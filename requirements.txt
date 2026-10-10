@@ -1,0 +1,8 @@
+# 运行 Demo 所需（galcore 轮子另装，见 start.bat / docs/demo.md）
+pyyaml>=6
+jsonschema>=4.20
+packaging>=23
+httpx>=0.27
+fastapi>=0.110
+uvicorn>=0.29
+websockets>=12

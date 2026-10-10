@@ -12,3 +12,6 @@ content/scripts/**/beats.yaml
 content/cards/*.yaml
 !content/**/README.md
 core/target/
+
+wheels/*.whl
+dist/

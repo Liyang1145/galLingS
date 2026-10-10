@@ -20,7 +20,7 @@ config_schema:
   required: [dsh_memory_path]
   properties:
     dsh_memory_path: {type: string, description: dsh-memory 检出目录（版本锁定见 server/memory/LINGSHU_VERSION）}
-    python: {type: string, default: python3}
+    python: {type: string, default: "", description: 跑灵枢的 Python；留空 = 当前解释器（Windows 上没有 python3 命令）}
     graph_dir: {type: string, default: "${data_dir}/graph", description: 认知图目录（MDCG_ROOT）}
     actor: {type: string, default: gallings}
     layer: {type: string, default: contextual}

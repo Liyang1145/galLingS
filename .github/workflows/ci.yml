@@ -1,0 +1,41 @@
+# CI：三平台编译 Rust 核心、出 galcore 轮子、跑 Rust 单测与 pytest（PLAN §17.3）。
+# Windows 演示机直接用这里产出的轮子（Actions → 本次运行 → Artifacts → galcore-windows-latest）。
+name: ci
+on:
+  push:
+    branches: [main, demo-ch01]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Rust 单测
+        working-directory: core
+        run: cargo test --quiet
+      - name: 打 galcore 轮子
+        working-directory: core
+        run: |
+          python -m pip install maturin
+          maturin build --release --out ../dist
+      - name: 安装依赖
+        shell: bash
+        run: |
+          python -m pip install -r requirements.txt pytest pytest-asyncio
+          python -m pip install --no-index --find-links dist galcore
+      - name: pytest（正式剧本不在仓库，相关用例自动跳过）
+        run: python -m pytest -q
+      - uses: actions/upload-artifact@v4
+        with:
+          name: galcore-${{ matrix.os }}
+          path: dist/*.whl

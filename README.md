@@ -33,3 +33,7 @@ python -m server.plugins list
 python -m server.plugins check --config config.example.yaml
 python -m pytest            # 灵枢集成测试需设 GALLINGS_TEST_DSH=<dsh-memory 检出>
 ```
+
+## 素材库
+
+《海风与布丁》的背景素材、预览和命名约定见 [素材库](content/assets/README.md)，当前收录浅滩、书房和甜品店三张白天背景。

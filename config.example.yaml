@@ -15,7 +15,7 @@ game:
   # ---- 只留接口（PLAN §16），Demo 不启用
   cross_run_memory: false            # 跨局记忆
   post_ending:
-    mode: off                        # off | scene | chat_window | auto（结局后自由聊天，预留）
+    mode: "off"                      # off | scene | chat_window | auto（结局后自由聊天，预留）
     affects_next_run: false
   agent_port:
     enabled: false                   # 外部 Agent 端口（HTTP / MCP），预留

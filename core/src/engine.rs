@@ -232,7 +232,8 @@ impl Engine {
         let st = self.draft.as_ref().unwrap_or(&self.state);
         json!({"op": "STATE", "affection": st.affection + st.deferred, "tails": st.tails_script + st.tails_ai,
                "mood": st.mood, "address_stage": st.address_stage, "wound": st.wound,
-               "mode": st.mode, "input_open": self.input_open(st), "lineage": st.lineage, "turn": st.turn})
+               "mode": st.mode, "input_open": self.input_open(st), "lineage": st.lineage, "turn": st.turn,
+               "wait": st.wait})
     }
 
     fn input_open(&self, st: &State) -> bool {

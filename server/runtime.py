@@ -16,7 +16,8 @@ log = logging.getLogger("gallings")
 
 
 def load_config(path: Path | None = None) -> dict[str, Any]:
-    for p in [path, ROOT / "config.yaml", ROOT / "config.example.yaml"]:
+    env = os.environ.get("GALLINGS_CONFIG")
+    for p in [path, Path(env) if env else None, ROOT / "config.yaml", ROOT / "config.example.yaml"]:
         if p and Path(p).is_file():
             return yaml.safe_load(Path(p).read_text(encoding="utf-8")) or {}
     return {}

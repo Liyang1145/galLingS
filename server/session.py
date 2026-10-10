@@ -420,7 +420,7 @@ class Session:
         return {"op": "STATE", "affection": st["affection"] + st["deferred"], "tails": st["tails_script"] + st["tails_ai"],
                 "mood": st["mood"], "mode": st["mode"], "lineage": st["lineage"], "turn": st["turn"],
                 "input_open": st["wait"] == "choice" and st["mode"] == "ai" and not st["input_closed"] and not st["forced_choice_scene"],
-                "address_stage": st["address_stage"], "wound": st["wound"]}
+                "address_stage": st["address_stage"], "wound": st["wound"], "wait": st["wait"]}
 
     async def on_seek(self, seq: int) -> None:
         """调试时间轴拖动：从头回放到 seq，显示那一刻的画面（只看，不改当前进度）。"""

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="data:,">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>galLingS · 海风与布丁</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">galLingS <span id="chapterTitle"></span></div>
+  <div class="controls">
+    <label>角色卡 <select id="cardSel"></select></label>
+    <div class="seg" id="modeSeg">
+      <button data-mode="choice">纯选项</button>
+      <button data-mode="ai">AI 模式</button>
+    </div>
+    <button id="restartBtn" title="用当前卡和模式重新开始">重新开始</button>
+    <span class="sep"></span>
+    <button id="saveBtn">存档</button>
+    <button id="loadBtn">读档</button>
+    <button id="diaryBtn">日记本</button>
+    <a class="btn" href="/cards.html">建卡页</a>
+    <span class="sep"></span>
+    <label class="chk"><input type="checkbox" id="cheat"> 作弊：显示好感</label>
+    <label class="chk"><input type="checkbox" id="tlToggle" checked> 调试时间轴</label>
+  </div>
+  <div id="status" class="status"></div>
+</header>
+
+<main class="layout">
+  <section class="stage" id="stage">
+    <div class="bg" id="bg"></div>
+    <div class="scene-tag" id="sceneTag"></div>
+    <div class="bgm-tag" id="bgmTag"></div>
+    <div class="sprite" id="sprite" hidden>
+      <svg viewBox="0 0 200 320" class="silhouette" aria-hidden="true">
+        <defs>
+          <linearGradient id="hairG" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0" stop-color="#1d2a4d"/><stop offset="1" stop-color="#3b3f8f"/>
+          </linearGradient>
+          <linearGradient id="tailG" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0" stop-color="#3b3a8a"/><stop offset="1" stop-color="#f4f7ff"/>
+          </linearGradient>
+        </defs>
+        <path d="M60 300 C 30 250, 40 190, 70 160 L 130 160 C 160 190, 170 250, 140 300 Z" fill="#cfe3f5" opacity=".9"/>
+        <path id="tail" d="M150 250 C 190 240, 195 200, 175 180 C 190 205, 170 230, 145 235 Z" fill="url(#tailG)"/>
+        <circle cx="100" cy="105" r="44" fill="#f6e6dc"/>
+        <path d="M54 110 C 50 50, 150 40, 148 110 C 160 160, 150 200, 140 215 L 135 120 C 120 90, 80 90, 66 120 L 60 215 C 48 190, 44 150, 54 110 Z" fill="url(#hairG)"/>
+        <circle cx="85" cy="110" r="5" fill="#5ab7e8"/><circle cx="115" cy="110" r="5" fill="#5ab7e8"/>
+      </svg>
+      <div class="expr" id="expr"></div>
+    </div>
+    <div class="tail-chip" id="tailChip" hidden></div>
+    <div class="banner" id="banner" hidden></div>
+    <div class="replay-bar" id="replayBar" hidden>
+      <span id="replayText"></span><button id="backLive">返回当前</button>
+    </div>
+
+    <div class="hud">
+      <div class="hud-item" id="hudAff" hidden>好感 <b id="aff">0</b></div>
+      <div class="hud-item">尾鳍 <b id="tails">0</b></div>
+      <div class="hud-item small" id="hudLineage"></div>
+    </div>
+
+    <div class="dialog" id="dialog">
+      <div class="speaker" id="speaker"></div>
+      <div class="text" id="text"></div>
+      <div class="hint" id="hint">点击继续 ▸</div>
+    </div>
+
+    <div class="choices" id="choices" hidden>
+      <div class="options" id="options"></div>
+      <form class="free" id="freeForm" hidden>
+        <input id="freeInput" maxlength="200" placeholder="不想选？直接对她说点什么…" autocomplete="off">
+        <button type="submit">说</button>
+      </form>
+    </div>
+    <div class="thinking" id="thinking" hidden><span></span><span></span><span></span></div>
+    <div class="notice" id="notice" hidden></div>
+  </section>
+
+  <aside class="timeline" id="timeline">
+    <div class="tl-head">
+      <b>调试时间轴</b>
+      <span class="legend"><i class="ok"></i>通过 <i class="clamp"></i>裁剪 <i class="rej"></i>驳回 <i class="fb"></i>降级</span>
+    </div>
+    <div class="tl-sub">每一步：模型提议 → 引擎裁决。点一行 = 回放到那一刻。</div>
+    <ol id="tl"></ol>
+  </aside>
+</main>
+
+<dialog id="diaryDlg">
+  <h3>日记本</h3>
+  <div id="diaryBody"></div>
+  <form method="dialog"><button>合上</button></form>
+</dialog>
+
+<script src="/static/player.js"></script>
+</body>
+</html>

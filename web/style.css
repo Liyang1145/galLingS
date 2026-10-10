@@ -118,3 +118,60 @@ dialog .entry { background: #fffaf0; border-left: 3px solid #e7c58a; padding: 10
 .finding.error { background: #fde8e7; } .finding.warn { background: #fff4d6; }
 .primary { background: var(--sea); color: #fff; border: 0; padding: 8px 16px; }
 .muted { color: var(--ink2); font-size: 12px; }
+
+/* ================= UI 布局优化：16:9 画面 + galgame 风对话框 ================= */
+.topbar { flex-wrap: nowrap; gap: 12px; padding: 6px 12px; }
+.controls { flex-wrap: nowrap; gap: 6px; overflow-x: auto; scrollbar-width: none; }
+.controls::-webkit-scrollbar { display: none; }
+.controls label, .controls button, .controls .btn { white-space: nowrap; }
+.status { max-width: 300px; }
+.timeline { width: 340px; }
+
+/* 舞台：深色底，中间是始终 16:9 的画面，图不再被裁掉 */
+.stage { display: flex; align-items: center; justify-content: center; background: #0b1424; container-type: size; }
+.screen { position: relative; width: min(100cqw, calc(100cqh * 16 / 9)); aspect-ratio: 16 / 9; overflow: hidden; container-type: size; box-shadow: 0 0 40px rgba(0,0,0,.5); }
+
+/* 立绘：占画面 95% 高，脚下压在对话框后面 */
+.sprite { bottom: 0; }
+.sprite.has-img { height: 95cqh; }
+
+/* 左上：场景 / 音乐小标签（空的不显示） */
+.scene-tag, .bgm-tag { left: 1.6cqw; font-size: max(11px, 1.15cqw); background: rgba(8,20,40,.45); backdrop-filter: blur(4px); padding: .3em .9em; }
+.scene-tag { top: 2cqh; } .bgm-tag { top: calc(2cqh + 2.2em); }
+.scene-tag:empty, .bgm-tag:empty, .hud-item:empty { display: none; }
+
+/* 右上：尾鳍计数、时间线、尾鳍提示排一列 */
+.hud { top: 2cqh; right: 1.6cqw; bottom: auto; }
+.hud-item { background: rgba(8,20,40,.5); color: #fff; backdrop-filter: blur(4px); font-size: max(12px, 1.2cqw); padding: .25em .9em; border-radius: 999px; }
+.hud-item b { color: #9fe0ff; }
+.hud-item.small { color: #c9d6ea; font-size: max(10px, .95cqw); }
+.tail-chip { top: auto; right: 1.6cqw; bottom: calc(30cqh + 2.2cqh); font-size: max(12px, 1.25cqw); border-radius: 999px; }
+
+/* 对话框：深海蓝半透明，名字牌浮在左上角 */
+.dialog { left: 3cqw; right: 3cqw; bottom: 2.4cqh; height: 28cqh; min-height: 0; padding: 3.2cqh 3cqw 2cqh;
+  background: linear-gradient(180deg, rgba(14,34,66,.78), rgba(8,20,42,.88)); border: 1px solid rgba(160,215,255,.28);
+  border-radius: 1.4cqw; box-shadow: 0 8px 30px rgba(0,0,0,.35); backdrop-filter: blur(8px); color: #f2f7ff; }
+.speaker { position: absolute; top: 0; left: 2.4cqw; transform: translateY(-55%); margin: 0; padding: .3em 1.2em; min-height: 0;
+  font-size: max(13px, 1.5cqw); color: #fff; background: linear-gradient(90deg, #2f7fb8, #5bb4e6); border-radius: 999px; box-shadow: 0 3px 10px rgba(0,0,0,.3); }
+.speaker:empty { display: none; }
+.text { font-size: max(15px, 1.75cqw); line-height: 1.75; color: #f2f7ff; }
+.text.narration { color: #dbe6f6; }
+.text.action { color: #a9bddb; }
+.text.player { color: #b9e4ff; }
+.hint { right: 2cqw; bottom: 1.4cqh; color: #9fc6e8; font-size: max(11px, 1cqw); animation: hintBob 1.4s ease-in-out infinite; }
+@keyframes hintBob { 50% { transform: translateY(3px); opacity: .45; } }
+
+/* 选项：画面中央偏上，玻璃按钮，和 VN Studio 开始界面一个风格 */
+.choices { top: auto; bottom: calc(30cqh + 5cqh); width: min(52cqw, 90%); }
+.options button { font-size: max(14px, 1.6cqw); padding: 1.1cqh 1.6cqw; border-radius: 999px; text-align: center; color: #fff;
+  background: rgba(14,40,78,.72); border: 1px solid rgba(160,215,255,.4); backdrop-filter: blur(6px); transition: transform .15s, background .15s; }
+.options button:hover { background: rgba(47,127,184,.9); transform: translateX(4px); border-color: #bfe6ff; }
+.free input { font-size: max(14px, 1.4cqw); background: rgba(255,255,255,.94); }
+.thinking { bottom: calc(30cqh + 4cqh); }
+.banner, .notice { font-size: max(13px, 1.3cqw); }
+.sprite:not(.has-img) { bottom: 31cqh; width: 16cqw; }
+.sprite:not(.has-img) .silhouette { width: 100%; }
+.brand { white-space: nowrap; flex-shrink: 0; }
+@media (max-width: 1150px) { .brand span { display: none; } }
+.screen:has(.choices:not([hidden])) .hint { display: none; }
+.expr { white-space: nowrap; }

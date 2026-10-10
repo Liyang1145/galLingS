@@ -1,20 +1,41 @@
-# galLingS 配置示例（复制为 config.yaml 后修改）。密钥一律走环境变量，不写在这里。
+# galLingS 配置示例（复制为 config.yaml 后修改；没有 config.yaml 时用本文件）。
+# 密钥一律走环境变量（GALLINGS_LLM_API_KEY），不写在这里。
+
+server:
+  host: 127.0.0.1            # 只监听本机（PLAN §17.4）
+  port: 8765
+  data_dir: ~/.gallings      # 事件日志、玩家建的卡、演绎缓存、记忆；Windows 下是 %USERPROFILE%\.gallings
+
+game:
+  chapter_dir: content/scripts/ch01
+  default_card: whale
+  default_mode: choice       # choice | ai
+  agm_fill: true             # AGM 补位开关（PLAN §13.1）
+  honesty_gap_rule: false    # §8.3 待议：尾鳍须"心里与嘴上落差"支撑；默认关
+  # ---- 只留接口（PLAN §16），Demo 不启用
+  cross_run_memory: false            # 跨局记忆
+  post_ending:
+    mode: off                        # off | scene | chat_window | auto（结局后自由聊天，预留）
+    affects_next_run: false
+  agent_port:
+    enabled: false                   # 外部 Agent 端口（HTTP / MCP），预留
+
 plugins:
   paths:
     - plugins/builtin
     - ~/.gallings/plugins          # 玩家 / 第三方插件
   select:                          # 单例 kind：列表 = 主用 + 降级备选（按顺序）
-    llm: [gallings.llm.openai-compat, gallings.llm.scripted]
-    # memory: gallings.memory.lingshu
-  tools: [gallings.tool.proposals]
+    llm: [gallings.llm.openai-compat]
+    memory: [gallings.memory.local]
+    # memory: [gallings.memory.lingshu, gallings.memory.local]   # 装了灵枢就用灵枢，失败退本地
+    # image: [...]   # 生图（预留）
+    # tts: [...]     # 语音（预留）
+  tools: []
   guards: [gallings.guard.injection]
   importers: []
   config:
     gallings.llm.openai-compat:
       base_url: https://api.deepseek.com
       model: deepseek-chat
-    gallings.llm.scripted:
-      responses:
-        - text: "……哼，你还没走啊。"
     # gallings.memory.lingshu:
-    #   dsh_memory_path: /path/to/dsh-memory
+    #   dsh_memory_path: C:/path/to/dsh-memory

@@ -118,7 +118,7 @@ class Performer:
     async def render(self, op: dict[str, Any]) -> tuple[dict[str, Any], dict[str, Any] | None]:
         """返回 (要上屏的 op, 需要记录的 perform 事件 payload 或 None)。"""
         k = op.get("op")
-        if self.locked:
+        if self.locked or "src" not in op:  # 原作卡，或 AI 即兴 / 降级产生的 op：不经演绎层
             return op, None
         if k == "SAY" and self._eligible(op):
             src = op["src"]

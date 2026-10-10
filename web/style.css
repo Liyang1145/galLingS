@@ -120,12 +120,6 @@ dialog .entry { background: #fffaf0; border-left: 3px solid #e7c58a; padding: 10
 .muted { color: var(--ink2); font-size: 12px; }
 
 /* ================= UI 布局优化：16:9 画面 + galgame 风对话框 ================= */
-.topbar { flex-wrap: nowrap; gap: 12px; padding: 6px 12px; }
-.controls { flex-wrap: nowrap; gap: 6px; overflow-x: auto; scrollbar-width: none; }
-.controls::-webkit-scrollbar { display: none; }
-.controls label, .controls button, .controls .btn { white-space: nowrap; }
-.status { max-width: 300px; }
-.timeline { width: 340px; }
 
 /* 舞台：深色底，中间是始终 16:9 的画面，图不再被裁掉 */
 .stage { display: flex; align-items: center; justify-content: center; background: #0b1424; container-type: size; }
@@ -171,7 +165,59 @@ dialog .entry { background: #fffaf0; border-left: 3px solid #e7c58a; padding: 10
 .banner, .notice { font-size: max(13px, 1.3cqw); }
 .sprite:not(.has-img) { bottom: 31cqh; width: 16cqw; }
 .sprite:not(.has-img) .silhouette { width: 100%; }
-.brand { white-space: nowrap; flex-shrink: 0; }
-@media (max-width: 1150px) { .brand span { display: none; } }
 .screen:has(.choices:not([hidden])) .hint { display: none; }
 .expr { white-space: nowrap; }
+
+/* ================= 播放器外框：顶栏 + 可拖宽时间轴（只作用于 body.player，建卡页不受影响） ================= */
+.player { --tlw: clamp(260px, 26vw, 440px); font-size: 14px; }
+.player .topbar { flex-wrap: nowrap; gap: 10px; padding: 0 12px; height: 48px; background: #0f2140; border-bottom: 1px solid #22385e; color: #e8f1ff; }
+.player .brand { display: flex; align-items: baseline; gap: 8px; white-space: nowrap; min-width: 0; flex-shrink: 1; overflow: hidden; }
+.player .brand b { font-size: 16px; letter-spacing: .5px; color: #fff; }
+.player .brand span { margin: 0; font-size: 13px; color: #9fb6d8; overflow: hidden; text-overflow: ellipsis; }
+.player .tb-group { display: flex; align-items: center; gap: 4px; padding-left: 10px; border-left: 1px solid #2a4370; flex-shrink: 0; }
+.player .ib, .player .seg button, .player .field select, .player .menu-pop .btn {
+  height: 32px; display: inline-flex; align-items: center; gap: 6px; padding: 0 12px; font-size: 14px; border-radius: 8px;
+  background: rgba(255,255,255,.06); color: #e8f1ff; border: 1px solid transparent; transition: background .15s, border-color .15s; }
+.player .ib:hover, .player .seg button:hover:not(:disabled) { background: rgba(255,255,255,.14); border-color: #4f78b0; }
+.player .ib i { font-style: normal; font-size: 15px; line-height: 1; }
+.player .field { display: inline-flex; align-items: center; gap: 6px; color: #9fb6d8; font-size: 13px; }
+.player .field select { padding: 0 8px; background: #17305a; border-color: #2a4370; }
+.player .seg { border: 1px solid #2a4370; border-radius: 8px; background: rgba(255,255,255,.04); }
+.player .seg button { border-radius: 0; background: transparent; }
+.player .seg button.on { background: #2f7fb8; color: #fff; }
+.player .seg button:disabled { opacity: .45; }
+.player .tb-spacer { flex: 1; }
+.player .status { margin: 0; max-width: 34vw; font-size: 12px; color: #8ea6c9; }
+.player .tb-menu { position: relative; flex-shrink: 0; }
+.player .tb-menu summary { list-style: none; cursor: pointer; }
+.player .tb-menu summary::-webkit-details-marker { display: none; }
+.player .tb-menu[open] summary { background: rgba(255,255,255,.16); border-color: #4f78b0; }
+.player .menu-pop { position: absolute; right: 0; top: calc(100% + 6px); z-index: 20; min-width: 210px; display: flex; flex-direction: column; gap: 10px;
+  padding: 12px 14px; background: #fff; color: var(--ink); border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,.35); font-size: 14px; }
+.player .menu-pop .btn { color: var(--ink); background: #f1f6fc; justify-content: center; }
+.player .menu-pop .btn:hover { border-color: var(--sea); }
+.player .chk { gap: 8px; cursor: pointer; }
+/* 窄屏：按钮只留图标（悬停看名字），状态文字收起 */
+@media (max-width: 1180px) { .player .ib span { display: none; } .player .ib { padding: 0 9px; } .player .status { display: none; } }
+@media (max-width: 760px) { .player .field span, .player .brand span { display: none; } }
+
+/* 时间轴：左边缘拖动改宽度，宽度记住；窄屏变成浮在右侧的抽屉 */
+.player .layout { position: relative; }
+.player .timeline { position: relative; width: var(--tlw); min-width: 220px; max-width: 70vw; flex-shrink: 0; font-size: 13px; }
+.player .tl-resizer { position: absolute; left: -4px; top: 0; bottom: 0; width: 8px; cursor: col-resize; z-index: 6; }
+.player .tl-resizer::after { content: ""; position: absolute; left: 3px; top: 0; bottom: 0; width: 2px; background: transparent; transition: background .15s; }
+.player .tl-resizer:hover::after, .player.tl-dragging .tl-resizer::after { background: var(--sea); }
+.player.tl-dragging, .player.tl-dragging * { cursor: col-resize !important; user-select: none; }
+.player .tl-head { padding: 12px 14px 4px; font-size: 14px; }
+.player .tl-sub { padding: 0 14px 10px; }
+.player #tl li { padding: 8px 14px; line-height: 1.5; }
+.player #tl .badge { font-size: 12px; }
+@media (max-width: 900px) {
+  .player .timeline { position: absolute; right: 0; top: 0; bottom: 0; z-index: 10; width: min(88vw, var(--tlw)); box-shadow: -10px 0 30px rgba(0,0,0,.35); }
+}
+.player .tl-head { flex-wrap: wrap; align-items: center; gap: 4px 8px; }
+.player .tl-head b { white-space: nowrap; }
+.player .tl-head .legend { white-space: nowrap; font-size: 12px; }
+.player .tl-close { order: 3; margin-left: auto; height: 24px; padding: 0 8px; border-radius: 6px; font-size: 12px; background: transparent; border-color: transparent; color: var(--ink2); }
+.player .tl-close:hover { background: #e8f0fa; }
+.player .tl-head .legend { order: 4; flex-basis: 100%; }

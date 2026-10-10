@@ -39,7 +39,8 @@ class MCPClient:
         return self._proc is not None and self._proc.returncode is None
 
     async def start(self) -> None:
-        env = {**os.environ, **self.env}
+        # Windows 默认控制台编码是 cp1252/GBK：子进程（多为 Python）一律按 UTF-8 收发，否则中文一输出就崩
+        env = {**os.environ, "PYTHONUTF8": "1", "PYTHONIOENCODING": "utf-8", **self.env}
         try:
             self._proc = await asyncio.create_subprocess_exec(
                 *self.command, stdin=asyncio.subprocess.PIPE, stdout=asyncio.subprocess.PIPE,

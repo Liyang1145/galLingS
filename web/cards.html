@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="data:,">
+<title>galLingS · 建卡页</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="cards-page">
+<header class="topbar">
+  <div class="brand">galLingS <span>建卡页</span></div>
+  <div class="controls">
+    <label>打开已有卡 <select id="openSel"><option value="">—</option></select></label>
+    <a class="btn" href="/">回到游戏</a>
+  </div>
+  <div class="status" id="status"></div>
+</header>
+<div class="cards-wrap">
+  <section class="panel">
+    <h3>① 写一段人设</h3>
+    <textarea id="desc" placeholder="例：港口灯塔的守塔人，狐族成年女性，外表二十五六岁。说话慢吞吞、爱用天气打比方，嘴上嫌麻烦其实很照顾人。紧张时耳朵会抖，开心时尾巴会晃。最宝贝的是自己晒的橘子干，喜欢喝加了蜂蜜的姜茶。"></textarea>
+    <p><button class="primary" id="genBtn">AI 填卡</button> <span class="muted" id="genMsg"></span></p>
+    <p class="muted">AI 先按格式填满各字段，再按校验规则自查补洞。黄色 = 还空着，红框 = 校验没过。</p>
+  </section>
+  <section class="panel">
+    <h3>② 逐字段修改</h3>
+    <div id="fields"><p class="muted">先在左边生成，或从上面打开一张卡。</p></div>
+  </section>
+  <section class="panel">
+    <h3>③ 校验并启用</h3>
+    <p><button id="valBtn">校验</button> <button class="primary" id="useBtn" disabled>启用并重演第一话</button></p>
+    <div id="findings"></div>
+    <p class="muted">error 不改完不能启用；warn（含人设-剧本适配度）只提示，可以照常启用。新卡用通用占位立绘。</p>
+  </section>
+</div>
+<script src="/static/cards.js"></script>
+</body>
+</html>

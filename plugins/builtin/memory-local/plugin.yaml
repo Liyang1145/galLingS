@@ -1,0 +1,24 @@
+schema_version: 1
+id: gallings.memory.local
+name: 本地轻量记忆（灵枢不可用时的备选）
+version: 0.1.0
+kind: memory
+api: 1
+description: >
+  纯 Python、零依赖的本地记忆：原文存 JSONL，按中文字二元组重合度召回，按可见时间线过滤（PLAN §13.3）。
+  用于没装灵枢的机器（如演示笔记本）和测试。正式召回走 gallings.memory.lingshu。
+requires:
+  gallings: ">=0.1,<0.2"
+runtime:
+  type: python
+  entry: plugin.py:LocalMemory
+capabilities: [timeline_filter, verbatim]
+config_schema:
+  type: object
+  additionalProperties: false
+  properties:
+    file: {type: string, default: memory.jsonl, description: 相对插件数据目录}
+    fresh: {type: boolean, default: true, description: 启动时清空（每个会话独立记忆；跨局记忆开关预留）}
+permissions:
+  filesystem: ["${data_dir}"]
+determinism: recorded

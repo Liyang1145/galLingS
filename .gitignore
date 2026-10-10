@@ -4,3 +4,14 @@ __pycache__/
 *.egg-info/
 .venv/
 config.yaml
+
+# 剧本、角色卡、素材：仓库公开，内容授权未定（PLAN §2.1、§22），不进仓库
+content/scripts/**/*.md
+content/scripts/**/chapter.json
+content/scripts/**/beats.yaml
+content/cards/*.yaml
+!content/**/README.md
+core/target/
+
+wheels/*.whl
+dist/

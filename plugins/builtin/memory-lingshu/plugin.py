@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import re
+import sys
 from typing import Any
 
 from server.plugins import MemoryHit, MemoryPlugin, MemoryRecord, MCPError, Timeline
@@ -35,7 +36,7 @@ class LingshuMemory(MemoryPlugin):
             env["MDCG_TOKEN"] = token
         else:
             env["MDCG_LEGACY_ENV_AUTH"] = "1"
-        self.client = MCPClient([c["python"], "-m", "md_cg.mcp_server"], env=env, cwd=c["dsh_memory_path"],
+        self.client = MCPClient([c["python"] or sys.executable, "-m", "md_cg.mcp_server"], env=env, cwd=c["dsh_memory_path"],
                                 call_timeout_s=c["call_timeout_s"], name=self.ctx.plugin_id)
         await self.client.start()
         names = {t["name"] for t in await self.client.list_tools()}

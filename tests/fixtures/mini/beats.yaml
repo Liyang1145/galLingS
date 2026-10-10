@@ -1,0 +1,16 @@
+chapter_id: mini
+title: 码头上的猫
+heroine_name_in_script: 猫小姐
+declared_affection_range: [-4, 5]
+declared_tail_total: 1
+ai_tail_max: 1
+tail_total_max: 2
+choices:
+  - {id: mini.choice.1, beat: mini.beat.shadow, purpose: 初遇试探, emotion_target: 警惕 → 放松, natures: {A: 顺毛, B: 作死}}
+  - {id: mini.choice.2, beat: mini.beat.fish, purpose: 分享鱼干, emotion_target: 嘴硬 → 心软, natures: {A: 顺毛, B: 诚实笨拙}}
+tail_signals:
+  - {match: 勾, signal: heart, meaning: heart}
+  - {match: 拍, signal: angry, meaning: angry}
+slots:
+  - {literal: 鱼干, slot: treasured_object, type: object}
+scene_tags: [码头, 清晨]

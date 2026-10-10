@@ -11,7 +11,7 @@
 9. 立绘：占位；以后每卡预生成轮换，优先 Live2D。TTS 只留接口。
 10. 记忆：灵枢底座 + AGM 补位（经 hive-memory-bench 实测）；跨局记忆为设置开关。
 11. 结局后 AI 自由聊天：场景内或聊天窗口，玩家可选或 AI 判断；是否影响下一周目为设置开关。
-12. 技术栈 Python + C++：Python 管模型网关、导演、守卫、记忆网关、Web；C++ 管 OP 运行时、存档回放、AGM 扩散；pybind11 绑定。客户端嵌入后续再议。
+12. 技术栈 Python + C++：Python 管模型网关、导演、守卫、记忆网关、Web；C++ 管 OP 运行时、存档回放、AGM 扩散；pybind11 绑定。客户端嵌入后续再议。**（已被第 24 条取代：C++ 改为 Rust）**
 13. Demo：单台笔记本本地运行，不做断网兜底；本人演示，调试时间轴常开；流程约 15 分钟。
 14. 原则：Demo 最简化，非核心能力只预留接口。
 15. LetsGal Studio 仅作设计参考；其剧本 JSON 导入导出暂不做。
@@ -28,4 +28,11 @@
 
 ## 插件插座（2026-10-10）
 
-23. 插件插座（2026-10-10，负责人：Hark）：所有可替换能力统一成插件，一个目录 + 一份 `plugin.yaml`（`schemas/plugin.schema.json`）。7 种 kind：llm、image、tts、memory、tool、guard、importer。运行方式：进程内 Python + MCP stdio 子进程。单例 kind 有降级链，多例 kind 全部启用。插件只提议、不碰 C++ 状态；插件锁写进事件日志头。剧本、角色卡、素材属于内容，不走插件。详见 `docs/plugin-format.md`。
+23. 插件插座（2026-10-10，负责人：Hark）：所有可替换能力统一成插件，一个目录 + 一份 `plugin.yaml`（`schemas/plugin.schema.json`）。7 种 kind：llm、image、tts、memory、tool、guard、importer。运行方式：进程内 Python + MCP stdio 子进程。单例 kind 有降级链，多例 kind 全部启用。插件只提议、不碰核心状态；插件锁写进事件日志头。剧本、角色卡、素材属于内容，不走插件。详见 `docs/plugin-format.md`。
+
+## 第一话 Demo（2026-10-10）
+
+24. 确定性核心由 C++ 改为 **Rust**（PyO3 + maturin，abi3 轮子）。理由：跨平台构建省事，Windows 演示机直接装 CI 轮子；以后也能出 C ABI 给 Unity / UE。
+25. 演示笔记本为 **Windows**；`start.bat` 一键启动。
+26. 读档后被放弃时间线的记忆与 AGM 边只隐藏、不删除（为 Meta 线留地基）。
+27. 仓库公开、内容授权未定：剧本、角色卡不进 git，CI 用原创迷你章节测试。

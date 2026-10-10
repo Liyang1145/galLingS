@@ -8,6 +8,11 @@ dependencies = [
   "jsonschema>=4.20",
   "packaging>=23",
   "httpx>=0.27",
+  "fastapi>=0.110",
+  "uvicorn>=0.29",
+  "websockets>=12",
+  # 确定性核心（Rust，core/）：Windows 用 CI 产出的轮子，见 docs/demo.md
+  # "galcore==0.1.0",
 ]
 
 [project.optional-dependencies]

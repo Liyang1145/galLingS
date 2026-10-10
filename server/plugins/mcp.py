@@ -33,13 +33,17 @@ class MCPClient:
         self._lock = asyncio.Lock()
         self.stderr_tail: list[str] = []
         self._bg: list[asyncio.Task] = []
+        self._stdout_eof = False
 
     @property
     def alive(self) -> bool:
-        return self._proc is not None and self._proc.returncode is None
+        # stdout 已 EOF 也算死：Windows 上 EOF 先到、returncode 稍后才置位，只看 returncode 会误判存活
+        return self._proc is not None and self._proc.returncode is None and not self._stdout_eof
 
     async def start(self) -> None:
-        env = {**os.environ, **self.env}
+        # Windows 默认控制台编码是 cp1252/GBK：子进程（多为 Python）一律按 UTF-8 收发，否则中文一输出就崩
+        env = {**os.environ, "PYTHONUTF8": "1", "PYTHONIOENCODING": "utf-8", **self.env}
+        self._stdout_eof = False
         try:
             self._proc = await asyncio.create_subprocess_exec(
                 *self.command, stdin=asyncio.subprocess.PIPE, stdout=asyncio.subprocess.PIPE,
@@ -86,6 +90,7 @@ class MCPClient:
                     else:
                         fut.set_result(msg.get("result"))
         finally:
+            self._stdout_eof = True
             for fut in self._pending.values():
                 if not fut.done():
                     fut.set_exception(MCPError("子进程已退出：" + " | ".join(self.stderr_tail[-3:]), self.name))

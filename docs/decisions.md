@@ -15,3 +15,4 @@
 13. Demo：单台笔记本本地运行，不做断网兜底；本人演示，调试时间轴常开；流程约 15 分钟。
 14. 原则：Demo 最简化，非核心能力只预留接口。
 15. LetsGal Studio 仅作设计参考；其剧本 JSON 导入导出暂不做。
+16. 插件插座（2026-10-10，负责人：Hark）：所有可替换能力统一成插件，一个目录 + 一份 `plugin.yaml`（`schemas/plugin.schema.json`）。7 种 kind：llm、image、tts、memory、tool、guard、importer。运行方式：进程内 Python + MCP stdio 子进程。单例 kind 有降级链，多例 kind 全部启用。插件只提议、不碰 C++ 状态；插件锁写进事件日志头。剧本、角色卡、素材属于内容，不走插件。详见 `docs/plugin-format.md`。

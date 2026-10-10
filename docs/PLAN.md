@@ -19,6 +19,7 @@ v1.1 的方向、技术栈、Demo 范围全部保留。v1.2 只补"能不能真�
 5. **好感预算**（§8.2）：编译器算出每个节点之后剧本还能给的好感上下界，AI 的好感提议按此裁剪，保证 AI 模式下本章结算仍落在 -17 ~ +23。
 6. **读档时记忆回滚**（§13.3）：记忆按"时间线 + 回合"打标，读档后召回自动排除被放弃的时间线。v1.1 读档后她会记得"没发生过的事"。
 7. **接口先冻结**（§18 M0a）：OP、事件、角色卡、WS 协议四份 JSON Schema 放 `schemas/`，三端共用；C++ 线和前端线不必等剧本 v5.0 就能开工。
+9. **【新】插件插座**（§16.1）：模型、生图、语音、记忆、工具、守卫、导入导出统一成插件，一份 `plugin.yaml` 格式（`schemas/plugin.schema.json`，说明见 `docs/plugin-format.md`）；地基已实现在 `server/plugins/`。
 8. 补齐：OP 缺的条件跳转与音效、WebSocket 协议、构建与 CI、评测集与量化验收、许可证、密钥与隐私、降级阶梯、延迟预算、风险表。
 
 ---
@@ -508,6 +509,14 @@ v1.1 规定尾鳍代表真心，但没说"真心"从哪来。建议：
 | LetsGal 剧本 JSON | 内部结构与之同构（Chapter→Fragment→Block→OP），导入导出后做 |
 | 动态混音 | `propose_music_mood` + manifest 分轨字段 |
 
+### 16.1 【新】插件插座（统一插件格式）
+上表的"适配器接口"全部落到同一个插件系统里，不再各写各的：
+- 一个插件 = 一个目录 + `plugin.yaml`；kind 共 7 种：llm、image、tts、memory、tool、guard、importer。
+- 运行方式两种：进程内 Python；MCP stdio 子进程（目前用于 tool）。灵枢以 memory 插件接入，内部走 MCP。
+- 单例 kind（llm/image/tts/memory）按配置列表做主用 + 降级备选；多例 kind（tool/guard/importer）全部启用。
+- 插件只能提议，不碰 C++ 状态；插件锁（id、版本、清单与配置哈希）写进事件日志头，回放前比对。
+- 格式与接口详见 `docs/plugin-format.md`；Schema 进 M0a 冻结范围。
+
 ## 17. 【新】工程与构建
 
 ### 17.1 仓库结构
@@ -515,7 +524,8 @@ v1.1 规定尾鳍代表真心，但没说"真心"从哪来。建议：
 galLingS/
 ├── README.md  LICENSE  CONTRIBUTING.md
 ├── docs/            # Plan、决策记录、记忆实测、script-syntax.md、card-format.md、protocol.md、event-log.md
-├── schemas/         # 单一真源：op / event / card / tools / ws 的 JSON Schema
+├── schemas/         # 单一真源：op / event / card / tools / ws / plugin 的 JSON Schema
+├── plugins/builtin/ # 内置插件（也是参考实现）
 ├── core/            # C++：galcore
 │   ├── include/galcore/
 │   ├── src/  (op_vm, state, rules, eventlog_replay, snapshot, agm, rng, hash)
@@ -570,7 +580,7 @@ galLingS/
 ### 18.1 【改】里程碑
 | 阶段 | 内容 | 验收标准 |
 |---|---|---|
-| **【新】** M0a 接口冻结 | `schemas/` 五份 Schema；`docs/script-syntax.md`、`docs/card-format.md`、`docs/protocol.md`；手写迷你章节（2 个选项点、1 个汇合、1 个存档点） | 三端都能用 Schema 校验迷你章节；团队评审通过后改动走 PR |
+| **【新】** M0a 接口冻结 | `schemas/` 五份 Schema + 插件清单 Schema（已完成）；`docs/script-syntax.md`、`docs/card-format.md`、`docs/protocol.md`；手写迷你章节（2 个选项点、1 个汇合、1 个存档点） | 三端都能用 Schema 校验迷你章节；团队评审通过后改动走 PR |
 | M0 剧本与卡 | 编译器；第一话 JSON/OP；鲸鱼小姐卡；校验报告 | 第一话 4 个选项点、10 处好感、存档点全部编译出；校验报告列出附录 E 冲突；**【新】** 好感可达区间与 -17 ~ +23 一致；两次编译字节一致 |
 | M1 确定性运行时 | C++ OP 解释器、状态机、事件日志、快照；pybind11；Web 播放器；存读档 | 纯选项通关第一话；**【改】** 录制日志回放后每条 `state_hash` 一致（三平台）；好感结算落在 -17 ~ +23；**【新】** 随机走 1000 条选项路径全部通关、无死路 |
 | M2 AI 模式 | DeepSeek 网关；工具注册表；意图分类；导演 AI_TURN；守卫；降级阶梯 | 剧本外输入能接住并在 ≤3 轮引回汇合点；"回深海"相关提议 100% 驳回；风格检查生效；**【新】** 评测集风格合格率 ≥ 95%、红队集 100% 拦截、首句上屏 p95 ≤ 5 s；AI 模式 100 局随机打字后章末好感全部在区间内 |

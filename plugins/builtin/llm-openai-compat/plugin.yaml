@@ -1,0 +1,32 @@
+schema_version: 1
+id: gallings.llm.openai-compat
+name: OpenAI-compatible 模型网关
+version: 0.1.0
+kind: llm
+api: 1
+description: 走 /chat/completions 流式接口（DeepSeek 等），把 SSE 归一成五种内部事件（PLAN §12）。
+requires:
+  gallings: ">=0.1,<0.2"
+  python: ">=3.11"
+runtime:
+  type: python
+  entry: plugin.py:OpenAICompatLLM
+capabilities: [stream, tools, usage]
+config_schema:
+  type: object
+  additionalProperties: false
+  required: [base_url, model]
+  properties:
+    base_url: {type: string, default: "https://api.deepseek.com"}
+    model: {type: string, default: deepseek-chat}
+    temperature: {type: number, minimum: 0, maximum: 2, default: 0.8}
+    timeout_s: {type: number, minimum: 1, default: 60}
+    connect_timeout_s: {type: number, minimum: 1, default: 10}
+secrets:
+  - name: api_key
+    env: GALLINGS_LLM_API_KEY
+    required: true
+    description: 模型服务的 API key；只从环境变量读，不进配置、不进日志
+permissions:
+  network: [api.deepseek.com]
+determinism: recorded

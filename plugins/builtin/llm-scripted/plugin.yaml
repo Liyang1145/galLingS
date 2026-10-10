@@ -1,0 +1,38 @@
+schema_version: 1
+id: gallings.llm.scripted
+name: 脚本化模型（测试 / 录制回放演示）
+version: 0.1.0
+kind: llm
+api: 1
+description: 按配置里的脚本逐条回放模型输出，不联网。用于单元测试、CI 和演示现场的离线兜底彩排。
+requires:
+  gallings: ">=0.1,<0.2"
+runtime:
+  type: python
+  entry: plugin.py:ScriptedLLM
+capabilities: [stream, tools]
+config_schema:
+  type: object
+  additionalProperties: false
+  properties:
+    responses:
+      type: array
+      default: []
+      description: 每次 stream() 依次取一条；用完后循环
+      items:
+        type: object
+        additionalProperties: false
+        properties:
+          text: {type: string}
+          tool_calls:
+            type: array
+            items:
+              type: object
+              required: [name, arguments]
+              properties:
+                name: {type: string}
+                arguments: {type: object}
+    chunk_chars: {type: integer, minimum: 1, default: 8}
+permissions:
+  network: []
+determinism: pure

@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/TanPowasd/galLingS/schemas/plugin.schema.json",
+  "title": "galLingS 插件清单（plugin.yaml）",
+  "description": "所有插件共用的唯一清单格式。作者用 YAML 写，加载时转 JSON 按本 Schema 校验。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "id", "name", "version", "kind", "api", "runtime"],
+  "properties": {
+    "schema_version": {"const": 1, "description": "清单格式版本，本 Schema 只认 1"},
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9]*(\\.[a-z][a-z0-9-]*){2,}$",
+      "maxLength": 96,
+      "description": "全局唯一，反向域名式三段以上：<作者/组织>.<kind>.<名字>，如 gallings.llm.openai-compat"
+    },
+    "name": {"type": "string", "minLength": 1, "maxLength": 80},
+    "version": {
+      "type": "string",
+      "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(-[0-9A-Za-z.-]+)?$",
+      "description": "插件自身版本，SemVer"
+    },
+    "kind": {
+      "enum": ["llm", "image", "tts", "memory", "tool", "guard", "importer"],
+      "description": "扩展点类型，决定必须实现的接口（见 docs/plugin-format.md §3）"
+    },
+    "api": {"type": "integer", "minimum": 1, "description": "所实现的 kind 接口主版本；引擎只加载自己支持的主版本"},
+    "description": {"type": "string", "maxLength": 500},
+    "authors": {"type": "array", "items": {"type": "string"}},
+    "license": {"type": "string"},
+    "homepage": {"type": "string"},
+    "requires": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "gallings": {"type": "string", "description": "引擎版本范围，PEP 440 写法，如 \">=0.1,<0.2\""},
+        "python": {"type": "string"},
+        "plugins": {
+          "type": "object",
+          "description": "依赖的其它插件：{id: 版本范围}",
+          "additionalProperties": {"type": "string"}
+        }
+      }
+    },
+    "runtime": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["type", "entry"],
+          "properties": {
+            "type": {"const": "python"},
+            "entry": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_./-]+\\.py:[A-Za-z_][A-Za-z0-9_]*$",
+              "description": "相对插件目录的 <文件>.py:<类名>"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["type", "command"],
+          "properties": {
+            "type": {"const": "mcp"},
+            "command": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+            "env": {"type": "object", "additionalProperties": {"type": "string"}},
+            "cwd": {"type": "string"},
+            "startup_timeout_s": {"type": "number", "minimum": 1, "maximum": 120},
+            "call_timeout_s": {"type": "number", "minimum": 1, "maximum": 600}
+          }
+        }
+      ]
+    },
+    "capabilities": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^[a-z][a-z0-9_.-]*$"},
+      "description": "可选能力标签，如 llm 的 stream、tools；导演按能力降级"
+    },
+    "provides": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "tools": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"type": "string", "pattern": "^[a-z][a-z0-9_]*$"},
+          "description": "kind=tool 时导出的工具名；mcp 运行时可写 [\"*\"] 以外的显式白名单"
+        }
+      }
+    },
+    "config_schema": {
+      "type": "object",
+      "description": "插件配置的 JSON Schema（内联）。config.yaml 中该插件的配置按它校验"
+    },
+    "secrets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "env"],
+        "properties": {
+          "name": {"type": "string", "pattern": "^[a-z][a-z0-9_]*$"},
+          "env": {"type": "string", "pattern": "^[A-Z][A-Z0-9_]*$"},
+          "required": {"type": "boolean"},
+          "description": {"type": "string"}
+        }
+      },
+      "description": "密钥只从环境变量读；插件只能读到这里声明过的项"
+    },
+    "permissions": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "network": {"type": "array", "items": {"type": "string"}, "description": "要访问的主机名；空 = 不联网"},
+        "filesystem": {"type": "array", "items": {"type": "string"}, "description": "可读写路径，支持 ${data_dir}"},
+        "subprocess": {"type": "boolean"}
+      }
+    },
+    "determinism": {
+      "enum": ["pure", "recorded"],
+      "description": "pure = 同输入同输出、回放时可重算；recorded = 输出必须先记成事件，回放读事件不再调用（默认）"
+    }
+  }
+}

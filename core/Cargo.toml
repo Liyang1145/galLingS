@@ -1,0 +1,25 @@
+[package]
+name = "galcore"
+version = "0.1.0"
+edition = "2021"
+description = "galLingS 确定性核心：OP 解释器、状态机、裁决规则、快照回放、状态哈希、AGM 扩散（PLAN §3.1、§4、§17.2）"
+license = "Apache-2.0"
+publish = false
+
+[lib]
+name = "galcore"
+crate-type = ["cdylib", "rlib"]
+
+[features]
+default = []
+# Python 绑定（maturin 打轮子时打开）。cargo test 不需要 Python。
+python = ["dep:pyo3"]
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"  # 不开 preserve_order：Map 是 BTreeMap，键天然有序，哈希稳定
+pyo3 = { version = "0.29", features = ["extension-module", "abi3-py311"], optional = true }
+
+[profile.release]
+lto = true
+codegen-units = 1

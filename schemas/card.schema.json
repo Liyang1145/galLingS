@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gallings.dev/schemas/card.schema.json",
+  "title": "galLingS 角色卡",
+  "description": "PLAN §7。作者用 YAML 写，加载时转 JSON 按本 Schema 校验；语义规则（成年锚点、信号数量、槽位覆盖、红线只收紧）在 server/cards/validate.py。",
+  "type": "object",
+  "required": ["schema_version", "id", "identity", "appearance", "personality", "speech", "honesty_signals",
+               "address_system", "taboo", "red_lines", "slots", "style_examples"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9_-]{1,40}$"},
+    "locked_script": {"type": "boolean", "default": false},
+    "identity": {
+      "type": "object", "required": ["name", "species", "role", "adult_anchor"],
+      "properties": {
+        "name": {"type": "string", "minLength": 1},
+        "name_en": {"type": "string"},
+        "species": {"type": "string"},
+        "role": {"type": "string"},
+        "adult_anchor": {"type": "string", "minLength": 4}
+      }
+    },
+    "appearance": {"type": "object", "minProperties": 1, "additionalProperties": {"type": ["string", "array"]}},
+    "personality": {
+      "type": "object", "required": ["traits", "laws", "values"],
+      "properties": {
+        "traits": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "laws": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "values": {"type": "array", "items": {"type": "string"}, "minItems": 1}
+      }
+    },
+    "speech": {
+      "type": "object", "required": ["self_ref", "endings"],
+      "properties": {
+        "self_ref": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "sentence_heads": {"type": "array", "items": {"type": "string"}},
+        "endings": {"type": "array", "items": {"type": "string"}},
+        "metaphor_system": {"type": "string"},
+        "action_markers": {"type": "string"},
+        "threats": {"type": "array", "items": {"type": "string"}},
+        "catchphrases": {"type": "array", "items": {"type": "string"}},
+        "forbidden": {
+          "type": "object",
+          "properties": {
+            "checkable": {"type": "array", "items": {"type": "object", "required": ["pattern", "reason"],
+              "properties": {"pattern": {"type": "string"}, "reason": {"type": "string"}}}},
+            "prose": {"type": "array", "items": {"type": "string"}}
+          }
+        }
+      }
+    },
+    "honesty_signals": {
+      "type": "array", "minItems": 1,
+      "items": {"type": "object", "required": ["id", "body_part", "action", "meaning"],
+        "properties": {"id": {"type": "string", "pattern": "^[a-z][a-z0-9_]*$"}, "body_part": {"type": "string"},
+          "action": {"type": "string"}, "meaning": {"enum": ["heart", "angry", "panic"]},
+          "intensity": {"type": "integer", "minimum": 1, "maximum": 3}}}
+    },
+    "address_system": {
+      "type": "array", "minItems": 1,
+      "items": {"type": "object", "required": ["from", "to", "name", "stage_min", "stage_max"],
+        "properties": {"from": {"type": "string"}, "to": {"type": "string"}, "name": {"type": "string"},
+          "stage_min": {"type": "integer", "minimum": 0}, "stage_max": {"type": "integer", "minimum": 0},
+          "unlock": {"type": "string"}}}
+    },
+    "taboo": {"type": "object", "properties": {
+      "scale": {"type": "array", "items": {"type": "string"}},
+      "reverse_scale_event": {"type": ["string", "null"]},
+      "no_comedy_topics": {"type": "array", "items": {"type": "string"}}}},
+    "red_lines": {"type": "array", "items": {"type": "string"}},
+    "hidden_layer": {"type": "object"},
+    "slots": {"type": "object", "additionalProperties": {"type": "string"}},
+    "assets": {"type": "object", "properties": {
+      "sprites": {"type": "array", "items": {"type": "string"}},
+      "live2d": {"type": ["string", "null"], "description": "Live2D 模型路径（预留）"},
+      "voice": {"type": ["string", "null"], "description": "TTS 声线 id（预留）"}}},
+    "style_examples": {"type": "array", "items": {"type": "string"}, "minItems": 3},
+    "build_record": {"type": "object", "description": "建卡页记录：原始描述、适配度评估等"}
+  }
+}

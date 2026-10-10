@@ -121,3 +121,59 @@ async def test_choice_mode_blocks_input(tmp_path, mini_dir):
     await s.handle({"type": "input", "text": "你好"})
     assert out[-1]["type"] == "error"
     await rt.stop()
+
+
+@pytest.mark.asyncio
+async def test_other_card_performs_script(tmp_path, mini_dir, cat_card):
+    import yaml
+    cards = tmp_path / "cards"
+    cards.mkdir()
+    fox = {**cat_card, "id": "fox", "locked_script": False,
+           "identity": {**cat_card["identity"], "name": "狐小姐"}, "slots": {"treasured_object": "橘子干"}}
+    (cards / "fox.yaml").write_text(yaml.safe_dump(fox, allow_unicode=True), encoding="utf-8")
+    seg1 = {"text": json.dumps({"lines": ["你踩到本狐的影子了。"]}, ensure_ascii=False)}
+    rt = make_runtime(tmp_path, mini_dir, cards, [seg1, {"text": "{}"}, {"text": "{}"}])
+    await rt.start()
+    out = []
+
+    async def send(m):
+        out.append(m)
+
+    s = Session(rt, SessionOptions("fox"), send)
+    await s.hello()
+    for _ in range(6):
+        if s.state["wait"] == "choice":
+            break
+        await s.handle({"type": "advance"})
+    texts = [o["text"] for o in says(out)]
+    assert "你踩到本狐的影子了。" in texts
+    assert any(r["kind"] == "perform" for r in s.recorder.events)
+    _, _, bad = replay(s.recorder.header, s.recorder.events)
+    assert bad is None
+    await rt.stop()
+
+
+@pytest.mark.asyncio
+async def test_card_builder(tmp_path, mini_dir, cat_card):
+    from server.cards import builder
+    from server.plugins import PluginManager  # noqa: F401
+    gen = {**cat_card, "id": "Lighthouse Fox!", "locked_script": True}
+    rt = make_runtime(tmp_path, mini_dir, FIX / "cards", [{"text": json.dumps(gen, ensure_ascii=False)}])
+    await rt.start()
+    r = await builder.generate("灯塔的守塔人，狐族成年女性，说话慢吞吞。", rt.llm_chain(), rt.chapter)
+    assert r["ok"] and r["card"]["id"] == "lighthousefox" and r["card"]["locked_script"] is False
+    assert not [f for f in r["findings"] if f["level"] == "error"]
+    await rt.stop()
+
+
+def test_card_validation_rules(mini_chapter, cat_card):
+    from server.cards.validate import validate_card
+    bad = {**cat_card, "identity": {**cat_card["identity"], "adult_anchor": "外表约 16 岁"},
+           "honesty_signals": cat_card["honesty_signals"][:2], "slots": {}}
+    errs = {f.field for f in validate_card(bad, mini_chapter) if f.level == "error"}
+    assert {"identity.adult_anchor", "honesty_signals", "slots.treasured_object"} <= errs
+    water = {**cat_card, "personality": {**cat_card["personality"], "traits": ["怕水"]}}
+    ch = {**mini_chapter, "scene_tags": ["浅滩"]}
+    fs = validate_card(water, ch)
+    assert any(f.field == "fitness" and f.level == "warn" for f in fs)
+    assert not any(f.level == "error" for f in fs)

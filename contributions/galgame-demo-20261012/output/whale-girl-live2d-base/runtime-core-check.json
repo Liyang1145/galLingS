@@ -1,0 +1,1389 @@
+{
+  "testedAt": "2026-10-10T18:31:01.564Z",
+  "scope": "Cubism Core binary loading, finite geometry and six parameter effects. Does not verify rendering, animation quality or game integration.",
+  "mocBytes": 37568,
+  "drawableCount": 16,
+  "drawableIds": [
+    "HairCap",
+    "HairFrontStrands",
+    "MouthClosed",
+    "MouthOpen",
+    "Eyebrows",
+    "EyeL_Closed",
+    "EyeR_Closed",
+    "EyeL_Open",
+    "EyeR_Open",
+    "Face",
+    "Coverup",
+    "BodyCore",
+    "ArmL",
+    "ArmR",
+    "HairBack",
+    "Tail"
+  ],
+  "parameterCount": 27,
+  "results": [
+    {
+      "id": "ParamAngleZ",
+      "keys": [
+        -30,
+        0,
+        30
+      ],
+      "samples": [
+        {
+          "value": -30,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "EyeL_Closed",
+            "EyeR_Closed",
+            "EyeL_Open",
+            "EyeR_Open",
+            "Face",
+            "HairBack"
+          ]
+        },
+        {
+          "value": -27,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "EyeL_Closed",
+            "EyeR_Closed",
+            "EyeL_Open",
+            "EyeR_Open",
+            "Face",
+            "HairBack"
+          ]
+        },
+        {
+          "value": -24,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "EyeL_Closed",
+            "EyeR_Closed",
+            "EyeL_Open",
+            "EyeR_Open",
+            "Face",
+            "HairBack"
+          ]
+        },
+        {
+          "value": -21,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "EyeL_Closed",
+            "EyeR_Closed",
+            "EyeL_Open",
+            "EyeR_Open",
+            "Face",
+            "HairBack"
+          ]
+        },
+        {
+          "value": -18,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "EyeL_Closed",
+            "EyeR_Closed",
+            "EyeL_Open",
+            "EyeR_Open",
+            "Face",
+            "HairBack"
+          ]
+        },
+        {
+          "value": -15,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "EyeL_Closed",
+            "EyeR_Closed",
+            "EyeL_Open",
+            "EyeR_Open",
+            "Face",
+            "HairBack"
+          ]
+        },
+        {
+          "value": -12,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "EyeL_Closed",
+            "EyeR_Closed",
+            "EyeL_Open",
+            "EyeR_Open",
+            "Face",
+            "HairBack"
+          ]
+        },
+        {
+          "value": -9,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "EyeL_Closed",
+            "EyeR_Closed",
+            "EyeL_Open",
+            "EyeR_Open",
+            "Face",
+            "HairBack"
+          ]
+        },
+        {
+          "value": -6,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "EyeL_Closed",
+            "EyeR_Closed",
+            "EyeL_Open",
+            "EyeR_Open",
+            "Face",
+            "HairBack"
+          ]
+        },
+        {
+          "value": -3,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "EyeL_Closed",
+            "EyeR_Closed",
+            "EyeL_Open",
+            "EyeR_Open",
+            "Face",
+            "HairBack"
+          ]
+        },
+        {
+          "value": 0,
+          "changed": []
+        },
+        {
+          "value": 3,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "EyeL_Closed",
+            "EyeR_Closed",
+            "EyeL_Open",
+            "EyeR_Open",
+            "Face",
+            "HairBack"
+          ]
+        },
+        {
+          "value": 6,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "EyeL_Closed",
+            "EyeR_Closed",
+            "EyeL_Open",
+            "EyeR_Open",
+            "Face",
+            "HairBack"
+          ]
+        },
+        {
+          "value": 9,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "EyeL_Closed",
+            "EyeR_Closed",
+            "EyeL_Open",
+            "EyeR_Open",
+            "Face",
+            "HairBack"
+          ]
+        },
+        {
+          "value": 12,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "EyeL_Closed",
+            "EyeR_Closed",
+            "EyeL_Open",
+            "EyeR_Open",
+            "Face",
+            "HairBack"
+          ]
+        },
+        {
+          "value": 15,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "EyeL_Closed",
+            "EyeR_Closed",
+            "EyeL_Open",
+            "EyeR_Open",
+            "Face",
+            "HairBack"
+          ]
+        },
+        {
+          "value": 18,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "EyeL_Closed",
+            "EyeR_Closed",
+            "EyeL_Open",
+            "EyeR_Open",
+            "Face",
+            "HairBack"
+          ]
+        },
+        {
+          "value": 21,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "EyeL_Closed",
+            "EyeR_Closed",
+            "EyeL_Open",
+            "EyeR_Open",
+            "Face",
+            "HairBack"
+          ]
+        },
+        {
+          "value": 24,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "EyeL_Closed",
+            "EyeR_Closed",
+            "EyeL_Open",
+            "EyeR_Open",
+            "Face",
+            "HairBack"
+          ]
+        },
+        {
+          "value": 27,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "EyeL_Closed",
+            "EyeR_Closed",
+            "EyeL_Open",
+            "EyeR_Open",
+            "Face",
+            "HairBack"
+          ]
+        },
+        {
+          "value": 30,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "EyeL_Closed",
+            "EyeR_Closed",
+            "EyeL_Open",
+            "EyeR_Open",
+            "Face",
+            "HairBack"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ParamEyeLOpen",
+      "keys": [
+        0,
+        0.5,
+        1
+      ],
+      "samples": [
+        {
+          "value": 0,
+          "changed": [
+            "EyeL_Closed",
+            "EyeL_Open"
+          ]
+        },
+        {
+          "value": 0.05,
+          "changed": [
+            "EyeL_Closed",
+            "EyeL_Open"
+          ]
+        },
+        {
+          "value": 0.1,
+          "changed": [
+            "EyeL_Closed",
+            "EyeL_Open"
+          ]
+        },
+        {
+          "value": 0.15,
+          "changed": [
+            "EyeL_Closed",
+            "EyeL_Open"
+          ]
+        },
+        {
+          "value": 0.2,
+          "changed": [
+            "EyeL_Closed",
+            "EyeL_Open"
+          ]
+        },
+        {
+          "value": 0.25,
+          "changed": [
+            "EyeL_Closed",
+            "EyeL_Open"
+          ]
+        },
+        {
+          "value": 0.3,
+          "changed": [
+            "EyeL_Closed",
+            "EyeL_Open"
+          ]
+        },
+        {
+          "value": 0.35,
+          "changed": [
+            "EyeL_Closed",
+            "EyeL_Open"
+          ]
+        },
+        {
+          "value": 0.4,
+          "changed": [
+            "EyeL_Closed",
+            "EyeL_Open"
+          ]
+        },
+        {
+          "value": 0.45,
+          "changed": [
+            "EyeL_Closed",
+            "EyeL_Open"
+          ]
+        },
+        {
+          "value": 0.5,
+          "changed": [
+            "EyeL_Open"
+          ]
+        },
+        {
+          "value": 0.55,
+          "changed": [
+            "EyeL_Open"
+          ]
+        },
+        {
+          "value": 0.6,
+          "changed": [
+            "EyeL_Open"
+          ]
+        },
+        {
+          "value": 0.65,
+          "changed": [
+            "EyeL_Open"
+          ]
+        },
+        {
+          "value": 0.7,
+          "changed": [
+            "EyeL_Open"
+          ]
+        },
+        {
+          "value": 0.75,
+          "changed": [
+            "EyeL_Open"
+          ]
+        },
+        {
+          "value": 0.8,
+          "changed": [
+            "EyeL_Open"
+          ]
+        },
+        {
+          "value": 0.85,
+          "changed": [
+            "EyeL_Open"
+          ]
+        },
+        {
+          "value": 0.9,
+          "changed": [
+            "EyeL_Open"
+          ]
+        },
+        {
+          "value": 0.95,
+          "changed": [
+            "EyeL_Open"
+          ]
+        },
+        {
+          "value": 1,
+          "changed": []
+        }
+      ]
+    },
+    {
+      "id": "ParamEyeROpen",
+      "keys": [
+        0,
+        0.5,
+        1
+      ],
+      "samples": [
+        {
+          "value": 0,
+          "changed": [
+            "EyeR_Closed",
+            "EyeR_Open"
+          ]
+        },
+        {
+          "value": 0.05,
+          "changed": [
+            "EyeR_Closed",
+            "EyeR_Open"
+          ]
+        },
+        {
+          "value": 0.1,
+          "changed": [
+            "EyeR_Closed",
+            "EyeR_Open"
+          ]
+        },
+        {
+          "value": 0.15,
+          "changed": [
+            "EyeR_Closed",
+            "EyeR_Open"
+          ]
+        },
+        {
+          "value": 0.2,
+          "changed": [
+            "EyeR_Closed",
+            "EyeR_Open"
+          ]
+        },
+        {
+          "value": 0.25,
+          "changed": [
+            "EyeR_Closed",
+            "EyeR_Open"
+          ]
+        },
+        {
+          "value": 0.3,
+          "changed": [
+            "EyeR_Closed",
+            "EyeR_Open"
+          ]
+        },
+        {
+          "value": 0.35,
+          "changed": [
+            "EyeR_Closed",
+            "EyeR_Open"
+          ]
+        },
+        {
+          "value": 0.4,
+          "changed": [
+            "EyeR_Closed",
+            "EyeR_Open"
+          ]
+        },
+        {
+          "value": 0.45,
+          "changed": [
+            "EyeR_Closed",
+            "EyeR_Open"
+          ]
+        },
+        {
+          "value": 0.5,
+          "changed": [
+            "EyeR_Open"
+          ]
+        },
+        {
+          "value": 0.55,
+          "changed": [
+            "EyeR_Open"
+          ]
+        },
+        {
+          "value": 0.6,
+          "changed": [
+            "EyeR_Open"
+          ]
+        },
+        {
+          "value": 0.65,
+          "changed": [
+            "EyeR_Open"
+          ]
+        },
+        {
+          "value": 0.7,
+          "changed": [
+            "EyeR_Open"
+          ]
+        },
+        {
+          "value": 0.75,
+          "changed": [
+            "EyeR_Open"
+          ]
+        },
+        {
+          "value": 0.8,
+          "changed": [
+            "EyeR_Open"
+          ]
+        },
+        {
+          "value": 0.85,
+          "changed": [
+            "EyeR_Open"
+          ]
+        },
+        {
+          "value": 0.9,
+          "changed": [
+            "EyeR_Open"
+          ]
+        },
+        {
+          "value": 0.95,
+          "changed": [
+            "EyeR_Open"
+          ]
+        },
+        {
+          "value": 1,
+          "changed": []
+        }
+      ]
+    },
+    {
+      "id": "ParamMouthOpenY",
+      "keys": [
+        0,
+        0.5,
+        1
+      ],
+      "samples": [
+        {
+          "value": 0,
+          "changed": []
+        },
+        {
+          "value": 0.05,
+          "changed": [
+            "MouthClosed",
+            "MouthOpen"
+          ]
+        },
+        {
+          "value": 0.1,
+          "changed": [
+            "MouthClosed",
+            "MouthOpen"
+          ]
+        },
+        {
+          "value": 0.15,
+          "changed": [
+            "MouthClosed",
+            "MouthOpen"
+          ]
+        },
+        {
+          "value": 0.2,
+          "changed": [
+            "MouthClosed",
+            "MouthOpen"
+          ]
+        },
+        {
+          "value": 0.25,
+          "changed": [
+            "MouthClosed",
+            "MouthOpen"
+          ]
+        },
+        {
+          "value": 0.3,
+          "changed": [
+            "MouthClosed",
+            "MouthOpen"
+          ]
+        },
+        {
+          "value": 0.35,
+          "changed": [
+            "MouthClosed",
+            "MouthOpen"
+          ]
+        },
+        {
+          "value": 0.4,
+          "changed": [
+            "MouthClosed",
+            "MouthOpen"
+          ]
+        },
+        {
+          "value": 0.45,
+          "changed": [
+            "MouthClosed",
+            "MouthOpen"
+          ]
+        },
+        {
+          "value": 0.5,
+          "changed": [
+            "MouthClosed",
+            "MouthOpen"
+          ]
+        },
+        {
+          "value": 0.55,
+          "changed": [
+            "MouthClosed",
+            "MouthOpen"
+          ]
+        },
+        {
+          "value": 0.6,
+          "changed": [
+            "MouthClosed",
+            "MouthOpen"
+          ]
+        },
+        {
+          "value": 0.65,
+          "changed": [
+            "MouthClosed",
+            "MouthOpen"
+          ]
+        },
+        {
+          "value": 0.7,
+          "changed": [
+            "MouthClosed",
+            "MouthOpen"
+          ]
+        },
+        {
+          "value": 0.75,
+          "changed": [
+            "MouthClosed",
+            "MouthOpen"
+          ]
+        },
+        {
+          "value": 0.8,
+          "changed": [
+            "MouthClosed",
+            "MouthOpen"
+          ]
+        },
+        {
+          "value": 0.85,
+          "changed": [
+            "MouthClosed",
+            "MouthOpen"
+          ]
+        },
+        {
+          "value": 0.9,
+          "changed": [
+            "MouthClosed",
+            "MouthOpen"
+          ]
+        },
+        {
+          "value": 0.95,
+          "changed": [
+            "MouthClosed",
+            "MouthOpen"
+          ]
+        },
+        {
+          "value": 1,
+          "changed": [
+            "MouthClosed",
+            "MouthOpen"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ParamBreath",
+      "keys": [
+        0,
+        1
+      ],
+      "samples": [
+        {
+          "value": 0,
+          "changed": []
+        },
+        {
+          "value": 0.05,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "EyeL_Closed",
+            "EyeR_Closed",
+            "EyeL_Open",
+            "EyeR_Open",
+            "Face",
+            "Coverup",
+            "BodyCore",
+            "ArmL",
+            "ArmR",
+            "HairBack",
+            "Tail"
+          ]
+        },
+        {
+          "value": 0.1,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "EyeL_Closed",
+            "EyeR_Closed",
+            "EyeL_Open",
+            "EyeR_Open",
+            "Face",
+            "Coverup",
+            "BodyCore",
+            "ArmL",
+            "ArmR",
+            "HairBack",
+            "Tail"
+          ]
+        },
+        {
+          "value": 0.15,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "EyeL_Closed",
+            "EyeR_Closed",
+            "EyeL_Open",
+            "EyeR_Open",
+            "Face",
+            "Coverup",
+            "BodyCore",
+            "ArmL",
+            "ArmR",
+            "HairBack",
+            "Tail"
+          ]
+        },
+        {
+          "value": 0.2,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "EyeL_Closed",
+            "EyeR_Closed",
+            "EyeL_Open",
+            "EyeR_Open",
+            "Face",
+            "Coverup",
+            "BodyCore",
+            "ArmL",
+            "ArmR",
+            "HairBack",
+            "Tail"
+          ]
+        },
+        {
+          "value": 0.25,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "EyeL_Closed",
+            "EyeR_Closed",
+            "EyeL_Open",
+            "EyeR_Open",
+            "Face",
+            "Coverup",
+            "BodyCore",
+            "ArmL",
+            "ArmR",
+            "HairBack",
+            "Tail"
+          ]
+        },
+        {
+          "value": 0.3,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "EyeL_Closed",
+            "EyeR_Closed",
+            "EyeL_Open",
+            "EyeR_Open",
+            "Face",
+            "Coverup",
+            "BodyCore",
+            "ArmL",
+            "ArmR",
+            "HairBack",
+            "Tail"
+          ]
+        },
+        {
+          "value": 0.35,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "EyeL_Closed",
+            "EyeR_Closed",
+            "EyeL_Open",
+            "EyeR_Open",
+            "Face",
+            "Coverup",
+            "BodyCore",
+            "ArmL",
+            "ArmR",
+            "HairBack",
+            "Tail"
+          ]
+        },
+        {
+          "value": 0.4,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "EyeL_Closed",
+            "EyeR_Closed",
+            "EyeL_Open",
+            "EyeR_Open",
+            "Face",
+            "Coverup",
+            "BodyCore",
+            "ArmL",
+            "ArmR",
+            "HairBack",
+            "Tail"
+          ]
+        },
+        {
+          "value": 0.45,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "EyeL_Closed",
+            "EyeR_Closed",
+            "EyeL_Open",
+            "EyeR_Open",
+            "Face",
+            "Coverup",
+            "BodyCore",
+            "ArmL",
+            "ArmR",
+            "HairBack",
+            "Tail"
+          ]
+        },
+        {
+          "value": 0.5,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "EyeL_Closed",
+            "EyeR_Closed",
+            "EyeL_Open",
+            "EyeR_Open",
+            "Face",
+            "Coverup",
+            "BodyCore",
+            "ArmL",
+            "ArmR",
+            "HairBack",
+            "Tail"
+          ]
+        },
+        {
+          "value": 0.55,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "EyeL_Closed",
+            "EyeR_Closed",
+            "EyeL_Open",
+            "EyeR_Open",
+            "Face",
+            "Coverup",
+            "BodyCore",
+            "ArmL",
+            "ArmR",
+            "HairBack",
+            "Tail"
+          ]
+        },
+        {
+          "value": 0.6,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "EyeL_Closed",
+            "EyeR_Closed",
+            "EyeL_Open",
+            "EyeR_Open",
+            "Face",
+            "Coverup",
+            "BodyCore",
+            "ArmL",
+            "ArmR",
+            "HairBack",
+            "Tail"
+          ]
+        },
+        {
+          "value": 0.65,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "EyeL_Closed",
+            "EyeR_Closed",
+            "EyeL_Open",
+            "EyeR_Open",
+            "Face",
+            "Coverup",
+            "BodyCore",
+            "ArmL",
+            "ArmR",
+            "HairBack",
+            "Tail"
+          ]
+        },
+        {
+          "value": 0.7,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "EyeL_Closed",
+            "EyeR_Closed",
+            "EyeL_Open",
+            "EyeR_Open",
+            "Face",
+            "Coverup",
+            "BodyCore",
+            "ArmL",
+            "ArmR",
+            "HairBack",
+            "Tail"
+          ]
+        },
+        {
+          "value": 0.75,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "EyeL_Closed",
+            "EyeR_Closed",
+            "EyeL_Open",
+            "EyeR_Open",
+            "Face",
+            "Coverup",
+            "BodyCore",
+            "ArmL",
+            "ArmR",
+            "HairBack",
+            "Tail"
+          ]
+        },
+        {
+          "value": 0.8,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "EyeL_Closed",
+            "EyeR_Closed",
+            "EyeL_Open",
+            "EyeR_Open",
+            "Face",
+            "Coverup",
+            "BodyCore",
+            "ArmL",
+            "ArmR",
+            "HairBack",
+            "Tail"
+          ]
+        },
+        {
+          "value": 0.85,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "EyeL_Closed",
+            "EyeR_Closed",
+            "EyeL_Open",
+            "EyeR_Open",
+            "Face",
+            "Coverup",
+            "BodyCore",
+            "ArmL",
+            "ArmR",
+            "HairBack",
+            "Tail"
+          ]
+        },
+        {
+          "value": 0.9,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "EyeL_Closed",
+            "EyeR_Closed",
+            "EyeL_Open",
+            "EyeR_Open",
+            "Face",
+            "Coverup",
+            "BodyCore",
+            "ArmL",
+            "ArmR",
+            "HairBack",
+            "Tail"
+          ]
+        },
+        {
+          "value": 0.95,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "EyeL_Closed",
+            "EyeR_Closed",
+            "EyeL_Open",
+            "EyeR_Open",
+            "Face",
+            "Coverup",
+            "BodyCore",
+            "ArmL",
+            "ArmR",
+            "HairBack",
+            "Tail"
+          ]
+        },
+        {
+          "value": 1,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "EyeL_Closed",
+            "EyeR_Closed",
+            "EyeL_Open",
+            "EyeR_Open",
+            "Face",
+            "Coverup",
+            "BodyCore",
+            "ArmL",
+            "ArmR",
+            "HairBack",
+            "Tail"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ParamHairBack",
+      "keys": [
+        -1,
+        0,
+        1
+      ],
+      "samples": [
+        {
+          "value": -1,
+          "changed": [
+            "HairBack"
+          ]
+        },
+        {
+          "value": -0.9,
+          "changed": [
+            "HairBack"
+          ]
+        },
+        {
+          "value": -0.8,
+          "changed": [
+            "HairBack"
+          ]
+        },
+        {
+          "value": -0.7,
+          "changed": [
+            "HairBack"
+          ]
+        },
+        {
+          "value": -0.6,
+          "changed": [
+            "HairBack"
+          ]
+        },
+        {
+          "value": -0.5,
+          "changed": [
+            "HairBack"
+          ]
+        },
+        {
+          "value": -0.4,
+          "changed": [
+            "HairBack"
+          ]
+        },
+        {
+          "value": -0.30000000000000004,
+          "changed": [
+            "HairBack"
+          ]
+        },
+        {
+          "value": -0.19999999999999996,
+          "changed": [
+            "HairBack"
+          ]
+        },
+        {
+          "value": -0.09999999999999998,
+          "changed": [
+            "HairBack"
+          ]
+        },
+        {
+          "value": 0,
+          "changed": []
+        },
+        {
+          "value": 0.10000000000000009,
+          "changed": [
+            "HairBack"
+          ]
+        },
+        {
+          "value": 0.19999999999999996,
+          "changed": [
+            "HairBack"
+          ]
+        },
+        {
+          "value": 0.30000000000000004,
+          "changed": [
+            "HairBack"
+          ]
+        },
+        {
+          "value": 0.3999999999999999,
+          "changed": [
+            "HairBack"
+          ]
+        },
+        {
+          "value": 0.5,
+          "changed": [
+            "HairBack"
+          ]
+        },
+        {
+          "value": 0.6000000000000001,
+          "changed": [
+            "HairBack"
+          ]
+        },
+        {
+          "value": 0.7,
+          "changed": [
+            "HairBack"
+          ]
+        },
+        {
+          "value": 0.8,
+          "changed": [
+            "HairBack"
+          ]
+        },
+        {
+          "value": 0.8999999999999999,
+          "changed": [
+            "HairBack"
+          ]
+        },
+        {
+          "value": 1,
+          "changed": [
+            "HairBack"
+          ]
+        }
+      ]
+    }
+  ],
+  "breathFootCheck": {
+    "region": "Lowest 10 percent of BodyCore vertex Y extent",
+    "maxDisplacementModelUnits": 1.909733655747219e-7,
+    "maxDisplacementSourcePixels": 0.00019555672634851524
+  },
+  "metadataCheck": {
+    "groups": {
+      "EyeBlink": [
+        "ParamEyeLOpen",
+        "ParamEyeROpen"
+      ],
+      "LipSync": [
+        "ParamMouthOpenY"
+      ]
+    },
+    "physicsSettings": 1,
+    "fps": 60,
+    "scope": "Manifest and physics reference integrity only; not physics playback validation"
+  }
+}

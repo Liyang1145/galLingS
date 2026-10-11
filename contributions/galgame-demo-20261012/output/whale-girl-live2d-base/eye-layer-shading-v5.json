@@ -1,0 +1,19 @@
+{
+  "width": 1280,
+  "height": 1280,
+  "output": "./output/whale-girl-live2d-base/eye-layer-shading-v5.psd",
+  "layers": [
+    {
+      "name": "EyeWhite_Test",
+      "file": "./output/whale-girl-live2d-base/layers/eye-white-viewer-left-candidate-v2.png"
+    },
+    {
+      "name": "Iris_Test",
+      "file": "./output/whale-girl-live2d-base/layers/iris-soft-shading-v5.png",
+      "width": 894,
+      "height": 894,
+      "left": 272,
+      "top": 187
+    }
+  ]
+}

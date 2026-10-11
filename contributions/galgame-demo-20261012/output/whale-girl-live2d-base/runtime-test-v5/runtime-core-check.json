@@ -1,0 +1,2486 @@
+{
+  "testedAt": "2026-10-11T12:07:38.860Z",
+  "scope": "Core loading, exported blink/closed-lash opacity, and geometry/reference integrity; not visual quality, physics playback, or game acceptance",
+  "drawableCount": 20,
+  "drawableIds": [
+    "HairCap",
+    "HairFrontStrands",
+    "MouthClosed",
+    "MouthOpen",
+    "Eyebrows",
+    "Coverup",
+    "BodyCore",
+    "ArmL",
+    "ArmR",
+    "HairBack",
+    "Tail",
+    "Iris_Test",
+    "Lash_Overlay_Test",
+    "Sclera_Only_Test",
+    "Iris_Test2",
+    "Lash_Overlay_Test2",
+    "Sclera_Only_Test2",
+    "Face_Static_v4",
+    "ClosedLash_Hi_v5",
+    "ClosedLash_Hi_L_v5"
+  ],
+  "parameterCount": 28,
+  "physicsGroups": 2,
+  "eyeEffects": [
+    {
+      "id": "ParamEyeLOpen",
+      "affected": [
+        "Iris_Test",
+        "Lash_Overlay_Test",
+        "Sclera_Only_Test",
+        "ClosedLash_Hi_L_v5"
+      ]
+    },
+    {
+      "id": "ParamEyeROpen",
+      "affected": [
+        "Iris_Test2",
+        "Lash_Overlay_Test2",
+        "Sclera_Only_Test2",
+        "ClosedLash_Hi_v5"
+      ]
+    }
+  ],
+  "closedLashes": [
+    {
+      "param": "ParamEyeLOpen",
+      "closed": "ClosedLash_Hi_L_v5",
+      "open": "Lash_Overlay_Test",
+      "samples": [
+        {
+          "value": 0,
+          "closedOpacity": 1,
+          "openOpacity": 0
+        },
+        {
+          "value": 0.05,
+          "closedOpacity": 0.8999999761581421,
+          "openOpacity": 0.10000000149011612
+        },
+        {
+          "value": 0.1,
+          "closedOpacity": 0.800000011920929,
+          "openOpacity": 0.20000000298023224
+        },
+        {
+          "value": 0.25,
+          "closedOpacity": 0.5,
+          "openOpacity": 0.5
+        },
+        {
+          "value": 0.5,
+          "closedOpacity": 0,
+          "openOpacity": 1
+        },
+        {
+          "value": 0.75,
+          "closedOpacity": 0,
+          "openOpacity": 1
+        },
+        {
+          "value": 1,
+          "closedOpacity": 0,
+          "openOpacity": 1
+        }
+      ]
+    },
+    {
+      "param": "ParamEyeROpen",
+      "closed": "ClosedLash_Hi_v5",
+      "open": "Lash_Overlay_Test2",
+      "samples": [
+        {
+          "value": 0,
+          "closedOpacity": 1,
+          "openOpacity": 0
+        },
+        {
+          "value": 0.05,
+          "closedOpacity": 0.8999999761581421,
+          "openOpacity": 0.10000000149011612
+        },
+        {
+          "value": 0.1,
+          "closedOpacity": 0.800000011920929,
+          "openOpacity": 0.20000000298023224
+        },
+        {
+          "value": 0.25,
+          "closedOpacity": 0.5,
+          "openOpacity": 0.5
+        },
+        {
+          "value": 0.5,
+          "closedOpacity": 0,
+          "openOpacity": 1
+        },
+        {
+          "value": 0.75,
+          "closedOpacity": 0,
+          "openOpacity": 1
+        },
+        {
+          "value": 1,
+          "closedOpacity": 0,
+          "openOpacity": 1
+        }
+      ]
+    }
+  ],
+  "masks": [
+    {
+      "id": "Iris_Test",
+      "masks": [
+        "Sclera_Only_Test"
+      ]
+    },
+    {
+      "id": "Iris_Test2",
+      "masks": [
+        "Sclera_Only_Test2"
+      ]
+    }
+  ],
+  "combinations": 27,
+  "results": [
+    {
+      "id": "ParamAngleX",
+      "samples": [
+        {
+          "value": -30,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": -27,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": -24,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": -21,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": -18,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": -15,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": -12,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": -9,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": -6,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": -3,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 0,
+          "changed": []
+        },
+        {
+          "value": 3,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 6,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 9,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 12,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 15,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 18,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 21,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 24,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 27,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 30,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ParamAngleY",
+      "samples": [
+        {
+          "value": -30,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": -27,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": -24,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": -21,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": -18,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": -15,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": -12,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": -9,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": -6,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": -3,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 0,
+          "changed": []
+        },
+        {
+          "value": 3,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 6,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 9,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 12,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 15,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 18,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 21,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 24,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 27,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 30,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ParamAngleZ",
+      "samples": [
+        {
+          "value": -30,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": -27,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": -24,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": -21,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": -18,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": -15,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": -12,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": -9,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": -6,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": -3,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 0,
+          "changed": []
+        },
+        {
+          "value": 3,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 6,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 9,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 12,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 15,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 18,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 21,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 24,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 27,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 30,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "HairBack",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ParamEyeLOpen",
+      "samples": [
+        {
+          "value": 0,
+          "changed": [
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 0.05,
+          "changed": [
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 0.1,
+          "changed": [
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 0.15,
+          "changed": [
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 0.2,
+          "changed": [
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 0.25,
+          "changed": [
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 0.3,
+          "changed": [
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 0.35,
+          "changed": [
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 0.4,
+          "changed": [
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 0.45,
+          "changed": [
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 0.5,
+          "changed": [
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test"
+          ]
+        },
+        {
+          "value": 0.55,
+          "changed": [
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test"
+          ]
+        },
+        {
+          "value": 0.6,
+          "changed": [
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test"
+          ]
+        },
+        {
+          "value": 0.65,
+          "changed": [
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test"
+          ]
+        },
+        {
+          "value": 0.7,
+          "changed": [
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test"
+          ]
+        },
+        {
+          "value": 0.75,
+          "changed": [
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test"
+          ]
+        },
+        {
+          "value": 0.8,
+          "changed": [
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test"
+          ]
+        },
+        {
+          "value": 0.85,
+          "changed": [
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test"
+          ]
+        },
+        {
+          "value": 0.9,
+          "changed": [
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test"
+          ]
+        },
+        {
+          "value": 0.95,
+          "changed": [
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test"
+          ]
+        },
+        {
+          "value": 1,
+          "changed": []
+        }
+      ]
+    },
+    {
+      "id": "ParamEyeROpen",
+      "samples": [
+        {
+          "value": 0,
+          "changed": [
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "ClosedLash_Hi_v5"
+          ]
+        },
+        {
+          "value": 0.05,
+          "changed": [
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "ClosedLash_Hi_v5"
+          ]
+        },
+        {
+          "value": 0.1,
+          "changed": [
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "ClosedLash_Hi_v5"
+          ]
+        },
+        {
+          "value": 0.15,
+          "changed": [
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "ClosedLash_Hi_v5"
+          ]
+        },
+        {
+          "value": 0.2,
+          "changed": [
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "ClosedLash_Hi_v5"
+          ]
+        },
+        {
+          "value": 0.25,
+          "changed": [
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "ClosedLash_Hi_v5"
+          ]
+        },
+        {
+          "value": 0.3,
+          "changed": [
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "ClosedLash_Hi_v5"
+          ]
+        },
+        {
+          "value": 0.35,
+          "changed": [
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "ClosedLash_Hi_v5"
+          ]
+        },
+        {
+          "value": 0.4,
+          "changed": [
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "ClosedLash_Hi_v5"
+          ]
+        },
+        {
+          "value": 0.45,
+          "changed": [
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "ClosedLash_Hi_v5"
+          ]
+        },
+        {
+          "value": 0.5,
+          "changed": [
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2"
+          ]
+        },
+        {
+          "value": 0.55,
+          "changed": [
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2"
+          ]
+        },
+        {
+          "value": 0.6,
+          "changed": [
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2"
+          ]
+        },
+        {
+          "value": 0.65,
+          "changed": [
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2"
+          ]
+        },
+        {
+          "value": 0.7,
+          "changed": [
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2"
+          ]
+        },
+        {
+          "value": 0.75,
+          "changed": [
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2"
+          ]
+        },
+        {
+          "value": 0.8,
+          "changed": [
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2"
+          ]
+        },
+        {
+          "value": 0.85,
+          "changed": [
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2"
+          ]
+        },
+        {
+          "value": 0.9,
+          "changed": [
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2"
+          ]
+        },
+        {
+          "value": 0.95,
+          "changed": [
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2"
+          ]
+        },
+        {
+          "value": 1,
+          "changed": []
+        }
+      ]
+    },
+    {
+      "id": "ParamMouthOpenY",
+      "samples": [
+        {
+          "value": 0,
+          "changed": []
+        },
+        {
+          "value": 0.05,
+          "changed": [
+            "MouthClosed",
+            "MouthOpen"
+          ]
+        },
+        {
+          "value": 0.1,
+          "changed": [
+            "MouthClosed",
+            "MouthOpen"
+          ]
+        },
+        {
+          "value": 0.15,
+          "changed": [
+            "MouthClosed",
+            "MouthOpen"
+          ]
+        },
+        {
+          "value": 0.2,
+          "changed": [
+            "MouthClosed",
+            "MouthOpen"
+          ]
+        },
+        {
+          "value": 0.25,
+          "changed": [
+            "MouthClosed",
+            "MouthOpen"
+          ]
+        },
+        {
+          "value": 0.3,
+          "changed": [
+            "MouthClosed",
+            "MouthOpen"
+          ]
+        },
+        {
+          "value": 0.35,
+          "changed": [
+            "MouthClosed",
+            "MouthOpen"
+          ]
+        },
+        {
+          "value": 0.4,
+          "changed": [
+            "MouthClosed",
+            "MouthOpen"
+          ]
+        },
+        {
+          "value": 0.45,
+          "changed": [
+            "MouthClosed",
+            "MouthOpen"
+          ]
+        },
+        {
+          "value": 0.5,
+          "changed": [
+            "MouthClosed",
+            "MouthOpen"
+          ]
+        },
+        {
+          "value": 0.55,
+          "changed": [
+            "MouthClosed",
+            "MouthOpen"
+          ]
+        },
+        {
+          "value": 0.6,
+          "changed": [
+            "MouthClosed",
+            "MouthOpen"
+          ]
+        },
+        {
+          "value": 0.65,
+          "changed": [
+            "MouthClosed",
+            "MouthOpen"
+          ]
+        },
+        {
+          "value": 0.7,
+          "changed": [
+            "MouthClosed",
+            "MouthOpen"
+          ]
+        },
+        {
+          "value": 0.75,
+          "changed": [
+            "MouthClosed",
+            "MouthOpen"
+          ]
+        },
+        {
+          "value": 0.8,
+          "changed": [
+            "MouthClosed",
+            "MouthOpen"
+          ]
+        },
+        {
+          "value": 0.85,
+          "changed": [
+            "MouthClosed",
+            "MouthOpen"
+          ]
+        },
+        {
+          "value": 0.9,
+          "changed": [
+            "MouthClosed",
+            "MouthOpen"
+          ]
+        },
+        {
+          "value": 0.95,
+          "changed": [
+            "MouthClosed",
+            "MouthOpen"
+          ]
+        },
+        {
+          "value": 1,
+          "changed": [
+            "MouthClosed",
+            "MouthOpen"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ParamBreath",
+      "samples": [
+        {
+          "value": 0,
+          "changed": []
+        },
+        {
+          "value": 0.05,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "Coverup",
+            "BodyCore",
+            "ArmL",
+            "ArmR",
+            "HairBack",
+            "Tail",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 0.1,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "Coverup",
+            "BodyCore",
+            "ArmL",
+            "ArmR",
+            "HairBack",
+            "Tail",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 0.15,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "Coverup",
+            "BodyCore",
+            "ArmL",
+            "ArmR",
+            "HairBack",
+            "Tail",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 0.2,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "Coverup",
+            "BodyCore",
+            "ArmL",
+            "ArmR",
+            "HairBack",
+            "Tail",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 0.25,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "Coverup",
+            "BodyCore",
+            "ArmL",
+            "ArmR",
+            "HairBack",
+            "Tail",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 0.3,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "Coverup",
+            "BodyCore",
+            "ArmL",
+            "ArmR",
+            "HairBack",
+            "Tail",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 0.35,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "Coverup",
+            "BodyCore",
+            "ArmL",
+            "ArmR",
+            "HairBack",
+            "Tail",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 0.4,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "Coverup",
+            "BodyCore",
+            "ArmL",
+            "ArmR",
+            "HairBack",
+            "Tail",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 0.45,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "Coverup",
+            "BodyCore",
+            "ArmL",
+            "ArmR",
+            "HairBack",
+            "Tail",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 0.5,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "Coverup",
+            "BodyCore",
+            "ArmL",
+            "ArmR",
+            "HairBack",
+            "Tail",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 0.55,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "Coverup",
+            "BodyCore",
+            "ArmL",
+            "ArmR",
+            "HairBack",
+            "Tail",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 0.6,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "Coverup",
+            "BodyCore",
+            "ArmL",
+            "ArmR",
+            "HairBack",
+            "Tail",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 0.65,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "Coverup",
+            "BodyCore",
+            "ArmL",
+            "ArmR",
+            "HairBack",
+            "Tail",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 0.7,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "Coverup",
+            "BodyCore",
+            "ArmL",
+            "ArmR",
+            "HairBack",
+            "Tail",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 0.75,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "Coverup",
+            "BodyCore",
+            "ArmL",
+            "ArmR",
+            "HairBack",
+            "Tail",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 0.8,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "Coverup",
+            "BodyCore",
+            "ArmL",
+            "ArmR",
+            "HairBack",
+            "Tail",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 0.85,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "Coverup",
+            "BodyCore",
+            "ArmL",
+            "ArmR",
+            "HairBack",
+            "Tail",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 0.9,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "Coverup",
+            "BodyCore",
+            "ArmL",
+            "ArmR",
+            "HairBack",
+            "Tail",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 0.95,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "Coverup",
+            "BodyCore",
+            "ArmL",
+            "ArmR",
+            "HairBack",
+            "Tail",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        },
+        {
+          "value": 1,
+          "changed": [
+            "HairCap",
+            "HairFrontStrands",
+            "MouthClosed",
+            "MouthOpen",
+            "Eyebrows",
+            "Coverup",
+            "BodyCore",
+            "ArmL",
+            "ArmR",
+            "HairBack",
+            "Tail",
+            "Iris_Test",
+            "Lash_Overlay_Test",
+            "Sclera_Only_Test",
+            "Iris_Test2",
+            "Lash_Overlay_Test2",
+            "Sclera_Only_Test2",
+            "Face_Static_v4",
+            "ClosedLash_Hi_v5",
+            "ClosedLash_Hi_L_v5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ParamHairBack",
+      "samples": [
+        {
+          "value": -1,
+          "changed": [
+            "HairBack"
+          ]
+        },
+        {
+          "value": -0.9,
+          "changed": [
+            "HairBack"
+          ]
+        },
+        {
+          "value": -0.8,
+          "changed": [
+            "HairBack"
+          ]
+        },
+        {
+          "value": -0.7,
+          "changed": [
+            "HairBack"
+          ]
+        },
+        {
+          "value": -0.6,
+          "changed": [
+            "HairBack"
+          ]
+        },
+        {
+          "value": -0.5,
+          "changed": [
+            "HairBack"
+          ]
+        },
+        {
+          "value": -0.4,
+          "changed": [
+            "HairBack"
+          ]
+        },
+        {
+          "value": -0.30000000000000004,
+          "changed": [
+            "HairBack"
+          ]
+        },
+        {
+          "value": -0.19999999999999996,
+          "changed": [
+            "HairBack"
+          ]
+        },
+        {
+          "value": -0.09999999999999998,
+          "changed": [
+            "HairBack"
+          ]
+        },
+        {
+          "value": 0,
+          "changed": []
+        },
+        {
+          "value": 0.10000000000000009,
+          "changed": [
+            "HairBack"
+          ]
+        },
+        {
+          "value": 0.19999999999999996,
+          "changed": [
+            "HairBack"
+          ]
+        },
+        {
+          "value": 0.30000000000000004,
+          "changed": [
+            "HairBack"
+          ]
+        },
+        {
+          "value": 0.3999999999999999,
+          "changed": [
+            "HairBack"
+          ]
+        },
+        {
+          "value": 0.5,
+          "changed": [
+            "HairBack"
+          ]
+        },
+        {
+          "value": 0.6000000000000001,
+          "changed": [
+            "HairBack"
+          ]
+        },
+        {
+          "value": 0.7,
+          "changed": [
+            "HairBack"
+          ]
+        },
+        {
+          "value": 0.8,
+          "changed": [
+            "HairBack"
+          ]
+        },
+        {
+          "value": 0.8999999999999999,
+          "changed": [
+            "HairBack"
+          ]
+        },
+        {
+          "value": 1,
+          "changed": [
+            "HairBack"
+          ]
+        }
+      ]
+    }
+  ]
+}

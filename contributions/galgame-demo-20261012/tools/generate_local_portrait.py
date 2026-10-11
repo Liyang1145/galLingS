@@ -1,0 +1,25 @@
+"""Submit a reference-guided sprite draft to the user's existing NoctQ server."""
+from pathlib import Path
+import json, urllib.request, shutil
+ROOT=Path(__file__).resolve().parents[1]
+OUT=ROOT/'art/portraits/local-noctq'
+OUT.mkdir(parents=True,exist_ok=True)
+comfy=Path(r'<USERPROFILE>\Desktop\NoctQ-ComfyUI\ComfyUI-0.38.0')
+reference='seabreeze_reference_20261009.png'
+shutil.copy2(Path(r'<USERPROFILE>\Desktop\download.png'),comfy/'input'/reference)
+text='''Create a full-body character sprite for a romantic Japanese visual novel, based on the woman in Picture 1. Clearly adult woman age 25, mature facial proportions. Preserve her recognizable long flowing navy-blue and violet hair with pale blue highlights, blue eyes, small fin-like ears, ocean themed color palette. Front three-quarter view, upright relaxed pose, arms loosely crossed, slightly proud shy expression. She is a whale mermaid: human upper body wearing a modest opaque white and navy sleeveless sailor blouse with a blue ribbon, waist completely covered; below the waist a single long gracefully curved whale tail, dark indigo upper surface and white underside, ending in two broad whale flukes. No human legs. Entire character from top of head to both tail flukes fully visible with generous margin on all sides. Remove sunglasses, maid headdress, popsicle and all background objects. Flat uniform pale gray background, no scenery or floor, no cast shadow. Beautiful clean anime line art and soft cel shading, crisp readable silhouette, detailed hands with five fingers. One character only, no words, no watermark, nonsexual everyday character design.'''
+negative='cropped head, cropped tail, cut off body, closeup, multiple people, child, young girl, nudity, bikini, lingerie, cleavage, suggestive pose, human legs, extra limbs, extra fingers, malformed hands, text, watermark, photo, 3d render, busy background'
+p={
+'1':{'class_type':'UNETLoader','inputs':{'unet_name':'NoctQA_V1_int8_convrot.safetensors','weight_dtype':'default'}},
+'2':{'class_type':'CLIPLoader','inputs':{'clip_name':'qwen3vl_8b_int8_convrot.safetensors','type':'qwen_image','device':'default'}},
+'3':{'class_type':'VAELoader','inputs':{'vae_name':'qwen_image_2.1_vae_bf16.safetensors'}},
+'10':{'class_type':'LoadImage','inputs':{'image':reference}},
+'4':{'class_type':'TextEncodeQwenImage21','inputs':{'clip':['2',0],'vae':['3',0],'prompt':text,'negative_prompt':negative,'resolution':768,'images.image_1':['10',0]}},
+'6':{'class_type':'KSampler','inputs':{'model':['1',0],'positive':['4',0],'negative':['4',1],'latent_image':['4',2],'seed':2026100901,'steps':20,'cfg':3.0,'sampler_name':'euler','scheduler':'simple','denoise':1.0}},
+'7':{'class_type':'VAEDecode','inputs':{'samples':['6',0],'vae':['3',0]}},
+'8':{'class_type':'SaveImage','inputs':{'images':['7',0],'filename_prefix':'Seabreeze/whale_sprite_draft'}}}
+(OUT/'workflow-api.json').write_text(json.dumps(p,ensure_ascii=False,indent=2),encoding='utf-8')
+req=urllib.request.Request('http://127.0.0.1:8189/prompt',data=json.dumps({'prompt':p}).encode(),headers={'Content-Type':'application/json'})
+with urllib.request.urlopen(req,timeout=30) as r: result=json.load(r)
+(OUT/'request.json').write_text(json.dumps(result,indent=2),encoding='utf-8')
+print(json.dumps(result))

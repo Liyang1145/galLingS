@@ -1,0 +1,30 @@
+{
+  "timestamp": "2026-10-11T14:14:41+08:00",
+  "complete": false,
+  "main_model": "whale-girl-layered-v2.cmo3",
+  "main_changes": [
+    "Face AngleX=0: left lower boundary screen 1773,483 -> 1768,490 at 211.2%",
+    "Chin boundary 1837,498 -> 1837,490",
+    "Right cheek boundary 1984,433 -> 1987,439",
+    "Inspected AngleX=-15 and +15; no runtime acceptance"
+  ],
+  "backup": "whale-girl-before-jaw-rounding-1411.cmo3",
+  "eye_model": "eye-layer-test-v2.cmo3",
+  "eye_saved": "2026-10-11T14:08:50+08:00",
+  "eye_changes": [
+    "Lash_Local_Correction level1 lower grid 1510,938 ->1510,908 and 1951,939 ->1951,908 at200% closed",
+    "Sclera_Only_Test parent is now Lash_Local_Correction, reparented at EyeROpen1",
+    "Sclera near-closed bottom bbox reduced; added shape keys at approximately0.25 and0.5 and corrected lower boundary",
+    "Iris remains Root clipped by Sclera_Only_Test",
+    "Eye prototype NOT integrated; closed curve and intermediate states still require full validation"
+  ],
+  "current_ui": "Main model selected Face; AngleX15; zoom211.2%; saved",
+  "remaining": [
+    "eye integration and identity",
+    "face yaw/pitch volume",
+    "expressions and motion",
+    "fresh native export",
+    "actual galgame acceptance",
+    "isolated git upload only after local acceptance"
+  ]
+}

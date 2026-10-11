@@ -1,0 +1,17 @@
+schema_version: 1
+id: gallings.tool.proposals
+name: 提议类 Agent 工具
+version: 0.1.0
+kind: tool
+api: 1
+description: >
+  PLAN §11.1 的提议工具（好感、心情）。工具本身不改任何状态，只把提议交给引擎裁决
+  （限幅、好感预算在 C++ 侧）。也是 tool 插件的参考实现。
+requires:
+  gallings: ">=0.1,<0.2"
+runtime:
+  type: python
+  entry: plugin.py:ProposalTools
+provides:
+  tools: [propose_affection, propose_mood]
+determinism: pure

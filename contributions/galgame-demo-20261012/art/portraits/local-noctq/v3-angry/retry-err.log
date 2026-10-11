@@ -1,0 +1,75 @@
+[32m[INFO][0m setup plugin alembic.autogenerate.schemas
+[32m[INFO][0m setup plugin alembic.autogenerate.tables
+[32m[INFO][0m setup plugin alembic.autogenerate.types
+[32m[INFO][0m setup plugin alembic.autogenerate.constraints
+[32m[INFO][0m setup plugin alembic.autogenerate.defaults
+[32m[INFO][0m setup plugin alembic.autogenerate.comments
+[32m[INFO][0m setup plugin alembic.ext.checkconstraint_byname
+[1m[33m[WARNING][0m On windows we are currently forcing single GPU mode in ComfyUI due to a Nvidia related issue, if you want to disable this use: --cuda-device all
+[32m[INFO][0m Adding extra search path diffusion_models <USERPROFILE>\Desktop\NoctQ-ComfyUI\ComfyUI-0.38.0\models\diffusion_models
+[32m[INFO][0m Adding extra search path text_encoders <USERPROFILE>\Desktop\NoctQ-ComfyUI\ComfyUI-0.38.0\models\text_encoders
+[32m[INFO][0m Adding extra search path vae <USERPROFILE>\Desktop\NoctQ-ComfyUI\ComfyUI-0.38.0\models\vae
+[32m[INFO][0m Found comfy_kitchen backend hip: {'available': False, 'disabled': False, 'unavailable_reason': 'PyTorch ROCm/HIP runtime not available', 'capabilities': []}
+[32m[INFO][0m Found comfy_kitchen backend ascend: {'available': False, 'disabled': False, 'unavailable_reason': "torch-npu is not installed: No module named 'torch_npu'", 'capabilities': []}
+[32m[INFO][0m Found comfy_kitchen backend eager: {'available': True, 'disabled': False, 'unavailable_reason': None, 'capabilities': ['adaln', 'apply_rope', 'apply_rope1', 'apply_rope1_', 'apply_rope_', 'apply_rope_split_half', 'apply_rope_split_half1', 'apply_rope_split_half1_', 'apply_rope_split_half_', 'convrot_w4a4_linear', 'dequantize_convrot_w4a4_weight', 'dequantize_int8_convrot_weight', 'dequantize_int8_convrot_weight_dtype', 'dequantize_int8_embedding', 'dequantize_int8_simple', 'dequantize_int8_simple_dtype', 'dequantize_mxfp8', 'dequantize_nvfp4', 'dequantize_per_tensor_fp8', 'dequantize_w4a8_int8_weight', 'fp16_conv3d', 'fp16_conv3d_out', 'fp16_linear', 'gemv_awq_w4a16', 'group_norm_silu_pad3d', 'group_norm_silu_pad3d_out', 'int8_linear', 'na3d', 'prepare_int4_weight_for_int8_linear', 'quantize_and_rotate_rowwise', 'quantize_convrot_w4a4_weight', 'quantize_int8_convrot_weight', 'quantize_int8_rowwise', 'quantize_int8_tensorwise', 'quantize_mxfp8', 'quantize_nvfp4', 'quantize_per_tensor_fp8', 'quantize_svdquant_w4a4', 'quantize_w4a8_int8_weight', 'rms_adaln', 'rms_rope', 'rms_rope1', 'rms_rope1_', 'rms_rope_', 'rms_rope_split_half', 'rms_rope_split_half1', 'rms_rope_split_half1_', 'rms_rope_split_half_', 'rotate_int8_convrot_weight', 'scaled_mm_mxfp8', 'scaled_mm_nvfp4', 'scaled_mm_svdquant_w4a4', 'sol_attn', 'stochastic_rounding_fp8', 'w4a8_int8_linear']}
+[32m[INFO][0m Found comfy_kitchen backend cuda: {'available': True, 'disabled': False, 'unavailable_reason': None, 'capabilities': ['adaln', 'apply_rope', 'apply_rope1', 'apply_rope1_', 'apply_rope_', 'apply_rope_split_half', 'apply_rope_split_half1', 'apply_rope_split_half1_', 'apply_rope_split_half_', 'convrot_w4a4_linear', 'dequantize_convrot_w4a4_weight', 'dequantize_int8_convrot_weight', 'dequantize_int8_convrot_weight_dtype', 'dequantize_int8_simple', 'dequantize_int8_simple_dtype', 'dequantize_nvfp4', 'dequantize_per_tensor_fp8', 'dequantize_w4a8_int8_weight', 'fp16_conv3d', 'fp16_conv3d_out', 'fp16_linear', 'gemv_awq_w4a16', 'group_norm_silu_pad3d', 'group_norm_silu_pad3d_out', 'int8_linear', 'na3d', 'prepare_int4_weight_for_int8_linear', 'quantize_and_rotate_rowwise', 'quantize_convrot_w4a4_weight', 'quantize_int8_convrot_weight', 'quantize_int8_rowwise', 'quantize_int8_tensorwise', 'quantize_mxfp8', 'quantize_nvfp4', 'quantize_per_tensor_fp8', 'quantize_svdquant_w4a4', 'quantize_w4a8_int8_weight', 'rms_adaln', 'rms_rope', 'rms_rope1', 'rms_rope1_', 'rms_rope_', 'rms_rope_split_half', 'rms_rope_split_half1', 'rms_rope_split_half1_', 'rms_rope_split_half_', 'rotate_int8_convrot_weight', 'scaled_mm_nvfp4', 'scaled_mm_svdquant_w4a4', 'sol_attn', 'stochastic_rounding_fp8', 'w4a8_int8_linear']}
+[32m[INFO][0m Found comfy_kitchen backend triton: {'available': False, 'disabled': True, 'unavailable_reason': "ImportError: No module named 'triton'", 'capabilities': []}
+[32m[INFO][0m Checkpoint files will always be loaded safely.
+[32m[INFO][0m Total VRAM 8188 MB, total RAM 15578 MB
+[32m[INFO][0m pytorch version: 2.9.1+cu130
+[32m[INFO][0m Set vram state to: NORMAL_VRAM
+[32m[INFO][0m Device: cuda:0 NVIDIA GeForce RTX 4060 Laptop GPU : cudaMallocAsync
+[32m[INFO][0m working around nvidia conv3d memory bug.
+[32m[INFO][0m Using pytorch attention
+[32m[INFO][0m aimdo: src-win/cuda-detour.c:38:INFO:aimdo_setup_hooks: installing 6 hooks
+[32m[INFO][0m aimdo: src/control.c:269:INFO:comfy-aimdo NVML pressure enabled
+[32m[INFO][0m aimdo: src-win/shmem-detect.c:80:INFO:comfy-aimdo WDDM adapter match: NVIDIA GeForce RTX 4060 Laptop GPU runtime_luid=00000000:00015421 dxgi_luid=00000000:00015421
+[32m[INFO][0m aimdo: src/control.c:284:INFO:comfy-aimdo inited for GPU: NVIDIA GeForce RTX 4060 Laptop GPU (VRAM: 8187 MB)
+[32m[INFO][0m DynamicVRAM support detected and enabled
+[32m[INFO][0m Python version: 3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]
+[32m[INFO][0m ComfyUI version: 0.38.0
+[32m[INFO][0m comfy-aimdo version: 0.5.5
+[32m[INFO][0m comfy-kitchen version: 0.2.36
+[32m[INFO][0m comfyui-frontend-package version: 1.53.6
+[32m[INFO][0m comfyui-workflow-templates version: 0.11.70
+[32m[INFO][0m comfyui-embedded-docs version: 0.5.12
+[32m[INFO][0m comfy-kitchen version: 0.2.36
+[32m[INFO][0m comfy-aimdo version: 0.5.5
+[32m[INFO][0m [Prompt Server] web root: <USERPROFILE>\Desktop\NoctQ-ComfyUI\.venv\Lib\site-packages\comfyui_frontend_package\static
+[32m[INFO][0m Asset seeder disabled
+[32m[INFO][0m No OpenGL_accelerate module loaded: No module named 'OpenGL_accelerate'
+[32m[INFO][0m Skipping loading of custom nodes
+[32m[INFO][0m Context impl SQLiteImpl.
+[32m[INFO][0m Will assume non-transactional DDL.
+[32m[INFO][0m Disabling intermediate node cache.
+[32m[INFO][0m Starting server
+
+[32m[INFO][0m To see the GUI go to: http://127.0.0.1:8189
+[32m[INFO][0m got prompt
+[32m[INFO][0m Model storage policy: fast_disk=True paths=['<USERPROFILE>\\Desktop\\NoctQ-ComfyUI\\ComfyUI-0.38.0\\models\\vae\\qwen_image_2.1_vae_bf16.safetensors']
+[32m[INFO][0m Using pytorch attention in VAE
+[32m[INFO][0m Using pytorch attention in VAE
+[32m[INFO][0m VAE load device: cuda:0, offload device: cpu, dtype: torch.bfloat16
+[32m[INFO][0m Found quantization metadata version 1
+[32m[INFO][0m Using MixedPrecisionOps for text encoder
+[32m[INFO][0m Model storage policy: fast_disk=True paths=['<USERPROFILE>\\Desktop\\NoctQ-ComfyUI\\ComfyUI-0.38.0\\models\\text_encoders\\qwen3vl_8b_int8_convrot.safetensors']
+[32m[INFO][0m CLIP/text encoder model load device: cuda:0, offload device: cpu, current: cpu, dtype: torch.float16
+[32m[INFO][0m Requested to load WanVAE
+[32m[INFO][0m Model WanVAE prepared for dynamic VRAM loading. 644MB Staged. 0 patches attached. Force pre-loaded 68 weights: 102 KB.
+[32m[INFO][0m Model WanVAE prepared for dynamic VRAM loading. 644MB Staged. 0 patches attached. Force pre-loaded 68 weights: 102 KB.
+[32m[INFO][0m Requested to load QwenImage21TEModel_
+[32m[INFO][0m Model QwenImage21TEModel_ prepared for dynamic VRAM loading. 8916MB Staged. 0 patches attached. Force pre-loaded 255 weights: 849 KB.
+[32m[INFO][0m Model QwenImage21TEModel_ prepared for dynamic VRAM loading. 8916MB Staged. 0 patches attached. Force pre-loaded 255 weights: 849 KB.
+[32m[INFO][0m Found quantization metadata version 1
+[32m[INFO][0m Detected mixed precision quantization
+[32m[INFO][0m Using mixed precision operations
+[32m[INFO][0m Native ops: float8_e5m2, float8_e4m3fn, asym_w4a8_int8, w6a8_int8, convrot_w4a4, int8_tensorwise , emulated ops: mxfp8, nvfp4
+[32m[INFO][0m model weight dtype torch.bfloat16, manual cast: torch.bfloat16
+[32m[INFO][0m model_type FLUX
+[32m[INFO][0m Model storage policy: fast_disk=True paths=['<USERPROFILE>\\Desktop\\NoctQ-ComfyUI\\ComfyUI-0.38.0\\models\\diffusion_models\\NoctQA_V1_int8_convrot.safetensors']
+[32m[INFO][0m Requested to load QwenImage21
+[32m[INFO][0m Model QwenImage21 prepared for dynamic VRAM loading. 6920MB Staged. 0 patches attached. Force pre-loaded 65 weights: 63 KB.
+  0%|          | 0/28 [00:00<?, ?it/s]  0%|          | 0/28 [00:00<?, ?it/s,   Model Initializing ...  ]  0%|          | 0/28 [00:05<?, ?it/s,  Model Initialization complete!  ]  4%|▎         | 1/28 [00:05<02:32,  5.66s/it,  Model Initialization complete!  ]  4%|▎         | 1/28 [00:09<02:32,  5.66s/it]                                     7%|▋         | 2/28 [00:09<02:06,  4.88s/it] 11%|█         | 3/28 [00:14<02:03,  4.94s/it] 14%|█▍        | 4/28 [00:19<01:57,  4.88s/it] 18%|█▊        | 5/28 [00:24<01:51,  4.84s/it] 21%|██▏       | 6/28 [00:29<01:46,  4.83s/it] 25%|██▌       | 7/28 [00:34<01:43,  4.91s/it] 29%|██▊       | 8/28 [00:39<01:37,  4.86s/it] 32%|███▏      | 9/28 [00:43<01:32,  4.87s/it] 36%|███▌      | 10/28 [00:48<01:28,  4.89s/it] 39%|███▉      | 11/28 [00:53<01:23,  4.90s/it] 43%|████▎     | 12/28 [00:58<01:18,  4.93s/it] 46%|████▋     | 13/28 [01:03<01:13,  4.88s/it] 50%|█████     | 14/28 [01:08<01:08,  4.87s/it] 54%|█████▎    | 15/28 [01:13<01:03,  4.87s/it] 57%|█████▋    | 16/28 [01:18<00:58,  4.88s/it] 61%|██████    | 17/28 [01:23<00:53,  4.89s/it] 64%|██████▍   | 18/28 [01:27<00:49,  4.93s/it] 68%|██████▊   | 19/28 [01:32<00:44,  4.90s/it] 71%|███████▏  | 20/28 [01:37<00:39,  4.90s/it] 75%|███████▌  | 21/28 [01:42<00:34,  4.90s/it] 79%|███████▊  | 22/28 [01:47<00:29,  4.90s/it] 82%|████████▏ | 23/28 [01:52<00:24,  4.89s/it] 86%|████████▌ | 24/28 [01:57<00:19,  4.93s/it] 89%|████████▉ | 25/28 [02:02<00:14,  4.96s/it] 93%|█████████▎| 26/28 [02:07<00:09,  4.99s/it] 96%|█████████▋| 27/28 [02:12<00:04,  4.99s/it]100%|██████████| 28/28 [02:17<00:00,  4.99s/it]100%|██████████| 28/28 [02:17<00:00,  4.90s/it]
+[32m[INFO][0m Comfy model compiler graph breaks: 9, rogues: 0
+[32m[INFO][0m Model WanVAE prepared for dynamic VRAM loading. 644MB Staged. 0 patches attached. Force pre-loaded 68 weights: 102 KB.
+[32m[INFO][0m [32mPrompt executed in 153.69 seconds[0m

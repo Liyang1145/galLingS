@@ -1,0 +1,37 @@
+schema_version: 1
+id: gallings.memory.lingshu
+name: 灵枢（dsh-memory）记忆底座
+version: 0.1.0
+kind: memory
+api: 1
+description: >
+  以 MCP stdio 子进程拉起灵枢 md_cg.mcp_server；写入零 LLM、存原文；
+  记忆按「时间线 + 回合」打标签，召回时按可见时间线过滤（PLAN §13.3）。
+  AGM 补位不在本插件内，由引擎在召回结果上叠加（PLAN §13.1）。
+requires:
+  gallings: ">=0.1,<0.2"
+runtime:
+  type: python
+  entry: plugin.py:LingshuMemory
+capabilities: [timeline_filter, verbatim]
+config_schema:
+  type: object
+  additionalProperties: false
+  required: [dsh_memory_path]
+  properties:
+    dsh_memory_path: {type: string, description: dsh-memory 检出目录（版本锁定见 server/memory/LINGSHU_VERSION）}
+    python: {type: string, default: python3}
+    graph_dir: {type: string, default: "${data_dir}/graph", description: 认知图目录（MDCG_ROOT）}
+    actor: {type: string, default: gallings}
+    layer: {type: string, default: contextual}
+    overfetch: {type: integer, minimum: 1, maximum: 10, default: 4, description: 时间线过滤前多取的倍数}
+    call_timeout_s: {type: number, minimum: 1, default: 30}
+secrets:
+  - name: token
+    env: GALLINGS_LINGSHU_TOKEN
+    required: false
+    description: 灵枢令牌（MDCG_TOKEN）；不设则走本机 legacy env 身份
+permissions:
+  filesystem: ["${data_dir}"]
+  subprocess: true
+determinism: recorded

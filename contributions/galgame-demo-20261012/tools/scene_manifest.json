@@ -1,0 +1,22 @@
+{
+  "camp_dusk.png": {
+    "sha256": "040620513bef5879d39c76fd729663b6563044ff804e9d5d1749d1307ac60eae",
+    "bytes": 2883519
+  },
+  "cove_afternoon.png": {
+    "sha256": "20e29fdb8ab66d7bec46962f8de700fdcc3342e592b3ce4f9fc6c8a7491b2f57",
+    "bytes": 2565505
+  },
+  "cove_dusk.png": {
+    "sha256": "5a581d19c0ae288e42cfb3062d2f7f0ab0fd008d0cf5cececafca76a36cd4b9d",
+    "bytes": 2546261
+  },
+  "cove_golden.png": {
+    "sha256": "2c9fe27ca25f815676405c1fa29959a59e419e800c1758f93416352518e58fe3",
+    "bytes": 2584557
+  },
+  "cove_noon.png": {
+    "sha256": "06e8006e19f6bc22687da56a3255b2bb6d52f8822e30f9ad5fefd2fa65b0a138",
+    "bytes": 2728969
+  }
+}

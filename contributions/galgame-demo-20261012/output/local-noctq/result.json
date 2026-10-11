@@ -1,0 +1,146 @@
+{
+  "ae3b865d-358b-4b5b-a851-e080ecf7c12e": {
+    "prompt": [
+      0,
+      "ae3b865d-358b-4b5b-a851-e080ecf7c12e",
+      {
+        "1": {
+          "class_type": "UNETLoader",
+          "inputs": {
+            "unet_name": "NoctQA_V1_int8_convrot.safetensors",
+            "weight_dtype": "default"
+          }
+        },
+        "2": {
+          "class_type": "CLIPLoader",
+          "inputs": {
+            "clip_name": "qwen3vl_8b_int8_convrot.safetensors",
+            "type": "qwen_image",
+            "device": "default"
+          }
+        },
+        "3": {
+          "class_type": "VAELoader",
+          "inputs": {
+            "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+          }
+        },
+        "4": {
+          "class_type": "TextEncodeQwenImage21",
+          "inputs": {
+            "clip": [
+              "2",
+              0
+            ],
+            "prompt": "Anime visual novel illustration, clearly adult 25 year old woman with long navy blue hair and blue eyes, small whale themed hair ornament, wearing an opaque white sailor dress and navy cardigan, fully clothed, relaxed neutral pose, summer seaside, soft daylight, elegant mature face, half body portrait, no text.",
+            "negative_prompt": "nudity, revealing clothing, child, teenager, text, watermark, malformed hands",
+            "resolution": 512
+          }
+        },
+        "6": {
+          "class_type": "KSampler",
+          "inputs": {
+            "model": [
+              "1",
+              0
+            ],
+            "positive": [
+              "4",
+              0
+            ],
+            "negative": [
+              "4",
+              1
+            ],
+            "latent_image": [
+              "4",
+              2
+            ],
+            "seed": 20261009,
+            "steps": 8,
+            "cfg": 3.0,
+            "sampler_name": "euler",
+            "scheduler": "simple",
+            "denoise": 1.0
+          }
+        },
+        "7": {
+          "class_type": "VAEDecode",
+          "inputs": {
+            "samples": [
+              "6",
+              0
+            ],
+            "vae": [
+              "3",
+              0
+            ]
+          }
+        },
+        "8": {
+          "class_type": "SaveImage",
+          "inputs": {
+            "images": [
+              "7",
+              0
+            ],
+            "filename_prefix": "GALgame_local_trial"
+          }
+        }
+      },
+      {
+        "create_time": 1791554453880
+      },
+      [
+        "8"
+      ]
+    ],
+    "outputs": {
+      "8": {
+        "images": [
+          {
+            "filename": "GALgame_local_trial_00001_.png",
+            "subfolder": "",
+            "type": "output"
+          }
+        ]
+      }
+    },
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "ae3b865d-358b-4b5b-a851-e080ecf7c12e",
+            "timestamp": 1791554453882
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [],
+            "prompt_id": "ae3b865d-358b-4b5b-a851-e080ecf7c12e",
+            "timestamp": 1791554453882
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "ae3b865d-358b-4b5b-a851-e080ecf7c12e",
+            "timestamp": 1791554471688
+          }
+        ]
+      ]
+    },
+    "meta": {
+      "8": {
+        "node_id": "8",
+        "display_node": "8",
+        "parent_node": null,
+        "real_node_id": "8"
+      }
+    }
+  }
+}

@@ -7,6 +7,7 @@ AI 驱动、角色卡驱动的 Galgame 后端引擎。剧本决定"发生什么"
 - Demo 运行与说明：[docs/demo.md](docs/demo.md)
 - 详细计划：[docs/PLAN.md](docs/PLAN.md)
 - 决策记录：[docs/decisions.md](docs/decisions.md)
+- 音乐方向与负责人：[docs/music-direction.md](docs/music-direction.md)
 - 记忆系统实测：[docs/memory-bench.md](docs/memory-bench.md)
 
 Demo：《海风与布丁》第一话「浅滩上的偶遇」。技术栈：Python + Rust（PyO3），默认模型 DeepSeek，记忆为灵枢（dsh-memory）底座 + AGM 补位。

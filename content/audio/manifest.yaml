@@ -1,0 +1,44 @@
+# Music metadata only. The selected MP3 is currently stored locally, not in this repository.
+schema_version: 1
+updated: "2026-10-11"
+tracks:
+  - id: bgm_emerald_dream_main_v01
+    title: 翡翠之梦
+    role: character_theme
+    character: 鲸鱼小姐
+    status: selected_main_theme
+    original_filename: 翡翠1.1.mp3
+    archived_filename: bgm_emerald_dream_main_v01.mp3
+    file: null
+    availability: local_only
+    selected_on: "2026-10-11"
+    bytes: 3066777
+    duration_seconds: 133.2135
+    sha256: 02162232f3aa9e5465ea06d1b4968776375f04d6fbeae1c9e39e5623eede44fa
+    scenes:
+      - chapter: ch01
+        script_line: 96
+        cue: 角色曲「翡翠之梦」前奏
+        preview_mapping: 当前主曲播放；尚无独立前奏素材
+      - chapter: ch01
+        script_line: 209
+        cue: 「翡翠之梦」完整版
+        preview_mapping: 继续播放当前主曲
+    loop_start: null
+    loop_end: null
+    loop_units: samples
+    preview_loop: whole_track
+    stems: []
+    processing:
+      edited: false
+      loudness_normalized: false
+      seamless_loop_prepared: false
+    source:
+      tool: Suno
+      generation_url: null
+      generation_prompt: null
+      model: null
+      membership_tier: null
+      uploaded_reference: null
+    authorization_status: not_recorded
+    notes: 音乐负责人指定的当前角色主曲；后续变奏以此为基准。元数据不表示音频已提交到仓库或正式播放器已完成接入。

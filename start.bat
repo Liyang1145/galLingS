@@ -4,6 +4,10 @@ chcp 65001 >nul
 setlocal
 cd /d "%~dp0"
 
+rem 必须放在 galLingS 仓库根目录（和 requirements.txt、server\ 在一起）运行
+if not exist "requirements.txt" goto :wrongdir
+if not exist "server\__main__.py" goto :wrongdir
+
 where py >nul 2>nul && (set "PY=py -3") || (set "PY=python")
 set "VPY=%~dp0.venv\Scripts\python.exe"
 
@@ -32,7 +36,9 @@ if errorlevel 1 (
   echo [3/4] galcore 已安装
 )
 
-if not exist "content\scripts\ch01\ch01.md" goto :nocontent
+if not exist "content\scripts\ch01\ch01.md" (
+  echo 提示：没有剧本内容包 content\scripts\ch01，AI 剧本 Demo 不能玩；顶栏「作品」里的《海风与布丁》照常可玩。
+)
 
 rem 已经在作品页 ⚙ 设置里保存过密钥，就不用每次再问
 if exist "%USERPROFILE%\.gallings\secrets.json" goto :start
@@ -49,6 +55,10 @@ echo [4/4] 启动后端：content\vn 里有作品时浏览器打开作品页 htt
 "%VPY%" -m server
 goto :eof
 
+:wrongdir
+echo 这个 start.bat 不在 galLingS 文件夹里（旁边找不到 requirements.txt 和 server 文件夹）。
+echo 请打开 galLingS 完整版文件夹，双击里面的 start.bat；如果用的是“覆盖文件”，要先把它们复制进你的 galLingS 仓库根目录。
+pause & exit /b 1
 :nopython
 echo 没找到 Python 3.11+。请先安装：https://www.python.org/downloads/windows/ （勾选 Add to PATH）
 pause & exit /b 1

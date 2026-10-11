@@ -36,8 +36,15 @@ class Runtime:
         self.game = game
         cdir = Path(game.get("chapter_dir", "content/scripts/ch01"))
         cdir = cdir if cdir.is_absolute() else ROOT / cdir
-        self.chapter_path = ensure_chapter(cdir)
-        self.chapter = load_chapter_file(self.chapter_path)
+        try:
+            self.chapter_path = ensure_chapter(cdir)
+            self.chapter = load_chapter_file(self.chapter_path)
+            self.has_chapter = True
+        except (IndexError, FileNotFoundError):
+            # 没有剧本内容包（content/scripts/ch01）：AI 剧本 Demo 不能玩，但作品页 /vn.html 和设置照常可用
+            self.chapter_path = cdir / "chapter.json"
+            self.chapter = {"chapter_id": "none", "title": "（没有剧本内容包）", "content_hash": "", "program": [], "slots": []}
+            self.has_chapter = False
         self.cards = CardStore(ROOT / "content" / "cards", self.data_dir / "cards")
         self.plugins = self._make_plugins()
 

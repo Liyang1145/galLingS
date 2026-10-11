@@ -7,6 +7,7 @@
 - ``/api/report``                   编译报告
 - ``/api/plugins``                  插件状态
 - ``/api/agent/*``                  外部 Agent 端口（预留，默认关闭）
+- ``WS  /ws/soul?card=whale``         灵枢外部端口 vn-soul/1：外部前端（VN Studio）的手账记忆 / 悄悄话
 """
 from __future__ import annotations
 
@@ -24,6 +25,7 @@ from server.cards import builder
 from server.cards.validate import has_errors, validate_card
 from server.runtime import ROOT, Runtime, load_config
 from server.session import TOOLS, Session, SessionOptions
+from server.soul import SoulSession
 
 log = logging.getLogger("gallings.api")
 WEB = ROOT / "web"
@@ -157,5 +159,32 @@ def create_app(runtime: Runtime | None = None) -> FastAPI:
             pass
         finally:
             await sess.close()
+
+    # ---------------------------------------------------------------- 灵枢外部端口（VN Studio 手账）
+    @app.websocket("/ws/soul")
+    async def ws_soul(sock: WebSocket) -> None:
+        await sock.accept()
+
+        async def send(m: dict[str, Any]) -> None:
+            await sock.send_text(json.dumps(m, ensure_ascii=False))
+
+        card_id = sock.query_params.get("card") or rt().game.get("default_card", "whale")
+        try:
+            soul = SoulSession(rt(), card_id, send)
+        except KeyError:
+            await send({"type": "error", "message": f"没有这张卡：{card_id}"})
+            await sock.close()
+            return
+        try:
+            while True:
+                raw = await sock.receive_text()
+                try:
+                    msg = json.loads(raw)
+                except json.JSONDecodeError:
+                    await send({"type": "error", "message": "不是 JSON"})
+                    continue
+                await soul.handle(msg)
+        except WebSocketDisconnect:
+            pass
 
     return app

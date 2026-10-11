@@ -72,7 +72,7 @@ function collect() {
 function showFindings(fs) {
   $("findings").innerHTML = fs.length
     ? fs.map((f) => `<div class="finding ${f.level}"><b>${f.level === "error" ? "错误" : "提示"}</b> ${f.field}：${f.message}</div>`).join("")
-    : '<div class="finding">全部通过 ✓</div>';
+    : '<div class="finding">全部通过 ' + gi('check') + '</div>';
   $("useBtn").disabled = fs.some((f) => f.level === "error");
 }
 

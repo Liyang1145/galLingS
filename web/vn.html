@@ -12,21 +12,21 @@
 <header class="topbar">
   <div class="brand"><a href="/" title="回到 AI 剧本 Demo"><b>galLingS</b></a><span id="chapterTitle"></span></div>
   <div class="tb-group" role="group" aria-label="游戏">
-    <button id="saveBtn" class="ib" title="存档"><i>💾</i><span>存档</span></button>
-    <button id="loadBtn" class="ib" title="读档"><i>📂</i><span>读档</span></button>
-    <button id="journalBtn" class="ib" title="手账（右侧栏）"><i>📒</i><span>手账</span><b class="dotnew" id="journalNew" hidden></b></button>
-    <button id="titleBtn" class="ib" title="回到标题画面"><i>⌂</i><span>标题</span></button>
+    <button id="saveBtn" class="ib" title="存档"><svg class="gi" viewBox="0 0 24 24" aria-hidden="true"><path d="M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/> <path d="M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7"/> <path d="M7 3v4a1 1 0 0 0 1 1h7"/></svg><span>存档</span></button>
+    <button id="loadBtn" class="ib" title="读档"><svg class="gi" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 14 1.5-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.54 6a2 2 0 0 1-1.95 1.5H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H18a2 2 0 0 1 2 2v2"/></svg><span>读档</span></button>
+    <button id="journalBtn" class="ib" title="手账（右侧栏）"><svg class="gi" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/> <path d="M8.62 9.8A2.25 2.25 0 1 1 12 6.836a2.25 2.25 0 1 1 3.38 2.966l-2.626 2.856a.998.998 0 0 1-1.507 0z"/></svg><span>手账</span><b class="dotnew" id="journalNew" hidden></b></button>
+    <button id="titleBtn" class="ib" title="回到标题画面"><svg class="gi" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/> <path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>标题</span></button>
   </div>
   <div class="tb-group" role="group" aria-label="作品">
     <label class="tb-field" title="作品"><span>作品</span><select id="gameSel"></select></label>
     <div class="seg" id="viewSeg">
-      <button data-view="win" class="on" title="窗口模式：手账在右侧栏">窗口</button>
-      <button data-view="full" title="全屏模式：手账在游戏里（按 Esc 回到窗口）">全屏</button>
+      <button data-view="win" class="on" title="窗口模式：手账在右侧栏"><svg class="gi" viewBox="0 0 24 24" aria-hidden="true"><rect width="20" height="14" x="2" y="3" rx="2"/> <line x1="8" x2="16" y1="21" y2="21"/> <line x1="12" x2="12" y1="17" y2="21"/></svg>窗口</button>
+      <button data-view="full" title="全屏模式：手账在游戏里（按 Esc 回到窗口）"><svg class="gi" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3"/> <path d="M21 8V5a2 2 0 0 0-2-2h-3"/> <path d="M3 16v3a2 2 0 0 0 2 2h3"/> <path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg>全屏</button>
     </div>
   </div>
   <div class="tb-spacer"></div>
   <div id="status" class="status"></div>
-  <button id="setBtn" class="ib" title="设置：模型、记忆、手账、游戏"><i>⚙</i><span>设置</span></button>
+  <button id="setBtn" class="ib" title="设置：模型、记忆、手账、游戏"><svg class="gi" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"/> <circle cx="12" cy="12" r="3"/></svg><span>设置</span></button>
 </header>
 
 <main class="layout">
@@ -38,7 +38,7 @@
   </section>
   <aside class="timeline journal" id="journal">
     <div class="tl-resizer" id="tlResizer" title="拖动调整宽度，双击恢复默认"></div>
-    <button class="j-close" id="jClose" title="收起手账（收起后手账回到游戏里）">✕</button>
+    <button class="j-close" id="jClose" title="收起手账（收起后手账回到游戏里）"><svg class="gi" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/> <path d="m6 6 12 12"/></svg></button>
     <div id="soulDock"></div>
   </aside>
 </main>
@@ -73,6 +73,7 @@
   <div class="set-foot"><small class="muted" id="saveOut"></small><button type="button" id="sClose">关闭</button><button type="button" class="primary" id="sSave">保存</button></div>
 </dialog>
 
+<script src="/static/icons.js"></script>
 <script src="/static/vn.js"></script>
 </body>
 </html>

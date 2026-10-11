@@ -138,8 +138,8 @@ function renderServer() {
   $("sBase").value = s.llm.base_url; $("sModel").value = s.llm.model; $("sKey").value = "";
   $("sKey").placeholder = s.llm.key_set ? `已设置（末 4 位 ${s.llm.key_tail || "****"}），留空 = 不改` : "未设置";
   $("keyHint").textContent = s.llm.key_from_env ? "系统环境变量 GALLINGS_LLM_API_KEY 已设置，它优先；这里填的不生效。" : "只保存在本机 galLingS 数据文件夹里，网页拿不到原文。";
-  $("llmState").textContent = s.llm_ready ? "● 可用" : "○ 未启用"; $("llmState").className = s.llm_ready ? "ok" : "bad";
-  $("memState").textContent = s.memory_ready ? "● 可用" : "○ 未启用"; $("memState").className = s.memory_ready ? "ok" : "bad";
+  $("llmState").innerHTML = `<i class="ldot ${s.llm_ready ? "ok" : "bad"}"></i>${s.llm_ready ? "可用" : "未启用"}`; $("llmState").className = s.llm_ready ? "ok" : "bad";
+  $("memState").innerHTML = `<i class="ldot ${s.memory_ready ? "ok" : "bad"}"></i>${s.memory_ready ? "可用" : "未启用"}`; $("memState").className = s.memory_ready ? "ok" : "bad";
   memUse = s.memory.use; $("sDsh").value = s.memory.dsh_memory_path || ""; $("sGames").value = s.vn.games_dir || "";
   syncMem();
   const fail = Object.entries(s.failed || {}).map(([k, v]) => `${k}：${v}`).join("；");
@@ -170,7 +170,7 @@ $("sSave").onclick = async () => {
 $("sTest").onclick = async () => {
   $("sTestOut").textContent = "测试中……";
   const r = await (await fetch("/api/settings/test", { method: "POST" })).json();
-  $("sTestOut").textContent = (r.ok ? "✓ 通了：" : "✗ ") + r.message;
+  $("sTestOut").innerHTML = (r.ok ? gi("check") + " 通了：" : gi("x") + " ") + r.message.replace(/</g, "&lt;");
 };
 
 loadSettings();

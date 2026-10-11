@@ -339,3 +339,6 @@ html:has(body.chrome) { background: #e3f1fc; }
 #soulDock #soul .win input:focus { border-color: var(--c-acc); box-shadow: 0 0 0 3px rgba(61,154,214,.18); background: #fff; }
 #soulDock #soul .win .btn { width: 40px; height: 36px; border-radius: 8px; background: linear-gradient(180deg, #5fb3e6, var(--c-acc)); color: #fff; font-size: 16px; }
 #soulDock #soul .left { font-size: 12px; color: var(--c-ink2); }
+
+/* 作品页画面：尺寸和位置由 vn.js layoutScreen() 按整像素算；去掉外框圆角裁剪，免得显卡每帧给整块 iframe 做遮罩 */
+.vnpage .screen { border-radius: 0; contain: layout paint; }

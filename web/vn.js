@@ -175,3 +175,20 @@ $("sTest").onclick = async () => {
 
 loadSettings();
 loadGames();
+
+// ---------------------------------------------------------------- 画面尺寸对齐整像素
+// 16:9 画面用 CSS 自适应会算出 911×512.44、上边 198.78 这种小数像素；游戏再整体缩放一次，浏览器每帧都得重新栅格化，
+// 拖完右侧栏后就全局卡顿（打字变慢、悬停高光延迟）。这里用 JS 把宽高取成 16 的倍数（物理像素），左上角也对齐到物理像素。
+function layoutScreen() {
+  const scr = $("screen"), st = $("stage");
+  if (document.fullscreenElement) { scr.style.cssText = ""; return; }
+  const r = st.getBoundingClientRect(), dpr = devicePixelRatio || 1;
+  const wd = Math.max(16, Math.floor(Math.min(r.width, r.height * 16 / 9) * dpr / 16 + 0.01) * 16), hd = wd * 9 / 16;
+  const left = (Math.round(r.left * dpr + (r.width * dpr - wd) / 2) - r.left * dpr) / dpr;
+  const top = (Math.round(r.top * dpr + (r.height * dpr - hd) / 2) - r.top * dpr) / dpr;
+  scr.style.cssText = `position:absolute;aspect-ratio:auto;width:${wd / dpr}px;height:${hd / dpr}px;left:${left}px;top:${top}px`;
+}
+new ResizeObserver(layoutScreen).observe($("stage"));
+addEventListener("resize", layoutScreen);
+document.addEventListener("fullscreenchange", () => requestAnimationFrame(layoutScreen));
+layoutScreen();

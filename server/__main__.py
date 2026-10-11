@@ -1,4 +1,4 @@
-"""python -m server  → 启动本地服务并打开浏览器。"""
+"""python -m server → 启动本地后端并打开 API 文档。"""
 from __future__ import annotations
 
 import argparse
@@ -25,7 +25,7 @@ def main(argv: list[str] | None = None) -> int:
     srv = cfg.get("server") or {}
     host = srv.get("host", "127.0.0.1")
     port = a.port or int(srv.get("port", 8765))
-    url = f"http://{host}:{port}/"
+    url = f"http://{host}:{port}/docs"
     print(f"galLingS 已启动：{url}")
     if not a.no_browser:
         threading.Timer(1.5, lambda: webbrowser.open(url)).start()

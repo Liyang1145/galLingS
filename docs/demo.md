@@ -1,4 +1,6 @@
-# 第一话 Demo：运行与说明
+# 第一话后端：运行与试玩状态
+
+> 2026-10-11：按用户要求移除旧版网页试玩 `web/index.html` 和 `web/player.js`。当前画面、音乐试听使用用户提供的《海风与布丁 技术DEMO》本地包（十六话＋两篇番外）；它尚未提交到仓库或连接本仓库后端。下文安装步骤启动的是后端服务，根路径转到 `/docs`，建卡页仍可保存角色卡。
 
 ## 一、在 Windows 演示机上运行
 
@@ -6,7 +8,7 @@
 2. 拿到内容包（剧本、角色卡，见 `content/README.md`），解压到 `content\`。
 3. 拿到 galcore 轮子：GitHub → Actions → 最近一次 `ci` → Artifacts → `galcore-windows-latest`，把里面的 `.whl` 放进 `wheels\`。
    （装了 Rust 的机器可以跳过这步，`start.bat` 会自己编译。）
-4. 双击 `start.bat`。第一次会建 `.venv`、装依赖、装 galcore，然后问 DeepSeek API key（回车跳过 = 只能纯选项），浏览器自动打开 `http://127.0.0.1:8765/`。
+4. 双击 `start.bat`。第一次会建 `.venv`、装依赖、装 galcore，然后问 DeepSeek API key（回车跳过 = 只能纯选项），浏览器打开 `http://127.0.0.1:8765/`，随后转到 API 文档 `/docs`。
 
 key 只放在这次运行的环境变量里，不写文件、不进日志。也可以提前在系统环境变量里设 `GALLINGS_LLM_API_KEY`。
 
@@ -22,7 +24,9 @@ export GALLINGS_LLM_API_KEY=...   # 可选
 python -m server
 ```
 
-## 二、演示脚本（对应 PLAN §20）
+## 二、旧版演示脚本（历史记录，对应 PLAN §20）
+
+以下流程依赖已删除的旧播放器，当前不能按此进行网页试玩。后端会话、角色卡、记录与回放能力继续保留；新技术 DEMO 与后端的连接待实现。
 
 | 时段 | 操作 | 看点 |
 |---|---|---|
@@ -45,8 +49,8 @@ python -m server
 | 记忆：本地记忆 / 灵枢插件 + 时间线过滤 + AGM 补位（7 + 3） | ✅ | `server/memory/`、`plugins/builtin/memory-*` |
 | 日记（AI 模式通关后她写一篇，只读日记本） | ✅ | `session.write_diary` |
 | 演绎层：换卡演同一章 | ✅ | `server/director/perform.py` |
-| 建卡页：AI 填卡 → 修改 → 校验（含适配度守卫）→ 启用 | ✅ | `web/cards.html`、`server/cards/` |
-| Web 播放器 + 调试时间轴（拖动回放） | ✅ | `web/` |
+| 建卡页：AI 填卡 → 修改 → 校验（含适配度守卫）→ 保存 | ✅ | `web/cards.html`、`server/cards/` |
+| 旧 Web 播放器 + 调试时间轴 | 已移除 | 用户指定使用本地技术 DEMO；后端回放接口仍保留 |
 | 生图 / TTS | 🔌 预留：插件 kind `image` / `tts`、`SAY.voice`、工具 `generate_image` / `speak`（引擎驳回为 reserved） | `server/plugins/kinds.py` |
 | Live2D | 🔌 预留：`SPRITE.kind = static\|live2d`、卡 `assets.live2d` | |
 | 剧本外新分支 / 新结局 | 🔌 预留：`propose_branch` / `request_ending` 记录并驳回；`END` 只由导演 / 剧本发出 | |
@@ -70,4 +74,4 @@ python -m pytest -q            # 全部 Python 测试（正式剧本在场时多
 - 没用真模型跑过评测集（PLAN §19.2）：需要 key，按约定先征得同意再跑。
 - 换卡演绎是"开局后台分段生成 + 本机缓存"，第一次开新卡的头几句可能要等几秒。
 - 灵枢插件在本机需先配好灵枢自身的身份 / 令牌；没配时用本地记忆插件（`gallings.memory.local`）。
-- 前端是原生 JS，不区分 origin（玩家看不出哪句是 AI 即兴），区分只在时间轴。
+- 本地技术 DEMO 与后端尚未接入，不能把其画面试听视作 AI 会话联调完成。

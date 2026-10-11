@@ -1,4 +1,4 @@
-// 建卡页（PLAN §7.3）：描述 → AI 填卡 → 逐字段修改 → 引擎校验 → 启用。
+// 建卡页（PLAN §7.3）：描述 → AI 填卡 → 逐字段修改 → 校验 → 保存。
 "use strict";
 const $ = (id) => document.getElementById(id);
 const ORDER = [
@@ -90,7 +90,9 @@ $("useBtn").onclick = async () => {
   try { c = collect(); } catch (e) { showFindings([{ level: "error", field: "JSON", message: e.message }]); return; }
   const r = await (await fetch("/api/cards", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(c) })).json();
   if (!r.ok) { showFindings(r.findings || [{ level: "error", field: "保存", message: r.error }]); return; }
-  location.href = `/?card=${encodeURIComponent(r.id)}&mode=ai`;
+  card = c;
+  readOnly = false;
+  $("status").textContent = `角色卡已保存：${r.id}`;
 };
 
 init();

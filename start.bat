@@ -36,11 +36,11 @@ if not exist "content\scripts\ch01\ch01.md" goto :nocontent
 
 if "%GALLINGS_LLM_API_KEY%"=="" (
   echo.
-  echo 没有设置 GALLINGS_LLM_API_KEY：不填只能玩纯选项模式。key 只在这次运行里有效，不会写进任何文件。
+  echo 没有设置 GALLINGS_LLM_API_KEY：不填则后端 AI 功能不可用。key 只在这次运行里有效，不会写进任何文件。
   set /p "GALLINGS_LLM_API_KEY=输入 DeepSeek API key（直接回车跳过）："
 )
 
-echo [4/4] 启动：浏览器会自动打开 http://127.0.0.1:8765/
+echo [4/4] 启动后端：浏览器将打开 API 文档 http://127.0.0.1:8765/docs
 "%VPY%" -m server
 goto :eof
 

@@ -2,9 +2,9 @@
 
 AI 驱动、角色卡驱动的 Galgame 后端引擎。剧本决定"发生什么"，角色卡决定"谁来演"，大模型以 agent 身份实时演出，确定性引擎负责校验、落账、存档与回放。
 
-**当前阶段：第一话 Demo 可运行**（Windows 双击 `start.bat`，说明见 [docs/demo.md](docs/demo.md)）。正式剧本与角色卡不在公开仓库里。
+**当前阶段：第一话后端会话能力已实现，旧版网页试玩已移除。** `start.bat` 启动后端服务并打开 API 文档，运行说明见 [docs/demo.md](docs/demo.md)。当前画面与配乐试玩采用项目成员提供的《海风与布丁 技术DEMO》本地包，该包尚未提交到仓库，也尚未接入本仓库后端。
 
-- Demo 运行与说明：[docs/demo.md](docs/demo.md)
+- 后端运行与试玩状态：[docs/demo.md](docs/demo.md)
 - 详细计划：[docs/PLAN.md](docs/PLAN.md)
 - 决策记录：[docs/decisions.md](docs/decisions.md)
 - 音乐方向与负责人：[docs/music-direction.md](docs/music-direction.md)
@@ -20,7 +20,7 @@ Demo：《海风与布丁》第一话「浅滩上的偶遇」。技术栈：Pyth
 | `compiler/` | 剧本编译器：Markdown → OP 程序 + 校验报告 |
 | `server/` | 导演、守卫、记忆网关、演绎层、事件记录与回放、HTTP/WS |
 | `plugins/builtin/` | 内置插件（模型、记忆、守卫、工具） |
-| `web/` | 播放器、调试时间轴、建卡页 |
+| `web/` | 建卡页与共享样式；旧播放器已移除 |
 | `schemas/` | 插件清单、角色卡、工具注册表 |
 | `tests/` | Rust 之外的全部测试；`fixtures/` 是原创迷你章节 |
 

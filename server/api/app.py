@@ -1,6 +1,6 @@
 """HTTP + WebSocket（PLAN §14.1）。只监听 127.0.0.1。
 
-- ``GET /``                         播放器（含调试时间轴）
+- ``GET /``                         跳转到 API 文档（旧播放器已移除）
 - ``GET /cards.html``               建卡页
 - ``WS  /ws?card=whale&mode=choice`` 一个连接 = 一个会话
 - ``/api/cards*``                   卡列表 / 读取 / 校验 / AI 填卡 / 保存
@@ -17,7 +17,7 @@ from pathlib import Path
 from typing import Any
 
 from fastapi import FastAPI, HTTPException, WebSocket, WebSocketDisconnect
-from fastapi.responses import FileResponse, JSONResponse, PlainTextResponse
+from fastapi.responses import FileResponse, JSONResponse, PlainTextResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 
 from server.cards import builder
@@ -46,8 +46,8 @@ def create_app(runtime: Runtime | None = None) -> FastAPI:
         return rt_holder["rt"]
 
     @app.get("/")
-    async def index() -> FileResponse:
-        return FileResponse(WEB / "index.html")
+    async def index() -> RedirectResponse:
+        return RedirectResponse(url="/docs")
 
     @app.get("/cards.html")
     async def cards_page() -> FileResponse:

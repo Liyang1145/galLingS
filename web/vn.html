@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="data:,">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>galLingS · 作品</title>
+<link rel="stylesheet" href="/static/style.css">
+<style id="soulCss"></style>
+</head>
+<body class="player chrome vnpage">
+<header class="topbar">
+  <div class="brand"><a href="/" title="回到 AI 剧本 Demo"><b>galLingS</b></a><span id="chapterTitle"></span></div>
+  <div class="tb-group" role="group" aria-label="游戏">
+    <button id="saveBtn" class="ib" title="存档"><i>💾</i><span>存档</span></button>
+    <button id="loadBtn" class="ib" title="读档"><i>📂</i><span>读档</span></button>
+    <button id="journalBtn" class="ib" title="手账（右侧栏）"><i>📒</i><span>手账</span><b class="dotnew" id="journalNew" hidden></b></button>
+    <button id="titleBtn" class="ib" title="回到标题画面"><i>⌂</i><span>标题</span></button>
+  </div>
+  <div class="tb-group" role="group" aria-label="作品">
+    <label class="tb-field" title="作品"><span>作品</span><select id="gameSel"></select></label>
+    <div class="seg" id="viewSeg">
+      <button data-view="win" class="on" title="窗口模式：手账在右侧栏">窗口</button>
+      <button data-view="full" title="全屏模式：手账在游戏里（按 Esc 回到窗口）">全屏</button>
+    </div>
+  </div>
+  <div class="tb-spacer"></div>
+  <div id="status" class="status"></div>
+  <button id="setBtn" class="ib" title="设置：模型、记忆、手账、游戏"><i>⚙</i><span>设置</span></button>
+</header>
+
+<main class="layout">
+  <section class="stage" id="stage">
+    <div class="screen" id="screen">
+      <iframe id="game" title="游戏" allow="fullscreen; autoplay"></iframe>
+      <div class="vn-empty" id="empty" hidden></div>
+    </div>
+  </section>
+  <aside class="timeline journal" id="journal">
+    <div class="tl-resizer" id="tlResizer" title="拖动调整宽度，双击恢复默认"></div>
+    <button class="j-close" id="jClose" title="收起手账（收起后手账回到游戏里）">✕</button>
+    <div id="soulDock"></div>
+  </aside>
+</main>
+
+<dialog id="setDlg">
+  <h3>设置</h3>
+  <div class="set-body">
+    <section>
+      <h4>模型 <small id="llmState"></small></h4>
+      <label class="set-row"><span>服务地址</span><input id="sBase" spellcheck="false" placeholder="https://api.deepseek.com"></label>
+      <label class="set-row"><span>模型</span><input id="sModel" spellcheck="false" placeholder="deepseek-chat"></label>
+      <label class="set-row"><span>API 密钥</span><input id="sKey" type="password" autocomplete="off" spellcheck="false"></label>
+      <div class="set-row"><span></span><small class="muted" id="keyHint"></small></div>
+      <div class="set-row"><span></span><button type="button" id="sTest">测试模型</button><small id="sTestOut" class="muted"></small></div>
+    </section>
+    <section>
+      <h4>记忆 <small id="memState"></small></h4>
+      <div class="set-row"><span>记忆底座</span><div class="seg" id="sMem"><button type="button" data-v="local">本地</button><button type="button" data-v="lingshu">灵枢 dsh-memory</button></div></div>
+      <label class="set-row" id="sDshRow"><span>dsh-memory 路径</span><input id="sDsh" spellcheck="false" placeholder="C:/path/to/dsh-memory"></label>
+    </section>
+    <section id="soulSec">
+      <h4>手账</h4>
+      <div id="gSoul"></div>
+      <div class="set-row"><span>她记得的事</span><small class="muted" id="memCount"></small><button type="button" id="sForget">全部遗忘</button></div>
+    </section>
+    <section>
+      <h4>游戏</h4>
+      <div id="gPrefs"></div>
+      <label class="set-row"><span>作品文件夹</span><input id="sGames" spellcheck="false" placeholder="默认：galLingS/content/vn"></label>
+    </section>
+  </div>
+  <div class="set-foot"><small class="muted" id="saveOut"></small><button type="button" id="sClose">关闭</button><button type="button" class="primary" id="sSave">保存</button></div>
+</dialog>
+
+<script src="/static/vn.js"></script>
+</body>
+</html>

@@ -7,6 +7,9 @@
 - ``/api/report``                   编译报告
 - ``/api/plugins``                  插件状态
 - ``/api/agent/*``                  外部 Agent 端口（预留，默认关闭）
+- ``GET /vn.html``                    作品页：玩 VN Studio 导出的游戏（窗口 / 全屏），手账停靠右侧栏
+- ``/vn/{作品}/…``、``/api/vn/games``  作品文件（vn.games_dir，默认 content/vn）
+- ``/api/settings``                 网页设置（模型 / 密钥 / 记忆底座），存 data_dir，改完重启插件
 - ``WS  /ws/soul?card=whale``         灵枢外部端口 vn-soul/1：外部前端（VN Studio）的手账记忆 / 悄悄话
 """
 from __future__ import annotations
@@ -50,6 +53,10 @@ def create_app(runtime: Runtime | None = None) -> FastAPI:
     @app.get("/")
     async def index() -> RedirectResponse:
         return RedirectResponse(url="/docs")
+
+    @app.get("/vn.html")
+    async def vn_page() -> FileResponse:
+        return FileResponse(WEB / "vn.html")
 
     @app.get("/cards.html")
     async def cards_page() -> FileResponse:
@@ -159,6 +166,47 @@ def create_app(runtime: Runtime | None = None) -> FastAPI:
             pass
         finally:
             await sess.close()
+
+    # ---------------------------------------------------------------- 作品（VN Studio 导出的游戏）+ 网页设置
+    @app.get("/api/vn/games")
+    async def vn_games() -> dict[str, Any]:
+        r = rt()
+        return {"dir": str(r.games_dir), "games": r.games()}
+
+    @app.get("/vn/{game}/{path:path}")
+    async def vn_file(game: str, path: str) -> FileResponse:
+        base = (rt().games_dir / game).resolve()
+        f = (base / (path or "index.html")).resolve()
+        if base not in f.parents and f != base or not f.is_file():
+            raise HTTPException(404)
+        return FileResponse(f)
+
+    @app.get("/api/settings")
+    async def get_settings() -> dict[str, Any]:
+        r = rt()
+        return {**r.settings.public(r.config, r.base_environ), "llm_ready": bool(r.llm_chain()),
+                "memory_ready": r.plugins.get("memory") is not None,
+                "failed": {k: v for k, v in r.plugins.failed().items()}}
+
+    @app.post("/api/settings")
+    async def post_settings(body: dict[str, Any]) -> dict[str, Any]:
+        r = rt()
+        r.settings.save(body)
+        await r.reload_plugins()
+        return await get_settings()
+
+    @app.post("/api/settings/test")
+    async def test_llm() -> dict[str, Any]:
+        """用当前设置真调一次模型：回一句话就算通。"""
+        from server.director.llm import complete
+        r = rt()
+        if not r.llm_chain():
+            return {"ok": False, "message": "没有可用的模型（没填密钥，或插件没启动）"}
+        try:
+            res = await complete(r.llm_chain(), [{"role": "user", "content": "只回复两个字：在呢"}], timeout=20, max_tokens=10)
+        except Exception as e:  # noqa: BLE001
+            return {"ok": False, "message": str(e)[:200]}
+        return {"ok": bool(res.text.strip()), "message": res.text.strip()[:40] or "模型没有回复"}
 
     # ---------------------------------------------------------------- 灵枢外部端口（VN Studio 手账）
     @app.websocket("/ws/soul")

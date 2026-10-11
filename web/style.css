@@ -256,3 +256,44 @@ dialog .entry { background: #fffaf0; border-left: 3px solid #e7c58a; padding: 10
 html:has(body.chrome) { background: #e3f1fc; }
 .cards-page .topbar { position: sticky; top: 0; }
 .cards-page .panel:first-child, .cards-page .panel:last-child { top: 68px; }
+
+/* ================= 作品页 vn.html：游戏嵌在 16:9 画面里，右侧栏是手账 ================= */
+.vnpage .screen iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: #000; display: block; }
+.vnpage .screen:fullscreen { width: 100vw; height: 100vh; aspect-ratio: auto; border-radius: 0; box-shadow: none; background: #000; }
+.vnpage .vn-empty { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 30px; text-align: center; color: #e8f2fb; background: #0b1424; line-height: 1.8; }
+.vnpage .vn-empty code { background: #ffffff1a; padding: 1px 6px; border-radius: 4px; }
+.vnpage .brand a { text-decoration: none; }
+.vnpage .ib { position: relative; }
+.vnpage .ib:disabled { opacity: .45; }
+.vnpage .dotnew { position: absolute; top: 4px; right: 4px; width: 8px; height: 8px; border-radius: 50%; background: #e2725b; }
+.vnpage .ldot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #9db3c8; margin-right: 4px; vertical-align: 0; }
+.vnpage .ldot.ok { background: #3fb37a; } .vnpage .ldot.bad { background: #e2725b; } .vnpage .ldot.wait { background: #e6c14d; }
+.vnpage { --tlw: clamp(340px, 28vw, 480px); }
+.vnpage .journal { background: #f3e9d4; min-width: 300px; }
+.vnpage .journal #soulDock { flex: 1; min-height: 0; }
+.vnpage .j-close { position: absolute; top: 12px; right: 12px; z-index: 3; width: 30px; height: 30px; border-radius: 50%; border: 1px solid #d9c7a6; background: #fffaf0cc; color: #8a6b55; cursor: pointer; font-size: 13px; }
+.vnpage .j-close:hover { background: #fff; }
+/* 设置对话框 */
+.vnpage #setDlg { width: min(640px, 94vw); max-height: 88vh; padding: 0; color: var(--c-ink); border: 1px solid var(--c-line); }
+.vnpage #setDlg h3 { margin: 0; padding: 16px 22px 10px; font-size: 18px; border-bottom: 1px solid var(--c-line); background: var(--c-bar); }
+.vnpage .set-body { padding: 6px 22px 10px; overflow-y: auto; max-height: calc(88vh - 120px); }
+.vnpage .set-body section { padding: 12px 0; border-bottom: 1px dashed var(--c-line); }
+.vnpage .set-body section:last-child { border-bottom: 0; }
+.vnpage .set-body h4 { margin: 0 0 10px; font-size: 15px; display: flex; align-items: baseline; gap: 10px; }
+.vnpage .set-body h4 small { font-size: 12px; font-weight: 400; }
+.vnpage .set-body h4 small.ok { color: #2e9b66; } .vnpage .set-body h4 small.bad { color: #c0583f; }
+.vnpage .set-row { display: flex; align-items: center; gap: 10px; margin: 8px 0; min-height: 32px; }
+.vnpage .set-row[hidden] { display: none; }
+.vnpage .set-row > span { width: 110px; flex: none; color: var(--c-ink2); font-size: 13.5px; }
+.vnpage .set-row input:not([type=range]) { flex: 1; height: 32px; padding: 0 10px; border: 1px solid var(--c-line); border-radius: 8px; background: #fbfdff; font-size: 14px; color: var(--c-ink); }
+.vnpage .set-row input:focus { outline: none; border-color: var(--c-acc); box-shadow: 0 0 0 3px rgba(61,154,214,.18); }
+.vnpage .set-row input[type=range] { flex: 1; accent-color: var(--c-acc); }
+.vnpage .set-row .rv { width: 40px; text-align: right; }
+.vnpage .set-row button, .vnpage .set-foot button { height: 32px; padding: 0 14px; border-radius: 8px; border: 1px solid var(--c-line); background: #fff; color: var(--c-ink); font-size: 13.5px; cursor: pointer; white-space: nowrap; }
+.vnpage .set-row .seg button { border: 0; border-radius: 0; background: transparent; height: 30px; }
+.vnpage .set-row .seg button.on { background: linear-gradient(180deg, #5fb3e6, var(--c-acc)); color: #fff; }
+.vnpage .set-foot { display: flex; align-items: center; gap: 8px; padding: 12px 22px; border-top: 1px solid var(--c-line); background: #f7fbff; }
+.vnpage .set-foot .muted { flex: 1; }
+.vnpage .set-foot .primary { background: linear-gradient(180deg, #5fb3e6, var(--c-acc)); color: #fff; border: 0; }
+.vnpage .muted { color: var(--c-ink2); font-size: 12.5px; line-height: 1.5; }
+@media (max-width: 900px) { .vnpage .journal { position: absolute; right: 0; top: 0; bottom: 0; z-index: 10; width: min(92vw, var(--tlw)); box-shadow: -10px 0 30px rgba(0,0,0,.35); } }

@@ -34,13 +34,18 @@ if errorlevel 1 (
 
 if not exist "content\scripts\ch01\ch01.md" goto :nocontent
 
+rem 已经在作品页 ⚙ 设置里保存过密钥，就不用每次再问
+if exist "%USERPROFILE%\.gallings\secrets.json" goto :start
 if "%GALLINGS_LLM_API_KEY%"=="" (
   echo.
   echo 没有设置 GALLINGS_LLM_API_KEY：不填则后端 AI 功能不可用。key 只在这次运行里有效，不会写进任何文件。
+  echo 也可以以后在 作品页 右上角 ⚙ 设置 里填，填一次就记住（只存在本机）。
   set /p "GALLINGS_LLM_API_KEY=输入 DeepSeek API key（直接回车跳过）："
 )
 
-echo [4/4] 启动后端：浏览器将打开 API 文档 http://127.0.0.1:8765/docs
+:start
+
+echo [4/4] 启动后端：content\vn 里有作品时浏览器打开作品页 http://127.0.0.1:8765/vn.html ，否则打开 API 文档 /docs
 "%VPY%" -m server
 goto :eof
 

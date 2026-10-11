@@ -56,9 +56,16 @@ class SoulSession:
         self.name = (self.card.get("identity") or {}).get("name") or card_id
         self.sprites = list((self.card.get("assets") or {}).get("sprites") or [])
         self.guard = TextGuard(self.card)
-        self.memory: MemoryPlugin | None = rt.plugins.get("memory")
-        self.llm = rt.llm_chain()
         self.send = send
+
+    # 每次现取：网页里改了设置、插件重启后，已连着的手账马上用上新模型
+    @property
+    def memory(self) -> MemoryPlugin | None:
+        return self.rt.plugins.get("memory")
+
+    @property
+    def llm(self) -> list[Any]:
+        return self.rt.llm_chain()
 
     def stage(self) -> int:
         """手账在剧情之外：用卡里女主对玩家的最高称呼阶段，免得守卫误拦后期称呼。"""

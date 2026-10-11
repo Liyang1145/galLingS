@@ -1,16 +1,29 @@
-"""python -m server → 启动本地后端并打开 API 文档。"""
+"""python -m server → 启动本地后端；有作品时打开作品页，否则打开 API 文档。"""
 from __future__ import annotations
 
 import argparse
 import logging
+import os
 import sys
 import threading
 import webbrowser
+from pathlib import Path
 
 import uvicorn
 
 from .api.app import create_app
-from .runtime import load_config
+from .runtime import ROOT, load_config
+from .settings_store import SettingsStore
+
+
+def _has_games(cfg: dict) -> bool:
+    """作品文件夹（content/vn 或网页设置里改过的）里有没有 VN Studio 导出的游戏。"""
+    srv = cfg.get("server") or {}
+    data_dir = Path(os.path.expanduser(str(srv.get("data_dir", "~/.gallings"))))
+    vn = SettingsStore(data_dir).overlay(cfg).get("vn") or {}
+    d = Path(os.path.expanduser(str(vn.get("games_dir") or "content/vn")))
+    d = d if d.is_absolute() else ROOT / d
+    return d.is_dir() and any((p / "index.html").is_file() for p in d.iterdir())
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -25,7 +38,7 @@ def main(argv: list[str] | None = None) -> int:
     srv = cfg.get("server") or {}
     host = srv.get("host", "127.0.0.1")
     port = a.port or int(srv.get("port", 8765))
-    url = f"http://{host}:{port}/docs"
+    url = f"http://{host}:{port}" + ("/vn.html" if _has_games(cfg) else "/docs")
     print(f"galLingS 已启动：{url}")
     if not a.no_browser:
         threading.Timer(1.5, lambda: webbrowser.open(url)).start()

@@ -36,4 +36,4 @@ python -m pytest            # 灵枢集成测试需设 GALLINGS_TEST_DSH=<dsh-me
 
 ## 素材库
 
-《海风与布丁》的背景素材、预览和命名约定见 [素材库](content/assets/README.md)，当前收录浅滩、书房和甜品店三张白天背景。
+《海风与布丁》的背景素材、预览和命名约定见 [素材库](content/assets/README.md)，当前收录 11 张背景，覆盖浅滩时段差分、书房、甜品店、营地、集市、院子与深海珊瑚礁。

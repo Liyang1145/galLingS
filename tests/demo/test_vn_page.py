@@ -1,6 +1,8 @@
 """作品页：作品列表 / 作品文件（防目录穿越）/ 网页设置（密钥只回末 4 位、存本机、改完插件重启）。"""
 from __future__ import annotations
 
+import os
+
 from fastapi.testclient import TestClient
 
 from server.api.app import create_app
@@ -39,7 +41,8 @@ def test_settings_roundtrip(tmp_path, mini_dir, monkeypatch):
         r = c.post("/api/settings", json={"llm": {"base_url": "http://127.0.0.1:9", "model": "m1", "api_key": "sk-abcdef123456"}}).json()
         assert r["llm"]["model"] == "m1" and r["llm"]["key_tail"] == "3456" and "sk-abc" not in str(r)
         assert r["llm_ready"]  # 有密钥后 openai-compat 插件能启动
-        assert (rt.data_dir / "secrets.json").stat().st_mode & 0o777 == 0o600
+        if os.name != "nt":  # Windows 没有 POSIX 权限位，600 只在 Linux/macOS 上检查
+            assert (rt.data_dir / "secrets.json").stat().st_mode & 0o777 == 0o600
         r = c.post("/api/settings", json={"llm": {"api_key": ""}}).json()  # 清除
         assert r["llm"]["key_set"] is False
 

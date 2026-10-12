@@ -1,5 +1,5 @@
 {
-  "version": "1.1",
+  "version": "1.2",
   "built_on": "2026-10-12",
   "base_author": "LarryE135",
   "story_lines": 3308,
@@ -797,7 +797,7 @@
     },
     "sfx_s06_pen_writing_v01": {
       "ambient_lines": 0,
-      "action_cues": 2
+      "action_cues": 3
     },
     "sfx_s07_notebook_close_v01": {
       "ambient_lines": 0,
@@ -963,6 +963,13 @@
       "asset_id": "sfx_s04_tail_flattens_water_v01",
       "reason": "替换原拍水占位音效",
       "text": "（尾鳍拍水一下。）"
+    },
+    {
+      "index": 230,
+      "line_id": "thmholt2",
+      "asset_id": "sfx_s06_pen_writing_v01",
+      "reason": "开始一笔一画写字，替换旧叮声",
+      "text": "然后低下头，一笔一画地开始写。"
     },
     {
       "index": 250,
@@ -1623,6 +1630,650 @@
     "原动作声音中海浪、篝火、心跳改为持续环境轨；尾鳍微表情不逐句发声。",
     "保留原剧本、画面、分支、变量及行标识；仅调整声音字段和播放器音频控制。",
     "环境循环使用首尾交叉混合；主曲保持原 MP3 整曲循环，尚未编辑无缝音乐循环点。",
-    "v1.1：角色曲开始时不再切入 A04，保持常规潮声连续播放；A04 仅供试听。"
+    "v1.1：角色曲开始时不再切入 A04，保持常规潮声连续播放；A04 仅供试听。",
+    "v1.2：停用剩余 8 类、61 处旧占位音效，旧 18 个音频从播放素材表撤出。新增一处现有笔尖书写素材，缺失真实动作音效留白。"
+  ],
+  "disabled_legacy_assets": [
+    {
+      "id": "ylw9jl4p",
+      "name": "SE_入水",
+      "archive_path": "assets/se/SE_入水.mp3"
+    },
+    {
+      "id": "trn6d3es",
+      "name": "SE_叮",
+      "archive_path": "assets/se/SE_叮.mp3"
+    },
+    {
+      "id": "ryix8t8e",
+      "name": "SE_尾鳍",
+      "archive_path": "assets/se/SE_尾鳍.mp3"
+    },
+    {
+      "id": "i3bpdl93",
+      "name": "SE_开门",
+      "archive_path": "assets/se/SE_开门.mp3"
+    },
+    {
+      "id": "l9by9rac",
+      "name": "SE_心跳",
+      "archive_path": "assets/se/SE_心跳.mp3"
+    },
+    {
+      "id": "9o1oexdo",
+      "name": "SE_拍水",
+      "archive_path": "assets/se/SE_拍水.mp3"
+    },
+    {
+      "id": "6k9gr02q",
+      "name": "SE_撞击",
+      "archive_path": "assets/se/SE_撞击.mp3"
+    },
+    {
+      "id": "k9uxngfm",
+      "name": "SE_气泡",
+      "archive_path": "assets/se/SE_气泡.mp3"
+    },
+    {
+      "id": "7dm5kdqa",
+      "name": "SE_海浪",
+      "archive_path": "assets/se/SE_海浪.mp3"
+    },
+    {
+      "id": "n8jcsibf",
+      "name": "SE_海鸥",
+      "archive_path": "assets/se/SE_海鸥.mp3"
+    },
+    {
+      "id": "6dpn4go8",
+      "name": "SE_煎锅",
+      "archive_path": "assets/se/SE_煎锅.mp3"
+    },
+    {
+      "id": "ra9p2hj1",
+      "name": "SE_电话铃",
+      "archive_path": "assets/se/SE_电话铃.mp3"
+    },
+    {
+      "id": "hbv4fpl9",
+      "name": "SE_碗勺",
+      "archive_path": "assets/se/SE_碗勺.mp3"
+    },
+    {
+      "id": "mvac8s3q",
+      "name": "SE_篝火",
+      "archive_path": "assets/se/SE_篝火.mp3"
+    },
+    {
+      "id": "5845dcg1",
+      "name": "SE_翻页",
+      "archive_path": "assets/se/SE_翻页.mp3"
+    },
+    {
+      "id": "xb2x0j2g",
+      "name": "SE_脚步",
+      "archive_path": "assets/se/SE_脚步.mp3"
+    },
+    {
+      "id": "uihep4jc",
+      "name": "SE_跳",
+      "archive_path": "assets/se/SE_跳.mp3"
+    },
+    {
+      "id": "tmd6bfiv",
+      "name": "SE_风铃",
+      "archive_path": "assets/se/SE_风铃.mp3"
+    }
+  ],
+  "disabled_legacy_cues": [
+    {
+      "index": 17,
+      "line_id": "4my5piai",
+      "chapter": "第一话",
+      "asset_id": "trn6d3es",
+      "name": "SE_叮",
+      "text": "一只手接住了它。",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 33,
+      "line_id": "vo6wamvr",
+      "chapter": "第一话",
+      "asset_id": "5845dcg1",
+      "name": "SE_翻页",
+      "text": "她单手翻开笔记本，扫了一眼里面密密麻麻的字。",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 103,
+      "line_id": "ottic25f",
+      "chapter": "第一话",
+      "asset_id": "trn6d3es",
+      "name": "SE_叮",
+      "text": "她哼了一声，把剩下的半块糍粑掰成两半。",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 115,
+      "line_id": "fcuozeol",
+      "chapter": "第一话",
+      "asset_id": "uihep4jc",
+      "name": "SE_跳",
+      "text": "她整个人像被噎了一下。耳鳍都立了起来。",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 134,
+      "line_id": "m2b0jpcs",
+      "chapter": "第一话",
+      "asset_id": "5845dcg1",
+      "name": "SE_翻页",
+      "text": "我翻开笔记本新的一页，写下今天的日期。",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 149,
+      "line_id": "wanvxgpm",
+      "chapter": "第一话",
+      "asset_id": "trn6d3es",
+      "name": "SE_叮",
+      "text": "还温着。",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 174,
+      "line_id": "dchi3kli",
+      "chapter": "第二话",
+      "asset_id": "uihep4jc",
+      "name": "SE_跳",
+      "text": "她整个人像被点了穴。",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 213,
+      "line_id": "41eae4tv",
+      "chapter": "第二话",
+      "asset_id": "uihep4jc",
+      "name": "SE_跳",
+      "text": "她的耳朵以肉眼可见的速度红透。",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 230,
+      "line_id": "thmholt2",
+      "chapter": "第二话",
+      "asset_id": "trn6d3es",
+      "name": "SE_叮",
+      "text": "然后低下头，一笔一画地开始写。",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 321,
+      "line_id": "dq6kwkvc",
+      "chapter": "第二话",
+      "asset_id": "5845dcg1",
+      "name": "SE_翻页",
+      "text": "我翻开笔记本，契约那一页的最下方，多了一行不是她写的、也不是我写的字。",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 416,
+      "line_id": "6kx65iqy",
+      "chapter": "第三话",
+      "asset_id": "6k9gr02q",
+      "name": "SE_撞击",
+      "text": "手腕被抓住了。",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 431,
+      "line_id": "u0r7llgc",
+      "chapter": "第三话",
+      "asset_id": "trn6d3es",
+      "name": "SE_叮",
+      "text": "她仰着头，蓝黑色的长发在水里散开。",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 498,
+      "line_id": "vj4hequ9",
+      "chapter": "第三话",
+      "asset_id": "5845dcg1",
+      "name": "SE_翻页",
+      "text": "深夜。我翻开笔记本。",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 564,
+      "line_id": "t62nb5w5",
+      "chapter": "第四话",
+      "asset_id": "uihep4jc",
+      "name": "SE_跳",
+      "text": "然后，整条尾巴翘了起来，耳朵都立正了。",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 580,
+      "line_id": "ul895at2",
+      "chapter": "第四话",
+      "asset_id": "6k9gr02q",
+      "name": "SE_撞击",
+      "text": "话音刚落，她突然停住。",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 588,
+      "line_id": "hz0fv6l5",
+      "chapter": "第四话",
+      "asset_id": "uihep4jc",
+      "name": "SE_跳",
+      "text": "她噎住了。",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 619,
+      "line_id": "g6qp0nuq",
+      "chapter": "第四话",
+      "asset_id": "trn6d3es",
+      "name": "SE_叮",
+      "text": "她忽然把手链摘下来，递给我。",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 704,
+      "line_id": "4w6hutq0",
+      "chapter": "第五话",
+      "asset_id": "trn6d3es",
+      "name": "SE_叮",
+      "text": "明月不解人间意，",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 809,
+      "line_id": "u6kl3s5c",
+      "chapter": "第六话",
+      "asset_id": "6k9gr02q",
+      "name": "SE_撞击",
+      "text": "——然后，整条尾巴炸了起来。",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 825,
+      "line_id": "7oc5875s",
+      "chapter": "第六话",
+      "asset_id": "trn6d3es",
+      "name": "SE_叮",
+      "text": "",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 894,
+      "line_id": "02nrzcq0",
+      "chapter": "第六话",
+      "asset_id": "5845dcg1",
+      "name": "SE_翻页",
+      "text": "我翻开笔记本，写下今晚的条目。",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 986,
+      "line_id": "bty9f3xg",
+      "chapter": "第七话",
+      "asset_id": "uihep4jc",
+      "name": "SE_跳",
+      "text": "她的眼睛立刻亮了。",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 1021,
+      "line_id": "s1bpze24",
+      "chapter": "第七话",
+      "asset_id": "trn6d3es",
+      "name": "SE_叮",
+      "text": "远处海面，一群海豚跃出水面。",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 1156,
+      "line_id": "d7fh1lq0",
+      "chapter": "第七话",
+      "asset_id": "xb2x0j2g",
+      "name": "SE_脚步",
+      "text": "回来的时候，脚步比平时慢。",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 1264,
+      "line_id": "poe8rqp8",
+      "chapter": "第八话",
+      "asset_id": "trn6d3es",
+      "name": "SE_叮",
+      "text": "两层。白墙。蓝色的屋顶。院子里一棵不知名的树，树下挂着一副秋千。",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 1400,
+      "line_id": "6f5ujm37",
+      "chapter": "第八话",
+      "asset_id": "hbv4fpl9",
+      "name": "SE_碗勺",
+      "text": "饭后，她抱着酸梅汤，忽然把勺子一放。",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 1418,
+      "line_id": "7e3q0223",
+      "chapter": "第八话",
+      "asset_id": "5845dcg1",
+      "name": "SE_翻页",
+      "text": "我翻开本子，一条条记。",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 1443,
+      "line_id": "cbwd0bo9",
+      "chapter": "第八话",
+      "asset_id": "hbv4fpl9",
+      "name": "SE_碗勺",
+      "text": "她说到这里，忽然反应过来什么，抄起勺子指着我。",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 1506,
+      "line_id": "hyvw4wnl",
+      "chapter": "第九话",
+      "asset_id": "trn6d3es",
+      "name": "SE_叮",
+      "text": "一把抢过我手里的手机。",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 1682,
+      "line_id": "zdagiim5",
+      "chapter": "第十话",
+      "asset_id": "5845dcg1",
+      "name": "SE_翻页",
+      "text": "第四夜。我翻开笔记本。",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 1711,
+      "line_id": "ol75qhi8",
+      "chapter": "第十话",
+      "asset_id": "trn6d3es",
+      "name": "SE_叮",
+      "text": "然后，手腕被抓住了。",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 1713,
+      "line_id": "2huzgcwc",
+      "chapter": "第十话",
+      "asset_id": "6k9gr02q",
+      "name": "SE_撞击",
+      "text": "蓝色的光，从很远的地方，撞进我熄下去的眼睛里。",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 1720,
+      "line_id": "flf4jvw6",
+      "chapter": "第十一话",
+      "asset_id": "6k9gr02q",
+      "name": "SE_撞击",
+      "text": "冲出水面的一瞬，我呛出了半辈子的水。",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 1754,
+      "line_id": "c89jp58m",
+      "chapter": "第十一话",
+      "asset_id": "uihep4jc",
+      "name": "SE_跳",
+      "text": "她猛地抬起头，眼睛通红，下巴抬得老高。",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 1814,
+      "line_id": "zhfirfxi",
+      "chapter": "第十一话",
+      "asset_id": "trn6d3es",
+      "name": "SE_叮",
+      "text": "",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 1882,
+      "line_id": "qo7o3n0x",
+      "chapter": "第十二话",
+      "asset_id": "xb2x0j2g",
+      "name": "SE_脚步",
+      "text": "她的脚步，猛地一顿。",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 1896,
+      "line_id": "w4krj3id",
+      "chapter": "第十二话",
+      "asset_id": "6k9gr02q",
+      "name": "SE_撞击",
+      "text": "她的架势瞬间破了功，整张脸腾地红透，用力甩了一下尾巴，拍开我的手。",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 2019,
+      "line_id": "oyyyug02",
+      "chapter": "第十二话",
+      "asset_id": "trn6d3es",
+      "name": "SE_叮",
+      "text": "她在柜台上站起来，张开手臂，尾巴在身后展开成一面蓝色的帆。",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 2216,
+      "line_id": "wt13b21i",
+      "chapter": "第十三话",
+      "asset_id": "trn6d3es",
+      "name": "SE_叮",
+      "text": "两枚戒指躺在绒布上。天青色，一对，安静地泛着光。",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 2243,
+      "line_id": "kv59mwip",
+      "chapter": "第十三话",
+      "asset_id": "6dpn4go8",
+      "name": "SE_煎锅",
+      "text": "第二日。香煎鱼排——带鱼切段，姜葱料酒去腥，豆豉剁碎炒香，少糖提鲜。",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 2285,
+      "line_id": "e9x3objn",
+      "chapter": "第十三话",
+      "asset_id": "6k9gr02q",
+      "name": "SE_撞击",
+      "text": "正撞上我在看她。",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 2346,
+      "line_id": "davcm8sv",
+      "chapter": "第十四话",
+      "asset_id": "6k9gr02q",
+      "name": "SE_撞击",
+      "text": "然后，她一把拍开了我的手。",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 2348,
+      "line_id": "i0gqucqt",
+      "chapter": "第十四话",
+      "asset_id": "trn6d3es",
+      "name": "SE_叮",
+      "text": "「什么叫做房贷是个玩笑——」",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 2380,
+      "line_id": "9e5ksanc",
+      "chapter": "第十四话",
+      "asset_id": "xb2x0j2g",
+      "name": "SE_脚步",
+      "text": "她脚步慢了下来。",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 2421,
+      "line_id": "h1jytzhq",
+      "chapter": "第十四话",
+      "asset_id": "trn6d3es",
+      "name": "SE_叮",
+      "text": "『上一次，她也是这样走的。』",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 2500,
+      "line_id": "xw6hfdoy",
+      "chapter": "第十四话",
+      "asset_id": "6dpn4go8",
+      "name": "SE_煎锅",
+      "text": "晚饭。香煎带鱼。",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 2516,
+      "line_id": "lnq83pc4",
+      "chapter": "第十四话",
+      "asset_id": "5845dcg1",
+      "name": "SE_翻页",
+      "text": "",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 2535,
+      "line_id": "jmp50q6t",
+      "chapter": "第十五话",
+      "asset_id": "6dpn4go8",
+      "name": "SE_煎锅",
+      "text": "今天的早餐，是她定的——海鲜粥、香煎贝肉、凉拌海藻。",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 2564,
+      "line_id": "v7tq9aph",
+      "chapter": "第十五话",
+      "asset_id": "5845dcg1",
+      "name": "SE_翻页",
+      "text": "她的那本，封皮『不许多看』。今天翻开，第一页多了个新栏目——",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 2569,
+      "line_id": "y6711tev",
+      "chapter": "第十五话",
+      "asset_id": "6dpn4go8",
+      "name": "SE_煎锅",
+      "text": "『三个新菜的味道勉强及格。香煎鱼排可以再咸一点。』",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 2685,
+      "line_id": "n6zy48cd",
+      "chapter": "第十五话",
+      "asset_id": "i3bpdl93",
+      "name": "SE_开门",
+      "text": "门开了。",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 2693,
+      "line_id": "c5l6ebj7",
+      "chapter": "第十五话",
+      "asset_id": "trn6d3es",
+      "name": "SE_叮",
+      "text": "她踮起脚。",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 2730,
+      "line_id": "46yst21x",
+      "chapter": "第十五话",
+      "asset_id": "xb2x0j2g",
+      "name": "SE_脚步",
+      "text": "她往卧室走的脚步，猛地停住了。",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 2932,
+      "line_id": "o7r4je26",
+      "chapter": "第十六话",
+      "asset_id": "trn6d3es",
+      "name": "SE_叮",
+      "text": "月光下，她把银链戴在脖子上。",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 3012,
+      "line_id": "vp5098y4",
+      "chapter": "番外一",
+      "asset_id": "uihep4jc",
+      "name": "SE_跳",
+      "text": "她把纸抢回去了。",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 3029,
+      "line_id": "oiuiuiu0",
+      "chapter": "番外一",
+      "asset_id": "trn6d3es",
+      "name": "SE_叮",
+      "text": "「看什么看！」",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 3081,
+      "line_id": "fnn4g3g4",
+      "chapter": "番外一",
+      "asset_id": "trn6d3es",
+      "name": "SE_叮",
+      "text": "于是，集市上出现了这样的画面——",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 3089,
+      "line_id": "ct7ajc97",
+      "chapter": "番外一",
+      "asset_id": "xb2x0j2g",
+      "name": "SE_脚步",
+      "text": "她的脚步，钉在了原地。",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 3238,
+      "line_id": "8r5v7gpa",
+      "chapter": "番外二",
+      "asset_id": "6k9gr02q",
+      "name": "SE_撞击",
+      "text": "力道很轻。",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 3267,
+      "line_id": "hrcbxp2r",
+      "chapter": "番外二",
+      "asset_id": "trn6d3es",
+      "name": "SE_叮",
+      "text": "灯捻小了一半。",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    },
+    {
+      "index": 3292,
+      "line_id": "b1177cjn",
+      "chapter": "番外二",
+      "asset_id": "5845dcg1",
+      "name": "SE_翻页",
+      "text": "我翻开笔记本，把昨天的日记，用暗号写：",
+      "reason": "停用旧占位音效；必要动作缺素材时留白，表情或抽象提示不补声。"
+    }
   ]
 }

@@ -43,3 +43,5 @@ python -m pytest            # 灵枢集成测试需设 GALLINGS_TEST_DSH=<dsh-me
 音效素材：已收录 15 个环境音和 18 个剧情音效，索引见 [音效素材库](content/assets/audio/sfx/README.md)。
 
 当前整合试玩：[LarryE 技术 DEMO](previews/larry-tech-demo/README.md)，完整十六话及两篇番外，含《翡翠之梦》主曲、32 个音效来源的场景接入及全部素材试听。
+
+音效待补：[缺失音效表](docs/sfx-gap-list.md)。当前试玩已停用原 DEMO 全部旧占位音效，必要动作缺素材时留白。

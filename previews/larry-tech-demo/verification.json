@@ -1,6 +1,6 @@
 [
   {
-    "version": "1.1",
+    "version": "1.2",
     "file": "游戏文件夹\\index.html",
     "playable": true,
     "story_lines": 3308,
@@ -11,6 +11,9 @@
     "music_and_ambience_continue": true,
     "role_theme_keeps_normal_waves": true,
     "a04_music_overlay_excluded_from_all_scenes": true,
+    "legacy_placeholder_assets_removed_from_playback": 18,
+    "legacy_placeholder_cues_checked": 61,
+    "supplied_writing_sound_replaces_ding": true,
     "three_volume_controls": true,
     "save_load_elapsed_audio": true,
     "load_does_not_replay_action_sounds": true,
@@ -27,8 +30,8 @@
     "external_requests": []
   },
   {
-    "version": "1.1",
-    "file": "海风与布丁_LarryE_DEMO_音乐音效整合版_v1.1.html",
+    "version": "1.2",
+    "file": "海风与布丁_LarryE_DEMO_音乐音效整合版_v1.2.html",
     "playable": true,
     "story_lines": 3308,
     "chapters": 18,
@@ -38,6 +41,9 @@
     "music_and_ambience_continue": true,
     "role_theme_keeps_normal_waves": true,
     "a04_music_overlay_excluded_from_all_scenes": true,
+    "legacy_placeholder_assets_removed_from_playback": 18,
+    "legacy_placeholder_cues_checked": 0,
+    "supplied_writing_sound_replaces_ding": false,
     "three_volume_controls": true,
     "save_load_elapsed_audio": true,
     "load_does_not_replay_action_sounds": true,

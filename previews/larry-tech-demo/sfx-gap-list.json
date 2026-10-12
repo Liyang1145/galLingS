@@ -1,0 +1,253 @@
+{
+  "version": "1.2",
+  "updated": "2026-10-12",
+  "legacy_audio_provenance": "原DEMO提供预制MP3，未提供生成脚本；按用户要求停用旧占位音效。",
+  "disabled_old_types": [
+    {
+      "name": "SE_叮",
+      "count": 22
+    },
+    {
+      "name": "SE_翻页",
+      "count": 10
+    },
+    {
+      "name": "SE_跳",
+      "count": 8
+    },
+    {
+      "name": "SE_撞击",
+      "count": 9
+    },
+    {
+      "name": "SE_脚步",
+      "count": 5
+    },
+    {
+      "name": "SE_碗勺",
+      "count": 2
+    },
+    {
+      "name": "SE_煎锅",
+      "count": 4
+    },
+    {
+      "name": "SE_开门",
+      "count": 1
+    }
+  ],
+  "disabled_old_cues": 61,
+  "disabled_old_assets": 18,
+  "gaps": [
+    {
+      "id": "sfx_s18_notebook_page_turn_v01",
+      "title": "笔记本翻开／纸页轻翻",
+      "priority": "优先",
+      "duration": "0.5–2 秒",
+      "scene": "第1、2、3、6、8、10、14、15话及番外2，翻开笔记本",
+      "requirements": "近距离、薄纸与软封皮；轻而干净，提供翻开和单页翻动两种；不要带叮声、旋律或夸张重音。",
+      "status": "缺专用素材，10处原占位已停用",
+      "references": [
+        {
+          "index": 33,
+          "line_id": "vo6wamvr",
+          "chapter": "第一话",
+          "text": "她单手翻开笔记本，扫了一眼里面密密麻麻的字。"
+        },
+        {
+          "index": 134,
+          "line_id": "m2b0jpcs",
+          "chapter": "第一话",
+          "text": "我翻开笔记本新的一页，写下今天的日期。"
+        },
+        {
+          "index": 321,
+          "line_id": "dq6kwkvc",
+          "chapter": "第二话",
+          "text": "我翻开笔记本，契约那一页的最下方，多了一行不是她写的、也不是我写的字。"
+        },
+        {
+          "index": 498,
+          "line_id": "vj4hequ9",
+          "chapter": "第三话",
+          "text": "深夜。我翻开笔记本。"
+        },
+        {
+          "index": 894,
+          "line_id": "02nrzcq0",
+          "chapter": "第六话",
+          "text": "我翻开笔记本，写下今晚的条目。"
+        },
+        {
+          "index": 1418,
+          "line_id": "7e3q0223",
+          "chapter": "第八话",
+          "text": "我翻开本子，一条条记。"
+        },
+        {
+          "index": 1682,
+          "line_id": "zdagiim5",
+          "chapter": "第十话",
+          "text": "第四夜。我翻开笔记本。"
+        },
+        {
+          "index": 2516,
+          "line_id": "lnq83pc4",
+          "chapter": "第十四话",
+          "text": ""
+        },
+        {
+          "index": 2564,
+          "line_id": "v7tq9aph",
+          "chapter": "第十五话",
+          "text": "她的那本，封皮『不许多看』。今天翻开，第一页多了个新栏目——"
+        },
+        {
+          "index": 3292,
+          "line_id": "b1177cjn",
+          "chapter": "番外二",
+          "text": "我翻开笔记本，把昨天的日记，用暗号写："
+        }
+      ],
+      "suggested_filename": "sfx_s18_notebook_page_turn_v01.wav"
+    },
+    {
+      "id": "sfx_s19_wet_sand_footsteps_v01",
+      "title": "湿沙滩脚步",
+      "priority": "次优先",
+      "duration": "2–4 秒",
+      "scene": "第7话，送走海星后慢慢走回沙洲",
+      "requirements": "2–4步缓慢脚步，湿沙轻陷、少量水声；不要硬底鞋或拍子感。",
+      "status": "缺素材，先留白",
+      "references": [
+        {
+          "index": 1156,
+          "line_id": "d7fh1lq0",
+          "chapter": "第七话",
+          "text": "回来的时候，脚步比平时慢。"
+        }
+      ],
+      "suggested_filename": "sfx_s19_wet_sand_footsteps_v01.wav"
+    },
+    {
+      "id": "sfx_s20_stone_path_footsteps_v01",
+      "title": "集市石板路脚步",
+      "priority": "次优先",
+      "duration": "2–4 秒",
+      "scene": "第14话，集市争执后脚步慢下来",
+      "requirements": "轻步行逐渐放缓；能单独裁出停步；不要夸张鞋跟声。",
+      "status": "缺素材，先留白",
+      "references": [
+        {
+          "index": 2380,
+          "line_id": "9e5ksanc",
+          "chapter": "第十四话",
+          "text": "她脚步慢了下来。"
+        }
+      ],
+      "suggested_filename": "sfx_s20_stone_path_footsteps_v01.wav"
+    },
+    {
+      "id": "sfx_s21_bedroom_door_open_v01",
+      "title": "卧室木门轻开",
+      "priority": "次优先",
+      "duration": "0.5–2 秒",
+      "scene": "第15话，次日清晨她打开房门",
+      "requirements": "轻门把手、开门的短促木门声；不要惊悚吱呀或砰声。",
+      "status": "缺素材，先留白",
+      "references": [
+        {
+          "index": 2685,
+          "line_id": "n6zy48cd",
+          "chapter": "第十五话",
+          "text": "门开了。"
+        }
+      ],
+      "suggested_filename": "sfx_s21_bedroom_door_open_v01.wav"
+    },
+    {
+      "id": "sfx_s22_spoon_set_down_v01",
+      "title": "小勺轻放／碗勺轻碰",
+      "priority": "次优先",
+      "duration": "0.3–1 秒",
+      "scene": "第8话，饭后她放下勺子",
+      "requirements": "一次轻放，金属勺与碗沿或桌面接触，短尾音；避免连续餐具碰撞。",
+      "status": "缺素材，先留白",
+      "references": [
+        {
+          "index": 1400,
+          "line_id": "6f5ujm37",
+          "chapter": "第八话",
+          "text": "饭后，她抱着酸梅汤，忽然把勺子一放。"
+        }
+      ],
+      "suggested_filename": "sfx_s22_spoon_set_down_v01.wav"
+    },
+    {
+      "id": "sfx_s23_pan_frying_v01",
+      "title": "真实煎锅滋啦",
+      "priority": "后补",
+      "duration": "5–10 秒，可循环",
+      "scene": "第13话，店内厨房制作香煎鱼排",
+      "requirements": "小火煎鱼的油脂滋啦，稳定、贴近厨房；不要鼓点、乐音或大段油烟机声。",
+      "status": "缺素材；仅实际做菜时使用，菜名和日记回忆不触发",
+      "references": [
+        {
+          "index": 2243,
+          "line_id": "kv59mwip",
+          "chapter": "第十三话",
+          "text": "第二日。香煎鱼排——带鱼切段，姜葱料酒去腥，豆豉剁碎炒香，少糖提鲜。"
+        }
+      ],
+      "suggested_filename": "sfx_s23_pan_frying_v01.wav"
+    },
+    {
+      "id": "sfx_s24_light_hand_contact_v01",
+      "title": "轻拍手／手腕接触",
+      "priority": "可选",
+      "duration": "0.2–0.8 秒",
+      "scene": "第3、10、12、14话及番外2，抓手腕或轻拍手",
+      "requirements": "轻微皮肤、衣袖接触，提供轻拍和握住两种；不可用拳击、砸物或鼓声。",
+      "status": "可留白，不必为细小动作补声",
+      "references": [
+        {
+          "index": 416,
+          "line_id": "6kx65iqy",
+          "chapter": "第三话",
+          "text": "手腕被抓住了。"
+        },
+        {
+          "index": 1711,
+          "line_id": "ol75qhi8",
+          "chapter": "第十话",
+          "text": "然后，手腕被抓住了。"
+        },
+        {
+          "index": 1896,
+          "line_id": "w4krj3id",
+          "chapter": "第十二话",
+          "text": "她的架势瞬间破了功，整张脸腾地红透，用力甩了一下尾巴，拍开我的手。"
+        },
+        {
+          "index": 2346,
+          "line_id": "davcm8sv",
+          "chapter": "第十四话",
+          "text": "然后，她一把拍开了我的手。"
+        },
+        {
+          "index": 3238,
+          "line_id": "8r5v7gpa",
+          "chapter": "番外二",
+          "text": "力道很轻。"
+        }
+      ],
+      "suggested_filename": "sfx_s24_light_hand_contact_v01.wav"
+    }
+  ],
+  "current_policy": "已停用旧占位音效；必要动作缺专用素材时留白，表情与抽象提示不要求补声。",
+  "already_available": {
+    "writing": "sfx_s06_pen_writing_v01",
+    "close_notebook": "sfx_s07_notebook_close_v01",
+    "normal_waves": "amb_a01_waves_normal_v01"
+  }
+}

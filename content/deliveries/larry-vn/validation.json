@@ -1,0 +1,9 @@
+{
+  "checks": [],
+  "passed": true,
+  "chapters_checked": 18,
+  "images_decoded": 83,
+  "audio_metadata_decoded": 52,
+  "js_errors": [],
+  "limitations": "检查独立导出播放与资源解码；未宣称听感、AI后端、同源手账或跨包存档迁移验收。"
+}

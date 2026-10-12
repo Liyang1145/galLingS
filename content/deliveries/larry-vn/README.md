@@ -2,7 +2,7 @@
 
 音乐负责人于2026-10-13提供 `海风与布丁_全16话+番外+音效_游戏.zip`，明确要求代 Larry 提交。检查时新、旧仓库均无开放PR，Larry分支没有更新的完整包，所以采用这份交付。
 
-原ZIP保存在[私有附件](https://github.com/Liyang1145/galLingS/releases/download/workspace-20261012/海风与布丁_全16话+番外+音效_游戏.zip)。附件复用原有交接发布容器；该ZIP是本次Larry交付，不表示它属于此前Live2D/RenPy快照。没有创建新版本号。
+原ZIP保存在[私有附件](https://github.com/Liyang1145/galLingS/releases/download/workspace-20261012/larry-complete-game.zip)。附件复用原有交接发布容器；该ZIP是本次Larry交付，不表示它属于此前Live2D/RenPy快照。没有创建新版本号。
 
 可运行目录为 [content/vn/海风与布丁](../../vn/海风与布丁/)，入口 `index.html`。双击可独立运行，也可通过 galLingS 的 `/vn.html` 加载。原包中的单文件HTML仍保留在原ZIP里，避免在Git重复保存嵌入的整套素材。
 

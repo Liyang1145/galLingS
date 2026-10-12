@@ -3,7 +3,7 @@
   "archive_filename": "海风与布丁_全16话+番外+音效_游戏.zip",
   "archive_bytes": 53807929,
   "archive_sha256": "89e03de2b9a3fed80a04e48e7831203654e19dc1b9f155404d58311ffc9cbd2b",
-  "archive_url": "https://github.com/Liyang1145/galLingS/releases/download/workspace-20261012/海风与布丁_全16话+番外+音效_游戏.zip",
+  "archive_url": "https://github.com/Liyang1145/galLingS/releases/download/workspace-20261012/larry-complete-game.zip",
   "runtime": "content/vn/海风与布丁",
   "chapters": 18,
   "lines": 3308,
@@ -700,5 +700,6 @@
       "bytes": 960931,
       "sha256": "2bb7b85b821c55e1c770375357f1351daf4231ee26f40eab08183fe3e06cbe11"
     }
-  ]
+  ],
+  "archive_asset_filename": "larry-complete-game.zip"
 }

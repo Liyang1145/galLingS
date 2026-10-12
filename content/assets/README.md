@@ -46,4 +46,4 @@
 
 剧情音效包含拍水、落水、书写、风铃、电话、深潜、滴水及喜剧重音，见 [剧情音效索引](audio/sfx/README.md#剧情音效)。
 
-当前配乐：[翡翠之梦 · 主曲](audio/bgm/README.md)。素材已在 [LarryE 技术 DEMO](../../previews/larry-tech-demo/README.md) 中结合场景试听；游戏使用裁切处理后的音效副本，原素材保留。
+当前配乐探索素材：[翡翠之梦](audio/bgm/README.md)。配乐、环境音与剧情音效在此单独归档；接入以 LarryE135 提供的最新 DEMO 为基础，具体映射待核对。

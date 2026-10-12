@@ -19,15 +19,15 @@ tracks:
       - chapter: ch01
         script_line: 96
         cue: 角色曲「翡翠之梦」前奏
-        preview_mapping: 当前主曲播放；尚无独立前奏素材
+        preview_mapping: null # 待作者最新 DEMO 核对；目前没有独立前奏素材
       - chapter: ch01
         script_line: 209
         cue: 「翡翠之梦」完整版
-        preview_mapping: 继续播放当前主曲
+        preview_mapping: null # 待作者最新 DEMO 核对
     loop_start: null
     loop_end: null
     loop_units: samples
-    preview_loop: whole_track
+    preview_loop: null
     stems: []
     processing:
       edited: false
@@ -41,4 +41,4 @@ tracks:
       membership_tier: null
       uploaded_reference: null
     authorization_status: not_recorded
-    notes: 音乐负责人指定的当前角色主曲；后续变奏以此为基准。原 MP3 已入库并接入 LarryE 技术 DEMO；主曲未剪辑，变奏与后端联调待后续完成。
+    notes: 音乐负责人指定的当前角色主曲；后续变奏以此为基准。原 MP3 单独归档用于保存探索素材；主曲未剪辑，场景接入待 LarryE 最新 DEMO 核对，当前音乐版本未冻结。

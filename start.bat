@@ -39,7 +39,7 @@ if errorlevel 1 (
 )
 
 if not exist "content\scripts\ch01\ch01.md" (
-  echo 提示：没有剧本内容包 content\scripts\ch01，AI 剧本 Demo 不能玩；顶栏「作品」里的《海风与布丁》照常可玩。
+  echo 提示：没有剧本内容包 content\scripts\ch01，后端 AI 剧本会话不能用；作品页 /vn.html 里的作品照常可玩。
 )
 
 rem 已经在作品页 ⚙ 设置里保存过密钥，就不用每次再问

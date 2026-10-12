@@ -208,7 +208,7 @@ def create_app(runtime: Runtime | None = None) -> FastAPI:
         await sock.accept()
         r = rt()
         if not getattr(r, "has_chapter", True):
-            await sock.send_text(json.dumps({"type": "error", "message": "缺少剧本内容包 content/scripts/ch01，AI 剧本 Demo 暂时不能玩。顶栏「作品」里的《海风与布丁》可以正常玩。"}, ensure_ascii=False))
+            await sock.send_text(json.dumps({"type": "error", "message": "缺少剧本内容包 content/scripts/ch01，AI 剧本会话暂时不能用。作品页 /vn.html 里的作品可以正常玩。"}, ensure_ascii=False))
             await sock.close()
             return
         q = sock.query_params

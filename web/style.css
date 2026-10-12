@@ -168,7 +168,7 @@ dialog .entry { background: #fffaf0; border-left: 3px solid #e7c58a; padding: 10
 .screen:has(.choices:not([hidden])) .hint { display: none; }
 .expr { white-space: nowrap; }
 
-/* ================= 共用外框（播放器 + 建卡页，body.chrome）：淡蓝色系 ================= */
+/* ================= 共用外框（作品页 + 建卡页，body.chrome）：淡蓝色系 ================= */
 .chrome { --c-bar: linear-gradient(180deg, #f3faff, #e2f1fd); --c-line: #c9e0f4; --c-ink: #1c3b5e; --c-ink2: #5d7d9e;
   --c-btn: rgba(255,255,255,.75); --c-hover: #ffffff; --c-acc: #3d9ad6; --c-acc2: #7cc6f0; font-size: 14px; }
 .player { --tlw: clamp(260px, 26vw, 440px); }

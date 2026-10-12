@@ -42,7 +42,7 @@ class Runtime:
             self.chapter = load_chapter_file(self.chapter_path)
             self.has_chapter = True
         except (IndexError, FileNotFoundError):
-            # 没有剧本内容包（content/scripts/ch01）：AI 剧本 Demo 不能玩，但作品页 /vn.html 和设置照常可用
+            # 没有剧本内容包（content/scripts/ch01）：AI 剧本会话不能用，但作品页 /vn.html 和设置照常可用
             self.chapter_path = cdir / "chapter.json"
             self.chapter = {"chapter_id": "none", "title": "（没有剧本内容包）", "content_hash": "", "program": [], "slots": []}
             self.has_chapter = False

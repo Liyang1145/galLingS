@@ -1,6 +1,6 @@
 # 作品页（vn.html）：在 galLingS 里玩 VN Studio 做的完整作品
 
-打开 `http://127.0.0.1:8765/vn.html`（或播放器顶栏 ▶ 作品）。galLingS 负责启动、模型、记忆和所有设置；
+打开 `http://127.0.0.1:8765/vn.html`（`start.bat` / `python -m server` 在作品文件夹里有游戏时会直接打开这里，否则照常打开 `/docs`）。galLingS 负责启动、模型、记忆和所有设置；
 剧情由 VN Studio 导出的游戏自己跑，嵌在 16:9 画面里。
 
 ## 两种模式（同一局游戏、同一份手账）

@@ -1,5 +1,7 @@
 # galLingS
 
+团队与 agent 开工入口：[AGENTS.md](AGENTS.md) · [共享台账与兼容协调](docs/coordination-ledger.md) · [任务记录](docs/work-ledger/)。当前协作仓库为 [Liyang1145/galLingS](https://github.com/Liyang1145/galLingS)，私有。
+
 AI 驱动、角色卡驱动的 Galgame 后端引擎。剧本决定"发生什么"，角色卡决定"谁来演"，大模型以 agent 身份实时演出，确定性引擎负责校验、落账、存档与回放。
 
 **当前阶段：第一话后端会话能力已实现，旧版网页试玩已移除。** `start.bat` 启动后端服务并打开 API 文档，运行说明见 [docs/demo.md](docs/demo.md)。画面与交互 DEMO 以 LarryE135 准备提供的最新进度为准；当前仓库保留后端、项目文档与素材库。音乐仍处于探索阶段。
@@ -22,7 +24,7 @@ Demo：《海风与布丁》第一话「浅滩上的偶遇」。技术栈：Pyth
 | `compiler/` | 剧本编译器：Markdown → OP 程序 + 校验报告 |
 | `server/` | 导演、守卫、记忆网关、演绎层、事件记录与回放、HTTP/WS |
 | `plugins/builtin/` | 内置插件（模型、记忆、守卫、工具） |
-| `web/` | 建卡页与共享样式；旧播放器已移除 |
+| `web/` | 建卡页、作品页与共享样式；旧播放器已移除 |
 | `schemas/` | 插件清单、角色卡、工具注册表 |
 | `tests/` | Rust 之外的全部测试；`fixtures/` 是原创迷你章节 |
 

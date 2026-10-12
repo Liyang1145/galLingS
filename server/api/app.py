@@ -34,6 +34,22 @@ log = logging.getLogger("gallings.api")
 WEB = ROOT / "web"
 
 
+
+def lingshu_path_problem(path: str) -> str:
+    """灵枢路径要指向 dsh-memory 检出目录（里面有 md_cg/mcp_server.py）。不对就返回给人看的原因。"""
+    from pathlib import Path
+    if not path.strip():
+        return "没填 dsh-memory 路径，记忆设置没改。"
+    p = Path(path.strip().strip('"'))
+    if not p.is_dir():
+        return f"找不到文件夹 {p}，记忆设置没改。"
+    if (p / "md_cg" / "mcp_server.py").is_file():
+        return ""
+    if any(p.glob("*/md_cg/mcp_server.py")):
+        sub = next(p.glob("*/md_cg/mcp_server.py")).parent.parent
+        return f"灵枢在下一层：请填 {sub}，记忆设置没改。"
+    return "这里没有灵枢（找不到 md_cg\\mcp_server.py），记忆设置没改。先下载 dsh-memory（github.com/FuRongJun-1999/dsh-memory），再填它的文件夹。"
+
 def create_app(runtime: Runtime | None = None) -> FastAPI:
     rt_holder: dict[str, Runtime] = {}
 
@@ -190,14 +206,21 @@ def create_app(runtime: Runtime | None = None) -> FastAPI:
         r = rt()
         return {**r.settings.public(r.config, r.base_environ), "llm_ready": bool(r.llm_chain()),
                 "memory_ready": r.plugins.get("memory") is not None,
+                "memory_active": getattr(getattr(r.plugins.get("memory"), "ctx", None), "plugin_id", ""),
                 "failed": {k: v for k, v in r.plugins.failed().items()}}
 
     @app.post("/api/settings")
     async def post_settings(body: dict[str, Any]) -> dict[str, Any]:
         r = rt()
+        warn = ""
+        mem = body.get("memory") if isinstance(body.get("memory"), dict) else None
+        if mem and mem.get("use") == "lingshu":
+            warn = lingshu_path_problem(str(mem.get("dsh_memory_path") or ""))
+            if warn:
+                body = {k: v for k, v in body.items() if k != "memory"}  # 其余照存，记忆设置不动
         r.settings.save(body)
         await r.reload_plugins()
-        return await get_settings()
+        return {**await get_settings(), "warn": warn}
 
     @app.post("/api/settings/test")
     async def test_llm() -> dict[str, Any]:
@@ -207,10 +230,10 @@ def create_app(runtime: Runtime | None = None) -> FastAPI:
         if not r.llm_chain():
             return {"ok": False, "message": "没有可用的模型（没填密钥，或插件没启动）"}
         try:
-            res = await complete(r.llm_chain(), [{"role": "user", "content": "只回复两个字：在呢"}], timeout=20, max_tokens=10)
+            res = await complete(r.llm_chain(), [{"role": "user", "content": "只回复两个字：在呢"}], timeout=30, max_tokens=32)
         except Exception as e:  # noqa: BLE001
             return {"ok": False, "message": str(e)[:200]}
-        return {"ok": bool(res.text.strip()), "message": res.text.strip()[:40] or "模型没有回复"}
+        return {"ok": bool(res.text.strip()), "message": res.text.strip()[:40] or "模型连上了，但只返回了空内容（可能是思考模式把字数用完了）"}
 
     # ---------------------------------------------------------------- 灵枢外部端口（VN Studio 手账）
     @app.websocket("/ws/soul")

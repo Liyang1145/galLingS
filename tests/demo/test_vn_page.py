@@ -41,3 +41,12 @@ def test_settings_roundtrip(tmp_path, mini_dir, monkeypatch):
         assert (rt.data_dir / "secrets.json").stat().st_mode & 0o777 == 0o600
         r = c.post("/api/settings", json={"llm": {"api_key": ""}}).json()  # 清除
         assert r["llm"]["key_set"] is False
+
+
+def test_lingshu_path_check(tmp_path):
+    from server.api.app import lingshu_path_problem
+    assert "没有灵枢" in lingshu_path_problem(str(tmp_path))
+    (tmp_path / "dsh" / "md_cg").mkdir(parents=True)
+    (tmp_path / "dsh" / "md_cg" / "mcp_server.py").write_text("")
+    assert "下一层" in lingshu_path_problem(str(tmp_path))
+    assert lingshu_path_problem(str(tmp_path / "dsh")) == ""

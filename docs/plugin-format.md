@@ -107,7 +107,7 @@ plugins:
   guards: [gallings.guard.injection]
   importers: []
   config:
-    gallings.llm.openai-compat: {base_url: https://api.deepseek.com, model: deepseek-chat}
+    gallings.llm.openai-compat: {base_url: https://api.deepseek.com, model: deepseek-flash}
 ```
 
 - 安装 = 把插件目录放进任一 `paths`。只有被 `select / tools / guards / importers` 点名的插件和它们的依赖才会加载。

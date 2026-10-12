@@ -36,6 +36,6 @@ plugins:
   config:
     gallings.llm.openai-compat:
       base_url: https://api.deepseek.com
-      model: deepseek-chat
+      model: deepseek-flash
     # gallings.memory.lingshu:
     #   dsh_memory_path: C:/path/to/dsh-memory

@@ -12,7 +12,7 @@
 | 组 | 内容 | 存在哪 |
 |---|---|---|
 | 模型 | 服务地址、模型名、API 密钥、测试 | `~/.gallings/settings.json`；密钥在 `secrets.json`（本机，权限 600，网页只拿得到末 4 位）。系统环境变量 GALLINGS_LLM_API_KEY 优先 |
-| 记忆 | 本地 / 灵枢 dsh-memory（填路径） | 同上；保存后插件重启 |
+| 记忆 | 本地 / 灵枢 dsh-memory（填 FuRongJun-1999/dsh-memory 检出目录，里面要有 md_cg/mcp_server.py；不对时 /api/settings 不改记忆设置并回 warn） | 同上；保存后插件重启；灵枢起不来自动落到本地 |
 | 手账 | 陪伴模式、话量、全部遗忘 | 游戏的玩家偏好（随作品存在浏览器里） |
 | 游戏 | 音乐 / 音效 / 语音音量、文字速度、自动播放、只快进已读、作品文件夹 | 同上；作品文件夹存 settings.json |
 

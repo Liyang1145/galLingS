@@ -139,11 +139,24 @@ function renderServer() {
   $("sKey").placeholder = s.llm.key_set ? `已设置（末 4 位 ${s.llm.key_tail || "****"}），留空 = 不改` : "未设置";
   $("keyHint").textContent = s.llm.key_from_env ? "系统环境变量 GALLINGS_LLM_API_KEY 已设置，它优先；这里填的不生效。" : "只保存在本机 galLingS 数据文件夹里，网页拿不到原文。";
   $("llmState").innerHTML = `<i class="ldot ${s.llm_ready ? "ok" : "bad"}"></i>${s.llm_ready ? "可用" : "未启用"}`; $("llmState").className = s.llm_ready ? "ok" : "bad";
-  $("memState").innerHTML = `<i class="ldot ${s.memory_ready ? "ok" : "bad"}"></i>${s.memory_ready ? "可用" : "未启用"}`; $("memState").className = s.memory_ready ? "ok" : "bad";
+  const memFell = s.memory.use === "lingshu" && s.memory_active && s.memory_active !== "gallings.memory.lingshu";
+  const memTxt = !s.memory_ready ? "未启用" : memFell ? "灵枢没启动，正在用本地" : s.memory_active === "gallings.memory.lingshu" ? "灵枢可用" : "本地可用";
+  $("memState").innerHTML = `<i class="ldot ${!s.memory_ready ? "bad" : memFell ? "warn" : "ok"}"></i>${memTxt}`; $("memState").className = !s.memory_ready ? "bad" : memFell ? "warn" : "ok";
   memUse = s.memory.use; $("sDsh").value = s.memory.dsh_memory_path || ""; $("sGames").value = s.vn.games_dir || "";
   syncMem();
-  const fail = Object.entries(s.failed || {}).map(([k, v]) => `${k}：${v}`).join("；");
-  $("saveOut").textContent = fail ? "有插件没启动：" + fail : "";
+  const fail = Object.entries(s.failed || {}).map(([k, v]) => `${k}：${v}`).join("\n");
+  const msg = s.warn || Object.entries(s.failed || {}).map(([k, v]) => friendlyFail(k, v)).join(" ");
+  $("saveOut").textContent = msg; $("saveOut").title = [msg, fail].filter(Boolean).join("\n\n");   // 原始报错放在悬停提示里
+  $("saveOut").classList.toggle("bad", !!msg);
+}
+// 插件报错翻成一句人话（原文悬停可见）
+function friendlyFail(id, v) {
+  if (id === "gallings.memory.lingshu") {
+    if (/No module named 'md_cg'/.test(v)) return "灵枢没启动：填的文件夹里没有 dsh-memory，已自动改用本地记忆。";
+    return "灵枢没启动，已自动改用本地记忆（悬停看原因）。";
+  }
+  if (id.startsWith("gallings.llm")) return /缺少.*密钥/.test(v) ? "还没填 API 密钥，模型没启动（悄悄话用离线回复）。" : "模型没启动（悬停看原因）。";
+  return `${id} 没启动（悬停看原因）。`;
 }
 function syncMem() { document.querySelectorAll("#sMem button").forEach((b) => b.classList.toggle("on", b.dataset.v === memUse)); $("sDshRow").hidden = memUse !== "lingshu"; }
 document.querySelectorAll("#sMem button").forEach((b) => b.onclick = () => { memUse = b.dataset.v; syncMem(); });
@@ -156,6 +169,7 @@ $("setBtn").onclick = async () => {
 $("sClose").onclick = () => { $("setDlg").close(); game.focus(); };
 $("sForget").onclick = () => { if (confirm("让她忘掉这一局记下的所有事？（剧情进度不变）")) { H?.forget(); renderGamePrefs(); } };
 $("sSave").onclick = async () => {
+  $("saveOut").classList.remove("bad"); $("saveOut").title = "";
   const body = { llm: { base_url: $("sBase").value.trim(), model: $("sModel").value.trim() },
                  memory: { use: memUse, dsh_memory_path: $("sDsh").value.trim() }, vn: { games_dir: $("sGames").value.trim() } };
   if ($("sKey").value.trim()) body.llm.api_key = $("sKey").value.trim();
@@ -163,6 +177,7 @@ $("sSave").onclick = async () => {
   try {
     srv = await (await fetch("/api/settings", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) })).json();
     renderServer(srv); if (!$("saveOut").textContent) $("saveOut").textContent = "已保存。";
+    if (srv.warn && body.memory.use === "lingshu") { memUse = "lingshu"; $("sDsh").value = body.memory.dsh_memory_path; syncMem(); }  // 路径不对：留在灵枢页让人改
     H?.connect().catch(() => {});
   } catch (e) { $("saveOut").textContent = "保存失败：" + e.message; }
   $("sSave").disabled = false; tick();

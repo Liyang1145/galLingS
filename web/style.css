@@ -342,3 +342,12 @@ html:has(body.chrome) { background: #e3f1fc; }
 
 /* 作品页画面：尺寸和位置由 vn.js layoutScreen() 按整像素算；去掉外框圆角裁剪，免得显卡每帧给整块 iframe 做遮罩 */
 .vnpage .screen { border-radius: 0; contain: layout paint; }
+
+/* 设置弹窗：只让中间内容滚动，一条滚动条；底栏提示最多两行，原文在悬停提示里 */
+.vnpage #setDlg[open] { display: flex; flex-direction: column; overflow: hidden; }
+.vnpage #setDlg .set-body { flex: 1 1 auto; min-height: 0; max-height: none; }
+.vnpage #setDlg h3, .vnpage #setDlg .set-foot { flex: none; }
+.vnpage .set-foot #saveOut { min-width: 0; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.45; }
+.vnpage .set-foot #saveOut.bad { color: #c0583f; }
+.vnpage .set-body h4 small.warn { color: #c98a1d; }
+.vnpage .ldot.warn { background: #e0a43a; }

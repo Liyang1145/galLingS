@@ -95,7 +95,7 @@ class SettingsStore:
         key = env.get(KEY_ENV) or self._secrets().get(KEY_ENV) or ""
         mem_sel = sel.get("memory") or []
         return {
-            "llm": {"base_url": llm_c.get("base_url", "https://api.deepseek.com"), "model": llm_c.get("model", "deepseek-chat"),
+            "llm": {"base_url": llm_c.get("base_url", "https://api.deepseek.com"), "model": llm_c.get("model", "deepseek-flash"),
                     "key_set": bool(key), "key_tail": key[-4:] if len(key) >= 8 else "", "key_from_env": bool(env.get(KEY_ENV))},
             "memory": {"use": "lingshu" if "gallings.memory.lingshu" in mem_sel else "local",
                        "dsh_memory_path": (conf.get("gallings.memory.lingshu") or {}).get("dsh_memory_path", "")},

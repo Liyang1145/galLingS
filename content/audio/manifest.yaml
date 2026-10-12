@@ -1,6 +1,6 @@
-# Music metadata only. The selected MP3 is currently stored locally, not in this repository.
+# Music metadata. File paths are relative to content/audio; the selected MP3 is now archived in the repository.
 schema_version: 1
-updated: "2026-10-11"
+updated: "2026-10-12"
 tracks:
   - id: bgm_emerald_dream_main_v01
     title: 翡翠之梦
@@ -9,8 +9,8 @@ tracks:
     status: selected_main_theme
     original_filename: 翡翠1.1.mp3
     archived_filename: bgm_emerald_dream_main_v01.mp3
-    file: null
-    availability: local_only
+    file: ../assets/audio/bgm/bgm_emerald_dream_main_v01.mp3
+    availability: repository
     selected_on: "2026-10-11"
     bytes: 3066777
     duration_seconds: 133.2135
@@ -41,4 +41,4 @@ tracks:
       membership_tier: null
       uploaded_reference: null
     authorization_status: not_recorded
-    notes: 音乐负责人指定的当前角色主曲；后续变奏以此为基准。元数据不表示音频已提交到仓库或正式播放器已完成接入。
+    notes: 音乐负责人指定的当前角色主曲；后续变奏以此为基准。原 MP3 已入库并接入 LarryE 技术 DEMO；主曲未剪辑，变奏与后端联调待后续完成。

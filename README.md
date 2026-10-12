@@ -2,7 +2,7 @@
 
 AI 驱动、角色卡驱动的 Galgame 后端引擎。剧本决定"发生什么"，角色卡决定"谁来演"，大模型以 agent 身份实时演出，确定性引擎负责校验、落账、存档与回放。
 
-**当前阶段：第一话后端会话能力已实现，旧版网页试玩已移除。** `start.bat` 启动后端服务并打开 API 文档，运行说明见 [docs/demo.md](docs/demo.md)。当前画面与配乐试玩采用项目成员提供的《海风与布丁 技术DEMO》本地包，该包尚未提交到仓库，也尚未接入本仓库后端。
+**当前阶段：第一话后端会话能力已实现，旧版网页试玩已移除。** `start.bat` 启动后端服务并打开 API 文档，运行说明见 [docs/demo.md](docs/demo.md)。当前画面与配乐试玩采用用户确认由 LarryE135 制作的《海风与布丁 技术DEMO》，已将音乐与音效整合版收录在 [previews/larry-tech-demo](previews/larry-tech-demo/README.md)，可直接离线试玩；该 DEMO 尚未连接本仓库后端。
 
 - 后端运行与试玩状态：[docs/demo.md](docs/demo.md)
 - 详细计划：[docs/PLAN.md](docs/PLAN.md)
@@ -21,6 +21,7 @@ Demo：《海风与布丁》第一话「浅滩上的偶遇」。技术栈：Pyth
 | `server/` | 导演、守卫、记忆网关、演绎层、事件记录与回放、HTTP/WS |
 | `plugins/builtin/` | 内置插件（模型、记忆、守卫、工具） |
 | `web/` | 建卡页与共享样式；旧播放器已移除 |
+| `previews/larry-tech-demo/` | LarryE 完整技术 DEMO，已整合主曲、环境音、剧情音效与音频试听 |
 | `schemas/` | 插件清单、角色卡、工具注册表 |
 | `tests/` | Rust 之外的全部测试；`fixtures/` 是原创迷你章节 |
 
@@ -40,3 +41,5 @@ python -m pytest            # 灵枢集成测试需设 GALLINGS_TEST_DSH=<dsh-me
 《海风与布丁》的背景素材、预览和命名约定见 [素材库](content/assets/README.md)，当前收录 11 张背景，覆盖浅滩时段差分、书房、甜品店、营地、集市、院子与深海珊瑚礁。
 
 音效素材：已收录 15 个环境音和 18 个剧情音效，索引见 [音效素材库](content/assets/audio/sfx/README.md)。
+
+当前整合试玩：[LarryE 技术 DEMO](previews/larry-tech-demo/README.md)，完整十六话及两篇番外，含《翡翠之梦》主曲和 33 个音效来源。

@@ -1254,6 +1254,28 @@
         "loudness_normalized": false
       },
       "playback_integration": "archived_only"
+    },
+    {
+      "id": "bgm_emerald_dream_main_v01",
+      "title": "翡翠之梦",
+      "category": "music",
+      "path": "audio/bgm/bgm_emerald_dream_main_v01.mp3",
+      "version": 1,
+      "format": "mp3",
+      "bytes": 3066777,
+      "duration_seconds": 133.2135,
+      "sha256": "02162232f3aa9e5465ea06d1b4968776375f04d6fbeae1c9e39e5623eede44fa",
+      "source_filename": "翡翠1.1.mp3",
+      "provenance": "音乐负责人提供，Suno 生成；实际生成提示词与生成链接未记录",
+      "archived_on": "2026-10-12",
+      "publication_authorization": "用户要求使用现有音乐继续组装并完善当前技术 DEMO",
+      "license": "未指定开放许可证；不默认适用引擎代码许可证",
+      "processing": {
+        "edited": false,
+        "transcoded": false,
+        "loudness_normalized": false
+      },
+      "status": "selected_main_theme"
     }
   ]
 }

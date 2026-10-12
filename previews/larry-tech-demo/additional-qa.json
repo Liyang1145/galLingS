@@ -1,0 +1,36 @@
+{
+  "first_chapter_ui_walk": true,
+  "clicks": 224,
+  "choices": [
+    {
+      "line": 20,
+      "selected": "「我可以解释——」"
+    },
+    {
+      "line": 41,
+      "selected": "「你的尾巴重要。」"
+    },
+    {
+      "line": 86,
+      "selected": "「记一个问题的答案。」"
+    },
+    {
+      "line": 113,
+      "selected": "「手艺真好。是你做的吗？」"
+    }
+  ],
+  "reached_chapter_two": true,
+  "default_volumes": {
+    "music": 0.35,
+    "ambience": 0.3,
+    "effects": 0.55
+  },
+  "mobile_landscape": {
+    "width": 896,
+    "height": 414,
+    "touch_library_play": true,
+    "ambience_volume_adjust": true,
+    "start_and_read": true
+  },
+  "browser_errors": []
+}

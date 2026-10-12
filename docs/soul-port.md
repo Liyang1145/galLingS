@@ -3,6 +3,8 @@
 给“剧本自己跑”的外部前端（VN Studio 导出的《海风与布丁》）用：galLingS 不接管剧情，只负责**记忆**和**手账悄悄话**。
 
 - 地址：`WS ws://127.0.0.1:8765/ws/soul?card=whale`（端口见 config.yaml 的 server.port；card = 角色卡 id）
+- 只接受本机网页（Origin 是 127.0.0.1 / localhost）或 `Origin: null`（双击打开的 file:// 游戏）；别的网站连进来直接断开（1008）。
+- 角色卡要在 galLingS 里（内容包的 `content/cards/whale.yaml`，或建卡页建一张同 id 的卡）；没有卡时回 `{"type":"error"}` 并断开，前端用离线回复。
 - 一个连接 = 一个前端游戏窗口。所有消息都是 JSON，前端自带 `id`，回复原样带回。
 
 ## 消息

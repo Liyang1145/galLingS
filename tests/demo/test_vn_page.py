@@ -16,7 +16,7 @@ def _client(tmp_path, mini_dir):
     (tmp_path / "secret.txt").write_text("nope", encoding="utf-8")
     rt.config.setdefault("vn", {})["games_dir"] = str(games)
     rt.base_config.setdefault("vn", {})["games_dir"] = str(games)
-    return TestClient(create_app(rt)), rt
+    return TestClient(create_app(rt), base_url="http://127.0.0.1:8765"), rt
 
 
 def test_games_and_files(tmp_path, mini_dir):
@@ -26,6 +26,7 @@ def test_games_and_files(tmp_path, mini_dir):
         assert c.get("/vn/作品甲/index.html").text == "<p>game</p>"
         assert c.get("/vn/作品甲/../../secret.txt").status_code == 404
         assert c.get("/vn/作品甲/%2e%2e/%2e%2e/secret.txt").status_code == 404
+        assert c.get("/vn/%2e%2e/secret.txt").status_code == 404   # 作品名本身是 ".."
         assert c.get("/vn.html").status_code == 200
 
 
@@ -50,3 +51,31 @@ def test_lingshu_path_check(tmp_path):
     (tmp_path / "dsh" / "md_cg" / "mcp_server.py").write_text("")
     assert "下一层" in lingshu_path_problem(str(tmp_path))
     assert lingshu_path_problem(str(tmp_path / "dsh")) == ""
+
+
+def test_local_only_guard(tmp_path, mini_dir):
+    """没有登录的 /api/settings 只认本机网页：挡 DNS 重绑定（Host）和别的网站的后台请求（Origin）。"""
+    c, _ = _client(tmp_path, mini_dir)
+    with c:
+        assert c.get("/api/settings").status_code == 200
+        assert c.get("/api/settings", headers={"Origin": "http://localhost:8765"}).status_code == 200
+        assert c.get("/api/settings", headers={"Host": "evil.example:8765"}).status_code == 403
+        assert c.post("/api/settings", json={"llm": {"base_url": "http://evil.example"}},
+                      headers={"Origin": "http://evil.example"}).status_code == 403
+        assert c.get("/api/settings").json()["llm"]["base_url"] != "http://evil.example"
+        import pytest
+        from starlette.websockets import WebSocketDisconnect
+        with pytest.raises(WebSocketDisconnect):
+            with c.websocket_connect("ws://127.0.0.1:8765/ws/soul?card=cat", headers={"Origin": "http://evil.example"}) as ws:
+                ws.receive_text()
+    # server.host 改成 0.0.0.0（自己开局域网）：不查 Host，同源网页照常可用，别的网站仍然挡
+    rt2 = make_runtime(tmp_path / "lan", mini_dir, FIX / "cards", None)
+    rt2.base_config["server"]["host"] = "0.0.0.0"
+    c2 = TestClient(create_app(rt2), base_url="http://192.168.1.5:8765")
+    with c2:
+        assert c2.post("/api/settings", json={}, headers={"Origin": "http://192.168.1.5:8765"}).status_code == 200
+        assert c2.post("/api/settings", json={}, headers={"Origin": "http://evil.example"}).status_code == 403
+    with c:
+        with c.websocket_connect("ws://127.0.0.1:8765/ws/soul?card=cat", headers={"Origin": "null"}) as ws:  # 双击打开的游戏（file://）
+            ws.send_text('{"type":"hello"}')
+            assert '"hello"' in ws.receive_text()

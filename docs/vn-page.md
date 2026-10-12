@@ -24,6 +24,9 @@
 - `GET/POST /api/settings`、`POST /api/settings/test`
 - 游戏侧接口 `window.VNHost`（同源直接调用）：`dock(el)`、`css()`、`state()`、`prefs()`、`setPref(k,v)`、`save()`、`load()`、`title()`、`forget()`、`connect()`。
   游戏网址带 `?host=gallings` 时才挂出来；这时游戏的灵枢自动连同源的 `/ws/soul`，游戏内设置里的“连接”一行改为“由 galLingS 管理”。
+- 安全：服务只监听 127.0.0.1，`/api/settings` 没有登录，所以有一道门卫（`server/api/app.py` 的 `LocalOnlyGuard`）：
+  Host 必须是本机名（挡 DNS 重绑定），带 Origin 的请求必须来自本机网页（挡别的网站在后台改设置、偷用密钥）；`/ws/soul` 另外放行 `Origin: null`（双击打开的游戏）。
+  config.yaml 把 server.host 改成非本机地址时不查 Host。作品和 galLingS 同源，**放进 content/vn 的作品等于本机程序**，只放自己信得过的。
 - 测试：`tests/demo/test_vn_page.py`；真浏览器测试在 VN Studio 的 `tests/pw26.py`。
 
 ## 图标

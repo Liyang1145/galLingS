@@ -50,6 +50,54 @@ def lingshu_path_problem(path: str) -> str:
         return f"灵枢在下一层：请填 {sub}，记忆设置没改。"
     return "这里没有灵枢（找不到 md_cg\\mcp_server.py），记忆设置没改。先下载 dsh-memory（github.com/FuRongJun-1999/dsh-memory），再填它的文件夹。"
 
+LOOPBACK = {"127.0.0.1", "localhost", "::1"}
+
+
+def _hostname(v: str) -> str:
+    """'127.0.0.1:8765' / '[::1]:8765' / 'http://localhost:8765' → 主机名（小写，不带端口）。"""
+    v = v.strip().lower()
+    if "://" in v:
+        v = v.split("://", 1)[1]
+    v = v.split("/", 1)[0]
+    if v.startswith("["):
+        return v[1:].split("]", 1)[0]
+    return v.rsplit(":", 1)[0] if v.count(":") == 1 else v
+
+
+class LocalOnlyGuard:
+    """本机服务的门卫（PLAN §17.4）：/api/settings 没有登录，靠它挡住别的网站。
+
+    - Host 必须是本机名：挡 DNS 重绑定（坏网站把自己的域名解析到 127.0.0.1，就成了“同源”）。
+      config.yaml 里 server.host 改成非本机地址（自己要开局域网）时不查 Host。
+    - 有 Origin 时必须是本机网页：挡别的网站在后台 POST /api/settings（改服务地址偷密钥）或连 WebSocket 花你的模型额度。
+      /ws/soul 额外放行 Origin: null —— 双击打开的 VN Studio 游戏（file://）要连灵枢端口。
+    """
+
+    def __init__(self, app: Any, check_host: bool = True) -> None:
+        self.app, self.check_host = app, check_host
+
+    async def __call__(self, scope: dict, receive: Any, send: Any) -> None:
+        if scope["type"] in ("http", "websocket"):
+            h = {k.decode("latin-1"): v.decode("latin-1") for k, v in scope.get("headers") or []}
+            bad = ""
+            if self.check_host and _hostname(h.get("host", "")) not in LOOPBACK:
+                bad = "host"
+            origin = h.get("origin")
+            if origin is not None and not bad:
+                null_ok = scope["type"] == "websocket" and scope.get("path") == "/ws/soul"
+                same = origin.lower().split("://", 1)[-1].rstrip("/") == h.get("host", "").lower()  # 同源（开了局域网时手机访问）
+                if not ((origin == "null" and null_ok) or same or _hostname(origin) in LOOPBACK):
+                    bad = "origin"
+            if bad:
+                log.warning("拒绝非本机请求（%s）：%s %s", bad, h.get("host", ""), origin or "")
+                if scope["type"] == "websocket":
+                    await send({"type": "websocket.close", "code": 1008})
+                    return
+                await PlainTextResponse("forbidden: galLingS 只接受本机网页的请求", status_code=403)(scope, receive, send)
+                return
+        await self.app(scope, receive, send)
+
+
 def create_app(runtime: Runtime | None = None) -> FastAPI:
     rt_holder: dict[str, Runtime] = {}
 
@@ -62,6 +110,9 @@ def create_app(runtime: Runtime | None = None) -> FastAPI:
         await rt.stop()
 
     app = FastAPI(title="galLingS", lifespan=lifespan)
+    bind_cfg = (getattr(runtime, "base_config", None) or {}) if runtime else load_config()  # 测试替身可能没有配置：按默认 127.0.0.1
+    bind = str((bind_cfg.get("server") or {}).get("host", "127.0.0.1"))
+    app.add_middleware(LocalOnlyGuard, check_host=_hostname(bind) in LOOPBACK)
 
     def rt() -> Runtime:
         return rt_holder["rt"]
@@ -195,9 +246,11 @@ def create_app(runtime: Runtime | None = None) -> FastAPI:
 
     @app.get("/vn/{game}/{path:path}")
     async def vn_file(game: str, path: str) -> FileResponse:
-        base = (rt().games_dir / game).resolve()
+        root = rt().games_dir.resolve()
+        base = (root / game).resolve()
         f = (base / (path or "index.html")).resolve()
-        if base not in f.parents and f != base or not f.is_file():
+        # 作品名本身也可能是 ".." 或 Windows 盘符 "C:"：作品文件夹必须正好在 games_dir 下一层，文件必须在作品文件夹里
+        if base.parent != root or base not in f.parents or not f.is_file():
             raise HTTPException(404)
         return FileResponse(f)
 
@@ -247,7 +300,8 @@ def create_app(runtime: Runtime | None = None) -> FastAPI:
         try:
             soul = SoulSession(rt(), card_id, send)
         except KeyError:
-            await send({"type": "error", "message": f"没有这张卡：{card_id}"})
+            await send({"type": "error", "message": f"没有这张卡：{card_id}（角色卡在内容包 content/cards/{card_id}.yaml 里，或在建卡页建一张同 id 的卡）；手账先用离线回复"})
+            log.warning("/ws/soul：没有角色卡 %s，手账只能用离线回复", card_id)
             await sock.close()
             return
         try:

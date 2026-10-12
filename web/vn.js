@@ -113,6 +113,7 @@ setInterval(tick, 600);
 let memUse = "local";
 async function loadSettings() { srv = await (await fetch("/api/settings")).json(); tick(); return srv; }
 function renderGamePrefs() {
+  // 清单来自游戏（VNHost.prefs()）：音乐 / 音效 / 环境音（VN Studio v0.19 起）/ 语音 / 文字…… 游戏加了新偏好，这里自动多一行
   const list = H ? H.prefs() : [];
   const row = (p) => {
     if (p.type === "range") return `<label class="set-row"><span>${p.label}</span><input type="range" min="${p.min}" max="${p.max}" step="${p.step}" value="${p.value}" data-gp="${p.k}"><small class="muted rv">${(+p.value).toFixed(p.step < 1 ? 2 : 0)}</small></label>`;

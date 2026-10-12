@@ -4,6 +4,7 @@
 // 游戏那边的接口是 window.VNHost（同源，直接调用），见 VN Studio TECH.md §7.6。
 "use strict";
 const $ = (id) => document.getElementById(id);
+const esc = (v) => String(v ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 const game = $("game");
 let H = null;              // 游戏的 VNHost
 let srv = null;            // /api/settings 的结果
@@ -13,12 +14,12 @@ let docked = false;
 async function loadGames() {
   const r = await (await fetch("/api/vn/games")).json();
   const sel = $("gameSel");
-  sel.innerHTML = r.games.map((g) => `<option value="${encodeURIComponent(g.id)}">${g.title.replace(/</g, "&lt;")}</option>`).join("");
+  sel.innerHTML = r.games.map((g) => `<option value="${encodeURIComponent(g.id)}">${esc(g.title)}</option>`).join("");
   const want = new URLSearchParams(location.search).get("game") || localStorage.getItem("gl.vn.game");
   if (want && r.games.some((g) => g.id === want)) sel.value = encodeURIComponent(want);
   if (!r.games.length) {
     $("empty").hidden = false; game.hidden = true;
-    $("empty").innerHTML = `<b>还没有作品</b><p>把 VN Studio 导出的游戏文件夹（里面有 index.html）放进<br><code>${r.dir.replace(/</g, "&lt;")}</code><br>的一个子文件夹里，例如 <code>海风与布丁/</code>，然后刷新。也可以在 ⚙ 设置里换作品文件夹。</p>`;
+    $("empty").innerHTML = `<b>还没有作品</b><p>把 VN Studio 导出的游戏文件夹（里面有 index.html）放进<br><code>${esc(r.dir)}</code><br>的一个子文件夹里，例如 <code>海风与布丁/</code>，然后刷新。也可以在 ⚙ 设置里换作品文件夹。</p>`;
     return;
   }
   openGame();
@@ -77,11 +78,11 @@ function tick() {
   const s = H.state();
   $("chapterTitle").textContent = "· " + (s.chapter || s.title || "");
   const bits = [];
-  if (s.playing && s.affName && s.aff != null) bits.push(`${s.affName} ${s.aff}`);
-  if (s.playing && s.signalName && s.signal != null) bits.push(`${s.signalName} ${s.signal}`);
+  if (s.playing && s.affName && s.aff != null) bits.push(esc(`${s.affName} ${s.aff}`));
+  if (s.playing && s.signalName && s.signal != null) bits.push(esc(`${s.signalName} ${s.signal}`));
   const link = { ok: "灵枢在线", wait: "灵枢连接中", bad: "灵枢未连上（离线回复）", off: "灵枢待命" }[s.link] || "";
-  if (s.soulOn) bits.push(`<i class="ldot ${s.link}"></i>${link}`);
-  if (srv) bits.push(srv.llm_ready ? `模型 ${srv.llm.model}` : "模型未配置");
+  if (s.soulOn) bits.push(`<i class="ldot ${esc(s.link)}"></i>${link}`);
+  if (srv) bits.push(srv.llm_ready ? `模型 ${esc(srv.llm.model)}` : "模型未配置");
   $("status").innerHTML = bits.join(" · ");
   $("journalNew").hidden = !(s.unread > 0 && !docked);
   $("saveBtn").disabled = !s.playing;
@@ -185,7 +186,7 @@ $("sSave").onclick = async () => {
 $("sTest").onclick = async () => {
   $("sTestOut").textContent = "测试中……";
   const r = await (await fetch("/api/settings/test", { method: "POST" })).json();
-  $("sTestOut").innerHTML = (r.ok ? gi("check") + " 通了：" : gi("x") + " ") + r.message.replace(/</g, "&lt;");
+  $("sTestOut").innerHTML = (r.ok ? gi("check") + " 通了：" : gi("x") + " ") + esc(r.message);
 };
 
 loadSettings();

@@ -1,3 +1,6 @@
 *.bat text eol=crlf
 *.rs text eol=lf
 *.py text eol=lf
+
+# Preserve the delivered VN export byte-for-byte.
+content/vn/海风与布丁/** -text

@@ -2,9 +2,11 @@
 
 团队与 agent 开工入口：[AGENTS.md](AGENTS.md) · [共享台账与兼容协调](docs/coordination-ledger.md) · [任务记录](docs/work-ledger/)。当前协作仓库为 [Liyang1145/galLingS](https://github.com/Liyang1145/galLingS)，私有。
 
+Larry 最新完整作品已由音乐负责人代提交：[交付说明与校验清单](content/deliveries/larry-vn/README.md)，可运行目录为 `content/vn/海风与布丁/`。主曲与最新包的正式接入继续按共享台账核对。
+
 AI 驱动、角色卡驱动的 Galgame 后端引擎。剧本决定"发生什么"，角色卡决定"谁来演"，大模型以 agent 身份实时演出，确定性引擎负责校验、落账、存档与回放。
 
-**当前阶段：第一话后端会话能力已实现，旧版网页试玩已移除。** `start.bat` 启动后端服务并打开 API 文档，运行说明见 [docs/demo.md](docs/demo.md)。画面与交互 DEMO 以 LarryE135 准备提供的最新进度为准；当前仓库保留后端、项目文档与素材库。音乐仍处于探索阶段。
+**当前阶段：第一话后端会话能力已实现，旧版网页试玩已移除，Larry完整作品已交付。** 运行说明见 [docs/demo.md](docs/demo.md)；作品页入口见 [docs/vn-page.md](docs/vn-page.md)。完整内容交付不等于AI后端、音乐和所有资产均已验收，音乐仍处于探索阶段。
 
 - 后端运行与试玩状态：[docs/demo.md](docs/demo.md)
 - 详细计划：[docs/PLAN.md](docs/PLAN.md)

@@ -49,9 +49,12 @@ class SettingsStore:
                 sec[KEY_ENV] = key.strip()
             else:
                 sec.pop(KEY_ENV, None)
-            self.secret_path.write_text(json.dumps(sec), encoding="utf-8")
+            # 一创建就是 600（先写后 chmod 会有一瞬间别人可读）；Windows 上权限位不起作用，靠用户目录本身的权限
+            fd = os.open(self.secret_path, os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o600)
+            with os.fdopen(fd, "w", encoding="utf-8") as fh:
+                fh.write(json.dumps(sec))
             try:
-                os.chmod(self.secret_path, 0o600)
+                os.chmod(self.secret_path, 0o600)  # 旧文件可能是别的权限
             except OSError:
                 pass
 

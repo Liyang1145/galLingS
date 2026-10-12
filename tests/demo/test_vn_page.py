@@ -79,3 +79,39 @@ def test_local_only_guard(tmp_path, mini_dir):
         with c.websocket_connect("ws://127.0.0.1:8765/ws/soul?card=cat", headers={"Origin": "null"}) as ws:  # 双击打开的游戏（file://）
             ws.send_text('{"type":"hello"}')
             assert '"hello"' in ws.receive_text()
+
+
+def test_reload_plugins_serialized(tmp_path, mini_dir):
+    """两次保存挨得很近：插件重启要排队，不能交错（一个刚起的插件被另一次重启半路关掉，或者没人关、灵枢子进程泄漏）。"""
+    import asyncio
+    rt = make_runtime(tmp_path, mini_dir, FIX / "cards", None)
+    started, stopped, early = [], [], []
+
+    async def main():
+        await rt.start()
+        orig_make = rt._make_plugins
+
+        def make():
+            pm = orig_make()
+            s0, t0 = pm.start, pm.stop
+
+            async def start():
+                started.append(pm)
+                await asyncio.sleep(0.01)
+                r = await s0()
+                pm.ready_ = True
+                return r
+
+            async def stop():
+                stopped.append(pm)
+                if not getattr(pm, "ready_", False):
+                    early.append(pm)   # 还没启动完就被另一次重启关掉 = 两次重启交错了
+                return await t0()
+            pm.start, pm.stop = start, stop
+            return pm
+        rt._make_plugins = make
+        await asyncio.gather(rt.reload_plugins(), rt.reload_plugins(), rt.reload_plugins())
+        await rt.stop()
+
+    asyncio.run(main())
+    assert len(started) == 3 and all(pm in stopped for pm in started) and not early

@@ -1,6 +1,7 @@
 """进程级运行时：配置、插件管理器、章节、角色卡库。一个进程一个，多个会话共用。"""
 from __future__ import annotations
 
+import asyncio
 import logging
 import os
 from pathlib import Path
@@ -47,6 +48,7 @@ class Runtime:
             self.has_chapter = False
         self.cards = CardStore(ROOT / "content" / "cards", self.data_dir / "cards")
         self.plugins = self._make_plugins()
+        self._reload_lock = asyncio.Lock()
 
     def _make_plugins(self) -> PluginManager:
         settings = PluginSettings.from_dict(self.config.get("plugins"), base_dir=ROOT)
@@ -54,10 +56,12 @@ class Runtime:
 
     async def reload_plugins(self) -> dict[str, Any]:
         """网页里改了设置：重新叠配置、重启插件。正在进行的剧本会话下次开局才用上新模型。"""
-        await self.plugins.stop()
-        self.config = self.settings.overlay(self.base_config)
-        self.plugins = self._make_plugins()
-        return await self.start()
+        # 两次保存挨得很近时要排队：不然两个重启交错，前一个新起的插件（比如灵枢子进程）没人关
+        async with self._reload_lock:
+            await self.plugins.stop()
+            self.config = self.settings.overlay(self.base_config)
+            self.plugins = self._make_plugins()
+            return await self.start()
 
     @property
     def games_dir(self) -> Path:

@@ -50,3 +50,33 @@ def test_sse_bad_arguments_and_garbage():
     errs = [e for e in evs if isinstance(e, Error)]
     assert len(errs) == 2 and all(e.code == "bad_response" for e in errs)
     assert not any(isinstance(e, ToolCallDone) for e in evs)
+
+
+def _plugin_body(base_url, thinking="auto"):
+    """跑一次 stream，抓发给服务端的请求体。"""
+    import asyncio
+    import httpx
+    from server.plugins.kinds import ChatMessage as Message, ChatRequest
+    m = load_manifest(BUILTIN / "llm-openai-compat")
+    cls = load_class(m)
+    seen = {}
+
+    def handler(req):
+        seen.update(json.loads(req.content))
+        return httpx.Response(200, text='data: {"choices":[{"delta":{"content":"在呢"}}]}\n\ndata: [DONE]\n\n')
+
+    p = cls.__new__(cls)
+    p.ctx = type("C", (), {"config": {"base_url": base_url, "model": "m", "temperature": 0.8, "thinking": thinking}})()
+    p._client = httpx.AsyncClient(base_url=base_url, transport=httpx.MockTransport(handler))
+
+    async def go():
+        return [e async for e in p.stream(ChatRequest(messages=[Message(role="user", content="hi")], max_tokens=10))]
+    asyncio.run(go())
+    return seen
+
+
+def test_deepseek_thinking_off_by_default():
+    # deepseek-flash 默认开思考：短回复（max_tokens=10）会被思考吃光、正文为空，所以 DeepSeek 默认关掉
+    assert _plugin_body("https://api.deepseek.com")["thinking"] == {"type": "disabled"}
+    assert "thinking" not in _plugin_body("https://api.openai.com/v1")
+    assert _plugin_body("https://api.deepseek.com", "enabled")["thinking"] == {"type": "enabled"}

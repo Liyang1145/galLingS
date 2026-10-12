@@ -18,7 +18,8 @@ config_schema:
   required: [base_url, model]
   properties:
     base_url: {type: string, default: "https://api.deepseek.com"}
-    model: {type: string, default: deepseek-chat}
+    model: {type: string, default: deepseek-flash}
+    thinking: {type: string, enum: [auto, disabled, enabled], default: auto, description: "思考模式：auto = DeepSeek 关掉（deepseek-flash 默认开着思考，短回复会被思考吃光，返回空），其它服务不发这个参数"}
     temperature: {type: number, minimum: 0, maximum: 2, default: 0.8}
     timeout_s: {type: number, minimum: 1, default: 60}
     connect_timeout_s: {type: number, minimum: 1, default: 10}

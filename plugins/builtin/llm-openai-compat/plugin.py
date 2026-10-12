@@ -33,6 +33,11 @@ class OpenAICompatLLM(LLMPlugin):
             "temperature": request.temperature if request.temperature is not None else c["temperature"],
             **request.extra,
         }
+        th = c.get("thinking", "auto")
+        if th == "auto":
+            th = "disabled" if "deepseek" in c["base_url"].lower() else ""
+        if th and "thinking" not in body:
+            body["thinking"] = {"type": th}
         if request.tools:
             body["tools"] = request.tools
         if request.max_tokens:

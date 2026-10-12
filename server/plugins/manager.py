@@ -11,7 +11,7 @@ config.yaml 里的 ``plugins`` 段（见 docs/plugin-format.md §5）::
       guards: []
       importers: []
       config:
-        gallings.llm.openai-compat: {base_url: https://api.deepseek.com, model: deepseek-chat}
+        gallings.llm.openai-compat: {base_url: https://api.deepseek.com, model: deepseek-flash}
 """
 from __future__ import annotations
 

@@ -13,7 +13,7 @@ async function init() {
   const st = await (await fetch("/api/status")).json();
   if (!st.llm) { $("genBtn").disabled = true; $("genMsg").textContent = "未配置模型 key，AI 填卡不可用，可以打开已有卡手改"; }
   const cards = await (await fetch("/api/cards")).json();
-  $("openSel").innerHTML += cards.map((c) => `<option value="${c.id}">${c.name}${c.builtin ? "（内置，只读）" : ""}</option>`).join("");
+  $("openSel").innerHTML += cards.map((c) => `<option value="${escHtml(c.id)}">${escHtml(c.name)}${c.builtin ? "（内置，只读）" : ""}</option>`).join("");
 }
 
 $("openSel").onchange = async () => {
@@ -72,7 +72,7 @@ function collect() {
 function showFindings(fs) {
   $("findings").innerHTML = fs.length
     ? fs.map((f) => `<div class="finding ${f.level}"><b>${f.level === "error" ? "错误" : "提示"}</b> ${f.field}：${f.message}</div>`).join("")
-    : '<div class="finding">全部通过 ✓</div>';
+    : '<div class="finding">全部通过 ' + gi('check') + '</div>';
   $("useBtn").disabled = fs.some((f) => f.level === "error");
 }
 
@@ -96,3 +96,5 @@ $("useBtn").onclick = async () => {
 };
 
 init();
+// 卡名 / id 可能来自导入的卡：放进 innerHTML 前转义
+function escHtml(v) { return String(v ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]); }

@@ -9,7 +9,7 @@ from server.api.app import create_app
 
 def test_retired_player_and_remaining_pages():
     runtime = SimpleNamespace(start=AsyncMock(), stop=AsyncMock())
-    with TestClient(create_app(runtime=runtime)) as client:
+    with TestClient(create_app(runtime=runtime), base_url="http://127.0.0.1:8765") as client:  # 本机门卫只认 127.0.0.1
         root = client.get("/", follow_redirects=False)
         assert root.status_code == 307
         assert root.headers["location"] == "/docs"

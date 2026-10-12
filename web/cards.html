@@ -6,33 +6,35 @@
 <title>galLingS · 建卡页</title>
 <link rel="stylesheet" href="/static/style.css">
 </head>
-<body class="cards-page">
+<body class="cards-page chrome">
 <header class="topbar">
-  <div class="brand">galLingS <span>建卡页</span></div>
-  <div class="controls">
-    <label>打开已有卡 <select id="openSel"><option value="">—</option></select></label>
-    <a class="btn" href="/docs">服务文档</a>
+  <div class="brand"><b>galLingS</b><span>建卡页</span></div>
+  <div class="tb-group" role="group">
+    <label class="tb-field" title="打开已有卡"><span>打开已有卡</span><select id="openSel"><option value="">—</option></select></label>
   </div>
+  <div class="tb-spacer"></div>
   <div class="status" id="status"></div>
+  <a class="ib" href="/docs" title="服务文档"><svg class="gi" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/> <path d="M14 2v4a2 2 0 0 0 2 2h4"/> <path d="M10 9H8"/> <path d="M16 13H8"/> <path d="M16 17H8"/></svg><span>服务文档</span></a>
 </header>
 <div class="cards-wrap">
   <section class="panel">
-    <h3>① 写一段人设</h3>
+    <h3><em>1</em>写一段人设</h3>
     <textarea id="desc" placeholder="例：港口灯塔的守塔人，狐族成年女性，外表二十五六岁。说话慢吞吞、爱用天气打比方，嘴上嫌麻烦其实很照顾人。紧张时耳朵会抖，开心时尾巴会晃。最宝贝的是自己晒的橘子干，喜欢喝加了蜂蜜的姜茶。"></textarea>
     <p><button class="primary" id="genBtn">AI 填卡</button> <span class="muted" id="genMsg"></span></p>
     <p class="muted">AI 先按格式填满各字段，再按校验规则自查补洞。黄色 = 还空着，红框 = 校验没过。</p>
   </section>
   <section class="panel">
-    <h3>② 逐字段修改</h3>
+    <h3><em>2</em>逐字段修改</h3>
     <div id="fields"><p class="muted">先在左边生成，或从上面打开一张卡。</p></div>
   </section>
   <section class="panel">
-    <h3>③ 校验并保存</h3>
+    <h3><em>3</em>校验并保存</h3>
     <p><button id="valBtn">校验</button> <button class="primary" id="useBtn" disabled>保存角色卡</button></p>
     <div id="findings"></div>
     <p class="muted">error 不改完不能保存；warn（含人设-剧本适配度）只提示，可以照常保存。</p>
   </section>
 </div>
+<script src="/static/icons.js"></script>
 <script src="/static/cards.js"></script>
 </body>
 </html>

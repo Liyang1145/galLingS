@@ -1,5 +1,5 @@
 {
-  "version": "1.0",
+  "version": "1.1",
   "built_on": "2026-10-12",
   "base_author": "LarryE135",
   "story_lines": 3308,
@@ -712,23 +712,23 @@
   ],
   "usage": {
     "amb_a01_waves_normal_v01": {
-      "ambient_lines": 167,
+      "ambient_lines": 399,
       "action_cues": 0
     },
     "amb_a02_waves_soft_v01": {
-      "ambient_lines": 662,
+      "ambient_lines": 693,
       "action_cues": 0
     },
     "amb_a03_waves_distant_ebb_v01": {
-      "ambient_lines": 360,
+      "ambient_lines": 390,
       "action_cues": 0
     },
     "amb_a04_waves_bed_v01": {
-      "ambient_lines": 298,
+      "ambient_lines": 0,
       "action_cues": 0
     },
     "amb_a05_waves_violent_v01": {
-      "ambient_lines": 58,
+      "ambient_lines": 63,
       "action_cues": 0
     },
     "amb_a06_seagulls_v01": {
@@ -1613,9 +1613,16 @@
     "深海之光主曲",
     "翡翠之梦各变奏"
   ],
+  "audition_only_assets": [
+    {
+      "id": "amb_a04_waves_bed_v01",
+      "reason": "包含规律节拍和乐音，避免与角色曲叠加；原素材与试听保留，撤出所有场景。"
+    }
+  ],
   "notes": [
     "原动作声音中海浪、篝火、心跳改为持续环境轨；尾鳍微表情不逐句发声。",
     "保留原剧本、画面、分支、变量及行标识；仅调整声音字段和播放器音频控制。",
-    "环境循环使用首尾交叉混合；主曲保持原 MP3 整曲循环，尚未编辑无缝音乐循环点。"
+    "环境循环使用首尾交叉混合；主曲保持原 MP3 整曲循环，尚未编辑无缝音乐循环点。",
+    "v1.1：角色曲开始时不再切入 A04，保持常规潮声连续播放；A04 仅供试听。"
   ]
 }

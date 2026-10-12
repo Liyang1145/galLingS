@@ -15,6 +15,8 @@ if not exist "%VPY%" (
   echo [1/4] 创建虚拟环境 .venv ...
   %PY% -m venv .venv || goto :nopython
 )
+rem galcore 轮子是 cp311-abi3：Python 低于 3.11 装不上，提前说清楚（旧 .venv 也会被查出来）
+"%VPY%" -c "import sys; sys.exit(sys.version_info < (3, 11))" || goto :oldpython
 
 echo [2/4] 安装 Python 依赖 ...
 "%VPY%" -m pip install -q --disable-pip-version-check -r requirements.txt || goto :fail
@@ -41,7 +43,7 @@ if not exist "content\scripts\ch01\ch01.md" (
 )
 
 rem 已经在作品页 ⚙ 设置里保存过密钥，就不用每次再问
-if exist "%USERPROFILE%\.gallings\secrets.json" goto :start
+findstr /c:"GALLINGS_LLM_API_KEY" "%USERPROFILE%\.gallings\secrets.json" >nul 2>nul && goto :start
 if "%GALLINGS_LLM_API_KEY%"=="" (
   echo.
   echo 没有设置 GALLINGS_LLM_API_KEY：不填则后端 AI 功能不可用。key 只在这次运行里有效，不会写进任何文件。
@@ -67,9 +69,9 @@ echo 没有 galcore 轮子，也没有 Rust 编译器。二选一：
 echo   1. 从 GitHub Actions 下载 galcore-windows-latest 里的 .whl，放进本目录的 wheels\ 文件夹，再运行本脚本；
 echo   2. 安装 Rust（https://rustup.rs），再运行本脚本自动编译。
 pause & exit /b 1
-:nocontent
-echo 缺少剧本 content\scripts\ch01\ch01.md 和角色卡 content\cards\whale.yaml。
-echo 内容授权未定，不在公开仓库里；向项目负责人要内容包，解压到 content\ 下。
+:oldpython
+echo .venv 里的 Python 低于 3.11。请安装 Python 3.11 或更新版本（https://www.python.org/downloads/windows/ ，勾选 Add to PATH），
+echo 然后删掉本文件夹里的 .venv 文件夹，再双击 start.bat。
 pause & exit /b 1
 :fail
 echo 安装失败，看上面的报错。

@@ -1,0 +1,68 @@
+schema_version: 1
+id: gallings.tool.galagent
+name: GalAgent · 结局后聊天 + 基础 Agent 工具
+version: 0.1.0
+kind: tool
+api: 1
+description: >
+  结局后自由聊天（PLAN §16 post_ending）的 Agent 实现：角色一边保持人设陪玩家聊天，一边能调用工具完成简单任务。
+  自带 powershell / 文件 / 网页 / 时间等基础工具；其它 tool 插件声明 capabilities: [galagent] 即可把工具接进来。
+  思考与工具调用以事件流推给前端（galagent/1 协议，见 docs/galagent.md）。
+authors: [galLingS contributors]
+requires:
+  gallings: ">=0.1,<0.2"
+  python: ">=3.11"
+runtime:
+  type: python
+  entry: plugin.py:GalAgent
+capabilities: [galagent, post_ending]
+provides:
+  tools: [powershell, read_file, write_file, list_dir, fetch_url, get_time]
+config_schema:
+  type: object
+  additionalProperties: false
+  properties:
+    workspace:
+      type: string
+      default: ""
+      description: 文件工具与 powershell 的工作目录；留空 = ${data_dir}/workspace
+    allow_outside_workspace:
+      type: boolean
+      default: false
+      description: 文件工具是否允许访问工作目录以外的路径（powershell 本身不受此限制，所以默认需要玩家确认）
+    shell:
+      enum: [auto, pwsh, powershell, bash, sh]
+      default: auto
+      description: auto = pwsh → powershell.exe（Windows）→ bash → sh
+    shell_timeout_s: {type: number, minimum: 1, maximum: 600, default: 60}
+    max_output_chars: {type: integer, minimum: 200, maximum: 200000, default: 8000}
+    fetch_max_bytes: {type: integer, minimum: 1000, maximum: 5000000, default: 400000}
+    confirm:
+      type: object
+      description: 按工具名设置确认策略：auto 直接执行 / ask 先问玩家 / deny 禁用
+      additionalProperties: {enum: [auto, ask, deny]}
+      default: {powershell: ask, write_file: ask, read_file: auto, list_dir: auto, fetch_url: auto, get_time: auto}
+    confirm_by_effect:
+      type: object
+      description: 扩展工具（其它插件）没在 confirm 里点名时，按 ToolSpec.effect 决定
+      additionalProperties: {enum: [auto, ask, deny]}
+      default: {read: auto, memory: auto, perform: ask, propose: deny}
+    extra_tool_plugins:
+      type: array
+      items: {type: string}
+      default: []
+      description: 额外接入的 tool 插件 id（没声明 capabilities:[galagent] 也接）；写 "*" 接入全部
+    max_rounds: {type: integer, minimum: 1, maximum: 32, default: 8, description: 每轮对话最多几次模型往返}
+    max_tool_calls: {type: integer, minimum: 0, maximum: 64, default: 16}
+    turn_timeout_s: {type: number, minimum: 10, maximum: 3600, default: 300}
+    approval_timeout_s: {type: number, minimum: 5, maximum: 3600, default: 180}
+    client_call_timeout_s: {type: number, minimum: 1, maximum: 600, default: 30}
+    history_limit: {type: integer, minimum: 4, maximum: 400, default: 60}
+    temperature: {type: number, minimum: 0, maximum: 2, default: 0.7}
+    think: {type: boolean, default: true, description: 让模型把思考写在 <think></think> 里，前端显示为可折叠的“思考”步骤}
+    extra_prompt: {type: string, default: "", description: 追加到系统提示词末尾（世界观、任务边界等）}
+permissions:
+  network: ["*"]
+  filesystem: ["${data_dir}/workspace"]
+  subprocess: true
+determinism: recorded

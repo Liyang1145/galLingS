@@ -1,0 +1,25 @@
+schema_version: 1
+id: example.tool.notes
+name: 示例：角色的备忘本（GalAgent 扩展）
+version: 0.1.0
+kind: tool
+api: 1
+description: >
+  演示怎样给 GalAgent 加工具：清单写 capabilities: [galagent]，工具就会出现在结局后聊天里。
+  角色可以帮玩家记事、查看记过的事。数据存在插件独占的 data_dir。
+requires:
+  gallings: ">=0.1,<0.2"
+runtime:
+  type: python
+  entry: plugin.py:NotesTools
+capabilities: [galagent]          # ← 关键：声明后 GalAgent 自动接入
+provides:
+  tools: [add_note, list_notes]   # 必须与 list_tools() 完全一致
+config_schema:
+  type: object
+  additionalProperties: false
+  properties:
+    max_notes: {type: integer, minimum: 1, maximum: 10000, default: 200}
+permissions:
+  filesystem: ["${data_dir}"]
+determinism: recorded

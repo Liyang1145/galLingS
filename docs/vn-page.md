@@ -31,3 +31,9 @@
 
 ## 图标
 界面图标一律是 lucide 线条 SVG（ISC 许可）：HTML 里直接内联，JS 里用 `web/icons.js` 的 `gi('名字')`。不再用 emoji，新图标从 lucide 取路径加进 GL_ICON。
+
+## 插件（VN Studio v0.20+）
+
+- 游戏启动时（托管模式）取 `GET /api/vn/plugins`，装上 galLingS 提供的 VN Studio 插件：GalAgent（`gallings.tool.galagent` 开着时，`/galagent/galagent.vnplugin.js`）+ `content/vn_plugins/*.js`（`vn.plugins_dir` 可改）。只收同源地址。
+- 顶栏“插件”按钮调用 `VNHost.openPlugins()`，在游戏里打开插件面板（看状态、改设置、停用；玩家自己导入的插件也在这里卸载）。旧版游戏没有这个接口时按钮隐藏。
+- 规范：VN Studio `PLUGIN_API.md`；GalAgent 见 `docs/galagent.md` §5。

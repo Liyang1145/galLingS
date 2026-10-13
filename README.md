@@ -30,9 +30,13 @@ Demo：《海风与布丁》第一话「浅滩上的偶遇」。技术栈：Pyth
 | `schemas/` | 插件清单、角色卡、工具注册表 |
 | `tests/` | Rust 之外的全部测试；`fixtures/` 是原创迷你章节 |
 
+最新游玩入口：[游玩.html](游玩.html)（离线剧情）；`start.bat` 启动作品页后可使用 GalAgent 结局后聊天与插件管理，模型需在设置中配置。接入范围见 [本次统筹记录](docs/work-ledger/boliyer-galagent-integration.md)。
+
 ## 插件插座
 
 引擎是插座，模型、生图、语音、记忆、工具、守卫、导入导出都是插件。格式见 [`docs/plugin-format.md`](docs/plugin-format.md)。
+
+结局后聊天 GalAgent 和 VN Studio 插件规范见 [GalAgent说明](docs/galagent.md)。
 
 ```bash
 pip install -e ".[dev]"

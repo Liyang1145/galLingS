@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GalAgent · 结局后聊天</title>
+<style>html,body{margin:0;height:100%;background:#000}#wrap{position:fixed;inset:0}</style>
+</head>
+<body>
+<div id="wrap"></div>
+<script src="/galagent/galagent-ui.js"></script>
+<script>
+  // 用法：/galagent?card=whale[&name=显示名][&bg=背景][&sprite=立绘网址，可含 {expr}][&ending=结局名][&greeting=开场白][&mock=1]
+  //   bg 可以写 galLingS 素材库里的文件名（如 bg_shallows_sunset_v01），也可以写完整网址
+  //   同源打开不需要令牌；从别处嵌入时加 &token=...
+  const q = new URLSearchParams(location.search);
+  const proto = location.protocol === 'https:' ? 'wss:' : 'ws:';
+  const url = q.get('ws') || `${proto}//${location.host}/ws/post_ending` + (q.get('card') ? `?card=${encodeURIComponent(q.get('card'))}` : '');
+  let bg = q.get('bg') || 'bg_shallows_sunset_v01';
+  if (!/[/.]/.test(bg)) bg = `/galagent/assets/backgrounds/${bg}.png`;
+  new GalAgent.GalStage(document.getElementById('wrap'), {
+    url, token: q.get('token') || '', card: q.get('card') || '', mock: q.get('mock') === '1',
+    character: q.get('name') ? { name: q.get('name') } : {},
+    context: { ending: q.get('ending') || '' },
+    bg, sprite: q.get('sprite') || '',
+    greeting: q.get('greeting') || '……结局之后，我还在这里哦。',
+    clientTools: [{
+      name: 'show_notice', description: '在玩家屏幕上弹出一条小提示（比如提醒、计时结束）', effect: 'perform',
+      parameters: { type: 'object', properties: { text: { type: 'string' } }, required: ['text'] },
+      handler: ({ text }) => { const n = document.createElement('div'); n.textContent = text; Object.assign(n.style, { position: 'fixed', top: '16px', left: '50%', transform: 'translateX(-50%)', background: '#ffd27a', color: '#1a1300', padding: '8px 16px', borderRadius: '10px', zIndex: 99, font: '15px system-ui' }); document.body.appendChild(n); setTimeout(() => n.remove(), 4000); return { shown: true }; }
+    }]
+  });
+</script>
+</body>
+</html>

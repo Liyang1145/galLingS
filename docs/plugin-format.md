@@ -149,6 +149,11 @@ python -m server.plugins check --config config.yaml        # 按配置全部启�
 | gallings.memory.lingshu | memory | 灵枢 MCP 子进程；时间线标签 `tl:<lineage>@<turn>` 与可见性过滤 |
 | gallings.tool.proposals | tool | `propose_affection`、`propose_mood`，只出提议 |
 | gallings.guard.injection | guard | 玩家输入的提示注入检测 |
+| gallings.tool.galagent | tool | 结局后聊天（post_ending）的 Agent：powershell / 文件 / 网页等基础工具 + galagent/1 会话，见 [galagent.md](galagent.md) |
+
+能力标签 `galagent`：tool 插件在 `capabilities` 里写上它，工具就会出现在结局后聊天里（确认策略见 galagent.md §2、§4）。
+
+> 另：VN Studio（前端游戏）有自己的插件格式 vn-plugin/1（一个 .js 文件），见 VN Studio 的 `PLUGIN_API.md`；GalAgent 两边都有：后端是这里的 tool 插件，前端是 `plugins/builtin/galagent/web/galagent.vnplugin.js`。
 
 ## 10. 尚未做（按需再加）
 

@@ -37,7 +37,7 @@ game.addEventListener("load", () => {
   let n = 0;
   const t = setInterval(() => {
     const w = game.contentWindow;
-    if (w && w.VNHost) { clearInterval(t); H = w.VNHost; $("soulCss").textContent = H.css(); applyDock(); tick(); }
+    if (w && w.VNHost) { clearInterval(t); H = w.VNHost; $("plugBtn").hidden = !H.openPlugins; $("soulCss").textContent = H.css(); applyDock(); tick(); }
     else if (++n > 100) clearInterval(t);
   }, 100);
 });
@@ -70,6 +70,7 @@ document.addEventListener("fullscreenchange", () => {
 // ---------------------------------------------------------------- 顶栏按钮 → 游戏
 $("saveBtn").onclick = () => { H?.save(); game.focus(); };
 $("loadBtn").onclick = () => { H?.load(); game.focus(); };
+$("plugBtn").onclick = () => { H?.openPlugins?.(); game.focus(); };
 $("audioBtn").onclick = () => { H?.audioLibrary?.(); game.focus(); };
 $("titleBtn").onclick = () => { if (H?.state().playing && !confirm("回到标题画面？没存档的进度会丢。")) return; H?.title(); game.focus(); };
 

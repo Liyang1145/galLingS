@@ -7,8 +7,10 @@
 - ``/api/report``                   编译报告
 - ``/api/plugins``                  插件状态
 - ``/api/agent/*``                  外部 Agent 端口（预留，默认关闭）
+- ``WS  /ws/post_ending``、``/galagent`` 结局后聊天 GalAgent（gallings.tool.galagent，见 docs/galagent.md）
 - ``GET /vn.html``                    作品页：玩 VN Studio 导出的游戏（窗口 / 全屏），手账停靠右侧栏
 - ``/vn/{作品}/…``、``/api/vn/games``  作品文件（vn.games_dir，默认 content/vn）
+- ``/api/vn/plugins``、``/vn_plugins/…`` 给作品用的 VN Studio 插件（vn-plugin/1）：GalAgent + content/vn_plugins/*.js
 - ``/api/settings``                 网页设置（模型 / 密钥 / 记忆底座），存 data_dir，改完重启插件
 - ``WS  /ws/soul?card=whale``         灵枢外部端口 vn-soul/1：外部前端（VN Studio）的手账记忆 / 悄悄话
 """
@@ -24,6 +26,7 @@ from fastapi import FastAPI, HTTPException, WebSocket, WebSocketDisconnect
 from fastapi.responses import FileResponse, JSONResponse, PlainTextResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 
+from server.api import post_ending
 from server.cards import builder
 from server.cards.validate import has_errors, validate_card
 from server.runtime import ROOT, Runtime, load_config
@@ -32,6 +35,12 @@ from server.soul import SoulSession
 
 log = logging.getLogger("gallings.api")
 WEB = ROOT / "web"
+
+
+def VN_PLUGINS_DIR(r: Runtime) -> Path:  # noqa: N802
+    """放给作品用的 VN Studio 插件（.js）的文件夹：vn.plugins_dir，默认 content/vn_plugins。"""
+    d = Path(str((r.config.get("vn") or {}).get("plugins_dir") or "content/vn_plugins")).expanduser()
+    return d if d.is_absolute() else ROOT / d
 
 
 
@@ -198,9 +207,8 @@ def create_app(runtime: Runtime | None = None) -> FastAPI:
     async def agent_call(body: dict[str, Any]) -> JSONResponse:
         return JSONResponse({"ok": False, "error": "外部 Agent 端口是预留接口，Demo 未开放"}, 501)
 
-    @app.post("/api/post_ending/chat")
-    async def post_ending_chat(body: dict[str, Any]) -> JSONResponse:
-        return JSONResponse({"ok": False, "error": "结局后自由聊天是预留接口（PLAN §16）"}, 501)
+    # 结局后自由聊天（PLAN §16）：/ws/post_ending、/api/post_ending/*、/galagent，由 gallings.tool.galagent 插件提供实现
+    post_ending.mount(app, rt)
 
     # ---------------------------------------------------------------- 会话
     @app.websocket("/ws")
@@ -243,6 +251,24 @@ def create_app(runtime: Runtime | None = None) -> FastAPI:
     async def vn_games() -> dict[str, Any]:
         r = rt()
         return {"dir": str(r.games_dir), "games": r.games()}
+
+    @app.get("/api/vn/plugins")
+    async def vn_plugins() -> dict[str, Any]:
+        """作品页里的游戏（托管模式）启动时来取：galLingS 提供给它的 VN Studio 插件。玩家可以在游戏的“插件”面板里停用。"""
+        r = rt()
+        out = post_ending.vn_plugins(r)
+        d = VN_PLUGINS_DIR(r)
+        if d.is_dir():
+            out += [{"id": f.stem.removesuffix(".vnplugin"), "url": f"/vn_plugins/{f.name}"} for f in sorted(d.glob("*.js"))]
+        return {"plugins": out}
+
+    @app.get("/vn_plugins/{name}")
+    async def vn_plugin_file(name: str) -> FileResponse:
+        d = VN_PLUGINS_DIR(rt()).resolve()
+        f = (d / name).resolve()
+        if f.parent != d or f.suffix != ".js" or not f.is_file():
+            raise HTTPException(404)
+        return FileResponse(f, media_type="text/javascript")
 
     @app.get("/vn/{game}/{path:path}")
     async def vn_file(game: str, path: str) -> FileResponse:

@@ -1,0 +1,181 @@
+{
+  "author": "boliyer（用户提供的称呼）",
+  "archive_sha256": "5cd57dd2595e728099911125e18ba3fc73e5a216408728e94b8d87d4e6bd0c4a",
+  "baseline": "93ad6bde63c82d374df4daab54b7b890b9bca710",
+  "files": [
+    {
+      "path": "覆盖说明.txt",
+      "bytes": 816,
+      "sha256": "ca360d964fe1d09bc4c235c1ccb571c7458a5fa687734590006169ba7b17df8e",
+      "state": "new"
+    },
+    {
+      "path": "galLingS/plugins/examples/galagent-notes/plugin.yaml",
+      "bytes": 820,
+      "sha256": "180828f8f1d549f43936ecc8ea571204ae76ea246e9103230cc098c2cbbc2f55",
+      "state": "new"
+    },
+    {
+      "path": "galLingS/plugins/examples/galagent-notes/plugin.py",
+      "bytes": 2110,
+      "sha256": "3fc98314a5dc0ec76478b4556e80feb1487076502fa4d73623b846ca73b4389c",
+      "state": "new"
+    },
+    {
+      "path": "galLingS/plugins/builtin/galagent/web/vnplugin.src.js",
+      "bytes": 14260,
+      "sha256": "13cb2066ffd1d4fa3ea7b603f70906c9dd15a12e6077b64efb3c76863c96f3af",
+      "state": "new"
+    },
+    {
+      "path": "galLingS/plugins/builtin/galagent/web/galagent.vnplugin.js",
+      "bytes": 74005,
+      "sha256": "65e5d58799f03ddb512a448b90fd21689246d140ee88de09ad37d23417f1ccde",
+      "state": "new"
+    },
+    {
+      "path": "galLingS/plugins/builtin/galagent/web/galagent-ui.js",
+      "bytes": 58069,
+      "sha256": "a6a35c8cba2ca30e82fadea32f87fe20aa43aa0fa4bd630de86ac4e14c51efd7",
+      "state": "new"
+    },
+    {
+      "path": "galLingS/plugins/builtin/galagent/web/chat.html",
+      "bytes": 2166,
+      "sha256": "f9170eea3af5ec432a5de70db40cd872f6bf577395d262dbc03f53b0dd32cc8f",
+      "state": "new"
+    },
+    {
+      "path": "galLingS/plugins/builtin/galagent/web/build_vnplugin.py",
+      "bytes": 2470,
+      "sha256": "18bcc0c7b65bdf9020fa9f69133437461fa1c29de37d32138aaa31ba9f7270fc",
+      "state": "new"
+    },
+    {
+      "path": "galLingS/plugins/builtin/galagent/tools_basic.py",
+      "bytes": 12187,
+      "sha256": "d6e58d7c254b54dec6807297076a0337fe8e02b000423de97fac5899f7c2f356",
+      "state": "new"
+    },
+    {
+      "path": "galLingS/plugins/builtin/galagent/stream_split.py",
+      "bytes": 2692,
+      "sha256": "8c3d7468e6061c499d0d4da63cbbd963f79a0067be3cb79f74df998e34654452",
+      "state": "new"
+    },
+    {
+      "path": "galLingS/plugins/builtin/galagent/prompts.py",
+      "bytes": 4239,
+      "sha256": "eca59c239ad6963eb0965af9be2d8ae8b98150ffd145b75219602b5d4cffea35",
+      "state": "new"
+    },
+    {
+      "path": "galLingS/plugins/builtin/galagent/plugin.yaml",
+      "bytes": 3391,
+      "sha256": "7418f33b9b0c9ac59f8aaf997dc683d875e451f0492c895ee5224803cf630cf7",
+      "state": "new"
+    },
+    {
+      "path": "galLingS/plugins/builtin/galagent/plugin.py",
+      "bytes": 5194,
+      "sha256": "08e68cc0927d12f4f3d57ddf83dc89e0ca8f90345d6070a969927821efc4a911",
+      "state": "new"
+    },
+    {
+      "path": "galLingS/plugins/builtin/galagent/loop.py",
+      "bytes": 18700,
+      "sha256": "7da4fcd7b2ce6844ce01cf16e75db62e799262ab0dcf343d0ea56a8d1aaea444",
+      "state": "new"
+    },
+    {
+      "path": "galLingS/plugins/builtin/galagent/README.md",
+      "bytes": 953,
+      "sha256": "bb8cb7b1a7c82508b6f4fc74fa86fdc24cd3512cb792a43d3d05475de31c23a9",
+      "state": "new"
+    },
+    {
+      "path": "galLingS/content/vn/海风与布丁/index.html",
+      "bytes": 318166,
+      "sha256": "deb718cbae30260e68a6229d459b2089da563bb5a6769569e9e941bff52ec973",
+      "state": "changed"
+    },
+    {
+      "path": "galLingS/content/vn_plugins/README.md",
+      "bytes": 474,
+      "sha256": "82ed576959b68c2576b5f9f701d89882cb72930b06ea2d528e49a4bbfbd56ae0",
+      "state": "new"
+    },
+    {
+      "path": "galLingS/config.galagent.example.yaml",
+      "bytes": 1866,
+      "sha256": "c6680507f434ac499674329d721401eb157945121ddcbdf6994c4a106e7e4d3f",
+      "state": "new"
+    },
+    {
+      "path": "galLingS/web/vn.js",
+      "bytes": 14601,
+      "sha256": "13986b47919b0a5c1960bafb8e24c2decaf982ab2633d6ac7d34726de4be78db",
+      "state": "changed"
+    },
+    {
+      "path": "galLingS/web/vn.html",
+      "bytes": 6715,
+      "sha256": "81f8235e8229f15411a30fadd27cfb999f3269374c8e0f6869ec540820a928d2",
+      "state": "changed"
+    },
+    {
+      "path": "galLingS/tests/plugins/test_galagent.py",
+      "bytes": 13687,
+      "sha256": "2579186c015daf117fb4bef0c8266a88f354c9cbe181328483bfd697a50e0c1b",
+      "state": "new"
+    },
+    {
+      "path": "galLingS/tests/demo/test_vn_page.py",
+      "bytes": 6829,
+      "sha256": "e13f3887e756c16d6f3744fec39275a0bb2d78481fe4f4c078ed474980ff0dc0",
+      "state": "changed"
+    },
+    {
+      "path": "galLingS/server/api/post_ending.py",
+      "bytes": 14665,
+      "sha256": "966db5d981bb39573c8327b1f9b154d7738f01523091d8147c88288b1b2e0112",
+      "state": "new"
+    },
+    {
+      "path": "galLingS/server/api/app.py",
+      "bytes": 16558,
+      "sha256": "f021af3cef11eb5a81fca904b38c0710de8aefb4119e9c6a4264b663e7561e74",
+      "state": "changed"
+    },
+    {
+      "path": "galLingS/docs/galagent.md",
+      "bytes": 12667,
+      "sha256": "67a33be8055ae601ad31a1ba6cb0cba668f0c3a62316550e65129feb7c0cce26",
+      "state": "new"
+    },
+    {
+      "path": "galLingS/docs/vn-page.md",
+      "bytes": 4412,
+      "sha256": "55e9d6d09dd39d6d906b93e806f20d2dd4673b75ae0407618775ca022966cbed",
+      "state": "changed"
+    },
+    {
+      "path": "galLingS/docs/plugin-format.md",
+      "bytes": 9130,
+      "sha256": "dbecdf911f14154302f5ceae85b8cad5a7415f17f506077b6ae458a3108227d6",
+      "state": "changed"
+    },
+    {
+      "path": "galLingS/config.example.yaml",
+      "bytes": 2409,
+      "sha256": "1b689058120489b1bda6925539bcdbde387c0186a0b3250ca778e6f48b8d9796",
+      "state": "changed"
+    },
+    {
+      "path": "galLingS/README.md",
+      "bytes": 3610,
+      "sha256": "f82d9a078d45fbff282637edb3f4f9730b9f388e816fb84a1958220e9df027d3",
+      "state": "changed"
+    }
+  ]
+}

@@ -437,6 +437,70 @@ body.playing #soulTab.show{display:flex}
 #psettings .dot.ok{background:#5fd18a}#psettings .dot.bad{background:#e2725b}#psettings .dot.wait{background:#e6c14d;animation:soulblink 1s infinite}
 @media (pointer:coarse){#soulTab{width:60px;height:80px;font-size:30px}#soul.ovl{width:620px}#soul .hd{font-size:30px}#soul .tabs button{height:52px;font-size:26px}#soul .it p,#soul .talk .her{font-size:27px;line-height:38px}#soul .it small{font-size:18px}#soul .talk .me{font-size:22px}#soul .face{width:64px;height:64px}#soul .win input{height:56px;font-size:23px}#soul .win .btn{width:60px;height:56px}#soul .ovx{width:48px;height:48px;font-size:24px}}
 #soul.show + #soulTab{display:none!important}
+/* —— 插件管理面板（v0.20）：编辑器弹窗和游戏浮层共用，颜色跟随各自的界面 —— */
+.plgui{--pl-card:#ffffff06;--pl-line:var(--line);--pl-dim:var(--dim);--pl-fs:13px;display:flex;flex-direction:column;gap:12px;font-size:var(--pl-fs)}
+#modal .plgui{width:min(700px,86vw)}
+.plg-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.plg-head h2{margin:0;display:flex;align-items:center;gap:8px;font-size:1.25em;font-weight:600}
+.plg-sub{color:var(--pl-dim);font-size:.92em}
+.plg-head .grow{flex:1}
+.plg-imp{display:inline-flex;align-items:center;gap:6px;border:0;border-radius:6px;padding:7px 14px;cursor:pointer;background:var(--acc);color:#0b0c0f;font:inherit;font-weight:600}
+.plg-list{display:flex;flex-direction:column;gap:8px;max-height:58vh;overflow-y:auto}
+.plg-card{display:flex;gap:12px;align-items:flex-start;padding:12px;border:1px solid var(--pl-line);border-radius:10px;background:var(--pl-card);transition:opacity .2s,border-color .2s}
+.plg-card.off{opacity:.55}
+.plg-card.bad{border-color:#ff8a8a77}
+.plg-ic{width:38px;height:38px;border-radius:9px;display:grid;place-items:center;background:#2b3655;color:var(--acc);flex:none;font-size:18px}
+.plg-main{flex:1;min-width:0}
+.plg-t{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.plg-t b{font-size:1.08em}
+.plg-t small{color:var(--pl-dim)}
+.plg-tag{font-size:.78em;padding:1px 8px;border-radius:999px;border:1px solid var(--acc);color:var(--acc);white-space:nowrap}
+.plg-tag.dim{border-color:var(--pl-line);color:var(--pl-dim)}
+.plg-d{color:var(--pl-dim);margin-top:3px;line-height:1.55}
+.plg-perm{display:flex;gap:5px;flex-wrap:wrap;margin-top:6px}
+.plg-perm span{font-size:.78em;padding:1px 7px;border-radius:4px;background:#ffffff12;color:var(--pl-dim)}
+.plg-err{color:#ff8a8a;margin-top:6px;line-height:1.5}
+.plg-set{display:none;flex-direction:column;gap:8px;margin-top:10px;padding-top:10px;border-top:1px dashed var(--pl-line)}
+.plg-card.open .plg-set{display:flex}
+.plg-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.plg-row>span{width:96px;color:var(--pl-dim);flex:none}
+.plg-row input,.plg-row select,.plg-row textarea{flex:1;min-width:0}
+.plg-row textarea{height:60px;resize:vertical;font:inherit}
+.plg-row small{width:100%;padding-left:106px;color:var(--pl-dim);font-size:.85em}
+.plg-ops{display:flex;align-items:center;gap:6px;flex:none}
+.plg-b{display:inline-flex;align-items:center;gap:5px;height:30px;padding:0 10px;border:1px solid var(--pl-line);border-radius:6px;background:transparent;color:inherit;cursor:pointer;font:inherit;white-space:nowrap}
+.plg-b.ico{width:30px;padding:0;justify-content:center}
+.plg-b:hover:not(:disabled){border-color:var(--acc);color:var(--acc)}
+.plg-b.del:hover{border-color:#ff8a8a;color:#ff8a8a}
+.plg-b:disabled{opacity:.4;cursor:default}
+.plg-sw{width:38px;height:22px;border-radius:999px;border:1px solid var(--pl-line);background:#ffffff14;position:relative;cursor:pointer;padding:0;flex:none;transition:background .2s,border-color .2s}
+.plg-sw i{position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;background:#fff;transition:transform .2s}
+.plg-sw.on{background:var(--acc);border-color:var(--acc)}
+.plg-sw.on i{transform:translateX(16px);background:#0b0c0f}
+.plg-empty{text-align:center;padding:30px 0;color:var(--pl-dim);display:flex;flex-direction:column;align-items:center;gap:6px}
+.plg-empty .svi{width:34px;height:34px;opacity:.6}
+.plg-foot{color:var(--pl-dim);font-size:.85em;text-align:center}
+.plgui.drag{outline:2px dashed var(--acc);outline-offset:6px;border-radius:10px}
+/* 游戏里：和“设置”同一种浮层，字大一点 */
+#plugins .plgui{--pl-card:#ffffff10;--pl-line:#ffffff30;--pl-dim:#c3c8d6;--pl-fs:18px;max-width:900px;margin:0 auto}
+#plugins .plg-list{max-height:none;overflow:visible}
+#plugins .plg-ic{width:50px;height:50px;font-size:24px;border-radius:12px;background:#ffffff14}
+#plugins .plg-card{padding:16px;border-radius:12px}
+#plugins .plg-b{height:40px;padding:0 14px;border-radius:8px}
+#plugins .plg-b.ico{width:40px;padding:0}
+#plugins .plg-sw{width:50px;height:28px}
+#plugins .plg-sw i{width:22px;height:22px}
+#plugins .plg-sw.on i{transform:translateX(22px)}
+#plugins .plg-imp{border-radius:8px;padding:9px 20px}
+#plugins .plg-row>span{width:130px}
+#plugins .plg-row small{padding-left:140px}
+#plugins .plg-row input,#plugins .plg-row select,#plugins .plg-row textarea{background:#ffffff10;border:1px solid #ffffff40;border-radius:8px;color:#fff;padding:7px 12px;font:inherit;font-size:17px;outline:none}
+#plugins .plg-row select option{color:#000}
+#plugins .plg-row input:focus,#plugins .plg-row select:focus{border-color:var(--acc)}
+#plgToast{position:absolute;left:50%;top:28px;transform:translate(-50%,-10px);z-index:60;opacity:0;pointer-events:none;background:#000c;color:#fff;border:1px solid #ffffff30;border-radius:10px;padding:8px 18px;font-size:18px;transition:opacity .25s,transform .25s;font-family:var(--font)}
+#plgToast.show{opacity:1;transform:translate(-50%,0)}
+#endcard button.pb{background:var(--acc);color:#000;border-color:transparent;font-weight:600}
+#title.glass button:nth-child(5){animation-delay:.83s}#title.glass button:nth-child(6){animation-delay:.95s}#title.glass button:nth-child(7){animation-delay:1.07s}
 </style>
 <link rel="stylesheet" href="game-polish.css">
 </head>
@@ -462,6 +526,7 @@ body.playing #soulTab.show{display:flex}
     <button class="btn" data-tip="chars" id="bChars"><i data-ic="users"></i></button>
     <button class="btn" data-tip="check" id="bCheck"><i data-ic="stethoscope"></i></button>
     <button class="btn" data-tip="theme" id="bTheme"><i data-ic="palette"></i></button>
+    <button class="btn" data-tip="plugins" id="bPlug"><i data-ic="puzzle"></i></button>
     <select id="chSel" data-tip="chSel"></select>
     <span class="btn" id="saveWarn" data-tip="saveWarn"><i data-ic="triangle-alert"></i></span>
     <div class="grow"></div>
@@ -517,6 +582,7 @@ body.playing #soulTab.show{display:flex}
       <div class="ovl" id="title"></div>
       <div class="ovl" id="slots"></div>
       <div class="ovl" id="psettings"></div>
+      <div class="ovl" id="plugins"></div>
       <div class="ovl" id="gallery"></div>
       <div class="ovl" id="endcard"></div>
       <div class="ovl" id="soul"></div>
@@ -603,6 +669,7 @@ const TIPS = {
   fxPlay:['预览特效','','再播一次',''],
   mood:['持续氛围','','一直持续，直到换掉','🌀神志不清（忽明忽暗+模糊+摇晃）🕯忽明忽暗 ⚡闪烁 🌫模糊 〽摇晃 🎞回忆 🌑昏暗 ❤危险心跳。新的一节会沿用；在时间轴 🌫 轨上拖边缘可以延长或缩短。'],
   wait:['停留秒数','','到时间自动下一节','没有文字的“演出节”默认停 2 秒，并自动隐藏对话框；有台词时对话框自动回来。有文字的节填了也会自动前进。'],
+  plugins:['插件','','导入 / 管理插件','插件能给编辑器和导出的游戏加功能（比如 GalAgent：结局后和角色聊天、让角色用工具做事）。项目里的插件随导出的游戏一起带走；玩家也能在游戏开始界面的“插件”里自己导入。'],
   theme:['界面风格','','对话框、名字牌、选项的样子','6 套预设（默认/和风/少女/科幻/复古/极简），可以再细调颜色、透明度、字号、圆角、字体，或用一张图片当对话框。'],
   ending:['结局','','这一句之后进入结局','填上结局名后，玩家看完这一句会出现结局画面并回到标题；结局会记入“鉴赏 → 结局”。'],
   cgMark:['标记为 CG','','玩家看过后可在鉴赏里回看','名字以 CG_ 开头的背景自动算 CG。'],
@@ -665,7 +732,7 @@ function normLine(l) {
 }
 /* 动效表：[值, 图标, 名称] */
 /* —— 界面图标：Lucide (ISC 许可) 的 SVG 矢量图标，任意缩放都清晰；颜色跟随文字颜色 —— */
-const ICON = {"hourglass":"<path d=\"M5 22h14\"/><path d=\"M5 2h14\"/><path d=\"M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22\"/><path d=\"M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2\"/>","activity":"<path d=\"M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2\"/>","arrow-down":"<path d=\"M12 5v14\"/><path d=\"m19 12-7 7-7-7\"/>","arrow-down-to-line":"<path d=\"M12 17V3\"/><path d=\"m6 11 6 6 6-6\"/><path d=\"M19 21H5\"/>","arrow-left":"<path d=\"m12 19-7-7 7-7\"/><path d=\"M19 12H5\"/>","arrow-right":"<path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/>","arrow-up":"<path d=\"m5 12 7-7 7 7\"/><path d=\"M12 19V5\"/>","bell":"<path d=\"M10.268 21a2 2 0 0 0 3.464 0\"/><path d=\"M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326\"/>","blend":"<circle cx=\"15\" cy=\"9\" r=\"7\"/><circle cx=\"9\" cy=\"15\" r=\"7\"/>","bomb":"<circle cx=\"11\" cy=\"13\" r=\"9\"/><path d=\"M14.35 4.65 16.3 2.7a2.41 2.41 0 0 1 3.4 0l1.6 1.6a2.4 2.4 0 0 1 0 3.4l-1.95 1.95\"/><path d=\"m22 2-1.5 1.5\"/>","book-open":"<path d=\"M12 5v16\"/><path d=\"M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z\"/>","bot":"<path d=\"M12 8V4H8\"/><rect width=\"16\" height=\"12\" x=\"4\" y=\"8\" rx=\"2\"/><path d=\"M2 14h2\"/><path d=\"M20 14h2\"/><path d=\"M15 13v2\"/><path d=\"M9 13v2\"/>","bring-to-front":"<rect x=\"8\" y=\"8\" width=\"8\" height=\"8\" rx=\"2\"/><path d=\"M4 10a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2\"/><path d=\"M14 20a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2\"/>","chevron-down":"<path d=\"m6 9 6 6 6-6\"/>","chevron-right":"<path d=\"m9 18 6-6-6-6\"/>","chevrons-down":"<path d=\"m7 6 5 5 5-5\"/><path d=\"m7 13 5 5 5-5\"/>","chevrons-up":"<path d=\"m17 11-5-5-5 5\"/><path d=\"m17 18-5-5-5 5\"/>","circle-check":"<circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"m16 9-5.5 5.5L8 12\"/>","circle-play":"<path d=\"M9 9.003a1 1 0 0 1 1.517-.859l4.997 2.997a1 1 0 0 1 0 1.718l-4.997 2.997A1 1 0 0 1 9 14.996z\"/><circle cx=\"12\" cy=\"12\" r=\"10\"/>","clapperboard":"<path d=\"m12.296 3.464 3.02 3.956\"/><path d=\"M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3z\"/><path d=\"M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z\"/><path d=\"m6.18 5.276 3.1 3.899\"/>","cloud-fog":"<path d=\"M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242\"/><path d=\"M16 17H7\"/><path d=\"M17 21H9\"/>","contrast":"<circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"M12 18a6 6 0 0 0 0-12v12z\"/>","corner-down-right":"<path d=\"m15 10 5 5-5 5\"/><path d=\"M4 4v7a4 4 0 0 0 4 4h12\"/>","door-open":"<path d=\"M10 21H2\"/><path d=\"M10 3H7a2 2 0 00-2 2v16\"/><path d=\"M14 12h.01\"/><path d=\"M19 21V5a2 2 0 00-1.675-1.974l-6.163-1.013A1 1 0 0010 3v18a1 1 0 001.124.992z\"/><path d=\"M22 21h-3\"/>","eye":"<path d=\"M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0\"/><circle cx=\"12\" cy=\"12\" r=\"3\"/>","eye-off":"<path d=\"M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49\"/><path d=\"M14.084 14.158a3 3 0 0 1-4.242-4.242\"/><path d=\"M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143\"/><path d=\"m2 2 20 20\"/>","fast-forward":"<path d=\"M12 6a2 2 0 0 1 3.414-1.414l6 6a2 2 0 0 1 0 2.828l-6 6A2 2 0 0 1 12 18z\"/><path d=\"M2 6a2 2 0 0 1 3.414-1.414l6 6a2 2 0 0 1 0 2.828l-6 6A2 2 0 0 1 2 18z\"/>","file-code":"<path d=\"M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z\"/><path d=\"M14 2v5a1 1 0 0 0 1 1h5\"/><path d=\"M10 12.5 8 15l2 2.5\"/><path d=\"m14 12.5 2 2.5-2 2.5\"/>","file-plus":"<path d=\"M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z\"/><path d=\"M14 2v5a1 1 0 0 0 1 1h5\"/><path d=\"M9 15h6\"/><path d=\"M12 18v-6\"/>","film":"<rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"2\"/><path d=\"M7 3v18\"/><path d=\"M3 7.5h4\"/><path d=\"M3 12h18\"/><path d=\"M3 16.5h4\"/><path d=\"M17 3v18\"/><path d=\"M17 7.5h4\"/><path d=\"M17 16.5h4\"/>","flag":"<path d=\"M4 22V4a1 1 0 0 1 .4-.8A6 6 0 0 1 8 2c3 0 5 2 7.333 2q2 0 3.067-.8A1 1 0 0 1 20 4v10a1 1 0 0 1-.4.8A6 6 0 0 1 16 16c-3 0-5-2-8-2a6 6 0 0 0-4 1.528\"/>","flame":"<path d=\"M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4\"/>","flip-horizontal-2":"<path d=\"M10 12H8\"/><path d=\"M16 12h-2\"/><path d=\"M22 12h-2\"/><path d=\"M4 12H2\"/><path d=\"M7.298 20.288A1 1 0 008 22h8a1 1 0 00.703-1.712l-3.991-3.99a1 1 0 00-1.424-.001z\"/><path d=\"M7.298 3.712A1 1 0 018 2h8a1 1 0 01.703 1.712l-3.991 3.99a1 1 0 01-1.424.001z\"/>","folder":"<path d=\"M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z\"/>","folder-open":"<path d=\"m6 14 1.5-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.54 6a2 2 0 0 1-1.95 1.5H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H18a2 2 0 0 1 2 2v2\"/>","folder-plus":"<path d=\"M12 10v6\"/><path d=\"M9 13h6\"/><path d=\"M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z\"/>","folder-tree":"<path d=\"M20 10a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1h-2.5a1 1 0 0 1-.8-.4l-.9-1.2A1 1 0 0 0 15 3h-2a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1Z\"/><path d=\"M20 21a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-2.9a1 1 0 0 1-.88-.55l-.42-.85a1 1 0 0 0-.92-.6H13a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1Z\"/><path d=\"M3 5a2 2 0 0 0 2 2h3\"/><path d=\"M3 3v13a2 2 0 0 0 2 2h3\"/>","gamepad-2":"<line x1=\"6\" x2=\"10\" y1=\"11\" y2=\"11\"/><line x1=\"8\" x2=\"8\" y1=\"9\" y2=\"13\"/><line x1=\"15\" x2=\"15.01\" y1=\"12\" y2=\"12\"/><line x1=\"18\" x2=\"18.01\" y1=\"10\" y2=\"10\"/><path d=\"M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z\"/>","heart-pulse":"<path d=\"M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5\"/><path d=\"M3.22 13H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27\"/>","image":"<rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"2\" ry=\"2\"/><circle cx=\"9\" cy=\"9\" r=\"2\"/><path d=\"m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21\"/>","image-plus":"<path d=\"M16 5h6\"/><path d=\"M19 2v6\"/><path d=\"M21 11.5V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7.5\"/><path d=\"m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21\"/><circle cx=\"9\" cy=\"9\" r=\"2\"/>","link":"<path d=\"M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71\"/><path d=\"M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71\"/>","list-checks":"<path d=\"M13 5h8\"/><path d=\"M13 12h8\"/><path d=\"M13 19h8\"/><path d=\"m3 17 2 2 4-4\"/><path d=\"m3 7 2 2 4-4\"/>","lock":"<rect width=\"18\" height=\"11\" x=\"3\" y=\"11\" rx=\"2\" ry=\"2\"/><path d=\"M7 11V7a5 5 0 0 1 10 0v4\"/>","log-out":"<path d=\"m16 17 5-5-5-5\"/><path d=\"M21 12H9\"/><path d=\"M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4\"/>","message-square":"<path d=\"M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z\"/>","message-square-off":"<path d=\"M19 19H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.7.7 0 0 1 2 21.286V5a2 2 0 0 1 1.184-1.826\"/><path d=\"m2 2 20 20\"/><path d=\"M8.656 3H20a2 2 0 0 1 2 2v11.344\"/>","message-square-text":"<path d=\"M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z\"/><path d=\"M7 11h10\"/><path d=\"M7 15h6\"/><path d=\"M7 7h8\"/>","mic":"<path d=\"M12 19v3\"/><path d=\"M19 10v2a7 7 0 0 1-14 0v-2\"/><rect x=\"9\" y=\"2\" width=\"6\" height=\"13\" rx=\"3\"/>","minus":"<path d=\"M5 12h14\"/>","moon":"<path d=\"M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401\"/>","move-horizontal":"<path d=\"m18 8 4 4-4 4\"/><path d=\"M2 12h20\"/><path d=\"m6 8-4 4 4 4\"/>","music":"<path d=\"M9 18V5l12-2v13\"/><circle cx=\"6\" cy=\"18\" r=\"3\"/><circle cx=\"18\" cy=\"16\" r=\"3\"/>","palette":"<path d=\"M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z\"/><circle cx=\"13.5\" cy=\"6.5\" r=\".5\" fill=\"currentColor\"/><circle cx=\"17.5\" cy=\"10.5\" r=\".5\" fill=\"currentColor\"/><circle cx=\"6.5\" cy=\"12.5\" r=\".5\" fill=\"currentColor\"/><circle cx=\"8.5\" cy=\"7.5\" r=\".5\" fill=\"currentColor\"/>","panel-left-close":"<rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"2\"/><path d=\"M9 3v18\"/><path d=\"m16 15-3-3 3-3\"/>","panel-left-open":"<rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"2\"/><path d=\"M9 3v18\"/><path d=\"m14 9 3 3-3 3\"/>","person-standing":"<circle cx=\"12\" cy=\"5\" r=\"1\"/><path d=\"m9 20 3-6 3 6\"/><path d=\"m6 8 6 2 6-2\"/><path d=\"M12 10v4\"/>","play":"<path d=\"M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z\"/>","plus":"<path d=\"M5 12h14\"/><path d=\"M12 5v14\"/>","redo-2":"<path d=\"m15 14 5-5-5-5\"/><path d=\"M20 9H9.5A5.5 5.5 0 0 0 4 14.5A5.5 5.5 0 0 0 9.5 20H13\"/>","save":"<path d=\"M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z\"/><path d=\"M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7\"/><path d=\"M7 3v4a1 1 0 0 0 1 1h7\"/>","scissors":"<circle cx=\"6\" cy=\"6\" r=\"3\"/><path d=\"M8.12 8.12 12 12\"/><path d=\"M20 4 8.12 15.88\"/><circle cx=\"6\" cy=\"18\" r=\"3\"/><path d=\"M14.8 14.8 20 20\"/>","scroll-text":"<path d=\"M15 12h-5\"/><path d=\"M15 8h-5\"/><path d=\"M19 17V5a2 2 0 0 0-2-2H4\"/><path d=\"M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3\"/>","send-to-back":"<rect x=\"14\" y=\"14\" width=\"8\" height=\"8\" rx=\"2\"/><rect x=\"2\" y=\"2\" width=\"8\" height=\"8\" rx=\"2\"/><path d=\"M7 14v1a2 2 0 0 0 2 2h1\"/><path d=\"M14 7h1a2 2 0 0 1 2 2v1\"/>","settings":"<path d=\"M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915\"/><circle cx=\"12\" cy=\"12\" r=\"3\"/>","siren":"<path d=\"M7 18v-6a5 5 0 1 1 10 0v6\"/><path d=\"M5 21a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-1a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2z\"/><path d=\"M21 12h1\"/><path d=\"M18.5 4.5 18 5\"/><path d=\"M2 12h1\"/><path d=\"M12 2v1\"/><path d=\"m4.929 4.929.707.707\"/><path d=\"M12 12v6\"/>","smartphone":"<rect width=\"14\" height=\"20\" x=\"5\" y=\"2\" rx=\"2\" ry=\"2\"/><path d=\"M12 18h.01\"/>","smile":"<path d=\"M15 10V9\"/><path d=\"M16.472 15a6 6 0 01-8.943 0\"/><path d=\"M9 10V9\"/><circle cx=\"12\" cy=\"12\" r=\"10\"/>","sparkle":"<path d=\"M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z\"/>","split":"<path d=\"M16 3h5v5\"/><path d=\"M8 3H3v5\"/><path d=\"M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3\"/><path d=\"m15 9 6-6\"/>","square":"<rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"2\"/>","square-dashed":"<path d=\"M5 3a2 2 0 0 0-2 2\"/><path d=\"M19 3a2 2 0 0 1 2 2\"/><path d=\"M21 19a2 2 0 0 1-2 2\"/><path d=\"M5 21a2 2 0 0 1-2-2\"/><path d=\"M9 3h1\"/><path d=\"M9 21h1\"/><path d=\"M14 3h1\"/><path d=\"M14 21h1\"/><path d=\"M3 9v1\"/><path d=\"M21 9v1\"/><path d=\"M3 14v1\"/><path d=\"M21 14v1\"/>","stethoscope":"<path d=\"M11 2v2\"/><path d=\"M5 2v2\"/><path d=\"M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1\"/><path d=\"M8 15a6 6 0 0 0 12 0v-3\"/><circle cx=\"20\" cy=\"10\" r=\"2\"/>","sun":"<circle cx=\"12\" cy=\"12\" r=\"4\"/><path d=\"M12 2v2\"/><path d=\"M12 20v2\"/><path d=\"m4.93 4.93 1.41 1.41\"/><path d=\"m17.66 17.66 1.41 1.41\"/><path d=\"M2 12h2\"/><path d=\"M20 12h2\"/><path d=\"m6.34 17.66-1.41 1.41\"/><path d=\"m19.07 4.93-1.41 1.41\"/>","tag":"<path d=\"M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z\"/><circle cx=\"7.5\" cy=\"7.5\" r=\".5\" fill=\"currentColor\"/>","target":"<circle cx=\"12\" cy=\"12\" r=\"10\"/><circle cx=\"12\" cy=\"12\" r=\"6\"/><circle cx=\"12\" cy=\"12\" r=\"2\"/>","timer":"<line x1=\"10\" x2=\"14\" y1=\"2\" y2=\"2\"/><line x1=\"12\" x2=\"15\" y1=\"14\" y2=\"11\"/><circle cx=\"12\" cy=\"14\" r=\"8\"/>","tornado":"<path d=\"M21 4H3\"/><path d=\"M18 8H6\"/><path d=\"M19 12H9\"/><path d=\"M16 16h-6\"/><path d=\"M11 20H9\"/>","trash-2":"<path d=\"M10 11v6\"/><path d=\"M14 11v6\"/><path d=\"M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6\"/><path d=\"M3 6h18\"/><path d=\"M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2\"/>","triangle-alert":"<path d=\"m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3\"/><path d=\"M12 9v4\"/><path d=\"M12 17h.01\"/>","undo-2":"<path d=\"M9 14 4 9l5-5\"/><path d=\"M4 9h10.5a5.5 5.5 0 0 1 5.5 5.5a5.5 5.5 0 0 1-5.5 5.5H11\"/>","user":"<path d=\"M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2\"/><circle cx=\"12\" cy=\"7\" r=\"4\"/>","user-plus":"<path d=\"M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2\"/><circle cx=\"9\" cy=\"7\" r=\"4\"/><line x1=\"19\" x2=\"19\" y1=\"8\" y2=\"14\"/><line x1=\"22\" x2=\"16\" y1=\"11\" y2=\"11\"/>","users":"<path d=\"M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2\"/><path d=\"M16 3.128a4 4 0 0 1 0 7.744\"/><path d=\"M22 21v-2a4 4 0 0 0-3-3.87\"/><circle cx=\"9\" cy=\"7\" r=\"4\"/>","variable":"<path d=\"M8 21s-4-3-4-9 4-9 4-9\"/><path d=\"M16 3s4 3 4 9-4 9-4 9\"/><line x1=\"15\" x2=\"9\" y1=\"9\" y2=\"15\"/><line x1=\"9\" x2=\"15\" y1=\"9\" y2=\"15\"/>","vibrate":"<path d=\"m2 8 2 2-2 2 2 2-2 2\"/><path d=\"m22 8-2 2 2 2-2 2 2 2\"/><rect width=\"8\" height=\"14\" x=\"8\" y=\"5\" rx=\"1\"/>","volume-2":"<path d=\"M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z\"/><path d=\"M16 9a5 5 0 0 1 0 6\"/><path d=\"M19.364 18.364a9 9 0 0 0 0-12.728\"/>","wand-sparkles":"<path d=\"m21.64 3.64-1.28-1.28a1.21 1.21 0 0 0-1.72 0L2.36 18.64a1.21 1.21 0 0 0 0 1.72l1.28 1.28a1.2 1.2 0 0 0 1.72 0L21.64 5.36a1.2 1.2 0 0 0 0-1.72\"/><path d=\"m14 7 3 3\"/><path d=\"M5 6v4\"/><path d=\"M19 14v4\"/><path d=\"M10 2v2\"/><path d=\"M7 8H3\"/><path d=\"M21 16h-4\"/><path d=\"M11 3H9\"/>","waves":"<path d=\"M2 12q2.5 2 5 0t5 0 5 0 5 0\"/><path d=\"M2 19q2.5 2 5 0t5 0 5 0 5 0\"/><path d=\"M2 5q2.5 2 5 0t5 0 5 0 5 0\"/>","x":"<path d=\"M18 6 6 18\"/><path d=\"m6 6 12 12\"/>","zap":"<path d=\"M15.914 4a1.5 1.5 0 00-2.474-1.561l-9 9A1.5 1.5 0 005.5 14h4.002a.5.5 0 01.471.666L8.086 20a1.5 1.5 0 002.475 1.56l9-9A1.5 1.5 0 0018.5 10h-3.997a.5.5 0 01-.472-.667z\"/>","zoom-in":"<circle cx=\"11\" cy=\"11\" r=\"8\"/><line x1=\"21\" x2=\"16.65\" y1=\"21\" y2=\"16.65\"/><line x1=\"11\" x2=\"11\" y1=\"8\" y2=\"14\"/><line x1=\"8\" x2=\"14\" y1=\"11\" y2=\"11\"/>","book-heart":"<path d=\"M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20\"/><path d=\"M8.62 9.8A2.25 2.25 0 1 1 12 6.836a2.25 2.25 0 1 1 3.38 2.966l-2.626 2.856a.998.998 0 0 1-1.507 0z\"/>","brain":"<path d=\"M12 18V5\"/><path d=\"M15 13a4.17 4.17 0 0 1-3-4 4.17 4.17 0 0 1-3 4\"/><path d=\"M17.598 6.5A3 3 0 1 0 12 5a3 3 0 1 0-5.598 1.5\"/><path d=\"M17.997 5.125a4 4 0 0 1 2.526 5.77\"/><path d=\"M18 18a4 4 0 0 0 2-7.464\"/><path d=\"M19.967 17.483A4 4 0 1 1 12 18a4 4 0 1 1-7.967-.517\"/><path d=\"M6 18a4 4 0 0 1-2-7.464\"/><path d=\"M6.003 5.125a4 4 0 0 0-2.526 5.77\"/>","feather":"<path d=\"M14.086 18.412A2 2 0 0112.67 19H5v-7.672a2 2 0 01.586-1.414L11.75 3.75a6 6 0 118.49 8.49z\"/><path d=\"M16 8 2 22\"/><path d=\"M17.488 15H9\"/>","list-ordered":"<path d=\"M11 5h10\"/><path d=\"M11 12h10\"/><path d=\"M11 19h10\"/><path d=\"M4 4h1v5\"/><path d=\"M4 9h2\"/><path d=\"M6.5 20H3.4c0-1 2.6-1.925 2.6-3.5a1.5 1.5 0 0 0-2.6-1.02\"/>","send":"<path d=\"M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z\"/><path d=\"m21.854 2.147-10.94 10.939\"/>","eraser":"<path d=\"M21 21H8a2 2 0 0 1-1.42-.587l-3.994-3.999a2 2 0 0 1 0-2.828l10-10a2 2 0 0 1 2.829 0l5.999 6a2 2 0 0 1 0 2.828L12.834 21\"/><path d=\"m5.082 11.09 8.828 8.828\"/>","plug":"<path d=\"M12 22v-5\"/><path d=\"M15 8V2\"/><path d=\"M17 8a1 1 0 0 1 1 1v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1z\"/><path d=\"M9 8V2\"/>"};
+const ICON = {"puzzle":"<path d=\"M15.39 4.39a1 1 0 0 0 1.68-.474 2.5 2.5 0 1 1 3.014 3.015 1 1 0 0 0-.474 1.68l1.683 1.682a2.414 2.414 0 0 1 0 3.414L19.61 15.39a1 1 0 0 1-1.68-.474 2.5 2.5 0 1 0-3.014 3.015 1 1 0 0 1 .474 1.68l-1.683 1.682a2.414 2.414 0 0 1-3.414 0L8.61 19.61a1 1 0 0 0-1.68.474 2.5 2.5 0 1 1-3.014-3.015 1 1 0 0 0 .474-1.68l-1.683-1.682a2.414 2.414 0 0 1 0-3.414L4.39 8.61a1 1 0 0 1 1.68.474 2.5 2.5 0 1 0 3.014-3.015 1 1 0 0 1-.474-1.68l1.683-1.682a2.414 2.414 0 0 1 3.414 0z\"/>","upload":"<path d=\"M12 3v12\"/><path d=\"m17 8-5-5-5 5\"/><path d=\"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4\"/>","hourglass":"<path d=\"M5 22h14\"/><path d=\"M5 2h14\"/><path d=\"M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22\"/><path d=\"M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2\"/>","activity":"<path d=\"M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2\"/>","arrow-down":"<path d=\"M12 5v14\"/><path d=\"m19 12-7 7-7-7\"/>","arrow-down-to-line":"<path d=\"M12 17V3\"/><path d=\"m6 11 6 6 6-6\"/><path d=\"M19 21H5\"/>","arrow-left":"<path d=\"m12 19-7-7 7-7\"/><path d=\"M19 12H5\"/>","arrow-right":"<path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/>","arrow-up":"<path d=\"m5 12 7-7 7 7\"/><path d=\"M12 19V5\"/>","bell":"<path d=\"M10.268 21a2 2 0 0 0 3.464 0\"/><path d=\"M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326\"/>","blend":"<circle cx=\"15\" cy=\"9\" r=\"7\"/><circle cx=\"9\" cy=\"15\" r=\"7\"/>","bomb":"<circle cx=\"11\" cy=\"13\" r=\"9\"/><path d=\"M14.35 4.65 16.3 2.7a2.41 2.41 0 0 1 3.4 0l1.6 1.6a2.4 2.4 0 0 1 0 3.4l-1.95 1.95\"/><path d=\"m22 2-1.5 1.5\"/>","book-open":"<path d=\"M12 5v16\"/><path d=\"M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z\"/>","bot":"<path d=\"M12 8V4H8\"/><rect width=\"16\" height=\"12\" x=\"4\" y=\"8\" rx=\"2\"/><path d=\"M2 14h2\"/><path d=\"M20 14h2\"/><path d=\"M15 13v2\"/><path d=\"M9 13v2\"/>","bring-to-front":"<rect x=\"8\" y=\"8\" width=\"8\" height=\"8\" rx=\"2\"/><path d=\"M4 10a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2\"/><path d=\"M14 20a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2\"/>","chevron-down":"<path d=\"m6 9 6 6 6-6\"/>","chevron-right":"<path d=\"m9 18 6-6-6-6\"/>","chevrons-down":"<path d=\"m7 6 5 5 5-5\"/><path d=\"m7 13 5 5 5-5\"/>","chevrons-up":"<path d=\"m17 11-5-5-5 5\"/><path d=\"m17 18-5-5-5 5\"/>","circle-check":"<circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"m16 9-5.5 5.5L8 12\"/>","circle-play":"<path d=\"M9 9.003a1 1 0 0 1 1.517-.859l4.997 2.997a1 1 0 0 1 0 1.718l-4.997 2.997A1 1 0 0 1 9 14.996z\"/><circle cx=\"12\" cy=\"12\" r=\"10\"/>","clapperboard":"<path d=\"m12.296 3.464 3.02 3.956\"/><path d=\"M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3z\"/><path d=\"M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z\"/><path d=\"m6.18 5.276 3.1 3.899\"/>","cloud-fog":"<path d=\"M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242\"/><path d=\"M16 17H7\"/><path d=\"M17 21H9\"/>","contrast":"<circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"M12 18a6 6 0 0 0 0-12v12z\"/>","corner-down-right":"<path d=\"m15 10 5 5-5 5\"/><path d=\"M4 4v7a4 4 0 0 0 4 4h12\"/>","door-open":"<path d=\"M10 21H2\"/><path d=\"M10 3H7a2 2 0 00-2 2v16\"/><path d=\"M14 12h.01\"/><path d=\"M19 21V5a2 2 0 00-1.675-1.974l-6.163-1.013A1 1 0 0010 3v18a1 1 0 001.124.992z\"/><path d=\"M22 21h-3\"/>","eye":"<path d=\"M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0\"/><circle cx=\"12\" cy=\"12\" r=\"3\"/>","eye-off":"<path d=\"M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49\"/><path d=\"M14.084 14.158a3 3 0 0 1-4.242-4.242\"/><path d=\"M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143\"/><path d=\"m2 2 20 20\"/>","fast-forward":"<path d=\"M12 6a2 2 0 0 1 3.414-1.414l6 6a2 2 0 0 1 0 2.828l-6 6A2 2 0 0 1 12 18z\"/><path d=\"M2 6a2 2 0 0 1 3.414-1.414l6 6a2 2 0 0 1 0 2.828l-6 6A2 2 0 0 1 2 18z\"/>","file-code":"<path d=\"M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z\"/><path d=\"M14 2v5a1 1 0 0 0 1 1h5\"/><path d=\"M10 12.5 8 15l2 2.5\"/><path d=\"m14 12.5 2 2.5-2 2.5\"/>","file-plus":"<path d=\"M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z\"/><path d=\"M14 2v5a1 1 0 0 0 1 1h5\"/><path d=\"M9 15h6\"/><path d=\"M12 18v-6\"/>","film":"<rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"2\"/><path d=\"M7 3v18\"/><path d=\"M3 7.5h4\"/><path d=\"M3 12h18\"/><path d=\"M3 16.5h4\"/><path d=\"M17 3v18\"/><path d=\"M17 7.5h4\"/><path d=\"M17 16.5h4\"/>","flag":"<path d=\"M4 22V4a1 1 0 0 1 .4-.8A6 6 0 0 1 8 2c3 0 5 2 7.333 2q2 0 3.067-.8A1 1 0 0 1 20 4v10a1 1 0 0 1-.4.8A6 6 0 0 1 16 16c-3 0-5-2-8-2a6 6 0 0 0-4 1.528\"/>","flame":"<path d=\"M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4\"/>","flip-horizontal-2":"<path d=\"M10 12H8\"/><path d=\"M16 12h-2\"/><path d=\"M22 12h-2\"/><path d=\"M4 12H2\"/><path d=\"M7.298 20.288A1 1 0 008 22h8a1 1 0 00.703-1.712l-3.991-3.99a1 1 0 00-1.424-.001z\"/><path d=\"M7.298 3.712A1 1 0 018 2h8a1 1 0 01.703 1.712l-3.991 3.99a1 1 0 01-1.424.001z\"/>","folder":"<path d=\"M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z\"/>","folder-open":"<path d=\"m6 14 1.5-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.54 6a2 2 0 0 1-1.95 1.5H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H18a2 2 0 0 1 2 2v2\"/>","folder-plus":"<path d=\"M12 10v6\"/><path d=\"M9 13h6\"/><path d=\"M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z\"/>","folder-tree":"<path d=\"M20 10a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1h-2.5a1 1 0 0 1-.8-.4l-.9-1.2A1 1 0 0 0 15 3h-2a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1Z\"/><path d=\"M20 21a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-2.9a1 1 0 0 1-.88-.55l-.42-.85a1 1 0 0 0-.92-.6H13a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1Z\"/><path d=\"M3 5a2 2 0 0 0 2 2h3\"/><path d=\"M3 3v13a2 2 0 0 0 2 2h3\"/>","gamepad-2":"<line x1=\"6\" x2=\"10\" y1=\"11\" y2=\"11\"/><line x1=\"8\" x2=\"8\" y1=\"9\" y2=\"13\"/><line x1=\"15\" x2=\"15.01\" y1=\"12\" y2=\"12\"/><line x1=\"18\" x2=\"18.01\" y1=\"10\" y2=\"10\"/><path d=\"M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z\"/>","heart-pulse":"<path d=\"M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5\"/><path d=\"M3.22 13H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27\"/>","image":"<rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"2\" ry=\"2\"/><circle cx=\"9\" cy=\"9\" r=\"2\"/><path d=\"m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21\"/>","image-plus":"<path d=\"M16 5h6\"/><path d=\"M19 2v6\"/><path d=\"M21 11.5V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7.5\"/><path d=\"m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21\"/><circle cx=\"9\" cy=\"9\" r=\"2\"/>","link":"<path d=\"M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71\"/><path d=\"M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71\"/>","list-checks":"<path d=\"M13 5h8\"/><path d=\"M13 12h8\"/><path d=\"M13 19h8\"/><path d=\"m3 17 2 2 4-4\"/><path d=\"m3 7 2 2 4-4\"/>","lock":"<rect width=\"18\" height=\"11\" x=\"3\" y=\"11\" rx=\"2\" ry=\"2\"/><path d=\"M7 11V7a5 5 0 0 1 10 0v4\"/>","log-out":"<path d=\"m16 17 5-5-5-5\"/><path d=\"M21 12H9\"/><path d=\"M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4\"/>","message-square":"<path d=\"M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z\"/>","message-square-off":"<path d=\"M19 19H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.7.7 0 0 1 2 21.286V5a2 2 0 0 1 1.184-1.826\"/><path d=\"m2 2 20 20\"/><path d=\"M8.656 3H20a2 2 0 0 1 2 2v11.344\"/>","message-square-text":"<path d=\"M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z\"/><path d=\"M7 11h10\"/><path d=\"M7 15h6\"/><path d=\"M7 7h8\"/>","mic":"<path d=\"M12 19v3\"/><path d=\"M19 10v2a7 7 0 0 1-14 0v-2\"/><rect x=\"9\" y=\"2\" width=\"6\" height=\"13\" rx=\"3\"/>","minus":"<path d=\"M5 12h14\"/>","moon":"<path d=\"M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401\"/>","move-horizontal":"<path d=\"m18 8 4 4-4 4\"/><path d=\"M2 12h20\"/><path d=\"m6 8-4 4 4 4\"/>","music":"<path d=\"M9 18V5l12-2v13\"/><circle cx=\"6\" cy=\"18\" r=\"3\"/><circle cx=\"18\" cy=\"16\" r=\"3\"/>","palette":"<path d=\"M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z\"/><circle cx=\"13.5\" cy=\"6.5\" r=\".5\" fill=\"currentColor\"/><circle cx=\"17.5\" cy=\"10.5\" r=\".5\" fill=\"currentColor\"/><circle cx=\"6.5\" cy=\"12.5\" r=\".5\" fill=\"currentColor\"/><circle cx=\"8.5\" cy=\"7.5\" r=\".5\" fill=\"currentColor\"/>","panel-left-close":"<rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"2\"/><path d=\"M9 3v18\"/><path d=\"m16 15-3-3 3-3\"/>","panel-left-open":"<rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"2\"/><path d=\"M9 3v18\"/><path d=\"m14 9 3 3-3 3\"/>","person-standing":"<circle cx=\"12\" cy=\"5\" r=\"1\"/><path d=\"m9 20 3-6 3 6\"/><path d=\"m6 8 6 2 6-2\"/><path d=\"M12 10v4\"/>","play":"<path d=\"M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z\"/>","plus":"<path d=\"M5 12h14\"/><path d=\"M12 5v14\"/>","redo-2":"<path d=\"m15 14 5-5-5-5\"/><path d=\"M20 9H9.5A5.5 5.5 0 0 0 4 14.5A5.5 5.5 0 0 0 9.5 20H13\"/>","save":"<path d=\"M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z\"/><path d=\"M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7\"/><path d=\"M7 3v4a1 1 0 0 0 1 1h7\"/>","scissors":"<circle cx=\"6\" cy=\"6\" r=\"3\"/><path d=\"M8.12 8.12 12 12\"/><path d=\"M20 4 8.12 15.88\"/><circle cx=\"6\" cy=\"18\" r=\"3\"/><path d=\"M14.8 14.8 20 20\"/>","scroll-text":"<path d=\"M15 12h-5\"/><path d=\"M15 8h-5\"/><path d=\"M19 17V5a2 2 0 0 0-2-2H4\"/><path d=\"M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3\"/>","send-to-back":"<rect x=\"14\" y=\"14\" width=\"8\" height=\"8\" rx=\"2\"/><rect x=\"2\" y=\"2\" width=\"8\" height=\"8\" rx=\"2\"/><path d=\"M7 14v1a2 2 0 0 0 2 2h1\"/><path d=\"M14 7h1a2 2 0 0 1 2 2v1\"/>","settings":"<path d=\"M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915\"/><circle cx=\"12\" cy=\"12\" r=\"3\"/>","siren":"<path d=\"M7 18v-6a5 5 0 1 1 10 0v6\"/><path d=\"M5 21a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-1a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2z\"/><path d=\"M21 12h1\"/><path d=\"M18.5 4.5 18 5\"/><path d=\"M2 12h1\"/><path d=\"M12 2v1\"/><path d=\"m4.929 4.929.707.707\"/><path d=\"M12 12v6\"/>","smartphone":"<rect width=\"14\" height=\"20\" x=\"5\" y=\"2\" rx=\"2\" ry=\"2\"/><path d=\"M12 18h.01\"/>","smile":"<path d=\"M15 10V9\"/><path d=\"M16.472 15a6 6 0 01-8.943 0\"/><path d=\"M9 10V9\"/><circle cx=\"12\" cy=\"12\" r=\"10\"/>","sparkle":"<path d=\"M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z\"/>","split":"<path d=\"M16 3h5v5\"/><path d=\"M8 3H3v5\"/><path d=\"M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3\"/><path d=\"m15 9 6-6\"/>","square":"<rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"2\"/>","square-dashed":"<path d=\"M5 3a2 2 0 0 0-2 2\"/><path d=\"M19 3a2 2 0 0 1 2 2\"/><path d=\"M21 19a2 2 0 0 1-2 2\"/><path d=\"M5 21a2 2 0 0 1-2-2\"/><path d=\"M9 3h1\"/><path d=\"M9 21h1\"/><path d=\"M14 3h1\"/><path d=\"M14 21h1\"/><path d=\"M3 9v1\"/><path d=\"M21 9v1\"/><path d=\"M3 14v1\"/><path d=\"M21 14v1\"/>","stethoscope":"<path d=\"M11 2v2\"/><path d=\"M5 2v2\"/><path d=\"M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1\"/><path d=\"M8 15a6 6 0 0 0 12 0v-3\"/><circle cx=\"20\" cy=\"10\" r=\"2\"/>","sun":"<circle cx=\"12\" cy=\"12\" r=\"4\"/><path d=\"M12 2v2\"/><path d=\"M12 20v2\"/><path d=\"m4.93 4.93 1.41 1.41\"/><path d=\"m17.66 17.66 1.41 1.41\"/><path d=\"M2 12h2\"/><path d=\"M20 12h2\"/><path d=\"m6.34 17.66-1.41 1.41\"/><path d=\"m19.07 4.93-1.41 1.41\"/>","tag":"<path d=\"M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z\"/><circle cx=\"7.5\" cy=\"7.5\" r=\".5\" fill=\"currentColor\"/>","target":"<circle cx=\"12\" cy=\"12\" r=\"10\"/><circle cx=\"12\" cy=\"12\" r=\"6\"/><circle cx=\"12\" cy=\"12\" r=\"2\"/>","timer":"<line x1=\"10\" x2=\"14\" y1=\"2\" y2=\"2\"/><line x1=\"12\" x2=\"15\" y1=\"14\" y2=\"11\"/><circle cx=\"12\" cy=\"14\" r=\"8\"/>","tornado":"<path d=\"M21 4H3\"/><path d=\"M18 8H6\"/><path d=\"M19 12H9\"/><path d=\"M16 16h-6\"/><path d=\"M11 20H9\"/>","trash-2":"<path d=\"M10 11v6\"/><path d=\"M14 11v6\"/><path d=\"M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6\"/><path d=\"M3 6h18\"/><path d=\"M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2\"/>","triangle-alert":"<path d=\"m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3\"/><path d=\"M12 9v4\"/><path d=\"M12 17h.01\"/>","undo-2":"<path d=\"M9 14 4 9l5-5\"/><path d=\"M4 9h10.5a5.5 5.5 0 0 1 5.5 5.5a5.5 5.5 0 0 1-5.5 5.5H11\"/>","user":"<path d=\"M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2\"/><circle cx=\"12\" cy=\"7\" r=\"4\"/>","user-plus":"<path d=\"M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2\"/><circle cx=\"9\" cy=\"7\" r=\"4\"/><line x1=\"19\" x2=\"19\" y1=\"8\" y2=\"14\"/><line x1=\"22\" x2=\"16\" y1=\"11\" y2=\"11\"/>","users":"<path d=\"M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2\"/><path d=\"M16 3.128a4 4 0 0 1 0 7.744\"/><path d=\"M22 21v-2a4 4 0 0 0-3-3.87\"/><circle cx=\"9\" cy=\"7\" r=\"4\"/>","variable":"<path d=\"M8 21s-4-3-4-9 4-9 4-9\"/><path d=\"M16 3s4 3 4 9-4 9-4 9\"/><line x1=\"15\" x2=\"9\" y1=\"9\" y2=\"15\"/><line x1=\"9\" x2=\"15\" y1=\"9\" y2=\"15\"/>","vibrate":"<path d=\"m2 8 2 2-2 2 2 2-2 2\"/><path d=\"m22 8-2 2 2 2-2 2 2 2\"/><rect width=\"8\" height=\"14\" x=\"8\" y=\"5\" rx=\"1\"/>","volume-2":"<path d=\"M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z\"/><path d=\"M16 9a5 5 0 0 1 0 6\"/><path d=\"M19.364 18.364a9 9 0 0 0 0-12.728\"/>","wand-sparkles":"<path d=\"m21.64 3.64-1.28-1.28a1.21 1.21 0 0 0-1.72 0L2.36 18.64a1.21 1.21 0 0 0 0 1.72l1.28 1.28a1.2 1.2 0 0 0 1.72 0L21.64 5.36a1.2 1.2 0 0 0 0-1.72\"/><path d=\"m14 7 3 3\"/><path d=\"M5 6v4\"/><path d=\"M19 14v4\"/><path d=\"M10 2v2\"/><path d=\"M7 8H3\"/><path d=\"M21 16h-4\"/><path d=\"M11 3H9\"/>","waves":"<path d=\"M2 12q2.5 2 5 0t5 0 5 0 5 0\"/><path d=\"M2 19q2.5 2 5 0t5 0 5 0 5 0\"/><path d=\"M2 5q2.5 2 5 0t5 0 5 0 5 0\"/>","x":"<path d=\"M18 6 6 18\"/><path d=\"m6 6 12 12\"/>","zap":"<path d=\"M15.914 4a1.5 1.5 0 00-2.474-1.561l-9 9A1.5 1.5 0 005.5 14h4.002a.5.5 0 01.471.666L8.086 20a1.5 1.5 0 002.475 1.56l9-9A1.5 1.5 0 0018.5 10h-3.997a.5.5 0 01-.472-.667z\"/>","zoom-in":"<circle cx=\"11\" cy=\"11\" r=\"8\"/><line x1=\"21\" x2=\"16.65\" y1=\"21\" y2=\"16.65\"/><line x1=\"11\" x2=\"11\" y1=\"8\" y2=\"14\"/><line x1=\"8\" x2=\"14\" y1=\"11\" y2=\"11\"/>","book-heart":"<path d=\"M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20\"/><path d=\"M8.62 9.8A2.25 2.25 0 1 1 12 6.836a2.25 2.25 0 1 1 3.38 2.966l-2.626 2.856a.998.998 0 0 1-1.507 0z\"/>","brain":"<path d=\"M12 18V5\"/><path d=\"M15 13a4.17 4.17 0 0 1-3-4 4.17 4.17 0 0 1-3 4\"/><path d=\"M17.598 6.5A3 3 0 1 0 12 5a3 3 0 1 0-5.598 1.5\"/><path d=\"M17.997 5.125a4 4 0 0 1 2.526 5.77\"/><path d=\"M18 18a4 4 0 0 0 2-7.464\"/><path d=\"M19.967 17.483A4 4 0 1 1 12 18a4 4 0 1 1-7.967-.517\"/><path d=\"M6 18a4 4 0 0 1-2-7.464\"/><path d=\"M6.003 5.125a4 4 0 0 0-2.526 5.77\"/>","feather":"<path d=\"M14.086 18.412A2 2 0 0112.67 19H5v-7.672a2 2 0 01.586-1.414L11.75 3.75a6 6 0 118.49 8.49z\"/><path d=\"M16 8 2 22\"/><path d=\"M17.488 15H9\"/>","list-ordered":"<path d=\"M11 5h10\"/><path d=\"M11 12h10\"/><path d=\"M11 19h10\"/><path d=\"M4 4h1v5\"/><path d=\"M4 9h2\"/><path d=\"M6.5 20H3.4c0-1 2.6-1.925 2.6-3.5a1.5 1.5 0 0 0-2.6-1.02\"/>","send":"<path d=\"M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z\"/><path d=\"m21.854 2.147-10.94 10.939\"/>","eraser":"<path d=\"M21 21H8a2 2 0 0 1-1.42-.587l-3.994-3.999a2 2 0 0 1 0-2.828l10-10a2 2 0 0 1 2.829 0l5.999 6a2 2 0 0 1 0 2.828L12.834 21\"/><path d=\"m5.082 11.09 8.828 8.828\"/>","plug":"<path d=\"M12 22v-5\"/><path d=\"M15 8V2\"/><path d=\"M17 8a1 1 0 0 1 1 1v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1z\"/><path d=\"M9 8V2\"/>"};
 const ic = n => `<svg class="svi" viewBox="0 0 24 24" aria-hidden="true">${ICON[n] || ''}</svg>`;
 function hydrateIcons(root) { (root || document).querySelectorAll('i[data-ic]').forEach(e => { e.outerHTML = ic(e.dataset.ic); }); }
 hydrateIcons();
@@ -700,9 +767,10 @@ const labels = () => [...new Set(P.lines.map(l => l.label).filter(Boolean))];
 const labelIndex = name => P.lines.findIndex(l => l.label === name);
 function blank() {
   return { v: 3, id: uid(), title: '', assets: {}, recent: { bg: [], ch: [], au: [] }, lines: [mkLine()], cur: 0,
-           vars: [], chars: [],
-           settings: { tip: 'brief', ghost: 0.35, speed: 30, link: true, dlg: 'ghost', vbgm: 0.6, vse: 0.8, vamb: 0.8, vvo: 1, autoMul: 1, skipRead: true, focus: true, agentProvider: 'mock', agentUrl: '', bw: 110, tlh: 260, trk: { hide: {}, lock: {} } } };
+           vars: [], chars: [], plugins: [],
+           settings: { tip: 'brief', ghost: 0.35, speed: 30, link: true, dlg: 'ghost', vbgm: 0.6, vse: 0.8, vamb: 0.8, vvo: 1, autoMul: 1, skipRead: true, focus: true, agentProvider: 'mock', agentUrl: '', pluginData: {}, bw: 110, tlh: 260, trk: { hide: {}, lock: {} } } };
 }
+const VN_VERSION = '0.20.0';
 const gameMode = !!window.VN_GAME;           // 导出的游戏里为 true
 // 被 galLingS 的作品页嵌着玩（网址带 ?host=gallings，且同源）：灵枢自动连 galLingS，手账可以停靠到外面的侧栏
 const HOSTED = (() => { try { return gameMode && new URLSearchParams(location.search).get('host') === 'gallings' && parent !== window && !!parent.document; } catch (e) { return false; } })();
@@ -2152,9 +2220,12 @@ function startPlay(fromIdx, state) {
   SOUL_REV++; soulTabUpd();
   layer.innerHTML = ''; loadPrefs(); loadRead();
   stopEffects(); RT.audioRestore=state?.audio||null; RT.audioSkipEntrySe=!!state;
+  VNPlugins.emit('play', { from: RT.idx, loaded: !!state });
   showPlay(true);
 }
 function stopPlay() {
+  if (RT.chat && !RT.chat.ending) { RT.chat.ending = true; VNPlugins.emit('chat:end', RT.chat); }
+  VNPlugins.emit('stop');
   stopChoiceTimer(); stopAmb();
   clearTimers(); stage.classList.remove('nodlg', 'hideui'); playVoice(null); playBgm(null); RT.chat = null; lastShown = null; $('#pin').classList.remove('show');
   $('#soulTab').classList.remove('show'); SOUL_REV++;
@@ -2200,6 +2271,7 @@ function showPlay(first) {
   setName($('#pnm'), l.speaker);
   const shown = fillVars(l.text);
   if (l.text) { RT.back.push({ s: l.speaker, t: shown, v: l.voice || undefined }); if (RT.back.length > 300) RT.back.shift(); }
+  VNPlugins.emit('line', { index: RT.idx, line: l, text: shown });
   typeText(shown, () => afterText(l));
 }
 // 台词里写 {好感} 会换成变量当前的值
@@ -2264,11 +2336,17 @@ function showEnding(name) {
   soulRemember({ type: 'ending', text: name }, 'end:' + name);
   G.clears++; saveG();
   const box = $('#endcard');
-  box.innerHTML = '<div class="t"></div><div class="n"></div><button>返回标题</button>';
+  const pbs = VNPlugins.R.endBtns.filter(b => { try { return !b.show || b.show(name); } catch (e) { return false; } });
+  box.innerHTML = '<div class="t"></div><div class="n"></div>' + pbs.map((b, k) => `<button class="${b.primary ? 'pb' : ''}" data-pb="${k}">${b.icon ? ic(b.icon) + ' ' : ''}${esc(typeof b.label === 'function' ? b.label(name) : b.label)}</button>`).join('') + '<button data-home>返回标题</button>';
   box.querySelector('.t').textContent = '— ' + name + ' —';
   box.querySelector('.n').textContent = (first ? '新结局达成！' : '') + `  已收集 ${Object.keys(G.endings).length} / ${Math.max(allEndings().length, Object.keys(G.endings).length)}`;
   box.classList.add('show');
-  box.onclick = e => { e.stopPropagation(); if (e.target.tagName === 'BUTTON') { box.classList.remove('show'); stopPlay(); } };
+  box.onclick = e => {
+    e.stopPropagation();
+    const pb = e.target.closest('[data-pb]'); if (pb) { try { pbs[+pb.dataset.pb].onClick(name); } catch (er) { console.warn(er); } return; }
+    if (e.target.closest('[data-home]')) { box.classList.remove('show'); stopPlay(); }
+  };
+  VNPlugins.emit('ending', { name, first });
 }
 // 鉴赏：CG 和结局
 function showGallery(tab = 'cg') {
@@ -2305,6 +2383,7 @@ function advance() {
   if (typer) return finishTyping();
   if (RT.chat) {                                  // Agent 对话：结束后才能往下
     if (!RT.chat.ending) return;
+    if (RT.chat.onExit) { const f = RT.chat.onExit; RT.chat = null; return f(); }   // 插件开的对话（比如结局后聊天）：交回插件
     const ex = RT.chat.line.agent.exit; RT.chat = null;
     const j = ex ? labelIndex(ex) : -1;
     return goNext(j >= 0 ? j : RT.idx + 1);
@@ -2325,6 +2404,7 @@ function choose(c, timedOut) {
   playUi(timedOut ? 'timeoutSilence' : 'choiceConfirm');
   { const va = clone(RT.vars); setTimeout(() => { if (playing) uiVarSe(vb, va); }, 300); }   // 好感音效晚一点，不和点选声叠在一起
   RT.back.push({ s: '▶', t: timedOut ? c.text + '（时间到）' : c.text });
+  VNPlugins.emit('choice', { text: c.text, target: c.target || '', timedOut: !!timedOut });
   const j = c.target ? labelIndex(c.target) : -1;
   goNext(j >= 0 ? j : RT.idx + 1);
 }
@@ -2490,7 +2570,7 @@ function showTitle() {
   t.style.setProperty('--ty', (cv.ty ?? 186) + 'px');
   loadG();
   const hasGal = Object.values(P.assets).some(isCG) || allEndings().length;
-  t.innerHTML = (ca ? `<div class="cbg" style="background-image:${esc(cssUrl(ca.src))}"></div>` : '') + `<h1 class="t-${ca ? pos(cv.title) : 'center'}"></h1><div class="menu m-${ca ? pos(cv.menu) : 'center'}">` + '<button data-t="start">开始游戏</button><button data-t="load">读取进度</button>' + (hasGal ? '<button data-t="gal">鉴赏</button>' : '') + '<button data-t="chapters">章节试阅</button><button data-t="audio">音频试听</button><button data-t="set">设置</button></div>';
+  t.innerHTML = (ca ? `<div class="cbg" style="background-image:${esc(cssUrl(ca.src))}"></div>` : '') + `<h1 class="t-${ca ? pos(cv.title) : 'center'}"></h1><div class="menu m-${ca ? pos(cv.menu) : 'center'}">` + '<button data-t="start">开始游戏</button><button data-t="load">读取进度</button>' + (hasGal ? '<button data-t="gal">鉴赏</button>' : '') + VNPlugins.R.titleBtns.map((b, k) => { try { return !b.show || b.show() ? `<button data-tp="${k}">${esc(b.label)}</button>` : ''; } catch (e) { return ''; } }).join('') + '<button data-t="chapters">章节试阅</button><button data-t="audio">音频试听</button><button data-t="set">设置</button>' + (P.settings.plgMenu === false ? '' : '<button data-t="plg">插件</button>') + '</div>';
   loadPrefs();
   t.querySelector('[data-t=gal]')?.addEventListener('click', e => { e.stopPropagation(); showGallery(); });
   t.querySelector('h1').textContent = P.title || '';
@@ -2499,7 +2579,10 @@ function showTitle() {
   t.querySelector('[data-t=chapters]').onclick=e=>{e.stopPropagation();showChapterReview();};
   t.querySelector('[data-t=audio]').onclick=e=>{e.stopPropagation();showAudioLibrary();};
   t.querySelector('[data-t=set]').onclick = e => { e.stopPropagation(); showPrefs(); };
+  t.querySelector('[data-t=plg]')?.addEventListener('click', e => { e.stopPropagation(); showPluginsOvl(); });
+  t.querySelectorAll('[data-tp]').forEach(b => b.onclick = e => { e.stopPropagation(); try { VNPlugins.R.titleBtns[+b.dataset.tp].onClick(); } catch (er) { console.warn(er); } });
   t.onclick = e => e.stopPropagation();
+  VNPlugins.emit('title');
   t.classList.add('show'); fit();
 }
 
@@ -2769,7 +2852,7 @@ function soulPrefsBind(box) {
 const VNAgent = {
   providers: {},
   register(name, fn) { this.providers[name] = fn; },
-  async chat(req) { const fn = this.providers[P.settings.agentProvider] || this.providers.mock; return fn(req, P.settings); }
+  async chat(req) { const fn = this.providers[(RT.chat && RT.chat.provider) || P.settings.agentProvider] || this.providers.mock; return fn(req, P.settings, RT.chat); }
 };
 window.VNAgent = VNAgent;
 VNAgent.register('mock', async req => {
@@ -2804,8 +2887,9 @@ function buildAgentRequest(C, input) {
 function startChat(l) {
   RT.auto = RT.skip = false; updPctl();
   RT.chat = { line: l, turn: 0, max: Math.max(1, +l.agent.turns || 6), history: [], busy: false, ending: false };
-  $('#pin').classList.add('show'); $('#pinput').value = '';
+  $('#pin').classList.add('show'); $('#pinput').value = ''; $('#pinput').placeholder = '';
   setTimeout(() => $('#pinput').focus({ preventScroll: true }), 30);
+  VNPlugins.emit('chat:start', RT.chat);
 }
 async function sendChat() {
   const C = RT.chat; if (!C || C.busy || C.ending) return;
@@ -2824,7 +2908,7 @@ async function sendChat() {
   if (res.emotion) applyEmotion(C.line.agent.char, String(res.emotion));
   typeText(text, () => { if (res.end || C.turn >= C.max) endChat(); else $('#pinput').focus({ preventScroll: true }); });
 }
-function endChat() { if (!RT.chat) return; RT.chat.ending = true; $('#pin').classList.remove('show'); }
+function endChat() { if (!RT.chat || RT.chat.ending) return; RT.chat.ending = true; $('#pin').classList.remove('show'); VNPlugins.emit('chat:end', RT.chat); }
 function applyEmotion(name, emo) {
   const target = Object.values(P.assets).find(a => a.type === 'ch' && charKey(a) === name && splitName(a.name)[1] === emo);
   if (!target || !lastShown) return;
@@ -2834,7 +2918,7 @@ function applyEmotion(name, emo) {
   });
 }
 $('#pinput').addEventListener('keydown', e => { if (e.key === 'Enter' && !e.isComposing) { e.preventDefault(); sendChat(); } });
-$('#pinEnd').addEventListener('click', e => { e.stopPropagation(); endChat(); advance(); });
+$('#pinEnd').addEventListener('click', e => { e.stopPropagation(); endChat(); if (typer) finishTyping(); advance(); });
 $('#pin').addEventListener('click', e => e.stopPropagation());
 
 /* ========== 弹窗：批量台词 / 设置 ========== */
@@ -2865,7 +2949,7 @@ function openSettings() {
     <div class="row"><span>${ic('music')}</span><input type="range" min="0" max="1" step="0.05" value="${s.vbgm}" data-r="vbgm"></div>
     <div class="row"><span>${ic('bell')}</span><input type="range" min="0" max="1" step="0.05" value="${s.vse}" data-r="vse"></div>
     <div class="row"><span>${ic('waves')}</span><input type="range" min="0" max="1" step="0.05" value="${s.vamb ?? 0.8}" data-r="vamb"></div>
-    <div class="row"><span>${ic('bot')}</span>${seg('agentProvider', [['mock', '模拟'], ['http', '接口']])}</div>
+    <div class="row"><span>${ic('bot')}</span>${seg('agentProvider', [['mock', '模拟'], ['http', '接口'], ...VNPlugins.providers()])}</div>
     <div class="row"><span>接口</span><input data-i="agentUrl" value="${esc(s.agentUrl)}" placeholder="http://localhost:8787/agent"></div>`,
     b => {
       b.querySelectorAll('.seg').forEach(g => { const on = g.querySelector('.on'); if (on) s[g.dataset.k] = on.dataset.v; });
@@ -2986,6 +3070,7 @@ function runCheck() {
     out.push([i, j > i ? `第 ${i + 1}–${j + 1} 句永远走不到` : '这句永远走不到']);
     i = j;
   }
+  out.push(...VNPlugins.checks());
   return out.sort((a, b) => a[0] - b[0]);
 }
 function openCheck() {
@@ -3019,6 +3104,7 @@ function scriptText() {
   { const c = P.settings.cover; if (c && A(c.img)) out.push(`@cover ${A(c.img).name}` + ['menu', 'title', 'style', 'ty'].filter(k => c[k] != null).map(k => ` ${k}=${c[k]}`).join('')); }
   { const so = P.settings.soul; if (so?.char) out.push(`@soul ${so.char}` + ['signal', 'aff', 'rule', 'limit', 'card'].filter(k => so[k] != null && so[k] !== '').map(k => ` ${k}=${so[k]}`).join('')); }
   { const u = P.settings.uiSe; if (u) { const kv = [...UI_SE_KEYS.filter(k => u[k] && A(u[k])).map(k => `${k}=${A(u[k]).name}`), ...['favorVar', 'tailVar'].filter(k => u[k]).map(k => `${k}=${u[k]}`)]; if (kv.length) out.push('@uise ' + kv.join(' ')); } }
+  out.push(...VNPlugins.exportLines());
   P.vars.forEach(v => out.push(`@var ${v.name} = ${v.init}${v.global ? ' global' : ''}`));
   Object.values(P.assets).filter(a => a.type === 'bg' && a.cg != null && a.cg !== /^cg[_\-\s]/i.test(a.name)).forEach(a => out.push(`@cg ${a.name}${a.cg ? '' : ' off'}`));
   P.chars.forEach(c => out.push(`@char ${c.name} color=${c.color}${c.persona ? ' persona=' + c.persona.replace(/\n/g, '\\n') : ''}`));
@@ -3082,10 +3168,13 @@ function loadProject(o) {
   P.lines = P.lines.map(normLine);
   P.vars = Array.isArray(P.vars) ? P.vars : [];
   P.chars = Array.isArray(P.chars) ? P.chars : [];
+  P.plugins = Array.isArray(P.plugins) ? P.plugins.filter(r => r && typeof r.code === 'string') : [];
+  P.settings.pluginData = P.settings.pluginData && typeof P.settings.pluginData === 'object' ? P.settings.pluginData : {};
   P.assets = P.assets || {};
   P.recent = Object.assign({ bg: [], ch: [], au: [] }, P.recent);
   P.cur = Math.max(0, Math.min(P.lines.length - 1, P.cur | 0));
   hist = []; redoS = []; selUid = null; TL.sel = null; TL.lastCur = -1; if(gameMode){applyTheme();}else{applyTlh();changed();}
+  if (!gameMode) VNPlugins.reload();
 }
 
 /* ========== 按钮与快捷键 ========== */
@@ -3098,6 +3187,7 @@ $('#fProj').onchange = async e => {
 };
 $('#bSave').onclick = saveFile;
 $('#bTheme').onclick = openTheme;
+$('#bPlug').onclick = openPlugins;
 $('#bFolder').onclick = folderMenu;
 $('#bExport').onclick = exportScript;
 $('#bGame').onclick = exportGame;
@@ -3515,7 +3605,7 @@ function importScript(text, opt = {}) {
       case 'timeout': { need(); const m = arg.match(/^(\d+(?:\.\d+)?)(?:\s*->\s*(\S+))?$/); if (!m || !(+m[1] > 0)) err('写法：@timeout 秒数 [-> 超时默认的选项标签]'); last.ctime = +m[1]; last.cdef = m[2] || ''; break; }
       case 'agent': { need(); const gi = arg.indexOf('goal='), head = gi >= 0 ? arg.slice(0, gi) : arg, o = kv(head);
         last.agent = { char: head.trim().split(/\s+/)[0], goal: gi >= 0 ? arg.slice(gi + 5).trim() : '', turns: +o.turns || 6, exit: o.exit || '' }; break; }
-      default: err('不认识的命令 @' + cmd);
+      default: if (!VNPlugins.runCommand(cmd, arg, { kv, err, need })) err('不认识的命令 @' + cmd + '（如果是插件提供的命令，先在“插件”里装上并启用那个插件）');
     }
   });
   if (!lines.length) fail('剧本里没有台词');
@@ -3536,6 +3626,14 @@ const OPS = {
   title: c => { P.title = String(c.text ?? c.title ?? ''); },
   theme: c => { API.setTheme(c); return theme(); },
   cover: c => API.setCover(c),
+  plugins: () => (P.plugins || []).map(r => ({ id: r.id, name: r.name, version: r.version, enabled: r.enabled !== false })),
+  plugin: c => {     // { op:'plugin', code } 装进项目；{ op:'plugin', id, enabled } 开关；{ op:'plugin', id, remove:true } 卸载
+    if (c.code != null) { const m = peekMeta(String(c.code)); P.plugins = (P.plugins || []).filter(r => r.id !== m.id); P.plugins.push({ id: m.id, name: m.name, version: m.version, code: String(c.code), enabled: c.enabled !== false, settings: c.settings || {} }); VNPlugins.reload(); return m; }
+    const r = (P.plugins || []).find(r => r.id === c.id); if (!r) fail('项目里没有这个插件：' + c.id);
+    if (c.remove) P.plugins = P.plugins.filter(x => x !== r); else if (c.enabled != null) r.enabled = !!c.enabled;
+    if (c.settings) r.settings = Object.assign({}, r.settings, c.settings);
+    VNPlugins.reload();
+  },
   soul: c => API.setSoul(c.char == null || c.char === 'off' || c.char === '' ? 'off' : c),
   asset: c => API.addAsset(c),
   var: c => { if (!IDENT.test(c.name || '')) fail('变量名不合法：' + c.name); if (BUILTIN_VARS.includes(c.name)) fail(c.name + ' 是内置变量'); const v = P.vars.find(v => v.name === c.name); const init = String(c.init ?? 0), g = c.global ? true : undefined; if (v) { v.init = init; if (c.global !== undefined) v.global = g; } else P.vars.push({ name: c.name, init, global: g }); },
@@ -3619,7 +3717,7 @@ async function execCmds(cmds, opt = {}) {
   let failed = false;
   try {
     for (const c of cmds) {
-      const fn = OPS[c?.op];
+      const fn = OPS[c?.op] || VNPlugins.op(c?.op);
       try {
         if (!fn) fail('未知命令：' + c?.op + '（可用：' + Object.keys(OPS).join(', ') + '）');
         // 浏览器里给网址/图片却没给尺寸时，先读一下尺寸
@@ -3691,6 +3789,8 @@ if (HOSTED) {
     title() { if (playing) stopPlay(); },
     forget() { if (playing) soulForget(); },
     connect() { soulSock.close(); return soulSock.open(); },
+    plugins: () => VNPlugins.list().map(p => ({ id: p.id, name: p.name, version: p.version, src: p.src, enabled: p.enabled, error: p.error })),
+    openPlugins() { showPluginsOvl(); },
   };
   let rev = -1;
   setInterval(() => { if (SOUL_DOCK && rev !== SOUL_REV) { rev = SOUL_REV; showSoul(); } }, 300);
@@ -3712,15 +3812,468 @@ const audioPanel = document.createElement('div'); audioPanel.id = 'paudio'; audi
 new MutationObserver(() => { if (!audioPanel.classList.contains('show')) closeAudioLibrary(); }).observe(audioPanel, { attributes: true, attributeFilter: ['class'] });
 
 
+/* ========== 插件（vn-plugin/1） ==========
+// 插件 = 一个 .js 文件，里面只调用一次 VNPlugin.define({ id, name, version, api: 1, setup(vn) { … } })。规范见 PLUGIN_API.md。
+// 三个来源，同 id 后者覆盖前者：
+//   项目插件  P.plugins（编辑器里导入，存进项目，随导出的游戏一起带走）
+//   托管插件  在 galLingS 作品页里玩时，galLingS 提供的插件（/api/vn/plugins）
+//   玩家插件  导出的游戏里玩家自己导入的（IndexedDB vnplugins:<项目id>）
+// 玩家对每个插件的开关、设置存 localStorage vnplug:<项目id>；编辑器里改的是项目自带的默认值。
+// 安全：插件能运行任意代码（这是“插件”本身的意思），所以导入前一定会提示，只导入信任的来源；剧本本身仍然不执行代码。 */
+const PLUGIN_API = 1;
+const PLUGIN_ID_RE = /^[a-z0-9][a-z0-9._-]{2,63}$/i;
+const VNPlugins = (() => {
+  const live = new Map();        // id → 已加载的插件 { id, def, src, rec, vn, offs, dispose, exports, error, needReload }
+  const known = new Map();       // id → 列表里显示的条目（含未启用、加载失败的）
+  const R = { providers: {}, commands: {}, ops: {}, endBtns: [], titleBtns: [], checks: [], ev: {} };
+  let defined = null, booting = null, hostList = [];
+  const stKey = () => 'vnplug:' + P.id, playerKey = () => 'vnplugins:' + P.id;
+  const loadSt = () => { try { return JSON.parse(localStorage.getItem(stKey()) || '{}') || {}; } catch (e) { return {}; } };
+  const saveSt = st => { try { localStorage.setItem(stKey(), JSON.stringify(st)); } catch (e) {} };
+  const localKey = (id, k) => 'vnplugsec:' + P.id + ':' + id + ':' + k;     // local:true 的设置（令牌等）只存本机，不进项目、不随游戏导出
+
+  /* —— 运行插件代码，取出它 define 的内容 —— */
+  function exec(code, label) {
+    if (typeof code !== 'string' || !code.trim()) throw new Error('插件文件是空的');
+    if (code.length > 4e6) throw new Error('插件文件太大（超过 4 MB）');
+    defined = null; let err = null;
+    const onErr = e => { err = e.error || new Error(e.message); e.preventDefault?.(); };
+    addEventListener('error', onErr);
+    try {
+      const s = document.createElement('script');
+      s.textContent = code + '\n//# sourceURL=vnplugin-' + String(label || 'plugin').replace(/[^\w.-]/g, '_') + '.js';
+      document.head.appendChild(s); s.remove();
+    } finally { removeEventListener('error', onErr); }
+    if (err) throw err;
+    const d = defined; defined = null;
+    if (!d) throw new Error('这个文件不是 VN Studio 插件（没有调用 VNPlugin.define）');
+    return check(d);
+  }
+  function check(d) {
+    if (!d || typeof d !== 'object') throw new Error('define 需要一个对象');
+    if (!PLUGIN_ID_RE.test(d.id || '')) throw new Error('插件 id 不合法：' + d.id + '（3–64 个字母、数字、点、减号、下划线，建议写成 作者.名字）');
+    if (!d.name) throw new Error('插件缺少 name');
+    if (!/^\d+\.\d+(\.\d+)?([-+.\w]*)$/.test(String(d.version || ''))) throw new Error('插件 version 要写成 1.0.0 这样');
+    if ((d.api | 0) < 1 || (d.api | 0) > PLUGIN_API) throw new Error(`插件需要接口版本 ${d.api}，这个 VN Studio 支持 ${PLUGIN_API}`);
+    if (d.setup != null && typeof d.setup !== 'function') throw new Error('setup 必须是函数');
+    if (d.settings != null && !Array.isArray(d.settings)) throw new Error('settings 必须是数组');
+    return d;
+  }
+  const meta = d => ({ id: d.id, name: String(d.name), version: String(d.version), author: String(d.author || ''), description: String(d.description || ''), icon: String(d.icon || 'puzzle'), homepage: String(d.homepage || ''), permissions: Array.isArray(d.permissions) ? d.permissions.map(String) : [] });
+
+  /* —— 事件 —— */
+  function emit(name, data) {
+    for (const f of [...(R.ev[name] || [])]) { try { f(data); } catch (e) { console.warn('[插件] ' + name + ' 处理出错', e); } }
+  }
+
+  /* —— 设置：玩家改的 > 项目默认 > 插件默认 —— */
+  function settingDefs(id) { return (live.get(id)?.def || known.get(id)?.def)?.settings || []; }
+  function getSetting(id, k) {
+    const sd = settingDefs(id).find(s => s.key === k);
+    if (sd?.local) { try { const v = localStorage.getItem(localKey(id, k)); if (v != null) return JSON.parse(v); } catch (e) {} return sd.default ?? ''; }
+    const st = loadSt()[id]?.set || {}; if (Object.prototype.hasOwnProperty.call(st, k)) return st[k];
+    const rec = (P.plugins || []).find(r => r.id === id); if (rec?.settings && Object.prototype.hasOwnProperty.call(rec.settings, k)) return rec.settings[k];
+    return sd?.default ?? (sd?.type === 'bool' ? false : '');
+  }
+  function setSetting(id, k, v) {
+    const sd = settingDefs(id).find(s => s.key === k);
+    if (sd?.local) { try { localStorage.setItem(localKey(id, k), JSON.stringify(v)); } catch (e) {} }
+    else {
+      const rec = (P.plugins || []).find(r => r.id === id);
+      if (!gameMode && !headless && rec && known.get(id)?.src === 'project') { rec.settings = Object.assign({}, rec.settings, { [k]: v }); changed(); }
+      else { const st = loadSt(); st[id] = Object.assign({}, st[id]); st[id].set = Object.assign({}, st[id].set, { [k]: v }); saveSt(st); }
+    }
+    const p = live.get(id); if (p) for (const f of p.setFns) { try { f(k, v); } catch (e) { console.warn(e); } }
+  }
+
+  /* —— 给插件的接口 vn —— */
+  function makeVn(p) {
+    const id = p.id, offs = p.offs;
+    const track = off => { offs.push(off); return off; };
+    const removeFrom = (arr, x) => () => { const i = arr.indexOf(x); if (i >= 0) arr.splice(i, 1); };
+    const vn = {
+      id, api: PLUGIN_API,
+      engine: { name: 'VN Studio', version: VN_VERSION, mode: gameMode ? 'game' : headless ? 'headless' : 'editor', hosted: HOSTED, origin: location.origin, protocol: location.protocol },
+      exports: p.exports,
+      on(ev, fn) { (R.ev[ev] ||= []).push(fn); return track(removeFrom(R.ev[ev], fn)); },
+      require(other) { const q = live.get(other); return q && !q.error ? q.exports : null; },
+      settings: {
+        get: k => getSetting(id, k),
+        all: () => Object.fromEntries(settingDefs(id).map(s => [s.key, getSetting(id, s.key)])),
+        set: (k, v) => setSetting(id, k, v),
+        onChange(fn) { p.setFns.push(fn); return track(removeFrom(p.setFns, fn)); },
+      },
+      // 项目数据：剧本命令（如 @postchat）写在这里，随项目保存、随游戏导出
+      data: {
+        get: () => clone(P.settings.pluginData?.[id] || {}),
+        set(o) { P.settings.pluginData = Object.assign({}, P.settings.pluginData, { [id]: clone(o || {}) }); if (!gameMode && !headless && !batching) changed(); },
+      },
+      storage: {   // 本机小存储（localStorage，按项目 + 插件分开）
+        get(k, d) { try { const v = localStorage.getItem('vnplugkv:' + P.id + ':' + id + ':' + k); return v == null ? d : JSON.parse(v); } catch (e) { return d; } },
+        set(k, v) { try { localStorage.setItem('vnplugkv:' + P.id + ':' + id + ':' + k, JSON.stringify(v)); } catch (e) {} },
+      },
+      project: {
+        get title() { return P.title; }, get id() { return P.id; },
+        chars: () => P.chars.map(c => ({ name: c.name, color: c.color, persona: c.persona || '' })),
+        vars: () => P.vars.map(v => ({ name: v.name, init: v.init, global: !!v.global })),
+        soul: () => clone(P.settings.soul || null),
+      },
+      chars: {
+        get: name => { const c = charOf(name); return c ? { name: c.name, color: c.color, persona: c.persona || '' } : null; },
+        expressions: name => exprNames(name),
+        avatar(name) { const list = Object.values(P.assets).filter(a => a.type === 'ch' && charKey(a) === name); const a = list.find(a => !splitName(a.name)[1]) || list[0]; return a && a.src && !String(a.src).startsWith('(') ? a.src : ''; },
+        setEmotion: (name, emo) => applyEmotion(name, String(emo || '')),
+      },
+      vars: {
+        all: () => clone(playing ? RT.vars || {} : Object.fromEntries(P.vars.map(v => [v.name, v.init]))),
+        get: name => (RT.vars || {})[name],
+        set(name, value) {
+          const v = P.vars.find(v => v.name === name); if (!v) throw new Error('没有这个变量：' + name);
+          RT.vars[name] = typeof value === 'number' || (value !== '' && value != null && isFinite(+value)) ? +value : String(value);
+          if (v.global) { loadG(); G.vars[name] = RT.vars[name]; saveG(); }
+          return RT.vars[name];
+        },
+      },
+      audio: {
+        se(name) { const a = Object.values(P.assets).find(a => a.type === 'se' && a.name === name); if (!a) throw new Error('没有这个音效：' + name); playSe(a.id); return true; },
+        list: () => Object.values(P.assets).filter(a => a.type === 'se').map(a => a.name),
+      },
+      story: {
+        get playing() { return playing; }, get index() { return RT.idx; },
+        line: () => playing ? clone(P.lines[RT.idx] || null) : null,
+        backlog: (n = 20) => (RT.back || []).slice(-n).map(b => ({ speaker: b.s === '▶' ? '' : b.s || '', text: b.t, choice: b.s === '▶' })),
+        background: () => { const l = lastShown || P.lines[RT.idx]; return l?.bg && A(l.bg) ? { name: A(l.bg).name, src: A(l.bg).src } : null; },
+      },
+      agent: {
+        // 新“大脑”：fn(request, settings, chat) → Promise<{ text, emotion?, set?, end? }>；request 格式见 AGENT_API.md（vn-agent/1）
+        register(name, label, fn) {
+          if (typeof label === 'function') { fn = label; label = name; }
+          R.providers[name] = { label: String(label || name), plugin: id }; VNAgent.register(name, fn);
+          return track(() => { if (R.providers[name]?.plugin === id) { delete R.providers[name]; delete VNAgent.providers[name]; } });
+        },
+      },
+      chat: {
+        // 开一段自由对话（和剧情 @agent 同一套：对话框 + 输入框）。opts: { char, goal, provider, turns, greeting, placeholder, onExit(), extra }
+        start(o = {}) {
+          if (!playing) throw new Error('只有游戏进行中才能开始对话');
+          const cur = P.lines[RT.idx] || {};
+          const line = { id: 'plugin-chat', text: o.setup ?? cur.text ?? '', bg: lastShown ? lastShown.bg : cur.bg, agent: { char: String(o.char || ''), goal: String(o.goal || ''), turns: o.turns ?? 9999, exit: '' } };
+          hideOverlays(); clearTimers(); stage.classList.remove('nodlg', 'hideui');
+          startChat(line);
+          Object.assign(RT.chat, { plugin: id, provider: o.provider || null, onExit: typeof o.onExit === 'function' ? o.onExit : null }, o.extra || {});
+          setName($('#pnm'), line.agent.char); $('#ptx').textContent = o.greeting || '……';
+          $('#pinput').placeholder = o.placeholder || '';
+          return RT.chat;
+        },
+        end() { if (RT.chat) { endChat(); if (typer) finishTyping(); advance(); } },
+        get current() { return RT.chat; },
+      },
+      script: {
+        // 剧本命令 @名字：parse(参数文字, { kv, err })；export() 返回要写回剧本的行（字符串或数组）
+        command(name, h) {
+          name = String(name).toLowerCase();
+          if (!/^[a-z][a-z0-9_]{1,31}$/.test(name)) throw new Error('命令名不合法：' + name);
+          R.commands[name] = Object.assign({ plugin: id }, h);
+          return track(() => { if (R.commands[name]?.plugin === id) delete R.commands[name]; });
+        },
+      },
+      api: { op(name, fn) { R.ops[name] = { plugin: id, fn }; return track(() => { if (R.ops[name]?.plugin === id) delete R.ops[name]; }); } },
+      check(fn) { const x = { plugin: id, fn }; R.checks.push(x); return track(removeFrom(R.checks, x)); },
+      ui: {
+        icon: n => ic(n), esc,
+        get stage() { return stage; },
+        el: name => ({ dialog: $('#pdlg'), name: $('#pnm'), text: $('#ptx'), input: $('#pinput'), inputBar: $('#pin'), endcard: $('#endcard'), title: $('#title') })[name] || null,
+        css(text) { const s = document.createElement('style'); s.dataset.plugin = id; s.textContent = String(text); document.head.appendChild(s); return track(() => s.remove()); },
+        toast: msg => pluginToast(msg),
+        // 结局卡上的按钮：{ label(结局名) | label, primary, show(结局名), onClick(结局名) }
+        addEndingButton(b) { const x = Object.assign({ plugin: id }, b); R.endBtns.push(x); return track(removeFrom(R.endBtns, x)); },
+        // 开始界面菜单里多一项：{ label, onClick, show() }
+        addTitleButton(b) { const x = Object.assign({ plugin: id }, b); R.titleBtns.push(x); return track(removeFrom(R.titleBtns, x)); },
+        endingCard: { show: () => $('#endcard').classList.add('show'), hide: () => $('#endcard').classList.remove('show') },
+      },
+      get raw() { return { P, RT, VNAgent, stage }; },   // 逃生口：直接碰内部数据。不保证以后版本不变
+      log: (...a) => console.log('[' + id + ']', ...a),
+    };
+    return vn;
+  }
+
+  /* —— 加载 / 卸下一个插件 —— */
+  function start(item) {
+    const { def } = item;
+    stop(def.id, true);
+    const p = { id: def.id, def, src: item.src, rec: item.rec, offs: [], setFns: [], exports: {}, dispose: null, error: '' };
+    p.vn = makeVn(p);
+    live.set(def.id, p);
+    try {
+      const r = def.setup ? def.setup(p.vn) : null;
+      if (typeof r === 'function') p.dispose = r; else if (r && typeof r.dispose === 'function') p.dispose = () => r.dispose();
+      if (r && typeof r.then === 'function') r.catch(e => { p.error = String(e?.message || e); console.warn(e); });
+    } catch (e) { p.error = String(e?.message || e); console.warn('[插件] ' + def.id + ' 启动失败', e); }
+    emit('plugin:ready', { id: def.id });
+  }
+  function stop(id, quiet) {
+    const p = live.get(id); if (!p) return true;
+    let clean = true;
+    try { p.dispose?.(); } catch (e) { console.warn(e); }
+    for (const off of p.offs.splice(0).reverse()) { try { off(); } catch (e) { console.warn(e); } }
+    if (!p.dispose && p.def.cleanup === false) clean = false;      // 插件自己说清不干净，要刷新
+    live.delete(id);
+    if (!quiet) emit('plugin:stopped', { id });
+    return clean;
+  }
+
+  /* —— 收集三个来源 —— */
+  async function sources() {
+    const out = [];
+    for (const rec of P.plugins || []) out.push({ src: 'project', rec, code: rec.code, enabled: rec.enabled !== false });
+    for (const h of hostList) out.push({ src: 'host', rec: h, code: h.code, enabled: true });
+    if (gameMode) for (const rec of (await idbGet(playerKey())) || []) out.push({ src: 'player', rec, code: rec.code, enabled: true });
+    return out;
+  }
+  async function loadHost() {
+    hostList = [];
+    if (!HOSTED) return;
+    try {
+      const r = await fetch('/api/vn/plugins', { cache: 'no-store' }); if (!r.ok) return;
+      const j = await r.json();
+      for (const x of (j.plugins || []).slice(0, 20)) {
+        if (!x || typeof x.url !== 'string' || !x.url.startsWith('/')) continue;     // 只收同源
+        try { const t = await fetch(x.url, { cache: 'no-store' }); if (t.ok) hostList.push({ id: x.id, url: x.url, code: await t.text() }); } catch (e) {}
+      }
+    } catch (e) {}
+  }
+  async function reload(opt = {}) {
+    for (const id of [...live.keys()]) stop(id, true);
+    known.clear();
+    if (opt.host) await loadHost();
+    const st = loadSt(), order = [];
+    for (const it of await sources()) {
+      let def = null, error = '';
+      try { def = exec(it.code, it.rec?.id || it.src); } catch (e) { error = String(e.message || e); }
+      const id = def?.id || it.rec?.id || '?';
+      const item = { id, def, src: it.src, rec: it.rec, error, enabled: it.enabled && !(st[id]?.off), meta: def ? meta(def) : { id, name: it.rec?.name || id, version: it.rec?.version || '?', author: '', description: '', icon: 'puzzle', permissions: [] } };
+      if (known.has(id)) item.overrides = known.get(id).src;
+      known.set(id, item);
+    }
+    // 先启动被依赖的（requires）
+    const seen = new Set();
+    const visit = (item, depth = 0) => {
+      if (seen.has(item.id) || depth > 10) return; seen.add(item.id);
+      for (const dep of item.def?.requires || []) { const d = known.get(dep); if (d) visit(d, depth + 1); }
+      order.push(item);
+    };
+    for (const item of known.values()) visit(item);
+    for (const item of order) {
+      if (!item.def || !item.enabled || item.error) continue;
+      const miss = (item.def.requires || []).filter(d => !known.get(d)?.enabled);
+      if (miss.length) { item.error = '需要先装并启用：' + miss.join('、'); continue; }
+      start(item);
+      const p = live.get(item.id); if (p?.error) item.error = p.error;
+    }
+    emit('plugins:changed');
+  }
+
+  /* —— 管理面板用的操作 —— */
+  async function install(code, from) {
+    const def = exec(code, 'import');                // 先试运行，拿到名字版本，不启动
+    const m = meta(def);
+    if (!gameMode) {                                  // 编辑器：装进项目
+      P.plugins = (P.plugins || []).filter(r => r.id !== m.id);
+      P.plugins.push({ id: m.id, name: m.name, version: m.version, code, enabled: true, settings: {} });
+      changed();
+    } else {                                          // 游戏：装给这个玩家
+      const list = ((await idbGet(playerKey())) || []).filter(r => r.id !== m.id);
+      list.push({ id: m.id, name: m.name, version: m.version, code, from: from || '' });
+      if (!(await idbSet(playerKey(), list))) throw new Error('浏览器存储不可用，装不上');
+      const st = loadSt(); if (st[m.id]) { delete st[m.id].off; saveSt(st); }
+    }
+    await reload();
+    return m;
+  }
+  async function remove(id) {
+    const item = known.get(id); if (!item) return;
+    const clean = stop(id);
+    if (item.src === 'project' && !gameMode) { P.plugins = (P.plugins || []).filter(r => r.id !== id); changed(); }
+    else if (item.src === 'player') { const list = ((await idbGet(playerKey())) || []).filter(r => r.id !== id); await idbSet(playerKey(), list); }
+    else { const st = loadSt(); st[id] = Object.assign({}, st[id], { off: true }); saveSt(st); }   // 托管 / 项目自带的：玩家只能停用
+    try { Object.keys(localStorage).filter(k => k.startsWith('vnplugsec:' + P.id + ':' + id + ':')).forEach(k => localStorage.removeItem(k)); } catch (e) {}
+    await reload();
+    return clean;
+  }
+  async function setEnabled(id, on) {
+    const item = known.get(id); if (!item) return;
+    if (item.src === 'project' && !gameMode) { const rec = P.plugins.find(r => r.id === id); if (rec) rec.enabled = on; changed(); }
+    else { const st = loadSt(); st[id] = Object.assign({}, st[id]); if (on) delete st[id].off; else st[id].off = true; saveSt(st); }
+    let clean = true;
+    if (!on) clean = stop(id);
+    await reload();
+    return clean;
+  }
+  function list() {
+    return [...known.values()].map(it => ({ ...it.meta, src: it.src, enabled: it.enabled, running: live.has(it.id) && !live.get(it.id).error, error: it.error, overrides: it.overrides || '',
+      settings: (it.def?.settings || []).map(s => ({ ...s, value: getSetting(it.id, s.key) })),
+      actions: (it.def?.actions || []).filter(a => !a.when || a.when === 'all' || a.when === (gameMode ? 'game' : 'editor')).map(a => ({ id: a.id, label: a.label, icon: a.icon || 'zap' })),
+      removable: !(gameMode && (it.src === 'project' || it.src === 'host')), code: it.rec?.code }));
+  }
+  function action(id, aid) { const p = live.get(id); const a = p?.def.actions?.find(a => a.id === aid); if (!a) return pluginToast('先启用这个插件'); try { a.run(p.vn); } catch (e) { alert('插件出错：' + e.message); } }
+
+  return {
+    define(d) { defined = d; },
+    emit, reload, install, remove, setEnabled, list, action, getSetting, setSetting,
+    async boot() { if (!booting) booting = reload({ host: true }); return booting; },
+    get live() { return live; }, R,
+    providers: () => Object.entries(R.providers).map(([k, v]) => [k, v.label]),
+    runCommand(cmd, arg, h) { const c = R.commands[cmd]; if (!c) return false; c.parse?.(arg, h); return true; },
+    exportLines() { const out = []; for (const c of Object.values(R.commands)) { try { const x = c.export?.(); if (x) out.push(...[].concat(x).filter(Boolean).map(String)); } catch (e) { console.warn(e); } } return out; },
+    op: name => R.ops[name]?.fn || null,
+    checks() { const out = []; for (const c of R.checks) { try { for (const x of c.fn() || []) out.push([x[0] | 0, String(x[1])]); } catch (e) { console.warn(e); } } return out; },
+  };
+})();
+window.VNPlugin = { api: PLUGIN_API, define: d => VNPlugins.define(d) };
+window.VNPlugins = VNPlugins;
+
+function pluginToast(msg) {
+  let t = $('#plgToast'); if (!t) { t = document.createElement('div'); t.id = 'plgToast'; stage.appendChild(t); }
+  t.textContent = String(msg); t.classList.remove('show'); void t.offsetWidth; t.classList.add('show');
+  clearTimeout(t._h); t._h = setTimeout(() => t.classList.remove('show'), 2600);
+}
+
+/* —— 插件管理面板：编辑器里是弹窗，游戏里是和“设置”同款的浮层 —— */
+const PLG_SRC = { project: '项目', host: 'galLingS', player: '我导入的' };
+function pluginCardsHtml() {
+  const items = VNPlugins.list();
+  if (!items.length) return `<div class="plg-empty">${ic('puzzle')}<div>还没有插件</div><small>${gameMode ? '导入作者或朋友给你的 .js 插件文件' : '导入的插件会存进项目，导出游戏时一起带走'}</small></div>`;
+  return items.map(p => {
+    const set = p.settings.map(s => {
+      const v = s.value, k = esc(s.key), lab = `<span>${esc(s.label || s.key)}</span>`;
+      let inp;
+      if (s.type === 'bool') inp = `<button class="plg-sw ${v ? 'on' : ''}" data-set="${k}" data-type="bool"><i></i></button>`;
+      else if (s.type === 'select' || s.type === 'char') {
+        const opts = s.type === 'char' ? [['', s.allowEmpty || '（不选）'], ...P.chars.map(c => [c.name, c.name])] : (s.options || []).map(o => Array.isArray(o) ? o : [o, o]);
+        inp = `<select data-set="${k}">${opts.map(([ov, ol]) => `<option value="${esc(ov)}" ${String(v) === String(ov) ? 'selected' : ''}>${esc(ol)}</option>`).join('')}</select>`;
+      } else if (s.type === 'textarea') inp = `<textarea data-set="${k}" placeholder="${esc(s.placeholder || '')}">${esc(v ?? '')}</textarea>`;
+      else inp = `<input data-set="${k}" type="${s.type === 'password' ? 'password' : s.type === 'number' ? 'number' : 'text'}" value="${esc(v ?? '')}" placeholder="${esc(s.placeholder || '')}" spellcheck="false" autocomplete="off">`;
+      return `<label class="plg-row">${lab}${inp}${s.help ? `<small>${esc(s.help)}</small>` : ''}</label>`;
+    }).join('');
+    const tag = `<span class="plg-tag">${esc(PLG_SRC[p.src] || p.src)}</span>` + (p.overrides ? `<span class="plg-tag dim">覆盖${esc(PLG_SRC[p.overrides] || '')}版本</span>` : '');
+    const perm = p.permissions.length ? `<div class="plg-perm">${p.permissions.map(x => `<span>${esc(PLG_PERM[x] || x)}</span>`).join('')}</div>` : '';
+    return `<div class="plg-card ${p.enabled ? '' : 'off'} ${p.error ? 'bad' : ''}" data-id="${esc(p.id)}">
+      <div class="plg-ic">${ic(ICON[p.icon] ? p.icon : 'puzzle')}</div>
+      <div class="plg-main">
+        <div class="plg-t"><b>${esc(p.name)}</b><small>${esc(p.version)}${p.author ? ' · ' + esc(p.author) : ''}</small>${tag}</div>
+        <div class="plg-d">${esc(p.description || p.id)}</div>${perm}
+        ${p.error ? `<div class="plg-err">${ic('triangle-alert')} ${esc(p.error)}</div>` : ''}
+        ${set ? `<div class="plg-set">${set}</div>` : ''}
+      </div>
+      <div class="plg-ops">
+        <button class="plg-sw ${p.enabled ? 'on' : ''}" data-op="toggle" title="${p.enabled ? '停用' : '启用'}"><i></i></button>
+        ${p.actions.map(a => `<button class="plg-b" data-act="${esc(a.id)}" ${p.running ? '' : 'disabled'}>${ic(ICON[a.icon] ? a.icon : 'zap')}<span>${esc(a.label)}</span></button>`).join('')}
+        ${set ? `<button class="plg-b ico" data-op="set" title="设置">${ic('settings')}</button>` : ''}
+        ${!gameMode && p.code ? `<button class="plg-b ico" data-op="dl" title="导出插件文件">${ic('arrow-down-to-line')}</button>` : ''}
+        ${p.removable ? `<button class="plg-b ico del" data-op="del" title="${p.src === 'project' || p.src === 'player' ? '卸载' : '停用'}">${ic('trash-2')}</button>` : ''}
+      </div></div>`;
+  }).join('');
+}
+const PLG_PERM = { network: '联网', agent: '角色对话', script: '剧本命令', vars: '改变量', ui: '界面', storage: '本机存储', tools: '运行工具' };
+function bindPluginPanel(root, rerender) {
+  const list = root.querySelector('.plg-list');
+  const draw = () => { list.innerHTML = pluginCardsHtml(); };
+  draw();
+  const fileIn = document.createElement('input'); fileIn.type = 'file'; fileIn.accept = '.js,.mjs,text/javascript,application/javascript'; fileIn.multiple = true; fileIn.hidden = true; root.appendChild(fileIn);
+  const importFiles = async files => {
+    for (const f of files) {
+      if (!/\.m?js$/i.test(f.name)) { alert(f.name + ' 不是 .js 插件文件'); continue; }
+      const code = await f.text();
+      let m;
+      try {
+        const cur = VNPlugins.list();
+        const peek = peekMeta(code);
+        const old = cur.find(x => x.id === peek.id);
+        const msg = `导入插件「${peek.name}」${peek.version}${peek.author ? '（' + peek.author + '）' : ''}？\n\n${peek.description || ''}\n${peek.permissions.length ? '\n会用到：' + peek.permissions.map(x => PLG_PERM[x] || x).join('、') : ''}${old ? `\n\n已经装了 ${old.version}，会被替换。` : ''}\n\n插件可以运行任意代码，只导入你信任的来源。`;
+        if (!confirm(msg)) continue;
+        m = await VNPlugins.install(code, f.name);
+        pluginToast(`已导入：${m.name} ${m.version}`);
+      } catch (e) { alert('导入失败：' + e.message); }
+    }
+    draw(); rerender?.();
+  };
+  root.querySelector('[data-plg=imp]').onclick = e => { e.stopPropagation(); fileIn.value = ''; fileIn.click(); };
+  fileIn.onchange = () => importFiles([...fileIn.files]);
+  root.addEventListener('dragover', e => { if ([...e.dataTransfer.types].includes('Files')) { e.preventDefault(); e.stopPropagation(); root.classList.add('drag'); } });
+  root.addEventListener('dragleave', e => { if (e.target === root) root.classList.remove('drag'); });
+  root.addEventListener('drop', e => { if (!e.dataTransfer.files.length) return; e.preventDefault(); e.stopPropagation(); root.classList.remove('drag'); importFiles([...e.dataTransfer.files]); });
+  list.addEventListener('click', async e => {
+    e.stopPropagation();
+    const card = e.target.closest('.plg-card'); if (!card) return;
+    const id = card.dataset.id, b = e.target.closest('button'); if (!b) return;
+    if (b.dataset.set) { const v = !b.classList.contains('on'); b.classList.toggle('on', v); VNPlugins.setSetting(id, b.dataset.set, v); return; }
+    if (b.dataset.act) { if (!gameMode) closeModal(); VNPlugins.action(id, b.dataset.act); return; }
+    const op = b.dataset.op;
+    if (op === 'set') return card.classList.toggle('open');
+    if (op === 'toggle') { const on = !b.classList.contains('on'); const clean = await VNPlugins.setEnabled(id, on); if (!clean) pluginToast('停用了；有些改动要刷新页面后才完全消失'); draw(); rerender?.(); return; }
+    if (op === 'dl') { const p = VNPlugins.list().find(x => x.id === id); if (p?.code) download(id + '.vnplugin.js', p.code, 'text/javascript'); return; }
+    if (op === 'del') {
+      const p = VNPlugins.list().find(x => x.id === id); if (!p) return;
+      const verb = p.src === 'project' || p.src === 'player' ? '卸载' : '停用';
+      if (!confirm(`${verb}「${p.name}」？` + (p.src === 'project' && !gameMode ? '\n项目里的插件文件会删掉，导出的游戏也不再带它。' : ''))) return;
+      const clean = await VNPlugins.remove(id); if (clean === false) pluginToast('已' + verb + '；有些改动要刷新页面后才完全消失');
+      draw(); rerender?.();
+    }
+  });
+  const onSet = e => {
+    const el = e.target.closest('[data-set]'); if (!el || el.tagName === 'BUTTON') return;
+    const card = el.closest('.plg-card'); VNPlugins.setSetting(card.dataset.id, el.dataset.set, el.type === 'number' ? +el.value : el.value);
+  };
+  list.addEventListener('change', onSet);
+  list.addEventListener('keydown', e => e.stopPropagation());
+  return { draw };
+}
+// 只读出插件的名字版本，不启动
+function peekMeta(code) {
+  const keep = window.VNPlugin;
+  let d = null;
+  window.VNPlugin = { api: PLUGIN_API, define: x => { d = x; } };
+  try {
+    const s = document.createElement('script'); let err = null;
+    const onErr = e => { err = e.error || new Error(e.message); e.preventDefault?.(); };
+    addEventListener('error', onErr);
+    s.textContent = code + '\n//# sourceURL=vnplugin-peek.js'; document.head.appendChild(s); s.remove();
+    removeEventListener('error', onErr);
+    if (err) throw err;
+  } finally { window.VNPlugin = keep; }
+  if (!d) throw new Error('这个文件不是 VN Studio 插件（没有调用 VNPlugin.define）');
+  if (!PLUGIN_ID_RE.test(d.id || '') || !d.name || !d.version) throw new Error('插件信息不完整（需要 id、name、version）');
+  if ((d.api | 0) < 1 || (d.api | 0) > PLUGIN_API) throw new Error(`插件需要接口版本 ${d.api}，这个 VN Studio 支持 ${PLUGIN_API}`);
+  return { id: d.id, name: String(d.name), version: String(d.version), author: String(d.author || ''), description: String(d.description || ''), permissions: Array.isArray(d.permissions) ? d.permissions : [] };
+}
+function plgHead() {
+  return `<div class="plg-head"><h2>${ic('puzzle')}<span>插件</span></h2><span class="plg-sub">${gameMode ? '给游戏加功能：导入 .js 插件文件，或把文件拖进来' : '导入的插件存进项目，导出游戏时一起带走 · 规范见 PLUGIN_API.md'}</span><span class="grow"></span><button class="plg-imp" data-plg="imp">${ic('upload')}<span>导入插件</span></button></div><div class="plg-list"></div><div class="plg-foot">插件可以运行任意代码，只导入你信任的来源 · vn-plugin/${PLUGIN_API}</div>`;
+}
+// 编辑器：顶栏“插件”按钮
+function openPlugins() {
+  const box = modal(`<div id="plgBox" class="plgui">${plgHead()}</div>`, null);
+  box.querySelector('[data-a=c]').textContent = '关闭';
+  bindPluginPanel(box.querySelector('#plgBox'));
+}
+// 游戏：开始界面“插件”
+function showPluginsOvl() {
+  const box = $('#plugins');
+  box.innerHTML = `<div class="plgui">${plgHead()}</div>`;
+  bindPluginPanel(box.querySelector('.plgui'), () => { if ($('#title').classList.contains('show')) { showTitle(); box.classList.add('show'); } });   // 插件改了开始界面菜单：重画菜单，面板留着
+  addClose(box); box.classList.add('show');
+  box.onclick = e => { e.stopPropagation(); if (e.target === box) box.classList.remove('show'); };
+}
+
 /* ========== 启动 ========== */
 (async () => {
   if (gameMode) {
     document.body.classList.add('game');
     loadProject(window.VN_GAME);
     document.title = P.title || 'Game';
+    try { await Promise.race([VNPlugins.boot(), new Promise(r => setTimeout(r, 4000))]); } catch (e) { console.warn(e); }
     return showTitle();
   }
-  if (headless) { render(); window.VN_READY = true; return; }
+  if (headless) { render(); await VNPlugins.reload({ headless: true }); window.VN_READY = true; return; }
   // 上次用的是项目文件夹：浏览器要求点一下才能重新访问
   const lastDir = fsOK() ? await idbGet('folder') : null;
   if (lastDir) {

@@ -1,0 +1,11 @@
+galLingS · GalAgent 插件覆盖包（基于“galLingS_精简版”）
+
+用法：把这个压缩包里的 galLingS 文件夹，覆盖到你的 galLingS 文件夹上（同名文件替换），然后照常双击 start.bat。
+
+改了什么：
+- 新增结局后聊天 GalAgent（plugins/builtin/galagent，默认开启；PowerShell、写文件默认先问玩家）。
+- 作品页里的游戏会自动装上 GalAgent 的 VN Studio 插件；顶栏多了“插件”按钮。
+- 《海风与布丁》换成 VN Studio v0.20 引擎（有插件接口，游戏内容不变）。
+- 你自己的 config.yaml 如果有，要把 config.example.yaml 里的 game.post_ending 和 plugins.tools 两段抄过去。
+
+说明文档：docs/galagent.md（后端、协议、扩展）、VN Studio 的 PLUGIN_API.md（前端插件规范）。

@@ -1,0 +1,224 @@
+[
+  {
+    "id": "md2p8m90",
+    "name": "CG_人鱼公主",
+    "adopted": true,
+    "scene_indices": [
+      3267,
+      3268,
+      3269,
+      3270,
+      3271,
+      3272,
+      3273,
+      3274,
+      3275
+    ]
+  },
+  {
+    "id": "yvwvivzm",
+    "name": "CG_初登场",
+    "adopted": true,
+    "scene_indices": [
+      17,
+      18,
+      19
+    ]
+  },
+  {
+    "id": "ehbun5kh",
+    "name": "CG_原来是你",
+    "adopted": true,
+    "scene_indices": [
+      825,
+      826,
+      827,
+      828,
+      829
+    ]
+  },
+  {
+    "id": "pmngp4pk",
+    "name": "CG_和解",
+    "adopted": true,
+    "scene_indices": [
+      1814,
+      1815,
+      1816,
+      1817,
+      1818
+    ]
+  },
+  {
+    "id": "yjxp4irw",
+    "name": "CG_夏日沙洲",
+    "adopted": false,
+    "scene_indices": []
+  },
+  {
+    "id": "w3km9isl",
+    "name": "CG_布丁",
+    "adopted": true,
+    "scene_indices": [
+      2348,
+      2349,
+      2350,
+      2351
+    ]
+  },
+  {
+    "id": "ez0vsxzc",
+    "name": "CG_手链",
+    "adopted": false,
+    "scene_indices": []
+  },
+  {
+    "id": "jxxr16ez",
+    "name": "CG_新家",
+    "adopted": false,
+    "scene_indices": []
+  },
+  {
+    "id": "sqnct5dc",
+    "name": "CG_早安",
+    "adopted": false,
+    "scene_indices": []
+  },
+  {
+    "id": "supaesch",
+    "name": "CG_海豚",
+    "adopted": true,
+    "scene_indices": [
+      1021,
+      1022,
+      1023,
+      1024,
+      1025
+    ]
+  },
+  {
+    "id": "wnpuk9dy",
+    "name": "CG_海风与布丁",
+    "adopted": true,
+    "scene_indices": [
+      2932,
+      2933,
+      2934,
+      2935,
+      2936
+    ]
+  },
+  {
+    "id": "ij6ed2gn",
+    "name": "CG_深水区",
+    "adopted": true,
+    "scene_indices": [
+      1711,
+      1712,
+      1713,
+      1714,
+      1715,
+      2421,
+      2422,
+      2423,
+      2424
+    ]
+  },
+  {
+    "id": "kful0adz",
+    "name": "CG_深海之光",
+    "adopted": true,
+    "scene_indices": [
+      431,
+      432,
+      433,
+      434,
+      435
+    ]
+  },
+  {
+    "id": "akugkagj",
+    "name": "CG_烤鱿鱼",
+    "adopted": true,
+    "scene_indices": [
+      149,
+      150,
+      151,
+      152
+    ]
+  },
+  {
+    "id": "z639wmth",
+    "name": "CG_珍珠",
+    "adopted": false,
+    "scene_indices": []
+  },
+  {
+    "id": "ak1lber9",
+    "name": "CG_电话",
+    "adopted": true,
+    "scene_indices": [
+      1506,
+      1507,
+      1508,
+      1509,
+      1510
+    ]
+  },
+  {
+    "id": "xndnkx8k",
+    "name": "CG_立约",
+    "adopted": true,
+    "scene_indices": [
+      230,
+      231,
+      232,
+      233,
+      234,
+      235,
+      236,
+      237,
+      238,
+      239,
+      240,
+      241
+    ]
+  },
+  {
+    "id": "c6r2xcnj",
+    "name": "CG_糍粑",
+    "adopted": false,
+    "scene_indices": []
+  },
+  {
+    "id": "7jj07jqh",
+    "name": "CG_翡翠之梦",
+    "adopted": false,
+    "scene_indices": []
+  },
+  {
+    "id": "r0t0azno",
+    "name": "CG_诗句",
+    "adopted": true,
+    "scene_indices": [
+      704,
+      705,
+      706,
+      707,
+      708,
+      709,
+      710
+    ]
+  },
+  {
+    "id": "dxmnyp7j",
+    "name": "CG_集市女仆",
+    "adopted": true,
+    "scene_indices": [
+      3081,
+      3082,
+      3083,
+      3084
+    ]
+  }
+]

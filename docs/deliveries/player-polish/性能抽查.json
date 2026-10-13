@@ -1,0 +1,9 @@
+{
+  "startup": {
+    "images": 1,
+    "resources": 5,
+    "longTasks": []
+  },
+  "idle_long_tasks_over_50ms": [],
+  "scope": "Edge无头、1440×900、本机一次冷启动与1.2秒静置抽查；非真实显卡帧率结论，不代表所有设备"
+}

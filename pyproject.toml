@@ -17,6 +17,7 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["pytest>=8", "pytest-asyncio>=0.23"]
+art = ["Pillow>=10"]  # Optional: rebuild the art index/thumbnails and portable review HTML.
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

@@ -514,6 +514,7 @@ body.playing #soulTab.show{display:flex}
     <button class="btn" data-tip="export" id="bExport"><i data-ic="file-code"></i></button>
     <div class="sep"></div>
     <button class="btn" data-tip="import" id="bImport"><i data-ic="image-plus"></i></button>
+    <button class="btn" id="bArt" hidden title="浏览全部背景、角色、CG及备用原件"><i data-ic="images"></i>美术素材</button>
     <button class="btn" data-tip="undo" id="bUndo"><i data-ic="undo-2"></i></button>
     <button class="btn" data-tip="redo" id="bRedo"><i data-ic="redo-2"></i></button>
     <div class="sep"></div>
@@ -771,11 +772,12 @@ function blank() {
            settings: { tip: 'brief', ghost: 0.35, speed: 30, link: true, dlg: 'ghost', vbgm: 0.6, vse: 0.8, vamb: 0.8, vvo: 1, autoMul: 1, skipRead: true, focus: true, agentProvider: 'mock', agentUrl: '', pluginData: {}, bw: 110, tlh: 260, trk: { hide: {}, lock: {} } } };
 }
 const VN_VERSION = '0.20.0';
-const gameMode = !!window.VN_GAME;           // 导出的游戏里为 true
+const studioEditor = !!window.VN_EDITOR || new URLSearchParams(location.search).get('editor') === '1';
+const gameMode = !!window.VN_GAME && !studioEditor; // 同一作品可显式进入编辑模式
 // 被 galLingS 的作品页嵌着玩（网址带 ?host=gallings，且同源）：灵枢自动连 galLingS，手账可以停靠到外面的侧栏
 const HOSTED = (() => { try { return gameMode && new URLSearchParams(location.search).get('host') === 'gallings' && parent !== window && !!parent.document; } catch (e) { return false; } })();
 const headless = !!window.VN_HEADLESS;       // 命令行（无界面）模式：给 AI / 脚本调用
-const ORIGINAL_HTML = '<!doctype html>\n' + document.documentElement.outerHTML;   // 导出游戏时复用本文件
+const ORIGINAL_HTML = gameMode ? '' : '<!doctype html>\n' + document.documentElement.outerHTML; // 仅编辑器/命令行导出需要快照
 let P = blank();
 let selUid = null;
 const L = () => P.lines[P.cur];
@@ -901,6 +903,7 @@ const dbP = new Promise(res => {
   } catch (e) { res(null); }
 });
 async function idbSet(k, v) {
+  if (studioEditor) k = 'art-editor:' + (window.VN_GAME?.id || 'new') + ':' + k;
   const d = await dbP; if (!d) return false;
   return new Promise(r => {
     try { const t = d.transaction('kv', 'readwrite'); t.objectStore('kv').put(v, k); t.oncomplete = () => r(true); t.onerror = t.onabort = () => r(false); }
@@ -908,6 +911,7 @@ async function idbSet(k, v) {
   });
 }
 async function idbGet(k) {
+  if (studioEditor) k = 'art-editor:' + (window.VN_GAME?.id || 'new') + ':' + k;
   const d = await dbP; if (!d) return null;
   return new Promise(r => { try { const q = d.transaction('kv').objectStore('kv').get(k); q.onsuccess = () => r(q.result); q.onerror = () => r(null); } catch (e) { r(null); } });
 }
@@ -916,7 +920,7 @@ let saveT;
 const savedAssets = new Set();
 let saving = false, saveAgain = false;
 function autosave() {
-  if (gameMode || headless) return;
+  if (gameMode || headless || window.VN_PREVIEW_ONLY) return;
   clearTimeout(saveT);
   saveT = setTimeout(flushSave, 600);
 }
@@ -1036,21 +1040,23 @@ async function exportGameFolder() {
   const problems = runCheck().filter(([, m]) => !m.startsWith('空台词') && !m.includes('走不到'));
   if (problems.length && !confirm(`检查发现 ${problems.length} 个问题，仍然导出？`)) return openCheck();
   const d = await pickFolder();
+  const project = studioEditor ? window.VNArtLibrary.playableProject() : P;
+  const source = studioEditor ? await window.VNArtLibrary.sourceForExport() : undefined;
   const used = new Set(), assets = {};
-  for (const a of Object.values(P.assets)) {
+  for (const a of Object.values(project.assets)) {
     if (!a.src) continue;
     const blob = await srcBlob(a.src), p = a.file && !used.has(a.file) ? (used.add(a.file), a.file) : assetPath(a, blob, used);
     await fsWrite(d, p, blob);
     assets[a.id] = Object.assign({}, a, { src: p, file: undefined });
   }
-  const files = gameFolderFiles(assets);
+  const files = gameFolderFiles(assets, source, project);
   for (const [name, text] of Object.entries(files)) await fsWrite(d, name, text);
   alert(`已导出到文件夹 ${d.name}\n双击里面的 index.html 就能玩。`);
 }
 // 导出文件夹里的两个文本文件（命令行也用这个）
-function gameFolderFiles(assets) {
-  const src = window.VN_SOURCE_HTML || ORIGINAL_HTML;
-  const data = JSON.stringify(Object.assign({}, P, { recent: undefined, cur: 0, assets }));
+function gameFolderFiles(assets, source, project) {
+  const src = source || window.VN_SOURCE_HTML || ORIGINAL_HTML;
+  const data = JSON.stringify(Object.assign({}, project || P, { recent: undefined, cur: 0, assets })).replace(/</g, '\\u003c');
   const marker = '<script>\n\'use strict\';', i = src.indexOf(marker);
   if (i < 0) throw new Error('找不到播放器代码');
   const html = src.slice(0, i) + '<script src="game.js"><\/script>\n' + src.slice(i);
@@ -1868,7 +1874,8 @@ const bgmRetiring = new Set(), ambientTracks = new Map(), activeEffects = new Se
 let audioLibraryOpen = false, auditionEl = null, auditionAsset = null, auditionState = null;
 let audioFocusPaused = false;
 const volume01 = v => Math.max(0, Math.min(1, Number.isFinite(+v) ? +v : 0));
-const musicVolume = () => volume01(pref('vbgm'));
+const trackGain = a => volume01(a?.playbackGain ?? 1);
+const musicVolume = () => volume01(pref('vbgm')) * trackGain(A(bgmId));
 const ambienceVolume = () => volume01(pref('vamb') ?? .3) * (bgmId ? .75 : 1);
 const effectVolume = () => volume01(pref('vse'));
 
@@ -1989,7 +1996,7 @@ function refreshAudioVolumes(key) {
   if (bgmEl && key === 'vbgm') fadeVol(bgmEl, musicVolume(), 0);
   if (key === 'vamb') for (const t of ambientTracks.values()) { t.target = ambienceVolume() * t.gain; fadeVol(t.el, t.target, 0); }
   if (key === 'vse') for (const el of activeEffects) el.volume = volume01(effectVolume() * el._gain);
-  if (auditionEl && auditionAsset) auditionEl.volume = volume01(pref(auditionAsset.audioCategory === 'music' ? 'vbgm' : auditionAsset.audioCategory === 'ambience' ? 'vamb' : 'vse'));
+  if (auditionEl && auditionAsset) auditionEl.volume = volume01(pref(auditionAsset.audioCategory === 'music' ? 'vbgm' : auditionAsset.audioCategory === 'ambience' ? 'vamb' : 'vse')) * (auditionAsset.audioCategory === 'music' ? trackGain(auditionAsset) : 1);
 }
 function resumeGameAudio() {
   if (audioFocusPaused || audioLibraryOpen || !playing || $('#title')?.classList.contains('show')) return;
@@ -3192,6 +3199,10 @@ function loadProject(o) {
   P.plugins = Array.isArray(P.plugins) ? P.plugins.filter(r => r && typeof r.code === 'string') : [];
   P.settings.pluginData = P.settings.pluginData && typeof P.settings.pluginData === 'object' ? P.settings.pluginData : {};
   P.assets = P.assets || {};
+  if (studioEditor && window.VNArtLibrary) {
+    for (const a of Object.values(P.assets)) if (a.libraryPath && !window.VN_PREVIEW_ONLY && !a.src?.startsWith('data:') && !a.src?.startsWith('blob:')) a.src = window.VNArtLibrary.resolve(a.libraryPath);
+    window.VNArtLibrary.register();
+  }
   P.recent = Object.assign({ bg: [], ch: [], au: [] }, P.recent);
   P.cur = Math.max(0, Math.min(P.lines.length - 1, P.cur | 0));
   hist = []; redoS = []; selUid = null; TL.sel = null; TL.lastCur = -1; if(gameMode){applyTheme();}else{applyTlh();changed();}
@@ -4292,6 +4303,21 @@ function showPluginsOvl() {
 
 /* ========== 启动 ========== */
 (async () => {
+  if (studioEditor) {
+    const script = src => new Promise((resolve, reject) => { const el = document.createElement('script'); el.src = src; el.onload = resolve; el.onerror = () => reject(new Error('无法加载 ' + src)); document.head.appendChild(el); });
+    try {
+      if (!window.VN_GAME) throw new Error('没有可编辑的作品');
+      if (!window.VN_ART_CATALOG) await script('art-catalog.js');
+      if (!window.VNArtLibrary) await script('art-editor.js');
+      const draft = window.VN_PREVIEW_ONLY ? null : await loadAutosave();
+      loadProject(clone(draft || window.VN_GAME));
+      if (!draft) P.cur = Math.max(0, P.lines.findIndex(l => l.chapter && !l.chapter.includes('导航')));
+      // Do not automatically reopen a writable folder while inspecting an editor link.
+      DIR = null; if (!draft) P.settings.link = false; render(); fit();
+      await window.VNArtLibrary.start(window.VN_ART_CATALOG);
+    } catch (e) { console.error(e); alert('开发页加载失败：' + e.message); }
+    return;
+  }
   if (gameMode) {
     document.body.classList.add('game');
     loadProject(window.VN_GAME);

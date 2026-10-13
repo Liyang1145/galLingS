@@ -1,0 +1,9 @@
+{
+  "startupSeconds": 1.49,
+  "imagesDecoded": 94,
+  "audioDecoded": 103,
+  "allMediaInline": true,
+  "saveLoadRestoredLine": 18,
+  "externalRequests": [],
+  "errors": []
+}

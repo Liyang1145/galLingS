@@ -17,3 +17,4 @@
 - 2026-10-13用户后续授权代交boliyer的GalAgent覆盖包并统筹最新游玩。当前统一入口为根目录 `游玩.html`（离线剧情）及 `start.bat` 启动的作品页（同一作品、GalAgent需配置模型）；[统筹记录](docs/work-ledger/boliyer-galagent-integration.md) 与 [最新游玩说明](docs/latest-play.md) 为新接入依据。原覆盖包归档，不直接整包覆盖已有音乐、美术和剧情定位。
 - 完成后在自己的记录里写清改了什么、验证了什么、尚缺什么。不要把“文件已保存”“接口已定义”写成“已经集成”或“已验收”。
 - 玩家视角打磨见 [本轮记录](docs/work-ledger/player-experience-polish.md)、[审美审核与缺口](docs/player-aesthetic-review.md)。默认不展开空手账；字号是玩家偏好；模型状态在连接设置查看；候选音频收起但原件仍在。勿整包回退这些交互修正；角色/人物CG和未交付音乐仍按原分工继续。
+- 2026-10-14用户明确恢复素材开发并要求入库。根目录 `引擎开发.html` 为同一作品的编辑入口，176项/209图像文件均可调用；微调项目JSON不直接改运行包，草稿与玩家存档隔离。接续读 [开发说明](docs/art-editor.md) 和 [任务记录](docs/work-ledger/art-editor-library.md)。Atri E1/E2/E7已接入，M6与主曲同SHA去重，E5/E6仅候选；32个旧WAV有MP3播放副本，原件保留。不得整包覆盖这些接入，不将“已请求Image2.5”写成“后端已确认路由”；人物重制仍待做。

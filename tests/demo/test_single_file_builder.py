@@ -19,6 +19,7 @@ def test_saved_project_export_keeps_adjustments_and_prunes_unused_library(tmp_pa
     (game / "game-polish.css").write_text('body{background:url("cover.webp")}', encoding="utf-8")
     monkeypatch.setattr(pack, "ROOT", root)
     monkeypatch.setattr(pack, "GAME", game)
+    monkeypatch.setattr(pack.mimetypes, "guess_type", lambda name: ("application/octet-stream", None))
     imported = "data:image/png;base64," + base64.b64encode(b"imported-image").decode()
     project = {"id":"stable-project", "assets":{
         "bg": {"type":"bg", "src":"http://old-host/art-assets/assets/new.png", "libraryPath":"content/assets/new.png"},
@@ -33,6 +34,7 @@ def test_saved_project_export_keeps_adjustments_and_prunes_unused_library(tmp_pa
     assert result["assets"] == 2 and result["files"] == 3
     assert '"x":701' in html and '"h":620' in html and 'stable-node' in html
     assert 'data:image/png;base64,' in html and imported in html
+    assert 'data:image/webp;base64,' in html
     assert 'old-host' not in html and 'missing.png' not in html
     assert '<link' not in html and 'src="game.js"' not in html
     # A crafted project may not package arbitrary local files even if disguised as media.

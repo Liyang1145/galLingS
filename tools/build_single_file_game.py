@@ -13,6 +13,9 @@ from urllib.request import url2pathname
 
 ROOT = Path(__file__).resolve().parents[1]
 GAME = ROOT / "content/vn/海风与布丁"
+MEDIA_MIME = {".png":"image/png", ".jpg":"image/jpeg", ".jpeg":"image/jpeg", ".webp":"image/webp",
+              ".gif":"image/gif", ".avif":"image/avif", ".mp3":"audio/mpeg", ".ogg":"audio/ogg",
+              ".wav":"audio/wav", ".m4a":"audio/mp4", ".aac":"audio/aac", ".flac":"audio/flac"}
 
 
 def build(output: Path, project_file: Path | None = None) -> dict:
@@ -60,7 +63,8 @@ def build(output: Path, project_file: Path | None = None) -> dict:
             path = (GAME / src).resolve()
         if (ROOT / "content").resolve() not in path.parents or not path.is_file():
             raise ValueError(f"Missing or unsafe media path: {library_path or src}")
-        mime = mimetypes.guess_type(path.name)[0] or "application/octet-stream"
+        # Windows registry MIME entries may omit WebP or override its media type.
+        mime = MEDIA_MIME.get(path.suffix.lower()) or mimetypes.guess_type(path.name)[0] or "application/octet-stream"
         if not mime.startswith(("image/", "audio/")):
             raise ValueError(f"Expected image/audio media: {path.name}")
         key = path.relative_to(ROOT.resolve()).as_posix()

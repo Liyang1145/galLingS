@@ -38,7 +38,7 @@ python tools/build_single_file_game.py --project "project.vnproj.json" --output 
 新增或替换美术原件、改变剧情引用后，安装可选美术依赖并重建：
 
 ```powershell
-python -m pip install ".[art]"
+python -m pip install "Pillow>=10"
 python tools/build_art_catalog.py
 ```
 

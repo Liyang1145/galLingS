@@ -1,0 +1,155 @@
+[
+  {
+    "asset_id": "bg_shallows_day_v01",
+    "target_id": "B02",
+    "path": "content/assets\\backgrounds\\bg_shallows_day_v01.png",
+    "status": "参考或验收复用候选",
+    "judgement": "主海岸日景母图候选；接 C01/C02 时检查地形与人物受光",
+    "provenance": "用户生成并提供，生成工具与模型未记录",
+    "model_route_verified": false
+  },
+  {
+    "asset_id": "bg_house_study_day_v01",
+    "target_id": "B28",
+    "path": "content/assets\\backgrounds\\bg_house_study_day_v01.png",
+    "status": "参考或验收复用候选",
+    "judgement": "书房结构母图候选；电话 CG 接右侧写稿区与真实手机",
+    "provenance": "用户生成并提供，生成工具与模型未记录",
+    "model_route_verified": false
+  },
+  {
+    "asset_id": "bg_emerald_dream_interior_day_v01",
+    "target_id": "B38",
+    "path": "content/assets\\backgrounds\\bg_emerald_dream_interior_day_v01.png",
+    "status": "参考或验收复用候选",
+    "judgement": "店铺内景结构母图候选；固定柜台、楼梯、海景窗",
+    "provenance": "用户生成并提供，生成工具与模型未记录",
+    "model_route_verified": false
+  },
+  {
+    "asset_id": "bg_shallows_sunset_v01",
+    "target_id": "B03",
+    "path": "content/assets\\backgrounds\\bg_shallows_sunset_v01.png",
+    "status": "参考或验收复用候选",
+    "judgement": "从日景做时段差分的候选；地形、远山、反光方向一并对齐",
+    "provenance": "用户通过 ChatGPT 网页端生成并下载；具体模型未记录",
+    "model_route_verified": false
+  },
+  {
+    "asset_id": "bg_shallows_night_v01",
+    "target_id": "B04",
+    "path": "content/assets\\backgrounds\\bg_shallows_night_v01.png",
+    "status": "参考或验收复用候选",
+    "judgement": "月夜候选；礁石夜近景仍需 B07，并控制同夜月相",
+    "provenance": "用户通过 ChatGPT 网页端生成并下载；具体模型未记录",
+    "model_route_verified": false
+  },
+  {
+    "asset_id": "bg_house_study_night_v01",
+    "target_id": "B30",
+    "path": "content/assets\\backgrounds\\bg_house_study_night_v01.png",
+    "status": "参考或验收复用候选",
+    "judgement": "夜间书房候选；搬家后的日记与季终仍使用此住宅",
+    "provenance": "用户通过 ChatGPT 网页端生成并下载；具体模型未记录",
+    "model_route_verified": false
+  },
+  {
+    "asset_id": "bg_beach_campsite_night_v01",
+    "target_id": "B16",
+    "path": "content/assets\\backgrounds\\bg_beach_campsite_night_v01.png",
+    "status": "参考或验收复用候选",
+    "judgement": "营地夜候选；先统一帐篷外、内、黄昏结构",
+    "provenance": "用户通过 ChatGPT 网页端生成并下载；具体模型未记录",
+    "model_route_verified": false
+  },
+  {
+    "asset_id": "bg_town_market_day_v01",
+    "target_id": "B21",
+    "path": "content/assets\\backgrounds\\bg_town_market_day_v01.png",
+    "status": "参考或验收复用候选",
+    "judgement": "夏日集市候选；初秋另做 B22，饰品巷/珍珠摊保持同街区",
+    "provenance": "用户通过 ChatGPT 网页端生成并下载；具体模型未记录",
+    "model_route_verified": false
+  },
+  {
+    "asset_id": "bg_house_courtyard_morning_v01",
+    "target_id": "B26",
+    "path": "content/assets\\backgrounds\\bg_house_courtyard_morning_v01.png",
+    "status": "参考或验收复用候选",
+    "judgement": "白墙蓝顶院子候选；新家 CG 接同一树、秋千和烟囱",
+    "provenance": "用户通过 ChatGPT 网页端生成并下载；具体模型未记录",
+    "model_route_verified": false
+  },
+  {
+    "asset_id": "bg_emerald_dream_upstairs_night_v01",
+    "target_id": "B42",
+    "path": "content/assets\\backgrounds\\bg_emerald_dream_upstairs_night_v01.png",
+    "status": "参考或验收复用候选",
+    "judgement": "打烊后窗边双人桌候选；只属于店铺二楼",
+    "provenance": "用户通过 ChatGPT 网页端生成并下载；具体模型未记录",
+    "model_route_verified": false
+  },
+  {
+    "asset_id": "bg_deepsea_coral_glow_v01",
+    "target_id": "B13",
+    "path": "content/assets\\backgrounds\\bg_deepsea_coral_glow_v01.png",
+    "status": "参考或验收复用候选",
+    "judgement": "发光珊瑚候选；与暗黑危机水下 B12 分开",
+    "provenance": "用户通过 ChatGPT 网页端生成并下载；具体模型未记录",
+    "model_route_verified": false
+  },
+  {
+    "asset_id": "bg_house_study_sunset",
+    "target_id": "B29",
+    "path": "content/assets\\backgrounds\\bg_house_study_sunset.png",
+    "status": "参考或验收复用候选",
+    "judgement": "用户已选网页端；与日景/夜景再核门窗、书架和后门位置",
+    "provenance": "用户提供的网页端生成图片，明确选择采用；模型版本未知。",
+    "model_route_verified": false
+  },
+  {
+    "asset_id": "bg_emerald_dream_interior_night",
+    "target_id": "B39",
+    "path": "content/assets\\backgrounds\\bg_emerald_dream_interior_night.png",
+    "status": "参考或验收复用候选",
+    "judgement": "用户提供夜店内候选；C15 需要人物 CG，不能复用空景充数",
+    "provenance": "用户提供的生成图片；具体生成工具与模型版本未记录。",
+    "model_route_verified": false
+  },
+  {
+    "asset_id": "bg_emerald_dream_kitchen_day",
+    "target_id": "B41",
+    "path": "content/assets\\backgrounds\\bg_emerald_dream_kitchen_day.png",
+    "status": "参考或验收复用候选",
+    "judgement": "商业后厨候选；金属设备与浅木店内连接要明确",
+    "provenance": "用户提供的生成图片；具体生成工具与模型版本未记录。",
+    "model_route_verified": false
+  },
+  {
+    "asset_id": "bg_house_living_day",
+    "target_id": "B27",
+    "path": "content/assets\\backgrounds\\bg_house_living_day.png",
+    "status": "参考或验收复用候选",
+    "judgement": "居家客厅候选；检查与书房窗光方向及过道关系",
+    "provenance": "用户提供的生成图片；具体生成工具与模型版本未记录。",
+    "model_route_verified": false
+  },
+  {
+    "asset_id": "bg_house_kitchen_morning",
+    "target_id": "B31",
+    "path": "content/assets\\backgrounds\\bg_house_kitchen_morning.png",
+    "status": "参考或验收复用候选",
+    "judgement": "家用厨房候选；与店后厨设备尺度区分",
+    "provenance": "用户提供的生成图片；具体生成工具与模型版本未记录。",
+    "model_route_verified": false
+  },
+  {
+    "asset_id": "bg_house_dining_night",
+    "target_id": "B34",
+    "path": "content/assets\\backgrounds\\bg_house_dining_night.png",
+    "status": "参考或验收复用候选",
+    "judgement": "用户提供夜间餐厅候选；早餐桌 B33 接同一空间",
+    "provenance": "用户提供的生成图片；具体生成工具与模型版本未记录。",
+    "model_route_verified": false
+  }
+]

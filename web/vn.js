@@ -70,6 +70,7 @@ document.addEventListener("fullscreenchange", () => {
 // ---------------------------------------------------------------- 顶栏按钮 → 游戏
 $("saveBtn").onclick = () => { H?.save(); game.focus(); };
 $("loadBtn").onclick = () => { H?.load(); game.focus(); };
+$("audioBtn").onclick = () => { H?.audioLibrary?.(); game.focus(); };
 $("titleBtn").onclick = () => { if (H?.state().playing && !confirm("回到标题画面？没存档的进度会丢。")) return; H?.title(); game.focus(); };
 
 // ---------------------------------------------------------------- 状态：章节、好感、信号、灵枢连接
@@ -83,9 +84,10 @@ function tick() {
   const link = { ok: "灵枢在线", wait: "灵枢连接中", bad: "灵枢未连上（离线回复）", off: "灵枢待命" }[s.link] || "";
   if (s.soulOn) bits.push(`<i class="ldot ${esc(s.link)}"></i>${link}`);
   if (srv) bits.push(srv.llm_ready ? `模型 ${esc(srv.llm.model)}` : "模型未配置");
-  $("status").innerHTML = bits.join(" · ");
+  const statusHtml=bits.join(" · ");if($("status").innerHTML!==statusHtml)$("status").innerHTML=statusHtml;
   $("journalNew").hidden = !(s.unread > 0 && !docked);
   $("saveBtn").disabled = !s.playing;
+  $("audioBtn").hidden = !H.capabilities?.audioLibrary;
 }
 setInterval(tick, 600);
 

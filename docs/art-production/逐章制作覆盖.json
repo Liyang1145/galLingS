@@ -1,0 +1,283 @@
+[
+  {
+    "chapter": "第一话 · 浅滩上的偶遇",
+    "background_targets": [
+      "B02",
+      "B03",
+      "B15"
+    ],
+    "cg_targets": [
+      "C01",
+      "C02",
+      "C03"
+    ],
+    "registered_cg_enhancements": [],
+    "note": "盛夏正午初遇 → 下午糍粑 → 黄昏营地；开场和 C02 保持日景，服装连续。"
+  },
+  {
+    "chapter": "第二话 · 暗号契约",
+    "background_targets": [
+      "B02",
+      "B05",
+      "B06",
+      "B07"
+    ],
+    "cg_targets": [
+      "C04"
+    ],
+    "registered_cg_enhancements": [],
+    "note": "次日早间礁石立约 → 黄昏 → 夜；认真持本与契约文字后排。"
+  },
+  {
+    "chapter": "第三话 · 深海之光",
+    "background_targets": [
+      "B01",
+      "B11",
+      "B13",
+      "B14",
+      "B16"
+    ],
+    "cg_targets": [
+      "C05",
+      "C06"
+    ],
+    "registered_cg_enhancements": [],
+    "note": "清晨出发 → 日间下潜/发光珊瑚 → 黄昏上浮 → 夜营地；双腿+鲸尾不切换。"
+  },
+  {
+    "chapter": "第四话 · 集市上的“我妻子”",
+    "background_targets": [
+      "B03",
+      "B16",
+      "B21",
+      "B23"
+    ],
+    "cg_targets": [
+      "C07"
+    ],
+    "registered_cg_enhancements": [],
+    "note": "集市蓝白吊带裙；手链先戴后摘，黄昏代管 CG 延续该裙。"
+  },
+  {
+    "chapter": "第五话 · 海浪与诗句",
+    "background_targets": [
+      "B04",
+      "B16"
+    ],
+    "cg_targets": [
+      "C08"
+    ],
+    "registered_cg_enhancements": [],
+    "note": "常服月夜念诗；夜景月相相容，诗稿文字准确后排。"
+  },
+  {
+    "chapter": "第六话 · 原来不是别人啊",
+    "background_targets": [
+      "B16",
+      "B17"
+    ],
+    "cg_targets": [
+      "C09"
+    ],
+    "registered_cg_enhancements": [],
+    "note": "夜间营地抱膝坦白 → 帐篷内夜；与番外 2 的早期营地结构相同。"
+  },
+  {
+    "chapter": "第七话 · 冒险家和海豚",
+    "background_targets": [
+      "B01",
+      "B08",
+      "B09",
+      "B10",
+      "B16"
+    ],
+    "cg_targets": [
+      "C10"
+    ],
+    "registered_cg_enhancements": [],
+    "note": "退潮清晨 → 沙洲上午/午后阴凉/黄昏；海豚 CG 接同一沙洲。"
+  },
+  {
+    "chapter": "第八话 · 搬家",
+    "background_targets": [
+      "B16",
+      "B20",
+      "B26",
+      "B27",
+      "B29",
+      "B30",
+      "B34"
+    ],
+    "cg_targets": [
+      "C11"
+    ],
+    "registered_cg_enhancements": [
+      "O08",
+      "O09"
+    ],
+    "note": "夜营地 → 次晨新家 → 午后客厅 → 黄昏书房 → 夜晚餐厅/书房；搬家后不回帐篷写日记。"
+  },
+  {
+    "chapter": "第九话 · 电话",
+    "background_targets": [
+      "B03",
+      "B28",
+      "B30"
+    ],
+    "cg_targets": [
+      "C12"
+    ],
+    "registered_cg_enhancements": [],
+    "note": "电话在书房午后；受伤后浅滩黄昏；深夜写日记在住宅书房。"
+  },
+  {
+    "chapter": "第十话 · 深水区",
+    "background_targets": [
+      "B01",
+      "B02",
+      "B03",
+      "B04",
+      "B12",
+      "B30"
+    ],
+    "cg_targets": [
+      "C13"
+    ],
+    "registered_cg_enhancements": [],
+    "note": "电话后疏远与留白 → 黄昏深水区 → 夜间救援；新增低落/背侧身代替一路喜剧生气。"
+  },
+  {
+    "chapter": "第十一话 · 礁石与和解",
+    "background_targets": [
+      "B07",
+      "B12",
+      "B30"
+    ],
+    "cg_targets": [
+      "C14"
+    ],
+    "registered_cg_enhancements": [],
+    "note": "暗蓝救援收尾 → 月夜礁石和解 → 住宅深夜日记；湿发、红眼和月相连续。"
+  },
+  {
+    "chapter": "第十二话 · 翡翠之梦",
+    "background_targets": [
+      "B27",
+      "B30",
+      "B37",
+      "B38",
+      "B39",
+      "B41"
+    ],
+    "cg_targets": [
+      "C15"
+    ],
+    "registered_cg_enhancements": [
+      "O10"
+    ],
+    "note": "开店提议/营业后厨/店内 → 打烊柜台尾帆；CG 需要站上柜台的人物事件。"
+  },
+  {
+    "chapter": "第十三话 · 店长与珍珠",
+    "background_targets": [
+      "B21",
+      "B23",
+      "B24",
+      "B25",
+      "B31",
+      "B38",
+      "B41",
+      "B42"
+    ],
+    "cg_targets": [
+      "C16",
+      "C17"
+    ],
+    "registered_cg_enhancements": [
+      "O07"
+    ],
+    "note": "珍珠摊与银匠铺；先摘贝壳项链、再戴验/存银戒；二楼夜换家居睡衣。"
+  },
+  {
+    "chapter": "第十四话 · 那些布丁和糍粑",
+    "background_targets": [
+      "B22",
+      "B30",
+      "B34",
+      "B40"
+    ],
+    "cg_targets": [
+      "C13",
+      "C18"
+    ],
+    "registered_cg_enhancements": [],
+    "note": "入秋集市真实争执；深水区明确为灰色回忆复用；下午店内关灯仍是白天。"
+  },
+  {
+    "chapter": "第十五话 · 日记与早安",
+    "background_targets": [
+      "B03",
+      "B22",
+      "B29",
+      "B31",
+      "B34",
+      "B35",
+      "B36",
+      "B41"
+    ],
+    "cg_targets": [
+      "C19",
+      "C20"
+    ],
+    "registered_cg_enhancements": [],
+    "note": "清晨睡袍+围裙；次晨卧室门口深蓝正装；书房黄昏、卧室夜各保持住宅结构。"
+  },
+  {
+    "chapter": "第十六话 · 海风与布丁",
+    "background_targets": [
+      "B04",
+      "B30",
+      "B41"
+    ],
+    "cg_targets": [
+      "C21",
+      "C22"
+    ],
+    "registered_cg_enhancements": [
+      "O11"
+    ],
+    "note": "深秋后厨/夜间浅滩验稿 → 分支终幕；真结局戴银链，未通过结局保持未戴。"
+  },
+  {
+    "chapter": "番外篇一 · 盒子越来越满了",
+    "background_targets": [
+      "B08",
+      "B21",
+      "B24",
+      "B34",
+      "B38",
+      "B42"
+    ],
+    "cg_targets": [
+      "C23",
+      "C24"
+    ],
+    "registered_cg_enhancements": [],
+    "note": "插叙：晨间沙洲泳装；另一次采购用女仆装，后段外套系腰；菜单位置不等于季节顺序。"
+  },
+  {
+    "chapter": "番外篇二 · 贝壳项链",
+    "background_targets": [
+      "B02",
+      "B15",
+      "B16",
+      "B17",
+      "B19"
+    ],
+    "cg_targets": [
+      "C25"
+    ],
+    "registered_cg_enhancements": [],
+    "note": "搬家前帐篷：黄昏白裙获得项链 → 夜间睡衣 → 次晨帐篷内；补准确清晨背景。"
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "auth_mode": "Codex ChatGPT OAuth",
+  "endpoint": "https://chatgpt.com/backend-api/codex/images/edits",
+  "requested_model": "gpt-image-2.5-flare",
+  "backend_reported_model": null,
+  "model_selection_verified": false,
+  "requested_size": "2048x1152",
+  "backend_reported_size": "1672x941",
+  "requested_quality": "auto",
+  "backend_reported_quality": "low",
+  "usage": {
+    "input_tokens": 1688,
+    "input_tokens_details": {
+      "image_tokens": 1508,
+      "text_tokens": 180
+    },
+    "output_tokens": 301,
+    "output_tokens_details": {
+      "image_tokens": 301,
+      "text_tokens": 0
+    },
+    "total_tokens": 1989
+  },
+  "elapsed_seconds": 28.29,
+  "created": 1791869317,
+  "reference_image_count": 1,
+  "outputs": [
+    "content/assets/scene-backgrounds\\originals\\B06.png"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "auth_mode": "Codex ChatGPT OAuth",
+  "endpoint": "https://chatgpt.com/backend-api/codex/images/generations",
+  "requested_model": "gpt-image-2.5-flare",
+  "backend_reported_model": null,
+  "model_selection_verified": false,
+  "requested_size": "1024x1536",
+  "backend_reported_size": "1024x1536",
+  "requested_quality": "auto",
+  "backend_reported_quality": "medium",
+  "usage": {
+    "input_tokens": 439,
+    "input_tokens_details": {
+      "image_tokens": 0,
+      "text_tokens": 439
+    },
+    "output_tokens": 1372,
+    "output_tokens_details": {
+      "image_tokens": 1372,
+      "text_tokens": 0
+    },
+    "total_tokens": 1811
+  },
+  "elapsed_seconds": 47.04,
+  "created": 1791867680,
+  "reference_image_count": 0,
+  "outputs": [
+    "content/assets/image-trials\\R01_whale_character_candidate.png"
+  ],
+  "actual_image_size": [
+    1024,
+    1536
+  ],
+  "actual_image_mode": "RGB",
+  "sha256": "bb971d647f1df582dfbd13e567eed52ead63ff855f078295ec98d820656cb714",
+  "byte_count": 1814080
+}

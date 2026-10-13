@@ -1,0 +1,122 @@
+[
+  {
+    "id": "7jj07jqh",
+    "name": "CG_翡翠之梦",
+    "library": "bg_emerald_dream_interior_night",
+    "src": "assets/bg/bg_emerald_dream_interior_night.png"
+  },
+  {
+    "id": "j5onv73r",
+    "name": "书房_午后",
+    "library": "bg_house_study_day_v01",
+    "src": "assets/bg/bg_house_study_day_v01.png"
+  },
+  {
+    "id": "rqlji75s",
+    "name": "书房_夜",
+    "library": "bg_house_study_night_v01",
+    "src": "assets/bg/bg_house_study_night_v01.png"
+  },
+  {
+    "id": "ah4t9t6i",
+    "name": "书房_黄昏",
+    "library": "bg_house_study_sunset",
+    "src": "assets/bg/bg_house_study_sunset.png"
+  },
+  {
+    "id": "ooy2g3al",
+    "name": "厨房_清晨",
+    "library": "bg_house_kitchen_morning",
+    "src": "assets/bg/bg_house_kitchen_morning.png"
+  },
+  {
+    "id": "9qup2gii",
+    "name": "大房子_院子",
+    "library": "bg_house_courtyard_morning_v01",
+    "src": "assets/bg/bg_house_courtyard_morning_v01.png"
+  },
+  {
+    "id": "2c2u3g9q",
+    "name": "客厅_午后",
+    "library": "bg_house_living_day",
+    "src": "assets/bg/bg_house_living_day.png"
+  },
+  {
+    "id": "9hcpz81h",
+    "name": "帐篷_夜",
+    "library": "bg_beach_campsite_night_v01",
+    "src": "assets/bg/bg_beach_campsite_night_v01.png"
+  },
+  {
+    "id": "qla5b3w0",
+    "name": "浅滩_上午",
+    "library": "bg_shallows_day_v01",
+    "src": "assets/bg/bg_shallows_day_v01.png"
+  },
+  {
+    "id": "c5saufd0",
+    "name": "浅滩_午后",
+    "library": "bg_shallows_day_v01",
+    "src": "assets/bg/bg_shallows_day_v01.png"
+  },
+  {
+    "id": "9ow2x5w5",
+    "name": "浅滩_夜",
+    "library": "bg_shallows_night_v01",
+    "src": "assets/bg/bg_shallows_night_v01.png"
+  },
+  {
+    "id": "8eo1nf7q",
+    "name": "浅滩_正午",
+    "library": "bg_shallows_day_v01",
+    "src": "assets/bg/bg_shallows_day_v01.png"
+  },
+  {
+    "id": "mzy4oec6",
+    "name": "浅滩_黄昏",
+    "library": "bg_shallows_sunset_v01",
+    "src": "assets/bg/bg_shallows_sunset_v01.png"
+  },
+  {
+    "id": "fxqcg1oj",
+    "name": "深海_珊瑚礁",
+    "library": "bg_deepsea_coral_glow_v01",
+    "src": "assets/bg/bg_deepsea_coral_glow_v01.png"
+  },
+  {
+    "id": "lvjql900",
+    "name": "翡翠之梦_二楼夜",
+    "library": "bg_emerald_dream_upstairs_night_v01",
+    "src": "assets/bg/bg_emerald_dream_upstairs_night_v01.png"
+  },
+  {
+    "id": "r1teranv",
+    "name": "翡翠之梦_厨房",
+    "library": "bg_emerald_dream_kitchen_day",
+    "src": "assets/bg/bg_emerald_dream_kitchen_day.png"
+  },
+  {
+    "id": "lr4hgspz",
+    "name": "翡翠之梦_店内",
+    "library": "bg_emerald_dream_interior_day_v01",
+    "src": "assets/bg/bg_emerald_dream_interior_day_v01.png"
+  },
+  {
+    "id": "sr2lo203",
+    "name": "集市_上午",
+    "library": "bg_town_market_day_v01",
+    "src": "assets/bg/bg_town_market_day_v01.png"
+  },
+  {
+    "id": "9yvthx8h",
+    "name": "餐厅_夜",
+    "library": "bg_house_dining_night",
+    "src": "assets/bg/bg_house_dining_night.png"
+  },
+  {
+    "id": "bg_shop_interior_night",
+    "name": "翡翠之梦_店内夜",
+    "library": "bg_emerald_dream_interior_night",
+    "src": "assets/bg/bg_emerald_dream_interior_night.png"
+  }
+]

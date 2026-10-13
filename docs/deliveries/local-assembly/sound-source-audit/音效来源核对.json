@@ -1,0 +1,780 @@
+{
+  "sources": "用户明确提供的环境音.zip、剧情音效.zip、尾巴音效.zip原件",
+  "source_count": 44,
+  "larry_count": 52,
+  "counts": {
+    "三份包中未找到可确认来源": 11,
+    "波形确认同源，转码或剪辑副本": 37,
+    "名称对应，波形未充分确认": 4
+  },
+  "groups": {
+    "UI": {
+      "三份包中未找到可确认来源": 11
+    },
+    "剧情": {
+      "波形确认同源，转码或剪辑副本": 17,
+      "名称对应，波形未充分确认": 3
+    },
+    "尾巴": {
+      "波形确认同源，转码或剪辑副本": 9,
+      "名称对应，波形未充分确认": 1
+    },
+    "环境": {
+      "波形确认同源，转码或剪辑副本": 11
+    }
+  },
+  "method": "先比较SHA-256；不同文件以ffmpeg解码成8kHz单声道，比较实际波形的归一化互相关，允许裁剪、增益变化和转码。相关度绝对值>=0.90视为强同源证据。不靠文件名推定，也不等于听感验收。 对高频相位差影响较大的待定副本，另以2kHz低频波形进行复核，相关度>=0.95才确认。",
+  "rows": [
+    {
+      "larry_name": "UI_CG.mp3",
+      "larry_sha256": "b0f99ac4b065a0345c2a0d69d01eb010d78cb2b1d8b5bfb8b660f8ed56121afd",
+      "group": "UI",
+      "status": "三份包中未找到可确认来源",
+      "source": null
+    },
+    {
+      "larry_name": "UI_好感上升.mp3",
+      "larry_sha256": "5e359b32f76d1dfcdde9853e986050a331872b8fc2aa2d39f0b0fc5b87cf0da4",
+      "group": "UI",
+      "status": "三份包中未找到可确认来源",
+      "source": null
+    },
+    {
+      "larry_name": "UI_好感下降.mp3",
+      "larry_sha256": "4423a23b9e09de8489ec766e639ce120bdb8e9e2654722783c3e6e653193d460",
+      "group": "UI",
+      "status": "三份包中未找到可确认来源",
+      "source": null
+    },
+    {
+      "larry_name": "UI_存档.mp3",
+      "larry_sha256": "c93227030378ed413ad46f01c040cd3b4061d47e57da1dcf2603fdc9b30469f6",
+      "group": "UI",
+      "status": "三份包中未找到可确认来源",
+      "source": null
+    },
+    {
+      "larry_name": "UI_尾鳍标记.mp3",
+      "larry_sha256": "2a60d6a6186defc40cbaf966a3cc611ca8525299194479039034c499547fbecd",
+      "group": "UI",
+      "status": "三份包中未找到可确认来源",
+      "source": null
+    },
+    {
+      "larry_name": "UI_新结局.mp3",
+      "larry_sha256": "2689ca8d5ec6ccf78dd6ea8fa4519ddbac601b9ea3b74fbd662768537df91a5b",
+      "group": "UI",
+      "status": "三份包中未找到可确认来源",
+      "source": null
+    },
+    {
+      "larry_name": "UI_话末.mp3",
+      "larry_sha256": "6168139a9256a51434c74e52938a07af18e7a43c68d161b8928c8770efd9fe87",
+      "group": "UI",
+      "status": "三份包中未找到可确认来源",
+      "source": null
+    },
+    {
+      "larry_name": "UI_超时沉默.mp3",
+      "larry_sha256": "44dceae380410714f8ef03a735a4c70c124c2858bfdcbb126a46c1a69d4c8f9f",
+      "group": "UI",
+      "status": "三份包中未找到可确认来源",
+      "source": null
+    },
+    {
+      "larry_name": "UI_退潮线倒计时.mp3",
+      "larry_sha256": "5aa404567c4f2346002f1e40cd1778ccc08eb8de2cea993909f93e9683e05aaa",
+      "group": "UI",
+      "status": "三份包中未找到可确认来源",
+      "source": null
+    },
+    {
+      "larry_name": "UI_选项出现.mp3",
+      "larry_sha256": "64ae2b413cac2f2072be39ef60ff61e088307581f4f5bd7276fb7f60bd9f5e39",
+      "group": "UI",
+      "status": "三份包中未找到可确认来源",
+      "source": null
+    },
+    {
+      "larry_name": "UI_选项确认.mp3",
+      "larry_sha256": "299aeb2a4f9a2c5efd3e5b193b469cb8888d0410978db051701bada796fa7fbd",
+      "group": "UI",
+      "status": "三份包中未找到可确认来源",
+      "source": null
+    },
+    {
+      "larry_name": "剧情_发梢滴水.mp3",
+      "larry_sha256": "64def569357e0bbcb1cd7d2423a5d645d99ac0b9ab4ff5985efb6557d4a2fb75",
+      "group": "剧情",
+      "source": {
+        "archive": "剧情音效.zip",
+        "name": "S13 发梢滴水.mp3",
+        "sha256": "8a9b2f11ab3efff3eec0cada016705e2127d61a3681cbb6c30dd55450bf5cd83"
+      },
+      "waveform": {
+        "correlation": 0.9788957557877918,
+        "offset_seconds": 0.3,
+        "compared_seconds": 3.9
+      },
+      "status": "波形确认同源，转码或剪辑副本"
+    },
+    {
+      "larry_name": "剧情_合上笔记本.mp3",
+      "larry_sha256": "d2ca44a292ff8379e486b3c983cc057c88b7187fe1e3d86cb94837a680fc620b",
+      "group": "剧情",
+      "source": {
+        "archive": "剧情音效.zip",
+        "name": "S07 合上笔记本.wav",
+        "sha256": "d76ec4e22fe094df262ec719f311d792c9347b060e13e2347e54cca86322e5d2"
+      },
+      "waveform": {
+        "correlation": 0.9936426351500316,
+        "offset_seconds": 1.404625,
+        "compared_seconds": 0.297375
+      },
+      "status": "波形确认同源，转码或剪辑副本"
+    },
+    {
+      "larry_name": "剧情_呛水.mp3",
+      "larry_sha256": "40f42b2762d295d07da0f32fe6f800173f7a729995bea469b5f0021f55ef8859",
+      "group": "剧情",
+      "source": {
+        "archive": "剧情音效.zip",
+        "name": "S02 呛水.wav",
+        "sha256": "617b3a3c01a64c271571ce1823f0369d7804572939c7144279fa0071837aa60c"
+      },
+      "waveform": {
+        "correlation": 0.9627734234226957,
+        "offset_seconds": 0.6,
+        "compared_seconds": 5.6
+      },
+      "status": "波形确认同源，转码或剪辑副本"
+    },
+    {
+      "larry_name": "剧情_定格重音.mp3",
+      "larry_sha256": "a815fbaa0d9631b92ecb62883c69a3216a814a3bb072ff74f13888b2e88f03ce",
+      "group": "剧情",
+      "source": {
+        "archive": "剧情音效.zip",
+        "name": "S16 被雷劈的定格重音.mp3",
+        "sha256": "b3364a1ad21291d78ca91f7696eabd9cf79cf8f4c655fa5df879a37e7afcf140"
+      },
+      "waveform": {
+        "correlation": 0.9985934811560934,
+        "offset_seconds": 0.0,
+        "compared_seconds": 1.253875
+      },
+      "status": "波形确认同源，转码或剪辑副本"
+    },
+    {
+      "larry_name": "剧情_尾巴急甩.mp3",
+      "larry_sha256": "3614a5e8c1c94a61d81083eb27a4af367da3ace80986471d3ecb6ac3aa3cdfaf",
+      "group": "剧情",
+      "source": {
+        "archive": "剧情音效.zip",
+        "name": "S11 尾巴急甩.wav",
+        "sha256": "d4c72eb1cf5b2f5fb102203c351f11dbac3bef9d19c5cdcea6b11a0ac384b4bc"
+      },
+      "waveform": {
+        "correlation": 0.6172493959897587,
+        "offset_seconds": 0.31225,
+        "compared_seconds": 2.43425
+      },
+      "status": "名称对应，波形未充分确认"
+    },
+    {
+      "larry_name": "剧情_尾巴拍平水面.mp3",
+      "larry_sha256": "357aae63a81dbd65af49ee8a551c49841b886bd6edaa98462076cd74cb4f6137",
+      "group": "剧情",
+      "source": {
+        "archive": "剧情音效.zip",
+        "name": "S04 尾巴拍平水面.flac",
+        "sha256": "be6c1fdc7dd7edfd07f5713e683f6b8958ccf72564a444d323dc76d5f218b8b5"
+      },
+      "waveform": {
+        "correlation": 0.8790560207182624,
+        "offset_seconds": 0.48,
+        "compared_seconds": 1.82
+      },
+      "status": "名称对应，波形未充分确认"
+    },
+    {
+      "larry_name": "剧情_巨大拍水.mp3",
+      "larry_sha256": "999454e0fba2708a33f8764146b0e7737c54c69e32ee3b897e5b18e9a2933f03",
+      "group": "剧情",
+      "source": {
+        "archive": "剧情音效.zip",
+        "name": "S01 巨大拍水.wav",
+        "sha256": "8d81a2883a276e388c246c96c5f380c7753f311e2bcfab5a5b7f0d75d07059f6"
+      },
+      "waveform": {
+        "correlation": 0.9969794131866346,
+        "offset_seconds": 0.0,
+        "compared_seconds": 2.17225
+      },
+      "status": "波形确认同源，转码或剪辑副本"
+    },
+    {
+      "larry_name": "剧情_心跳.mp3",
+      "larry_sha256": "732baabad72b3b3e145af7dc9090a34997977cd18b3c80185803e67a574b7a74",
+      "group": "剧情",
+      "source": {
+        "archive": "环境音.zip",
+        "name": "A08 水下·心跳声.wav",
+        "sha256": "1ed32edb9121a482e25ad2a606047a2efee40e6682d13a28539a80585c56d134"
+      },
+      "waveform": {
+        "correlation": 0.9982571562886522,
+        "offset_seconds": 0.0,
+        "compared_seconds": 5.5
+      },
+      "status": "波形确认同源，转码或剪辑副本"
+    },
+    {
+      "larry_name": "剧情_手机扣礁石.mp3",
+      "larry_sha256": "675f672aece1c25f6bff27832e9bba7fd76171949b40a7a6bc4a93c23ca4a980",
+      "group": "剧情",
+      "source": {
+        "archive": "剧情音效.zip",
+        "name": "S17 手机扣在礁石上.mp3",
+        "sha256": "b25d6dc3c1ad9f772a1550d96d0e0e1815cdf69557b099a6bd4fb734558c7f0f"
+      },
+      "waveform": {
+        "correlation": 0.9290995403791514,
+        "offset_seconds": 0.0,
+        "compared_seconds": 2.36675
+      },
+      "status": "波形确认同源，转码或剪辑副本"
+    },
+    {
+      "larry_name": "剧情_手机来电.mp3",
+      "larry_sha256": "37e2711acfa6c7ae34ccda9cdd54512eb128aa1d5afe5ec7191c510394c12656",
+      "group": "剧情",
+      "source": {
+        "archive": "剧情音效.zip",
+        "name": "S09 手机来电.wav",
+        "sha256": "b27464dbe81e7d1cbeb568104ce7c05933964c541250256610ff4fee912f85b5"
+      },
+      "waveform": {
+        "correlation": 0.9927729921942359,
+        "offset_seconds": 0.0,
+        "compared_seconds": 0.617125
+      },
+      "status": "波形确认同源，转码或剪辑副本"
+    },
+    {
+      "larry_name": "剧情_接挂电话.mp3",
+      "larry_sha256": "b78b3d4c81177d6e5ed42e2ac7c6c71280a4d4c67f8a2b72b7aece599397bef5",
+      "group": "剧情",
+      "source": {
+        "archive": "剧情音效.zip",
+        "name": "S10 接挂电话.wav",
+        "sha256": "fdf25d046b6a78512ddf2efb0ebbdbb13748174c64ac366149187df16e9c01d6"
+      },
+      "waveform": {
+        "correlation": 0.9362896308086348,
+        "offset_seconds": 1.0145,
+        "compared_seconds": 3.3855
+      },
+      "status": "波形确认同源，转码或剪辑副本"
+    },
+    {
+      "larry_name": "剧情_撕开小鱼干.mp3",
+      "larry_sha256": "f8b5e8d8f92c374c5cdbcd3d0d956ef0afd43eb0b30104ff4d763b1ec55a95c9",
+      "group": "剧情",
+      "source": {
+        "archive": "剧情音效.zip",
+        "name": "S15 小鱼干撕开.wav",
+        "sha256": "10be14d352fb37becd97cbc8eb91aadb48ef80c97afb53700104c75511ebb264"
+      },
+      "waveform": {
+        "correlation": 0.9735572690427488,
+        "offset_seconds": 0.1135,
+        "compared_seconds": 2.42
+      },
+      "status": "波形确认同源，转码或剪辑副本"
+    },
+    {
+      "larry_name": "剧情_水花溅脸.mp3",
+      "larry_sha256": "87b10e1c6db77123d900e174fc4b8847903bb83470755a496bdfa34c5195cb2e",
+      "group": "剧情",
+      "source": {
+        "archive": "剧情音效.zip",
+        "name": "S03 水花溅脸.wav",
+        "sha256": "44735670c503cc4454c4db6d17eae149ce7e70caf9ea077f0476a4db1bba5c3e"
+      },
+      "waveform": {
+        "correlation": 0.7372466505510629,
+        "offset_seconds": 14.918375,
+        "compared_seconds": 1.102125
+      },
+      "status": "名称对应，波形未充分确认"
+    },
+    {
+      "larry_name": "剧情_海鸥.mp3",
+      "larry_sha256": "674deb9503fe8baded0847a65b6af51aef02472d4a3081f8714c871b669d7a79",
+      "group": "剧情",
+      "source": {
+        "archive": "环境音.zip",
+        "name": "A06 海鸥.mp3",
+        "sha256": "f8a68f8a49afc18fabf63259b594699221f41d93c6f7ef73153e98b3ffeb9b1f"
+      },
+      "waveform": {
+        "correlation": 0.9593189811437325,
+        "offset_seconds": 0.511375,
+        "compared_seconds": 4.988625
+      },
+      "status": "波形确认同源，转码或剪辑副本"
+    },
+    {
+      "larry_name": "剧情_海鸥叼食.mp3",
+      "larry_sha256": "15100a147506772ce7b81a4ce3f594731687da2dbf6a09965d69a493241ea1a4",
+      "group": "剧情",
+      "source": {
+        "archive": "剧情音效.zip",
+        "name": "S05 海鸥叼食.wav",
+        "sha256": "e5ae9918ef788f2b76bab2cf3e5a7e4a559f98e8607b98838c70cc5ae39ed2fd"
+      },
+      "waveform": {
+        "correlation": 0.9974828043654524,
+        "offset_seconds": 1.0,
+        "compared_seconds": 4.5
+      },
+      "status": "波形确认同源，转码或剪辑副本"
+    },
+    {
+      "larry_name": "剧情_深潜水压.mp3",
+      "larry_sha256": "202508575e2bc041b7a04bd25abb9c62e094823c6e9d190dd4cbf2cecc24998c",
+      "group": "剧情",
+      "source": {
+        "archive": "剧情音效.zip",
+        "name": "S12 深潜水压.wav",
+        "sha256": "6e71723f2a89f3a5655e22d8af85106ffc092d3193e963767b6f149160ff59e9"
+      },
+      "waveform": {
+        "correlation": 0.9998373006156575,
+        "offset_seconds": 0.01025,
+        "compared_seconds": 5.58975
+      },
+      "status": "波形确认同源，转码或剪辑副本"
+    },
+    {
+      "larry_name": "剧情_窸窸窣窣.mp3",
+      "larry_sha256": "7f6e07ee3f19860fc766c2d60c49a2795bb083fa0da6093d29bc3d469aa5c39a",
+      "group": "剧情",
+      "source": {
+        "archive": "剧情音效.zip",
+        "name": "S14 窸窸窣窣.wav",
+        "sha256": "7c76171c8c9911c10ffae3f15095bc876212fa62211f005884e758e706ace3e5"
+      },
+      "waveform": {
+        "correlation": 0.9859456781104717,
+        "offset_seconds": 0.0,
+        "compared_seconds": 2.745875
+      },
+      "status": "波形确认同源，转码或剪辑副本"
+    },
+    {
+      "larry_name": "剧情_笔尖书写.mp3",
+      "larry_sha256": "e92d5749955cc2ae117035e9e9153b7b6bf143c5ad219ad91afc127ebbe71763",
+      "group": "剧情",
+      "source": {
+        "archive": "剧情音效.zip",
+        "name": "S06 笔尖书写.wav",
+        "sha256": "5e91c2e68212f351845d7473b734c37e75a25d52cc575f72fa7e1155cd44fb16"
+      },
+      "waveform": {
+        "correlation": 0.9820007173529111,
+        "offset_seconds": 0.1105,
+        "compared_seconds": 3.3895
+      },
+      "status": "波形确认同源，转码或剪辑副本"
+    },
+    {
+      "larry_name": "剧情_落水.mp3",
+      "larry_sha256": "e901df7e6f25624c1dec109eff1d002b254568a16dd537caa0124deaae62b704",
+      "group": "剧情",
+      "source": {
+        "archive": "剧情音效.zip",
+        "name": "S02 落水.wav",
+        "sha256": "b5b2ffe82eb655221d53cc384b0c41f1fd37ecfc8b5326639cf63ce3d96f43ff"
+      },
+      "waveform": {
+        "correlation": 0.985446156650403,
+        "offset_seconds": 0.0,
+        "compared_seconds": 2.8325
+      },
+      "status": "波形确认同源，转码或剪辑副本"
+    },
+    {
+      "larry_name": "剧情_风铃单响.mp3",
+      "larry_sha256": "565fdd98872f0208a3a8e0dc7915c29e0cf1368468f274a789cfa45ac99b6c30",
+      "group": "剧情",
+      "source": {
+        "archive": "剧情音效.zip",
+        "name": "S08 风铃单响.wav",
+        "sha256": "979b894581dfeeedfae9e9b15aa6279e1238cc0a3e950e53cad5de4c78f4d5e3"
+      },
+      "waveform": {
+        "correlation": 0.9955329297228253,
+        "offset_seconds": 0.007125,
+        "compared_seconds": 2.1045
+      },
+      "status": "波形确认同源，转码或剪辑副本"
+    },
+    {
+      "larry_name": "尾巴_卷圈.mp3",
+      "larry_sha256": "41eb61cd98703fee10920e2bcbe6dcf7c7d83afd0db1b4c3e389e9c108d03943",
+      "group": "尾巴",
+      "source": {
+        "archive": "尾巴音效.zip",
+        "name": "T06卷圈、轻卷.wav",
+        "sha256": "473ca1bb0e14db5ec3e49ce287ef68fdeb68cbd93e2d091018093a31105d117e"
+      },
+      "waveform": {
+        "correlation": 0.9718889165513809,
+        "offset_seconds": 0.0,
+        "compared_seconds": 1.130875
+      },
+      "status": "波形确认同源，转码或剪辑副本"
+    },
+    {
+      "larry_name": "尾巴_慌乱甩圈.mp3",
+      "larry_sha256": "02ccb305757a0e4dd45b940754231d224f284b402178e268d3121521315d04d4",
+      "group": "尾巴",
+      "source": {
+        "archive": "尾巴音效.zip",
+        "name": "T08慌乱甩圈.wav",
+        "sha256": "10cb59565605974fa16ca94c57af4c2adbf285c3f9fd53a966030a8dcc6fe409"
+      },
+      "waveform": {
+        "correlation": 0.8374819045880794,
+        "offset_seconds": 0.74925,
+        "compared_seconds": 3.45075
+      },
+      "status": "名称对应，波形未充分确认"
+    },
+    {
+      "larry_name": "尾巴_拍地.mp3",
+      "larry_sha256": "f95734bfe73eca54dd4e2843dcd085f7ffd5e048908e823179fe1df90f7d7a0e",
+      "group": "尾巴",
+      "source": {
+        "archive": "尾巴音效.zip",
+        "name": "T05拍地.wav",
+        "sha256": "6031794538c3f05df23be6dfeb585e1278cc34dc2127b67c8bd0e845af911408"
+      },
+      "waveform": {
+        "correlation": 0.9985386996494953,
+        "offset_seconds": 0.0,
+        "compared_seconds": 0.394
+      },
+      "status": "波形确认同源，转码或剪辑副本"
+    },
+    {
+      "larry_name": "尾巴_拍床.mp3",
+      "larry_sha256": "7e729dc926d127250033b38596cd19ec3fd4f3b72960ddcafe43209d1ca9b2bb",
+      "group": "尾巴",
+      "source": {
+        "archive": "尾巴音效.zip",
+        "name": "T04拍床、沙发.wav",
+        "sha256": "165dd7e5f3a6532135e205fe2209c3d4a4f089bd4aa672d3aa2599086aa34f4d"
+      },
+      "waveform": {
+        "correlation": 0.9814202376634817,
+        "offset_seconds": 0.061375,
+        "compared_seconds": 1.58
+      },
+      "status": "波形确认同源，转码或剪辑副本"
+    },
+    {
+      "larry_name": "尾巴_拍桌.mp3",
+      "larry_sha256": "31877b9ef39af46244fe7fb1a6c17b15619899aeae12c588cce53c024e92d625",
+      "group": "尾巴",
+      "source": {
+        "archive": "尾巴音效.zip",
+        "name": "T03拍桌、桌腿.wav",
+        "sha256": "de36984eac265a4235e7a713c476defba8a26d239e3066cac362f795ec365171"
+      },
+      "waveform": {
+        "correlation": 0.9878880782219244,
+        "offset_seconds": 0.0,
+        "compared_seconds": 2.455
+      },
+      "status": "波形确认同源，转码或剪辑副本"
+    },
+    {
+      "larry_name": "尾巴_拍水.mp3",
+      "larry_sha256": "32040d67fc9a6a179fb07c083d2106a997225c958aedf7250b7753e7bfce799d",
+      "group": "尾巴",
+      "source": {
+        "archive": "尾巴音效.zip",
+        "name": "T01拍水（轻档）.flac",
+        "sha256": "246277aaf149a5deed6e2fbca873b32f029818525b9dcd9fb3a73695688438c8"
+      },
+      "waveform": {
+        "correlation": 0.9267316085314946,
+        "offset_seconds": 0.6,
+        "compared_seconds": 1.6
+      },
+      "status": "波形确认同源，转码或剪辑副本"
+    },
+    {
+      "larry_name": "尾巴_拍沙.mp3",
+      "larry_sha256": "874ef28464b00d560979e29377a95ea68a384da6a433e294b1c3331b7c0863cc",
+      "group": "尾巴",
+      "source": {
+        "archive": "尾巴音效.zip",
+        "name": "T02拍沙.wav",
+        "sha256": "56b9db34beead9a28b52e4e5000bee4b582d6ed0007f051e009c587194a7f45c"
+      },
+      "waveform": {
+        "correlation": 0.9821031372066965,
+        "offset_seconds": 1.261875,
+        "compared_seconds": 1.93825
+      },
+      "status": "波形确认同源，转码或剪辑副本"
+    },
+    {
+      "larry_name": "尾巴_放平.mp3",
+      "larry_sha256": "3e02dbffac3a12eb9f3cef44c978bc363a579d321fbb77c6d6975a9bf1e34df2",
+      "group": "尾巴",
+      "source": {
+        "archive": "尾巴音效.zip",
+        "name": "T10放平、沉底.wav",
+        "sha256": "51c09e044f10621da78d4b37eb86479a0c848e36a2d5771a0315e99da2be3ef1"
+      },
+      "waveform": {
+        "correlation": 0.9996825341812339,
+        "offset_seconds": 0.0,
+        "compared_seconds": 0.38875
+      },
+      "status": "波形确认同源，转码或剪辑副本"
+    },
+    {
+      "larry_name": "尾巴_缠绕.mp3",
+      "larry_sha256": "376058543f9127d703b3473da82d862819e1b9fa82c8f979a4a8c1ff9ed1762a",
+      "group": "尾巴",
+      "source": {
+        "archive": "尾巴音效.zip",
+        "name": "T09缠绕.wav",
+        "sha256": "5e842d5e96ef9dc50d811278647c5de500d1371693b33f1e799444878a7f8e99"
+      },
+      "waveform": {
+        "correlation": 0.9651103558908406,
+        "offset_seconds": 0.1935,
+        "compared_seconds": 4.0065
+      },
+      "status": "波形确认同源，转码或剪辑副本"
+    },
+    {
+      "larry_name": "尾巴_翘起.mp3",
+      "larry_sha256": "d0dc832b312e043209c8b268c956299712c9fd1b9375946622d4e79e05e95e40",
+      "group": "尾巴",
+      "source": {
+        "archive": "尾巴音效.zip",
+        "name": "T07翘起、高翘.wav",
+        "sha256": "2d8c7639013707c7a6466f2bdb4c97e45eabefbcc0f699df0edbad50a6f23938"
+      },
+      "waveform": {
+        "correlation": 0.9982578500117617,
+        "offset_seconds": 0.564375,
+        "method": "两个独立片段高度相关，裁剪起点一致",
+        "segments": [
+          {
+            "correlation": 0.9997297059135694,
+            "offset_seconds": 0.9115,
+            "compared_seconds": 0.433875,
+            "query_start_seconds": 0.347125,
+            "source_start_seconds": 0.564375
+          },
+          {
+            "correlation": 0.9982578500117617,
+            "offset_seconds": 1.518875,
+            "compared_seconds": 0.433875,
+            "query_start_seconds": 0.9545,
+            "source_start_seconds": 0.564375
+          }
+        ]
+      },
+      "status": "波形确认同源，转码或剪辑副本"
+    },
+    {
+      "larry_name": "环境_帐篷海风.mp3",
+      "larry_sha256": "c2f7de0f9c2661a66058ef94fe6ed5fcd4b56e093bad87db08e070025b9e3b0e",
+      "group": "环境",
+      "source": {
+        "archive": "环境音.zip",
+        "name": "A12 帐篷海风.wav",
+        "sha256": "fc30260cd4a3bb1c5dea4942c4c8af24e78bfc2ce9b9f82eab89c76491a0c7a9"
+      },
+      "waveform": {
+        "correlation": 0.9593852007772284,
+        "offset_seconds": 0.0,
+        "compared_seconds": 20.0
+      },
+      "status": "波形确认同源，转码或剪辑副本"
+    },
+    {
+      "larry_name": "环境_店内底噪.mp3",
+      "larry_sha256": "bc301811a42c22f84b32698eec08e97d943da87a6f4c480baa19ecd70350a2a3",
+      "group": "环境",
+      "source": {
+        "archive": "环境音.zip",
+        "name": "A15 店内底噪.wav",
+        "sha256": "df246a9a3caa14f8f698ab3948f097e98001f879eb3c3b95f4d91e5095172f67"
+      },
+      "waveform": {
+        "correlation": 0.970648266087016,
+        "offset_seconds": 20.0,
+        "compared_seconds": 20.0
+      },
+      "status": "波形确认同源，转码或剪辑副本"
+    },
+    {
+      "larry_name": "环境_水下嗡鸣.mp3",
+      "larry_sha256": "bfa49d6343fc253455433ff199f212292d0c39bc2786e0bf89779b53e54b9572",
+      "group": "环境",
+      "source": {
+        "archive": "环境音.zip",
+        "name": "A07 水下·低频嗡鸣.wav",
+        "sha256": "05042be769341240ca448241ef00f79f7cccdf48b3836f61b785f10f5e4c6bfa"
+      },
+      "waveform": {
+        "correlation": 0.9546766281070461,
+        "offset_seconds": 10.0,
+        "compared_seconds": 20.0
+      },
+      "status": "波形确认同源，转码或剪辑副本"
+    },
+    {
+      "larry_name": "环境_潮声常规.mp3",
+      "larry_sha256": "71c6657d5c42f65c3932f1503a5fd73e050dcde118a9fa5e344e58d09de1ebb0",
+      "group": "环境",
+      "source": {
+        "archive": "环境音.zip",
+        "name": "A01 潮声·常规（30秒，循环）.mp3",
+        "sha256": "659de044a8b3d8597007191fa0bb61f30ecdfab9f527036d227c9e7b5f29adca"
+      },
+      "waveform": {
+        "correlation": 0.9935148103218592,
+        "offset_seconds": 0.0,
+        "compared_seconds": 20.0
+      },
+      "status": "波形确认同源，转码或剪辑副本"
+    },
+    {
+      "larry_name": "环境_潮声暴烈.mp3",
+      "larry_sha256": "049dc0cc4f3608a59e1a01afbcb64b0d8e7fe14180ccd99d6e33e2a0efa5a90c",
+      "group": "环境",
+      "source": {
+        "archive": "环境音.zip",
+        "name": "A05 潮声·暴烈（30秒，循环）.mp3",
+        "sha256": "811adccc4254b1ab9698f885682e2145db48ce717b70e254b28788619e3a5d64"
+      },
+      "waveform": {
+        "correlation": 0.9974501958529116,
+        "offset_seconds": 0.0,
+        "compared_seconds": 20.0
+      },
+      "status": "波形确认同源，转码或剪辑副本"
+    },
+    {
+      "larry_name": "环境_潮声轻.mp3",
+      "larry_sha256": "66ff5e985d778a1ec75c4eef7dbc907b15d0fb518f8994090723ce28faa8817b",
+      "group": "环境",
+      "source": {
+        "archive": "环境音.zip",
+        "name": "A02 潮声·轻（30秒，循环）.mp3",
+        "sha256": "1f39d6b96c8ed20fea6b80eae8f4c18358dd71d199c6328637e6b9c884bda0cb"
+      },
+      "waveform": {
+        "correlation": 0.9934491423993391,
+        "offset_seconds": 0.0,
+        "compared_seconds": 20.0
+      },
+      "status": "波形确认同源，转码或剪辑副本"
+    },
+    {
+      "larry_name": "环境_潮声远.mp3",
+      "larry_sha256": "8ed1b9c27d56e65fad641cf49a4c255b8c7c871551d77cdcc76ed62d3d242597",
+      "group": "环境",
+      "source": {
+        "archive": "环境音.zip",
+        "name": "A03 潮声·远（退潮）（30秒，循环）.mp3",
+        "sha256": "27a67419e28e91f0ff5b22ef1a50b2f7c605f18634b82ebc0076e502475808d9"
+      },
+      "waveform": {
+        "correlation": 0.9992033700141892,
+        "offset_seconds": 0.0,
+        "compared_seconds": 20.0
+      },
+      "status": "波形确认同源，转码或剪辑副本"
+    },
+    {
+      "larry_name": "环境_潮声铺底.mp3",
+      "larry_sha256": "14aac3175ee4245379b949bf0781ddb3b51f6522a5b6082b6e37a1401677e330",
+      "group": "环境",
+      "source": {
+        "archive": "环境音.zip",
+        "name": "A04 潮声·单独铺底（30秒，循环）.mp3",
+        "sha256": "da98da570377cac69e10eadd452a11368fc6b402bd248f4fc5fa137baa81e22d"
+      },
+      "waveform": {
+        "correlation": 0.999040563931857,
+        "offset_seconds": 0.0,
+        "compared_seconds": 20.0
+      },
+      "status": "波形确认同源，转码或剪辑副本"
+    },
+    {
+      "larry_name": "环境_篝火.mp3",
+      "larry_sha256": "43d454504a63dc486bb13bb29574cd3022977b7f28b9f0e78608ce3c313a9c7a",
+      "group": "环境",
+      "source": {
+        "archive": "环境音.zip",
+        "name": "A14 篝火.wav",
+        "sha256": "f7bf5459606c5d9225df4c705d38417d9c9a18447a1c72479abf71885b936254"
+      },
+      "waveform": {
+        "correlation": 0.9637888408869641,
+        "offset_seconds": 30.0,
+        "compared_seconds": 20.0
+      },
+      "status": "波形确认同源，转码或剪辑副本"
+    },
+    {
+      "larry_name": "环境_贝壳风铃.mp3",
+      "larry_sha256": "f193019f578e7652cfeff64f33aa32815865cbd33bfa13bd3a77f0bfa4df15b3",
+      "group": "环境",
+      "source": {
+        "archive": "环境音.zip",
+        "name": "A11 贝壳风铃.wav",
+        "sha256": "644b7b3cbbdcdc3af7ccbdd0b2212d5a6698701c51536b4ccc616f170a555a71"
+      },
+      "waveform": {
+        "correlation": 0.9519165307276424,
+        "offset_seconds": 0.0,
+        "compared_seconds": 20.0
+      },
+      "status": "波形确认同源，转码或剪辑副本"
+    },
+    {
+      "larry_name": "环境_集市人声.mp3",
+      "larry_sha256": "2bb7b85b821c55e1c770375357f1351daf4231ee26f40eab08183fe3e06cbe11",
+      "group": "环境",
+      "source": {
+        "archive": "环境音.zip",
+        "name": "A10 集市人声.MP3",
+        "sha256": "815bb272c40db926307793803496c9ae3e17540379957995c802a87a5eba1fc5"
+      },
+      "waveform": {
+        "correlation": 0.9755690617043853,
+        "offset_seconds": 60.0,
+        "compared_seconds": 20.0
+      },
+      "status": "波形确认同源，转码或剪辑副本"
+    }
+  ],
+  "modified_game": false,
+  "push": false
+}

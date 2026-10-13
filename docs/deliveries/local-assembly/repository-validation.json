@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "author_originals_index_hashes_verified": 137,
+  "outer_player_files_match_tested_local": true,
+  "outer_static_references_exist": true,
+  "offline_start_index": 2,
+  "offline_tent_morning": "B19",
+  "decoded_visual_asset_refs": 68,
+  "gallery_items": 44,
+  "js_errors": [],
+  "scope": "仓库副本离线启动与资源校验；9处实机场景、音乐和存档恢复结果另见场景装配/验证结果.json；未完成在线AI配置联调",
+  "baseline": "2fc1c6a9be9be404250c13531ca1336e11d0625a"
+}

@@ -2,7 +2,7 @@
 
 团队与 agent 开工入口：[AGENTS.md](AGENTS.md) · [共享台账与兼容协调](docs/coordination-ledger.md) · [任务记录](docs/work-ledger/)。当前协作仓库为 [Liyang1145/galLingS](https://github.com/Liyang1145/galLingS)，私有。
 
-Larry 最新完整作品已由音乐负责人代提交：[交付说明与校验清单](content/deliveries/larry-vn/README.md)，可运行目录为 `content/vn/海风与布丁/`。主曲与最新包的正式接入继续按共享台账核对。
+Larry 最新完整作品已由音乐负责人代提交：[交付说明与校验清单](content/deliveries/larry-vn/README.md)，可运行目录为 `content/vn/海风与布丁/`。当前已装配本地音乐音效与场景背景，接入范围、原件保存及验证见 [场景与音频装配记录](docs/work-ledger/local-scene-audio-assembly.md)。
 
 AI 驱动、角色卡驱动的 Galgame 后端引擎。剧本决定"发生什么"，角色卡决定"谁来演"，大模型以 agent 身份实时演出，确定性引擎负责校验、落账、存档与回放。
 
@@ -43,7 +43,7 @@ python -m pytest            # 灵枢集成测试需设 GALLINGS_TEST_DSH=<dsh-me
 
 ## 素材库
 
-《海风与布丁》的背景素材、预览和命名约定见 [素材库](content/assets/README.md)，当前收录 11 张背景，覆盖浅滩时段差分、书房、甜品店、营地、集市、院子与深海珊瑚礁。
+《海风与布丁》的背景素材、预览和命名约定见 [素材库](content/assets/README.md)。最新 [44张场景背景库](content/assets/scene-backgrounds/README.md) 包含原件、提示词与审核；游戏使用40张，另外4张备用，角色和人物CG暂缓更换。
 
 音效素材：已收录 15 个环境音和 18 个剧情音效，索引见 [音效素材库](content/assets/audio/sfx/README.md)。
 

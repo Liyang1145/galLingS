@@ -1,0 +1,17 @@
+{
+  "journal_style": {
+    "bg": "linear-gradient(135deg, rgb(251, 246, 233), rgb(240, 235, 220))",
+    "title": "rgb(54, 77, 69)",
+    "empty": "rgb(104, 109, 91)"
+  },
+  "offline_reply_passed": true,
+  "model_called": false,
+  "perf": {
+    "sample": "独立Edge无头测试，不等于用户设备内嵌浏览器的GPU/帧率",
+    "idle_seconds": 4,
+    "main_thread_busy_percent": 0.18,
+    "js_heap_mib": 8.51,
+    "long_tasks": []
+  },
+  "errors": []
+}

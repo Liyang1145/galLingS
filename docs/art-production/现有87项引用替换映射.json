@@ -1,0 +1,962 @@
+[
+  {
+    "old_id": "md2p8m90",
+    "old_name": "CG_人鱼公主",
+    "old_src": "assets/bg/CG_人鱼公主.jpg",
+    "current_ref_lines": 9,
+    "target_ids": [
+      "C25"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "yvwvivzm",
+    "old_name": "CG_初登场",
+    "old_src": "assets/bg/CG_初登场.jpg",
+    "current_ref_lines": 3,
+    "target_ids": [
+      "C01"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "ehbun5kh",
+    "old_name": "CG_原来是你",
+    "old_src": "assets/bg/CG_原来是你.jpg",
+    "current_ref_lines": 5,
+    "target_ids": [
+      "C09"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "pmngp4pk",
+    "old_name": "CG_和解",
+    "old_src": "assets/bg/CG_和解.jpg",
+    "current_ref_lines": 5,
+    "target_ids": [
+      "C14"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "yjxp4irw",
+    "old_name": "CG_夏日沙洲",
+    "old_src": "assets/bg/CG_夏日沙洲.jpg",
+    "current_ref_lines": 0,
+    "target_ids": [
+      "C23"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": true
+  },
+  {
+    "old_id": "w3km9isl",
+    "old_name": "CG_布丁",
+    "old_src": "assets/bg/CG_布丁.jpg",
+    "current_ref_lines": 4,
+    "target_ids": [
+      "C18"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "ez0vsxzc",
+    "old_name": "CG_手链",
+    "old_src": "assets/bg/CG_手链.jpg",
+    "current_ref_lines": 0,
+    "target_ids": [
+      "C07"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": true
+  },
+  {
+    "old_id": "jxxr16ez",
+    "old_name": "CG_新家",
+    "old_src": "assets/bg/CG_新家.jpg",
+    "current_ref_lines": 0,
+    "target_ids": [
+      "C11"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": true
+  },
+  {
+    "old_id": "sqnct5dc",
+    "old_name": "CG_早安",
+    "old_src": "assets/bg/CG_早安.jpg",
+    "current_ref_lines": 0,
+    "target_ids": [
+      "C19"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": true
+  },
+  {
+    "old_id": "supaesch",
+    "old_name": "CG_海豚",
+    "old_src": "assets/bg/CG_海豚.jpg",
+    "current_ref_lines": 5,
+    "target_ids": [
+      "C10"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "wnpuk9dy",
+    "old_name": "CG_海风与布丁",
+    "old_src": "assets/bg/CG_海风与布丁.jpg",
+    "current_ref_lines": 5,
+    "target_ids": [
+      "C22"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "ij6ed2gn",
+    "old_name": "CG_深水区",
+    "old_src": "assets/bg/CG_深水区.jpg",
+    "current_ref_lines": 9,
+    "target_ids": [
+      "C13"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "kful0adz",
+    "old_name": "CG_深海之光",
+    "old_src": "assets/bg/CG_深海之光.jpg",
+    "current_ref_lines": 5,
+    "target_ids": [
+      "C06"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "akugkagj",
+    "old_name": "CG_烤鱿鱼",
+    "old_src": "assets/bg/CG_烤鱿鱼.jpg",
+    "current_ref_lines": 4,
+    "target_ids": [
+      "C03"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "z639wmth",
+    "old_name": "CG_珍珠",
+    "old_src": "assets/bg/CG_珍珠.jpg",
+    "current_ref_lines": 0,
+    "target_ids": [
+      "C16"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": true
+  },
+  {
+    "old_id": "ak1lber9",
+    "old_name": "CG_电话",
+    "old_src": "assets/bg/CG_电话.jpg",
+    "current_ref_lines": 5,
+    "target_ids": [
+      "C12"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "xndnkx8k",
+    "old_name": "CG_立约",
+    "old_src": "assets/bg/CG_立约.jpg",
+    "current_ref_lines": 12,
+    "target_ids": [
+      "C04"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "c6r2xcnj",
+    "old_name": "CG_糍粑",
+    "old_src": "assets/bg/CG_糍粑.jpg",
+    "current_ref_lines": 0,
+    "target_ids": [
+      "C02"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": true
+  },
+  {
+    "old_id": "7jj07jqh",
+    "old_name": "CG_翡翠之梦",
+    "old_src": "assets/bg/bg_emerald_dream_interior_night.png",
+    "current_ref_lines": 0,
+    "target_ids": [
+      "C15"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": true
+  },
+  {
+    "old_id": "r0t0azno",
+    "old_name": "CG_诗句",
+    "old_src": "assets/bg/CG_诗句.jpg",
+    "current_ref_lines": 7,
+    "target_ids": [
+      "C08"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "dxmnyp7j",
+    "old_name": "CG_集市女仆",
+    "old_src": "assets/bg/CG_集市女仆.jpg",
+    "current_ref_lines": 4,
+    "target_ids": [
+      "C24"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "j5onv73r",
+    "old_name": "书房_午后",
+    "old_src": "assets/bg/bg_house_study_day_v01.png",
+    "current_ref_lines": 90,
+    "target_ids": [
+      "B28"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "rqlji75s",
+    "old_name": "书房_夜",
+    "old_src": "assets/bg/bg_house_study_night_v01.png",
+    "current_ref_lines": 108,
+    "target_ids": [
+      "B30"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "ah4t9t6i",
+    "old_name": "书房_黄昏",
+    "old_src": "assets/bg/bg_house_study_sunset.png",
+    "current_ref_lines": 115,
+    "target_ids": [
+      "B29"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "zx4c9brc",
+    "old_name": "卧室_夜",
+    "old_src": "assets/bg/卧室_夜.jpg",
+    "current_ref_lines": 26,
+    "target_ids": [
+      "B35"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "ooy2g3al",
+    "old_name": "厨房_清晨",
+    "old_src": "assets/bg/bg_house_kitchen_morning.png",
+    "current_ref_lines": 149,
+    "target_ids": [
+      "B31"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "9qup2gii",
+    "old_name": "大房子_院子",
+    "old_src": "assets/bg/bg_house_courtyard_morning_v01.png",
+    "current_ref_lines": 47,
+    "target_ids": [
+      "B26"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "2c2u3g9q",
+    "old_name": "客厅_午后",
+    "old_src": "assets/bg/bg_house_living_day.png",
+    "current_ref_lines": 125,
+    "target_ids": [
+      "B27"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "32lrbngt",
+    "old_name": "封面_ISLAND",
+    "old_src": "assets/bg/封面_ISLAND.jpg",
+    "current_ref_lines": 0,
+    "target_ids": [
+      "T01"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "rpkibqqw",
+    "old_name": "小镇_清晨",
+    "old_src": "assets/bg/小镇_清晨.jpg",
+    "current_ref_lines": 2,
+    "target_ids": [
+      "B20"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "9hcpz81h",
+    "old_name": "帐篷_夜",
+    "old_src": "assets/bg/bg_beach_campsite_night_v01.png",
+    "current_ref_lines": 217,
+    "target_ids": [
+      "B16"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "4g7f8iam",
+    "old_name": "帐篷_黄昏",
+    "old_src": "assets/bg/帐篷_黄昏.jpg",
+    "current_ref_lines": 43,
+    "target_ids": [
+      "B15"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "mcdi4nzi",
+    "old_name": "帐篷内_夜",
+    "old_src": "assets/bg/帐篷内_夜.jpg",
+    "current_ref_lines": 62,
+    "target_ids": [
+      "B17"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "y417cb1b",
+    "old_name": "店面_下午",
+    "old_src": "assets/bg/店面_下午.jpg",
+    "current_ref_lines": 21,
+    "target_ids": [
+      "B37"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "02e2z9nd",
+    "old_name": "沙洲_上午",
+    "old_src": "assets/bg/沙洲_上午.jpg",
+    "current_ref_lines": 62,
+    "target_ids": [
+      "B08"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "tafi49ag",
+    "old_name": "沙洲_午后",
+    "old_src": "assets/bg/沙洲_午后.jpg",
+    "current_ref_lines": 163,
+    "target_ids": [
+      "B09"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "g0htlsw4",
+    "old_name": "沙洲_黄昏",
+    "old_src": "assets/bg/沙洲_黄昏.jpg",
+    "current_ref_lines": 103,
+    "target_ids": [
+      "B10"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "qla5b3w0",
+    "old_name": "浅滩_上午",
+    "old_src": "assets/bg/bg_shallows_day_v01.png",
+    "current_ref_lines": 43,
+    "target_ids": [
+      "B02"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "c5saufd0",
+    "old_name": "浅滩_午后",
+    "old_src": "assets/bg/bg_shallows_day_v01.png",
+    "current_ref_lines": 63,
+    "target_ids": [
+      "B02"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "9ow2x5w5",
+    "old_name": "浅滩_夜",
+    "old_src": "assets/bg/bg_shallows_night_v01.png",
+    "current_ref_lines": 267,
+    "target_ids": [
+      "B04"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "8eo1nf7q",
+    "old_name": "浅滩_正午",
+    "old_src": "assets/bg/bg_shallows_day_v01.png",
+    "current_ref_lines": 69,
+    "target_ids": [
+      "B02"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "ohwph2ga",
+    "old_name": "浅滩_清晨",
+    "old_src": "assets/bg/浅滩_清晨.jpg",
+    "current_ref_lines": 60,
+    "target_ids": [
+      "B01"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "mzy4oec6",
+    "old_name": "浅滩_黄昏",
+    "old_src": "assets/bg/bg_shallows_sunset_v01.png",
+    "current_ref_lines": 83,
+    "target_ids": [
+      "B03"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "2mbzwwg2",
+    "old_name": "海面_黄昏",
+    "old_src": "assets/bg/海面_黄昏.jpg",
+    "current_ref_lines": 17,
+    "target_ids": [
+      "B14"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "e6cby6b5",
+    "old_name": "深水区_水下",
+    "old_src": "assets/bg/深水区_水下.jpg",
+    "current_ref_lines": 26,
+    "target_ids": [
+      "B11",
+      "B12"
+    ],
+    "dispatch_note": "按章节/时段分配，不可全局单一替换",
+    "withdrawn": false
+  },
+  {
+    "old_id": "fxqcg1oj",
+    "old_name": "深海_珊瑚礁",
+    "old_src": "assets/bg/bg_deepsea_coral_glow_v01.png",
+    "current_ref_lines": 84,
+    "target_ids": [
+      "B13"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "9vjefxje",
+    "old_name": "礁石_上午",
+    "old_src": "assets/bg/礁石_上午.jpg",
+    "current_ref_lines": 71,
+    "target_ids": [
+      "B05"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "acqkjhf8",
+    "old_name": "礁石_夜",
+    "old_src": "assets/bg/bg_shallows_night_v01.png",
+    "current_ref_lines": 133,
+    "target_ids": [
+      "B07"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "uhhb6qjn",
+    "old_name": "礁石_黄昏",
+    "old_src": "assets/bg/礁石_黄昏.jpg",
+    "current_ref_lines": 52,
+    "target_ids": [
+      "B06"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "lvjql900",
+    "old_name": "翡翠之梦_二楼夜",
+    "old_src": "assets/bg/bg_emerald_dream_upstairs_night_v01.png",
+    "current_ref_lines": 115,
+    "target_ids": [
+      "B42"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "r1teranv",
+    "old_name": "翡翠之梦_厨房",
+    "old_src": "assets/bg/bg_emerald_dream_kitchen_day.png",
+    "current_ref_lines": 82,
+    "target_ids": [
+      "B41"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "lr4hgspz",
+    "old_name": "翡翠之梦_店内",
+    "old_src": "assets/bg/bg_emerald_dream_interior_day_v01.png",
+    "current_ref_lines": 111,
+    "target_ids": [
+      "B38"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "179f3n2w",
+    "old_name": "银匠铺",
+    "old_src": "assets/bg/银匠铺.jpg",
+    "current_ref_lines": 53,
+    "target_ids": [
+      "B25"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "sr2lo203",
+    "old_name": "集市_上午",
+    "old_src": "assets/bg/bg_town_market_day_v01.png",
+    "current_ref_lines": 221,
+    "target_ids": [
+      "B21",
+      "B22"
+    ],
+    "dispatch_note": "按章节/时段分配，不可全局单一替换",
+    "withdrawn": false
+  },
+  {
+    "old_id": "hihrcqx5",
+    "old_name": "集市_珍珠摊",
+    "old_src": "assets/bg/集市_珍珠摊.jpg",
+    "current_ref_lines": 24,
+    "target_ids": [
+      "B24"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "p8guxpyy",
+    "old_name": "集市_饰品巷",
+    "old_src": "assets/bg/集市_饰品巷.jpg",
+    "current_ref_lines": 87,
+    "target_ids": [
+      "B23"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "9yvthx8h",
+    "old_name": "餐厅_夜",
+    "old_src": "assets/bg/bg_house_dining_night.png",
+    "current_ref_lines": 96,
+    "target_ids": [
+      "B34"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "xfg3qcn2",
+    "old_name": "鲸鱼小姐",
+    "old_src": "assets/ch/鲸鱼小姐.webp",
+    "current_ref_lines": 534,
+    "target_ids": [
+      "L01"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "6i0w6nq5",
+    "old_name": "鲸鱼小姐_吊带裙",
+    "old_src": "assets/ch/鲸鱼小姐_吊带裙.webp",
+    "current_ref_lines": 27,
+    "target_ids": [
+      "L13"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "6xha9feh",
+    "old_name": "鲸鱼小姐_吊带裙害羞",
+    "old_src": "assets/ch/鲸鱼小姐_吊带裙害羞.webp",
+    "current_ref_lines": 47,
+    "target_ids": [
+      "L15"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "mp0q0cx2",
+    "old_name": "鲸鱼小姐_吊带裙得意",
+    "old_src": "assets/ch/鲸鱼小姐_吊带裙得意.webp",
+    "current_ref_lines": 28,
+    "target_ids": [
+      "L14"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "vjwh9nmj",
+    "old_name": "鲸鱼小姐_吊带裙生气",
+    "old_src": "assets/ch/鲸鱼小姐_吊带裙生气.webp",
+    "current_ref_lines": 13,
+    "target_ids": [
+      "L16"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "cbx03q1l",
+    "old_name": "鲸鱼小姐_坏笑",
+    "old_src": "assets/ch/鲸鱼小姐_坏笑.webp",
+    "current_ref_lines": 107,
+    "target_ids": [
+      "L04"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "fz3yt5k8",
+    "old_name": "鲸鱼小姐_女仆装",
+    "old_src": "assets/ch/鲸鱼小姐_女仆装.webp",
+    "current_ref_lines": 27,
+    "target_ids": [
+      "L21"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "m6hj48ex",
+    "old_name": "鲸鱼小姐_女仆装害羞",
+    "old_src": "assets/ch/鲸鱼小姐_女仆装害羞.webp",
+    "current_ref_lines": 33,
+    "target_ids": [
+      "L23"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "ff7robzo",
+    "old_name": "鲸鱼小姐_女仆装得意",
+    "old_src": "assets/ch/鲸鱼小姐_女仆装得意.webp",
+    "current_ref_lines": 6,
+    "target_ids": [
+      "L22"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "x013srmu",
+    "old_name": "鲸鱼小姐_害羞",
+    "old_src": "assets/ch/鲸鱼小姐_害羞.webp",
+    "current_ref_lines": 292,
+    "target_ids": [
+      "L03"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "2qshq03j",
+    "old_name": "鲸鱼小姐_得意",
+    "old_src": "assets/ch/鲸鱼小姐_得意.webp",
+    "current_ref_lines": 357,
+    "target_ids": [
+      "L02"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "z869j1e3",
+    "old_name": "鲸鱼小姐_慌乱",
+    "old_src": "assets/ch/鲸鱼小姐_慌乱.webp",
+    "current_ref_lines": 137,
+    "target_ids": [
+      "L06"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "hfcyjlxm",
+    "old_name": "鲸鱼小姐_抱本子",
+    "old_src": "assets/ch/鲸鱼小姐_抱本子.webp",
+    "current_ref_lines": 46,
+    "target_ids": [
+      "L08"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "wrwcdezj",
+    "old_name": "鲸鱼小姐_柔和",
+    "old_src": "assets/ch/鲸鱼小姐_柔和.webp",
+    "current_ref_lines": 399,
+    "target_ids": [
+      "L07"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "tp44t1rb",
+    "old_name": "鲸鱼小姐_正装",
+    "old_src": "assets/ch/鲸鱼小姐_正装.webp",
+    "current_ref_lines": 29,
+    "target_ids": [
+      "L31"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "eqidiyyr",
+    "old_name": "鲸鱼小姐_正装柔和",
+    "old_src": "assets/ch/鲸鱼小姐_正装柔和.webp",
+    "current_ref_lines": 5,
+    "target_ids": [
+      "L32"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "nvgbi1x6",
+    "old_name": "鲸鱼小姐_泳装",
+    "old_src": "assets/ch/鲸鱼小姐_泳装.webp",
+    "current_ref_lines": 8,
+    "target_ids": [
+      "L17"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "jtp36q4e",
+    "old_name": "鲸鱼小姐_泳装害羞",
+    "old_src": "assets/ch/鲸鱼小姐_泳装害羞.webp",
+    "current_ref_lines": 16,
+    "target_ids": [
+      "L18"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "ylbq6xyk",
+    "old_name": "鲸鱼小姐_潜水",
+    "old_src": "assets/ch/鲸鱼小姐_潜水.webp",
+    "current_ref_lines": 79,
+    "target_ids": [
+      "L19",
+      "L20"
+    ],
+    "dispatch_note": "按章节/时段分配，不可全局单一替换",
+    "withdrawn": false
+  },
+  {
+    "old_id": "88v1dull",
+    "old_name": "鲸鱼小姐_生气",
+    "old_src": "assets/ch/鲸鱼小姐_生气.webp",
+    "current_ref_lines": 303,
+    "target_ids": [
+      "L05"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "52119ew2",
+    "old_name": "鲸鱼小姐_睡衣项链",
+    "old_src": "assets/ch/鲸鱼小姐_睡衣项链.webp",
+    "current_ref_lines": 61,
+    "target_ids": [
+      "L28"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "2z0mfu7o",
+    "old_name": "鲸鱼小姐_睡袍",
+    "old_src": "assets/ch/鲸鱼小姐_睡袍.webp",
+    "current_ref_lines": 60,
+    "target_ids": [
+      "L24"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "368tmc5i",
+    "old_name": "鲸鱼小姐_睡袍害羞",
+    "old_src": "assets/ch/鲸鱼小姐_睡袍害羞.webp",
+    "current_ref_lines": 15,
+    "target_ids": [
+      "L25"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "xtwug3dy",
+    "old_name": "鲸鱼小姐_睡袍慌乱",
+    "old_src": "assets/ch/鲸鱼小姐_睡袍慌乱.webp",
+    "current_ref_lines": 8,
+    "target_ids": [
+      "L26"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "t4lmlnr9",
+    "old_name": "鲸鱼小姐_长裙",
+    "old_src": "assets/ch/鲸鱼小姐_长裙.webp",
+    "current_ref_lines": 29,
+    "target_ids": [
+      "L29"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "7fvck9ya",
+    "old_name": "鲸鱼小姐_长裙项链",
+    "old_src": "assets/ch/鲸鱼小姐_长裙项链.webp",
+    "current_ref_lines": 14,
+    "target_ids": [
+      "L30"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "bg_shop_interior_night",
+    "old_name": "翡翠之梦_店内夜",
+    "old_src": "assets/bg/bg_emerald_dream_interior_night.png",
+    "current_ref_lines": 14,
+    "target_ids": [
+      "B39"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "bg_house_door_morning_draft",
+    "old_name": "住宅_房门口清晨_临时取景",
+    "old_src": "assets/bg/bg_house_living_day.png",
+    "current_ref_lines": 36,
+    "target_ids": [
+      "B36"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "bg_tent_morning_corner_draft",
+    "old_name": "帐篷内_清晨_帐角临时取景",
+    "old_src": "assets/bg/帐篷内_夜.jpg",
+    "current_ref_lines": 15,
+    "target_ids": [
+      "B19"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  },
+  {
+    "old_id": "bg_shop_afternoon_counter_draft",
+    "old_name": "翡翠之梦_午后未开灯_柜台临时取景",
+    "old_src": "assets/bg/bg_emerald_dream_interior_day_v01.png",
+    "current_ref_lines": 71,
+    "target_ids": [
+      "B40"
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "withdrawn": false
+  }
+]

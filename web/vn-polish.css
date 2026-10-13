@@ -1,0 +1,28 @@
+/* Match the shell to the sea and warm timber backgrounds. */
+body.vnpage { --ink:#edf0e4; --ink2:#bccbc7; --paper:#16282e; --sea:#537d77; --sea2:#99bcb0; --line:#aec6bb2c; --c-bar:#16282e; --c-ink:#edf0e4; --c-ink2:#bccbc7; --c-line:#aec6bb33; --c-btn:#20353a; --c-hover:#2c464a; background:#101b20; }
+.vnpage.chrome .ib { background:#20353a; color:#edf0e4; border-color:#aec6bb33; }
+.vnpage.chrome .ib:hover { background:#2c464a; color:#fff7e7; }
+.vnpage.chrome .stage { background:#101b20; }
+.vnpage.chrome .seg button.on { background:#426862; color:#fff7e7; }
+.vnpage .topbar { background:#16282e; padding:8px 16px; gap:14px; border-bottom:1px solid #aec6bb2c; }
+.vnpage .brand b { font-weight:500; color:#f6eddc; letter-spacing:.10em; }
+.vnpage button,.vnpage select { background:#20353a; color:#edf0e4; border-color:#aec6bb33; }
+.vnpage button:hover { background:#2c464a; border-color:#b2d0c266; }
+.vnpage .seg button.on { background:#426862; color:#fff7e7; }
+.vnpage .screen { background:#101b20; }
+.vnpage #setDlg { background:#172b30; color:#edf0e4; border:1px solid #aec6bb40; border-radius:12px; box-shadow:0 20px 80px #0008; }
+.vnpage #setDlg h3 { color:#f6eddc; font-weight:500; letter-spacing:.12em; }
+.vnpage #setDlg h4 { color:#c2d4cd; font-weight:500; }
+.vnpage #setDlg input { background:#20353a; color:#edf0e4; border-color:#aec6bb33; accent-color:#94bcab; }
+.vnpage #setDlg .muted { color:#b4c5bf; }
+/* Keep the native hand journal legible inside the dark shell. */
+.vnpage.chrome #soulDock #soul.dock { color:#3d3c32; background:linear-gradient(135deg,#fbf6e9,#f0ebdc); border-left-color:#bdc5b3; }
+.vnpage.chrome #soulDock #soul.dock .hd { color:#364d45; }
+.vnpage.chrome #soulDock #soul.dock .empty,.vnpage.chrome #soulDock #soul.dock small,.vnpage.chrome #soulDock #soul.dock .left { color:#686d5b; }
+.vnpage.chrome #soulDock #soul.dock .tabs button { background:#f8f5ec; color:#55675e; border-color:#cbd0be; }
+.vnpage.chrome #soulDock #soul.dock .tabs button.on { background:#53766a; color:#fffbed; }
+.vnpage.chrome #soulDock #soul.dock .it { color:#414535; }
+.vnpage.chrome #soulDock #soul.dock .win input { background:#fffaf0; color:#343d33; border-color:#b8c3ad; }
+.vnpage.chrome #soulDock #soul.dock .her p { color:#3d4336; background:#e8efdf; }
+.vnpage.chrome #soulDock #soul.dock .me p { color:#fff9ea; background:#536f64; }
+.vnpage.chrome .tb-field select { background:#20353a; color:#edf0e4; }

@@ -1,0 +1,36 @@
+{
+  "auth_mode": "Codex ChatGPT OAuth",
+  "endpoint": "https://chatgpt.com/backend-api/codex/images/generations",
+  "requested_model": "gpt-image-2.5-flare",
+  "backend_reported_model": null,
+  "model_selection_verified": false,
+  "requested_size": "2048x1152",
+  "backend_reported_size": "1672x941",
+  "requested_quality": "auto",
+  "backend_reported_quality": "medium",
+  "usage": {
+    "input_tokens": 478,
+    "input_tokens_details": {
+      "image_tokens": 0,
+      "text_tokens": 478
+    },
+    "output_tokens": 515,
+    "output_tokens_details": {
+      "image_tokens": 515,
+      "text_tokens": 0
+    },
+    "total_tokens": 993
+  },
+  "elapsed_seconds": 39.96,
+  "created": 1791868214,
+  "reference_image_count": 0,
+  "outputs": [
+    "content/assets/image-trials\\B19_tent_morning_candidate.png"
+  ],
+  "actual_image_size": [
+    1672,
+    941
+  ],
+  "asset_plan_id": "B19",
+  "status": "展示候选，未接入游戏"
+}

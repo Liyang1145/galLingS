@@ -1,0 +1,1506 @@
+{
+  "local_only": true,
+  "push": false,
+  "preserved": [
+    "台词ID",
+    "正文",
+    "姓名",
+    "变量",
+    "分支",
+    "跳转",
+    "音乐/环境/音效字段",
+    "原始图文件"
+  ],
+  "backgrounds_before": 58,
+  "backgrounds_after": 61,
+  "sprites": 26,
+  "withdrawn_cg": [
+    "CG_糍粑",
+    "CG_手链",
+    "CG_新家",
+    "CG_早安",
+    "CG_夏日沙洲",
+    "CG_珍珠",
+    "CG_翡翠之梦"
+  ],
+  "temporary_views": [
+    "bg_house_door_morning_draft",
+    "bg_tent_morning_corner_draft",
+    "bg_shop_afternoon_counter_draft"
+  ],
+  "changes": [
+    {
+      "index": 0,
+      "id": "frqml99w",
+      "old_bg": "浅滩_黄昏",
+      "new_bg": "浅滩_正午",
+      "reason": "开场导航不再展示黄昏；新游戏按钮直接进入第一话。",
+      "sprites_changed": false
+    },
+    {
+      "index": 1,
+      "id": "kq4s0fev",
+      "old_bg": "浅滩_黄昏",
+      "new_bg": "浅滩_正午",
+      "reason": "开场导航不再展示黄昏；新游戏按钮直接进入第一话。",
+      "sprites_changed": false
+    },
+    {
+      "index": 103,
+      "id": "u7ne78gd",
+      "old_bg": "CG_糍粑",
+      "new_bg": "浅滩_午后",
+      "reason": "糍粑CG是夕阳色，与连续下午叙事矛盾；暂用日景和同服装立绘。",
+      "sprites_changed": true
+    },
+    {
+      "index": 104,
+      "id": "wpivfe7f",
+      "old_bg": "CG_糍粑",
+      "new_bg": "浅滩_午后",
+      "reason": "糍粑CG是夕阳色，与连续下午叙事矛盾；暂用日景和同服装立绘。",
+      "sprites_changed": true
+    },
+    {
+      "index": 105,
+      "id": "9gso8zi0",
+      "old_bg": "CG_糍粑",
+      "new_bg": "浅滩_午后",
+      "reason": "糍粑CG是夕阳色，与连续下午叙事矛盾；暂用日景和同服装立绘。",
+      "sprites_changed": true
+    },
+    {
+      "index": 106,
+      "id": "macs2evb",
+      "old_bg": "CG_糍粑",
+      "new_bg": "浅滩_午后",
+      "reason": "糍粑CG是夕阳色，与连续下午叙事矛盾；暂用日景和同服装立绘。",
+      "sprites_changed": true
+    },
+    {
+      "index": 107,
+      "id": "twdgdg8k",
+      "old_bg": "CG_糍粑",
+      "new_bg": "浅滩_午后",
+      "reason": "糍粑CG是夕阳色，与连续下午叙事矛盾；暂用日景和同服装立绘。",
+      "sprites_changed": true
+    },
+    {
+      "index": 108,
+      "id": "q0cw392y",
+      "old_bg": "CG_糍粑",
+      "new_bg": "浅滩_午后",
+      "reason": "糍粑CG是夕阳色，与连续下午叙事矛盾；暂用日景和同服装立绘。",
+      "sprites_changed": true
+    },
+    {
+      "index": 109,
+      "id": "unfmnv5c",
+      "old_bg": "CG_糍粑",
+      "new_bg": "浅滩_午后",
+      "reason": "糍粑CG是夕阳色，与连续下午叙事矛盾；暂用日景和同服装立绘。",
+      "sprites_changed": true
+    },
+    {
+      "index": 110,
+      "id": "tyxffvv9",
+      "old_bg": "CG_糍粑",
+      "new_bg": "浅滩_午后",
+      "reason": "糍粑CG是夕阳色，与连续下午叙事矛盾；暂用日景和同服装立绘。",
+      "sprites_changed": true
+    },
+    {
+      "index": 619,
+      "id": "ii0wejed",
+      "old_bg": "CG_手链",
+      "new_bg": "浅滩_黄昏",
+      "reason": "手链CG为制服，前后为蓝白吊带裙；保留前后服装，待补手链CG。",
+      "sprites_changed": true
+    },
+    {
+      "index": 620,
+      "id": "grmaytdg",
+      "old_bg": "CG_手链",
+      "new_bg": "浅滩_黄昏",
+      "reason": "手链CG为制服，前后为蓝白吊带裙；保留前后服装，待补手链CG。",
+      "sprites_changed": true
+    },
+    {
+      "index": 621,
+      "id": "82u9n7le",
+      "old_bg": "CG_手链",
+      "new_bg": "浅滩_黄昏",
+      "reason": "手链CG为制服，前后为蓝白吊带裙；保留前后服装，待补手链CG。",
+      "sprites_changed": true
+    },
+    {
+      "index": 622,
+      "id": "fn8j4ids",
+      "old_bg": "CG_手链",
+      "new_bg": "浅滩_黄昏",
+      "reason": "手链CG为制服，前后为蓝白吊带裙；保留前后服装，待补手链CG。",
+      "sprites_changed": true
+    },
+    {
+      "index": 623,
+      "id": "wqr5d8bu",
+      "old_bg": "CG_手链",
+      "new_bg": "浅滩_黄昏",
+      "reason": "手链CG为制服，前后为蓝白吊带裙；保留前后服装，待补手链CG。",
+      "sprites_changed": true
+    },
+    {
+      "index": 624,
+      "id": "d0yth26k",
+      "old_bg": "CG_手链",
+      "new_bg": "浅滩_黄昏",
+      "reason": "手链CG为制服，前后为蓝白吊带裙；保留前后服装，待补手链CG。",
+      "sprites_changed": true
+    },
+    {
+      "index": 625,
+      "id": "rigd2hkm",
+      "old_bg": "CG_手链",
+      "new_bg": "浅滩_黄昏",
+      "reason": "手链CG为制服，前后为蓝白吊带裙；保留前后服装，待补手链CG。",
+      "sprites_changed": true
+    },
+    {
+      "index": 1264,
+      "id": "6zssdq0a",
+      "old_bg": "CG_新家",
+      "new_bg": "大房子_院子",
+      "reason": "新家原CG是夕阳，与清晨到达及院子建筑不连续；用同一住宅图。",
+      "sprites_changed": false
+    },
+    {
+      "index": 1265,
+      "id": "ufuse1qs",
+      "old_bg": "CG_新家",
+      "new_bg": "大房子_院子",
+      "reason": "新家原CG是夕阳，与清晨到达及院子建筑不连续；用同一住宅图。",
+      "sprites_changed": false
+    },
+    {
+      "index": 1266,
+      "id": "g6i5zfxw",
+      "old_bg": "CG_新家",
+      "new_bg": "大房子_院子",
+      "reason": "新家原CG是夕阳，与清晨到达及院子建筑不连续；用同一住宅图。",
+      "sprites_changed": false
+    },
+    {
+      "index": 1267,
+      "id": "06qb66fn",
+      "old_bg": "CG_新家",
+      "new_bg": "大房子_院子",
+      "reason": "新家原CG是夕阳，与清晨到达及院子建筑不连续；用同一住宅图。",
+      "sprites_changed": false
+    },
+    {
+      "index": 1268,
+      "id": "y8o8c15n",
+      "old_bg": "CG_新家",
+      "new_bg": "大房子_院子",
+      "reason": "新家原CG是夕阳，与清晨到达及院子建筑不连续；用同一住宅图。",
+      "sprites_changed": false
+    },
+    {
+      "index": 1269,
+      "id": "wel7nhkx",
+      "old_bg": "CG_新家",
+      "new_bg": "大房子_院子",
+      "reason": "新家原CG是夕阳，与清晨到达及院子建筑不连续；用同一住宅图。",
+      "sprites_changed": false
+    },
+    {
+      "index": 1843,
+      "id": "h3txnuo3",
+      "old_bg": "帐篷内_夜",
+      "new_bg": "书房_夜",
+      "reason": "第八话已搬家，和解后深夜日记回到住宅，不再误用帐篷。",
+      "sprites_changed": false
+    },
+    {
+      "index": 1844,
+      "id": "hnuphpka",
+      "old_bg": "帐篷内_夜",
+      "new_bg": "书房_夜",
+      "reason": "第八话已搬家，和解后深夜日记回到住宅，不再误用帐篷。",
+      "sprites_changed": false
+    },
+    {
+      "index": 1845,
+      "id": "ectapupe",
+      "old_bg": "帐篷内_夜",
+      "new_bg": "书房_夜",
+      "reason": "第八话已搬家，和解后深夜日记回到住宅，不再误用帐篷。",
+      "sprites_changed": false
+    },
+    {
+      "index": 1846,
+      "id": "hydcao8y",
+      "old_bg": "帐篷内_夜",
+      "new_bg": "书房_夜",
+      "reason": "第八话已搬家，和解后深夜日记回到住宅，不再误用帐篷。",
+      "sprites_changed": false
+    },
+    {
+      "index": 1847,
+      "id": "yro8lc74",
+      "old_bg": "帐篷内_夜",
+      "new_bg": "书房_夜",
+      "reason": "第八话已搬家，和解后深夜日记回到住宅，不再误用帐篷。",
+      "sprites_changed": false
+    },
+    {
+      "index": 1848,
+      "id": "krvq0qfa",
+      "old_bg": "帐篷内_夜",
+      "new_bg": "书房_夜",
+      "reason": "第八话已搬家，和解后深夜日记回到住宅，不再误用帐篷。",
+      "sprites_changed": false
+    },
+    {
+      "index": 1849,
+      "id": "qnjcr3tt",
+      "old_bg": "帐篷内_夜",
+      "new_bg": "书房_夜",
+      "reason": "第八话已搬家，和解后深夜日记回到住宅，不再误用帐篷。",
+      "sprites_changed": false
+    },
+    {
+      "index": 1850,
+      "id": "aqi41f5l",
+      "old_bg": "帐篷内_夜",
+      "new_bg": "书房_夜",
+      "reason": "第八话已搬家，和解后深夜日记回到住宅，不再误用帐篷。",
+      "sprites_changed": false
+    },
+    {
+      "index": 1851,
+      "id": "u1zx0jpl",
+      "old_bg": "帐篷内_夜",
+      "new_bg": "书房_夜",
+      "reason": "第八话已搬家，和解后深夜日记回到住宅，不再误用帐篷。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2019,
+      "id": "1albn6n2",
+      "old_bg": "CG_翡翠之梦",
+      "new_bg": "翡翠之梦_店内夜",
+      "reason": "所谓CG只是同一店内背景，避免无意义切图与假CG解锁；动作CG待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2020,
+      "id": "ahxwfvyg",
+      "old_bg": "CG_翡翠之梦",
+      "new_bg": "翡翠之梦_店内夜",
+      "reason": "所谓CG只是同一店内背景，避免无意义切图与假CG解锁；动作CG待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2021,
+      "id": "7yme9cq6",
+      "old_bg": "CG_翡翠之梦",
+      "new_bg": "翡翠之梦_店内夜",
+      "reason": "所谓CG只是同一店内背景，避免无意义切图与假CG解锁；动作CG待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2022,
+      "id": "k2v082xj",
+      "old_bg": "CG_翡翠之梦",
+      "new_bg": "翡翠之梦_店内夜",
+      "reason": "所谓CG只是同一店内背景，避免无意义切图与假CG解锁；动作CG待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2068,
+      "id": "yocv4zc0",
+      "old_bg": "集市_上午",
+      "new_bg": "翡翠之梦_店内",
+      "reason": "店内谈转正没有出门，移除夹在两段店内对话间的集市图。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2069,
+      "id": "6x2tdh4m",
+      "old_bg": "集市_上午",
+      "new_bg": "翡翠之梦_店内",
+      "reason": "店内谈转正没有出门，移除夹在两段店内对话间的集市图。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2070,
+      "id": "to8odwsc",
+      "old_bg": "集市_上午",
+      "new_bg": "翡翠之梦_店内",
+      "reason": "店内谈转正没有出门，移除夹在两段店内对话间的集市图。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2071,
+      "id": "pj4t6x7c",
+      "old_bg": "集市_上午",
+      "new_bg": "翡翠之梦_店内",
+      "reason": "店内谈转正没有出门，移除夹在两段店内对话间的集市图。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2072,
+      "id": "raq5lvsx",
+      "old_bg": "集市_上午",
+      "new_bg": "翡翠之梦_店内",
+      "reason": "店内谈转正没有出门，移除夹在两段店内对话间的集市图。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2073,
+      "id": "xgcaqocx",
+      "old_bg": "集市_上午",
+      "new_bg": "翡翠之梦_店内",
+      "reason": "店内谈转正没有出门，移除夹在两段店内对话间的集市图。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2074,
+      "id": "q3fviwig",
+      "old_bg": "集市_上午",
+      "new_bg": "翡翠之梦_店内",
+      "reason": "店内谈转正没有出门，移除夹在两段店内对话间的集市图。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2216,
+      "id": "ft79wxbo",
+      "old_bg": "CG_珍珠",
+      "new_bg": "银匠铺",
+      "reason": "原珍珠CG只有单颗珍珠，不是绒布上的两枚戒指；暂回工坊场景。",
+      "sprites_changed": true
+    },
+    {
+      "index": 2217,
+      "id": "ypp2wel7",
+      "old_bg": "CG_珍珠",
+      "new_bg": "银匠铺",
+      "reason": "原珍珠CG只有单颗珍珠，不是绒布上的两枚戒指；暂回工坊场景。",
+      "sprites_changed": true
+    },
+    {
+      "index": 2218,
+      "id": "poo0ulnk",
+      "old_bg": "CG_珍珠",
+      "new_bg": "银匠铺",
+      "reason": "原珍珠CG只有单颗珍珠，不是绒布上的两枚戒指；暂回工坊场景。",
+      "sprites_changed": true
+    },
+    {
+      "index": 2219,
+      "id": "7ygu15vs",
+      "old_bg": "CG_珍珠",
+      "new_bg": "银匠铺",
+      "reason": "原珍珠CG只有单颗珍珠，不是绒布上的两枚戒指；暂回工坊场景。",
+      "sprites_changed": true
+    },
+    {
+      "index": 2220,
+      "id": "0dmyfzwd",
+      "old_bg": "CG_珍珠",
+      "new_bg": "银匠铺",
+      "reason": "原珍珠CG只有单颗珍珠，不是绒布上的两枚戒指；暂回工坊场景。",
+      "sprites_changed": true
+    },
+    {
+      "index": 2221,
+      "id": "s3hgbbim",
+      "old_bg": "CG_珍珠",
+      "new_bg": "银匠铺",
+      "reason": "原珍珠CG只有单颗珍珠，不是绒布上的两枚戒指；暂回工坊场景。",
+      "sprites_changed": true
+    },
+    {
+      "index": 2222,
+      "id": "2f3e2ns1",
+      "old_bg": "CG_珍珠",
+      "new_bg": "银匠铺",
+      "reason": "原珍珠CG只有单颗珍珠，不是绒布上的两枚戒指；暂回工坊场景。",
+      "sprites_changed": true
+    },
+    {
+      "index": 2223,
+      "id": "yfd68r01",
+      "old_bg": "CG_珍珠",
+      "new_bg": "银匠铺",
+      "reason": "原珍珠CG只有单颗珍珠，不是绒布上的两枚戒指；暂回工坊场景。",
+      "sprites_changed": true
+    },
+    {
+      "index": 2429,
+      "id": "01qp63pb",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2430,
+      "id": "9nlt3f79",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2431,
+      "id": "paysdmbp",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2432,
+      "id": "eeqh5w9k",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2433,
+      "id": "neus45zx",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2434,
+      "id": "pijdcf2s",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2435,
+      "id": "9e4mps3g",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2436,
+      "id": "xgriuxcj",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2437,
+      "id": "9w5jze92",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2438,
+      "id": "afa4j9zc",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2439,
+      "id": "j8vyptxu",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2440,
+      "id": "kyn4jtzf",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2441,
+      "id": "xa9d4avp",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2442,
+      "id": "bw4n1kbr",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2443,
+      "id": "4smyo4io",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2444,
+      "id": "gha3filx",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2445,
+      "id": "o3ygyfvx",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2446,
+      "id": "fv21nzme",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2447,
+      "id": "g8glgdtv",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2448,
+      "id": "qvuh9y1q",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2449,
+      "id": "uommvund",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2450,
+      "id": "glhvzr2v",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2451,
+      "id": "ab5ipd42",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2452,
+      "id": "qqfr4fvw",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2453,
+      "id": "2p2c9eea",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2454,
+      "id": "98kl44d9",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2455,
+      "id": "szrf7var",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2456,
+      "id": "6e19djai",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2457,
+      "id": "3zbwicmm",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2458,
+      "id": "n3oh08q8",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2459,
+      "id": "9vmv8ny9",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2460,
+      "id": "3zei0ire",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2461,
+      "id": "clsrj7xe",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2462,
+      "id": "9a9pf17w",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2463,
+      "id": "q1046611",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2464,
+      "id": "cyf4id7e",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2465,
+      "id": "yzmygz5h",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2466,
+      "id": "1h0nmugs",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2467,
+      "id": "uofv82du",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2468,
+      "id": "1gokdlo0",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2469,
+      "id": "5460zrkh",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2470,
+      "id": "pqprixxj",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2471,
+      "id": "4572zuzx",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2472,
+      "id": "fpwok380",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2473,
+      "id": "6rdalb1f",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2474,
+      "id": "wkcdsj0j",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2475,
+      "id": "n40fv6vz",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2476,
+      "id": "dlnak41f",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2477,
+      "id": "4p8bckdw",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2478,
+      "id": "xn58wi0r",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2479,
+      "id": "o8vysv83",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2480,
+      "id": "hzflf2wb",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2481,
+      "id": "80ravay2",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2482,
+      "id": "u2mxfp6w",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2483,
+      "id": "82ol2e47",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2484,
+      "id": "355s07pe",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2485,
+      "id": "7ehvyu17",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2486,
+      "id": "1794nozx",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2487,
+      "id": "nj8typdi",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2488,
+      "id": "waokl18b",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2489,
+      "id": "d46e0pxd",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2490,
+      "id": "mr8xxs4z",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2491,
+      "id": "uvl1ny7e",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2492,
+      "id": "w4zapr0o",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2493,
+      "id": "jkppfvyr",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2494,
+      "id": "obxvc8br",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2495,
+      "id": "9qwi02v6",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2496,
+      "id": "cg92ylsx",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2497,
+      "id": "h7f6b1r2",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2498,
+      "id": "3ymdx90q",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2499,
+      "id": "jpi8ae5r",
+      "old_bg": "翡翠之梦_店内",
+      "new_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+      "reason": "保持午后，避免用夜景或画面中明显点亮的吊灯；准确差分仍待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2684,
+      "id": "pctfqhja",
+      "old_bg": "厨房_清晨",
+      "new_bg": "住宅_房门口清晨_临时取景",
+      "reason": "房门口早安不在厨房；保留正装，撤下制服早餐桌CG。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2685,
+      "id": "v0m5cj9i",
+      "old_bg": "厨房_清晨",
+      "new_bg": "住宅_房门口清晨_临时取景",
+      "reason": "房门口早安不在厨房；保留正装，撤下制服早餐桌CG。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2686,
+      "id": "vyvhxfeg",
+      "old_bg": "厨房_清晨",
+      "new_bg": "住宅_房门口清晨_临时取景",
+      "reason": "房门口早安不在厨房；保留正装，撤下制服早餐桌CG。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2687,
+      "id": "xo5lqmqh",
+      "old_bg": "厨房_清晨",
+      "new_bg": "住宅_房门口清晨_临时取景",
+      "reason": "房门口早安不在厨房；保留正装，撤下制服早餐桌CG。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2688,
+      "id": "0ixzpbpn",
+      "old_bg": "厨房_清晨",
+      "new_bg": "住宅_房门口清晨_临时取景",
+      "reason": "房门口早安不在厨房；保留正装，撤下制服早餐桌CG。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2689,
+      "id": "t6qh483c",
+      "old_bg": "厨房_清晨",
+      "new_bg": "住宅_房门口清晨_临时取景",
+      "reason": "房门口早安不在厨房；保留正装，撤下制服早餐桌CG。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2690,
+      "id": "8tb1lt8m",
+      "old_bg": "厨房_清晨",
+      "new_bg": "住宅_房门口清晨_临时取景",
+      "reason": "房门口早安不在厨房；保留正装，撤下制服早餐桌CG。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2691,
+      "id": "tqfjwodm",
+      "old_bg": "厨房_清晨",
+      "new_bg": "住宅_房门口清晨_临时取景",
+      "reason": "房门口早安不在厨房；保留正装，撤下制服早餐桌CG。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2692,
+      "id": "asjhgud1",
+      "old_bg": "厨房_清晨",
+      "new_bg": "住宅_房门口清晨_临时取景",
+      "reason": "房门口早安不在厨房；保留正装，撤下制服早餐桌CG。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2693,
+      "id": "hjiyaq0l",
+      "old_bg": "CG_早安",
+      "new_bg": "住宅_房门口清晨_临时取景",
+      "reason": "房门口早安不在厨房；保留正装，撤下制服早餐桌CG。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2694,
+      "id": "y8vi2xae",
+      "old_bg": "CG_早安",
+      "new_bg": "住宅_房门口清晨_临时取景",
+      "reason": "房门口早安不在厨房；保留正装，撤下制服早餐桌CG。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2695,
+      "id": "mekeu17c",
+      "old_bg": "CG_早安",
+      "new_bg": "住宅_房门口清晨_临时取景",
+      "reason": "房门口早安不在厨房；保留正装，撤下制服早餐桌CG。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2696,
+      "id": "83d4m1z4",
+      "old_bg": "CG_早安",
+      "new_bg": "住宅_房门口清晨_临时取景",
+      "reason": "房门口早安不在厨房；保留正装，撤下制服早餐桌CG。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2697,
+      "id": "g5mky371",
+      "old_bg": "CG_早安",
+      "new_bg": "住宅_房门口清晨_临时取景",
+      "reason": "房门口早安不在厨房；保留正装，撤下制服早餐桌CG。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2698,
+      "id": "z2cd08ag",
+      "old_bg": "厨房_清晨",
+      "new_bg": "住宅_房门口清晨_临时取景",
+      "reason": "房门口早安不在厨房；保留正装，撤下制服早餐桌CG。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2699,
+      "id": "qgdzhpf9",
+      "old_bg": "厨房_清晨",
+      "new_bg": "住宅_房门口清晨_临时取景",
+      "reason": "房门口早安不在厨房；保留正装，撤下制服早餐桌CG。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2700,
+      "id": "bk5wc4dm",
+      "old_bg": "厨房_清晨",
+      "new_bg": "住宅_房门口清晨_临时取景",
+      "reason": "房门口早安不在厨房；保留正装，撤下制服早餐桌CG。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2701,
+      "id": "q9surrfu",
+      "old_bg": "厨房_清晨",
+      "new_bg": "住宅_房门口清晨_临时取景",
+      "reason": "房门口早安不在厨房；保留正装，撤下制服早餐桌CG。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2702,
+      "id": "g0o3nj8v",
+      "old_bg": "厨房_清晨",
+      "new_bg": "住宅_房门口清晨_临时取景",
+      "reason": "房门口早安不在厨房；保留正装，撤下制服早餐桌CG。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2703,
+      "id": "01f9u9pn",
+      "old_bg": "厨房_清晨",
+      "new_bg": "住宅_房门口清晨_临时取景",
+      "reason": "房门口早安不在厨房；保留正装，撤下制服早餐桌CG。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2704,
+      "id": "ow85l90k",
+      "old_bg": "厨房_清晨",
+      "new_bg": "住宅_房门口清晨_临时取景",
+      "reason": "房门口早安不在厨房；保留正装，撤下制服早餐桌CG。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2705,
+      "id": "13fgkssa",
+      "old_bg": "厨房_清晨",
+      "new_bg": "住宅_房门口清晨_临时取景",
+      "reason": "房门口早安不在厨房；保留正装，撤下制服早餐桌CG。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2706,
+      "id": "1ydfm204",
+      "old_bg": "厨房_清晨",
+      "new_bg": "住宅_房门口清晨_临时取景",
+      "reason": "房门口早安不在厨房；保留正装，撤下制服早餐桌CG。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2707,
+      "id": "1rlqdk1w",
+      "old_bg": "厨房_清晨",
+      "new_bg": "住宅_房门口清晨_临时取景",
+      "reason": "房门口早安不在厨房；保留正装，撤下制服早餐桌CG。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2708,
+      "id": "kq8eaykx",
+      "old_bg": "厨房_清晨",
+      "new_bg": "住宅_房门口清晨_临时取景",
+      "reason": "房门口早安不在厨房；保留正装，撤下制服早餐桌CG。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2709,
+      "id": "w143fp9b",
+      "old_bg": "厨房_清晨",
+      "new_bg": "住宅_房门口清晨_临时取景",
+      "reason": "房门口早安不在厨房；保留正装，撤下制服早餐桌CG。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2710,
+      "id": "zeafdgq6",
+      "old_bg": "厨房_清晨",
+      "new_bg": "住宅_房门口清晨_临时取景",
+      "reason": "房门口早安不在厨房；保留正装，撤下制服早餐桌CG。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2711,
+      "id": "tzy5yacr",
+      "old_bg": "厨房_清晨",
+      "new_bg": "住宅_房门口清晨_临时取景",
+      "reason": "房门口早安不在厨房；保留正装，撤下制服早餐桌CG。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2712,
+      "id": "tlaprtzk",
+      "old_bg": "厨房_清晨",
+      "new_bg": "住宅_房门口清晨_临时取景",
+      "reason": "房门口早安不在厨房；保留正装，撤下制服早餐桌CG。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2713,
+      "id": "2x0c3z1s",
+      "old_bg": "厨房_清晨",
+      "new_bg": "住宅_房门口清晨_临时取景",
+      "reason": "房门口早安不在厨房；保留正装，撤下制服早餐桌CG。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2714,
+      "id": "k3l7jp8q",
+      "old_bg": "厨房_清晨",
+      "new_bg": "住宅_房门口清晨_临时取景",
+      "reason": "房门口早安不在厨房；保留正装，撤下制服早餐桌CG。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2715,
+      "id": "2cyz437m",
+      "old_bg": "厨房_清晨",
+      "new_bg": "住宅_房门口清晨_临时取景",
+      "reason": "房门口早安不在厨房；保留正装，撤下制服早餐桌CG。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2716,
+      "id": "igqjosbz",
+      "old_bg": "厨房_清晨",
+      "new_bg": "住宅_房门口清晨_临时取景",
+      "reason": "房门口早安不在厨房；保留正装，撤下制服早餐桌CG。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2717,
+      "id": "hvxv91vl",
+      "old_bg": "厨房_清晨",
+      "new_bg": "住宅_房门口清晨_临时取景",
+      "reason": "房门口早安不在厨房；保留正装，撤下制服早餐桌CG。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2718,
+      "id": "8aoh56l4",
+      "old_bg": "厨房_清晨",
+      "new_bg": "住宅_房门口清晨_临时取景",
+      "reason": "房门口早安不在厨房；保留正装，撤下制服早餐桌CG。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2719,
+      "id": "w4411q0j",
+      "old_bg": "厨房_清晨",
+      "new_bg": "住宅_房门口清晨_临时取景",
+      "reason": "房门口早安不在厨房；保留正装，撤下制服早餐桌CG。",
+      "sprites_changed": false
+    },
+    {
+      "index": 2693,
+      "id": "hjiyaq0l",
+      "old_bg": "住宅_房门口清晨_临时取景",
+      "new_bg": "住宅_房门口清晨_临时取景",
+      "reason": "早安CG的服装和机位不符，沿用正装柔和表情。",
+      "sprites_changed": true
+    },
+    {
+      "index": 2694,
+      "id": "y8vi2xae",
+      "old_bg": "住宅_房门口清晨_临时取景",
+      "new_bg": "住宅_房门口清晨_临时取景",
+      "reason": "早安CG的服装和机位不符，沿用正装柔和表情。",
+      "sprites_changed": true
+    },
+    {
+      "index": 2695,
+      "id": "mekeu17c",
+      "old_bg": "住宅_房门口清晨_临时取景",
+      "new_bg": "住宅_房门口清晨_临时取景",
+      "reason": "早安CG的服装和机位不符，沿用正装柔和表情。",
+      "sprites_changed": true
+    },
+    {
+      "index": 2696,
+      "id": "83d4m1z4",
+      "old_bg": "住宅_房门口清晨_临时取景",
+      "new_bg": "住宅_房门口清晨_临时取景",
+      "reason": "早安CG的服装和机位不符，沿用正装柔和表情。",
+      "sprites_changed": true
+    },
+    {
+      "index": 2697,
+      "id": "g5mky371",
+      "old_bg": "住宅_房门口清晨_临时取景",
+      "new_bg": "住宅_房门口清晨_临时取景",
+      "reason": "早安CG的服装和机位不符，沿用正装柔和表情。",
+      "sprites_changed": true
+    },
+    {
+      "index": 3029,
+      "id": "4n84m5fl",
+      "old_bg": "CG_夏日沙洲",
+      "new_bg": "沙洲_上午",
+      "reason": "泳装段CG却是制服且偏夕阳，恢复上午泳装立绘。",
+      "sprites_changed": true
+    },
+    {
+      "index": 3030,
+      "id": "jdterkju",
+      "old_bg": "CG_夏日沙洲",
+      "new_bg": "沙洲_上午",
+      "reason": "泳装段CG却是制服且偏夕阳，恢复上午泳装立绘。",
+      "sprites_changed": true
+    },
+    {
+      "index": 3031,
+      "id": "q84nvinh",
+      "old_bg": "CG_夏日沙洲",
+      "new_bg": "沙洲_上午",
+      "reason": "泳装段CG却是制服且偏夕阳，恢复上午泳装立绘。",
+      "sprites_changed": true
+    },
+    {
+      "index": 3032,
+      "id": "xy5v80ck",
+      "old_bg": "CG_夏日沙洲",
+      "new_bg": "沙洲_上午",
+      "reason": "泳装段CG却是制服且偏夕阳，恢复上午泳装立绘。",
+      "sprites_changed": true
+    },
+    {
+      "index": 3033,
+      "id": "3wd0u0ld",
+      "old_bg": "CG_夏日沙洲",
+      "new_bg": "沙洲_上午",
+      "reason": "泳装段CG却是制服且偏夕阳，恢复上午泳装立绘。",
+      "sprites_changed": true
+    },
+    {
+      "index": 3276,
+      "id": "ckjv83kd",
+      "old_bg": "帐篷内_夜",
+      "new_bg": "帐篷内_清晨_帐角临时取景",
+      "reason": "明确次日清晨，不再显示帐篷外星空；真实差分待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 3277,
+      "id": "x1ura30y",
+      "old_bg": "帐篷内_夜",
+      "new_bg": "帐篷内_清晨_帐角临时取景",
+      "reason": "明确次日清晨，不再显示帐篷外星空；真实差分待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 3278,
+      "id": "tdeybm9c",
+      "old_bg": "帐篷内_夜",
+      "new_bg": "帐篷内_清晨_帐角临时取景",
+      "reason": "明确次日清晨，不再显示帐篷外星空；真实差分待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 3279,
+      "id": "ih2fsqg1",
+      "old_bg": "帐篷内_夜",
+      "new_bg": "帐篷内_清晨_帐角临时取景",
+      "reason": "明确次日清晨，不再显示帐篷外星空；真实差分待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 3280,
+      "id": "gsmpu2g2",
+      "old_bg": "帐篷内_夜",
+      "new_bg": "帐篷内_清晨_帐角临时取景",
+      "reason": "明确次日清晨，不再显示帐篷外星空；真实差分待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 3281,
+      "id": "godpamy3",
+      "old_bg": "帐篷内_夜",
+      "new_bg": "帐篷内_清晨_帐角临时取景",
+      "reason": "明确次日清晨，不再显示帐篷外星空；真实差分待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 3282,
+      "id": "la3hxz1o",
+      "old_bg": "帐篷内_夜",
+      "new_bg": "帐篷内_清晨_帐角临时取景",
+      "reason": "明确次日清晨，不再显示帐篷外星空；真实差分待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 3283,
+      "id": "djrthqch",
+      "old_bg": "帐篷内_夜",
+      "new_bg": "帐篷内_清晨_帐角临时取景",
+      "reason": "明确次日清晨，不再显示帐篷外星空；真实差分待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 3284,
+      "id": "n5jl2w5m",
+      "old_bg": "帐篷内_夜",
+      "new_bg": "帐篷内_清晨_帐角临时取景",
+      "reason": "明确次日清晨，不再显示帐篷外星空；真实差分待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 3285,
+      "id": "7u2ni6q6",
+      "old_bg": "帐篷内_夜",
+      "new_bg": "帐篷内_清晨_帐角临时取景",
+      "reason": "明确次日清晨，不再显示帐篷外星空；真实差分待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 3286,
+      "id": "3xl1v5ls",
+      "old_bg": "帐篷内_夜",
+      "new_bg": "帐篷内_清晨_帐角临时取景",
+      "reason": "明确次日清晨，不再显示帐篷外星空；真实差分待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 3287,
+      "id": "s3vlh2uo",
+      "old_bg": "帐篷内_夜",
+      "new_bg": "帐篷内_清晨_帐角临时取景",
+      "reason": "明确次日清晨，不再显示帐篷外星空；真实差分待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 3288,
+      "id": "69jhv9jv",
+      "old_bg": "帐篷内_夜",
+      "new_bg": "帐篷内_清晨_帐角临时取景",
+      "reason": "明确次日清晨，不再显示帐篷外星空；真实差分待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 3289,
+      "id": "sg2iqklb",
+      "old_bg": "帐篷内_夜",
+      "new_bg": "帐篷内_清晨_帐角临时取景",
+      "reason": "明确次日清晨，不再显示帐篷外星空；真实差分待补。",
+      "sprites_changed": false
+    },
+    {
+      "index": 3290,
+      "id": "noh6cni0",
+      "old_bg": "帐篷内_夜",
+      "new_bg": "帐篷内_清晨_帐角临时取景",
+      "reason": "明确次日清晨，不再显示帐篷外星空；真实差分待补。",
+      "sprites_changed": false
+    },
+    {
+      "asset": "acqkjhf8",
+      "old_src": "assets/bg/礁石_夜.jpg",
+      "new_src": "assets/bg/bg_shallows_night_v01.png",
+      "reason": "统一礁石夜与和解CG的满月阶段，原弯月图保留归档；礁石近景待补。"
+    }
+  ],
+  "new_game_entry_index": 2,
+  "choice_layout": "短选项放在角色另一侧，避免挡脸；导航长列表单独处理",
+  "remaining": "临时取景不是完成的新图。动作CG、帐篷清晨/门口/午后关灯差分与画风统一仍需补。"
+}

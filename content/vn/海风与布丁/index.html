@@ -438,6 +438,7 @@ body.playing #soulTab.show{display:flex}
 @media (pointer:coarse){#soulTab{width:60px;height:80px;font-size:30px}#soul.ovl{width:620px}#soul .hd{font-size:30px}#soul .tabs button{height:52px;font-size:26px}#soul .it p,#soul .talk .her{font-size:27px;line-height:38px}#soul .it small{font-size:18px}#soul .talk .me{font-size:22px}#soul .face{width:64px;height:64px}#soul .win input{height:56px;font-size:23px}#soul .win .btn{width:60px;height:56px}#soul .ovx{width:48px;height:48px;font-size:24px}}
 #soul.show + #soulTab{display:none!important}
 </style>
+<link rel="stylesheet" href="game-polish.css">
 </head>
 <body>
 <div id="app">
@@ -1082,6 +1083,8 @@ function useAsset(id, x) {
 const cssUrl = u => `url("${String(u).replace(/["\\\n]/g, c => '\\' + c)}")`;
 const stage = $('#stage'), layer = $('#layer'), bgEl = $('#bgEl');
 function renderStage(line, editable) {
+  const backdrop=A(line.bg);stage.dataset.light=backdrop?.lighting||(/夜/.test(backdrop?.name||'')?'night':'');stage.dataset.library=backdrop?.libraryAsset?'true':'false';
+  bgEl.style.backgroundSize=backdrop?.view?.size||'';bgEl.style.backgroundPosition=backdrop?.view?.position||'';
   const hideBg = editable && hiddenLane('bg');
   stage.dataset.mood = (editable && hiddenLane('mood')) ? '' : (line.mood || '');
   bgEl.style.backgroundImage = line.bg && A(line.bg) && !hideBg ? cssUrl(A(line.bg).src) : '';
@@ -1437,6 +1440,7 @@ function renderButtons() {
 }
 function renderChoices(list, live) {
   const box = $('#choices'); box.innerHTML = '';
+  box.dataset.side=(playing && (P.lines[RT.idx]?.sprites?.[0]?.x??W/2)<W/2)?'right':'left';box.dataset.many=list.length>4?'true':'false';
   box.className = list.length ? (live ? 'show' : 'show edit') : '';
   list.forEach(c => {
     const b = document.createElement('button'); b.textContent = c.text || '…';
@@ -1790,36 +1794,216 @@ function renderProps() {
 function toggleProps() { $('#props').classList.toggle('open'); if ($('#props').classList.contains('open')) renderProps(); renderButtons(); }
 
 /* ========== 播放用音频 ========== */
+// Continuous music and ambience have separate volume controls; action effects are one-shots.
 let bgmEl = null, bgmId = null;
-function playBgm(id) {
-  if (id === bgmId) return;
-  const old = bgmEl;
-  if (old) fadeVol(old, 0, 600, () => old.pause());
-  bgmId = id; bgmEl = null;
-  if (!id || !A(id)) return;
-  bgmEl = new Audio(A(id).src); bgmEl.loop = true; bgmEl.volume = 0; bgmEl.play()?.catch?.(() => {});
-  fadeVol(bgmEl, pref('vbgm'), 800);
-}
+const bgmRetiring = new Set(), ambientTracks = new Map(), activeEffects = new Set();
+let audioLibraryOpen = false, auditionEl = null, auditionAsset = null, auditionState = null;
+let audioFocusPaused = false;
+const volume01 = v => Math.max(0, Math.min(1, Number.isFinite(+v) ? +v : 0));
+const musicVolume = () => volume01(pref('vbgm'));
+const ambienceVolume = () => volume01(pref('vamb') ?? .3) * (bgmId ? .75 : 1);
+const effectVolume = () => volume01(pref('vse'));
+
 function fadeVol(el, to, ms, done) {
-  // 同一个音频再次淡变时，旧的淡变作废（el._fd 计数），免得两段淡变抢着改音量
-  const from = el.volume, t0 = performance.now(), tok = el._fd = (el._fd || 0) + 1;
-  const step = now => { if (el._fd !== tok) return; const k = Math.min(1, (now - t0) / ms); el.volume = Math.max(0, Math.min(1, from + (to - from) * k)); if (k < 1) requestAnimationFrame(step); else done?.(); };
-  requestAnimationFrame(step);
+  cancelAnimationFrame(el._fadeFrame);
+  to = volume01(to);
+  if (!ms || ms <= 0) { el.volume = to; done?.(); return; }
+  const from = el.volume, t0 = performance.now();
+  const step = now => {
+    const k = Math.min(1, (now - t0) / ms);
+    el.volume = volume01(from + (to - from) * k);
+    if (k < 1) el._fadeFrame = requestAnimationFrame(step);
+    else { el._fadeFrame = 0; done?.(); }
+  };
+  el._fadeFrame = requestAnimationFrame(step);
 }
-/* —— 环境音（v0.19）：两层循环（AMB[0] = @amb，AMB[1] = @amb2），跟 BGM 一样记在每一句上、往后继承；
-   换成别的声音时旧的 1 秒淡出、新的 1 秒淡入；音量 = 本句写的 vol × 玩家设置“环境音” —— */
-const AMB = [{ el: null, id: null, v: 0 }, { el: null, id: null, v: 0 }];
-const ambVol = () => pref('vamb') ?? 0.8;
-function playAmb(k, id, v) {
-  const ch = AMB[k]; v = v ?? 0.6; if (!(id && A(id))) id = null;
-  if (id === ch.id) { if (ch.el && v !== ch.v) { ch.v = v; fadeVol(ch.el, v * ambVol(), 600); } return; }
-  const old = ch.el; if (old) fadeVol(old, 0, 1000, () => old.pause());
-  ch.id = id; ch.el = null; ch.v = v;
+function seekAudio(el, seconds) {
+  if (!Number.isFinite(seconds) || seconds < 0) return;
+  const seek = () => { if (Number.isFinite(el.duration) && el.duration > 0) el.currentTime = seconds % el.duration; };
+  if (el.readyState >= 1) seek();
+  else el.addEventListener('loadedmetadata', seek, { once: true });
+}
+function tryPlayAudio(el) {
+  if (!el || audioFocusPaused || document.hidden) return;
+  el.play()?.catch?.(() => {});
+}
+function playBgm(id, fadeOutMs = 600, restoreTime) {
+  if (id && !A(id)) id = null;
+  if (id === bgmId) {
+    if (bgmEl && restoreTime != null) seekAudio(bgmEl, restoreTime);
+    if (!id && fadeOutMs === 0) {
+      for (const el of bgmRetiring) { fadeVol(el, 0, 0); el.pause(); }
+      bgmRetiring.clear();
+    }
+    return;
+  }
+  if (bgmEl) {
+    const old = bgmEl;
+    bgmRetiring.add(old);
+    fadeVol(old, 0, fadeOutMs, () => { old.pause(); bgmRetiring.delete(old); });
+  }
+  bgmId = id; bgmEl = null;
   if (!id) return;
-  const el = new Audio(A(id).src); el.loop = true; el.volume = 0; el.play()?.catch?.(() => {});
-  ch.el = el; fadeVol(el, v * ambVol(), 1000);
+  const el = new Audio(A(id).src);
+  el._assetId = id; el.loop = true; el.preload = 'auto'; el.volume = 0;
+  bgmEl = el;
+  if (restoreTime != null) seekAudio(el, restoreTime);
+  tryPlayAudio(el);
+  fadeVol(el, musicVolume(), 800);
 }
-function stopAmb() { playAmb(0, null); playAmb(1, null); }
+function playAmbience(specs, restore = [], fadeMs = 900) {
+  const next = new Map((specs || []).filter(s => A(s.id)).map(s => [s.id, s]));
+  for (const [id, track] of ambientTracks) {
+    if (!next.has(id)) {
+      ambientTracks.delete(id);
+      const old = track.el;
+      bgmRetiring.add(old);
+      fadeVol(old, 0, fadeMs, () => { old.pause(); bgmRetiring.delete(old); });
+    }
+  }
+  for (const [id, spec] of next) {
+    let track = ambientTracks.get(id);
+    const restored = restore.find(s => s.id === id);
+    const gain = volume01(spec.gain ?? 1), target = ambienceVolume() * gain;
+    if (track) {
+      if (restored) seekAudio(track.el, restored.time);
+      if (track.gain !== gain || Math.abs(track.target - target) > .001) fadeVol(track.el, target, 350);
+      track.gain = gain; track.target = target;
+      continue;
+    }
+    const el = new Audio(A(id).src);
+    el._assetId = id; el.loop = true; el.preload = 'auto'; el.volume = 0;
+    track = { id, el, gain, target };
+    ambientTracks.set(id, track);
+    if (restored) seekAudio(el, restored.time);
+    tryPlayAudio(el); fadeVol(el, target, fadeMs);
+  }
+}
+function stopEffects() {
+  for (const el of activeEffects) { el.pause(); el.removeAttribute('src'); el.load(); }
+  activeEffects.clear();
+}
+function playSe(id, gain = 1) {
+  if (!id || !A(id) || effectVolume() <= 0 || audioFocusPaused || audioLibraryOpen) return;
+  if ([...activeEffects].some(el => el._assetId === id && el.currentTime < .4 && !el.paused)) return;
+  while (activeEffects.size >= 4) {
+    const old = activeEffects.values().next().value;
+    old.pause(); activeEffects.delete(old);
+  }
+  const el = new Audio(A(id).src);
+  el._assetId = id; el._gain = gain; el.volume = volume01(effectVolume() * gain);
+  activeEffects.add(el);
+  el.addEventListener('ended', () => activeEffects.delete(el), { once: true });
+  el.addEventListener('error', () => activeEffects.delete(el), { once: true });
+  tryPlayAudio(el);
+}
+function captureAudioState() {
+  return { bgm: bgmEl && bgmId ? { id: bgmId, time: bgmEl.currentTime } : null,
+    ambience: [...ambientTracks].map(([id, t]) => ({ id, time: t.el.currentTime })) };
+}
+function applyLineAudio(line, restore, suppressSe = false) {
+  playBgm(line.bgm, line._musicFadeOutMs ?? 600, restore?.bgm?.id === line.bgm ? restore.bgm.time : undefined);
+  playAmbience(line.ambience || [], restore?.ambience || [], restore ? 250 : 900);
+  if (RT.skip) stopEffects();
+  else if (!suppressSe) {
+    if (line.se) playSe(line.se, line._seGain ?? 1);
+    for (const event of line.seEvents || []) playSe(event.id, event.gain ?? 1);
+  }
+}
+function stopAllAudio() {
+  playBgm(null, 0);
+  playAmbience([], [], 0);
+  stopEffects();
+  if (voEl) { voEl.pause(); voEl = null; }
+  if (auditionEl) { auditionEl.pause(); auditionEl = null; auditionAsset = null; }
+}
+function refreshAudioVolumes(key) {
+  if (bgmEl && key === 'vbgm') fadeVol(bgmEl, musicVolume(), 0);
+  if (key === 'vamb') for (const t of ambientTracks.values()) { t.target = ambienceVolume() * t.gain; fadeVol(t.el, t.target, 0); }
+  if (key === 'vse') for (const el of activeEffects) el.volume = volume01(effectVolume() * el._gain);
+  if (auditionEl && auditionAsset) auditionEl.volume = volume01(pref(auditionAsset.audioCategory === 'music' ? 'vbgm' : auditionAsset.audioCategory === 'ambience' ? 'vamb' : 'vse'));
+}
+function resumeGameAudio() {
+  if (audioFocusPaused || audioLibraryOpen || !playing || $('#title')?.classList.contains('show')) return;
+  if (bgmEl && musicVolume() > 0 && bgmEl.paused) tryPlayAudio(bgmEl);
+  for (const t of ambientTracks.values()) if (ambienceVolume() > 0 && t.el.paused) tryPlayAudio(t.el);
+}
+document.addEventListener('pointerdown', resumeGameAudio, { capture: true });
+document.addEventListener('keydown', resumeGameAudio, { capture: true });
+document.addEventListener('visibilitychange', () => {
+  audioFocusPaused = document.hidden;
+  if (audioFocusPaused) {
+    if (bgmEl) bgmEl.pause();
+    for (const t of ambientTracks.values()) t.el.pause();
+    for (const el of bgmRetiring) { cancelAnimationFrame(el._fadeFrame); el.pause(); }
+    bgmRetiring.clear(); stopEffects();
+    if (auditionEl) auditionEl.pause();
+    if (voEl) voEl.pause();
+    RT.skip = false; updPctl(); clearTimeout(RT.timer); RT.timer = null;
+  } else {
+    if (bgmEl) fadeVol(bgmEl, musicVolume(), 0);
+    for (const t of ambientTracks.values()) fadeVol(t.el, ambienceVolume() * t.gain, 0);
+    if (audioLibraryOpen && auditionEl) tryPlayAudio(auditionEl);
+    else { resumeGameAudio(); kick(); }
+  }
+});
+
+function showAudioLibrary() {
+  if (audioLibraryOpen) return;
+  clearTimeout(RT.timer); RT.timer = null;
+  auditionState = captureAudioState(); audioLibraryOpen = true;
+  if (bgmEl) bgmEl.pause();
+  for (const t of ambientTracks.values()) t.el.pause();
+  for (const el of bgmRetiring) { cancelAnimationFrame(el._fadeFrame); el.pause(); }
+  bgmRetiring.clear(); stopEffects();
+  const box = $('#paudio');
+  const categories = [['music', '音乐'], ['ambience', '环境音'], ['effect', '剧情音效']];
+  box.innerHTML = '<h2>音频试听</h2><p class="audio-note">已收录《翡翠之梦》主曲；《深海之光》与各主题变奏等待后续加入。</p><p id="audioNow" role="status">选择一段音频试听</p>' + categories.map(([kind, title]) => '<h3>' + title + '</h3><div class="audio-grid">' + Object.values(P.assets).filter(a => a.audioCategory === kind).map(a => '<button data-audio="' + esc(a.id) + '">' + esc(a.name) + (a.auditionOnly ? '<small class="audition-only">待审 · 未接入剧情</small>' : '') + '<span>' + (a.dur < 10 ? a.dur.toFixed(1) : Math.round(a.dur)) + ' 秒</span></button>').join('') + '</div>').join('') + '<button id="audioStop">停止试听</button>';
+  box.querySelectorAll('[data-audio]').forEach(b => b.onclick = e => {
+    e.stopPropagation();
+    if (auditionEl) auditionEl.pause();
+    auditionAsset = A(b.dataset.audio); auditionEl = new Audio(auditionAsset.src);
+    auditionEl.loop = auditionAsset.audioCategory !== 'effect';
+    refreshAudioVolumes(); tryPlayAudio(auditionEl);
+    box.querySelector('#audioNow').textContent = '正在试听：' + auditionAsset.name;
+    box.querySelectorAll('[data-audio]').forEach(x => x.classList.toggle('active', x === b));
+    auditionEl.addEventListener('ended', () => { box.querySelector('#audioNow').textContent = '播放完毕'; b.classList.remove('active'); });
+  });
+  box.querySelector('#audioStop').onclick = e => {
+    e.stopPropagation(); if (auditionEl) auditionEl.pause();
+    box.querySelector('#audioNow').textContent = '试听已停止';
+    box.querySelectorAll('[data-audio]').forEach(x => x.classList.remove('active'));
+  };
+  addClose(box, closeAudioLibrary); box.classList.add('show');
+  box.onclick = e => { e.stopPropagation(); if (e.target === box || e.target.tagName === 'H2') { box.classList.remove('show'); closeAudioLibrary(); } };
+}
+function closeAudioLibrary() {
+  if (!audioLibraryOpen) return;
+  audioLibraryOpen = false;
+  if (auditionEl) { auditionEl.pause(); auditionEl = null; auditionAsset = null; }
+  if (!$('#title').classList.contains('show') && playing) {
+    applyLineAudio(P.lines[RT.idx], auditionState, true);
+    resumeGameAudio(); kick();
+  }
+  auditionState = null;
+}
+
+function showChapterReview() {
+  const box = document.getElementById('pchapters');
+  const chapters = P.lines.flatMap((line, index) => line.chapter ? [{title:line.chapter, index}] : []);
+  box.innerHTML = '<h2>章节试阅</h2><p>从该话开头试阅，使用初始好感与尾鳍数值。</p><div class="chapter-grid">' + chapters.map(c => '<button class="chapter-entry" data-chapter="' + c.index + '">' + esc(c.title) + '</button>').join('') + '</div>';
+  box.querySelectorAll('[data-chapter]').forEach(button => button.onclick = event => { event.stopPropagation(); startPlay(Number(button.dataset.chapter)); });
+  addClose(box); box.classList.add('show');
+  box.onclick = event => { event.stopPropagation(); if (event.target === box) box.classList.remove('show'); };
+}
+
+// 配音：新的一节开始就停掉上一句
+let voEl = null;
+function playVoice(id) {
+  if (voEl) { voEl.pause(); voEl = null; }
+  if (!id || !A(id)) return;
+  voEl = new Audio(A(id).src); voEl.volume = pref('vvo'); voEl.play()?.catch?.(() => {});
+}
 /* —— 界面音效（v0.19）：P.settings.uiSe = { 键: 素材id, favorVar, tailVar }，剧本 @uise 设置；音量跟“音效” ——
    choiceShow 选项出现 / choiceConfirm 点选项 / timeoutTick 限时倒计时（循环）/ timeoutSilence 超时 / favorUp favorDown 好感变化 /
    tailfin 尾鳍信号增加 / cg 出现 CG / save 存档 / chapterEnd 话末（下一句是新章节或本句是结局的那句）/ endingNew 第一次达成某结局 */
@@ -1836,14 +2020,8 @@ function uiVarSe(before, after) {
   if (d(fv) > 0) playUi('favorUp'); else if (d(fv) < 0) playUi('favorDown');
   if (d(tv) > 0) playUi('tailfin');
 }
-function playSe(id) { if (!id || !A(id)) return; const a = new Audio(A(id).src); a.volume = pref('vse'); a.play()?.catch?.(() => {}); }
-// 配音：新的一节开始就停掉上一句
-let voEl = null;
-function playVoice(id) {
-  if (voEl) { voEl.pause(); voEl = null; }
-  if (!id || !A(id)) return;
-  voEl = new Audio(A(id).src); voEl.volume = pref('vvo'); voEl.play()?.catch?.(() => {});
-}
+
+function stopAmb(){playAmbience([]);}
 /* —— 玩家偏好：导出的游戏里存在玩家自己的浏览器；编辑器预览时直接改作者默认值 —— */
 let PREF = {};
 const pref = k => (gameMode && PREF[k] != null) ? PREF[k] : P.settings[k];
@@ -1851,10 +2029,8 @@ function loadPrefs() { if (!gameMode) return; try { PREF = JSON.parse(localStora
 function setPref(k, v) {
   if (gameMode) { PREF[k] = v; try { localStorage.setItem('vnprefs:' + P.id, JSON.stringify(PREF)); } catch (e) {} }
   else { P.settings[k] = v; autosave(); }
-  if (k === 'vbgm' && bgmEl) bgmEl.volume = v;
+  refreshAudioVolumes(k);
   if (k === 'vvo' && voEl) voEl.volume = v;
-  if (k === 'vamb') AMB.forEach(c => { if (c.el) { c.el._fd = (c.el._fd || 0) + 1; c.el.volume = Math.min(1, c.v * v); } });
-  if (k === 'vse' && tickEl) tickEl.volume = v;
 }
 /* —— 已读记录：所有存档共用，用来“只快进已读” —— */
 let READ = new Set(), readT = null;
@@ -1942,7 +2118,7 @@ function loadG() { if (gPid === P.id && G) return G; gPid = P.id; try { G = JSON
 function saveG() { try { localStorage.setItem(gKey(), JSON.stringify(G)); } catch (e) {} }
 function resetG() { G = { cg: [], endings: {}, clears: 0, vars: {} }; gPid = P.id; saveG(); }
 const BUILTIN_VARS = ['周目', '结局数'];                 // 只读，剧本里可以直接用在条件里
-const isCG = a => !!a && a.type === 'bg' && (a.cg ?? /^cg[_\-\s]/i.test(a.name || ''));
+const isCG = a => !!a && !a.previewExcluded && a.type === 'bg' && (a.cg ?? /^cg[_\-\s]/i.test(a.name || ''));
 const allEndings = () => [...new Set(P.lines.map(l => l.ending).filter(Boolean))];
 // 开局时：普通变量用初始值；跨周目变量用记住的值；再放进内置变量
 function applyGlobals(vars) {
@@ -1975,6 +2151,7 @@ function startPlay(fromIdx, state) {
   { const T = RT.soul.tl || (RT.soul.tl = soulNewTl()); if (state?.soul) { T.anc = [...T.anc, { lineage: T.lin, turn: T.turn }]; T.lin = T.lin.split('.')[0] + '.' + Date.now().toString(36); } }
   SOUL_REV++; soulTabUpd();
   layer.innerHTML = ''; loadPrefs(); loadRead();
+  stopEffects(); RT.audioRestore=state?.audio||null; RT.audioSkipEntrySe=!!state;
   showPlay(true);
 }
 function stopPlay() {
@@ -2019,7 +2196,7 @@ function showPlay(first) {
   if (!first && l.bg && l.bg !== prev?.bg && isCG(A(l.bg))) playUi('cg');
   if (!first && l.text && isChapterEnd(RT.idx)) playUi('chapterEnd');
   if (l.bg && isCG(A(l.bg)) && !G.cg.includes(l.bg)) { G.cg.push(l.bg); saveG(); }
-  playBgm(l.bgm); playAmb(0, l.amb, l.ambv); playAmb(1, l.amb2, l.amb2v); if (!RT.skip) playSe(l.se);
+  applyLineAudio(l,RT.audioRestore,RT.audioSkipEntrySe); RT.audioRestore=null;RT.audioSkipEntrySe=false;
   setName($('#pnm'), l.speaker);
   const shown = fillVars(l.text);
   if (l.text) { RT.back.push({ s: l.speaker, t: shown, v: l.voice || undefined }); if (RT.back.length > 300) RT.back.shift(); }
@@ -2288,7 +2465,7 @@ async function showSlots(mode) {
       e.stopPropagation();
       if (mode === 'save') {
         const l = P.lines[RT.idx];
-        saves[k] = { time: Date.now(), idx: RT.idx, lineId: l.id, vars: clone(RT.varsBefore), back: RT.back.slice(-100), soul: RT.soul ? clone(RT.soul) : undefined, text: l.text || '', bg: l.bg, thumb: await makeThumb(l) };
+        saves[k] = { time: Date.now(), idx: RT.idx, lineId: l.id, vars: clone(RT.varsBefore), back: RT.back.slice(-100), soul: RT.soul ? clone(RT.soul) : undefined, text: l.text || '', bg: l.bg, thumb: await makeThumb(l), audio:captureAudioState() };
         const ok = await idbSet(saveKey(), saves);
         if (!ok) alert('存档失败：浏览器存储不可用'); else playUi('save');
         showSlots('save');
@@ -2304,7 +2481,7 @@ async function showSlots(mode) {
   box.onclick = e => { e.stopPropagation(); if (e.target === box || e.target.tagName === 'H2') box.classList.remove('show'); };
 }
 function showTitle() {
-  playing = true; document.body.classList.add('playing'); hideOverlays(); clearTimers(); playBgm(null); stopAmb(); stopChoiceTimer();
+  playing = true; document.body.classList.add('playing'); hideOverlays(); clearTimers(); stopAllAudio(); stopTick(); stopChoiceTimer();
   RT.chat = null; $('#pin').classList.remove('show'); $('#choices').className = ''; $('#soulTab').classList.remove('show');
   const t = $('#title'), first = P.lines[0];
   const cv = P.settings.cover || {}, ca = cv.img && A(cv.img), pos = v => /^(left|center|right|hide)$/.test(v) ? v : 'center';
@@ -2313,12 +2490,14 @@ function showTitle() {
   t.style.setProperty('--ty', (cv.ty ?? 186) + 'px');
   loadG();
   const hasGal = Object.values(P.assets).some(isCG) || allEndings().length;
-  t.innerHTML = (ca ? `<div class="cbg" style="background-image:${esc(cssUrl(ca.src))}"></div>` : '') + `<h1 class="t-${ca ? pos(cv.title) : 'center'}"></h1><div class="menu m-${ca ? pos(cv.menu) : 'center'}">` + '<button data-t="start">开始游戏</button><button data-t="load">读取进度</button>' + (hasGal ? '<button data-t="gal">鉴赏</button>' : '') + '<button data-t="set">设置</button></div>';
+  t.innerHTML = (ca ? `<div class="cbg" style="background-image:${esc(cssUrl(ca.src))}"></div>` : '') + `<h1 class="t-${ca ? pos(cv.title) : 'center'}"></h1><div class="menu m-${ca ? pos(cv.menu) : 'center'}">` + '<button data-t="start">开始游戏</button><button data-t="load">读取进度</button>' + (hasGal ? '<button data-t="gal">鉴赏</button>' : '') + '<button data-t="chapters">章节试阅</button><button data-t="audio">音频试听</button><button data-t="set">设置</button></div>';
   loadPrefs();
   t.querySelector('[data-t=gal]')?.addEventListener('click', e => { e.stopPropagation(); showGallery(); });
   t.querySelector('h1').textContent = P.title || '';
-  t.querySelector('[data-t=start]').onclick = e => { e.stopPropagation(); startPlay(0); };
+  t.querySelector('[data-t=start]').onclick = e => { e.stopPropagation(); const entry=P.lines.findIndex(l=>l.chapter);startPlay(entry>=0?entry:0); };
   t.querySelector('[data-t=load]').onclick = e => { e.stopPropagation(); showSlots('load'); };
+  t.querySelector('[data-t=chapters]').onclick=e=>{e.stopPropagation();showChapterReview();};
+  t.querySelector('[data-t=audio]').onclick=e=>{e.stopPropagation();showAudioLibrary();};
   t.querySelector('[data-t=set]').onclick = e => { e.stopPropagation(); showPrefs(); };
   t.onclick = e => e.stopPropagation();
   t.classList.add('show'); fit();
@@ -2906,7 +3085,7 @@ function loadProject(o) {
   P.assets = P.assets || {};
   P.recent = Object.assign({ bg: [], ch: [], au: [] }, P.recent);
   P.cur = Math.max(0, Math.min(P.lines.length - 1, P.cur | 0));
-  hist = []; redoS = []; selUid = null; TL.sel = null; TL.lastCur = -1; applyTlh(); changed();
+  hist = []; redoS = []; selUid = null; TL.sel = null; TL.lastCur = -1; if(gameMode){applyTheme();}else{applyTlh();changed();}
 }
 
 /* ========== 按钮与快捷键 ========== */
@@ -3473,9 +3652,10 @@ if (HOSTED) {
       { k: 'soulMode', label: '陪伴', group: 'soul', type: 'seg', def: 'mix', options: [['off', '纯剧本'], ['mix', '剧本+即兴'], ['free', '自由']] },
       { k: 'soulTalk', label: '她的话量', group: 'soul', type: 'seg', def: 'mid', options: [['short', '简短'], ['mid', '适中'], ['long', '话多']] },
     ] : []),
-  ].map(x => Object.assign(x, { value: x.inv ? x.inv - pref(x.k) : (pref(x.k) ?? x.def) }));
+  ].filter(x=>x.k!=='vvo'||P.lines.some(l=>l.voice)).map(x => Object.assign(x, { value: x.inv ? x.inv - pref(x.k) : (pref(x.k) ?? x.def) }));
   window.VNHost = {
-    version: 1,
+    version: 1, capabilities:{journal:true,audioLibrary:true,modelSettings:true},
+    audioLibrary(){showAudioLibrary();},
     dock(el) {   // el = 外面页面里的容器；手账画在它里面新建的 #soul.dock 里。el 为空 = 收回游戏
       SOUL_DOCK?.remove(); SOUL_DOCK = null;
       if (el) { const d = el.ownerDocument.createElement('div'); d.id = 'soul'; d.className = 'dock'; el.appendChild(d); SOUL_DOCK = d; $('#soul').classList.remove('show'); showSoul(); }
@@ -3500,7 +3680,7 @@ if (HOSTED) {
     },
     state() {
       const c = soulCfg(), v = playing ? RT.vars : {};
-      return { playing, title: P.title, chapter: playing ? chapterAt(RT.idx) : '', char: c?.char || '', aff: c ? v[c.aff] : null, affName: c?.aff || '',
+      return { playing:playing&&!$('#title').classList.contains('show'), title: P.title, chapter: playing ? chapterAt(RT.idx) : '', char: c?.char || '', aff: c ? v[c.aff] : null, affName: c?.aff || '',
         signal: c?.signal ? v[c.signal] : null, signalName: c?.signal || '', unread: playing && RT.soul ? RT.soul.unread : 0, rev: SOUL_REV,
         mem: playing && RT.soul ? RT.soul.mem.length : 0, link: soulSock.state, info: soulSock.info, soulOn: !!c && soulMode() !== 'off' };
     },
@@ -3526,6 +3706,11 @@ if (/[?&]bridge=1\b/.test(location.search)) {
     e.source?.postMessage({ vnResult: r, id: e.data.id }, e.origin === 'null' ? '*' : e.origin);
   });
 }
+
+const chapterReviewPanel = document.createElement('div'); chapterReviewPanel.id = 'pchapters'; chapterReviewPanel.className = 'ovl'; stage.appendChild(chapterReviewPanel);
+const audioPanel = document.createElement('div'); audioPanel.id = 'paudio'; audioPanel.className = 'ovl'; stage.appendChild(audioPanel);
+new MutationObserver(() => { if (!audioPanel.classList.contains('show')) closeAudioLibrary(); }).observe(audioPanel, { attributes: true, attributeFilter: ['class'] });
+
 
 /* ========== 启动 ========== */
 (async () => {

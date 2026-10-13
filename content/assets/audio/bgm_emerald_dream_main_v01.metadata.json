@@ -1,0 +1,14 @@
+{
+  "id": "bgm_emerald_dream_main_v01",
+  "title": "翡翠之梦",
+  "project": "海风与布丁",
+  "role": "角色主曲",
+  "status": "暂存，作为后续变奏的主曲候选",
+  "source_file": "D:\\download\\翡翠1.1.mp3",
+  "file": "bgm_emerald_dream_main_v01.mp3",
+  "saved_at": "2026-10-11T21:56:53.7143980+08:00",
+  "sha256": "02162232F3AA9E5465EA06D1B4968776375F04D6FBEAE1C9E39E5623EEDE44FA",
+  "bytes": 3066777,
+  "repository": "https://github.com/TanPowasd/galLingS",
+  "notes": "用户指定保存的音频。尚未做剪辑、响度处理或循环点编辑。"
+}

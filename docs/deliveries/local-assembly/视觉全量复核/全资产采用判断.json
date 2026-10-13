@@ -1,0 +1,872 @@
+[
+  {
+    "id": "md2p8m90",
+    "name": "CG_人鱼公主",
+    "type": "bg",
+    "src": "assets/bg/CG_人鱼公主.jpg",
+    "reference_lines": 9,
+    "first": 3267,
+    "status": "retained_draft",
+    "note": "夜间帐篷与睡衣阶段基本相符，保留草稿；贝壳项链、系带与坐床动作还需细化。"
+  },
+  {
+    "id": "yvwvivzm",
+    "name": "CG_初登场",
+    "type": "bg",
+    "src": "assets/bg/CG_初登场.jpg",
+    "reference_lines": 3,
+    "first": 17,
+    "status": "retained_draft",
+    "note": "日间海水、制服、接本子/亮相的叙事相符，保留；海岸机位与人物母图以后统一。"
+  },
+  {
+    "id": "ehbun5kh",
+    "name": "CG_原来是你",
+    "type": "bg",
+    "src": "assets/bg/CG_原来是你.jpg",
+    "reference_lines": 5,
+    "first": 825,
+    "status": "retained_draft",
+    "note": "夜间营地、制服、情绪揭示相符，保留；帐篷形制与普通营地图尚未统一。"
+  },
+  {
+    "id": "pmngp4pk",
+    "name": "CG_和解",
+    "type": "bg",
+    "src": "assets/bg/CG_和解.jpg",
+    "reference_lines": 5,
+    "first": 1814,
+    "status": "retained_draft",
+    "note": "夜间情绪告白可用，保留；周边礁石夜图原为弯月，已改用满月海岸。CG月亮尺度仍属夸张构图。"
+  },
+  {
+    "id": "yjxp4irw",
+    "name": "CG_夏日沙洲",
+    "type": "bg",
+    "src": "assets/bg/CG_夏日沙洲.jpg",
+    "reference_lines": 0,
+    "first": null,
+    "status": "withdrawn_mismatch",
+    "note": "撤出：番外要求深蓝泳装/白袜，CG却是制服且低日照。改用上午沙洲与泳装立绘，准确CG待补。"
+  },
+  {
+    "id": "w3km9isl",
+    "name": "CG_布丁",
+    "type": "bg",
+    "src": "assets/bg/CG_布丁.jpg",
+    "reference_lines": 4,
+    "first": 2348,
+    "status": "retained_draft",
+    "note": "画面是集市场景的争执情绪，和第十四话地点相符，保留；不能仅因文件名“布丁”就当作甜品特写。"
+  },
+  {
+    "id": "ez0vsxzc",
+    "name": "CG_手链",
+    "type": "bg",
+    "src": "assets/bg/CG_手链.jpg",
+    "reference_lines": 0,
+    "first": null,
+    "status": "withdrawn_mismatch",
+    "note": "撤出：第四话前后为蓝白吊带裙，CG是制服。沿用吊带裙与黄昏浅滩，需同服装手链CG。"
+  },
+  {
+    "id": "jxxr16ez",
+    "name": "CG_新家",
+    "type": "bg",
+    "src": "assets/bg/CG_新家.jpg",
+    "reference_lines": 0,
+    "first": null,
+    "status": "withdrawn_mismatch",
+    "note": "撤出：原图夕阳与清晨抵达冲突，且房屋轮廓与庭院图不同。当前沿用同一住宅庭院；揭示CG待补。"
+  },
+  {
+    "id": "sqnct5dc",
+    "name": "CG_早安",
+    "type": "bg",
+    "src": "assets/bg/CG_早安.jpg",
+    "reference_lines": 0,
+    "first": null,
+    "status": "withdrawn_mismatch",
+    "note": "撤出：正装房门口段切成制服早餐桌。沿用正装/柔和差分和门口临时取景，需准确亲吻CG。"
+  },
+  {
+    "id": "supaesch",
+    "name": "CG_海豚",
+    "type": "bg",
+    "src": "assets/bg/CG_海豚.jpg",
+    "reference_lines": 5,
+    "first": 1021,
+    "status": "retained_draft",
+    "note": "日间海豚和制服基本相符，保留；与沙洲的光照/机位不同，后续用同一海岸空间重核。"
+  },
+  {
+    "id": "wnpuk9dy",
+    "name": "CG_海风与布丁",
+    "type": "bg",
+    "src": "assets/bg/CG_海风与布丁.jpg",
+    "reference_lines": 5,
+    "first": 2932,
+    "status": "retained_draft",
+    "note": "夜间珍珠银链与季终相符，保留；月亮尺度夸张，尾巴/身体轮廓与立绘母图待统一。"
+  },
+  {
+    "id": "ij6ed2gn",
+    "name": "CG_深水区",
+    "type": "bg",
+    "src": "assets/bg/CG_深水区.jpg",
+    "reference_lines": 9,
+    "first": 1711,
+    "status": "retained_draft",
+    "note": "第十话为救援，第十四话为明确的灰色回忆，保留；回忆回到集市属于有文本依据的切换。"
+  },
+  {
+    "id": "kful0adz",
+    "name": "CG_深海之光",
+    "type": "bg",
+    "src": "assets/bg/CG_深海之光.jpg",
+    "reference_lines": 5,
+    "first": 431,
+    "status": "retained_draft",
+    "note": "蓝色水下、制服/尾巴、发光生物与段落相符，保留；人物头身/海底机位仍与普通场景有差别。"
+  },
+  {
+    "id": "akugkagj",
+    "name": "CG_烤鱿鱼",
+    "type": "bg",
+    "src": "assets/bg/CG_烤鱿鱼.jpg",
+    "reference_lines": 4,
+    "first": 149,
+    "status": "retained_draft",
+    "note": "暮色帐篷和鱿鱼串对应第一话，保留；帐篷细节与营地母图待统一。"
+  },
+  {
+    "id": "z639wmth",
+    "name": "CG_珍珠",
+    "type": "bg",
+    "src": "assets/bg/CG_珍珠.jpg",
+    "reference_lines": 0,
+    "first": null,
+    "status": "withdrawn_mismatch",
+    "note": "撤出：正文为两枚蓝珍珠银戒在绒布上，图仅突出单颗珍珠。保留工坊背景，需双戒指特写。"
+  },
+  {
+    "id": "ak1lber9",
+    "name": "CG_电话",
+    "type": "bg",
+    "src": "assets/bg/CG_电话.jpg",
+    "reference_lines": 5,
+    "first": 1506,
+    "status": "retained_draft",
+    "note": "情绪肖像和书房用途可保留草稿；抢手机动作/手机道具不准确，新旧书房布局也不一致，需后续重绘。暖窗光不足以独自判成明确夜景。"
+  },
+  {
+    "id": "xndnkx8k",
+    "name": "CG_立约",
+    "type": "bg",
+    "src": "assets/bg/CG_立约.jpg",
+    "reference_lines": 12,
+    "first": 230,
+    "status": "retained_draft",
+    "note": "日间礁石、本子与签字动作相符，保留；契约文字应后期准确排版。"
+  },
+  {
+    "id": "c6r2xcnj",
+    "name": "CG_糍粑",
+    "type": "bg",
+    "src": "assets/bg/CG_糍粑.jpg",
+    "reference_lines": 0,
+    "first": null,
+    "status": "withdrawn_mismatch",
+    "note": "撤出：第一话仍是下午，图为夕阳色，切回日景产生错误时间倒退。沿用下午背景和同服装立绘，需下午分享糍粑CG。"
+  },
+  {
+    "id": "7jj07jqh",
+    "name": "CG_翡翠之梦",
+    "type": "bg",
+    "src": "assets/bg/bg_emerald_dream_interior_night.png",
+    "reference_lines": 0,
+    "first": null,
+    "status": "withdrawn_mismatch",
+    "note": "撤出：当前仅普通夜间店铺图，不能算完成的事件CG或鉴赏解锁。沿用同一个背景ID，需站柜台张臂/尾帆CG。"
+  },
+  {
+    "id": "r0t0azno",
+    "name": "CG_诗句",
+    "type": "bg",
+    "src": "assets/bg/CG_诗句.jpg",
+    "reference_lines": 7,
+    "first": 704,
+    "status": "retained_draft",
+    "note": "夜景、制服、念诗姿态可保留；本子上的诗句不能靠伪字，需要准确文字版面。"
+  },
+  {
+    "id": "dxmnyp7j",
+    "name": "CG_集市女仆",
+    "type": "bg",
+    "src": "assets/bg/CG_集市女仆.jpg",
+    "reference_lines": 4,
+    "first": 3081,
+    "status": "retained_draft",
+    "note": "日间集市与女仆装相符，保留；人物母图/衣服细节仍需统一。"
+  },
+  {
+    "id": "j5onv73r",
+    "name": "书房_午后",
+    "type": "bg",
+    "src": "assets/bg/bg_house_study_day_v01.png",
+    "reference_lines": 90,
+    "first": 1474,
+    "status": "retained_draft",
+    "note": "沿用本地住宅书房母图；空间与夜/黄昏相连，保留。"
+  },
+  {
+    "id": "rqlji75s",
+    "name": "书房_夜",
+    "type": "bg",
+    "src": "assets/bg/bg_house_study_night_v01.png",
+    "reference_lines": 108,
+    "first": 1456,
+    "status": "retained_draft",
+    "note": "沿用同一书房夜差分；和解后日记已恢复到此，不再出现搬家前帐篷。"
+  },
+  {
+    "id": "ah4t9t6i",
+    "name": "书房_黄昏",
+    "type": "bg",
+    "src": "assets/bg/bg_house_study_sunset.png",
+    "reference_lines": 115,
+    "first": 1353,
+    "status": "retained_draft",
+    "note": "与书房日夜的门窗/书桌基本连贯，保留。"
+  },
+  {
+    "id": "zx4c9brc",
+    "name": "卧室_夜",
+    "type": "bg",
+    "src": "assets/bg/卧室_夜.jpg",
+    "reference_lines": 26,
+    "first": 2800,
+    "status": "retained_draft",
+    "note": "夜间与床边按摩段相符，保留草稿；蓝色现代房间与新住宅木质风格不同，需卧室系列统一。"
+  },
+  {
+    "id": "ooy2g3al",
+    "name": "厨房_清晨",
+    "type": "bg",
+    "src": "assets/bg/bg_house_kitchen_morning.png",
+    "reference_lines": 149,
+    "first": 2147,
+    "status": "retained_draft",
+    "note": "早餐与早晨做饭可用；已撤出房门口早安段，不把厨房代替卧室门口。"
+  },
+  {
+    "id": "9qup2gii",
+    "name": "大房子_院子",
+    "type": "bg",
+    "src": "assets/bg/bg_house_courtyard_morning_v01.png",
+    "reference_lines": 47,
+    "first": 1264,
+    "status": "retained_draft",
+    "note": "白墙蓝顶、树与秋千相符；作为新家揭示和庭院共用，避免夕阳/清晨跳变。远景海崖/烟囱CG仍需补。"
+  },
+  {
+    "id": "2c2u3g9q",
+    "name": "客厅_午后",
+    "type": "bg",
+    "src": "assets/bg/bg_house_living_day.png",
+    "reference_lines": 125,
+    "first": 1311,
+    "status": "retained_draft",
+    "note": "住宅木色、窗景和过道可用；新门口临时取景从本图取入口一侧，不冒称真实卧室门口。"
+  },
+  {
+    "id": "32lrbngt",
+    "name": "封面_ISLAND",
+    "type": "bg",
+    "src": "assets/bg/封面_ISLAND.jpg",
+    "reference_lines": 0,
+    "first": null,
+    "status": "retained_draft",
+    "note": "保留标题封面，未作为正文场景；静态封面不持续缩放。"
+  },
+  {
+    "id": "rpkibqqw",
+    "name": "小镇_清晨",
+    "type": "bg",
+    "src": "assets/bg/小镇_清晨.jpg",
+    "reference_lines": 2,
+    "first": 1262,
+    "status": "retained_draft",
+    "note": "清晨抵达小镇符合时间，保留；街道与住宅海岸地理关系还需场景母图。"
+  },
+  {
+    "id": "9hcpz81h",
+    "name": "帐篷_夜",
+    "type": "bg",
+    "src": "assets/bg/bg_beach_campsite_night_v01.png",
+    "reference_lines": 217,
+    "first": 498,
+    "status": "retained_draft",
+    "note": "现用用户夜间营地图；帐篷形制与作者黄昏/内部不同，属于明确待统一项。"
+  },
+  {
+    "id": "4g7f8iam",
+    "name": "帐篷_黄昏",
+    "type": "bg",
+    "src": "assets/bg/帐篷_黄昏.jpg",
+    "reference_lines": 43,
+    "first": 148,
+    "status": "retained_draft",
+    "note": "营地黄昏用途符合正文，保留；与新夜景不是严格同一帐篷。"
+  },
+  {
+    "id": "mcdi4nzi",
+    "name": "帐篷内_夜",
+    "type": "bg",
+    "src": "assets/bg/帐篷内_夜.jpg",
+    "reference_lines": 62,
+    "first": 893,
+    "status": "retained_draft",
+    "note": "第六话和番外夜间可用；已撤出搬家后的日记段；清晨不再展示完整星空。"
+  },
+  {
+    "id": "y417cb1b",
+    "name": "店面_下午",
+    "type": "bg",
+    "src": "assets/bg/店面_下午.jpg",
+    "reference_lines": 21,
+    "first": 1935,
+    "status": "retained_draft",
+    "note": "下午开店外景可用；外立面与内景空间/建筑样式需后续固定。"
+  },
+  {
+    "id": "02e2z9nd",
+    "name": "沙洲_上午",
+    "type": "bg",
+    "src": "assets/bg/沙洲_上午.jpg",
+    "reference_lines": 62,
+    "first": 917,
+    "status": "retained_draft",
+    "note": "上午沙洲可用；恢复泳装段使用本图，保留。"
+  },
+  {
+    "id": "tafi49ag",
+    "name": "沙洲_午后",
+    "type": "bg",
+    "src": "assets/bg/沙洲_午后.jpg",
+    "reference_lines": 163,
+    "first": 946,
+    "status": "retained_draft",
+    "note": "午后偏暖图可用草稿；与上午月牙沙洲地形/机位关系不够明确，需同一沙洲母图。"
+  },
+  {
+    "id": "g0htlsw4",
+    "name": "沙洲_黄昏",
+    "type": "bg",
+    "src": "assets/bg/沙洲_黄昏.jpg",
+    "reference_lines": 103,
+    "first": 1114,
+    "status": "retained_draft",
+    "note": "黄昏太阳位置明确，保留；同一沙洲形状需与上午对齐。"
+  },
+  {
+    "id": "qla5b3w0",
+    "name": "浅滩_上午",
+    "type": "bg",
+    "src": "assets/bg/bg_shallows_day_v01.png",
+    "reference_lines": 43,
+    "first": 160,
+    "status": "retained_draft",
+    "note": "沿用用户主海岸日图，上午日常可用；需要精确上午光线时再做差分。"
+  },
+  {
+    "id": "c5saufd0",
+    "name": "浅滩_午后",
+    "type": "bg",
+    "src": "assets/bg/bg_shallows_day_v01.png",
+    "reference_lines": 63,
+    "first": 72,
+    "status": "retained_draft",
+    "note": "与正午/上午共用海岸日图；第一话下午不会插入夕阳CG。"
+  },
+  {
+    "id": "9ow2x5w5",
+    "name": "浅滩_夜",
+    "type": "bg",
+    "src": "assets/bg/bg_shallows_night_v01.png",
+    "reference_lines": 267,
+    "first": 655,
+    "status": "retained_draft",
+    "note": "海岸夜景母图；现在也供礁石夜段共用，以免同一夜换月相。"
+  },
+  {
+    "id": "8eo1nf7q",
+    "name": "浅滩_正午",
+    "type": "bg",
+    "src": "assets/bg/bg_shallows_day_v01.png",
+    "reference_lines": 69,
+    "first": 0,
+    "status": "retained_draft",
+    "note": "正文明确盛夏正午，保留；开场按钮直接从第一话进入。"
+  },
+  {
+    "id": "ohwph2ga",
+    "name": "浅滩_清晨",
+    "type": "bg",
+    "src": "assets/bg/浅滩_清晨.jpg",
+    "reference_lines": 60,
+    "first": 337,
+    "status": "retained_draft",
+    "note": "原清晨海岸时段可用，保留；与用户日/夜主机位不同，晨景差分仍需补。"
+  },
+  {
+    "id": "mzy4oec6",
+    "name": "浅滩_黄昏",
+    "type": "bg",
+    "src": "assets/bg/bg_shallows_sunset_v01.png",
+    "reference_lines": 83,
+    "first": 130,
+    "status": "retained_draft",
+    "note": "黄昏段可用；导航不再播放它。"
+  },
+  {
+    "id": "2mbzwwg2",
+    "name": "海面_黄昏",
+    "type": "bg",
+    "src": "assets/bg/海面_黄昏.jpg",
+    "reference_lines": 17,
+    "first": 481,
+    "status": "retained_draft",
+    "note": "第三话上浮夕阳相符，保留。"
+  },
+  {
+    "id": "e6cby6b5",
+    "name": "深水区_水下",
+    "type": "bg",
+    "src": "assets/bg/深水区_水下.jpg",
+    "reference_lines": 26,
+    "first": 384,
+    "status": "retained_draft",
+    "note": "蓝色水下场景可用；与发光海底属于不同深度，非错误时段切换。"
+  },
+  {
+    "id": "fxqcg1oj",
+    "name": "深海_珊瑚礁",
+    "type": "bg",
+    "src": "assets/bg/bg_deepsea_coral_glow_v01.png",
+    "reference_lines": 84,
+    "first": 392,
+    "status": "retained_draft",
+    "note": "用户蓝色发光珊瑚图可用；普通水下与CG仍需要同一生态/空间参考。"
+  },
+  {
+    "id": "9vjefxje",
+    "name": "礁石_上午",
+    "type": "bg",
+    "src": "assets/bg/礁石_上午.jpg",
+    "reference_lines": 71,
+    "first": 186,
+    "status": "retained_draft",
+    "note": "上午谈话/立约符合时段，保留；近景海岸布局待统一。"
+  },
+  {
+    "id": "acqkjhf8",
+    "name": "礁石_夜",
+    "type": "bg",
+    "src": "assets/bg/bg_shallows_night_v01.png",
+    "reference_lines": 133,
+    "first": 321,
+    "status": "retained_draft",
+    "note": "原弯月图已不用，当前使用本地主海岸满月夜景；精确同地点礁石近景仍缺。"
+  },
+  {
+    "id": "uhhb6qjn",
+    "name": "礁石_黄昏",
+    "type": "bg",
+    "src": "assets/bg/礁石_黄昏.jpg",
+    "reference_lines": 52,
+    "first": 269,
+    "status": "retained_draft",
+    "note": "夕阳时段正确，保留；与主海岸的朝向/地貌需参考统一。"
+  },
+  {
+    "id": "lvjql900",
+    "name": "翡翠之梦_二楼夜",
+    "type": "bg",
+    "src": "assets/bg/bg_emerald_dream_upstairs_night_v01.png",
+    "reference_lines": 115,
+    "first": 2251,
+    "status": "retained_draft",
+    "note": "打烊后窗口/月光和灯火可用；楼梯位置与楼下基本相连，保留。"
+  },
+  {
+    "id": "r1teranv",
+    "name": "翡翠之梦_厨房",
+    "type": "bg",
+    "src": "assets/bg/bg_emerald_dream_kitchen_day.png",
+    "reference_lines": 82,
+    "first": 1956,
+    "status": "retained_draft",
+    "note": "昼间后厨可用；早晨/下午共用，不暗自变成深夜。"
+  },
+  {
+    "id": "lr4hgspz",
+    "name": "翡翠之梦_店内",
+    "type": "bg",
+    "src": "assets/bg/bg_emerald_dream_interior_day_v01.png",
+    "reference_lines": 111,
+    "first": 1987,
+    "status": "retained_draft",
+    "note": "营业日景可用；店内谈转正不再误切集市。未开灯的午后另取临时柜台视角。"
+  },
+  {
+    "id": "179f3n2w",
+    "name": "银匠铺",
+    "type": "bg",
+    "src": "assets/bg/银匠铺.jpg",
+    "reference_lines": 53,
+    "first": 2186,
+    "status": "retained_draft",
+    "note": "工坊谈话和日光可用；双戒指展示暂保留本场景，准确特写待补。"
+  },
+  {
+    "id": "sr2lo203",
+    "name": "集市_上午",
+    "type": "bg",
+    "src": "assets/bg/bg_town_market_day_v01.png",
+    "reference_lines": 221,
+    "first": 511,
+    "status": "retained_draft",
+    "note": "采购日景可用；只在实际采购/市场段出现。"
+  },
+  {
+    "id": "hihrcqx5",
+    "name": "集市_珍珠摊",
+    "type": "bg",
+    "src": "assets/bg/集市_珍珠摊.jpg",
+    "reference_lines": 24,
+    "first": 2171,
+    "status": "retained_draft",
+    "note": "购珍珠特写场景可用，保留；市场与小巷空间仍需母图对齐。"
+  },
+  {
+    "id": "p8guxpyy",
+    "name": "集市_饰品巷",
+    "type": "bg",
+    "src": "assets/bg/集市_饰品巷.jpg",
+    "reference_lines": 87,
+    "first": 530,
+    "status": "retained_draft",
+    "note": "饰品购买用途可用，保留。"
+  },
+  {
+    "id": "9yvthx8h",
+    "name": "餐厅_夜",
+    "type": "bg",
+    "src": "assets/bg/bg_house_dining_night.png",
+    "reference_lines": 96,
+    "first": 1399,
+    "status": "retained_draft",
+    "note": "晚饭用途可用；角色昼夜层次自然，保留。"
+  },
+  {
+    "id": "xfg3qcn2",
+    "name": "鲸鱼小姐",
+    "type": "ch",
+    "src": "assets/ch/鲸鱼小姐.webp",
+    "reference_lines": 534,
+    "first": 33,
+    "status": "retained_draft",
+    "note": "制服组表情可辨、透明背景有效；头身与脸型有细微差异，仍需固定人物母图。 已核对实际舞台取景；站姿/姿态差分不足不能算对应动作CG。"
+  },
+  {
+    "id": "6i0w6nq5",
+    "name": "鲸鱼小姐_吊带裙",
+    "type": "ch",
+    "src": "assets/ch/鲸鱼小姐_吊带裙.webp",
+    "reference_lines": 27,
+    "first": 514,
+    "status": "retained_draft",
+    "note": "蓝白吊带裙组可用，手链段已保留同服装；不能切回制服CG。 已核对实际舞台取景；站姿/姿态差分不足不能算对应动作CG。"
+  },
+  {
+    "id": "6xha9feh",
+    "name": "鲸鱼小姐_吊带裙害羞",
+    "type": "ch",
+    "src": "assets/ch/鲸鱼小姐_吊带裙害羞.webp",
+    "reference_lines": 47,
+    "first": 538,
+    "status": "retained_draft",
+    "note": "蓝白吊带裙组可用，手链段已保留同服装；不能切回制服CG。 已核对实际舞台取景；站姿/姿态差分不足不能算对应动作CG。"
+  },
+  {
+    "id": "mp0q0cx2",
+    "name": "鲸鱼小姐_吊带裙得意",
+    "type": "ch",
+    "src": "assets/ch/鲸鱼小姐_吊带裙得意.webp",
+    "reference_lines": 28,
+    "first": 519,
+    "status": "retained_draft",
+    "note": "蓝白吊带裙组可用，手链段已保留同服装；不能切回制服CG。 已核对实际舞台取景；站姿/姿态差分不足不能算对应动作CG。"
+  },
+  {
+    "id": "vjwh9nmj",
+    "name": "鲸鱼小姐_吊带裙生气",
+    "type": "ch",
+    "src": "assets/ch/鲸鱼小姐_吊带裙生气.webp",
+    "reference_lines": 13,
+    "first": 595,
+    "status": "retained_draft",
+    "note": "蓝白吊带裙组可用，手链段已保留同服装；不能切回制服CG。 已核对实际舞台取景；站姿/姿态差分不足不能算对应动作CG。"
+  },
+  {
+    "id": "cbx03q1l",
+    "name": "鲸鱼小姐_坏笑",
+    "type": "ch",
+    "src": "assets/ch/鲸鱼小姐_坏笑.webp",
+    "reference_lines": 107,
+    "first": 27,
+    "status": "retained_draft",
+    "note": "制服组表情可辨、透明背景有效；头身与脸型有细微差异，仍需固定人物母图。 已核对实际舞台取景；站姿/姿态差分不足不能算对应动作CG。"
+  },
+  {
+    "id": "fz3yt5k8",
+    "name": "鲸鱼小姐_女仆装",
+    "type": "ch",
+    "src": "assets/ch/鲸鱼小姐_女仆装.webp",
+    "reference_lines": 27,
+    "first": 3058,
+    "status": "retained_draft",
+    "note": "女仆组可用，购物篮姿态符合市场用途；与普通服装按剧情分别使用。 已核对实际舞台取景；站姿/姿态差分不足不能算对应动作CG。"
+  },
+  {
+    "id": "m6hj48ex",
+    "name": "鲸鱼小姐_女仆装害羞",
+    "type": "ch",
+    "src": "assets/ch/鲸鱼小姐_女仆装害羞.webp",
+    "reference_lines": 33,
+    "first": 3068,
+    "status": "retained_draft",
+    "note": "女仆组可用，购物篮姿态符合市场用途；与普通服装按剧情分别使用。 已核对实际舞台取景；站姿/姿态差分不足不能算对应动作CG。"
+  },
+  {
+    "id": "ff7robzo",
+    "name": "鲸鱼小姐_女仆装得意",
+    "type": "ch",
+    "src": "assets/ch/鲸鱼小姐_女仆装得意.webp",
+    "reference_lines": 6,
+    "first": 3065,
+    "status": "retained_draft",
+    "note": "女仆组可用，购物篮姿态符合市场用途；与普通服装按剧情分别使用。 已核对实际舞台取景；站姿/姿态差分不足不能算对应动作CG。"
+  },
+  {
+    "id": "x013srmu",
+    "name": "鲸鱼小姐_害羞",
+    "type": "ch",
+    "src": "assets/ch/鲸鱼小姐_害羞.webp",
+    "reference_lines": 292,
+    "first": 57,
+    "status": "retained_draft",
+    "note": "制服组表情可辨、透明背景有效；头身与脸型有细微差异，仍需固定人物母图。 已核对实际舞台取景；站姿/姿态差分不足不能算对应动作CG。"
+  },
+  {
+    "id": "2qshq03j",
+    "name": "鲸鱼小姐_得意",
+    "type": "ch",
+    "src": "assets/ch/鲸鱼小姐_得意.webp",
+    "reference_lines": 357,
+    "first": 42,
+    "status": "retained_draft",
+    "note": "制服组表情可辨、透明背景有效；头身与脸型有细微差异，仍需固定人物母图。 已核对实际舞台取景；站姿/姿态差分不足不能算对应动作CG。"
+  },
+  {
+    "id": "z869j1e3",
+    "name": "鲸鱼小姐_慌乱",
+    "type": "ch",
+    "src": "assets/ch/鲸鱼小姐_慌乱.webp",
+    "reference_lines": 137,
+    "first": 63,
+    "status": "retained_draft",
+    "note": "制服组表情可辨、透明背景有效；头身与脸型有细微差异，仍需固定人物母图。 已核对实际舞台取景；站姿/姿态差分不足不能算对应动作CG。"
+  },
+  {
+    "id": "hfcyjlxm",
+    "name": "鲸鱼小姐_抱本子",
+    "type": "ch",
+    "src": "assets/ch/鲸鱼小姐_抱本子.webp",
+    "reference_lines": 46,
+    "first": 242,
+    "status": "retained_draft",
+    "note": "制服组表情可辨、透明背景有效；头身与脸型有细微差异，仍需固定人物母图。 已核对实际舞台取景；站姿/姿态差分不足不能算对应动作CG。"
+  },
+  {
+    "id": "wrwcdezj",
+    "name": "鲸鱼小姐_柔和",
+    "type": "ch",
+    "src": "assets/ch/鲸鱼小姐_柔和.webp",
+    "reference_lines": 399,
+    "first": 82,
+    "status": "retained_draft",
+    "note": "制服组表情可辨、透明背景有效；头身与脸型有细微差异，仍需固定人物母图。 已核对实际舞台取景；站姿/姿态差分不足不能算对应动作CG。"
+  },
+  {
+    "id": "tp44t1rb",
+    "name": "鲸鱼小姐_正装",
+    "type": "ch",
+    "src": "assets/ch/鲸鱼小姐_正装.webp",
+    "reference_lines": 29,
+    "first": 2686,
+    "status": "retained_draft",
+    "note": "正装组可用，早安保持同一套服装；柔和差分已用于亲密段。 已核对实际舞台取景；站姿/姿态差分不足不能算对应动作CG。"
+  },
+  {
+    "id": "eqidiyyr",
+    "name": "鲸鱼小姐_正装柔和",
+    "type": "ch",
+    "src": "assets/ch/鲸鱼小姐_正装柔和.webp",
+    "reference_lines": 5,
+    "first": 2693,
+    "status": "retained_draft",
+    "note": "正装组可用，早安保持同一套服装；柔和差分已用于亲密段。 已核对实际舞台取景；站姿/姿态差分不足不能算对应动作CG。"
+  },
+  {
+    "id": "nvgbi1x6",
+    "name": "鲸鱼小姐_泳装",
+    "type": "ch",
+    "src": "assets/ch/鲸鱼小姐_泳装.webp",
+    "reference_lines": 8,
+    "first": 3037,
+    "status": "retained_draft",
+    "note": "泳装/白袜阶段可用，已替换错装CG；滑落袜口等动作仍缺细化。 已核对实际舞台取景；站姿/姿态差分不足不能算对应动作CG。"
+  },
+  {
+    "id": "jtp36q4e",
+    "name": "鲸鱼小姐_泳装害羞",
+    "type": "ch",
+    "src": "assets/ch/鲸鱼小姐_泳装害羞.webp",
+    "reference_lines": 16,
+    "first": 3027,
+    "status": "retained_draft",
+    "note": "泳装/白袜阶段可用，已替换错装CG；滑落袜口等动作仍缺细化。 已核对实际舞台取景；站姿/姿态差分不足不能算对应动作CG。"
+  },
+  {
+    "id": "ylbq6xyk",
+    "name": "鲸鱼小姐_潜水",
+    "type": "ch",
+    "src": "assets/ch/鲸鱼小姐_潜水.webp",
+    "reference_lines": 79,
+    "first": 396,
+    "status": "retained_draft",
+    "note": "水下用途可用；人鱼式下身与陆地双腿/侧尾的形态差异需作者确认，暂保留水下专用。 已核对实际舞台取景；站姿/姿态差分不足不能算对应动作CG。"
+  },
+  {
+    "id": "88v1dull",
+    "name": "鲸鱼小姐_生气",
+    "type": "ch",
+    "src": "assets/ch/鲸鱼小姐_生气.webp",
+    "reference_lines": 303,
+    "first": 12,
+    "status": "retained_draft",
+    "note": "制服组表情可辨、透明背景有效；头身与脸型有细微差异，仍需固定人物母图。 已核对实际舞台取景；站姿/姿态差分不足不能算对应动作CG。"
+  },
+  {
+    "id": "52119ew2",
+    "name": "鲸鱼小姐_睡衣项链",
+    "type": "ch",
+    "src": "assets/ch/鲸鱼小姐_睡衣项链.webp",
+    "reference_lines": 61,
+    "first": 3219,
+    "status": "retained_draft",
+    "note": "睡衣/贝壳项链阶段可用；抱枕站姿不能精确表现蹲着验贝壳，需要动作差分。 已核对实际舞台取景；站姿/姿态差分不足不能算对应动作CG。"
+  },
+  {
+    "id": "2z0mfu7o",
+    "name": "鲸鱼小姐_睡袍",
+    "type": "ch",
+    "src": "assets/ch/鲸鱼小姐_睡袍.webp",
+    "reference_lines": 60,
+    "first": 2536,
+    "status": "retained_draft",
+    "note": "图实际偏围裙/厨房服，当前做饭场景可用；不能凭名称把它当卧室浴袍。 已核对实际舞台取景；站姿/姿态差分不足不能算对应动作CG。"
+  },
+  {
+    "id": "368tmc5i",
+    "name": "鲸鱼小姐_睡袍害羞",
+    "type": "ch",
+    "src": "assets/ch/鲸鱼小姐_睡袍害羞.webp",
+    "reference_lines": 15,
+    "first": 2557,
+    "status": "retained_draft",
+    "note": "图实际偏围裙/厨房服，当前做饭场景可用；不能凭名称把它当卧室浴袍。 已核对实际舞台取景；站姿/姿态差分不足不能算对应动作CG。"
+  },
+  {
+    "id": "xtwug3dy",
+    "name": "鲸鱼小姐_睡袍慌乱",
+    "type": "ch",
+    "src": "assets/ch/鲸鱼小姐_睡袍慌乱.webp",
+    "reference_lines": 8,
+    "first": 2559,
+    "status": "retained_draft",
+    "note": "图实际偏围裙/厨房服，当前做饭场景可用；不能凭名称把它当卧室浴袍。 已核对实际舞台取景；站姿/姿态差分不足不能算对应动作CG。"
+  },
+  {
+    "id": "t4lmlnr9",
+    "name": "鲸鱼小姐_长裙",
+    "type": "ch",
+    "src": "assets/ch/鲸鱼小姐_长裙.webp",
+    "reference_lines": 29,
+    "first": 3174,
+    "status": "retained_draft",
+    "note": "制服组表情可辨、透明背景有效；头身与脸型有细微差异，仍需固定人物母图。 已核对实际舞台取景；站姿/姿态差分不足不能算对应动作CG。"
+  },
+  {
+    "id": "7fvck9ya",
+    "name": "鲸鱼小姐_长裙项链",
+    "type": "ch",
+    "src": "assets/ch/鲸鱼小姐_长裙项链.webp",
+    "reference_lines": 14,
+    "first": 3203,
+    "status": "retained_draft",
+    "note": "制服组表情可辨、透明背景有效；头身与脸型有细微差异，仍需固定人物母图。 已核对实际舞台取景；站姿/姿态差分不足不能算对应动作CG。"
+  },
+  {
+    "id": "bg_shop_interior_night",
+    "name": "翡翠之梦_店内夜",
+    "type": "bg",
+    "src": "assets/bg/bg_emerald_dream_interior_night.png",
+    "reference_lines": 14,
+    "first": 2014,
+    "status": "retained_draft",
+    "note": "打烊夜景用途正确，保留；假CG切换已经合并，正式动作CG仍缺。"
+  },
+  {
+    "id": "bg_house_door_morning_draft",
+    "name": "住宅_房门口清晨_临时取景",
+    "type": "bg",
+    "src": "assets/bg/bg_house_living_day.png",
+    "reference_lines": 36,
+    "first": 2684,
+    "status": "temporary_framing",
+    "note": "借客厅入口侧临时取景，时间/服装保持；不是完成的卧室门口新图。"
+  },
+  {
+    "id": "bg_tent_morning_corner_draft",
+    "name": "帐篷内_清晨_帐角临时取景",
+    "type": "bg",
+    "src": "assets/bg/帐篷内_夜.jpg",
+    "reference_lines": 15,
+    "first": 3276,
+    "status": "temporary_framing",
+    "note": "借床垫、贝壳和地面近景避开灯/夜空；放大后清晰度较弱，必须补真实清晨内景。"
+  },
+  {
+    "id": "bg_shop_afternoon_counter_draft",
+    "name": "翡翠之梦_午后未开灯_柜台临时取景",
+    "type": "bg",
+    "src": "assets/bg/bg_emerald_dream_interior_day_v01.png",
+    "reference_lines": 71,
+    "first": 2429,
+    "status": "temporary_framing",
+    "note": "保留日光、避免明显点亮的吊灯；准确的未开灯同机位差分仍需补。"
+  }
+]

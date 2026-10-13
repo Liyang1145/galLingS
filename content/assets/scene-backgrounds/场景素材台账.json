@@ -1,0 +1,835 @@
+{
+  "scope": "42项主背景+2项完整时段补齐；不制作角色/人物CG/封面；仅本地素材，不改游戏",
+  "requested_model": "gpt-image-2.5-flare",
+  "model_route_verified": false,
+  "items": {
+    "B02": {
+      "name": "浅滩日景",
+      "status": "existing_web_candidate",
+      "source": "content/assets\\backgrounds\\bg_shallows_day_v01.png",
+      "path": "content/assets/scene-backgrounds\\originals\\B02.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "f55b3d5ff30aa9f1484c65a1d240ab47205b746129b0d2d9fff4e6a34245ebe1",
+      "bytes": 2571881,
+      "visual_review": "reviewed",
+      "review_note": "已检查时段、空舞台、主要物件与参考场景；保留为可用于后续组装的背景。",
+      "game_integrated": false
+    },
+    "B28": {
+      "name": "住宅书房午后",
+      "status": "existing_web_candidate",
+      "source": "content/assets\\backgrounds\\bg_house_study_day_v01.png",
+      "path": "content/assets/scene-backgrounds\\originals\\B28.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "2240ec5eaac2ead33eb92f85b71cabc70f2c4560df4a47c09e679996865eb354",
+      "bytes": 2600770,
+      "visual_review": "reviewed",
+      "review_note": "住宅书房母图，昼暮夜参考同一空间。",
+      "game_integrated": false
+    },
+    "B38": {
+      "name": "翡翠之梦店内日景",
+      "status": "existing_web_candidate",
+      "source": "content/assets\\backgrounds\\bg_emerald_dream_interior_day_v01.png",
+      "path": "content/assets/scene-backgrounds\\originals\\B38.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "20482ea03761e6631c451f1a4198345e5ad80b0219d747852962fe7abe64e05e",
+      "bytes": 2541364,
+      "visual_review": "reviewed",
+      "review_note": "甜品店内景母图；同构图灯光差分和店外建立镜头。",
+      "game_integrated": false
+    },
+    "B03": {
+      "name": "浅滩黄昏",
+      "status": "existing_web_candidate",
+      "source": "content/assets\\backgrounds\\bg_shallows_sunset_v01.png",
+      "path": "content/assets/scene-backgrounds\\originals\\B03.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "3a29e4902f9ab0b9b889f2a74cdff67143a3d5a981bdbaae16b9e2be2febf78a",
+      "bytes": 2513764,
+      "visual_review": "reviewed",
+      "review_note": "已检查时段、空舞台、主要物件与参考场景；保留为可用于后续组装的背景。",
+      "game_integrated": false
+    },
+    "B04": {
+      "name": "浅滩月夜",
+      "status": "existing_web_candidate",
+      "source": "content/assets\\backgrounds\\bg_shallows_night_v01.png",
+      "path": "content/assets/scene-backgrounds\\originals\\B04.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "68d0914afe85b4ef5246bb0be89ef912d1b76b41521324b2080af4e280fc6680",
+      "bytes": 2512756,
+      "visual_review": "reviewed",
+      "review_note": "已检查时段、空舞台、主要物件与参考场景；保留为可用于后续组装的背景。",
+      "game_integrated": false
+    },
+    "B30": {
+      "name": "住宅书房夜",
+      "status": "existing_web_candidate",
+      "source": "content/assets\\backgrounds\\bg_house_study_night_v01.png",
+      "path": "content/assets/scene-backgrounds\\originals\\B30.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "c632cf89ba4f6dcfa2cbe8f3ef86d0bc2f5a4777a020e217990433e7ad6e7a2e",
+      "bytes": 2245817,
+      "visual_review": "reviewed",
+      "review_note": "已检查时段、空舞台、主要物件与参考场景；保留为可用于后续组装的背景。",
+      "game_integrated": false
+    },
+    "B21": {
+      "name": "集市街道夏日",
+      "status": "existing_web_candidate",
+      "source": "content/assets\\backgrounds\\bg_town_market_day_v01.png",
+      "path": "content/assets/scene-backgrounds\\originals\\B21.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "0098488b6e427f582ad0005bfa7e46eb6beddf79e715efa9bdfcf3ba5916a91e",
+      "bytes": 3128040,
+      "visual_review": "reviewed",
+      "review_note": "已检查时段、空舞台、主要物件与参考场景；保留为可用于后续组装的背景。",
+      "game_integrated": false
+    },
+    "B26": {
+      "name": "住宅院子清晨",
+      "status": "existing_web_candidate",
+      "source": "content/assets\\backgrounds\\bg_house_courtyard_morning_v01.png",
+      "path": "content/assets/scene-backgrounds\\originals\\B26.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "29079ec6cdce6c2eff0d482f75335e49b847d1d967e5b59e7cb7df6bb8636d0f",
+      "bytes": 3291464,
+      "visual_review": "reviewed",
+      "review_note": "住宅外观参考母图；人物揭示CG以后按同一院树秋千制作。",
+      "game_integrated": false
+    },
+    "B42": {
+      "name": "翡翠之梦二楼夜",
+      "status": "existing_web_candidate",
+      "source": "content/assets\\backgrounds\\bg_emerald_dream_upstairs_night_v01.png",
+      "path": "content/assets/scene-backgrounds\\originals\\B42.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "66f34e70610edc1bb9c7b33d0f5ab8c444a0cbddedef13057a8529cad602500e",
+      "bytes": 2172491,
+      "visual_review": "reviewed",
+      "review_note": "已检查时段、空舞台、主要物件与参考场景；保留为可用于后续组装的背景。",
+      "game_integrated": false
+    },
+    "B13": {
+      "name": "深海发光珊瑚",
+      "status": "existing_web_candidate",
+      "source": "content/assets\\backgrounds\\bg_deepsea_coral_glow_v01.png",
+      "path": "content/assets/scene-backgrounds\\originals\\B13.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "0b0f9e9e42e1cad47b48930765d862179c63adf1e9d897644275e07b2b76f1bb",
+      "bytes": 2438796,
+      "visual_review": "reviewed",
+      "review_note": "已有发光珊瑚；与危险暗水分开，中心留角色空间。",
+      "game_integrated": false
+    },
+    "B29": {
+      "name": "住宅书房黄昏",
+      "status": "existing_web_candidate",
+      "source": "content/assets\\backgrounds\\bg_house_study_sunset.png",
+      "path": "content/assets/scene-backgrounds\\originals\\B29.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "72c06f6ad8881f0d10cc1c414e5673a037d8b905150059ee4aaca3934ff45349",
+      "bytes": 2679472,
+      "visual_review": "reviewed",
+      "review_note": "已检查时段、空舞台、主要物件与参考场景；保留为可用于后续组装的背景。",
+      "game_integrated": false
+    },
+    "B39": {
+      "name": "翡翠之梦店内打烊夜",
+      "status": "existing_web_candidate",
+      "source": "content/assets\\backgrounds\\bg_emerald_dream_interior_night.png",
+      "path": "content/assets/scene-backgrounds\\originals\\B39.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "6eacf5998ecdefe421cc59be0c314699cba105f8abc314aa6014cba992133b8d",
+      "bytes": 2719782,
+      "visual_review": "reviewed",
+      "review_note": "已检查时段、空舞台、主要物件与参考场景；保留为可用于后续组装的背景。",
+      "game_integrated": false
+    },
+    "B41": {
+      "name": "翡翠之梦后厨日景",
+      "status": "existing_web_candidate",
+      "source": "content/assets\\backgrounds\\bg_emerald_dream_kitchen_day.png",
+      "path": "content/assets/scene-backgrounds\\originals\\B41.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "7503e5e700276702b5c582f1fd8a2da5eeb70480f40731ec7a27749f134eb26e",
+      "bytes": 2934733,
+      "visual_review": "reviewed",
+      "review_note": "店铺不锈钢商业后厨，与住宅木制家厨分开。",
+      "game_integrated": false
+    },
+    "B27": {
+      "name": "住宅客厅午后",
+      "status": "existing_web_candidate",
+      "source": "content/assets\\backgrounds\\bg_house_living_day.png",
+      "path": "content/assets/scene-backgrounds\\originals\\B27.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "9e396f1f3279c4b32ab990727854f19f840662317d0a18dc58abd5bc9b7eeb75",
+      "bytes": 3109193,
+      "visual_review": "reviewed",
+      "review_note": "已检查时段、空舞台、主要物件与参考场景；保留为可用于后续组装的背景。",
+      "game_integrated": false
+    },
+    "B31": {
+      "name": "住宅厨房清晨",
+      "status": "existing_web_candidate",
+      "source": "content/assets\\backgrounds\\bg_house_kitchen_morning.png",
+      "path": "content/assets/scene-backgrounds\\originals\\B31.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "032d462b773d252e9e838560d91c725242481a9eede6ea306e65b37c6b9350f6",
+      "bytes": 3050218,
+      "visual_review": "reviewed",
+      "review_note": "已检查时段、空舞台、主要物件与参考场景；保留为可用于后续组装的背景。",
+      "game_integrated": false
+    },
+    "B34": {
+      "name": "住宅餐厅夜",
+      "status": "existing_web_candidate",
+      "source": "content/assets\\backgrounds\\bg_house_dining_night.png",
+      "path": "content/assets/scene-backgrounds\\originals\\B34.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "5a4b2b416b9584098e451c2de662d844fb0045a3b477eda577b8abde04ff8857",
+      "bytes": 2784920,
+      "visual_review": "reviewed",
+      "review_note": "已检查时段、空舞台、主要物件与参考场景；保留为可用于后续组装的背景。",
+      "game_integrated": false
+    },
+    "B19": {
+      "name": "帐篷内清晨",
+      "status": "user_web_reference_adopted",
+      "source": "C:\\Users\\袁力阳\\AppData\\Local\\Temp\\codex-clipboard-1e7a4a2d-de40-4912-9205-9f7c9d6caa3c.png",
+      "path": "content/assets/scene-backgrounds\\originals\\B19.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "23868a22caaa143237d7f9e47f898c30ed9b7fe0d0b1ce52046884a413c320e0",
+      "bytes": 2659158,
+      "visual_review": "reviewed",
+      "review_note": "采用用户本轮网页图为帐篷内部母图；与角色图无关。",
+      "game_integrated": false
+    },
+    "B01": {
+      "name": "浅滩清晨",
+      "status": "generated",
+      "references": [
+        "B02"
+      ],
+      "prompt_file": "content/assets/scene-backgrounds\\prompts\\B01.txt",
+      "path": "content/assets/scene-backgrounds\\originals\\B01.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "79fffe8ef3a354a713a84ba894456a15e9fe03fb78d8a6a013dccf13e0fdf4e0",
+      "bytes": 2457202,
+      "elapsed_seconds": 37.0,
+      "visual_review": "reviewed",
+      "generation_record": "content/assets/scene-backgrounds\\originals\\B01.generation.json",
+      "backend_reported_model": null,
+      "review_note": "与日景同机位，朝光变化较轻；可作晨间草稿，后续强时间演出再调冷朝光。",
+      "game_integrated": false
+    },
+    "B05": {
+      "name": "礁石谈话日景",
+      "status": "generated",
+      "references": [
+        "B02"
+      ],
+      "prompt_file": "content/assets/scene-backgrounds\\prompts\\B05.txt",
+      "path": "content/assets/scene-backgrounds\\originals\\B05.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "81635617f9f3997ab9dfb09617612252f82912150b78212a62ee285b2bb1d60a",
+      "bytes": 2920781,
+      "elapsed_seconds": 41.7,
+      "visual_review": "reviewed",
+      "generation_record": "content/assets/scene-backgrounds\\originals\\B05.generation.json",
+      "backend_reported_model": null,
+      "review_note": "同一海岸近机位，可坐礁石与空舞台；日暮夜空间匹配。",
+      "game_integrated": false
+    },
+    "B06": {
+      "name": "礁石谈话黄昏",
+      "status": "generated",
+      "references": [
+        "B05"
+      ],
+      "prompt_file": "content/assets/scene-backgrounds\\prompts\\B06.txt",
+      "path": "content/assets/scene-backgrounds\\originals\\B06.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "3b08c05cebe34e889eaef3c753bb91f10f2810a81ceb4c373e229138265548a8",
+      "bytes": 2900702,
+      "elapsed_seconds": 28.5,
+      "visual_review": "reviewed",
+      "generation_record": "content/assets/scene-backgrounds\\originals\\B06.generation.json",
+      "backend_reported_model": null,
+      "review_note": "已检查时段、空舞台、主要物件与参考场景；保留为可用于后续组装的背景。",
+      "game_integrated": false
+    },
+    "B08": {
+      "name": "月牙沙洲上午",
+      "status": "generated",
+      "references": [
+        "B02"
+      ],
+      "prompt_file": "content/assets/scene-backgrounds\\prompts\\B08.txt",
+      "path": "content/assets/scene-backgrounds\\originals\\B08.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "966325059f64a2113be94e7cb20e7eca8c5a85d19106bc2919bd459660d3e891",
+      "bytes": 2520907,
+      "elapsed_seconds": 51.7,
+      "visual_review": "reviewed",
+      "generation_record": "content/assets/scene-backgrounds\\originals\\B08.generation.json",
+      "backend_reported_model": null,
+      "review_note": "已检查时段、空舞台、主要物件与参考场景；保留为可用于后续组装的背景。",
+      "game_integrated": false
+    },
+    "B07": {
+      "name": "礁石救援/和解夜景",
+      "status": "generated",
+      "references": [
+        "B05"
+      ],
+      "prompt_file": "content/assets/scene-backgrounds\\prompts\\B07.txt",
+      "path": "content/assets/scene-backgrounds\\originals\\B07.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "abc97f03335606c79add3a6b24f1b4d7dc0c43316f3720ea80e882e821d37742",
+      "bytes": 3029819,
+      "elapsed_seconds": 32.4,
+      "visual_review": "reviewed",
+      "generation_record": "content/assets/scene-backgrounds\\originals\\B07.generation.json",
+      "backend_reported_model": null,
+      "review_note": "已检查时段、空舞台、主要物件与参考场景；保留为可用于后续组装的背景。",
+      "game_integrated": false
+    },
+    "B09": {
+      "name": "沙洲午后阴凉",
+      "status": "generated",
+      "references": [
+        "B08"
+      ],
+      "prompt_file": "content/assets/scene-backgrounds\\prompts\\B09.txt",
+      "path": "content/assets/scene-backgrounds\\originals\\B09.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "b0bf4313e2f5b8221bb2b9a3582684277423cb18e6bbe6020e28fa67f3e8e37d",
+      "bytes": 2587058,
+      "elapsed_seconds": 49.5,
+      "visual_review": "reviewed",
+      "generation_record": "content/assets/scene-backgrounds\\originals\\B09.generation.json",
+      "backend_reported_model": null,
+      "review_note": "下午仍为日景，阴凉集中在岩石近处。",
+      "game_integrated": false
+    },
+    "B10": {
+      "name": "沙洲黄昏",
+      "status": "generated",
+      "references": [
+        "B08"
+      ],
+      "prompt_file": "content/assets/scene-backgrounds\\prompts\\B10.txt",
+      "path": "content/assets/scene-backgrounds\\originals\\B10.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "225fd266195557a59c6e7a4537607b8196fa262f3e9554000b8b185fa604c7b7",
+      "bytes": 2758456,
+      "elapsed_seconds": 39.0,
+      "visual_review": "reviewed",
+      "generation_record": "content/assets/scene-backgrounds\\originals\\B10.generation.json",
+      "backend_reported_model": null,
+      "review_note": "已检查时段、空舞台、主要物件与参考场景；保留为可用于后续组装的背景。",
+      "game_integrated": false
+    },
+    "B11": {
+      "name": "下潜浅层水下",
+      "status": "generated",
+      "references": [
+        "B02"
+      ],
+      "prompt_file": "content/assets/scene-backgrounds\\prompts\\B11.txt",
+      "path": "content/assets/scene-backgrounds\\originals\\B11.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "beb5d9222b5c7ce92ebaffe129b414d3c5f5a86f2b78eb726c38f8c83b7f30b0",
+      "bytes": 2354593,
+      "elapsed_seconds": 38.7,
+      "visual_review": "reviewed",
+      "generation_record": "content/assets/scene-backgrounds\\originals\\B11.generation.json",
+      "backend_reported_model": null,
+      "review_note": "已检查时段、空舞台、主要物件与参考场景；保留为可用于后续组装的背景。",
+      "game_integrated": false
+    },
+    "B14": {
+      "name": "上浮海面黄昏",
+      "status": "generated",
+      "references": [],
+      "prompt_file": "content/assets/scene-backgrounds\\prompts\\B14_water_level.txt",
+      "path": "content/assets/scene-backgrounds\\originals\\B14.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "0865b95b265b9fe6ab21e1c5db48c32dfd1f7862019400d1bc3d3e9025f9ae8e",
+      "bytes": 1974905,
+      "elapsed_seconds": 41.7,
+      "visual_review": "reviewed",
+      "generation_record": "content/assets/scene-backgrounds\\originals\\B14.generation.json",
+      "backend_reported_model": null,
+      "corrected_after_review": true,
+      "review_note": "复核后重做水面机位；前景为海水，远岸在左侧，旧岸上取景保留在records供追溯。",
+      "game_integrated": false
+    },
+    "B15": {
+      "name": "营地外黄昏",
+      "status": "generated",
+      "references": [
+        "B19"
+      ],
+      "prompt_file": "content/assets/scene-backgrounds\\prompts\\B15.txt",
+      "path": "content/assets/scene-backgrounds\\originals\\B15.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "b82fb541a0f168c7c24a0a384aa412a0b47c5a84738ea6c475972ee666b8a003",
+      "bytes": 2671974,
+      "elapsed_seconds": 39.7,
+      "visual_review": "reviewed",
+      "generation_record": "content/assets/scene-backgrounds\\originals\\B15.generation.json",
+      "backend_reported_model": null,
+      "review_note": "已检查时段、空舞台、主要物件与参考场景；保留为可用于后续组装的背景。",
+      "game_integrated": false
+    },
+    "B12": {
+      "name": "深水区黑暗水下",
+      "status": "generated",
+      "references": [
+        "B11"
+      ],
+      "prompt_file": "content/assets/scene-backgrounds\\prompts\\B12.txt",
+      "path": "content/assets/scene-backgrounds\\originals\\B12.png",
+      "size": [
+        1672,
+        940
+      ],
+      "sha256": "88d6b0a8266934e513b9870285687366c127d055c8212ef479e6a8120253169f",
+      "bytes": 2046564,
+      "elapsed_seconds": 33.2,
+      "visual_review": "reviewed",
+      "generation_record": "content/assets/scene-backgrounds\\originals\\B12.generation.json",
+      "backend_reported_model": null,
+      "review_note": "已检查时段、空舞台、主要物件与参考场景；保留为可用于后续组装的背景。",
+      "game_integrated": false
+    },
+    "B17": {
+      "name": "帐篷内夜灯亮",
+      "status": "generated",
+      "references": [
+        "B19"
+      ],
+      "prompt_file": "content/assets/scene-backgrounds\\prompts\\B17.txt",
+      "path": "content/assets/scene-backgrounds\\originals\\B17.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "34c389c773bcb717a29e835cd6d25df850429be80c6da42c01d17d6f77ae9fa5",
+      "bytes": 2207269,
+      "elapsed_seconds": 43.5,
+      "visual_review": "reviewed",
+      "generation_record": "content/assets/scene-backgrounds\\originals\\B17.generation.json",
+      "backend_reported_model": null,
+      "review_note": "已检查时段、空舞台、主要物件与参考场景；保留为可用于后续组装的背景。",
+      "game_integrated": false
+    },
+    "B18": {
+      "name": "帐篷内夜灯暗",
+      "status": "generated",
+      "references": [
+        "B17"
+      ],
+      "prompt_file": "content/assets/scene-backgrounds\\prompts\\B18.txt",
+      "path": "content/assets/scene-backgrounds\\originals\\B18.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "d03409a46ed29cca1b35d14a93f321af54e4319a9e8d114b849354c166d0ea77",
+      "bytes": 2126953,
+      "elapsed_seconds": 36.1,
+      "visual_review": "reviewed",
+      "generation_record": "content/assets/scene-backgrounds\\originals\\B18.generation.json",
+      "backend_reported_model": null,
+      "review_note": "已检查时段、空舞台、主要物件与参考场景；保留为可用于后续组装的背景。",
+      "game_integrated": false
+    },
+    "B16": {
+      "name": "营地外夜",
+      "status": "generated",
+      "references": [
+        "B15"
+      ],
+      "prompt_file": "content/assets/scene-backgrounds\\prompts\\B16.txt",
+      "path": "content/assets/scene-backgrounds\\originals\\B16.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "751ac41619ce4a9ee471dc9ede053394e62d8ba034aa316941872bc553abe3b2",
+      "bytes": 2590418,
+      "elapsed_seconds": 40.5,
+      "visual_review": "reviewed",
+      "generation_record": "content/assets/scene-backgrounds\\originals\\B16.generation.json",
+      "backend_reported_model": null,
+      "review_note": "已检查时段、空舞台、主要物件与参考场景；保留为可用于后续组装的背景。",
+      "game_integrated": false
+    },
+    "B20": {
+      "name": "小镇边缘清晨",
+      "status": "generated",
+      "references": [
+        "B26",
+        "B21"
+      ],
+      "prompt_file": "content/assets/scene-backgrounds\\prompts\\B20.txt",
+      "path": "content/assets/scene-backgrounds\\originals\\B20.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "3f46a19fe2e64c2d0b14b891572448d1b537033f76f3fe421dee0afcb3343993",
+      "bytes": 3345920,
+      "elapsed_seconds": 47.9,
+      "visual_review": "reviewed",
+      "generation_record": "content/assets/scene-backgrounds\\originals\\B20.generation.json",
+      "backend_reported_model": null,
+      "review_note": "已检查时段、空舞台、主要物件与参考场景；保留为可用于后续组装的背景。",
+      "game_integrated": false
+    },
+    "B22": {
+      "name": "集市街道初秋",
+      "status": "generated",
+      "references": [
+        "B21"
+      ],
+      "prompt_file": "content/assets/scene-backgrounds\\prompts\\B22.txt",
+      "path": "content/assets/scene-backgrounds\\originals\\B22.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "53758a3fd0771005a51b87f7a946b505453264d58915736e4193b001643d94cd",
+      "bytes": 3055993,
+      "elapsed_seconds": 63.0,
+      "visual_review": "reviewed",
+      "generation_record": "content/assets/scene-backgrounds\\originals\\B22.generation.json",
+      "backend_reported_model": null,
+      "review_note": "已检查时段、空舞台、主要物件与参考场景；保留为可用于后续组装的背景。",
+      "game_integrated": false
+    },
+    "B32": {
+      "name": "住宅厨房夜",
+      "status": "generated",
+      "references": [
+        "B31"
+      ],
+      "prompt_file": "content/assets/scene-backgrounds\\prompts\\B32.txt",
+      "path": "content/assets/scene-backgrounds\\originals\\B32.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "9bea296dfb2e58c9dec64cd8aaff2b33a439017f4f4ffb8f5c4938c7f325733f",
+      "bytes": 2486886,
+      "elapsed_seconds": 43.1,
+      "visual_review": "reviewed",
+      "generation_record": "content/assets/scene-backgrounds\\originals\\B32.generation.json",
+      "backend_reported_model": null,
+      "review_note": "已检查时段、空舞台、主要物件与参考场景；保留为可用于后续组装的背景。",
+      "game_integrated": false
+    },
+    "B23": {
+      "name": "饰品巷",
+      "status": "generated",
+      "references": [
+        "B21"
+      ],
+      "prompt_file": "content/assets/scene-backgrounds\\prompts\\B23.txt",
+      "path": "content/assets/scene-backgrounds\\originals\\B23.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "ecb3079a0df10a4d95cc5751c67c3ccc4acb081019b96ad255afe93e5ccbef53",
+      "bytes": 3137570,
+      "elapsed_seconds": 83.6,
+      "visual_review": "reviewed",
+      "generation_record": "content/assets/scene-backgrounds\\originals\\B23.generation.json",
+      "backend_reported_model": null,
+      "review_note": "已检查时段、空舞台、主要物件与参考场景；保留为可用于后续组装的背景。",
+      "game_integrated": false
+    },
+    "B33": {
+      "name": "住宅早餐桌日景",
+      "status": "generated",
+      "references": [
+        "records/B33_before_diary_props.png"
+      ],
+      "prompt_file": "content/assets/scene-backgrounds\\prompts\\B33_diaries.txt",
+      "path": "content/assets/scene-backgrounds\\originals\\B33.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "81b374fcfb42c029e032f5a802062a90279807ff9407418f3c984dc32407f609",
+      "bytes": 2526207,
+      "elapsed_seconds": 42.8,
+      "visual_review": "reviewed",
+      "generation_record": "content/assets/scene-backgrounds\\originals\\B33.generation.json",
+      "backend_reported_model": null,
+      "corrected_after_review": true,
+      "review_note": "同一住宅餐厅改晨间，并补两本可辨的空白日记；精确文字留后期。",
+      "game_integrated": false
+    },
+    "B24": {
+      "name": "珍珠摊",
+      "status": "generated",
+      "references": [
+        "B23"
+      ],
+      "prompt_file": "content/assets/scene-backgrounds\\prompts\\B24.txt",
+      "path": "content/assets/scene-backgrounds\\originals\\B24.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "bb851b05796581f2699aa983c9d50b286e5cbce6e2eb9d27343fdee04868dc8e",
+      "bytes": 2969940,
+      "elapsed_seconds": 74.6,
+      "visual_review": "reviewed",
+      "generation_record": "content/assets/scene-backgrounds\\originals\\B24.generation.json",
+      "backend_reported_model": null,
+      "review_note": "已检查时段、空舞台、主要物件与参考场景；保留为可用于后续组装的背景。",
+      "game_integrated": false
+    },
+    "B25": {
+      "name": "银匠工坊",
+      "status": "generated",
+      "references": [
+        "B23"
+      ],
+      "prompt_file": "content/assets/scene-backgrounds\\prompts\\B25.txt",
+      "path": "content/assets/scene-backgrounds\\originals\\B25.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "430f6664f70db2a4f9e1617bb4eed6e1c187dc4c189ca88afe89a4f6d7dd0d74",
+      "bytes": 3009752,
+      "elapsed_seconds": 63.9,
+      "visual_review": "reviewed",
+      "generation_record": "content/assets/scene-backgrounds\\originals\\B25.generation.json",
+      "backend_reported_model": null,
+      "review_note": "已检查时段、空舞台、主要物件与参考场景；保留为可用于后续组装的背景。",
+      "game_integrated": false
+    },
+    "B35": {
+      "name": "住宅卧室夜",
+      "status": "generated",
+      "references": [
+        "B28"
+      ],
+      "prompt_file": "content/assets/scene-backgrounds\\prompts\\B35.txt",
+      "path": "content/assets/scene-backgrounds\\originals\\B35.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "10eafa5007ed8c0a4415bd7813749bdb727bc121bbbd684970507d9f24eb46a9",
+      "bytes": 2465379,
+      "elapsed_seconds": 56.8,
+      "visual_review": "reviewed",
+      "generation_record": "content/assets/scene-backgrounds\\originals\\B35.generation.json",
+      "backend_reported_model": null,
+      "review_note": "已检查时段、空舞台、主要物件与参考场景；保留为可用于后续组装的背景。",
+      "game_integrated": false
+    },
+    "B37": {
+      "name": "翡翠之梦店外营业",
+      "status": "generated",
+      "references": [
+        "B38"
+      ],
+      "prompt_file": "content/assets/scene-backgrounds\\prompts\\B37.txt",
+      "path": "content/assets/scene-backgrounds\\originals\\B37.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "1aba7fc750d2764ae6c1ec693053bfad0505ff85936df24ed902abed9b44ec9b",
+      "bytes": 3007197,
+      "elapsed_seconds": 53.5,
+      "visual_review": "reviewed",
+      "generation_record": "content/assets/scene-backgrounds\\originals\\B37.generation.json",
+      "backend_reported_model": null,
+      "review_note": "已检查时段、空舞台、主要物件与参考场景；保留为可用于后续组装的背景。",
+      "game_integrated": false
+    },
+    "B36": {
+      "name": "卧室门口清晨",
+      "status": "generated",
+      "references": [
+        "B35"
+      ],
+      "prompt_file": "content/assets/scene-backgrounds\\prompts\\B36.txt",
+      "path": "content/assets/scene-backgrounds\\originals\\B36.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "b1ef5bd78937adfc03c18e9d2afeca80f3e41a3cc0d26ca1851bcf761cb9ce7b",
+      "bytes": 2336238,
+      "elapsed_seconds": 45.7,
+      "visual_review": "reviewed",
+      "generation_record": "content/assets/scene-backgrounds\\originals\\B36.generation.json",
+      "backend_reported_model": null,
+      "review_note": "卧室与木门、过道关系可辨；采用独立门口机位，替代原客厅裁切。",
+      "game_integrated": false
+    },
+    "B40": {
+      "name": "翡翠之梦店内午后未开灯",
+      "status": "generated",
+      "references": [
+        "B38"
+      ],
+      "prompt_file": "content/assets/scene-backgrounds\\prompts\\B40.txt",
+      "path": "content/assets/scene-backgrounds\\originals\\B40.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "81967c6bcdc72b17e3c051b0b7db9dd5066370f470c902c533cd875eb515503f",
+      "bytes": 2476895,
+      "elapsed_seconds": 52.9,
+      "visual_review": "reviewed",
+      "generation_record": "content/assets/scene-backgrounds\\originals\\B40.generation.json",
+      "backend_reported_model": null,
+      "review_note": "同一店铺下午自然光、主吊灯关闭；保持全景，区别打烊夜。",
+      "game_integrated": false
+    },
+    "O01": {
+      "name": "营地外清晨",
+      "status": "generated",
+      "references": [
+        "B15"
+      ],
+      "prompt_file": "content/assets/scene-backgrounds\\prompts\\O01.txt",
+      "path": "content/assets/scene-backgrounds\\originals\\O01.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "50284f6ce98c50bd3b3eb40979407aa40b2fb4b8002ae3bd11a2b8c1dfa5af2d",
+      "bytes": 2953464,
+      "elapsed_seconds": 36.8,
+      "visual_review": "reviewed",
+      "generation_record": "content/assets/scene-backgrounds\\originals\\O01.generation.json",
+      "backend_reported_model": null,
+      "review_note": "已检查时段、空舞台、主要物件与参考场景；保留为可用于后续组装的背景。",
+      "game_integrated": false
+    },
+    "O02": {
+      "name": "翡翠之梦店外初秋",
+      "status": "generated",
+      "references": [
+        "B37"
+      ],
+      "prompt_file": "content/assets/scene-backgrounds\\prompts\\O02.txt",
+      "path": "content/assets/scene-backgrounds\\originals\\O02.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "f932b7961e59adb7042738165926db14ef1cc28a4bb55b1913dbe00d5247f656",
+      "bytes": 2983286,
+      "elapsed_seconds": 50.0,
+      "visual_review": "reviewed",
+      "generation_record": "content/assets/scene-backgrounds\\originals\\O02.generation.json",
+      "backend_reported_model": null,
+      "review_note": "补充店外秋季图，秋色与装饰比主篇初秋较浓；当前无必须使用节点，后续采用时按日期减装饰。",
+      "game_integrated": false
+    }
+  },
+  "visual_review": "reviewed",
+  "completed_count": 44,
+  "main_background_count": 42,
+  "new_generation_count": 27,
+  "reused_count": 17
+}

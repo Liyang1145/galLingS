@@ -1,0 +1,2979 @@
+{
+  "passed": true,
+  "checks": [
+    "3308句台词ID、正文、姓名、分支、变量、跳转和音频字段不变；全部图片引用与分支目标有效；撤下的7张CG没有进入播放或鉴赏",
+    "作者原件137文件校验仍通过；原图文件、17张本地PNG与主曲保留",
+    "冷启动实际点击开始游戏后，首段逐帧只有正午浅滩；不再播放黄昏导航行",
+    "第一话糍粑前后保持下午；手链保持吊带裙；转正谈话保持店内；番外泳装段服装一致",
+    "晨间门口服装与取景保持一致；帐篷晨景使用明确标注的帐角临时取景；转场恢复背景默认尺寸/位置",
+    "全部57个剧情选择点已检查，适用的立绘脸部区域未被选项遮挡",
+    "18章入口、87个图片引用解码、主曲与音频状态恢复通过，无脚本异常",
+    "直接打开本地HTML也从第一话正午进入"
+  ],
+  "trace_start": [
+    {
+      "idx": 0,
+      "bg": "浅滩_正午",
+      "title": true
+    },
+    {
+      "idx": 0,
+      "bg": "浅滩_正午",
+      "title": true
+    },
+    {
+      "idx": 0,
+      "bg": "浅滩_正午",
+      "title": true
+    },
+    {
+      "idx": 0,
+      "bg": "浅滩_正午",
+      "title": true
+    },
+    {
+      "idx": 0,
+      "bg": "浅滩_正午",
+      "title": true
+    },
+    {
+      "idx": 0,
+      "bg": "浅滩_正午",
+      "title": true
+    },
+    {
+      "idx": 0,
+      "bg": "浅滩_正午",
+      "title": true
+    },
+    {
+      "idx": 0,
+      "bg": "浅滩_正午",
+      "title": true
+    },
+    {
+      "idx": 0,
+      "bg": "浅滩_正午",
+      "title": true
+    },
+    {
+      "idx": 0,
+      "bg": "浅滩_正午",
+      "title": true
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 2,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    },
+    {
+      "idx": 3,
+      "bg": "浅滩_正午",
+      "title": false
+    }
+  ],
+  "choice_points": [
+    {
+      "index": 20,
+      "applicable": true,
+      "overlap": false,
+      "count": 3,
+      "side": "left"
+    },
+    {
+      "index": 41,
+      "applicable": true,
+      "overlap": false,
+      "count": 3,
+      "side": "left"
+    },
+    {
+      "index": 86,
+      "applicable": true,
+      "overlap": false,
+      "count": 3,
+      "side": "left"
+    },
+    {
+      "index": 113,
+      "applicable": true,
+      "overlap": false,
+      "count": 3,
+      "side": "left"
+    },
+    {
+      "index": 170,
+      "applicable": true,
+      "overlap": false,
+      "count": 3,
+      "side": "left"
+    },
+    {
+      "index": 201,
+      "applicable": true,
+      "overlap": false,
+      "count": 3,
+      "side": "left"
+    },
+    {
+      "index": 243,
+      "applicable": true,
+      "overlap": false,
+      "count": 3,
+      "side": "left"
+    },
+    {
+      "index": 279,
+      "applicable": true,
+      "overlap": false,
+      "count": 3,
+      "side": "left"
+    },
+    {
+      "index": 365,
+      "applicable": true,
+      "overlap": false,
+      "count": 3,
+      "side": "left"
+    },
+    {
+      "index": 402,
+      "applicable": true,
+      "overlap": false,
+      "count": 3,
+      "side": "left"
+    },
+    {
+      "index": 423,
+      "applicable": true,
+      "overlap": false,
+      "count": 2,
+      "side": "left"
+    },
+    {
+      "index": 448,
+      "applicable": true,
+      "overlap": false,
+      "count": 3,
+      "side": "left"
+    },
+    {
+      "index": 544,
+      "applicable": true,
+      "overlap": false,
+      "count": 3,
+      "side": "left"
+    },
+    {
+      "index": 587,
+      "applicable": true,
+      "overlap": false,
+      "count": 3,
+      "side": "left"
+    },
+    {
+      "index": 671,
+      "applicable": true,
+      "overlap": false,
+      "count": 3,
+      "side": "left"
+    },
+    {
+      "index": 707,
+      "applicable": false
+    },
+    {
+      "index": 789,
+      "applicable": true,
+      "overlap": false,
+      "count": 3,
+      "side": "left"
+    },
+    {
+      "index": 838,
+      "applicable": true,
+      "overlap": false,
+      "count": 3,
+      "side": "left"
+    },
+    {
+      "index": 922,
+      "applicable": true,
+      "overlap": false,
+      "count": 3,
+      "side": "left"
+    },
+    {
+      "index": 948,
+      "applicable": true,
+      "overlap": false,
+      "count": 2,
+      "side": "left"
+    },
+    {
+      "index": 999,
+      "applicable": true,
+      "overlap": false,
+      "count": 3,
+      "side": "left"
+    },
+    {
+      "index": 1025,
+      "applicable": false
+    },
+    {
+      "index": 1072,
+      "applicable": false
+    },
+    {
+      "index": 1078,
+      "applicable": false
+    },
+    {
+      "index": 1125,
+      "applicable": true,
+      "overlap": false,
+      "count": 3,
+      "side": "left"
+    },
+    {
+      "index": 1146,
+      "applicable": true,
+      "overlap": false,
+      "count": 2,
+      "side": "left"
+    },
+    {
+      "index": 1170,
+      "applicable": true,
+      "overlap": false,
+      "count": 3,
+      "side": "left"
+    },
+    {
+      "index": 1195,
+      "applicable": true,
+      "overlap": false,
+      "count": 3,
+      "side": "left"
+    },
+    {
+      "index": 1244,
+      "applicable": true,
+      "overlap": false,
+      "count": 3,
+      "side": "left"
+    },
+    {
+      "index": 1338,
+      "applicable": true,
+      "overlap": false,
+      "count": 3,
+      "side": "left"
+    },
+    {
+      "index": 1429,
+      "applicable": true,
+      "overlap": false,
+      "count": 3,
+      "side": "left"
+    },
+    {
+      "index": 1521,
+      "applicable": true,
+      "overlap": false,
+      "count": 3,
+      "side": "left"
+    },
+    {
+      "index": 1561,
+      "applicable": true,
+      "overlap": false,
+      "count": 2,
+      "side": "left"
+    },
+    {
+      "index": 1768,
+      "applicable": true,
+      "overlap": false,
+      "count": 3,
+      "side": "left"
+    },
+    {
+      "index": 1866,
+      "applicable": true,
+      "overlap": false,
+      "count": 3,
+      "side": "left"
+    },
+    {
+      "index": 1965,
+      "applicable": true,
+      "overlap": false,
+      "count": 3,
+      "side": "left"
+    },
+    {
+      "index": 2045,
+      "applicable": true,
+      "overlap": false,
+      "count": 3,
+      "side": "left"
+    },
+    {
+      "index": 2111,
+      "applicable": true,
+      "overlap": false,
+      "count": 3,
+      "side": "left"
+    },
+    {
+      "index": 2157,
+      "applicable": true,
+      "overlap": false,
+      "count": 3,
+      "side": "left"
+    },
+    {
+      "index": 2199,
+      "applicable": true,
+      "overlap": false,
+      "count": 3,
+      "side": "left"
+    },
+    {
+      "index": 2272,
+      "applicable": true,
+      "overlap": false,
+      "count": 3,
+      "side": "left"
+    },
+    {
+      "index": 2326,
+      "applicable": true,
+      "overlap": false,
+      "count": 3,
+      "side": "left"
+    },
+    {
+      "index": 2329,
+      "applicable": true,
+      "overlap": false,
+      "count": 2,
+      "side": "left"
+    },
+    {
+      "index": 2378,
+      "applicable": false
+    },
+    {
+      "index": 2486,
+      "applicable": true,
+      "overlap": false,
+      "count": 3,
+      "side": "left"
+    },
+    {
+      "index": 2550,
+      "applicable": true,
+      "overlap": false,
+      "count": 3,
+      "side": "left"
+    },
+    {
+      "index": 2584,
+      "applicable": true,
+      "overlap": false,
+      "count": 3,
+      "side": "left"
+    },
+    {
+      "index": 2606,
+      "applicable": true,
+      "overlap": false,
+      "count": 3,
+      "side": "left"
+    },
+    {
+      "index": 2636,
+      "applicable": true,
+      "overlap": false,
+      "count": 3,
+      "side": "left"
+    },
+    {
+      "index": 2698,
+      "applicable": true,
+      "overlap": false,
+      "count": 3,
+      "side": "left"
+    },
+    {
+      "index": 2755,
+      "applicable": true,
+      "overlap": false,
+      "count": 3,
+      "side": "left"
+    },
+    {
+      "index": 2870,
+      "applicable": true,
+      "overlap": false,
+      "count": 3,
+      "side": "left"
+    },
+    {
+      "index": 3004,
+      "applicable": true,
+      "overlap": false,
+      "count": 3,
+      "side": "left"
+    },
+    {
+      "index": 3033,
+      "applicable": true,
+      "overlap": false,
+      "count": 3,
+      "side": "left"
+    },
+    {
+      "index": 3100,
+      "applicable": true,
+      "overlap": false,
+      "count": 3,
+      "side": "left"
+    },
+    {
+      "index": 3188,
+      "applicable": true,
+      "overlap": false,
+      "count": 3,
+      "side": "left"
+    },
+    {
+      "index": 3243,
+      "applicable": true,
+      "overlap": false,
+      "count": 3,
+      "side": "left"
+    }
+  ],
+  "graph_background_edges": 163,
+  "decoded": [
+    {
+      "id": "md2p8m90",
+      "ok": true
+    },
+    {
+      "id": "yvwvivzm",
+      "ok": true
+    },
+    {
+      "id": "ehbun5kh",
+      "ok": true
+    },
+    {
+      "id": "pmngp4pk",
+      "ok": true
+    },
+    {
+      "id": "yjxp4irw",
+      "ok": true
+    },
+    {
+      "id": "w3km9isl",
+      "ok": true
+    },
+    {
+      "id": "ez0vsxzc",
+      "ok": true
+    },
+    {
+      "id": "jxxr16ez",
+      "ok": true
+    },
+    {
+      "id": "sqnct5dc",
+      "ok": true
+    },
+    {
+      "id": "supaesch",
+      "ok": true
+    },
+    {
+      "id": "wnpuk9dy",
+      "ok": true
+    },
+    {
+      "id": "ij6ed2gn",
+      "ok": true
+    },
+    {
+      "id": "kful0adz",
+      "ok": true
+    },
+    {
+      "id": "akugkagj",
+      "ok": true
+    },
+    {
+      "id": "z639wmth",
+      "ok": true
+    },
+    {
+      "id": "ak1lber9",
+      "ok": true
+    },
+    {
+      "id": "xndnkx8k",
+      "ok": true
+    },
+    {
+      "id": "c6r2xcnj",
+      "ok": true
+    },
+    {
+      "id": "7jj07jqh",
+      "ok": true
+    },
+    {
+      "id": "r0t0azno",
+      "ok": true
+    },
+    {
+      "id": "dxmnyp7j",
+      "ok": true
+    },
+    {
+      "id": "j5onv73r",
+      "ok": true
+    },
+    {
+      "id": "rqlji75s",
+      "ok": true
+    },
+    {
+      "id": "ah4t9t6i",
+      "ok": true
+    },
+    {
+      "id": "zx4c9brc",
+      "ok": true
+    },
+    {
+      "id": "ooy2g3al",
+      "ok": true
+    },
+    {
+      "id": "9qup2gii",
+      "ok": true
+    },
+    {
+      "id": "2c2u3g9q",
+      "ok": true
+    },
+    {
+      "id": "32lrbngt",
+      "ok": true
+    },
+    {
+      "id": "rpkibqqw",
+      "ok": true
+    },
+    {
+      "id": "9hcpz81h",
+      "ok": true
+    },
+    {
+      "id": "4g7f8iam",
+      "ok": true
+    },
+    {
+      "id": "mcdi4nzi",
+      "ok": true
+    },
+    {
+      "id": "y417cb1b",
+      "ok": true
+    },
+    {
+      "id": "02e2z9nd",
+      "ok": true
+    },
+    {
+      "id": "tafi49ag",
+      "ok": true
+    },
+    {
+      "id": "g0htlsw4",
+      "ok": true
+    },
+    {
+      "id": "qla5b3w0",
+      "ok": true
+    },
+    {
+      "id": "c5saufd0",
+      "ok": true
+    },
+    {
+      "id": "9ow2x5w5",
+      "ok": true
+    },
+    {
+      "id": "8eo1nf7q",
+      "ok": true
+    },
+    {
+      "id": "ohwph2ga",
+      "ok": true
+    },
+    {
+      "id": "mzy4oec6",
+      "ok": true
+    },
+    {
+      "id": "2mbzwwg2",
+      "ok": true
+    },
+    {
+      "id": "e6cby6b5",
+      "ok": true
+    },
+    {
+      "id": "fxqcg1oj",
+      "ok": true
+    },
+    {
+      "id": "9vjefxje",
+      "ok": true
+    },
+    {
+      "id": "acqkjhf8",
+      "ok": true
+    },
+    {
+      "id": "uhhb6qjn",
+      "ok": true
+    },
+    {
+      "id": "lvjql900",
+      "ok": true
+    },
+    {
+      "id": "r1teranv",
+      "ok": true
+    },
+    {
+      "id": "lr4hgspz",
+      "ok": true
+    },
+    {
+      "id": "179f3n2w",
+      "ok": true
+    },
+    {
+      "id": "sr2lo203",
+      "ok": true
+    },
+    {
+      "id": "hihrcqx5",
+      "ok": true
+    },
+    {
+      "id": "p8guxpyy",
+      "ok": true
+    },
+    {
+      "id": "9yvthx8h",
+      "ok": true
+    },
+    {
+      "id": "xfg3qcn2",
+      "ok": true
+    },
+    {
+      "id": "6i0w6nq5",
+      "ok": true
+    },
+    {
+      "id": "6xha9feh",
+      "ok": true
+    },
+    {
+      "id": "mp0q0cx2",
+      "ok": true
+    },
+    {
+      "id": "vjwh9nmj",
+      "ok": true
+    },
+    {
+      "id": "cbx03q1l",
+      "ok": true
+    },
+    {
+      "id": "fz3yt5k8",
+      "ok": true
+    },
+    {
+      "id": "m6hj48ex",
+      "ok": true
+    },
+    {
+      "id": "ff7robzo",
+      "ok": true
+    },
+    {
+      "id": "x013srmu",
+      "ok": true
+    },
+    {
+      "id": "2qshq03j",
+      "ok": true
+    },
+    {
+      "id": "z869j1e3",
+      "ok": true
+    },
+    {
+      "id": "hfcyjlxm",
+      "ok": true
+    },
+    {
+      "id": "wrwcdezj",
+      "ok": true
+    },
+    {
+      "id": "tp44t1rb",
+      "ok": true
+    },
+    {
+      "id": "eqidiyyr",
+      "ok": true
+    },
+    {
+      "id": "nvgbi1x6",
+      "ok": true
+    },
+    {
+      "id": "jtp36q4e",
+      "ok": true
+    },
+    {
+      "id": "ylbq6xyk",
+      "ok": true
+    },
+    {
+      "id": "88v1dull",
+      "ok": true
+    },
+    {
+      "id": "52119ew2",
+      "ok": true
+    },
+    {
+      "id": "2z0mfu7o",
+      "ok": true
+    },
+    {
+      "id": "368tmc5i",
+      "ok": true
+    },
+    {
+      "id": "xtwug3dy",
+      "ok": true
+    },
+    {
+      "id": "t4lmlnr9",
+      "ok": true
+    },
+    {
+      "id": "7fvck9ya",
+      "ok": true
+    },
+    {
+      "id": "bg_shop_interior_night",
+      "ok": true
+    },
+    {
+      "id": "bg_house_door_morning_draft",
+      "ok": true
+    },
+    {
+      "id": "bg_tent_morning_corner_draft",
+      "ok": true
+    },
+    {
+      "id": "bg_shop_afternoon_counter_draft",
+      "ok": true
+    }
+  ],
+  "errors": [],
+  "push": false,
+  "limits": [
+    "全量复核是图、数据、切换点与分支目标核对；没有把完整所有剧情分支逐句人工游玩",
+    "三处临时取景仍需准确差分，不算生成了新图",
+    "被撤下的7张CG原件仍保留，需补时段/服装/道具准确版本"
+  ]
+}

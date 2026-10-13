@@ -1,0 +1,49 @@
+{
+  "task": "Larry最新完整作者包与用户本地打磨稿兼容融合",
+  "date": "2026-10-13",
+  "owner": "音乐负责人 @Liyang1145；执行 Codex",
+  "source_commit": "2fc1c6a9be9be404250c13531ca1336e11d0625a",
+  "repository": "https://github.com/Liyang1145/galLingS",
+  "scope": "仅本地独立副本，未提交，未推送，不命名发布版本",
+  "author_source": "C:\\Users\\袁力阳\\Documents\\Codex\\2026-10-10\\new-chat\\work\\larry-latest-delivery\\海风与布丁\\游戏文件夹",
+  "local_source": "C:\\Users\\袁力阳\\Documents\\Codex\\2026-10-10\\new-chat\\outputs\\larry-local-audio\\content\\vn\\海风与布丁 · 本地音频探索",
+  "local_output": "docs/deliveries/local-assembly",
+  "api": "保留原生VNHost 1、Soul手账及vamb；扩展audioLibrary方法及capabilities，存档增加audio位置字段",
+  "original_assets_preserved": true,
+  "line_count": 3308,
+  "chapters": 18,
+  "background_library_files": 17,
+  "local_audio": 47,
+  "author_audio_retained": 52,
+  "shared_ledger_updated": false,
+  "legacy_saves": "不同项目ID隔离；原旧试玩仍可读原存档；对照表供后续显式迁移，未自动覆盖",
+  "checks": [
+    "融合验证结果.json",
+    "界面与性能复核.json"
+  ],
+  "art_decision": "已完成全素材与切换点复核：7张错配/占位CG撤出，保留原文件；新家采用本地庭院；3处临时取景待准确差分。",
+  "pending": [
+    "正式CG与房屋远近景结构统一",
+    "作者52原声的人工听感与替换选择",
+    "缺音乐变奏和真实动作声",
+    "模型/角色卡与灵枢后端配置",
+    "用户已有存档需要时显式迁移"
+  ],
+  "music_assembly_policy": {
+    "collaborator": "Atri-Lobato",
+    "direction": "暂按 Atri 方案组装剩余音乐",
+    "plan": "Atri音乐接入计划.json",
+    "new_audio_received": false,
+    "existing_main_theme_preserved": true
+  },
+  "visual_review": {
+    "report": "视觉全量复核/图片全量复核与补图清单.md",
+    "source_images_reviewed": 84,
+    "scene_points_before": 134,
+    "scene_points_after": 119,
+    "choice_points": 57,
+    "branch_background_edges": 163,
+    "local_only": true,
+    "originals_preserved": true
+  }
+}

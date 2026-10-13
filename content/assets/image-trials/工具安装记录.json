@@ -1,0 +1,31 @@
+{
+  "source_repository": "https://github.com/ningzimu/codex-gpt-image",
+  "source_commit": "e22fb471aa2ff4f2c013c1468e916132eaaa66a8",
+  "installed_skill": "C:\\Users\\UserX\\.codex\\skills\\codex-gpt-image",
+  "shell_command": "codex-image",
+  "wrapper": "C:\\Users\\UserX\\.local\\bin\\codex-image.cmd",
+  "auth_mode": "Existing Codex ChatGPT OAuth; no API key",
+  "requested_default_model": "gpt-image-2.5-flare",
+  "local_changes": [
+    "Pin credential-bearing image requests to first-party Codex Images endpoints",
+    "Reject redirects for credential-bearing image requests",
+    "Write redacted generation metadata beside output images"
+  ],
+  "script_sha256": "7930fbe0cf3bde7fc8c57a8063c825d05a1cf1a69add6d767f59ff632b98bd81",
+  "validation": [
+    "Python syntax check passed",
+    "Local auth present",
+    "Command resolved on PATH",
+    "Dry run model and endpoint verified"
+  ],
+  "live_generation": "succeeded",
+  "model_selection_verified": false,
+  "game_modified": false,
+  "pushed": false,
+  "sample_output": "content/assets/image-trials\\R01_whale_character_candidate.png",
+  "actual_sample_size": [
+    1024,
+    1536
+  ],
+  "backend_reported_model": null
+}

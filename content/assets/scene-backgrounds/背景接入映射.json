@@ -1,0 +1,478 @@
+[
+  {
+    "old_id": "j5onv73r",
+    "old_name": "书房_午后",
+    "new_files": [
+      {
+        "id": "B28",
+        "path": "content/assets/scene-backgrounds\\originals\\B28.png"
+      }
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "clear_temporary_view": false
+  },
+  {
+    "old_id": "rqlji75s",
+    "old_name": "书房_夜",
+    "new_files": [
+      {
+        "id": "B30",
+        "path": "content/assets/scene-backgrounds\\originals\\B30.png"
+      }
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "clear_temporary_view": false
+  },
+  {
+    "old_id": "ah4t9t6i",
+    "old_name": "书房_黄昏",
+    "new_files": [
+      {
+        "id": "B29",
+        "path": "content/assets/scene-backgrounds\\originals\\B29.png"
+      }
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "clear_temporary_view": false
+  },
+  {
+    "old_id": "zx4c9brc",
+    "old_name": "卧室_夜",
+    "new_files": [
+      {
+        "id": "B35",
+        "path": "content/assets/scene-backgrounds\\originals\\B35.png"
+      }
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "clear_temporary_view": false
+  },
+  {
+    "old_id": "ooy2g3al",
+    "old_name": "厨房_清晨",
+    "new_files": [
+      {
+        "id": "B31",
+        "path": "content/assets/scene-backgrounds\\originals\\B31.png"
+      }
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "clear_temporary_view": false
+  },
+  {
+    "old_id": "9qup2gii",
+    "old_name": "大房子_院子",
+    "new_files": [
+      {
+        "id": "B26",
+        "path": "content/assets/scene-backgrounds\\originals\\B26.png"
+      }
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "clear_temporary_view": false
+  },
+  {
+    "old_id": "2c2u3g9q",
+    "old_name": "客厅_午后",
+    "new_files": [
+      {
+        "id": "B27",
+        "path": "content/assets/scene-backgrounds\\originals\\B27.png"
+      }
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "clear_temporary_view": false
+  },
+  {
+    "old_id": "rpkibqqw",
+    "old_name": "小镇_清晨",
+    "new_files": [
+      {
+        "id": "B20",
+        "path": "content/assets/scene-backgrounds\\originals\\B20.png"
+      }
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "clear_temporary_view": false
+  },
+  {
+    "old_id": "9hcpz81h",
+    "old_name": "帐篷_夜",
+    "new_files": [
+      {
+        "id": "B16",
+        "path": "content/assets/scene-backgrounds\\originals\\B16.png"
+      }
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "clear_temporary_view": false
+  },
+  {
+    "old_id": "4g7f8iam",
+    "old_name": "帐篷_黄昏",
+    "new_files": [
+      {
+        "id": "B15",
+        "path": "content/assets/scene-backgrounds\\originals\\B15.png"
+      }
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "clear_temporary_view": false
+  },
+  {
+    "old_id": "mcdi4nzi",
+    "old_name": "帐篷内_夜",
+    "new_files": [
+      {
+        "id": "B17",
+        "path": "content/assets/scene-backgrounds\\originals\\B17.png"
+      }
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "clear_temporary_view": false
+  },
+  {
+    "old_id": "y417cb1b",
+    "old_name": "店面_下午",
+    "new_files": [
+      {
+        "id": "B37",
+        "path": "content/assets/scene-backgrounds\\originals\\B37.png"
+      }
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "clear_temporary_view": false
+  },
+  {
+    "old_id": "02e2z9nd",
+    "old_name": "沙洲_上午",
+    "new_files": [
+      {
+        "id": "B08",
+        "path": "content/assets/scene-backgrounds\\originals\\B08.png"
+      }
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "clear_temporary_view": false
+  },
+  {
+    "old_id": "tafi49ag",
+    "old_name": "沙洲_午后",
+    "new_files": [
+      {
+        "id": "B09",
+        "path": "content/assets/scene-backgrounds\\originals\\B09.png"
+      }
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "clear_temporary_view": false
+  },
+  {
+    "old_id": "g0htlsw4",
+    "old_name": "沙洲_黄昏",
+    "new_files": [
+      {
+        "id": "B10",
+        "path": "content/assets/scene-backgrounds\\originals\\B10.png"
+      }
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "clear_temporary_view": false
+  },
+  {
+    "old_id": "qla5b3w0",
+    "old_name": "浅滩_上午",
+    "new_files": [
+      {
+        "id": "B02",
+        "path": "content/assets/scene-backgrounds\\originals\\B02.png"
+      }
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "clear_temporary_view": false
+  },
+  {
+    "old_id": "c5saufd0",
+    "old_name": "浅滩_午后",
+    "new_files": [
+      {
+        "id": "B02",
+        "path": "content/assets/scene-backgrounds\\originals\\B02.png"
+      }
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "clear_temporary_view": false
+  },
+  {
+    "old_id": "9ow2x5w5",
+    "old_name": "浅滩_夜",
+    "new_files": [
+      {
+        "id": "B04",
+        "path": "content/assets/scene-backgrounds\\originals\\B04.png"
+      }
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "clear_temporary_view": false
+  },
+  {
+    "old_id": "8eo1nf7q",
+    "old_name": "浅滩_正午",
+    "new_files": [
+      {
+        "id": "B02",
+        "path": "content/assets/scene-backgrounds\\originals\\B02.png"
+      }
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "clear_temporary_view": false
+  },
+  {
+    "old_id": "ohwph2ga",
+    "old_name": "浅滩_清晨",
+    "new_files": [
+      {
+        "id": "B01",
+        "path": "content/assets/scene-backgrounds\\originals\\B01.png"
+      }
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "clear_temporary_view": false
+  },
+  {
+    "old_id": "mzy4oec6",
+    "old_name": "浅滩_黄昏",
+    "new_files": [
+      {
+        "id": "B03",
+        "path": "content/assets/scene-backgrounds\\originals\\B03.png"
+      }
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "clear_temporary_view": false
+  },
+  {
+    "old_id": "2mbzwwg2",
+    "old_name": "海面_黄昏",
+    "new_files": [
+      {
+        "id": "B14",
+        "path": "content/assets/scene-backgrounds\\originals\\B14.png"
+      }
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "clear_temporary_view": false
+  },
+  {
+    "old_id": "e6cby6b5",
+    "old_name": "深水区_水下",
+    "new_files": [
+      {
+        "id": "B11",
+        "path": "content/assets/scene-backgrounds\\originals\\B11.png"
+      },
+      {
+        "id": "B12",
+        "path": "content/assets/scene-backgrounds\\originals\\B12.png"
+      }
+    ],
+    "dispatch_note": "按章节/时段分配，不可全局单一替换",
+    "clear_temporary_view": false
+  },
+  {
+    "old_id": "fxqcg1oj",
+    "old_name": "深海_珊瑚礁",
+    "new_files": [
+      {
+        "id": "B13",
+        "path": "content/assets/scene-backgrounds\\originals\\B13.png"
+      }
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "clear_temporary_view": false
+  },
+  {
+    "old_id": "9vjefxje",
+    "old_name": "礁石_上午",
+    "new_files": [
+      {
+        "id": "B05",
+        "path": "content/assets/scene-backgrounds\\originals\\B05.png"
+      }
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "clear_temporary_view": false
+  },
+  {
+    "old_id": "acqkjhf8",
+    "old_name": "礁石_夜",
+    "new_files": [
+      {
+        "id": "B07",
+        "path": "content/assets/scene-backgrounds\\originals\\B07.png"
+      }
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "clear_temporary_view": false
+  },
+  {
+    "old_id": "uhhb6qjn",
+    "old_name": "礁石_黄昏",
+    "new_files": [
+      {
+        "id": "B06",
+        "path": "content/assets/scene-backgrounds\\originals\\B06.png"
+      }
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "clear_temporary_view": false
+  },
+  {
+    "old_id": "lvjql900",
+    "old_name": "翡翠之梦_二楼夜",
+    "new_files": [
+      {
+        "id": "B42",
+        "path": "content/assets/scene-backgrounds\\originals\\B42.png"
+      }
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "clear_temporary_view": false
+  },
+  {
+    "old_id": "r1teranv",
+    "old_name": "翡翠之梦_厨房",
+    "new_files": [
+      {
+        "id": "B41",
+        "path": "content/assets/scene-backgrounds\\originals\\B41.png"
+      }
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "clear_temporary_view": false
+  },
+  {
+    "old_id": "lr4hgspz",
+    "old_name": "翡翠之梦_店内",
+    "new_files": [
+      {
+        "id": "B38",
+        "path": "content/assets/scene-backgrounds\\originals\\B38.png"
+      }
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "clear_temporary_view": false
+  },
+  {
+    "old_id": "179f3n2w",
+    "old_name": "银匠铺",
+    "new_files": [
+      {
+        "id": "B25",
+        "path": "content/assets/scene-backgrounds\\originals\\B25.png"
+      }
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "clear_temporary_view": false
+  },
+  {
+    "old_id": "sr2lo203",
+    "old_name": "集市_上午",
+    "new_files": [
+      {
+        "id": "B21",
+        "path": "content/assets/scene-backgrounds\\originals\\B21.png"
+      },
+      {
+        "id": "B22",
+        "path": "content/assets/scene-backgrounds\\originals\\B22.png"
+      }
+    ],
+    "dispatch_note": "按章节/时段分配，不可全局单一替换",
+    "clear_temporary_view": false
+  },
+  {
+    "old_id": "hihrcqx5",
+    "old_name": "集市_珍珠摊",
+    "new_files": [
+      {
+        "id": "B24",
+        "path": "content/assets/scene-backgrounds\\originals\\B24.png"
+      }
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "clear_temporary_view": false
+  },
+  {
+    "old_id": "p8guxpyy",
+    "old_name": "集市_饰品巷",
+    "new_files": [
+      {
+        "id": "B23",
+        "path": "content/assets/scene-backgrounds\\originals\\B23.png"
+      }
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "clear_temporary_view": false
+  },
+  {
+    "old_id": "9yvthx8h",
+    "old_name": "餐厅_夜",
+    "new_files": [
+      {
+        "id": "B34",
+        "path": "content/assets/scene-backgrounds\\originals\\B34.png"
+      }
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "clear_temporary_view": false
+  },
+  {
+    "old_id": "bg_shop_interior_night",
+    "old_name": "翡翠之梦_店内夜",
+    "new_files": [
+      {
+        "id": "B39",
+        "path": "content/assets/scene-backgrounds\\originals\\B39.png"
+      }
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "clear_temporary_view": false
+  },
+  {
+    "old_id": "bg_house_door_morning_draft",
+    "old_name": "住宅_房门口清晨_临时取景",
+    "new_files": [
+      {
+        "id": "B36",
+        "path": "content/assets/scene-backgrounds\\originals\\B36.png"
+      }
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "clear_temporary_view": true
+  },
+  {
+    "old_id": "bg_tent_morning_corner_draft",
+    "old_name": "帐篷内_清晨_帐角临时取景",
+    "new_files": [
+      {
+        "id": "B19",
+        "path": "content/assets/scene-backgrounds\\originals\\B19.png"
+      }
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "clear_temporary_view": true
+  },
+  {
+    "old_id": "bg_shop_afternoon_counter_draft",
+    "old_name": "翡翠之梦_午后未开灯_柜台临时取景",
+    "new_files": [
+      {
+        "id": "B40",
+        "path": "content/assets/scene-backgrounds\\originals\\B40.png"
+      }
+    ],
+    "dispatch_note": "保留旧ID或用显式映射接入",
+    "clear_temporary_view": true
+  }
+]

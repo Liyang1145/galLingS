@@ -1,0 +1,1143 @@
+[
+  {
+    "from": 1,
+    "to": 2995,
+    "type": "choice",
+    "from_bg": "浅滩_正午",
+    "to_bg": "翡翠之梦_二楼夜"
+  },
+  {
+    "from": 1,
+    "to": 3170,
+    "type": "choice",
+    "from_bg": "浅滩_正午",
+    "to_bg": "帐篷_黄昏"
+  },
+  {
+    "from": 16,
+    "to": 17,
+    "type": "next",
+    "from_bg": "浅滩_正午",
+    "to_bg": "CG_初登场"
+  },
+  {
+    "from": 19,
+    "to": 20,
+    "type": "next",
+    "from_bg": "CG_初登场",
+    "to_bg": "浅滩_正午"
+  },
+  {
+    "from": 71,
+    "to": 72,
+    "type": "next",
+    "from_bg": "浅滩_正午",
+    "to_bg": "浅滩_午后"
+  },
+  {
+    "from": 122,
+    "to": 130,
+    "type": "jump",
+    "from_bg": "浅滩_午后",
+    "to_bg": "浅滩_黄昏"
+  },
+  {
+    "from": 125,
+    "to": 130,
+    "type": "jump",
+    "from_bg": "浅滩_午后",
+    "to_bg": "浅滩_黄昏"
+  },
+  {
+    "from": 129,
+    "to": 130,
+    "type": "next",
+    "from_bg": "浅滩_午后",
+    "to_bg": "浅滩_黄昏"
+  },
+  {
+    "from": 147,
+    "to": 148,
+    "type": "next",
+    "from_bg": "浅滩_黄昏",
+    "to_bg": "帐篷_黄昏"
+  },
+  {
+    "from": 148,
+    "to": 149,
+    "type": "next",
+    "from_bg": "帐篷_黄昏",
+    "to_bg": "CG_烤鱿鱼"
+  },
+  {
+    "from": 152,
+    "to": 153,
+    "type": "next",
+    "from_bg": "CG_烤鱿鱼",
+    "to_bg": "帐篷_黄昏"
+  },
+  {
+    "from": 159,
+    "to": 160,
+    "type": "next",
+    "from_bg": "帐篷_黄昏",
+    "to_bg": "浅滩_上午"
+  },
+  {
+    "from": 173,
+    "to": 186,
+    "type": "jump",
+    "from_bg": "浅滩_上午",
+    "to_bg": "礁石_上午"
+  },
+  {
+    "from": 181,
+    "to": 186,
+    "type": "jump",
+    "from_bg": "浅滩_上午",
+    "to_bg": "礁石_上午"
+  },
+  {
+    "from": 185,
+    "to": 186,
+    "type": "next",
+    "from_bg": "浅滩_上午",
+    "to_bg": "礁石_上午"
+  },
+  {
+    "from": 229,
+    "to": 230,
+    "type": "next",
+    "from_bg": "礁石_上午",
+    "to_bg": "CG_立约"
+  },
+  {
+    "from": 241,
+    "to": 242,
+    "type": "next",
+    "from_bg": "CG_立约",
+    "to_bg": "礁石_上午"
+  },
+  {
+    "from": 253,
+    "to": 269,
+    "type": "jump",
+    "from_bg": "礁石_上午",
+    "to_bg": "礁石_黄昏"
+  },
+  {
+    "from": 259,
+    "to": 269,
+    "type": "jump",
+    "from_bg": "礁石_上午",
+    "to_bg": "礁石_黄昏"
+  },
+  {
+    "from": 268,
+    "to": 269,
+    "type": "next",
+    "from_bg": "礁石_上午",
+    "to_bg": "礁石_黄昏"
+  },
+  {
+    "from": 320,
+    "to": 321,
+    "type": "next",
+    "from_bg": "礁石_黄昏",
+    "to_bg": "礁石_夜"
+  },
+  {
+    "from": 336,
+    "to": 337,
+    "type": "next",
+    "from_bg": "礁石_夜",
+    "to_bg": "浅滩_清晨"
+  },
+  {
+    "from": 370,
+    "to": 384,
+    "type": "jump",
+    "from_bg": "浅滩_清晨",
+    "to_bg": "深水区_水下"
+  },
+  {
+    "from": 375,
+    "to": 384,
+    "type": "jump",
+    "from_bg": "浅滩_清晨",
+    "to_bg": "深水区_水下"
+  },
+  {
+    "from": 383,
+    "to": 384,
+    "type": "next",
+    "from_bg": "浅滩_清晨",
+    "to_bg": "深水区_水下"
+  },
+  {
+    "from": 391,
+    "to": 392,
+    "type": "next",
+    "from_bg": "深水区_水下",
+    "to_bg": "深海_珊瑚礁"
+  },
+  {
+    "from": 430,
+    "to": 431,
+    "type": "next",
+    "from_bg": "深海_珊瑚礁",
+    "to_bg": "CG_深海之光"
+  },
+  {
+    "from": 435,
+    "to": 436,
+    "type": "next",
+    "from_bg": "CG_深海之光",
+    "to_bg": "深海_珊瑚礁"
+  },
+  {
+    "from": 453,
+    "to": 481,
+    "type": "jump",
+    "from_bg": "深海_珊瑚礁",
+    "to_bg": "海面_黄昏"
+  },
+  {
+    "from": 466,
+    "to": 481,
+    "type": "jump",
+    "from_bg": "深海_珊瑚礁",
+    "to_bg": "海面_黄昏"
+  },
+  {
+    "from": 480,
+    "to": 481,
+    "type": "next",
+    "from_bg": "深海_珊瑚礁",
+    "to_bg": "海面_黄昏"
+  },
+  {
+    "from": 497,
+    "to": 498,
+    "type": "next",
+    "from_bg": "海面_黄昏",
+    "to_bg": "帐篷_夜"
+  },
+  {
+    "from": 510,
+    "to": 511,
+    "type": "next",
+    "from_bg": "帐篷_夜",
+    "to_bg": "集市_上午"
+  },
+  {
+    "from": 529,
+    "to": 530,
+    "type": "next",
+    "from_bg": "集市_上午",
+    "to_bg": "集市_饰品巷"
+  },
+  {
+    "from": 553,
+    "to": 574,
+    "type": "jump",
+    "from_bg": "集市_饰品巷",
+    "to_bg": "集市_上午"
+  },
+  {
+    "from": 561,
+    "to": 574,
+    "type": "jump",
+    "from_bg": "集市_饰品巷",
+    "to_bg": "集市_上午"
+  },
+  {
+    "from": 573,
+    "to": 574,
+    "type": "next",
+    "from_bg": "集市_饰品巷",
+    "to_bg": "集市_上午"
+  },
+  {
+    "from": 597,
+    "to": 618,
+    "type": "jump",
+    "from_bg": "集市_上午",
+    "to_bg": "浅滩_黄昏"
+  },
+  {
+    "from": 604,
+    "to": 618,
+    "type": "jump",
+    "from_bg": "集市_上午",
+    "to_bg": "浅滩_黄昏"
+  },
+  {
+    "from": 617,
+    "to": 618,
+    "type": "next",
+    "from_bg": "集市_上午",
+    "to_bg": "浅滩_黄昏"
+  },
+  {
+    "from": 635,
+    "to": 636,
+    "type": "next",
+    "from_bg": "浅滩_黄昏",
+    "to_bg": "帐篷_夜"
+  },
+  {
+    "from": 654,
+    "to": 655,
+    "type": "next",
+    "from_bg": "帐篷_夜",
+    "to_bg": "浅滩_夜"
+  },
+  {
+    "from": 703,
+    "to": 704,
+    "type": "next",
+    "from_bg": "浅滩_夜",
+    "to_bg": "CG_诗句"
+  },
+  {
+    "from": 707,
+    "to": 726,
+    "type": "choice",
+    "from_bg": "CG_诗句",
+    "to_bg": "浅滩_夜"
+  },
+  {
+    "from": 707,
+    "to": 732,
+    "type": "choice",
+    "from_bg": "CG_诗句",
+    "to_bg": "浅滩_夜"
+  },
+  {
+    "from": 710,
+    "to": 711,
+    "type": "next",
+    "from_bg": "CG_诗句",
+    "to_bg": "浅滩_夜"
+  },
+  {
+    "from": 759,
+    "to": 760,
+    "type": "next",
+    "from_bg": "浅滩_夜",
+    "to_bg": "帐篷_夜"
+  },
+  {
+    "from": 824,
+    "to": 825,
+    "type": "next",
+    "from_bg": "帐篷_夜",
+    "to_bg": "CG_原来是你"
+  },
+  {
+    "from": 829,
+    "to": 830,
+    "type": "next",
+    "from_bg": "CG_原来是你",
+    "to_bg": "帐篷_夜"
+  },
+  {
+    "from": 892,
+    "to": 893,
+    "type": "next",
+    "from_bg": "帐篷_夜",
+    "to_bg": "帐篷内_夜"
+  },
+  {
+    "from": 904,
+    "to": 905,
+    "type": "next",
+    "from_bg": "帐篷内_夜",
+    "to_bg": "浅滩_清晨"
+  },
+  {
+    "from": 916,
+    "to": 917,
+    "type": "next",
+    "from_bg": "浅滩_清晨",
+    "to_bg": "沙洲_上午"
+  },
+  {
+    "from": 945,
+    "to": 946,
+    "type": "next",
+    "from_bg": "沙洲_上午",
+    "to_bg": "沙洲_午后"
+  },
+  {
+    "from": 1007,
+    "to": 1021,
+    "type": "jump",
+    "from_bg": "沙洲_午后",
+    "to_bg": "CG_海豚"
+  },
+  {
+    "from": 1017,
+    "to": 1021,
+    "type": "jump",
+    "from_bg": "沙洲_午后",
+    "to_bg": "CG_海豚"
+  },
+  {
+    "from": 1020,
+    "to": 1021,
+    "type": "next",
+    "from_bg": "沙洲_午后",
+    "to_bg": "CG_海豚"
+  },
+  {
+    "from": 1025,
+    "to": 1026,
+    "type": "choice",
+    "from_bg": "CG_海豚",
+    "to_bg": "沙洲_午后"
+  },
+  {
+    "from": 1025,
+    "to": 1033,
+    "type": "choice",
+    "from_bg": "CG_海豚",
+    "to_bg": "沙洲_午后"
+  },
+  {
+    "from": 1025,
+    "to": 1040,
+    "type": "choice",
+    "from_bg": "CG_海豚",
+    "to_bg": "沙洲_午后"
+  },
+  {
+    "from": 1113,
+    "to": 1114,
+    "type": "next",
+    "from_bg": "沙洲_午后",
+    "to_bg": "沙洲_黄昏"
+  },
+  {
+    "from": 1203,
+    "to": 1217,
+    "type": "jump",
+    "from_bg": "沙洲_黄昏",
+    "to_bg": "帐篷_夜"
+  },
+  {
+    "from": 1209,
+    "to": 1217,
+    "type": "jump",
+    "from_bg": "沙洲_黄昏",
+    "to_bg": "帐篷_夜"
+  },
+  {
+    "from": 1216,
+    "to": 1217,
+    "type": "next",
+    "from_bg": "沙洲_黄昏",
+    "to_bg": "帐篷_夜"
+  },
+  {
+    "from": 1251,
+    "to": 1262,
+    "type": "jump",
+    "from_bg": "帐篷_夜",
+    "to_bg": "小镇_清晨"
+  },
+  {
+    "from": 1256,
+    "to": 1262,
+    "type": "jump",
+    "from_bg": "帐篷_夜",
+    "to_bg": "小镇_清晨"
+  },
+  {
+    "from": 1261,
+    "to": 1262,
+    "type": "next",
+    "from_bg": "帐篷_夜",
+    "to_bg": "小镇_清晨"
+  },
+  {
+    "from": 1263,
+    "to": 1264,
+    "type": "next",
+    "from_bg": "小镇_清晨",
+    "to_bg": "大房子_院子"
+  },
+  {
+    "from": 1310,
+    "to": 1311,
+    "type": "next",
+    "from_bg": "大房子_院子",
+    "to_bg": "客厅_午后"
+  },
+  {
+    "from": 1342,
+    "to": 1353,
+    "type": "jump",
+    "from_bg": "客厅_午后",
+    "to_bg": "书房_黄昏"
+  },
+  {
+    "from": 1347,
+    "to": 1353,
+    "type": "jump",
+    "from_bg": "客厅_午后",
+    "to_bg": "书房_黄昏"
+  },
+  {
+    "from": 1352,
+    "to": 1353,
+    "type": "next",
+    "from_bg": "客厅_午后",
+    "to_bg": "书房_黄昏"
+  },
+  {
+    "from": 1398,
+    "to": 1399,
+    "type": "next",
+    "from_bg": "书房_黄昏",
+    "to_bg": "餐厅_夜"
+  },
+  {
+    "from": 1448,
+    "to": 1456,
+    "type": "jump",
+    "from_bg": "餐厅_夜",
+    "to_bg": "书房_夜"
+  },
+  {
+    "from": 1452,
+    "to": 1456,
+    "type": "jump",
+    "from_bg": "餐厅_夜",
+    "to_bg": "书房_夜"
+  },
+  {
+    "from": 1455,
+    "to": 1456,
+    "type": "next",
+    "from_bg": "餐厅_夜",
+    "to_bg": "书房_夜"
+  },
+  {
+    "from": 1473,
+    "to": 1474,
+    "type": "next",
+    "from_bg": "书房_夜",
+    "to_bg": "书房_午后"
+  },
+  {
+    "from": 1505,
+    "to": 1506,
+    "type": "next",
+    "from_bg": "书房_午后",
+    "to_bg": "CG_电话"
+  },
+  {
+    "from": 1510,
+    "to": 1511,
+    "type": "next",
+    "from_bg": "CG_电话",
+    "to_bg": "书房_午后"
+  },
+  {
+    "from": 1564,
+    "to": 1569,
+    "type": "jump",
+    "from_bg": "书房_午后",
+    "to_bg": "浅滩_黄昏"
+  },
+  {
+    "from": 1568,
+    "to": 1569,
+    "type": "next",
+    "from_bg": "书房_午后",
+    "to_bg": "浅滩_黄昏"
+  },
+  {
+    "from": 1592,
+    "to": 1593,
+    "type": "next",
+    "from_bg": "浅滩_黄昏",
+    "to_bg": "书房_夜"
+  },
+  {
+    "from": 1609,
+    "to": 1610,
+    "type": "next",
+    "from_bg": "书房_夜",
+    "to_bg": "浅滩_夜"
+  },
+  {
+    "from": 1669,
+    "to": 1670,
+    "type": "next",
+    "from_bg": "浅滩_夜",
+    "to_bg": "浅滩_午后"
+  },
+  {
+    "from": 1674,
+    "to": 1675,
+    "type": "next",
+    "from_bg": "浅滩_午后",
+    "to_bg": "浅滩_清晨"
+  },
+  {
+    "from": 1675,
+    "to": 1676,
+    "type": "next",
+    "from_bg": "浅滩_清晨",
+    "to_bg": "浅滩_黄昏"
+  },
+  {
+    "from": 1681,
+    "to": 1682,
+    "type": "next",
+    "from_bg": "浅滩_黄昏",
+    "to_bg": "书房_夜"
+  },
+  {
+    "from": 1691,
+    "to": 1692,
+    "type": "next",
+    "from_bg": "书房_夜",
+    "to_bg": "浅滩_黄昏"
+  },
+  {
+    "from": 1697,
+    "to": 1698,
+    "type": "next",
+    "from_bg": "浅滩_黄昏",
+    "to_bg": "深水区_水下"
+  },
+  {
+    "from": 1710,
+    "to": 1711,
+    "type": "next",
+    "from_bg": "深水区_水下",
+    "to_bg": "CG_深水区"
+  },
+  {
+    "from": 1715,
+    "to": 1716,
+    "type": "next",
+    "from_bg": "CG_深水区",
+    "to_bg": "深水区_水下"
+  },
+  {
+    "from": 1720,
+    "to": 1721,
+    "type": "next",
+    "from_bg": "深水区_水下",
+    "to_bg": "礁石_夜"
+  },
+  {
+    "from": 1813,
+    "to": 1814,
+    "type": "next",
+    "from_bg": "礁石_夜",
+    "to_bg": "CG_和解"
+  },
+  {
+    "from": 1818,
+    "to": 1819,
+    "type": "next",
+    "from_bg": "CG_和解",
+    "to_bg": "礁石_夜"
+  },
+  {
+    "from": 1842,
+    "to": 1843,
+    "type": "next",
+    "from_bg": "礁石_夜",
+    "to_bg": "书房_夜"
+  },
+  {
+    "from": 1851,
+    "to": 1852,
+    "type": "next",
+    "from_bg": "书房_夜",
+    "to_bg": "客厅_午后"
+  },
+  {
+    "from": 1934,
+    "to": 1935,
+    "type": "next",
+    "from_bg": "客厅_午后",
+    "to_bg": "店面_下午"
+  },
+  {
+    "from": 1955,
+    "to": 1956,
+    "type": "next",
+    "from_bg": "店面_下午",
+    "to_bg": "翡翠之梦_厨房"
+  },
+  {
+    "from": 1986,
+    "to": 1987,
+    "type": "next",
+    "from_bg": "翡翠之梦_厨房",
+    "to_bg": "翡翠之梦_店内"
+  },
+  {
+    "from": 2013,
+    "to": 2014,
+    "type": "next",
+    "from_bg": "翡翠之梦_店内",
+    "to_bg": "翡翠之梦_店内夜"
+  },
+  {
+    "from": 2027,
+    "to": 2028,
+    "type": "next",
+    "from_bg": "翡翠之梦_店内夜",
+    "to_bg": "书房_夜"
+  },
+  {
+    "from": 2034,
+    "to": 2035,
+    "type": "next",
+    "from_bg": "书房_夜",
+    "to_bg": "翡翠之梦_店内"
+  },
+  {
+    "from": 2100,
+    "to": 2101,
+    "type": "next",
+    "from_bg": "翡翠之梦_店内",
+    "to_bg": "集市_上午"
+  },
+  {
+    "from": 2103,
+    "to": 2104,
+    "type": "next",
+    "from_bg": "集市_上午",
+    "to_bg": "集市_饰品巷"
+  },
+  {
+    "from": 2127,
+    "to": 2147,
+    "type": "jump",
+    "from_bg": "集市_饰品巷",
+    "to_bg": "厨房_清晨"
+  },
+  {
+    "from": 2135,
+    "to": 2147,
+    "type": "jump",
+    "from_bg": "集市_饰品巷",
+    "to_bg": "厨房_清晨"
+  },
+  {
+    "from": 2146,
+    "to": 2147,
+    "type": "jump",
+    "from_bg": "集市_饰品巷",
+    "to_bg": "厨房_清晨"
+  },
+  {
+    "from": 2162,
+    "to": 2171,
+    "type": "jump",
+    "from_bg": "厨房_清晨",
+    "to_bg": "集市_珍珠摊"
+  },
+  {
+    "from": 2165,
+    "to": 2171,
+    "type": "jump",
+    "from_bg": "厨房_清晨",
+    "to_bg": "集市_珍珠摊"
+  },
+  {
+    "from": 2170,
+    "to": 2171,
+    "type": "jump",
+    "from_bg": "厨房_清晨",
+    "to_bg": "集市_珍珠摊"
+  },
+  {
+    "from": 2185,
+    "to": 2186,
+    "type": "next",
+    "from_bg": "集市_珍珠摊",
+    "to_bg": "银匠铺"
+  },
+  {
+    "from": 2238,
+    "to": 2239,
+    "type": "next",
+    "from_bg": "银匠铺",
+    "to_bg": "翡翠之梦_厨房"
+  },
+  {
+    "from": 2250,
+    "to": 2251,
+    "type": "next",
+    "from_bg": "翡翠之梦_厨房",
+    "to_bg": "翡翠之梦_二楼夜"
+  },
+  {
+    "from": 2307,
+    "to": 2308,
+    "type": "next",
+    "from_bg": "翡翠之梦_二楼夜",
+    "to_bg": "集市_上午"
+  },
+  {
+    "from": 2347,
+    "to": 2348,
+    "type": "next",
+    "from_bg": "集市_上午",
+    "to_bg": "CG_布丁"
+  },
+  {
+    "from": 2351,
+    "to": 2352,
+    "type": "next",
+    "from_bg": "CG_布丁",
+    "to_bg": "集市_上午"
+  },
+  {
+    "from": 2378,
+    "to": 2445,
+    "type": "choice",
+    "from_bg": "集市_上午",
+    "to_bg": "翡翠之梦_午后未开灯_柜台临时取景"
+  },
+  {
+    "from": 2405,
+    "to": 2460,
+    "type": "jump",
+    "from_bg": "集市_上午",
+    "to_bg": "翡翠之梦_午后未开灯_柜台临时取景"
+  },
+  {
+    "from": 2420,
+    "to": 2421,
+    "type": "next",
+    "from_bg": "集市_上午",
+    "to_bg": "CG_深水区"
+  },
+  {
+    "from": 2424,
+    "to": 2425,
+    "type": "next",
+    "from_bg": "CG_深水区",
+    "to_bg": "集市_上午"
+  },
+  {
+    "from": 2428,
+    "to": 2429,
+    "type": "next",
+    "from_bg": "集市_上午",
+    "to_bg": "翡翠之梦_午后未开灯_柜台临时取景"
+  },
+  {
+    "from": 2490,
+    "to": 2500,
+    "type": "jump",
+    "from_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+    "to_bg": "餐厅_夜"
+  },
+  {
+    "from": 2495,
+    "to": 2500,
+    "type": "jump",
+    "from_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+    "to_bg": "餐厅_夜"
+  },
+  {
+    "from": 2499,
+    "to": 2500,
+    "type": "jump",
+    "from_bg": "翡翠之梦_午后未开灯_柜台临时取景",
+    "to_bg": "餐厅_夜"
+  },
+  {
+    "from": 2512,
+    "to": 2513,
+    "type": "next",
+    "from_bg": "餐厅_夜",
+    "to_bg": "书房_夜"
+  },
+  {
+    "from": 2531,
+    "to": 2532,
+    "type": "next",
+    "from_bg": "书房_夜",
+    "to_bg": "厨房_清晨"
+  },
+  {
+    "from": 2619,
+    "to": 2620,
+    "type": "next",
+    "from_bg": "厨房_清晨",
+    "to_bg": "集市_上午"
+  },
+  {
+    "from": 2620,
+    "to": 2621,
+    "type": "next",
+    "from_bg": "集市_上午",
+    "to_bg": "厨房_清晨"
+  },
+  {
+    "from": 2641,
+    "to": 2670,
+    "type": "jump",
+    "from_bg": "厨房_清晨",
+    "to_bg": "餐厅_夜"
+  },
+  {
+    "from": 2654,
+    "to": 2670,
+    "type": "jump",
+    "from_bg": "厨房_清晨",
+    "to_bg": "餐厅_夜"
+  },
+  {
+    "from": 2657,
+    "to": 2658,
+    "type": "next",
+    "from_bg": "厨房_清晨",
+    "to_bg": "翡翠之梦_厨房"
+  },
+  {
+    "from": 2669,
+    "to": 2670,
+    "type": "next",
+    "from_bg": "翡翠之梦_厨房",
+    "to_bg": "餐厅_夜"
+  },
+  {
+    "from": 2683,
+    "to": 2684,
+    "type": "next",
+    "from_bg": "餐厅_夜",
+    "to_bg": "住宅_房门口清晨_临时取景"
+  },
+  {
+    "from": 2705,
+    "to": 2720,
+    "type": "jump",
+    "from_bg": "住宅_房门口清晨_临时取景",
+    "to_bg": "书房_黄昏"
+  },
+  {
+    "from": 2711,
+    "to": 2720,
+    "type": "jump",
+    "from_bg": "住宅_房门口清晨_临时取景",
+    "to_bg": "书房_黄昏"
+  },
+  {
+    "from": 2719,
+    "to": 2720,
+    "type": "next",
+    "from_bg": "住宅_房门口清晨_临时取景",
+    "to_bg": "书房_黄昏"
+  },
+  {
+    "from": 2788,
+    "to": 2789,
+    "type": "next",
+    "from_bg": "书房_黄昏",
+    "to_bg": "浅滩_黄昏"
+  },
+  {
+    "from": 2799,
+    "to": 2800,
+    "type": "next",
+    "from_bg": "浅滩_黄昏",
+    "to_bg": "卧室_夜"
+  },
+  {
+    "from": 2825,
+    "to": 2826,
+    "type": "next",
+    "from_bg": "卧室_夜",
+    "to_bg": "翡翠之梦_厨房"
+  },
+  {
+    "from": 2852,
+    "to": 2853,
+    "type": "next",
+    "from_bg": "翡翠之梦_厨房",
+    "to_bg": "浅滩_夜"
+  },
+  {
+    "from": 2931,
+    "to": 2932,
+    "type": "next",
+    "from_bg": "浅滩_夜",
+    "to_bg": "CG_海风与布丁"
+  },
+  {
+    "from": 2936,
+    "to": 2937,
+    "type": "next",
+    "from_bg": "CG_海风与布丁",
+    "to_bg": "浅滩_夜"
+  },
+  {
+    "from": 2938,
+    "to": 2939,
+    "type": "next",
+    "from_bg": "浅滩_夜",
+    "to_bg": "书房_夜"
+  },
+  {
+    "from": 2980,
+    "to": 2981,
+    "type": "next",
+    "from_bg": "浅滩_夜",
+    "to_bg": "书房_夜"
+  },
+  {
+    "from": 3017,
+    "to": 3018,
+    "type": "next",
+    "from_bg": "翡翠之梦_二楼夜",
+    "to_bg": "沙洲_上午"
+  },
+  {
+    "from": 3039,
+    "to": 3051,
+    "type": "jump",
+    "from_bg": "沙洲_上午",
+    "to_bg": "翡翠之梦_店内"
+  },
+  {
+    "from": 3045,
+    "to": 3051,
+    "type": "jump",
+    "from_bg": "沙洲_上午",
+    "to_bg": "翡翠之梦_店内"
+  },
+  {
+    "from": 3050,
+    "to": 3051,
+    "type": "jump",
+    "from_bg": "沙洲_上午",
+    "to_bg": "翡翠之梦_店内"
+  },
+  {
+    "from": 3068,
+    "to": 3069,
+    "type": "next",
+    "from_bg": "翡翠之梦_店内",
+    "to_bg": "餐厅_夜"
+  },
+  {
+    "from": 3080,
+    "to": 3081,
+    "type": "next",
+    "from_bg": "餐厅_夜",
+    "to_bg": "CG_集市女仆"
+  },
+  {
+    "from": 3084,
+    "to": 3085,
+    "type": "next",
+    "from_bg": "CG_集市女仆",
+    "to_bg": "集市_上午"
+  },
+  {
+    "from": 3107,
+    "to": 3135,
+    "type": "jump",
+    "from_bg": "集市_上午",
+    "to_bg": "翡翠之梦_二楼夜"
+  },
+  {
+    "from": 3116,
+    "to": 3135,
+    "type": "jump",
+    "from_bg": "集市_上午",
+    "to_bg": "翡翠之梦_二楼夜"
+  },
+  {
+    "from": 3125,
+    "to": 3126,
+    "type": "next",
+    "from_bg": "集市_上午",
+    "to_bg": "集市_珍珠摊"
+  },
+  {
+    "from": 3134,
+    "to": 3135,
+    "type": "jump",
+    "from_bg": "集市_珍珠摊",
+    "to_bg": "翡翠之梦_二楼夜"
+  },
+  {
+    "from": 3193,
+    "to": 3205,
+    "type": "jump",
+    "from_bg": "帐篷_黄昏",
+    "to_bg": "帐篷_夜"
+  },
+  {
+    "from": 3197,
+    "to": 3205,
+    "type": "jump",
+    "from_bg": "帐篷_黄昏",
+    "to_bg": "帐篷_夜"
+  },
+  {
+    "from": 3204,
+    "to": 3205,
+    "type": "jump",
+    "from_bg": "帐篷_黄昏",
+    "to_bg": "帐篷_夜"
+  },
+  {
+    "from": 3216,
+    "to": 3217,
+    "type": "next",
+    "from_bg": "帐篷_夜",
+    "to_bg": "帐篷内_夜"
+  },
+  {
+    "from": 3249,
+    "to": 3267,
+    "type": "jump",
+    "from_bg": "帐篷内_夜",
+    "to_bg": "CG_人鱼公主"
+  },
+  {
+    "from": 3262,
+    "to": 3267,
+    "type": "jump",
+    "from_bg": "帐篷内_夜",
+    "to_bg": "CG_人鱼公主"
+  },
+  {
+    "from": 3266,
+    "to": 3267,
+    "type": "jump",
+    "from_bg": "帐篷内_夜",
+    "to_bg": "CG_人鱼公主"
+  },
+  {
+    "from": 3275,
+    "to": 3276,
+    "type": "next",
+    "from_bg": "CG_人鱼公主",
+    "to_bg": "帐篷内_清晨_帐角临时取景"
+  },
+  {
+    "from": 3290,
+    "to": 3291,
+    "type": "next",
+    "from_bg": "帐篷内_清晨_帐角临时取景",
+    "to_bg": "浅滩_上午"
+  }
+]

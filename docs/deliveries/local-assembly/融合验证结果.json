@@ -1,0 +1,1057 @@
+{
+  "passed": true,
+  "url": "http://127.0.0.1:8772/vn.html",
+  "checks": [
+    "3308句新版台词、编号、分支、变量、手账配置与26张立绘完整保留；17张本地背景与主曲原文件校验一致；作者素材原件保留",
+    "音效按本地接入规则迁移；待审原声不自动触发；否定动作处无拍水声；UI声音关闭",
+    "18章试阅均可进入；标题不可存档；原生手账可停靠；启动仅请求1张图片",
+    "全部84张背景/CG/立绘和99份音频成功解码；修正作者音效的零时长元数据",
+    "主曲与潮声逐句续播，无A04叠加；三路音量生效；未配音时隐藏空语音滑条",
+    "真实剧情选项写入手账；存读档保留新编号、变量与手账，并恢复音乐/环境声进度且不重复动作声",
+    "试听收录本地47份与作者52份；待审标签可见，试听暂停场景声，关闭续播",
+    "电话打断处停奏；返回标题所有场景声停止；五处日夜/室内/深海场景截图核查",
+    "直接打开本地index.html可离线试玩和播放主曲",
+    "独立测试浏览器无脚本错误、失败资源或外部网络请求；未调用模型，未修改用户浏览器存档",
+    "仓库工作区保持干净；本轮没有提交或推送"
+  ],
+  "startup_image_requests": [
+    {
+      "url": "http://127.0.0.1:8772/vn/%E6%B5%B7%E9%A3%8E%E4%B8%8E%E5%B8%83%E4%B8%81/assets/bg/%E5%B0%81%E9%9D%A2_ISLAND.jpg",
+      "type": "image"
+    }
+  ],
+  "media": [
+    {
+      "id": "mni51ori",
+      "ok": true,
+      "duration": 2.458118
+    },
+    {
+      "id": "yq8tcybf",
+      "ok": true,
+      "duration": 0.69585
+    },
+    {
+      "id": "dwromo3v",
+      "ok": true,
+      "duration": 1.08712
+    },
+    {
+      "id": "jsxl4tcf",
+      "ok": true,
+      "duration": 1.271905
+    },
+    {
+      "id": "ayhs65mz",
+      "ok": true,
+      "duration": 0.215624
+    },
+    {
+      "id": "ubotdcr5",
+      "ok": true,
+      "duration": 6
+    },
+    {
+      "id": "84dehvnk",
+      "ok": true,
+      "duration": 3.883537
+    },
+    {
+      "id": "0l5canwg",
+      "ok": true,
+      "duration": 2.733039
+    },
+    {
+      "id": "084gbl61",
+      "ok": true,
+      "duration": 3.986531
+    },
+    {
+      "id": "b6keau2r",
+      "ok": true,
+      "duration": 0.140363
+    },
+    {
+      "id": "f8c9r2uu",
+      "ok": true,
+      "duration": 0.299796
+    },
+    {
+      "id": "we9vnprm",
+      "ok": true,
+      "duration": 3.9
+    },
+    {
+      "id": "3vid9p95",
+      "ok": true,
+      "duration": 0.297324
+    },
+    {
+      "id": "9pewhqn1",
+      "ok": true,
+      "duration": 5.6
+    },
+    {
+      "id": "hl08iesl",
+      "ok": true,
+      "duration": 1.253878
+    },
+    {
+      "id": "t4n910zd",
+      "ok": true,
+      "duration": 2.43424
+    },
+    {
+      "id": "z99ks1g9",
+      "ok": true,
+      "duration": 1.819977
+    },
+    {
+      "id": "y4yar145",
+      "ok": true,
+      "duration": 2.172268
+    },
+    {
+      "id": "jpswn4ou",
+      "ok": true,
+      "duration": 5.5
+    },
+    {
+      "id": "j3r2wgjd",
+      "ok": true,
+      "duration": 2.366667
+    },
+    {
+      "id": "wq1hcql9",
+      "ok": true,
+      "duration": 0.617029
+    },
+    {
+      "id": "ikmmc4rd",
+      "ok": true,
+      "duration": 3.385465
+    },
+    {
+      "id": "62zsrlep",
+      "ok": true,
+      "duration": 2.420023
+    },
+    {
+      "id": "ked1340w",
+      "ok": true,
+      "duration": 1.102086
+    },
+    {
+      "id": "01xv6k84",
+      "ok": true,
+      "duration": 4.988571
+    },
+    {
+      "id": "p9peyxja",
+      "ok": true,
+      "duration": 4.5
+    },
+    {
+      "id": "6186g35b",
+      "ok": true,
+      "duration": 5.589728
+    },
+    {
+      "id": "rfiajeti",
+      "ok": true,
+      "duration": 2.745828
+    },
+    {
+      "id": "8op9un8s",
+      "ok": true,
+      "duration": 3.389456
+    },
+    {
+      "id": "ruxo9hhr",
+      "ok": true,
+      "duration": 2.832517
+    },
+    {
+      "id": "fitkd10c",
+      "ok": true,
+      "duration": 2.104467
+    },
+    {
+      "id": "x1tt92z6",
+      "ok": true,
+      "duration": 1.130884
+    },
+    {
+      "id": "1vlwjxq8",
+      "ok": true,
+      "duration": 3.450703
+    },
+    {
+      "id": "oirfbiqt",
+      "ok": true,
+      "duration": 0.393946
+    },
+    {
+      "id": "ckztcn3x",
+      "ok": true,
+      "duration": 1.579932
+    },
+    {
+      "id": "guntvixk",
+      "ok": true,
+      "duration": 2.454989
+    },
+    {
+      "id": "ulncpcrt",
+      "ok": true,
+      "duration": 1.600023
+    },
+    {
+      "id": "bg9y8h6j",
+      "ok": true,
+      "duration": 1.938163
+    },
+    {
+      "id": "300w0xmn",
+      "ok": true,
+      "duration": 0.38873
+    },
+    {
+      "id": "9pxap24y",
+      "ok": true,
+      "duration": 4.006508
+    },
+    {
+      "id": "35ne6hcj",
+      "ok": true,
+      "duration": 1.735624
+    },
+    {
+      "id": "gjflu4vq",
+      "ok": true,
+      "duration": 32.2
+    },
+    {
+      "id": "1n1k47zu",
+      "ok": true,
+      "duration": 60
+    },
+    {
+      "id": "y8a9djv3",
+      "ok": true,
+      "duration": 60
+    },
+    {
+      "id": "c417hz1z",
+      "ok": true,
+      "duration": 30.000181
+    },
+    {
+      "id": "je287mgp",
+      "ok": true,
+      "duration": 30.000181
+    },
+    {
+      "id": "hax42gix",
+      "ok": true,
+      "duration": 30.000181
+    },
+    {
+      "id": "xnqc8ujq",
+      "ok": true,
+      "duration": 30.000181
+    },
+    {
+      "id": "bahuc7vr",
+      "ok": true,
+      "duration": 30.000181
+    },
+    {
+      "id": "3dk9mevc",
+      "ok": true,
+      "duration": 60
+    },
+    {
+      "id": "iav5u9l3",
+      "ok": true,
+      "duration": 27.2
+    },
+    {
+      "id": "fu6lfpbq",
+      "ok": true,
+      "duration": 60
+    },
+    {
+      "id": "bgm_emerald_dream_main_v01",
+      "ok": true,
+      "duration": 133.2135
+    },
+    {
+      "id": "amb_a01_waves_normal_v01",
+      "ok": true,
+      "duration": 29.202667
+    },
+    {
+      "id": "amb_a02_waves_soft_v01",
+      "ok": true,
+      "duration": 29.202667
+    },
+    {
+      "id": "amb_a03_waves_distant_ebb_v01",
+      "ok": true,
+      "duration": 29.202667
+    },
+    {
+      "id": "amb_a04_waves_bed_v01",
+      "ok": true,
+      "duration": 29.202667
+    },
+    {
+      "id": "amb_a05_waves_violent_v01",
+      "ok": true,
+      "duration": 29.202667
+    },
+    {
+      "id": "amb_a06_seagulls_v01",
+      "ok": true,
+      "duration": 29.002667
+    },
+    {
+      "id": "amb_a07_underwater_low_hum_v01",
+      "ok": true,
+      "duration": 29.202667
+    },
+    {
+      "id": "amb_a08_underwater_heartbeat_v01",
+      "ok": true,
+      "duration": 13.202667
+    },
+    {
+      "id": "amb_a09_water_splash_v01",
+      "ok": true,
+      "duration": 4.287854
+    },
+    {
+      "id": "amb_a10_market_crowd_v01",
+      "ok": true,
+      "duration": 47.202667
+    },
+    {
+      "id": "amb_a11_shell_wind_chimes_v01",
+      "ok": true,
+      "duration": 34.002667
+    },
+    {
+      "id": "amb_a12_tent_sea_wind_v01",
+      "ok": true,
+      "duration": 29.202667
+    },
+    {
+      "id": "amb_a13_lighter_ignites_wick_v01",
+      "ok": true,
+      "duration": 2.802667
+    },
+    {
+      "id": "amb_a14_campfire_v01",
+      "ok": true,
+      "duration": 39.202667
+    },
+    {
+      "id": "amb_a15_shop_room_tone_v01",
+      "ok": true,
+      "duration": 29.202667
+    },
+    {
+      "id": "sfx_s01_large_water_slap_v01",
+      "ok": true,
+      "duration": 2.174917
+    },
+    {
+      "id": "sfx_s02_choking_water_v01",
+      "ok": true,
+      "duration": 5.502667
+    },
+    {
+      "id": "sfx_s02_fall_into_water_v01",
+      "ok": true,
+      "duration": 2.502667
+    },
+    {
+      "id": "sfx_s03_splash_on_face_v01",
+      "ok": true,
+      "duration": 3.002667
+    },
+    {
+      "id": "sfx_s04_tail_flattens_water_v01",
+      "ok": true,
+      "duration": 2.502667
+    },
+    {
+      "id": "sfx_s05_seagull_takes_food_v01",
+      "ok": true,
+      "duration": 4.002667
+    },
+    {
+      "id": "sfx_s06_pen_writing_v01",
+      "ok": true,
+      "duration": 4.502667
+    },
+    {
+      "id": "sfx_s07_notebook_close_v01",
+      "ok": true,
+      "duration": 1.426521
+    },
+    {
+      "id": "sfx_s08_wind_chime_single_v01",
+      "ok": true,
+      "duration": 4.102667
+    },
+    {
+      "id": "sfx_s09_phone_ringing_v01",
+      "ok": true,
+      "duration": 1.716958
+    },
+    {
+      "id": "sfx_s10_phone_answer_hangup_v01",
+      "ok": true,
+      "duration": 2.502667
+    },
+    {
+      "id": "sfx_s11_tail_quick_swish_v01",
+      "ok": true,
+      "duration": 2.002667
+    },
+    {
+      "id": "sfx_s12_deep_dive_pressure_v01",
+      "ok": true,
+      "duration": 5.002667
+    },
+    {
+      "id": "sfx_s13_hair_drips_v01",
+      "ok": true,
+      "duration": 4.502667
+    },
+    {
+      "id": "sfx_s14_rustling_v01",
+      "ok": true,
+      "duration": 2.502667
+    },
+    {
+      "id": "sfx_s15_dried_fish_tear_v01",
+      "ok": true,
+      "duration": 2.249333
+    },
+    {
+      "id": "sfx_s16_comic_freeze_sting_v01",
+      "ok": true,
+      "duration": 1.256521
+    },
+    {
+      "id": "sfx_s17_phone_set_on_reef_v01",
+      "ok": true,
+      "duration": 1.802667
+    },
+    {
+      "id": "sfx_tail_water_light",
+      "ok": true,
+      "duration": 0.462667
+    },
+    {
+      "id": "sfx_tail_water_double",
+      "ok": true,
+      "duration": 0.902667
+    },
+    {
+      "id": "sfx_tail_sand",
+      "ok": true,
+      "duration": 0.642667
+    },
+    {
+      "id": "sfx_tail_wood",
+      "ok": true,
+      "duration": 0.662667
+    },
+    {
+      "id": "sfx_tail_wood_leg",
+      "ok": true,
+      "duration": 0.722667
+    },
+    {
+      "id": "sfx_tail_soft",
+      "ok": true,
+      "duration": 1.002667
+    },
+    {
+      "id": "sfx_tail_close_door",
+      "ok": true,
+      "duration": 1.302667
+    },
+    {
+      "id": "sfx_tail_floor_review",
+      "ok": true,
+      "duration": 0.396625
+    },
+    {
+      "id": "sfx_tail_curl_review",
+      "ok": true,
+      "duration": 1.158208
+    },
+    {
+      "id": "sfx_tail_raise_review",
+      "ok": true,
+      "duration": 11.565333
+    },
+    {
+      "id": "sfx_tail_fluster_review",
+      "ok": true,
+      "duration": 11.894125
+    },
+    {
+      "id": "sfx_tail_wrap_review",
+      "ok": true,
+      "duration": 15.007375
+    },
+    {
+      "id": "sfx_tail_flat_review",
+      "ok": true,
+      "duration": 0.398813
+    }
+  ],
+  "images": [
+    {
+      "id": "md2p8m90",
+      "ok": true,
+      "w": 1280,
+      "h": 720
+    },
+    {
+      "id": "yvwvivzm",
+      "ok": true,
+      "w": 1920,
+      "h": 1080
+    },
+    {
+      "id": "ehbun5kh",
+      "ok": true,
+      "w": 1920,
+      "h": 1080
+    },
+    {
+      "id": "pmngp4pk",
+      "ok": true,
+      "w": 1920,
+      "h": 1080
+    },
+    {
+      "id": "yjxp4irw",
+      "ok": true,
+      "w": 1280,
+      "h": 720
+    },
+    {
+      "id": "w3km9isl",
+      "ok": true,
+      "w": 1920,
+      "h": 1080
+    },
+    {
+      "id": "ez0vsxzc",
+      "ok": true,
+      "w": 1280,
+      "h": 720
+    },
+    {
+      "id": "jxxr16ez",
+      "ok": true,
+      "w": 1672,
+      "h": 941
+    },
+    {
+      "id": "sqnct5dc",
+      "ok": true,
+      "w": 1920,
+      "h": 1080
+    },
+    {
+      "id": "supaesch",
+      "ok": true,
+      "w": 1920,
+      "h": 1080
+    },
+    {
+      "id": "wnpuk9dy",
+      "ok": true,
+      "w": 1920,
+      "h": 1080
+    },
+    {
+      "id": "ij6ed2gn",
+      "ok": true,
+      "w": 1920,
+      "h": 1080
+    },
+    {
+      "id": "kful0adz",
+      "ok": true,
+      "w": 1920,
+      "h": 1080
+    },
+    {
+      "id": "akugkagj",
+      "ok": true,
+      "w": 1920,
+      "h": 1080
+    },
+    {
+      "id": "z639wmth",
+      "ok": true,
+      "w": 1920,
+      "h": 1080
+    },
+    {
+      "id": "ak1lber9",
+      "ok": true,
+      "w": 1920,
+      "h": 1080
+    },
+    {
+      "id": "xndnkx8k",
+      "ok": true,
+      "w": 1920,
+      "h": 1080
+    },
+    {
+      "id": "c6r2xcnj",
+      "ok": true,
+      "w": 1920,
+      "h": 1080
+    },
+    {
+      "id": "7jj07jqh",
+      "ok": true,
+      "w": 1672,
+      "h": 941
+    },
+    {
+      "id": "r0t0azno",
+      "ok": true,
+      "w": 1920,
+      "h": 1080
+    },
+    {
+      "id": "dxmnyp7j",
+      "ok": true,
+      "w": 1920,
+      "h": 1080
+    },
+    {
+      "id": "j5onv73r",
+      "ok": true,
+      "w": 1672,
+      "h": 941
+    },
+    {
+      "id": "rqlji75s",
+      "ok": true,
+      "w": 1672,
+      "h": 941
+    },
+    {
+      "id": "ah4t9t6i",
+      "ok": true,
+      "w": 1672,
+      "h": 941
+    },
+    {
+      "id": "zx4c9brc",
+      "ok": true,
+      "w": 1280,
+      "h": 720
+    },
+    {
+      "id": "ooy2g3al",
+      "ok": true,
+      "w": 1672,
+      "h": 941
+    },
+    {
+      "id": "9qup2gii",
+      "ok": true,
+      "w": 1672,
+      "h": 941
+    },
+    {
+      "id": "2c2u3g9q",
+      "ok": true,
+      "w": 1672,
+      "h": 941
+    },
+    {
+      "id": "32lrbngt",
+      "ok": true,
+      "w": 1280,
+      "h": 720
+    },
+    {
+      "id": "rpkibqqw",
+      "ok": true,
+      "w": 1280,
+      "h": 720
+    },
+    {
+      "id": "9hcpz81h",
+      "ok": true,
+      "w": 1672,
+      "h": 941
+    },
+    {
+      "id": "4g7f8iam",
+      "ok": true,
+      "w": 1280,
+      "h": 720
+    },
+    {
+      "id": "mcdi4nzi",
+      "ok": true,
+      "w": 1280,
+      "h": 720
+    },
+    {
+      "id": "y417cb1b",
+      "ok": true,
+      "w": 1280,
+      "h": 720
+    },
+    {
+      "id": "02e2z9nd",
+      "ok": true,
+      "w": 1280,
+      "h": 720
+    },
+    {
+      "id": "tafi49ag",
+      "ok": true,
+      "w": 1280,
+      "h": 720
+    },
+    {
+      "id": "g0htlsw4",
+      "ok": true,
+      "w": 1280,
+      "h": 720
+    },
+    {
+      "id": "qla5b3w0",
+      "ok": true,
+      "w": 1672,
+      "h": 941
+    },
+    {
+      "id": "c5saufd0",
+      "ok": true,
+      "w": 1672,
+      "h": 941
+    },
+    {
+      "id": "9ow2x5w5",
+      "ok": true,
+      "w": 1672,
+      "h": 941
+    },
+    {
+      "id": "8eo1nf7q",
+      "ok": true,
+      "w": 1672,
+      "h": 941
+    },
+    {
+      "id": "ohwph2ga",
+      "ok": true,
+      "w": 1280,
+      "h": 720
+    },
+    {
+      "id": "mzy4oec6",
+      "ok": true,
+      "w": 1672,
+      "h": 941
+    },
+    {
+      "id": "2mbzwwg2",
+      "ok": true,
+      "w": 1280,
+      "h": 720
+    },
+    {
+      "id": "e6cby6b5",
+      "ok": true,
+      "w": 1280,
+      "h": 720
+    },
+    {
+      "id": "fxqcg1oj",
+      "ok": true,
+      "w": 1672,
+      "h": 941
+    },
+    {
+      "id": "9vjefxje",
+      "ok": true,
+      "w": 1280,
+      "h": 720
+    },
+    {
+      "id": "acqkjhf8",
+      "ok": true,
+      "w": 1280,
+      "h": 720
+    },
+    {
+      "id": "uhhb6qjn",
+      "ok": true,
+      "w": 1280,
+      "h": 720
+    },
+    {
+      "id": "lvjql900",
+      "ok": true,
+      "w": 1672,
+      "h": 941
+    },
+    {
+      "id": "r1teranv",
+      "ok": true,
+      "w": 1672,
+      "h": 941
+    },
+    {
+      "id": "lr4hgspz",
+      "ok": true,
+      "w": 1672,
+      "h": 941
+    },
+    {
+      "id": "179f3n2w",
+      "ok": true,
+      "w": 1280,
+      "h": 720
+    },
+    {
+      "id": "sr2lo203",
+      "ok": true,
+      "w": 1672,
+      "h": 941
+    },
+    {
+      "id": "hihrcqx5",
+      "ok": true,
+      "w": 1280,
+      "h": 720
+    },
+    {
+      "id": "p8guxpyy",
+      "ok": true,
+      "w": 1280,
+      "h": 720
+    },
+    {
+      "id": "9yvthx8h",
+      "ok": true,
+      "w": 1672,
+      "h": 941
+    },
+    {
+      "id": "xfg3qcn2",
+      "ok": true,
+      "w": 497,
+      "h": 1300
+    },
+    {
+      "id": "6i0w6nq5",
+      "ok": true,
+      "w": 564,
+      "h": 1300
+    },
+    {
+      "id": "6xha9feh",
+      "ok": true,
+      "w": 564,
+      "h": 1300
+    },
+    {
+      "id": "mp0q0cx2",
+      "ok": true,
+      "w": 549,
+      "h": 1300
+    },
+    {
+      "id": "vjwh9nmj",
+      "ok": true,
+      "w": 552,
+      "h": 1300
+    },
+    {
+      "id": "cbx03q1l",
+      "ok": true,
+      "w": 468,
+      "h": 1191
+    },
+    {
+      "id": "fz3yt5k8",
+      "ok": true,
+      "w": 552,
+      "h": 1300
+    },
+    {
+      "id": "m6hj48ex",
+      "ok": true,
+      "w": 552,
+      "h": 1300
+    },
+    {
+      "id": "ff7robzo",
+      "ok": true,
+      "w": 586,
+      "h": 1300
+    },
+    {
+      "id": "x013srmu",
+      "ok": true,
+      "w": 457,
+      "h": 1168
+    },
+    {
+      "id": "2qshq03j",
+      "ok": true,
+      "w": 507,
+      "h": 1300
+    },
+    {
+      "id": "z869j1e3",
+      "ok": true,
+      "w": 586,
+      "h": 1192
+    },
+    {
+      "id": "hfcyjlxm",
+      "ok": true,
+      "w": 441,
+      "h": 1121
+    },
+    {
+      "id": "wrwcdezj",
+      "ok": true,
+      "w": 445,
+      "h": 1139
+    },
+    {
+      "id": "tp44t1rb",
+      "ok": true,
+      "w": 501,
+      "h": 1300
+    },
+    {
+      "id": "eqidiyyr",
+      "ok": true,
+      "w": 501,
+      "h": 1300
+    },
+    {
+      "id": "nvgbi1x6",
+      "ok": true,
+      "w": 586,
+      "h": 1300
+    },
+    {
+      "id": "jtp36q4e",
+      "ok": true,
+      "w": 506,
+      "h": 1300
+    },
+    {
+      "id": "ylbq6xyk",
+      "ok": true,
+      "w": 669,
+      "h": 1300
+    },
+    {
+      "id": "88v1dull",
+      "ok": true,
+      "w": 652,
+      "h": 1300
+    },
+    {
+      "id": "52119ew2",
+      "ok": true,
+      "w": 493,
+      "h": 1300
+    },
+    {
+      "id": "2z0mfu7o",
+      "ok": true,
+      "w": 595,
+      "h": 1300
+    },
+    {
+      "id": "368tmc5i",
+      "ok": true,
+      "w": 495,
+      "h": 1300
+    },
+    {
+      "id": "xtwug3dy",
+      "ok": true,
+      "w": 569,
+      "h": 1300
+    },
+    {
+      "id": "t4lmlnr9",
+      "ok": true,
+      "w": 544,
+      "h": 1300
+    },
+    {
+      "id": "7fvck9ya",
+      "ok": true,
+      "w": 544,
+      "h": 1300
+    },
+    {
+      "id": "bg_shop_interior_night",
+      "ok": true,
+      "w": 1672,
+      "h": 941
+    }
+  ],
+  "saved_audio": {
+    "bgm": {
+      "id": "bgm_emerald_dream_main_v01",
+      "time": 31.276788
+    },
+    "ambience": [
+      {
+        "id": "amb_a01_waves_normal_v01",
+        "time": 9.526812
+      }
+    ]
+  },
+  "journal_choice_index": 1,
+  "errors": [],
+  "failed_requests": [],
+  "external_requests": [],
+  "limits": [
+    "解码和播放状态通过不代表人工听感验收",
+    "未配置在线模型，未验证模型或灵枢服务",
+    "新旧台词编号完全不同，旧存档保留但不自动导入融合副本"
+  ],
+  "push": false,
+  "final_art_check": {
+    "new_home_cg": "作者海崖远景",
+    "courtyard": "本地近景",
+    "passed": true
+  },
+  "author_original_integrity_check": {
+    "file_count": 137,
+    "repository_and_extracted_originals_unchanged": true
+  }
+}

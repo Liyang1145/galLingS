@@ -8,6 +8,8 @@
 
 最新统筹：音乐负责人的场景/音频融合与用户转交的boliyer GalAgent已合并到同一作品，参见 [最新游玩与模块状态](latest-play.md)、[本次接入](work-ledger/boliyer-galagent-integration.md)。根目录 `游玩.html` 与 `start.bat` 使用同一 `content/vn/海风与布丁/`。下表早期交付快照中“无主曲”“接口预留”等描述按该快照理解，当前状态以最新统筹记录为准。
 
+后续玩家审美打磨：只调整作品及外层界面，game.js与所有资产未改；403画面取样、57选择点及操作验证通过。[审核与优先缺口](player-aesthetic-review.md) 把角色/CG统一、缺曲、动作素材验收单独列出，界面已打磨不等于美术音乐全部完成。
+
 | 项目 | 已核实状态 | 协作含义 |
 |---|---|---|
 | 仓库 | [Liyang1145/galLingS](https://github.com/Liyang1145/galLingS)，私有，默认 `main` | 后续默认提交到此处。旧公开仓库尚未由其管理员关闭，不能把迁移等同于旧内容已经不公开。 |

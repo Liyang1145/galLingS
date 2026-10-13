@@ -570,7 +570,7 @@ body.playing #soulTab.show{display:flex}
       </div>
       <div id="dlg"><input id="nm" spellcheck="false"><textarea id="tx" spellcheck="false"></textarea></div>
       <div id="pdlg"><div id="pnm"></div><div id="ptx"></div>
-        <div id="pctl"><button class="btn" data-pc="log" data-tip="pcLog"><i data-ic="scroll-text"></i></button><button class="btn" data-pc="auto" data-tip="pcAuto"><i data-ic="circle-play"></i></button><button class="btn" data-pc="skip" data-tip="pcSkip"><i data-ic="fast-forward"></i></button><button class="btn" data-pc="save" data-tip="pcSave"><i data-ic="save"></i></button><button class="btn" data-pc="load" data-tip="pcLoad"><i data-ic="folder-open"></i></button><button class="btn" data-pc="set" data-tip="pcSet"><i data-ic="settings"></i></button><button class="btn" data-pc="exit" data-tip="pcExit"><i data-ic="log-out"></i></button></div>
+        <div id="pctl"><button class="btn" data-pc="log" data-tip="pcLog" aria-label="回看" title="回看"><i data-ic="scroll-text"></i><span class="pc-label">回看</span></button><button class="btn" data-pc="auto" data-tip="pcAuto" aria-label="自动" title="自动"><i data-ic="circle-play"></i><span class="pc-label">自动</span></button><button class="btn" data-pc="skip" data-tip="pcSkip" aria-label="快进" title="快进"><i data-ic="fast-forward"></i><span class="pc-label">快进</span></button><button class="btn" data-pc="save" data-tip="pcSave" aria-label="存档" title="存档"><i data-ic="save"></i><span class="pc-label">存档</span></button><button class="btn" data-pc="load" data-tip="pcLoad" aria-label="读档" title="读档"><i data-ic="folder-open"></i><span class="pc-label">读档</span></button><button class="btn" data-pc="set" data-tip="pcSet" aria-label="设置" title="设置"><i data-ic="settings"></i><span class="pc-label">设置</span></button><button class="btn" data-pc="hide" aria-label="查看完整画面" title="查看完整画面（H），点击画面恢复"><i data-ic="eye"></i><span class="pc-label">画面</span></button><button class="btn" data-pc="exit" data-tip="pcExit" aria-label="标题" title="标题"><i data-ic="log-out"></i><span class="pc-label">标题</span></button></div>
       </div>
       <div id="pin"><input id="pinput" autocomplete="off" spellcheck="false"><button class="btn" id="pinEnd" data-tip="pinEnd"><i data-ic="square"></i></button></div>
       <div id="exprPop"></div>
@@ -2024,27 +2024,38 @@ function showAudioLibrary() {
   for (const t of ambientTracks.values()) t.el.pause();
   for (const el of bgmRetiring) { cancelAnimationFrame(el._fadeFrame); el.pause(); }
   bgmRetiring.clear(); stopEffects();
-  const box = $('#paudio');
-  const categories = [['music', '音乐'], ['ambience', '环境音'], ['effect', '剧情音效']];
-  box.innerHTML = '<h2>音频试听</h2><p class="audio-note">已收录《翡翠之梦》主曲；《深海之光》与各主题变奏等待后续加入。</p><p id="audioNow" role="status">选择一段音频试听</p>' + categories.map(([kind, title]) => '<h3>' + title + '</h3><div class="audio-grid">' + Object.values(P.assets).filter(a => a.audioCategory === kind).map(a => '<button data-audio="' + esc(a.id) + '">' + esc(a.name) + (a.auditionOnly ? '<small class="audition-only">待审 · 未接入剧情</small>' : '') + '<span>' + (a.dur < 10 ? a.dur.toFixed(1) : Math.round(a.dur)) + ' 秒</span></button>').join('') + '</div>').join('') + '<button id="audioStop">停止试听</button>';
-  box.querySelectorAll('[data-audio]').forEach(b => b.onclick = e => {
+  const box = $('#paudio'), assets = Object.values(P.assets).filter(a => a.audioCategory);
+  const categories = [['music', '配乐'], ['ambience', '环境'], ['effect', '音效']];
+  const displayName = a => a.name.replace(/^作者原声[ ·]+/, '').replace(/^(环境|剧情|UI)_/, '').replace(/_/g, ' ');
+  const card = a => '<button type="button" data-audio="' + esc(a.id) + '" aria-pressed="false"><span class="track-icon">' + ic(a.audioCategory === 'music' ? 'music' : a.audioCategory === 'ambience' ? 'waves' : 'bell') + '</span><b>' + esc(displayName(a)) + '</b><small>' + (a.dur < 10 ? a.dur.toFixed(1) : Math.round(a.dur)) + ' 秒</small></button>';
+  box.innerHTML = '<header class="panel-heading"><small>海风与布丁</small><h2>声音收藏</h2><p>重听一段旋律，或留在熟悉的海风里。</p></header><nav class="audio-tabs" aria-label="声音分类">' + categories.map(([kind, title], i) => '<button type="button" data-kind="' + kind + '" aria-pressed="' + (i === 0) + '">' + title + '</button>').join('') + '</nav><div class="audio-player"><p id="audioNow" role="status" aria-live="polite">选择一段声音开始试听</p><button type="button" id="audioStop" disabled>停止</button></div>' + categories.map(([kind]) => '<section data-audio-panel="' + kind + '"' + (kind === 'music' ? '' : ' hidden') + '><div class="audio-grid">' + assets.filter(a => a.audioCategory === kind && !a.auditionOnly).map(card).join('') + '</div></section>').join('') + '<details class="audio-archive"><summary>素材归档 · 候选试听</summary><p>以下原件暂未用于剧情，可供制作时比较。</p><div class="audio-grid">' + assets.filter(a => a.auditionOnly).map(card).join('') + '</div></details>';
+  box.querySelectorAll('[data-kind]').forEach(button => button.onclick = e => {
+    e.stopPropagation();
+    box.querySelectorAll('[data-kind]').forEach(b => b.setAttribute('aria-pressed', String(b === button)));
+    box.querySelectorAll('[data-audio-panel]').forEach(panel => panel.hidden = panel.dataset.audioPanel !== button.dataset.kind);
+  });
+  box.querySelectorAll('[data-audio]').forEach(button => button.onclick = e => {
     e.stopPropagation();
     if (auditionEl) auditionEl.pause();
-    auditionAsset = A(b.dataset.audio); auditionEl = new Audio(auditionAsset.src);
-    auditionEl.loop = auditionAsset.audioCategory !== 'effect';
-    refreshAudioVolumes(); tryPlayAudio(auditionEl);
-    box.querySelector('#audioNow').textContent = '正在试听：' + auditionAsset.name;
-    box.querySelectorAll('[data-audio]').forEach(x => x.classList.toggle('active', x === b));
-    auditionEl.addEventListener('ended', () => { box.querySelector('#audioNow').textContent = '播放完毕'; b.classList.remove('active'); });
+    auditionAsset = A(button.dataset.audio); const selected = auditionAsset, el = new Audio(selected.src); auditionEl = el;
+    el.loop = selected.audioCategory !== 'effect'; refreshAudioVolumes();
+    const status = box.querySelector('#audioNow'); status.textContent = '正在加载：' + displayName(selected);
+    const mark = active => box.querySelectorAll('[data-audio]').forEach(b => { b.classList.toggle('active', active && b === button); b.setAttribute('aria-pressed', String(active && b === button)); });
+    mark(true); box.querySelector('#audioStop').disabled = false;
+    el.addEventListener('playing', () => { if (auditionEl === el) status.textContent = '正在播放：' + displayName(selected); });
+    el.addEventListener('ended', () => { if (auditionEl === el) { status.textContent = '播放完毕：' + displayName(selected); mark(false); box.querySelector('#audioStop').disabled = true; } });
+    el.addEventListener('error', () => { if (auditionEl === el) { status.textContent = '这段声音暂时无法播放，请换一段试试。'; mark(false); box.querySelector('#audioStop').disabled = true; } });
+    el.play().catch(() => { if (auditionEl === el) status.textContent = '尚未开始播放，请再次点击曲目。'; });
   });
   box.querySelector('#audioStop').onclick = e => {
     e.stopPropagation(); if (auditionEl) auditionEl.pause();
-    box.querySelector('#audioNow').textContent = '试听已停止';
-    box.querySelectorAll('[data-audio]').forEach(x => x.classList.remove('active'));
+    box.querySelector('#audioNow').textContent = '已停止'; box.querySelector('#audioStop').disabled = true;
+    box.querySelectorAll('[data-audio]').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-pressed', 'false'); });
   };
   addClose(box, closeAudioLibrary); box.classList.add('show');
-  box.onclick = e => { e.stopPropagation(); if (e.target === box || e.target.tagName === 'H2') { box.classList.remove('show'); closeAudioLibrary(); } };
+  box.onclick = e => { e.stopPropagation(); if (e.target === box) { box.classList.remove('show'); closeAudioLibrary(); } };
 }
+
 function closeAudioLibrary() {
   if (!audioLibraryOpen) return;
   audioLibraryOpen = false;
@@ -2059,7 +2070,7 @@ function closeAudioLibrary() {
 function showChapterReview() {
   const box = document.getElementById('pchapters');
   const chapters = P.lines.flatMap((line, index) => line.chapter ? [{title:line.chapter, index}] : []);
-  box.innerHTML = '<h2>章节试阅</h2><p>从该话开头试阅，使用初始好感与尾鳍数值。</p><div class="chapter-grid">' + chapters.map(c => '<button class="chapter-entry" data-chapter="' + c.index + '">' + esc(c.title) + '</button>').join('') + '</div>';
+  box.innerHTML = '<header class="panel-heading"><small>故事的起点</small><h2>章节试阅</h2><p>从该话开头试阅，关系数值从初始状态开始；已有存档保留。</p></header><div class="chapter-grid">' + chapters.map(c => '<button class="chapter-entry" data-chapter="' + c.index + '">' + esc(c.title) + '</button>').join('') + '</div>';
   box.querySelectorAll('[data-chapter]').forEach(button => button.onclick = event => { event.stopPropagation(); startPlay(Number(button.dataset.chapter)); });
   addClose(box); box.classList.add('show');
   box.onclick = event => { event.stopPropagation(); if (event.target === box) box.classList.remove('show'); };
@@ -2098,6 +2109,7 @@ function setPref(k, v) {
   if (gameMode) { PREF[k] = v; try { localStorage.setItem('vnprefs:' + P.id, JSON.stringify(PREF)); } catch (e) {} }
   else { P.settings[k] = v; autosave(); }
   refreshAudioVolumes(k);
+  if (k === 'readerScale') applyTheme();
   if (k === 'vvo' && voEl) voEl.volume = v;
 }
 /* —— 已读记录：所有存档共用，用来“只快进已读” —— */
@@ -2134,7 +2146,7 @@ function applyTheme() {
     '--dRad': t.radius + 'px', '--dSide': t.layout === 'wide' ? '0px' : '60px', '--dBot': t.layout === 'wide' ? '0px' : '28px', '--dH': t.layout === 'wide' ? '220px' : '190px',
     '--nBg': t.layout === 'wide' ? 'transparent' : t.name, '--nFg': t.layout === 'wide' ? t.accent : (isLight(t.name) ? '#222' : '#fff'),
     '--nRad': Math.min(t.radius, 20) + 'px', '--nBorder': t.layout === 'wide' ? '0' : `1px solid ${isLight(t.name) ? '#00000022' : '#ffffff30'}`,
-    '--tFg': t.text, '--tSize': t.size + 'px', '--font': (FONTS[t.font] || FONTS.sans)[1],
+    '--tFg': t.text, '--tSize': (t.size * Math.max(1, Math.min(1.25, +(pref('readerScale') ?? 1)))) + 'px', '--font': (FONTS[t.font] || FONTS.sans)[1],
     '--cBg': hexA(t.box, Math.max(.75, t.alpha)), '--cHover': t.name === '#000000' ? hexA(t.accent, .35) : t.name,
     '--cBorder': preset === 'scifi' ? `1px solid ${t.accent}` : `1px solid ${isLight(t.box) ? '#00000030' : '#ffffff40'}`, '--cRad': Math.min(t.radius, 30) + 'px', '--acc': t.accent
   };
@@ -2218,7 +2230,7 @@ function startPlay(fromIdx, state) {
   CH_AT = null; RT.soul = state?.soul ? clone(state.soul) : soulFresh(); RT.soul.busy = 0;
   { const T = RT.soul.tl || (RT.soul.tl = soulNewTl()); if (state?.soul) { T.anc = [...T.anc, { lineage: T.lin, turn: T.turn }]; T.lin = T.lin.split('.')[0] + '.' + Date.now().toString(36); } }
   SOUL_REV++; soulTabUpd();
-  layer.innerHTML = ''; loadPrefs(); loadRead();
+  layer.innerHTML = ''; loadPrefs(); applyTheme(); loadRead();
   stopEffects(); RT.audioRestore=state?.audio||null; RT.audioSkipEntrySe=!!state;
   VNPlugins.emit('play', { from: RT.idx, loaded: !!state });
   showPlay(true);
@@ -2357,10 +2369,10 @@ function showGallery(tab = 'cg') {
   if (tab === 'cg') {
     body.className = 'body cgs';
     cgs.forEach(a => {
-      const d = document.createElement('div'), open = G.cg.includes(a.id);
+      const d = document.createElement('button'), open = G.cg.includes(a.id); d.type = 'button'; d.disabled = !open; d.setAttribute('aria-label', open ? a.name.replace(/^CG_/, '') : '尚未解锁的画面');
       d.className = 'cg' + (open ? '' : ' lock');
       if (open) { d.style.backgroundImage = cssUrl(a.src); d.onclick = e => { e.stopPropagation(); const v = $('#cgview'); v.style.backgroundImage = cssUrl(a.src); v.classList.add('show'); v.onclick = ev => { ev.stopPropagation(); v.classList.remove('show'); }; }; }
-      else d.textContent = '?';
+      else d.innerHTML = '<small>尚未解锁</small>';
       body.appendChild(d);
     });
     if (!cgs.length) body.outerHTML = '<div class="stat">还没有 CG</div>';
@@ -2376,7 +2388,7 @@ function showGallery(tab = 'cg') {
   box.querySelector('.stat').textContent = `通关 ${G.clears} 次`;
   box.querySelectorAll('[data-g]').forEach(b => b.onclick = e => { e.stopPropagation(); showGallery(b.dataset.g); });
   addClose(box); box.classList.add('show');
-  box.onclick = e => { e.stopPropagation(); if (e.target === box || e.target.tagName === 'H2') box.classList.remove('show'); };
+  box.onclick = e => { e.stopPropagation(); if (e.target === box) box.classList.remove('show'); };
 }
 function advance() {
   if (!playing || overlayOpen()) return;
@@ -2440,7 +2452,7 @@ stage.addEventListener('contextmenu', e => {
 });
 // 每个弹出层右上角一个 ✕（手机上没有 Esc 键）
 function addClose(box, after) {
-  const x = document.createElement('button'); x.className = 'ovx'; x.innerHTML = ic('x');
+  const x = document.createElement('button'); x.className = 'ovx'; x.type = 'button'; x.setAttribute('aria-label', '返回游戏'); x.title = '返回游戏（Esc）'; x.innerHTML = ic('x');
   x.onclick = e => { e.stopPropagation(); box.classList.remove('show'); after?.(); };
   box.prepend(x);
 }
@@ -2456,18 +2468,24 @@ document.addEventListener('pointerup', goFullscreen);
 $('#bPortrait').onclick = () => document.body.classList.add('portraitOk');
 ['orientationchange', 'fullscreenchange'].forEach(t => window.addEventListener(t, () => setTimeout(fit, 120)));
 window.visualViewport?.addEventListener('resize', fit);
-stage.addEventListener('wheel', e => { if (playing && e.deltaY < 0 && !overlayOpen()) showBacklog(); });
+stage.addEventListener('wheel', e => {
+  if (e.target.closest('#ptx') && $('#ptx').scrollHeight > $('#ptx').clientHeight + 2) return;
+  if (playing && e.deltaY < 0 && !overlayOpen()) showBacklog();
+});
 
 /* —— 游戏内菜单：回看 / 自动 / 快进 / 存档 / 读档 —— */
 function updPctl() {
   document.querySelector('[data-pc=auto]').classList.toggle('on', RT.auto);
+  document.querySelector('[data-pc=auto]').setAttribute('aria-pressed', String(RT.auto));
   document.querySelector('[data-pc=skip]').classList.toggle('on', RT.skip);
+  document.querySelector('[data-pc=skip]').setAttribute('aria-pressed', String(RT.skip));
 }
 $('#pctl').addEventListener('click', e => {
   e.stopPropagation();
   const b = e.target.closest('[data-pc]'); if (!b) return;
   const a = b.dataset.pc;
   if (a === 'log') showBacklog();
+  if (a === 'hide') setHideUI(true);
   if (a === 'save' || a === 'load') showSlots(a);
   if (a === 'set') showPrefs();
   if (a === 'exit') stopPlay();
@@ -2477,20 +2495,20 @@ $('#soulTab').addEventListener('click', e => { e.stopPropagation(); if ($('#soul
 function showPrefs() {
   clearTimeout(RT.timer); RT.timer = null;
   const box = $('#psettings');
-  const sl = (k, label, min, max, step, inv) => `<div class="row"><span>${label}</span><input type="range" min="${min}" max="${max}" step="${step}" data-k="${k}" ${inv ? 'data-inv="' + inv + '"' : ''} value="${inv ? inv - pref(k) : pref(k)}"></div>`;
-  box.innerHTML = `<h2>${ic('settings')}</h2><div class="rows">
-    ${sl('vbgm', ic('music') + ' 音乐', 0, 1, 0.05)}${sl('vse', ic('bell') + ' 音效', 0, 1, 0.05)}${sl('vamb', ic('waves') + ' 环境音', 0, 1, 0.05)}${sl('vvo', ic('mic') + ' 语音', 0, 1, 0.05)}
-    ${sl('speed', '文字速度', 5, 80, 5, 85)}${sl('autoMul', '自动播放等待', 0.4, 2.5, 0.1)}
+  const sl = (k, label, min, max, step, inv) => `<div class="row"><span>${label}</span><input type="range" min="${min}" max="${max}" step="${step}" data-k="${k}" ${inv ? 'data-inv="' + inv + '"' : ''} value="${inv ? inv - pref(k) : (pref(k) ?? 1)}"></div>`;
+  box.innerHTML = `<header class="panel-heading"><small>按自己的节奏</small><h2>声音与阅读</h2></header><div class="rows">
+    ${sl('vbgm', ic('music') + ' 音乐', 0, 1, 0.05)}${sl('vse', ic('bell') + ' 音效', 0, 1, 0.05)}${sl('vamb', ic('waves') + ' 环境音', 0, 1, 0.05)}${P.lines.some(l => l.voice) ? sl('vvo', ic('mic') + ' 语音', 0, 1, 0.05) : ''}
+    ${sl('readerScale', '文字大小', 1, 1.25, 0.05)}${sl('speed', '文字速度', 5, 80, 5, 85)}${sl('autoMul', '自动播放等待', 0.4, 2.5, 0.1)}
     <div class="row"><span>快进</span><button class="tg ${pref('skipRead') ? 'on' : ''}" data-tg="skipRead">只快进已读</button></div>${soulPrefsHtml()}</div>`;
   box.querySelectorAll('input[type=range]').forEach(r => r.oninput = () => setPref(r.dataset.k, r.dataset.inv ? +r.dataset.inv - +r.value : +r.value));
   box.querySelectorAll('[data-tg]').forEach(b => b.onclick = e => { e.stopPropagation(); const v = !pref(b.dataset.tg); setPref(b.dataset.tg, v); b.classList.toggle('on', v); });
   soulPrefsBind(box);
   addClose(box, kick); box.classList.add('show');
-  box.onclick = e => { e.stopPropagation(); if (e.target === box || e.target.tagName === 'H2') { box.classList.remove('show'); kick(); } };
+  box.onclick = e => { e.stopPropagation(); if (e.target === box) { box.classList.remove('show'); kick(); } };
 }
 function hideOverlays() { document.querySelectorAll('.ovl').forEach(o => o.classList.remove('show')); }
 function showBacklog() {
-  const b = $('#backlog'); b.innerHTML = '';
+  const b = $('#backlog'); b.innerHTML = '<header class="panel-heading"><small>走过的片刻</small><h2>对话回看</h2></header>' + (RT.back.length ? '' : '<p>这里会留下已经读过的对话。</p>');
   RT.back.forEach(x => {
     const d = document.createElement('div'); d.className = 'e';
     if (x.s) { const n = document.createElement('b'); if (x.s === '▶') n.innerHTML = ic('chevron-right'); else n.textContent = x.s; d.appendChild(n); }
@@ -2499,7 +2517,7 @@ function showBacklog() {
     b.appendChild(d);
   });
   addClose(b); b.classList.add('show'); b.scrollTop = b.scrollHeight;
-  b.onclick = e => { e.stopPropagation(); b.classList.remove('show'); };
+  b.onclick = e => { e.stopPropagation(); if (e.target === b) b.classList.remove('show'); };
 }
 // 存档缩略图：把背景和立绘画到一张 320×180 的小图上
 async function makeThumb(l) {
@@ -2531,19 +2549,21 @@ const saveKey = () => 'saves:' + P.id;
 async function showSlots(mode) {
   clearTimeout(RT.timer); RT.timer = null; RT.auto = RT.skip = false; updPctl();
   const saves = (await idbGet(saveKey())) || {}, box = $('#slots');
-  box.innerHTML = '<h2></h2><div class="grid2"></div>';
-  box.querySelector('h2').innerHTML = ic(mode === 'save' ? 'save' : 'folder-open');
+  box.innerHTML = '<header class="panel-heading"><small>旅途记录</small><h2>' + (mode === 'save' ? '保存进度' : '读取进度') + '</h2><p>' + (mode === 'save' ? '选一个位置，把这一刻留下。' : Object.keys(saves).length ? '回到上次停下的地方。' : '还没有保存的进度。开始游戏后，随时可以存档。') + '</p></header><div class="grid2"></div>';
   const g = box.querySelector('.grid2');
   for (let k = 1; k <= 6; k++) {
-    const s = saves[k], d = document.createElement('div'); d.className = 'slot';
+    const s = saves[k], d = document.createElement('button'); d.type = 'button'; d.className = 'slot' + (s ? '' : ' empty'); d.disabled = !s && mode === 'load';
     if (s?.thumb) d.style.backgroundImage = cssUrl(s.thumb);
     else if (s) miniScene(d, P.lines.find(x => x.id === s.lineId) || { bg: s.bg, sprites: [] });
     const sp = document.createElement('span');
-    sp.textContent = s ? `${k}  ${new Date(s.time).toLocaleString()}  ${(s.text || '').slice(0, 16)}` : `${k}  —`;
+    const savedIndex = s ? P.lines.findIndex(x => x.id === s.lineId) : -1;
+    sp.innerHTML = '<b>存档 ' + String(k).padStart(2, '0') + '</b>' + (s ? '<small>' + esc(chapterAt(savedIndex >= 0 ? savedIndex : s.idx)) + '</small><p>' + esc((s.text || '').slice(0, 28)) + '</p><time>' + esc(new Date(s.time).toLocaleString()) + '</time>' : '<small>还没有记录</small>');
     d.appendChild(sp);
     d.onclick = async e => {
       e.stopPropagation();
       if (mode === 'save') {
+        if (s && !confirm('覆盖存档 ' + String(k).padStart(2, '0') + '？原进度会被替换。')) return;
+        d.disabled = true;
         const l = P.lines[RT.idx];
         saves[k] = { time: Date.now(), idx: RT.idx, lineId: l.id, vars: clone(RT.varsBefore), back: RT.back.slice(-100), soul: RT.soul ? clone(RT.soul) : undefined, text: l.text || '', bg: l.bg, thumb: await makeThumb(l), audio:captureAudioState() };
         const ok = await idbSet(saveKey(), saves);
@@ -2558,7 +2578,7 @@ async function showSlots(mode) {
     g.appendChild(d);
   }
   addClose(box); box.classList.add('show');
-  box.onclick = e => { e.stopPropagation(); if (e.target === box || e.target.tagName === 'H2') box.classList.remove('show'); };
+  box.onclick = e => { e.stopPropagation(); if (e.target === box) box.classList.remove('show'); };
 }
 function showTitle() {
   playing = true; document.body.classList.add('playing'); hideOverlays(); clearTimers(); stopAllAudio(); stopTick(); stopChoiceTimer();
@@ -2570,8 +2590,9 @@ function showTitle() {
   t.style.setProperty('--ty', (cv.ty ?? 186) + 'px');
   loadG();
   const hasGal = Object.values(P.assets).some(isCG) || allEndings().length;
-  t.innerHTML = (ca ? `<div class="cbg" style="background-image:${esc(cssUrl(ca.src))}"></div>` : '') + `<h1 class="t-${ca ? pos(cv.title) : 'center'}"></h1><div class="menu m-${ca ? pos(cv.menu) : 'center'}">` + '<button data-t="start">开始游戏</button><button data-t="load">读取进度</button>' + (hasGal ? '<button data-t="gal">鉴赏</button>' : '') + VNPlugins.R.titleBtns.map((b, k) => { try { return !b.show || b.show() ? `<button data-tp="${k}">${esc(b.label)}</button>` : ''; } catch (e) { return ''; } }).join('') + '<button data-t="chapters">章节试阅</button><button data-t="audio">音频试听</button><button data-t="set">设置</button>' + (P.settings.plgMenu === false ? '' : '<button data-t="plg">插件</button>') + '</div>';
-  loadPrefs();
+  t.innerHTML = (ca ? `<div class="cbg" style="background-image:${esc(cssUrl(ca.src))}"></div>` : '') + `<h1 class="t-${ca ? pos(cv.title) : 'center'}"></h1><div class="menu m-${ca ? pos(cv.menu) : 'center'}">` + '<button data-t="start">开始游戏</button><button data-t="load">读取进度</button>' + (hasGal ? '<button data-t="gal">鉴赏</button>' : '') + VNPlugins.R.titleBtns.map((b, k) => { try { return !b.show || b.show() ? `<button data-tp="${k}">${esc(b.label)}</button>` : ''; } catch (e) { return ''; } }).join('') + '<button data-t="chapters">章节试阅</button><button data-t="audio">声音收藏</button><button data-t="set">设置</button>' + (P.settings.plgMenu === false ? '' : '<button data-t="plg">插件</button>') + '</div>';
+  loadPrefs(); applyTheme();
+  t.insertAdjacentHTML('beforeend', '<p class="play-help">点击 / 空格 继续　·　滚轮上翻 回看　·　H 隐藏界面</p>');
   t.querySelector('[data-t=gal]')?.addEventListener('click', e => { e.stopPropagation(); showGallery(); });
   t.querySelector('h1').textContent = P.title || '';
   t.querySelector('[data-t=start]').onclick = e => { e.stopPropagation(); const entry=P.lines.findIndex(l=>l.chapter);startPlay(entry>=0?entry:0); };
@@ -3212,6 +3233,9 @@ $('#bSide').onclick = () => { const s = $('#side'); s.classList.toggle('collapse
 document.addEventListener('keydown', e => {
   if ($('#modal').style.display === 'flex') { if (e.key === 'Escape') closeModal(); return; }
   if (playing) {
+    if (e.isComposing) return;
+    const typing = ['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement?.tagName) || document.activeElement?.isContentEditable;
+    if (typing && document.activeElement !== $('#pinput')) return;
     if (document.activeElement === $('#pinput')) { if (e.key === 'Escape') $('#pinput').blur(); return; }
     if (e.key === 'Escape') {
       const open = [...document.querySelectorAll('.ovl.show')].filter(o => o.id !== 'title');
@@ -3219,6 +3243,7 @@ document.addEventListener('keydown', e => {
       if (!$('#title').classList.contains('show') || !gameMode) stopPlay();
       return;
     }
+    if (overlayOpen() || ([' ', 'Enter'].includes(e.key) && e.target.closest('button,summary,[role=button]'))) return;
     if (e.key.toLowerCase() === 'h' && !e.ctrlKey && !overlayOpen()) return setHideUI(!stage.classList.contains('hideui'));
     if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); if (stage.classList.contains('hideui')) return setHideUI(false); return advance(); }
     if (e.key === 'Control' && !RT.skip && !RT.chat) { RT.skip = true; RT.auto = false; updPctl(); kick(); }
@@ -3743,6 +3768,7 @@ if (HOSTED) {
     { k: 'vse', label: '音效', type: 'range', min: 0, max: 1, step: 0.05 },
     { k: 'vamb', label: '环境音', type: 'range', min: 0, max: 1, step: 0.05 },
     { k: 'vvo', label: '语音', type: 'range', min: 0, max: 1, step: 0.05 },
+    { k: 'readerScale', label: '文字大小', type: 'range', def: 1, min: 1, max: 1.25, step: 0.05 },
     { k: 'speed', label: '文字速度', type: 'range', min: 5, max: 80, step: 5, inv: 85 },
     { k: 'autoMul', label: '自动播放等待', type: 'range', min: 0.4, max: 2.5, step: 0.1 },
     { k: 'skipRead', label: '只快进已读', type: 'bool' },

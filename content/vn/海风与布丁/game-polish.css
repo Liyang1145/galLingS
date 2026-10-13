@@ -38,3 +38,72 @@ body.game #choices[data-many="false"] button { width:100%; min-width:0; padding:
 body.game #choices[data-many="false"] .ctimer { width:100%; max-width:100%; }
 body.game #choices[data-many="true"] { top:48px; bottom:210px; left:48px; right:48px; display:grid; grid-template-columns:1fr 1fr; overflow:auto; align-items:start; }
 body.game #choices[data-many="true"] button { min-width:0; width:100%; font-size:20px; }
+
+/* Player-facing panels share the quiet sea-green palette. */
+body.game .ovl:not(#title):not(#cgview):not(#soul) { background:linear-gradient(145deg,#142f32f7,#102327fc); padding:54px 88px 60px; }
+body.game .panel-heading { margin:0 0 28px; }
+body.game .panel-heading>small { color:#a8c6b8; font-size:14px; letter-spacing:.18em; }
+body.game .panel-heading h2 { margin:8px 0 10px; font-size:32px; font-weight:500; letter-spacing:.10em; text-align:left; }
+body.game .panel-heading p,body.game #pchapters>p { color:#b9cbc3; font-size:18px; line-height:1.7; }
+body.game .ovl .ovx { color:#eaf0e4; background:#183437; border:1px solid #9cbcad55; }
+body.game .ovl button,body.game .ovl summary { font-family:var(--font); }
+body.game button:focus-visible,body.game summary:focus-visible,body.game input:focus-visible { outline:3px solid #d8e4b5; outline-offset:4px; }
+body.game #ptx { line-height:1.6; overflow-y:auto; scrollbar-width:thin; scrollbar-color:#a8c1a766 transparent; }
+body.game #pdlg { height:190px; padding:32px 34px 48px; }
+body.game #pctl .btn { width:auto; min-width:48px; height:30px; padding:0 8px; display:inline-flex; align-items:center; gap:5px; opacity:.85; }
+body.game #pctl .pc-label { font-size:14px; letter-spacing:0; }
+#pctl .pc-label { display:none; }
+body.game #pctl .pc-label { display:inline; }
+body.game #pctl .btn.on { background:#b8d6cb2b; color:#dceacb; opacity:1; }
+body.game #title.glass button { font-size:21px; backdrop-filter:none; }
+body.game #title [data-t="start"] { background:#e5efda; color:#243d35; border-color:#eaf5df; font-weight:600; }
+body.game #title [data-t="start"]:hover { background:#f7f6e7; }
+body.game #title [data-t="load"] { margin-bottom:6px; }
+body.game #title [data-t="plg"] { background:#173334aa; color:#d5e2d2; }
+body.game #title .play-help { position:absolute; left:68px; bottom:17px; margin:0; padding:7px 12px; color:#eaf3e6; background:#10282bb3; border-radius:4px; font-size:14px; letter-spacing:.025em; z-index:2; }
+body.game .audio-tabs { display:flex; gap:12px; border-bottom:1px solid #bdd2c12b; padding-bottom:16px; }
+body.game .audio-tabs button,body.game #audioStop { border:1px solid #a9c3b64a; border-radius:6px; background:#203f40; color:#dce9db; padding:11px 28px; font-size:20px; cursor:pointer; }
+body.game .audio-tabs button[aria-pressed="true"] { background:#d5e4ce; color:#263f36; border-color:#d5e4ce; }
+body.game .audio-player { display:flex; align-items:center; justify-content:space-between; gap:20px; margin:22px 0; padding:0 4px; }
+body.game #audioNow { color:#dce9db; font-size:19px; margin:0; }
+body.game #audioStop:disabled { opacity:.4; cursor:default; }
+body.game .audio-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; }
+body.game .audio-grid button { display:grid; grid-template-columns:42px 1fr; align-items:center; gap:4px 12px; min-height:92px; padding:18px 20px; text-align:left; border:1px solid #91b3a43a; border-radius:8px; background:#ffffff06; color:#f0f0df; cursor:pointer; font-size:18px; line-height:1.5; }
+body.game .audio-grid button:hover { background-color:#accdbd14; border-color:#b4d0b777; }
+body.game .audio-grid button.active { background-color:#63897530; border-color:#c2d8ae; }
+body.game .audio-grid button b { font-weight:500; overflow-wrap:anywhere; }
+body.game .audio-grid button small { grid-column:2; color:#a6c2b4; font-size:14px; }
+body.game .track-icon { grid-row:span 2; color:#b3cdb0; }
+body.game .track-icon .svi { width:28px; height:28px; }
+body.game [data-audio-panel="music"] .audio-grid { grid-template-columns:1fr; }
+body.game [data-audio-panel="music"] button { min-height:220px; padding:40px; font-size:29px; background:linear-gradient(90deg,#193a3afa 20%,#173435cf 62%,#15353c40),url("assets/bg/scenes/B38.webp") right center/cover; }
+body.game [data-audio-panel="music"] button small { font-size:17px; }
+body.game .audio-archive { margin-top:32px; color:#a8c2b5; border-top:1px solid #a7c2b329; padding-top:20px; font-size:17px; }
+body.game .audio-archive summary { cursor:pointer; }
+body.game .audio-archive>p { font-size:15px; }
+body.game #slots .grid2 { gap:18px; }
+body.game #slots .panel-heading h2 { text-align:left; margin:8px 0 10px; }
+body.game #psettings .panel-heading h2,body.game #pchapters .panel-heading h2 { text-align:left; }
+body.game #slots .slot { height:220px; padding:0; text-align:left; color:#e9efdf; font-family:var(--font); }
+body.game #slots .slot.empty { background:linear-gradient(145deg,#253f3f,#182e32); border-style:dashed; }
+body.game #slots .slot.empty:disabled { opacity:.65; cursor:default; }
+body.game #slots .slot span { padding:13px 16px; white-space:normal; background:linear-gradient(transparent,#102324ed 18%); }
+body.game #slots .slot.empty span { top:0; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:12px; background:none; }
+body.game #slots .slot b { display:block; font-size:20px; font-weight:500; }
+body.game #slots .slot small { display:block; font-size:14px; color:#c0d0c2; margin-top:4px; }
+body.game #slots .slot p { margin:8px 0 5px; font-size:16px; }
+body.game #slots .slot time { font-size:12px; color:#a4bdb0; }
+body.game #psettings .rows { max-width:900px; margin:0; }
+body.game #psettings .row>span { width:210px; color:#d4e2d4; }
+body.game #psettings input[type="range"] { accent-color:#b6cead; }
+body.game #psettings .tg { color:#e5ecdf; border-color:#a3c1b450; background:#233f3e; }
+body.game #psettings .tg.on { background:#53766c; }
+body.game #gallery .tabs { margin:20px 0 26px; }
+body.game #gallery .lock { background:linear-gradient(145deg,#233c3c,#172c30); color:#abc3b1; border:1px dashed #9db6a740; }
+body.game #backlog .e { padding:18px 4px; border-bottom:1px solid #a5c0b229; font-size:25px; line-height:1.65; }
+body.game #backlog .e b { font-weight:500; margin-bottom:5px; }
+@media (pointer:coarse) {
+  body.game #pctl .btn { width:auto; min-width:76px; height:44px; }
+  body.game #pctl { gap:8px; }
+  body.game .audio-grid button { min-height:104px; }
+}

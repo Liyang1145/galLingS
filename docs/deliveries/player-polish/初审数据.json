@@ -1,0 +1,4345 @@
+{
+  "visual_states": [
+    {
+      "index": 3,
+      "chapter": "第一话 · 浅滩上的偶遇",
+      "bg": "浅滩_正午",
+      "sprites": [],
+      "text": "盛夏的正午，浅滩的水被太阳晒得温热。",
+      "overflow": false,
+      "choices": 0
+    },
+    {
+      "index": 6,
+      "chapter": "第一话 · 浅滩上的偶遇",
+      "bg": "浅滩_正午",
+      "sprites": [],
+      "text": "「……所以这是哪儿？」",
+      "overflow": false,
+      "choices": 0
+    },
+    {
+      "index": 12,
+      "chapter": "第一话 · 浅滩上的偶遇",
+      "bg": "浅滩_正午",
+      "sprites": [
+        "鲸鱼小姐_生气"
+      ],
+      "text": "「——！！」",
+      "overflow": false,
+      "choices": 0
+    },
+    {
+      "index": 17,
+      "chapter": "第一话 · 浅滩上的偶遇",
+      "bg": "CG_初登场",
+      "sprites": [],
+      "text": "一只手接住了它。",
+      "overflow": false,
+      "choices": 0
+    },
+    {
+      "index": 20,
+      "chapter": "第一话 · 浅滩上的偶遇",
+      "bg": "浅滩_正午",
+      "sprites": [
+        "鲸鱼小姐_生气"
+      ],
+      "text": "「……说话。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 27,
+      "chapter": "第一话 · 浅滩上的偶遇",
+      "bg": "浅滩_正午",
+      "sprites": [
+        "鲸鱼小姐_坏笑"
+      ],
+      "text": "她僵住了。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 33,
+      "chapter": "第一话 · 浅滩上的偶遇",
+      "bg": "浅滩_正午",
+      "sprites": [
+        "鲸鱼小姐"
+      ],
+      "text": "她单手翻开笔记本，扫了一眼里面密密麻麻的字。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 39,
+      "chapter": "第一话 · 浅滩上的偶遇",
+      "bg": "浅滩_正午",
+      "sprites": [
+        "鲸鱼小姐_坏笑"
+      ],
+      "text": "她把笔记本举高。尾鳍在水里卷出一个威胁的弧度。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 42,
+      "chapter": "第一话 · 浅滩上的偶遇",
+      "bg": "浅滩_正午",
+      "sprites": [
+        "鲸鱼小姐_得意"
+      ],
+      "text": "「哼。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 57,
+      "chapter": "第一话 · 浅滩上的偶遇",
+      "bg": "浅滩_正午",
+      "sprites": [
+        "鲸鱼小姐_害羞"
+      ],
+      "text": "她停下，半侧过脸。耳尖有点红。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 63,
+      "chapter": "第一话 · 浅滩上的偶遇",
+      "bg": "浅滩_正午",
+      "sprites": [
+        "鲸鱼小姐_慌乱"
+      ],
+      "text": "「谁救你了！」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 72,
+      "chapter": "第一话 · 浅滩上的偶遇",
+      "bg": "浅滩_午后",
+      "sprites": [
+        "鲸鱼小姐"
+      ],
+      "text": "下午。我坐在礁石上晒干笔记本。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 82,
+      "chapter": "第一话 · 浅滩上的偶遇",
+      "bg": "浅滩_午后",
+      "sprites": [
+        "鲸鱼小姐_柔和"
+      ],
+      "text": "她游近了半米。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 93,
+      "chapter": "第一话 · 浅滩上的偶遇",
+      "bg": "浅滩_午后",
+      "sprites": [
+        "鲸鱼小姐_慌乱"
+      ],
+      "text": "（整条尾巴“啪”地拍平在水面上。）",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 95,
+      "chapter": "第一话 · 浅滩上的偶遇",
+      "bg": "浅滩_午后",
+      "sprites": [
+        "鲸鱼小姐_害羞"
+      ],
+      "text": "「人类，你搭讪的方式是抄的哪本破书？」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 98,
+      "chapter": "第一话 · 浅滩上的偶遇",
+      "bg": "浅滩_午后",
+      "sprites": [
+        "鲸鱼小姐_坏笑"
+      ],
+      "text": "「呵。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 102,
+      "chapter": "第一话 · 浅滩上的偶遇",
+      "bg": "浅滩_午后",
+      "sprites": [
+        "鲸鱼小姐"
+      ],
+      "text": "「什么嘛。无聊。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 103,
+      "chapter": "第一话 · 浅滩上的偶遇",
+      "bg": "浅滩_午后",
+      "sprites": [
+        "鲸鱼小姐"
+      ],
+      "text": "她哼了一声，把剩下的半块糍粑掰成两半。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 115,
+      "chapter": "第一话 · 浅滩上的偶遇",
+      "bg": "浅滩_午后",
+      "sprites": [
+        "鲸鱼小姐_慌乱"
+      ],
+      "text": "她整个人像被噎了一下。耳鳍都立了起来。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 124,
+      "chapter": "第一话 · 浅滩上的偶遇",
+      "bg": "浅滩_午后",
+      "sprites": [
+        "鲸鱼小姐_得意"
+      ],
+      "text": "「……嗯。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 130,
+      "chapter": "第一话 · 浅滩上的偶遇",
+      "bg": "浅滩_黄昏",
+      "sprites": [
+        "鲸鱼小姐_害羞"
+      ],
+      "text": "「明天还来。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 131,
+      "chapter": "第一话 · 浅滩上的偶遇",
+      "bg": "浅滩_黄昏",
+      "sprites": [
+        "鲸鱼小姐_慌乱"
+      ],
+      "text": "「不准来！」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 133,
+      "chapter": "第一话 · 浅滩上的偶遇",
+      "bg": "浅滩_黄昏",
+      "sprites": [
+        "鲸鱼小姐"
+      ],
+      "text": "她愣住。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 136,
+      "chapter": "第一话 · 浅滩上的偶遇",
+      "bg": "浅滩_黄昏",
+      "sprites": [
+        "鲸鱼小姐_柔和"
+      ],
+      "text": "她盯着我看了足足五秒钟。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 142,
+      "chapter": "第一话 · 浅滩上的偶遇",
+      "bg": "浅滩_黄昏",
+      "sprites": [],
+      "text": "她转身扎进深水区。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 148,
+      "chapter": "第一话 · 浅滩上的偶遇",
+      "bg": "帐篷_黄昏",
+      "sprites": [],
+      "text": "回到帐篷的时候，门口放着一串烤小鱿鱼。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 149,
+      "chapter": "第一话 · 浅滩上的偶遇",
+      "bg": "CG_烤鱿鱼",
+      "sprites": [],
+      "text": "还温着。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 160,
+      "chapter": "第二话 · 暗号契约",
+      "bg": "浅滩_上午",
+      "sprites": [],
+      "text": "第二天上午。我带着冰镇酸梅汤，加桂花。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 168,
+      "chapter": "第二话 · 暗号契约",
+      "bg": "浅滩_上午",
+      "sprites": [
+        "鲸鱼小姐"
+      ],
+      "text": "她从礁石后面绕出来，抱臂，别着脸。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 171,
+      "chapter": "第二话 · 暗号契约",
+      "bg": "浅滩_上午",
+      "sprites": [
+        "鲸鱼小姐_慌乱"
+      ],
+      "text": "「……无关紧要！」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 179,
+      "chapter": "第二话 · 暗号契约",
+      "bg": "浅滩_上午",
+      "sprites": [
+        "鲸鱼小姐_害羞"
+      ],
+      "text": "「……哼。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 184,
+      "chapter": "第二话 · 暗号契约",
+      "bg": "浅滩_上午",
+      "sprites": [
+        "鲸鱼小姐_得意"
+      ],
+      "text": "「在本小姐的地盘，投喂之前要先报菜名。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 186,
+      "chapter": "第二话 · 暗号契约",
+      "bg": "礁石_上午",
+      "sprites": [
+        "鲸鱼小姐"
+      ],
+      "text": "「桂花放多了。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 191,
+      "chapter": "第二话 · 暗号契约",
+      "bg": "礁石_上午",
+      "sprites": [
+        "鲸鱼小姐_得意"
+      ],
+      "text": "「销毁证据。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 193,
+      "chapter": "第二话 · 暗号契约",
+      "bg": "礁石_上午",
+      "sprites": [
+        "鲸鱼小姐_柔和"
+      ],
+      "text": "喝到最后，她忽然停下来，盯着杯子里的桂花看了一会儿。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 213,
+      "chapter": "第二话 · 暗号契约",
+      "bg": "礁石_上午",
+      "sprites": [
+        "鲸鱼小姐_慌乱"
+      ],
+      "text": "她的耳朵以肉眼可见的速度红透。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 228,
+      "chapter": "第二话 · 暗号契约",
+      "bg": "礁石_上午",
+      "sprites": [
+        "鲸鱼小姐_害羞"
+      ],
+      "text": "她盯着那行字看了三秒。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 230,
+      "chapter": "第二话 · 暗号契约",
+      "bg": "CG_立约",
+      "sprites": [],
+      "text": "然后低下头，一笔一画地开始写。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 242,
+      "chapter": "第二话 · 暗号契约",
+      "bg": "礁石_上午",
+      "sprites": [
+        "鲸鱼小姐_抱本子"
+      ],
+      "text": "她把本子转过来，尾巴尖点了点落款处。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 243,
+      "chapter": "第二话 · 暗号契约",
+      "bg": "礁石_上午",
+      "sprites": [
+        "鲸鱼小姐_得意"
+      ],
+      "text": "「签字。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 247,
+      "chapter": "第二话 · 暗号契约",
+      "bg": "礁石_上午",
+      "sprites": [
+        "鲸鱼小姐_柔和"
+      ],
+      "text": "她盯着那行小字看了很久。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 260,
+      "chapter": "第二话 · 暗号契约",
+      "bg": "礁石_上午",
+      "sprites": [
+        "鲸鱼小姐_坏笑"
+      ],
+      "text": "「卖身契？」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 269,
+      "chapter": "第二话 · 暗号契约",
+      "bg": "礁石_黄昏",
+      "sprites": [
+        "鲸鱼小姐_柔和"
+      ],
+      "text": "傍晚。契约签完了，酸梅汤也见底了。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 288,
+      "chapter": "第二话 · 暗号契约",
+      "bg": "礁石_黄昏",
+      "sprites": [
+        "鲸鱼小姐_害羞"
+      ],
+      "text": "「……暗号才不是这么用的。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 294,
+      "chapter": "第二话 · 暗号契约",
+      "bg": "礁石_黄昏",
+      "sprites": [
+        "鲸鱼小姐"
+      ],
+      "text": "「你记得？」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 300,
+      "chapter": "第二话 · 暗号契约",
+      "bg": "礁石_黄昏",
+      "sprites": [
+        "鲸鱼小姐_慌乱"
+      ],
+      "text": "「好什么好！」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 302,
+      "chapter": "第二话 · 暗号契约",
+      "bg": "礁石_黄昏",
+      "sprites": [
+        "鲸鱼小姐_生气"
+      ],
+      "text": "她掰着手指数，越数越气。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 306,
+      "chapter": "第二话 · 暗号契约",
+      "bg": "礁石_黄昏",
+      "sprites": [
+        "鲸鱼小姐_抱本子"
+      ],
+      "text": "她把笔记本抱在怀里，忽然用尾巴尖把本子往我这边推了推。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 311,
+      "chapter": "第二话 · 暗号契约",
+      "bg": "礁石_黄昏",
+      "sprites": [
+        "鲸鱼小姐_得意"
+      ],
+      "text": "「『桂花』，酸梅汤。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 317,
+      "chapter": "第二话 · 暗号契约",
+      "bg": "礁石_黄昏",
+      "sprites": [],
+      "text": "说完，她扎进水里，速度快得像在逃。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 321,
+      "chapter": "第二话 · 暗号契约",
+      "bg": "礁石_夜",
+      "sprites": [],
+      "text": "我翻开笔记本，契约那一页的最下方，多了一行不是她写的、也不是我写的字。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 329,
+      "chapter": "第二话 · 暗号契约",
+      "bg": "礁石_夜",
+      "sprites": [
+        "鲸鱼小姐_柔和"
+      ],
+      "text": "「看什么。小伤。海里的生灵愈合得快，三天就好。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 337,
+      "chapter": "第三话 · 深海之光",
+      "bg": "浅滩_清晨",
+      "sprites": [],
+      "text": "第三天清晨。我到浅滩的时候，她已经在了。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 340,
+      "chapter": "第三话 · 深海之光",
+      "bg": "浅滩_清晨",
+      "sprites": [
+        "鲸鱼小姐_害羞"
+      ],
+      "text": "看见我，她立刻转过去，假装在看海。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 344,
+      "chapter": "第三话 · 深海之光",
+      "bg": "浅滩_清晨",
+      "sprites": [
+        "鲸鱼小姐_得意"
+      ],
+      "text": "「巡视浅滩。巡视礁石。巡视你来的路。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 346,
+      "chapter": "第三话 · 深海之光",
+      "bg": "浅滩_清晨",
+      "sprites": [
+        "鲸鱼小姐"
+      ],
+      "text": "「今天有什么事吗？你起这么早。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 348,
+      "chapter": "第三话 · 深海之光",
+      "bg": "浅滩_清晨",
+      "sprites": [
+        "鲸鱼小姐_慌乱"
+      ],
+      "text": "她说完，自己顿住了。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 356,
+      "chapter": "第三话 · 深海之光",
+      "bg": "浅滩_清晨",
+      "sprites": [
+        "鲸鱼小姐_柔和"
+      ],
+      "text": "她的声音沉了下来。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 366,
+      "chapter": "第三话 · 深海之光",
+      "bg": "浅滩_清晨",
+      "sprites": [
+        "鲸鱼小姐_坏笑"
+      ],
+      "text": "「哦？」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 384,
+      "chapter": "第三话 · 深海之光",
+      "bg": "深水区_水下",
+      "sprites": [
+        "鲸鱼小姐_柔和"
+      ],
+      "text": "下潜。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 388,
+      "chapter": "第三话 · 深海之光",
+      "bg": "深水区_水下",
+      "sprites": [
+        "鲸鱼小姐_柔和"
+      ],
+      "text": "光没了。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 390,
+      "chapter": "第三话 · 深海之光",
+      "bg": "深水区_水下",
+      "sprites": [
+        "鲸鱼小姐_柔和"
+      ],
+      "text": "然后，光回来了。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 392,
+      "chapter": "第三话 · 深海之光",
+      "bg": "深海_珊瑚礁",
+      "sprites": [
+        "鲸鱼小姐_柔和"
+      ],
+      "text": "是从海床深处，一点一点亮起来的、蓝色的、星星点点的光。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 396,
+      "chapter": "第三话 · 深海之光",
+      "bg": "深海_珊瑚礁",
+      "sprites": [
+        "鲸鱼小姐_潜水"
+      ],
+      "text": "「说话呀。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 411,
+      "chapter": "第三话 · 深海之光",
+      "bg": "深海_珊瑚礁",
+      "sprites": [
+        "鲸鱼小姐_潜水"
+      ],
+      "text": "『——可是刚才入水之前，她说的是“带你去个地方”。』",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 430,
+      "chapter": "第三话 · 深海之光",
+      "bg": "深海_珊瑚礁",
+      "sprites": [],
+      "text": "我们在珊瑚礁上方悬停下来。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 431,
+      "chapter": "第三话 · 深海之光",
+      "bg": "CG_深海之光",
+      "sprites": [],
+      "text": "她仰着头，蓝黑色的长发在水里散开。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 436,
+      "chapter": "第三话 · 深海之光",
+      "bg": "深海_珊瑚礁",
+      "sprites": [
+        "鲸鱼小姐_潜水"
+      ],
+      "text": "「喂，人类。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 446,
+      "chapter": "第三话 · 深海之光",
+      "bg": "深海_珊瑚礁",
+      "sprites": [
+        "鲸鱼小姐_潜水"
+      ],
+      "text": "『她说这句话的时候，语速比平时慢。』",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 481,
+      "chapter": "第三话 · 深海之光",
+      "bg": "海面_黄昏",
+      "sprites": [],
+      "text": "上浮。出水。夕阳已经把半边海烧红了。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 482,
+      "chapter": "第三话 · 深海之光",
+      "bg": "海面_黄昏",
+      "sprites": [
+        "鲸鱼小姐_害羞"
+      ],
+      "text": "她先爬上礁石，背对着我，尾巴在身后一下一下地甩水。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 488,
+      "chapter": "第三话 · 深海之光",
+      "bg": "海面_黄昏",
+      "sprites": [
+        "鲸鱼小姐_柔和"
+      ],
+      "text": "「有些画面，只能放在脑袋里。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 498,
+      "chapter": "第三话 · 深海之光",
+      "bg": "帐篷_夜",
+      "sprites": [],
+      "text": "深夜。我翻开笔记本。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 511,
+      "chapter": "第四话 · 集市上的“我妻子”",
+      "bg": "集市_上午",
+      "sprites": [],
+      "text": "第五天。她列了清单，塞给我。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 514,
+      "chapter": "第四话 · 集市上的“我妻子”",
+      "bg": "集市_上午",
+      "sprites": [
+        "鲸鱼小姐_吊带裙"
+      ],
+      "text": "「看什么看，走啦。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 519,
+      "chapter": "第四话 · 集市上的“我妻子”",
+      "bg": "集市_上午",
+      "sprites": [
+        "鲸鱼小姐_吊带裙得意"
+      ],
+      "text": "「当然。本小姐巡视这片海域三年了。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 530,
+      "chapter": "第四话 · 集市上的“我妻子”",
+      "bg": "集市_饰品巷",
+      "sprites": [
+        "鲸鱼小姐_吊带裙"
+      ],
+      "text": "巷子深处，一个卖手作饰品的小摊。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 538,
+      "chapter": "第四话 · 集市上的“我妻子”",
+      "bg": "集市_饰品巷",
+      "sprites": [
+        "鲸鱼小姐_吊带裙害羞"
+      ],
+      "text": "「等等！」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 540,
+      "chapter": "第四话 · 集市上的“我妻子”",
+      "bg": "集市_饰品巷",
+      "sprites": [
+        "鲸鱼小姐_吊带裙得意"
+      ],
+      "text": "「刚好配得上本小姐的气质，不是想要，是配得上，懂吗？」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 574,
+      "chapter": "第四话 · 集市上的“我妻子”",
+      "bg": "集市_上午",
+      "sprites": [
+        "鲸鱼小姐_吊带裙得意"
+      ],
+      "text": "回程的路上。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 578,
+      "chapter": "第四话 · 集市上的“我妻子”",
+      "bg": "集市_上午",
+      "sprites": [
+        "鲸鱼小姐_吊带裙害羞"
+      ],
+      "text": "「……这是赠品。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 595,
+      "chapter": "第四话 · 集市上的“我妻子”",
+      "bg": "集市_上午",
+      "sprites": [
+        "鲸鱼小姐_吊带裙生气"
+      ],
+      "text": "「暗号条款二，你自己签的字！」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 619,
+      "chapter": "第四话 · 集市上的“我妻子”",
+      "bg": "浅滩_黄昏",
+      "sprites": [
+        "鲸鱼小姐_吊带裙害羞"
+      ],
+      "text": "她忽然把手链摘下来，递给我。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 626,
+      "chapter": "第四话 · 集市上的“我妻子”",
+      "bg": "浅滩_黄昏",
+      "sprites": [
+        "鲸鱼小姐_吊带裙"
+      ],
+      "text": "「那什么时候拿回去？」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 632,
+      "chapter": "第四话 · 集市上的“我妻子”",
+      "bg": "浅滩_黄昏",
+      "sprites": [
+        "鲸鱼小姐_吊带裙"
+      ],
+      "text": "『她说“一直放你那儿”的时候，语气像在交代一件珍宝的保管权。』",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 656,
+      "chapter": "第五话 · 海浪与诗句",
+      "bg": "浅滩_夜",
+      "sprites": [],
+      "text": "第七天。夜。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 659,
+      "chapter": "第五话 · 海浪与诗句",
+      "bg": "浅滩_夜",
+      "sprites": [
+        "鲸鱼小姐"
+      ],
+      "text": "她趴在礁石上，无聊地拍着水。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 663,
+      "chapter": "第五话 · 海浪与诗句",
+      "bg": "浅滩_夜",
+      "sprites": [
+        "鲸鱼小姐_坏笑"
+      ],
+      "text": "「哦？」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 671,
+      "chapter": "第五话 · 海浪与诗句",
+      "bg": "浅滩_夜",
+      "sprites": [
+        "鲸鱼小姐_生气"
+      ],
+      "text": "「你也知道？！」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 673,
+      "chapter": "第五话 · 海浪与诗句",
+      "bg": "浅滩_夜",
+      "sprites": [
+        "鲸鱼小姐_得意"
+      ],
+      "text": "她眼睛亮了一瞬，又立刻别过脸。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 687,
+      "chapter": "第五话 · 海浪与诗句",
+      "bg": "浅滩_夜",
+      "sprites": [
+        "鲸鱼小姐_坏笑"
+      ],
+      "text": "「这叫打击乐。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 690,
+      "chapter": "第五话 · 海浪与诗句",
+      "bg": "浅滩_夜",
+      "sprites": [
+        "鲸鱼小姐_得意"
+      ],
+      "text": "「呆呆学者。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 695,
+      "chapter": "第五话 · 海浪与诗句",
+      "bg": "浅滩_夜",
+      "sprites": [
+        "鲸鱼小姐"
+      ],
+      "text": "她忽然伸手，把笔记本抽走了。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 698,
+      "chapter": "第五话 · 海浪与诗句",
+      "bg": "浅滩_夜",
+      "sprites": [
+        "鲸鱼小姐_抱本子"
+      ],
+      "text": "她盘起尾巴，跪坐在礁石上，借着我手电的光，提笔。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 704,
+      "chapter": "第五话 · 海浪与诗句",
+      "bg": "CG_诗句",
+      "sprites": [],
+      "text": "明月不解人间意，",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 711,
+      "chapter": "第五话 · 海浪与诗句",
+      "bg": "浅滩_夜",
+      "sprites": [
+        "鲸鱼小姐_得意"
+      ],
+      "text": "我抬起头。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 713,
+      "chapter": "第五话 · 海浪与诗句",
+      "bg": "浅滩_夜",
+      "sprites": [
+        "鲸鱼小姐_慌乱"
+      ],
+      "text": "对上我视线的瞬间，整条尾巴僵住了。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 719,
+      "chapter": "第五话 · 海浪与诗句",
+      "bg": "浅滩_夜",
+      "sprites": [
+        "鲸鱼小姐_抱本子"
+      ],
+      "text": "她把笔记本抢回去，“啪”地合上。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 722,
+      "chapter": "第五话 · 海浪与诗句",
+      "bg": "浅滩_夜",
+      "sprites": [
+        "鲸鱼小姐_害羞"
+      ],
+      "text": "喊完，她安静了两秒，声音突然低下去：",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 726,
+      "chapter": "第五话 · 海浪与诗句",
+      "bg": "浅滩_夜",
+      "sprites": [
+        "鲸鱼小姐"
+      ],
+      "text": "「教你？」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 753,
+      "chapter": "第五话 · 海浪与诗句",
+      "bg": "浅滩_夜",
+      "sprites": [
+        "鲸鱼小姐_柔和"
+      ],
+      "text": "她半眯着眼睛，声音含糊——",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 774,
+      "chapter": "第六话 · 原来不是别人啊",
+      "bg": "帐篷_夜",
+      "sprites": [
+        "鲸鱼小姐_柔和"
+      ],
+      "text": "她抱着膝盖坐在火堆边，难得地安静。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 777,
+      "chapter": "第六话 · 原来不是别人啊",
+      "bg": "帐篷_夜",
+      "sprites": [
+        "鲸鱼小姐"
+      ],
+      "text": "「你今晚的‘沙沙’声，比平时慢两倍。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 782,
+      "chapter": "第六话 · 原来不是别人啊",
+      "bg": "帐篷_夜",
+      "sprites": [
+        "鲸鱼小姐_坏笑"
+      ],
+      "text": "「行。但是先说好，要是又是那种海豚救人的——」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 809,
+      "chapter": "第六话 · 原来不是别人啊",
+      "bg": "帐篷_夜",
+      "sprites": [
+        "鲸鱼小姐_生气"
+      ],
+      "text": "——然后，整条尾巴炸了起来。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 814,
+      "chapter": "第六话 · 原来不是别人啊",
+      "bg": "帐篷_夜",
+      "sprites": [
+        "鲸鱼小姐_慌乱"
+      ],
+      "text": "「本小姐吃了你这么多布丁，结果是个——是个——」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 825,
+      "chapter": "第六话 · 原来不是别人啊",
+      "bg": "CG_原来是你",
+      "sprites": [],
+      "text": "过了很久，她低声说——",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 830,
+      "chapter": "第六话 · 原来不是别人啊",
+      "bg": "帐篷_夜",
+      "sprites": [
+        "鲸鱼小姐_害羞"
+      ],
+      "text": "「哼。那是因为你先卖关子。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 833,
+      "chapter": "第六话 · 原来不是别人啊",
+      "bg": "帐篷_夜",
+      "sprites": [
+        "鲸鱼小姐_柔和"
+      ],
+      "text": "她把下巴搁回膝盖上，看着火。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 841,
+      "chapter": "第六话 · 原来不是别人啊",
+      "bg": "帐篷_夜",
+      "sprites": [
+        "鲸鱼小姐_得意"
+      ],
+      "text": "「但是本小姐知道，本小姐喜欢什么，讨厌什么。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 850,
+      "chapter": "第六话 · 原来不是别人啊",
+      "bg": "帐篷_夜",
+      "sprites": [
+        "鲸鱼小姐_慌乱"
+      ],
+      "text": "「那是当然的！」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 871,
+      "chapter": "第六话 · 原来不是别人啊",
+      "bg": "帐篷_夜",
+      "sprites": [
+        "鲸鱼小姐"
+      ],
+      "text": "「本小姐跟你说一件事。你听好，只说一遍。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 875,
+      "chapter": "第六话 · 原来不是别人啊",
+      "bg": "帐篷_夜",
+      "sprites": [
+        "鲸鱼小姐_生气"
+      ],
+      "text": "「本小姐会掀翻这片海域。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 893,
+      "chapter": "第六话 · 原来不是别人啊",
+      "bg": "帐篷内_夜",
+      "sprites": [],
+      "text": "她睡着了。尾巴还搭在我的脚背上。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 907,
+      "chapter": "第七话 · 冒险家和海豚",
+      "bg": "浅滩_清晨",
+      "sprites": [
+        "鲸鱼小姐_得意"
+      ],
+      "text": "她站在沙洲上，朝我挥手。尾巴甩得像面旗。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 917,
+      "chapter": "第七话 · 冒险家和海豚",
+      "bg": "沙洲_上午",
+      "sprites": [
+        "鲸鱼小姐"
+      ],
+      "text": "沙洲上全是贝壳。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 924,
+      "chapter": "第七话 · 冒险家和海豚",
+      "bg": "沙洲_上午",
+      "sprites": [
+        "鲸鱼小姐_柔和"
+      ],
+      "text": "「……然后呢？」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 926,
+      "chapter": "第七话 · 冒险家和海豚",
+      "bg": "沙洲_上午",
+      "sprites": [
+        "鲸鱼小姐_生气"
+      ],
+      "text": "「讲完了？！」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 930,
+      "chapter": "第七话 · 冒险家和海豚",
+      "bg": "沙洲_上午",
+      "sprites": [
+        "鲸鱼小姐_得意"
+      ],
+      "text": "「好。记下了。利钱是一个布丁。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 944,
+      "chapter": "第七话 · 冒险家和海豚",
+      "bg": "沙洲_上午",
+      "sprites": [
+        "鲸鱼小姐_害羞"
+      ],
+      "text": "「……是阴影投射原理。科学。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 946,
+      "chapter": "第七话 · 冒险家和海豚",
+      "bg": "沙洲_午后",
+      "sprites": [
+        "鲸鱼小姐_柔和"
+      ],
+      "text": "她怀里抱着贝壳山，在阴凉里打了个瞌睡。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 950,
+      "chapter": "第七话 · 冒险家和海豚",
+      "bg": "沙洲_午后",
+      "sprites": [
+        "鲸鱼小姐_慌乱"
+      ],
+      "text": "她的瞌睡一下子没了。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 955,
+      "chapter": "第七话 · 冒险家和海豚",
+      "bg": "沙洲_午后",
+      "sprites": [
+        "鲸鱼小姐_生气"
+      ],
+      "text": "「不用讲到那儿，听名字就知道了。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 958,
+      "chapter": "第七话 · 冒险家和海豚",
+      "bg": "沙洲_午后",
+      "sprites": [
+        "鲸鱼小姐_得意"
+      ],
+      "text": "「这个故事，本小姐要专心审。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 964,
+      "chapter": "第七话 · 冒险家和海豚",
+      "bg": "沙洲_午后",
+      "sprites": [
+        "鲸鱼小姐_坏笑"
+      ],
+      "text": "「噗……不会游泳还去探索海洋？你们人类真的好奇怪。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 968,
+      "chapter": "第七话 · 冒险家和海豚",
+      "bg": "沙洲_午后",
+      "sprites": [
+        "鲸鱼小姐"
+      ],
+      "text": "「……海豚？」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 997,
+      "chapter": "第七话 · 冒险家和海豚",
+      "bg": "沙洲_午后",
+      "sprites": [
+        "鲸鱼小姐_害羞"
+      ],
+      "text": "然后发现自己居然在为一篇故事吃醋，脸红到了耳根。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1021,
+      "chapter": "第七话 · 冒险家和海豚",
+      "bg": "CG_海豚",
+      "sprites": [],
+      "text": "远处海面，一群海豚跃出水面。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1026,
+      "chapter": "第七话 · 冒险家和海豚",
+      "bg": "沙洲_午后",
+      "sprites": [
+        "鲸鱼小姐"
+      ],
+      "text": "「仗义是仗义，吵也是真吵。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1029,
+      "chapter": "第七话 · 冒险家和海豚",
+      "bg": "沙洲_午后",
+      "sprites": [
+        "鲸鱼小姐_害羞"
+      ],
+      "text": "顿了顿，声音低了下去——",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1033,
+      "chapter": "第七话 · 冒险家和海豚",
+      "bg": "沙洲_午后",
+      "sprites": [
+        "鲸鱼小姐_慌乱"
+      ],
+      "text": "「————」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1042,
+      "chapter": "第七话 · 冒险家和海豚",
+      "bg": "沙洲_午后",
+      "sprites": [
+        "鲸鱼小姐_柔和"
+      ],
+      "text": "「海豚早就游走了。本小姐一直替你看着呢。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1046,
+      "chapter": "第七话 · 冒险家和海豚",
+      "bg": "沙洲_午后",
+      "sprites": [],
+      "text": "此刻，贝壳在口袋里。她在我背上。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1099,
+      "chapter": "第七话 · 冒险家和海豚",
+      "bg": "沙洲_午后",
+      "sprites": [
+        "鲸鱼小姐_生气"
+      ],
+      "text": "她真的跳下去了，站在碎贝壳区外面的浅水里，抱着胳膊瞪我。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1105,
+      "chapter": "第七话 · 冒险家和海豚",
+      "bg": "沙洲_午后",
+      "sprites": [
+        "鲸鱼小姐_生气"
+      ],
+      "text": "又绕了回来，尾巴尖指着我口袋。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1108,
+      "chapter": "第七话 · 冒险家和海豚",
+      "bg": "沙洲_午后",
+      "sprites": [
+        "鲸鱼小姐_柔和"
+      ],
+      "text": "夕阳沉下去之前，她忽然想起什么似的，回过头。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1111,
+      "chapter": "第七话 · 冒险家和海豚",
+      "bg": "沙洲_午后",
+      "sprites": [
+        "鲸鱼小姐_得意"
+      ],
+      "text": "「……下一个。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1114,
+      "chapter": "第七话 · 冒险家和海豚",
+      "bg": "沙洲_黄昏",
+      "sprites": [
+        "鲸鱼小姐_柔和"
+      ],
+      "text": "我讲了贝壳姑娘——一个少年捡到神奇贝壳，发现每晚自己准备的零食都会莫名不见——然后在梦里，和贝壳姑娘相会。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1118,
+      "chapter": "第七话 · 冒险家和海豚",
+      "bg": "沙洲_黄昏",
+      "sprites": [
+        "鲸鱼小姐_慌乱"
+      ],
+      "text": "「呜！主人这个故事是什么意思！」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1122,
+      "chapter": "第七话 · 冒险家和海豚",
+      "bg": "沙洲_黄昏",
+      "sprites": [
+        "鲸鱼小姐_害羞"
+      ],
+      "text": "「还、还有，什么叫‘在梦里缠绵’啊！」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1125,
+      "chapter": "第七话 · 冒险家和海豚",
+      "bg": "沙洲_黄昏",
+      "sprites": [
+        "鲸鱼小姐_得意"
+      ],
+      "text": "「我都是当着你的面，光明正大吃的！」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1129,
+      "chapter": "第七话 · 冒险家和海豚",
+      "bg": "沙洲_黄昏",
+      "sprites": [
+        "鲸鱼小姐_生气"
+      ],
+      "text": "「另、另有其人？！」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1135,
+      "chapter": "第七话 · 冒险家和海豚",
+      "bg": "沙洲_黄昏",
+      "sprites": [
+        "鲸鱼小姐"
+      ],
+      "text": "「……每天？」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1168,
+      "chapter": "第七话 · 冒险家和海豚",
+      "bg": "沙洲_黄昏",
+      "sprites": [
+        "鲸鱼小姐_坏笑"
+      ],
+      "text": "「配额照扣。那是两码事。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1230,
+      "chapter": "第八话 · 搬家",
+      "bg": "帐篷_夜",
+      "sprites": [
+        "鲸鱼小姐_柔和"
+      ],
+      "text": "她裹着毯子坐在帐篷门口，验收今天的最后一项：我修帐篷杆的手艺。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1232,
+      "chapter": "第八话 · 搬家",
+      "bg": "帐篷_夜",
+      "sprites": [
+        "鲸鱼小姐"
+      ],
+      "text": "「……算了。歪着吧。反正海风大的时候，先倒的也不是这根。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1235,
+      "chapter": "第八话 · 搬家",
+      "bg": "帐篷_夜",
+      "sprites": [
+        "鲸鱼小姐_得意"
+      ],
+      "text": "「验收——勉强及格。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1249,
+      "chapter": "第八话 · 搬家",
+      "bg": "帐篷_夜",
+      "sprites": [
+        "鲸鱼小姐_害羞"
+      ],
+      "text": "「……那就，勉为其难。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1255,
+      "chapter": "第八话 · 搬家",
+      "bg": "帐篷_夜",
+      "sprites": [
+        "鲸鱼小姐_坏笑"
+      ],
+      "text": "「你的计划，最好不是把盐当成糖的那种计划。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1262,
+      "chapter": "第八话 · 搬家",
+      "bg": "小镇_清晨",
+      "sprites": [],
+      "text": "三天后。小镇边缘，海崖下面。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1264,
+      "chapter": "第八话 · 搬家",
+      "bg": "大房子_院子",
+      "sprites": [],
+      "text": "两层。白墙。蓝色的屋顶。院子里一棵不知名的树，树下挂着一副秋千。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1270,
+      "chapter": "第八话 · 搬家",
+      "bg": "大房子_院子",
+      "sprites": [
+        "鲸鱼小姐_得意"
+      ],
+      "text": "「它说，既然要长住，长就要长得像个家。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1273,
+      "chapter": "第八话 · 搬家",
+      "bg": "大房子_院子",
+      "sprites": [
+        "鲸鱼小姐_得意"
+      ],
+      "text": "『第三次。』",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1281,
+      "chapter": "第八话 · 搬家",
+      "bg": "大房子_院子",
+      "sprites": [
+        "鲸鱼小姐_坏笑"
+      ],
+      "text": "「所以，管理员先生——」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1293,
+      "chapter": "第八话 · 搬家",
+      "bg": "大房子_院子",
+      "sprites": [
+        "鲸鱼小姐_生气"
+      ],
+      "text": "「底层不用你管。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1294,
+      "chapter": "第八话 · 搬家",
+      "bg": "大房子_院子",
+      "sprites": [
+        "鲸鱼小姐"
+      ],
+      "text": "整理木盒的时候，盒盖没锁。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1300,
+      "chapter": "第八话 · 搬家",
+      "bg": "大房子_院子",
+      "sprites": [
+        "鲸鱼小姐_害羞"
+      ],
+      "text": "「……废纸也有废纸的用处。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1304,
+      "chapter": "第八话 · 搬家",
+      "bg": "大房子_院子",
+      "sprites": [
+        "鲸鱼小姐_柔和"
+      ],
+      "text": "还有一对风铃。蓝白色的，贝壳穿成的，一摇，像很远的地方有水在响。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1311,
+      "chapter": "第八话 · 搬家",
+      "bg": "客厅_午后",
+      "sprites": [
+        "鲸鱼小姐"
+      ],
+      "text": "搬家进入尾声。她在验收每一个房间。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1321,
+      "chapter": "第八话 · 搬家",
+      "bg": "客厅_午后",
+      "sprites": [
+        "鲸鱼小姐_慌乱"
+      ],
+      "text": "「三——十——年？！」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1324,
+      "chapter": "第八话 · 搬家",
+      "bg": "客厅_午后",
+      "sprites": [
+        "鲸鱼小姐_生气"
+      ],
+      "text": "「你拿什么还？你的稿费连个浪花都打不起来！」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1328,
+      "chapter": "第八话 · 搬家",
+      "bg": "客厅_午后",
+      "sprites": [
+        "鲸鱼小姐_得意"
+      ],
+      "text": "——然后，整条尾巴翘了起来。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1341,
+      "chapter": "第八话 · 搬家",
+      "bg": "客厅_午后",
+      "sprites": [
+        "鲸鱼小姐_害羞"
+      ],
+      "text": "「本小姐顶多就是有点小脾气。可从来没真让你睡过外面。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1343,
+      "chapter": "第八话 · 搬家",
+      "bg": "客厅_午后",
+      "sprites": [
+        "鲸鱼小姐_坏笑"
+      ],
+      "text": "「也挺什么？」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1353,
+      "chapter": "第八话 · 搬家",
+      "bg": "书房_黄昏",
+      "sprites": [
+        "鲸鱼小姐_柔和"
+      ],
+      "text": "黄昏。东西都归了位。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1360,
+      "chapter": "第八话 · 搬家",
+      "bg": "书房_黄昏",
+      "sprites": [
+        "鲸鱼小姐"
+      ],
+      "text": "她转过头。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1370,
+      "chapter": "第八话 · 搬家",
+      "bg": "书房_黄昏",
+      "sprites": [
+        "鲸鱼小姐_害羞"
+      ],
+      "text": "「……油嘴滑舌。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1390,
+      "chapter": "第八话 · 搬家",
+      "bg": "书房_黄昏",
+      "sprites": [
+        "鲸鱼小姐_得意"
+      ],
+      "text": "「哼。准了。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1399,
+      "chapter": "第八话 · 搬家",
+      "bg": "餐厅_夜",
+      "sprites": [],
+      "text": "搬家第一顿晚饭。六菜一汤，她验收了四道，及格六道。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1400,
+      "chapter": "第八话 · 搬家",
+      "bg": "餐厅_夜",
+      "sprites": [
+        "鲸鱼小姐"
+      ],
+      "text": "饭后，她抱着酸梅汤，忽然把勺子一放。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1409,
+      "chapter": "第八话 · 搬家",
+      "bg": "餐厅_夜",
+      "sprites": [
+        "鲸鱼小姐_得意"
+      ],
+      "text": "「既然你要写，本小姐就大发慈悲帮你顺一顺。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1414,
+      "chapter": "第八话 · 搬家",
+      "bg": "餐厅_夜",
+      "sprites": [
+        "鲸鱼小姐_害羞"
+      ],
+      "text": "她顿了一下，视线飘向别处，耳朵尖红了一层，声音低了下去。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1416,
+      "chapter": "第八话 · 搬家",
+      "bg": "餐厅_夜",
+      "sprites": [
+        "鲸鱼小姐_生气"
+      ],
+      "text": "「要是你写砸了，或者敢安排什么海豚虎鲸当男主角——」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1438,
+      "chapter": "第八话 · 搬家",
+      "bg": "餐厅_夜",
+      "sprites": [
+        "鲸鱼小姐_柔和"
+      ],
+      "text": "「喜欢的：做学问，做甜点，陪本小姐逛海边。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1443,
+      "chapter": "第八话 · 搬家",
+      "bg": "餐厅_夜",
+      "sprites": [
+        "鲸鱼小姐_慌乱"
+      ],
+      "text": "她说到这里，忽然反应过来什么，抄起勺子指着我。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1456,
+      "chapter": "第八话 · 搬家",
+      "bg": "书房_夜",
+      "sprites": [],
+      "text": "搬家第一夜。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1469,
+      "chapter": "第八话 · 搬家",
+      "bg": "书房_夜",
+      "sprites": [],
+      "text": "身后，端着桂花糖水的手——",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1475,
+      "chapter": "第九话 · 电话",
+      "bg": "书房_午后",
+      "sprites": [],
+      "text": "搬家后的第三天。大房子。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1481,
+      "chapter": "第九话 · 电话",
+      "bg": "书房_午后",
+      "sprites": [
+        "鲸鱼小姐"
+      ],
+      "text": "她已经监督了我一个下午，零食箱从左边搬到了右边，又搬回了左边。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1484,
+      "chapter": "第九话 · 电话",
+      "bg": "书房_午后",
+      "sprites": [
+        "鲸鱼小姐_坏笑"
+      ],
+      "text": "「你们人类的‘润色’，就是把同一句话写十二遍吗？」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1486,
+      "chapter": "第九话 · 电话",
+      "bg": "书房_午后",
+      "sprites": [
+        "鲸鱼小姐_得意"
+      ],
+      "text": "「哼。第十二遍写不完，晚饭的烤鱿鱼就没有你的份。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1503,
+      "chapter": "第九话 · 电话",
+      "bg": "书房_午后",
+      "sprites": [
+        "鲸鱼小姐_慌乱"
+      ],
+      "text": "她就那么看着我，脸上的表情，从疑惑，一点一点，变成不可置信。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1506,
+      "chapter": "第九话 · 电话",
+      "bg": "CG_电话",
+      "sprites": [],
+      "text": "一把抢过我手里的手机。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1511,
+      "chapter": "第九话 · 电话",
+      "bg": "书房_午后",
+      "sprites": [
+        "鲸鱼小姐_生气"
+      ],
+      "text": "「你、你是嫌本小姐不够听话——」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1519,
+      "chapter": "第九话 · 电话",
+      "bg": "书房_午后",
+      "sprites": [
+        "鲸鱼小姐_生气"
+      ],
+      "text": "『她扣手机的手势很熟练。』",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1523,
+      "chapter": "第九话 · 电话",
+      "bg": "书房_午后",
+      "sprites": [
+        "鲸鱼小姐"
+      ],
+      "text": "「玩笑。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1537,
+      "chapter": "第九话 · 电话",
+      "bg": "书房_午后",
+      "sprites": [
+        "鲸鱼小姐_柔和"
+      ],
+      "text": "「……连解释都不解释了吗。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1570,
+      "chapter": "第九话 · 电话",
+      "bg": "浅滩_黄昏",
+      "sprites": [
+        "鲸鱼小姐_柔和"
+      ],
+      "text": "她站在浅水线边上，半个身子已经浸在水里。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1573,
+      "chapter": "第九话 · 电话",
+      "bg": "浅滩_黄昏",
+      "sprites": [
+        "鲸鱼小姐"
+      ],
+      "text": "「你自己说的，退潮的意思，别来烦本小姐。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1578,
+      "chapter": "第九话 · 电话",
+      "bg": "浅滩_黄昏",
+      "sprites": [
+        "鲸鱼小姐_生气"
+      ],
+      "text": "「我就把海星全部倒进深海。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1583,
+      "chapter": "第九话 · 电话",
+      "bg": "浅滩_黄昏",
+      "sprites": [
+        "鲸鱼小姐_生气"
+      ],
+      "text": "『她的威胁库全书都是玩笑。』",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1616,
+      "chapter": "第十话 · 深水区",
+      "bg": "浅滩_夜",
+      "sprites": [
+        "鲸鱼小姐_生气"
+      ],
+      "text": "浅水线的边缘，她立在那里。半个身子在水里，像随时可以走的姿势。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1629,
+      "chapter": "第十话 · 深水区",
+      "bg": "浅滩_夜",
+      "sprites": [
+        "鲸鱼小姐_生气"
+      ],
+      "text": "她很久没有说话。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1650,
+      "chapter": "第十话 · 深水区",
+      "bg": "浅滩_夜",
+      "sprites": [
+        "鲸鱼小姐_生气"
+      ],
+      "text": "『这个问题，在很久以前，也有人问过他。』",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1664,
+      "chapter": "第十话 · 深水区",
+      "bg": "浅滩_夜",
+      "sprites": [],
+      "text": "蓝黑色的长发没入水面。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1671,
+      "chapter": "第十话 · 深水区",
+      "bg": "浅滩_午后",
+      "sprites": [],
+      "text": "第一天。我带了桂花。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1698,
+      "chapter": "第十话 · 深水区",
+      "bg": "深水区黑暗水下",
+      "sprites": [],
+      "text": "水没过腰。没过胸。没过头顶。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1704,
+      "chapter": "第十话 · 深水区",
+      "bg": "深水区黑暗水下",
+      "sprites": [],
+      "text": "光一层一层退掉。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1711,
+      "chapter": "第十话 · 深水区",
+      "bg": "CG_深水区",
+      "sprites": [],
+      "text": "然后，手腕被抓住了。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1720,
+      "chapter": "第十一话 · 礁石与和解",
+      "bg": "深水区黑暗水下",
+      "sprites": [],
+      "text": "冲出水面的一瞬，我呛出了半辈子的水。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1721,
+      "chapter": "第十一话 · 礁石与和解",
+      "bg": "礁石_夜",
+      "sprites": [
+        "鲸鱼小姐_生气"
+      ],
+      "text": "「咳出来！快点咳出来！」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1728,
+      "chapter": "第十一话 · 礁石与和解",
+      "bg": "礁石_夜",
+      "sprites": [
+        "鲸鱼小姐_慌乱"
+      ],
+      "text": "骂到第五句，声音劈了。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1732,
+      "chapter": "第十一话 · 礁石与和解",
+      "bg": "礁石_夜",
+      "sprites": [
+        "鲸鱼小姐"
+      ],
+      "text": "她愣住。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1736,
+      "chapter": "第十一话 · 礁石与和解",
+      "bg": "礁石_夜",
+      "sprites": [
+        "鲸鱼小姐_害羞"
+      ],
+      "text": "「你问过我一个问题。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1749,
+      "chapter": "第十一话 · 礁石与和解",
+      "bg": "礁石_夜",
+      "sprites": [
+        "鲸鱼小姐_柔和"
+      ],
+      "text": "她低着头，尾巴尖在水面上一点一点。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1758,
+      "chapter": "第十一话 · 礁石与和解",
+      "bg": "礁石_夜",
+      "sprites": [
+        "鲸鱼小姐_得意"
+      ],
+      "text": "「第一！」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1771,
+      "chapter": "第十一话 · 礁石与和解",
+      "bg": "礁石_夜",
+      "sprites": [
+        "鲸鱼小姐_坏笑"
+      ],
+      "text": "「人类，本小姐告诉你——」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1814,
+      "chapter": "第十一话 · 礁石与和解",
+      "bg": "CG_和解",
+      "sprites": [],
+      "text": "她顿了顿，忽然说——",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1819,
+      "chapter": "第十一话 · 礁石与和解",
+      "bg": "礁石_夜",
+      "sprites": [
+        "鲸鱼小姐_得意"
+      ],
+      "text": "过了一会儿，她站起来，拍拍裙子。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1828,
+      "chapter": "第十一话 · 礁石与和解",
+      "bg": "礁石_夜",
+      "sprites": [
+        "鲸鱼小姐_坏笑"
+      ],
+      "text": "「算你还有点自知之明。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1830,
+      "chapter": "第十一话 · 礁石与和解",
+      "bg": "礁石_夜",
+      "sprites": [
+        "鲸鱼小姐_柔和"
+      ],
+      "text": "「男仆。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1852,
+      "chapter": "第十二话 · 翡翠之梦",
+      "bg": "客厅_午后",
+      "sprites": [],
+      "text": "和解后的第三天。初遇篇，卡在第三章。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1853,
+      "chapter": "第十二话 · 翡翠之梦",
+      "bg": "客厅_午后",
+      "sprites": [
+        "鲸鱼小姐_抱本子"
+      ],
+      "text": "她已经监工了一下午，零食箱从左边搬到了右边，又搬回了左边。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1855,
+      "chapter": "第十二话 · 翡翠之梦",
+      "bg": "客厅_午后",
+      "sprites": [
+        "鲸鱼小姐_生气"
+      ],
+      "text": "「……你又跳到店了？」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1858,
+      "chapter": "第十二话 · 翡翠之梦",
+      "bg": "客厅_午后",
+      "sprites": [
+        "鲸鱼小姐"
+      ],
+      "text": "嘴上嫌弃着，垂在身侧的手，已经开始掰着指头盘算了。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1861,
+      "chapter": "第十二话 · 翡翠之梦",
+      "bg": "客厅_午后",
+      "sprites": [
+        "鲸鱼小姐_得意"
+      ],
+      "text": "「反正深海里的菜谱，本小姐倒背如流。海藻布丁、珍珠贝肉塔、发光水母果冻——集市上那些摊子，可做不出来。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1872,
+      "chapter": "第十二话 · 翡翠之梦",
+      "bg": "客厅_午后",
+      "sprites": [
+        "鲸鱼小姐_坏笑"
+      ],
+      "text": "「同志？」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1883,
+      "chapter": "第十二话 · 翡翠之梦",
+      "bg": "客厅_午后",
+      "sprites": [
+        "鲸鱼小姐_害羞"
+      ],
+      "text": "她回过头，脸颊不争气地红了一下，又被她压了下去。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1896,
+      "chapter": "第十二话 · 翡翠之梦",
+      "bg": "客厅_午后",
+      "sprites": [
+        "鲸鱼小姐_慌乱"
+      ],
+      "text": "她的架势瞬间破了功，整张脸腾地红透，用力甩了一下尾巴，拍开我的手。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1914,
+      "chapter": "第十二话 · 翡翠之梦",
+      "bg": "客厅_午后",
+      "sprites": [
+        "鲸鱼小姐"
+      ],
+      "text": "她拿着毛巾，愣愣地听完。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1920,
+      "chapter": "第十二话 · 翡翠之梦",
+      "bg": "客厅_午后",
+      "sprites": [
+        "鲸鱼小姐_坏笑"
+      ],
+      "text": "「呜……讲得头头是道。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1922,
+      "chapter": "第十二话 · 翡翠之梦",
+      "bg": "客厅_午后",
+      "sprites": [
+        "鲸鱼小姐_柔和"
+      ],
+      "text": "她侧过头，往店的方向看了看，语气放缓了些。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1927,
+      "chapter": "第十二话 · 翡翠之梦",
+      "bg": "客厅_午后",
+      "sprites": [
+        "鲸鱼小姐_慌乱"
+      ],
+      "text": "「要是你招来一个不三不四的人，或者、或者比我更会撒娇的家伙——」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1929,
+      "chapter": "第十二话 · 翡翠之梦",
+      "bg": "客厅_午后",
+      "sprites": [
+        "鲸鱼小姐_害羞"
+      ],
+      "text": "她清了清嗓子，别过脸去，小声补充。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1934,
+      "chapter": "第十二话 · 翡翠之梦",
+      "bg": "客厅_午后",
+      "sprites": [
+        "鲸鱼小姐_得意"
+      ],
+      "text": "「这是老板娘的特权。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1935,
+      "chapter": "第十二话 · 翡翠之梦",
+      "bg": "店面_下午",
+      "sprites": [
+        "鲸鱼小姐"
+      ],
+      "text": "走到半路，前方——",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1937,
+      "chapter": "第十二话 · 翡翠之梦",
+      "bg": "店面_下午",
+      "sprites": [
+        "鲸鱼小姐_慌乱"
+      ],
+      "text": "「————」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1944,
+      "chapter": "第十二话 · 翡翠之梦",
+      "bg": "店面_下午",
+      "sprites": [
+        "鲸鱼小姐_生气"
+      ],
+      "text": "「我们不是才刚刚说好要开店的嘛！」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1946,
+      "chapter": "第十二话 · 翡翠之梦",
+      "bg": "店面_下午",
+      "sprites": [
+        "鲸鱼小姐_害羞"
+      ],
+      "text": "她后退半步，拽住我的衣袖。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1951,
+      "chapter": "第十二话 · 翡翠之梦",
+      "bg": "店面_下午",
+      "sprites": [
+        "鲸鱼小姐_得意"
+      ],
+      "text": "她踮起脚，又看了一眼人群。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1956,
+      "chapter": "第十二话 · 翡翠之梦",
+      "bg": "翡翠之梦_厨房",
+      "sprites": [
+        "鲸鱼小姐"
+      ],
+      "text": "后厨。她拿起小碟和竹签，先走到海鲜区。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1960,
+      "chapter": "第十二话 · 翡翠之梦",
+      "bg": "翡翠之梦_厨房",
+      "sprites": [
+        "鲸鱼小姐_柔和"
+      ],
+      "text": "送进嘴里，微咸微甜化开，她眯起了眼睛——",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1968,
+      "chapter": "第十二话 · 翡翠之梦",
+      "bg": "翡翠之梦_厨房",
+      "sprites": [
+        "鲸鱼小姐_坏笑"
+      ],
+      "text": "「驳回。再想。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1969,
+      "chapter": "第十二话 · 翡翠之梦",
+      "bg": "翡翠之梦_厨房",
+      "sprites": [
+        "鲸鱼小姐_害羞"
+      ],
+      "text": "「鲸鱼小姐的甜品站。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1975,
+      "chapter": "第十二话 · 翡翠之梦",
+      "bg": "翡翠之梦_厨房",
+      "sprites": [
+        "鲸鱼小姐_得意"
+      ],
+      "text": "「名字还行。验收合格。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1987,
+      "chapter": "第十二话 · 翡翠之梦",
+      "bg": "翡翠之梦_店内",
+      "sprites": [
+        "鲸鱼小姐"
+      ],
+      "text": "开业筹备。我趁热打铁，发表了一篇演说。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1995,
+      "chapter": "第十二话 · 翡翠之梦",
+      "bg": "翡翠之梦_店内",
+      "sprites": [
+        "鲸鱼小姐_坏笑"
+      ],
+      "text": "「这套说辞，你对着镜子练了几天？」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 1997,
+      "chapter": "第十二话 · 翡翠之梦",
+      "bg": "翡翠之梦_店内",
+      "sprites": [
+        "鲸鱼小姐_生气"
+      ],
+      "text": "「三天，就想把买菜、排班、对账全推给员工？」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2012,
+      "chapter": "第十二话 · 翡翠之梦",
+      "bg": "翡翠之梦_店内",
+      "sprites": [
+        "鲸鱼小姐_得意"
+      ],
+      "text": "「以后店里的公事，叫合伙人。回家干活，还是男仆。两码事，不许搞混。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2014,
+      "chapter": "第十二话 · 翡翠之梦",
+      "bg": "翡翠之梦_店内夜",
+      "sprites": [
+        "鲸鱼小姐_柔和"
+      ],
+      "text": "打烊。最后一盏灯。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2019,
+      "chapter": "第十二话 · 翡翠之梦",
+      "bg": "翡翠之梦_店内夜",
+      "sprites": [
+        "鲸鱼小姐_得意"
+      ],
+      "text": "她在柜台上站起来，张开手臂，尾巴在身后展开成一面蓝色的帆。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2023,
+      "chapter": "第十二话 · 翡翠之梦",
+      "bg": "翡翠之梦_店内夜",
+      "sprites": [
+        "鲸鱼小姐_坏笑"
+      ],
+      "text": "「而你的梦——在那张纸上。五百字。现在。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2026,
+      "chapter": "第十二话 · 翡翠之梦",
+      "bg": "翡翠之梦_店内夜",
+      "sprites": [
+        "鲸鱼小姐_得意"
+      ],
+      "text": "「哼。写吧。本小姐给你熬桂花糖水。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2028,
+      "chapter": "第十二话 · 翡翠之梦",
+      "bg": "书房_夜",
+      "sprites": [
+        "鲸鱼小姐_得意"
+      ],
+      "text": "深夜。笔尖落到纸上，忽然就不卡了。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2036,
+      "chapter": "第十三话 · 店长与珍珠",
+      "bg": "翡翠之梦_店内",
+      "sprites": [
+        "鲸鱼小姐_得意"
+      ],
+      "text": "开业第二周。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2038,
+      "chapter": "第十三话 · 店长与珍珠",
+      "bg": "翡翠之梦_店内",
+      "sprites": [
+        "鲸鱼小姐"
+      ],
+      "text": "「男仆。柜台快被人挤满了。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2042,
+      "chapter": "第十三话 · 店长与珍珠",
+      "bg": "翡翠之梦_店内",
+      "sprites": [
+        "鲸鱼小姐_坏笑"
+      ],
+      "text": "她放下算盘，眯起眼睛。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2051,
+      "chapter": "第十三话 · 店长与珍珠",
+      "bg": "翡翠之梦_店内",
+      "sprites": [
+        "鲸鱼小姐_柔和"
+      ],
+      "text": "「信任他们，让他们成长。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2085,
+      "chapter": "第十三话 · 店长与珍珠",
+      "bg": "翡翠之梦_店内",
+      "sprites": [
+        "鲸鱼小姐_生气"
+      ],
+      "text": "「三天，就想把买菜、排班、对账全推给员工？」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2091,
+      "chapter": "第十三话 · 店长与珍珠",
+      "bg": "翡翠之梦_店内",
+      "sprites": [],
+      "text": "但是，三天后。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2093,
+      "chapter": "第十三话 · 店长与珍珠",
+      "bg": "翡翠之梦_店内",
+      "sprites": [
+        "鲸鱼小姐"
+      ],
+      "text": "她对着报表核完最后一行，忽然停下来。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2096,
+      "chapter": "第十三话 · 店长与珍珠",
+      "bg": "翡翠之梦_店内",
+      "sprites": [
+        "鲸鱼小姐_得意"
+      ],
+      "text": "「报表留着。举报箱也做一个——挂厨房门口，本小姐亲自验收。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2101,
+      "chapter": "第十三话 · 店长与珍珠",
+      "bg": "集市_上午",
+      "sprites": [
+        "鲸鱼小姐"
+      ],
+      "text": "采购日。她的清单比开店的营业执照还长：",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2104,
+      "chapter": "第十三话 · 店长与珍珠",
+      "bg": "集市_饰品巷",
+      "sprites": [
+        "鲸鱼小姐"
+      ],
+      "text": "路过饰品巷，那个送手链的老奶奶还在。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2106,
+      "chapter": "第十三话 · 店长与珍珠",
+      "bg": "集市_饰品巷",
+      "sprites": [
+        "鲸鱼小姐_慌乱"
+      ],
+      "text": "「————不是——我们——店——」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2108,
+      "chapter": "第十三话 · 店长与珍珠",
+      "bg": "集市_饰品巷",
+      "sprites": [
+        "鲸鱼小姐_害羞"
+      ],
+      "text": "摊上有新货。一小碟珍珠。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2122,
+      "chapter": "第十三话 · 店长与珍珠",
+      "bg": "集市_饰品巷",
+      "sprites": [
+        "鲸鱼小姐_柔和"
+      ],
+      "text": "【碎片·其十四】",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2128,
+      "chapter": "第十三话 · 店长与珍珠",
+      "bg": "集市_饰品巷",
+      "sprites": [
+        "鲸鱼小姐_生气"
+      ],
+      "text": "「都要了？！」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2147,
+      "chapter": "第十三话 · 店长与珍珠",
+      "bg": "厨房_清晨",
+      "sprites": [
+        "鲸鱼小姐"
+      ],
+      "text": "珍珠收进她的贴身口袋，三天了。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2154,
+      "chapter": "第十三话 · 店长与珍珠",
+      "bg": "厨房_清晨",
+      "sprites": [
+        "鲸鱼小姐_得意"
+      ],
+      "text": "她说这话的时候，眼神坚定，下巴微扬。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2161,
+      "chapter": "第十三话 · 店长与珍珠",
+      "bg": "厨房_清晨",
+      "sprites": [
+        "鲸鱼小姐_慌乱"
+      ],
+      "text": "「是工作！镇店之宝需要成双成对！这是生意经！」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2168,
+      "chapter": "第十三话 · 店长与珍珠",
+      "bg": "厨房_清晨",
+      "sprites": [
+        "鲸鱼小姐_柔和"
+      ],
+      "text": "她说这话的时候，手指无意识地摩挲着领口——那里挂着贝壳项链。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2171,
+      "chapter": "第十三话 · 店长与珍珠",
+      "bg": "集市_珍珠摊",
+      "sprites": [
+        "鲸鱼小姐"
+      ],
+      "text": "珍珠摊。她一颗一颗地看过去，拿起，对着天光，放下。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2177,
+      "chapter": "第十三话 · 店长与珍珠",
+      "bg": "集市_珍珠摊",
+      "sprites": [
+        "鲸鱼小姐_柔和"
+      ],
+      "text": "「……这颗，还行。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2180,
+      "chapter": "第十三话 · 店长与珍珠",
+      "bg": "集市_珍珠摊",
+      "sprites": [
+        "鲸鱼小姐_慌乱"
+      ],
+      "text": "「本小姐怎么知道和家里那颗一不一样。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2182,
+      "chapter": "第十三话 · 店长与珍珠",
+      "bg": "集市_珍珠摊",
+      "sprites": [
+        "鲸鱼小姐_害羞"
+      ],
+      "text": "「……见过。见过一次。很久之前。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2186,
+      "chapter": "第十三话 · 店长与珍珠",
+      "bg": "银匠铺",
+      "sprites": [
+        "鲸鱼小姐"
+      ],
+      "text": "银匠铺。老师傅戴着放大镜，听完需求，慢悠悠地开口。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2193,
+      "chapter": "第十三话 · 店长与珍珠",
+      "bg": "银匠铺",
+      "sprites": [
+        "鲸鱼小姐_得意"
+      ],
+      "text": "「刻。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2197,
+      "chapter": "第十三话 · 店长与珍珠",
+      "bg": "银匠铺",
+      "sprites": [
+        "鲸鱼小姐_柔和"
+      ],
+      "text": "她看了我很久。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2198,
+      "chapter": "第十三话 · 店长与珍珠",
+      "bg": "银匠铺",
+      "sprites": [
+        "鲸鱼小姐_害羞"
+      ],
+      "text": "「另一枚——刻“存”。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2204,
+      "chapter": "第十三话 · 店长与珍珠",
+      "bg": "银匠铺",
+      "sprites": [
+        "鲸鱼小姐_慌乱"
+      ],
+      "text": "「这句话你不许记。记了也不许承认。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2215,
+      "chapter": "第十三话 · 店长与珍珠",
+      "bg": "银匠铺",
+      "sprites": [],
+      "text": "一周后。取货。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2216,
+      "chapter": "第十三话 · 店长与珍珠",
+      "bg": "银匠铺",
+      "sprites": [
+        "鲸鱼小姐_得意"
+      ],
+      "text": "两枚戒指躺在绒布上。天青色，一对，安静地泛着光。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2225,
+      "chapter": "第十三话 · 店长与珍珠",
+      "bg": "银匠铺",
+      "sprites": [
+        "鲸鱼小姐_害羞"
+      ],
+      "text": "「你那颗——」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2239,
+      "chapter": "第十三话 · 店长与珍珠",
+      "bg": "翡翠之梦_厨房",
+      "sprites": [
+        "鲸鱼小姐"
+      ],
+      "text": "三道新菜，限期三日。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2245,
+      "chapter": "第十三话 · 店长与珍珠",
+      "bg": "翡翠之梦_厨房",
+      "sprites": [
+        "鲸鱼小姐_得意"
+      ],
+      "text": "「还有——菜谱写出来，贴在厨房墙上。字号本小姐来定。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2251,
+      "chapter": "第十三话 · 店长与珍珠",
+      "bg": "翡翠之梦_二楼夜",
+      "sprites": [],
+      "text": "打烊了。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2254,
+      "chapter": "第十三话 · 店长与珍珠",
+      "bg": "翡翠之梦_二楼夜",
+      "sprites": [
+        "鲸鱼小姐_柔和"
+      ],
+      "text": "「你碗里那块最大的贝肉——」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2257,
+      "chapter": "第十三话 · 店长与珍珠",
+      "bg": "翡翠之梦_二楼夜",
+      "sprites": [
+        "鲸鱼小姐_得意"
+      ],
+      "text": "她验收——“面，合格。贝肉，合格。葱花——”",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2267,
+      "chapter": "第十三话 · 店长与珍珠",
+      "bg": "翡翠之梦_二楼夜",
+      "sprites": [
+        "鲸鱼小姐_慌乱"
+      ],
+      "text": "「——本小姐什么都没说。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2272,
+      "chapter": "第十三话 · 店长与珍珠",
+      "bg": "翡翠之梦_二楼夜",
+      "sprites": [
+        "鲸鱼小姐_害羞"
+      ],
+      "text": "（她的耳朵尖红透了，尾巴尖却把椅腿缠上了。）",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2281,
+      "chapter": "第十三话 · 店长与珍珠",
+      "bg": "翡翠之梦_二楼夜",
+      "sprites": [
+        "鲸鱼小姐_生气"
+      ],
+      "text": "「……水温记录员的工作明天开始就归你了。每天报三次。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2309,
+      "chapter": "第十四话 · 那些布丁和糍粑",
+      "bg": "集市街道初秋",
+      "sprites": [],
+      "text": "开店后的第一个秋天。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2310,
+      "chapter": "第十四话 · 那些布丁和糍粑",
+      "bg": "集市街道初秋",
+      "sprites": [
+        "鲸鱼小姐"
+      ],
+      "text": "采购日。她在带鱼摊前，指尖一条条拨过去，检查银膜和眼珠。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2321,
+      "chapter": "第十四话 · 那些布丁和糍粑",
+      "bg": "集市街道初秋",
+      "sprites": [
+        "鲸鱼小姐_生气"
+      ],
+      "text": "「呜……主人这话是什么意思。什么叫做把我们的记忆安置好了，什么叫做本小姐会记错细节。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2324,
+      "chapter": "第十四话 · 那些布丁和糍粑",
+      "bg": "集市街道初秋",
+      "sprites": [
+        "鲸鱼小姐_得意"
+      ],
+      "text": "她抱着胳膊，扬起下巴。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2335,
+      "chapter": "第十四话 · 那些布丁和糍粑",
+      "bg": "集市街道初秋",
+      "sprites": [
+        "鲸鱼小姐_柔和"
+      ],
+      "text": "她的眼睛眯了一下，享受了一秒，然后警觉地睁开。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2336,
+      "chapter": "第十四话 · 那些布丁和糍粑",
+      "bg": "集市街道初秋",
+      "sprites": [
+        "鲸鱼小姐_坏笑"
+      ],
+      "text": "「……先摸头，准没好事。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2344,
+      "chapter": "第十四话 · 那些布丁和糍粑",
+      "bg": "集市街道初秋",
+      "sprites": [
+        "鲸鱼小姐_生气"
+      ],
+      "text": "她的表情，是从第三个例子开始变冷的。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2348,
+      "chapter": "第十四话 · 那些布丁和糍粑",
+      "bg": "CG_布丁",
+      "sprites": [],
+      "text": "「什么叫做房贷是个玩笑——」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2352,
+      "chapter": "第十四话 · 那些布丁和糍粑",
+      "bg": "集市街道初秋",
+      "sprites": [
+        "鲸鱼小姐_生气"
+      ],
+      "text": "「还有，谁记错带鱼了？我明明是在提醒你要挑新鲜的。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2376,
+      "chapter": "第十四话 · 那些布丁和糍粑",
+      "bg": "集市街道初秋",
+      "sprites": [],
+      "text": "然后，消失在巷口。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2393,
+      "chapter": "第十四话 · 那些布丁和糍粑",
+      "bg": "集市街道初秋",
+      "sprites": [
+        "鲸鱼小姐_生气"
+      ],
+      "text": "没有立刻走回来，只是站在几步外看着我。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2399,
+      "chapter": "第十四话 · 那些布丁和糍粑",
+      "bg": "集市街道初秋",
+      "sprites": [
+        "鲸鱼小姐"
+      ],
+      "text": "她重新朝摊位走回来。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2404,
+      "chapter": "第十四话 · 那些布丁和糍粑",
+      "bg": "集市街道初秋",
+      "sprites": [
+        "鲸鱼小姐_害羞"
+      ],
+      "text": "「如果你今天表现还算老实——晚上的翡翠之梦，可以多分你半勺。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2421,
+      "chapter": "第十四话 · 那些布丁和糍粑",
+      "bg": "CG_深水区",
+      "sprites": [],
+      "text": "『上一次，她也是这样走的。』",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2429,
+      "chapter": "第十四话 · 那些布丁和糍粑",
+      "bg": "翡翠之梦_午后未开灯",
+      "sprites": [
+        "鲸鱼小姐_生气"
+      ],
+      "text": "店里没开灯。她坐在柜台后面，背对着门，在擦贝壳盘。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2441,
+      "chapter": "第十四话 · 那些布丁和糍粑",
+      "bg": "翡翠之梦_午后未开灯",
+      "sprites": [
+        "鲸鱼小姐"
+      ],
+      "text": "「……带鱼，鳃是红的。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2453,
+      "chapter": "第十四话 · 那些布丁和糍粑",
+      "bg": "翡翠之梦_午后未开灯",
+      "sprites": [
+        "鲸鱼小姐_害羞"
+      ],
+      "text": "「……两串。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2455,
+      "chapter": "第十四话 · 那些布丁和糍粑",
+      "bg": "翡翠之梦_午后未开灯",
+      "sprites": [
+        "鲸鱼小姐_得意"
+      ],
+      "text": "「赔罪，一串怎么够。两串。现在。立刻。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2479,
+      "chapter": "第十四话 · 那些布丁和糍粑",
+      "bg": "翡翠之梦_午后未开灯",
+      "sprites": [
+        "鲸鱼小姐_柔和"
+      ],
+      "text": "她的声音软了半度。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2487,
+      "chapter": "第十四话 · 那些布丁和糍粑",
+      "bg": "翡翠之梦_午后未开灯",
+      "sprites": [
+        "鲸鱼小姐_坏笑"
+      ],
+      "text": "「爽快得可疑。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2491,
+      "chapter": "第十四话 · 那些布丁和糍粑",
+      "bg": "翡翠之梦_午后未开灯",
+      "sprites": [
+        "鲸鱼小姐_慌乱"
+      ],
+      "text": "「本小姐也写？」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2500,
+      "chapter": "第十四话 · 那些布丁和糍粑",
+      "bg": "餐厅_夜",
+      "sprites": [
+        "鲸鱼小姐"
+      ],
+      "text": "晚饭。香煎带鱼。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2506,
+      "chapter": "第十四话 · 那些布丁和糍粑",
+      "bg": "餐厅_夜",
+      "sprites": [
+        "鲸鱼小姐_坏笑"
+      ],
+      "text": "「你吃的那部分。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2507,
+      "chapter": "第十四话 · 那些布丁和糍粑",
+      "bg": "餐厅_夜",
+      "sprites": [
+        "鲸鱼小姐_柔和"
+      ],
+      "text": "她把自己盘子里的鱼肚肉夹了一半，放进我碗里。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2533,
+      "chapter": "第十五话 · 日记与早安",
+      "bg": "厨房_清晨",
+      "sprites": [],
+      "text": "日记制度，第三周。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2536,
+      "chapter": "第十五话 · 日记与早安",
+      "bg": "厨房_清晨",
+      "sprites": [
+        "鲸鱼小姐_睡袍"
+      ],
+      "text": "「呜……醒了？」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2557,
+      "chapter": "第十五话 · 日记与早安",
+      "bg": "厨房_清晨",
+      "sprites": [
+        "鲸鱼小姐_睡袍害羞"
+      ],
+      "text": "「不是本小姐妥协。是海藻在汤里更好消化。这是科学。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2559,
+      "chapter": "第十五话 · 日记与早安",
+      "bg": "厨房_清晨",
+      "sprites": [
+        "鲸鱼小姐_睡袍慌乱"
+      ],
+      "text": "「不加海藻的版本？」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2563,
+      "chapter": "第十五话 · 日记与早安",
+      "bg": "住宅早餐桌日景",
+      "sprites": [
+        "鲸鱼小姐_睡袍"
+      ],
+      "text": "饭后，日记共读时间。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2587,
+      "chapter": "第十五话 · 日记与早安",
+      "bg": "住宅早餐桌日景",
+      "sprites": [
+        "鲸鱼小姐_睡袍慌乱"
+      ],
+      "text": "「————」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2591,
+      "chapter": "第十五话 · 日记与早安",
+      "bg": "住宅早餐桌日景",
+      "sprites": [
+        "鲸鱼小姐_睡袍害羞"
+      ],
+      "text": "「……刚才那句，本小姐收回。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2623,
+      "chapter": "第十五话 · 日记与早安",
+      "bg": "住宅早餐桌日景",
+      "sprites": [],
+      "text": "挑战周的周四。日记共读。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2624,
+      "chapter": "第十五话 · 日记与早安",
+      "bg": "住宅早餐桌日景",
+      "sprites": [
+        "鲸鱼小姐_抱本子"
+      ],
+      "text": "她的日记，念到昨天——",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2630,
+      "chapter": "第十五话 · 日记与早安",
+      "bg": "住宅早餐桌日景",
+      "sprites": [
+        "鲸鱼小姐"
+      ],
+      "text": "「店里也有窗户。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2634,
+      "chapter": "第十五话 · 日记与早安",
+      "bg": "住宅早餐桌日景",
+      "sprites": [
+        "鲸鱼小姐_柔和"
+      ],
+      "text": "「那就是本小姐记错了。改过来吧。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2645,
+      "chapter": "第十五话 · 日记与早安",
+      "bg": "住宅早餐桌日景",
+      "sprites": [
+        "鲸鱼小姐"
+      ],
+      "text": "「……留着？」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2650,
+      "chapter": "第十五话 · 日记与早安",
+      "bg": "住宅早餐桌日景",
+      "sprites": [
+        "鲸鱼小姐_柔和"
+      ],
+      "text": "「……那这个规矩，验收合格。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2657,
+      "chapter": "第十五话 · 日记与早安",
+      "bg": "住宅早餐桌日景",
+      "sprites": [
+        "鲸鱼小姐_得意"
+      ],
+      "text": "「……本来就是。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2658,
+      "chapter": "第十五话 · 日记与早安",
+      "bg": "翡翠之梦_厨房",
+      "sprites": [],
+      "text": "第二天早晨——",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2662,
+      "chapter": "第十五话 · 日记与早安",
+      "bg": "翡翠之梦_厨房",
+      "sprites": [
+        "鲸鱼小姐_得意"
+      ],
+      "text": "「看吧。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2665,
+      "chapter": "第十五话 · 日记与早安",
+      "bg": "翡翠之梦_厨房",
+      "sprites": [
+        "鲸鱼小姐_得意"
+      ],
+      "text": "『他同意了她的记忆。』",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2670,
+      "chapter": "第十五话 · 日记与早安",
+      "bg": "餐厅_夜",
+      "sprites": [
+        "鲸鱼小姐_得意"
+      ],
+      "text": "周日。一周的最后一天。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2676,
+      "chapter": "第十五话 · 日记与早安",
+      "bg": "餐厅_夜",
+      "sprites": [
+        "鲸鱼小姐_害羞"
+      ],
+      "text": "周日夜里，她把我的日记本，从桌子对面，推到了我手边。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2681,
+      "chapter": "第十五话 · 日记与早安",
+      "bg": "餐厅_夜",
+      "sprites": [
+        "鲸鱼小姐_慌乱"
+      ],
+      "text": "「没有为什么。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2684,
+      "chapter": "第十五话 · 日记与早安",
+      "bg": "卧室门口_清晨",
+      "sprites": [],
+      "text": "次日清晨。我提前一刻钟站在她房门口。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2686,
+      "chapter": "第十五话 · 日记与早安",
+      "bg": "卧室门口_清晨",
+      "sprites": [
+        "鲸鱼小姐_正装"
+      ],
+      "text": "她穿得很整齐。整齐得过分。耳鳍绯红，尾巴在身后绷成一条直线。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2693,
+      "chapter": "第十五话 · 日记与早安",
+      "bg": "卧室门口_清晨",
+      "sprites": [
+        "鲸鱼小姐_正装柔和"
+      ],
+      "text": "她踮起脚。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2698,
+      "chapter": "第十五话 · 日记与早安",
+      "bg": "卧室门口_清晨",
+      "sprites": [
+        "鲸鱼小姐_正装"
+      ],
+      "text": "她转身要逃。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2720,
+      "chapter": "第十五话 · 日记与早安",
+      "bg": "书房_黄昏",
+      "sprites": [],
+      "text": "赌约周的第三天。稿子，还是没交。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2721,
+      "chapter": "第十五话 · 日记与早安",
+      "bg": "书房_黄昏",
+      "sprites": [
+        "鲸鱼小姐_生气"
+      ],
+      "text": "「你要的东西我都记着。但你也别忘了昨天答应我的小说还没写完。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2724,
+      "chapter": "第十五话 · 日记与早安",
+      "bg": "书房_黄昏",
+      "sprites": [
+        "鲸鱼小姐_得意"
+      ],
+      "text": "她扬了扬下巴。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2732,
+      "chapter": "第十五话 · 日记与早安",
+      "bg": "书房_黄昏",
+      "sprites": [
+        "鲸鱼小姐_生气"
+      ],
+      "text": "——然后走回来，双手按在桌沿上，居高临下地看着我。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2734,
+      "chapter": "第十五话 · 日记与早安",
+      "bg": "书房_黄昏",
+      "sprites": [
+        "鲸鱼小姐_生气"
+      ],
+      "text": "「呜……你刚才说什么？」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2747,
+      "chapter": "第十五话 · 日记与早安",
+      "bg": "书房_黄昏",
+      "sprites": [
+        "鲸鱼小姐_柔和"
+      ],
+      "text": "她的声音低下去，又抬起来。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2751,
+      "chapter": "第十五话 · 日记与早安",
+      "bg": "书房_黄昏",
+      "sprites": [
+        "鲸鱼小姐"
+      ],
+      "text": "「现在，你老实说。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2756,
+      "chapter": "第十五话 · 日记与早安",
+      "bg": "书房_黄昏",
+      "sprites": [
+        "鲸鱼小姐"
+      ],
+      "text": "「确实写不出来。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2757,
+      "chapter": "第十五话 · 日记与早安",
+      "bg": "书房_黄昏",
+      "sprites": [
+        "鲸鱼小姐_柔和"
+      ],
+      "text": "「……嗯。这还差不多。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2769,
+      "chapter": "第十五话 · 日记与早安",
+      "bg": "书房_黄昏",
+      "sprites": [
+        "鲸鱼小姐_害羞"
+      ],
+      "text": "她别过头，视线落在阳台的风铃上，语气软了下来。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2780,
+      "chapter": "第十五话 · 日记与早安",
+      "bg": "书房_黄昏",
+      "sprites": [
+        "鲸鱼小姐_坏笑"
+      ],
+      "text": "「这就去写？」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2789,
+      "chapter": "第十五话 · 日记与早安",
+      "bg": "浅滩_黄昏",
+      "sprites": [
+        "鲸鱼小姐_柔和"
+      ],
+      "text": "海滩。她走在我旁边，保持着半米的距离。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2796,
+      "chapter": "第十五话 · 日记与早安",
+      "bg": "浅滩_黄昏",
+      "sprites": [
+        "鲸鱼小姐_得意"
+      ],
+      "text": "「本小姐今天心情还行，可以勉强听你讲讲。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2800,
+      "chapter": "第十五话 · 日记与早安",
+      "bg": "卧室_夜",
+      "sprites": [],
+      "text": "那一晚打烊后，一切如常。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2801,
+      "chapter": "第十五话 · 日记与早安",
+      "bg": "卧室_夜",
+      "sprites": [
+        "鲸鱼小姐_柔和"
+      ],
+      "text": "她照旧趴在桌边，尾巴垂下去，一晃一晃。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2805,
+      "chapter": "第十五话 · 日记与早安",
+      "bg": "卧室_夜",
+      "sprites": [
+        "鲸鱼小姐_得意"
+      ],
+      "text": "「坐好。换本小姐来。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2811,
+      "chapter": "第十五话 · 日记与早安",
+      "bg": "卧室_夜",
+      "sprites": [
+        "鲸鱼小姐_柔和"
+      ],
+      "text": "她趴在对面，尾巴把我的手腕圈得死死的，睡得很沉。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2814,
+      "chapter": "第十五话 · 日记与早安",
+      "bg": "卧室_夜",
+      "sprites": [
+        "鲸鱼小姐_得意"
+      ],
+      "text": "「哼。算你识货。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2815,
+      "chapter": "第十五话 · 日记与早安",
+      "bg": "卧室_夜",
+      "sprites": [
+        "鲸鱼小姐_害羞"
+      ],
+      "text": "「算你今天……还算老实。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2834,
+      "chapter": "第十六话 · 海风与布丁",
+      "bg": "翡翠之梦_厨房",
+      "sprites": [
+        "鲸鱼小姐"
+      ],
+      "text": "她不知道什么时候站在了厨房门口。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2835,
+      "chapter": "第十六话 · 海风与布丁",
+      "bg": "翡翠之梦_厨房",
+      "sprites": [
+        "鲸鱼小姐_得意"
+      ],
+      "text": "「今天这锅布丁，本小姐亲自验收。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2838,
+      "chapter": "第十六话 · 海风与布丁",
+      "bg": "翡翠之梦_厨房",
+      "sprites": [
+        "鲸鱼小姐_柔和"
+      ],
+      "text": "「……焦糖。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2843,
+      "chapter": "第十六话 · 海风与布丁",
+      "bg": "翡翠之梦_厨房",
+      "sprites": [
+        "鲸鱼小姐_害羞"
+      ],
+      "text": "「……谁让你记次数的。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2845,
+      "chapter": "第十六话 · 海风与布丁",
+      "bg": "翡翠之梦_厨房",
+      "sprites": [
+        "鲸鱼小姐_慌乱"
+      ],
+      "text": "「————」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2856,
+      "chapter": "第十六话 · 海风与布丁",
+      "bg": "浅滩_夜",
+      "sprites": [
+        "鲸鱼小姐_柔和"
+      ],
+      "text": "她坐在礁石上，尾巴垂在水里，晃。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2863,
+      "chapter": "第十六话 · 海风与布丁",
+      "bg": "浅滩_夜",
+      "sprites": [
+        "鲸鱼小姐_得意"
+      ],
+      "text": "「说明书写好了：洗澡要摘，睡觉要摘，见外婆——」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2864,
+      "chapter": "第十六话 · 海风与布丁",
+      "bg": "浅滩_夜",
+      "sprites": [
+        "鲸鱼小姐_害羞"
+      ],
+      "text": "她顿了顿。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2867,
+      "chapter": "第十六话 · 海风与布丁",
+      "bg": "浅滩_夜",
+      "sprites": [
+        "鲸鱼小姐_抱本子"
+      ],
+      "text": "她把手稿摊在膝盖上。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2882,
+      "chapter": "第十六话 · 海风与布丁",
+      "bg": "浅滩_夜",
+      "sprites": [
+        "鲸鱼小姐_坏笑"
+      ],
+      "text": "「公主和王子？」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2887,
+      "chapter": "第十六话 · 海风与布丁",
+      "bg": "浅滩_夜",
+      "sprites": [
+        "鲸鱼小姐_生气"
+      ],
+      "text": "「都行？」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2892,
+      "chapter": "第十六话 · 海风与布丁",
+      "bg": "浅滩_夜",
+      "sprites": [
+        "鲸鱼小姐"
+      ],
+      "text": "稿子合上了。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2907,
+      "chapter": "第十六话 · 海风与布丁",
+      "bg": "浅滩_夜",
+      "sprites": [
+        "鲸鱼小姐_慌乱"
+      ],
+      "text": "「给本小姐的！」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2932,
+      "chapter": "第十六话 · 海风与布丁",
+      "bg": "CG_海风与布丁",
+      "sprites": [],
+      "text": "月光下，她把银链戴在脖子上。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2937,
+      "chapter": "第十六话 · 海风与布丁",
+      "bg": "浅滩_夜",
+      "sprites": [
+        "鲸鱼小姐_得意"
+      ],
+      "text": "她朝深水区走，头也不回，尾巴尖翘得老高。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2953,
+      "chapter": "第十六话 · 海风与布丁",
+      "bg": "浅滩_夜",
+      "sprites": [
+        "鲸鱼小姐"
+      ],
+      "text": "她顿了顿，又顿了顿。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2961,
+      "chapter": "第十六话 · 海风与布丁",
+      "bg": "浅滩_夜",
+      "sprites": [
+        "鲸鱼小姐_生气"
+      ],
+      "text": "「还有这里。你说，那是个玩笑。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2963,
+      "chapter": "第十六话 · 海风与布丁",
+      "bg": "浅滩_夜",
+      "sprites": [
+        "鲸鱼小姐_柔和"
+      ],
+      "text": "「本小姐的话，十句里有九句是反着说的。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2973,
+      "chapter": "第十六话 · 海风与布丁",
+      "bg": "浅滩_夜",
+      "sprites": [
+        "鲸鱼小姐_柔和"
+      ],
+      "text": "「这个，先放本小姐这儿保管。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2975,
+      "chapter": "第十六话 · 海风与布丁",
+      "bg": "浅滩_夜",
+      "sprites": [
+        "鲸鱼小姐_得意"
+      ],
+      "text": "「初遇篇，打回去重写。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2977,
+      "chapter": "第十六话 · 海风与布丁",
+      "bg": "浅滩_夜",
+      "sprites": [
+        "鲸鱼小姐_害羞"
+      ],
+      "text": "「……焦糖，可以先少一层。等你补回来。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 2978,
+      "chapter": "第十六话 · 海风与布丁",
+      "bg": "浅滩_夜",
+      "sprites": [
+        "鲸鱼小姐"
+      ],
+      "text": "她朝深水区走。走到一半，回头看了一眼。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 3003,
+      "chapter": "番外篇一 · 盒子越来越满了",
+      "bg": "翡翠之梦_二楼夜",
+      "sprites": [
+        "鲸鱼小姐_生气"
+      ],
+      "text": "「是本小姐没收的那批！」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 3006,
+      "chapter": "番外篇一 · 盒子越来越满了",
+      "bg": "翡翠之梦_二楼夜",
+      "sprites": [
+        "鲸鱼小姐_害羞"
+      ],
+      "text": "「……看、看吧。反正写都写了。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 3010,
+      "chapter": "番外篇一 · 盒子越来越满了",
+      "bg": "翡翠之梦_二楼夜",
+      "sprites": [
+        "鲸鱼小姐"
+      ],
+      "text": "「但是那天的验收记录，一个字都不许外传。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 3018,
+      "chapter": "番外篇一 · 盒子越来越满了",
+      "bg": "沙洲_上午",
+      "sprites": [],
+      "text": "——沙洲捡贝壳那天，出发前。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 3027,
+      "chapter": "番外篇一 · 盒子越来越满了",
+      "bg": "沙洲_上午",
+      "sprites": [
+        "鲸鱼小姐_泳装害羞"
+      ],
+      "text": "深蓝的泳装。白色过膝袜——袜口松松垮垮，有一边还滑下来一点。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 3034,
+      "chapter": "番外篇一 · 盒子越来越满了",
+      "bg": "沙洲_上午",
+      "sprites": [
+        "鲸鱼小姐_泳装害羞"
+      ],
+      "text": "「————」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 3037,
+      "chapter": "番外篇一 · 盒子越来越满了",
+      "bg": "沙洲_上午",
+      "sprites": [
+        "鲸鱼小姐_泳装"
+      ],
+      "text": "「总之！验收开始！捡贝壳！」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 3058,
+      "chapter": "番外篇一 · 盒子越来越满了",
+      "bg": "翡翠之梦_店内",
+      "sprites": [
+        "鲸鱼小姐_女仆装"
+      ],
+      "text": "「走。顺路。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 3065,
+      "chapter": "番外篇一 · 盒子越来越满了",
+      "bg": "翡翠之梦_店内",
+      "sprites": [
+        "鲸鱼小姐_女仆装得意"
+      ],
+      "text": "「这件怎么了？这是制服。劳动人民的制服。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 3068,
+      "chapter": "番外篇一 · 盒子越来越满了",
+      "bg": "翡翠之梦_店内",
+      "sprites": [
+        "鲸鱼小姐_女仆装害羞"
+      ],
+      "text": "「你停顿了。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 3071,
+      "chapter": "番外篇一 · 盒子越来越满了",
+      "bg": "餐厅_夜",
+      "sprites": [
+        "鲸鱼小姐_女仆装"
+      ],
+      "text": "「————」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 3078,
+      "chapter": "番外篇一 · 盒子越来越满了",
+      "bg": "餐厅_夜",
+      "sprites": [
+        "鲸鱼小姐_女仆装害羞"
+      ],
+      "text": "「缺一个——这事就永远免谈，衣服锁进柜子，你连看都别想。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 3081,
+      "chapter": "番外篇一 · 盒子越来越满了",
+      "bg": "CG_集市女仆",
+      "sprites": [],
+      "text": "于是，集市上出现了这样的画面——",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 3085,
+      "chapter": "番外篇一 · 盒子越来越满了",
+      "bg": "集市_上午",
+      "sprites": [
+        "鲸鱼小姐_女仆装"
+      ],
+      "text": "「老板娘，又来啦？今天这是……店里搞活动？」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 3093,
+      "chapter": "番外篇一 · 盒子越来越满了",
+      "bg": "集市_上午",
+      "sprites": [
+        "鲸鱼小姐_女仆装害羞"
+      ],
+      "text": "「……等等。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 3110,
+      "chapter": "番外篇一 · 盒子越来越满了",
+      "bg": "集市_上午",
+      "sprites": [
+        "鲸鱼小姐_女仆装得意"
+      ],
+      "text": "「将错就错！速战速决！」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 3126,
+      "chapter": "番外篇一 · 盒子越来越满了",
+      "bg": "集市_珍珠摊",
+      "sprites": [],
+      "text": "那天的集市，安安静静。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 3131,
+      "chapter": "番外篇一 · 盒子越来越满了",
+      "bg": "集市_珍珠摊",
+      "sprites": [
+        "鲸鱼小姐_女仆装害羞"
+      ],
+      "text": "「————」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 3135,
+      "chapter": "番外篇一 · 盒子越来越满了",
+      "bg": "翡翠之梦_二楼夜",
+      "sprites": [
+        "鲸鱼小姐_抱本子"
+      ],
+      "text": "两页废稿，读完了。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 3143,
+      "chapter": "番外篇一 · 盒子越来越满了",
+      "bg": "翡翠之梦_二楼夜",
+      "sprites": [
+        "鲸鱼小姐"
+      ],
+      "text": "「……灰烬不好清理。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 3147,
+      "chapter": "番外篇一 · 盒子越来越满了",
+      "bg": "翡翠之梦_二楼夜",
+      "sprites": [
+        "鲸鱼小姐_得意"
+      ],
+      "text": "「销毁和保管，是两种处理方式。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 3153,
+      "chapter": "番外篇一 · 盒子越来越满了",
+      "bg": "翡翠之梦_二楼夜",
+      "sprites": [
+        "鲸鱼小姐_害羞"
+      ],
+      "text": "「……闭嘴。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 3160,
+      "chapter": "番外篇一 · 盒子越来越满了",
+      "bg": "翡翠之梦_二楼夜",
+      "sprites": [
+        "鲸鱼小姐_柔和"
+      ],
+      "text": "「但是，桂花买到了。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 3174,
+      "chapter": "番外篇二 · 贝壳项链",
+      "bg": "帐篷_黄昏",
+      "sprites": [
+        "鲸鱼小姐_长裙"
+      ],
+      "text": "她坐在小桌边上，尾巴在沙地上铺开，像一张不耐烦的席子。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 3203,
+      "chapter": "番外篇二 · 贝壳项链",
+      "bg": "帐篷_黄昏",
+      "sprites": [
+        "鲸鱼小姐_长裙项链"
+      ],
+      "text": "「……戴着碍事的话，本小姐勉强替你保管。」",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 3205,
+      "chapter": "番外篇二 · 贝壳项链",
+      "bg": "帐篷_夜",
+      "sprites": [
+        "鲸鱼小姐_长裙项链"
+      ],
+      "text": "她戴着项链吃完了整顿饭。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 3212,
+      "chapter": "番外篇二 · 贝壳项链",
+      "bg": "帐篷_夜",
+      "sprites": [
+        "鲸鱼小姐_长裙项链"
+      ],
+      "text": "『她说“严重”的时候，』",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 3219,
+      "chapter": "番外篇二 · 贝壳项链",
+      "bg": "帐篷内_夜",
+      "sprites": [
+        "鲸鱼小姐_睡衣项链"
+      ],
+      "text": "她抱着膝盖坐在床上，忽然发现我在看她颈间的项链。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 3267,
+      "chapter": "番外篇二 · 贝壳项链",
+      "bg": "CG_人鱼公主",
+      "sprites": [],
+      "text": "灯捻小了一半。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 3276,
+      "chapter": "番外篇二 · 贝壳项链",
+      "bg": "帐篷内_清晨",
+      "sprites": [],
+      "text": "次日清晨。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 3278,
+      "chapter": "番外篇二 · 贝壳项链",
+      "bg": "帐篷内_清晨",
+      "sprites": [
+        "鲸鱼小姐_睡衣项链"
+      ],
+      "text": "正蹲在帐篷角落，检查那两枚贝壳。",
+      "overflow": false,
+      "choices": 3
+    },
+    {
+      "index": 3302,
+      "chapter": "番外篇二 · 贝壳项链",
+      "bg": "浅滩_上午",
+      "sprites": [],
+      "text": "『她说“看不懂”。』",
+      "overflow": false,
+      "choices": 3
+    }
+  ],
+  "chapter_entries": {
+    "第一话 · 浅滩上的偶遇": 2,
+    "第二话 · 暗号契约": 160,
+    "第三话 · 深海之光": 337,
+    "第四话 · 集市上的“我妻子”": 511,
+    "第五话 · 海浪与诗句": 655,
+    "第六话 · 原来不是别人啊": 771,
+    "第七话 · 冒险家和海豚": 905,
+    "第八话 · 搬家": 1228,
+    "第九话 · 电话": 1474,
+    "第十话 · 深水区": 1610,
+    "第十一话 · 礁石与和解": 1716,
+    "第十二话 · 翡翠之梦": 1852,
+    "第十三话 · 店长与珍珠": 2035,
+    "第十四话 · 那些布丁和糍粑": 2308,
+    "第十五话 · 日记与早安": 2532,
+    "第十六话 · 海风与布丁": 2826,
+    "番外篇一 · 盒子越来越满了": 2995,
+    "番外篇二 · 贝壳项链": 3170
+  },
+  "js_errors": [],
+  "review_scope": "逐个不同背景/立绘组合实机截图；不等于逐句完整游玩所有剧情分支"
+}

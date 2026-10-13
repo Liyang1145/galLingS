@@ -50,11 +50,11 @@ function applyDock() {
   if (want !== docked) { docked = want; H.dock(want ? $("soulDock") : null); }
 }
 function setJournal(open) {
-  $("journal").hidden = !open; localStorage.setItem("gl.vn.journal", open ? "1" : "0"); applyDock(); tick();
+  $("journal").hidden = !open; $("journalBtn").setAttribute("aria-expanded", String(open)); localStorage.setItem("gl.vn.journal", open ? "1" : "0"); applyDock(); tick();
 }
 $("journalBtn").onclick = () => setJournal(!journalOpen());
 $("jClose").onclick = () => setJournal(false);
-setJournal(localStorage.getItem("gl.vn.journal") !== "0");
+setJournal(localStorage.getItem("gl.vn.journal") === "1");
 
 // ---------------------------------------------------------------- 窗口 / 全屏
 document.querySelectorAll("#viewSeg button").forEach((b) => b.onclick = async () => {
@@ -78,14 +78,13 @@ $("titleBtn").onclick = () => { if (H?.state().playing && !confirm("回到标题
 function tick() {
   if (!H) return;
   const s = H.state();
-  $("chapterTitle").textContent = "· " + (s.chapter || s.title || "");
-  const bits = [];
-  if (s.playing && s.affName && s.aff != null) bits.push(esc(`${s.affName} ${s.aff}`));
-  if (s.playing && s.signalName && s.signal != null) bits.push(esc(`${s.signalName} ${s.signal}`));
-  const link = { ok: "灵枢在线", wait: "灵枢连接中", bad: "灵枢未连上（离线回复）", off: "灵枢待命" }[s.link] || "";
-  if (s.soulOn) bits.push(`<i class="ldot ${esc(s.link)}"></i>${link}`);
-  if (srv) bits.push(srv.llm_ready ? `模型 ${esc(srv.llm.model)}` : "模型未配置");
-  const statusHtml=bits.join(" · ");if($("status").innerHTML!==statusHtml)$("status").innerHTML=statusHtml;
+  $("gameBrand").textContent = s.title || "海风与布丁";
+  $("chapterTitle").textContent = s.chapter ? "· " + s.chapter : "";
+  // Character statistics and infrastructure state belong in settings, outside the story view.
+  const statusText = s.unread > 0 && !docked ? '手账有新记录' : '';
+  if ($("status").textContent !== statusText) $("status").textContent = statusText;
+  $("status").hidden = !statusText;
+  $("gameSel").closest('.game-select-group').hidden = $("gameSel").options.length < 2;
   $("journalNew").hidden = !(s.unread > 0 && !docked);
   $("saveBtn").disabled = !s.playing;
   $("audioBtn").hidden = !H.capabilities?.audioLibrary;
@@ -115,10 +114,11 @@ setInterval(tick, 600);
 // ---------------------------------------------------------------- 设置：服务器部分（模型 / 记忆 / 作品文件夹）+ 游戏部分（手账 / 声音 / 文字）
 let memUse = "local";
 async function loadSettings() { srv = await (await fetch("/api/settings")).json(); tick(); return srv; }
+const formatGamePref = (p, value) => /^(vbgm|vse|vamb|vvo|readerScale)$/.test(p.k) ? Math.round(+value * 100) + "%" : (+value).toFixed(p.step < 1 ? 1 : 0);
 function renderGamePrefs() {
   const list = H ? H.prefs() : [];
   const row = (p) => {
-    if (p.type === "range") return `<label class="set-row"><span>${p.label}</span><input type="range" min="${p.min}" max="${p.max}" step="${p.step}" value="${p.value}" data-gp="${p.k}"><small class="muted rv">${(+p.value).toFixed(p.step < 1 ? 2 : 0)}</small></label>`;
+    if (p.type === "range") return `<label class="set-row"><span>${p.label}</span><input type="range" min="${p.min}" max="${p.max}" step="${p.step}" value="${p.value}" data-gp="${p.k}"><small class="muted rv">${formatGamePref(p, p.value)}</small></label>`;
     if (p.type === "bool") return `<div class="set-row"><span>${p.label}</span><div class="seg"><button type="button" data-gp="${p.k}" data-v="1" class="${p.value ? "on" : ""}">开</button><button type="button" data-gp="${p.k}" data-v="0" class="${p.value ? "" : "on"}">关</button></div></div>`;
     return `<div class="set-row"><span>${p.label}</span><div class="seg">${p.options.map(([v, t]) => `<button type="button" data-gp="${p.k}" data-v="${v}" class="${p.value === v ? "on" : ""}">${t}</button>`).join("")}</div></div>`;
   };
@@ -130,7 +130,7 @@ function renderGamePrefs() {
   $("sForget").disabled = !st?.playing;
   document.querySelectorAll("#setDlg [data-gp]").forEach((el) => {
     const sc = list.find((p) => p.k === el.dataset.gp);
-    if (el.type === "range") el.oninput = () => { H.setPref(sc.k, +el.value); el.nextElementSibling.textContent = (+el.value).toFixed(sc.step < 1 ? 2 : 0); };
+    if (el.type === "range") el.oninput = () => { H.setPref(sc.k, +el.value); el.nextElementSibling.textContent = formatGamePref(sc, el.value); };
     else el.onclick = () => {
       H.setPref(sc.k, sc.type === "bool" ? el.dataset.v === "1" : el.dataset.v);
       el.parentElement.querySelectorAll("button").forEach((b) => b.classList.toggle("on", b === el));
@@ -149,7 +149,7 @@ function renderServer() {
   memUse = s.memory.use; $("sDsh").value = s.memory.dsh_memory_path || ""; $("sGames").value = s.vn.games_dir || "";
   syncMem();
   const fail = Object.entries(s.failed || {}).map(([k, v]) => `${k}：${v}`).join("\n");
-  const msg = s.warn || Object.entries(s.failed || {}).map(([k, v]) => friendlyFail(k, v)).join(" ");
+  const msg = s.warn || Object.entries(s.failed || {}).filter(([k, v]) => !(k.startsWith("gallings.llm") && /缺少.*密钥/.test(v))).map(([k, v]) => friendlyFail(k, v)).join(" ");
   $("saveOut").textContent = msg; $("saveOut").title = [msg, fail].filter(Boolean).join("\n\n");   // 原始报错放在悬停提示里
   $("saveOut").classList.toggle("bad", !!msg);
 }
@@ -168,7 +168,7 @@ $("setBtn").onclick = async () => {
   if (document.fullscreenElement) await document.exitFullscreen();
   $("saveOut").textContent = ""; $("sTestOut").textContent = "";
   renderGamePrefs(); $("setDlg").showModal();
-  renderServer(await loadSettings());
+  try { renderServer(await loadSettings()); } catch (e) { $("saveOut").textContent = "连接设置暂时无法读取，剧情仍可继续。"; }
 };
 $("sClose").onclick = () => { $("setDlg").close(); game.focus(); };
 $("sForget").onclick = () => { if (confirm("让她忘掉这一局记下的所有事？（剧情进度不变）")) { H?.forget(); renderGamePrefs(); } };
@@ -192,8 +192,8 @@ $("sTest").onclick = async () => {
   $("sTestOut").innerHTML = (r.ok ? gi("check") + " 通了：" : gi("x") + " ") + esc(r.message);
 };
 
-loadSettings();
-loadGames();
+loadSettings().catch(() => {});
+loadGames().catch(() => { $("empty").hidden = false; $("empty").textContent = "作品暂时无法加载，请检查本地服务后刷新。"; });
 
 // ---------------------------------------------------------------- 画面尺寸对齐整像素
 // 16:9 画面用 CSS 自适应会算出 911×512.44、上边 198.78 这种小数像素；游戏再整体缩放一次，浏览器每帧都得重新栅格化，

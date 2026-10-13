@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "ending_chat_actual_ui_scripted_reply": true,
+  "disconnect_releases_input": true,
+  "title_menu_visible": true,
+  "unified_offline_entry": true,
+  "js_errors": [],
+  "scope": "聊天使用独立测试配置的脚本化模型，不代表已验收真实云端模型与听感"
+}

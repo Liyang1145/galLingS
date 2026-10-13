@@ -1,0 +1,46 @@
+# GalAgent（结局后聊天 + 基础 Agent 工具）配置示例。
+# 用法 A：合并进你的 config.yaml，跑完整引擎：python -m server
+# 用法 B：只跑聊天端口（不需要 Rust 核心，给只用 VN Studio 的作者）：
+#         python -m server.api.post_ending --config config.galagent.example.yaml
+# 密钥走环境变量 GALLINGS_LLM_API_KEY。
+
+server:
+  host: 127.0.0.1
+  port: 8765
+  data_dir: ~/.gallings
+
+game:
+  post_ending:
+    mode: chat_window                # off | scene | chat_window | auto；不是 off 就开放 /ws/post_ending
+    provider: gallings.tool.galagent # 可省略：自动找第一个实现了 open_post_ending 的插件
+    token: ""                        # 留空 = 自动生成到 ~/.gallings/post_ending_token.txt
+    # require_token: false           # 只在完全信任的环境里关掉（任何网页都能连本机端口！）
+    affects_next_run: false
+
+plugins:
+  paths:
+    - plugins/builtin
+    - ~/.gallings/plugins
+  select:
+    llm: [gallings.llm.openai-compat]
+  tools:
+    - gallings.tool.galagent
+    # - yourname.tool.weather        # 扩展插件：清单里写 capabilities: [galagent] 就会出现在聊天里
+  guards: []
+  config:
+    gallings.llm.openai-compat:
+      base_url: https://api.deepseek.com
+      model: deepseek-chat
+    gallings.tool.galagent:
+      workspace: ""                  # 留空 = ~/.gallings/plugins/gallings.tool.galagent/workspace
+      shell: auto                    # auto | pwsh | powershell | bash | sh
+      confirm:                       # auto 直接执行 / ask 先问玩家 / deny 禁用
+        powershell: ask
+        write_file: ask
+        read_file: auto
+        list_dir: auto
+        fetch_url: auto
+        get_time: auto
+      confirm_by_effect: {read: auto, memory: auto, perform: ask, propose: deny}
+      max_rounds: 8
+      think: true

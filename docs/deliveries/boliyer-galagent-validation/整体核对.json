@@ -1,0 +1,10 @@
+{
+  "pytest": {
+    "passed": 74,
+    "skipped": 2
+  },
+  "runtime_game_js_unchanged": true,
+  "author_originals_verified": 137,
+  "no_release_version": true,
+  "scope": "本地74测试及浏览器联调；聊天为脚本化测试模型，云端未验收"
+}

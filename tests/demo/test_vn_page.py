@@ -118,3 +118,20 @@ def test_reload_plugins_serialized(tmp_path, mini_dir):
 
     asyncio.run(main())
     assert len(started) == 3 and all(pm in stopped for pm in started) and not early
+
+
+def test_vn_plugins_dir(tmp_path, mini_dir):
+    """content/vn_plugins 里的 .js 会提供给作品页里的游戏（VN Studio v0.20 插件）；只给本文件夹里的 .js。"""
+    c, rt = _client(tmp_path, mini_dir)
+    d = tmp_path / "vn_plugins"
+    d.mkdir()
+    (d / "example.hello.vnplugin.js").write_text("VNPlugin.define({})", encoding="utf-8")
+    (d / "readme.txt").write_text("x", encoding="utf-8")
+    rt.config.setdefault("vn", {})["plugins_dir"] = str(d)
+    with c:
+        ps = c.get("/api/vn/plugins").json()["plugins"]
+        assert {"id": "example.hello", "url": "/vn_plugins/example.hello.vnplugin.js"} in ps
+        r = c.get("/vn_plugins/example.hello.vnplugin.js")
+        assert r.status_code == 200 and r.headers["content-type"].startswith("text/javascript")
+        assert c.get("/vn_plugins/readme.txt").status_code == 404
+        assert c.get("/vn_plugins/..%2fsecret.txt").status_code == 404

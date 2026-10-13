@@ -1,0 +1,52 @@
+{
+  "passed": true,
+  "galagent_hosted_plugin_loaded": true,
+  "galagent_scripted_websocket_reply": true,
+  "audition_and_plugin_buttons": true,
+  "story_nodes_unchanged": 3308,
+  "decoded_background_refs": 46,
+  "startup_scene": "B02",
+  "representative_scene_checks": [
+    [
+      384,
+      "B11"
+    ],
+    [
+      1700,
+      "B12"
+    ],
+    [
+      511,
+      "B21"
+    ],
+    [
+      2340,
+      "B22"
+    ],
+    [
+      2563,
+      "B33"
+    ],
+    [
+      2684,
+      "B36"
+    ],
+    [
+      3278,
+      "B19"
+    ],
+    [
+      2435,
+      "B40"
+    ],
+    [
+      893,
+      "B17"
+    ]
+  ],
+  "crop_overrides_removed": true,
+  "audio_and_save_restore": true,
+  "offline_html_start": true,
+  "js_errors": [],
+  "scope": "数据/资源核对、实际冷启动、关键时段机位与存档恢复；未逐句遍历全部剧情分支"
+}

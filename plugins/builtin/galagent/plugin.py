@@ -1,0 +1,112 @@
+"""gallings.tool.galagent —— 结局后聊天的 Agent 插件。
+
+两重身份：
+1. 普通 tool 插件：导出 powershell / read_file / write_file / list_dir / fetch_url / get_time，
+   和其它 tool 插件一样由 PluginManager 管理、写 tool.called 事件。
+2. post_ending 提供者：实现 ``open_post_ending()``，引擎的 ``/ws/post_ending`` 端口找到它后，
+   每个聊天窗口开一个 :class:`GalAgentSession`。
+
+扩展：其它 tool 插件在清单里写 ``capabilities: [galagent]``，它的工具就会出现在结局后聊天里
+（确认策略按 confirm / confirm_by_effect 配置）。详见 docs/galagent.md。
+"""
+from __future__ import annotations
+
+from typing import Any
+
+from server.plugins import ToolPlugin, ToolResult, ToolSpec
+
+from .loop import PROTOCOL, GalAgentSession, Send, ToolEntry
+from .prompts import persona_from_card
+from .tools_basic import BasicTools
+
+__all__ = ["GalAgent", "GalAgentSession", "PROTOCOL"]
+
+
+class ManagerRegistry:
+    """把 PluginManager 里可用的工具包装成会话用的注册表（自带工具 + 声明了 galagent 能力的插件工具）。"""
+
+    def __init__(self, owner: "GalAgent", manager: Any) -> None:
+        self.owner = owner
+        self.manager = manager
+
+    def _plugin_ids(self) -> list[str]:
+        cfg_extra = list(self.owner.ctx.config.get("extra_tool_plugins") or [])
+        out: list[str] = []
+        for pid in self.manager.settings.multi.get("tool", []):
+            st = self.manager.states.get(pid)
+            if st is None or st.status != "running":
+                continue
+            if pid == self.owner.ctx.plugin_id or "galagent" in st.manifest.capabilities \
+                    or "*" in cfg_extra or pid in cfg_extra:
+                out.append(pid)
+        return out
+
+    async def entries(self) -> list[ToolEntry]:
+        out: list[ToolEntry] = []
+        for pid in self._plugin_ids():
+            inst = self.manager.states[pid].instance
+            for spec in await inst.list_tools():
+                out.append(ToolEntry(spec, pid, self.owner.policy(spec)))
+        return out
+
+    async def call(self, name: str, arguments: dict[str, Any], turn: dict[str, Any]) -> ToolResult:
+        return await self.manager.call_tool(name, arguments, turn)
+
+
+class LocalRegistry:
+    """没有 PluginManager 时（单测、独立运行）只用自带工具。"""
+
+    def __init__(self, owner: "GalAgent") -> None:
+        self.owner = owner
+
+    async def entries(self) -> list[ToolEntry]:
+        return [ToolEntry(s, self.owner.ctx.plugin_id, self.owner.policy(s)) for s in await self.owner.list_tools()]
+
+    async def call(self, name: str, arguments: dict[str, Any], turn: dict[str, Any]) -> ToolResult:
+        return await self.owner.call(name, arguments, turn)
+
+
+class GalAgent(ToolPlugin):
+    async def setup(self) -> None:
+        self.tools = BasicTools(self.ctx.config, self.ctx.data_dir)
+        self.ctx.log.info("GalAgent 工作目录：%s；shell：%s", self.tools.workspace,
+                          self.tools.shell[0] if self.tools.shell else "无")
+
+    async def health(self) -> dict[str, Any]:
+        return {"ok": True, "workspace": str(self.tools.workspace),
+                "shell": self.tools.shell[0] if self.tools.shell else None}
+
+    # ------------------------------------------------------------------ tool 接口
+    async def list_tools(self) -> list[ToolSpec]:
+        return self.tools.specs()
+
+    async def call(self, name: str, arguments: dict[str, Any], turn: dict[str, Any]) -> ToolResult:
+        spec = next((s for s in self.tools.specs() if s.name == name), None)
+        if spec is None:
+            return ToolResult(False, error=f"未知工具 {name}")
+        try:
+            import jsonschema
+            jsonschema.validate(arguments, spec.parameters)
+        except Exception as e:  # noqa: BLE001
+            return ToolResult(False, error=f"参数不合法：{getattr(e, 'message', e)}")
+        return await self.tools.call(name, arguments)
+
+    # ------------------------------------------------------------------ 确认策略
+    def policy(self, spec: ToolSpec) -> str:
+        c = self.ctx.config
+        by_name = c.get("confirm") or {}
+        if spec.name in by_name:
+            return by_name[spec.name]
+        return (c.get("confirm_by_effect") or {}).get(spec.effect, "ask")
+
+    # ------------------------------------------------------------------ post_ending 提供者
+    def open_post_ending(self, *, llm_chain: list[Any], send: Send, manager: Any | None = None) -> GalAgentSession:
+        reg = ManagerRegistry(self, manager) if manager is not None else LocalRegistry(self)
+        return GalAgentSession(llm_chain=llm_chain, registry=reg, send=send, config=self.ctx.config,
+                               workspace=str(self.tools.workspace), log=self.ctx.log, emit=self.ctx.emit)
+
+    @staticmethod
+    def character_from_card(card: dict[str, Any]) -> dict[str, Any]:
+        return {"name": (card.get("identity") or {}).get("name", card.get("id", "她")),
+                "persona": persona_from_card(card),
+                "expressions": list((card.get("assets") or {}).get("sprites") or [])}

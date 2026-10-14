@@ -29,6 +29,7 @@
   </div>
   <div class="tb-spacer"></div>
   <div id="status" class="status"></div>
+  <button id="tlBtn" class="ib" title="引擎时间轴：每一步的事件、裁决与状态（调试）" aria-expanded="false"><svg class="gi" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg><span>时间轴</span></button>
   <button id="setBtn" class="ib" title="设置：模型、记忆、手账、游戏"><svg class="gi" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"/> <circle cx="12" cy="12" r="3"/></svg><span>设置</span></button>
 </header>
 
@@ -43,6 +44,16 @@
     <div class="tl-resizer" id="tlResizer" title="拖动调整宽度，双击恢复默认"></div>
     <button class="j-close" id="jClose" title="收起手账（收起后手账回到游戏里）"><svg class="gi" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/> <path d="m6 6 12 12"/></svg></button>
     <div id="soulDock"></div>
+  </aside>
+  <aside class="engine-tl" id="engineTl" hidden aria-label="引擎时间轴">
+    <header class="etl-head">
+      <b>引擎时间轴</b><span id="etlSess" class="muted"></span>
+      <button class="j-close" id="etlClose" title="收起时间轴"><svg class="gi" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/> <path d="m6 6 12 12"/></svg></button>
+    </header>
+    <div class="etl-state" id="etlState"></div>
+    <div class="etl-seek" id="etlSeek" hidden></div>
+    <ol class="etl-rows" id="etlRows"></ol>
+    <footer class="etl-foot muted" id="etlFoot">还没有引擎会话：从作品标题画面开始游戏后，引擎每走一步都会列在这里。</footer>
   </aside>
 </main>
 
@@ -82,5 +93,6 @@
 
 <script src="/static/icons.js"></script>
 <script src="/static/vn.js"></script>
+<script src="/static/timeline.js"></script>
 </body>
 </html>

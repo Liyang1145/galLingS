@@ -58,3 +58,50 @@ body.vnpage { --ink:#edf0e4; --ink2:#bccbc7; --paper:#16282e; --sea:#537d77; --s
   .vnpage #setDlg .set-row>span { width:86px; font-size:13px; }
   .vnpage #setDlg .set-row { flex-wrap:wrap; }
 }
+
+/* 引擎调试时间轴（web/timeline.js，PLAN §14） */
+.vnpage .engine-tl { width: 380px; flex-shrink: 0; display: flex; flex-direction: column; min-height: 0; background: #0f1d24; color: #d8e6ea; border-left: 1px solid #23363f; font-size: 12.5px; }
+.vnpage .engine-tl[hidden] { display: none; }
+.engine-tl .etl-head { display: flex; align-items: center; gap: 8px; padding: 10px 12px; border-bottom: 1px solid #23363f; }
+.engine-tl .etl-head b { font-size: 14px; letter-spacing: .04em; }
+.engine-tl .etl-head .j-close { margin-left: auto; position: static; }
+.engine-tl .muted { color: #86a0a8; }
+.engine-tl .etl-foot { padding: 6px 12px; border-top: 1px solid #23363f; font-size: 11.5px; }
+.engine-tl .etl-state { padding: 8px 12px; border-bottom: 1px solid #23363f; }
+.engine-tl .etl-kv { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.engine-tl .etl-kv > span { color: #86a0a8; margin-right: 2px; }
+.engine-tl .etl-kv b { background: #1b2f38; border-radius: 6px; padding: 2px 7px; font-weight: 600; }
+.engine-tl .etl-kv i { font-style: normal; color: #9cc7d2; }
+.engine-tl .etl-kv small { flex-basis: 100%; color: #86a0a8; }
+.engine-tl .etl-rows { list-style: none; margin: 0; padding: 4px 0; overflow: auto; flex: 1; min-height: 0; }
+.engine-tl .etl-row { padding: 7px 12px 7px 10px; border-left: 3px solid transparent; cursor: pointer; border-bottom: 1px solid #16262e; }
+.engine-tl .etl-row:hover { background: #142730; }
+.engine-tl .etl-row.sel { background: #1a3440; border-left-color: #7fd3e6; }
+.engine-tl .etl-row.src-player { border-left-color: #6fb2ff; }
+.engine-tl .etl-row.src-model { border-left-color: #c79bff; }
+.engine-tl .etl-row.flag { background: #2a1f14; }
+.engine-tl .etl-l1 { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.engine-tl .seq { color: #6d8790; font-variant-numeric: tabular-nums; min-width: 2.6em; }
+.engine-tl .src { font-size: 11px; color: #86a0a8; border: 1px solid #2c444e; border-radius: 10px; padding: 0 6px; }
+.engine-tl code { margin-left: auto; color: #58737c; font-size: 11px; }
+.engine-tl .etl-l2 { margin: 3px 0 0 2.9em; color: #b9cdd2; line-height: 1.5; }
+.engine-tl .etl-l2 q { quotes: none; display: block; }
+.engine-tl .etl-l2 q.imp { color: #e4c8ff; }
+.engine-tl .etl-l2 em { font-style: normal; color: #9cd3e0; margin-right: 6px; }
+.engine-tl .op { display: inline-block; font-size: 11px; background: #1b2f38; border-radius: 5px; padding: 0 6px; margin-right: 4px; color: #9cc7d2; }
+.engine-tl .op.end { background: #3a2c12; color: #ffd38a; }
+.engine-tl .vd { font-size: 11px; border-radius: 5px; padding: 0 6px; }
+.engine-tl .vd.applied { background: #163626; color: #8fe0b0; }
+.engine-tl .vd.clamped { background: #3a3112; color: #ffd36e; }
+.engine-tl .vd.rejected { background: #3d1a1a; color: #ff9a9a; }
+.engine-tl .dl { font-size: 11px; font-weight: 600; }
+.engine-tl .dl.up { color: #8fe0b0; } .engine-tl .dl.down { color: #ff9a9a; }
+.engine-tl .etl-seek { padding: 10px 12px; border-bottom: 1px solid #23363f; background: #122630; }
+.engine-tl .etl-seek-head { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+.engine-tl .etl-seek-head button { margin-left: auto; background: #1f3a46; color: #d8e6ea; border: 1px solid #2f5260; border-radius: 6px; padding: 2px 10px; cursor: pointer; }
+.engine-tl .etl-shot { position: relative; aspect-ratio: 16 / 9; border-radius: 8px; background: #0a1418 center / cover no-repeat; overflow: hidden; margin-bottom: 8px; }
+.engine-tl .etl-say { position: absolute; left: 6px; right: 6px; bottom: 6px; background: rgba(10, 22, 28, .82); border-radius: 6px; padding: 6px 8px; line-height: 1.45; }
+.engine-tl .etl-say small { display: block; color: #86a0a8; }
+.engine-tl .etl-say em { font-style: normal; color: #9cd3e0; margin-right: 6px; }
+@media (max-width: 1100px) { .vnpage .engine-tl { position: absolute; right: 0; top: 0; bottom: 0; z-index: 11; width: min(92vw, 380px); box-shadow: -10px 0 30px rgba(0,0,0,.4); } }
+.engine-tl .pick { display: block; color: #9fd0ff; font-weight: 600; }

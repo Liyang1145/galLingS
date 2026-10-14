@@ -270,6 +270,17 @@ async def test_save_in_player_then_restore_in_new_session(tmp_path):
     while a.state["wait"] != "end":
         await a.handle({"type": "advance"})
     want = a.state
+    # 调试时间轴（PLAN §14）：每行带指令摘要与状态；选择行带选项原文；拖动回放给出那一刻的台词 ID
+    rows = [m["row"] for m in out if m["type"] == "timeline"]
+    pick = next(r for r in rows if r["kind"] == "choice")
+    assert pick["option_text"] and pick["state"]["wait"] in ("say", "choice", "end")
+    assert any(o["op"] == "SAY" and o["src"].startswith("vn:") for r in rows for o in r.get("out", []))
+    first_say = next(r for r in rows if any(o["op"] == "SAY" for o in r.get("out", [])))
+    out.clear()
+    await a.handle({"type": "seek", "seq": first_say["seq"]})
+    sc = next(m for m in out if m["type"] == "screen")
+    assert sc["live"] is False and sc["replay_ok"] and sc["line_id"] == first_say["out"][0]["src"][3:]
+    assert a.state["wait"] == "end"  # 只看，不改当前进度
     await a.close()
 
     out.clear()

@@ -112,16 +112,37 @@ class Session:
         ev = {"kind": kind, "payload": payload or {}, "source": source}
         res = json.loads(self.engine.step(json.dumps(ev, ensure_ascii=False)))
         row = self.recorder.record(ev, res, display)
-        await self.send({"type": "timeline", "row": self._timeline_view(row)})
+        await self.send({"type": "timeline", "row": self._timeline_view(row, res)})
         if render:
             await self.render(res["ops"])
         return res
 
-    def _timeline_view(self, row: dict[str, Any]) -> dict[str, Any]:
+    def _timeline_view(self, row: dict[str, Any], res: dict[str, Any] | None = None) -> dict[str, Any]:
+        """给调试时间轴看的一行：事件本身 + 这一步引擎吐出的指令摘要和状态（只显示，不进日志、不参与回放）。"""
         p = dict(row["payload"])
         if row["kind"] == "load":
             p = {"slot": p.get("slot"), "new_lineage": p.get("new_lineage")}
-        return {**row, "payload": p}
+        view: dict[str, Any] = {**row, "payload": p}
+        if row["kind"] == "choice" and self.choice_op:
+            opt = next((o for o in self.choice_op.get("options", []) if o.get("id") == p.get("option_id")), None)
+            if opt:
+                view["option_text"] = opt.get("text") or opt.get("label") or ""
+        if res:
+            out = []
+            for op in res.get("ops", []):
+                k = op.get("op")
+                if k == "SAY":
+                    out.append({"op": k, "speaker": op.get("speaker"), "text": str(op.get("text", ""))[:60],
+                                "src": op.get("src"), "origin": op.get("origin")})
+                elif k in ("CHOICE", "SCENE", "BGM", "END", "TAIL", "INPUT"):
+                    out.append({"op": k, **{x: op[x] for x in ("id", "bg", "track", "ending", "kind", "src") if x in op},
+                                **({"n": len(op.get("options", []))} if k == "CHOICE" else {})})
+            view["out"] = out[:12]
+            st = self.state
+            view["state"] = {"affection": st["affection"] + st["deferred"], "tails": st["tails_script"] + st["tails_ai"],
+                             "lineage": st["lineage"], "turn": st["turn"], "wait": st["wait"], "mode": st["mode"],
+                             "vars": st.get("vars", {})}
+        return view
 
     async def render(self, ops: list[dict[str, Any]]) -> None:
         out = []
@@ -455,7 +476,10 @@ class Session:
     async def on_seek(self, seq: int) -> None:
         """调试时间轴拖动：从头回放到 seq，显示那一刻的画面（只看，不改当前进度）。"""
         _, ops, bad = replay(self.recorder.header, self.recorder.events, upto=seq)
-        await self.send({"type": "screen", "screen": screen_from_ops(ops), "live": False, "seq": seq, "replay_ok": bad is None})
+        sc = screen_from_ops(ops)
+        src = str((sc.get("say") or {}).get("src") or "")
+        await self.send({"type": "screen", "screen": sc, "live": False, "seq": seq, "replay_ok": bad is None,
+                         "line_id": src[3:] if src.startswith("vn:") else None})
 
     async def close(self) -> None:
         self.recorder.close()

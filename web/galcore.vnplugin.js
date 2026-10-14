@@ -32,8 +32,16 @@
       const idxOf = id => P.lines.findIndex(l => l.id === id);
       const log = (...a) => console.info('[galcore]', ...a);
 
+      // 调试时间轴在外框（web/vn.html）里：引擎消息同源转给它（PLAN §14）
+      const toHost = msg => { try { if (window.parent !== window) window.parent.postMessage({ gallings: 'galcore', ...msg }, location.origin); } catch (e) { /* 离线打开 */ } };
+      const onHostMsg = ev => {
+        if (ev.origin !== location.origin || ev.data?.gallings !== 'galcore-seek' || !B.on || !B.ws) return;
+        B.ws.send(JSON.stringify({ type: 'seek', seq: Number(ev.data.seq) }));
+      };
+      window.addEventListener('message', onHostMsg);
+
       function detach(why) {
-        if (B.on) log('不再接管：' + why);
+        if (B.on) { log('不再接管：' + why); toHost({ ev: 'detach', why }); }
         B.on = false; B.busy = false;
         try { B.ws?.close(); } catch (e) { /* 已关 */ }
         B.ws = null;
@@ -51,7 +59,7 @@
       function onOps(ops) {
         const w = B.waiters[0];
         for (const o of ops) {
-          if (o.op === 'STATE') { B.state = o; B.inputOpen = !!o.input_open; }
+          if (o.op === 'STATE') { B.state = o; B.inputOpen = !!o.input_open; toHost({ ev: 'state', state: o }); }
           if (w) w.ops.push(o);
         }
         if (w && ops.some(o => o.op === 'SAY' || o.op === 'CHOICE' || o.op === 'END') && !w.streaming) {
@@ -78,8 +86,20 @@
               if (m.chapter?.id !== P.id) { detach('服务器当前游戏不是这部作品（' + m.chapter?.id + '）'); return reject(new Error('not this game')); }
               B.heroine = (P.settings.soul && P.settings.soul.char) || (P.chars[0] && P.chars[0].name) || '';
               log('已接管，会话 ' + m.session + '，模式 ' + m.mode + (restore ? '（读档）' : ''));
+              toHost({ ev: 'session', session: m.session, mode: m.mode, llm: m.llm, card: m.card, restore: !!restore, lines: P.lines.length });
               if (restore) ws.send(JSON.stringify({ type: 'restore', save: restore }));
             } else if (m.type === 'ops') onOps(m.ops);
+            else if (m.type === 'timeline') {
+              const r = m.row, line = (r.out || []).find(o => o.op === 'SAY');
+              const id = line && String(line.src || '').replace(/^vn:/, '');
+              const L = id && P.lines.find(x => x.id === id);
+              if (L) r.chapter = chapterOf(L);
+              toHost({ ev: 'row', row: r });
+            }
+            else if (m.type === 'screen' && m.live === false) {   // 时间轴拖动：只看那一刻，不改当前进度
+              const L = m.line_id && P.lines.find(x => x.id === m.line_id);
+              toHost({ ev: 'seek', seq: m.seq, replay_ok: m.replay_ok, screen: m.screen, line: L ? lineView(L) : null });
+            }
             else if (m.type === 'screen') {           // 读档完成：引擎已回到存档那一刻
               B.state = m.state; B.inputOpen = !!m.state?.input_open;
               const w = B.waiters[0];
@@ -230,7 +250,20 @@
         box.appendChild(b);
       }
 
+      function lineView(L) {
+        const who = (P.chars || []).find(c => c.id === L.speaker)?.name || L.speaker || '';
+        let bg = '';
+        try { const a = typeof A === 'function' ? A(L.bg) : null; if (a?.src) bg = new URL(a.src, location.href).href; } catch (e) { /* 无背景 */ }
+        return { id: L.id, who, text: L.text || '', bg, chapter: chapterOf(L) };
+      }
+      function chapterOf(L) {
+        let i = P.lines.indexOf(L);
+        for (; i >= 0; i--) if (P.lines[i].chapter) return String(P.lines[i].chapter);
+        return '';
+      }
+
       return () => {
+        window.removeEventListener('message', onHostMsg);
         detach('插件停用');
         delete B.snapFor;
         Object.assign(g, orig);

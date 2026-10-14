@@ -1,0 +1,92 @@
+# 仓库盘点与收敛方案（按 PLAN §17.1）
+
+> 分支 `tanpowasd/dev`，基线 `main` f45ec51（2026-10-14）。本文件只做**分类**，没有移动或删除任何文件。
+> 2026-10-14 进展：路线 1（导入器）已完成，播放器按决定 32 改为作品画面 + 引擎桥（`web/galcore.vnplugin.js`），见 [任务记录](collab/work-ledger/repo-consolidation.md)。
+> 最终目标：仓库里只有**一个** galgame（一个引擎、一个播放器、一份内容），GalAgent 是它的插件，结构按 [PLAN](PLAN.md) §17.1。
+
+## 1. 现在仓库里有几样东西
+
+仓库约 680 MB，按"它是什么"分成 8 类。最关键的事实：**现在有两套各自能跑剧情的运行时**。
+
+| # | 类别 | 位置 | 体量 | 现状 | 和 PLAN 的关系 |
+|---|---|---|---|---|---|
+| A | **galLingS 引擎**（PLAN 本体） | `core/`（Rust galcore）、`compiler/`、`server/`、`schemas/`、`plugins/builtin/` 的 6 个插件、`tests/`、`start.bat`、`pyproject.toml`、`wheels/`、`.github/` | 小 | 第一话 OP 程序、状态机、守卫、灵枢记忆、插件插座、三平台 CI。**自己的播放器 `web/index.html`/`player.js` 已在 2994c5a 删除**，目前没有自己的剧情前端 | 就是 PLAN；保留为唯一引擎 |
+| B | **VN Studio 作品**（Larry，第二套运行时） | `content/imports/vnstudio/海风与布丁/`（`game.js` + `index.html` + `assets/`）、根目录 `游玩.html`、宿主页 `web/vn.html` `web/vn.js` `web/vn-polish.css`、`server/soul.py`（`/ws/soul`）、`content/vn_plugins/` | 97 MB，246 文件 | 16 话 + 2 番外、3308 句，剧情逻辑和渲染都写在 `game.js` 里，**不经过 galcore 状态机、守卫、事件日志** | 与 PLAN 冲突：剧情应是数据，由引擎跑 |
+| C | **GalAgent**（boliyer） | `plugins/builtin/galagent/`、`server/api/post_ending.py`、`plugins/examples/galagent-notes/`、`config.galagent.example.yaml`、`docs/design/galagent.md` | 0.2 MB | 结局后聊天 + 角色 Agent，tool 插件 + `post_ending` 端口 | 已符合 PLAN §16（插件 + 预留端口），保留 |
+| D | **剧本与角色卡** | `content/scripts/haifeng-pudding_s1_v5.0_draft.md`（全卷草稿）、`schemas/card.schema.json`；`ch01.md` `beats.yaml` `whale.yaml` 仍未入库 | 0.3 MB | 全卷只有草稿 Markdown；编译器目前只吃第一话 | PLAN 的内容源；需要补 `content/cards/` |
+| E | **素材原件** | `content/assets/audio/`（238 MB）、`content/assets/scene-backgrounds/`（129 MB）、`content/assets/backgrounds/`（46 MB）、`content/assets/archives/`（10 MB）、`content/assets/image-trials/`（4 MB）、`content/assets/music/`（Atri：wav 95 MB、mp3 16 MB、方向文档）、`content/audio/manifest.yaml`、`content/assets/manifest.json` | ≈540 MB | 原件、运行副本（`content/imports/vnstudio/.../assets` 里的 ogg/webp）分散在三处；`content/assets/music/` 在根目录 | PLAN 只有 `content/audio/manifest.yaml`；需要一个统一素材库 |
+| F | **交付凭证与验证截图** | `archive/deliveries/`（larry-vn、boliyer 原件清单/ZIP 校验）、`archive/deliveries/`（player-polish 26 MB、boliyer-validation 10 MB、local-assembly 9 MB 截图/对照页）、`docs/content/art-production/` | ≈46 MB | 证明来源和验收过程的材料 | 不属于运行内容；应归档 |
+| G | **文档与协作** | `docs/PLAN.md` `decisions.md` `memory-bench.md` `plugin-format.md` `demo.md` `soul-port.md` `vn-page.md` `latest-play.md` `music-direction.md` `music-tracklist.md` `player-aesthetic-review.md` `coordination-ledger.md` `work-ledger/`、`AGENTS.md`、`README.md` | 小 | 设计、协作台账、各任务记录混在 `docs/` 一层 | PLAN 的 `docs/`；按用途分子目录 |
+| H | **只在分支上的东西** | `handoff/galgame-workspace-20261012`（旧 RenPy 工程、Live2D v6 检查点，+4）、`larrye/haifeng-vn-studio`（+1）、`feat/art-editor-library`（+3，有人在做） | — | 未合入 main | RenPy 是历史备份；Live2D 将来进立绘层；art-editor 等作者合 |
+
+另：`content/imports/vnstudio/海风与布丁/assets/audio/*.ogg` 与 `content/assets/audio/`、`content/assets/music/` 是同一批声音的原件/运行副本两份，目前靠手工同步。
+
+## 2. 核心矛盾：两套运行时
+
+| | galLingS 引擎（A） | VN Studio 作品（B） |
+|---|---|---|
+| 剧情 | 第一话，Markdown → 编译器 → OP | 全 18 章，写死在 `game.js` |
+| 状态/好感 | Rust 状态机，可回放、可哈希 | `game.js` 内变量 |
+| AI 演绎、守卫、记忆 | 有（导演、守卫、灵枢） | 只有手账/GalAgent 外挂 |
+| 前端 | 已删除 | 完整、已打磨（player-polish） |
+
+PLAN 要求"模型提议、确定性引擎裁决"。只要剧情还在 `game.js` 里，AI 演绎、好感预算、存档回放都管不到全 18 章，所以收敛方向是 **B 的内容和画面并进 A**，不是反过来。
+
+## 3. 收敛路线（建议，待确认）
+
+1. **导入插件 `plugins/builtin/importer-vnstudio/`**（PLAN §16.1 已有 importer kind）：把 VN Studio 导出的节点、选项、变量、素材 ID 转成 Chapter → Fragment → Block → OP；**保留原节点 ID**，满足台账 C05 的存档定位。
+2. **引擎播放器回归 `web/player/`**：只吃 OP 指令流；画面直接沿用 Larry 作品与 player-polish 的样式和交互，`游玩.html` 最终指向它。
+3. **GalAgent 不动**，继续作为 tool 插件 + `post_ending`。
+4. **一个素材库 `content/assets/`**：`content/assets/music/` 并入 `content/assets/music/`；运行副本（ogg/webp）由脚本从原件生成，不再手工双份；一份 manifest。
+5. **交付凭证进 `archive/`**（或私有 Release 附件），主线 `docs/` 只留设计和协作文档。
+6. 迁完后 `content/imports/vnstudio/海风与布丁/` 降为"导入源"，保留原件以便核对，不再作为运行入口。
+
+## 4. 目标目录（PLAN §17.1 + 本次补充）
+
+```
+galLingS/
+├── README.md  AGENTS.md  start.bat  pyproject.toml
+├── core/  compiler/  server/  schemas/  tests/  wheels/  .github/     # A：不变
+├── plugins/
+│   ├── builtin/        # llm-*、memory-*、guard-*、tool-proposals、galagent、importer-vnstudio(新)
+│   └── examples/
+├── web/
+│   ├── player/         # 引擎播放器（吸收 Larry 画面 + player-polish）
+│   ├── cards/          # 建卡页
+│   └── shared/         # icons、公共样式
+├── content/
+│   ├── scripts/        # 全卷源稿、每话编译产物
+│   ├── cards/          # whale.yaml 等
+│   ├── assets/         # 唯一素材库：backgrounds/ audio/ content/assets/music/ + manifest
+│   └── imports/vnstudio/海风与布丁/   # Larry 原件，作为导入源
+├── docs/
+│   ├── PLAN.md  decisions.md  inventory.md
+│   ├── design/         # plugin-format、soul-port、galagent、vn-page、memory-bench…
+│   ├── content/        # music-direction、music-tracklist、player-aesthetic-review…
+│   └── collab/         # coordination-ledger、work-ledger/、latest-play
+└── archive/            # deliveries 凭证、截图、image-trials、旧 RenPy 指针
+```
+
+## 4.1 目录迁移结果（2026-10-14，用户：“全部放在我自己的分支就行了”）
+
+只在 `tanpowasd/dev` 上迁移，Git 记为重命名、内容不变；引用（Markdown 相对链接、仓库根相对路径、`.gitattributes`、工具脚本、服务器默认作品目录、测试）一并改写。合入 main 前需音乐负责人、美术编辑器负责人确认。
+
+| 原位置 | 新位置 | 说明 |
+|---|---|---|
+| `music/` | `content/assets/music/` | Atri 母带与 MP3 原件原样搬入；`sourcePath` 保留来源提交中的历史路径，`sourceCurrentPath` 记录现位置 |
+| `content/vn/` | `content/imports/vnstudio/` | 作品原件 + 画面层；服务器默认 `vn.games_dir` 改为此处；`/vn/{作品}/` 网址不变，浏览器存档不受影响；美术编辑器离线模式根路径深一级已改 |
+| `content/deliveries/*`、`docs/deliveries/*` | `archive/deliveries/*` | 交付凭证与验证截图；凭证内部记录的历史打包路径保持原样 |
+| `docs/art-production/` | `docs/content/art-production/` | 美术路线登记（`build_art_catalog.py` 仍读取） |
+| `docs/work-ledger/`、`coordination-ledger.md`、`latest-play.md`、`current-remaining-work.md` | `docs/collab/` | AGENTS.md 已改指向 |
+| `plugin-format` `soul-port` `galagent` `vn-page` `memory-bench` `demo` `art-editor` | `docs/design/` | |
+| `music-direction` `music-tracklist` `player-aesthetic-review` | `docs/content/` | |
+| `content/assets/image-trials/` | **不动** | 美术编辑器运行时经 `/art-assets/` 读取其中候选图，该接口只开放 `content/assets/` 与作品素材 |
+
+2026-10-15合并审核补充：用户明确要求处理此分支，音乐和美术入口按实际文件复核。旧本机设置仍指定默认 `content/vn`（相对或绝对路径）且该处已无作品时，启动页和运行时自动使用新目录；自定义作品目录与仍有作品的旧目录保留。历史音乐交付目录和迁移后的交付目录均可用于接入，来源路径跟随实际交付，不改写旧提交事实。
+
+验证：Markdown 相对链接断链数与迁移前相同（仅 1 处迁移前就断的 `gal-polish` 链接）；pytest 83 通过、2 跳过；浏览器里 `游玩.html`、`引擎开发.html` 离线打开均载入 3308 句无脚本错误；托管作品页引擎接管、存档→读档→续玩与不中断一致，日志回放一致。
+
+## 5. 顺序与影响
+
+- 先做 1、2（导入插件 + 播放器），能跑通再挪目录；挪目录会改 `游玩.html`、`start.bat`、`server/content.py`、`web/vn.*` 的路径，并和 `feat/art-editor-library` 等分支交叉，按 AGENTS.md 在任务记录里写清。
+- 不重写历史、不强推；大文件只移动不改内容（Git 视为重命名，不增加体积）。

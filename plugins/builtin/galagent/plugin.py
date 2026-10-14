@@ -7,7 +7,7 @@
    每个聊天窗口开一个 :class:`GalAgentSession`。
 
 扩展：其它 tool 插件在清单里写 ``capabilities: [galagent]``，它的工具就会出现在结局后聊天里
-（确认策略按 confirm / confirm_by_effect 配置）。详见 docs/galagent.md。
+（确认策略按 confirm / confirm_by_effect 配置）。详见 docs/design/galagent.md。
 """
 from __future__ import annotations
 

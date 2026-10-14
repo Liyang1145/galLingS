@@ -13,4 +13,4 @@ web/galagent-ui.js 前端库（两级折叠的工作流程 + 聊天窗口 + 离�
 web/chat.html      /galagent 独立聊天页
 ```
 
-文档：[docs/galagent.md](../../../docs/galagent.md)（协议、配置、安全、扩展步骤）。
+文档：[docs/design/galagent.md](../../../docs/design/galagent.md)（协议、配置、安全、扩展步骤）。

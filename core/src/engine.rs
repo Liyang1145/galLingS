@@ -67,6 +67,10 @@ pub struct State {
     pub rng: Pcg32,
     pub in_turn: bool,
     pub turn_says: u32,
+    /// 通用整数变量（导入的 VN Studio 剧本用：玩笑、贝壳延后、结局数…）。
+    /// 好感 / 尾鳍不在这里，映射到 affection / tails。空时不序列化，旧章节的 state_hash 不变。
+    #[serde(default, skip_serializing_if = "BTreeMap::is_empty")]
+    pub vars: BTreeMap<String, i64>,
 }
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
@@ -91,6 +95,9 @@ pub struct Config {
     pub tsundere_defer_pct: i64,
     #[serde(default = "d_mode")]
     pub mode: String,
+    /// 开局变量（含跨周目只读变量，如 `结局数`，由 Python 从本机记录算好传入）
+    #[serde(default)]
+    pub vars_init: BTreeMap<String, i64>,
 }
 fn d_threshold() -> i64 { 750 }
 fn d_gap() -> i64 { 2 }
@@ -129,6 +136,62 @@ fn i(v: &Value, k: &str) -> i64 {
 
 fn s<'a>(v: &'a Value, k: &str) -> &'a str {
     v.get(k).and_then(Value::as_str).unwrap_or("")
+}
+
+/// 读变量：`affection` / `tails` 是角色状态通道，其余在 `vars`（缺省 0）。
+pub fn get_var(st: &State, name: &str) -> i64 {
+    match name {
+        "affection" => st.affection + st.deferred,
+        "tails" => (st.tails_script + st.tails_ai) as i64,
+        _ => st.vars.get(name).copied().unwrap_or(0),
+    }
+}
+
+/// 条件：`[{var, cmp, value}]`，全部成立才算成立；缺省 / null 为真。
+pub fn eval_cond(st: &State, cond: Option<&Value>) -> bool {
+    let Some(arr) = cond.and_then(Value::as_array) else { return true };
+    arr.iter().all(|c| {
+        let a = get_var(st, s(c, "var"));
+        let b = i(c, "value");
+        match s(c, "cmp") {
+            "<" => a < b,
+            "<=" => a <= b,
+            ">" => a > b,
+            ">=" => a >= b,
+            "==" => a == b,
+            "!=" => a != b,
+            _ => false,
+        }
+    })
+}
+
+/// 变量修改：`[{var, op, value}]`，op 为 `=` `+=` `-=`。剧本里的好感同时记表层与内心。
+pub fn apply_set(st: &mut State, set: Option<&Value>) {
+    for m in set.and_then(Value::as_array).into_iter().flatten() {
+        let v = i(m, "value");
+        let name = s(m, "var");
+        let cur = get_var(st, name);
+        let new = match s(m, "op") {
+            "=" => v,
+            "+=" => cur + v,
+            "-=" => cur - v,
+            _ => cur,
+        };
+        match name {
+            "affection" => {
+                let d = new - cur;
+                st.affection += d;
+                st.inner += d;
+            }
+            "tails" => {
+                let ai = st.tails_ai as i64;
+                st.tails_script = (new - ai).max(0) as u32;
+            }
+            _ => {
+                st.vars.insert(name.to_string(), new);
+            }
+        }
+    }
 }
 
 fn verdict(result: &str, rule: &str, applied: Value, reason: &str) -> Value {
@@ -192,6 +255,7 @@ impl Engine {
             rng: Pcg32::new(seed),
             in_turn: false,
             turn_says: 0,
+            vars: cfg.vars_init.clone(),
         };
         Ok(Engine {
             program,
@@ -265,8 +329,10 @@ impl Engine {
                     self.state.excursion_net = 0;
                     self.state.input_closed = false;
                     let mut o = op.clone();
-                    // 选项目标 pc 不下发给前端
+                    // 条件不满足的选项不下发；选项目标 pc 不下发给前端
                     if let Some(arr) = o.get_mut("options").and_then(Value::as_array_mut) {
+                        let st = &self.state;
+                        arr.retain(|x| eval_cond(st, x.get("cond")));
                         for x in arr {
                             if let Some(m) = x.as_object_mut() {
                                 m.remove("target");
@@ -284,6 +350,14 @@ impl Engine {
                 }
                 "JUMP" => {
                     self.state.pc = i(&op, "target") as usize;
+                }
+                "JUMP_IF" => {
+                    self.state.pc = if eval_cond(&self.state, op.get("cond")) { i(&op, "target") as usize } else { pc + 1 };
+                }
+                "SET" => {
+                    apply_set(&mut self.state, op.get("set"));
+                    ops.push(op);
+                    self.state.pc += 1;
                 }
                 "MERGE" => {
                     self.state.pc += 1;
@@ -347,6 +421,10 @@ impl Engine {
 
     fn take_option(&mut self, option_id: &str, ops: &mut Vec<Value>) -> Result<(), EngineError> {
         let o = self.choice_option(option_id)?;
+        if !eval_cond(&self.state, o.get("cond")) {
+            return err(format!("选项 {option_id} 条件不满足"));
+        }
+        apply_set(&mut self.state, o.get("set"));
         self.state.history.push(option_id.to_string());
         self.state.pc = i(&o, "target") as usize;
         self.state.wait = Wait::Ready;
@@ -494,6 +572,18 @@ impl Engine {
             return err(format!("AI 回合进行中，不能处理 {kind}"));
         }
         match kind.as_str() {
+            // 从某一章开头开局（章节试阅 / 作品标题的“开始游戏”直入第一话）：只能是第一个事件，目标必须是 CHAPTER
+            "start" => {
+                if self.state.seq != 0 || self.state.pc != 0 || self.state.wait != Wait::Ready {
+                    return err("start 只能作为第一个事件");
+                }
+                let pc = i(&p, "pc") as usize;
+                if self.program.get(pc).map(|o| s(o, "op")) != Some("CHAPTER") {
+                    return err(format!("start 目标 {pc} 不是章节开头"));
+                }
+                self.state.pc = pc;
+                self.run(&mut ops)?;
+            }
             "advance" => match self.state.wait {
                 Wait::Ready | Wait::Say => self.run(&mut ops)?,
                 Wait::Choice => return err("停在选项点，不能 advance"),

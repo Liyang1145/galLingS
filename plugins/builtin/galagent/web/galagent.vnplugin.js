@@ -9,7 +9,7 @@
  *      const ga = vn.require('gallings.galagent');
  *      ga.addClientTool({ name, description, parameters, effect, handler })      // 前端工具
  *      ga.GalAgent.registerToolRenderer(name, (step, box) => {})                 // 自定义工具结果显示
- *    后端工具照旧写 galLingS 插件（capabilities: [galagent]），见 galLingS docs/galagent.md。
+ *    后端工具照旧写 galLingS 插件（capabilities: [galagent]），见 galLingS docs/design/galagent.md。
  * 前端库与 galLingS plugins/builtin/galagent/web/galagent-ui.js 是同一份（构建时嵌入），勿手改这一段。 */
 (() => {
   'use strict';

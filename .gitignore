@@ -10,8 +10,13 @@ content/scripts/**/*.md
 content/scripts/**/chapter.json
 content/scripts/**/beats.yaml
 content/cards/*.yaml
+!content/cards/whale.yaml
 !content/**/README.md
 core/target/
 
 wheels/*.whl
 dist/
+
+# galcore 本地构建产物（maturin develop）
+core/python/galcore/*.so
+core/python/galcore/*.pyd

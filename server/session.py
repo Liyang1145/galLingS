@@ -51,6 +51,8 @@ class SessionOptions:
     seed: int | None = None
     agm_fill: bool = True
     honesty_gap_rule: bool = False
+    #: 本机已收集的结局数（导入剧本里的只读变量 `结局数`，由播放器从本机记录传入）
+    endings_seen: int = 0
 
 
 @dataclass
@@ -66,7 +68,11 @@ class Session:
         self.card, self.card_path = rt.cards.get(self.opts.card_id)
         self.card_hash = sha16(self.card)
         self.seed = self.opts.seed if self.opts.seed is not None else random.SystemRandom().randrange(1, 2**31)
-        self.engine_config = {"mode": self.opts.mode, "honesty_gap_rule": self.opts.honesty_gap_rule}
+        self.engine_config: dict[str, Any] = {"mode": self.opts.mode, "honesty_gap_rule": self.opts.honesty_gap_rule}
+        if self.chapter.get("vars"):  # 导入的 VN Studio 剧本：通用变量初值 + 只读的周目变量
+            vi = {v["var"]: int(v["init"]) for v in self.chapter["vars"] if v["var"] not in ("affection", "tails")}
+            vi["结局数"] = max(0, int(self.opts.endings_seen))
+            self.engine_config["vars_init"] = vi
         self.engine = galcore.Engine(json.dumps(self.chapter, ensure_ascii=False), json.dumps(self.card, ensure_ascii=False),
                                      json.dumps(self.engine_config), self.seed)
         self.guard = TextGuard(self.card)
@@ -106,16 +112,37 @@ class Session:
         ev = {"kind": kind, "payload": payload or {}, "source": source}
         res = json.loads(self.engine.step(json.dumps(ev, ensure_ascii=False)))
         row = self.recorder.record(ev, res, display)
-        await self.send({"type": "timeline", "row": self._timeline_view(row)})
+        await self.send({"type": "timeline", "row": self._timeline_view(row, res)})
         if render:
             await self.render(res["ops"])
         return res
 
-    def _timeline_view(self, row: dict[str, Any]) -> dict[str, Any]:
+    def _timeline_view(self, row: dict[str, Any], res: dict[str, Any] | None = None) -> dict[str, Any]:
+        """给调试时间轴看的一行：事件本身 + 这一步引擎吐出的指令摘要和状态（只显示，不进日志、不参与回放）。"""
         p = dict(row["payload"])
         if row["kind"] == "load":
             p = {"slot": p.get("slot"), "new_lineage": p.get("new_lineage")}
-        return {**row, "payload": p}
+        view: dict[str, Any] = {**row, "payload": p}
+        if row["kind"] == "choice" and self.choice_op:
+            opt = next((o for o in self.choice_op.get("options", []) if o.get("id") == p.get("option_id")), None)
+            if opt:
+                view["option_text"] = opt.get("text") or opt.get("label") or ""
+        if res:
+            out = []
+            for op in res.get("ops", []):
+                k = op.get("op")
+                if k == "SAY":
+                    out.append({"op": k, "speaker": op.get("speaker"), "text": str(op.get("text", ""))[:60],
+                                "src": op.get("src"), "origin": op.get("origin")})
+                elif k in ("CHOICE", "SCENE", "BGM", "END", "TAIL", "INPUT"):
+                    out.append({"op": k, **{x: op[x] for x in ("id", "bg", "track", "ending", "kind", "src") if x in op},
+                                **({"n": len(op.get("options", []))} if k == "CHOICE" else {})})
+            view["out"] = out[:12]
+            st = self.state
+            view["state"] = {"affection": st["affection"] + st["deferred"], "tails": st["tails_script"] + st["tails_ai"],
+                             "lineage": st["lineage"], "turn": st["turn"], "wait": st["wait"], "mode": st["mode"],
+                             "vars": st.get("vars", {})}
+        return view
 
     async def render(self, ops: list[dict[str, Any]]) -> None:
         out = []
@@ -150,7 +177,14 @@ class Session:
         t = msg.get("type")
         async with self.lock:
             try:
-                if t == "advance":
+                if t == "start":  # 从某章开头开局（导入的 VN Studio 作品：章节入口句 ID）
+                    src = f"vn:{msg.get('line_id', '')}"
+                    pc = next((k for k, o in enumerate(self.chapter["program"]) if o.get("op") == "CHAPTER" and o.get("src") == src), None)
+                    if pc is None:
+                        await self.send({"type": "error", "message": f"没有这个章节入口：{msg.get('line_id')}"})
+                        return
+                    await self.step("start", {"pc": pc}, source="player")
+                elif t == "advance":
                     await self.step("advance", source="player")
                 elif t == "choose":
                     await self.on_choose(msg["option_id"])
@@ -163,6 +197,10 @@ class Session:
                     await self.step("mode_switch", {"mode": msg["mode"]}, source="player")
                     if self.choice_op and self.state["wait"] == "choice":
                         await self.send({"type": "ops", "ops": [self.choice_op]})
+                elif t == "snapshot":  # 播放器自己存档时带走的引擎快照（只读，不改状态、不记事件）
+                    await self.send({"type": "snapshot", "save": self.export_save()})
+                elif t == "restore":  # 新会话从播放器存档里的引擎快照接着跑（读档 = 新时间线，PLAN §13.3）
+                    await self.on_restore(msg.get("save") or {})
                 elif t == "save":
                     await self.on_save(str(msg.get("slot", "1")))
                 elif t == "load":
@@ -402,6 +440,19 @@ class Session:
         await self.step("save", {"slot": slot}, source="player", render=False)
         await self.send({"type": "saved", "slot": slot, "turn": st["turn"]})
 
+    def export_save(self) -> dict[str, Any]:
+        st = self.state
+        return {"snapshot": self.engine.snapshot(), "content_hash": self.chapter["content_hash"], "seq": st["seq"],
+                "recent": list(self.recent[-40:]), "choice_op": self.choice_op}
+
+    async def on_restore(self, save: dict[str, Any]) -> None:
+        if save.get("content_hash") != self.chapter["content_hash"] or not isinstance(save.get("snapshot"), str):
+            await self.send({"type": "error", "message": "存档里的引擎快照与当前剧本不一致，这一局改由作品自身运行"})
+            return
+        self.saves["_restore"] = {"snapshot": save["snapshot"], "seq": int(save.get("seq") or 0), "screen": {},
+                                  "recent": [str(x) for x in save.get("recent") or []][-40:], "choice_op": save.get("choice_op")}
+        await self.on_load("_restore")
+
     async def on_load(self, slot: str) -> None:
         s = self.saves.get(slot)
         if not s:
@@ -425,7 +476,10 @@ class Session:
     async def on_seek(self, seq: int) -> None:
         """调试时间轴拖动：从头回放到 seq，显示那一刻的画面（只看，不改当前进度）。"""
         _, ops, bad = replay(self.recorder.header, self.recorder.events, upto=seq)
-        await self.send({"type": "screen", "screen": screen_from_ops(ops), "live": False, "seq": seq, "replay_ok": bad is None})
+        sc = screen_from_ops(ops)
+        src = str((sc.get("say") or {}).get("src") or "")
+        await self.send({"type": "screen", "screen": sc, "live": False, "seq": seq, "replay_ok": bad is None,
+                         "line_id": src[3:] if src.startswith("vn:") else None})
 
     async def close(self) -> None:
         self.recorder.close()

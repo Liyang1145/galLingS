@@ -1,4 +1,4 @@
-# 运行 Demo 所需（galcore 轮子另装，见 start.bat / docs/demo.md）
+# 运行 Demo 所需（galcore 轮子另装，见 start.bat / docs/design/demo.md）
 pyyaml>=6
 jsonschema>=4.20
 packaging>=23

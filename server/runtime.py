@@ -17,6 +17,20 @@ ROOT = Path(__file__).resolve().parents[1]
 log = logging.getLogger("gallings")
 
 
+def resolve_games_dir(config: dict[str, Any]) -> Path:
+    """Keep the old default in saved settings usable after the repository move."""
+    configured = (config.get("vn") or {}).get("games_dir") or "content/imports/vnstudio"
+    directory = Path(os.path.expanduser(str(configured)))
+    directory = directory if directory.is_absolute() else ROOT / directory
+    legacy = ROOT / "content/vn"
+    migrated = ROOT / "content/imports/vnstudio"
+    if directory.resolve() == legacy.resolve() and migrated.is_dir():
+        has_legacy_game = directory.is_dir() and any((p / "index.html").is_file() for p in directory.iterdir())
+        if not has_legacy_game:
+            return migrated
+    return directory
+
+
 def load_config(path: Path | None = None) -> dict[str, Any]:
     env = os.environ.get("GALLINGS_CONFIG")
     for p in [path, Path(env) if env else None, ROOT / "config.yaml", ROOT / "config.example.yaml"]:
@@ -37,8 +51,14 @@ class Runtime:
         self.game = game
         cdir = Path(game.get("chapter_dir", "content/scripts/ch01"))
         cdir = cdir if cdir.is_absolute() else ROOT / cdir
+        vn_game = game.get("vn_game") if game.get("source") == "vnstudio" else None
         try:
-            self.chapter_path = ensure_chapter(cdir)
+            if vn_game:
+                # 一个游戏：VN Studio 作品经导入器变成 OP 程序，由 galcore 跑（PLAN §16.1 importer）
+                from compiler.vnstudio import ensure_imported
+                self.chapter_path = ensure_imported(self.games_dir / vn_game, self.data_dir / "imports")
+            else:
+                self.chapter_path = ensure_chapter(cdir)
             self.chapter = load_chapter_file(self.chapter_path)
             self.has_chapter = True
         except (IndexError, FileNotFoundError):
@@ -66,8 +86,7 @@ class Runtime:
     @property
     def games_dir(self) -> Path:
         """作品文件夹：每个子文件夹是一个 VN Studio 导出的游戏（里面有 index.html）。"""
-        d = Path(os.path.expanduser(str((self.config.get("vn") or {}).get("games_dir") or "content/vn")))
-        return d if d.is_absolute() else ROOT / d
+        return resolve_games_dir(self.config)
 
     def games(self) -> list[dict[str, Any]]:
         d = self.games_dir

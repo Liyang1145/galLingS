@@ -1,6 +1,6 @@
 """插件管理器：发现 → 校验 → 兼容性 → 按配置选用 → 依赖排序 → 启动 → 路由 → 关闭。
 
-config.yaml 里的 ``plugins`` 段（见 docs/plugin-format.md §5）::
+config.yaml 里的 ``plugins`` 段（见 docs/design/plugin-format.md §5）::
 
     plugins:
       paths: [plugins/builtin, ~/.gallings/plugins]

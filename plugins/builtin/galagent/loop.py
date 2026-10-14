@@ -5,7 +5,7 @@
 没有工具调用的那次往返，台词就是这轮的最终回复。
 
 前端的“分步折叠”对应这里的 step（think 步骤、tool 步骤），“总折叠”对应整个 turn。
-协议见 docs/galagent.md。
+协议见 docs/design/galagent.md。
 """
 from __future__ import annotations
 

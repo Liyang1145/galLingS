@@ -3,5 +3,5 @@
 *.py text eol=lf
 
 # Preserve the delivered VN export byte-for-byte.
-content/vn/海风与布丁/** -text
-content/deliveries/larry-vn/original-overridden-files/** -text
+content/imports/vnstudio/海风与布丁/** -text
+archive/deliveries/larry-vn/original-overridden-files/** -text

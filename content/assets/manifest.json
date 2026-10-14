@@ -519,7 +519,22 @@
       "loop_start": null,
       "loop_end": null,
       "seamless_loop_verified": false,
-      "playback_integration": "archived_only"
+      "playback_integration": "archived_only",
+      "playback_variants": [
+        {
+          "format": "mp3",
+          "path": "audio/mp3/sfx/amb_a07_underwater_low_hum_v01.mp3",
+          "bytes": 1671582,
+          "sha256": "84159c26057bc589c6119e398fc8c1728bd6582ee9e4978ced1ab51c0a66a0e2",
+          "audio": {
+            "codec": "mp3",
+            "sample_rate": 44100,
+            "channels": 2,
+            "duration": 120.0
+          },
+          "purpose": "compressed playback copy"
+        }
+      ]
     },
     {
       "id": "amb_a08_underwater_heartbeat_v01",
@@ -550,7 +565,22 @@
       "loop_start": null,
       "loop_end": null,
       "seamless_loop_verified": false,
-      "playback_integration": "archived_only"
+      "playback_integration": "archived_only",
+      "playback_variants": [
+        {
+          "format": "mp3",
+          "path": "audio/mp3/sfx/amb_a08_underwater_heartbeat_v01.mp3",
+          "bytes": 63078,
+          "sha256": "ec213cd2788f8cb0322b0793247696550415c4e3fb8ea8484b7ddca9cd42ca23",
+          "audio": {
+            "codec": "mp3",
+            "sample_rate": 44100,
+            "channels": 2,
+            "duration": 14.6261
+          },
+          "purpose": "compressed playback copy"
+        }
+      ]
     },
     {
       "id": "amb_a09_water_splash_v01",
@@ -581,7 +611,22 @@
       "loop_start": null,
       "loop_end": null,
       "seamless_loop_verified": false,
-      "playback_integration": "archived_only"
+      "playback_integration": "archived_only",
+      "playback_variants": [
+        {
+          "format": "mp3",
+          "path": "audio/mp3/sfx/amb_a09_water_splash_v01.mp3",
+          "bytes": 76268,
+          "sha256": "4d06a950a8fa4b93a98775ddfe605a4ed0a398b3225d28b6ace6d360b1d9994a",
+          "audio": {
+            "codec": "mp3",
+            "sample_rate": 48000,
+            "channels": 2,
+            "duration": 5.205188
+          },
+          "purpose": "compressed playback copy"
+        }
+      ]
     },
     {
       "id": "amb_a10_market_crowd_v01",
@@ -643,7 +688,22 @@
       "loop_start": null,
       "loop_end": null,
       "seamless_loop_verified": false,
-      "playback_integration": "archived_only"
+      "playback_integration": "archived_only",
+      "playback_variants": [
+        {
+          "format": "mp3",
+          "path": "audio/mp3/sfx/amb_a11_shell_wind_chimes_v01.mp3",
+          "bytes": 1022108,
+          "sha256": "bf01af754af412dfddd13bc2498a07a6d151f0834fe509bc979fc6560050167d",
+          "audio": {
+            "codec": "mp3",
+            "sample_rate": 48000,
+            "channels": 2,
+            "duration": 29.200583
+          },
+          "purpose": "compressed playback copy"
+        }
+      ]
     },
     {
       "id": "amb_a12_tent_sea_wind_v01",
@@ -674,7 +734,22 @@
       "loop_start": null,
       "loop_end": null,
       "seamless_loop_verified": false,
-      "playback_integration": "archived_only"
+      "playback_integration": "archived_only",
+      "playback_variants": [
+        {
+          "format": "mp3",
+          "path": "audio/mp3/sfx/amb_a12_tent_sea_wind_v01.mp3",
+          "bytes": 417020,
+          "sha256": "e40b30292b1a35a55356a715fe86f5bbd1c3b008a16a57f1b323454b2f5dcda3",
+          "audio": {
+            "codec": "mp3",
+            "sample_rate": 48000,
+            "channels": 1,
+            "duration": 34.273375
+          },
+          "purpose": "compressed playback copy"
+        }
+      ]
     },
     {
       "id": "amb_a13_lighter_ignites_wick_v01",
@@ -705,7 +780,22 @@
       "loop_start": null,
       "loop_end": null,
       "seamless_loop_verified": false,
-      "playback_integration": "archived_only"
+      "playback_integration": "archived_only",
+      "playback_variants": [
+        {
+          "format": "mp3",
+          "path": "audio/mp3/sfx/amb_a13_lighter_ignites_wick_v01.mp3",
+          "bytes": 766500,
+          "sha256": "53663fe96a89b7c72391e414786be57f7b12a7a80e7026dbb752b23a496f3e8c",
+          "audio": {
+            "codec": "mp3",
+            "sample_rate": 44100,
+            "channels": 1,
+            "duration": 55.356372
+          },
+          "purpose": "compressed playback copy"
+        }
+      ]
     },
     {
       "id": "amb_a14_campfire_v01",
@@ -736,7 +826,22 @@
       "loop_start": null,
       "loop_end": null,
       "seamless_loop_verified": false,
-      "playback_integration": "archived_only"
+      "playback_integration": "archived_only",
+      "playback_variants": [
+        {
+          "format": "mp3",
+          "path": "audio/mp3/sfx/amb_a14_campfire_v01.mp3",
+          "bytes": 5698508,
+          "sha256": "beb9ea33cf06164715e59cbccd3893653c3608d4f6eceef88ec26732a641fd4b",
+          "audio": {
+            "codec": "mp3",
+            "sample_rate": 48000,
+            "channels": 2,
+            "duration": 236.202667
+          },
+          "purpose": "compressed playback copy"
+        }
+      ]
     },
     {
       "id": "amb_a15_shop_room_tone_v01",
@@ -767,7 +872,22 @@
       "loop_start": null,
       "loop_end": null,
       "seamless_loop_verified": false,
-      "playback_integration": "archived_only"
+      "playback_integration": "archived_only",
+      "playback_variants": [
+        {
+          "format": "mp3",
+          "path": "audio/mp3/sfx/amb_a15_shop_room_tone_v01.mp3",
+          "bytes": 3054187,
+          "sha256": "88f9cdefba9a5b0968926606dc91b60739ef9ef94944c444ce2291308b1fef29",
+          "audio": {
+            "codec": "mp3",
+            "sample_rate": 44100,
+            "channels": 2,
+            "duration": 137.438912
+          },
+          "purpose": "compressed playback copy"
+        }
+      ]
     },
     {
       "id": "sfx_s01_large_water_slap_v01",
@@ -794,7 +914,22 @@
         "transcoded": false,
         "loudness_normalized": false
       },
-      "playback_integration": "archived_only"
+      "playback_integration": "archived_only",
+      "playback_variants": [
+        {
+          "format": "mp3",
+          "path": "audio/mp3/sfx/sfx_s01_large_water_slap_v01.mp3",
+          "bytes": 41780,
+          "sha256": "b2e2a551e793c993bb9ac2dfca116abee1aef7582a80144a66492150c08b7883",
+          "audio": {
+            "codec": "mp3",
+            "sample_rate": 48000,
+            "channels": 2,
+            "duration": 2.17225
+          },
+          "purpose": "compressed playback copy"
+        }
+      ]
     },
     {
       "id": "sfx_s02_choking_water_v01",
@@ -821,7 +956,22 @@
         "transcoded": false,
         "loudness_normalized": false
       },
-      "playback_integration": "archived_only"
+      "playback_integration": "archived_only",
+      "playback_variants": [
+        {
+          "format": "mp3",
+          "path": "audio/mp3/sfx/sfx_s02_choking_water_v01.mp3",
+          "bytes": 578817,
+          "sha256": "22bacb8ede1cbb8d2a2968a25e68a77ac6eca4c16a37dffde314724b68c1986f",
+          "audio": {
+            "codec": "mp3",
+            "sample_rate": 44100,
+            "channels": 2,
+            "duration": 20.21068
+          },
+          "purpose": "compressed playback copy"
+        }
+      ]
     },
     {
       "id": "sfx_s02_fall_into_water_v01",
@@ -848,7 +998,22 @@
         "transcoded": false,
         "loudness_normalized": false
       },
-      "playback_integration": "archived_only"
+      "playback_integration": "archived_only",
+      "playback_variants": [
+        {
+          "format": "mp3",
+          "path": "audio/mp3/sfx/sfx_s02_fall_into_water_v01.mp3",
+          "bytes": 67210,
+          "sha256": "b6c171786bbcecef427c6e039e69abe46950d4c6c63adff661cea6259f344728",
+          "audio": {
+            "codec": "mp3",
+            "sample_rate": 44100,
+            "channels": 2,
+            "duration": 2.832517
+          },
+          "purpose": "compressed playback copy"
+        }
+      ]
     },
     {
       "id": "sfx_s03_splash_on_face_v01",
@@ -875,7 +1040,22 @@
         "transcoded": false,
         "loudness_normalized": false
       },
-      "playback_integration": "archived_only"
+      "playback_integration": "archived_only",
+      "playback_variants": [
+        {
+          "format": "mp3",
+          "path": "audio/mp3/sfx/sfx_s03_splash_on_face_v01.mp3",
+          "bytes": 181460,
+          "sha256": "f6cc0a77aefe096d1eb2f49d21bc1bd809d8830e2650cba2c0fca34616c619bd",
+          "audio": {
+            "codec": "mp3",
+            "sample_rate": 48000,
+            "channels": 1,
+            "duration": 26.989479
+          },
+          "purpose": "compressed playback copy"
+        }
+      ]
     },
     {
       "id": "sfx_s04_tail_flattens_water_v01",
@@ -929,7 +1109,22 @@
         "transcoded": false,
         "loudness_normalized": false
       },
-      "playback_integration": "archived_only"
+      "playback_integration": "archived_only",
+      "playback_variants": [
+        {
+          "format": "mp3",
+          "path": "audio/mp3/sfx/sfx_s05_seagull_takes_food_v01.mp3",
+          "bytes": 209314,
+          "sha256": "54becd6d4e6537d7ba9e9b91b788075b350848bcbee1520102965a54a3e3a3e1",
+          "audio": {
+            "codec": "mp3",
+            "sample_rate": 44100,
+            "channels": 2,
+            "duration": 16.844286
+          },
+          "purpose": "compressed playback copy"
+        }
+      ]
     },
     {
       "id": "sfx_s06_pen_writing_v01",
@@ -956,7 +1151,22 @@
         "transcoded": false,
         "loudness_normalized": false
       },
-      "playback_integration": "archived_only"
+      "playback_integration": "archived_only",
+      "playback_variants": [
+        {
+          "format": "mp3",
+          "path": "audio/mp3/sfx/sfx_s06_pen_writing_v01.mp3",
+          "bytes": 261583,
+          "sha256": "9fc0bd8f19b5269f6fb8cba62f576d10f876a1b08deaf6537a6a23f6e305b186",
+          "audio": {
+            "codec": "mp3",
+            "sample_rate": 44100,
+            "channels": 2,
+            "duration": 17.266054
+          },
+          "purpose": "compressed playback copy"
+        }
+      ]
     },
     {
       "id": "sfx_s07_notebook_close_v01",
@@ -983,7 +1193,22 @@
         "transcoded": false,
         "loudness_normalized": false
       },
-      "playback_integration": "archived_only"
+      "playback_integration": "archived_only",
+      "playback_variants": [
+        {
+          "format": "mp3",
+          "path": "audio/mp3/sfx/sfx_s07_notebook_close_v01.mp3",
+          "bytes": 13772,
+          "sha256": "a074b96b972ae5d7ba14b483e1fd8d10172dab4898ef4ebbad8dc0886d362dc2",
+          "audio": {
+            "codec": "mp3",
+            "sample_rate": 48000,
+            "channels": 1,
+            "duration": 2.743854
+          },
+          "purpose": "compressed playback copy"
+        }
+      ]
     },
     {
       "id": "sfx_s08_wind_chime_single_v01",
@@ -1010,7 +1235,22 @@
         "transcoded": false,
         "loudness_normalized": false
       },
-      "playback_integration": "archived_only"
+      "playback_integration": "archived_only",
+      "playback_variants": [
+        {
+          "format": "mp3",
+          "path": "audio/mp3/sfx/sfx_s08_wind_chime_single_v01.mp3",
+          "bytes": 84284,
+          "sha256": "2d24a43207d57686ec9177713561ea97ce3e44158732e06a7f321818414a3a22",
+          "audio": {
+            "codec": "mp3",
+            "sample_rate": 48000,
+            "channels": 2,
+            "duration": 4.040292
+          },
+          "purpose": "compressed playback copy"
+        }
+      ]
     },
     {
       "id": "sfx_s09_phone_ringing_v01",
@@ -1037,7 +1277,22 @@
         "transcoded": false,
         "loudness_normalized": false
       },
-      "playback_integration": "archived_only"
+      "playback_integration": "archived_only",
+      "playback_variants": [
+        {
+          "format": "mp3",
+          "path": "audio/mp3/sfx/sfx_s09_phone_ringing_v01.mp3",
+          "bytes": 18980,
+          "sha256": "3716ca1df4c8107679316287102c716ed4a0d868f8ce22148624a6248a8b7982",
+          "audio": {
+            "codec": "mp3",
+            "sample_rate": 48000,
+            "channels": 2,
+            "duration": 1.714292
+          },
+          "purpose": "compressed playback copy"
+        }
+      ]
     },
     {
       "id": "sfx_s10_phone_answer_hangup_v01",
@@ -1064,7 +1319,22 @@
         "transcoded": false,
         "loudness_normalized": false
       },
-      "playback_integration": "archived_only"
+      "playback_integration": "archived_only",
+      "playback_variants": [
+        {
+          "format": "mp3",
+          "path": "audio/mp3/sfx/sfx_s10_phone_answer_hangup_v01.mp3",
+          "bytes": 44756,
+          "sha256": "7042d5eba794a97c9c9825e5a38a178af74b24e492806e1d61430c46c511c49b",
+          "audio": {
+            "codec": "mp3",
+            "sample_rate": 48000,
+            "channels": 1,
+            "duration": 6.773333
+          },
+          "purpose": "compressed playback copy"
+        }
+      ]
     },
     {
       "id": "sfx_s11_tail_quick_swish_v01",
@@ -1091,7 +1361,22 @@
         "transcoded": false,
         "loudness_normalized": false
       },
-      "playback_integration": "archived_only"
+      "playback_integration": "archived_only",
+      "playback_variants": [
+        {
+          "format": "mp3",
+          "path": "audio/mp3/sfx/sfx_s11_tail_quick_swish_v01.mp3",
+          "bytes": 64433,
+          "sha256": "c73861c3e6e3f991fc01b759bba73a818b888fbecc810cee46e9f35710dce89c",
+          "audio": {
+            "codec": "mp3",
+            "sample_rate": 44100,
+            "channels": 2,
+            "duration": 2.786395
+          },
+          "purpose": "compressed playback copy"
+        }
+      ]
     },
     {
       "id": "sfx_s12_deep_dive_pressure_v01",
@@ -1118,7 +1403,22 @@
         "transcoded": false,
         "loudness_normalized": false
       },
-      "playback_integration": "archived_only"
+      "playback_integration": "archived_only",
+      "playback_variants": [
+        {
+          "format": "mp3",
+          "path": "audio/mp3/sfx/sfx_s12_deep_dive_pressure_v01.mp3",
+          "bytes": 44595,
+          "sha256": "5aaebdbf677960931a7ca0cbe69d36b1c26d792cfb8e9273f8dda77d86f15d3f",
+          "audio": {
+            "codec": "mp3",
+            "sample_rate": 44100,
+            "channels": 2,
+            "duration": 6.718753
+          },
+          "purpose": "compressed playback copy"
+        }
+      ]
     },
     {
       "id": "sfx_s13_hair_drips_v01",
@@ -1172,7 +1472,22 @@
         "transcoded": false,
         "loudness_normalized": false
       },
-      "playback_integration": "archived_only"
+      "playback_integration": "archived_only",
+      "playback_variants": [
+        {
+          "format": "mp3",
+          "path": "audio/mp3/sfx/sfx_s14_rustling_v01.mp3",
+          "bytes": 62774,
+          "sha256": "477929bd39cd2a9d8c0cd0cdc3ce0aee168fa159ee008b49d6db1836cc69c855",
+          "audio": {
+            "codec": "mp3",
+            "sample_rate": 44100,
+            "channels": 2,
+            "duration": 2.914898
+          },
+          "purpose": "compressed playback copy"
+        }
+      ]
     },
     {
       "id": "sfx_s15_dried_fish_tear_v01",
@@ -1199,7 +1514,22 @@
         "transcoded": false,
         "loudness_normalized": false
       },
-      "playback_integration": "archived_only"
+      "playback_integration": "archived_only",
+      "playback_variants": [
+        {
+          "format": "mp3",
+          "path": "audio/mp3/sfx/sfx_s15_dried_fish_tear_v01.mp3",
+          "bytes": 56876,
+          "sha256": "eade457c195546050b2ad8f168f9db5aa8625e376110d14229c186c150a0a59c",
+          "audio": {
+            "codec": "mp3",
+            "sample_rate": 48000,
+            "channels": 2,
+            "duration": 2.566667
+          },
+          "purpose": "compressed playback copy"
+        }
+      ]
     },
     {
       "id": "sfx_s16_comic_freeze_sting_v01",
@@ -1433,7 +1763,22 @@
       "source_archive": "archives/尾巴音效.zip",
       "archived_on": "2026-10-12",
       "provenance": "负责音效的队友更新，用户提供。",
-      "usage_status": "source_preserved"
+      "usage_status": "source_preserved",
+      "playback_variants": [
+        {
+          "format": "mp3",
+          "path": "audio/mp3/sfx/tail/source/T02拍沙.mp3",
+          "bytes": 106316,
+          "sha256": "b301adc05bee589019885219a19b118d57cb28bb3dec2a7e3ad2ca7f9eb2ef92",
+          "audio": {
+            "codec": "mp3",
+            "sample_rate": 48000,
+            "channels": 1,
+            "duration": 12.600979
+          },
+          "purpose": "compressed playback copy"
+        }
+      ]
     },
     {
       "id": "tail_source_t03",
@@ -1449,7 +1794,22 @@
       "source_archive": "archives/尾巴音效.zip",
       "archived_on": "2026-10-12",
       "provenance": "负责音效的队友更新，用户提供。",
-      "usage_status": "source_preserved"
+      "usage_status": "source_preserved",
+      "playback_variants": [
+        {
+          "format": "mp3",
+          "path": "audio/mp3/sfx/tail/source/T03拍桌、桌腿.mp3",
+          "bytes": 55390,
+          "sha256": "428ec0eef779efb847e0dc788c8573a6d1f16f952dc1fd629be40a40ae79d0c1",
+          "audio": {
+            "codec": "mp3",
+            "sample_rate": 48000,
+            "channels": 2,
+            "duration": 2.722667
+          },
+          "purpose": "compressed playback copy"
+        }
+      ]
     },
     {
       "id": "tail_source_t04",
@@ -1465,7 +1825,22 @@
       "source_archive": "archives/尾巴音效.zip",
       "archived_on": "2026-10-12",
       "provenance": "负责音效的队友更新，用户提供。",
-      "usage_status": "source_preserved"
+      "usage_status": "source_preserved",
+      "playback_variants": [
+        {
+          "format": "mp3",
+          "path": "audio/mp3/sfx/tail/source/T04拍床、沙发.mp3",
+          "bytes": 16087,
+          "sha256": "cf4132986792ad953f38b91af0c2df4236f64fb057093ad54a25661a04de0aba",
+          "audio": {
+            "codec": "mp3",
+            "sample_rate": 44100,
+            "channels": 2,
+            "duration": 2.1178
+          },
+          "purpose": "compressed playback copy"
+        }
+      ]
     },
     {
       "id": "tail_source_t05",
@@ -1481,7 +1856,22 @@
       "source_archive": "archives/尾巴音效.zip",
       "archived_on": "2026-10-12",
       "provenance": "负责音效的队友更新，用户提供。",
-      "usage_status": "source_preserved"
+      "usage_status": "source_preserved",
+      "playback_variants": [
+        {
+          "format": "mp3",
+          "path": "audio/mp3/sfx/tail/source/T05拍地.mp3",
+          "bytes": 9331,
+          "sha256": "ec288528ff36eee5803254a7cb84bb931ea9bfd920fb19eabfe66fedadbb5d29",
+          "audio": {
+            "codec": "mp3",
+            "sample_rate": 44100,
+            "channels": 2,
+            "duration": 0.393946
+          },
+          "purpose": "compressed playback copy"
+        }
+      ]
     },
     {
       "id": "tail_source_t06",
@@ -1497,7 +1887,22 @@
       "source_archive": "archives/尾巴音效.zip",
       "archived_on": "2026-10-12",
       "provenance": "负责音效的队友更新，用户提供。",
-      "usage_status": "source_preserved"
+      "usage_status": "source_preserved",
+      "playback_variants": [
+        {
+          "format": "mp3",
+          "path": "audio/mp3/sfx/tail/source/T06卷圈、轻卷.mp3",
+          "bytes": 25924,
+          "sha256": "17a294b1939edb7b2eed6786a07ee27e71a1c8998ea0f53c10c3ed10c12e9eba",
+          "audio": {
+            "codec": "mp3",
+            "sample_rate": 44100,
+            "channels": 2,
+            "duration": 1.155533
+          },
+          "purpose": "compressed playback copy"
+        }
+      ]
     },
     {
       "id": "tail_source_t07",
@@ -1513,7 +1918,22 @@
       "source_archive": "archives/尾巴音效.zip",
       "archived_on": "2026-10-12",
       "provenance": "负责音效的队友更新，用户提供。",
-      "usage_status": "source_preserved"
+      "usage_status": "source_preserved",
+      "playback_variants": [
+        {
+          "format": "mp3",
+          "path": "audio/mp3/sfx/tail/source/T07翘起、高翘.mp3",
+          "bytes": 132716,
+          "sha256": "d625073d80f4dba5e28d769dc833e51fdbac5dcd2d2b4d482cf0f6a37165ed61",
+          "audio": {
+            "codec": "mp3",
+            "sample_rate": 48000,
+            "channels": 1,
+            "duration": 11.562667
+          },
+          "purpose": "compressed playback copy"
+        }
+      ]
     },
     {
       "id": "tail_source_t08",
@@ -1529,7 +1949,22 @@
       "source_archive": "archives/尾巴音效.zip",
       "archived_on": "2026-10-12",
       "provenance": "负责音效的队友更新，用户提供。",
-      "usage_status": "source_preserved"
+      "usage_status": "source_preserved",
+      "playback_variants": [
+        {
+          "format": "mp3",
+          "path": "audio/mp3/sfx/tail/source/T08慌乱甩圈.mp3",
+          "bytes": 154607,
+          "sha256": "b160981097a287679a6b2b87af4a85a65c5b65e619a714e917b10f1e3cdfca4b",
+          "audio": {
+            "codec": "mp3",
+            "sample_rate": 44100,
+            "channels": 2,
+            "duration": 11.891451
+          },
+          "purpose": "compressed playback copy"
+        }
+      ]
     },
     {
       "id": "tail_source_t09",
@@ -1545,7 +1980,22 @@
       "source_archive": "archives/尾巴音效.zip",
       "archived_on": "2026-10-12",
       "provenance": "负责音效的队友更新，用户提供。",
-      "usage_status": "source_preserved"
+      "usage_status": "source_preserved",
+      "playback_variants": [
+        {
+          "format": "mp3",
+          "path": "audio/mp3/sfx/tail/source/T09缠绕.mp3",
+          "bytes": 393068,
+          "sha256": "2608dcfa4ab0429288633aad3eb75019e21e8fab980b05de40af17666ab073b3",
+          "audio": {
+            "codec": "mp3",
+            "sample_rate": 48000,
+            "channels": 2,
+            "duration": 15.004708
+          },
+          "purpose": "compressed playback copy"
+        }
+      ]
     },
     {
       "id": "tail_source_t10",
@@ -1561,7 +2011,22 @@
       "source_archive": "archives/尾巴音效.zip",
       "archived_on": "2026-10-12",
       "provenance": "负责音效的队友更新，用户提供。",
-      "usage_status": "source_preserved"
+      "usage_status": "source_preserved",
+      "playback_variants": [
+        {
+          "format": "mp3",
+          "path": "audio/mp3/sfx/tail/source/T10放平、沉底.mp3",
+          "bytes": 5036,
+          "sha256": "4a09ba4827370b002e98f8ba5218980a81a51ab97e17bfc5841fff38c1016cc5",
+          "audio": {
+            "codec": "mp3",
+            "sample_rate": 48000,
+            "channels": 1,
+            "duration": 0.396146
+          },
+          "purpose": "compressed playback copy"
+        }
+      ]
     },
     {
       "id": "tail_source_t11",
@@ -1577,7 +2042,22 @@
       "source_archive": "archives/尾巴音效.zip",
       "archived_on": "2026-10-12",
       "provenance": "负责音效的队友更新，用户提供。",
-      "usage_status": "source_preserved"
+      "usage_status": "source_preserved",
+      "playback_variants": [
+        {
+          "format": "mp3",
+          "path": "audio/mp3/sfx/tail/source/T11尾巴带上门.mp3",
+          "bytes": 56276,
+          "sha256": "851ecf0e15ec513afeb1349a42edc7fa936a51c4ab06cd235c75c794ad0c5d6c",
+          "audio": {
+            "codec": "mp3",
+            "sample_rate": 48000,
+            "channels": 2,
+            "duration": 2.491208
+          },
+          "purpose": "compressed playback copy"
+        }
+      ]
     },
     {
       "id": "sfx_tail_water_light",

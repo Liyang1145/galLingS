@@ -1274,7 +1274,7 @@ window.VN_GAME ={
       "sourceAliases": [
         {
           "sourceAuthor": "Atri-Lobato",
-          "sourcePath": "content/assets/music/mp3/M6？.mp3",
+          "sourcePath": "music/mp3/M6？.mp3",
           "sourceCommit": "f45ec5172adde3d05a409af6506fb763ca8d7b55",
           "sourceSha256": "02162232f3aa9e5465ea06d1b4968776375f04d6fbeae1c9e39e5623eede44fa",
           "roles": [
@@ -1282,7 +1282,8 @@ window.VN_GAME ={
             "E3",
             "M7"
           ],
-          "identity": "SHA-256 identical"
+          "identity": "SHA-256 identical",
+          "sourceCurrentPath": "content/assets/music/mp3/M6？.mp3"
         }
       ]
     },
@@ -1882,10 +1883,11 @@ window.VN_GAME ={
       "auditionOnly": false,
       "playbackGain": 0.99655,
       "sourceAuthor": "Atri-Lobato",
-      "sourcePath": "content/assets/music/mp3/E1.mp3",
+      "sourcePath": "music/mp3/E1.mp3",
       "sourceCommit": "f45ec5172adde3d05a409af6506fb763ca8d7b55",
       "sourceSha256": "3342a33f9c41c9bdaed932d287d955a1fcf21e8e64757857114e0e400fcd03c5",
-      "purposeStatus": "scene-mapped"
+      "purposeStatus": "scene-mapped",
+      "sourceCurrentPath": "content/assets/music/mp3/E1.mp3"
     },
     "bgm_atri_e2_deepsea": {
       "id": "bgm_atri_e2_deepsea",
@@ -1897,10 +1899,11 @@ window.VN_GAME ={
       "auditionOnly": false,
       "playbackGain": 0.70795,
       "sourceAuthor": "Atri-Lobato",
-      "sourcePath": "content/assets/music/mp3/E2.mp3",
+      "sourcePath": "music/mp3/E2.mp3",
       "sourceCommit": "f45ec5172adde3d05a409af6506fb763ca8d7b55",
       "sourceSha256": "70f119348fa351452a0573454ec482dba76a20fe015c2be572a10882a3ea3021",
-      "purposeStatus": "scene-mapped"
+      "purposeStatus": "scene-mapped",
+      "sourceCurrentPath": "content/assets/music/mp3/E2.mp3"
     },
     "bgm_atri_e7_reflection": {
       "id": "bgm_atri_e7_reflection",
@@ -1912,10 +1915,11 @@ window.VN_GAME ={
       "auditionOnly": false,
       "playbackGain": 0.65539,
       "sourceAuthor": "Atri-Lobato",
-      "sourcePath": "content/assets/music/mp3/E7.mp3",
+      "sourcePath": "music/mp3/E7.mp3",
       "sourceCommit": "f45ec5172adde3d05a409af6506fb763ca8d7b55",
       "sourceSha256": "1e1f2f226d15142dbf05134aa61c48a5f6ae850dd46e4d985a3754588dfc3fe5",
-      "purposeStatus": "scene-mapped"
+      "purposeStatus": "scene-mapped",
+      "sourceCurrentPath": "content/assets/music/mp3/E7.mp3"
     },
     "bgm_atri_e5_e6_candidate": {
       "id": "bgm_atri_e5_e6_candidate",
@@ -1927,10 +1931,11 @@ window.VN_GAME ={
       "auditionOnly": true,
       "playbackGain": 1.0,
       "sourceAuthor": "Atri-Lobato",
-      "sourcePath": "content/assets/music/mp3/E6或E5.mp3",
+      "sourcePath": "music/mp3/E6或E5.mp3",
       "sourceCommit": "f45ec5172adde3d05a409af6506fb763ca8d7b55",
       "sourceSha256": "372e8b3cd2b991e4188d15df1b586ae3f250f7a63a9844a95ee81e73606d288e",
-      "purposeStatus": "candidate"
+      "purposeStatus": "candidate",
+      "sourceCurrentPath": "content/assets/music/mp3/E6或E5.mp3"
     }
   },
   "lines": [

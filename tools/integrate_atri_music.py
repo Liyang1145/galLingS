@@ -49,6 +49,15 @@ def loudness(path: Path) -> float:
     return float(json.JSONDecoder().raw_decode(text[text.rfind("{"):])[0]["input_i"])
 
 
+def music_source(source_root: Path, filename: str) -> Path:
+    """Historical deliveries retain the paths that existed at their source commit."""
+    for relative in ("music/mp3", "content/assets/music/mp3"):
+        source = source_root / relative / filename
+        if source.is_file():
+            return source
+    raise FileNotFoundError(f"Missing Atri source track: {filename}")
+
+
 def run(source_root: Path) -> dict:
     text = (GAME / "game.js").read_text(encoding="utf-8-sig")
     project = json.loads(text[text.index("=") + 1:].strip().removesuffix(";"))
@@ -62,7 +71,8 @@ def run(source_root: Path) -> dict:
     source_manifest = json.loads((source_root / "source-manifest.json").read_text(encoding="utf-8"))
     rows = []
     for filename, asset_id, name, candidate, offset in TRACKS:
-        source = source_root / "content/assets/music/mp3" / filename
+        source = music_source(source_root, filename)
+        source_path = source.relative_to(source_root).as_posix()
         info = probe(source)
         subprocess.run(["ffmpeg", "-v", "error", "-xerror", "-i", str(source), "-f", "null", "-"], check=True)
         measured_i = loudness(source)
@@ -74,7 +84,8 @@ def run(source_root: Path) -> dict:
             asset_id = "bgm_emerald_dream_main_v01"
             candidate = False
             project["assets"][asset_id]["sourceAliases"] = [{"sourceAuthor":"Atri-Lobato",
-                "sourcePath":"content/assets/music/mp3/"+filename,"sourceCommit":source_manifest["commit"],
+                "sourcePath":source_path,"sourceCurrentPath":"content/assets/music/mp3/"+filename,
+                "sourceCommit":source_manifest["commit"],
                 "sourceSha256":digest,"roles":["M6","E3","M7"],"identity":"SHA-256 identical"}]
         else:
             shutil.copy2(source, target)
@@ -82,7 +93,8 @@ def run(source_root: Path) -> dict:
             project["assets"][asset_id] = {"id":asset_id, "type":"bgm", "name":name,
                 "src":target.relative_to(GAME).as_posix(), "dur":info["duration"], "audioCategory":"music",
                 "auditionOnly":candidate, "playbackGain":gain, "sourceAuthor":"Atri-Lobato",
-                "sourcePath":"content/assets/music/mp3/" + filename, "sourceCommit":source_manifest["commit"],
+                "sourcePath":source_path,"sourceCurrentPath":"content/assets/music/mp3/"+filename,
+                "sourceCommit":source_manifest["commit"],
                 "sourceSha256":digest, "purposeStatus":"candidate" if candidate else "scene-mapped"}
         rows.append({"assetId":asset_id,"filename":filename,"name":name,"candidate":candidate,"deduplicated":duplicate,
                      "sha256":digest,"bytes":source.stat().st_size,"audio":info,

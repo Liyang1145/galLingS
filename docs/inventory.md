@@ -73,7 +73,7 @@ galLingS/
 
 | 原位置 | 新位置 | 说明 |
 |---|---|---|
-| `music/` | `content/assets/music/` | Atri 母带与 MP3 原件原样搬入，`game.js` 的 `sourcePath` 同步 |
+| `music/` | `content/assets/music/` | Atri 母带与 MP3 原件原样搬入；`sourcePath` 保留来源提交中的历史路径，`sourceCurrentPath` 记录现位置 |
 | `content/vn/` | `content/imports/vnstudio/` | 作品原件 + 画面层；服务器默认 `vn.games_dir` 改为此处；`/vn/{作品}/` 网址不变，浏览器存档不受影响；美术编辑器离线模式根路径深一级已改 |
 | `content/deliveries/*`、`docs/deliveries/*` | `archive/deliveries/*` | 交付凭证与验证截图；凭证内部记录的历史打包路径保持原样 |
 | `docs/art-production/` | `docs/content/art-production/` | 美术路线登记（`build_art_catalog.py` 仍读取） |
@@ -81,6 +81,8 @@ galLingS/
 | `plugin-format` `soul-port` `galagent` `vn-page` `memory-bench` `demo` `art-editor` | `docs/design/` | |
 | `music-direction` `music-tracklist` `player-aesthetic-review` | `docs/content/` | |
 | `content/assets/image-trials/` | **不动** | 美术编辑器运行时经 `/art-assets/` 读取其中候选图，该接口只开放 `content/assets/` 与作品素材 |
+
+2026-10-15合并审核补充：用户明确要求处理此分支，音乐和美术入口按实际文件复核。旧本机设置仍指定默认 `content/vn`（相对或绝对路径）且该处已无作品时，启动页和运行时自动使用新目录；自定义作品目录与仍有作品的旧目录保留。历史音乐交付目录和迁移后的交付目录均可用于接入，来源路径跟随实际交付，不改写旧提交事实。
 
 验证：Markdown 相对链接断链数与迁移前相同（仅 1 处迁移前就断的 `gal-polish` 链接）；pytest 83 通过、2 跳过；浏览器里 `游玩.html`、`引擎开发.html` 离线打开均载入 3308 句无脚本错误；托管作品页引擎接管、存档→读档→续玩与不中断一致，日志回放一致。
 

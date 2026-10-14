@@ -216,7 +216,7 @@ def create_app(runtime: Runtime | None = None) -> FastAPI:
         await sock.accept()
         r = rt()
         if not getattr(r, "has_chapter", True):
-            await sock.send_text(json.dumps({"type": "error", "message": "缺少剧本内容包 content/scripts/ch01，AI 剧本会话暂时不能用。作品页 /vn.html 里的作品可以正常玩。"}, ensure_ascii=False))
+            await sock.send_text(json.dumps({"type": "error", "message": "缺少剧本内容（config.yaml 的 game.vn_game 作品或 game.chapter_dir），引擎会话暂时不能用。"}, ensure_ascii=False))
             await sock.close()
             return
         q = sock.query_params
@@ -230,13 +230,14 @@ def create_app(runtime: Runtime | None = None) -> FastAPI:
 
         try:
             sess = Session(r, SessionOptions(card_id=card_id, mode=mode, agm_fill=bool(r.game.get("agm_fill", True)),
-                                             honesty_gap_rule=bool(r.game.get("honesty_gap_rule", False))), send)
+                                             honesty_gap_rule=bool(r.game.get("honesty_gap_rule", False)),
+                                             endings_seen=int(q.get("endings") or 0) if (q.get("endings") or "0").isdigit() else 0), send)
         except KeyError:
             await send({"type": "error", "message": f"没有这张卡：{card_id}"})
             await sock.close()
             return
         await sess.hello()
-        await sess.handle({"type": "advance"})
+        await sess.handle({"type": "start", "line_id": q["start"]} if q.get("start") else {"type": "advance"})
         try:
             while True:
                 msg = json.loads(await sock.receive_text())
@@ -257,6 +258,9 @@ def create_app(runtime: Runtime | None = None) -> FastAPI:
         """作品页里的游戏（托管模式）启动时来取：galLingS 提供给它的 VN Studio 插件。玩家可以在游戏的“插件”面板里停用。"""
         r = rt()
         out = post_ending.vn_plugins(r)
+        if r.game.get("source") == "vnstudio" and getattr(r, "has_chapter", False):
+            # 一个游戏：作品的剧情交给 galcore 引擎（web/galcore.vnplugin.js 只接管服务器当前加载的那部作品）
+            out.insert(0, {"id": "gallings.galcore", "name": "galcore 引擎", "url": "/static/galcore.vnplugin.js"})
         d = VN_PLUGINS_DIR(r)
         if d.is_dir():
             out += [{"id": f.stem.removesuffix(".vnplugin"), "url": f"/vn_plugins/{f.name}"} for f in sorted(d.glob("*.js"))]

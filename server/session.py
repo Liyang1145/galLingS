@@ -51,6 +51,8 @@ class SessionOptions:
     seed: int | None = None
     agm_fill: bool = True
     honesty_gap_rule: bool = False
+    #: 本机已收集的结局数（导入剧本里的只读变量 `结局数`，由播放器从本机记录传入）
+    endings_seen: int = 0
 
 
 @dataclass
@@ -66,7 +68,11 @@ class Session:
         self.card, self.card_path = rt.cards.get(self.opts.card_id)
         self.card_hash = sha16(self.card)
         self.seed = self.opts.seed if self.opts.seed is not None else random.SystemRandom().randrange(1, 2**31)
-        self.engine_config = {"mode": self.opts.mode, "honesty_gap_rule": self.opts.honesty_gap_rule}
+        self.engine_config: dict[str, Any] = {"mode": self.opts.mode, "honesty_gap_rule": self.opts.honesty_gap_rule}
+        if self.chapter.get("vars"):  # 导入的 VN Studio 剧本：通用变量初值 + 只读的周目变量
+            vi = {v["var"]: int(v["init"]) for v in self.chapter["vars"] if v["var"] not in ("affection", "tails")}
+            vi["结局数"] = max(0, int(self.opts.endings_seen))
+            self.engine_config["vars_init"] = vi
         self.engine = galcore.Engine(json.dumps(self.chapter, ensure_ascii=False), json.dumps(self.card, ensure_ascii=False),
                                      json.dumps(self.engine_config), self.seed)
         self.guard = TextGuard(self.card)
@@ -150,7 +156,14 @@ class Session:
         t = msg.get("type")
         async with self.lock:
             try:
-                if t == "advance":
+                if t == "start":  # 从某章开头开局（导入的 VN Studio 作品：章节入口句 ID）
+                    src = f"vn:{msg.get('line_id', '')}"
+                    pc = next((k for k, o in enumerate(self.chapter["program"]) if o.get("op") == "CHAPTER" and o.get("src") == src), None)
+                    if pc is None:
+                        await self.send({"type": "error", "message": f"没有这个章节入口：{msg.get('line_id')}"})
+                        return
+                    await self.step("start", {"pc": pc}, source="player")
+                elif t == "advance":
                     await self.step("advance", source="player")
                 elif t == "choose":
                     await self.on_choose(msg["option_id"])

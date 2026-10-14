@@ -37,8 +37,14 @@ class Runtime:
         self.game = game
         cdir = Path(game.get("chapter_dir", "content/scripts/ch01"))
         cdir = cdir if cdir.is_absolute() else ROOT / cdir
+        vn_game = game.get("vn_game") if game.get("source") == "vnstudio" else None
         try:
-            self.chapter_path = ensure_chapter(cdir)
+            if vn_game:
+                # 一个游戏：VN Studio 作品经导入器变成 OP 程序，由 galcore 跑（PLAN §16.1 importer）
+                from compiler.vnstudio import ensure_imported
+                self.chapter_path = ensure_imported(self.games_dir / vn_game, self.data_dir / "imports")
+            else:
+                self.chapter_path = ensure_chapter(cdir)
             self.chapter = load_chapter_file(self.chapter_path)
             self.has_chapter = True
         except (IndexError, FileNotFoundError):

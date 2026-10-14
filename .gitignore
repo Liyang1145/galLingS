@@ -10,6 +10,7 @@ content/scripts/**/*.md
 content/scripts/**/chapter.json
 content/scripts/**/beats.yaml
 content/cards/*.yaml
+!content/cards/whale.yaml
 !content/**/README.md
 core/target/
 

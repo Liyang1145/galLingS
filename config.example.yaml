@@ -9,7 +9,7 @@ server:
 game:
   # 唯一的游戏：VN Studio 作品《海风与布丁》经导入器（compiler/vnstudio.py）变成 OP 程序，由 galcore 跑
   source: vnstudio                 # vnstudio | script（script = 按 chapter_dir 编译 Markdown 剧本，测试与新章节用）
-  vn_game: 海风与布丁                # content/vn/ 下的作品文件夹
+  vn_game: 海风与布丁                # content/imports/vnstudio/ 下的作品文件夹
   chapter_dir: content/scripts/ch01
   default_card: whale
   default_mode: choice       # choice | ai
@@ -17,7 +17,7 @@ game:
   honesty_gap_rule: false    # §8.3 待议：尾鳍须"心里与嘴上落差"支撑；默认关
   # ---- 只留接口（PLAN §16），Demo 不启用
   cross_run_memory: false            # 跨局记忆
-  post_ending:                       # 结局后自由聊天 GalAgent（docs/galagent.md）
+  post_ending:                       # 结局后自由聊天 GalAgent（docs/design/galagent.md）
     mode: chat_window                # off | scene | chat_window | auto；不是 off 就开放 /ws/post_ending，作品页的游戏会自动装上 GalAgent 插件
     provider: gallings.tool.galagent
     token: ""                        # 留空 = 自动生成到 ~/.gallings/post_ending_token.txt（同源的作品页不需要）

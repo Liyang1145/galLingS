@@ -1,7 +1,7 @@
 """结局后自由聊天端口（PLAN §16 ``post_ending``）。
 
 引擎只做“插座”：找到实现了 ``open_post_ending()`` 的插件（默认 ``gallings.tool.galagent``），
-把 WebSocket 消息转给它开的会话。协议 galagent/1，见 docs/galagent.md。
+把 WebSocket 消息转给它开的会话。协议 galagent/1，见 docs/design/galagent.md。
 
 - ``WS   /ws/post_ending[?card=<id>]``   一个连接 = 一个聊天窗口
 - ``GET  /api/post_ending/info``         是否可用、提供者、工具清单

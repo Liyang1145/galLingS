@@ -7,7 +7,7 @@ api: 1
 description: >
   结局后自由聊天（PLAN §16 post_ending）的 Agent 实现：角色一边保持人设陪玩家聊天，一边能调用工具完成简单任务。
   自带 powershell / 文件 / 网页 / 时间等基础工具；其它 tool 插件声明 capabilities: [galagent] 即可把工具接进来。
-  思考与工具调用以事件流推给前端（galagent/1 协议，见 docs/galagent.md）。
+  思考与工具调用以事件流推给前端（galagent/1 协议，见 docs/design/galagent.md）。
 authors: [galLingS contributors]
 requires:
   gallings: ">=0.1,<0.2"

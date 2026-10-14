@@ -1,0 +1,4398 @@
+{
+  "task": "Image2.5全量图片统一重制分析",
+  "date": "2026-10-13",
+  "scope": "分析与清单；未生成、未替换游戏、未推送",
+  "source_game_sha256": "eb0d753b9812de9997b0d74e89fc6619a8c3665665557fb9865705f8b05c7b76",
+  "source_lines": 3308,
+  "source_chapters": 18,
+  "existing_visual_refs": 87,
+  "old_reference_mapping_complete": true,
+  "counts": {
+    "背景": 42,
+    "事件CG": 25,
+    "角色差分": 36,
+    "封面": 1,
+    "main_production_items": 104,
+    "reference_boards": 8,
+    "optional_items": 11
+  },
+  "count_note": "104为制作需求项，不是预计请求次数或最终PNG精确数；表情/道具状态层可组合，17张已有网页端候选也可能验收复用。参考板、尝试样图、字图和增强项另计。原稿22项CG登记全部另有映射，其中5项列为恢复完整收集时需要的增强项。",
+  "rows": [
+    {
+      "id": "B01",
+      "category": "背景",
+      "name": "浅滩清晨",
+      "family": "海岸",
+      "time": "清晨",
+      "costume": "普通背景不含可叠加的主角",
+      "chapters": "3、7、10",
+      "requirements": "主海岸同机位；清冷朝光、潮池可见，不能画成橙红落日。",
+      "old_names": [
+        "浅滩_清晨"
+      ],
+      "priority": "P0",
+      "dependencies": [
+        "R04"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 60,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\浅滩_清晨.jpg"
+      ],
+      "old_ids": [
+        "ohwph2ga"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第三话 · 深海之光",
+        "第七话 · 冒险家和海豚",
+        "第十话 · 深水区"
+      ]
+    },
+    {
+      "id": "B02",
+      "category": "背景",
+      "name": "浅滩日景",
+      "family": "海岸",
+      "time": "上午/正午/午后",
+      "costume": "普通背景不含可叠加的主角",
+      "chapters": "1、2、10、番外2",
+      "requirements": "海平线、左侧可坐礁石、小镇与山脉固定；夏日通透日光，用于第一话正午及下午。",
+      "old_names": [
+        "浅滩_正午",
+        "浅滩_上午",
+        "浅滩_午后"
+      ],
+      "priority": "P0",
+      "dependencies": [
+        "R04"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 175,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\bg_shallows_day_v01.png",
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\bg_shallows_day_v01.png",
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\bg_shallows_day_v01.png"
+      ],
+      "old_ids": [
+        "qla5b3w0",
+        "c5saufd0",
+        "8eo1nf7q"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第一话 · 浅滩上的偶遇",
+        "第二话 · 暗号契约",
+        "第十话 · 深水区",
+        "番外篇二 · 贝壳项链"
+      ]
+    },
+    {
+      "id": "B03",
+      "category": "背景",
+      "name": "浅滩黄昏",
+      "family": "海岸",
+      "time": "黄昏",
+      "costume": "普通背景不含可叠加的主角",
+      "chapters": "1、4、9、10、15",
+      "requirements": "从B02改时段，太阳下降与海面反光明确；不另造海岸或翻转地形。",
+      "old_names": [
+        "浅滩_黄昏"
+      ],
+      "priority": "P0",
+      "dependencies": [
+        "R04"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 83,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\bg_shallows_sunset_v01.png"
+      ],
+      "old_ids": [
+        "mzy4oec6"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第一话 · 浅滩上的偶遇",
+        "第四话 · 集市上的“我妻子”",
+        "第九话 · 电话",
+        "第十话 · 深水区",
+        "第十五话 · 日记与早安"
+      ]
+    },
+    {
+      "id": "B04",
+      "category": "背景",
+      "name": "浅滩月夜",
+      "family": "海岸",
+      "time": "月夜",
+      "costume": "普通背景不含可叠加的主角",
+      "chapters": "5、10、16",
+      "requirements": "从B02改夜色；同一晚的月相与反光位置相容，暗部保留可读细节。",
+      "old_names": [
+        "浅滩_夜"
+      ],
+      "priority": "P0",
+      "dependencies": [
+        "R04"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 267,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\bg_shallows_night_v01.png"
+      ],
+      "old_ids": [
+        "9ow2x5w5"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第五话 · 海浪与诗句",
+        "第十话 · 深水区",
+        "第十六话 · 海风与布丁"
+      ]
+    },
+    {
+      "id": "B05",
+      "category": "背景",
+      "name": "礁石谈话日景",
+      "family": "海岸近景",
+      "time": "上午",
+      "costume": "普通背景不含可叠加的主角",
+      "chapters": "2",
+      "requirements": "同一浅滩的可坐礁石换近机位，潮池和海平线与B02同地点；不另造悬崖。",
+      "old_names": [
+        "礁石_上午"
+      ],
+      "priority": "P0",
+      "dependencies": [
+        "R04"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 71,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\礁石_上午.jpg"
+      ],
+      "old_ids": [
+        "9vjefxje"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第二话 · 暗号契约"
+      ]
+    },
+    {
+      "id": "B06",
+      "category": "背景",
+      "name": "礁石谈话黄昏",
+      "family": "海岸近景",
+      "time": "黄昏",
+      "costume": "普通背景不含可叠加的主角",
+      "chapters": "2、4",
+      "requirements": "B05的时段差分，契约、手链CG需参考相同礁石。",
+      "old_names": [
+        "礁石_黄昏"
+      ],
+      "priority": "P1",
+      "dependencies": [
+        "R04"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 52,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\礁石_黄昏.jpg"
+      ],
+      "old_ids": [
+        "uhhb6qjn"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第二话 · 暗号契约"
+      ]
+    },
+    {
+      "id": "B07",
+      "category": "背景",
+      "name": "礁石救援/和解夜景",
+      "family": "海岸近景",
+      "time": "夜",
+      "costume": "普通背景不含可叠加的主角",
+      "chapters": "2、11",
+      "requirements": "B05夜差分，供救援与和解；月相与同夜CG一致，留两人并坐空间。",
+      "old_names": [
+        "礁石_夜"
+      ],
+      "priority": "P0",
+      "dependencies": [
+        "R04"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 133,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\bg_shallows_night_v01.png"
+      ],
+      "old_ids": [
+        "acqkjhf8"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第二话 · 暗号契约",
+        "第十一话 · 礁石与和解"
+      ]
+    },
+    {
+      "id": "B08",
+      "category": "背景",
+      "name": "月牙沙洲上午",
+      "family": "沙洲",
+      "time": "清晨后/上午",
+      "costume": "普通背景不含可叠加的主角",
+      "chapters": "7、番外1",
+      "requirements": "低潮露出的月牙沙洲，贝壳、附近礁石与海岸地理固定；泳装镜头在明亮晨间。",
+      "old_names": [
+        "沙洲_上午"
+      ],
+      "priority": "P1",
+      "dependencies": [
+        "R04"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 62,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\沙洲_上午.jpg"
+      ],
+      "old_ids": [
+        "02e2z9nd"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第七话 · 冒险家和海豚",
+        "番外篇一 · 盒子越来越满了"
+      ]
+    },
+    {
+      "id": "B09",
+      "category": "背景",
+      "name": "沙洲午后阴凉",
+      "family": "沙洲",
+      "time": "午后",
+      "costume": "普通背景不含可叠加的主角",
+      "chapters": "7",
+      "requirements": "同一沙洲移到阴凉近景；不能把沙洲变成另一片大陆，不用夕阳代午后。",
+      "old_names": [
+        "沙洲_午后"
+      ],
+      "priority": "P1",
+      "dependencies": [
+        "R04"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 163,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\沙洲_午后.jpg"
+      ],
+      "old_ids": [
+        "tafi49ag"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第七话 · 冒险家和海豚"
+      ]
+    },
+    {
+      "id": "B10",
+      "category": "背景",
+      "name": "沙洲黄昏",
+      "family": "沙洲",
+      "time": "黄昏",
+      "costume": "普通背景不含可叠加的主角",
+      "chapters": "7",
+      "requirements": "沿用B08沙洲轮廓、漂木/礁石和远山，黄昏光照。",
+      "old_names": [
+        "沙洲_黄昏"
+      ],
+      "priority": "P1",
+      "dependencies": [
+        "R04"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 103,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\沙洲_黄昏.jpg"
+      ],
+      "old_ids": [
+        "g0htlsw4"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第七话 · 冒险家和海豚"
+      ]
+    },
+    {
+      "id": "B11",
+      "category": "背景",
+      "name": "下潜浅层水下",
+      "family": "水下",
+      "time": "白天下潜",
+      "costume": "普通背景不含可叠加的主角",
+      "chapters": "3",
+      "requirements": "上方日光逐渐衰减，水中悬浮空间通透；不要与黑暗溺水背景共用。",
+      "old_names": [
+        "深水区_水下"
+      ],
+      "priority": "P1",
+      "dependencies": [
+        "R04"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 26,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\深水区_水下.jpg"
+      ],
+      "old_ids": [
+        "e6cby6b5"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第三话 · 深海之光",
+        "第十话 · 深水区",
+        "第十一话 · 礁石与和解"
+      ]
+    },
+    {
+      "id": "B12",
+      "category": "背景",
+      "name": "深水区黑暗水下",
+      "family": "水下",
+      "time": "黄昏下潜/夜间救援",
+      "costume": "普通背景不含可叠加的主角",
+      "chapters": "10、11、14回忆",
+      "requirements": "深蓝黑、能见度低；不出现明亮正午光束。救援光由人物/CG表达，回忆可由引擎灰化复用。",
+      "old_names": [
+        "深水区_水下"
+      ],
+      "priority": "P1",
+      "dependencies": [
+        "R04"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 26,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\深水区_水下.jpg"
+      ],
+      "old_ids": [
+        "e6cby6b5"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第三话 · 深海之光",
+        "第十话 · 深水区",
+        "第十一话 · 礁石与和解"
+      ]
+    },
+    {
+      "id": "B13",
+      "category": "背景",
+      "name": "深海发光珊瑚",
+      "family": "水下",
+      "time": "正午但海底无直射日光",
+      "costume": "普通背景不含可叠加的主角",
+      "chapters": "3",
+      "requirements": "蓝色发光海藻、珊瑚、海葵；中央留悬浮人物空间，不把地下星空画成天空。",
+      "old_names": [
+        "深海_珊瑚礁"
+      ],
+      "priority": "P1",
+      "dependencies": [
+        "R04"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 84,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\bg_deepsea_coral_glow_v01.png"
+      ],
+      "old_ids": [
+        "fxqcg1oj"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第三话 · 深海之光"
+      ]
+    },
+    {
+      "id": "B14",
+      "category": "背景",
+      "name": "上浮海面黄昏",
+      "family": "海面",
+      "time": "黄昏",
+      "costume": "普通背景不含可叠加的主角",
+      "chapters": "3",
+      "requirements": "从潜水地点上浮，海岸地理接主海岸；夕阳与水面反光相符。",
+      "old_names": [
+        "海面_黄昏"
+      ],
+      "priority": "P1",
+      "dependencies": [
+        "R04"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 17,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\海面_黄昏.jpg"
+      ],
+      "old_ids": [
+        "2mbzwwg2"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第三话 · 深海之光"
+      ]
+    },
+    {
+      "id": "B15",
+      "category": "背景",
+      "name": "营地外黄昏",
+      "family": "营地",
+      "time": "黄昏",
+      "costume": "普通背景不含可叠加的主角",
+      "chapters": "1、番外2",
+      "requirements": "固定同一顶朴素帐篷、海岸、火堆位置；夜景和帐篷内都由同一结构展开。",
+      "old_names": [
+        "帐篷_黄昏"
+      ],
+      "priority": "P0",
+      "dependencies": [
+        "R05"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 43,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\帐篷_黄昏.jpg"
+      ],
+      "old_ids": [
+        "4g7f8iam"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第一话 · 浅滩上的偶遇",
+        "番外篇二 · 贝壳项链"
+      ]
+    },
+    {
+      "id": "B16",
+      "category": "背景",
+      "name": "营地外夜",
+      "family": "营地",
+      "time": "夜",
+      "costume": "普通背景不含可叠加的主角",
+      "chapters": "3–8、番外2",
+      "requirements": "B15夜差分；帐篷口暖灯、低篝火与小坐垫，中央留谈话空间。",
+      "old_names": [
+        "帐篷_夜"
+      ],
+      "priority": "P0",
+      "dependencies": [
+        "R05"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 217,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\bg_beach_campsite_night_v01.png"
+      ],
+      "old_ids": [
+        "9hcpz81h"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第三话 · 深海之光",
+        "第四话 · 集市上的“我妻子”",
+        "第五话 · 海浪与诗句",
+        "第六话 · 原来不是别人啊",
+        "第七话 · 冒险家和海豚",
+        "第八话 · 搬家",
+        "番外篇二 · 贝壳项链"
+      ]
+    },
+    {
+      "id": "B17",
+      "category": "背景",
+      "name": "帐篷内夜灯亮",
+      "family": "营地",
+      "time": "深夜",
+      "costume": "普通背景不含可叠加的主角",
+      "chapters": "6、番外2",
+      "requirements": "真正内部视角，入口、地垫/被褥、灯、本子、贝壳位置固定；不把帐篷外正面图冒充内景。",
+      "old_names": [
+        "帐篷内_夜"
+      ],
+      "priority": "P0",
+      "dependencies": [
+        "R05"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 62,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\帐篷内_夜.jpg"
+      ],
+      "old_ids": [
+        "mcdi4nzi"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第六话 · 原来不是别人啊",
+        "番外篇二 · 贝壳项链"
+      ]
+    },
+    {
+      "id": "B18",
+      "category": "背景",
+      "name": "帐篷内夜灯暗",
+      "family": "营地",
+      "time": "同夜灯调小",
+      "costume": "普通背景不含可叠加的主角",
+      "chapters": "番外2",
+      "requirements": "同B17构图，仅减小灯光；供“灯捻小了一半”CG参考，可由同母图编辑。",
+      "old_names": [],
+      "priority": "P1",
+      "dependencies": [
+        "R05"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 0,
+      "reference_files": [],
+      "old_ids": [],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": []
+    },
+    {
+      "id": "B19",
+      "category": "背景",
+      "name": "帐篷内清晨",
+      "family": "营地",
+      "time": "次日清晨",
+      "costume": "普通背景不含可叠加的主角",
+      "chapters": "番外2",
+      "requirements": "B17同内部机位，日光进入、灯熄灭、无星空；替掉330%帐角临时放大。",
+      "old_names": [
+        "帐篷内_清晨_帐角临时取景"
+      ],
+      "priority": "P0",
+      "dependencies": [
+        "R05"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 15,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\帐篷内_夜.jpg"
+      ],
+      "old_ids": [
+        "bg_tent_morning_corner_draft"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "番外篇二 · 贝壳项链"
+      ]
+    },
+    {
+      "id": "B20",
+      "category": "背景",
+      "name": "小镇边缘清晨",
+      "family": "小镇",
+      "time": "清晨",
+      "costume": "普通背景不含可叠加的主角",
+      "chapters": "8",
+      "requirements": "小镇、海崖和住宅所在位置连续；沿海通路通向白墙蓝顶住宅。",
+      "old_names": [
+        "小镇_清晨"
+      ],
+      "priority": "P1",
+      "dependencies": [
+        "R04"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 2,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\小镇_清晨.jpg"
+      ],
+      "old_ids": [
+        "rpkibqqw"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第八话 · 搬家"
+      ]
+    },
+    {
+      "id": "B21",
+      "category": "背景",
+      "name": "集市街道夏日",
+      "family": "集市",
+      "time": "上午/下午归途",
+      "costume": "普通背景不含可叠加的主角",
+      "chapters": "4、13、番外1回忆",
+      "requirements": "同一条沿海石板街；摊棚、带鱼摊、通向饰品巷的入口固定；可有低细节远景顾客，前景不画鲸鱼小姐。",
+      "old_names": [
+        "集市_上午"
+      ],
+      "priority": "P1",
+      "dependencies": [
+        "R04"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 221,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\bg_town_market_day_v01.png"
+      ],
+      "old_ids": [
+        "sr2lo203"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第四话 · 集市上的“我妻子”",
+        "第十三话 · 店长与珍珠",
+        "第十四话 · 那些布丁和糍粑",
+        "第十五话 · 日记与早安",
+        "番外篇一 · 盒子越来越满了"
+      ]
+    },
+    {
+      "id": "B22",
+      "category": "背景",
+      "name": "集市街道初秋",
+      "family": "集市",
+      "time": "秋季白天",
+      "costume": "普通背景不含可叠加的主角",
+      "chapters": "14、15",
+      "requirements": "B21同机位/摊位；光稍柔和、路人薄外套，海边常绿植物可保留，不强行画成雪景或满地红叶。",
+      "old_names": [
+        "集市_上午"
+      ],
+      "priority": "P1",
+      "dependencies": [
+        "R04"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 221,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\bg_town_market_day_v01.png"
+      ],
+      "old_ids": [
+        "sr2lo203"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第四话 · 集市上的“我妻子”",
+        "第十三话 · 店长与珍珠",
+        "第十四话 · 那些布丁和糍粑",
+        "第十五话 · 日记与早安",
+        "番外篇一 · 盒子越来越满了"
+      ]
+    },
+    {
+      "id": "B23",
+      "category": "背景",
+      "name": "饰品巷",
+      "family": "集市",
+      "time": "日间",
+      "costume": "普通背景不含可叠加的主角",
+      "chapters": "4、13",
+      "requirements": "同市场支巷、蓝白遮棚、贝壳手链摊；老奶奶只在对应CG或必要远景出现。",
+      "old_names": [
+        "集市_饰品巷"
+      ],
+      "priority": "P1",
+      "dependencies": [
+        "R04"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 87,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\集市_饰品巷.jpg"
+      ],
+      "old_ids": [
+        "p8guxpyy"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第四话 · 集市上的“我妻子”",
+        "第十三话 · 店长与珍珠"
+      ]
+    },
+    {
+      "id": "B24",
+      "category": "背景",
+      "name": "珍珠摊",
+      "family": "集市",
+      "time": "上午",
+      "costume": "普通背景不含可叠加的主角",
+      "chapters": "13、番外1",
+      "requirements": "与饰品巷同区域；珍珠品种陈列合理，不把所有珠子都画成目标天青色。",
+      "old_names": [
+        "集市_珍珠摊"
+      ],
+      "priority": "P1",
+      "dependencies": [
+        "R04"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 24,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\集市_珍珠摊.jpg"
+      ],
+      "old_ids": [
+        "hihrcqx5"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第十三话 · 店长与珍珠",
+        "番外篇一 · 盒子越来越满了"
+      ]
+    },
+    {
+      "id": "B25",
+      "category": "背景",
+      "name": "银匠工坊",
+      "family": "集市",
+      "time": "午后/取货日间",
+      "costume": "普通背景不含可叠加的主角",
+      "chapters": "13",
+      "requirements": "工坊工具、放大镜、绒布工作台与窗光固定；留手部和双戒指特写构图依据。",
+      "old_names": [
+        "银匠铺"
+      ],
+      "priority": "P1",
+      "dependencies": [
+        "R04"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 53,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\银匠铺.jpg"
+      ],
+      "old_ids": [
+        "179f3n2w"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第十三话 · 店长与珍珠"
+      ]
+    },
+    {
+      "id": "B26",
+      "category": "背景",
+      "name": "住宅院子清晨",
+      "family": "住宅",
+      "time": "清晨/上午",
+      "costume": "普通背景不含可叠加的主角",
+      "chapters": "8",
+      "requirements": "两层白墙蓝顶、同一棵院树及秋千、厨房烟囱；与房屋揭示CG及所有室内视窗一致。",
+      "old_names": [
+        "大房子_院子"
+      ],
+      "priority": "P0",
+      "dependencies": [
+        "R06"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 47,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\bg_house_courtyard_morning_v01.png"
+      ],
+      "old_ids": [
+        "9qup2gii"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第八话 · 搬家"
+      ]
+    },
+    {
+      "id": "B27",
+      "category": "背景",
+      "name": "住宅客厅午后",
+      "family": "住宅",
+      "time": "午后",
+      "costume": "普通背景不含可叠加的主角",
+      "chapters": "8、12",
+      "requirements": "奶白墙和浅木，门窗/海景方向按住宅结构固定；用于居家和开店提议。",
+      "old_names": [
+        "客厅_午后"
+      ],
+      "priority": "P1",
+      "dependencies": [
+        "R06"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 125,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\bg_house_living_day.png"
+      ],
+      "old_ids": [
+        "2c2u3g9q"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第八话 · 搬家",
+        "第十二话 · 翡翠之梦"
+      ]
+    },
+    {
+      "id": "B28",
+      "category": "背景",
+      "name": "住宅书房午后",
+      "family": "住宅",
+      "time": "午后",
+      "costume": "普通背景不含可叠加的主角",
+      "chapters": "9",
+      "requirements": "左侧海景窗/风铃、右侧写稿书桌/书架、零食箱与后门固定；电话CG必须接同一空间。",
+      "old_names": [
+        "书房_午后"
+      ],
+      "priority": "P0",
+      "dependencies": [
+        "R06"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 90,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\bg_house_study_day_v01.png"
+      ],
+      "old_ids": [
+        "j5onv73r"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第九话 · 电话"
+      ]
+    },
+    {
+      "id": "B29",
+      "category": "背景",
+      "name": "住宅书房黄昏",
+      "family": "住宅",
+      "time": "黄昏",
+      "costume": "普通背景不含可叠加的主角",
+      "chapters": "8、15",
+      "requirements": "B28同机位，仅改光照/台灯状态，不换家具，不另画一间书房。",
+      "old_names": [
+        "书房_黄昏"
+      ],
+      "priority": "P0",
+      "dependencies": [
+        "R06"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 115,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\bg_house_study_sunset.png"
+      ],
+      "old_ids": [
+        "ah4t9t6i"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第八话 · 搬家",
+        "第十五话 · 日记与早安"
+      ]
+    },
+    {
+      "id": "B30",
+      "category": "背景",
+      "name": "住宅书房夜",
+      "family": "住宅",
+      "time": "深夜",
+      "costume": "普通背景不含可叠加的主角",
+      "chapters": "8–12、14、16",
+      "requirements": "B28夜差分；海景冷光、桌灯暖光；搬家后日记一直在住宅，不回帐篷。",
+      "old_names": [
+        "书房_夜"
+      ],
+      "priority": "P0",
+      "dependencies": [
+        "R06"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 108,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\bg_house_study_night_v01.png"
+      ],
+      "old_ids": [
+        "rqlji75s"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第八话 · 搬家",
+        "第九话 · 电话",
+        "第十话 · 深水区",
+        "第十一话 · 礁石与和解",
+        "第十二话 · 翡翠之梦",
+        "第十四话 · 那些布丁和糍粑",
+        "第十六话 · 海风与布丁"
+      ]
+    },
+    {
+      "id": "B31",
+      "category": "背景",
+      "name": "住宅厨房清晨",
+      "family": "住宅",
+      "time": "清晨",
+      "costume": "普通背景不含可叠加的主角",
+      "chapters": "13、15",
+      "requirements": "家用厨房尺度，别与店铺不锈钢后厨混用；灶台、餐具与窗台薄荷固定。",
+      "old_names": [
+        "厨房_清晨"
+      ],
+      "priority": "P1",
+      "dependencies": [
+        "R06"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 149,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\bg_house_kitchen_morning.png"
+      ],
+      "old_ids": [
+        "ooy2g3al"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第十三话 · 店长与珍珠",
+        "第十五话 · 日记与早安"
+      ]
+    },
+    {
+      "id": "B32",
+      "category": "背景",
+      "name": "住宅厨房夜",
+      "family": "住宅",
+      "time": "晚饭制作",
+      "costume": "普通背景不含可叠加的主角",
+      "chapters": "14原稿预留",
+      "requirements": "B31夜差分；原稿煎带鱼镜头需要，当前HTML主要用餐厅，新增镜头接入需再对齐，不当作已引用。",
+      "old_names": [],
+      "priority": "P1",
+      "dependencies": [
+        "R06"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 0,
+      "reference_files": [],
+      "old_ids": [],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": []
+    },
+    {
+      "id": "B33",
+      "category": "背景",
+      "name": "住宅早餐桌日景",
+      "family": "住宅",
+      "time": "早餐后/日记共读",
+      "costume": "普通背景不含可叠加的主角",
+      "chapters": "15",
+      "requirements": "家中同一餐桌；两个日记本、杯碗只作环境道具，关键字后排。当前厨房背景承担此段，需明确桌位。",
+      "old_names": [],
+      "priority": "P1",
+      "dependencies": [
+        "R06"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 0,
+      "reference_files": [],
+      "old_ids": [],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": []
+    },
+    {
+      "id": "B34",
+      "category": "背景",
+      "name": "住宅餐厅夜",
+      "family": "住宅",
+      "time": "晚饭",
+      "costume": "普通背景不含可叠加的主角",
+      "chapters": "8、14、15、番外1",
+      "requirements": "与B33同餐厅空间；主菜/甜点随段落换状态，不每次生出不同餐桌。",
+      "old_names": [
+        "餐厅_夜"
+      ],
+      "priority": "P1",
+      "dependencies": [
+        "R06"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 96,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\bg_house_dining_night.png"
+      ],
+      "old_ids": [
+        "9yvthx8h"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第八话 · 搬家",
+        "第十四话 · 那些布丁和糍粑",
+        "第十五话 · 日记与早安",
+        "番外篇一 · 盒子越来越满了"
+      ]
+    },
+    {
+      "id": "B35",
+      "category": "背景",
+      "name": "住宅卧室夜",
+      "family": "住宅",
+      "time": "夜",
+      "costume": "普通背景不含可叠加的主角",
+      "chapters": "15",
+      "requirements": "按同一住宅木色重做；床、床边桌/椅、门、窗与风铃相容，不保留孤立现代蓝色酒店房间。",
+      "old_names": [
+        "卧室_夜"
+      ],
+      "priority": "P1",
+      "dependencies": [
+        "R06"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 26,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\卧室_夜.jpg"
+      ],
+      "old_ids": [
+        "zx4c9brc"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第十五话 · 日记与早安"
+      ]
+    },
+    {
+      "id": "B36",
+      "category": "背景",
+      "name": "卧室门口清晨",
+      "family": "住宅",
+      "time": "清晨",
+      "costume": "普通背景不含可叠加的主角",
+      "chapters": "15",
+      "requirements": "真正卧室门和过道，门后接B35房间；替换借客厅入口侧的临时取景。",
+      "old_names": [
+        "住宅_房门口清晨_临时取景"
+      ],
+      "priority": "P0",
+      "dependencies": [
+        "R06"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 36,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\bg_house_living_day.png"
+      ],
+      "old_ids": [
+        "bg_house_door_morning_draft"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第十五话 · 日记与早安"
+      ]
+    },
+    {
+      "id": "B37",
+      "category": "背景",
+      "name": "翡翠之梦店外营业",
+      "family": "店铺",
+      "time": "夏季下午",
+      "costume": "普通背景不含可叠加的主角",
+      "chapters": "12",
+      "requirements": "同一两层海边店铺的招牌/遮棚/入口；开业段可见远景排队客人，留女主立绘空间，中文字后排。",
+      "old_names": [
+        "店面_下午"
+      ],
+      "priority": "P1",
+      "dependencies": [
+        "R07"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 21,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\店面_下午.jpg"
+      ],
+      "old_ids": [
+        "y417cb1b"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第十二话 · 翡翠之梦"
+      ]
+    },
+    {
+      "id": "B38",
+      "category": "背景",
+      "name": "翡翠之梦店内日景",
+      "family": "店铺",
+      "time": "日间营业",
+      "costume": "普通背景不含可叠加的主角",
+      "chapters": "12、13、番外1",
+      "requirements": "浅木柜台、甜品柜、朝海窗口、楼梯与后厨入口固定；常规背景不含鲸鱼小姐。",
+      "old_names": [
+        "翡翠之梦_店内"
+      ],
+      "priority": "P0",
+      "dependencies": [
+        "R07"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 111,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\bg_emerald_dream_interior_day_v01.png"
+      ],
+      "old_ids": [
+        "lr4hgspz"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第十二话 · 翡翠之梦",
+        "第十三话 · 店长与珍珠",
+        "番外篇一 · 盒子越来越满了"
+      ]
+    },
+    {
+      "id": "B39",
+      "category": "背景",
+      "name": "翡翠之梦店内打烊夜",
+      "family": "店铺",
+      "time": "夜/最后一盏灯",
+      "costume": "普通背景不含可叠加的主角",
+      "chapters": "12",
+      "requirements": "B38夜差分，仅留小范围暖灯；柜台需能支撑女主站上去的事件CG。",
+      "old_names": [
+        "翡翠之梦_店内夜"
+      ],
+      "priority": "P0",
+      "dependencies": [
+        "R07"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 14,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\bg_emerald_dream_interior_night.png"
+      ],
+      "old_ids": [
+        "bg_shop_interior_night"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第十二话 · 翡翠之梦"
+      ]
+    },
+    {
+      "id": "B40",
+      "category": "背景",
+      "name": "翡翠之梦店内午后未开灯",
+      "family": "店铺",
+      "time": "下午，吊灯关闭",
+      "costume": "普通背景不含可叠加的主角",
+      "chapters": "14",
+      "requirements": "B38同机位：有日光但主灯熄灭；准确区分关灯与夜晚，替掉柜台175%局部取景。",
+      "old_names": [
+        "翡翠之梦_午后未开灯_柜台临时取景"
+      ],
+      "priority": "P0",
+      "dependencies": [
+        "R07"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 71,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\bg_emerald_dream_interior_day_v01.png"
+      ],
+      "old_ids": [
+        "bg_shop_afternoon_counter_draft"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第十四话 · 那些布丁和糍粑"
+      ]
+    },
+    {
+      "id": "B41",
+      "category": "背景",
+      "name": "翡翠之梦后厨日景",
+      "family": "店铺",
+      "time": "上午/下午",
+      "costume": "普通背景不含可叠加的主角",
+      "chapters": "12、13、15、16",
+      "requirements": "营业厨房、海鲜操作台与甜品制作器具；不与住宅厨房混；窗台薄荷/锅具状态接剧情。",
+      "old_names": [
+        "翡翠之梦_厨房"
+      ],
+      "priority": "P1",
+      "dependencies": [
+        "R07"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 82,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\bg_emerald_dream_kitchen_day.png"
+      ],
+      "old_ids": [
+        "r1teranv"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第十二话 · 翡翠之梦",
+        "第十三话 · 店长与珍珠",
+        "第十五话 · 日记与早安",
+        "第十六话 · 海风与布丁"
+      ]
+    },
+    {
+      "id": "B42",
+      "category": "背景",
+      "name": "翡翠之梦二楼夜",
+      "family": "店铺",
+      "time": "打烊后",
+      "costume": "普通背景不含可叠加的主角",
+      "chapters": "13、番外1",
+      "requirements": "朝海窗、小桌两椅、唯一暖灯、楼梯回楼下；海鲜面与披毯CG参考同一机位。",
+      "old_names": [
+        "翡翠之梦_二楼夜"
+      ],
+      "priority": "P1",
+      "dependencies": [
+        "R07"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 115,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\bg_emerald_dream_upstairs_night_v01.png"
+      ],
+      "old_ids": [
+        "lvjql900"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第十三话 · 店长与珍珠",
+        "番外篇一 · 盒子越来越满了"
+      ]
+    },
+    {
+      "id": "C01",
+      "category": "事件CG",
+      "name": "主角初登场",
+      "family": "事件",
+      "time": "正午浅滩",
+      "costume": "常服",
+      "chapters": "1",
+      "requirements": "接住湿笔记本、海水甩起，危险但有喜感的眼神；成年脸型、双腿和独立鲸尾可辨。",
+      "old_names": [
+        "CG_初登场"
+      ],
+      "priority": "P0",
+      "dependencies": [
+        "R01",
+        "R02",
+        "B02",
+        "L01"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 3,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\CG_初登场.jpg"
+      ],
+      "old_ids": [
+        "yvwvivzm"
+      ],
+      "source_cg_indices": [
+        {
+          "index": 17,
+          "line_id": "1ab8nnfn"
+        },
+        {
+          "index": 18,
+          "line_id": "58oo02cv"
+        },
+        {
+          "index": 19,
+          "line_id": "986487og"
+        }
+      ],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第一话 · 浅滩上的偶遇"
+      ]
+    },
+    {
+      "id": "C02",
+      "category": "事件CG",
+      "name": "下午分享糍粑",
+      "family": "事件",
+      "time": "下午浅滩/礁石",
+      "costume": "常服",
+      "chapters": "1",
+      "requirements": "坐礁石掰开糍粑，大半自己吃，小半递向玩家；日光和蓝海，不出现落日/晚霞。",
+      "old_names": [
+        "CG_糍粑"
+      ],
+      "priority": "P0",
+      "dependencies": [
+        "R01",
+        "R02",
+        "B02",
+        "L01"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 0,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\CG_糍粑.jpg"
+      ],
+      "old_ids": [
+        "c6r2xcnj"
+      ],
+      "source_cg_indices": [
+        {
+          "index": 103,
+          "line_id": "u7ne78gd"
+        },
+        {
+          "index": 104,
+          "line_id": "wpivfe7f"
+        },
+        {
+          "index": 105,
+          "line_id": "9gso8zi0"
+        },
+        {
+          "index": 106,
+          "line_id": "macs2evb"
+        },
+        {
+          "index": 107,
+          "line_id": "twdgdg8k"
+        },
+        {
+          "index": 108,
+          "line_id": "q0cw392y"
+        },
+        {
+          "index": 109,
+          "line_id": "unfmnv5c"
+        },
+        {
+          "index": 110,
+          "line_id": "tyxffvv9"
+        }
+      ],
+      "anchor_candidates": [],
+      "current_chapter_references": []
+    },
+    {
+      "id": "C03",
+      "category": "事件CG",
+      "name": "帐篷门口烤鱿鱼",
+      "family": "事件",
+      "time": "黄昏营地",
+      "costume": "道具为主",
+      "chapters": "1",
+      "requirements": "温热烤小鱿鱼、竹串与蓝黑细线留在门口，帐篷形制对应B15；不加不在场的人物。",
+      "old_names": [
+        "CG_烤鱿鱼"
+      ],
+      "priority": "P1",
+      "dependencies": [
+        "R01",
+        "R02",
+        "B15"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 4,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\CG_烤鱿鱼.jpg"
+      ],
+      "old_ids": [
+        "akugkagj"
+      ],
+      "source_cg_indices": [
+        {
+          "index": 149,
+          "line_id": "wupi03c8"
+        },
+        {
+          "index": 150,
+          "line_id": "luv45vih"
+        },
+        {
+          "index": 151,
+          "line_id": "127wrb75"
+        },
+        {
+          "index": 152,
+          "line_id": "1sjdneqt"
+        }
+      ],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第一话 · 浅滩上的偶遇"
+      ]
+    },
+    {
+      "id": "C04",
+      "category": "事件CG",
+      "name": "礁石写契约",
+      "family": "事件",
+      "time": "上午礁石",
+      "costume": "常服",
+      "chapters": "2",
+      "requirements": "俯身在男主笔记本写条款；尾尖悬起可辨；契约文字后排，不画生成伪字。",
+      "old_names": [
+        "CG_立约"
+      ],
+      "priority": "P1",
+      "dependencies": [
+        "R01",
+        "R02",
+        "B05",
+        "L01"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 12,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\CG_立约.jpg"
+      ],
+      "old_ids": [
+        "xndnkx8k"
+      ],
+      "source_cg_indices": [
+        {
+          "index": 230,
+          "line_id": "74kcvphs"
+        },
+        {
+          "index": 231,
+          "line_id": "u7fab4y8"
+        },
+        {
+          "index": 232,
+          "line_id": "urwxpwpj"
+        },
+        {
+          "index": 233,
+          "line_id": "1ysm319j"
+        },
+        {
+          "index": 234,
+          "line_id": "toipot06"
+        },
+        {
+          "index": 235,
+          "line_id": "vqks6qld"
+        },
+        {
+          "index": 236,
+          "line_id": "toiw2hsb"
+        },
+        {
+          "index": 237,
+          "line_id": "d8bbbrvg"
+        },
+        {
+          "index": 238,
+          "line_id": "k8xf3if4"
+        },
+        {
+          "index": 239,
+          "line_id": "d8i8u3h4"
+        },
+        {
+          "index": 240,
+          "line_id": "v7m6mpzz"
+        },
+        {
+          "index": 241,
+          "line_id": "z8w99xv9"
+        }
+      ],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第二话 · 暗号契约"
+      ]
+    },
+    {
+      "id": "C05",
+      "category": "事件CG",
+      "name": "入水回头确认",
+      "family": "事件",
+      "time": "上午入水",
+      "costume": "常服/水下姿态",
+      "chapters": "3",
+      "requirements": "回头确认男主抓稳；双腿与后腰鲸尾同时存在，不能直接变成人鱼尾。",
+      "old_names": [],
+      "priority": "P1",
+      "dependencies": [
+        "R01",
+        "R02",
+        "B11",
+        "R03",
+        "L19"
+      ],
+      "anchors": [
+        "下潜。"
+      ],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 0,
+      "reference_files": [],
+      "old_ids": [],
+      "source_cg_indices": [],
+      "anchor_candidates": [
+        {
+          "index": 384,
+          "line_id": "vl8i53gt",
+          "text": "下潜。"
+        }
+      ],
+      "current_chapter_references": []
+    },
+    {
+      "id": "C06",
+      "category": "事件CG",
+      "name": "深海星光定情",
+      "family": "事件",
+      "time": "发光珊瑚",
+      "costume": "常服/水下姿态",
+      "chapters": "3",
+      "requirements": "两人悬浮，她仰头，蓝光落脸，头发自然散开；双腿与鲸尾共存，构图安静而辽阔。",
+      "old_names": [
+        "CG_深海之光"
+      ],
+      "priority": "P0",
+      "dependencies": [
+        "R01",
+        "R02",
+        "B13",
+        "R03",
+        "L20"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 5,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\CG_深海之光.jpg"
+      ],
+      "old_ids": [
+        "kful0adz"
+      ],
+      "source_cg_indices": [
+        {
+          "index": 431,
+          "line_id": "n910kr47"
+        },
+        {
+          "index": 432,
+          "line_id": "q92mph7f"
+        },
+        {
+          "index": 433,
+          "line_id": "m6l8mfz9"
+        },
+        {
+          "index": 434,
+          "line_id": "2do52ju2"
+        },
+        {
+          "index": 435,
+          "line_id": "1byom25d"
+        }
+      ],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第三话 · 深海之光"
+      ]
+    },
+    {
+      "id": "C07",
+      "category": "事件CG",
+      "name": "黄昏手链代管",
+      "family": "事件",
+      "time": "黄昏浅滩/礁石",
+      "costume": "蓝白吊带裙",
+      "chapters": "4",
+      "requirements": "递蓝贝壳手链、别开视线，服装接集市段；不能换回制服，手链在此摘下代管。",
+      "old_names": [
+        "CG_手链"
+      ],
+      "priority": "P0",
+      "dependencies": [
+        "R01",
+        "R02",
+        "B03",
+        "L13"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 0,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\CG_手链.jpg"
+      ],
+      "old_ids": [
+        "ez0vsxzc"
+      ],
+      "source_cg_indices": [
+        {
+          "index": 619,
+          "line_id": "ii0wejed"
+        },
+        {
+          "index": 620,
+          "line_id": "grmaytdg"
+        },
+        {
+          "index": 621,
+          "line_id": "82u9n7le"
+        },
+        {
+          "index": 622,
+          "line_id": "fn8j4ids"
+        },
+        {
+          "index": 623,
+          "line_id": "wqr5d8bu"
+        },
+        {
+          "index": 624,
+          "line_id": "d0yth26k"
+        },
+        {
+          "index": 625,
+          "line_id": "rigd2hkm"
+        }
+      ],
+      "anchor_candidates": [],
+      "current_chapter_references": []
+    },
+    {
+      "id": "C08",
+      "category": "事件CG",
+      "name": "月夜念诗",
+      "family": "事件",
+      "time": "夜间礁石",
+      "costume": "常服",
+      "chapters": "5",
+      "requirements": "持笔记本念诗/面向玩家，冷月色下的认真；诗的四行准确文字另排。",
+      "old_names": [
+        "CG_诗句"
+      ],
+      "priority": "P1",
+      "dependencies": [
+        "R01",
+        "R02",
+        "B04",
+        "L34"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 7,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\CG_诗句.jpg"
+      ],
+      "old_ids": [
+        "r0t0azno"
+      ],
+      "source_cg_indices": [
+        {
+          "index": 704,
+          "line_id": "cp31i7u2"
+        },
+        {
+          "index": 705,
+          "line_id": "p8jn2vcp"
+        },
+        {
+          "index": 706,
+          "line_id": "v0zc5ynb"
+        },
+        {
+          "index": 707,
+          "line_id": "pm8x8v2h"
+        },
+        {
+          "index": 708,
+          "line_id": "w5tu54ij"
+        },
+        {
+          "index": 709,
+          "line_id": "jo5jwd6u"
+        },
+        {
+          "index": 710,
+          "line_id": "8a3f78h1"
+        }
+      ],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第五话 · 海浪与诗句"
+      ]
+    },
+    {
+      "id": "C09",
+      "category": "事件CG",
+      "name": "原来不是别人",
+      "family": "事件",
+      "time": "夜间营地",
+      "costume": "常服",
+      "chapters": "6",
+      "requirements": "帐篷旁抱膝，表情从嘴硬转软；海岸、灯火、帐篷和B16一致。",
+      "old_names": [
+        "CG_原来是你"
+      ],
+      "priority": "P1",
+      "dependencies": [
+        "R01",
+        "R02",
+        "B16",
+        "L35"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 5,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\CG_原来是你.jpg"
+      ],
+      "old_ids": [
+        "ehbun5kh"
+      ],
+      "source_cg_indices": [
+        {
+          "index": 825,
+          "line_id": "x33w4xyw"
+        },
+        {
+          "index": 826,
+          "line_id": "qmg5t0z6"
+        },
+        {
+          "index": 827,
+          "line_id": "f0antagp"
+        },
+        {
+          "index": 828,
+          "line_id": "hw3uuao6"
+        },
+        {
+          "index": 829,
+          "line_id": "yj2nm06z"
+        }
+      ],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第六话 · 原来不是别人啊"
+      ]
+    },
+    {
+      "id": "C10",
+      "category": "事件CG",
+      "name": "沙洲海豚与吃醋",
+      "family": "事件",
+      "time": "午后沙洲",
+      "costume": "常服",
+      "chapters": "7",
+      "requirements": "远景海豚跃出，女主侧身看/不服气；同一沙洲、双腿与侧尾，不能重造整片海岸。",
+      "old_names": [
+        "CG_海豚"
+      ],
+      "priority": "P1",
+      "dependencies": [
+        "R01",
+        "R02",
+        "B09",
+        "L01"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 5,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\CG_海豚.jpg"
+      ],
+      "old_ids": [
+        "supaesch"
+      ],
+      "source_cg_indices": [
+        {
+          "index": 1021,
+          "line_id": "xgkvacl0"
+        },
+        {
+          "index": 1022,
+          "line_id": "0zxutepz"
+        },
+        {
+          "index": 1023,
+          "line_id": "0zt9xnx6"
+        },
+        {
+          "index": 1024,
+          "line_id": "tl0rxpsl"
+        },
+        {
+          "index": 1025,
+          "line_id": "ipdjcsw2"
+        }
+      ],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第七话 · 冒险家和海豚"
+      ]
+    },
+    {
+      "id": "C11",
+      "category": "事件CG",
+      "name": "新家第一次揭示",
+      "family": "事件",
+      "time": "清晨海崖下住宅",
+      "costume": "常服",
+      "chapters": "8",
+      "requirements": "同一栋白墙蓝顶两层住宅、院树秋千、热烟囱；人物惊讶/介绍新家，绝不夕阳。",
+      "old_names": [
+        "CG_新家"
+      ],
+      "priority": "P0",
+      "dependencies": [
+        "R01",
+        "R02",
+        "B26",
+        "L01"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 0,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\CG_新家.jpg"
+      ],
+      "old_ids": [
+        "jxxr16ez"
+      ],
+      "source_cg_indices": [
+        {
+          "index": 1264,
+          "line_id": "6zssdq0a"
+        },
+        {
+          "index": 1265,
+          "line_id": "ufuse1qs"
+        },
+        {
+          "index": 1266,
+          "line_id": "g6i5zfxw"
+        },
+        {
+          "index": 1267,
+          "line_id": "06qb66fn"
+        },
+        {
+          "index": 1268,
+          "line_id": "y8o8c15n"
+        },
+        {
+          "index": 1269,
+          "line_id": "wel7nhkx"
+        }
+      ],
+      "anchor_candidates": [],
+      "current_chapter_references": []
+    },
+    {
+      "id": "C12",
+      "category": "事件CG",
+      "name": "电话后抢手机",
+      "family": "事件",
+      "time": "午后书房",
+      "costume": "常服",
+      "chapters": "9",
+      "requirements": "手里真的有刚夺来的手机，惊慌/受伤而非俏皮摆拍；室内接B28，不把伤心当滑稽。",
+      "old_names": [
+        "CG_电话"
+      ],
+      "priority": "P0",
+      "dependencies": [
+        "R01",
+        "R02",
+        "B28",
+        "L10"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 5,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\CG_电话.jpg"
+      ],
+      "old_ids": [
+        "ak1lber9"
+      ],
+      "source_cg_indices": [
+        {
+          "index": 1506,
+          "line_id": "0l62ynl2"
+        },
+        {
+          "index": 1507,
+          "line_id": "4oeeyc4i"
+        },
+        {
+          "index": 1508,
+          "line_id": "f0xwde5y"
+        },
+        {
+          "index": 1509,
+          "line_id": "ztlm6qic"
+        },
+        {
+          "index": 1510,
+          "line_id": "fvr7qaqr"
+        }
+      ],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第九话 · 电话"
+      ]
+    },
+    {
+      "id": "C13",
+      "category": "事件CG",
+      "name": "深水区救援",
+      "family": "事件",
+      "time": "暗蓝水下",
+      "costume": "常服/水下姿态",
+      "chapters": "10、14回忆",
+      "requirements": "男主逐渐失去意识，女主抓手腕带他上浮；她有双腿和独立鲸尾。14话灰色回忆复用本图。",
+      "old_names": [
+        "CG_深水区"
+      ],
+      "priority": "P0",
+      "dependencies": [
+        "R01",
+        "R02",
+        "B12",
+        "R03",
+        "L19"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 9,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\CG_深水区.jpg"
+      ],
+      "old_ids": [
+        "ij6ed2gn"
+      ],
+      "source_cg_indices": [
+        {
+          "index": 1711,
+          "line_id": "vqav6b0n"
+        },
+        {
+          "index": 1712,
+          "line_id": "xevq9c3h"
+        },
+        {
+          "index": 1713,
+          "line_id": "3geu2mec"
+        },
+        {
+          "index": 1714,
+          "line_id": "uom3a5i3"
+        },
+        {
+          "index": 1715,
+          "line_id": "z1grd729"
+        },
+        {
+          "index": 2421,
+          "line_id": "kjqx7aqt"
+        },
+        {
+          "index": 2422,
+          "line_id": "5dkq3ve0"
+        },
+        {
+          "index": 2423,
+          "line_id": "zzznn8ck"
+        },
+        {
+          "index": 2424,
+          "line_id": "090mqzz0"
+        }
+      ],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第十话 · 深水区",
+        "第十四话 · 那些布丁和糍粑"
+      ]
+    },
+    {
+      "id": "C14",
+      "category": "事件CG",
+      "name": "月夜和解",
+      "family": "事件",
+      "time": "深夜礁石",
+      "costume": "常服，头发仍有水滴",
+      "chapters": "11",
+      "requirements": "眼眶红、郑重告白，距离与救援后场景相符；衣物不透，月相接B07。",
+      "old_names": [
+        "CG_和解"
+      ],
+      "priority": "P0",
+      "dependencies": [
+        "R01",
+        "R02",
+        "B07",
+        "L11"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 5,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\CG_和解.jpg"
+      ],
+      "old_ids": [
+        "pmngp4pk"
+      ],
+      "source_cg_indices": [
+        {
+          "index": 1814,
+          "line_id": "2sq46aj0"
+        },
+        {
+          "index": 1815,
+          "line_id": "nrhr2xeg"
+        },
+        {
+          "index": 1816,
+          "line_id": "j30yw6u7"
+        },
+        {
+          "index": 1817,
+          "line_id": "km17llk5"
+        },
+        {
+          "index": 1818,
+          "line_id": "y2uoutn6"
+        }
+      ],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第十一话 · 礁石与和解"
+      ]
+    },
+    {
+      "id": "C15",
+      "category": "事件CG",
+      "name": "翡翠之梦尾帆",
+      "family": "事件",
+      "time": "打烊店内",
+      "costume": "常服/店内主服",
+      "chapters": "12",
+      "requirements": "站上柜台张开手臂，鲸尾在身后展开蓝帆；真实人物事件图，不能交普通空店背景。",
+      "old_names": [
+        "CG_翡翠之梦"
+      ],
+      "priority": "P0",
+      "dependencies": [
+        "R01",
+        "R02",
+        "B39",
+        "L01"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 0,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\bg_emerald_dream_interior_night.png"
+      ],
+      "old_ids": [
+        "7jj07jqh"
+      ],
+      "source_cg_indices": [
+        {
+          "index": 2019,
+          "line_id": "1albn6n2"
+        },
+        {
+          "index": 2020,
+          "line_id": "ahxwfvyg"
+        },
+        {
+          "index": 2021,
+          "line_id": "7yme9cq6"
+        },
+        {
+          "index": 2022,
+          "line_id": "k2v082xj"
+        }
+      ],
+      "anchor_candidates": [],
+      "current_chapter_references": []
+    },
+    {
+      "id": "C16",
+      "category": "事件CG",
+      "name": "同款珍珠戒指",
+      "family": "事件",
+      "time": "日间银匠铺",
+      "costume": "常服，手部/道具为主",
+      "chapters": "13",
+      "requirements": "两枚相同银戒、各一颗天青珍珠，放绒布上；她握验的那枚。验/存准确字刻后排。",
+      "old_names": [
+        "CG_珍珠"
+      ],
+      "priority": "P0",
+      "dependencies": [
+        "R01",
+        "R02",
+        "B25"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 0,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\CG_珍珠.jpg"
+      ],
+      "old_ids": [
+        "z639wmth"
+      ],
+      "source_cg_indices": [
+        {
+          "index": 2216,
+          "line_id": "ft79wxbo"
+        },
+        {
+          "index": 2217,
+          "line_id": "ypp2wel7"
+        },
+        {
+          "index": 2218,
+          "line_id": "poo0ulnk"
+        },
+        {
+          "index": 2219,
+          "line_id": "7ygu15vs"
+        },
+        {
+          "index": 2220,
+          "line_id": "0dmyfzwd"
+        },
+        {
+          "index": 2221,
+          "line_id": "s3hgbbim"
+        },
+        {
+          "index": 2222,
+          "line_id": "2f3e2ns1"
+        },
+        {
+          "index": 2223,
+          "line_id": "yfd68r01"
+        }
+      ],
+      "anchor_candidates": [],
+      "current_chapter_references": []
+    },
+    {
+      "id": "C17",
+      "category": "事件CG",
+      "name": "打烊后披毯与海鲜面",
+      "family": "事件",
+      "time": "二楼夜",
+      "costume": "鲸鱼睡衣/家居服",
+      "chapters": "13",
+      "requirements": "同一小桌两碗海鲜面，一碗贝肉更多；亲密疲惫、披毯，戒指/项链按剧情状态。",
+      "old_names": [],
+      "priority": "P1",
+      "dependencies": [
+        "R01",
+        "R02",
+        "B42",
+        "L27"
+      ],
+      "anchors": [
+        "楼下的灯一盏一盏灭掉。只剩二楼窗边的这一盏。"
+      ],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 0,
+      "reference_files": [],
+      "old_ids": [],
+      "source_cg_indices": [],
+      "anchor_candidates": [
+        {
+          "index": 2252,
+          "line_id": "b6uhjwem",
+          "text": "楼下的灯一盏一盏灭掉。只剩二楼窗边的这一盏。"
+        }
+      ],
+      "current_chapter_references": []
+    },
+    {
+      "id": "C18",
+      "category": "事件CG",
+      "name": "布丁是不是假的",
+      "family": "事件",
+      "time": "初秋集市",
+      "costume": "常服",
+      "chapters": "14",
+      "requirements": "带鱼摊前的真实受伤与争执；不是搞笑炸毛；同一市场、秋季路人衣着。",
+      "old_names": [
+        "CG_布丁"
+      ],
+      "priority": "P1",
+      "dependencies": [
+        "R01",
+        "R02",
+        "B22",
+        "L10"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 4,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\CG_布丁.jpg"
+      ],
+      "old_ids": [
+        "w3km9isl"
+      ],
+      "source_cg_indices": [
+        {
+          "index": 2348,
+          "line_id": "f4jwlens"
+        },
+        {
+          "index": 2349,
+          "line_id": "wy3gj38g"
+        },
+        {
+          "index": 2350,
+          "line_id": "dj3k6kx3"
+        },
+        {
+          "index": 2351,
+          "line_id": "64r409s6"
+        }
+      ],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第十四话 · 那些布丁和糍粑"
+      ]
+    },
+    {
+      "id": "C19",
+      "category": "事件CG",
+      "name": "正装门口早安",
+      "family": "事件",
+      "time": "次日清晨卧室门口",
+      "costume": "深蓝正装",
+      "chapters": "15",
+      "requirements": "踮脚轻吻，郑重又害羞；服装是正装，背景是门口，不画制服早餐桌。",
+      "old_names": [
+        "CG_早安"
+      ],
+      "priority": "P0",
+      "dependencies": [
+        "R01",
+        "R02",
+        "B36",
+        "R03",
+        "L31"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 0,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\CG_早安.jpg"
+      ],
+      "old_ids": [
+        "sqnct5dc"
+      ],
+      "source_cg_indices": [
+        {
+          "index": 2693,
+          "line_id": "hjiyaq0l"
+        },
+        {
+          "index": 2694,
+          "line_id": "y8vi2xae"
+        },
+        {
+          "index": 2695,
+          "line_id": "mekeu17c"
+        },
+        {
+          "index": 2696,
+          "line_id": "83d4m1z4"
+        },
+        {
+          "index": 2697,
+          "line_id": "g5mky371"
+        }
+      ],
+      "anchor_candidates": [],
+      "current_chapter_references": []
+    },
+    {
+      "id": "C20",
+      "category": "事件CG",
+      "name": "尾巴缠手腕约定",
+      "family": "事件",
+      "time": "同一清晨门口",
+      "costume": "深蓝正装",
+      "chapters": "15",
+      "requirements": "尾尖柔缓绕住男主手腕，害羞且主动靠近；按实际分支安排，不强塞所有路线。",
+      "old_names": [],
+      "priority": "P1",
+      "dependencies": [
+        "R01",
+        "R02",
+        "B36",
+        "R03",
+        "L32"
+      ],
+      "anchors": [
+        "（尾巴尖，慢慢卷上了我的手腕。）"
+      ],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 0,
+      "reference_files": [],
+      "old_ids": [],
+      "source_cg_indices": [],
+      "anchor_candidates": [
+        {
+          "index": 2717,
+          "line_id": "hvxv91vl",
+          "text": "（尾巴尖，慢慢卷上了我的手腕。）"
+        }
+      ],
+      "current_chapter_references": []
+    },
+    {
+      "id": "C21",
+      "category": "事件CG",
+      "name": "月下共读初遇稿",
+      "family": "事件",
+      "time": "月夜浅滩",
+      "costume": "常服，验字戒指已佩戴",
+      "chapters": "16",
+      "requirements": "膝上摊手稿，认真核对与看向玩家；稿中文字后排；和季终戴银链是不同瞬间。",
+      "old_names": [],
+      "priority": "P1",
+      "dependencies": [
+        "R01",
+        "R02",
+        "B04",
+        "L34"
+      ],
+      "anchors": [
+        "她把手稿摊在膝盖上。"
+      ],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 0,
+      "reference_files": [],
+      "old_ids": [],
+      "source_cg_indices": [],
+      "anchor_candidates": [
+        {
+          "index": 2867,
+          "line_id": "4lbhobyw",
+          "text": "她把手稿摊在膝盖上。"
+        }
+      ],
+      "current_chapter_references": []
+    },
+    {
+      "id": "C22",
+      "category": "事件CG",
+      "name": "海风与布丁终幕",
+      "family": "事件",
+      "time": "月夜浅滩",
+      "costume": "常服，验字戒指+本段戴上的银链珍珠",
+      "chapters": "16真结局",
+      "requirements": "银链戴上，天青珍珠贴在领口附近，期待后续生活；不把未通过路线也画成已戴链。",
+      "old_names": [
+        "CG_海风与布丁"
+      ],
+      "priority": "P0",
+      "dependencies": [
+        "R01",
+        "R02",
+        "B04",
+        "L01"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 5,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\CG_海风与布丁.jpg"
+      ],
+      "old_ids": [
+        "wnpuk9dy"
+      ],
+      "source_cg_indices": [
+        {
+          "index": 2932,
+          "line_id": "835o2c4e"
+        },
+        {
+          "index": 2933,
+          "line_id": "nspynsn1"
+        },
+        {
+          "index": 2934,
+          "line_id": "4rgwdowo"
+        },
+        {
+          "index": 2935,
+          "line_id": "woskmm6c"
+        },
+        {
+          "index": 2936,
+          "line_id": "gexvjjp4"
+        }
+      ],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第十六话 · 海风与布丁"
+      ]
+    },
+    {
+      "id": "C23",
+      "category": "事件CG",
+      "name": "泳装沙洲亮相",
+      "family": "事件",
+      "time": "晨间沙洲",
+      "costume": "深蓝连体泳衣+白过膝袜",
+      "chapters": "番外1",
+      "requirements": "轻扶袜口/白外搭衣角，耳鳍害羞，尾尖拍水；双腿清楚，不能变制服或夕阳。不因原稿“裙摆”加一条不存在的裙子。",
+      "old_names": [
+        "CG_夏日沙洲"
+      ],
+      "priority": "P0",
+      "dependencies": [
+        "R01",
+        "R02",
+        "B08",
+        "L17"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 0,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\CG_夏日沙洲.jpg"
+      ],
+      "old_ids": [
+        "yjxp4irw"
+      ],
+      "source_cg_indices": [
+        {
+          "index": 3029,
+          "line_id": "4n84m5fl"
+        },
+        {
+          "index": 3030,
+          "line_id": "jdterkju"
+        },
+        {
+          "index": 3031,
+          "line_id": "q84nvinh"
+        },
+        {
+          "index": 3032,
+          "line_id": "xy5v80ck"
+        },
+        {
+          "index": 3033,
+          "line_id": "3wd0u0ld"
+        }
+      ],
+      "anchor_candidates": [],
+      "current_chapter_references": []
+    },
+    {
+      "id": "C24",
+      "category": "事件CG",
+      "name": "集市上的女仆",
+      "family": "事件",
+      "time": "上午集市",
+      "costume": "黑白女仆装/采购篮",
+      "chapters": "番外1",
+      "requirements": "挎菜篮验收货品、旁人自然看过来；后段腰系男士外套需独立道具状态，不当同一CG瞬间。",
+      "old_names": [
+        "CG_集市女仆"
+      ],
+      "priority": "P1",
+      "dependencies": [
+        "R01",
+        "R02",
+        "B21",
+        "L21"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 4,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\CG_集市女仆.jpg"
+      ],
+      "old_ids": [
+        "dxmnyp7j"
+      ],
+      "source_cg_indices": [
+        {
+          "index": 3081,
+          "line_id": "yr4mrn6l"
+        },
+        {
+          "index": 3082,
+          "line_id": "lzoklj58"
+        },
+        {
+          "index": 3083,
+          "line_id": "cuxcb5q5"
+        },
+        {
+          "index": 3084,
+          "line_id": "pbl5dskw"
+        }
+      ],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "番外篇一 · 盒子越来越满了"
+      ]
+    },
+    {
+      "id": "C25",
+      "category": "事件CG",
+      "name": "贝壳项链与暖灯",
+      "family": "事件",
+      "time": "夜间帐篷灯暗",
+      "costume": "当前游戏睡衣+粉贝壳项链",
+      "chapters": "番外2",
+      "requirements": "半张脸埋臂弯、耳鳍红、尾尖攥帐帘；完整日常着装、情绪与道具为主。原稿限定装和当前游戏呈现有差异，装束确认后才制作。",
+      "old_names": [
+        "CG_人鱼公主"
+      ],
+      "priority": "P1",
+      "dependencies": [
+        "R01",
+        "R02",
+        "B18",
+        "L28"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 9,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\CG_人鱼公主.jpg"
+      ],
+      "old_ids": [
+        "md2p8m90"
+      ],
+      "source_cg_indices": [
+        {
+          "index": 3267,
+          "line_id": "a8qve0p6"
+        },
+        {
+          "index": 3268,
+          "line_id": "som1ibyp"
+        },
+        {
+          "index": 3269,
+          "line_id": "ftgg6j6d"
+        },
+        {
+          "index": 3270,
+          "line_id": "ewny80he"
+        },
+        {
+          "index": 3271,
+          "line_id": "7b4y2fx8"
+        },
+        {
+          "index": 3272,
+          "line_id": "ziq42tmy"
+        },
+        {
+          "index": 3273,
+          "line_id": "gfj7t3os"
+        },
+        {
+          "index": 3274,
+          "line_id": "bbw7lmle"
+        },
+        {
+          "index": 3275,
+          "line_id": "lyflxyis"
+        }
+      ],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "番外篇二 · 贝壳项链"
+      ]
+    },
+    {
+      "id": "L01",
+      "category": "角色差分",
+      "name": "常服中性",
+      "family": "人物",
+      "time": "随场景显示层匹配",
+      "costume": "常服",
+      "chapters": "第一话 · 浅滩上的偶遇；第二话 · 暗号契约；第三话 · 深海之光；第五话 · 海浪与诗句；第六话 · 原来不是别人啊；第七话 · 冒险家和海豚；第八话 · 搬家；第九话 · 电话；第十一话 · 礁石与和解；第十二话 · 翡翠之梦；第十三话 · 店长与珍珠；第十四话 · 那些布丁和糍粑；第十五话 · 日记与早安；第十六话 · 海风与布丁；番外篇一 · 盒子越来越满了",
+      "requirements": "放松站姿、平视，默认交流，保留成人比例和完整独立鲸尾。",
+      "old_names": [
+        "鲸鱼小姐"
+      ],
+      "priority": "P0",
+      "dependencies": [
+        "R01",
+        "R02"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 534,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\ch\\鲸鱼小姐.webp"
+      ],
+      "old_ids": [
+        "xfg3qcn2"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第一话 · 浅滩上的偶遇",
+        "第二话 · 暗号契约",
+        "第三话 · 深海之光",
+        "第五话 · 海浪与诗句",
+        "第六话 · 原来不是别人啊",
+        "第七话 · 冒险家和海豚",
+        "第八话 · 搬家",
+        "第九话 · 电话",
+        "第十一话 · 礁石与和解",
+        "第十二话 · 翡翠之梦",
+        "第十三话 · 店长与珍珠",
+        "第十四话 · 那些布丁和糍粑",
+        "第十五话 · 日记与早安",
+        "第十六话 · 海风与布丁",
+        "番外篇一 · 盒子越来越满了"
+      ]
+    },
+    {
+      "id": "L02",
+      "category": "角色差分",
+      "name": "常服得意",
+      "family": "人物",
+      "time": "随场景显示层匹配",
+      "costume": "常服",
+      "chapters": "第一话 · 浅滩上的偶遇；第二话 · 暗号契约；第三话 · 深海之光；第五话 · 海浪与诗句；第六话 · 原来不是别人啊；第七话 · 冒险家和海豚；第八话 · 搬家；第九话 · 电话；第十一话 · 礁石与和解；第十二话 · 翡翠之梦；第十三话 · 店长与珍珠；第十四话 · 那些布丁和糍粑；第十五话 · 日记与早安；第十六话 · 海风与布丁；番外篇一 · 盒子越来越满了",
+      "requirements": "同底图，只改得意表情/耳鳍/尾尖，不能重生一张脸。",
+      "old_names": [
+        "鲸鱼小姐_得意"
+      ],
+      "priority": "P0",
+      "dependencies": [
+        "R01",
+        "R02",
+        "L01"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 357,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\ch\\鲸鱼小姐_得意.webp"
+      ],
+      "old_ids": [
+        "2qshq03j"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第一话 · 浅滩上的偶遇",
+        "第二话 · 暗号契约",
+        "第三话 · 深海之光",
+        "第五话 · 海浪与诗句",
+        "第六话 · 原来不是别人啊",
+        "第七话 · 冒险家和海豚",
+        "第八话 · 搬家",
+        "第九话 · 电话",
+        "第十一话 · 礁石与和解",
+        "第十二话 · 翡翠之梦",
+        "第十三话 · 店长与珍珠",
+        "第十四话 · 那些布丁和糍粑",
+        "第十五话 · 日记与早安",
+        "第十六话 · 海风与布丁",
+        "番外篇一 · 盒子越来越满了"
+      ]
+    },
+    {
+      "id": "L03",
+      "category": "角色差分",
+      "name": "常服害羞",
+      "family": "人物",
+      "time": "随场景显示层匹配",
+      "costume": "常服",
+      "chapters": "第一话 · 浅滩上的偶遇；第二话 · 暗号契约；第三话 · 深海之光；第五话 · 海浪与诗句；第六话 · 原来不是别人啊；第七话 · 冒险家和海豚；第八话 · 搬家；第十一话 · 礁石与和解；第十二话 · 翡翠之梦；第十三话 · 店长与珍珠；第十四话 · 那些布丁和糍粑；第十五话 · 日记与早安；第十六话 · 海风与布丁；番外篇一 · 盒子越来越满了",
+      "requirements": "耳鳍微红、视线回避，不变年龄/肩宽/领口。",
+      "old_names": [
+        "鲸鱼小姐_害羞"
+      ],
+      "priority": "P0",
+      "dependencies": [
+        "R01",
+        "R02",
+        "L01"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 292,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\ch\\鲸鱼小姐_害羞.webp"
+      ],
+      "old_ids": [
+        "x013srmu"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第一话 · 浅滩上的偶遇",
+        "第二话 · 暗号契约",
+        "第三话 · 深海之光",
+        "第五话 · 海浪与诗句",
+        "第六话 · 原来不是别人啊",
+        "第七话 · 冒险家和海豚",
+        "第八话 · 搬家",
+        "第十一话 · 礁石与和解",
+        "第十二话 · 翡翠之梦",
+        "第十三话 · 店长与珍珠",
+        "第十四话 · 那些布丁和糍粑",
+        "第十五话 · 日记与早安",
+        "第十六话 · 海风与布丁",
+        "番外篇一 · 盒子越来越满了"
+      ]
+    },
+    {
+      "id": "L04",
+      "category": "角色差分",
+      "name": "常服坏笑",
+      "family": "人物",
+      "time": "随场景显示层匹配",
+      "costume": "常服",
+      "chapters": "第一话 · 浅滩上的偶遇；第二话 · 暗号契约；第三话 · 深海之光；第五话 · 海浪与诗句；第六话 · 原来不是别人啊；第七话 · 冒险家和海豚；第八话 · 搬家；第九话 · 电话；第十一话 · 礁石与和解；第十二话 · 翡翠之梦；第十三话 · 店长与珍珠；第十四话 · 那些布丁和糍粑；第十五话 · 日记与早安；第十六话 · 海风与布丁",
+      "requirements": "俏皮挑眉，不画成恶意或夸张恐怖笑。",
+      "old_names": [
+        "鲸鱼小姐_坏笑"
+      ],
+      "priority": "P1",
+      "dependencies": [
+        "R01",
+        "R02",
+        "L01"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 107,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\ch\\鲸鱼小姐_坏笑.webp"
+      ],
+      "old_ids": [
+        "cbx03q1l"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第一话 · 浅滩上的偶遇",
+        "第二话 · 暗号契约",
+        "第三话 · 深海之光",
+        "第五话 · 海浪与诗句",
+        "第六话 · 原来不是别人啊",
+        "第七话 · 冒险家和海豚",
+        "第八话 · 搬家",
+        "第九话 · 电话",
+        "第十一话 · 礁石与和解",
+        "第十二话 · 翡翠之梦",
+        "第十三话 · 店长与珍珠",
+        "第十四话 · 那些布丁和糍粑",
+        "第十五话 · 日记与早安",
+        "第十六话 · 海风与布丁"
+      ]
+    },
+    {
+      "id": "L05",
+      "category": "角色差分",
+      "name": "常服生气",
+      "family": "人物",
+      "time": "随场景显示层匹配",
+      "costume": "常服",
+      "chapters": "第一话 · 浅滩上的偶遇；第二话 · 暗号契约；第五话 · 海浪与诗句；第六话 · 原来不是别人啊；第七话 · 冒险家和海豚；第八话 · 搬家；第九话 · 电话；第十话 · 深水区；第十一话 · 礁石与和解；第十二话 · 翡翠之梦；第十三话 · 店长与珍珠；第十四话 · 那些布丁和糍粑；第十五话 · 日记与早安；第十六话 · 海风与布丁；番外篇一 · 盒子越来越满了",
+      "requirements": "日常炸毛/叉腰，可喜剧性；不作为真正心灰意冷的唯一差分。",
+      "old_names": [
+        "鲸鱼小姐_生气"
+      ],
+      "priority": "P0",
+      "dependencies": [
+        "R01",
+        "R02",
+        "L01"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 303,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\ch\\鲸鱼小姐_生气.webp"
+      ],
+      "old_ids": [
+        "88v1dull"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第一话 · 浅滩上的偶遇",
+        "第二话 · 暗号契约",
+        "第五话 · 海浪与诗句",
+        "第六话 · 原来不是别人啊",
+        "第七话 · 冒险家和海豚",
+        "第八话 · 搬家",
+        "第九话 · 电话",
+        "第十话 · 深水区",
+        "第十一话 · 礁石与和解",
+        "第十二话 · 翡翠之梦",
+        "第十三话 · 店长与珍珠",
+        "第十四话 · 那些布丁和糍粑",
+        "第十五话 · 日记与早安",
+        "第十六话 · 海风与布丁",
+        "番外篇一 · 盒子越来越满了"
+      ]
+    },
+    {
+      "id": "L06",
+      "category": "角色差分",
+      "name": "常服慌乱",
+      "family": "人物",
+      "time": "随场景显示层匹配",
+      "costume": "常服",
+      "chapters": "第一话 · 浅滩上的偶遇；第二话 · 暗号契约；第三话 · 深海之光；第五话 · 海浪与诗句；第六话 · 原来不是别人啊；第七话 · 冒险家和海豚；第八话 · 搬家；第九话 · 电话；第十一话 · 礁石与和解；第十二话 · 翡翠之梦；第十三话 · 店长与珍珠；第十四话 · 那些布丁和糍粑；第十五话 · 日记与早安；第十六话 · 海风与布丁",
+      "requirements": "惊讶、慌张，头饰/发际/身体比例固定。",
+      "old_names": [
+        "鲸鱼小姐_慌乱"
+      ],
+      "priority": "P1",
+      "dependencies": [
+        "R01",
+        "R02",
+        "L01"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 137,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\ch\\鲸鱼小姐_慌乱.webp"
+      ],
+      "old_ids": [
+        "z869j1e3"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第一话 · 浅滩上的偶遇",
+        "第二话 · 暗号契约",
+        "第三话 · 深海之光",
+        "第五话 · 海浪与诗句",
+        "第六话 · 原来不是别人啊",
+        "第七话 · 冒险家和海豚",
+        "第八话 · 搬家",
+        "第九话 · 电话",
+        "第十一话 · 礁石与和解",
+        "第十二话 · 翡翠之梦",
+        "第十三话 · 店长与珍珠",
+        "第十四话 · 那些布丁和糍粑",
+        "第十五话 · 日记与早安",
+        "第十六话 · 海风与布丁"
+      ]
+    },
+    {
+      "id": "L07",
+      "category": "角色差分",
+      "name": "常服柔和",
+      "family": "人物",
+      "time": "随场景显示层匹配",
+      "costume": "常服",
+      "chapters": "第一话 · 浅滩上的偶遇；第二话 · 暗号契约；第三话 · 深海之光；第五话 · 海浪与诗句；第六话 · 原来不是别人啊；第七话 · 冒险家和海豚；第八话 · 搬家；第九话 · 电话；第十一话 · 礁石与和解；第十二话 · 翡翠之梦；第十三话 · 店长与珍珠；第十四话 · 那些布丁和糍粑；第十五话 · 日记与早安；第十六话 · 海风与布丁；番外篇一 · 盒子越来越满了",
+      "requirements": "视线与唇角放软，同衣同人体。",
+      "old_names": [
+        "鲸鱼小姐_柔和"
+      ],
+      "priority": "P0",
+      "dependencies": [
+        "R01",
+        "R02",
+        "L01"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 399,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\ch\\鲸鱼小姐_柔和.webp"
+      ],
+      "old_ids": [
+        "wrwcdezj"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第一话 · 浅滩上的偶遇",
+        "第二话 · 暗号契约",
+        "第三话 · 深海之光",
+        "第五话 · 海浪与诗句",
+        "第六话 · 原来不是别人啊",
+        "第七话 · 冒险家和海豚",
+        "第八话 · 搬家",
+        "第九话 · 电话",
+        "第十一话 · 礁石与和解",
+        "第十二话 · 翡翠之梦",
+        "第十三话 · 店长与珍珠",
+        "第十四话 · 那些布丁和糍粑",
+        "第十五话 · 日记与早安",
+        "第十六话 · 海风与布丁",
+        "番外篇一 · 盒子越来越满了"
+      ]
+    },
+    {
+      "id": "L08",
+      "category": "角色差分",
+      "name": "常服抱笔记本",
+      "family": "人物",
+      "time": "随场景显示层匹配",
+      "costume": "常服",
+      "chapters": "第二话 · 暗号契约；第五话 · 海浪与诗句；第十二话 · 翡翠之梦；第十五话 · 日记与早安；第十六话 · 海风与布丁；番外篇一 · 盒子越来越满了",
+      "requirements": "独立持物姿态，本子形状接道具参考板，不依赖生成文字。",
+      "old_names": [
+        "鲸鱼小姐_抱本子"
+      ],
+      "priority": "P1",
+      "dependencies": [
+        "R01",
+        "R02",
+        "L01"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 46,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\ch\\鲸鱼小姐_抱本子.webp"
+      ],
+      "old_ids": [
+        "hfcyjlxm"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第二话 · 暗号契约",
+        "第五话 · 海浪与诗句",
+        "第十二话 · 翡翠之梦",
+        "第十五话 · 日记与早安",
+        "第十六话 · 海风与布丁",
+        "番外篇一 · 盒子越来越满了"
+      ]
+    },
+    {
+      "id": "L09",
+      "category": "角色差分",
+      "name": "常服认真验收",
+      "family": "人物",
+      "time": "随场景显示层匹配",
+      "costume": "常服",
+      "chapters": "2、5、8、12、13、15、16",
+      "requirements": "严肃专注，适合契约、稿子、验收，不等于生气。",
+      "old_names": [],
+      "priority": "P1",
+      "dependencies": [
+        "R01",
+        "R02",
+        "L01"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 0,
+      "reference_files": [],
+      "old_ids": [],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": []
+    },
+    {
+      "id": "L10",
+      "category": "角色差分",
+      "name": "常服受伤低落",
+      "family": "人物",
+      "time": "随场景显示层匹配",
+      "costume": "常服",
+      "chapters": "9、10、14、15",
+      "requirements": "第九/十/十四话的安静受伤，少夸张红脸喜剧符号。",
+      "old_names": [],
+      "priority": "P0",
+      "dependencies": [
+        "R01",
+        "R02",
+        "L01"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 0,
+      "reference_files": [],
+      "old_ids": [],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": []
+    },
+    {
+      "id": "L11",
+      "category": "角色差分",
+      "name": "常服救援后红眼",
+      "family": "人物",
+      "time": "随场景显示层匹配",
+      "costume": "常服",
+      "chapters": "11",
+      "requirements": "头发水滴、眼眶红、呼吸急促；衣物保持不透，接和解。",
+      "old_names": [],
+      "priority": "P0",
+      "dependencies": [
+        "R01",
+        "R02",
+        "L01"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 0,
+      "reference_files": [],
+      "old_ids": [],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": []
+    },
+    {
+      "id": "L12",
+      "category": "角色差分",
+      "name": "常服冷淡背侧身",
+      "family": "人物",
+      "time": "随场景显示层匹配",
+      "costume": "常服",
+      "chapters": "9、10、14",
+      "requirements": "半背身/视线避开，真实退潮与离开，固定衣服与尾巴根位置。",
+      "old_names": [],
+      "priority": "P1",
+      "dependencies": [
+        "R01",
+        "R02",
+        "L01"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 0,
+      "reference_files": [],
+      "old_ids": [],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": []
+    },
+    {
+      "id": "L13",
+      "category": "角色差分",
+      "name": "吊带裙中性",
+      "family": "人物",
+      "time": "随场景显示层匹配",
+      "costume": "蓝白吊带裙",
+      "chapters": "第四话 · 集市上的“我妻子”",
+      "requirements": "同一吊带裙裁剪；内搭若保留应统一，但不是原稿已明确的设计。侧尾不要每次换根部。",
+      "old_names": [
+        "鲸鱼小姐_吊带裙"
+      ],
+      "priority": "P0",
+      "dependencies": [
+        "R01",
+        "R02"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 27,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\ch\\鲸鱼小姐_吊带裙.webp"
+      ],
+      "old_ids": [
+        "6i0w6nq5"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第四话 · 集市上的“我妻子”"
+      ]
+    },
+    {
+      "id": "L14",
+      "category": "角色差分",
+      "name": "吊带裙得意",
+      "family": "人物",
+      "time": "随场景显示层匹配",
+      "costume": "蓝白吊带裙",
+      "chapters": "第四话 · 集市上的“我妻子”",
+      "requirements": "沿L13底图改表情，腕间手链按状态另叠。",
+      "old_names": [
+        "鲸鱼小姐_吊带裙得意"
+      ],
+      "priority": "P1",
+      "dependencies": [
+        "R01",
+        "R02",
+        "L13"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 28,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\ch\\鲸鱼小姐_吊带裙得意.webp"
+      ],
+      "old_ids": [
+        "mp0q0cx2"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第四话 · 集市上的“我妻子”"
+      ]
+    },
+    {
+      "id": "L15",
+      "category": "角色差分",
+      "name": "吊带裙害羞",
+      "family": "人物",
+      "time": "随场景显示层匹配",
+      "costume": "蓝白吊带裙",
+      "chapters": "第四话 · 集市上的“我妻子”",
+      "requirements": "同L13身体/服装，用于被叫妻子与代管手链。",
+      "old_names": [
+        "鲸鱼小姐_吊带裙害羞"
+      ],
+      "priority": "P1",
+      "dependencies": [
+        "R01",
+        "R02",
+        "L13"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 47,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\ch\\鲸鱼小姐_吊带裙害羞.webp"
+      ],
+      "old_ids": [
+        "6xha9feh"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第四话 · 集市上的“我妻子”"
+      ]
+    },
+    {
+      "id": "L16",
+      "category": "角色差分",
+      "name": "吊带裙生气",
+      "family": "人物",
+      "time": "随场景显示层匹配",
+      "costume": "蓝白吊带裙",
+      "chapters": "第四话 · 集市上的“我妻子”",
+      "requirements": "同L13，可嘴硬和吃醋，不改成主服制服。",
+      "old_names": [
+        "鲸鱼小姐_吊带裙生气"
+      ],
+      "priority": "P1",
+      "dependencies": [
+        "R01",
+        "R02",
+        "L13"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 13,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\ch\\鲸鱼小姐_吊带裙生气.webp"
+      ],
+      "old_ids": [
+        "vjwh9nmj"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第四话 · 集市上的“我妻子”"
+      ]
+    },
+    {
+      "id": "L17",
+      "category": "角色差分",
+      "name": "泳装中性",
+      "family": "人物",
+      "time": "随场景显示层匹配",
+      "costume": "深蓝连体泳衣+白过膝袜",
+      "chapters": "番外篇一 · 盒子越来越满了",
+      "requirements": "双腿可见；当前白外搭是否保留按角色母图定，别擅加短裙。",
+      "old_names": [
+        "鲸鱼小姐_泳装"
+      ],
+      "priority": "P0",
+      "dependencies": [
+        "R01",
+        "R02"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 8,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\ch\\鲸鱼小姐_泳装.webp"
+      ],
+      "old_ids": [
+        "nvgbi1x6"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "番外篇一 · 盒子越来越满了"
+      ]
+    },
+    {
+      "id": "L18",
+      "category": "角色差分",
+      "name": "泳装害羞",
+      "family": "人物",
+      "time": "随场景显示层匹配",
+      "costume": "同L17",
+      "chapters": "番外篇一 · 盒子越来越满了",
+      "requirements": "同L17衣物和体型，只改表情/轻扶袜口动作，度假日常构图。",
+      "old_names": [
+        "鲸鱼小姐_泳装害羞"
+      ],
+      "priority": "P1",
+      "dependencies": [
+        "R01",
+        "R02",
+        "L17"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 16,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\ch\\鲸鱼小姐_泳装害羞.webp"
+      ],
+      "old_ids": [
+        "jtp36q4e"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "番外篇一 · 盒子越来越满了"
+      ]
+    },
+    {
+      "id": "L19",
+      "category": "角色差分",
+      "name": "水下回头确认",
+      "family": "人物",
+      "time": "随场景显示层匹配",
+      "costume": "常服水下姿态",
+      "chapters": "3（水下回头）",
+      "requirements": "双腿和独立鲸尾共存，转头确认抓稳；重做现人鱼式下身。",
+      "old_names": [
+        "鲸鱼小姐_潜水"
+      ],
+      "priority": "P0",
+      "dependencies": [
+        "R01",
+        "R02"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 79,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\ch\\鲸鱼小姐_潜水.webp"
+      ],
+      "old_ids": [
+        "ylbq6xyk"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第三话 · 深海之光"
+      ]
+    },
+    {
+      "id": "L20",
+      "category": "角色差分",
+      "name": "水下悬浮看光",
+      "family": "人物",
+      "time": "随场景显示层匹配",
+      "costume": "常服水下姿态",
+      "chapters": "3（水下悬浮）",
+      "requirements": "漂浮姿态自然、发丝和衣摆受水流，双腿和尾不合并。",
+      "old_names": [
+        "鲸鱼小姐_潜水"
+      ],
+      "priority": "P1",
+      "dependencies": [
+        "R01",
+        "R02",
+        "L19"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 79,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\ch\\鲸鱼小姐_潜水.webp"
+      ],
+      "old_ids": [
+        "ylbq6xyk"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第三话 · 深海之光"
+      ]
+    },
+    {
+      "id": "L21",
+      "category": "角色差分",
+      "name": "女仆中性",
+      "family": "人物",
+      "time": "随场景显示层匹配",
+      "costume": "黑白女仆装",
+      "chapters": "番外篇一 · 盒子越来越满了",
+      "requirements": "围裙/衣袖/裙长/袜色固定；蓝白外围裙是独立可脱状态。",
+      "old_names": [
+        "鲸鱼小姐_女仆装"
+      ],
+      "priority": "P1",
+      "dependencies": [
+        "R01",
+        "R02"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 27,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\ch\\鲸鱼小姐_女仆装.webp"
+      ],
+      "old_ids": [
+        "fz3yt5k8"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "番外篇一 · 盒子越来越满了"
+      ]
+    },
+    {
+      "id": "L22",
+      "category": "角色差分",
+      "name": "女仆得意",
+      "family": "人物",
+      "time": "随场景显示层匹配",
+      "costume": "同L21",
+      "chapters": "番外篇一 · 盒子越来越满了",
+      "requirements": "同底图，手叉腰或验收，作为活动日特定服装。",
+      "old_names": [
+        "鲸鱼小姐_女仆装得意"
+      ],
+      "priority": "P1",
+      "dependencies": [
+        "R01",
+        "R02",
+        "L21"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 6,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\ch\\鲸鱼小姐_女仆装得意.webp"
+      ],
+      "old_ids": [
+        "ff7robzo"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "番外篇一 · 盒子越来越满了"
+      ]
+    },
+    {
+      "id": "L23",
+      "category": "角色差分",
+      "name": "女仆害羞持菜篮",
+      "family": "人物",
+      "time": "随场景显示层匹配",
+      "costume": "同L21",
+      "chapters": "番外篇一 · 盒子越来越满了",
+      "requirements": "采购篮与角色身份固定，羞赧表情；不重复画市场背景。",
+      "old_names": [
+        "鲸鱼小姐_女仆装害羞"
+      ],
+      "priority": "P1",
+      "dependencies": [
+        "R01",
+        "R02",
+        "L21"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 33,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\ch\\鲸鱼小姐_女仆装害羞.webp"
+      ],
+      "old_ids": [
+        "m6hj48ex"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "番外篇一 · 盒子越来越满了"
+      ]
+    },
+    {
+      "id": "L24",
+      "category": "角色差分",
+      "name": "早餐睡袍围裙中性",
+      "family": "人物",
+      "time": "随场景显示层匹配",
+      "costume": "家居睡袍+围裙",
+      "chapters": "第十五话 · 日记与早安",
+      "requirements": "原稿明确睡袍外罩围裙；睡袍与夜间睡衣区别，厨房姿态自然。",
+      "old_names": [
+        "鲸鱼小姐_睡袍"
+      ],
+      "priority": "P1",
+      "dependencies": [
+        "R01",
+        "R02"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 60,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\ch\\鲸鱼小姐_睡袍.webp"
+      ],
+      "old_ids": [
+        "2z0mfu7o"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第十五话 · 日记与早安"
+      ]
+    },
+    {
+      "id": "L25",
+      "category": "角色差分",
+      "name": "早餐睡袍围裙害羞",
+      "family": "人物",
+      "time": "随场景显示层匹配",
+      "costume": "同L24",
+      "chapters": "第十五话 · 日记与早安",
+      "requirements": "固定睡袍、围裙、锅铲只改表情。",
+      "old_names": [
+        "鲸鱼小姐_睡袍害羞"
+      ],
+      "priority": "P1",
+      "dependencies": [
+        "R01",
+        "R02",
+        "L24"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 15,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\ch\\鲸鱼小姐_睡袍害羞.webp"
+      ],
+      "old_ids": [
+        "368tmc5i"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第十五话 · 日记与早安"
+      ]
+    },
+    {
+      "id": "L26",
+      "category": "角色差分",
+      "name": "早餐睡袍围裙慌乱",
+      "family": "人物",
+      "time": "随场景显示层匹配",
+      "costume": "同L24",
+      "chapters": "第十五话 · 日记与早安",
+      "requirements": "同L24脸和服装，原稿晨间呆毛状态适度变化。",
+      "old_names": [
+        "鲸鱼小姐_睡袍慌乱"
+      ],
+      "priority": "P1",
+      "dependencies": [
+        "R01",
+        "R02",
+        "L24"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 8,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\ch\\鲸鱼小姐_睡袍慌乱.webp"
+      ],
+      "old_ids": [
+        "xtwug3dy"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第十五话 · 日记与早安"
+      ]
+    },
+    {
+      "id": "L27",
+      "category": "角色差分",
+      "name": "鲸鱼睡衣无项链",
+      "family": "人物",
+      "time": "随场景显示层匹配",
+      "costume": "鲸鱼睡衣",
+      "chapters": "13（二楼打烊）",
+      "requirements": "居家常服/打烊二楼；完整睡衣母版，不提前画上后续饰物。",
+      "old_names": [],
+      "priority": "P0",
+      "dependencies": [
+        "R01",
+        "R02"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 0,
+      "reference_files": [],
+      "old_ids": [],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": []
+    },
+    {
+      "id": "L28",
+      "category": "角色差分",
+      "name": "鲸鱼睡衣贝壳项链",
+      "family": "人物",
+      "time": "随场景显示层匹配",
+      "costume": "同L27+粉贝壳项链",
+      "chapters": "番外篇二 · 贝壳项链",
+      "requirements": "睡衣母版加道具状态，番外帐篷；当前抱枕可保留为持物层而非固定所有动作。",
+      "old_names": [
+        "鲸鱼小姐_睡衣项链"
+      ],
+      "priority": "P1",
+      "dependencies": [
+        "R01",
+        "R02",
+        "L27"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 61,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\ch\\鲸鱼小姐_睡衣项链.webp"
+      ],
+      "old_ids": [
+        "52119ew2"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "番外篇二 · 贝壳项链"
+      ]
+    },
+    {
+      "id": "L29",
+      "category": "角色差分",
+      "name": "白色夏日长裙",
+      "family": "人物",
+      "time": "随场景显示层匹配",
+      "costume": "白色连衣裙",
+      "chapters": "番外篇二 · 贝壳项链",
+      "requirements": "番外等待晚饭，同一领口、裙褶、成人比例。",
+      "old_names": [
+        "鲸鱼小姐_长裙"
+      ],
+      "priority": "P1",
+      "dependencies": [
+        "R01",
+        "R02"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 29,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\ch\\鲸鱼小姐_长裙.webp"
+      ],
+      "old_ids": [
+        "t4lmlnr9"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "番外篇二 · 贝壳项链"
+      ]
+    },
+    {
+      "id": "L30",
+      "category": "角色差分",
+      "name": "白裙贝壳项链",
+      "family": "人物",
+      "time": "随场景显示层匹配",
+      "costume": "同L29+粉贝壳项链",
+      "chapters": "番外篇二 · 贝壳项链",
+      "requirements": "和L29只差粉贝壳项链/道具状态，不换脸和衣裙。",
+      "old_names": [
+        "鲸鱼小姐_长裙项链"
+      ],
+      "priority": "P1",
+      "dependencies": [
+        "R01",
+        "R02",
+        "L29"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 14,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\ch\\鲸鱼小姐_长裙项链.webp"
+      ],
+      "old_ids": [
+        "7fvck9ya"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "番外篇二 · 贝壳项链"
+      ]
+    },
+    {
+      "id": "L31",
+      "category": "角色差分",
+      "name": "正装郑重",
+      "family": "人物",
+      "time": "随场景显示层匹配",
+      "costume": "深蓝正装",
+      "chapters": "第十五话 · 日记与早安",
+      "requirements": "门口早安的正式深蓝连衣裙；不要沿主服海军领误画成制服。",
+      "old_names": [
+        "鲸鱼小姐_正装"
+      ],
+      "priority": "P0",
+      "dependencies": [
+        "R01",
+        "R02"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 29,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\ch\\鲸鱼小姐_正装.webp"
+      ],
+      "old_ids": [
+        "tp44t1rb"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第十五话 · 日记与早安"
+      ]
+    },
+    {
+      "id": "L32",
+      "category": "角色差分",
+      "name": "正装害羞柔和",
+      "family": "人物",
+      "time": "随场景显示层匹配",
+      "costume": "同L31",
+      "chapters": "第十五话 · 日记与早安",
+      "requirements": "同L31身体，耳鳍红与柔和表情，用于早安与尾巴约定。",
+      "old_names": [
+        "鲸鱼小姐_正装柔和"
+      ],
+      "priority": "P1",
+      "dependencies": [
+        "R01",
+        "R02",
+        "L31"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 5,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\ch\\鲸鱼小姐_正装柔和.webp"
+      ],
+      "old_ids": [
+        "eqidiyyr"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": [
+        "第十五话 · 日记与早安"
+      ]
+    },
+    {
+      "id": "L33",
+      "category": "角色差分",
+      "name": "常服裹毯",
+      "family": "人物",
+      "time": "随场景显示层匹配",
+      "costume": "常服+毯子",
+      "chapters": "8（搬家前营地）",
+      "requirements": "第八话营地监工/抱膝，毯子到下巴，尾巴独立；不同于睡衣。",
+      "old_names": [],
+      "priority": "P1",
+      "dependencies": [
+        "R01",
+        "R02"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 0,
+      "reference_files": [],
+      "old_ids": [],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": []
+    },
+    {
+      "id": "L34",
+      "category": "角色差分",
+      "name": "礁石坐姿持本",
+      "family": "人物",
+      "time": "随场景显示层匹配",
+      "costume": "常服",
+      "chapters": "5、16（月夜持稿）",
+      "requirements": "月夜读诗/稿、打瞌睡的坐姿母版；本子放膝或抱胸，不拿站姿代所有坐姿。",
+      "old_names": [],
+      "priority": "P1",
+      "dependencies": [
+        "R01",
+        "R02"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 0,
+      "reference_files": [],
+      "old_ids": [],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": []
+    },
+    {
+      "id": "L35",
+      "category": "角色差分",
+      "name": "营地抱膝坐姿",
+      "family": "人物",
+      "time": "随场景显示层匹配",
+      "costume": "常服",
+      "chapters": "6（营地坦白）",
+      "requirements": "第六话安静坦白；双腿折叠、鲸尾在侧，成人比例。",
+      "old_names": [],
+      "priority": "P1",
+      "dependencies": [
+        "R01",
+        "R02"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 0,
+      "reference_files": [],
+      "old_ids": [],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": []
+    },
+    {
+      "id": "L36",
+      "category": "角色差分",
+      "name": "女仆腰系男士外套",
+      "family": "人物",
+      "time": "随场景显示层匹配",
+      "costume": "女仆装+外套在腰间",
+      "chapters": "番外1（采购后段）",
+      "requirements": "番外采购后段：外套系腰，不披肩；与L21同服同脸。",
+      "old_names": [],
+      "priority": "P1",
+      "dependencies": [
+        "R01",
+        "R02",
+        "L21"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 0,
+      "reference_files": [],
+      "old_ids": [],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": []
+    },
+    {
+      "id": "T01",
+      "category": "封面",
+      "name": "海风与布丁主标题封面",
+      "family": "标题",
+      "time": "夏日海岸",
+      "costume": "常服/按女主母图确定",
+      "chapters": "标题页",
+      "requirements": "成人女主、完整双腿与独立鲸尾，图上不生成书名；左侧/下侧菜单留空，书名准确排版，图像与标题字分开。",
+      "old_names": [
+        "封面_ISLAND"
+      ],
+      "priority": "P1",
+      "dependencies": [
+        "R01",
+        "R02",
+        "B02",
+        "L01"
+      ],
+      "anchors": [],
+      "status": "待制作/验收",
+      "model_requested": "用户称为Image2.5的网页端工作流",
+      "scope": "main",
+      "current_reference_lines": 0,
+      "reference_files": [
+        "content/imports/vnstudio/海风与布丁\\assets\\bg\\封面_ISLAND.jpg"
+      ],
+      "old_ids": [
+        "32lrbngt"
+      ],
+      "source_cg_indices": [],
+      "anchor_candidates": [],
+      "current_chapter_references": []
+    }
+  ],
+  "reference_boards": [
+    {
+      "id": "R01",
+      "name": "女主身份与服装母图",
+      "requirements": "先定成年22–24岁脸型、蓝黑长发、天青眼、环形呆毛、耳鳍、双腿+后腰鲸尾；主服/七组服装设计，不把26旧图的漂移全部带入。"
+    },
+    {
+      "id": "R02",
+      "name": "尾鳍徽记与关键道具板",
+      "requirements": "白底圆形新月+星点徽记固定；白色头饰与现蓝蝴蝶发饰冲突待选；笔记本、蓝贝壳手链、粉扇贝项链、两枚验/存银戒、终幕银链珍珠分别画。"
+    },
+    {
+      "id": "R03",
+      "name": "男主简参",
+      "requirements": "现救援CG短黑发/眼镜/白衬衣可作候选，不冒称剧本规定相貌；双人CG和玩家手部始终用同一成年男性设计。"
+    },
+    {
+      "id": "R04",
+      "name": "海岸与小镇地理板",
+      "requirements": "浅滩、可坐礁石、低潮沙洲、潜水方向、小镇与住宅海崖位置；固定镜头和朝向，允许不同机位但要能对应。"
+    },
+    {
+      "id": "R05",
+      "name": "营地/帐篷结构板",
+      "requirements": "固定同一帐篷外观、入口、内地垫、灯、被褥、本子、贝壳、火堆位置，晨昏内外都能对得上。"
+    },
+    {
+      "id": "R06",
+      "name": "住宅结构板",
+      "requirements": "白墙蓝顶两层住宅；院树秋千、烟囱、客厅、书房、家庭厨房、餐厅、卧室与门口的关系。未写明的平面安排是提案，不改剧情。"
+    },
+    {
+      "id": "R07",
+      "name": "翡翠之梦店铺结构板",
+      "requirements": "同一两层店铺外观、柜台、甜品柜、海景窗口、楼梯、后厨、二楼窗桌；区别住宅与商用厨房。"
+    },
+    {
+      "id": "R08",
+      "name": "重复NPC简参",
+      "requirements": "老奶奶/银匠两人统一脸型与衣着；仅需要在反复CG里认得出来，不必新增常驻NPC立绘系统。"
+    }
+  ],
+  "optional": [
+    {
+      "id": "O01",
+      "name": "营地外清晨背景",
+      "reason": "完整营地时段族可补，当前游戏无独立明确外晨节点，排在B19内部晨景之后。"
+    },
+    {
+      "id": "O02",
+      "name": "店外初秋营业背景",
+      "reason": "需要增加秋天店外建立镜头时制作；当前开业外景主要在12话夏季。"
+    },
+    {
+      "id": "O03",
+      "name": "常服薄外套差分",
+      "reason": "深秋有服装需要时追加，先由用户选款，不能为了季节擅改全部常服。"
+    },
+    {
+      "id": "O04",
+      "name": "未通过结局CG",
+      "reason": "银链留在手里、没有戴上，情绪克制，沿用同一月夜；保留分支条件。"
+    },
+    {
+      "id": "O05",
+      "name": "海盐布丁制作CG",
+      "reason": "16话锅中的新海盐布丁、成人女主验收，可强化开头；普通后厨足以运行时非必需。"
+    },
+    {
+      "id": "O06",
+      "name": "家庭日记共读CG",
+      "reason": "15话早餐桌双日记、批注，后期准确字图，可强化关系但不是旧素材逐张替换。"
+    },
+    {
+      "id": "O07",
+      "name": "采购天青珍珠CG",
+      "reason": "13话旧宝物/第二颗珍珠的情绪重点，原稿收集说明有此项；现在没有独立CG，优先低于双戒指。"
+    },
+    {
+      "id": "O08",
+      "name": "秋千验收CG",
+      "reason": "原稿登记CG-006：第八话新家院树秋千。当前可以用B26+角色演出；恢复原稿完整CG收集时需补，沿用同一院子与秋千。"
+    },
+    {
+      "id": "O09",
+      "name": "窗前铃铛CG",
+      "reason": "原稿登记CG-007：第八话书房黄昏，手持蓝白贝壳铃铛、尾鳍缠窗框。当前B29+角色承担；恢复原稿完整收集时需补。"
+    },
+    {
+      "id": "O10",
+      "name": "开张时僵住CG",
+      "reason": "原稿登记CG-009：第十二话店外开张，得知合伙人安排后的怔住。与夜间柜台尾帆C15不是同一时刻；当前B37+角色承担。"
+    },
+    {
+      "id": "O11",
+      "name": "月光下尾鳍圈影CG",
+      "reason": "原稿登记CG-019：第十六话尾鳍圈起两人影子，浅浅一圈。可以由C21另构图或同底图差分完成；不能遗漏为普通立绘。"
+    }
+  ],
+  "registered_cg_mapping": [
+    {
+      "script_id": "CG-001",
+      "script_chapter": "一",
+      "script_name": "立绘初登场",
+      "target_id": "C01"
+    },
+    {
+      "script_id": "CG-002",
+      "script_chapter": "二",
+      "script_name": "立约·Rare「认真」",
+      "target_id": "C04"
+    },
+    {
+      "script_id": "CG-003",
+      "script_chapter": "四",
+      "script_name": "夕阳·蓝贝壳",
+      "target_id": "C07"
+    },
+    {
+      "script_id": "CG-004",
+      "script_chapter": "五",
+      "script_name": "手写诗·屏幕手写字体",
+      "target_id": "C08"
+    },
+    {
+      "script_id": "CG-005",
+      "script_chapter": "六",
+      "script_name": "火堆·坦白",
+      "target_id": "C09"
+    },
+    {
+      "script_id": "CG-006",
+      "script_chapter": "八",
+      "script_name": "秋千验收",
+      "target_id": "O08"
+    },
+    {
+      "script_id": "CG-007",
+      "script_chapter": "八",
+      "script_name": "窗前铃铛",
+      "target_id": "O09"
+    },
+    {
+      "script_id": "CG-008",
+      "script_chapter": "十一",
+      "script_name": "水下抓腕·蓝光",
+      "target_id": "C13"
+    },
+    {
+      "script_id": "CG-009",
+      "script_chapter": "十二",
+      "script_name": "开张·僵住",
+      "target_id": "O10"
+    },
+    {
+      "script_id": "CG-010",
+      "script_chapter": "十二",
+      "script_name": "柜台上蓝色的帆",
+      "target_id": "C15"
+    },
+    {
+      "script_id": "CG-011",
+      "script_chapter": "十三",
+      "script_name": "采购日珍珠",
+      "target_id": "O07"
+    },
+    {
+      "script_id": "CG-012",
+      "script_chapter": "十三",
+      "script_name": "同款戒指一对",
+      "target_id": "C16"
+    },
+    {
+      "script_id": "CG-013",
+      "script_chapter": "十三",
+      "script_name": "打烊后披毯",
+      "target_id": "C17"
+    },
+    {
+      "script_id": "CG-014",
+      "script_chapter": "十四",
+      "script_name": "集市冷脸·Rare",
+      "target_id": "C18"
+    },
+    {
+      "script_id": "CG-015",
+      "script_chapter": "十五",
+      "script_name": "卧室门口正装",
+      "target_id": "C19"
+    },
+    {
+      "script_id": "CG-016",
+      "script_chapter": "十五",
+      "script_name": "尾巴打结拉钩",
+      "target_id": "C20"
+    },
+    {
+      "script_id": "CG-017",
+      "script_chapter": "十六",
+      "script_name": "月光读稿",
+      "target_id": "C21"
+    },
+    {
+      "script_id": "CG-018",
+      "script_chapter": "十六",
+      "script_name": "见外婆不许摘",
+      "target_id": "C22"
+    },
+    {
+      "script_id": "CG-019",
+      "script_chapter": "十六",
+      "script_name": "尾鳍圈影",
+      "target_id": "O11"
+    },
+    {
+      "script_id": "CG-020",
+      "script_chapter": "番一",
+      "script_name": "夏日沙洲",
+      "target_id": "C23"
+    },
+    {
+      "script_id": "CG-021",
+      "script_chapter": "番一",
+      "script_name": "集市上的女仆",
+      "target_id": "C24"
+    },
+    {
+      "script_id": "CG-022",
+      "script_chapter": "番二",
+      "script_name": "人鱼公主",
+      "target_id": "C25"
+    }
+  ],
+  "model_note": "Image2.5沿用用户所说网页端称呼；没有调用模型或核实路由，清单不作模型能力声明。"
+}

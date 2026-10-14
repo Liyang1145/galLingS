@@ -7,9 +7,9 @@
 - ``/api/report``                   编译报告
 - ``/api/plugins``                  插件状态
 - ``/api/agent/*``                  外部 Agent 端口（预留，默认关闭）
-- ``WS  /ws/post_ending``、``/galagent`` 结局后聊天 GalAgent（gallings.tool.galagent，见 docs/galagent.md）
+- ``WS  /ws/post_ending``、``/galagent`` 结局后聊天 GalAgent（gallings.tool.galagent，见 docs/design/galagent.md）
 - ``GET /vn.html``                    作品页：玩 VN Studio 导出的游戏（窗口 / 全屏），手账停靠右侧栏
-- ``/vn/{作品}/…``、``/api/vn/games``  作品文件（vn.games_dir，默认 content/vn）
+- ``/vn/{作品}/…``、``/api/vn/games``  作品文件（vn.games_dir，默认 content/imports/vnstudio）
 - ``/api/vn/plugins``、``/vn_plugins/…`` 给作品用的 VN Studio 插件（vn-plugin/1）：GalAgent + content/vn_plugins/*.js
 - ``/api/settings``                 网页设置（模型 / 密钥 / 记忆底座），存 data_dir，改完重启插件
 - ``WS  /ws/soul?card=whale``         灵枢外部端口 vn-soul/1：外部前端（VN Studio）的手账记忆 / 悄悄话

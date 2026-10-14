@@ -22,7 +22,7 @@
     },
     "kind": {
       "enum": ["llm", "image", "tts", "memory", "tool", "guard", "importer"],
-      "description": "扩展点类型，决定必须实现的接口（见 docs/plugin-format.md §3）"
+      "description": "扩展点类型，决定必须实现的接口（见 docs/design/plugin-format.md §3）"
     },
     "api": {"type": "integer", "minimum": 1, "description": "所实现的 kind 接口主版本；引擎只加载自己支持的主版本"},
     "description": {"type": "string", "maxLength": 500},

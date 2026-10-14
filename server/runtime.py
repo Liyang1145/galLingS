@@ -72,7 +72,7 @@ class Runtime:
     @property
     def games_dir(self) -> Path:
         """作品文件夹：每个子文件夹是一个 VN Studio 导出的游戏（里面有 index.html）。"""
-        d = Path(os.path.expanduser(str((self.config.get("vn") or {}).get("games_dir") or "content/vn")))
+        d = Path(os.path.expanduser(str((self.config.get("vn") or {}).get("games_dir") or "content/imports/vnstudio")))
         return d if d.is_absolute() else ROOT / d
 
     def games(self) -> list[dict[str, Any]]:

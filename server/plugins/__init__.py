@@ -1,4 +1,4 @@
-"""galLingS 统一插件系统。格式说明见 docs/plugin-format.md，清单 Schema 见 schemas/plugin.schema.json。"""
+"""galLingS 统一插件系统。格式说明见 docs/design/plugin-format.md，清单 Schema 见 schemas/plugin.schema.json。"""
 from .context import PluginContext, Secrets
 from .errors import (CompatibilityError, ConfigError, LoadError, ManifestError, MCPError, PluginError,
                      SelectionError)

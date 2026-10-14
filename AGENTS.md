@@ -3,18 +3,18 @@
 用户在当前会话中的明确要求优先于这些协作约定。这里帮助并行工作，不增加每次修改都要问用户的审批流程。
 
 - 当前仓库是 **https://github.com/Liyang1145/galLingS**，私有，默认分支 `main`。旧的 `TanPowasd/galLingS` 是迁移来源，不是默认推送目标。不得在未获用户明确指示时公开仓库、增加外部协作者或把内容发到公共仓库。
-- 开工先读 [共享台账](docs/coordination-ledger.md)、[决策记录](docs/decisions.md)，再读本次工作涉及的接口/素材说明。历史记录、草稿建议、当前有效决定要区分，不把别的 agent 的推测当成用户要求。
-- 查看 [任务记录目录](docs/work-ledger/)。在自己的任务记录中说明负责人、分支、基线提交、影响文件、接口变化、依赖和验证结果。初始化记录不等于任务已经由其联系人认领；开始实际修改时由执行者更新。
-- 新任务按 [模板](docs/work-ledger/_template.md) 建独立文件。主要更新自己的记录，保留别人的记录；共享台账只维护基线和跨模块问题，避免多人反复重写同一张总表。
+- 开工先读 [共享台账](docs/collab/coordination-ledger.md)、[决策记录](docs/decisions.md)，再读本次工作涉及的接口/素材说明。历史记录、草稿建议、当前有效决定要区分，不把别的 agent 的推测当成用户要求。
+- 查看 [任务记录目录](docs/collab/work-ledger/)。在自己的任务记录中说明负责人、分支、基线提交、影响文件、接口变化、依赖和验证结果。初始化记录不等于任务已经由其联系人认领；开始实际修改时由执行者更新。
+- 新任务按 [模板](docs/collab/work-ledger/_template.md) 建独立文件。主要更新自己的记录，保留别人的记录；共享台账只维护基线和跨模块问题，避免多人反复重写同一张总表。
 - 修改前检查远端进度和本地未提交改动。推荐独立任务分支、小范围提交；用户已经明确授权的提交、修复和合并按其指示执行。不要重置他人分支、覆盖工作区、强推或重写历史来消除冲突。
 - 一般可逆修复可直接在已授权范围内完成。跨模块改动先标明兼容影响；有不同方案时保持各自分支与成果，优先用适配方式兼容旧接口。未对齐的联合改动标为待集成，同时继续不依赖它的工作。
 - 画面与交互以 LarryE135 交付的最新完整 VN Studio 作品为核对基础；`main` 的外层播放器不是游戏内容包。交接分支中的旧 RenPy 工程和制作中 Live2D 检查点不能冒充最新作品。
-- 2026-10-13最新完整作者包已代交到 `content/vn/海风与布丁/`，校验清单在 `content/deliveries/larry-vn/`。以此核对新接入，保留作者原件；历史旧包与代理本地整合不自动覆盖它。
-- 2026-10-13用户后续已明确授权提交全部本地成果。当前 `content/vn/海风与布丁/` 纳入以该作者包为基线的场景/音乐音效融合，详见 [本次记录](docs/work-ledger/local-scene-audio-assembly.md)。原始index.html、game.js保留在 `content/deliveries/larry-vn/original-overridden-files/`，其他135项及原ZIP保留；原件manifest仅用于作者来源核对。44张背景原件、提示词与审核在 `content/assets/scene-backgrounds/`，不要恢复3处临时取景或7张退出播放的错误CG。角色/人物CG暂缓、音乐按Atri方向、未冻结或发行新版本。
+- 2026-10-13最新完整作者包已代交到 `content/imports/vnstudio/海风与布丁/`，校验清单在 `archive/deliveries/larry-vn/`。以此核对新接入，保留作者原件；历史旧包与代理本地整合不自动覆盖它。
+- 2026-10-13用户后续已明确授权提交全部本地成果。当前 `content/imports/vnstudio/海风与布丁/` 纳入以该作者包为基线的场景/音乐音效融合，详见 [本次记录](docs/collab/work-ledger/local-scene-audio-assembly.md)。原始index.html、game.js保留在 `archive/deliveries/larry-vn/original-overridden-files/`，其他135项及原ZIP保留；原件manifest仅用于作者来源核对。44张背景原件、提示词与审核在 `content/assets/scene-backgrounds/`，不要恢复3处临时取景或7张退出播放的错误CG。角色/人物CG暂缓、音乐按Atri方向、未冻结或发行新版本。
 - 音乐由 @Liyang1145 负责。保留原始音频、素材 ID 和剧情/存档定位；缺真实动作声时留白，不自动补电子提示音或节拍。播放解码通过不等于听感验收通过。
 - 项目仍在探索期，不自行编发布版本号、冻结音乐/美术方案或把本地探索包当成正式 DEMO 发布。用户明确要求入库的文档和素材可按该次授权提交。
 - 不提交凭据、个人设置或未经授权的本地资料；大资源交付保留来源、清单和校验码。不要为了减小仓库而重写既有历史。
-- 2026-10-13用户后续授权代交boliyer的GalAgent覆盖包并统筹最新游玩。当前统一入口为根目录 `游玩.html`（离线剧情）及 `start.bat` 启动的作品页（同一作品、GalAgent需配置模型）；[统筹记录](docs/work-ledger/boliyer-galagent-integration.md) 与 [最新游玩说明](docs/latest-play.md) 为新接入依据。原覆盖包归档，不直接整包覆盖已有音乐、美术和剧情定位。
+- 2026-10-13用户后续授权代交boliyer的GalAgent覆盖包并统筹最新游玩。当前统一入口为根目录 `游玩.html`（离线剧情）及 `start.bat` 启动的作品页（同一作品、GalAgent需配置模型）；[统筹记录](docs/collab/work-ledger/boliyer-galagent-integration.md) 与 [最新游玩说明](docs/collab/latest-play.md) 为新接入依据。原覆盖包归档，不直接整包覆盖已有音乐、美术和剧情定位。
 - 完成后在自己的记录里写清改了什么、验证了什么、尚缺什么。不要把“文件已保存”“接口已定义”写成“已经集成”或“已验收”。
-- 玩家视角打磨见 [本轮记录](docs/work-ledger/player-experience-polish.md)、[审美审核与缺口](docs/player-aesthetic-review.md)。默认不展开空手账；字号是玩家偏好；模型状态在连接设置查看；候选音频收起但原件仍在。勿整包回退这些交互修正；角色/人物CG和未交付音乐仍按原分工继续。
-- 2026-10-14用户明确恢复素材开发并要求入库。根目录 `引擎开发.html` 为同一作品的编辑入口，176项/209图像文件均可调用；微调项目JSON不直接改运行包，草稿与玩家存档隔离。接续读 [开发说明](docs/art-editor.md) 和 [任务记录](docs/work-ledger/art-editor-library.md)。Atri E1/E2/E7已接入，M6与主曲同SHA去重，E5/E6仅候选；32个旧WAV有MP3播放副本，原件保留。不得整包覆盖这些接入，不将“已请求Image2.5”写成“后端已确认路由”；人物重制仍待做。
+- 玩家视角打磨见 [本轮记录](docs/collab/work-ledger/player-experience-polish.md)、[审美审核与缺口](docs/content/player-aesthetic-review.md)。默认不展开空手账；字号是玩家偏好；模型状态在连接设置查看；候选音频收起但原件仍在。勿整包回退这些交互修正；角色/人物CG和未交付音乐仍按原分工继续。
+- 2026-10-14用户明确恢复素材开发并要求入库。根目录 `引擎开发.html` 为同一作品的编辑入口，176项/209图像文件均可调用；微调项目JSON不直接改运行包，草稿与玩家存档隔离。接续读 [开发说明](docs/design/art-editor.md) 和 [任务记录](docs/collab/work-ledger/art-editor-library.md)。Atri E1/E2/E7已接入，M6与主曲同SHA去重，E5/E6仅候选；32个旧WAV有MP3播放副本，原件保留。不得整包覆盖这些接入，不将“已请求Image2.5”写成“后端已确认路由”；人物重制仍待做。

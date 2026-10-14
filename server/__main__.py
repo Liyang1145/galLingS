@@ -17,11 +17,11 @@ from .settings_store import SettingsStore
 
 
 def _has_games(cfg: dict) -> bool:
-    """作品文件夹（content/vn 或网页设置里改过的）里有没有 VN Studio 导出的游戏。"""
+    """作品文件夹（content/imports/vnstudio 或网页设置里改过的）里有没有 VN Studio 导出的游戏。"""
     srv = cfg.get("server") or {}
     data_dir = Path(os.path.expanduser(str(srv.get("data_dir", "~/.gallings"))))
     vn = SettingsStore(data_dir).overlay(cfg).get("vn") or {}
-    d = Path(os.path.expanduser(str(vn.get("games_dir") or "content/vn")))
+    d = Path(os.path.expanduser(str(vn.get("games_dir") or "content/imports/vnstudio")))
     d = d if d.is_absolute() else ROOT / d
     return d.is_dir() and any((p / "index.html").is_file() for p in d.iterdir())
 

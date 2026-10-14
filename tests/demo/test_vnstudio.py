@@ -22,7 +22,7 @@ from server.session import Session, SessionOptions
 from .conftest import FIX, ROOT, make_runtime
 
 MINI = FIX / "vnstudio" / "mini"
-REAL = ROOT / "content" / "vn" / "海风与布丁"
+REAL = ROOT / "content" / "imports" / "vnstudio" / "海风与布丁"
 WHALE = ROOT / "content" / "cards" / "whale.yaml"
 
 

@@ -61,8 +61,8 @@
     if (r.kind === "fallback") v.push(`<span class="vd rejected">降级</span>`);
     return v.join("");
   }
-  function rowHtml(r) {
-    const s = r.state, prev = rows[rows.indexOf(r) - 1]?.state;
+  function rowHtml(r, previous) {
+    const s = r.state, prev = previous?.state;
     const delta = s && prev ? [["♡", s.affection - prev.affection], ["尾鳍", s.tails - prev.tails]].filter(([, d]) => d).map(([k, d]) => `<span class="dl ${d > 0 ? "up" : "down"}">${k} ${d > 0 ? "+" : ""}${d}</span>`).join("") : "";
     const cls = ["etl-row", "src-" + (r.source || "engine"), (r.verdicts || []).some((x) => x.result !== "applied") || r.kind === "fallback" ? "flag" : "", seeking === r.seq ? "sel" : ""].join(" ");
     return `<li class="${cls}" data-seq="${r.seq}" tabindex="0" title="点一下：回放到这一步">
@@ -71,9 +71,17 @@
   }
   function renderRows() {
     const box = $("etlRows"), atBottom = box.scrollHeight - box.scrollTop - box.clientHeight < 40;
-    box.innerHTML = rows.map(rowHtml).join("");
+    box.innerHTML = rows.map((r, i) => rowHtml(r, rows[i - 1])).join("");
     if (atBottom || seeking == null) box.scrollTop = box.scrollHeight;
     $("etlFoot").textContent = rows.length ? `${rows.length} 条事件 · 每条都写进事件日志，可逐条回放校验 state_hash` : $("etlFoot").textContent;
+  }
+  function appendRow(r) {
+    const box = $("etlRows"), previous = rows[rows.length - 1];
+    const atBottom = box.scrollHeight - box.scrollTop - box.clientHeight < 40;
+    rows.push(r);
+    box.insertAdjacentHTML("beforeend", rowHtml(r, previous));
+    if (atBottom || seeking == null) box.scrollTop = box.scrollHeight;
+    $("etlFoot").textContent = `${rows.length} 条事件 · 每条都写进事件日志，可逐条回放校验 state_hash`;
   }
   $("etlRows").addEventListener("click", (e) => {
     const li = e.target.closest(".etl-row"); if (!li) return;
@@ -101,7 +109,7 @@
       $("etlSess").textContent = `会话 ${m.session}${m.restore ? " · 读档" : ""}`;
       renderRows();
     } else if (m.ev === "row") {
-      rows.push(m.row); if (m.row.state) live = m.row.state; renderRows(); renderState();
+      appendRow(m.row); if (m.row.state) live = m.row.state; renderState();
     } else if (m.ev === "state") {
       const s = m.state; live = { ...(live || {}), affection: s.affection, tails: s.tails, lineage: s.lineage, turn: s.turn, wait: s.wait, mode: s.mode }; renderState();
     } else if (m.ev === "seek") renderSeek(m);

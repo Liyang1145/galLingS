@@ -1,0 +1,1646 @@
+{
+  "sourceCommit": "f45ec5172adde3d05a409af6506fb763ca8d7b55",
+  "sourceAuthor": "Atri-Lobato",
+  "tracks": [
+    {
+      "assetId": "bgm_atri_e1_comedy",
+      "filename": "E1.mp3",
+      "name": "Atri · 傲娇互动（E1）",
+      "candidate": false,
+      "sha256": "3342a33f9c41c9bdaed932d287d955a1fcf21e8e64757857114e0e400fcd03c5",
+      "bytes": 2036697,
+      "audio": {
+        "codec": "mp3",
+        "duration": 86.4135,
+        "channels": 2,
+        "sample_rate": 48000
+      },
+      "measuredLUFS": -14.4,
+      "playbackGain": 0.99655,
+      "targetReferenceLUFS": -14.43,
+      "loopPoint": "待人工微调；原MP3不裁剪或重编码",
+      "deduplicated": false
+    },
+    {
+      "assetId": "bgm_atri_e2_deepsea",
+      "filename": "E2.mp3",
+      "name": "Atri · 深海之光（E2）",
+      "candidate": false,
+      "sha256": "70f119348fa351452a0573454ec482dba76a20fe015c2be572a10882a3ea3021",
+      "bytes": 2322969,
+      "audio": {
+        "codec": "mp3",
+        "duration": 96.4135,
+        "channels": 2,
+        "sample_rate": 48000
+      },
+      "measuredLUFS": -14.43,
+      "playbackGain": 0.70795,
+      "targetReferenceLUFS": -17.43,
+      "loopPoint": "待人工微调；原MP3不裁剪或重编码",
+      "deduplicated": false
+    },
+    {
+      "assetId": "bgm_atri_e7_reflection",
+      "filename": "E7.mp3",
+      "name": "Atri · 独白与思考（E7）",
+      "candidate": false,
+      "sha256": "1e1f2f226d15142dbf05134aa61c48a5f6ae850dd46e4d985a3754588dfc3fe5",
+      "bytes": 4466996,
+      "audio": {
+        "codec": "mp3",
+        "duration": 186.122417,
+        "channels": 2,
+        "sample_rate": 44100
+      },
+      "measuredLUFS": -12.76,
+      "playbackGain": 0.65539,
+      "targetReferenceLUFS": -16.43,
+      "loopPoint": "待人工微调；原MP3不裁剪或重编码",
+      "deduplicated": false
+    },
+    {
+      "assetId": "bgm_atri_e5_e6_candidate",
+      "filename": "E6或E5.mp3",
+      "name": "Atri · E5 / E6 用途待定",
+      "candidate": true,
+      "sha256": "372e8b3cd2b991e4188d15df1b586ae3f250f7a63a9844a95ee81e73606d288e",
+      "bytes": 4089441,
+      "audio": {
+        "codec": "mp3",
+        "duration": 178.4135,
+        "channels": 2,
+        "sample_rate": 48000
+      },
+      "measuredLUFS": -16.17,
+      "playbackGain": 1.0,
+      "targetReferenceLUFS": -15.43,
+      "loopPoint": "待人工微调；原MP3不裁剪或重编码",
+      "deduplicated": false
+    },
+    {
+      "assetId": "bgm_emerald_dream_main_v01",
+      "filename": "M6？.mp3",
+      "name": "M6/E3/M7 · 复用现有翡翠之梦主曲",
+      "candidate": false,
+      "sha256": "02162232f3aa9e5465ea06d1b4968776375f04d6fbeae1c9e39e5623eede44fa",
+      "bytes": 3066777,
+      "audio": {
+        "codec": "mp3",
+        "duration": 133.2135,
+        "channels": 2,
+        "sample_rate": 48000
+      },
+      "measuredLUFS": -14.43,
+      "playbackGain": 1.0,
+      "targetReferenceLUFS": -14.43,
+      "loopPoint": "待人工微调；原MP3不裁剪或重编码",
+      "deduplicated": true
+    }
+  ],
+  "cues": [
+    {
+      "assetId": "bgm_atri_e7_reflection",
+      "startIndex": 3,
+      "endExclusive": 13,
+      "startLineId": "cpdjaftu",
+      "lastLineId": "ktsw1bk3",
+      "note": "第一话：醒来、笔记本与未知世界；尾击前结束"
+    },
+    {
+      "assetId": "bgm_atri_e1_comedy",
+      "startIndex": 166,
+      "endExclusive": 193,
+      "startLineId": "lffkdixc",
+      "lastLineId": "fwmdeekd",
+      "note": "第二话：礁石后躲藏、酸梅汤与销毁证据；认真谈暗号前结束"
+    },
+    {
+      "assetId": "bgm_atri_e2_deepsea",
+      "startIndex": 384,
+      "endExclusive": 454,
+      "startLineId": "vl8i53gt",
+      "lastLineId": "sldr3fn7",
+      "note": "第三话：下潜、蓝色珊瑚与第一次深海之光"
+    },
+    {
+      "assetId": "bgm_atri_e7_reflection",
+      "startIndex": 454,
+      "endExclusive": 467,
+      "startLineId": "h01deoo3",
+      "lastLineId": "hf8lvkzr",
+      "note": "第三话：旧对话碎片与身份验证"
+    },
+    {
+      "assetId": "bgm_atri_e2_deepsea",
+      "startIndex": 467,
+      "endExclusive": 498,
+      "startLineId": "7uc2ce54",
+      "lastLineId": "si26npe8",
+      "note": "第三话：拨开长发、牵手、上岸后的余韵"
+    },
+    {
+      "assetId": "bgm_atri_e7_reflection",
+      "startIndex": 498,
+      "endExclusive": 509,
+      "startLineId": "vanrm482",
+      "lastLineId": "wdi4zt3q",
+      "note": "第三话：帐篷中替她记录的验证独白"
+    },
+    {
+      "assetId": "bgm_atri_e1_comedy",
+      "startIndex": 530,
+      "endExclusive": 574,
+      "startLineId": "zeyzvujn",
+      "lastLineId": "vnymith9",
+      "note": "第四话：手链摊与我妻子的喜剧情境；回程恢复原曲"
+    },
+    {
+      "assetId": "bgm_atri_e7_reflection",
+      "startIndex": 786,
+      "endExclusive": 825,
+      "startLineId": "kd5wxs1m",
+      "lastLineId": "9m22v7xh",
+      "note": "第六话：十五天对话伙伴的来历与身份回溯"
+    }
+  ],
+  "changedNodes": 245,
+  "nodeChanges": [
+    {
+      "index": 3,
+      "lineId": "cpdjaftu",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 4,
+      "lineId": "i6sivbpa",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 5,
+      "lineId": "uie8rbxl",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 6,
+      "lineId": "nwrt7ezp",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 7,
+      "lineId": "solebexx",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 8,
+      "lineId": "k3iysbbe",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 9,
+      "lineId": "3tp1qwm9",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 10,
+      "lineId": "15lmqdee",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 11,
+      "lineId": "929w6urb",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 12,
+      "lineId": "ktsw1bk3",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 166,
+      "lineId": "lffkdixc",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 167,
+      "lineId": "f3o1uyy0",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 168,
+      "lineId": "nkz1goaq",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 169,
+      "lineId": "f8e6wh8c",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 170,
+      "lineId": "cvelvwin",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 171,
+      "lineId": "7ukunjp3",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 172,
+      "lineId": "pzcqedbf",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 173,
+      "lineId": "ww8jppa2",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 174,
+      "lineId": "trj3l6tu",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 175,
+      "lineId": "c6aajftq",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 176,
+      "lineId": "vkft1lib",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 177,
+      "lineId": "d2nuypd0",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 178,
+      "lineId": "g3u1vj7p",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 179,
+      "lineId": "5p228zu3",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 180,
+      "lineId": "sb0dfj4m",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 181,
+      "lineId": "lmt2wdi5",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 182,
+      "lineId": "n9jp23uy",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 183,
+      "lineId": "e72ipq1f",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 184,
+      "lineId": "g3zkq3se",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 185,
+      "lineId": "2zmyc7ul",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 186,
+      "lineId": "kwsqkrhm",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 187,
+      "lineId": "qptgrijt",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 188,
+      "lineId": "4x70thl5",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 189,
+      "lineId": "ab62ikza",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 190,
+      "lineId": "oqqus6vm",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 191,
+      "lineId": "7esq5eqm",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 192,
+      "lineId": "fwmdeekd",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 384,
+      "lineId": "vl8i53gt",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 385,
+      "lineId": "a6d9apre",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 386,
+      "lineId": "jzhcx1mt",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 387,
+      "lineId": "jxcomt6b",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 388,
+      "lineId": "m6ei66jl",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 389,
+      "lineId": "x35m554a",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 390,
+      "lineId": "f1pdnd2t",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 391,
+      "lineId": "wgr8onro",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 392,
+      "lineId": "smyc1237",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 393,
+      "lineId": "s1eag3ez",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 394,
+      "lineId": "b7wnus9x",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 395,
+      "lineId": "54twpg60",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 396,
+      "lineId": "wz7popb4",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 397,
+      "lineId": "8j4840ue",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 398,
+      "lineId": "45um76ye",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 399,
+      "lineId": "b8tgtkdx",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 400,
+      "lineId": "p0qw841g",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 401,
+      "lineId": "ew9v7eo0",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 402,
+      "lineId": "krsgixfj",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 403,
+      "lineId": "8qrf8zlp",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 404,
+      "lineId": "8zfioky4",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 405,
+      "lineId": "y932tpsh",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 406,
+      "lineId": "7d3a32aa",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 407,
+      "lineId": "66xs252k",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 408,
+      "lineId": "3u8ph2yd",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 409,
+      "lineId": "56v75w35",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 410,
+      "lineId": "v1lq0dbo",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 411,
+      "lineId": "zd0um85v",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 412,
+      "lineId": "g5hgu8vb",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 413,
+      "lineId": "fh4vk7z0",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 414,
+      "lineId": "fmps114w",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 415,
+      "lineId": "uw61uwl3",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 416,
+      "lineId": "8z0e9h59",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 417,
+      "lineId": "8z9dhnpu",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 418,
+      "lineId": "xrqh9glz",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 419,
+      "lineId": "p6ez8cbq",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 420,
+      "lineId": "nwguycz5",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 421,
+      "lineId": "x3ohaufm",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 422,
+      "lineId": "sqp1yf73",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 423,
+      "lineId": "raw1hwhm",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 424,
+      "lineId": "ubolwxyw",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 425,
+      "lineId": "ttus1a2r",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 426,
+      "lineId": "8x3tm8cy",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 427,
+      "lineId": "mj6g6kev",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 428,
+      "lineId": "4hvg45xv",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 429,
+      "lineId": "arhrstjg",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 430,
+      "lineId": "hdv1o7vc",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 431,
+      "lineId": "n910kr47",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 432,
+      "lineId": "q92mph7f",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 433,
+      "lineId": "m6l8mfz9",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 434,
+      "lineId": "2do52ju2",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 435,
+      "lineId": "1byom25d",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 436,
+      "lineId": "yxpfn556",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 437,
+      "lineId": "u3z4fnv0",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 438,
+      "lineId": "xwilfrxk",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 439,
+      "lineId": "bs3ptc9o",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 440,
+      "lineId": "vfh87n2b",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 441,
+      "lineId": "azrf8xjb",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 442,
+      "lineId": "xbksr66t",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 443,
+      "lineId": "z3y00jde",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 444,
+      "lineId": "f127zgns",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 445,
+      "lineId": "apyxrb5o",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 446,
+      "lineId": "z6l9dto6",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 447,
+      "lineId": "2b4n1i90",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 448,
+      "lineId": "3pazn66p",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 449,
+      "lineId": "7ff2546g",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 450,
+      "lineId": "9wsntk51",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 451,
+      "lineId": "or055omq",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 452,
+      "lineId": "fbjpqepb",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 453,
+      "lineId": "sldr3fn7",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 454,
+      "lineId": "h01deoo3",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 455,
+      "lineId": "17tbshib",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 456,
+      "lineId": "m4h4m6z8",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 457,
+      "lineId": "b50sr8c6",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 458,
+      "lineId": "773n40kc",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 459,
+      "lineId": "5wdlwmaw",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 460,
+      "lineId": "mwege7ss",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 461,
+      "lineId": "o04hxx55",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 462,
+      "lineId": "b504tbak",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 463,
+      "lineId": "480teug0",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 464,
+      "lineId": "2yfftn4q",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 465,
+      "lineId": "fs5crwy2",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 466,
+      "lineId": "hf8lvkzr",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 467,
+      "lineId": "7uc2ce54",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 468,
+      "lineId": "3lwv5wvh",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 469,
+      "lineId": "mtc8hh52",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 470,
+      "lineId": "9onmu9do",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 471,
+      "lineId": "fafdvswq",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 472,
+      "lineId": "tujhhfvq",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 473,
+      "lineId": "750nsrjs",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 474,
+      "lineId": "6ibcv1r8",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 475,
+      "lineId": "suilsk5v",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 476,
+      "lineId": "suzncvm4",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 477,
+      "lineId": "bqbgs32g",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 478,
+      "lineId": "riwpwvaa",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 479,
+      "lineId": "l21nnthv",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 480,
+      "lineId": "9o8l1lyl",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 481,
+      "lineId": "xt9dxhsx",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 482,
+      "lineId": "ed0zg1gr",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 483,
+      "lineId": "kla5ddeu",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 484,
+      "lineId": "si9vs7sx",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 485,
+      "lineId": "u7ez7ugu",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 486,
+      "lineId": "69vtf30p",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 487,
+      "lineId": "mvpxbool",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 488,
+      "lineId": "x07d3zsr",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 489,
+      "lineId": "wcagm1v0",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 490,
+      "lineId": "8v250knv",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 491,
+      "lineId": "nmt5xybc",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 492,
+      "lineId": "zw98t5oc",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 493,
+      "lineId": "l3ljol2p",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 494,
+      "lineId": "y0pu6ld5",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 495,
+      "lineId": "a1nfgl2v",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 496,
+      "lineId": "mz3l7n1e",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 497,
+      "lineId": "si26npe8",
+      "before": null,
+      "after": "bgm_atri_e2_deepsea"
+    },
+    {
+      "index": 498,
+      "lineId": "vanrm482",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 499,
+      "lineId": "lfwbtc2v",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 500,
+      "lineId": "d26pwlm1",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 501,
+      "lineId": "ppgs9pg6",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 502,
+      "lineId": "8ovzq636",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 503,
+      "lineId": "fvhfjuqr",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 504,
+      "lineId": "s5zqvwy7",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 505,
+      "lineId": "1w7mndjt",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 506,
+      "lineId": "li3n7607",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 507,
+      "lineId": "s3drfhyb",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 508,
+      "lineId": "wdi4zt3q",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 530,
+      "lineId": "zeyzvujn",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 531,
+      "lineId": "k2itf3tc",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 532,
+      "lineId": "r2nr8aad",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 533,
+      "lineId": "0xfmq83t",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 534,
+      "lineId": "q5cpi32o",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 535,
+      "lineId": "58l9zm5i",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 536,
+      "lineId": "70alirnf",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 537,
+      "lineId": "znsk50dz",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 538,
+      "lineId": "djkgts1g",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 539,
+      "lineId": "gpqorkqk",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 540,
+      "lineId": "7vjcagxx",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 541,
+      "lineId": "hgrwc61e",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 542,
+      "lineId": "9ws74e5o",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 543,
+      "lineId": "xthn74fl",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 544,
+      "lineId": "ztbspbz6",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 545,
+      "lineId": "pcemmwn9",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 546,
+      "lineId": "fgdwbdo5",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 547,
+      "lineId": "g6sb0b7k",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 548,
+      "lineId": "3jmqd9ql",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 549,
+      "lineId": "tvp9j670",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 550,
+      "lineId": "7qme2cg1",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 551,
+      "lineId": "9awlv80y",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 552,
+      "lineId": "uh1ubr4x",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 553,
+      "lineId": "5y40plt9",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 554,
+      "lineId": "qb1we3lz",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 555,
+      "lineId": "ac7mn484",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 556,
+      "lineId": "21fxt6my",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 557,
+      "lineId": "jtb8wxpv",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 558,
+      "lineId": "3auxuuc1",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 559,
+      "lineId": "i9sk4w1d",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 560,
+      "lineId": "phg333dv",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 561,
+      "lineId": "3o8wcgff",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 562,
+      "lineId": "t22s5nju",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 563,
+      "lineId": "lov42mbo",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 564,
+      "lineId": "khe0tf6q",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 565,
+      "lineId": "b7fo5z9c",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 566,
+      "lineId": "jp65h980",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 567,
+      "lineId": "gh6ntg63",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 568,
+      "lineId": "pka89k7l",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 569,
+      "lineId": "po7g15ag",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 570,
+      "lineId": "ytjychxx",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 571,
+      "lineId": "pj574p7h",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 572,
+      "lineId": "dc75cbpf",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 573,
+      "lineId": "vnymith9",
+      "before": null,
+      "after": "bgm_atri_e1_comedy"
+    },
+    {
+      "index": 786,
+      "lineId": "kd5wxs1m",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 787,
+      "lineId": "4evr1bkw",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 788,
+      "lineId": "2n2n3efp",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 789,
+      "lineId": "750wy8c2",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 790,
+      "lineId": "id8p2z3g",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 791,
+      "lineId": "fatkbn3a",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 792,
+      "lineId": "bxim6lad",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 793,
+      "lineId": "qlcwp9xq",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 794,
+      "lineId": "3xpucbj5",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 795,
+      "lineId": "lldr65m6",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 796,
+      "lineId": "az2au3b8",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 797,
+      "lineId": "nzmqw5aa",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 798,
+      "lineId": "bf4wieqj",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 799,
+      "lineId": "gacisd4d",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 800,
+      "lineId": "iuxu5kg0",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 801,
+      "lineId": "uij1l3w9",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 802,
+      "lineId": "a0q13kjm",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 803,
+      "lineId": "td5o50ey",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 804,
+      "lineId": "cta88ckb",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 805,
+      "lineId": "bv4hij9a",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 806,
+      "lineId": "u7tl2ise",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 807,
+      "lineId": "dwesh6sp",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 808,
+      "lineId": "cpwu5gkq",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 809,
+      "lineId": "65rzzs94",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 810,
+      "lineId": "sgnmps4g",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 811,
+      "lineId": "osvglpqw",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 812,
+      "lineId": "xfa7e445",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 813,
+      "lineId": "54sw8532",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 814,
+      "lineId": "fhnlo6bb",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 815,
+      "lineId": "ytjn39z0",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 816,
+      "lineId": "2u9ksnay",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 817,
+      "lineId": "ebm0sezm",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 818,
+      "lineId": "pmna7qlr",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 819,
+      "lineId": "6l7rcby3",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 820,
+      "lineId": "tr3sx9pv",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 821,
+      "lineId": "ks06o02b",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 822,
+      "lineId": "q1lfwktz",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 823,
+      "lineId": "vwiad2lw",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    },
+    {
+      "index": 824,
+      "lineId": "9m22v7xh",
+      "before": null,
+      "after": "bgm_atri_e7_reflection"
+    }
+  ],
+  "emeraldDreamPreserved": true,
+  "conflictSilencePreserved": true,
+  "pending": [
+    "E6或E5需要作者/音乐负责人确定用途",
+    "M1/M2/M3/E4与明确E5/E6仍缺；循环点待人工编辑"
+  ]
+}

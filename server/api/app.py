@@ -280,6 +280,19 @@ def create_app(runtime: Runtime | None = None) -> FastAPI:
             raise HTTPException(404)
         return FileResponse(f)
 
+    @app.get("/art-assets/{path:path}")
+    async def art_asset_file(path: str) -> FileResponse:
+        """Read-only art access for authoring; neither arbitrary content nor archives."""
+        root = (ROOT / "content").resolve()
+        f = (root / path).resolve()
+        images = {".png", ".jpg", ".jpeg", ".webp"}
+        source_root = (root / "assets").resolve()
+        game_root = rt().games_dir.resolve()
+        in_game_assets = any((game / "assets").resolve() in f.parents for game in game_root.iterdir() if game.is_dir()) if game_root.is_dir() else False
+        if (source_root not in f.parents and not in_game_assets) or f.suffix.lower() not in images or not f.is_file():
+            raise HTTPException(404)
+        return FileResponse(f)
+
     @app.get("/api/settings")
     async def get_settings() -> dict[str, Any]:
         r = rt()

@@ -1,0 +1,177 @@
+﻿素材ID,名称,类型,采用状态,来源,工具,请求模型,后端确认模型,路由已确认,剧情引用句数,文件,后续处理
+32lrbngt,封面_ISLAND,bg,adopted,LarryE135 完整作品,未登记,,,False,0,content/vn/海风与布丁/assets/bg/封面_ISLAND.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+ohwph2ga,浅滩_清晨,bg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,60,content/vn/海风与布丁/assets/bg/scenes/B01.webp,保留已审核图；路线信息待核实
+8eo1nf7q,浅滩_正午,bg,adopted,用户提供,网页端生成,用户称 Image2.5,,False,175,content/vn/海风与布丁/assets/bg/scenes/B02.webp,保留用户已采用图；来源待补登记
+mzy4oec6,浅滩_黄昏,bg,adopted,用户提供,网页端生成,用户称 Image2.5,,False,83,content/vn/海风与布丁/assets/bg/scenes/B03.webp,保留用户已采用图；来源待补登记
+9ow2x5w5,浅滩_夜,bg,adopted,用户提供,网页端生成,用户称 Image2.5,,False,267,content/vn/海风与布丁/assets/bg/scenes/B04.webp,保留用户已采用图；来源待补登记
+9vjefxje,礁石_上午,bg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,71,content/vn/海风与布丁/assets/bg/scenes/B05.webp,保留已审核图；路线信息待核实
+uhhb6qjn,礁石_黄昏,bg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,52,content/vn/海风与布丁/assets/bg/scenes/B06.webp,保留已审核图；路线信息待核实
+acqkjhf8,礁石_夜,bg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,133,content/vn/海风与布丁/assets/bg/scenes/B07.webp,保留已审核图；路线信息待核实
+02e2z9nd,沙洲_上午,bg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,62,content/vn/海风与布丁/assets/bg/scenes/B08.webp,保留已审核图；路线信息待核实
+tafi49ag,沙洲_午后,bg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,163,content/vn/海风与布丁/assets/bg/scenes/B09.webp,保留已审核图；路线信息待核实
+g0htlsw4,沙洲_黄昏,bg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,103,content/vn/海风与布丁/assets/bg/scenes/B10.webp,保留已审核图；路线信息待核实
+e6cby6b5,深水区_水下,bg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,8,content/vn/海风与布丁/assets/bg/scenes/B11.webp,保留已审核图；路线信息待核实
+scene_b12,深水区黑暗水下,bg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,18,content/vn/海风与布丁/assets/bg/scenes/B12.webp,保留已审核图；路线信息待核实
+fxqcg1oj,深海_珊瑚礁,bg,adopted,用户提供,网页端生成,用户称 Image2.5,,False,84,content/vn/海风与布丁/assets/bg/scenes/B13.webp,保留用户已采用图；来源待补登记
+2mbzwwg2,海面_黄昏,bg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,17,content/vn/海风与布丁/assets/bg/scenes/B14.webp,保留已审核图；路线信息待核实
+4g7f8iam,帐篷_黄昏,bg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,43,content/vn/海风与布丁/assets/bg/scenes/B15.webp,保留已审核图；路线信息待核实
+9hcpz81h,帐篷_夜,bg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,217,content/vn/海风与布丁/assets/bg/scenes/B16.webp,保留已审核图；路线信息待核实
+mcdi4nzi,帐篷内_夜,bg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,62,content/vn/海风与布丁/assets/bg/scenes/B17.webp,保留已审核图；路线信息待核实
+bg_tent_morning_corner_draft,帐篷内_清晨,bg,adopted,用户提供,网页端生成,用户称 Image2.5,,False,15,content/vn/海风与布丁/assets/bg/scenes/B19.webp,保留用户已采用图；来源待补登记
+rpkibqqw,小镇_清晨,bg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,2,content/vn/海风与布丁/assets/bg/scenes/B20.webp,保留已审核图；路线信息待核实
+sr2lo203,集市_上午,bg,adopted,用户提供,网页端生成,用户称 Image2.5,,False,107,content/vn/海风与布丁/assets/bg/scenes/B21.webp,保留用户已采用图；来源待补登记
+scene_b22,集市街道初秋,bg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,114,content/vn/海风与布丁/assets/bg/scenes/B22.webp,保留已审核图；路线信息待核实
+p8guxpyy,集市_饰品巷,bg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,87,content/vn/海风与布丁/assets/bg/scenes/B23.webp,保留已审核图；路线信息待核实
+hihrcqx5,集市_珍珠摊,bg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,24,content/vn/海风与布丁/assets/bg/scenes/B24.webp,保留已审核图；路线信息待核实
+179f3n2w,银匠铺,bg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,53,content/vn/海风与布丁/assets/bg/scenes/B25.webp,保留已审核图；路线信息待核实
+9qup2gii,大房子_院子,bg,adopted,用户提供,网页端生成,用户称 Image2.5,,False,47,content/vn/海风与布丁/assets/bg/scenes/B26.webp,保留用户已采用图；来源待补登记
+2c2u3g9q,客厅_午后,bg,adopted,用户提供,网页端生成,用户称 Image2.5,,False,125,content/vn/海风与布丁/assets/bg/scenes/B27.webp,保留用户已采用图；来源待补登记
+j5onv73r,书房_午后,bg,adopted,用户提供,网页端生成,用户称 Image2.5,,False,90,content/vn/海风与布丁/assets/bg/scenes/B28.webp,保留用户已采用图；来源待补登记
+ah4t9t6i,书房_黄昏,bg,adopted,用户提供,网页端生成,用户称 Image2.5,,False,115,content/vn/海风与布丁/assets/bg/scenes/B29.webp,保留用户已采用图；来源待补登记
+rqlji75s,书房_夜,bg,adopted,用户提供,网页端生成,用户称 Image2.5,,False,108,content/vn/海风与布丁/assets/bg/scenes/B30.webp,保留用户已采用图；来源待补登记
+ooy2g3al,厨房_清晨,bg,adopted,用户提供,网页端生成,用户称 Image2.5,,False,58,content/vn/海风与布丁/assets/bg/scenes/B31.webp,保留用户已采用图；来源待补登记
+scene_b33,住宅早餐桌日景,bg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,91,content/vn/海风与布丁/assets/bg/scenes/B33.webp,保留已审核图；路线信息待核实
+9yvthx8h,餐厅_夜,bg,adopted,用户提供,网页端生成,用户称 Image2.5,,False,96,content/vn/海风与布丁/assets/bg/scenes/B34.webp,保留用户已采用图；来源待补登记
+zx4c9brc,卧室_夜,bg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,26,content/vn/海风与布丁/assets/bg/scenes/B35.webp,保留已审核图；路线信息待核实
+bg_house_door_morning_draft,卧室门口_清晨,bg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,36,content/vn/海风与布丁/assets/bg/scenes/B36.webp,保留已审核图；路线信息待核实
+y417cb1b,店面_下午,bg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,21,content/vn/海风与布丁/assets/bg/scenes/B37.webp,保留已审核图；路线信息待核实
+lr4hgspz,翡翠之梦_店内,bg,adopted,用户提供,网页端生成,用户称 Image2.5,,False,111,content/vn/海风与布丁/assets/bg/scenes/B38.webp,保留用户已采用图；来源待补登记
+bg_shop_interior_night,翡翠之梦_店内夜,bg,adopted,用户提供,网页端生成,用户称 Image2.5,,False,14,content/vn/海风与布丁/assets/bg/scenes/B39.webp,保留用户已采用图；来源待补登记
+bg_shop_afternoon_counter_draft,翡翠之梦_午后未开灯,bg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,71,content/vn/海风与布丁/assets/bg/scenes/B40.webp,保留已审核图；路线信息待核实
+r1teranv,翡翠之梦_厨房,bg,adopted,用户提供,网页端生成,用户称 Image2.5,,False,82,content/vn/海风与布丁/assets/bg/scenes/B41.webp,保留用户已采用图；来源待补登记
+lvjql900,翡翠之梦_二楼夜,bg,adopted,用户提供,网页端生成,用户称 Image2.5,,False,115,content/vn/海风与布丁/assets/bg/scenes/B42.webp,保留用户已采用图；来源待补登记
+art_2224495964087bbf,B14_rejected_shore_camera,bg,rejected,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/scene-backgrounds/records/B14_rejected_shore_camera.png,保留已审核图；路线信息待核实
+art_aae1b66c7938bf2e,B19_tent_morning_candidate,bg,candidate,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/image-trials/B19_tent_morning_candidate.png,保留已审核图；路线信息待核实
+art_e783eabbd8ca9970,B33_before_diary_props,bg,rejected,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/scene-backgrounds/records/B33_before_diary_props.png,保留已审核图；路线信息待核实
+art_e29f1a87253b2fd0,bg_beach_campsite_night_v01,bg,replaced,用户提供,网页端生成,用户称 Image2.5,,False,0,content/assets/backgrounds/bg_beach_campsite_night_v01.png,保留用户已采用图；来源待补登记
+art_27c89ac5a98e532e,书房_午后,bg,replaced,LarryE135 完整作品,未登记,,,False,0,content/vn/海风与布丁/assets/bg/书房_午后.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+art_5ea202fbdf77e025,书房_夜,bg,replaced,LarryE135 完整作品,未登记,,,False,0,content/vn/海风与布丁/assets/bg/书房_夜.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+art_e3a78f7577cdb165,书房_黄昏,bg,replaced,LarryE135 完整作品,未登记,,,False,0,content/vn/海风与布丁/assets/bg/书房_黄昏.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+art_0214efcb1b0c7c64,卧室_夜,bg,replaced,LarryE135 完整作品,未登记,,,False,0,content/vn/海风与布丁/assets/bg/卧室_夜.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+art_cad957daa27f8e49,厨房_清晨,bg,replaced,LarryE135 完整作品,未登记,,,False,0,content/vn/海风与布丁/assets/bg/厨房_清晨.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+art_34daefbe262a28e1,大房子_院子,bg,replaced,LarryE135 完整作品,未登记,,,False,0,content/vn/海风与布丁/assets/bg/大房子_院子.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+art_cade040d338ca68a,客厅_午后,bg,replaced,LarryE135 完整作品,未登记,,,False,0,content/vn/海风与布丁/assets/bg/客厅_午后.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+art_cf1bededf74d7dfa,小镇_清晨,bg,replaced,LarryE135 完整作品,未登记,,,False,0,content/vn/海风与布丁/assets/bg/小镇_清晨.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+art_31ab668fa3a33e90,帐篷_夜,bg,replaced,LarryE135 完整作品,未登记,,,False,0,content/vn/海风与布丁/assets/bg/帐篷_夜.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+art_019cd7056c8779a3,帐篷_黄昏,bg,replaced,LarryE135 完整作品,未登记,,,False,0,content/vn/海风与布丁/assets/bg/帐篷_黄昏.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+art_a65e09e8a791a183,帐篷内_夜,bg,replaced,LarryE135 完整作品,未登记,,,False,0,content/vn/海风与布丁/assets/bg/帐篷内_夜.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+art_c5130daac5ebadb1,店面_下午,bg,replaced,LarryE135 完整作品,未登记,,,False,0,content/vn/海风与布丁/assets/bg/店面_下午.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+art_239105965b337575,沙洲_上午,bg,replaced,LarryE135 完整作品,未登记,,,False,0,content/vn/海风与布丁/assets/bg/沙洲_上午.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+art_36a566a7aa0e42d1,沙洲_午后,bg,replaced,LarryE135 完整作品,未登记,,,False,0,content/vn/海风与布丁/assets/bg/沙洲_午后.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+art_f68a4fcf73bcf08b,沙洲_黄昏,bg,replaced,LarryE135 完整作品,未登记,,,False,0,content/vn/海风与布丁/assets/bg/沙洲_黄昏.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+art_c9c775e6e1af951f,浅滩_上午,bg,replaced,LarryE135 完整作品,未登记,,,False,0,content/vn/海风与布丁/assets/bg/浅滩_上午.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+art_bf5799db10cafc44,浅滩_午后,bg,replaced,LarryE135 完整作品,未登记,,,False,0,content/vn/海风与布丁/assets/bg/浅滩_午后.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+art_2d11a6010aa76076,浅滩_夜,bg,replaced,LarryE135 完整作品,未登记,,,False,0,content/vn/海风与布丁/assets/bg/浅滩_夜.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+art_6abc3fd6e69912d0,浅滩_正午,bg,replaced,LarryE135 完整作品,未登记,,,False,0,content/vn/海风与布丁/assets/bg/浅滩_正午.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+art_007d3a68d7de5667,浅滩_清晨,bg,replaced,LarryE135 完整作品,未登记,,,False,0,content/vn/海风与布丁/assets/bg/浅滩_清晨.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+art_d9d898ebbc2a6767,浅滩_黄昏,bg,replaced,LarryE135 完整作品,未登记,,,False,0,content/vn/海风与布丁/assets/bg/浅滩_黄昏.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+art_79bf3ead793d221d,海面_黄昏,bg,replaced,LarryE135 完整作品,未登记,,,False,0,content/vn/海风与布丁/assets/bg/海面_黄昏.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+art_ab9d33ee41c43721,深水区_水下,bg,replaced,LarryE135 完整作品,未登记,,,False,0,content/vn/海风与布丁/assets/bg/深水区_水下.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+art_a4acab761ec519bd,深海_珊瑚礁,bg,replaced,LarryE135 完整作品,未登记,,,False,0,content/vn/海风与布丁/assets/bg/深海_珊瑚礁.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+art_9695517095f4430a,礁石_上午,bg,replaced,LarryE135 完整作品,未登记,,,False,0,content/vn/海风与布丁/assets/bg/礁石_上午.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+art_ce7d8d4a1f92298d,礁石_夜,bg,replaced,LarryE135 完整作品,未登记,,,False,0,content/vn/海风与布丁/assets/bg/礁石_夜.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+art_49267dfef22aaf46,礁石_黄昏,bg,replaced,LarryE135 完整作品,未登记,,,False,0,content/vn/海风与布丁/assets/bg/礁石_黄昏.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+art_6ee2d4a8b34b444a,翡翠之梦_二楼夜,bg,replaced,LarryE135 完整作品,未登记,,,False,0,content/vn/海风与布丁/assets/bg/翡翠之梦_二楼夜.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+art_408d1c10f32a47ba,翡翠之梦_厨房,bg,replaced,LarryE135 完整作品,未登记,,,False,0,content/vn/海风与布丁/assets/bg/翡翠之梦_厨房.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+art_f94bb6604379293c,翡翠之梦_店内,bg,replaced,LarryE135 完整作品,未登记,,,False,0,content/vn/海风与布丁/assets/bg/翡翠之梦_店内.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+art_aaaeed3c5288905c,银匠铺,bg,replaced,LarryE135 完整作品,未登记,,,False,0,content/vn/海风与布丁/assets/bg/银匠铺.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+art_0bed70e28fdc6d6e,集市_上午,bg,replaced,LarryE135 完整作品,未登记,,,False,0,content/vn/海风与布丁/assets/bg/集市_上午.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+art_9f84db6dd3d596c9,集市_珍珠摊,bg,replaced,LarryE135 完整作品,未登记,,,False,0,content/vn/海风与布丁/assets/bg/集市_珍珠摊.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+art_d0951549c3a04e57,集市_饰品巷,bg,replaced,LarryE135 完整作品,未登记,,,False,0,content/vn/海风与布丁/assets/bg/集市_饰品巷.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+art_1e12ec8e8b67e33e,餐厅_夜,bg,replaced,LarryE135 完整作品,未登记,,,False,0,content/vn/海风与布丁/assets/bg/餐厅_夜.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+art_79fffe8ef3a354a7,B01 · 浅滩清晨,bg,source,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/scene-backgrounds/originals/B01.png,保留已审核图；路线信息待核实
+art_f55b3d5ff30aa9f1,B02 · 浅滩日景,bg,source,用户提供,网页端生成,用户称 Image2.5,,False,0,content/assets/backgrounds/bg_shallows_day_v01.png,保留用户已采用图；来源待补登记
+art_3a29e4902f9ab0b9,B03 · 浅滩黄昏,bg,source,用户提供,网页端生成,用户称 Image2.5,,False,0,content/assets/backgrounds/bg_shallows_sunset_v01.png,保留用户已采用图；来源待补登记
+art_68d0914afe85b4ef,B04 · 浅滩月夜,bg,source,用户提供,网页端生成,用户称 Image2.5,,False,0,content/assets/backgrounds/bg_shallows_night_v01.png,保留用户已采用图；来源待补登记
+art_81635617f9f3997a,B05 · 礁石谈话日景,bg,source,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/scene-backgrounds/originals/B05.png,保留已审核图；路线信息待核实
+art_3b08c05cebe34e88,B06 · 礁石谈话黄昏,bg,source,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/scene-backgrounds/originals/B06.png,保留已审核图；路线信息待核实
+art_abc97f03335606c7,B07 · 礁石救援/和解夜景,bg,source,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/scene-backgrounds/originals/B07.png,保留已审核图；路线信息待核实
+art_966325059f64a211,B08 · 月牙沙洲上午,bg,source,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/scene-backgrounds/originals/B08.png,保留已审核图；路线信息待核实
+art_b0bf4313e2f5b822,B09 · 沙洲午后阴凉,bg,source,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/scene-backgrounds/originals/B09.png,保留已审核图；路线信息待核实
+art_225fd266195557a5,B10 · 沙洲黄昏,bg,source,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/scene-backgrounds/originals/B10.png,保留已审核图；路线信息待核实
+art_beb5d9222b5c7ce9,B11 · 下潜浅层水下,bg,source,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/scene-backgrounds/originals/B11.png,保留已审核图；路线信息待核实
+art_88d6b0a8266934e5,B12 · 深水区黑暗水下,bg,source,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/scene-backgrounds/originals/B12.png,保留已审核图；路线信息待核实
+art_0b0f9e9e42e1cad4,B13 · 深海发光珊瑚,bg,source,用户提供,网页端生成,用户称 Image2.5,,False,0,content/assets/backgrounds/bg_deepsea_coral_glow_v01.png,保留用户已采用图；来源待补登记
+art_0865b95b265b9fe6,B14 · 上浮海面黄昏,bg,source,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/scene-backgrounds/originals/B14.png,保留已审核图；路线信息待核实
+art_b82fb541a0f168c7,B15 · 营地外黄昏,bg,source,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/scene-backgrounds/originals/B15.png,保留已审核图；路线信息待核实
+art_751ac41619ce4a9e,B16 · 营地外夜,bg,source,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/scene-backgrounds/originals/B16.png,保留已审核图；路线信息待核实
+art_34c389c773bcb717,B17 · 帐篷内夜灯亮,bg,source,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/scene-backgrounds/originals/B17.png,保留已审核图；路线信息待核实
+art_d03409a46ed29cca,B18 · 帐篷内夜灯暗,bg,source,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/scene-backgrounds/originals/B18.png,保留已审核图；路线信息待核实
+scene_b18,帐篷内夜灯暗,bg,reserve,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/vn/海风与布丁/assets/bg/scenes/B18.webp,保留已审核图；路线信息待核实
+art_23868a22caaa1432,B19 · 帐篷内清晨,bg,source,用户提供,网页端生成,用户称 Image2.5,,False,0,content/assets/scene-backgrounds/originals/B19.png,保留用户已采用图；来源待补登记
+art_3f46a19fe2e64c2d,B20 · 小镇边缘清晨,bg,source,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/scene-backgrounds/originals/B20.png,保留已审核图；路线信息待核实
+art_0098488b6e427f58,B21 · 集市街道夏日,bg,source,用户提供,网页端生成,用户称 Image2.5,,False,0,content/assets/backgrounds/bg_town_market_day_v01.png,保留用户已采用图；来源待补登记
+art_53758a3fd0771005,B22 · 集市街道初秋,bg,source,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/scene-backgrounds/originals/B22.png,保留已审核图；路线信息待核实
+art_ecb3079a0df10a4d,B23 · 饰品巷,bg,source,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/scene-backgrounds/originals/B23.png,保留已审核图；路线信息待核实
+art_bb851b05796581f2,B24 · 珍珠摊,bg,source,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/scene-backgrounds/originals/B24.png,保留已审核图；路线信息待核实
+art_430f6664f70db2a4,B25 · 银匠工坊,bg,source,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/scene-backgrounds/originals/B25.png,保留已审核图；路线信息待核实
+art_29079ec6cdce6c2e,B26 · 住宅院子清晨,bg,source,用户提供,网页端生成,用户称 Image2.5,,False,0,content/assets/backgrounds/bg_house_courtyard_morning_v01.png,保留用户已采用图；来源待补登记
+art_9e396f1f3279c4b3,B27 · 住宅客厅午后,bg,source,用户提供,网页端生成,用户称 Image2.5,,False,0,content/assets/backgrounds/bg_house_living_day.png,保留用户已采用图；来源待补登记
+art_2240ec5eaac2ead3,B28 · 住宅书房午后,bg,source,用户提供,网页端生成,用户称 Image2.5,,False,0,content/assets/backgrounds/bg_house_study_day_v01.png,保留用户已采用图；来源待补登记
+art_72c06f6ad8881f0d,B29 · 住宅书房黄昏,bg,source,用户提供,网页端生成,用户称 Image2.5,,False,0,content/assets/backgrounds/bg_house_study_sunset.png,保留用户已采用图；来源待补登记
+art_c632cf89ba4f6dcf,B30 · 住宅书房夜,bg,source,用户提供,网页端生成,用户称 Image2.5,,False,0,content/assets/backgrounds/bg_house_study_night_v01.png,保留用户已采用图；来源待补登记
+art_032d462b773d252e,B31 · 住宅厨房清晨,bg,source,用户提供,网页端生成,用户称 Image2.5,,False,0,content/assets/backgrounds/bg_house_kitchen_morning.png,保留用户已采用图；来源待补登记
+art_9bea296dfb2e58c9,B32 · 住宅厨房夜,bg,source,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/scene-backgrounds/originals/B32.png,保留已审核图；路线信息待核实
+scene_b32,住宅厨房夜,bg,reserve,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/vn/海风与布丁/assets/bg/scenes/B32.webp,保留已审核图；路线信息待核实
+art_81b374fcfb42c029,B33 · 住宅早餐桌日景,bg,source,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/scene-backgrounds/originals/B33.png,保留已审核图；路线信息待核实
+art_5a4b2b416b958409,B34 · 住宅餐厅夜,bg,source,用户提供,网页端生成,用户称 Image2.5,,False,0,content/assets/backgrounds/bg_house_dining_night.png,保留用户已采用图；来源待补登记
+art_10eafa5007ed8c0a,B35 · 住宅卧室夜,bg,source,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/scene-backgrounds/originals/B35.png,保留已审核图；路线信息待核实
+art_b1ef5bd78937adfc,B36 · 卧室门口清晨,bg,source,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/scene-backgrounds/originals/B36.png,保留已审核图；路线信息待核实
+art_1aba7fc750d2764a,B37 · 翡翠之梦店外营业,bg,source,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/scene-backgrounds/originals/B37.png,保留已审核图；路线信息待核实
+art_20482ea03761e663,B38 · 翡翠之梦店内日景,bg,source,用户提供,网页端生成,用户称 Image2.5,,False,0,content/assets/backgrounds/bg_emerald_dream_interior_day_v01.png,保留用户已采用图；来源待补登记
+7jj07jqh,CG_翡翠之梦,bg,rework,用户提供,网页端生成,用户称 Image2.5,,False,0,content/vn/海风与布丁/assets/bg/bg_emerald_dream_interior_night.png,保留用户已采用图；来源待补登记
+art_81967c6bcdc72b17,B40 · 翡翠之梦店内午后未开灯,bg,source,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/scene-backgrounds/originals/B40.png,保留已审核图；路线信息待核实
+art_7503e5e700276702,B41 · 翡翠之梦后厨日景,bg,source,用户提供,网页端生成,用户称 Image2.5,,False,0,content/assets/backgrounds/bg_emerald_dream_kitchen_day.png,保留用户已采用图；来源待补登记
+art_66f34e70610edc1b,B42 · 翡翠之梦二楼夜,bg,source,用户提供,网页端生成,用户称 Image2.5,,False,0,content/assets/backgrounds/bg_emerald_dream_upstairs_night_v01.png,保留用户已采用图；来源待补登记
+art_50284f6ce98c50bd,O01 · 营地外清晨,bg,source,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/scene-backgrounds/originals/O01.png,保留已审核图；路线信息待核实
+scene_o01,营地外清晨,bg,reserve,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/vn/海风与布丁/assets/bg/scenes/O01.webp,保留已审核图；路线信息待核实
+art_f932b7961e59adb7,O02 · 翡翠之梦店外初秋,bg,source,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/scene-backgrounds/originals/O02.png,保留已审核图；路线信息待核实
+scene_o02,翡翠之梦店外初秋,bg,reserve,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/vn/海风与布丁/assets/bg/scenes/O02.webp,保留已审核图；路线信息待核实
+md2p8m90,CG_人鱼公主,cg,adopted,LarryE135 完整作品,未登记,,,False,9,content/vn/海风与布丁/assets/bg/CG_人鱼公主.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+yvwvivzm,CG_初登场,cg,adopted,LarryE135 完整作品,未登记,,,False,3,content/vn/海风与布丁/assets/bg/CG_初登场.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+ehbun5kh,CG_原来是你,cg,adopted,LarryE135 完整作品,未登记,,,False,5,content/vn/海风与布丁/assets/bg/CG_原来是你.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+pmngp4pk,CG_和解,cg,adopted,LarryE135 完整作品,未登记,,,False,5,content/vn/海风与布丁/assets/bg/CG_和解.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+w3km9isl,CG_布丁,cg,adopted,LarryE135 完整作品,未登记,,,False,4,content/vn/海风与布丁/assets/bg/CG_布丁.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+supaesch,CG_海豚,cg,adopted,LarryE135 完整作品,未登记,,,False,5,content/vn/海风与布丁/assets/bg/CG_海豚.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+wnpuk9dy,CG_海风与布丁,cg,adopted,LarryE135 完整作品,未登记,,,False,5,content/vn/海风与布丁/assets/bg/CG_海风与布丁.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+ij6ed2gn,CG_深水区,cg,adopted,LarryE135 完整作品,未登记,,,False,9,content/vn/海风与布丁/assets/bg/CG_深水区.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+kful0adz,CG_深海之光,cg,adopted,LarryE135 完整作品,未登记,,,False,5,content/vn/海风与布丁/assets/bg/CG_深海之光.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+akugkagj,CG_烤鱿鱼,cg,adopted,LarryE135 完整作品,未登记,,,False,4,content/vn/海风与布丁/assets/bg/CG_烤鱿鱼.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+ak1lber9,CG_电话,cg,adopted,LarryE135 完整作品,未登记,,,False,5,content/vn/海风与布丁/assets/bg/CG_电话.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+xndnkx8k,CG_立约,cg,adopted,LarryE135 完整作品,未登记,,,False,12,content/vn/海风与布丁/assets/bg/CG_立约.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+r0t0azno,CG_诗句,cg,adopted,LarryE135 完整作品,未登记,,,False,7,content/vn/海风与布丁/assets/bg/CG_诗句.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+dxmnyp7j,CG_集市女仆,cg,adopted,LarryE135 完整作品,未登记,,,False,4,content/vn/海风与布丁/assets/bg/CG_集市女仆.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+yjxp4irw,CG_夏日沙洲,cg,rework,LarryE135 完整作品,未登记,,,False,0,content/vn/海风与布丁/assets/bg/CG_夏日沙洲.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+ez0vsxzc,CG_手链,cg,rework,LarryE135 完整作品,未登记,,,False,0,content/vn/海风与布丁/assets/bg/CG_手链.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+jxxr16ez,CG_新家,cg,rework,LarryE135 完整作品,未登记,,,False,0,content/vn/海风与布丁/assets/bg/CG_新家.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+sqnct5dc,CG_早安,cg,rework,LarryE135 完整作品,未登记,,,False,0,content/vn/海风与布丁/assets/bg/CG_早安.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+z639wmth,CG_珍珠,cg,rework,LarryE135 完整作品,未登记,,,False,0,content/vn/海风与布丁/assets/bg/CG_珍珠.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+c6r2xcnj,CG_糍粑,cg,rework,LarryE135 完整作品,未登记,,,False,0,content/vn/海风与布丁/assets/bg/CG_糍粑.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+art_919b65b7b0b0b090,CG_翡翠之梦,cg,replaced,LarryE135 完整作品,未登记,,,False,0,content/vn/海风与布丁/assets/bg/CG_翡翠之梦.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+xfg3qcn2,鲸鱼小姐,ch,adopted,LarryE135 完整作品,未登记,,,False,534,content/vn/海风与布丁/assets/ch/鲸鱼小姐.webp,使用中的人物/CG/封面待统一重制；旧背景留档
+6i0w6nq5,鲸鱼小姐_吊带裙,ch,adopted,LarryE135 完整作品,未登记,,,False,27,content/vn/海风与布丁/assets/ch/鲸鱼小姐_吊带裙.webp,使用中的人物/CG/封面待统一重制；旧背景留档
+6xha9feh,鲸鱼小姐_吊带裙害羞,ch,adopted,LarryE135 完整作品,未登记,,,False,47,content/vn/海风与布丁/assets/ch/鲸鱼小姐_吊带裙害羞.webp,使用中的人物/CG/封面待统一重制；旧背景留档
+mp0q0cx2,鲸鱼小姐_吊带裙得意,ch,adopted,LarryE135 完整作品,未登记,,,False,28,content/vn/海风与布丁/assets/ch/鲸鱼小姐_吊带裙得意.webp,使用中的人物/CG/封面待统一重制；旧背景留档
+vjwh9nmj,鲸鱼小姐_吊带裙生气,ch,adopted,LarryE135 完整作品,未登记,,,False,13,content/vn/海风与布丁/assets/ch/鲸鱼小姐_吊带裙生气.webp,使用中的人物/CG/封面待统一重制；旧背景留档
+cbx03q1l,鲸鱼小姐_坏笑,ch,adopted,LarryE135 完整作品,未登记,,,False,107,content/vn/海风与布丁/assets/ch/鲸鱼小姐_坏笑.webp,使用中的人物/CG/封面待统一重制；旧背景留档
+fz3yt5k8,鲸鱼小姐_女仆装,ch,adopted,LarryE135 完整作品,未登记,,,False,27,content/vn/海风与布丁/assets/ch/鲸鱼小姐_女仆装.webp,使用中的人物/CG/封面待统一重制；旧背景留档
+m6hj48ex,鲸鱼小姐_女仆装害羞,ch,adopted,LarryE135 完整作品,未登记,,,False,33,content/vn/海风与布丁/assets/ch/鲸鱼小姐_女仆装害羞.webp,使用中的人物/CG/封面待统一重制；旧背景留档
+ff7robzo,鲸鱼小姐_女仆装得意,ch,adopted,LarryE135 完整作品,未登记,,,False,6,content/vn/海风与布丁/assets/ch/鲸鱼小姐_女仆装得意.webp,使用中的人物/CG/封面待统一重制；旧背景留档
+x013srmu,鲸鱼小姐_害羞,ch,adopted,LarryE135 完整作品,未登记,,,False,292,content/vn/海风与布丁/assets/ch/鲸鱼小姐_害羞.webp,使用中的人物/CG/封面待统一重制；旧背景留档
+2qshq03j,鲸鱼小姐_得意,ch,adopted,LarryE135 完整作品,未登记,,,False,357,content/vn/海风与布丁/assets/ch/鲸鱼小姐_得意.webp,使用中的人物/CG/封面待统一重制；旧背景留档
+z869j1e3,鲸鱼小姐_慌乱,ch,adopted,LarryE135 完整作品,未登记,,,False,137,content/vn/海风与布丁/assets/ch/鲸鱼小姐_慌乱.webp,使用中的人物/CG/封面待统一重制；旧背景留档
+hfcyjlxm,鲸鱼小姐_抱本子,ch,adopted,LarryE135 完整作品,未登记,,,False,46,content/vn/海风与布丁/assets/ch/鲸鱼小姐_抱本子.webp,使用中的人物/CG/封面待统一重制；旧背景留档
+wrwcdezj,鲸鱼小姐_柔和,ch,adopted,LarryE135 完整作品,未登记,,,False,399,content/vn/海风与布丁/assets/ch/鲸鱼小姐_柔和.webp,使用中的人物/CG/封面待统一重制；旧背景留档
+tp44t1rb,鲸鱼小姐_正装,ch,adopted,LarryE135 完整作品,未登记,,,False,29,content/vn/海风与布丁/assets/ch/鲸鱼小姐_正装.webp,使用中的人物/CG/封面待统一重制；旧背景留档
+eqidiyyr,鲸鱼小姐_正装柔和,ch,adopted,LarryE135 完整作品,未登记,,,False,5,content/vn/海风与布丁/assets/ch/鲸鱼小姐_正装柔和.webp,使用中的人物/CG/封面待统一重制；旧背景留档
+nvgbi1x6,鲸鱼小姐_泳装,ch,adopted,LarryE135 完整作品,未登记,,,False,8,content/vn/海风与布丁/assets/ch/鲸鱼小姐_泳装.webp,使用中的人物/CG/封面待统一重制；旧背景留档
+jtp36q4e,鲸鱼小姐_泳装害羞,ch,adopted,LarryE135 完整作品,未登记,,,False,16,content/vn/海风与布丁/assets/ch/鲸鱼小姐_泳装害羞.webp,使用中的人物/CG/封面待统一重制；旧背景留档
+ylbq6xyk,鲸鱼小姐_潜水,ch,adopted,LarryE135 完整作品,未登记,,,False,79,content/vn/海风与布丁/assets/ch/鲸鱼小姐_潜水.webp,使用中的人物/CG/封面待统一重制；旧背景留档
+88v1dull,鲸鱼小姐_生气,ch,adopted,LarryE135 完整作品,未登记,,,False,303,content/vn/海风与布丁/assets/ch/鲸鱼小姐_生气.webp,使用中的人物/CG/封面待统一重制；旧背景留档
+52119ew2,鲸鱼小姐_睡衣项链,ch,adopted,LarryE135 完整作品,未登记,,,False,61,content/vn/海风与布丁/assets/ch/鲸鱼小姐_睡衣项链.webp,使用中的人物/CG/封面待统一重制；旧背景留档
+2z0mfu7o,鲸鱼小姐_睡袍,ch,adopted,LarryE135 完整作品,未登记,,,False,60,content/vn/海风与布丁/assets/ch/鲸鱼小姐_睡袍.webp,使用中的人物/CG/封面待统一重制；旧背景留档
+368tmc5i,鲸鱼小姐_睡袍害羞,ch,adopted,LarryE135 完整作品,未登记,,,False,15,content/vn/海风与布丁/assets/ch/鲸鱼小姐_睡袍害羞.webp,使用中的人物/CG/封面待统一重制；旧背景留档
+xtwug3dy,鲸鱼小姐_睡袍慌乱,ch,adopted,LarryE135 完整作品,未登记,,,False,8,content/vn/海风与布丁/assets/ch/鲸鱼小姐_睡袍慌乱.webp,使用中的人物/CG/封面待统一重制；旧背景留档
+t4lmlnr9,鲸鱼小姐_长裙,ch,adopted,LarryE135 完整作品,未登记,,,False,29,content/vn/海风与布丁/assets/ch/鲸鱼小姐_长裙.webp,使用中的人物/CG/封面待统一重制；旧背景留档
+7fvck9ya,鲸鱼小姐_长裙项链,ch,adopted,LarryE135 完整作品,未登记,,,False,14,content/vn/海风与布丁/assets/ch/鲸鱼小姐_长裙项链.webp,使用中的人物/CG/封面待统一重制；旧背景留档
+art_bb971d647f1df582,R01_whale_character_candidate,ch,candidate,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/image-trials/R01_whale_character_candidate.png,保留已审核图；路线信息待核实

@@ -176,6 +176,10 @@ class Session:
                     await self.step("mode_switch", {"mode": msg["mode"]}, source="player")
                     if self.choice_op and self.state["wait"] == "choice":
                         await self.send({"type": "ops", "ops": [self.choice_op]})
+                elif t == "snapshot":  # 播放器自己存档时带走的引擎快照（只读，不改状态、不记事件）
+                    await self.send({"type": "snapshot", "save": self.export_save()})
+                elif t == "restore":  # 新会话从播放器存档里的引擎快照接着跑（读档 = 新时间线，PLAN §13.3）
+                    await self.on_restore(msg.get("save") or {})
                 elif t == "save":
                     await self.on_save(str(msg.get("slot", "1")))
                 elif t == "load":
@@ -414,6 +418,19 @@ class Session:
                             "recent": list(self.recent), "choice_op": self.choice_op}
         await self.step("save", {"slot": slot}, source="player", render=False)
         await self.send({"type": "saved", "slot": slot, "turn": st["turn"]})
+
+    def export_save(self) -> dict[str, Any]:
+        st = self.state
+        return {"snapshot": self.engine.snapshot(), "content_hash": self.chapter["content_hash"], "seq": st["seq"],
+                "recent": list(self.recent[-40:]), "choice_op": self.choice_op}
+
+    async def on_restore(self, save: dict[str, Any]) -> None:
+        if save.get("content_hash") != self.chapter["content_hash"] or not isinstance(save.get("snapshot"), str):
+            await self.send({"type": "error", "message": "存档里的引擎快照与当前剧本不一致，这一局改由作品自身运行"})
+            return
+        self.saves["_restore"] = {"snapshot": save["snapshot"], "seq": int(save.get("seq") or 0), "screen": {},
+                                  "recent": [str(x) for x in save.get("recent") or []][-40:], "choice_op": save.get("choice_op")}
+        await self.on_load("_restore")
 
     async def on_load(self, slot: str) -> None:
         s = self.saves.get(slot)

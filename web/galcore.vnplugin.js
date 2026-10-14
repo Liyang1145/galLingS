@@ -5,7 +5,9 @@
  *   - 这里拦下作品的“下一句 / 选项 / 结局”，改问引擎（/ws），再按引擎给的句子 ID 让作品渲染。
  *   - 好感、尾鳍、变量、条件跳转都由引擎裁决；作品算的值只用于对照，不一致时以引擎为准并在控制台记一笔。
  *   - AI 模式：选项点出现“自己说”，打字交给引擎导演（守卫、好感预算、记忆都生效），说中某个选项就照那条走。
- * 只在 galLingS 作品页托管、且服务器当前游戏就是这部作品时接管；读档开的局暂由作品自身运行（引擎存读档同步待接）。
+ * 存读档：作品存档时顺带存一份引擎快照；读这样的存档时引擎从同一刻接着跑（新时间线，PLAN §13.3）。
+ *   没带快照的旧存档、从不是章节开头的地方开始的局，暂由作品自身运行（控制台注明）。
+ * 只在 galLingS 作品页托管、且服务器当前游戏就是这部作品时接管。
  */
 (() => {
   'use strict';
@@ -23,10 +25,10 @@
     setup(vn) {
       if (!vn.engine.hosted) return;
       const g = window;
-      const orig = { startPlay: g.startPlay, goNext: g.goNext, choose: g.choose, showEnding: g.showEnding };
+      const orig = { startPlay: g.startPlay, goNext: g.goNext, choose: g.choose, showEnding: g.showEnding, idbSet: g.idbSet };
       if (typeof orig.goNext !== 'function' || typeof orig.choose !== 'function') return;
 
-      const B = { ws: null, on: false, busy: false, waiters: [], state: null, heroine: '', inputOpen: false, forced: null };
+      const B = { ws: null, on: false, busy: false, waiters: [], state: null, heroine: '', inputOpen: false, forced: null, snap: null };
       const idxOf = id => P.lines.findIndex(l => l.id === id);
       const log = (...a) => console.info('[galcore]', ...a);
 
@@ -57,11 +59,13 @@
         }
       }
 
-      function connect(startLine) {
+      function connect(startLine, restore) {
         return new Promise((resolve, reject) => {
           detach('新的一局');
+          B.snap = null;
           const q = new URLSearchParams({ mode: vn.settings.get('mode') || 'choice', endings: String(Object.keys((loadG(), G).endings || {}).length) });
           if (startLine) q.set('start', startLine.id);
+          if (restore) q.set('restore', '1');
           const ws = new WebSocket((location.protocol === 'https:' ? 'wss://' : 'ws://') + location.host + '/ws?' + q);
           B.ws = ws; B.on = true;
           const first = { resolve, reject, ops: [] };
@@ -73,15 +77,23 @@
               hello = m;
               if (m.chapter?.id !== P.id) { detach('服务器当前游戏不是这部作品（' + m.chapter?.id + '）'); return reject(new Error('not this game')); }
               B.heroine = (P.settings.soul && P.settings.soul.char) || (P.chars[0] && P.chars[0].name) || '';
-              log('已接管，会话 ' + m.session + '，模式 ' + m.mode);
+              log('已接管，会话 ' + m.session + '，模式 ' + m.mode + (restore ? '（读档）' : ''));
+              if (restore) ws.send(JSON.stringify({ type: 'restore', save: restore }));
             } else if (m.type === 'ops') onOps(m.ops);
+            else if (m.type === 'screen') {           // 读档完成：引擎已回到存档那一刻
+              B.state = m.state; B.inputOpen = !!m.state?.input_open;
+              const w = B.waiters[0];
+              if (w === first) { B.waiters.shift(); w.resolve([]); }
+            } else if (m.type === 'snapshot') {
+              if (B.snapFor) { B.snap = { lineId: B.snapFor, save: m.save }; B.snapFor = null; }
+            }
             else if (m.type === 'busy') {
               const w = B.waiters[0];
               if (w && w.streaming && !m.on) { B.waiters.shift(); w.resolve(w.ops); }
             } else if (m.type === 'error') {
               console.warn('[galcore] 引擎拒绝：', m.message);
               const w = B.waiters.shift(); w?.reject(new Error(m.message));
-              if (!hello) detach(m.message);
+              if (!hello || w === first) detach(m.message);   // 开局 / 读档就失败：这一局交还作品
             }
           };
           ws.onerror = () => detach('连接出错');
@@ -97,16 +109,34 @@
           if (k in RT.vars && RT.vars[k] !== v) { console.warn(`[galcore] ${k}：作品 ${RT.vars[k]}，引擎 ${v}，以引擎为准`); RT.vars[k] = v; }
         }
       }
+      // 每句上屏后取一份引擎快照备用：作品存档时带走
+      function requestSnap() {
+        if (!B.on || !B.ws) return;
+        B.snap = null; B.snapFor = P.lines[RT.idx]?.id || null;
+        B.ws.send(JSON.stringify({ type: 'snapshot' }));
+      }
       vn.on('line', () => {
         if (!B.on) return;
         syncVars();
         const l = P.lines[RT.idx];
-        // 有选项的句子：引擎要再走一步才停到 CHOICE
-        if (l && visibleChoices(l).length && !B.busy) {
+        // 有选项的句子：引擎要再走一步才停到 CHOICE（读档回来时引擎可能已经停在 CHOICE）
+        if (l && visibleChoices(l).length && !B.busy && B.state?.wait !== 'choice') {
           B.busy = true;
-          ask({ type: 'advance' }).then(() => { B.busy = false; addSpeakButton(); }).catch(() => { B.busy = false; });
+          ask({ type: 'advance' }).then(() => { B.busy = false; addSpeakButton(); requestSnap(); }).catch(() => { B.busy = false; });
+        } else {
+          if (l && visibleChoices(l).length) addSpeakButton();
+          requestSnap();
         }
       });
+      g.idbSet = function (k, v) {
+        // 作品写存档：给刚存的那一格（当前这句、还没带快照）附上引擎快照
+        if (B.on && B.snap && k === saveKey() && v && typeof v === 'object') {
+          const cur = P.lines[RT.idx]?.id;
+          const slot = Object.values(v).filter(s => s && !s.galcore && s.lineId === cur).sort((a, b) => b.time - a.time)[0];
+          if (slot && B.snap.lineId === cur) slot.galcore = B.snap.save;
+        }
+        return orig.idbSet(k, v);
+      };
 
       function lineFrom(ops) {
         const say = [...ops].reverse().find(o => o.op === 'SAY' && o.id);
@@ -116,8 +146,12 @@
       // ---------------------------------------------------------- 接管：开局、下一句、选项、结局
       g.startPlay = function (fromIdx, state) {
         const at = fromIdx ? P.lines[fromIdx] : null;
-        // 读档、或从不是章节开头的地方开始：这一局暂由作品自身运行
-        if (state || (fromIdx && !(at && at.chapter))) { detach('读档 / 从中间开始'); return orig.startPlay(fromIdx, state); }
+        if (state && state.galcore && state.lineId === at?.id) {
+          return connect(null, state.galcore).then(() => orig.startPlay(fromIdx, state))
+            .catch(() => orig.startPlay(fromIdx, state));
+        }
+        // 没带引擎快照的存档、或从不是章节开头的地方开始：这一局暂由作品自身运行
+        if (state || (fromIdx && !(at && at.chapter))) { detach('读档（无引擎快照）/ 从中间开始'); return orig.startPlay(fromIdx, state); }
         connect(at).then(ops => {
           const i = lineFrom(ops);
           orig.startPlay(i >= 0 ? i : 0, state);
@@ -189,6 +223,7 @@
               if (B.forced != null) { const f = B.forced; B.forced = null; return orig.goNext(f); }
               afterText(P.lines[RT.idx]);   // 回到选项
               addSpeakButton();
+              requestSnap();
             },
           });
         };
@@ -197,6 +232,7 @@
 
       return () => {
         detach('插件停用');
+        delete B.snapFor;
         Object.assign(g, orig);
       };
     },

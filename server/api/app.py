@@ -237,7 +237,8 @@ def create_app(runtime: Runtime | None = None) -> FastAPI:
             await sock.close()
             return
         await sess.hello()
-        await sess.handle({"type": "start", "line_id": q["start"]} if q.get("start") else {"type": "advance"})
+        if not q.get("restore"):  # 读档局：等播放器发 restore，不自己开局
+            await sess.handle({"type": "start", "line_id": q["start"]} if q.get("start") else {"type": "advance"})
         try:
             while True:
                 msg = json.loads(await sock.receive_text())

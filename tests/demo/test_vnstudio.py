@@ -239,3 +239,58 @@ def test_api_offers_engine_bridge_and_ws_runs_imported_game(tmp_path):
                     break
             menu = next(o for o in ops if o["op"] == "CHOICE")
             assert [o["label"] for o in menu["options"]] == ["从头开始", "番外"]  # 结局数=1：l00 不跳，停在菜单
+
+
+async def test_save_in_player_then_restore_in_new_session(tmp_path):
+    """作品存档带走引擎快照；新会话 restore 后从同一刻接着走，结果与不中断一致，日志可回放。"""
+    from server.replay import replay
+    games = tmp_path / "games"
+    shutil.copytree(MINI, games / "mini")
+    from server.runtime import Runtime
+    rt = Runtime({"server": {"data_dir": str(tmp_path / "data")}, "vn": {"games_dir": str(games)},
+                  "game": {"source": "vnstudio", "vn_game": "mini", "default_card": "cat"},
+                  "plugins": {"paths": [str(ROOT / "plugins" / "builtin")], "select": {"memory": ["gallings.memory.local"]},
+                              "config": {}, "guards": [], "tools": [], "importers": []}})
+    rt.cards.builtin_dir = FIX / "cards"
+    await rt.start()
+    out: list[dict] = []
+
+    async def send(m):
+        out.append(m)
+
+    a = Session(rt, SessionOptions("cat", mode="choice"), send)
+    await a.hello()
+    await a.handle({"type": "start", "line_id": "l02"})
+    while a.state["wait"] != "choice":
+        await a.handle({"type": "advance"})
+    await a.handle({"type": "snapshot"})
+    save = next(m for m in out if m["type"] == "snapshot")["save"]
+    json.dumps(save)  # 能原样存进浏览器
+    await a.handle({"type": "choose", "option_id": "l04.1"})
+    while a.state["wait"] != "end":
+        await a.handle({"type": "advance"})
+    want = a.state
+    await a.close()
+
+    out.clear()
+    b = Session(rt, SessionOptions("cat", mode="choice"), send)
+    await b.hello()
+    await b.handle({"type": "restore", "save": save})
+    screen = next(m for m in out if m["type"] == "screen")
+    assert screen["state"]["wait"] == "choice" and screen["state"]["lineage"] == "L0.1"
+    await b.handle({"type": "choose", "option_id": "l04.1"})
+    while b.state["wait"] != "end":
+        await b.handle({"type": "advance"})
+    got = b.state
+    assert (got["ending"], got["affection"], got["tails_script"], got["vars"]) == \
+           (want["ending"], want["affection"], want["tails_script"], want["vars"]) == ("坏结局", -2, 1, {"玩笑": 1, "结局数": 0})
+    _, _, bad = replay(b.recorder.header, b.recorder.events)
+    assert bad is None
+    await b.close()
+
+    out.clear()
+    c = Session(rt, SessionOptions("cat", mode="choice"), send)
+    await c.handle({"type": "restore", "save": {**save, "content_hash": "0" * 16}})
+    assert any(m["type"] == "error" for m in out) and c.state["seq"] == 0
+    await c.close()
+    await rt.stop()

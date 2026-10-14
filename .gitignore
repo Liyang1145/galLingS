@@ -16,3 +16,7 @@ core/target/
 
 wheels/*.whl
 dist/
+
+# galcore 本地构建产物（maturin develop）
+core/python/galcore/*.so
+core/python/galcore/*.pyd

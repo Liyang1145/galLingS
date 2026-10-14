@@ -67,6 +67,20 @@ galLingS/
 └── archive/            # deliveries 凭证、截图、image-trials、旧 RenPy 指针
 ```
 
+## 4.1 目录迁移核查结果（2026-10-14）
+
+用户要求动手整理目录后，逐项查了引用，结论是**现阶段不移动**，原因：
+
+| 计划 | 撞到什么 | 结论 |
+|---|---|---|
+| `music/` → `content/assets/music/` | 音乐由 @Liyang1145 负责；[Atri 接入记录](work-ledger/atri-music-assembly.md) 与 [交付说明](deliveries/atri-music/README.md) 写明母带和 MP3 原件"留在原目录""保留来源目录"；作品 `game.js` 的 `sourcePath` 指向它 | 需音乐负责人同意 |
+| `content/deliveries/`、`docs/deliveries/` → `archive/` | `art-catalog.js` 85 处 `evidence`、`game.js` 的 `cueReport`、`tools/build_art_catalog.py`、`tools/integrate_atri_music.py` 和 15 份任务记录引用 | 需美术编辑器与音乐负责人一起改 |
+| `content/assets/image-trials/` → `archive/` | 美术编辑器（`引擎开发.html`）运行时按 `path` 加载其中候选图 | 移动会让编辑器缺图，不动 |
+| `docs/` 分 design/content/collab | `AGENTS.md` 规定各 agent 读 `docs/work-ledger/`、`docs/coordination-ledger.md`；多个协作分支在改这些文件 | 改约定需全员同步，不动 |
+| `content/vn/海风与布丁/` → `content/imports/vnstudio/` | `游玩.html`、`引擎开发.html`、`start.bat`、`web/vn.*`、导入器配置都按现路径 | 不动；它已是导入源 + 画面层，见决定 37 |
+
+"只有一个 galgame"已由运行层统一实现（唯一引擎 galcore，作品经导入器变成 OP，画面层交给作品页，见决定 37/38），目录名不影响这一点。上表各项待对应负责人同意后再成批迁移，迁移时同时改引用并补测试。
+
 ## 5. 顺序与影响
 
 - 先做 1、2（导入插件 + 播放器），能跑通再挪目录；挪目录会改 `游玩.html`、`start.bat`、`server/content.py`、`web/vn.*` 的路径，并和 `feat/art-editor-library` 等分支交叉，按 AGENTS.md 在任务记录里写清。

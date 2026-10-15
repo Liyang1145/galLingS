@@ -46,6 +46,7 @@ def apply():
     }
     for i,text in changes.items():first[i]['text']=text
     first[12]['speaker']='???'
+    first[18]['speaker']=first[19]['speaker']='鲸鱼小姐'
     first[22].update(text='（尾鳍拍水两下。）',speaker='',seEvents=[{'id':'sfx_tail_water_double','gain':.6}])
     first[23].update(text='「尾巴尖。也不行。」',speaker='鲸鱼小姐',seEvents=[])
     first[25].update(text='（尾鳍拍水两下。）',speaker='',seEvents=[{'id':'sfx_tail_water_double','gain':.6}])

@@ -51,6 +51,9 @@ def write_json(path: Path, obj: object) -> None:
 
 
 def main(argv: list[str] | None = None) -> int:
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8")
+        sys.stderr.reconfigure(encoding="utf-8")
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--out", default=str(ROOT / "dist" / "desktop"))
     ap.add_argument("--wasm", default="", help="已编好的 galcore.wasm；不给就现编（需要 Rust 和 wasm32 目标）")

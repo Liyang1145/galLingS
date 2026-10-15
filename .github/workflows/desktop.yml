@@ -1,5 +1,6 @@
 # 桌面程序：离线包（tools/build_desktop_dist.py）+ Tauri 外壳 → Windows 安装包和免安装 exe。
 # 产物在 Actions → 本次运行 → Artifacts → gallings-desktop-windows。
+# 失败时把日志推到 ci-logs/desktop 分支（只放日志，方便没有 Actions 日志权限的协作 agent 排查）。
 name: desktop
 on:
   push:
@@ -7,9 +8,19 @@ on:
     paths: ["core/**", "web/**", "desktop/**", "content/imports/**", "content/cards/**", "compiler/**", "tools/build_desktop_dist.py", ".github/workflows/desktop.yml"]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
+env:
+  PYTHONUTF8: "1"
+  PYTHONIOENCODING: utf-8
+
 jobs:
   windows:
     runs-on: windows-latest
+    defaults:
+      run:
+        shell: bash
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-python@v6
@@ -24,17 +35,16 @@ jobs:
             core
             desktop/src-tauri
       - name: 依赖
-        run: python -m pip install -r requirements.txt
+        run: python -m pip install -r requirements.txt 2>&1 | tee -a "$RUNNER_TEMP/ci.log"; exit ${PIPESTATUS[0]}
       - name: 引擎 → wasm
         working-directory: core
-        run: cargo build --release --target wasm32-unknown-unknown
+        run: cargo build --release --target wasm32-unknown-unknown 2>&1 | tee -a "$RUNNER_TEMP/ci.log"; exit ${PIPESTATUS[0]}
       - name: 离线包
-        run: python tools/build_desktop_dist.py
+        run: python tools/build_desktop_dist.py 2>&1 | tee -a "$RUNNER_TEMP/ci.log"; exit ${PIPESTATUS[0]}
       - name: Tauri 打包
         working-directory: desktop
-        run: npx --yes @tauri-apps/cli@2 build
+        run: npx --yes @tauri-apps/cli@2 build 2>&1 | tee -a "$RUNNER_TEMP/ci.log"; exit ${PIPESTATUS[0]}
       - name: 免安装版（exe + game 文件夹）
-        shell: bash
         run: |
           mkdir -p out/portable
           cp desktop/src-tauri/target/release/gallings-desktop.exe "out/portable/海风与布丁.exe"
@@ -44,3 +54,12 @@ jobs:
         with:
           name: gallings-desktop-windows
           path: out/
+      - name: 失败日志 → ci-logs/desktop
+        if: failure()
+        run: |
+          d="$RUNNER_TEMP/logs"; rm -rf "$d"; mkdir -p "$d"; cd "$d"
+          git init -q; git checkout -q -b ci-logs/desktop
+          tail -c 200000 "$RUNNER_TEMP/ci.log" > desktop.log 2>/dev/null || echo "（没有日志：失败发生在第一步之前）" > desktop.log
+          echo "run ${{ github.run_id }} sha ${{ github.sha }}" > run.txt
+          git add . && git -c user.name=ci -c user.email=ci@localhost commit -q -m "desktop CI 失败日志 ${{ github.run_id }}"
+          git push -f -q "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" ci-logs/desktop

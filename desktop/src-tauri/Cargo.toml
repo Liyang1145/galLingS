@@ -1,0 +1,20 @@
+[package]
+name = "gallings-desktop"
+version = "0.1.0"
+edition = "2021"
+description = "galLingS 桌面程序：离线包（tools/build_desktop_dist.py）装进 Tauri 外壳，双击就玩"
+license = "Apache-2.0"
+publish = false
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+percent-encoding = "2"
+
+[profile.release]
+lto = true
+codegen-units = 1
+opt-level = "s"
+strip = true

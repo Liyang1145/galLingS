@@ -67,14 +67,29 @@
         }
       }
 
+      // 桌面包 / 离线包：没有 Python 服务，引擎（galcore.wasm）就在页面里跑，消息格式和 /ws 一样（web/offline/）
+      const OFFLINE = (() => { try { return !!(window.GALLINGS_OFFLINE || window.parent.GALLINGS_OFFLINE); } catch (e) { return false; } })();
+      const loadJs = src => new Promise((ok, no) => {
+        if (document.querySelector(`script[data-gl="${src}"]`)) return ok();
+        const s = document.createElement('script'); s.src = src; s.dataset.gl = src; s.onload = ok; s.onerror = () => no(new Error('加载失败：' + src));
+        document.head.appendChild(s);
+      });
+      const offlineReady = OFFLINE ? loadJs('/static/offline/galcore-wasm.js').then(() => loadJs('/static/offline/local-session.js')).then(() => window.GalcoreLocal.preload()) : null;
+      offlineReady?.catch(e => console.warn('[galcore] 离线引擎不可用：', e));
+
       function connect(startLine, restore) {
+        if (OFFLINE) return offlineReady.then(() => connectNow(startLine, restore));
+        return connectNow(startLine, restore);
+      }
+      function connectNow(startLine, restore) {
         return new Promise((resolve, reject) => {
           detach('新的一局');
           B.snap = null;
           const q = new URLSearchParams({ mode: vn.settings.get('mode') || 'choice', endings: String(Object.keys((loadG(), G).endings || {}).length) });
           if (startLine) q.set('start', startLine.id);
           if (restore) q.set('restore', '1');
-          const ws = new WebSocket((location.protocol === 'https:' ? 'wss://' : 'ws://') + location.host + '/ws?' + q);
+          const ws = OFFLINE ? window.GalcoreLocal.open('/ws?' + q)
+            : new WebSocket((location.protocol === 'https:' ? 'wss://' : 'ws://') + location.host + '/ws?' + q);
           B.ws = ws; B.on = true;
           const first = { resolve, reject, ops: [] };
           B.waiters.push(first);

@@ -100,3 +100,167 @@ mod py {
         Ok(())
     }
 }
+
+/// 浏览器 / 桌面包里的引擎（PLAN §17.2）：编成 wasm32-unknown-unknown，不依赖 wasm-bindgen。
+///
+/// 约定只有字节进出：JS 先 `gc_alloc` 一块内存写入 UTF-8 JSON，再调函数；返回值是一块
+/// `[len: u32 LE][utf-8 …]` 的内存，读完用 `gc_free_result` 还回来。错误时 JSON 是 `{"error": "…"}`。
+/// 胶水在 web/offline/galcore-wasm.js，接口和 Python 绑定一一对应。
+#[cfg(target_arch = "wasm32")]
+mod wasm {
+    use crate::agm::Seed;
+    use crate::engine::{Engine as Core, ENGINE_VERSION};
+    use serde_json::{json, Value};
+
+    fn take(ptr: *mut u8, len: usize) -> String {
+        if ptr.is_null() || len == 0 {
+            return String::new();
+        }
+        let v = unsafe { Vec::from_raw_parts(ptr, len, len) };
+        String::from_utf8(v).unwrap_or_default()
+    }
+
+    fn give(s: String) -> *mut u8 {
+        let b = s.into_bytes();
+        let mut out = Vec::with_capacity(b.len() + 4);
+        out.extend_from_slice(&(b.len() as u32).to_le_bytes());
+        out.extend_from_slice(&b);
+        let mut out = out.into_boxed_slice();
+        let p = out.as_mut_ptr();
+        std::mem::forget(out);
+        p
+    }
+
+    fn fail(m: impl std::fmt::Display) -> *mut u8 {
+        give(json!({"error": m.to_string()}).to_string())
+    }
+
+    fn parse(s: &str, what: &str) -> Result<Value, String> {
+        serde_json::from_str(s).map_err(|e| format!("{what} 不是合法 JSON：{e}"))
+    }
+
+    #[no_mangle]
+    pub extern "C" fn gc_alloc(len: usize) -> *mut u8 {
+        let mut v = Vec::<u8>::with_capacity(len.max(1));
+        let p = v.as_mut_ptr();
+        std::mem::forget(v);
+        p
+    }
+
+    #[no_mangle]
+    pub extern "C" fn gc_free_result(p: *mut u8) {
+        if p.is_null() {
+            return;
+        }
+        unsafe {
+            let len = u32::from_le_bytes([*p, *p.add(1), *p.add(2), *p.add(3)]) as usize + 4;
+            drop(Box::from_raw(std::ptr::slice_from_raw_parts_mut(p, len)));
+        }
+    }
+
+    #[no_mangle]
+    pub extern "C" fn gc_version() -> *mut u8 {
+        give(ENGINE_VERSION.to_string())
+    }
+
+    #[no_mangle]
+    pub extern "C" fn gc_fnv1a64(p: *mut u8, n: usize) -> *mut u8 {
+        let s = take(p, n);
+        give(crate::hash::hex64(crate::hash::fnv1a64(s.as_bytes())))
+    }
+
+    /// 返回引擎句柄（>0）；失败返回 0，错误信息用 `gc_last_error` 取。
+    #[no_mangle]
+    pub extern "C" fn gc_new(cp: *mut u8, cn: usize, kp: *mut u8, kn: usize, gp: *mut u8, gn: usize, seed: u64) -> *mut Core {
+        let (c, k, g) = (take(cp, cn), take(kp, kn), take(gp, gn));
+        let r = (|| -> Result<Core, String> {
+            let c = parse(&c, "chapter")?;
+            let k = parse(&k, "card")?;
+            let g = parse(&g, "config")?;
+            Core::new(&c, &k, &g, seed).map_err(|e| e.0)
+        })();
+        match r {
+            Ok(e) => Box::into_raw(Box::new(e)),
+            Err(m) => {
+                LAST.with(|l| *l.borrow_mut() = m);
+                std::ptr::null_mut()
+            }
+        }
+    }
+
+    thread_local! { static LAST: std::cell::RefCell<String> = std::cell::RefCell::new(String::new()); }
+
+    #[no_mangle]
+    pub extern "C" fn gc_last_error() -> *mut u8 {
+        give(LAST.with(|l| l.borrow().clone()))
+    }
+
+    #[no_mangle]
+    pub extern "C" fn gc_drop(e: *mut Core) {
+        if !e.is_null() {
+            unsafe { drop(Box::from_raw(e)) }
+        }
+    }
+
+    fn eng<'a>(e: *mut Core) -> &'a mut Core {
+        unsafe { &mut *e }
+    }
+
+    #[no_mangle]
+    pub extern "C" fn gc_step(e: *mut Core, p: *mut u8, n: usize) -> *mut u8 {
+        let s = take(p, n);
+        match parse(&s, "event") {
+            Ok(ev) => match eng(e).step(&ev) {
+                Ok(v) => give(v.to_string()),
+                Err(x) => fail(x.0),
+            },
+            Err(m) => fail(m),
+        }
+    }
+
+    #[no_mangle]
+    pub extern "C" fn gc_state_json(e: *mut Core) -> *mut u8 {
+        give(eng(e).state_json())
+    }
+    #[no_mangle]
+    pub extern "C" fn gc_state_hash(e: *mut Core) -> *mut u8 {
+        give(eng(e).state_hash())
+    }
+    #[no_mangle]
+    pub extern "C" fn gc_budget_json(e: *mut Core) -> *mut u8 {
+        give(eng(e).budget_json())
+    }
+    #[no_mangle]
+    pub extern "C" fn gc_visible_json(e: *mut Core) -> *mut u8 {
+        give(serde_json::to_string(&eng(e).visible()).unwrap_or_else(|_| "[]".into()))
+    }
+    #[no_mangle]
+    pub extern "C" fn gc_snapshot(e: *mut Core) -> *mut u8 {
+        match eng(e).snapshot() {
+            Ok(s) => give(s),
+            Err(x) => fail(x.0),
+        }
+    }
+    /// 成功返回 `{"ok":true}`。
+    #[no_mangle]
+    pub extern "C" fn gc_restore(e: *mut Core, p: *mut u8, n: usize) -> *mut u8 {
+        let s = take(p, n);
+        match eng(e).restore(&s) {
+            Ok(()) => give(r#"{"ok":true}"#.into()),
+            Err(x) => fail(x.0),
+        }
+    }
+    #[no_mangle]
+    pub extern "C" fn gc_agm_recall(e: *mut Core, sp: *mut u8, sn: usize, xp: *mut u8, xn: usize, k: usize) -> *mut u8 {
+        let (s, x) = (take(sp, sn), take(xp, xn));
+        let seeds: Vec<Seed> = match serde_json::from_str(&s) {
+            Ok(v) => v,
+            Err(m) => return fail(format!("seeds：{m}")),
+        };
+        let ex: Vec<String> = match serde_json::from_str(&x) {
+            Ok(v) => v,
+            Err(m) => return fail(format!("exclude：{m}")),
+        };
+        give(eng(e).agm_recall(&seeds, &ex, k).to_string())
+    }
+}

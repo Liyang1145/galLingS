@@ -64,3 +64,7 @@
 37. 用户要求仓库最终只有一个 galgame / galagent，并确认“按照 plan 走”。剧情以 galcore 为唯一运行时：Larry 的 VN Studio 作品（`content/imports/vnstudio/海风与布丁/game.js`）经导入器 `compiler/vnstudio.py` 变成 OP 程序（句子 ID 原样保留，条件、变量、选项效果、结局由引擎执行）；画面仍是作品自己的播放器，由 `web/galcore.vnplugin.js` 把“下一句 / 选项 / 结局”改问引擎。依据决定 32，不恢复旧播放器。引擎新增通用整数变量、`SET`、`JUMP_IF`、选项 `set/cond`、`start`（从章节开头开局）；旧章节的 state_hash 不变。作者原件不改。
 38. 存读档对齐（2026-10-14，用户“开始”）：作品存档附带引擎快照，读档由引擎从快照接着跑并开新时间线；作品存档格式只新增字段，旧存档照常由作品自身读取。
 39. 目录按 inventory §4 迁移（2026-10-14，用户“全部放在我自己的分支就行了”）：仅在 tanpowasd/dev 上，引用同步改写；候选图目录因美术编辑器运行时读取而保留在 content/assets/；合入 main 前请音乐与美术编辑器负责人确认。
+
+## 桌面封装：引擎进浏览器（2026-10-16）
+
+40. 用户要求“封装”成可直接运行的程序。galcore 加编 `wasm32-unknown-unknown`（`core/src/lib.rs` 的 `mod wasm`，不依赖 wasm-bindgen），接口与 Python 绑定一一对应，state_hash 与快照逐字节一致（`tests/demo/test_wasm_parity.py`）。`web/offline/local-session.js` 在页面里实现 `/ws` 的纯选项部分；`tools/build_desktop_dist.py` 打离线包（路径与服务端路由相同）；`desktop/` 用 Tauri 2 包成 Windows 程序（本地协议读离线包，支持 Range），由 `.github/workflows/desktop.yml` 在 Windows 机器上出安装包和免安装版。离线包只有纯选项模式；AI 模式、结局后聊天、灵枢记忆仍走 Python 服务（start.bat），Python 后端不变。

@@ -1,0 +1,28 @@
+{
+  "silenceChoice": {
+    "before": 0,
+    "after": -10
+  },
+  "silentFoodChoice": {
+    "before": 0,
+    "after": -1
+  },
+  "fiveTailHits": {
+    "ids": [
+      "sfx_tail_water_double",
+      "sfx_tail_water_double",
+      "sfx_tail_water_light"
+    ],
+    "delays": [
+      0,
+      2405,
+      4807
+    ],
+    "pending": 0
+  },
+  "retiredEvidenceBypassed": [
+    "69m07oj9",
+    "nh0inhqs"
+  ],
+  "errors": []
+}

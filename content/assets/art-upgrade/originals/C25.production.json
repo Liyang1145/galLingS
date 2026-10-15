@@ -1,0 +1,21 @@
+{
+  "prompt": "One quiet 16:9 Japanese visual-novel night conversation CG inside the EXACT tent in the FIRST landscape reference. The SECOND reference defines the SAME ADULT woman aged24: blue hair, blue-white fin ears, loop ahoge, separate whale tail, opaque long-sleeved whale pajamas, full-length pajama trousers and TWO small separate PINK SCALLOP SHELLS on a simple cord. Keep that complete sleepwear and recognizable adult identity. She sits comfortably on the bedding with the thick blanket covering her legs, holding a soft whale cushion; both hands rest naturally. Warm slightly embarrassed smile and attentive eyes directed toward the viewer, a quiet shared bedtime story. Only face and hands visible; no clothes being removed, no revealing outfit, no intimate body emphasis. Gentle low lantern light agrees with the moonlit coastal campsite. The two shell pieces must remain real ridged fan-shaped shells, not a heart gemstone or blue pearl. Landscape 16:9, face and two-shell necklace above the dialogue area, no text or watermark.",
+  "requested_model": "gpt-image-2.5-flare",
+  "requested_quality": "max",
+  "requested_size": "3840x2160",
+  "references": [
+    {
+      "path": "content/assets/art-upgrade/originals/B18.png",
+      "sha256": "fdce0bd801c40fdbc22bcea633fda686fbcefd0f948e6ab614f0b6c8beebbe9c"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/L28.png",
+      "sha256": "c8567392025721df0bb103fafd55223c2394ba8726b9dd8a36c35a1ad522c020"
+    }
+  ],
+  "output_sha256": "28d936de8493d3136d61083498235a33568b2f826bc0c04210687ae45a73a7cf",
+  "actual_size": [
+    1672,
+    941
+  ]
+}

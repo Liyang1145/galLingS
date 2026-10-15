@@ -1,0 +1,25 @@
+{
+  "prompt": "One complete 16:9 EMPTY BACKGROUND for the game. Preserve the scene reference's architectural layout, camera, coastline and recurring objects. Upgrade painting finesse and lighting to match the user illustration's environment. The user image is STYLE ONLY: do not paint its woman, tail, face, bows or giant character into the empty scene. Keep an open staging area for overlaid sprites. No principal characters or foreground hands; market scenes can contain tiny indistinct distant shoppers. Daylight, sky, moon and electric lamps must agree with the specified time. No printed text. Household and commercial kitchens are different rooms.\nMatch the two user references: premium finely painted Japanese anime visual novel art, clean delicate outlines, coherent anatomy and perspective, subtle painterly material detail, luminous coastal blue palette, restrained clear highlights, sophisticated soft light. The heroine is the SAME ADULT woman aged 24: blue/periwinkle long hair, blue eyes, loop ahoge, cyan bow clips, blue-white fin ears, two human legs PLUS an independent mottled-blue whale tail growing behind the lower back. Human legs never turn into a mermaid tail. Use exact costume references. No watermark, typography, pseudo-writing, UI, duplicated people, extra limbs, warped fingers, floaty unrelated props or sexualized framing. Important faces and story actions stay above the lower 28% reserved for dialogue.\nPrimary scene: 银匠工坊\nTime: 午后/取货日间\nProduction constraints: 工坊工具、放大镜、绒布工作台与窗光固定；留手部和双戒指特写构图依据。\nReference order: FIRST is the exact target-location camera, SECOND generated family image if supplied is only for shared geometry/materials, LAST is user style. Do not replace the first target location with the family reference room or street. Final 16:9 landscape framing.",
+  "requested_model": "gpt-image-2.5-flare",
+  "requested_quality": "max",
+  "requested_size": "3840x2160",
+  "references": [
+    {
+      "path": "content/assets/scene-backgrounds/originals/B25.png",
+      "sha256": "430f6664f70db2a4f9e1617bb4eed6e1c187dc4c189ca88afe89a4f6d7dd0d74"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/B23.png",
+      "sha256": "5fa6c90e61094a43ca94865aeca718ef91dfc867bcee1d0a48557f890d39c95f"
+    },
+    {
+      "path": "content/assets/art-upgrade/references/user_face_style.jpg",
+      "sha256": "ab541ccc7a42eb2e21b172b7d9638cd76b9a75f68b04dce8bd1f866db94c9d9f"
+    }
+  ],
+  "output_sha256": "0f527e1013e88177d4f503dc79504dfcf42420b8378fa75c92fab3aef658f69c",
+  "actual_size": [
+    1672,
+    941
+  ]
+}

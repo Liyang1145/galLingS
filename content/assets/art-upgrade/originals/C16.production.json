@@ -1,0 +1,17 @@
+{
+  "prompt": "One premium finely painted Japanese visual novel 16:9 PROP CLOSE-UP: two matching simple silver rings, each with ONE small sky-blue pearl, resting on a muted dark jeweler cloth in the exact silverworker shop reference. One adult feminine hand gently holds one ring. Identical ring design and pearl color. Avoid giant gems, extra jewelry, hearts, face/body portrait or printed labels. Leave engraving surfaces clean for later exact Chinese typography. Coherent perspective, delicate jewelry materials, gentle daylight.",
+  "requested_model": "gpt-image-2.5-flare",
+  "requested_quality": "max",
+  "requested_size": "3840x2160",
+  "references": [
+    {
+      "path": "content/assets/art-upgrade/originals/B25.png",
+      "sha256": "0f527e1013e88177d4f503dc79504dfcf42420b8378fa75c92fab3aef658f69c"
+    }
+  ],
+  "output_sha256": "33d414e370b3e58cc871fc3ed769d5917a5260cacd9859504a38eb5e5aaf4223",
+  "actual_size": [
+    1672,
+    941
+  ]
+}

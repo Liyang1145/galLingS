@@ -41,7 +41,7 @@ window.VNArtLibrary = (() => {
       <small>关联操作遵循顶部“关联画面”开关；默认单句调用只修改当前句。撤销 / 重做均可用。</small>
       <dl><dt>素材 ID</dt><dd>${esc(a.id)}</dd><dt>剧情引用</dt><dd>${a.usage} 句${a.firstLine != null ? ' · <button data-jump>跳到首次使用 #' + (a.firstLine+1) + '</button>' : ''}</dd></dl>
       <details open><summary>来源与制作路线</summary><p>${esc(origin.label || '未登记')}</p><p>来源：${esc(notes.creator || origin.creator || '未登记')}<br>工具：${esc(notes.tool || origin.tool || '未登记')}<br>请求模型：${esc(notes.requestedModel || origin.requestedModel || '未登记')}<br>后端模型：${esc(notes.reportedModel || origin.reportedModel || '未回传')}<br>${esc(notes.note || '')}</p><button data-register>编辑来源 / 微调备注</button></details>
-      <details open><summary>原始文件 / 同内容副本（${a.files.length}）</summary>${a.files.map(p => `<a href="${esc(a.previewSrc || url(p))}" target="_blank" rel="noopener">${esc(p)}</a>`).join('')}</details>`;
+      <details open><summary>原始文件 / 同内容副本（${a.files.length}）</summary>${a.files.map(p => `<a href="${esc(a.previewSrc || url(p))}" target="_blank" rel="noopener">${esc(p)}</a>`).join('')}${a.sourceMasterPath ? '<a href="'+esc(url(a.sourceMasterPath))+'" target="_blank" rel="noopener">查看 PNG 母版</a>' : ''}</details>`;
     box.querySelectorAll('[data-use]').forEach(b => b.onclick = () => apply(a, b.dataset.use));
     const jump = box.querySelector('[data-jump]'); if (jump) jump.onclick = () => { goto(a.firstLine); close(); };
     box.querySelector('[data-register]').onclick = () => {
@@ -152,8 +152,9 @@ window.VNArtLibrary = (() => {
     const proj=clone(P), used=new Set();
     const scan=value=>{if(typeof value==='string')used.add(value);else if(Array.isArray(value))value.forEach(scan);else if(value && typeof value==='object')Object.values(value).forEach(scan);};
     Object.entries(proj).filter(([key])=>!['assets','recent'].includes(key)).forEach(([,value])=>scan(value));
-    // Keep the original gallery/audio library. Only unused authoring additions are omitted.
-    proj.assets=Object.fromEntries(Object.entries(proj.assets).filter(([id,a])=>!a.libraryPath || used.has(id)));
+    // Unused visual reserves stay in the editor; the player gallery keeps active CGs.
+    proj.assets=Object.fromEntries(Object.entries(proj.assets).filter(([id,a])=>
+      used.has(id) || (!a.libraryPath && !['bg','ch'].includes(a.type))));
     proj.cur=0;delete proj.recent;
     return proj;
   }

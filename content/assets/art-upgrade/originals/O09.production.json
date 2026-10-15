@@ -1,0 +1,17 @@
+{
+  "prompt": "Edit this EXACT completed adult woman at the sunset window CG: replace ONLY the glass Japanese furin bell and its paper strip with a small handmade BLUE AND WHITE SHELL wind-chime. Three small blue-white scallop shells hang on thin linen strings with one small brass bell; no glass sphere and no paper strip. Keep both hands holding the cord naturally. Preserve the adult age24 woman, face, clothes, whale tail, window, room, sunset, camera and exact 16:9 composition. No necklace. Delicate believable shell materials, no text.",
+  "requested_model": "gpt-image-2.5-flare",
+  "requested_quality": "max",
+  "requested_size": "3840x2160",
+  "references": [
+    {
+      "path": "content/assets/art-upgrade/originals/O09_before_review.png",
+      "sha256": "afd9998d842f1a700765232cf01f1b4215189d0a9b420d82e0aad5f164ecae36"
+    }
+  ],
+  "output_sha256": "cff5461136689d8f49d75e07ec2e9b6b8c8cfd22c0908e0a24fe10be0be18ee8",
+  "actual_size": [
+    1672,
+    941
+  ]
+}

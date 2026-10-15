@@ -337,9 +337,9 @@
   },
   "L34": {
     "status": "approved",
-    "sha256": "c8fca0d848547a21d5b66122abb97ad70e7572f3657095132c1ca2226d703631",
-    "note": "复核读书坐姿已睁眼，举高笔记本姿势与蓝色螺旋本一致；身体与手部可读，透明背景须在游戏内再核对。",
-    "reviewer": "Codex visual inspection; not final user approval"
+    "sha256": "06ec18b74c2034bb04c952e98f1ce2ba6fe21660160844fde1b1e8f494779ee5",
+    "note": "全身和局部重审：同新并膝母图，书托在膝上、双手在纸外边，不是原交腿骨架。全裙双白线连续、无破口；小腿与脚层次成立。",
+    "reviewer": "Codex full-body reinspection after user correction; not final user approval"
   },
   "L36": {
     "status": "approved",
@@ -511,9 +511,9 @@
   },
   "C08": {
     "status": "approved",
-    "sha256": "5fc67545616918d219d3d7dad5973f8fd5c8036f4ee9276f6abac311cd6f3ecf",
-    "note": "逐图核对表情与动作、实际时段/位置和服装，修正后的摘项链与贝壳风铃符合场景；裹毯坐姿为完整覆盖替代动作。",
-    "reviewer": "Codex visual inspection; not final user approval"
+    "sha256": "3fa7e67e2762b26412ff0e08cbf94d5b1706f6c31e17464457ac22545fabc375",
+    "note": "换用已复核的跪坐母图重画全景：两膝向前、小腿折在身下，完整裙摆、自然握笔与扶纸、单根尾巴一对尾鳍；月夜海岸一致，无戒指。书写手部位于对话框上缘以上，仍需实机确认。",
+    "reviewer": "Codex full-body and prop reinspection after user correction; not final user approval"
   },
   "C10": {
     "status": "approved",
@@ -646,5 +646,101 @@
     "sha256": "06b0cd8e3815feed949d4de52ee4e59858991a4c90b468f5e5f72b768ab4e83c",
     "note": "逐图复核：同一坐姿裹毯、奶油色开衫与完整裤装；P03抬手惊讶、P04握毯探身受伤生气，眉眼和手势明显不同。透明底已合成检查，须继续核对游戏内裁切。",
     "reviewer": "Codex visual inspection; not final user approval"
+  },
+  "P05": {
+    "status": "approved",
+    "sha256": "fc44bc5eb68672e3f2068a39850d73d6d04dd154ddab7778c941990b28b9dff0",
+    "note": "已审核结构母图的逐字节副本：S02；不声称单独生成。无戒指，用于较早的写诗/和解。",
+    "reviewer": "Codex exact-copy and full-body inspection; not final user approval"
+  },
+  "P06": {
+    "status": "approved",
+    "sha256": "a6b45a671b4998fd753e05a92dd0145bc6a075c1607b8298af27ed46edf35a02",
+    "note": "本轮逐图视觉复核：半松开的抱臂与托腮、审慎目光，尚未露出亲密笑容。 待实机再查手势遮挡与连续性。",
+    "reviewer": "Codex visual inspection; not final user approval"
+  },
+  "P07": {
+    "status": "approved",
+    "sha256": "e8fa3beef69b48dbfb237761c187c9f3b4457828d3a7216c9b339e352fd0a7c8",
+    "note": "本轮逐图视觉复核：冷怒止步手势、沉静眉眼与竖起鲸尾，不再使用得意V手势。 待实机再查手势遮挡与连续性。",
+    "reviewer": "Codex visual inspection; not final user approval"
+  },
+  "P08": {
+    "status": "approved",
+    "sha256": "c79aaf6477402d78157c580aaeae2079bbbfe40aff92d5c48d0eee6223772bd5",
+    "note": "本轮逐图视觉复核：欲伸又止的手与担忧目光，完整皮肤、无误画擦伤。 待实机再查手势遮挡与连续性。",
+    "reviewer": "Codex visual inspection; not final user approval"
+  },
+  "P09": {
+    "status": "approved",
+    "sha256": "e2874b2a4b6a8086a18f2d70e0f86eb15ae87a4a5143452c46e621f77ade66e3",
+    "note": "本轮逐图视觉复核：回望带小幅嘴硬笑意，与低落背身L12可明确区分。 待实机再查手势遮挡与连续性。",
+    "reviewer": "Codex visual inspection; not final user approval"
+  },
+  "P10": {
+    "status": "approved",
+    "sha256": "73ef0fc08b8b47f79a4ba0825a331b5ce91cf8460914cda4149fcbb309ee1af4",
+    "note": "本轮逐图视觉复核：单块糍粑举在胸前、支腕与偷看动作清楚；质感为淡色烤糍粑候选，不加海鸥。 待实机再查手势遮挡与连续性。",
+    "reviewer": "Codex visual inspection; not final user approval"
+  },
+  "P11": {
+    "status": "approved",
+    "sha256": "eb2ec4eb0ed1af24381a5233250c392e7fa228ab2a4459ced22d15afee297a53",
+    "note": "本轮逐图视觉复核：下巴贴在裹毯膝上，沉思听话；裤装与毯子保持完整。 待实机再查手势遮挡与连续性。",
+    "reviewer": "Codex visual inspection; not final user approval"
+  },
+  "P12": {
+    "status": "approved",
+    "sha256": "1866da7f7a5656c1808195b7673d4bbbf7e9cbfc67634416707230e0bd0c8d63",
+    "note": "本轮逐图视觉复核：递出同一条毯子的外折，手和布料相连，未改变衣装或露出腿部。 待实机再查手势遮挡与连续性。",
+    "reviewer": "Codex visual inspection; not final user approval"
+  },
+  "P13": {
+    "status": "approved",
+    "sha256": "6b802bcd09650ff14e2b2305d70c2d283f8a240dca184bd4de44a4392535fc78",
+    "note": "全身和局部重审：并膝母图下双手置于裙上、左手小天青珍珠戒指清楚。两膝、小腿和双脚层次、连续裙摆及一对尾鳍已看全身与局部。",
+    "reviewer": "Codex full-body reinspection after user correction; not final user approval"
+  },
+  "P14": {
+    "status": "approved",
+    "sha256": "82c4bd6e28bba323181828d568c0928ecb06cd3ee25336d8dcd240afa26980ad",
+    "note": "实看打开的蓝色螺旋本、自然双手、检查目光；透明底已合成灰底检查，无蓝色光晕。开本封面朝向玩家，页朝向角色，符合查看本子。",
+    "reviewer": "Codex visual inspection; not final user approval"
+  },
+  "P15": {
+    "status": "approved",
+    "sha256": "b830babb6a006fcb1d95939526bd67e87ae48a538d4fb0ed1ebf31bc05f7814b",
+    "note": "全身和局部重审：害羞拢发，上举左手的戒指可见；保留新并膝骨架和完整布料，手在裙上，无透裙破口。",
+    "reviewer": "Codex full-body reinspection after user correction; not final user approval"
+  },
+  "P16": {
+    "status": "approved",
+    "sha256": "f894a6295ab63c5ca0eb3e7cfa17cad3c74089423fc29ae6a55aeacfcd861e1e",
+    "note": "全身和局部重审：新并膝骨架、双脚、连续双白线裙摆、手在布料上、单对尾鳍均成立；左手戒指缺失待人工，不把本次接口拒绝记成已修好。",
+    "reviewer": "Codex anatomy approved with explicit jewelry gap; not final user approval"
+  },
+  "P17": {
+    "status": "approved",
+    "sha256": "f0aef848b55b412179f0ea85935eac2248b8da6448a34f4187570dc5b2c9d071",
+    "note": "全身和局部重审：右手举指嗔怪，左手在裙上且戒指可见；新并膝骨架、连续裙摆和尾巴一致。",
+    "reviewer": "Codex full-body reinspection after user correction; not final user approval"
+  },
+  "P18": {
+    "status": "approved",
+    "sha256": "dd8aac14e50f14882e2e5800fd2c9ac93e0168f1b340026981ef781b55d0d2dc",
+    "note": "已审核结构母图的逐字节副本：S01；不声称单独生成。无戒指，用于较早的写诗/和解。",
+    "reviewer": "Codex exact-copy and full-body inspection; not final user approval"
+  },
+  "S01": {
+    "status": "approved",
+    "sha256": "dd8aac14e50f14882e2e5800fd2c9ac93e0168f1b340026981ef781b55d0d2dc",
+    "note": "母图全身复核：并膝、骨盆到两膝的短缩可读、小腿下行到同一落脚层次；裙摆是完整双白线连续布料、双手在布料上方，无破口。尾巴只有一对尾鳍。相较退选交腿母图结构更清楚；后续差分须重新逐张复核。",
+    "reviewer": "Codex full-body visual inspection; not final user approval"
+  },
+  "S02": {
+    "status": "approved",
+    "sha256": "fc44bc5eb68672e3f2068a39850d73d6d04dd154ddab7778c941990b28b9dff0",
+    "note": "全身和局部重审：真实跪坐写诗：两膝前置、小腿折回身下、鞋袜在侧后可读；完整裙摆盖住双腿上方，双手与笔自然；尾巴已改为低位单根、只结束于一对尾鳍。",
+    "reviewer": "Codex full-body reinspection after user correction; not final user approval"
   }
 }

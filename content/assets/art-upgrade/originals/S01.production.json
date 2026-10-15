@@ -1,0 +1,17 @@
+{
+  "prompt": "Create a new full-body transparent-alpha production sprite of the SAME ADULT woman aged24 in the reference. Use the reference ONLY for her recognizable face, blue hair, fin ears, loop ahoge, cyan bows, exact navy sailor-collar dress with continuous double-white hem stripes, white socks and closed white shoes, two human legs and a separate whale tail. Do NOT copy its standing body pose.\n\nDesign a physically clear, ordinary seated pose in a gentle three-quarter view at roughly her chest height. Her pelvis is supported at the edge of an unseen rock just behind her, spine naturally upright, hips flexed, BOTH thighs extend forward from the pelvis toward TWO DISTINCT knees with proper foreshortening. Knees held together and bent naturally; shins descend from the knees toward two relaxed feet at the SAME believable ground level. Do not cross the legs or stack a leg on top of the other. Show a coherent pelvis-to-thigh-to-knee-to-calf chain, plausible thigh/calf lengths, natural knee caps and ankle perspective. No long shin growing directly out of the skirt, disconnected upper thigh, duplicate knee or fused leg. Hands rest loosely on her lap ABOVE the dress, not inside the fabric.\n\nThe navy dress remains one opaque intact garment. Its skirt lies naturally over her lap and upper thighs, draping forward under gravity from the waist and falling smoothly around both sides. One continuous hem with exactly two white stripes follows the cloth, not skin. No opening, split, triangular skin hole, hand piercing the skirt, pasted extra frill or unexplained floating fabric. Preserve the existing dress design and normal hem length; no transparent cloth or wardrobe substitution. The adult woman is fully dressed, a neutral visual-novel sitting pose, not a pinup or focus on legs.\n\nNeutral attentive blue eyes, small reserved closed-mouth expression, no ring or other jewelry, no book or prop. One separate whale tail curves from BEHIND the lower back to her side and ends in EXACTLY ONE two-lobed fluke; no additional tail fin or branch. Premium clean finely painted anime visual-novel finish matching the reference, soft neutral daylight. Whole ahoge, both feet and complete tail inside generous margins. No scenery, chair, rock, ground shadow, text, outlines of a skeleton or labels. Real clean transparent alpha with opaque figure interiors. Check complete anatomy and skirt construction before adding surface detail.",
+  "requested_model": "gpt-image-2.5-flare",
+  "requested_quality": "max",
+  "requested_size": "1536x2304",
+  "references": [
+    {
+      "path": "content/assets/art-upgrade/originals/L01.png",
+      "sha256": "566e6bd87c0a715a1b641f0d0549c6fd4380630484897d301cd0d7c7462f2b49"
+    }
+  ],
+  "output_sha256": "dd8aac14e50f14882e2e5800fd2c9ac93e0168f1b340026981ef781b55d0d2dc",
+  "actual_size": [
+    1024,
+    1536
+  ]
+}

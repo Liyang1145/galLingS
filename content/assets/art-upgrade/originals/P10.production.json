@@ -1,0 +1,17 @@
+{
+  "prompt": "A transparent-alpha Japanese romance visual-novel acting sprite of the SAME ADULT woman aged24 in the reference. Preserve her recognizable mature face, long blue hair, loop ahoge, cyan bow clips, fin ears, exact OPAQUE navy sailor-collar dress, white socks and closed white shoes, two human legs plus one separate mottled blue whale tail attached behind her lower back. Finely painted anime finish and neutral soft daylight. Preserve head size, framing and generous margins. Whole adult figure, all hair, shoes and tail inside canvas; naturally connected hands and fingers. Hands and emotional action visible around chest or face height above the dialogue area. Clean transparent alpha, no scenery, ground, shadow, glow outline, text, symbols, comic stickers or extra limbs. Acting direction: She has been feeding a gull offscreen, and now notices the viewer is hungry. One hand holds a SINGLE irregular small off-white piece of sticky rice cake between natural fingers at upper-chest height. The other hand lightly supports that wrist. Her gaze shifts sideways toward the viewer, brow slightly questioning, mouth closed with a small defensive pout. Modest blush only, no broad romantic smile. Independent tail relaxed. No bird, plate, chopsticks or second food item; do not put the food in her mouth.",
+  "requested_model": "gpt-image-2.5-flare",
+  "requested_quality": "max",
+  "requested_size": "1536x2304",
+  "references": [
+    {
+      "path": "content/assets/art-upgrade/originals/L01.png",
+      "sha256": "566e6bd87c0a715a1b641f0d0549c6fd4380630484897d301cd0d7c7462f2b49"
+    }
+  ],
+  "output_sha256": "73ef0fc08b8b47f79a4ba0825a331b5ce91cf8460914cda4149fcbb309ee1af4",
+  "actual_size": [
+    1024,
+    1536
+  ]
+}

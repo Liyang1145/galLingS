@@ -112,7 +112,7 @@ def build() -> dict:
             current=review.get('status') if review.get('sha256')==art_item.get('sha256') else art_item.get('review')
             archived=file.stem not in upgrade and not file.stem.startswith('R01')
             status='rejected' if archived or current=='rejected' else 'reserve' if current=='approved' else 'rework'
-            if art_item.get('gap'):provenance['action']=art_item['gap']
+        if upgraded and file.stem in upgrade and art_item.get('gap'):provenance['action']=art_item['gap']
         with Image.open(file) as image:
             width, height = image.size
             thumb_path = thumb_dir / (digest[:16] + ".webp")

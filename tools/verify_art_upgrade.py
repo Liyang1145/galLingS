@@ -35,6 +35,16 @@ def verify():
     active=[a for a in current['assets'].values() if a['id'] in used and a['type'] in {'bg','ch'}]
     remaining=[a['id'] for a in active if not a.get('productionArtId')]
     assert set(remaining)=={'nvgbi1x6','jtp36q4e'},remaining
+    state=json.loads((ART/'production.json').read_text(encoding='utf-8'))['items']
+    reviews=json.loads((ART/'reviews.json').read_text(encoding='utf-8'))
+    for a in active:
+        key=a.get('productionArtId')
+        if key:
+            review=reviews.get(key,{})
+            status=review.get('status') if review.get('sha256')==state[key]['sha256'] else state[key].get('review')
+            assert status=='approved',key
+            assert hashlib.sha256((ART/'originals'/f'{key}.png').read_bytes()).hexdigest()==state[key]['sha256'],key
+    assert not current.get('seatedReworkPending'),'坐姿返工仍有临时空缺，不能当作完成包'
     assert all(not a['src'].lower().endswith('.wav') for a in current['assets'].values())
     assert by_id['irma08fi']['choices'][1]['set']=='好感 -= 10'
     assert by_id['dk3o5u4e']['choices'][2]['set']=='好感 -= 1'

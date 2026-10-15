@@ -1,0 +1,288 @@
+{
+  "L01": {
+    "eyes": [
+      456,
+      234
+    ],
+    "gazeOffset": 0,
+    "sourceSha256": "566e6bd87c0a715a1b641f0d0549c6fd4380630484897d301cd0d7c7462f2b49"
+  },
+  "L02": {
+    "eyes": [
+      452,
+      212
+    ],
+    "gazeOffset": 0,
+    "sourceSha256": "998a2bd6cb048709195765dde7e64c4808d98c06d126a0a5818f397e3cb6a0fd"
+  },
+  "L03": {
+    "eyes": [
+      464,
+      225
+    ],
+    "gazeOffset": 0,
+    "sourceSha256": "9db53a2f71ab999a1608f2a8356a6127d1ff3c11ed2255654b4bc8c00814be59"
+  },
+  "L04": {
+    "eyes": [
+      415,
+      231
+    ],
+    "gazeOffset": 0,
+    "sourceSha256": "af4f2568be10789a00349b0061ebf4f3a51fe111cef985cd9d3b13626df728cc"
+  },
+  "L05": {
+    "eyes": [
+      458,
+      223
+    ],
+    "gazeOffset": 0,
+    "sourceSha256": "bdf939d0b3f7e91fa4c116710972704e391cd22402bc6ab640cf340f665c05f5"
+  },
+  "L06": {
+    "eyes": [
+      441,
+      213
+    ],
+    "gazeOffset": -4,
+    "sourceSha256": "f0e3bfe92023767ff616a1e151539f5cebf195136459b406d3d155cc55fe78eb"
+  },
+  "L07": {
+    "eyes": [
+      460,
+      229
+    ],
+    "gazeOffset": 0,
+    "sourceSha256": "2d27375071e767c1a4f3a76740cb699d7e3ecd5b65ac279829119a3d08a3ea6f"
+  },
+  "L08": {
+    "eyes": [
+      454,
+      231
+    ],
+    "gazeOffset": 0,
+    "sourceSha256": "93a55fe82ada7e4375b0d7f1efa24d307f77fd1e9015bf478265129a77a1acc7"
+  },
+  "L09": {
+    "eyes": [
+      453,
+      228
+    ],
+    "gazeOffset": 0,
+    "sourceSha256": "a3fdc7165bc341f9f9b6d303da0f5be9cf6885145db260136d8a6b3c30824fde"
+  },
+  "L10": {
+    "eyes": [
+      459,
+      233
+    ],
+    "gazeOffset": 4,
+    "sourceSha256": "ef9bc56745316df33dbf3329fc3c47af243df15780e895f3561edc4168df2260"
+  },
+  "L11": {
+    "eyes": [
+      460,
+      232
+    ],
+    "gazeOffset": 0,
+    "sourceSha256": "07d168f658a44907d4026cdcc17656f3b004defd7933c867901d3e4ad050ffb8"
+  },
+  "L12": {
+    "eyes": [
+      334,
+      221
+    ],
+    "gazeOffset": 0,
+    "sourceSha256": "4c199106b4d171304fd62a20d4c39c4813db002a020f26bac62631e2801597df"
+  },
+  "L33": {
+    "eyes": [
+      464,
+      285
+    ],
+    "gazeOffset": 30,
+    "sourceSha256": "b41a0de8a21132841db20cb297c54c4bae73a089d82a06f9d1a515aeca3decaa"
+  },
+  "L34": {
+    "eyes": [
+      452,
+      249
+    ],
+    "gazeOffset": 10,
+    "pupilSpan": 95,
+    "sourceSha256": "06ec18b74c2034bb04c952e98f1ce2ba6fe21660160844fde1b1e8f494779ee5",
+    "review": "用户指出交腿骨架问题后，已更换为逐张复核的新母图；手工标注取景。"
+  },
+  "L35": {
+    "eyes": [
+      457,
+      231
+    ],
+    "gazeOffset": 0,
+    "sourceSha256": "4953a9108a8ae99832306884cba76ff64aff944768ad66da297267165aabd8f7"
+  },
+  "L36": {
+    "eyes": [
+      457,
+      235
+    ],
+    "gazeOffset": 0,
+    "sourceSha256": "6cd24eececa2f9ebeae6882c11e5dce294cd4a60a15a4238db80478dd2c78b46"
+  },
+  "P01": {
+    "eyes": [
+      414,
+      221
+    ],
+    "gazeOffset": 0,
+    "sourceSha256": "a26ebf046aebf2b8121f7af83ba9a424d9a420c27b71c90be4d31aa994de41cc"
+  },
+  "P02": {
+    "eyes": [
+      450,
+      265
+    ],
+    "gazeOffset": 0,
+    "sourceSha256": "0985adf849b8f7e5552c3ae639e7f1ca210b30cacad6ac99f5856003d071a803"
+  },
+  "P03": {
+    "eyes": [
+      461,
+      244
+    ],
+    "gazeOffset": -3,
+    "sourceSha256": "f3b0aa760b5e8b15a543172f7a8dee06f595a818c0f7807a6db1cd6b71a7e4f2"
+  },
+  "P04": {
+    "eyes": [
+      470,
+      274
+    ],
+    "gazeOffset": 10,
+    "sourceSha256": "06b0cd8e3815feed949d4de52ee4e59858991a4c90b468f5e5f72b768ab4e83c"
+  },
+  "P05": {
+    "eyes": [
+      402,
+      376
+    ],
+    "gazeOffset": 16,
+    "pupilSpan": 110,
+    "sourceSha256": "fc44bc5eb68672e3f2068a39850d73d6d04dd154ddab7778c941990b28b9dff0",
+    "review": "用户指出交腿骨架问题后，已更换为逐张复核的新母图；手工标注取景。"
+  },
+  "P06": {
+    "eyes": [
+      442,
+      212
+    ],
+    "gazeOffset": 0,
+    "sourceSha256": "a6b45a671b4998fd753e05a92dd0145bc6a075c1607b8298af27ed46edf35a02"
+  },
+  "P07": {
+    "eyes": [
+      459,
+      227
+    ],
+    "gazeOffset": 0,
+    "sourceSha256": "e8fa3beef69b48dbfb237761c187c9f3b4457828d3a7216c9b339e352fd0a7c8"
+  },
+  "P08": {
+    "eyes": [
+      459,
+      233
+    ],
+    "gazeOffset": 0,
+    "sourceSha256": "c79aaf6477402d78157c580aaeae2079bbbfe40aff92d5c48d0eee6223772bd5"
+  },
+  "P09": {
+    "eyes": [
+      315,
+      221
+    ],
+    "gazeOffset": 0,
+    "sourceSha256": "e2874b2a4b6a8086a18f2d70e0f86eb15ae87a4a5143452c46e621f77ade66e3"
+  },
+  "P10": {
+    "eyes": [
+      462,
+      229
+    ],
+    "gazeOffset": 0,
+    "sourceSha256": "73ef0fc08b8b47f79a4ba0825a331b5ce91cf8460914cda4149fcbb309ee1af4"
+  },
+  "P11": {
+    "eyes": [
+      446,
+      299
+    ],
+    "gazeOffset": 35,
+    "sourceSha256": "eb2ec4eb0ed1af24381a5233250c392e7fa228ab2a4459ced22d15afee297a53"
+  },
+  "P12": {
+    "eyes": [
+      452,
+      233
+    ],
+    "gazeOffset": 0,
+    "sourceSha256": "1866da7f7a5656c1808195b7673d4bbbf7e9cbfc67634416707230e0bd0c8d63"
+  },
+  "P13": {
+    "eyes": [
+      452,
+      249
+    ],
+    "gazeOffset": 10,
+    "pupilSpan": 95,
+    "sourceSha256": "6b802bcd09650ff14e2b2305d70c2d283f8a240dca184bd4de44a4392535fc78",
+    "review": "用户指出交腿骨架问题后，已更换为逐张复核的新母图；手工标注取景。"
+  },
+  "P14": {
+    "eyes": [
+      466,
+      226
+    ],
+    "gazeOffset": 10,
+    "sourceSha256": "82c4bd6e28bba323181828d568c0928ecb06cd3ee25336d8dcd240afa26980ad"
+  },
+  "P15": {
+    "eyes": [
+      452,
+      249
+    ],
+    "gazeOffset": 10,
+    "pupilSpan": 95,
+    "sourceSha256": "b830babb6a006fcb1d95939526bd67e87ae48a538d4fb0ed1ebf31bc05f7814b",
+    "review": "用户指出交腿骨架问题后，已更换为逐张复核的新母图；手工标注取景。"
+  },
+  "P16": {
+    "eyes": [
+      452,
+      249
+    ],
+    "gazeOffset": 10,
+    "pupilSpan": 95,
+    "sourceSha256": "f894a6295ab63c5ca0eb3e7cfa17cad3c74089423fc29ae6a55aeacfcd861e1e",
+    "review": "用户指出交腿骨架问题后，已更换为逐张复核的新母图；手工标注取景。"
+  },
+  "P17": {
+    "eyes": [
+      452,
+      249
+    ],
+    "gazeOffset": 10,
+    "pupilSpan": 95,
+    "sourceSha256": "f0aef848b55b412179f0ea85935eac2248b8da6448a34f4187570dc5b2c9d071",
+    "review": "用户指出交腿骨架问题后，已更换为逐张复核的新母图；手工标注取景。"
+  },
+  "P18": {
+    "eyes": [
+      452,
+      249
+    ],
+    "gazeOffset": 10,
+    "pupilSpan": 95,
+    "sourceSha256": "dd8aac14e50f14882e2e5800fd2c9ac93e0168f1b340026981ef781b55d0d2dc",
+    "review": "用户指出交腿骨架问题后，已更换为逐张复核的新母图；手工标注取景。"
+  }
+}

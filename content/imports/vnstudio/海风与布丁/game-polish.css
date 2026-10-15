@@ -28,6 +28,9 @@ body.game #main { background:#101b20; }
 #paudio button { border-color:#afcfc449; }
 #gallery .tabs button.on { background:#bdd5ca; color:#14292b; }
 @media (prefers-reduced-motion:reduce) { #title *,#title::after { animation:none!important; transition:none!important; } }
+@media (prefers-reduced-motion:reduce) {
+  #stage #bgEl,#stage #layer,#stage .spr { animation:none!important; transition:none!important; }
+}
 
 #paudio .audition-only { display:block; margin:5px 0; color:#c4c7b5; font-size:13px; }
 

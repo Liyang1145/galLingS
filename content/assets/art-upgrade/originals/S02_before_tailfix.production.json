@@ -1,0 +1,17 @@
+{
+  "prompt": "One full-body transparent-alpha production sprite of the SAME fully clothed ADULT woman aged24 in the reference, matching her adult face identity, blue hair, ears, bows, loop ahoge, opaque navy sailor dress, white socks and closed shoes, and separate whale tail. New ordinary sitting pose for writing a poem on a flat rock: a natural Japanese seiza posture, seated on her folded heels, spine upright, both knees together pointing forward, both lower legs folded underneath her. The opaque skirt drapes naturally over her lap and knees with one continuous double-white hem stripe. Anatomically coherent pelvis, thighs, knees and folded legs. Do not cross the legs or draw two long shins hanging from the front of the skirt. Her body weight is supported on her folded legs, not hovering. An open dark-blue whale notebook rests on her lap, her right hand naturally holds a slim blue pen with its tip touching the page, left hand steadies the upper page. Eyes focus thoughtfully down toward her writing. Whole adult figure and separate single tail with exactly one two-lobed fluke inside generous margins. Natural hands and cloth, no fabric holes or extra limbs. No ring, scenery, rock, ground shadow, letters or annotations. Match the reference finely painted anime quality and neutral soft daylight. Real clean transparent alpha, opaque figure interior.",
+  "requested_model": "gpt-image-2.5-flare",
+  "requested_quality": "max",
+  "requested_size": "1536x2304",
+  "references": [
+    {
+      "path": "content/assets/art-upgrade/originals/L01.png",
+      "sha256": "566e6bd87c0a715a1b641f0d0549c6fd4380630484897d301cd0d7c7462f2b49"
+    }
+  ],
+  "output_sha256": "29615fe002d9774f21519126ef3fc280a6ae35b6cf8877f220b8c184fe7bfd37",
+  "actual_size": [
+    1024,
+    1536
+  ]
+}

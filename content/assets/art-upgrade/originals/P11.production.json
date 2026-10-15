@@ -1,0 +1,17 @@
+{
+  "prompt": "Edit the fully clothed ADULT woman age24 seated under the thick opaque whale blanket in the reference. Preserve exact face, hair, loop ahoge, bows, fin ears, cream cardigan, loose full-length trousers beneath the blanket, closed shoes and separate whale tail. Keep canvas, face size and opaque covered lower body unchanged. Redraw only the upper-body acting and blanket folds as requested. Clean transparent alpha, no scenery, extra people, symbols, text or clothing removal. Acting direction: She gathers her fully blanket-covered knees close and rests her chin gently on the TOP of those covered knees. Forearms rest together across the blanket top, hands relaxed. Brows slightly drawn in thought, eyes looking down a little toward the unseen fire, mouth neutral, listening carefully rather than sleepy. Calm and inward, no romantic grin. The separate tail rests low beside the blanket. No uncovered legs or exposed skin beneath the cardigan.",
+  "requested_model": "gpt-image-2.5-flare",
+  "requested_quality": "max",
+  "requested_size": "1536x2304",
+  "references": [
+    {
+      "path": "content/assets/art-upgrade/originals/L35.png",
+      "sha256": "4953a9108a8ae99832306884cba76ff64aff944768ad66da297267165aabd8f7"
+    }
+  ],
+  "output_sha256": "eb2ec4eb0ed1af24381a5233250c392e7fa228ab2a4459ced22d15afee297a53",
+  "actual_size": [
+    1024,
+    1536
+  ]
+}

@@ -1,0 +1,513 @@
+{
+  "baseline": "c9f0be4",
+  "curatedBeats": [
+    {
+      "pose": "P07",
+      "from": "ps0r6nbx",
+      "to": "gtc8s8ua",
+      "reason": "被冒犯后竖起尾巴；不能继续使用得意V手势",
+      "lineIds": [
+        "ps0r6nbx",
+        "gjwqntp5",
+        "gtc8s8ua"
+      ]
+    },
+    {
+      "pose": "P14",
+      "from": "8divye5i",
+      "to": "m4wlasdc",
+      "reason": "翻开笔记本检查，不再抱着闭合本子朗读",
+      "lineIds": [
+        "8divye5i",
+        "wxlmihwk",
+        "9nwggcga",
+        "m4wlasdc"
+      ]
+    },
+    {
+      "pose": "L08",
+      "from": "zknz0j4b",
+      "to": "p4p4l5nc",
+      "reason": "追问重要性时本子仍在她手里",
+      "lineIds": [
+        "zknz0j4b",
+        "opening_notebook_importance",
+        "p4p4l5nc"
+      ]
+    },
+    {
+      "pose": "P09",
+      "from": "no3hzp1r",
+      "to": "8ewkwxbl",
+      "reason": "初遇嘴硬回望，区别争吵后的低落背身",
+      "lineIds": [
+        "no3hzp1r",
+        "67eits5y",
+        "8ewkwxbl"
+      ]
+    },
+    {
+      "pose": "P01",
+      "from": "rme9rp7m",
+      "to": "rme9rp7m",
+      "reason": "海鸥落下时仍延续抱臂戒备姿态",
+      "lineIds": [
+        "rme9rp7m"
+      ]
+    },
+    {
+      "pose": "P10",
+      "from": "78arkzfg",
+      "to": "ott3er5w",
+      "reason": "拿着剩余糍粑偷偷看饥饿的人类",
+      "lineIds": [
+        "78arkzfg",
+        "8i9imu1y",
+        "robfi6au",
+        "y286tiec",
+        "ott3er5w"
+      ]
+    },
+    {
+      "pose": "P06",
+      "from": "ljqevszk",
+      "to": "hcrs0mry",
+      "reason": "走近问问题：好奇但尚未完全亲密",
+      "lineIds": [
+        "ljqevszk",
+        "huyyx0s8",
+        "04paurjq",
+        "jpgy8sfu",
+        "fm43foif",
+        "fuij1wic",
+        "o1frkrlk",
+        "ryvqt5v6",
+        "efj7migj",
+        "hcrs0mry"
+      ]
+    },
+    {
+      "pose": "P06",
+      "from": "7bjpv8xn",
+      "to": "7bjpv8xn",
+      "reason": "直球搭讪之前仍处在审慎好奇状态",
+      "lineIds": [
+        "7bjpv8xn"
+      ]
+    },
+    {
+      "pose": "P14",
+      "from": "fefqrihh",
+      "to": "4v9n0ev0",
+      "reason": "抢来笔记本时真正翻开检查",
+      "lineIds": [
+        "fefqrihh",
+        "4v9n0ev0"
+      ]
+    },
+    {
+      "pose": "P09",
+      "from": "ysfx3a0y",
+      "to": "dk3o5u4e",
+      "reason": "给出食物后刻意移开目光",
+      "lineIds": [
+        "ysfx3a0y",
+        "wb0jt6bd",
+        "dk3o5u4e"
+      ]
+    },
+    {
+      "pose": "L03",
+      "from": "19j7cn4u",
+      "to": "25q42u4a",
+      "reason": "被夸手艺后由惊慌转为嘴硬害羞",
+      "lineIds": [
+        "19j7cn4u",
+        "otgvk12p",
+        "yh5ghjft",
+        "z7u86pui",
+        "zv50a61e",
+        "n1u3boys",
+        "25q42u4a"
+      ]
+    },
+    {
+      "pose": "P06",
+      "from": "nvij36hj",
+      "to": "n7sguoiy",
+      "reason": "默默吃掉后的等待与不满，不是胜利得意",
+      "lineIds": [
+        "nvij36hj",
+        "s8tmtnhe",
+        "n7sguoiy"
+      ]
+    },
+    {
+      "pose": "P06",
+      "from": "sh7dcaxu",
+      "to": "ux0qdh8i",
+      "reason": "听到桂花谢礼，先迟疑好奇",
+      "lineIds": [
+        "sh7dcaxu",
+        "ui0uk1ih",
+        "7s27lp89",
+        "ux0qdh8i"
+      ]
+    },
+    {
+      "pose": "P09",
+      "from": "dg7yx2u8",
+      "to": "b40zjswe",
+      "reason": "随便你：转身掩饰接受约定",
+      "lineIds": [
+        "dg7yx2u8",
+        "b40zjswe"
+      ]
+    },
+    {
+      "pose": "P14",
+      "from": "ci68sroe",
+      "to": "3awuittl",
+      "reason": "翻到新页、读到桂花约定后停顿",
+      "lineIds": [
+        "ci68sroe",
+        "l1p8d9ay",
+        "6pjogay4",
+        "yn0vgxnv",
+        "elw59ee8",
+        "3awuittl"
+      ]
+    },
+    {
+      "pose": "P14",
+      "from": "r8v5y3ag",
+      "to": "r8v5y3ag",
+      "reason": "展示打开的契约落款",
+      "lineIds": [
+        "r8v5y3ag"
+      ]
+    },
+    {
+      "pose": "P05",
+      "from": "zynsrwzg",
+      "to": "joe6542h",
+      "reason": "补充契约条款时握笔",
+      "lineIds": [
+        "zynsrwzg",
+        "cgtze1bj",
+        "ijg7nr68",
+        "joe6542h"
+      ]
+    },
+    {
+      "pose": "P05",
+      "from": "jifyqa4p",
+      "to": "rg4rkhr4",
+      "reason": "诗签段真正跪坐写字，保持腿部结构与笔记本连续",
+      "lineIds": [
+        "jifyqa4p",
+        "ks5nh1es",
+        "a7qkea9z",
+        "gt5easnp",
+        "9mamop11",
+        "rg4rkhr4"
+      ]
+    },
+    {
+      "pose": "P11",
+      "from": "lldr65m6",
+      "to": "bv4hij9a",
+      "reason": "抱膝认真听完过去的经历",
+      "lineIds": [
+        "lldr65m6",
+        "az2au3b8",
+        "nzmqw5aa",
+        "bf4wieqj",
+        "gacisd4d",
+        "iuxu5kg0",
+        "uij1l3w9",
+        "a0q13kjm",
+        "td5o50ey",
+        "cta88ckb",
+        "bv4hij9a"
+      ]
+    },
+    {
+      "pose": "P03",
+      "from": "cpwu5gkq",
+      "to": "cpwu5gkq",
+      "reason": "身份揭示后的空白与怔住",
+      "lineIds": [
+        "cpwu5gkq"
+      ]
+    },
+    {
+      "pose": "P03",
+      "from": "6l7rcby3",
+      "to": "9m22v7xh",
+      "reason": "消化不是替代品的解释，不能瞬间恢复微笑",
+      "lineIds": [
+        "6l7rcby3",
+        "tr3sx9pv",
+        "ks06o02b",
+        "q1lfwktz",
+        "vwiad2lw",
+        "9m22v7xh"
+      ]
+    },
+    {
+      "pose": "P11",
+      "from": "5dlec0jm",
+      "to": "6cwliu90",
+      "reason": "下巴放回膝上，思考记忆与自我",
+      "lineIds": [
+        "5dlec0jm",
+        "d7dwuz4k",
+        "bxqlsr23",
+        "1tzro1iu",
+        "zx4wqsjx",
+        "pd6lvptm",
+        "x9oa7erd",
+        "hupqwkl2",
+        "72l09986",
+        "fa6zgj8n",
+        "r1flthwa",
+        "17h42sms",
+        "2uabacsp",
+        "lezxw6p2",
+        "p5jjwnj3",
+        "gs251l5z",
+        "1wn0vzq4",
+        "9gr04naa",
+        "zxcvocx9",
+        "ba3izm6n",
+        "sq9hou3l",
+        "8xq075on",
+        "zv0z52oz",
+        "gg22d91j",
+        "quo7gcb8",
+        "pck1epjp",
+        "q3p4q1h9",
+        "4vdddrpr",
+        "0xq57zcu",
+        "ye2varpl",
+        "h2kwuxgs",
+        "6cwliu90"
+      ]
+    },
+    {
+      "pose": "L35",
+      "from": "9gr04naa",
+      "to": "ba3izm6n",
+      "reason": "嘴硬辩解，取消惊慌瞪眼",
+      "lineIds": [
+        "9gr04naa",
+        "zxcvocx9",
+        "ba3izm6n"
+      ]
+    },
+    {
+      "pose": "P11",
+      "from": "vbf7gq78",
+      "to": "g7g2x5uf",
+      "reason": "要求保证时压低情绪，认真等答复",
+      "lineIds": [
+        "vbf7gq78",
+        "q6nn2bpy",
+        "kpols39n",
+        "7ty2jwvp",
+        "50nu6ngg",
+        "g7g2x5uf"
+      ]
+    },
+    {
+      "pose": "P12",
+      "from": "vqiksage",
+      "to": "kvt09y7b",
+      "reason": "递出一半毯子作为接纳的动作",
+      "lineIds": [
+        "vqiksage",
+        "ryc7zl02",
+        "kvt09y7b"
+      ]
+    },
+    {
+      "pose": "P08",
+      "from": "48jqdyhx",
+      "to": "uih7a0td",
+      "reason": "从不可置信到站到面前，不用喜剧双手惊慌",
+      "lineIds": [
+        "48jqdyhx",
+        "rkrt51j3",
+        "uih7a0td"
+      ]
+    },
+    {
+      "pose": "P07",
+      "from": "lqvlnz8o",
+      "to": "zpdqlvme",
+      "reason": "真正害怕被替换，去掉漫画式额头怒符",
+      "lineIds": [
+        "lqvlnz8o",
+        "ots5j0of",
+        "nnjsu447",
+        "wgc4e13x",
+        "vuzdb7te",
+        "rei5ctmq",
+        "sasls78c",
+        "jc1hxbvj",
+        "qockrnqr",
+        "w5q1n1k0",
+        "zpdqlvme"
+      ]
+    },
+    {
+      "pose": "L11",
+      "from": "gaqro6n5",
+      "to": "q2aoccrd",
+      "reason": "转身红眼、下巴抬高，先保持强硬",
+      "lineIds": [
+        "gaqro6n5",
+        "igyw0geo",
+        "wz85f8a4",
+        "qivaixt1",
+        "web5kdop",
+        "2joggtla",
+        "kwelvzlm",
+        "rb8shmm1",
+        "e9yuirxt",
+        "xqpsfwqr",
+        "d046tqqp",
+        "q2aoccrd"
+      ]
+    },
+    {
+      "pose": "P08",
+      "from": "kwelvzlm",
+      "to": "d046tqqp",
+      "reason": "声音短暂软下去，露出挽留",
+      "lineIds": [
+        "kwelvzlm",
+        "rb8shmm1",
+        "e9yuirxt",
+        "xqpsfwqr",
+        "d046tqqp"
+      ]
+    },
+    {
+      "pose": "P08",
+      "from": "kkgzbp5s",
+      "to": "jdhwszjx",
+      "reason": "被答案击中后仍在担心，避免马上羞笑",
+      "lineIds": [
+        "kkgzbp5s",
+        "bgqog1mw",
+        "mwyhxvet",
+        "y9lddnwn",
+        "0dejux6h",
+        "zcybpxp6",
+        "0fi8283h",
+        "0q161t3v",
+        "mqsa68bh",
+        "lkffry51",
+        "jsudbokl",
+        "nbisho4d",
+        "epi6n6h8",
+        "bcjqicvu",
+        "r1xufh6x",
+        "1wnc2g34",
+        "jdhwszjx"
+      ]
+    },
+    {
+      "pose": "L10",
+      "from": "lavqdy3h",
+      "to": "c8ikc5q1",
+      "reason": "低头消化，鼻音仍在",
+      "lineIds": [
+        "lavqdy3h",
+        "onk5pky8",
+        "yf5lgvkv",
+        "qooj8h27",
+        "c8ikc5q1"
+      ]
+    },
+    {
+      "pose": "P06",
+      "from": "rw2t93bv",
+      "to": "a87ekdcz",
+      "reason": "审视承诺，替代不合语境的胜利V手势",
+      "lineIds": [
+        "rw2t93bv",
+        "ipq4thuc",
+        "hga5tsh6",
+        "jg52i7h4",
+        "a87ekdcz"
+      ]
+    },
+    {
+      "pose": "P09",
+      "from": "gtpnwxzh",
+      "to": "z4fjktc7",
+      "reason": "别过脸，声音很轻地重新接受",
+      "lineIds": [
+        "gtpnwxzh",
+        "2n27icam",
+        "z4fjktc7"
+      ]
+    },
+    {
+      "pose": "P18",
+      "from": "caqa6eg2",
+      "to": "bnxnlk0y",
+      "reason": "和解后的抱膝谈话保持无首饰坐姿",
+      "lineIds": [
+        "caqa6eg2",
+        "4exe8ofv",
+        "q1in6nnn",
+        "vjru1og3",
+        "pcg8525l",
+        "5moh5rle",
+        "486srdmm",
+        "g06j2rjy",
+        "ycdhd5q4",
+        "bnxnlk0y"
+      ]
+    },
+    {
+      "pose": "P13",
+      "from": "pvyjs8ij",
+      "to": "livwvbn2",
+      "reason": "手在膝上，珍珠戒指可见，尚未拿起手稿",
+      "lineIds": [
+        "pvyjs8ij",
+        "x7jyamen",
+        "xjo7fnms",
+        "j6taov0s",
+        "kupuqhew",
+        "meudaeb0",
+        "8nxhllnu",
+        "48psdl1a",
+        "rte1qnt4",
+        "nj1i1iv4",
+        "livwvbn2"
+      ]
+    },
+    {
+      "pose": "P13/P15/P16/P17",
+      "from": "fdp1qtcz",
+      "to": "9xhxnr36",
+      "reason": "礁石长谈两条结局均保持坐姿，并保留害羞、得意、嗔怪的变化"
+    },
+    {
+      "pose": "P13/P15/P16/P17",
+      "from": "kyg6ltxc",
+      "to": "p7hu2gmh",
+      "reason": "礁石长谈两条结局均保持坐姿，并保留害羞、得意、嗔怪的变化"
+    }
+  ],
+  "alignedSprites": 2166,
+  "storyNodes": 3315,
+  "storyAndAudioUnchanged": true,
+  "artNotes": "专用姿态、重做的坐姿结构与写诗CG；静态差分、一次性动作及CG缓推，不声称Live2D或逐帧尾巴已完成。"
+}

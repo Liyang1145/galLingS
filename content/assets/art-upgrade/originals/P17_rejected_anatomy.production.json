@@ -1,0 +1,17 @@
+{
+  "prompt": "A transparent-alpha Japanese romance visual-novel acting sprite of the SAME ADULT woman aged24 in the reference. Preserve her recognizable mature face, long blue hair, loop ahoge, cyan bow clips, fin ears, exact OPAQUE navy sailor-collar dress, white socks and closed white shoes, two human legs plus one separate mottled blue whale tail attached behind her lower back. Finely painted anime finish and neutral soft daylight. Preserve head size, framing and generous margins. Whole adult figure, all hair, shoes and tail inside canvas; naturally connected hands and fingers. Hands and emotional action visible around chest or face height above the dialogue area. Clean transparent alpha, no scenery, ground, shadow, glow outline, text, symbols, comic stickers or extra limbs. Acting direction: Preserve the exact seated fully dressed body and small pale-blue pearl ring from the reference, both legs and feet unchanged. One hand raises a SINGLE admonishing index finger at chest/shoulder height while the other rests on her covered knee. Slightly forward shoulders, brows drawn into affectionate mock indignation, mouth speaking, no real cruelty or crying. Tail held alertly beside her. A seated playful scolding, no standing up, no book, comic stickers or extra jewelry.",
+  "requested_model": "gpt-image-2.5-flare",
+  "requested_quality": "max",
+  "requested_size": "1536x2304",
+  "references": [
+    {
+      "path": "content/assets/art-upgrade/originals/P13.png",
+      "sha256": "a011917be030cc786506f97d8a2adf497258488075976dd99f444e675dea017c"
+    }
+  ],
+  "output_sha256": "7f6eca111ca396cb323dda5c26987f2deefabc1c763811af2002b83577b3eb68",
+  "actual_size": [
+    1024,
+    1536
+  ]
+}

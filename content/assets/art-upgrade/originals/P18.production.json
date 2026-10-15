@@ -1,0 +1,6 @@
+{
+  "operation": "exact copy of reviewed anatomy master; not a separate generation",
+  "source": "S01",
+  "sourceSha256": "dd8aac14e50f14882e2e5800fd2c9ac93e0168f1b340026981ef781b55d0d2dc",
+  "outputSha256": "dd8aac14e50f14882e2e5800fd2c9ac93e0168f1b340026981ef781b55d0d2dc"
+}

@@ -29,7 +29,15 @@ window.VN_GAME = {
       "productionArtId": "C01",
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
-      "imageQualityReported": "medium"
+      "imageQualityReported": "medium",
+      "shot": {
+        "focus": [
+          0.47,
+          0.38
+        ],
+        "scale": 1.02,
+        "ms": 2200
+      }
     },
     "ehbun5kh": {
       "id": "ehbun5kh",
@@ -57,7 +65,15 @@ window.VN_GAME = {
       "productionArtId": "C14",
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
-      "imageQualityReported": "medium"
+      "imageQualityReported": "medium",
+      "shot": {
+        "focus": [
+          0.43,
+          0.37
+        ],
+        "scale": 1.02,
+        "ms": 2200
+      }
     },
     "yjxp4irw": {
       "id": "yjxp4irw",
@@ -265,7 +281,15 @@ window.VN_GAME = {
       "productionArtId": "C02",
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
-      "imageQualityReported": "medium"
+      "imageQualityReported": "medium",
+      "shot": {
+        "focus": [
+          0.46,
+          0.4
+        ],
+        "scale": 1.025,
+        "ms": 2200
+      }
     },
     "7jj07jqh": {
       "id": "7jj07jqh",
@@ -298,7 +322,15 @@ window.VN_GAME = {
       "productionArtId": "C08",
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
-      "imageQualityReported": "medium"
+      "imageQualityReported": "medium",
+      "shot": {
+        "focus": [
+          0.37,
+          0.45
+        ],
+        "scale": 1.025,
+        "ms": 2200
+      }
     },
     "dxmnyp7j": {
       "id": "dxmnyp7j",
@@ -1405,7 +1437,11 @@ window.VN_GAME = {
       "modelRequested": "gpt-image-2.5-sunburst",
       "modelReported": null,
       "imageQualityReported": "medium",
-      "character": "鲸鱼小姐"
+      "character": "鲸鱼小姐",
+      "actingEyes": [
+        456,
+        234
+      ]
     },
     "6i0w6nq5": {
       "id": "6i0w6nq5",
@@ -1480,7 +1516,11 @@ window.VN_GAME = {
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
       "imageQualityReported": "medium",
-      "character": "鲸鱼小姐"
+      "character": "鲸鱼小姐",
+      "actingEyes": [
+        415,
+        231
+      ]
     },
     "fz3yt5k8": {
       "id": "fz3yt5k8",
@@ -1540,7 +1580,11 @@ window.VN_GAME = {
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
       "imageQualityReported": "medium",
-      "character": "鲸鱼小姐"
+      "character": "鲸鱼小姐",
+      "actingEyes": [
+        464,
+        225
+      ]
     },
     "2qshq03j": {
       "id": "2qshq03j",
@@ -1555,7 +1599,11 @@ window.VN_GAME = {
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
       "imageQualityReported": "medium",
-      "character": "鲸鱼小姐"
+      "character": "鲸鱼小姐",
+      "actingEyes": [
+        452,
+        212
+      ]
     },
     "z869j1e3": {
       "id": "z869j1e3",
@@ -1570,7 +1618,11 @@ window.VN_GAME = {
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
       "imageQualityReported": "medium",
-      "character": "鲸鱼小姐"
+      "character": "鲸鱼小姐",
+      "actingEyes": [
+        441,
+        213
+      ]
     },
     "hfcyjlxm": {
       "id": "hfcyjlxm",
@@ -1585,7 +1637,11 @@ window.VN_GAME = {
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
       "imageQualityReported": "medium",
-      "character": "鲸鱼小姐"
+      "character": "鲸鱼小姐",
+      "actingEyes": [
+        454,
+        231
+      ]
     },
     "wrwcdezj": {
       "id": "wrwcdezj",
@@ -1600,7 +1656,11 @@ window.VN_GAME = {
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
       "imageQualityReported": "medium",
-      "character": "鲸鱼小姐"
+      "character": "鲸鱼小姐",
+      "actingEyes": [
+        460,
+        229
+      ]
     },
     "tp44t1rb": {
       "id": "tp44t1rb",
@@ -1676,7 +1736,11 @@ window.VN_GAME = {
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
       "imageQualityReported": "medium",
-      "character": "鲸鱼小姐"
+      "character": "鲸鱼小姐",
+      "actingEyes": [
+        458,
+        223
+      ]
     },
     "52119ew2": {
       "id": "52119ew2",
@@ -2565,7 +2629,15 @@ window.VN_GAME = {
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
       "imageQualityReported": "medium",
-      "previousSourcePath": "assets/art-upgrade/C21.webp"
+      "previousSourcePath": "assets/art-upgrade/C21.webp",
+      "shot": {
+        "focus": [
+          0.45,
+          0.45
+        ],
+        "scale": 1.02,
+        "ms": 2200
+      }
     },
     "art_upgrade_l09": {
       "id": "art_upgrade_l09",
@@ -2581,7 +2653,11 @@ window.VN_GAME = {
       "modelReported": null,
       "imageQualityReported": "medium",
       "previousSourcePath": "assets/art-upgrade/L09.webp",
-      "character": "鲸鱼小姐"
+      "character": "鲸鱼小姐",
+      "actingEyes": [
+        453,
+        228
+      ]
     },
     "art_upgrade_l10": {
       "id": "art_upgrade_l10",
@@ -2597,7 +2673,11 @@ window.VN_GAME = {
       "modelReported": null,
       "imageQualityReported": "medium",
       "previousSourcePath": "assets/art-upgrade/L10.webp",
-      "character": "鲸鱼小姐"
+      "character": "鲸鱼小姐",
+      "actingEyes": [
+        459,
+        233
+      ]
     },
     "art_upgrade_l11": {
       "id": "art_upgrade_l11",
@@ -2613,7 +2693,11 @@ window.VN_GAME = {
       "modelReported": null,
       "imageQualityReported": "medium",
       "previousSourcePath": "assets/art-upgrade/L11.webp",
-      "character": "鲸鱼小姐"
+      "character": "鲸鱼小姐",
+      "actingEyes": [
+        460,
+        232
+      ]
     },
     "art_upgrade_l12": {
       "id": "art_upgrade_l12",
@@ -2629,7 +2713,11 @@ window.VN_GAME = {
       "modelReported": null,
       "imageQualityReported": "medium",
       "previousSourcePath": "assets/art-upgrade/L12.webp",
-      "character": "鲸鱼小姐"
+      "character": "鲸鱼小姐",
+      "actingEyes": [
+        334,
+        221
+      ]
     },
     "art_upgrade_l20": {
       "id": "art_upgrade_l20",
@@ -2677,7 +2765,11 @@ window.VN_GAME = {
       "modelReported": null,
       "imageQualityReported": "medium",
       "previousSourcePath": "assets/art-upgrade/L33.webp",
-      "character": "鲸鱼小姐"
+      "character": "鲸鱼小姐",
+      "actingEyes": [
+        464,
+        285
+      ]
     },
     "art_upgrade_l34": {
       "id": "art_upgrade_l34",
@@ -2693,7 +2785,11 @@ window.VN_GAME = {
       "modelReported": null,
       "imageQualityReported": "medium",
       "previousSourcePath": "assets/art-upgrade/L34.webp",
-      "character": "鲸鱼小姐"
+      "character": "鲸鱼小姐",
+      "actingEyes": [
+        452,
+        249
+      ]
     },
     "art_upgrade_l35": {
       "id": "art_upgrade_l35",
@@ -2709,7 +2805,11 @@ window.VN_GAME = {
       "modelReported": null,
       "imageQualityReported": "medium",
       "previousSourcePath": "assets/art-upgrade/L35.webp",
-      "character": "鲸鱼小姐"
+      "character": "鲸鱼小姐",
+      "actingEyes": [
+        457,
+        231
+      ]
     },
     "art_upgrade_l36": {
       "id": "art_upgrade_l36",
@@ -2725,7 +2825,11 @@ window.VN_GAME = {
       "modelReported": null,
       "imageQualityReported": "medium",
       "previousSourcePath": "assets/art-upgrade/L36.webp",
-      "character": "鲸鱼小姐"
+      "character": "鲸鱼小姐",
+      "actingEyes": [
+        457,
+        235
+      ]
     },
     "art_upgrade_o03": {
       "id": "art_upgrade_o03",
@@ -2877,7 +2981,11 @@ window.VN_GAME = {
       "modelReported": null,
       "imageQualityReported": "medium",
       "character": "鲸鱼小姐",
-      "previousSourcePath": "assets/art-upgrade/P01.webp"
+      "previousSourcePath": "assets/art-upgrade/P01.webp",
+      "actingEyes": [
+        414,
+        221
+      ]
     },
     "art_upgrade_p02": {
       "id": "art_upgrade_p02",
@@ -2893,7 +3001,11 @@ window.VN_GAME = {
       "modelReported": null,
       "imageQualityReported": "medium",
       "character": "鲸鱼小姐",
-      "previousSourcePath": "assets/art-upgrade/P02.webp"
+      "previousSourcePath": "assets/art-upgrade/P02.webp",
+      "actingEyes": [
+        450,
+        265
+      ]
     },
     "art_upgrade_p03": {
       "id": "art_upgrade_p03",
@@ -2909,7 +3021,11 @@ window.VN_GAME = {
       "modelReported": null,
       "imageQualityReported": "medium",
       "character": "鲸鱼小姐",
-      "previousSourcePath": "assets/art-upgrade/P03.webp"
+      "previousSourcePath": "assets/art-upgrade/P03.webp",
+      "actingEyes": [
+        461,
+        244
+      ]
     },
     "art_upgrade_p04": {
       "id": "art_upgrade_p04",
@@ -2925,7 +3041,321 @@ window.VN_GAME = {
       "modelReported": null,
       "imageQualityReported": "medium",
       "character": "鲸鱼小姐",
-      "previousSourcePath": "assets/art-upgrade/P04.webp"
+      "previousSourcePath": "assets/art-upgrade/P04.webp",
+      "actingEyes": [
+        470,
+        274
+      ]
+    },
+    "art_upgrade_p05": {
+      "id": "art_upgrade_p05",
+      "name": "鲸鱼小姐_常服坐姿写诗",
+      "type": "ch",
+      "cg": false,
+      "src": "assets/art-upgrade/P05.webp",
+      "w": 1024,
+      "h": 1536,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/P05.png",
+      "productionArtId": "P05",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium",
+      "character": "鲸鱼小姐",
+      "previousSourcePath": "assets/art-upgrade/P05.webp",
+      "actingEyes": [
+        402,
+        376
+      ]
+    },
+    "art_upgrade_p06": {
+      "id": "art_upgrade_p06",
+      "name": "鲸鱼小姐_常服戒备中好奇",
+      "type": "ch",
+      "cg": false,
+      "src": "assets/art-upgrade/P06.webp",
+      "w": 1024,
+      "h": 1536,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/P06.png",
+      "productionArtId": "P06",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium",
+      "character": "鲸鱼小姐",
+      "previousSourcePath": "assets/art-upgrade/P06.webp",
+      "actingEyes": [
+        442,
+        212
+      ]
+    },
+    "art_upgrade_p07": {
+      "id": "art_upgrade_p07",
+      "name": "鲸鱼小姐_常服被冒犯后的冷怒",
+      "type": "ch",
+      "cg": false,
+      "src": "assets/art-upgrade/P07.webp",
+      "w": 1024,
+      "h": 1536,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/P07.png",
+      "productionArtId": "P07",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium",
+      "character": "鲸鱼小姐",
+      "previousSourcePath": "assets/art-upgrade/P07.webp",
+      "actingEyes": [
+        459,
+        227
+      ]
+    },
+    "art_upgrade_p08": {
+      "id": "art_upgrade_p08",
+      "name": "鲸鱼小姐_常服担心欲言又止",
+      "type": "ch",
+      "cg": false,
+      "src": "assets/art-upgrade/P08.webp",
+      "w": 1024,
+      "h": 1536,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/P08.png",
+      "productionArtId": "P08",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium",
+      "character": "鲸鱼小姐",
+      "previousSourcePath": "assets/art-upgrade/P08.webp",
+      "actingEyes": [
+        459,
+        233
+      ]
+    },
+    "art_upgrade_p09": {
+      "id": "art_upgrade_p09",
+      "name": "鲸鱼小姐_常服嘴硬回望",
+      "type": "ch",
+      "cg": false,
+      "src": "assets/art-upgrade/P09.webp",
+      "w": 1024,
+      "h": 1536,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/P09.png",
+      "productionArtId": "P09",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium",
+      "character": "鲸鱼小姐",
+      "previousSourcePath": "assets/art-upgrade/P09.webp",
+      "actingEyes": [
+        315,
+        221
+      ]
+    },
+    "art_upgrade_p10": {
+      "id": "art_upgrade_p10",
+      "name": "鲸鱼小姐_常服拿糍粑偷看",
+      "type": "ch",
+      "cg": false,
+      "src": "assets/art-upgrade/P10.webp",
+      "w": 1024,
+      "h": 1536,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/P10.png",
+      "productionArtId": "P10",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium",
+      "character": "鲸鱼小姐",
+      "previousSourcePath": "assets/art-upgrade/P10.webp",
+      "actingEyes": [
+        462,
+        229
+      ]
+    },
+    "art_upgrade_p11": {
+      "id": "art_upgrade_p11",
+      "name": "鲸鱼小姐_裹毯夜谈抱膝沉思",
+      "type": "ch",
+      "cg": false,
+      "src": "assets/art-upgrade/P11.webp",
+      "w": 1024,
+      "h": 1536,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/P11.png",
+      "productionArtId": "P11",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium",
+      "character": "鲸鱼小姐",
+      "previousSourcePath": "assets/art-upgrade/P11.webp",
+      "actingEyes": [
+        446,
+        299
+      ]
+    },
+    "art_upgrade_p12": {
+      "id": "art_upgrade_p12",
+      "name": "鲸鱼小姐_裹毯夜谈分毯",
+      "type": "ch",
+      "cg": false,
+      "src": "assets/art-upgrade/P12.webp",
+      "w": 1024,
+      "h": 1536,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/P12.png",
+      "productionArtId": "P12",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium",
+      "character": "鲸鱼小姐",
+      "previousSourcePath": "assets/art-upgrade/P12.webp",
+      "actingEyes": [
+        452,
+        233
+      ]
+    },
+    "art_upgrade_p13": {
+      "id": "art_upgrade_p13",
+      "name": "鲸鱼小姐_常服坐姿安静等待",
+      "type": "ch",
+      "cg": false,
+      "src": "assets/art-upgrade/P13.webp",
+      "w": 1024,
+      "h": 1536,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/P13.png",
+      "productionArtId": "P13",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium",
+      "character": "鲸鱼小姐",
+      "previousSourcePath": "assets/art-upgrade/P13.webp",
+      "actingEyes": [
+        452,
+        249
+      ]
+    },
+    "art_upgrade_p14": {
+      "id": "art_upgrade_p14",
+      "name": "鲸鱼小姐_常服翻开笔记本检查",
+      "type": "ch",
+      "cg": false,
+      "src": "assets/art-upgrade/P14.webp",
+      "w": 1024,
+      "h": 1536,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/P14.png",
+      "productionArtId": "P14",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium",
+      "character": "鲸鱼小姐",
+      "previousSourcePath": "assets/art-upgrade/P14.webp",
+      "actingEyes": [
+        466,
+        226
+      ]
+    },
+    "art_upgrade_p15": {
+      "id": "art_upgrade_p15",
+      "name": "鲸鱼小姐_常服坐姿害羞",
+      "type": "ch",
+      "cg": false,
+      "src": "assets/art-upgrade/P15.webp",
+      "w": 1024,
+      "h": 1536,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/P15.png",
+      "productionArtId": "P15",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium",
+      "character": "鲸鱼小姐",
+      "previousSourcePath": "assets/art-upgrade/P15.webp",
+      "actingEyes": [
+        452,
+        249
+      ]
+    },
+    "art_upgrade_p16": {
+      "id": "art_upgrade_p16",
+      "name": "鲸鱼小姐_常服坐姿得意",
+      "type": "ch",
+      "cg": false,
+      "src": "assets/art-upgrade/P16.webp",
+      "w": 1024,
+      "h": 1536,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/P16.png",
+      "productionArtId": "P16",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium",
+      "character": "鲸鱼小姐",
+      "previousSourcePath": "assets/art-upgrade/P16.webp",
+      "actingEyes": [
+        452,
+        249
+      ]
+    },
+    "art_upgrade_p17": {
+      "id": "art_upgrade_p17",
+      "name": "鲸鱼小姐_常服坐姿嗔怪",
+      "type": "ch",
+      "cg": false,
+      "src": "assets/art-upgrade/P17.webp",
+      "w": 1024,
+      "h": 1536,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/P17.png",
+      "productionArtId": "P17",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium",
+      "character": "鲸鱼小姐",
+      "previousSourcePath": "assets/art-upgrade/P17.webp",
+      "actingEyes": [
+        452,
+        249
+      ]
+    },
+    "art_upgrade_p18": {
+      "id": "art_upgrade_p18",
+      "name": "鲸鱼小姐_常服坐姿无首饰",
+      "type": "ch",
+      "cg": false,
+      "src": "assets/art-upgrade/P18.webp",
+      "w": 1024,
+      "h": 1536,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/P18.png",
+      "productionArtId": "P18",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium",
+      "character": "鲸鱼小姐",
+      "previousSourcePath": "assets/art-upgrade/P18.webp",
+      "actingEyes": [
+        452,
+        249
+      ]
+    },
+    "art_upgrade_s01": {
+      "id": "art_upgrade_s01",
+      "name": "鲸鱼小姐_坐姿结构母图·并膝",
+      "type": "ch",
+      "cg": false,
+      "src": "assets/art-upgrade/S01.webp",
+      "w": 1024,
+      "h": 1536,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/S01.png",
+      "productionArtId": "S01",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium",
+      "character": "鲸鱼小姐"
+    },
+    "art_upgrade_s02": {
+      "id": "art_upgrade_s02",
+      "name": "鲸鱼小姐_写诗跪坐结构母图",
+      "type": "ch",
+      "cg": false,
+      "src": "assets/art-upgrade/S02.webp",
+      "w": 1024,
+      "h": 1536,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/S02.png",
+      "productionArtId": "S02",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium",
+      "character": "鲸鱼小姐"
     }
   },
   "lines": [
@@ -3392,9 +3822,9 @@ window.VN_GAME = {
         {
           "uid": "xxr40kgb",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "in": "pop",
           "look": "shadow"
@@ -3438,9 +3868,9 @@ window.VN_GAME = {
         {
           "uid": "xxr40kgb",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "in": "pop",
           "look": "shadow"
@@ -3839,9 +4269,9 @@ window.VN_GAME = {
         {
           "uid": "wvnywozo",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -3885,9 +4315,9 @@ window.VN_GAME = {
         {
           "uid": "wvnywozo",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -3929,9 +4359,9 @@ window.VN_GAME = {
         {
           "uid": "wvnywozo",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -3974,9 +4404,9 @@ window.VN_GAME = {
         {
           "uid": "wvnywozo",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -4024,9 +4454,9 @@ window.VN_GAME = {
         {
           "uid": "wvnywozo",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -4069,9 +4499,9 @@ window.VN_GAME = {
         {
           "uid": "wvnywozo",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -4113,9 +4543,9 @@ window.VN_GAME = {
         {
           "uid": "wvnywozo",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -4163,9 +4593,9 @@ window.VN_GAME = {
         {
           "uid": "wvnywozo",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -4210,9 +4640,9 @@ window.VN_GAME = {
         {
           "uid": "wvnywozo",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -4253,10 +4683,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "wvnywozo",
-          "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p07",
+          "x": 638.05,
+          "y": 1044.56,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -4297,10 +4727,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "wvnywozo",
-          "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p07",
+          "x": 638.05,
+          "y": 1044.56,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -4341,10 +4771,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "wvnywozo",
-          "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p07",
+          "x": 638.05,
+          "y": 1044.56,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -4514,10 +4944,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "mq79wt9x",
-          "asset": "hfcyjlxm",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p14",
+          "x": 633.49,
+          "y": 1055.21,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -4558,10 +4988,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "mq79wt9x",
-          "asset": "hfcyjlxm",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p14",
+          "x": 633.49,
+          "y": 1055.21,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -4602,10 +5032,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "mq79wt9x",
-          "asset": "hfcyjlxm",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p14",
+          "x": 633.49,
+          "y": 1055.21,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -4646,10 +5076,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "mq79wt9x",
-          "asset": "hfcyjlxm",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p14",
+          "x": 633.49,
+          "y": 1055.21,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -4690,10 +5120,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "mq79wt9x",
-          "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "hfcyjlxm",
+          "x": 641.3,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -4734,10 +5164,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "mq79wt9x",
-          "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "hfcyjlxm",
+          "x": 641.3,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -4779,10 +5209,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "mq79wt9x",
-          "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "hfcyjlxm",
+          "x": 641.3,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -4826,9 +5256,9 @@ window.VN_GAME = {
         {
           "uid": "mq79wt9x",
           "asset": "art_upgrade_p02",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 683.91,
+          "y": 1019.82,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -4870,9 +5300,9 @@ window.VN_GAME = {
         {
           "uid": "mq79wt9x",
           "asset": "art_upgrade_p02",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 683.91,
+          "y": 1019.82,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -4933,9 +5363,9 @@ window.VN_GAME = {
         {
           "uid": "mq79wt9x",
           "asset": "art_upgrade_p02",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 683.91,
+          "y": 1019.82,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -4979,9 +5409,9 @@ window.VN_GAME = {
         {
           "uid": "mq79wt9x",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -5023,9 +5453,9 @@ window.VN_GAME = {
         {
           "uid": "mq79wt9x",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -5067,9 +5497,9 @@ window.VN_GAME = {
         {
           "uid": "mq79wt9x",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -5111,9 +5541,9 @@ window.VN_GAME = {
         {
           "uid": "mq79wt9x",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -5157,9 +5587,9 @@ window.VN_GAME = {
         {
           "uid": "mq79wt9x",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -5201,9 +5631,9 @@ window.VN_GAME = {
         {
           "uid": "mq79wt9x",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -5245,9 +5675,9 @@ window.VN_GAME = {
         {
           "uid": "mq79wt9x",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -5289,9 +5719,9 @@ window.VN_GAME = {
         {
           "uid": "mq79wt9x",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -5333,9 +5763,9 @@ window.VN_GAME = {
         {
           "uid": "mq79wt9x",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -5378,9 +5808,9 @@ window.VN_GAME = {
         {
           "uid": "mq79wt9x",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -5428,9 +5858,9 @@ window.VN_GAME = {
         {
           "uid": "mq79wt9x",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -5472,9 +5902,9 @@ window.VN_GAME = {
         {
           "uid": "mq79wt9x",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -5522,9 +5952,9 @@ window.VN_GAME = {
         {
           "uid": "mq79wt9x",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -5566,9 +5996,9 @@ window.VN_GAME = {
         {
           "uid": "mq79wt9x",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -5609,11 +6039,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "mq79wt9x",
-          "asset": "art_upgrade_l12",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p09",
+          "x": 731.8,
+          "y": 1048.46,
+          "h": 1000.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -5653,11 +6084,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "mq79wt9x",
-          "asset": "art_upgrade_l12",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p09",
+          "x": 731.8,
+          "y": 1048.46,
+          "h": 1000.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -5697,11 +6129,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "mq79wt9x",
-          "asset": "art_upgrade_l12",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p09",
+          "x": 731.8,
+          "y": 1048.46,
+          "h": 1000.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -5742,9 +6175,9 @@ window.VN_GAME = {
         {
           "uid": "mq79wt9x",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -5786,9 +6219,9 @@ window.VN_GAME = {
         {
           "uid": "mq79wt9x",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -5830,9 +6263,9 @@ window.VN_GAME = {
         {
           "uid": "mq79wt9x",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -5874,9 +6307,9 @@ window.VN_GAME = {
         {
           "uid": "mq79wt9x",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -5918,9 +6351,9 @@ window.VN_GAME = {
         {
           "uid": "mq79wt9x",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -5964,9 +6397,9 @@ window.VN_GAME = {
         {
           "uid": "mq79wt9x",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -6008,9 +6441,9 @@ window.VN_GAME = {
         {
           "uid": "mq79wt9x",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -6058,9 +6491,9 @@ window.VN_GAME = {
         {
           "uid": "mq79wt9x",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -6102,9 +6535,9 @@ window.VN_GAME = {
         {
           "uid": "mq79wt9x",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -6146,9 +6579,9 @@ window.VN_GAME = {
         {
           "uid": "mq79wt9x",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -6190,9 +6623,9 @@ window.VN_GAME = {
         {
           "uid": "mq79wt9x",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -6236,9 +6669,9 @@ window.VN_GAME = {
         {
           "uid": "mq79wt9x",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -6280,9 +6713,9 @@ window.VN_GAME = {
         {
           "uid": "mq79wt9x",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -6324,9 +6757,9 @@ window.VN_GAME = {
         {
           "uid": "mq79wt9x",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -6368,9 +6801,9 @@ window.VN_GAME = {
         {
           "uid": "mq79wt9x",
           "asset": "art_upgrade_p01",
-          "x": 820,
-          "y": 900,
-          "h": 860,
+          "x": 843.52,
+          "y": 907.28,
+          "h": 860.0,
           "flip": false
         }
       ],
@@ -6413,9 +6846,9 @@ window.VN_GAME = {
         {
           "uid": "mq79wt9x",
           "asset": "art_upgrade_p01",
-          "x": 820,
-          "y": 900,
-          "h": 860,
+          "x": 843.52,
+          "y": 907.28,
+          "h": 860.0,
           "flip": false
         }
       ],
@@ -6457,9 +6890,9 @@ window.VN_GAME = {
         {
           "uid": "mq79wt9x",
           "asset": "art_upgrade_p01",
-          "x": 820,
-          "y": 900,
-          "h": 860,
+          "x": 843.52,
+          "y": 907.28,
+          "h": 860.0,
           "flip": false
         }
       ],
@@ -6501,9 +6934,9 @@ window.VN_GAME = {
         {
           "uid": "mq79wt9x",
           "asset": "art_upgrade_p01",
-          "x": 820,
-          "y": 900,
-          "h": 860,
+          "x": 843.52,
+          "y": 907.28,
+          "h": 860.0,
           "flip": false
         }
       ],
@@ -6544,10 +6977,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "mq79wt9x",
-          "asset": "xfg3qcn2",
-          "x": 820,
-          "y": 900,
-          "h": 860,
+          "asset": "art_upgrade_p01",
+          "x": 843.52,
+          "y": 907.28,
+          "h": 860.0,
           "flip": false
         }
       ],
@@ -6594,11 +7027,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "mq79wt9x",
-          "asset": "xfg3qcn2",
-          "x": 820,
-          "y": 900,
-          "h": 860,
-          "flip": false
+          "asset": "art_upgrade_p10",
+          "x": 816.64,
+          "y": 902.8,
+          "h": 860.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -6638,11 +7072,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "mq79wt9x",
-          "asset": "xfg3qcn2",
-          "x": 820,
-          "y": 900,
-          "h": 860,
-          "flip": false
+          "asset": "art_upgrade_p10",
+          "x": 816.64,
+          "y": 902.8,
+          "h": 860.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -6688,11 +7123,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "mq79wt9x",
-          "asset": "xfg3qcn2",
-          "x": 820,
-          "y": 900,
-          "h": 860,
-          "flip": false
+          "asset": "art_upgrade_p10",
+          "x": 816.64,
+          "y": 902.8,
+          "h": 860.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -6732,11 +7168,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "mq79wt9x",
-          "asset": "xfg3qcn2",
-          "x": 820,
-          "y": 900,
-          "h": 860,
-          "flip": false
+          "asset": "art_upgrade_p10",
+          "x": 816.64,
+          "y": 902.8,
+          "h": 860.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -6776,11 +7213,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "mq79wt9x",
-          "asset": "xfg3qcn2",
-          "x": 820,
-          "y": 900,
-          "h": 860,
-          "flip": false
+          "asset": "art_upgrade_p10",
+          "x": 816.64,
+          "y": 902.8,
+          "h": 860.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -6822,11 +7260,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "mq79wt9x",
-          "asset": "wrwcdezj",
-          "x": 760,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p06",
+          "x": 768.57,
+          "y": 993.46,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -6866,11 +7305,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "mq79wt9x",
-          "asset": "wrwcdezj",
-          "x": 760,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p06",
+          "x": 768.57,
+          "y": 993.46,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -6910,11 +7350,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "mq79wt9x",
-          "asset": "wrwcdezj",
-          "x": 760,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p06",
+          "x": 768.57,
+          "y": 993.46,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -6954,11 +7395,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "mq79wt9x",
-          "asset": "wrwcdezj",
-          "x": 760,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p06",
+          "x": 768.57,
+          "y": 993.46,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -7017,11 +7459,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "mq79wt9x",
-          "asset": "wrwcdezj",
-          "x": 760,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p06",
+          "x": 768.57,
+          "y": 993.46,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -7061,11 +7504,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "mq79wt9x",
-          "asset": "wrwcdezj",
-          "x": 760,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p06",
+          "x": 768.57,
+          "y": 993.46,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -7105,11 +7549,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "mq79wt9x",
-          "asset": "wrwcdezj",
-          "x": 760,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p06",
+          "x": 768.57,
+          "y": 993.46,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -7149,11 +7594,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "mq79wt9x",
-          "asset": "wrwcdezj",
-          "x": 760,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p06",
+          "x": 768.57,
+          "y": 993.46,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -7193,11 +7639,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "mq79wt9x",
-          "asset": "wrwcdezj",
-          "x": 760,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p06",
+          "x": 768.57,
+          "y": 993.46,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -7237,11 +7684,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "mq79wt9x",
-          "asset": "wrwcdezj",
-          "x": 760,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p06",
+          "x": 768.57,
+          "y": 993.46,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -7281,10 +7729,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "mq79wt9x",
-          "asset": "wrwcdezj",
-          "x": 760,
-          "y": 980,
-          "h": 940,
+          "asset": "art_upgrade_p06",
+          "x": 768.57,
+          "y": 993.46,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -7326,9 +7774,9 @@ window.VN_GAME = {
         {
           "uid": "mq79wt9x",
           "asset": "z869j1e3",
-          "x": 760,
-          "y": 980,
-          "h": 940,
+          "x": 769.18,
+          "y": 989.09,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -7376,9 +7824,9 @@ window.VN_GAME = {
         {
           "uid": "mq79wt9x",
           "asset": "z869j1e3",
-          "x": 760,
-          "y": 980,
-          "h": 940,
+          "x": 769.18,
+          "y": 989.09,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -7420,9 +7868,9 @@ window.VN_GAME = {
         {
           "uid": "mq79wt9x",
           "asset": "x013srmu",
-          "x": 760,
-          "y": 980,
-          "h": 940,
+          "x": 755.1,
+          "y": 985.51,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -7464,9 +7912,9 @@ window.VN_GAME = {
         {
           "uid": "mq79wt9x",
           "asset": "x013srmu",
-          "x": 760,
-          "y": 980,
-          "h": 940,
+          "x": 755.1,
+          "y": 985.51,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -7508,9 +7956,9 @@ window.VN_GAME = {
         {
           "uid": "mq79wt9x",
           "asset": "x013srmu",
-          "x": 760,
-          "y": 980,
-          "h": 940,
+          "x": 755.1,
+          "y": 985.51,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -7552,9 +8000,9 @@ window.VN_GAME = {
         {
           "uid": "mq79wt9x",
           "asset": "cbx03q1l",
-          "x": 760,
-          "y": 980,
-          "h": 940,
+          "x": 785.09,
+          "y": 981.84,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -7596,9 +8044,9 @@ window.VN_GAME = {
         {
           "uid": "mq79wt9x",
           "asset": "cbx03q1l",
-          "x": 760,
-          "y": 980,
-          "h": 940,
+          "x": 785.09,
+          "y": 981.84,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -7639,10 +8087,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "mq79wt9x",
-          "asset": "cbx03q1l",
-          "x": 760,
-          "y": 980,
-          "h": 940,
+          "asset": "art_upgrade_p14",
+          "x": 753.88,
+          "y": 994.3,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -7683,10 +8131,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "mq79wt9x",
-          "asset": "cbx03q1l",
-          "x": 760,
-          "y": 980,
-          "h": 940,
+          "asset": "art_upgrade_p14",
+          "x": 753.88,
+          "y": 994.3,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -7728,9 +8176,9 @@ window.VN_GAME = {
         {
           "uid": "mq79wt9x",
           "asset": "xfg3qcn2",
-          "x": 760,
-          "y": 980,
-          "h": 940,
+          "x": 760.0,
+          "y": 980.0,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -8051,11 +8499,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "xpmf5x7z",
-          "asset": "xfg3qcn2",
-          "x": 760,
-          "y": 1000,
-          "h": 960,
-          "flip": false
+          "asset": "art_upgrade_p09",
+          "x": 848.12,
+          "y": 1008.12,
+          "h": 960.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -8095,11 +8544,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "xpmf5x7z",
-          "asset": "xfg3qcn2",
-          "x": 760,
-          "y": 1000,
-          "h": 960,
-          "flip": false
+          "asset": "art_upgrade_p09",
+          "x": 848.12,
+          "y": 1008.12,
+          "h": 960.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -8158,11 +8608,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "xpmf5x7z",
-          "asset": "xfg3qcn2",
-          "x": 760,
-          "y": 1000,
-          "h": 960,
-          "flip": false
+          "asset": "art_upgrade_p09",
+          "x": 848.12,
+          "y": 1008.12,
+          "h": 960.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -8203,9 +8654,9 @@ window.VN_GAME = {
         {
           "uid": "xpmf5x7z",
           "asset": "xfg3qcn2",
-          "x": 760,
-          "y": 1000,
-          "h": 960,
+          "x": 760.0,
+          "y": 1000.0,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -8249,9 +8700,9 @@ window.VN_GAME = {
         {
           "uid": "xpmf5x7z",
           "asset": "z869j1e3",
-          "x": 760,
-          "y": 1000,
-          "h": 960,
+          "x": 769.38,
+          "y": 1009.29,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -8292,11 +8743,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "xpmf5x7z",
-          "asset": "z869j1e3",
-          "x": 760,
-          "y": 1000,
-          "h": 960,
-          "flip": false
+          "asset": "x013srmu",
+          "x": 755.0,
+          "y": 1005.62,
+          "h": 960.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -8336,11 +8788,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "xpmf5x7z",
-          "asset": "z869j1e3",
-          "x": 760,
-          "y": 1000,
-          "h": 960,
-          "flip": false
+          "asset": "x013srmu",
+          "x": 755.0,
+          "y": 1005.62,
+          "h": 960.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -8380,11 +8833,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "xpmf5x7z",
-          "asset": "z869j1e3",
-          "x": 760,
-          "y": 1000,
-          "h": 960,
-          "flip": false
+          "asset": "x013srmu",
+          "x": 755.0,
+          "y": 1005.62,
+          "h": 960.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -8424,11 +8878,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "xpmf5x7z",
-          "asset": "z869j1e3",
-          "x": 760,
-          "y": 1000,
-          "h": 960,
-          "flip": false
+          "asset": "x013srmu",
+          "x": 755.0,
+          "y": 1005.62,
+          "h": 960.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -8468,11 +8923,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "xpmf5x7z",
-          "asset": "z869j1e3",
-          "x": 760,
-          "y": 1000,
-          "h": 960,
-          "flip": false
+          "asset": "x013srmu",
+          "x": 755.0,
+          "y": 1005.62,
+          "h": 960.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -8489,9 +8945,7 @@ window.VN_GAME = {
       "fx": "",
       "mood": "",
       "wait": 0,
-      "acts": {
-        "鲸鱼小姐": "shake"
-      },
+      "acts": {},
       "voice": null,
       "se": null,
       "set": "",
@@ -8514,11 +8968,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "xpmf5x7z",
-          "asset": "z869j1e3",
-          "x": 760,
-          "y": 1000,
-          "h": 960,
-          "flip": false
+          "asset": "x013srmu",
+          "x": 755.0,
+          "y": 1005.62,
+          "h": 960.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -8558,11 +9013,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "xpmf5x7z",
-          "asset": "z869j1e3",
-          "x": 760,
-          "y": 1000,
-          "h": 960,
-          "flip": false
+          "asset": "x013srmu",
+          "x": 755.0,
+          "y": 1005.62,
+          "h": 960.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -8603,9 +9059,9 @@ window.VN_GAME = {
         {
           "uid": "xpmf5x7z",
           "asset": "z869j1e3",
-          "x": 760,
-          "y": 1000,
-          "h": 960,
+          "x": 769.38,
+          "y": 1009.29,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -8647,9 +9103,9 @@ window.VN_GAME = {
         {
           "uid": "xpmf5x7z",
           "asset": "2qshq03j",
-          "x": 760,
-          "y": 1000,
-          "h": 960,
+          "x": 762.5,
+          "y": 1013.75,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -8691,9 +9147,9 @@ window.VN_GAME = {
         {
           "uid": "xpmf5x7z",
           "asset": "2qshq03j",
-          "x": 760,
-          "y": 1000,
-          "h": 960,
+          "x": 762.5,
+          "y": 1013.75,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -8735,9 +9191,9 @@ window.VN_GAME = {
         {
           "uid": "xpmf5x7z",
           "asset": "2qshq03j",
-          "x": 760,
-          "y": 1000,
-          "h": 960,
+          "x": 762.5,
+          "y": 1013.75,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -8778,10 +9234,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "xpmf5x7z",
-          "asset": "2qshq03j",
-          "x": 760,
-          "y": 1000,
-          "h": 960,
+          "asset": "art_upgrade_p06",
+          "x": 768.75,
+          "y": 1013.75,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -8822,10 +9278,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "xpmf5x7z",
-          "asset": "2qshq03j",
-          "x": 760,
-          "y": 1000,
-          "h": 960,
+          "asset": "art_upgrade_p06",
+          "x": 768.75,
+          "y": 1013.75,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -8866,10 +9322,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "xpmf5x7z",
-          "asset": "2qshq03j",
-          "x": 760,
-          "y": 1000,
-          "h": 960,
+          "asset": "art_upgrade_p06",
+          "x": 768.75,
+          "y": 1013.75,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -8911,9 +9367,9 @@ window.VN_GAME = {
         {
           "uid": "xpmf5x7z",
           "asset": "x013srmu",
-          "x": 760,
-          "y": 1000,
-          "h": 960,
+          "x": 755.0,
+          "y": 1005.62,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -8957,9 +9413,9 @@ window.VN_GAME = {
         {
           "uid": "xpmf5x7z",
           "asset": "z869j1e3",
-          "x": 760,
-          "y": 1000,
-          "h": 960,
+          "x": 769.38,
+          "y": 1009.29,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -9001,9 +9457,9 @@ window.VN_GAME = {
         {
           "uid": "xpmf5x7z",
           "asset": "z869j1e3",
-          "x": 760,
-          "y": 1000,
-          "h": 960,
+          "x": 769.38,
+          "y": 1009.29,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -9044,11 +9500,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "xpmf5x7z",
-          "asset": "xfg3qcn2",
-          "x": 760,
-          "y": 1000,
-          "h": 960,
-          "flip": false
+          "asset": "art_upgrade_p06",
+          "x": 768.75,
+          "y": 1013.75,
+          "h": 960.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -9088,11 +9545,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "xpmf5x7z",
-          "asset": "xfg3qcn2",
-          "x": 760,
-          "y": 1000,
-          "h": 960,
-          "flip": false
+          "asset": "art_upgrade_p06",
+          "x": 768.75,
+          "y": 1013.75,
+          "h": 960.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -9132,11 +9590,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "xpmf5x7z",
-          "asset": "xfg3qcn2",
-          "x": 760,
-          "y": 1000,
-          "h": 960,
-          "flip": false
+          "asset": "art_upgrade_p06",
+          "x": 768.75,
+          "y": 1013.75,
+          "h": 960.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -9176,11 +9635,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "xpmf5x7z",
-          "asset": "wrwcdezj",
-          "x": 760,
-          "y": 1000,
-          "h": 960,
-          "flip": false
+          "asset": "art_upgrade_p06",
+          "x": 768.75,
+          "y": 1013.75,
+          "h": 960.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -9221,9 +9681,9 @@ window.VN_GAME = {
         {
           "uid": "xpmf5x7z",
           "asset": "wrwcdezj",
-          "x": 760,
-          "y": 1000,
-          "h": 960,
+          "x": 757.5,
+          "y": 1003.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -9265,9 +9725,9 @@ window.VN_GAME = {
         {
           "uid": "xpmf5x7z",
           "asset": "wrwcdezj",
-          "x": 760,
-          "y": 1000,
-          "h": 960,
+          "x": 757.5,
+          "y": 1003.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -9309,9 +9769,9 @@ window.VN_GAME = {
         {
           "uid": "xpmf5x7z",
           "asset": "wrwcdezj",
-          "x": 760,
-          "y": 1000,
-          "h": 960,
+          "x": 757.5,
+          "y": 1003.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -9329,9 +9789,7 @@ window.VN_GAME = {
       "fx": "",
       "mood": "",
       "wait": 0,
-      "acts": {
-        "鲸鱼小姐": "nod"
-      },
+      "acts": {},
       "voice": null,
       "se": null,
       "set": "",
@@ -9354,11 +9812,13 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "xpmf5x7z",
-          "asset": "x013srmu",
-          "x": 760,
-          "y": 1000,
-          "h": 960,
-          "flip": false
+          "asset": "art_upgrade_p09",
+          "x": 799.04,
+          "y": 1018.21,
+          "h": 970.0,
+          "flip": false,
+          "poseSwitch": "soft",
+          "out": "right"
         }
       ],
       "ambience": [
@@ -9398,11 +9858,13 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "xpmf5x7z",
-          "asset": "x013srmu",
-          "x": 760,
-          "y": 1000,
-          "h": 960,
-          "flip": false
+          "asset": "art_upgrade_p09",
+          "x": 799.04,
+          "y": 1018.21,
+          "h": 970.0,
+          "flip": false,
+          "poseSwitch": "soft",
+          "out": "right"
         }
       ],
       "ambience": [
@@ -10443,9 +10905,9 @@ window.VN_GAME = {
         {
           "uid": "pj7k3972",
           "asset": "art_upgrade_p01",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 926.25,
+          "y": 1008.12,
+          "h": 960.0,
           "flip": false,
           "in": "right"
         }
@@ -10492,9 +10954,9 @@ window.VN_GAME = {
         {
           "uid": "pj7k3972",
           "asset": "xfg3qcn2",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 900.0,
+          "y": 1000.0,
+          "h": 960.0,
           "flip": false,
           "in": "right"
         }
@@ -10560,9 +11022,9 @@ window.VN_GAME = {
         {
           "uid": "pj7k3972",
           "asset": "xfg3qcn2",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 900.0,
+          "y": 1000.0,
+          "h": 960.0,
           "flip": false,
           "in": "right"
         }
@@ -10609,9 +11071,9 @@ window.VN_GAME = {
         {
           "uid": "pj7k3972",
           "asset": "z869j1e3",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 909.38,
+          "y": 1009.29,
+          "h": 960.0,
           "flip": false,
           "in": "right"
         }
@@ -10658,9 +11120,9 @@ window.VN_GAME = {
         {
           "uid": "pj7k3972",
           "asset": "xfg3qcn2",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 900.0,
+          "y": 1000.0,
+          "h": 960.0,
           "flip": false,
           "in": "right"
         }
@@ -10707,9 +11169,9 @@ window.VN_GAME = {
         {
           "uid": "pj7k3972",
           "asset": "xfg3qcn2",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 900.0,
+          "y": 1000.0,
+          "h": 960.0,
           "flip": false,
           "in": "right"
         }
@@ -10764,9 +11226,9 @@ window.VN_GAME = {
         {
           "uid": "pj7k3972",
           "asset": "z869j1e3",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 909.38,
+          "y": 1009.29,
+          "h": 960.0,
           "flip": false,
           "in": "right"
         }
@@ -10813,9 +11275,9 @@ window.VN_GAME = {
         {
           "uid": "pj7k3972",
           "asset": "z869j1e3",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 909.38,
+          "y": 1009.29,
+          "h": 960.0,
           "flip": false,
           "in": "right"
         }
@@ -10862,9 +11324,9 @@ window.VN_GAME = {
         {
           "uid": "pj7k3972",
           "asset": "z869j1e3",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 909.38,
+          "y": 1009.29,
+          "h": 960.0,
           "flip": false,
           "in": "right"
         }
@@ -10911,9 +11373,9 @@ window.VN_GAME = {
         {
           "uid": "pj7k3972",
           "asset": "z869j1e3",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 909.38,
+          "y": 1009.29,
+          "h": 960.0,
           "flip": false,
           "in": "right"
         }
@@ -10960,9 +11422,9 @@ window.VN_GAME = {
         {
           "uid": "pj7k3972",
           "asset": "z869j1e3",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 909.38,
+          "y": 1009.29,
+          "h": 960.0,
           "flip": false,
           "in": "right"
         }
@@ -11009,9 +11471,9 @@ window.VN_GAME = {
         {
           "uid": "pj7k3972",
           "asset": "x013srmu",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 895.0,
+          "y": 1005.62,
+          "h": 960.0,
           "flip": false,
           "in": "right"
         }
@@ -11058,9 +11520,9 @@ window.VN_GAME = {
         {
           "uid": "pj7k3972",
           "asset": "x013srmu",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 895.0,
+          "y": 1005.62,
+          "h": 960.0,
           "flip": false,
           "in": "right"
         }
@@ -11107,9 +11569,9 @@ window.VN_GAME = {
         {
           "uid": "pj7k3972",
           "asset": "x013srmu",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 895.0,
+          "y": 1005.62,
+          "h": 960.0,
           "flip": false,
           "in": "right"
         }
@@ -11156,9 +11618,9 @@ window.VN_GAME = {
         {
           "uid": "pj7k3972",
           "asset": "x013srmu",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 895.0,
+          "y": 1005.62,
+          "h": 960.0,
           "flip": false,
           "in": "right"
         }
@@ -11205,9 +11667,9 @@ window.VN_GAME = {
         {
           "uid": "pj7k3972",
           "asset": "x013srmu",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 895.0,
+          "y": 1005.62,
+          "h": 960.0,
           "flip": false,
           "in": "right"
         }
@@ -11254,9 +11716,9 @@ window.VN_GAME = {
         {
           "uid": "pj7k3972",
           "asset": "2qshq03j",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 902.5,
+          "y": 1013.75,
+          "h": 960.0,
           "flip": false,
           "in": "right"
         }
@@ -11303,9 +11765,9 @@ window.VN_GAME = {
         {
           "uid": "pj7k3972",
           "asset": "2qshq03j",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 902.5,
+          "y": 1013.75,
+          "h": 960.0,
           "flip": false,
           "in": "right"
         }
@@ -11358,9 +11820,9 @@ window.VN_GAME = {
         {
           "uid": "pj7k3972",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -11404,9 +11866,9 @@ window.VN_GAME = {
         {
           "uid": "pj7k3972",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -11449,9 +11911,9 @@ window.VN_GAME = {
         {
           "uid": "pj7k3972",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -11494,9 +11956,9 @@ window.VN_GAME = {
         {
           "uid": "pj7k3972",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -11539,9 +12001,9 @@ window.VN_GAME = {
         {
           "uid": "pj7k3972",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -11584,9 +12046,9 @@ window.VN_GAME = {
         {
           "uid": "pj7k3972",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -11629,9 +12091,9 @@ window.VN_GAME = {
         {
           "uid": "pj7k3972",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -11674,9 +12136,9 @@ window.VN_GAME = {
         {
           "uid": "pj7k3972",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -11720,9 +12182,9 @@ window.VN_GAME = {
         {
           "uid": "pj7k3972",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -11765,9 +12227,9 @@ window.VN_GAME = {
         {
           "uid": "pj7k3972",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -11810,9 +12272,9 @@ window.VN_GAME = {
         {
           "uid": "pj7k3972",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -11855,9 +12317,9 @@ window.VN_GAME = {
         {
           "uid": "pj7k3972",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -11900,9 +12362,9 @@ window.VN_GAME = {
         {
           "uid": "pj7k3972",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -11945,9 +12407,9 @@ window.VN_GAME = {
         {
           "uid": "pj7k3972",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -11990,9 +12452,9 @@ window.VN_GAME = {
         {
           "uid": "pj7k3972",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -12054,9 +12516,9 @@ window.VN_GAME = {
         {
           "uid": "pj7k3972",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -12099,9 +12561,9 @@ window.VN_GAME = {
         {
           "uid": "pj7k3972",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -12144,9 +12606,9 @@ window.VN_GAME = {
         {
           "uid": "pj7k3972",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -12189,9 +12651,9 @@ window.VN_GAME = {
         {
           "uid": "pj7k3972",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -12234,9 +12696,9 @@ window.VN_GAME = {
         {
           "uid": "pj7k3972",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -12279,9 +12741,9 @@ window.VN_GAME = {
         {
           "uid": "pj7k3972",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -12324,9 +12786,9 @@ window.VN_GAME = {
         {
           "uid": "pj7k3972",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -12369,9 +12831,9 @@ window.VN_GAME = {
         {
           "uid": "pj7k3972",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -12414,9 +12876,9 @@ window.VN_GAME = {
         {
           "uid": "pj7k3972",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -12459,9 +12921,9 @@ window.VN_GAME = {
         {
           "uid": "pj7k3972",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -12504,9 +12966,9 @@ window.VN_GAME = {
         {
           "uid": "pj7k3972",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -12549,9 +13011,9 @@ window.VN_GAME = {
         {
           "uid": "pj7k3972",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -12596,9 +13058,9 @@ window.VN_GAME = {
         {
           "uid": "pj7k3972",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -12641,9 +13103,9 @@ window.VN_GAME = {
         {
           "uid": "pj7k3972",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -12686,9 +13148,9 @@ window.VN_GAME = {
         {
           "uid": "pj7k3972",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -12731,9 +13193,9 @@ window.VN_GAME = {
         {
           "uid": "pj7k3972",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -12776,9 +13238,9 @@ window.VN_GAME = {
         {
           "uid": "pj7k3972",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -12821,9 +13283,9 @@ window.VN_GAME = {
         {
           "uid": "pj7k3972",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -12866,9 +13328,9 @@ window.VN_GAME = {
         {
           "uid": "pj7k3972",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -12911,9 +13373,9 @@ window.VN_GAME = {
         {
           "uid": "pj7k3972",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -12956,9 +13418,9 @@ window.VN_GAME = {
         {
           "uid": "pj7k3972",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -13001,9 +13463,9 @@ window.VN_GAME = {
         {
           "uid": "pj7k3972",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -13046,9 +13508,9 @@ window.VN_GAME = {
         {
           "uid": "pj7k3972",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -13090,10 +13552,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "pj7k3972",
-          "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p14",
+          "x": 633.49,
+          "y": 1055.21,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -13135,10 +13597,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "pj7k3972",
-          "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p14",
+          "x": 633.49,
+          "y": 1055.21,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -13180,10 +13642,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "pj7k3972",
-          "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p14",
+          "x": 633.49,
+          "y": 1055.21,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -13225,10 +13687,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "pj7k3972",
-          "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p14",
+          "x": 633.49,
+          "y": 1055.21,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -13270,10 +13732,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "pj7k3972",
-          "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p14",
+          "x": 633.49,
+          "y": 1055.21,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -13315,10 +13777,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "pj7k3972",
-          "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p14",
+          "x": 633.49,
+          "y": 1055.21,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -13786,10 +14248,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "mimdz81b",
-          "asset": "hfcyjlxm",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p14",
+          "x": 633.49,
+          "y": 1055.21,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -13850,9 +14312,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -13894,9 +14356,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -13938,9 +14400,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -13982,9 +14444,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -14026,9 +14488,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -14070,9 +14532,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -14114,9 +14576,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -14158,9 +14620,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "hfcyjlxm",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 641.3,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -14208,9 +14670,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "hfcyjlxm",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 641.3,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -14252,9 +14714,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "hfcyjlxm",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 641.3,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -14296,9 +14758,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "hfcyjlxm",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 641.3,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -14340,9 +14802,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "hfcyjlxm",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 641.3,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -14384,9 +14846,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "hfcyjlxm",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 641.3,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -14427,10 +14889,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "mimdz81b",
-          "asset": "hfcyjlxm",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p05",
+          "x": 659.53,
+          "y": 798.78,
+          "h": 781.82,
           "flip": false
         }
       ],
@@ -14471,10 +14933,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "mimdz81b",
-          "asset": "hfcyjlxm",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p05",
+          "x": 659.53,
+          "y": 798.78,
+          "h": 781.82,
           "flip": false
         }
       ],
@@ -14515,10 +14977,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "mimdz81b",
-          "asset": "hfcyjlxm",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p05",
+          "x": 659.53,
+          "y": 798.78,
+          "h": 781.82,
           "flip": false
         }
       ],
@@ -14559,10 +15021,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "mimdz81b",
-          "asset": "hfcyjlxm",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p05",
+          "x": 659.53,
+          "y": 798.78,
+          "h": 781.82,
           "flip": false
         }
       ],
@@ -14610,9 +15072,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -14654,9 +15116,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -14698,9 +15160,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -14742,9 +15204,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -14788,9 +15250,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -14832,9 +15294,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -14876,9 +15338,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -14920,9 +15382,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -14964,9 +15426,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -15014,9 +15476,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "wrwcdezj",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -15059,9 +15521,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "wrwcdezj",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -15103,9 +15565,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "wrwcdezj",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -15147,9 +15609,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "wrwcdezj",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -15191,9 +15653,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "wrwcdezj",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -15235,9 +15697,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "wrwcdezj",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -15279,9 +15741,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "wrwcdezj",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -15323,9 +15785,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "wrwcdezj",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -15367,9 +15829,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "wrwcdezj",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -15411,9 +15873,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "wrwcdezj",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -15474,9 +15936,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "wrwcdezj",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -15518,9 +15980,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "wrwcdezj",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -15562,9 +16024,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "wrwcdezj",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -15606,9 +16068,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "wrwcdezj",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -15650,9 +16112,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "wrwcdezj",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -15694,9 +16156,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "wrwcdezj",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -15738,9 +16200,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "wrwcdezj",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -15782,9 +16244,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "wrwcdezj",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -15826,9 +16288,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "wrwcdezj",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -15870,9 +16332,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "x013srmu",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 855.0,
+          "y": 1005.62,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -15914,9 +16376,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "x013srmu",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 855.0,
+          "y": 1005.62,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -15958,9 +16420,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "x013srmu",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 855.0,
+          "y": 1005.62,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -16002,9 +16464,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "x013srmu",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 855.0,
+          "y": 1005.62,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -16046,9 +16508,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "x013srmu",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 855.0,
+          "y": 1005.62,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -16090,9 +16552,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "x013srmu",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 855.0,
+          "y": 1005.62,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -16134,9 +16596,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "xfg3qcn2",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 860.0,
+          "y": 1000.0,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -16178,9 +16640,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "xfg3qcn2",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 860.0,
+          "y": 1000.0,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -16222,9 +16684,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "xfg3qcn2",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 860.0,
+          "y": 1000.0,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -16266,9 +16728,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "x013srmu",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 855.0,
+          "y": 1005.62,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -16310,9 +16772,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "x013srmu",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 855.0,
+          "y": 1005.62,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -16354,9 +16816,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "x013srmu",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 855.0,
+          "y": 1005.62,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -16400,9 +16862,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "z869j1e3",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 869.38,
+          "y": 1009.29,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -16444,9 +16906,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "z869j1e3",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 869.38,
+          "y": 1009.29,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -16488,9 +16950,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "88v1dull",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 858.75,
+          "y": 1006.88,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -16532,9 +16994,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "88v1dull",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 858.75,
+          "y": 1006.88,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -16576,9 +17038,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "88v1dull",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 858.75,
+          "y": 1006.88,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -16620,9 +17082,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "88v1dull",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 858.75,
+          "y": 1006.88,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -16670,9 +17132,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "hfcyjlxm",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 861.25,
+          "y": 1001.88,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -16716,9 +17178,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "hfcyjlxm",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 861.25,
+          "y": 1001.88,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -16760,9 +17222,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "xfg3qcn2",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 860.0,
+          "y": 1000.0,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -16804,9 +17266,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "xfg3qcn2",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 860.0,
+          "y": 1000.0,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -16848,9 +17310,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "xfg3qcn2",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 860.0,
+          "y": 1000.0,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -16892,9 +17354,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "2qshq03j",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 862.5,
+          "y": 1013.75,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -16936,9 +17398,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "2qshq03j",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 862.5,
+          "y": 1013.75,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -16980,9 +17442,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "2qshq03j",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 862.5,
+          "y": 1013.75,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -17024,9 +17486,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "x013srmu",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 855.0,
+          "y": 1005.62,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -17068,9 +17530,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "x013srmu",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 855.0,
+          "y": 1005.62,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -17112,9 +17574,9 @@ window.VN_GAME = {
         {
           "uid": "mimdz81b",
           "asset": "x013srmu",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 855.0,
+          "y": 1005.62,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -17584,9 +18046,9 @@ window.VN_GAME = {
         {
           "uid": "q1az3dwx",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false,
           "look": "gray"
         }
@@ -17981,9 +18443,9 @@ window.VN_GAME = {
         {
           "uid": "lnzzxv9u",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -18025,9 +18487,9 @@ window.VN_GAME = {
         {
           "uid": "lnzzxv9u",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -18069,9 +18531,9 @@ window.VN_GAME = {
         {
           "uid": "lnzzxv9u",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -18113,9 +18575,9 @@ window.VN_GAME = {
         {
           "uid": "lnzzxv9u",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -18157,9 +18619,9 @@ window.VN_GAME = {
         {
           "uid": "lnzzxv9u",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -18201,9 +18663,9 @@ window.VN_GAME = {
         {
           "uid": "lnzzxv9u",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -18245,9 +18707,9 @@ window.VN_GAME = {
         {
           "uid": "lnzzxv9u",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -18289,9 +18751,9 @@ window.VN_GAME = {
         {
           "uid": "lnzzxv9u",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -18333,9 +18795,9 @@ window.VN_GAME = {
         {
           "uid": "lnzzxv9u",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -18377,9 +18839,9 @@ window.VN_GAME = {
         {
           "uid": "lnzzxv9u",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -18421,9 +18883,9 @@ window.VN_GAME = {
         {
           "uid": "lnzzxv9u",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -18465,9 +18927,9 @@ window.VN_GAME = {
         {
           "uid": "lnzzxv9u",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -18509,9 +18971,9 @@ window.VN_GAME = {
         {
           "uid": "lnzzxv9u",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -18553,9 +19015,9 @@ window.VN_GAME = {
         {
           "uid": "lnzzxv9u",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -18598,9 +19060,9 @@ window.VN_GAME = {
         {
           "uid": "lnzzxv9u",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -18642,9 +19104,9 @@ window.VN_GAME = {
         {
           "uid": "lnzzxv9u",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -18686,9 +19148,9 @@ window.VN_GAME = {
         {
           "uid": "lnzzxv9u",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -18730,9 +19192,9 @@ window.VN_GAME = {
         {
           "uid": "lnzzxv9u",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -18774,9 +19236,9 @@ window.VN_GAME = {
         {
           "uid": "lnzzxv9u",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -18818,9 +19280,9 @@ window.VN_GAME = {
         {
           "uid": "lnzzxv9u",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -18862,9 +19324,9 @@ window.VN_GAME = {
         {
           "uid": "lnzzxv9u",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -18906,9 +19368,9 @@ window.VN_GAME = {
         {
           "uid": "lnzzxv9u",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -18950,9 +19412,9 @@ window.VN_GAME = {
         {
           "uid": "lnzzxv9u",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -18994,9 +19456,9 @@ window.VN_GAME = {
         {
           "uid": "lnzzxv9u",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -19038,9 +19500,9 @@ window.VN_GAME = {
         {
           "uid": "lnzzxv9u",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -19101,9 +19563,9 @@ window.VN_GAME = {
         {
           "uid": "lnzzxv9u",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -19145,9 +19607,9 @@ window.VN_GAME = {
         {
           "uid": "lnzzxv9u",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -19189,9 +19651,9 @@ window.VN_GAME = {
         {
           "uid": "lnzzxv9u",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -19233,9 +19695,9 @@ window.VN_GAME = {
         {
           "uid": "lnzzxv9u",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -19277,9 +19739,9 @@ window.VN_GAME = {
         {
           "uid": "lnzzxv9u",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -19321,9 +19783,9 @@ window.VN_GAME = {
         {
           "uid": "lnzzxv9u",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -19371,9 +19833,9 @@ window.VN_GAME = {
         {
           "uid": "lnzzxv9u",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -19415,9 +19877,9 @@ window.VN_GAME = {
         {
           "uid": "lnzzxv9u",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -19459,9 +19921,9 @@ window.VN_GAME = {
         {
           "uid": "lnzzxv9u",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -19503,9 +19965,9 @@ window.VN_GAME = {
         {
           "uid": "lnzzxv9u",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -19547,9 +20009,9 @@ window.VN_GAME = {
         {
           "uid": "lnzzxv9u",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -19591,9 +20053,9 @@ window.VN_GAME = {
         {
           "uid": "lnzzxv9u",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -19635,9 +20097,9 @@ window.VN_GAME = {
         {
           "uid": "lnzzxv9u",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -19679,9 +20141,9 @@ window.VN_GAME = {
         {
           "uid": "lnzzxv9u",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -19723,9 +20185,9 @@ window.VN_GAME = {
         {
           "uid": "lnzzxv9u",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -19767,9 +20229,9 @@ window.VN_GAME = {
         {
           "uid": "lnzzxv9u",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -19811,9 +20273,9 @@ window.VN_GAME = {
         {
           "uid": "lnzzxv9u",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -19855,9 +20317,9 @@ window.VN_GAME = {
         {
           "uid": "lnzzxv9u",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -19899,9 +20361,9 @@ window.VN_GAME = {
         {
           "uid": "lnzzxv9u",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -20056,9 +20518,9 @@ window.VN_GAME = {
         {
           "uid": "lnzzxv9u",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -20100,9 +20562,9 @@ window.VN_GAME = {
         {
           "uid": "lnzzxv9u",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -20144,9 +20606,9 @@ window.VN_GAME = {
         {
           "uid": "lnzzxv9u",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -20188,9 +20650,9 @@ window.VN_GAME = {
         {
           "uid": "lnzzxv9u",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -20232,9 +20694,9 @@ window.VN_GAME = {
         {
           "uid": "lnzzxv9u",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -20276,9 +20738,9 @@ window.VN_GAME = {
         {
           "uid": "lnzzxv9u",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -20320,9 +20782,9 @@ window.VN_GAME = {
         {
           "uid": "lnzzxv9u",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -20364,9 +20826,9 @@ window.VN_GAME = {
         {
           "uid": "lnzzxv9u",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -20408,9 +20870,9 @@ window.VN_GAME = {
         {
           "uid": "lnzzxv9u",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -24230,9 +24692,9 @@ window.VN_GAME = {
         {
           "uid": "w08rxofi",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -24274,9 +24736,9 @@ window.VN_GAME = {
         {
           "uid": "w08rxofi",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -24318,9 +24780,9 @@ window.VN_GAME = {
         {
           "uid": "w08rxofi",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -24362,9 +24824,9 @@ window.VN_GAME = {
         {
           "uid": "w08rxofi",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -24406,9 +24868,9 @@ window.VN_GAME = {
         {
           "uid": "w08rxofi",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -24450,9 +24912,9 @@ window.VN_GAME = {
         {
           "uid": "w08rxofi",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -24494,9 +24956,9 @@ window.VN_GAME = {
         {
           "uid": "w08rxofi",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -24538,9 +25000,9 @@ window.VN_GAME = {
         {
           "uid": "w08rxofi",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -24582,9 +25044,9 @@ window.VN_GAME = {
         {
           "uid": "w08rxofi",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -24626,9 +25088,9 @@ window.VN_GAME = {
         {
           "uid": "w08rxofi",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -24670,9 +25132,9 @@ window.VN_GAME = {
         {
           "uid": "w08rxofi",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -24714,9 +25176,9 @@ window.VN_GAME = {
         {
           "uid": "w08rxofi",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -24758,9 +25220,9 @@ window.VN_GAME = {
         {
           "uid": "w08rxofi",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -24802,9 +25264,9 @@ window.VN_GAME = {
         {
           "uid": "w08rxofi",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -24846,9 +25308,9 @@ window.VN_GAME = {
         {
           "uid": "w08rxofi",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -24890,9 +25352,9 @@ window.VN_GAME = {
         {
           "uid": "w08rxofi",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -31729,9 +32191,9 @@ window.VN_GAME = {
         {
           "uid": "m6j4rvz3",
           "asset": "xfg3qcn2",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 900.0,
+          "y": 1000.0,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -31773,9 +32235,9 @@ window.VN_GAME = {
         {
           "uid": "m6j4rvz3",
           "asset": "xfg3qcn2",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 900.0,
+          "y": 1000.0,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -31817,9 +32279,9 @@ window.VN_GAME = {
         {
           "uid": "m6j4rvz3",
           "asset": "xfg3qcn2",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 900.0,
+          "y": 1000.0,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -31861,9 +32323,9 @@ window.VN_GAME = {
         {
           "uid": "m6j4rvz3",
           "asset": "xfg3qcn2",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 900.0,
+          "y": 1000.0,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -31905,9 +32367,9 @@ window.VN_GAME = {
         {
           "uid": "m6j4rvz3",
           "asset": "cbx03q1l",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 925.62,
+          "y": 1001.88,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -31949,9 +32411,9 @@ window.VN_GAME = {
         {
           "uid": "m6j4rvz3",
           "asset": "cbx03q1l",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 925.62,
+          "y": 1001.88,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -31993,9 +32455,9 @@ window.VN_GAME = {
         {
           "uid": "m6j4rvz3",
           "asset": "cbx03q1l",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 925.62,
+          "y": 1001.88,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -32037,9 +32499,9 @@ window.VN_GAME = {
         {
           "uid": "m6j4rvz3",
           "asset": "xfg3qcn2",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 900.0,
+          "y": 1000.0,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -32081,9 +32543,9 @@ window.VN_GAME = {
         {
           "uid": "m6j4rvz3",
           "asset": "xfg3qcn2",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 900.0,
+          "y": 1000.0,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -32125,9 +32587,9 @@ window.VN_GAME = {
         {
           "uid": "m6j4rvz3",
           "asset": "xfg3qcn2",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 900.0,
+          "y": 1000.0,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -32169,9 +32631,9 @@ window.VN_GAME = {
         {
           "uid": "m6j4rvz3",
           "asset": "cbx03q1l",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 925.62,
+          "y": 1001.88,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -32213,9 +32675,9 @@ window.VN_GAME = {
         {
           "uid": "m6j4rvz3",
           "asset": "cbx03q1l",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 925.62,
+          "y": 1001.88,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -32278,9 +32740,9 @@ window.VN_GAME = {
         {
           "uid": "m6j4rvz3",
           "asset": "88v1dull",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 898.75,
+          "y": 1006.88,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -32322,9 +32784,9 @@ window.VN_GAME = {
         {
           "uid": "m6j4rvz3",
           "asset": "xfg3qcn2",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 900.0,
+          "y": 1000.0,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -32366,9 +32828,9 @@ window.VN_GAME = {
         {
           "uid": "m6j4rvz3",
           "asset": "2qshq03j",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 902.5,
+          "y": 1013.75,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -32410,9 +32872,9 @@ window.VN_GAME = {
         {
           "uid": "m6j4rvz3",
           "asset": "2qshq03j",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 902.5,
+          "y": 1013.75,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -32454,9 +32916,9 @@ window.VN_GAME = {
         {
           "uid": "m6j4rvz3",
           "asset": "xfg3qcn2",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 900.0,
+          "y": 1000.0,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -32498,9 +32960,9 @@ window.VN_GAME = {
         {
           "uid": "m6j4rvz3",
           "asset": "xfg3qcn2",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 900.0,
+          "y": 1000.0,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -32542,9 +33004,9 @@ window.VN_GAME = {
         {
           "uid": "m6j4rvz3",
           "asset": "xfg3qcn2",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 900.0,
+          "y": 1000.0,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -32586,9 +33048,9 @@ window.VN_GAME = {
         {
           "uid": "m6j4rvz3",
           "asset": "xfg3qcn2",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 900.0,
+          "y": 1000.0,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -32630,9 +33092,9 @@ window.VN_GAME = {
         {
           "uid": "m6j4rvz3",
           "asset": "xfg3qcn2",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 900.0,
+          "y": 1000.0,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -32680,9 +33142,9 @@ window.VN_GAME = {
         {
           "uid": "m6j4rvz3",
           "asset": "cbx03q1l",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 925.62,
+          "y": 1001.88,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -32724,9 +33186,9 @@ window.VN_GAME = {
         {
           "uid": "m6j4rvz3",
           "asset": "cbx03q1l",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 925.62,
+          "y": 1001.88,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -32768,9 +33230,9 @@ window.VN_GAME = {
         {
           "uid": "m6j4rvz3",
           "asset": "cbx03q1l",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 925.62,
+          "y": 1001.88,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -32818,9 +33280,9 @@ window.VN_GAME = {
         {
           "uid": "m6j4rvz3",
           "asset": "xfg3qcn2",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 900.0,
+          "y": 1000.0,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -32862,9 +33324,9 @@ window.VN_GAME = {
         {
           "uid": "m6j4rvz3",
           "asset": "xfg3qcn2",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 900.0,
+          "y": 1000.0,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -32982,9 +33444,9 @@ window.VN_GAME = {
         {
           "uid": "0idxpv64",
           "asset": "cbx03q1l",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 925.62,
+          "y": 1001.88,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -33026,9 +33488,9 @@ window.VN_GAME = {
         {
           "uid": "0idxpv64",
           "asset": "cbx03q1l",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 925.62,
+          "y": 1001.88,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -33070,9 +33532,9 @@ window.VN_GAME = {
         {
           "uid": "0idxpv64",
           "asset": "cbx03q1l",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 925.62,
+          "y": 1001.88,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -33120,9 +33582,9 @@ window.VN_GAME = {
         {
           "uid": "0idxpv64",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -33165,9 +33627,9 @@ window.VN_GAME = {
         {
           "uid": "0idxpv64",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -33209,9 +33671,9 @@ window.VN_GAME = {
         {
           "uid": "0idxpv64",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -33253,9 +33715,9 @@ window.VN_GAME = {
         {
           "uid": "0idxpv64",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -33297,9 +33759,9 @@ window.VN_GAME = {
         {
           "uid": "0idxpv64",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -33341,9 +33803,9 @@ window.VN_GAME = {
         {
           "uid": "0idxpv64",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -33385,9 +33847,9 @@ window.VN_GAME = {
         {
           "uid": "0idxpv64",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -33429,9 +33891,9 @@ window.VN_GAME = {
         {
           "uid": "0idxpv64",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -33474,10 +33936,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "0idxpv64",
-          "asset": "art_upgrade_l34",
-          "x": 640,
-          "y": 980,
-          "h": 940,
+          "asset": "art_upgrade_p05",
+          "x": 658.36,
+          "y": 753.25,
+          "h": 734.91,
           "flip": false
         }
       ],
@@ -33518,10 +33980,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "0idxpv64",
-          "asset": "art_upgrade_l34",
-          "x": 640,
-          "y": 980,
-          "h": 940,
+          "asset": "art_upgrade_p05",
+          "x": 658.36,
+          "y": 753.25,
+          "h": 734.91,
           "flip": false
         }
       ],
@@ -33562,10 +34024,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "0idxpv64",
-          "asset": "art_upgrade_l34",
-          "x": 640,
-          "y": 980,
-          "h": 940,
+          "asset": "art_upgrade_p05",
+          "x": 658.36,
+          "y": 753.25,
+          "h": 734.91,
           "flip": false
         }
       ],
@@ -33612,10 +34074,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "0idxpv64",
-          "asset": "art_upgrade_l34",
-          "x": 640,
-          "y": 980,
-          "h": 940,
+          "asset": "art_upgrade_p05",
+          "x": 658.36,
+          "y": 753.25,
+          "h": 734.91,
           "flip": false
         }
       ],
@@ -33656,10 +34118,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "0idxpv64",
-          "asset": "art_upgrade_l34",
-          "x": 640,
-          "y": 980,
-          "h": 940,
+          "asset": "art_upgrade_p05",
+          "x": 658.36,
+          "y": 753.25,
+          "h": 734.91,
           "flip": false
         }
       ],
@@ -33700,10 +34162,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "0idxpv64",
-          "asset": "art_upgrade_l34",
-          "x": 640,
-          "y": 980,
-          "h": 940,
+          "asset": "art_upgrade_p05",
+          "x": 658.36,
+          "y": 753.25,
+          "h": 734.91,
           "flip": false
         }
       ],
@@ -34009,9 +34471,9 @@ window.VN_GAME = {
         {
           "uid": "zrqbrwy8",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -34053,9 +34515,9 @@ window.VN_GAME = {
         {
           "uid": "zrqbrwy8",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -34097,9 +34559,9 @@ window.VN_GAME = {
         {
           "uid": "zrqbrwy8",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -34141,9 +34603,9 @@ window.VN_GAME = {
         {
           "uid": "zrqbrwy8",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -34185,9 +34647,9 @@ window.VN_GAME = {
         {
           "uid": "zrqbrwy8",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -34229,9 +34691,9 @@ window.VN_GAME = {
         {
           "uid": "zrqbrwy8",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -34273,9 +34735,9 @@ window.VN_GAME = {
         {
           "uid": "zrqbrwy8",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -34317,9 +34779,9 @@ window.VN_GAME = {
         {
           "uid": "zrqbrwy8",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -34361,9 +34823,9 @@ window.VN_GAME = {
         {
           "uid": "zrqbrwy8",
           "asset": "hfcyjlxm",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 641.3,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -34413,9 +34875,9 @@ window.VN_GAME = {
         {
           "uid": "zrqbrwy8",
           "asset": "hfcyjlxm",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 641.3,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -34457,9 +34919,9 @@ window.VN_GAME = {
         {
           "uid": "zrqbrwy8",
           "asset": "hfcyjlxm",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 641.3,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -34501,9 +34963,9 @@ window.VN_GAME = {
         {
           "uid": "zrqbrwy8",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -34545,9 +35007,9 @@ window.VN_GAME = {
         {
           "uid": "zrqbrwy8",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -34589,9 +35051,9 @@ window.VN_GAME = {
         {
           "uid": "zrqbrwy8",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -34633,9 +35095,9 @@ window.VN_GAME = {
         {
           "uid": "zrqbrwy8",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -34677,9 +35139,9 @@ window.VN_GAME = {
         {
           "uid": "zrqbrwy8",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -34721,9 +35183,9 @@ window.VN_GAME = {
         {
           "uid": "zrqbrwy8",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -34765,9 +35227,9 @@ window.VN_GAME = {
         {
           "uid": "zrqbrwy8",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -34809,9 +35271,9 @@ window.VN_GAME = {
         {
           "uid": "zrqbrwy8",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -34853,9 +35315,9 @@ window.VN_GAME = {
         {
           "uid": "zrqbrwy8",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -34897,9 +35359,9 @@ window.VN_GAME = {
         {
           "uid": "zrqbrwy8",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -34941,9 +35403,9 @@ window.VN_GAME = {
         {
           "uid": "zrqbrwy8",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -34985,9 +35447,9 @@ window.VN_GAME = {
         {
           "uid": "zrqbrwy8",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -35029,9 +35491,9 @@ window.VN_GAME = {
         {
           "uid": "zrqbrwy8",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -35073,9 +35535,9 @@ window.VN_GAME = {
         {
           "uid": "zrqbrwy8",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -35117,9 +35579,9 @@ window.VN_GAME = {
         {
           "uid": "zrqbrwy8",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -35161,9 +35623,9 @@ window.VN_GAME = {
         {
           "uid": "zrqbrwy8",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -35205,9 +35667,9 @@ window.VN_GAME = {
         {
           "uid": "zrqbrwy8",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -35249,9 +35711,9 @@ window.VN_GAME = {
         {
           "uid": "zrqbrwy8",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -35293,9 +35755,9 @@ window.VN_GAME = {
         {
           "uid": "zrqbrwy8",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -35337,9 +35799,9 @@ window.VN_GAME = {
         {
           "uid": "zrqbrwy8",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -35381,9 +35843,9 @@ window.VN_GAME = {
         {
           "uid": "zrqbrwy8",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -35425,9 +35887,9 @@ window.VN_GAME = {
         {
           "uid": "zrqbrwy8",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -35469,9 +35931,9 @@ window.VN_GAME = {
         {
           "uid": "zrqbrwy8",
           "asset": "hfcyjlxm",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 641.3,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -35519,9 +35981,9 @@ window.VN_GAME = {
         {
           "uid": "zrqbrwy8",
           "asset": "hfcyjlxm",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 641.3,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -35563,9 +36025,9 @@ window.VN_GAME = {
         {
           "uid": "zrqbrwy8",
           "asset": "hfcyjlxm",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 641.3,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -35607,9 +36069,9 @@ window.VN_GAME = {
         {
           "uid": "zrqbrwy8",
           "asset": "hfcyjlxm",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 641.3,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -35653,9 +36115,9 @@ window.VN_GAME = {
         {
           "uid": "zrqbrwy8",
           "asset": "hfcyjlxm",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 641.3,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -35697,9 +36159,9 @@ window.VN_GAME = {
         {
           "uid": "zrqbrwy8",
           "asset": "hfcyjlxm",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 641.3,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -35741,9 +36203,9 @@ window.VN_GAME = {
         {
           "uid": "zrqbrwy8",
           "asset": "hfcyjlxm",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 641.3,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -35785,9 +36247,9 @@ window.VN_GAME = {
         {
           "uid": "zrqbrwy8",
           "asset": "hfcyjlxm",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 641.3,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -35829,9 +36291,9 @@ window.VN_GAME = {
         {
           "uid": "zrqbrwy8",
           "asset": "hfcyjlxm",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 641.3,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -35873,9 +36335,9 @@ window.VN_GAME = {
         {
           "uid": "zrqbrwy8",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -35917,9 +36379,9 @@ window.VN_GAME = {
         {
           "uid": "zrqbrwy8",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -35961,9 +36423,9 @@ window.VN_GAME = {
         {
           "uid": "zrqbrwy8",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -36005,9 +36467,9 @@ window.VN_GAME = {
         {
           "uid": "zrqbrwy8",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -36049,9 +36511,9 @@ window.VN_GAME = {
         {
           "uid": "zrqbrwy8",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -36093,9 +36555,9 @@ window.VN_GAME = {
         {
           "uid": "zrqbrwy8",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -36137,9 +36599,9 @@ window.VN_GAME = {
         {
           "uid": "zrqbrwy8",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -36751,9 +37213,9 @@ window.VN_GAME = {
         {
           "uid": "d8zsozju",
           "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "x": 859.39,
+          "y": 981.84,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -36805,9 +37267,9 @@ window.VN_GAME = {
         {
           "uid": "d8zsozju",
           "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "x": 859.39,
+          "y": 981.84,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -36857,9 +37319,9 @@ window.VN_GAME = {
         {
           "uid": "d8zsozju",
           "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "x": 859.39,
+          "y": 981.84,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -36909,9 +37371,9 @@ window.VN_GAME = {
         {
           "uid": "d8zsozju",
           "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "x": 859.39,
+          "y": 981.84,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -36961,9 +37423,9 @@ window.VN_GAME = {
         {
           "uid": "d8zsozju",
           "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "x": 859.39,
+          "y": 981.84,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -37013,9 +37475,9 @@ window.VN_GAME = {
         {
           "uid": "d8zsozju",
           "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "x": 859.39,
+          "y": 981.84,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -37065,9 +37527,9 @@ window.VN_GAME = {
         {
           "uid": "d8zsozju",
           "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "x": 859.39,
+          "y": 981.84,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -37117,9 +37579,9 @@ window.VN_GAME = {
         {
           "uid": "d8zsozju",
           "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "x": 859.39,
+          "y": 981.84,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -37169,9 +37631,9 @@ window.VN_GAME = {
         {
           "uid": "d8zsozju",
           "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "x": 859.39,
+          "y": 981.84,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -37221,9 +37683,9 @@ window.VN_GAME = {
         {
           "uid": "d8zsozju",
           "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "x": 859.39,
+          "y": 981.84,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -37273,9 +37735,9 @@ window.VN_GAME = {
         {
           "uid": "d8zsozju",
           "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "x": 859.39,
+          "y": 981.84,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -37325,9 +37787,9 @@ window.VN_GAME = {
         {
           "uid": "d8zsozju",
           "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "x": 859.39,
+          "y": 981.84,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -37377,9 +37839,9 @@ window.VN_GAME = {
         {
           "uid": "d8zsozju",
           "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "x": 859.39,
+          "y": 981.84,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -37430,9 +37892,9 @@ window.VN_GAME = {
         {
           "uid": "d8zsozju",
           "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "x": 859.39,
+          "y": 981.84,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -37482,9 +37944,9 @@ window.VN_GAME = {
         {
           "uid": "d8zsozju",
           "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "x": 859.39,
+          "y": 981.84,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -37553,9 +38015,9 @@ window.VN_GAME = {
         {
           "uid": "d8zsozju",
           "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "x": 859.39,
+          "y": 981.84,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -37605,9 +38067,9 @@ window.VN_GAME = {
         {
           "uid": "d8zsozju",
           "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "x": 859.39,
+          "y": 981.84,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -37657,9 +38119,9 @@ window.VN_GAME = {
         {
           "uid": "d8zsozju",
           "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "x": 859.39,
+          "y": 981.84,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -37709,9 +38171,9 @@ window.VN_GAME = {
         {
           "uid": "d8zsozju",
           "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "x": 859.39,
+          "y": 981.84,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -37761,9 +38223,9 @@ window.VN_GAME = {
         {
           "uid": "d8zsozju",
           "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "x": 859.39,
+          "y": 981.84,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -37813,9 +38275,9 @@ window.VN_GAME = {
         {
           "uid": "d8zsozju",
           "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "x": 859.39,
+          "y": 981.84,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -37864,11 +38326,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "d8zsozju",
-          "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p11",
+          "x": 866.12,
+          "y": 973.12,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -37916,11 +38379,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "d8zsozju",
-          "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p11",
+          "x": 866.12,
+          "y": 973.12,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -37968,11 +38432,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "d8zsozju",
-          "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p11",
+          "x": 866.12,
+          "y": 973.12,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -38020,11 +38485,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "d8zsozju",
-          "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p11",
+          "x": 866.12,
+          "y": 973.12,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -38072,11 +38538,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "d8zsozju",
-          "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p11",
+          "x": 866.12,
+          "y": 973.12,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -38124,11 +38591,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "d8zsozju",
-          "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p11",
+          "x": 866.12,
+          "y": 973.12,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -38176,11 +38644,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "d8zsozju",
-          "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p11",
+          "x": 866.12,
+          "y": 973.12,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -38228,11 +38697,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "d8zsozju",
-          "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p11",
+          "x": 866.12,
+          "y": 973.12,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -38280,11 +38750,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "d8zsozju",
-          "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p11",
+          "x": 866.12,
+          "y": 973.12,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -38332,11 +38803,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "d8zsozju",
-          "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p11",
+          "x": 866.12,
+          "y": 973.12,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -38384,11 +38856,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "d8zsozju",
-          "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p11",
+          "x": 866.12,
+          "y": 973.12,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -38437,9 +38910,9 @@ window.VN_GAME = {
         {
           "uid": "d8zsozju",
           "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "x": 859.39,
+          "y": 981.84,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -38489,9 +38962,9 @@ window.VN_GAME = {
         {
           "uid": "d8zsozju",
           "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "x": 859.39,
+          "y": 981.84,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -38517,7 +38990,9 @@ window.VN_GAME = {
       "fx": "",
       "mood": "",
       "wait": 0,
-      "acts": {},
+      "acts": {
+        "鲸鱼小姐": "flinch"
+      },
       "voice": null,
       "se": null,
       "set": "",
@@ -38540,10 +39015,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "d8zsozju",
-          "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "asset": "art_upgrade_p03",
+          "x": 856.94,
+          "y": 971.06,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -38595,9 +39070,9 @@ window.VN_GAME = {
         {
           "uid": "d8zsozju",
           "asset": "art_upgrade_p04",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "x": 851.43,
+          "y": 964.92,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -38647,9 +39122,9 @@ window.VN_GAME = {
         {
           "uid": "d8zsozju",
           "asset": "art_upgrade_p04",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "x": 851.43,
+          "y": 964.92,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -38701,9 +39176,9 @@ window.VN_GAME = {
         {
           "uid": "d8zsozju",
           "asset": "art_upgrade_p04",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "x": 851.43,
+          "y": 964.92,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -38753,9 +39228,9 @@ window.VN_GAME = {
         {
           "uid": "d8zsozju",
           "asset": "art_upgrade_p04",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "x": 851.43,
+          "y": 964.92,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -38805,9 +39280,9 @@ window.VN_GAME = {
         {
           "uid": "d8zsozju",
           "asset": "art_upgrade_p04",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "x": 851.43,
+          "y": 964.92,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -38857,9 +39332,9 @@ window.VN_GAME = {
         {
           "uid": "d8zsozju",
           "asset": "art_upgrade_p03",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "x": 856.94,
+          "y": 971.06,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -38911,9 +39386,9 @@ window.VN_GAME = {
         {
           "uid": "d8zsozju",
           "asset": "art_upgrade_p03",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "x": 856.94,
+          "y": 971.06,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -38963,9 +39438,9 @@ window.VN_GAME = {
         {
           "uid": "d8zsozju",
           "asset": "art_upgrade_p03",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "x": 856.94,
+          "y": 971.06,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -39015,9 +39490,9 @@ window.VN_GAME = {
         {
           "uid": "d8zsozju",
           "asset": "art_upgrade_p03",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "x": 856.94,
+          "y": 971.06,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -39067,9 +39542,9 @@ window.VN_GAME = {
         {
           "uid": "d8zsozju",
           "asset": "art_upgrade_p03",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "x": 856.94,
+          "y": 971.06,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -39118,10 +39593,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "d8zsozju",
-          "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "asset": "art_upgrade_p03",
+          "x": 856.94,
+          "y": 971.06,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -39170,10 +39645,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "d8zsozju",
-          "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "asset": "art_upgrade_p03",
+          "x": 856.94,
+          "y": 971.06,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -39222,10 +39697,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "d8zsozju",
-          "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "asset": "art_upgrade_p03",
+          "x": 856.94,
+          "y": 971.06,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -39274,10 +39749,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "d8zsozju",
-          "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "asset": "art_upgrade_p03",
+          "x": 856.94,
+          "y": 971.06,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -39326,10 +39801,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "d8zsozju",
-          "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "asset": "art_upgrade_p03",
+          "x": 856.94,
+          "y": 971.06,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -39378,10 +39853,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "d8zsozju",
-          "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "asset": "art_upgrade_p03",
+          "x": 856.94,
+          "y": 971.06,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -39647,9 +40122,9 @@ window.VN_GAME = {
         {
           "uid": "kbhjnn8v",
           "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "x": 859.39,
+          "y": 981.84,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -39699,9 +40174,9 @@ window.VN_GAME = {
         {
           "uid": "kbhjnn8v",
           "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "x": 859.39,
+          "y": 981.84,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -39751,9 +40226,9 @@ window.VN_GAME = {
         {
           "uid": "kbhjnn8v",
           "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "x": 859.39,
+          "y": 981.84,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -39804,11 +40279,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "kbhjnn8v",
-          "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p11",
+          "x": 866.12,
+          "y": 973.12,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -39856,11 +40332,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "kbhjnn8v",
-          "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p11",
+          "x": 866.12,
+          "y": 973.12,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -39908,11 +40385,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "kbhjnn8v",
-          "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p11",
+          "x": 866.12,
+          "y": 973.12,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -39960,11 +40438,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "kbhjnn8v",
-          "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p11",
+          "x": 866.12,
+          "y": 973.12,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -40012,11 +40491,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "kbhjnn8v",
-          "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p11",
+          "x": 866.12,
+          "y": 973.12,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -40083,11 +40563,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "kbhjnn8v",
-          "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p11",
+          "x": 866.12,
+          "y": 973.12,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -40135,11 +40616,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "kbhjnn8v",
-          "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p11",
+          "x": 866.12,
+          "y": 973.12,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -40187,11 +40669,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "kbhjnn8v",
-          "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p11",
+          "x": 866.12,
+          "y": 973.12,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -40239,11 +40722,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "kbhjnn8v",
-          "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p11",
+          "x": 866.12,
+          "y": 973.12,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -40291,11 +40775,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "kbhjnn8v",
-          "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p11",
+          "x": 866.12,
+          "y": 973.12,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -40343,11 +40828,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "kbhjnn8v",
-          "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p11",
+          "x": 866.12,
+          "y": 973.12,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -40395,11 +40881,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "kbhjnn8v",
-          "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p11",
+          "x": 866.12,
+          "y": 973.12,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -40447,11 +40934,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "kbhjnn8v",
-          "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p11",
+          "x": 866.12,
+          "y": 973.12,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -40499,11 +40987,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "kbhjnn8v",
-          "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p11",
+          "x": 866.12,
+          "y": 973.12,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -40551,11 +41040,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "kbhjnn8v",
-          "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p11",
+          "x": 866.12,
+          "y": 973.12,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -40603,11 +41093,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "kbhjnn8v",
-          "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p11",
+          "x": 866.12,
+          "y": 973.12,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -40655,11 +41146,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "kbhjnn8v",
-          "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p11",
+          "x": 866.12,
+          "y": 973.12,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -40684,9 +41176,7 @@ window.VN_GAME = {
       "fx": "",
       "mood": "",
       "wait": 0,
-      "acts": {
-        "鲸鱼小姐": "shake"
-      },
+      "acts": {},
       "voice": null,
       "se": null,
       "set": "",
@@ -40709,11 +41199,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "kbhjnn8v",
-          "asset": "art_upgrade_p03",
-          "x": 860,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_l35",
+          "x": 859.39,
+          "y": 981.84,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -40761,11 +41252,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "kbhjnn8v",
-          "asset": "art_upgrade_p03",
-          "x": 860,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_l35",
+          "x": 859.39,
+          "y": 981.84,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -40813,11 +41305,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "kbhjnn8v",
-          "asset": "art_upgrade_p03",
-          "x": 860,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_l35",
+          "x": 859.39,
+          "y": 981.84,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -40865,11 +41358,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "kbhjnn8v",
-          "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p11",
+          "x": 866.12,
+          "y": 973.12,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -40917,11 +41411,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "kbhjnn8v",
-          "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p11",
+          "x": 866.12,
+          "y": 973.12,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -40969,11 +41464,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "kbhjnn8v",
-          "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p11",
+          "x": 866.12,
+          "y": 973.12,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -41021,11 +41517,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "kbhjnn8v",
-          "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p11",
+          "x": 866.12,
+          "y": 973.12,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -41073,11 +41570,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "kbhjnn8v",
-          "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p11",
+          "x": 866.12,
+          "y": 973.12,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -41125,11 +41623,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "kbhjnn8v",
-          "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p11",
+          "x": 866.12,
+          "y": 973.12,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -41177,11 +41676,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "kbhjnn8v",
-          "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p11",
+          "x": 866.12,
+          "y": 973.12,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -41229,11 +41729,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "kbhjnn8v",
-          "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p11",
+          "x": 866.12,
+          "y": 973.12,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -41281,11 +41782,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "kbhjnn8v",
-          "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p11",
+          "x": 866.12,
+          "y": 973.12,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -41333,11 +41835,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "kbhjnn8v",
-          "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p11",
+          "x": 866.12,
+          "y": 973.12,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -41385,11 +41888,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "kbhjnn8v",
-          "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p11",
+          "x": 866.12,
+          "y": 973.12,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -41437,11 +41941,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "kbhjnn8v",
-          "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p11",
+          "x": 866.12,
+          "y": 973.12,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -41490,9 +41995,9 @@ window.VN_GAME = {
         {
           "uid": "kbhjnn8v",
           "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "x": 859.39,
+          "y": 981.84,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -41542,9 +42047,9 @@ window.VN_GAME = {
         {
           "uid": "kbhjnn8v",
           "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "x": 859.39,
+          "y": 981.84,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -41594,9 +42099,9 @@ window.VN_GAME = {
         {
           "uid": "kbhjnn8v",
           "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "x": 859.39,
+          "y": 981.84,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -41646,9 +42151,9 @@ window.VN_GAME = {
         {
           "uid": "kbhjnn8v",
           "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "x": 859.39,
+          "y": 981.84,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -41698,9 +42203,9 @@ window.VN_GAME = {
         {
           "uid": "kbhjnn8v",
           "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "x": 859.39,
+          "y": 981.84,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -41750,9 +42255,9 @@ window.VN_GAME = {
         {
           "uid": "kbhjnn8v",
           "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "x": 859.39,
+          "y": 981.84,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -41802,9 +42307,9 @@ window.VN_GAME = {
         {
           "uid": "kbhjnn8v",
           "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "x": 859.39,
+          "y": 981.84,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -41854,9 +42359,9 @@ window.VN_GAME = {
         {
           "uid": "kbhjnn8v",
           "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "x": 859.39,
+          "y": 981.84,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -41906,9 +42411,9 @@ window.VN_GAME = {
         {
           "uid": "kbhjnn8v",
           "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "x": 859.39,
+          "y": 981.84,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -41958,9 +42463,9 @@ window.VN_GAME = {
         {
           "uid": "kbhjnn8v",
           "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "x": 859.39,
+          "y": 981.84,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -42010,9 +42515,9 @@ window.VN_GAME = {
         {
           "uid": "kbhjnn8v",
           "asset": "art_upgrade_p04",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "x": 851.43,
+          "y": 964.92,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -42062,9 +42567,9 @@ window.VN_GAME = {
         {
           "uid": "kbhjnn8v",
           "asset": "art_upgrade_p04",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "x": 851.43,
+          "y": 964.92,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -42114,9 +42619,9 @@ window.VN_GAME = {
         {
           "uid": "kbhjnn8v",
           "asset": "art_upgrade_p04",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "x": 851.43,
+          "y": 964.92,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -42166,9 +42671,9 @@ window.VN_GAME = {
         {
           "uid": "kbhjnn8v",
           "asset": "art_upgrade_p04",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "x": 851.43,
+          "y": 964.92,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -42218,9 +42723,9 @@ window.VN_GAME = {
         {
           "uid": "kbhjnn8v",
           "asset": "art_upgrade_p04",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "x": 851.43,
+          "y": 964.92,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -42269,11 +42774,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "kbhjnn8v",
-          "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p11",
+          "x": 866.12,
+          "y": 973.12,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -42321,11 +42827,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "kbhjnn8v",
-          "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p11",
+          "x": 866.12,
+          "y": 973.12,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -42373,11 +42880,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "kbhjnn8v",
-          "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p11",
+          "x": 866.12,
+          "y": 973.12,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -42425,11 +42933,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "kbhjnn8v",
-          "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p11",
+          "x": 866.12,
+          "y": 973.12,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -42477,11 +42986,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "kbhjnn8v",
-          "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p11",
+          "x": 866.12,
+          "y": 973.12,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -42529,11 +43039,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "kbhjnn8v",
-          "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p11",
+          "x": 866.12,
+          "y": 973.12,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -42582,9 +43093,9 @@ window.VN_GAME = {
         {
           "uid": "kbhjnn8v",
           "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "x": 859.39,
+          "y": 981.84,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -42634,9 +43145,9 @@ window.VN_GAME = {
         {
           "uid": "kbhjnn8v",
           "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "x": 859.39,
+          "y": 981.84,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -42686,9 +43197,9 @@ window.VN_GAME = {
         {
           "uid": "kbhjnn8v",
           "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "x": 859.39,
+          "y": 981.84,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -42738,9 +43249,9 @@ window.VN_GAME = {
         {
           "uid": "kbhjnn8v",
           "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
+          "x": 859.39,
+          "y": 981.84,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -42789,11 +43300,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "kbhjnn8v",
-          "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p12",
+          "x": 862.45,
+          "y": 980.61,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -42841,11 +43353,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "kbhjnn8v",
-          "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p12",
+          "x": 862.45,
+          "y": 980.61,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -42893,11 +43406,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "kbhjnn8v",
-          "asset": "art_upgrade_l35",
-          "x": 860,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p12",
+          "x": 862.45,
+          "y": 980.61,
+          "h": 940.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -43534,9 +44048,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "2qshq03j",
-          "x": 980,
-          "y": 900,
-          "h": 860,
+          "x": 982.24,
+          "y": 912.32,
+          "h": 860.0,
           "flip": false,
           "in": "right"
         }
@@ -43581,9 +44095,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "2qshq03j",
-          "x": 980,
-          "y": 900,
-          "h": 860,
+          "x": 982.24,
+          "y": 912.32,
+          "h": 860.0,
           "flip": false,
           "in": "right"
         }
@@ -43626,9 +44140,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "2qshq03j",
-          "x": 980,
-          "y": 900,
-          "h": 860,
+          "x": 982.24,
+          "y": 912.32,
+          "h": 860.0,
           "flip": false,
           "in": "right"
         }
@@ -43671,9 +44185,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "2qshq03j",
-          "x": 980,
-          "y": 900,
-          "h": 860,
+          "x": 982.24,
+          "y": 912.32,
+          "h": 860.0,
           "flip": false,
           "in": "right"
         }
@@ -43716,9 +44230,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "2qshq03j",
-          "x": 980,
-          "y": 900,
-          "h": 860,
+          "x": 982.24,
+          "y": 912.32,
+          "h": 860.0,
           "flip": false,
           "in": "right"
         }
@@ -43761,9 +44275,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "2qshq03j",
-          "x": 980,
-          "y": 900,
-          "h": 860,
+          "x": 982.24,
+          "y": 912.32,
+          "h": 860.0,
           "flip": false,
           "in": "right"
         }
@@ -43806,9 +44320,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "2qshq03j",
-          "x": 980,
-          "y": 900,
-          "h": 860,
+          "x": 982.24,
+          "y": 912.32,
+          "h": 860.0,
           "flip": false,
           "in": "right"
         }
@@ -43851,9 +44365,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "2qshq03j",
-          "x": 980,
-          "y": 900,
-          "h": 860,
+          "x": 982.24,
+          "y": 912.32,
+          "h": 860.0,
           "flip": false,
           "in": "right"
         }
@@ -43896,9 +44410,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "2qshq03j",
-          "x": 980,
-          "y": 900,
-          "h": 860,
+          "x": 982.24,
+          "y": 912.32,
+          "h": 860.0,
           "flip": false,
           "in": "right"
         }
@@ -43941,9 +44455,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "2qshq03j",
-          "x": 980,
-          "y": 900,
-          "h": 860,
+          "x": 982.24,
+          "y": 912.32,
+          "h": 860.0,
           "flip": false,
           "in": "right"
         }
@@ -43986,9 +44500,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -44032,9 +44546,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -44077,9 +44591,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -44122,9 +44636,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -44167,9 +44681,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -44231,9 +44745,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -44276,9 +44790,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -44321,9 +44835,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -44366,9 +44880,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -44413,9 +44927,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -44458,9 +44972,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -44503,9 +45017,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -44548,9 +45062,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -44593,9 +45107,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -44638,9 +45152,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -44683,9 +45197,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -44734,9 +45248,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -44779,9 +45293,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -44824,9 +45338,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -44869,9 +45383,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -44914,9 +45428,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -44959,9 +45473,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -45004,9 +45518,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -45049,9 +45563,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -45094,9 +45608,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -45139,9 +45653,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -45184,9 +45698,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -45229,9 +45743,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -45274,9 +45788,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -45319,9 +45833,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -45364,9 +45878,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -45424,9 +45938,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -45469,9 +45983,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -45514,9 +46028,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -45559,9 +46073,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -45604,9 +46118,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -45649,9 +46163,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -45694,9 +46208,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -45739,9 +46253,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -45784,9 +46298,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -45829,9 +46343,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -45874,9 +46388,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -45919,9 +46433,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -45964,9 +46478,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -46009,9 +46523,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -46054,9 +46568,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -46099,9 +46613,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -46144,9 +46658,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -46189,9 +46703,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -46234,9 +46748,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -46279,9 +46793,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -46324,9 +46838,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -46369,9 +46883,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -46414,9 +46928,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -46459,9 +46973,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -46504,9 +47018,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -46549,9 +47063,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -46594,9 +47108,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -46639,9 +47153,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -46684,9 +47198,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -46729,9 +47243,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -46774,9 +47288,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -46819,9 +47333,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -46864,9 +47378,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -46909,9 +47423,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -46954,9 +47468,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -46999,9 +47513,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -47044,9 +47558,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -47089,9 +47603,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -47136,9 +47650,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -47181,9 +47695,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -47226,9 +47740,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -47271,9 +47785,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -47316,9 +47830,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -47361,9 +47875,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -47406,9 +47920,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -47451,9 +47965,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -47498,9 +48012,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -47543,9 +48057,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -47588,9 +48102,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -47633,9 +48147,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -47678,9 +48192,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -47742,9 +48256,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -47787,9 +48301,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -47832,9 +48346,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -47877,9 +48391,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -47922,9 +48436,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -47967,9 +48481,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -48012,9 +48526,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -48057,9 +48571,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -48102,9 +48616,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -48147,9 +48661,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -48192,9 +48706,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -48237,9 +48751,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -48282,9 +48796,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -48327,9 +48841,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -48372,9 +48886,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -48417,9 +48931,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -48462,9 +48976,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -48507,9 +49021,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -48552,9 +49066,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -48597,9 +49111,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -48642,9 +49156,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -48687,9 +49201,9 @@ window.VN_GAME = {
         {
           "uid": "ewrclp9f",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "in": "right"
         }
@@ -48940,9 +49454,9 @@ window.VN_GAME = {
         {
           "uid": "ewymxv5q",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -48984,9 +49498,9 @@ window.VN_GAME = {
         {
           "uid": "ewymxv5q",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -49028,9 +49542,9 @@ window.VN_GAME = {
         {
           "uid": "ewymxv5q",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -49072,9 +49586,9 @@ window.VN_GAME = {
         {
           "uid": "ewymxv5q",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -49116,9 +49630,9 @@ window.VN_GAME = {
         {
           "uid": "ewymxv5q",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -49160,9 +49674,9 @@ window.VN_GAME = {
         {
           "uid": "ewymxv5q",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -49204,9 +49718,9 @@ window.VN_GAME = {
         {
           "uid": "ewymxv5q",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -49256,9 +49770,9 @@ window.VN_GAME = {
         {
           "uid": "ewymxv5q",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -49300,9 +49814,9 @@ window.VN_GAME = {
         {
           "uid": "ewymxv5q",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -49344,9 +49858,9 @@ window.VN_GAME = {
         {
           "uid": "ewymxv5q",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -49388,9 +49902,9 @@ window.VN_GAME = {
         {
           "uid": "ewymxv5q",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -49432,9 +49946,9 @@ window.VN_GAME = {
         {
           "uid": "ewymxv5q",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -49476,9 +49990,9 @@ window.VN_GAME = {
         {
           "uid": "ewymxv5q",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -49520,9 +50034,9 @@ window.VN_GAME = {
         {
           "uid": "ewymxv5q",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -49564,9 +50078,9 @@ window.VN_GAME = {
         {
           "uid": "ewymxv5q",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -49608,9 +50122,9 @@ window.VN_GAME = {
         {
           "uid": "ewymxv5q",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -49652,9 +50166,9 @@ window.VN_GAME = {
         {
           "uid": "ewymxv5q",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -49696,9 +50210,9 @@ window.VN_GAME = {
         {
           "uid": "ewymxv5q",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -49740,9 +50254,9 @@ window.VN_GAME = {
         {
           "uid": "ewymxv5q",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -49784,9 +50298,9 @@ window.VN_GAME = {
         {
           "uid": "ewymxv5q",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -51709,9 +52223,9 @@ window.VN_GAME = {
         {
           "uid": "uglu3yli",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -51754,9 +52268,9 @@ window.VN_GAME = {
         {
           "uid": "uglu3yli",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -51799,9 +52313,9 @@ window.VN_GAME = {
         {
           "uid": "uglu3yli",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -51844,9 +52358,9 @@ window.VN_GAME = {
         {
           "uid": "uglu3yli",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -51889,9 +52403,9 @@ window.VN_GAME = {
         {
           "uid": "uglu3yli",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -51969,9 +52483,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -52013,9 +52527,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -52057,9 +52571,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -52107,9 +52621,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -52151,9 +52665,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -52195,9 +52709,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -52239,9 +52753,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -52283,9 +52797,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -52327,9 +52841,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -52371,9 +52885,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -52415,9 +52929,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -52459,9 +52973,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -52503,9 +53017,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -52549,9 +53063,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -52593,9 +53107,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -52637,9 +53151,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -52681,9 +53195,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -52725,9 +53239,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -52769,9 +53283,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -52813,9 +53327,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -52876,9 +53390,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -52920,9 +53434,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -52964,9 +53478,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -53008,9 +53522,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -53060,9 +53574,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -53104,9 +53618,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -53148,9 +53662,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -53192,9 +53706,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -53236,9 +53750,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -53280,9 +53794,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -53324,9 +53838,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -53368,9 +53882,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -53412,9 +53926,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -53456,9 +53970,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -53500,9 +54014,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -53544,9 +54058,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -53588,9 +54102,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -53632,9 +54146,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -53678,9 +54192,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -53722,9 +54236,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -53766,9 +54280,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -53823,9 +54337,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -53867,9 +54381,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -53911,9 +54425,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -53955,9 +54469,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -53999,9 +54513,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -54043,9 +54557,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -54087,9 +54601,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -54131,9 +54645,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -54175,9 +54689,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -54219,9 +54733,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -54263,9 +54777,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -54307,9 +54821,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -54351,9 +54865,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -54395,9 +54909,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -54439,9 +54953,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -54483,9 +54997,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -54527,9 +55041,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -54571,9 +55085,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -54615,9 +55129,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -54659,9 +55173,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -54703,9 +55217,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -54747,9 +55261,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -54791,9 +55305,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -54835,9 +55349,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -54898,9 +55412,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -54942,9 +55456,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -54986,9 +55500,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -55030,9 +55544,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -55074,9 +55588,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -55118,9 +55632,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -55162,9 +55676,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -55206,9 +55720,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -55250,9 +55764,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -55294,9 +55808,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -55338,9 +55852,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -55382,9 +55896,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -55426,9 +55940,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -55470,9 +55984,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -55514,9 +56028,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -55558,9 +56072,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -55602,9 +56116,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -55652,9 +56166,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -55696,9 +56210,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -55740,9 +56254,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -55784,9 +56298,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -55828,9 +56342,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -55872,9 +56386,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -55916,9 +56430,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -55960,9 +56474,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -56023,9 +56537,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -56067,9 +56581,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -56111,9 +56625,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -56155,9 +56669,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -56199,9 +56713,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -56243,9 +56757,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -56287,9 +56801,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -56331,9 +56845,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -56375,9 +56889,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -56419,9 +56933,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -56463,9 +56977,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -56507,9 +57021,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -56551,9 +57065,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -56595,9 +57109,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -56639,9 +57153,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -56689,9 +57203,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -56733,9 +57247,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -56777,9 +57291,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -56823,9 +57337,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -56867,9 +57381,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -56911,9 +57425,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -56955,9 +57469,9 @@ window.VN_GAME = {
         {
           "uid": "q8lsvrjh",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -57512,9 +58026,9 @@ window.VN_GAME = {
         {
           "uid": "n3pe44yt",
           "asset": "art_upgrade_l33",
-          "x": 700,
-          "y": 980,
-          "h": 940,
+          "x": 695.1,
+          "y": 976.99,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -57560,9 +58074,9 @@ window.VN_GAME = {
         {
           "uid": "n3pe44yt",
           "asset": "art_upgrade_l33",
-          "x": 700,
-          "y": 980,
-          "h": 940,
+          "x": 695.1,
+          "y": 976.99,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -57608,9 +58122,9 @@ window.VN_GAME = {
         {
           "uid": "n3pe44yt",
           "asset": "art_upgrade_l33",
-          "x": 700,
-          "y": 980,
-          "h": 940,
+          "x": 695.1,
+          "y": 976.99,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -57656,9 +58170,9 @@ window.VN_GAME = {
         {
           "uid": "n3pe44yt",
           "asset": "art_upgrade_l33",
-          "x": 700,
-          "y": 980,
-          "h": 940,
+          "x": 695.1,
+          "y": 976.99,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -57704,9 +58218,9 @@ window.VN_GAME = {
         {
           "uid": "n3pe44yt",
           "asset": "art_upgrade_l33",
-          "x": 700,
-          "y": 980,
-          "h": 940,
+          "x": 695.1,
+          "y": 976.99,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -57752,9 +58266,9 @@ window.VN_GAME = {
         {
           "uid": "n3pe44yt",
           "asset": "art_upgrade_l33",
-          "x": 700,
-          "y": 980,
-          "h": 940,
+          "x": 695.1,
+          "y": 976.99,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -57800,9 +58314,9 @@ window.VN_GAME = {
         {
           "uid": "n3pe44yt",
           "asset": "art_upgrade_l33",
-          "x": 700,
-          "y": 980,
-          "h": 940,
+          "x": 695.1,
+          "y": 976.99,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -57848,9 +58362,9 @@ window.VN_GAME = {
         {
           "uid": "n3pe44yt",
           "asset": "art_upgrade_l33",
-          "x": 700,
-          "y": 980,
-          "h": 940,
+          "x": 695.1,
+          "y": 976.99,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -57896,9 +58410,9 @@ window.VN_GAME = {
         {
           "uid": "n3pe44yt",
           "asset": "art_upgrade_l33",
-          "x": 700,
-          "y": 980,
-          "h": 940,
+          "x": 695.1,
+          "y": 976.99,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -57944,9 +58458,9 @@ window.VN_GAME = {
         {
           "uid": "n3pe44yt",
           "asset": "art_upgrade_l33",
-          "x": 700,
-          "y": 980,
-          "h": 940,
+          "x": 695.1,
+          "y": 976.99,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -57992,9 +58506,9 @@ window.VN_GAME = {
         {
           "uid": "n3pe44yt",
           "asset": "art_upgrade_l33",
-          "x": 700,
-          "y": 980,
-          "h": 940,
+          "x": 695.1,
+          "y": 976.99,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -58040,9 +58554,9 @@ window.VN_GAME = {
         {
           "uid": "n3pe44yt",
           "asset": "art_upgrade_l33",
-          "x": 700,
-          "y": 980,
-          "h": 940,
+          "x": 695.1,
+          "y": 976.99,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -58088,9 +58602,9 @@ window.VN_GAME = {
         {
           "uid": "n3pe44yt",
           "asset": "art_upgrade_l33",
-          "x": 700,
-          "y": 980,
-          "h": 940,
+          "x": 695.1,
+          "y": 976.99,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -58136,9 +58650,9 @@ window.VN_GAME = {
         {
           "uid": "n3pe44yt",
           "asset": "art_upgrade_l33",
-          "x": 700,
-          "y": 980,
-          "h": 940,
+          "x": 695.1,
+          "y": 976.99,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -58203,9 +58717,9 @@ window.VN_GAME = {
         {
           "uid": "n3pe44yt",
           "asset": "art_upgrade_l33",
-          "x": 700,
-          "y": 980,
-          "h": 940,
+          "x": 695.1,
+          "y": 976.99,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -58251,9 +58765,9 @@ window.VN_GAME = {
         {
           "uid": "n3pe44yt",
           "asset": "art_upgrade_l33",
-          "x": 700,
-          "y": 980,
-          "h": 940,
+          "x": 695.1,
+          "y": 976.99,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -58299,9 +58813,9 @@ window.VN_GAME = {
         {
           "uid": "n3pe44yt",
           "asset": "art_upgrade_l33",
-          "x": 700,
-          "y": 980,
-          "h": 940,
+          "x": 695.1,
+          "y": 976.99,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -58347,9 +58861,9 @@ window.VN_GAME = {
         {
           "uid": "n3pe44yt",
           "asset": "art_upgrade_l33",
-          "x": 700,
-          "y": 980,
-          "h": 940,
+          "x": 695.1,
+          "y": 976.99,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -58395,9 +58909,9 @@ window.VN_GAME = {
         {
           "uid": "n3pe44yt",
           "asset": "art_upgrade_l33",
-          "x": 700,
-          "y": 980,
-          "h": 940,
+          "x": 695.1,
+          "y": 976.99,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -58443,9 +58957,9 @@ window.VN_GAME = {
         {
           "uid": "n3pe44yt",
           "asset": "art_upgrade_l33",
-          "x": 700,
-          "y": 980,
-          "h": 940,
+          "x": 695.1,
+          "y": 976.99,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -58491,9 +59005,9 @@ window.VN_GAME = {
         {
           "uid": "n3pe44yt",
           "asset": "art_upgrade_l33",
-          "x": 700,
-          "y": 980,
-          "h": 940,
+          "x": 695.1,
+          "y": 976.99,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -58539,9 +59053,9 @@ window.VN_GAME = {
         {
           "uid": "n3pe44yt",
           "asset": "art_upgrade_l33",
-          "x": 700,
-          "y": 980,
-          "h": 940,
+          "x": 695.1,
+          "y": 976.99,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -58587,9 +59101,9 @@ window.VN_GAME = {
         {
           "uid": "n3pe44yt",
           "asset": "art_upgrade_l33",
-          "x": 700,
-          "y": 980,
-          "h": 940,
+          "x": 695.1,
+          "y": 976.99,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -58635,9 +59149,9 @@ window.VN_GAME = {
         {
           "uid": "n3pe44yt",
           "asset": "art_upgrade_l33",
-          "x": 700,
-          "y": 980,
-          "h": 940,
+          "x": 695.1,
+          "y": 976.99,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -58683,9 +59197,9 @@ window.VN_GAME = {
         {
           "uid": "n3pe44yt",
           "asset": "art_upgrade_l33",
-          "x": 700,
-          "y": 980,
-          "h": 940,
+          "x": 695.1,
+          "y": 976.99,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -58731,9 +59245,9 @@ window.VN_GAME = {
         {
           "uid": "n3pe44yt",
           "asset": "art_upgrade_l33",
-          "x": 700,
-          "y": 980,
-          "h": 940,
+          "x": 695.1,
+          "y": 976.99,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -58779,9 +59293,9 @@ window.VN_GAME = {
         {
           "uid": "n3pe44yt",
           "asset": "art_upgrade_l33",
-          "x": 700,
-          "y": 980,
-          "h": 940,
+          "x": 695.1,
+          "y": 976.99,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -58827,9 +59341,9 @@ window.VN_GAME = {
         {
           "uid": "n3pe44yt",
           "asset": "art_upgrade_l33",
-          "x": 700,
-          "y": 980,
-          "h": 940,
+          "x": 695.1,
+          "y": 976.99,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -58875,9 +59389,9 @@ window.VN_GAME = {
         {
           "uid": "n3pe44yt",
           "asset": "art_upgrade_l33",
-          "x": 700,
-          "y": 980,
-          "h": 940,
+          "x": 695.1,
+          "y": 976.99,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -58923,9 +59437,9 @@ window.VN_GAME = {
         {
           "uid": "n3pe44yt",
           "asset": "art_upgrade_l33",
-          "x": 700,
-          "y": 980,
-          "h": 940,
+          "x": 695.1,
+          "y": 976.99,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -58971,9 +59485,9 @@ window.VN_GAME = {
         {
           "uid": "n3pe44yt",
           "asset": "art_upgrade_l33",
-          "x": 700,
-          "y": 980,
-          "h": 940,
+          "x": 695.1,
+          "y": 976.99,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -59019,9 +59533,9 @@ window.VN_GAME = {
         {
           "uid": "n3pe44yt",
           "asset": "art_upgrade_l33",
-          "x": 700,
-          "y": 980,
-          "h": 940,
+          "x": 695.1,
+          "y": 976.99,
+          "h": 940.0,
           "flip": false
         }
       ],
@@ -59348,9 +59862,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -59396,9 +59910,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -59444,9 +59958,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -59492,9 +60006,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -59540,9 +60054,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -59588,9 +60102,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -59636,9 +60150,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -59684,9 +60198,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -59732,9 +60246,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -59780,9 +60294,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -59828,9 +60342,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -59876,9 +60390,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -59924,9 +60438,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -59972,9 +60486,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -60020,9 +60534,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -60068,9 +60582,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -60116,9 +60630,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -60165,9 +60679,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -60213,9 +60727,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -60261,9 +60775,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -60309,9 +60823,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -60357,9 +60871,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -60405,9 +60919,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -60455,9 +60969,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -60503,9 +61017,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -60551,9 +61065,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -60599,9 +61113,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -60647,9 +61161,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -60695,9 +61209,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -60743,9 +61257,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -60791,9 +61305,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -60839,9 +61353,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -60887,9 +61401,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -60935,9 +61449,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -60983,9 +61497,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -61037,9 +61551,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -61085,9 +61599,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -61133,9 +61647,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -61181,9 +61695,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -61229,9 +61743,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -61277,9 +61791,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -61325,9 +61839,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -61371,9 +61885,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -61415,9 +61929,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -61459,9 +61973,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -61503,9 +62017,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -61547,9 +62061,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -61591,9 +62105,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -61635,9 +62149,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -61679,9 +62193,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -61723,9 +62237,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -61769,9 +62283,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -61813,9 +62327,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -61857,9 +62371,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -61901,9 +62415,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -61945,9 +62459,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -61989,9 +62503,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -62033,9 +62547,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -62077,9 +62591,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -62121,9 +62635,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -62165,9 +62679,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -62209,9 +62723,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -62253,9 +62767,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -62299,9 +62813,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -62343,9 +62857,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -62387,9 +62901,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -62431,9 +62945,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -62475,9 +62989,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -62538,9 +63052,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -62582,9 +63096,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -62626,9 +63140,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -62670,9 +63184,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -62714,9 +63228,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -62758,9 +63272,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -62802,9 +63316,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -62846,9 +63360,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -62890,9 +63404,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -62934,9 +63448,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -62978,9 +63492,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -63022,9 +63536,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -63066,9 +63580,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -63110,9 +63624,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -63154,9 +63668,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -63198,9 +63712,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "wrwcdezj",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -63244,9 +63758,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "wrwcdezj",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -63288,9 +63802,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "wrwcdezj",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -63332,9 +63846,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "wrwcdezj",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -63376,9 +63890,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "wrwcdezj",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -63420,9 +63934,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "wrwcdezj",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -63464,9 +63978,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "wrwcdezj",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -63508,9 +64022,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "xfg3qcn2",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 860.0,
+          "y": 1000.0,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -63552,9 +64066,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "xfg3qcn2",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 860.0,
+          "y": 1000.0,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -63596,9 +64110,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "xfg3qcn2",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 860.0,
+          "y": 1000.0,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -63640,9 +64154,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "xfg3qcn2",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 860.0,
+          "y": 1000.0,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -63684,9 +64198,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "xfg3qcn2",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 860.0,
+          "y": 1000.0,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -63728,9 +64242,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "xfg3qcn2",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 860.0,
+          "y": 1000.0,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -63772,9 +64286,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "xfg3qcn2",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 860.0,
+          "y": 1000.0,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -63816,9 +64330,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "xfg3qcn2",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 860.0,
+          "y": 1000.0,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -63860,9 +64374,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "xfg3qcn2",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 860.0,
+          "y": 1000.0,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -63904,9 +64418,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "xfg3qcn2",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 860.0,
+          "y": 1000.0,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -63948,9 +64462,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "x013srmu",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 855.0,
+          "y": 1005.62,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -63992,9 +64506,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "x013srmu",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 855.0,
+          "y": 1005.62,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -64036,9 +64550,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "wrwcdezj",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -64080,9 +64594,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "wrwcdezj",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -64124,9 +64638,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "wrwcdezj",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -64168,9 +64682,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "wrwcdezj",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -64218,9 +64732,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "wrwcdezj",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -64262,9 +64776,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "xfg3qcn2",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 860.0,
+          "y": 1000.0,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -64306,9 +64820,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "xfg3qcn2",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 860.0,
+          "y": 1000.0,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -64350,9 +64864,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "wrwcdezj",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -64394,9 +64908,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "wrwcdezj",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -64438,9 +64952,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "wrwcdezj",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -64482,9 +64996,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "wrwcdezj",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -64526,9 +65040,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "wrwcdezj",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -64570,9 +65084,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "wrwcdezj",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -64614,9 +65128,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "wrwcdezj",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -64658,9 +65172,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "wrwcdezj",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -64702,9 +65216,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "wrwcdezj",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -64746,9 +65260,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "wrwcdezj",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -64790,9 +65304,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "wrwcdezj",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -64834,9 +65348,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "2qshq03j",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 862.5,
+          "y": 1013.75,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -64878,9 +65392,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "x013srmu",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 855.0,
+          "y": 1005.62,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -64922,9 +65436,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "x013srmu",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 855.0,
+          "y": 1005.62,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -64966,9 +65480,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "x013srmu",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 855.0,
+          "y": 1005.62,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -65010,9 +65524,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "wrwcdezj",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -65060,9 +65574,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "wrwcdezj",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -65104,9 +65618,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "wrwcdezj",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -65148,9 +65662,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "wrwcdezj",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -65192,9 +65706,9 @@ window.VN_GAME = {
         {
           "uid": "lm51qmgo",
           "asset": "wrwcdezj",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -65273,9 +65787,9 @@ window.VN_GAME = {
         {
           "uid": "poauweo7",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -65317,9 +65831,9 @@ window.VN_GAME = {
         {
           "uid": "poauweo7",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -65361,9 +65875,9 @@ window.VN_GAME = {
         {
           "uid": "poauweo7",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -65405,9 +65919,9 @@ window.VN_GAME = {
         {
           "uid": "poauweo7",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -65449,9 +65963,9 @@ window.VN_GAME = {
         {
           "uid": "poauweo7",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -65493,9 +66007,9 @@ window.VN_GAME = {
         {
           "uid": "poauweo7",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -65537,9 +66051,9 @@ window.VN_GAME = {
         {
           "uid": "poauweo7",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -65581,9 +66095,9 @@ window.VN_GAME = {
         {
           "uid": "poauweo7",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -65625,9 +66139,9 @@ window.VN_GAME = {
         {
           "uid": "poauweo7",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -65669,9 +66183,9 @@ window.VN_GAME = {
         {
           "uid": "poauweo7",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -65713,9 +66227,9 @@ window.VN_GAME = {
         {
           "uid": "poauweo7",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -65757,9 +66271,9 @@ window.VN_GAME = {
         {
           "uid": "poauweo7",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -65801,9 +66315,9 @@ window.VN_GAME = {
         {
           "uid": "poauweo7",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -65845,9 +66359,9 @@ window.VN_GAME = {
         {
           "uid": "poauweo7",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -65889,9 +66403,9 @@ window.VN_GAME = {
         {
           "uid": "poauweo7",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -65933,9 +66447,9 @@ window.VN_GAME = {
         {
           "uid": "poauweo7",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -65977,9 +66491,9 @@ window.VN_GAME = {
         {
           "uid": "poauweo7",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -66021,9 +66535,9 @@ window.VN_GAME = {
         {
           "uid": "poauweo7",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -66065,9 +66579,9 @@ window.VN_GAME = {
         {
           "uid": "poauweo7",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -66109,9 +66623,9 @@ window.VN_GAME = {
         {
           "uid": "poauweo7",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -66153,9 +66667,9 @@ window.VN_GAME = {
         {
           "uid": "poauweo7",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -66197,9 +66711,9 @@ window.VN_GAME = {
         {
           "uid": "poauweo7",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -66241,9 +66755,9 @@ window.VN_GAME = {
         {
           "uid": "poauweo7",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -66285,9 +66799,9 @@ window.VN_GAME = {
         {
           "uid": "poauweo7",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -66329,9 +66843,9 @@ window.VN_GAME = {
         {
           "uid": "poauweo7",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -66373,9 +66887,9 @@ window.VN_GAME = {
         {
           "uid": "poauweo7",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -66417,9 +66931,9 @@ window.VN_GAME = {
         {
           "uid": "poauweo7",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -66467,9 +66981,9 @@ window.VN_GAME = {
         {
           "uid": "poauweo7",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -66511,9 +67025,9 @@ window.VN_GAME = {
         {
           "uid": "poauweo7",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -66574,9 +67088,9 @@ window.VN_GAME = {
         {
           "uid": "poauweo7",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -66618,9 +67132,9 @@ window.VN_GAME = {
         {
           "uid": "poauweo7",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -66662,9 +67176,9 @@ window.VN_GAME = {
         {
           "uid": "poauweo7",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -66706,9 +67220,9 @@ window.VN_GAME = {
         {
           "uid": "poauweo7",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -66750,9 +67264,9 @@ window.VN_GAME = {
         {
           "uid": "poauweo7",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -66794,9 +67308,9 @@ window.VN_GAME = {
         {
           "uid": "poauweo7",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -66838,9 +67352,9 @@ window.VN_GAME = {
         {
           "uid": "poauweo7",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -66882,9 +67396,9 @@ window.VN_GAME = {
         {
           "uid": "poauweo7",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -66926,9 +67440,9 @@ window.VN_GAME = {
         {
           "uid": "poauweo7",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -66970,9 +67484,9 @@ window.VN_GAME = {
         {
           "uid": "poauweo7",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -67014,9 +67528,9 @@ window.VN_GAME = {
         {
           "uid": "poauweo7",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -67058,9 +67572,9 @@ window.VN_GAME = {
         {
           "uid": "poauweo7",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -67102,9 +67616,9 @@ window.VN_GAME = {
         {
           "uid": "poauweo7",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -67146,9 +67660,9 @@ window.VN_GAME = {
         {
           "uid": "poauweo7",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -67192,9 +67706,9 @@ window.VN_GAME = {
         {
           "uid": "poauweo7",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -67236,9 +67750,9 @@ window.VN_GAME = {
         {
           "uid": "poauweo7",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -67280,9 +67794,9 @@ window.VN_GAME = {
         {
           "uid": "poauweo7",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -67324,9 +67838,9 @@ window.VN_GAME = {
         {
           "uid": "poauweo7",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -67368,9 +67882,9 @@ window.VN_GAME = {
         {
           "uid": "poauweo7",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -67412,9 +67926,9 @@ window.VN_GAME = {
         {
           "uid": "poauweo7",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -67456,9 +67970,9 @@ window.VN_GAME = {
         {
           "uid": "poauweo7",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -67500,9 +68014,9 @@ window.VN_GAME = {
         {
           "uid": "poauweo7",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -67544,9 +68058,9 @@ window.VN_GAME = {
         {
           "uid": "poauweo7",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -67588,9 +68102,9 @@ window.VN_GAME = {
         {
           "uid": "poauweo7",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -67638,9 +68152,9 @@ window.VN_GAME = {
         {
           "uid": "poauweo7",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -67682,9 +68196,9 @@ window.VN_GAME = {
         {
           "uid": "poauweo7",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -67726,9 +68240,9 @@ window.VN_GAME = {
         {
           "uid": "poauweo7",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -68658,9 +69172,9 @@ window.VN_GAME = {
         {
           "uid": "2uwzx8q6",
           "asset": "xfg3qcn2",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 800.0,
+          "y": 940.0,
+          "h": 900.0,
           "flip": false
         }
       ],
@@ -68702,9 +69216,9 @@ window.VN_GAME = {
         {
           "uid": "2uwzx8q6",
           "asset": "xfg3qcn2",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 800.0,
+          "y": 940.0,
+          "h": 900.0,
           "flip": false
         }
       ],
@@ -68746,9 +69260,9 @@ window.VN_GAME = {
         {
           "uid": "2uwzx8q6",
           "asset": "xfg3qcn2",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 800.0,
+          "y": 940.0,
+          "h": 900.0,
           "flip": false
         }
       ],
@@ -68790,9 +69304,9 @@ window.VN_GAME = {
         {
           "uid": "2uwzx8q6",
           "asset": "cbx03q1l",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 824.02,
+          "y": 941.76,
+          "h": 900.0,
           "flip": false
         }
       ],
@@ -68834,9 +69348,9 @@ window.VN_GAME = {
         {
           "uid": "2uwzx8q6",
           "asset": "cbx03q1l",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 824.02,
+          "y": 941.76,
+          "h": 900.0,
           "flip": false
         }
       ],
@@ -68878,9 +69392,9 @@ window.VN_GAME = {
         {
           "uid": "2uwzx8q6",
           "asset": "2qshq03j",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 802.34,
+          "y": 952.89,
+          "h": 900.0,
           "flip": false
         }
       ],
@@ -68922,9 +69436,9 @@ window.VN_GAME = {
         {
           "uid": "2uwzx8q6",
           "asset": "xfg3qcn2",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 800.0,
+          "y": 940.0,
+          "h": 900.0,
           "flip": false
         }
       ],
@@ -68972,9 +69486,9 @@ window.VN_GAME = {
         {
           "uid": "2uwzx8q6",
           "asset": "xfg3qcn2",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 800.0,
+          "y": 940.0,
+          "h": 900.0,
           "flip": false
         }
       ],
@@ -69016,9 +69530,9 @@ window.VN_GAME = {
         {
           "uid": "2uwzx8q6",
           "asset": "xfg3qcn2",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 800.0,
+          "y": 940.0,
+          "h": 900.0,
           "flip": false
         }
       ],
@@ -69066,9 +69580,9 @@ window.VN_GAME = {
         {
           "uid": "2uwzx8q6",
           "asset": "xfg3qcn2",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 800.0,
+          "y": 940.0,
+          "h": 900.0,
           "flip": false
         }
       ],
@@ -69118,9 +69632,9 @@ window.VN_GAME = {
         {
           "uid": "2uwzx8q6",
           "asset": "xfg3qcn2",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 800.0,
+          "y": 940.0,
+          "h": 900.0,
           "flip": false
         }
       ],
@@ -69162,9 +69676,9 @@ window.VN_GAME = {
         {
           "uid": "2uwzx8q6",
           "asset": "xfg3qcn2",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 800.0,
+          "y": 940.0,
+          "h": 900.0,
           "flip": false
         }
       ],
@@ -69206,9 +69720,9 @@ window.VN_GAME = {
         {
           "uid": "2uwzx8q6",
           "asset": "xfg3qcn2",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 800.0,
+          "y": 940.0,
+          "h": 900.0,
           "flip": false
         }
       ],
@@ -69250,9 +69764,9 @@ window.VN_GAME = {
         {
           "uid": "2uwzx8q6",
           "asset": "xfg3qcn2",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 800.0,
+          "y": 940.0,
+          "h": 900.0,
           "flip": false
         }
       ],
@@ -69294,9 +69808,9 @@ window.VN_GAME = {
         {
           "uid": "2uwzx8q6",
           "asset": "xfg3qcn2",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 800.0,
+          "y": 940.0,
+          "h": 900.0,
           "flip": false
         }
       ],
@@ -69338,9 +69852,9 @@ window.VN_GAME = {
         {
           "uid": "2uwzx8q6",
           "asset": "xfg3qcn2",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 800.0,
+          "y": 940.0,
+          "h": 900.0,
           "flip": false
         }
       ],
@@ -69382,9 +69896,9 @@ window.VN_GAME = {
         {
           "uid": "2uwzx8q6",
           "asset": "xfg3qcn2",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 800.0,
+          "y": 940.0,
+          "h": 900.0,
           "flip": false
         }
       ],
@@ -69432,9 +69946,9 @@ window.VN_GAME = {
         {
           "uid": "2uwzx8q6",
           "asset": "xfg3qcn2",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 800.0,
+          "y": 940.0,
+          "h": 900.0,
           "flip": false
         }
       ],
@@ -69476,9 +69990,9 @@ window.VN_GAME = {
         {
           "uid": "2uwzx8q6",
           "asset": "xfg3qcn2",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 800.0,
+          "y": 940.0,
+          "h": 900.0,
           "flip": false
         }
       ],
@@ -69520,9 +70034,9 @@ window.VN_GAME = {
         {
           "uid": "2uwzx8q6",
           "asset": "xfg3qcn2",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 800.0,
+          "y": 940.0,
+          "h": 900.0,
           "flip": false
         }
       ],
@@ -69564,9 +70078,9 @@ window.VN_GAME = {
         {
           "uid": "2uwzx8q6",
           "asset": "xfg3qcn2",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 800.0,
+          "y": 940.0,
+          "h": 900.0,
           "flip": false
         }
       ],
@@ -69610,9 +70124,9 @@ window.VN_GAME = {
         {
           "uid": "2uwzx8q6",
           "asset": "xfg3qcn2",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "x": 800.0,
+          "y": 940.0,
+          "h": 900.0,
           "flip": false
         }
       ],
@@ -69655,10 +70169,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "2uwzx8q6",
-          "asset": "art_upgrade_l10",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "asset": "art_upgrade_p08",
+          "x": 798.24,
+          "y": 940.59,
+          "h": 900.0,
           "flip": false
         }
       ],
@@ -69699,10 +70213,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "2uwzx8q6",
-          "asset": "art_upgrade_l10",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "asset": "art_upgrade_p08",
+          "x": 718.09,
+          "y": 1020.64,
+          "h": 980.0,
           "flip": false
         }
       ],
@@ -69743,10 +70257,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "2uwzx8q6",
-          "asset": "z869j1e3",
-          "x": 900,
-          "y": 1000,
-          "h": 960,
+          "asset": "art_upgrade_p08",
+          "x": 658.05,
+          "y": 1040.65,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -69940,7 +70454,7 @@ window.VN_GAME = {
       "mood": "",
       "wait": 0,
       "acts": {
-        "鲸鱼小姐": "shake"
+        "鲸鱼小姐": "flinch"
       },
       "voice": null,
       "se": null,
@@ -69964,10 +70478,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "e6g4bhsn",
-          "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p07",
+          "x": 638.05,
+          "y": 1044.56,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -70008,10 +70522,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "e6g4bhsn",
-          "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p07",
+          "x": 638.05,
+          "y": 1044.56,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -70052,10 +70566,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "e6g4bhsn",
-          "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p07",
+          "x": 638.05,
+          "y": 1044.56,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -70096,10 +70610,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "e6g4bhsn",
-          "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p07",
+          "x": 638.05,
+          "y": 1044.56,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -70140,10 +70654,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "e6g4bhsn",
-          "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p07",
+          "x": 638.05,
+          "y": 1044.56,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -70184,10 +70698,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "e6g4bhsn",
-          "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p07",
+          "x": 638.05,
+          "y": 1044.56,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -70228,10 +70742,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "e6g4bhsn",
-          "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p07",
+          "x": 638.05,
+          "y": 1044.56,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -70278,10 +70792,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "e6g4bhsn",
-          "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p07",
+          "x": 638.05,
+          "y": 1044.56,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -70322,10 +70836,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "e6g4bhsn",
-          "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p07",
+          "x": 638.05,
+          "y": 1044.56,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -70366,10 +70880,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "e6g4bhsn",
-          "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p07",
+          "x": 638.05,
+          "y": 1044.56,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -70429,10 +70943,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "e6g4bhsn",
-          "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p07",
+          "x": 638.05,
+          "y": 1044.56,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -70476,9 +70990,9 @@ window.VN_GAME = {
         {
           "uid": "e6g4bhsn",
           "asset": "art_upgrade_l10",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.05,
+          "y": 1044.65,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -70520,9 +71034,9 @@ window.VN_GAME = {
         {
           "uid": "e6g4bhsn",
           "asset": "art_upgrade_l10",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.05,
+          "y": 1044.65,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -70564,9 +71078,9 @@ window.VN_GAME = {
         {
           "uid": "e6g4bhsn",
           "asset": "art_upgrade_l10",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.05,
+          "y": 1044.65,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -70608,9 +71122,9 @@ window.VN_GAME = {
         {
           "uid": "e6g4bhsn",
           "asset": "art_upgrade_l10",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.05,
+          "y": 1044.65,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -70652,9 +71166,9 @@ window.VN_GAME = {
         {
           "uid": "e6g4bhsn",
           "asset": "art_upgrade_l10",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.05,
+          "y": 1044.65,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -70696,9 +71210,9 @@ window.VN_GAME = {
         {
           "uid": "e6g4bhsn",
           "asset": "art_upgrade_l10",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.05,
+          "y": 1044.65,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -70740,9 +71254,9 @@ window.VN_GAME = {
         {
           "uid": "e6g4bhsn",
           "asset": "art_upgrade_l10",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.05,
+          "y": 1044.65,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -70784,9 +71298,9 @@ window.VN_GAME = {
         {
           "uid": "e6g4bhsn",
           "asset": "art_upgrade_l10",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.05,
+          "y": 1044.65,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -70828,9 +71342,9 @@ window.VN_GAME = {
         {
           "uid": "e6g4bhsn",
           "asset": "art_upgrade_l10",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.05,
+          "y": 1044.65,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -70872,9 +71386,9 @@ window.VN_GAME = {
         {
           "uid": "e6g4bhsn",
           "asset": "art_upgrade_l10",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.05,
+          "y": 1044.65,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -70916,9 +71430,9 @@ window.VN_GAME = {
         {
           "uid": "e6g4bhsn",
           "asset": "art_upgrade_l10",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.05,
+          "y": 1044.65,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -70960,9 +71474,9 @@ window.VN_GAME = {
         {
           "uid": "e6g4bhsn",
           "asset": "art_upgrade_l10",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.05,
+          "y": 1044.65,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -71004,9 +71518,9 @@ window.VN_GAME = {
         {
           "uid": "e6g4bhsn",
           "asset": "art_upgrade_l10",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.05,
+          "y": 1044.65,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -71048,9 +71562,9 @@ window.VN_GAME = {
         {
           "uid": "e6g4bhsn",
           "asset": "art_upgrade_l10",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.05,
+          "y": 1044.65,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -71092,9 +71606,9 @@ window.VN_GAME = {
         {
           "uid": "e6g4bhsn",
           "asset": "art_upgrade_l10",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.05,
+          "y": 1044.65,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -71136,9 +71650,9 @@ window.VN_GAME = {
         {
           "uid": "e6g4bhsn",
           "asset": "art_upgrade_l10",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.05,
+          "y": 1044.65,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -71180,9 +71694,9 @@ window.VN_GAME = {
         {
           "uid": "e6g4bhsn",
           "asset": "art_upgrade_l10",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.05,
+          "y": 1044.65,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -71224,9 +71738,9 @@ window.VN_GAME = {
         {
           "uid": "e6g4bhsn",
           "asset": "art_upgrade_l12",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 719.43,
+          "y": 1048.46,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -71270,9 +71784,9 @@ window.VN_GAME = {
         {
           "uid": "e6g4bhsn",
           "asset": "art_upgrade_l12",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 719.43,
+          "y": 1048.46,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -71314,9 +71828,9 @@ window.VN_GAME = {
         {
           "uid": "e6g4bhsn",
           "asset": "art_upgrade_l12",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 719.43,
+          "y": 1048.46,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -71358,9 +71872,9 @@ window.VN_GAME = {
         {
           "uid": "e6g4bhsn",
           "asset": "art_upgrade_l12",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 719.43,
+          "y": 1048.46,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -71402,9 +71916,9 @@ window.VN_GAME = {
         {
           "uid": "e6g4bhsn",
           "asset": "art_upgrade_l12",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 719.43,
+          "y": 1048.46,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -71446,9 +71960,9 @@ window.VN_GAME = {
         {
           "uid": "e6g4bhsn",
           "asset": "art_upgrade_l12",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 719.43,
+          "y": 1048.46,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -71490,9 +72004,9 @@ window.VN_GAME = {
         {
           "uid": "e6g4bhsn",
           "asset": "art_upgrade_l12",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 719.43,
+          "y": 1048.46,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -71533,10 +72047,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "e6g4bhsn",
-          "asset": "art_upgrade_l10",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_l11",
+          "x": 637.4,
+          "y": 1041.3,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -71577,10 +72091,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "e6g4bhsn",
-          "asset": "art_upgrade_l10",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_l11",
+          "x": 637.4,
+          "y": 1041.3,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -71621,10 +72135,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "e6g4bhsn",
-          "asset": "art_upgrade_l10",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_l11",
+          "x": 637.4,
+          "y": 1041.3,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -71665,10 +72179,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "e6g4bhsn",
-          "asset": "art_upgrade_l10",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_l11",
+          "x": 637.4,
+          "y": 1041.3,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -71709,10 +72223,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "e6g4bhsn",
-          "asset": "art_upgrade_l10",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_l11",
+          "x": 637.4,
+          "y": 1041.3,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -71753,10 +72267,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "e6g4bhsn",
-          "asset": "art_upgrade_l10",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_l11",
+          "x": 637.4,
+          "y": 1041.3,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -71797,11 +72311,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "e6g4bhsn",
-          "asset": "art_upgrade_l10",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p08",
+          "x": 638.05,
+          "y": 1040.65,
+          "h": 1000.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -71841,11 +72356,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "e6g4bhsn",
-          "asset": "art_upgrade_l10",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p08",
+          "x": 638.05,
+          "y": 1040.65,
+          "h": 1000.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -71885,11 +72401,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "e6g4bhsn",
-          "asset": "art_upgrade_l10",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p08",
+          "x": 638.05,
+          "y": 1040.65,
+          "h": 1000.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -71929,11 +72446,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "e6g4bhsn",
-          "asset": "art_upgrade_l10",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p08",
+          "x": 638.05,
+          "y": 1040.65,
+          "h": 1000.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -71973,11 +72491,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "e6g4bhsn",
-          "asset": "art_upgrade_l10",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p08",
+          "x": 638.05,
+          "y": 1040.65,
+          "h": 1000.0,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -72017,10 +72536,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "e6g4bhsn",
-          "asset": "art_upgrade_l10",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_l11",
+          "x": 637.4,
+          "y": 1041.3,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -72062,9 +72581,9 @@ window.VN_GAME = {
         {
           "uid": "e6g4bhsn",
           "asset": "art_upgrade_l10",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.05,
+          "y": 1044.65,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -72106,9 +72625,9 @@ window.VN_GAME = {
         {
           "uid": "e6g4bhsn",
           "asset": "art_upgrade_l10",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.05,
+          "y": 1044.65,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -72150,9 +72669,9 @@ window.VN_GAME = {
         {
           "uid": "e6g4bhsn",
           "asset": "art_upgrade_l10",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.05,
+          "y": 1044.65,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -72207,9 +72726,9 @@ window.VN_GAME = {
         {
           "uid": "e6g4bhsn",
           "asset": "art_upgrade_l10",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.05,
+          "y": 1044.65,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -72251,9 +72770,9 @@ window.VN_GAME = {
         {
           "uid": "e6g4bhsn",
           "asset": "art_upgrade_l10",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.05,
+          "y": 1044.65,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -72295,9 +72814,9 @@ window.VN_GAME = {
         {
           "uid": "e6g4bhsn",
           "asset": "art_upgrade_l10",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.05,
+          "y": 1044.65,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -72339,9 +72858,9 @@ window.VN_GAME = {
         {
           "uid": "e6g4bhsn",
           "asset": "art_upgrade_l10",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.05,
+          "y": 1044.65,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -72385,9 +72904,9 @@ window.VN_GAME = {
         {
           "uid": "e6g4bhsn",
           "asset": "art_upgrade_l12",
-          "x": 668,
-          "y": 1040,
-          "h": 1000,
+          "x": 747.43,
+          "y": 1048.46,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -72429,9 +72948,9 @@ window.VN_GAME = {
         {
           "uid": "e6g4bhsn",
           "asset": "art_upgrade_l12",
-          "x": 668,
-          "y": 1040,
-          "h": 1000,
+          "x": 747.43,
+          "y": 1048.46,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -72473,9 +72992,9 @@ window.VN_GAME = {
         {
           "uid": "e6g4bhsn",
           "asset": "art_upgrade_l12",
-          "x": 668,
-          "y": 1040,
-          "h": 1000,
+          "x": 747.43,
+          "y": 1048.46,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -72517,9 +73036,9 @@ window.VN_GAME = {
         {
           "uid": "e6g4bhsn",
           "asset": "art_upgrade_l12",
-          "x": 668,
-          "y": 1040,
-          "h": 1000,
+          "x": 747.43,
+          "y": 1048.46,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -72598,9 +73117,9 @@ window.VN_GAME = {
         {
           "uid": "5en5cqw2",
           "asset": "art_upgrade_l12",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 936.25,
+          "y": 1008.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -72642,9 +73161,9 @@ window.VN_GAME = {
         {
           "uid": "5en5cqw2",
           "asset": "art_upgrade_l12",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 936.25,
+          "y": 1008.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -72686,9 +73205,9 @@ window.VN_GAME = {
         {
           "uid": "5en5cqw2",
           "asset": "art_upgrade_l12",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 936.25,
+          "y": 1008.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -72730,9 +73249,9 @@ window.VN_GAME = {
         {
           "uid": "5en5cqw2",
           "asset": "art_upgrade_l12",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 936.25,
+          "y": 1008.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -72774,9 +73293,9 @@ window.VN_GAME = {
         {
           "uid": "5en5cqw2",
           "asset": "art_upgrade_l12",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 936.25,
+          "y": 1008.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -72818,9 +73337,9 @@ window.VN_GAME = {
         {
           "uid": "5en5cqw2",
           "asset": "art_upgrade_l12",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 936.25,
+          "y": 1008.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -72862,9 +73381,9 @@ window.VN_GAME = {
         {
           "uid": "5en5cqw2",
           "asset": "art_upgrade_l12",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 936.25,
+          "y": 1008.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -72906,9 +73425,9 @@ window.VN_GAME = {
         {
           "uid": "5en5cqw2",
           "asset": "art_upgrade_l12",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 936.25,
+          "y": 1008.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -72950,9 +73469,9 @@ window.VN_GAME = {
         {
           "uid": "5en5cqw2",
           "asset": "art_upgrade_l12",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 936.25,
+          "y": 1008.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -72994,9 +73513,9 @@ window.VN_GAME = {
         {
           "uid": "5en5cqw2",
           "asset": "art_upgrade_l12",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 936.25,
+          "y": 1008.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -73038,9 +73557,9 @@ window.VN_GAME = {
         {
           "uid": "5en5cqw2",
           "asset": "art_upgrade_l12",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 936.25,
+          "y": 1008.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -73082,9 +73601,9 @@ window.VN_GAME = {
         {
           "uid": "5en5cqw2",
           "asset": "art_upgrade_l12",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 936.25,
+          "y": 1008.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -73126,9 +73645,9 @@ window.VN_GAME = {
         {
           "uid": "5en5cqw2",
           "asset": "art_upgrade_l12",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 936.25,
+          "y": 1008.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -73170,9 +73689,9 @@ window.VN_GAME = {
         {
           "uid": "5en5cqw2",
           "asset": "art_upgrade_l12",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 936.25,
+          "y": 1008.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -73214,9 +73733,9 @@ window.VN_GAME = {
         {
           "uid": "5en5cqw2",
           "asset": "art_upgrade_l12",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 936.25,
+          "y": 1008.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -73258,9 +73777,9 @@ window.VN_GAME = {
         {
           "uid": "5en5cqw2",
           "asset": "art_upgrade_l12",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 936.25,
+          "y": 1008.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -73302,9 +73821,9 @@ window.VN_GAME = {
         {
           "uid": "5en5cqw2",
           "asset": "art_upgrade_l12",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 936.25,
+          "y": 1008.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -73346,9 +73865,9 @@ window.VN_GAME = {
         {
           "uid": "5en5cqw2",
           "asset": "art_upgrade_l12",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 936.25,
+          "y": 1008.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -73390,9 +73909,9 @@ window.VN_GAME = {
         {
           "uid": "5en5cqw2",
           "asset": "art_upgrade_l12",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 936.25,
+          "y": 1008.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -74389,9 +74908,9 @@ window.VN_GAME = {
         {
           "uid": "4yuyu3lh",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "look": "shadow"
         }
@@ -74434,9 +74953,9 @@ window.VN_GAME = {
         {
           "uid": "4yuyu3lh",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "look": "shadow"
         }
@@ -74479,9 +74998,9 @@ window.VN_GAME = {
         {
           "uid": "4yuyu3lh",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "look": "shadow"
         }
@@ -74524,9 +75043,9 @@ window.VN_GAME = {
         {
           "uid": "4yuyu3lh",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "look": "shadow"
         }
@@ -74569,9 +75088,9 @@ window.VN_GAME = {
         {
           "uid": "4yuyu3lh",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "look": "shadow"
         }
@@ -74614,9 +75133,9 @@ window.VN_GAME = {
         {
           "uid": "4yuyu3lh",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "look": "shadow"
         }
@@ -74659,9 +75178,9 @@ window.VN_GAME = {
         {
           "uid": "4yuyu3lh",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "look": "shadow"
         }
@@ -74704,9 +75223,9 @@ window.VN_GAME = {
         {
           "uid": "4yuyu3lh",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "look": "shadow"
         }
@@ -74749,9 +75268,9 @@ window.VN_GAME = {
         {
           "uid": "4yuyu3lh",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "look": "shadow"
         }
@@ -74794,9 +75313,9 @@ window.VN_GAME = {
         {
           "uid": "4yuyu3lh",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "look": "shadow"
         }
@@ -74839,9 +75358,9 @@ window.VN_GAME = {
         {
           "uid": "4yuyu3lh",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "look": "shadow"
         }
@@ -74884,9 +75403,9 @@ window.VN_GAME = {
         {
           "uid": "4yuyu3lh",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "look": "shadow"
         }
@@ -74929,9 +75448,9 @@ window.VN_GAME = {
         {
           "uid": "4yuyu3lh",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "look": "shadow"
         }
@@ -74974,9 +75493,9 @@ window.VN_GAME = {
         {
           "uid": "4yuyu3lh",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "look": "shadow"
         }
@@ -75021,9 +75540,9 @@ window.VN_GAME = {
         {
           "uid": "4yuyu3lh",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "look": "shadow"
         }
@@ -75066,9 +75585,9 @@ window.VN_GAME = {
         {
           "uid": "4yuyu3lh",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "look": "shadow"
         }
@@ -75111,9 +75630,9 @@ window.VN_GAME = {
         {
           "uid": "4yuyu3lh",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "look": "shadow"
         }
@@ -75156,9 +75675,9 @@ window.VN_GAME = {
         {
           "uid": "4yuyu3lh",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "look": "shadow"
         }
@@ -75201,9 +75720,9 @@ window.VN_GAME = {
         {
           "uid": "4yuyu3lh",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "look": "shadow"
         }
@@ -75246,9 +75765,9 @@ window.VN_GAME = {
         {
           "uid": "4yuyu3lh",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "look": "shadow"
         }
@@ -75291,9 +75810,9 @@ window.VN_GAME = {
         {
           "uid": "4yuyu3lh",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "look": "shadow"
         }
@@ -75336,9 +75855,9 @@ window.VN_GAME = {
         {
           "uid": "4yuyu3lh",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "look": "shadow"
         }
@@ -75381,9 +75900,9 @@ window.VN_GAME = {
         {
           "uid": "4yuyu3lh",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "look": "shadow"
         }
@@ -75426,9 +75945,9 @@ window.VN_GAME = {
         {
           "uid": "4yuyu3lh",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "look": "shadow"
         }
@@ -75471,9 +75990,9 @@ window.VN_GAME = {
         {
           "uid": "4yuyu3lh",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "look": "shadow"
         }
@@ -75516,9 +76035,9 @@ window.VN_GAME = {
         {
           "uid": "4yuyu3lh",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "look": "shadow"
         }
@@ -75561,9 +76080,9 @@ window.VN_GAME = {
         {
           "uid": "4yuyu3lh",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "look": "shadow"
         }
@@ -75606,9 +76125,9 @@ window.VN_GAME = {
         {
           "uid": "4yuyu3lh",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "look": "shadow"
         }
@@ -75651,9 +76170,9 @@ window.VN_GAME = {
         {
           "uid": "4yuyu3lh",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "look": "shadow"
         }
@@ -75696,9 +76215,9 @@ window.VN_GAME = {
         {
           "uid": "4yuyu3lh",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "look": "shadow"
         }
@@ -75741,9 +76260,9 @@ window.VN_GAME = {
         {
           "uid": "4yuyu3lh",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "look": "shadow"
         }
@@ -75786,9 +76305,9 @@ window.VN_GAME = {
         {
           "uid": "4yuyu3lh",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "look": "shadow"
         }
@@ -75831,9 +76350,9 @@ window.VN_GAME = {
         {
           "uid": "4yuyu3lh",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "look": "shadow"
         }
@@ -75876,9 +76395,9 @@ window.VN_GAME = {
         {
           "uid": "4yuyu3lh",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "look": "shadow"
         }
@@ -75921,9 +76440,9 @@ window.VN_GAME = {
         {
           "uid": "4yuyu3lh",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "look": "shadow"
         }
@@ -75966,9 +76485,9 @@ window.VN_GAME = {
         {
           "uid": "4yuyu3lh",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "look": "shadow"
         }
@@ -76011,9 +76530,9 @@ window.VN_GAME = {
         {
           "uid": "4yuyu3lh",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "look": "shadow"
         }
@@ -76056,9 +76575,9 @@ window.VN_GAME = {
         {
           "uid": "4yuyu3lh",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "look": "shadow"
         }
@@ -76101,9 +76620,9 @@ window.VN_GAME = {
         {
           "uid": "4yuyu3lh",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "look": "shadow"
         }
@@ -76146,9 +76665,9 @@ window.VN_GAME = {
         {
           "uid": "4yuyu3lh",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "look": "shadow"
         }
@@ -76191,9 +76710,9 @@ window.VN_GAME = {
         {
           "uid": "4yuyu3lh",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "look": "shadow"
         }
@@ -76236,9 +76755,9 @@ window.VN_GAME = {
         {
           "uid": "4yuyu3lh",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "look": "shadow"
         }
@@ -76281,9 +76800,9 @@ window.VN_GAME = {
         {
           "uid": "4yuyu3lh",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "look": "shadow"
         }
@@ -76326,9 +76845,9 @@ window.VN_GAME = {
         {
           "uid": "4yuyu3lh",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "look": "shadow"
         }
@@ -76371,9 +76890,9 @@ window.VN_GAME = {
         {
           "uid": "4yuyu3lh",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "look": "shadow"
         }
@@ -76416,9 +76935,9 @@ window.VN_GAME = {
         {
           "uid": "4yuyu3lh",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "look": "shadow"
         }
@@ -76461,9 +76980,9 @@ window.VN_GAME = {
         {
           "uid": "4yuyu3lh",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "look": "shadow"
         }
@@ -76506,9 +77025,9 @@ window.VN_GAME = {
         {
           "uid": "4yuyu3lh",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "look": "shadow"
         }
@@ -78572,9 +79091,9 @@ window.VN_GAME = {
         {
           "uid": "gqeqnq3e",
           "asset": "art_upgrade_l11",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1041.3,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -78619,9 +79138,9 @@ window.VN_GAME = {
         {
           "uid": "gqeqnq3e",
           "asset": "art_upgrade_l11",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1041.3,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -78664,9 +79183,9 @@ window.VN_GAME = {
         {
           "uid": "gqeqnq3e",
           "asset": "art_upgrade_l11",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1041.3,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -78711,9 +79230,9 @@ window.VN_GAME = {
         {
           "uid": "gqeqnq3e",
           "asset": "art_upgrade_l11",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1041.3,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -78758,9 +79277,9 @@ window.VN_GAME = {
         {
           "uid": "gqeqnq3e",
           "asset": "art_upgrade_l11",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1041.3,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -78803,9 +79322,9 @@ window.VN_GAME = {
         {
           "uid": "gqeqnq3e",
           "asset": "art_upgrade_l11",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1041.3,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -78848,9 +79367,9 @@ window.VN_GAME = {
         {
           "uid": "gqeqnq3e",
           "asset": "art_upgrade_l11",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1041.3,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -78893,9 +79412,9 @@ window.VN_GAME = {
         {
           "uid": "gqeqnq3e",
           "asset": "art_upgrade_l11",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1041.3,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -78938,9 +79457,9 @@ window.VN_GAME = {
         {
           "uid": "gqeqnq3e",
           "asset": "art_upgrade_l11",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1041.3,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -78983,9 +79502,9 @@ window.VN_GAME = {
         {
           "uid": "gqeqnq3e",
           "asset": "art_upgrade_l11",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1041.3,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -79028,9 +79547,9 @@ window.VN_GAME = {
         {
           "uid": "gqeqnq3e",
           "asset": "art_upgrade_l11",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1041.3,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -79072,10 +79591,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "gqeqnq3e",
-          "asset": "art_upgrade_l11",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p08",
+          "x": 638.05,
+          "y": 1040.65,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -79117,10 +79636,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "gqeqnq3e",
-          "asset": "art_upgrade_l11",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p08",
+          "x": 638.05,
+          "y": 1040.65,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -79162,10 +79681,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "gqeqnq3e",
-          "asset": "art_upgrade_l11",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p08",
+          "x": 638.05,
+          "y": 1040.65,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -79202,10 +79721,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "gqeqnq3e",
-          "asset": "art_upgrade_l11",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p08",
+          "x": 638.05,
+          "y": 1040.65,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -79248,10 +79767,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "gqeqnq3e",
-          "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p08",
+          "x": 638.05,
+          "y": 1040.65,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -79290,10 +79809,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "gqeqnq3e",
-          "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p08",
+          "x": 638.05,
+          "y": 1040.65,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -79330,10 +79849,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "gqeqnq3e",
-          "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p08",
+          "x": 638.05,
+          "y": 1040.65,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -79370,10 +79889,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "gqeqnq3e",
-          "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p08",
+          "x": 638.05,
+          "y": 1040.65,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -79410,10 +79929,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "gqeqnq3e",
-          "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p08",
+          "x": 638.05,
+          "y": 1040.65,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -79450,10 +79969,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "gqeqnq3e",
-          "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p08",
+          "x": 638.05,
+          "y": 1040.65,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -79490,10 +80009,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "gqeqnq3e",
-          "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p08",
+          "x": 638.05,
+          "y": 1040.65,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -79530,10 +80049,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "gqeqnq3e",
-          "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p08",
+          "x": 638.05,
+          "y": 1040.65,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -79570,10 +80089,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "gqeqnq3e",
-          "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p08",
+          "x": 638.05,
+          "y": 1040.65,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -79610,10 +80129,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "gqeqnq3e",
-          "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p08",
+          "x": 638.05,
+          "y": 1040.65,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -79650,10 +80169,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "gqeqnq3e",
-          "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p08",
+          "x": 638.05,
+          "y": 1040.65,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -79690,10 +80209,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "gqeqnq3e",
-          "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p08",
+          "x": 638.05,
+          "y": 1040.65,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -79730,10 +80249,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "gqeqnq3e",
-          "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p08",
+          "x": 638.05,
+          "y": 1040.65,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -79770,12 +80289,13 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "gqeqnq3e",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_l10",
+          "x": 638.05,
+          "y": 1044.65,
+          "h": 1000.0,
           "flip": false,
-          "in": "pop"
+          "in": "pop",
+          "poseSwitch": "soft"
         }
       ],
       "ambience": []
@@ -79810,12 +80330,13 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "gqeqnq3e",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_l10",
+          "x": 638.05,
+          "y": 1044.65,
+          "h": 1000.0,
           "flip": false,
-          "in": "pop"
+          "in": "pop",
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -79855,12 +80376,13 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "gqeqnq3e",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_l10",
+          "x": 638.05,
+          "y": 1044.65,
+          "h": 1000.0,
           "flip": false,
-          "in": "pop"
+          "in": "pop",
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -79900,12 +80422,13 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "gqeqnq3e",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_l10",
+          "x": 638.05,
+          "y": 1044.65,
+          "h": 1000.0,
           "flip": false,
-          "in": "pop"
+          "in": "pop",
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -79945,12 +80468,13 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "gqeqnq3e",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_l10",
+          "x": 638.05,
+          "y": 1044.65,
+          "h": 1000.0,
           "flip": false,
-          "in": "pop"
+          "in": "pop",
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -79993,9 +80517,9 @@ window.VN_GAME = {
         {
           "uid": "gqeqnq3e",
           "asset": "art_upgrade_l11",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1041.3,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -80038,9 +80562,9 @@ window.VN_GAME = {
         {
           "uid": "gqeqnq3e",
           "asset": "art_upgrade_l11",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1041.3,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -80083,9 +80607,9 @@ window.VN_GAME = {
         {
           "uid": "gqeqnq3e",
           "asset": "art_upgrade_l11",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1041.3,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -80128,9 +80652,9 @@ window.VN_GAME = {
         {
           "uid": "gqeqnq3e",
           "asset": "art_upgrade_l11",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1041.3,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -80173,9 +80697,9 @@ window.VN_GAME = {
         {
           "uid": "gqeqnq3e",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -80218,9 +80742,9 @@ window.VN_GAME = {
         {
           "uid": "gqeqnq3e",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -80263,9 +80787,9 @@ window.VN_GAME = {
         {
           "uid": "gqeqnq3e",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -80308,9 +80832,9 @@ window.VN_GAME = {
         {
           "uid": "gqeqnq3e",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -80353,9 +80877,9 @@ window.VN_GAME = {
         {
           "uid": "gqeqnq3e",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -80398,9 +80922,9 @@ window.VN_GAME = {
         {
           "uid": "gqeqnq3e",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -80443,9 +80967,9 @@ window.VN_GAME = {
         {
           "uid": "gqeqnq3e",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -80488,9 +81012,9 @@ window.VN_GAME = {
         {
           "uid": "gqeqnq3e",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -80533,9 +81057,9 @@ window.VN_GAME = {
         {
           "uid": "gqeqnq3e",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -80578,9 +81102,9 @@ window.VN_GAME = {
         {
           "uid": "gqeqnq3e",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -80642,9 +81166,9 @@ window.VN_GAME = {
         {
           "uid": "gqeqnq3e",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -80686,10 +81210,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "gqeqnq3e",
-          "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p06",
+          "x": 649.11,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -80731,10 +81255,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "gqeqnq3e",
-          "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p06",
+          "x": 649.11,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -80776,10 +81300,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "gqeqnq3e",
-          "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p06",
+          "x": 649.11,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -80821,10 +81345,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "gqeqnq3e",
-          "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p06",
+          "x": 649.11,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -80866,10 +81390,10 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "gqeqnq3e",
-          "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p06",
+          "x": 649.11,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -80912,9 +81436,9 @@ window.VN_GAME = {
         {
           "uid": "gqeqnq3e",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -80957,9 +81481,9 @@ window.VN_GAME = {
         {
           "uid": "gqeqnq3e",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -81002,9 +81526,9 @@ window.VN_GAME = {
         {
           "uid": "gqeqnq3e",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -81047,9 +81571,9 @@ window.VN_GAME = {
         {
           "uid": "gqeqnq3e",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -81092,9 +81616,9 @@ window.VN_GAME = {
         {
           "uid": "gqeqnq3e",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -81137,9 +81661,9 @@ window.VN_GAME = {
         {
           "uid": "gqeqnq3e",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -81182,9 +81706,9 @@ window.VN_GAME = {
         {
           "uid": "gqeqnq3e",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -81227,9 +81751,9 @@ window.VN_GAME = {
         {
           "uid": "gqeqnq3e",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -81272,9 +81796,9 @@ window.VN_GAME = {
         {
           "uid": "gqeqnq3e",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -81317,9 +81841,9 @@ window.VN_GAME = {
         {
           "uid": "gqeqnq3e",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -81362,9 +81886,9 @@ window.VN_GAME = {
         {
           "uid": "gqeqnq3e",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -81407,9 +81931,9 @@ window.VN_GAME = {
         {
           "uid": "gqeqnq3e",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -81452,9 +81976,9 @@ window.VN_GAME = {
         {
           "uid": "gqeqnq3e",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -81497,9 +82021,9 @@ window.VN_GAME = {
         {
           "uid": "gqeqnq3e",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -81542,9 +82066,9 @@ window.VN_GAME = {
         {
           "uid": "gqeqnq3e",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -81587,9 +82111,9 @@ window.VN_GAME = {
         {
           "uid": "gqeqnq3e",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -81632,9 +82156,9 @@ window.VN_GAME = {
         {
           "uid": "gqeqnq3e",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -81677,9 +82201,9 @@ window.VN_GAME = {
         {
           "uid": "gqeqnq3e",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -81722,9 +82246,9 @@ window.VN_GAME = {
         {
           "uid": "gqeqnq3e",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -81767,9 +82291,9 @@ window.VN_GAME = {
         {
           "uid": "gqeqnq3e",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -81812,9 +82336,9 @@ window.VN_GAME = {
         {
           "uid": "gqeqnq3e",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -81857,9 +82381,9 @@ window.VN_GAME = {
         {
           "uid": "gqeqnq3e",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -81902,9 +82426,9 @@ window.VN_GAME = {
         {
           "uid": "gqeqnq3e",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -81947,9 +82471,9 @@ window.VN_GAME = {
         {
           "uid": "gqeqnq3e",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -81992,9 +82516,9 @@ window.VN_GAME = {
         {
           "uid": "gqeqnq3e",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -82036,12 +82560,13 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "gqeqnq3e",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p09",
+          "x": 731.8,
+          "y": 1048.46,
+          "h": 1000.0,
           "flip": false,
-          "in": "pop"
+          "in": "pop",
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -82081,12 +82606,13 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "gqeqnq3e",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p09",
+          "x": 731.8,
+          "y": 1048.46,
+          "h": 1000.0,
           "flip": false,
-          "in": "pop"
+          "in": "pop",
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -82126,12 +82652,13 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "gqeqnq3e",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p09",
+          "x": 731.8,
+          "y": 1048.46,
+          "h": 1000.0,
           "flip": false,
-          "in": "pop"
+          "in": "pop",
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -82172,9 +82699,9 @@ window.VN_GAME = {
         {
           "uid": "gqeqnq3e",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -82217,9 +82744,9 @@ window.VN_GAME = {
         {
           "uid": "gqeqnq3e",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false,
           "in": "pop"
         }
@@ -82262,12 +82789,13 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "gqeqnq3e",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p18",
+          "x": 698.97,
+          "y": 905.6,
+          "h": 850.95,
           "flip": false,
-          "in": "pop"
+          "in": "pop",
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -82307,12 +82835,13 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "gqeqnq3e",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p18",
+          "x": 698.97,
+          "y": 905.6,
+          "h": 850.95,
           "flip": false,
-          "in": "pop"
+          "in": "pop",
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -82352,12 +82881,13 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "gqeqnq3e",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p18",
+          "x": 698.97,
+          "y": 905.6,
+          "h": 850.95,
           "flip": false,
-          "in": "pop"
+          "in": "pop",
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -82397,12 +82927,13 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "gqeqnq3e",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p18",
+          "x": 698.97,
+          "y": 905.6,
+          "h": 850.95,
           "flip": false,
-          "in": "pop"
+          "in": "pop",
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -82442,12 +82973,13 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "gqeqnq3e",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p18",
+          "x": 698.97,
+          "y": 905.6,
+          "h": 850.95,
           "flip": false,
-          "in": "pop"
+          "in": "pop",
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -82487,12 +83019,13 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "gqeqnq3e",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p18",
+          "x": 698.97,
+          "y": 905.6,
+          "h": 850.95,
           "flip": false,
-          "in": "pop"
+          "in": "pop",
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -82532,12 +83065,13 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "gqeqnq3e",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p18",
+          "x": 698.97,
+          "y": 905.6,
+          "h": 850.95,
           "flip": false,
-          "in": "pop"
+          "in": "pop",
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -82577,12 +83111,13 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "gqeqnq3e",
-          "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p18",
+          "x": 698.97,
+          "y": 905.6,
+          "h": 850.95,
           "flip": false,
-          "in": "pop"
+          "in": "pop",
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -82622,12 +83157,13 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "gqeqnq3e",
-          "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p18",
+          "x": 698.97,
+          "y": 905.6,
+          "h": 850.95,
           "flip": false,
-          "in": "pop"
+          "in": "pop",
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -82667,12 +83203,13 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "gqeqnq3e",
-          "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "asset": "art_upgrade_p18",
+          "x": 698.97,
+          "y": 905.6,
+          "h": 850.95,
           "flip": false,
-          "in": "pop"
+          "in": "pop",
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -82888,9 +83425,9 @@ window.VN_GAME = {
         {
           "uid": "kc8zxvg0",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -82932,9 +83469,9 @@ window.VN_GAME = {
         {
           "uid": "kc8zxvg0",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -82976,9 +83513,9 @@ window.VN_GAME = {
         {
           "uid": "kc8zxvg0",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -83020,9 +83557,9 @@ window.VN_GAME = {
         {
           "uid": "kc8zxvg0",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -83064,9 +83601,9 @@ window.VN_GAME = {
         {
           "uid": "kc8zxvg0",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -83108,9 +83645,9 @@ window.VN_GAME = {
         {
           "uid": "kc8zxvg0",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -83152,9 +83689,9 @@ window.VN_GAME = {
         {
           "uid": "kc8zxvg0",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -83196,9 +83733,9 @@ window.VN_GAME = {
         {
           "uid": "kc8zxvg0",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -83240,9 +83777,9 @@ window.VN_GAME = {
         {
           "uid": "kc8zxvg0",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -83284,9 +83821,9 @@ window.VN_GAME = {
         {
           "uid": "kc8zxvg0",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -83328,9 +83865,9 @@ window.VN_GAME = {
         {
           "uid": "kc8zxvg0",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -83372,9 +83909,9 @@ window.VN_GAME = {
         {
           "uid": "kc8zxvg0",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -83416,9 +83953,9 @@ window.VN_GAME = {
         {
           "uid": "kc8zxvg0",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -83460,9 +83997,9 @@ window.VN_GAME = {
         {
           "uid": "kc8zxvg0",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -83504,9 +84041,9 @@ window.VN_GAME = {
         {
           "uid": "kc8zxvg0",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -83548,9 +84085,9 @@ window.VN_GAME = {
         {
           "uid": "kc8zxvg0",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -83592,9 +84129,9 @@ window.VN_GAME = {
         {
           "uid": "kc8zxvg0",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -83636,9 +84173,9 @@ window.VN_GAME = {
         {
           "uid": "kc8zxvg0",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -83680,9 +84217,9 @@ window.VN_GAME = {
         {
           "uid": "kc8zxvg0",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -84294,9 +84831,9 @@ window.VN_GAME = {
         {
           "uid": "ew0fssgs",
           "asset": "hfcyjlxm",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 641.3,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -84338,9 +84875,9 @@ window.VN_GAME = {
         {
           "uid": "ew0fssgs",
           "asset": "hfcyjlxm",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 641.3,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -84384,9 +84921,9 @@ window.VN_GAME = {
         {
           "uid": "ew0fssgs",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -84428,9 +84965,9 @@ window.VN_GAME = {
         {
           "uid": "ew0fssgs",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -84472,9 +85009,9 @@ window.VN_GAME = {
         {
           "uid": "ew0fssgs",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -84516,9 +85053,9 @@ window.VN_GAME = {
         {
           "uid": "ew0fssgs",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -84560,9 +85097,9 @@ window.VN_GAME = {
         {
           "uid": "ew0fssgs",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -84604,9 +85141,9 @@ window.VN_GAME = {
         {
           "uid": "ew0fssgs",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -84648,9 +85185,9 @@ window.VN_GAME = {
         {
           "uid": "ew0fssgs",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -84692,9 +85229,9 @@ window.VN_GAME = {
         {
           "uid": "ew0fssgs",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -84736,9 +85273,9 @@ window.VN_GAME = {
         {
           "uid": "ew0fssgs",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -84780,9 +85317,9 @@ window.VN_GAME = {
         {
           "uid": "ew0fssgs",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -84824,9 +85361,9 @@ window.VN_GAME = {
         {
           "uid": "ew0fssgs",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -84887,9 +85424,9 @@ window.VN_GAME = {
         {
           "uid": "ew0fssgs",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -84931,9 +85468,9 @@ window.VN_GAME = {
         {
           "uid": "ew0fssgs",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -84975,9 +85512,9 @@ window.VN_GAME = {
         {
           "uid": "ew0fssgs",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -85019,9 +85556,9 @@ window.VN_GAME = {
         {
           "uid": "ew0fssgs",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -85063,9 +85600,9 @@ window.VN_GAME = {
         {
           "uid": "ew0fssgs",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -85107,9 +85644,9 @@ window.VN_GAME = {
         {
           "uid": "ew0fssgs",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -85151,9 +85688,9 @@ window.VN_GAME = {
         {
           "uid": "ew0fssgs",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -85195,9 +85732,9 @@ window.VN_GAME = {
         {
           "uid": "ew0fssgs",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -85239,9 +85776,9 @@ window.VN_GAME = {
         {
           "uid": "ew0fssgs",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -85283,9 +85820,9 @@ window.VN_GAME = {
         {
           "uid": "ew0fssgs",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -85333,9 +85870,9 @@ window.VN_GAME = {
         {
           "uid": "ew0fssgs",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -85377,9 +85914,9 @@ window.VN_GAME = {
         {
           "uid": "ew0fssgs",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -85421,9 +85958,9 @@ window.VN_GAME = {
         {
           "uid": "ew0fssgs",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -85465,9 +86002,9 @@ window.VN_GAME = {
         {
           "uid": "ew0fssgs",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -85509,9 +86046,9 @@ window.VN_GAME = {
         {
           "uid": "ew0fssgs",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -85553,9 +86090,9 @@ window.VN_GAME = {
         {
           "uid": "ew0fssgs",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -85599,9 +86136,9 @@ window.VN_GAME = {
         {
           "uid": "ew0fssgs",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -85643,9 +86180,9 @@ window.VN_GAME = {
         {
           "uid": "ew0fssgs",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -85687,9 +86224,9 @@ window.VN_GAME = {
         {
           "uid": "ew0fssgs",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -85731,9 +86268,9 @@ window.VN_GAME = {
         {
           "uid": "ew0fssgs",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -85775,9 +86312,9 @@ window.VN_GAME = {
         {
           "uid": "ew0fssgs",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -85819,9 +86356,9 @@ window.VN_GAME = {
         {
           "uid": "ew0fssgs",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -85863,9 +86400,9 @@ window.VN_GAME = {
         {
           "uid": "ew0fssgs",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -85907,9 +86444,9 @@ window.VN_GAME = {
         {
           "uid": "ew0fssgs",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -85951,9 +86488,9 @@ window.VN_GAME = {
         {
           "uid": "ew0fssgs",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -85995,9 +86532,9 @@ window.VN_GAME = {
         {
           "uid": "ew0fssgs",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -86039,9 +86576,9 @@ window.VN_GAME = {
         {
           "uid": "ew0fssgs",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -86083,9 +86620,9 @@ window.VN_GAME = {
         {
           "uid": "ew0fssgs",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -86127,9 +86664,9 @@ window.VN_GAME = {
         {
           "uid": "ew0fssgs",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -86171,9 +86708,9 @@ window.VN_GAME = {
         {
           "uid": "ew0fssgs",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -86215,9 +86752,9 @@ window.VN_GAME = {
         {
           "uid": "ew0fssgs",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -86259,9 +86796,9 @@ window.VN_GAME = {
         {
           "uid": "ew0fssgs",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -86303,9 +86840,9 @@ window.VN_GAME = {
         {
           "uid": "ew0fssgs",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -86347,9 +86884,9 @@ window.VN_GAME = {
         {
           "uid": "ew0fssgs",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -86393,9 +86930,9 @@ window.VN_GAME = {
         {
           "uid": "ew0fssgs",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -86437,9 +86974,9 @@ window.VN_GAME = {
         {
           "uid": "ew0fssgs",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -86481,9 +87018,9 @@ window.VN_GAME = {
         {
           "uid": "ew0fssgs",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -86525,9 +87062,9 @@ window.VN_GAME = {
         {
           "uid": "ew0fssgs",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -86569,9 +87106,9 @@ window.VN_GAME = {
         {
           "uid": "ew0fssgs",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -86613,9 +87150,9 @@ window.VN_GAME = {
         {
           "uid": "ew0fssgs",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -86657,9 +87194,9 @@ window.VN_GAME = {
         {
           "uid": "ew0fssgs",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -86701,9 +87238,9 @@ window.VN_GAME = {
         {
           "uid": "ew0fssgs",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -86955,9 +87492,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -86999,9 +87536,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -87049,9 +87586,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -87093,9 +87630,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -87137,9 +87674,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -87181,9 +87718,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -87225,9 +87762,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -87269,9 +87806,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -87313,9 +87850,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -87357,9 +87894,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -87401,9 +87938,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -87445,9 +87982,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -87489,9 +88026,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -87533,9 +88070,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -87577,9 +88114,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -87621,9 +88158,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -87665,9 +88202,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -87709,9 +88246,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -87753,9 +88290,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -87797,9 +88334,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -87841,9 +88378,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -87885,9 +88422,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -87930,9 +88467,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -87974,9 +88511,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -88018,9 +88555,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -88062,9 +88599,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -88108,9 +88645,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -88152,9 +88689,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -88196,9 +88733,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -88240,9 +88777,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -88284,9 +88821,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -88328,9 +88865,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -88372,9 +88909,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -88416,9 +88953,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -88460,9 +88997,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -88504,9 +89041,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -88548,9 +89085,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -88592,9 +89129,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -88636,9 +89173,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -88680,9 +89217,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -88724,9 +89261,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -88768,9 +89305,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -88812,9 +89349,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -88856,9 +89393,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -88900,9 +89437,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -88944,9 +89481,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -88988,9 +89525,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -89032,9 +89569,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -89076,9 +89613,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -89120,9 +89657,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -89164,9 +89701,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -89227,9 +89764,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -89271,9 +89808,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -89315,9 +89852,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -89359,9 +89896,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -89403,9 +89940,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -89447,9 +89984,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -89491,9 +90028,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -89535,9 +90072,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -89579,9 +90116,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -89623,9 +90160,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -89667,9 +90204,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -89711,9 +90248,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -89755,9 +90292,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -89799,9 +90336,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -89843,9 +90380,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -89887,9 +90424,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -89931,9 +90468,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -89975,9 +90512,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -90019,9 +90556,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -90063,9 +90600,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -90107,9 +90644,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -90151,9 +90688,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -90195,9 +90732,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -90239,9 +90776,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -90283,9 +90820,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -90327,9 +90864,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -90371,9 +90908,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -90415,9 +90952,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -90459,9 +90996,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -90503,9 +91040,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -90547,9 +91084,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -90591,9 +91128,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -90635,9 +91172,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -90679,9 +91216,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -90723,9 +91260,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -90767,9 +91304,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -90813,9 +91350,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -90857,9 +91394,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -90901,9 +91438,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -90945,9 +91482,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -90991,9 +91528,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "art_upgrade_l09",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 641.95,
+          "y": 1043.91,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -91035,9 +91572,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "art_upgrade_l09",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 641.95,
+          "y": 1043.91,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -91079,9 +91616,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "art_upgrade_l09",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 641.95,
+          "y": 1043.91,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -91123,9 +91660,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "art_upgrade_l09",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 641.95,
+          "y": 1043.91,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -91167,9 +91704,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -91211,9 +91748,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -91255,9 +91792,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -91299,9 +91836,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -91343,9 +91880,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -91387,9 +91924,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -91433,9 +91970,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -91477,9 +92014,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -91521,9 +92058,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -91565,9 +92102,9 @@ window.VN_GAME = {
         {
           "uid": "2vi7xbhx",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -91749,9 +92286,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -91793,9 +92330,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -91837,9 +92374,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -91881,9 +92418,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -91925,9 +92462,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -91969,9 +92506,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -92019,9 +92556,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -92063,9 +92600,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -92107,9 +92644,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -92151,9 +92688,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -92195,9 +92732,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -92239,9 +92776,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -92283,9 +92820,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -92328,9 +92865,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -92372,9 +92909,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -92416,9 +92953,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -92460,9 +92997,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -92504,9 +93041,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -92548,9 +93085,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -92592,9 +93129,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -92636,9 +93173,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -92680,9 +93217,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -92743,9 +93280,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -92787,9 +93324,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -92831,9 +93368,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -92875,9 +93412,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -92919,9 +93456,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -92963,9 +93500,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -93007,9 +93544,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -93051,9 +93588,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -93095,9 +93632,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -93139,9 +93676,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -93183,9 +93720,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -93227,9 +93764,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -93271,9 +93808,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -93315,9 +93852,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -93359,9 +93896,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -93403,9 +93940,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -93447,9 +93984,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -93491,9 +94028,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -93535,9 +94072,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -93579,9 +94116,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -93623,9 +94160,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -93667,9 +94204,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -93711,9 +94248,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -93755,9 +94292,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -93800,9 +94337,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -93844,9 +94381,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -93888,9 +94425,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -93932,9 +94469,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -93976,9 +94513,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -94020,9 +94557,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -94064,9 +94601,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -94108,9 +94645,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -94152,9 +94689,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -94196,9 +94733,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -94240,9 +94777,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -94284,9 +94821,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -94328,9 +94865,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -94372,9 +94909,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -94416,9 +94953,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -94460,9 +94997,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -94504,9 +95041,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -94548,9 +95085,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -94592,9 +95129,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -94636,9 +95173,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -94680,9 +95217,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -94726,9 +95263,9 @@ window.VN_GAME = {
         {
           "uid": "emo27wx3",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -94840,9 +95377,9 @@ window.VN_GAME = {
         {
           "uid": "muq3y774",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -94884,9 +95421,9 @@ window.VN_GAME = {
         {
           "uid": "muq3y774",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -94928,9 +95465,9 @@ window.VN_GAME = {
         {
           "uid": "muq3y774",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -94972,9 +95509,9 @@ window.VN_GAME = {
         {
           "uid": "muq3y774",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -95016,9 +95553,9 @@ window.VN_GAME = {
         {
           "uid": "muq3y774",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -95060,9 +95597,9 @@ window.VN_GAME = {
         {
           "uid": "muq3y774",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -95104,9 +95641,9 @@ window.VN_GAME = {
         {
           "uid": "muq3y774",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -95183,9 +95720,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -95227,9 +95764,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -95271,9 +95808,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -95315,9 +95852,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -95359,9 +95896,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -95405,9 +95942,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -95449,9 +95986,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -95493,9 +96030,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -95537,9 +96074,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -95581,9 +96118,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -95644,9 +96181,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -95688,9 +96225,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -95732,9 +96269,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -95776,9 +96313,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -95820,9 +96357,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -95864,9 +96401,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -95908,9 +96445,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -95952,9 +96489,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -95996,9 +96533,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -96040,9 +96577,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -96084,9 +96621,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -96128,9 +96665,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -96172,9 +96709,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -96216,9 +96753,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -96260,9 +96797,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -96304,9 +96841,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -96348,9 +96885,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -96392,9 +96929,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -96436,9 +96973,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -96480,9 +97017,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -96524,9 +97061,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -96568,9 +97105,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -96612,9 +97149,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -96656,9 +97193,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -96700,9 +97237,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -96744,9 +97281,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -96788,9 +97325,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -96832,9 +97369,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -96876,9 +97413,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -96920,9 +97457,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -96964,9 +97501,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -97008,9 +97545,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -97052,9 +97589,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -97096,9 +97633,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -97140,9 +97677,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -97184,9 +97721,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -97228,9 +97765,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -97273,9 +97810,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -97317,9 +97854,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -97361,9 +97898,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -97405,9 +97942,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -97449,9 +97986,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -97493,9 +98030,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -97537,9 +98074,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -97581,9 +98118,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -97625,9 +98162,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -97688,9 +98225,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -97732,9 +98269,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -97776,9 +98313,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -97820,9 +98357,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -97866,9 +98403,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -97910,9 +98447,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -97960,9 +98497,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -98004,9 +98541,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -98048,9 +98585,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -98092,9 +98629,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -98136,9 +98673,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -98180,9 +98717,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -98224,9 +98761,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -98268,9 +98805,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -98312,9 +98849,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -98356,9 +98893,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -98400,9 +98937,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -98444,9 +98981,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -98488,9 +99025,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -98532,9 +99069,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -98576,9 +99113,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -98620,9 +99157,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -98664,9 +99201,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -98708,9 +99245,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -98752,9 +99289,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -98796,9 +99333,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -98840,9 +99377,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -98884,9 +99421,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -98928,9 +99465,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -98972,9 +99509,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -99016,9 +99553,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -99060,9 +99597,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -99104,9 +99641,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -99148,9 +99685,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -99192,9 +99729,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -99236,9 +99773,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -99280,9 +99817,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -99324,9 +99861,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -99368,9 +99905,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -99412,9 +99949,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -99456,9 +99993,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -99500,9 +100037,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -99563,9 +100100,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -99607,9 +100144,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -99651,9 +100188,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -99695,9 +100232,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -99739,9 +100276,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -99783,9 +100320,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -99827,9 +100364,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -99871,9 +100408,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -99915,9 +100452,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -99959,9 +100496,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -100003,9 +100540,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -100047,9 +100584,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -100091,9 +100628,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -100135,9 +100672,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -100179,9 +100716,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -100223,9 +100760,9 @@ window.VN_GAME = {
         {
           "uid": "5vm9gcbq",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -100582,9 +101119,9 @@ window.VN_GAME = {
         {
           "uid": "hftb0hyy",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -100626,9 +101163,9 @@ window.VN_GAME = {
         {
           "uid": "hftb0hyy",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -100670,9 +101207,9 @@ window.VN_GAME = {
         {
           "uid": "hftb0hyy",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -100714,9 +101251,9 @@ window.VN_GAME = {
         {
           "uid": "hftb0hyy",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -100758,9 +101295,9 @@ window.VN_GAME = {
         {
           "uid": "hftb0hyy",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -100802,9 +101339,9 @@ window.VN_GAME = {
         {
           "uid": "hftb0hyy",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -100846,9 +101383,9 @@ window.VN_GAME = {
         {
           "uid": "hftb0hyy",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -100890,9 +101427,9 @@ window.VN_GAME = {
         {
           "uid": "hftb0hyy",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -100934,9 +101471,9 @@ window.VN_GAME = {
         {
           "uid": "hftb0hyy",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -100978,9 +101515,9 @@ window.VN_GAME = {
         {
           "uid": "hftb0hyy",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -101022,9 +101559,9 @@ window.VN_GAME = {
         {
           "uid": "hftb0hyy",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -101206,9 +101743,9 @@ window.VN_GAME = {
         {
           "uid": "6al4chl7",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -101252,9 +101789,9 @@ window.VN_GAME = {
         {
           "uid": "6al4chl7",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -101296,9 +101833,9 @@ window.VN_GAME = {
         {
           "uid": "6al4chl7",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -101340,9 +101877,9 @@ window.VN_GAME = {
         {
           "uid": "6al4chl7",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -101384,9 +101921,9 @@ window.VN_GAME = {
         {
           "uid": "6al4chl7",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -101428,9 +101965,9 @@ window.VN_GAME = {
         {
           "uid": "6al4chl7",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -101472,9 +102009,9 @@ window.VN_GAME = {
         {
           "uid": "6al4chl7",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -101516,9 +102053,9 @@ window.VN_GAME = {
         {
           "uid": "6al4chl7",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -101560,9 +102097,9 @@ window.VN_GAME = {
         {
           "uid": "6al4chl7",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -101604,9 +102141,9 @@ window.VN_GAME = {
         {
           "uid": "6al4chl7",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -101648,9 +102185,9 @@ window.VN_GAME = {
         {
           "uid": "6al4chl7",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -101692,9 +102229,9 @@ window.VN_GAME = {
         {
           "uid": "6al4chl7",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -101878,9 +102415,9 @@ window.VN_GAME = {
         {
           "uid": "y7zsso22",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -101922,9 +102459,9 @@ window.VN_GAME = {
         {
           "uid": "y7zsso22",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -101966,9 +102503,9 @@ window.VN_GAME = {
         {
           "uid": "y7zsso22",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -102010,9 +102547,9 @@ window.VN_GAME = {
         {
           "uid": "y7zsso22",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -102054,9 +102591,9 @@ window.VN_GAME = {
         {
           "uid": "y7zsso22",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -102098,9 +102635,9 @@ window.VN_GAME = {
         {
           "uid": "y7zsso22",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -102142,9 +102679,9 @@ window.VN_GAME = {
         {
           "uid": "y7zsso22",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -102186,9 +102723,9 @@ window.VN_GAME = {
         {
           "uid": "y7zsso22",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -102230,9 +102767,9 @@ window.VN_GAME = {
         {
           "uid": "y7zsso22",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -102274,9 +102811,9 @@ window.VN_GAME = {
         {
           "uid": "y7zsso22",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -102318,9 +102855,9 @@ window.VN_GAME = {
         {
           "uid": "y7zsso22",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -102362,9 +102899,9 @@ window.VN_GAME = {
         {
           "uid": "y7zsso22",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -102408,9 +102945,9 @@ window.VN_GAME = {
         {
           "uid": "y7zsso22",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -102452,9 +102989,9 @@ window.VN_GAME = {
         {
           "uid": "y7zsso22",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -102496,9 +103033,9 @@ window.VN_GAME = {
         {
           "uid": "y7zsso22",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -102542,9 +103079,9 @@ window.VN_GAME = {
         {
           "uid": "y7zsso22",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -102586,9 +103123,9 @@ window.VN_GAME = {
         {
           "uid": "y7zsso22",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -102649,9 +103186,9 @@ window.VN_GAME = {
         {
           "uid": "y7zsso22",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -102693,9 +103230,9 @@ window.VN_GAME = {
         {
           "uid": "y7zsso22",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -102737,9 +103274,9 @@ window.VN_GAME = {
         {
           "uid": "y7zsso22",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -102781,9 +103318,9 @@ window.VN_GAME = {
         {
           "uid": "y7zsso22",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -102825,9 +103362,9 @@ window.VN_GAME = {
         {
           "uid": "y7zsso22",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -102869,9 +103406,9 @@ window.VN_GAME = {
         {
           "uid": "y7zsso22",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -102913,9 +103450,9 @@ window.VN_GAME = {
         {
           "uid": "y7zsso22",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -102959,9 +103496,9 @@ window.VN_GAME = {
         {
           "uid": "y7zsso22",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -103003,9 +103540,9 @@ window.VN_GAME = {
         {
           "uid": "y7zsso22",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -103047,9 +103584,9 @@ window.VN_GAME = {
         {
           "uid": "y7zsso22",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -103091,9 +103628,9 @@ window.VN_GAME = {
         {
           "uid": "y7zsso22",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -103141,9 +103678,9 @@ window.VN_GAME = {
         {
           "uid": "y7zsso22",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -103185,9 +103722,9 @@ window.VN_GAME = {
         {
           "uid": "y7zsso22",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -103229,9 +103766,9 @@ window.VN_GAME = {
         {
           "uid": "y7zsso22",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -103273,9 +103810,9 @@ window.VN_GAME = {
         {
           "uid": "y7zsso22",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -103317,9 +103854,9 @@ window.VN_GAME = {
         {
           "uid": "y7zsso22",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -103361,9 +103898,9 @@ window.VN_GAME = {
         {
           "uid": "y7zsso22",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -103405,9 +103942,9 @@ window.VN_GAME = {
         {
           "uid": "y7zsso22",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -103449,9 +103986,9 @@ window.VN_GAME = {
         {
           "uid": "y7zsso22",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -103493,9 +104030,9 @@ window.VN_GAME = {
         {
           "uid": "y7zsso22",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -103537,9 +104074,9 @@ window.VN_GAME = {
         {
           "uid": "y7zsso22",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -103581,9 +104118,9 @@ window.VN_GAME = {
         {
           "uid": "y7zsso22",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -103625,9 +104162,9 @@ window.VN_GAME = {
         {
           "uid": "y7zsso22",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -103669,9 +104206,9 @@ window.VN_GAME = {
         {
           "uid": "y7zsso22",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -103713,9 +104250,9 @@ window.VN_GAME = {
         {
           "uid": "y7zsso22",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -103757,9 +104294,9 @@ window.VN_GAME = {
         {
           "uid": "y7zsso22",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -104224,9 +104761,9 @@ window.VN_GAME = {
         {
           "uid": "4l1dto4t",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -104268,9 +104805,9 @@ window.VN_GAME = {
         {
           "uid": "4l1dto4t",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -104312,9 +104849,9 @@ window.VN_GAME = {
         {
           "uid": "4l1dto4t",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -104356,9 +104893,9 @@ window.VN_GAME = {
         {
           "uid": "4l1dto4t",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -104400,9 +104937,9 @@ window.VN_GAME = {
         {
           "uid": "4l1dto4t",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -104444,9 +104981,9 @@ window.VN_GAME = {
         {
           "uid": "4l1dto4t",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -104488,9 +105025,9 @@ window.VN_GAME = {
         {
           "uid": "4l1dto4t",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -104532,9 +105069,9 @@ window.VN_GAME = {
         {
           "uid": "4l1dto4t",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -104576,9 +105113,9 @@ window.VN_GAME = {
         {
           "uid": "4l1dto4t",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -104620,9 +105157,9 @@ window.VN_GAME = {
         {
           "uid": "4l1dto4t",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -104664,9 +105201,9 @@ window.VN_GAME = {
         {
           "uid": "4l1dto4t",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -104708,9 +105245,9 @@ window.VN_GAME = {
         {
           "uid": "4l1dto4t",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -104752,9 +105289,9 @@ window.VN_GAME = {
         {
           "uid": "4l1dto4t",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -104796,9 +105333,9 @@ window.VN_GAME = {
         {
           "uid": "4l1dto4t",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -104840,9 +105377,9 @@ window.VN_GAME = {
         {
           "uid": "4l1dto4t",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -104884,9 +105421,9 @@ window.VN_GAME = {
         {
           "uid": "4l1dto4t",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -104947,9 +105484,9 @@ window.VN_GAME = {
         {
           "uid": "4l1dto4t",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -104991,9 +105528,9 @@ window.VN_GAME = {
         {
           "uid": "4l1dto4t",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -105035,9 +105572,9 @@ window.VN_GAME = {
         {
           "uid": "4l1dto4t",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -105092,9 +105629,9 @@ window.VN_GAME = {
         {
           "uid": "4l1dto4t",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -105138,9 +105675,9 @@ window.VN_GAME = {
         {
           "uid": "4l1dto4t",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -105182,9 +105719,9 @@ window.VN_GAME = {
         {
           "uid": "4l1dto4t",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -105226,9 +105763,9 @@ window.VN_GAME = {
         {
           "uid": "4l1dto4t",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -105270,9 +105807,9 @@ window.VN_GAME = {
         {
           "uid": "4l1dto4t",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -105314,9 +105851,9 @@ window.VN_GAME = {
         {
           "uid": "4l1dto4t",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -105358,9 +105895,9 @@ window.VN_GAME = {
         {
           "uid": "4l1dto4t",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -105402,9 +105939,9 @@ window.VN_GAME = {
         {
           "uid": "4l1dto4t",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -105446,9 +105983,9 @@ window.VN_GAME = {
         {
           "uid": "4l1dto4t",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -105490,9 +106027,9 @@ window.VN_GAME = {
         {
           "uid": "4l1dto4t",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -105534,9 +106071,9 @@ window.VN_GAME = {
         {
           "uid": "4l1dto4t",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -105578,9 +106115,9 @@ window.VN_GAME = {
         {
           "uid": "4l1dto4t",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -105622,9 +106159,9 @@ window.VN_GAME = {
         {
           "uid": "4l1dto4t",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -105666,9 +106203,9 @@ window.VN_GAME = {
         {
           "uid": "4l1dto4t",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -105710,9 +106247,9 @@ window.VN_GAME = {
         {
           "uid": "4l1dto4t",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -105754,9 +106291,9 @@ window.VN_GAME = {
         {
           "uid": "4l1dto4t",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -105798,9 +106335,9 @@ window.VN_GAME = {
         {
           "uid": "4l1dto4t",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -105842,9 +106379,9 @@ window.VN_GAME = {
         {
           "uid": "4l1dto4t",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -105888,9 +106425,9 @@ window.VN_GAME = {
         {
           "uid": "4l1dto4t",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -106074,9 +106611,9 @@ window.VN_GAME = {
         {
           "uid": "h7ixm8d0",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -106118,9 +106655,9 @@ window.VN_GAME = {
         {
           "uid": "h7ixm8d0",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -106162,9 +106699,9 @@ window.VN_GAME = {
         {
           "uid": "h7ixm8d0",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -106206,9 +106743,9 @@ window.VN_GAME = {
         {
           "uid": "h7ixm8d0",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -106250,9 +106787,9 @@ window.VN_GAME = {
         {
           "uid": "h7ixm8d0",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -106294,9 +106831,9 @@ window.VN_GAME = {
         {
           "uid": "h7ixm8d0",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -106338,9 +106875,9 @@ window.VN_GAME = {
         {
           "uid": "h7ixm8d0",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -106382,9 +106919,9 @@ window.VN_GAME = {
         {
           "uid": "h7ixm8d0",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -106426,9 +106963,9 @@ window.VN_GAME = {
         {
           "uid": "h7ixm8d0",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -106470,9 +107007,9 @@ window.VN_GAME = {
         {
           "uid": "h7ixm8d0",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -106514,9 +107051,9 @@ window.VN_GAME = {
         {
           "uid": "h7ixm8d0",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -106558,9 +107095,9 @@ window.VN_GAME = {
         {
           "uid": "h7ixm8d0",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -106602,9 +107139,9 @@ window.VN_GAME = {
         {
           "uid": "h7ixm8d0",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -106646,9 +107183,9 @@ window.VN_GAME = {
         {
           "uid": "h7ixm8d0",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -106690,9 +107227,9 @@ window.VN_GAME = {
         {
           "uid": "h7ixm8d0",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -106734,9 +107271,9 @@ window.VN_GAME = {
         {
           "uid": "h7ixm8d0",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -106778,9 +107315,9 @@ window.VN_GAME = {
         {
           "uid": "h7ixm8d0",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -106822,9 +107359,9 @@ window.VN_GAME = {
         {
           "uid": "h7ixm8d0",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -106866,9 +107403,9 @@ window.VN_GAME = {
         {
           "uid": "h7ixm8d0",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -106910,9 +107447,9 @@ window.VN_GAME = {
         {
           "uid": "h7ixm8d0",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -106954,9 +107491,9 @@ window.VN_GAME = {
         {
           "uid": "h7ixm8d0",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -106998,9 +107535,9 @@ window.VN_GAME = {
         {
           "uid": "h7ixm8d0",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -107042,9 +107579,9 @@ window.VN_GAME = {
         {
           "uid": "h7ixm8d0",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -107086,9 +107623,9 @@ window.VN_GAME = {
         {
           "uid": "h7ixm8d0",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -107744,9 +108281,9 @@ window.VN_GAME = {
         {
           "uid": "338iw9un",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -107788,9 +108325,9 @@ window.VN_GAME = {
         {
           "uid": "338iw9un",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -107832,9 +108369,9 @@ window.VN_GAME = {
         {
           "uid": "338iw9un",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -107876,9 +108413,9 @@ window.VN_GAME = {
         {
           "uid": "338iw9un",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -107920,9 +108457,9 @@ window.VN_GAME = {
         {
           "uid": "338iw9un",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -107964,9 +108501,9 @@ window.VN_GAME = {
         {
           "uid": "338iw9un",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -108008,9 +108545,9 @@ window.VN_GAME = {
         {
           "uid": "338iw9un",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -108052,9 +108589,9 @@ window.VN_GAME = {
         {
           "uid": "338iw9un",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -108096,9 +108633,9 @@ window.VN_GAME = {
         {
           "uid": "338iw9un",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -108140,9 +108677,9 @@ window.VN_GAME = {
         {
           "uid": "338iw9un",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -108184,9 +108721,9 @@ window.VN_GAME = {
         {
           "uid": "338iw9un",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -108228,9 +108765,9 @@ window.VN_GAME = {
         {
           "uid": "338iw9un",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -108272,9 +108809,9 @@ window.VN_GAME = {
         {
           "uid": "338iw9un",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -108316,9 +108853,9 @@ window.VN_GAME = {
         {
           "uid": "338iw9un",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -108360,9 +108897,9 @@ window.VN_GAME = {
         {
           "uid": "338iw9un",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -108404,9 +108941,9 @@ window.VN_GAME = {
         {
           "uid": "338iw9un",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -108448,9 +108985,9 @@ window.VN_GAME = {
         {
           "uid": "338iw9un",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -108492,9 +109029,9 @@ window.VN_GAME = {
         {
           "uid": "338iw9un",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -108536,9 +109073,9 @@ window.VN_GAME = {
         {
           "uid": "338iw9un",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -108580,9 +109117,9 @@ window.VN_GAME = {
         {
           "uid": "338iw9un",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -108624,9 +109161,9 @@ window.VN_GAME = {
         {
           "uid": "338iw9un",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -108668,9 +109205,9 @@ window.VN_GAME = {
         {
           "uid": "338iw9un",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -108712,9 +109249,9 @@ window.VN_GAME = {
         {
           "uid": "338iw9un",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -108756,9 +109293,9 @@ window.VN_GAME = {
         {
           "uid": "338iw9un",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -108800,9 +109337,9 @@ window.VN_GAME = {
         {
           "uid": "338iw9un",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -108844,9 +109381,9 @@ window.VN_GAME = {
         {
           "uid": "338iw9un",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -108888,9 +109425,9 @@ window.VN_GAME = {
         {
           "uid": "338iw9un",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -108932,9 +109469,9 @@ window.VN_GAME = {
         {
           "uid": "338iw9un",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -109256,9 +109793,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -109300,9 +109837,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -109344,9 +109881,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -109388,9 +109925,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -109432,9 +109969,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -109476,9 +110013,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -109520,9 +110057,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -109564,9 +110101,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -109608,9 +110145,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -109652,9 +110189,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -109696,9 +110233,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -109740,9 +110277,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -109784,9 +110321,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -109828,9 +110365,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -109872,9 +110409,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -109916,9 +110453,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -109960,9 +110497,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -110004,9 +110541,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -110048,9 +110585,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -110092,9 +110629,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -110136,9 +110673,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -110180,9 +110717,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -110224,9 +110761,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -110268,9 +110805,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -110312,9 +110849,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -110356,9 +110893,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -110400,9 +110937,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -110444,9 +110981,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -110488,9 +111025,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -110532,9 +111069,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -110576,9 +111113,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -110620,9 +111157,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -110666,9 +111203,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -110710,9 +111247,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -110754,9 +111291,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -110798,9 +111335,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -110842,9 +111379,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -110886,9 +111423,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -110930,9 +111467,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -110974,9 +111511,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -111018,9 +111555,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -111062,9 +111599,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -111106,9 +111643,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -111150,9 +111687,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -111194,9 +111731,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -111238,9 +111775,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -111282,9 +111819,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -111326,9 +111863,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -111370,9 +111907,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -111414,9 +111951,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -111458,9 +111995,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -111502,9 +112039,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -111546,9 +112083,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -111590,9 +112127,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -111634,9 +112171,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -111678,9 +112215,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -111722,9 +112259,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -111785,9 +112322,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -111829,9 +112366,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -111873,9 +112410,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -111917,9 +112454,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -111961,9 +112498,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -112005,9 +112542,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -112049,9 +112586,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -112093,9 +112630,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -112137,9 +112674,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -112181,9 +112718,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -112227,9 +112764,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -112271,9 +112808,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -112315,9 +112852,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -112359,9 +112896,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -112409,9 +112946,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -112455,9 +112992,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -112499,9 +113036,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -112543,9 +113080,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -112587,9 +113124,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -112631,9 +113168,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -112675,9 +113212,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -112719,9 +113256,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -112763,9 +113300,9 @@ window.VN_GAME = {
         {
           "uid": "plklibmm",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -117668,9 +118205,9 @@ window.VN_GAME = {
         {
           "uid": "hcm3z4oq",
           "asset": "hfcyjlxm",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 641.3,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -117712,9 +118249,9 @@ window.VN_GAME = {
         {
           "uid": "hcm3z4oq",
           "asset": "hfcyjlxm",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 641.3,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -117756,9 +118293,9 @@ window.VN_GAME = {
         {
           "uid": "hcm3z4oq",
           "asset": "hfcyjlxm",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 641.3,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -117800,9 +118337,9 @@ window.VN_GAME = {
         {
           "uid": "hcm3z4oq",
           "asset": "hfcyjlxm",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 641.3,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -117844,9 +118381,9 @@ window.VN_GAME = {
         {
           "uid": "hcm3z4oq",
           "asset": "hfcyjlxm",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 641.3,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -117888,9 +118425,9 @@ window.VN_GAME = {
         {
           "uid": "hcm3z4oq",
           "asset": "hfcyjlxm",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 641.3,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -117932,9 +118469,9 @@ window.VN_GAME = {
         {
           "uid": "hcm3z4oq",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -117976,9 +118513,9 @@ window.VN_GAME = {
         {
           "uid": "hcm3z4oq",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -118020,9 +118557,9 @@ window.VN_GAME = {
         {
           "uid": "hcm3z4oq",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -118064,9 +118601,9 @@ window.VN_GAME = {
         {
           "uid": "hcm3z4oq",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -118108,9 +118645,9 @@ window.VN_GAME = {
         {
           "uid": "hcm3z4oq",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -118152,9 +118689,9 @@ window.VN_GAME = {
         {
           "uid": "hcm3z4oq",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -118215,9 +118752,9 @@ window.VN_GAME = {
         {
           "uid": "hcm3z4oq",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -118259,9 +118796,9 @@ window.VN_GAME = {
         {
           "uid": "hcm3z4oq",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -118303,9 +118840,9 @@ window.VN_GAME = {
         {
           "uid": "hcm3z4oq",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -118347,9 +118884,9 @@ window.VN_GAME = {
         {
           "uid": "hcm3z4oq",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -118566,9 +119103,9 @@ window.VN_GAME = {
         {
           "uid": "d7pq7igd",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -118610,9 +119147,9 @@ window.VN_GAME = {
         {
           "uid": "d7pq7igd",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -118654,9 +119191,9 @@ window.VN_GAME = {
         {
           "uid": "d7pq7igd",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -118698,9 +119235,9 @@ window.VN_GAME = {
         {
           "uid": "d7pq7igd",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -118742,9 +119279,9 @@ window.VN_GAME = {
         {
           "uid": "d7pq7igd",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -118786,9 +119323,9 @@ window.VN_GAME = {
         {
           "uid": "d7pq7igd",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -118830,9 +119367,9 @@ window.VN_GAME = {
         {
           "uid": "d7pq7igd",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -118874,9 +119411,9 @@ window.VN_GAME = {
         {
           "uid": "d7pq7igd",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -118918,9 +119455,9 @@ window.VN_GAME = {
         {
           "uid": "d7pq7igd",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -118962,9 +119499,9 @@ window.VN_GAME = {
         {
           "uid": "d7pq7igd",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -119006,9 +119543,9 @@ window.VN_GAME = {
         {
           "uid": "d7pq7igd",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -119050,9 +119587,9 @@ window.VN_GAME = {
         {
           "uid": "d7pq7igd",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -119094,9 +119631,9 @@ window.VN_GAME = {
         {
           "uid": "d7pq7igd",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -119278,9 +119815,9 @@ window.VN_GAME = {
         {
           "uid": "9y2d0y78",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -119322,9 +119859,9 @@ window.VN_GAME = {
         {
           "uid": "9y2d0y78",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -119366,9 +119903,9 @@ window.VN_GAME = {
         {
           "uid": "9y2d0y78",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -119410,9 +119947,9 @@ window.VN_GAME = {
         {
           "uid": "9y2d0y78",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -119454,9 +119991,9 @@ window.VN_GAME = {
         {
           "uid": "9y2d0y78",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -119498,9 +120035,9 @@ window.VN_GAME = {
         {
           "uid": "9y2d0y78",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -119542,9 +120079,9 @@ window.VN_GAME = {
         {
           "uid": "9y2d0y78",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -119586,9 +120123,9 @@ window.VN_GAME = {
         {
           "uid": "9y2d0y78",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -119630,9 +120167,9 @@ window.VN_GAME = {
         {
           "uid": "9y2d0y78",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -119674,9 +120211,9 @@ window.VN_GAME = {
         {
           "uid": "9y2d0y78",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -119718,9 +120255,9 @@ window.VN_GAME = {
         {
           "uid": "9y2d0y78",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -119762,9 +120299,9 @@ window.VN_GAME = {
         {
           "uid": "9y2d0y78",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -119806,9 +120343,9 @@ window.VN_GAME = {
         {
           "uid": "9y2d0y78",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -119850,9 +120387,9 @@ window.VN_GAME = {
         {
           "uid": "9y2d0y78",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -119894,9 +120431,9 @@ window.VN_GAME = {
         {
           "uid": "9y2d0y78",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -119938,9 +120475,9 @@ window.VN_GAME = {
         {
           "uid": "9y2d0y78",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -119982,9 +120519,9 @@ window.VN_GAME = {
         {
           "uid": "9y2d0y78",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -120026,9 +120563,9 @@ window.VN_GAME = {
         {
           "uid": "9y2d0y78",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -120070,9 +120607,9 @@ window.VN_GAME = {
         {
           "uid": "9y2d0y78",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -120114,9 +120651,9 @@ window.VN_GAME = {
         {
           "uid": "9y2d0y78",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -120158,9 +120695,9 @@ window.VN_GAME = {
         {
           "uid": "9y2d0y78",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -121791,9 +122328,9 @@ window.VN_GAME = {
         {
           "uid": "aymtu634",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -121835,9 +122372,9 @@ window.VN_GAME = {
         {
           "uid": "aymtu634",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -121879,9 +122416,9 @@ window.VN_GAME = {
         {
           "uid": "aymtu634",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -121923,9 +122460,9 @@ window.VN_GAME = {
         {
           "uid": "aymtu634",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -121967,9 +122504,9 @@ window.VN_GAME = {
         {
           "uid": "aymtu634",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -122011,9 +122548,9 @@ window.VN_GAME = {
         {
           "uid": "aymtu634",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -122055,9 +122592,9 @@ window.VN_GAME = {
         {
           "uid": "aymtu634",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -122099,9 +122636,9 @@ window.VN_GAME = {
         {
           "uid": "aymtu634",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -122143,9 +122680,9 @@ window.VN_GAME = {
         {
           "uid": "aymtu634",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -122257,9 +122794,9 @@ window.VN_GAME = {
         {
           "uid": "3m26xu54",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -122301,9 +122838,9 @@ window.VN_GAME = {
         {
           "uid": "3m26xu54",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -122345,9 +122882,9 @@ window.VN_GAME = {
         {
           "uid": "3m26xu54",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -122389,9 +122926,9 @@ window.VN_GAME = {
         {
           "uid": "3m26xu54",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -122433,9 +122970,9 @@ window.VN_GAME = {
         {
           "uid": "3m26xu54",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -122477,9 +123014,9 @@ window.VN_GAME = {
         {
           "uid": "3m26xu54",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -122521,9 +123058,9 @@ window.VN_GAME = {
         {
           "uid": "3m26xu54",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -122565,9 +123102,9 @@ window.VN_GAME = {
         {
           "uid": "3m26xu54",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -122609,9 +123146,9 @@ window.VN_GAME = {
         {
           "uid": "3m26xu54",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -122653,9 +123190,9 @@ window.VN_GAME = {
         {
           "uid": "3m26xu54",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -122697,9 +123234,9 @@ window.VN_GAME = {
         {
           "uid": "3m26xu54",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -122741,9 +123278,9 @@ window.VN_GAME = {
         {
           "uid": "3m26xu54",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -122785,9 +123322,9 @@ window.VN_GAME = {
         {
           "uid": "3m26xu54",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -122829,9 +123366,9 @@ window.VN_GAME = {
         {
           "uid": "3m26xu54",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -122873,9 +123410,9 @@ window.VN_GAME = {
         {
           "uid": "3m26xu54",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -122917,9 +123454,9 @@ window.VN_GAME = {
         {
           "uid": "3m26xu54",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -122961,9 +123498,9 @@ window.VN_GAME = {
         {
           "uid": "3m26xu54",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -123005,9 +123542,9 @@ window.VN_GAME = {
         {
           "uid": "3m26xu54",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -123049,9 +123586,9 @@ window.VN_GAME = {
         {
           "uid": "3m26xu54",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -123093,9 +123630,9 @@ window.VN_GAME = {
         {
           "uid": "3m26xu54",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -123137,9 +123674,9 @@ window.VN_GAME = {
         {
           "uid": "3m26xu54",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -123181,9 +123718,9 @@ window.VN_GAME = {
         {
           "uid": "3m26xu54",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -123225,9 +123762,9 @@ window.VN_GAME = {
         {
           "uid": "3m26xu54",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -123288,9 +123825,9 @@ window.VN_GAME = {
         {
           "uid": "3m26xu54",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -123332,9 +123869,9 @@ window.VN_GAME = {
         {
           "uid": "3m26xu54",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -123376,9 +123913,9 @@ window.VN_GAME = {
         {
           "uid": "3m26xu54",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -123420,9 +123957,9 @@ window.VN_GAME = {
         {
           "uid": "3m26xu54",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -123464,9 +124001,9 @@ window.VN_GAME = {
         {
           "uid": "3m26xu54",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -123508,9 +124045,9 @@ window.VN_GAME = {
         {
           "uid": "3m26xu54",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -123552,9 +124089,9 @@ window.VN_GAME = {
         {
           "uid": "3m26xu54",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -123596,9 +124133,9 @@ window.VN_GAME = {
         {
           "uid": "3m26xu54",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -123640,9 +124177,9 @@ window.VN_GAME = {
         {
           "uid": "3m26xu54",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -123684,9 +124221,9 @@ window.VN_GAME = {
         {
           "uid": "3m26xu54",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -123728,9 +124265,9 @@ window.VN_GAME = {
         {
           "uid": "3m26xu54",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -123772,9 +124309,9 @@ window.VN_GAME = {
         {
           "uid": "3m26xu54",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -123816,9 +124353,9 @@ window.VN_GAME = {
         {
           "uid": "3m26xu54",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -123860,9 +124397,9 @@ window.VN_GAME = {
         {
           "uid": "3m26xu54",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -123904,9 +124441,9 @@ window.VN_GAME = {
         {
           "uid": "3m26xu54",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -123948,9 +124485,9 @@ window.VN_GAME = {
         {
           "uid": "3m26xu54",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -123992,9 +124529,9 @@ window.VN_GAME = {
         {
           "uid": "3m26xu54",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -124036,9 +124573,9 @@ window.VN_GAME = {
         {
           "uid": "3m26xu54",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -124080,9 +124617,9 @@ window.VN_GAME = {
         {
           "uid": "3m26xu54",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -124124,9 +124661,9 @@ window.VN_GAME = {
         {
           "uid": "3m26xu54",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -124168,9 +124705,9 @@ window.VN_GAME = {
         {
           "uid": "3m26xu54",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -124212,9 +124749,9 @@ window.VN_GAME = {
         {
           "uid": "3m26xu54",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -124256,9 +124793,9 @@ window.VN_GAME = {
         {
           "uid": "3m26xu54",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -124300,9 +124837,9 @@ window.VN_GAME = {
         {
           "uid": "3m26xu54",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -124344,9 +124881,9 @@ window.VN_GAME = {
         {
           "uid": "3m26xu54",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -124388,9 +124925,9 @@ window.VN_GAME = {
         {
           "uid": "3m26xu54",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -124432,9 +124969,9 @@ window.VN_GAME = {
         {
           "uid": "3m26xu54",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -124476,9 +125013,9 @@ window.VN_GAME = {
         {
           "uid": "3m26xu54",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -124520,9 +125057,9 @@ window.VN_GAME = {
         {
           "uid": "3m26xu54",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -124564,9 +125101,9 @@ window.VN_GAME = {
         {
           "uid": "3m26xu54",
           "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -124614,9 +125151,9 @@ window.VN_GAME = {
         {
           "uid": "3m26xu54",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -124658,9 +125195,9 @@ window.VN_GAME = {
         {
           "uid": "3m26xu54",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -124702,9 +125239,9 @@ window.VN_GAME = {
         {
           "uid": "3m26xu54",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -124746,9 +125283,9 @@ window.VN_GAME = {
         {
           "uid": "3m26xu54",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -124790,9 +125327,9 @@ window.VN_GAME = {
         {
           "uid": "wyh4kkmb",
           "asset": "wrwcdezj",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -124834,9 +125371,9 @@ window.VN_GAME = {
         {
           "uid": "wyh4kkmb",
           "asset": "wrwcdezj",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -124878,9 +125415,9 @@ window.VN_GAME = {
         {
           "uid": "wyh4kkmb",
           "asset": "wrwcdezj",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -124922,9 +125459,9 @@ window.VN_GAME = {
         {
           "uid": "wyh4kkmb",
           "asset": "wrwcdezj",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -124966,9 +125503,9 @@ window.VN_GAME = {
         {
           "uid": "wyh4kkmb",
           "asset": "wrwcdezj",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -125010,9 +125547,9 @@ window.VN_GAME = {
         {
           "uid": "wyh4kkmb",
           "asset": "wrwcdezj",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -125054,9 +125591,9 @@ window.VN_GAME = {
         {
           "uid": "wyh4kkmb",
           "asset": "wrwcdezj",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -125098,9 +125635,9 @@ window.VN_GAME = {
         {
           "uid": "wyh4kkmb",
           "asset": "2qshq03j",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 862.5,
+          "y": 1013.75,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -125142,9 +125679,9 @@ window.VN_GAME = {
         {
           "uid": "wyh4kkmb",
           "asset": "2qshq03j",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 862.5,
+          "y": 1013.75,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -125186,9 +125723,9 @@ window.VN_GAME = {
         {
           "uid": "wyh4kkmb",
           "asset": "2qshq03j",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 862.5,
+          "y": 1013.75,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -125230,9 +125767,9 @@ window.VN_GAME = {
         {
           "uid": "wyh4kkmb",
           "asset": "2qshq03j",
-          "x": 860,
-          "y": 1000,
-          "h": 960,
+          "x": 862.5,
+          "y": 1013.75,
+          "h": 960.0,
           "flip": false
         }
       ],
@@ -125311,9 +125848,9 @@ window.VN_GAME = {
         {
           "uid": "c0gc4fpg",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -125355,9 +125892,9 @@ window.VN_GAME = {
         {
           "uid": "c0gc4fpg",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -125399,9 +125936,9 @@ window.VN_GAME = {
         {
           "uid": "c0gc4fpg",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -125443,9 +125980,9 @@ window.VN_GAME = {
         {
           "uid": "c0gc4fpg",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -125487,9 +126024,9 @@ window.VN_GAME = {
         {
           "uid": "c0gc4fpg",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -125531,9 +126068,9 @@ window.VN_GAME = {
         {
           "uid": "c0gc4fpg",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -125575,9 +126112,9 @@ window.VN_GAME = {
         {
           "uid": "c0gc4fpg",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -125619,9 +126156,9 @@ window.VN_GAME = {
         {
           "uid": "c0gc4fpg",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -125733,9 +126270,9 @@ window.VN_GAME = {
         {
           "uid": "afw63moy",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -125777,9 +126314,9 @@ window.VN_GAME = {
         {
           "uid": "afw63moy",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -125821,9 +126358,9 @@ window.VN_GAME = {
         {
           "uid": "afw63moy",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -125865,9 +126402,9 @@ window.VN_GAME = {
         {
           "uid": "afw63moy",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -125909,9 +126446,9 @@ window.VN_GAME = {
         {
           "uid": "afw63moy",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -125953,9 +126490,9 @@ window.VN_GAME = {
         {
           "uid": "afw63moy",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -125997,9 +126534,9 @@ window.VN_GAME = {
         {
           "uid": "afw63moy",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -126041,9 +126578,9 @@ window.VN_GAME = {
         {
           "uid": "afw63moy",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -126617,9 +127154,9 @@ window.VN_GAME = {
         {
           "uid": "tnx8mox7",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -126661,9 +127198,9 @@ window.VN_GAME = {
         {
           "uid": "tnx8mox7",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -126705,9 +127242,9 @@ window.VN_GAME = {
         {
           "uid": "tnx8mox7",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -126749,9 +127286,9 @@ window.VN_GAME = {
         {
           "uid": "tnx8mox7",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -126793,9 +127330,9 @@ window.VN_GAME = {
         {
           "uid": "tnx8mox7",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -126837,9 +127374,9 @@ window.VN_GAME = {
         {
           "uid": "tnx8mox7",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -126881,9 +127418,9 @@ window.VN_GAME = {
         {
           "uid": "tnx8mox7",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -126925,9 +127462,9 @@ window.VN_GAME = {
         {
           "uid": "tnx8mox7",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -126969,9 +127506,9 @@ window.VN_GAME = {
         {
           "uid": "tnx8mox7",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -127013,9 +127550,9 @@ window.VN_GAME = {
         {
           "uid": "tnx8mox7",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -127057,9 +127594,9 @@ window.VN_GAME = {
         {
           "uid": "tnx8mox7",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -127101,9 +127638,9 @@ window.VN_GAME = {
         {
           "uid": "tnx8mox7",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -127145,9 +127682,9 @@ window.VN_GAME = {
         {
           "uid": "tnx8mox7",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -127189,9 +127726,9 @@ window.VN_GAME = {
         {
           "uid": "tnx8mox7",
           "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -127233,9 +127770,9 @@ window.VN_GAME = {
         {
           "uid": "tnx8mox7",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -127277,9 +127814,9 @@ window.VN_GAME = {
         {
           "uid": "tnx8mox7",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -127321,9 +127858,9 @@ window.VN_GAME = {
         {
           "uid": "tnx8mox7",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -127365,9 +127902,9 @@ window.VN_GAME = {
         {
           "uid": "tnx8mox7",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -127409,9 +127946,9 @@ window.VN_GAME = {
         {
           "uid": "tnx8mox7",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -127559,11 +128096,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "art_upgrade_l34",
-          "x": 700,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -127603,11 +128141,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "art_upgrade_l34",
-          "x": 700,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -127647,11 +128186,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "art_upgrade_l34",
-          "x": 700,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -127691,11 +128231,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "art_upgrade_l34",
-          "x": 700,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -127735,11 +128276,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "art_upgrade_l34",
-          "x": 700,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -127779,11 +128321,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "art_upgrade_l34",
-          "x": 700,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -127823,11 +128366,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "art_upgrade_l34",
-          "x": 700,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -127867,11 +128411,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "art_upgrade_l34",
-          "x": 700,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -127911,11 +128456,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "art_upgrade_l34",
-          "x": 700,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -127955,11 +128501,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "art_upgrade_l34",
-          "x": 700,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -127999,11 +128546,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "art_upgrade_l34",
-          "x": 700,
-          "y": 980,
-          "h": 940,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -128168,11 +128716,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -128212,11 +128761,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -128256,11 +128806,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p15",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -128300,11 +128851,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p15",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -128344,11 +128896,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -128388,11 +128941,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -128432,11 +128986,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -128476,11 +129031,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -128520,11 +129076,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -128564,11 +129121,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -128608,11 +129166,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -128652,11 +129211,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -128696,11 +129256,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p16",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -128740,11 +129301,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "cbx03q1l",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p16",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -128784,11 +129346,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p16",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -128828,11 +129391,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p16",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -128872,11 +129436,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p16",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -128893,9 +129458,7 @@ window.VN_GAME = {
       "fx": "",
       "mood": "",
       "wait": 0,
-      "acts": {
-        "鲸鱼小姐": "shake"
-      },
+      "acts": {},
       "voice": null,
       "se": null,
       "set": "",
@@ -128918,11 +129481,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p17",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -128962,11 +129526,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p17",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -129006,11 +129571,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p17",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -129050,11 +129616,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p17",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -129094,11 +129661,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p17",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -129144,11 +129712,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -129196,11 +129765,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -129240,11 +129810,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -129284,11 +129855,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -129328,11 +129900,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -129372,11 +129945,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -129416,11 +129990,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -129460,11 +130035,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -129504,11 +130080,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -129548,11 +130125,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -129592,11 +130170,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -129636,11 +130215,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -129680,11 +130260,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -129724,11 +130305,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -129768,11 +130350,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -129789,9 +130372,7 @@ window.VN_GAME = {
       "fx": "",
       "mood": "",
       "wait": 0,
-      "acts": {
-        "鲸鱼小姐": "jump"
-      },
+      "acts": {},
       "voice": null,
       "se": null,
       "set": "",
@@ -129814,11 +130395,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p17",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -129858,11 +130440,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "z869j1e3",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p17",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -129902,11 +130485,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p15",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -129946,11 +130530,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p15",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -129990,11 +130575,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p15",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -130034,11 +130620,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p15",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -130078,11 +130665,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -130122,11 +130710,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -130166,11 +130755,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -130210,11 +130800,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -130254,11 +130845,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -130298,11 +130890,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -130342,11 +130935,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -130386,11 +130980,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -130430,11 +131025,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -130453,7 +131049,9 @@ window.VN_GAME = {
       "fx": "",
       "mood": "",
       "wait": 0,
-      "acts": {},
+      "acts": {
+        "鲸鱼小姐": "settle"
+      },
       "voice": null,
       "se": null,
       "set": "",
@@ -130476,11 +131074,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -130520,11 +131119,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -130564,11 +131164,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -130608,11 +131209,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -130652,11 +131254,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -130696,11 +131299,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -130740,11 +131344,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p16",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -130784,11 +131389,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p16",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -130828,11 +131434,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p16",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -130872,11 +131479,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "ssu9vjyy",
-          "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p16",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -131092,9 +131700,9 @@ window.VN_GAME = {
         {
           "uid": "dboa3skd",
           "asset": "2qshq03j",
-          "x": 980,
-          "y": 900,
-          "h": 860,
+          "x": 982.24,
+          "y": 912.32,
+          "h": 860.0,
           "flip": false
         }
       ],
@@ -131136,9 +131744,9 @@ window.VN_GAME = {
         {
           "uid": "dboa3skd",
           "asset": "2qshq03j",
-          "x": 980,
-          "y": 900,
-          "h": 860,
+          "x": 982.24,
+          "y": 912.32,
+          "h": 860.0,
           "flip": false
         }
       ],
@@ -131687,11 +132295,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "bahb65vw",
-          "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -131731,11 +132340,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "bahb65vw",
-          "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -131775,11 +132385,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "bahb65vw",
-          "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -131819,11 +132430,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "bahb65vw",
-          "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -131863,11 +132475,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "bahb65vw",
-          "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -131907,11 +132520,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "bahb65vw",
-          "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -131951,11 +132565,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "bahb65vw",
-          "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -131995,11 +132610,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "bahb65vw",
-          "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -132039,11 +132655,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "bahb65vw",
-          "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p17",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -132083,11 +132700,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "bahb65vw",
-          "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p17",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -132127,11 +132745,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "bahb65vw",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -132171,11 +132790,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "bahb65vw",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -132215,11 +132835,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "bahb65vw",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -132259,11 +132880,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "bahb65vw",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -132303,11 +132925,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "bahb65vw",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -132347,11 +132970,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "bahb65vw",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -132391,11 +133015,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "bahb65vw",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -132540,11 +133165,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "daeghqdt",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -132584,11 +133210,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "daeghqdt",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -132628,11 +133255,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "daeghqdt",
-          "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p16",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -132672,11 +133300,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "daeghqdt",
-          "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p16",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -132716,11 +133345,12 @@ window.VN_GAME = {
       "sprites": [
         {
           "uid": "daeghqdt",
-          "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
-          "flip": false
+          "asset": "art_upgrade_p15",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95,
+          "flip": false,
+          "poseSwitch": "soft"
         }
       ],
       "ambience": [
@@ -132761,9 +133391,9 @@ window.VN_GAME = {
         {
           "uid": "2tr3xp19",
           "asset": "xfg3qcn2",
-          "x": 980,
-          "y": 900,
-          "h": 860,
+          "x": 980.0,
+          "y": 900.0,
+          "h": 860.0,
           "flip": false
         }
       ],
@@ -132805,9 +133435,9 @@ window.VN_GAME = {
         {
           "uid": "2tr3xp19",
           "asset": "xfg3qcn2",
-          "x": 980,
-          "y": 900,
-          "h": 860,
+          "x": 980.0,
+          "y": 900.0,
+          "h": 860.0,
           "flip": false
         }
       ],
@@ -132849,9 +133479,9 @@ window.VN_GAME = {
         {
           "uid": "2tr3xp19",
           "asset": "xfg3qcn2",
-          "x": 980,
-          "y": 900,
-          "h": 860,
+          "x": 980.0,
+          "y": 900.0,
+          "h": 860.0,
           "flip": false
         }
       ],
@@ -133673,9 +134303,9 @@ window.VN_GAME = {
         {
           "uid": "pjthjgfk",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -133736,9 +134366,9 @@ window.VN_GAME = {
         {
           "uid": "pjthjgfk",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -133780,9 +134410,9 @@ window.VN_GAME = {
         {
           "uid": "pjthjgfk",
           "asset": "88v1dull",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -133824,9 +134454,9 @@ window.VN_GAME = {
         {
           "uid": "pjthjgfk",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -133868,9 +134498,9 @@ window.VN_GAME = {
         {
           "uid": "pjthjgfk",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -133918,9 +134548,9 @@ window.VN_GAME = {
         {
           "uid": "pjthjgfk",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -133962,9 +134592,9 @@ window.VN_GAME = {
         {
           "uid": "pjthjgfk",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -134006,9 +134636,9 @@ window.VN_GAME = {
         {
           "uid": "pjthjgfk",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -134050,9 +134680,9 @@ window.VN_GAME = {
         {
           "uid": "pjthjgfk",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -134096,9 +134726,9 @@ window.VN_GAME = {
         {
           "uid": "pjthjgfk",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -134140,9 +134770,9 @@ window.VN_GAME = {
         {
           "uid": "pjthjgfk",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -134184,9 +134814,9 @@ window.VN_GAME = {
         {
           "uid": "pjthjgfk",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -134228,9 +134858,9 @@ window.VN_GAME = {
         {
           "uid": "pjthjgfk",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -134272,9 +134902,9 @@ window.VN_GAME = {
         {
           "uid": "pjthjgfk",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -138495,9 +139125,9 @@ window.VN_GAME = {
         {
           "uid": "p7lnqlvh",
           "asset": "art_upgrade_l36",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 639.35,
+          "y": 1039.35,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -138539,9 +139169,9 @@ window.VN_GAME = {
         {
           "uid": "p7lnqlvh",
           "asset": "art_upgrade_l36",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 639.35,
+          "y": 1039.35,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -138583,9 +139213,9 @@ window.VN_GAME = {
         {
           "uid": "p7lnqlvh",
           "asset": "art_upgrade_l36",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 639.35,
+          "y": 1039.35,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -138627,9 +139257,9 @@ window.VN_GAME = {
         {
           "uid": "p7lnqlvh",
           "asset": "art_upgrade_l36",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 639.35,
+          "y": 1039.35,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -138671,9 +139301,9 @@ window.VN_GAME = {
         {
           "uid": "p7lnqlvh",
           "asset": "art_upgrade_l36",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 639.35,
+          "y": 1039.35,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -138715,9 +139345,9 @@ window.VN_GAME = {
         {
           "uid": "p7lnqlvh",
           "asset": "art_upgrade_l36",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 639.35,
+          "y": 1039.35,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -138759,9 +139389,9 @@ window.VN_GAME = {
         {
           "uid": "p7lnqlvh",
           "asset": "art_upgrade_l36",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 639.35,
+          "y": 1039.35,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -138803,9 +139433,9 @@ window.VN_GAME = {
         {
           "uid": "p7lnqlvh",
           "asset": "art_upgrade_l36",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 639.35,
+          "y": 1039.35,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -138847,9 +139477,9 @@ window.VN_GAME = {
         {
           "uid": "p7lnqlvh",
           "asset": "art_upgrade_l36",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 639.35,
+          "y": 1039.35,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -138891,9 +139521,9 @@ window.VN_GAME = {
         {
           "uid": "p7lnqlvh",
           "asset": "art_upgrade_l36",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 639.35,
+          "y": 1039.35,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -138935,9 +139565,9 @@ window.VN_GAME = {
         {
           "uid": "p7lnqlvh",
           "asset": "art_upgrade_l36",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 639.35,
+          "y": 1039.35,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -139154,9 +139784,9 @@ window.VN_GAME = {
         {
           "uid": "aycwp746",
           "asset": "art_upgrade_l36",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 639.35,
+          "y": 1039.35,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -139198,9 +139828,9 @@ window.VN_GAME = {
         {
           "uid": "aycwp746",
           "asset": "art_upgrade_l36",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 639.35,
+          "y": 1039.35,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -139242,9 +139872,9 @@ window.VN_GAME = {
         {
           "uid": "aycwp746",
           "asset": "art_upgrade_l36",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 639.35,
+          "y": 1039.35,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -139286,9 +139916,9 @@ window.VN_GAME = {
         {
           "uid": "aycwp746",
           "asset": "art_upgrade_l36",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 639.35,
+          "y": 1039.35,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -139330,9 +139960,9 @@ window.VN_GAME = {
         {
           "uid": "5j7txrop",
           "asset": "hfcyjlxm",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 641.3,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -139376,9 +140006,9 @@ window.VN_GAME = {
         {
           "uid": "5j7txrop",
           "asset": "hfcyjlxm",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 641.3,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -139420,9 +140050,9 @@ window.VN_GAME = {
         {
           "uid": "5j7txrop",
           "asset": "hfcyjlxm",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 641.3,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -139464,9 +140094,9 @@ window.VN_GAME = {
         {
           "uid": "5j7txrop",
           "asset": "hfcyjlxm",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 641.3,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -139508,9 +140138,9 @@ window.VN_GAME = {
         {
           "uid": "5j7txrop",
           "asset": "hfcyjlxm",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 641.3,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -139552,9 +140182,9 @@ window.VN_GAME = {
         {
           "uid": "5j7txrop",
           "asset": "hfcyjlxm",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 641.3,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -139604,9 +140234,9 @@ window.VN_GAME = {
         {
           "uid": "5j7txrop",
           "asset": "hfcyjlxm",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 641.3,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -139648,9 +140278,9 @@ window.VN_GAME = {
         {
           "uid": "5j7txrop",
           "asset": "hfcyjlxm",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 641.3,
+          "y": 1041.95,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -139692,9 +140322,9 @@ window.VN_GAME = {
         {
           "uid": "5j7txrop",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -139736,9 +140366,9 @@ window.VN_GAME = {
         {
           "uid": "5j7txrop",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -139780,9 +140410,9 @@ window.VN_GAME = {
         {
           "uid": "5j7txrop",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -139824,9 +140454,9 @@ window.VN_GAME = {
         {
           "uid": "5j7txrop",
           "asset": "xfg3qcn2",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -139868,9 +140498,9 @@ window.VN_GAME = {
         {
           "uid": "5j7txrop",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -139912,9 +140542,9 @@ window.VN_GAME = {
         {
           "uid": "5j7txrop",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -139956,9 +140586,9 @@ window.VN_GAME = {
         {
           "uid": "5j7txrop",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -140000,9 +140630,9 @@ window.VN_GAME = {
         {
           "uid": "5j7txrop",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -140044,9 +140674,9 @@ window.VN_GAME = {
         {
           "uid": "5j7txrop",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -140088,9 +140718,9 @@ window.VN_GAME = {
         {
           "uid": "5j7txrop",
           "asset": "2qshq03j",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -140132,9 +140762,9 @@ window.VN_GAME = {
         {
           "uid": "5j7txrop",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -140176,9 +140806,9 @@ window.VN_GAME = {
         {
           "uid": "5j7txrop",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -140220,9 +140850,9 @@ window.VN_GAME = {
         {
           "uid": "5j7txrop",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -140264,9 +140894,9 @@ window.VN_GAME = {
         {
           "uid": "5j7txrop",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -140308,9 +140938,9 @@ window.VN_GAME = {
         {
           "uid": "5j7txrop",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -140352,9 +140982,9 @@ window.VN_GAME = {
         {
           "uid": "5j7txrop",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -140396,9 +141026,9 @@ window.VN_GAME = {
         {
           "uid": "5j7txrop",
           "asset": "x013srmu",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -140440,9 +141070,9 @@ window.VN_GAME = {
         {
           "uid": "5j7txrop",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -140484,9 +141114,9 @@ window.VN_GAME = {
         {
           "uid": "5j7txrop",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -140528,9 +141158,9 @@ window.VN_GAME = {
         {
           "uid": "5j7txrop",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -140572,9 +141202,9 @@ window.VN_GAME = {
         {
           "uid": "5j7txrop",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -140616,9 +141246,9 @@ window.VN_GAME = {
         {
           "uid": "5j7txrop",
           "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1040,
-          "h": 1000,
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
           "flip": false
         }
       ],
@@ -147024,7 +147654,7 @@ window.VN_GAME = {
   },
   "artUpgrade": {
     "date": "2026-10-15",
-    "copiedReviewedArt": 116,
+    "copiedReviewedArt": 132,
     "activeOriginalWardrobeGaps": [
       {
         "asset": "nvgbi1x6",
@@ -147048,5 +147678,12 @@ window.VN_GAME = {
     "poseChanges": 289,
     "reframedSprites": 2592,
     "notes": "实体姿态、明确台词分镜与稳定角色归属；不加循环晃动或程序化音效。"
+  },
+  "characterDirection": {
+    "baseline": "c9f0be4",
+    "alignedSprites": 2166,
+    "storyNodes": 3315,
+    "storyAndAudioUnchanged": true,
+    "artNotes": "专用姿态、重做的坐姿结构与写诗CG；静态差分、一次性动作及CG缓推，不声称Live2D或逐帧尾巴已完成。"
   }
 };

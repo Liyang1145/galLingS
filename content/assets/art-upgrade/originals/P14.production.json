@@ -1,0 +1,17 @@
+{
+  "prompt": "A transparent-alpha Japanese romance visual-novel acting sprite of the SAME ADULT woman aged24 in the reference. Preserve her recognizable mature face, long blue hair, loop ahoge, cyan bow clips, fin ears, exact OPAQUE navy sailor-collar dress, white socks and closed white shoes, two human legs plus one separate mottled blue whale tail attached behind her lower back. Finely painted anime finish and neutral soft daylight. Preserve head size, framing and generous margins. Whole adult figure, all hair, shoes and tail inside canvas; naturally connected hands and fingers. Hands and emotional action visible around chest or face height above the dialogue area. Clean transparent alpha, no scenery, ground, shadow, glow outline, text, symbols, comic stickers or extra limbs. Acting direction: She has just opened the rescued notebook and is skeptical of its contents. Hold an OPEN light-blue spiral whale notebook in both hands at chest height, one hand under the spine and the other holding the upper outside corner. Two distinct paper pages visible, faint indistinct marks only, no readable typography. Her gaze looks slightly down at the open pages, one eyebrow raised, lips parted in a dry questioning expression. Keep the notebook high enough to read above dialogue. Not a closed book hugged against her chest, no pen, no second notebook.",
+  "requested_model": "gpt-image-2.5-flare",
+  "requested_quality": "max",
+  "requested_size": "1536x2304",
+  "references": [
+    {
+      "path": "content/assets/art-upgrade/originals/L08.png",
+      "sha256": "93a55fe82ada7e4375b0d7f1efa24d307f77fd1e9015bf478265129a77a1acc7"
+    }
+  ],
+  "output_sha256": "82c4bd6e28bba323181828d568c0928ecb06cd3ee25336d8dcd240afa26980ad",
+  "actual_size": [
+    1024,
+    1536
+  ]
+}

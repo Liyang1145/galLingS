@@ -1,0 +1,16 @@
+{
+  "originalLineIdsPreserved": 3308,
+  "newLines": 7,
+  "laterNodesStoryAndAudioFieldsPreserved": 3148,
+  "performanceBaselineNodeIdsPreserved": 3315,
+  "originalAudioAssetsUnchanged": 103,
+  "activeVisualIds": 117,
+  "activeReplacedVisualIds": 115,
+  "manualWardrobeVisualIds": [
+    "nvgbi1x6",
+    "jtp36q4e"
+  ],
+  "wavPlaybackAssets": 0,
+  "chapters": 18,
+  "gameSha256": "099a5f0e4be57b4479f5af786896d9b58eeac01a98226ea615297bd3a84c8b4e"
+}

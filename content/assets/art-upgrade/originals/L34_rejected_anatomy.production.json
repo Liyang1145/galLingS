@@ -1,0 +1,17 @@
+{
+  "prompt": "Edit ONLY the eyes and small facial expression in the reference sprite of the fully clothed ADULT woman age24 reading a book. Open BOTH blue eyes naturally: she is AWAKE, looking attentively toward the viewer with a small fond thoughtful smile. Keep the exact seated body, hand against cheek, other hand and open book on her lap, exact opaque navy sailor dress, white socks, closed white shoes, hair, fin ears, loop ahoge and independent whale tail. Preserve canvas and scale. No clothing, leg, pose, framing, or background change. Clean transparent alpha; no scenery or text.",
+  "requested_model": "gpt-image-2.5-flare",
+  "requested_quality": "max",
+  "requested_size": "1536x2304",
+  "references": [
+    {
+      "path": "content/assets/art-upgrade/originals/L34_before_performance.png",
+      "sha256": "c4013f6d6876f3719c81749f332a28d6a6c3fc5c43bb1210fba53c097b254954"
+    }
+  ],
+  "output_sha256": "c8fca0d848547a21d5b66122abb97ad70e7572f3657095132c1ca2226d703631",
+  "actual_size": [
+    1024,
+    1536
+  ]
+}

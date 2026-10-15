@@ -1162,12 +1162,56 @@ function useAsset(id, x) {
 // 背景图地址放进 CSS 时要加引号：占位图的地址里有括号，不加引号浏览器会认错
 const cssUrl = u => `url("${String(u).replace(/["\\\n]/g, c => '\\' + c)}")`;
 const stage = $('#stage'), layer = $('#layer'), bgEl = $('#bgEl');
+const motionPreference = matchMedia('(prefers-reduced-motion: reduce)');
+const stillMotion = () => motionPreference.matches;
+const spriteDecodeCache = new Map();
+function warmSprite(a) {
+  if (spriteDecodeCache.has(a.src)) return spriteDecodeCache.get(a.src);
+  const image = new Image(); image.decoding = 'async'; image.src = a.src;
+  const entry = { image, ready: false };
+  entry.promise = image.decode().then(() => { entry.ready = true; return entry; }, () => null);
+  spriteDecodeCache.set(a.src, entry);
+  // A handful of upcoming poses, rather than decoding the entire art library.
+  while (spriteDecodeCache.size > 6) spriteDecodeCache.delete(spriteDecodeCache.keys().next().value);
+  return entry;
+}
+function warmUpcomingSprites(index) {
+  if (RT.skip) return;
+  const seen = new Set();
+  for (const line of P.lines.slice(index + 1, index + 9)) {
+    for (const s of line.sprites) {
+      const a = A(s.asset); if (!a || seen.has(a.src)) continue;
+      seen.add(a.src); warmSprite(a); if (seen.size >= 3) return;
+    }
+  }
+}
+function clearStageShot() {
+  bgEl._shot?.cancel(); bgEl._shot = null; bgEl._shotKey = null;
+  bgEl.style.scale = ''; bgEl.style.transformOrigin = ''; bgEl.style.willChange = '';
+}
+function stageShot(line, editable) {
+  const shot = A(line.bg)?.shot;
+  if (editable || RT.skip || stillMotion() || !Array.isArray(shot?.focus)) { clearStageShot(); return; }
+  if (bgEl._shotKey === line.bg) return;
+  clearStageShot(); bgEl._shotKey = line.bg;
+  bgEl.style.transformOrigin = `${shot.focus[0] * 100}% ${shot.focus[1] * 100}%`;
+  bgEl.style.willChange = 'scale';
+  const zoom = Math.max(1, Math.min(1.04, shot.scale));
+  const anim = bgEl.animate([{ scale: '1' }, { scale: String(zoom) }],
+    { duration: Math.max(600, Math.min(3000, shot.ms)), easing: 'cubic-bezier(.2,.65,.3,1)', fill: 'forwards' });
+  bgEl._shot = anim;
+  anim.finished.then(() => {
+    if (bgEl._shot !== anim) return;
+    bgEl.style.scale = String(zoom); anim.cancel(); bgEl._shot = null; bgEl.style.willChange = '';
+  }, () => {});
+}
 function renderStage(line, editable) {
   const backdrop=A(line.bg);stage.dataset.light=backdrop?.lighting||(/夜/.test(backdrop?.name||'')?'night':'');stage.dataset.library=backdrop?.libraryAsset?'true':'false';
   bgEl.style.backgroundSize=backdrop?.view?.size||'';bgEl.style.backgroundPosition=backdrop?.view?.position||'';
   const hideBg = editable && hiddenLane('bg');
   stage.dataset.mood = (editable && hiddenLane('mood')) ? '' : (line.mood || '');
   bgEl.style.backgroundImage = line.bg && A(line.bg) && !hideBg ? cssUrl(A(line.bg).src) : '';
+  stageShot(line, editable);
   $('#empty').style.display = (!line.bg && !line.sprites.length && editable) ? 'flex' : 'none';
   if (!editable) { renderPlaySprites(line); placeBar(); return; }
   layer.innerHTML = '';
@@ -1184,7 +1228,8 @@ function renderStage(line, editable) {
 }
 // 播放时的立绘：同一个角色复用同一张图，所以换位置会“走过去”，换表情不会闪；新角色播入场，离开的播退场
 function renderPlaySprites(line) {
-  const fast = RT.skip;
+  const fast = RT.skip || stillMotion();
+  layer.querySelectorAll('.pose-ghost').forEach(el => el.remove());
   const have = new Map([...layer.querySelectorAll('img.spr:not(.leaving)')].map(el => [el.dataset.ck, el]));
   const speaker = line.speaker, keep = new Set();
   const focus = P.settings.focus !== false && line.text && line.sprites.some(s => A(s.asset) && charKey(A(s.asset)) === speaker);
@@ -1194,16 +1239,32 @@ function renderPlaySprites(line) {
     let el = have.get(ck);
     if (!el) {
       el = document.createElement('img'); el.draggable = false; el.dataset.ck = ck; el.className = 'spr';
-      el.src = a.src; placeSprite(el, s); layer.appendChild(el);
-      if (!fast && s.in !== 'none') sprAnim(el, 'in-' + (s.in || 'fade'));
+      el.decoding = 'async'; placeSprite(el, s); layer.appendChild(el);
     } else {
       el.classList.toggle('anim', !fast);
-      if (el.getAttribute('src') !== a.src) el.src = a.src;
-      placeSprite(el, s);
     }
     el.style.zIndex = z; el._out = s.out || 'fade';
     el.classList.toggle('dim', !!focus && ck !== speaker);
-    const act = line.acts?.[ck]; if (act && !fast) sprAnim(el, 'act-' + act);
+    const revision = el._poseRevision = (el._poseRevision || 0) + 1;
+    const previous = el.getAttribute('src'), changedPose = previous !== a.src;
+    const act = line.acts?.[ck], sameScene = lastShown?.bg === line.bg;
+    const commit = () => {
+      if (!playing || !el.isConnected || el._poseRevision !== revision) return;
+      if (changedPose && previous && !fast && !act && s.poseSwitch === 'soft' && sameScene) {
+        const ghost = el.cloneNode(false); ghost.className = 'spr leaving pose-ghost';
+        ghost.setAttribute('aria-hidden', 'true'); ghost.style.transition = 'none';
+        ghost.style.pointerEvents = 'none'; el.before(ghost);
+        ghost.animate([{ opacity: getComputedStyle(el).opacity }, { opacity: 0 }], { duration: 140, easing: 'ease-out' })
+          .finished.then(() => ghost.remove(), () => ghost.remove());
+      }
+      if (changedPose) el.src = a.src;
+      el.dataset.asset = a.id; placeSprite(el, s);
+      if (fast) [...el.classList].filter(c => /^(in|out|act)-/.test(c)).forEach(c => el.classList.remove(c));
+      else if (act) sprAnim(el, 'act-' + act);
+      else if (!previous && s.in !== 'none') sprAnim(el, 'in-' + (s.in || 'fade'));
+    };
+    const ready = changedPose && !fast ? warmSprite(a) : null;
+    if (ready && !ready.ready) ready.promise.then(commit); else commit();
   });
   have.forEach((el, ck) => {
     if (keep.has(ck)) return;
@@ -2259,7 +2320,7 @@ function startPlay(fromIdx, state) {
   CH_AT = null; RT.soul = state?.soul ? clone(state.soul) : soulFresh(); RT.soul.busy = 0;
   { const T = RT.soul.tl || (RT.soul.tl = soulNewTl()); if (state?.soul) { T.anc = [...T.anc, { lineage: T.lin, turn: T.turn }]; T.lin = T.lin.split('.')[0] + '.' + Date.now().toString(36); } }
   SOUL_REV++; soulTabUpd();
-  layer.innerHTML = ''; loadPrefs(); applyTheme(); loadRead();
+  layer.innerHTML = ''; clearStageShot(); loadPrefs(); applyTheme(); loadRead();
   stopEffects(); RT.audioRestore=state?.audio||null; RT.audioSkipEntrySe=!!state;
   VNPlugins.emit('play', { from: RT.idx, loaded: !!state });
   showPlay(true);
@@ -2267,7 +2328,7 @@ function startPlay(fromIdx, state) {
 function stopPlay() {
   if (RT.chat && !RT.chat.ending) { RT.chat.ending = true; VNPlugins.emit('chat:end', RT.chat); }
   VNPlugins.emit('stop');
-  stopChoiceTimer(); stopAmb();
+  stopChoiceTimer(); stopAmb(); clearStageShot();
   clearTimers(); stage.classList.remove('nodlg', 'hideui'); playVoice(null); playBgm(null); RT.chat = null; lastShown = null; $('#pin').classList.remove('show');
   $('#soulTab').classList.remove('show'); SOUL_REV++;
   if (gameMode) return showTitle();
@@ -2324,6 +2385,7 @@ function showPlay(first) {
   if (l.text) { RT.back.push({ s: l.speaker, t: shown, v: l.voice || undefined }); if (RT.back.length > 300) RT.back.shift(); }
   VNPlugins.emit('line', { index: RT.idx, line: l, text: shown });
   typeText(shown, () => afterText(l));
+  warmUpcomingSprites(RT.idx);
 }
 // 台词里写 {好感} 会换成变量当前的值
 const fillVars = (t, vars = RT.vars) => String(t || '').replace(/\{([^{}\s]{1,16})\}/g, (m, k) => vars && Object.prototype.hasOwnProperty.call(vars, k) ? String(vars[k]) : m);

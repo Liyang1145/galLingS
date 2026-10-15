@@ -1,0 +1,21 @@
+{
+  "prompt": "Edit FIRST image ONLY to correct the separate whale tail. Keep the exact adult woman, writing hands, pen, notebook, seated-on-folded-heels anatomy, complete opaque navy dress, face, hair, socks, shoes and transparent sprite framing unchanged. Replace ONLY the distorted tall branching tail behind her with ONE short thick naturally attached whale tail in a LOW relaxed C curve behind her right side, ending in exactly ONE anatomically clear two-lobed fluke. SECOND image is the reference for tail construction, blue mottling and a single terminal fluke ONLY; do not copy its sitting body or hands. Tail must emerge behind her lower back, one tapered stalk to one terminal fluke. No extra lateral fin, branch, fin at the root, duplicate tail, floating segment or giant vertical fin. Keep the complete two flukes inside canvas. Real transparent alpha, no scenery or text.",
+  "requested_model": "gpt-image-2.5-flare",
+  "requested_quality": "max",
+  "requested_size": "1536x2304",
+  "references": [
+    {
+      "path": "content/assets/art-upgrade/originals/S02_before_tailfix.png",
+      "sha256": "29615fe002d9774f21519126ef3fc280a6ae35b6cf8877f220b8c184fe7bfd37"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/S01.png",
+      "sha256": "dd8aac14e50f14882e2e5800fd2c9ac93e0168f1b340026981ef781b55d0d2dc"
+    }
+  ],
+  "output_sha256": "fc44bc5eb68672e3f2068a39850d73d6d04dd154ddab7778c941990b28b9dff0",
+  "actual_size": [
+    1024,
+    1536
+  ]
+}

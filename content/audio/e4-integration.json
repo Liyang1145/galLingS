@@ -1,0 +1,510 @@
+{
+  "assetId": "bgm_e4_sunset_wait",
+  "title": "日落空守",
+  "titleStatus": "provisional",
+  "baselineCommit": "e64b808375183ac5345812cc62437b63da410f38",
+  "sourceGameSha256": "33948a74ea65ddd4b5d19bc006fac2b41b70c2cce5ee2df48a08a6d30ffdcfe9",
+  "sourceSha256": "4fa6f18e5f96795912cee922b7fa46c58fdb6557b18fc874a06c3240645f6684",
+  "cues": [
+    {
+      "startLineId": "x68g8tf7",
+      "lastLineId": "eclt59o4",
+      "startIndex": 1576,
+      "endExclusive": 1617,
+      "nodeCount": 41,
+      "note": "第九话：黄昏退潮、离开后的笔记至章末；原稿L3594单音提示"
+    },
+    {
+      "startLineId": "17nl2n08",
+      "lastLineId": "4rlyhkwh",
+      "startIndex": 1678,
+      "endExclusive": 1699,
+      "nodeCount": 21,
+      "note": "第十话：其后数日等待；第五日主动出发前结束，原稿L3813极慢提示"
+    },
+    {
+      "startLineId": "0dejux6h",
+      "lastLineId": "onk5pky8",
+      "startIndex": 1743,
+      "endExclusive": 1758,
+      "nodeCount": 15,
+      "note": "第十一话：救援后尚未解冻的回答；她重新回应前结束，原稿L3983单音提示"
+    }
+  ],
+  "nodeChanges": [
+    {
+      "index": 1576,
+      "lineId": "x68g8tf7",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1577,
+      "lineId": "89lweywr",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1578,
+      "lineId": "5e0vnnip",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1579,
+      "lineId": "0ma8lcvt",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1580,
+      "lineId": "brzz9eaw",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1581,
+      "lineId": "efeiv5ck",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1582,
+      "lineId": "kzr515f8",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1583,
+      "lineId": "amyvc8xc",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1584,
+      "lineId": "53ot3kuk",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1585,
+      "lineId": "c0q7ryv9",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1586,
+      "lineId": "6c06yccj",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1587,
+      "lineId": "op2kckte",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1588,
+      "lineId": "a28puqc1",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1589,
+      "lineId": "52qwaari",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1590,
+      "lineId": "pnjh4spq",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1591,
+      "lineId": "2uiaqsh7",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1592,
+      "lineId": "7bwfo355",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1593,
+      "lineId": "mcxhc6ca",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1594,
+      "lineId": "1s60q3q5",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1595,
+      "lineId": "8r31wifm",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1596,
+      "lineId": "6bdzsyhk",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1597,
+      "lineId": "8hypo8dx",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1598,
+      "lineId": "m6zfep0b",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1599,
+      "lineId": "7x5exksj",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1600,
+      "lineId": "ntphcgef",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1601,
+      "lineId": "cil3e2db",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1602,
+      "lineId": "jm48g52i",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1603,
+      "lineId": "9arzv7dw",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1604,
+      "lineId": "3ccxpfqh",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1605,
+      "lineId": "rktpr6oz",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1606,
+      "lineId": "e5vquo97",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1607,
+      "lineId": "afydizku",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1608,
+      "lineId": "qpc4q82v",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1609,
+      "lineId": "qd57g9f8",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1610,
+      "lineId": "fytjxaxo",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1611,
+      "lineId": "byrgzepd",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1612,
+      "lineId": "72smuxwr",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1613,
+      "lineId": "k3v12lit",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1614,
+      "lineId": "wxth0g69",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1615,
+      "lineId": "j0rsbtd4",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1616,
+      "lineId": "eclt59o4",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1678,
+      "lineId": "17nl2n08",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1679,
+      "lineId": "139gk6y6",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1680,
+      "lineId": "vlhc2r5u",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1681,
+      "lineId": "4vtvkiuq",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1682,
+      "lineId": "9u2egegf",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1683,
+      "lineId": "ebx6qmnf",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1684,
+      "lineId": "khkmgx64",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1685,
+      "lineId": "2aoi8ghh",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1686,
+      "lineId": "ngw71bag",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1687,
+      "lineId": "wb6pq7fp",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1688,
+      "lineId": "xo3lw945",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1689,
+      "lineId": "xdgzt1zg",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1690,
+      "lineId": "npdbj0yk",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1691,
+      "lineId": "lu4ma2rz",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1692,
+      "lineId": "tfmdges3",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1693,
+      "lineId": "uwdgavh4",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1694,
+      "lineId": "pd8ugs21",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1695,
+      "lineId": "s6xywi3b",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1696,
+      "lineId": "lb790v9r",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1697,
+      "lineId": "y371ynsh",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1698,
+      "lineId": "4rlyhkwh",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1743,
+      "lineId": "0dejux6h",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1744,
+      "lineId": "zcybpxp6",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1745,
+      "lineId": "0fi8283h",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1746,
+      "lineId": "0q161t3v",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1747,
+      "lineId": "mqsa68bh",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1748,
+      "lineId": "lkffry51",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1749,
+      "lineId": "jsudbokl",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1750,
+      "lineId": "nbisho4d",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1751,
+      "lineId": "epi6n6h8",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1752,
+      "lineId": "bcjqicvu",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1753,
+      "lineId": "r1xufh6x",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1754,
+      "lineId": "1wnc2g34",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1755,
+      "lineId": "jdhwszjx",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1756,
+      "lineId": "lavqdy3h",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    },
+    {
+      "index": 1757,
+      "lineId": "onk5pky8",
+      "before": null,
+      "after": "bgm_e4_sunset_wait"
+    }
+  ],
+  "changedNodes": 77,
+  "allOtherLineFieldsPreserved": true,
+  "existingAssetsPreserved": 241,
+  "originalAudioAssetsPreserved": 103,
+  "silencePreserved": [
+    "电话和正面争执",
+    "深夜解释失败与她离去",
+    "第五日出发、水下、救援及咳水",
+    "重新回应至原有翡翠之梦回归"
+  ],
+  "playbackGain": 0.65917,
+  "loopPoint": "未制作无缝循环，保留完整原MP3"
+}

@@ -1,6 +1,7 @@
 """Audit line-ID continuity, adopted media and preservation of all original audio."""
 import hashlib
 import json
+import copy
 from stage_art_upgrade import project
 from produce_art_upgrade import ART, GAME, ROOT
 
@@ -11,7 +12,25 @@ def verify():
     new_ids=[l['id'] for l in current['lines']]
     assert len(set(new_ids))==len(new_ids)
     assert [i for i in new_ids if i in set(old_ids)]==old_ids
-    by_id={l['id']:l for l in current['lines']}
+    story_lines=copy.deepcopy(current['lines'])
+    by_id={l['id']:l for l in story_lines}
+    music_overlay=ROOT/'content/audio/e4-integration.json'
+    overlay_nodes=0
+    if music_overlay.exists():
+        # The music lead explicitly added E4 after the art checkpoint. Only the
+        # documented music assignments may differ; keep all story checks strict.
+        music=json.loads(music_overlay.read_text(encoding='utf-8'))
+        asset_id=music['assetId'];rows=music['nodeChanges']
+        assert len(rows)==music['changedNodes'] and len({r['lineId'] for r in rows})==len(rows)
+        assert {l['id'] for l in current['lines'] if l['bgm']==asset_id}=={r['lineId'] for r in rows}
+        for row in rows:
+            assert current['lines'][row['index']]['id']==row['lineId']
+            line=by_id[row['lineId']]
+            assert line['bgm']==row['after']==asset_id and row['before'] is None
+            line['bgm']=row['before']
+        audio_file=GAME/current['assets'][asset_id]['src']
+        assert hashlib.sha256(audio_file.read_bytes()).hexdigest()==music['sourceSha256']
+        overlay_nodes=len(rows)
     for old in before['lines'][160:]:
         a={k:v for k,v in old.items() if k not in {'bg','sprites','acts','fx'}}
         b={k:v for k,v in by_id[old['id']].items() if k not in {'bg','sprites','acts','fx'}}
@@ -20,7 +39,7 @@ def verify():
     if current.get('characterPerformance'):
         performance_before=project(performance_baseline)
         assert [l['id'] for l in performance_before['lines']]==new_ids
-        for a,b in zip(performance_before['lines'],current['lines']):
+        for a,b in zip(performance_before['lines'],story_lines):
             assert {k:v for k,v in a.items() if k not in {'bg','sprites','acts','fx','trans'}}=={k:v for k,v in b.items() if k not in {'bg','sprites','acts','fx','trans'}},a['id']
             if a.get('fx')!=b.get('fx'):
                 assert a['id'] in {'opening_second_hit_rebuke','opening_retrieve_notebook'} and not b['fx'],a['id']
@@ -55,6 +74,8 @@ def verify():
         'laterNodesStoryAndAudioFieldsPreserved':len(before['lines'])-160,
         'performanceBaselineNodeIdsPreserved':len(new_ids) if current.get('characterPerformance') else None,
         'originalAudioAssetsUnchanged':len(audio),'activeVisualIds':len(active),
+        'explicitMusicOverlayNodes':overlay_nodes,
+        'currentAudioAssets':sum(a['type'] not in {'bg','ch'} for a in current['assets'].values()),
         'activeReplacedVisualIds':len(active)-len(remaining),'manualWardrobeVisualIds':remaining,
         'wavPlaybackAssets':0,'chapters':sum(bool(l.get('chapter')) for l in current['lines']),
         'gameSha256':hashlib.sha256((GAME/'game.js').read_bytes()).hexdigest()}

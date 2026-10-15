@@ -1,0 +1,37 @@
+{
+  "id": "bgm_e4_sunset_wait",
+  "trackCode": "E4",
+  "title": "日落空守",
+  "titleStatus": "provisional",
+  "selectedBy": "Liyang1145",
+  "selectedOn": "2026-10-16",
+  "originalFilename": "日落空守.mp3",
+  "archivePath": "content/assets/audio/bgm/bgm_e4_sunset_wait.mp3",
+  "runtimePath": "content/imports/vnstudio/海风与布丁/assets/bgm/bgm_e4_sunset_wait.mp3",
+  "sha256": "4fa6f18e5f96795912cee922b7fa46c58fdb6557b18fc874a06c3240645f6684",
+  "bytes": 3280953,
+  "audio": {
+    "codec": "mp3",
+    "duration": 144.8135,
+    "channels": 2,
+    "sample_rate": 48000
+  },
+  "measuredLUFS": -14.81,
+  "playbackGain": 0.65917,
+  "targetReferenceLUFS": -18.43,
+  "processing": {
+    "edited": false,
+    "reencoded": false,
+    "loudnessNormalized": false,
+    "seamlessLoopPrepared": false
+  },
+  "loopStart": null,
+  "loopEnd": null,
+  "loopPointStatus": "待音乐负责人试听与人工微调",
+  "source": {
+    "tool": "Suno（源文件标签）",
+    "model": null,
+    "generationPrompt": null
+  },
+  "role": "争吵后的黄昏退潮、等待、和解前尚未解冻的情绪；不是争执动作配乐"
+}

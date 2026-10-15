@@ -1,6 +1,6 @@
 # Music metadata. File paths are relative to content/audio; the selected MP3 is now archived in the repository.
 schema_version: 1
-updated: "2026-10-12"
+updated: "2026-10-16"
 tracks:
   - id: bgm_emerald_dream_main_v01
     title: 翡翠之梦
@@ -42,3 +42,30 @@ tracks:
       uploaded_reference: null
     authorization_status: not_recorded
     notes: 音乐负责人指定的当前角色主曲；后续变奏以此为基准。原 MP3 单独归档用于保存探索素材；主曲未剪辑，场景接入待 LarryE 最新 DEMO 核对，当前音乐版本未冻结。
+  - id: bgm_e4_sunset_wait
+    title: 日落空守
+    title_status: provisional
+    track_code: E4
+    role: emotional_aftermath
+    character: 鲸鱼小姐
+    status: selected_scene_track
+    original_filename: 日落空守.mp3
+    archived_filename: bgm_e4_sunset_wait.mp3
+    file: ../assets/audio/bgm/bgm_e4_sunset_wait.mp3
+    availability: repository
+    selected_on: "2026-10-16"
+    selected_by: Liyang1145
+    bytes: 3280953
+    duration_seconds: 144.8135
+    sha256: 4fa6f18e5f96795912cee922b7fa46c58fdb6557b18fc874a06c3240645f6684
+    integrated_lufs: -14.81
+    playback_gain: 0.65917
+    cue_report: e4-integration.json
+    loop_start: null
+    loop_end: null
+    loop_units: samples
+    processing:
+      edited: false
+      loudness_normalized: false
+      seamless_loop_prepared: false
+    notes: 曲名暂定。完整原MP3不转码不裁剪；只用播放器音量衰减至主曲参考以下约4dB。第九话黄昏、第十话数日等待、第十一话救援后尚未解冻的回答；通话争执和水下救援保留停奏。

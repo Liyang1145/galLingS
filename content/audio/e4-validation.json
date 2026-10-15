@@ -1,0 +1,70 @@
+{
+  "baselineCommit": "e64b808375183ac5345812cc62437b63da410f38",
+  "onlyMusicAssignmentsChanged": 77,
+  "existingAudioAssetsUnchanged": 103,
+  "allVisualAndStoryFieldsUnchanged": true,
+  "cues": [
+    {
+      "startLineId": "x68g8tf7",
+      "lastLineId": "eclt59o4",
+      "playing": true,
+      "sameTrackAcrossLines": true,
+      "stopsAtBoundary": true,
+      "id": "bgm_e4_sunset_wait",
+      "duration": 144.8135,
+      "time": 1.006688,
+      "volume": 0.23070949999999998,
+      "expectedVolume": 0.23070949999999998,
+      "loop": true,
+      "error": null
+    },
+    {
+      "startLineId": "17nl2n08",
+      "lastLineId": "4rlyhkwh",
+      "playing": true,
+      "sameTrackAcrossLines": true,
+      "stopsAtBoundary": true,
+      "id": "bgm_e4_sunset_wait",
+      "duration": 144.8135,
+      "time": 1.009787,
+      "volume": 0.23070949999999998,
+      "expectedVolume": 0.23070949999999998,
+      "loop": true,
+      "error": null
+    },
+    {
+      "startLineId": "0dejux6h",
+      "lastLineId": "onk5pky8",
+      "playing": true,
+      "sameTrackAcrossLines": true,
+      "stopsAtBoundary": true,
+      "id": "bgm_e4_sunset_wait",
+      "duration": 144.8135,
+      "time": 1.000053,
+      "volume": 0.23070949999999998,
+      "expectedVolume": 0.23070949999999998,
+      "loop": true,
+      "error": null
+    }
+  ],
+  "errors": [],
+  "silenceSamples": [
+    "5s7jn3bz",
+    "48jqdyhx",
+    "kg0expss",
+    "9jsc7ccp",
+    "6krloggt",
+    "h1s7pefv",
+    "yf5lgvkv"
+  ],
+  "audioStateRestored": {
+    "id": "bgm_e4_sunset_wait",
+    "time": 37.749402
+  },
+  "stopAllStopsE4": true,
+  "offlineEmbeddedSha256": "4fa6f18e5f96795912cee922b7fa46c58fdb6557b18fc874a06c3240645f6684",
+  "offlinePlayback": true,
+  "gameSha256": "39ab7ce0f501f6952bee5eb5f884fe975b451bf0b1623f9ec202ebed70ca13ba",
+  "singleFileSha256": "ffbff282788d40619757472205f26148f1bdc52c3f4029645b91ae5bab18d0aa",
+  "passed": true
+}

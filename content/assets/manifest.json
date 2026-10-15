@@ -2305,6 +2305,22 @@
       ],
       "usage_status": "audition_only",
       "archived_on": "2026-10-12"
+    },
+    {
+      "id": "bgm_e4_sunset_wait",
+      "title": "日落空守",
+      "title_status": "provisional",
+      "track_code": "E4",
+      "category": "bgm",
+      "path": "audio/bgm/bgm_e4_sunset_wait.mp3",
+      "format": "mp3",
+      "bytes": 3280953,
+      "sha256": "4fa6f18e5f96795912cee922b7fa46c58fdb6557b18fc874a06c3240645f6684",
+      "duration_seconds": 144.8135,
+      "source_filename": "日落空守.mp3",
+      "provenance": "音乐负责人提供并指定用于E4，名称暂定",
+      "archived_on": "2026-10-16",
+      "license": "未指定开放许可证；不默认适用引擎代码许可证"
     }
   ]
 }

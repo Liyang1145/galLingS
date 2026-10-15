@@ -1,0 +1,99 @@
+{
+  "rendered": {
+    "C12": {
+      "node": "0l62ynl2",
+      "bg": "C12",
+      "actors": [],
+      "text": "一把抢过我手里的手机。"
+    },
+    "C18": {
+      "node": "f4jwlens",
+      "bg": "C18",
+      "actors": [],
+      "text": "「什么叫做房贷是个玩笑——」"
+    },
+    "P09": {
+      "node": "no3hzp1r",
+      "bg": "B02",
+      "actors": [
+        {
+          "id": "art_upgrade_p09",
+          "width": 1024,
+          "height": 1536
+        }
+      ],
+      "text": "她转身要走。蓝黑色的长发在水里铺开，像一小片退潮前的夜。"
+    }
+  },
+  "editor": {
+    "C12": {
+      "id": "ak1lber9",
+      "status": "adopted",
+      "sha256": "748f411e55b45579ea9efb86f8b2e5ba0e6145545cc9f4cbe9ce183908439aa9",
+      "usage": 5,
+      "libraryRegistered": true,
+      "insertUndo": true
+    },
+    "C18": {
+      "id": "w3km9isl",
+      "status": "adopted",
+      "sha256": "5d179aab30de8e88d1511461f5f1b5bb3949b19707c15a7517c82201f0743509",
+      "usage": 4,
+      "libraryRegistered": true,
+      "insertUndo": true
+    },
+    "P09": {
+      "id": "art_upgrade_p09",
+      "status": "adopted",
+      "sha256": "7fc10945d6878ba4c342602daa99c21ae7a78d6363fc4ff0fec8f2a80eb7ea93",
+      "usage": 11,
+      "libraryRegistered": true,
+      "insertUndo": true
+    },
+    "O11": {
+      "id": "art_upgrade_o11",
+      "status": "reserve",
+      "sha256": "f07829f245ad7a6d627c1de6916eb9a874ea33e0bfe9238ca729a717926e458b",
+      "usage": 0,
+      "libraryRegistered": true,
+      "insertUndo": true
+    }
+  },
+  "offline": {
+    "imagesDecoded": 118,
+    "hashes": {
+      "ak1lber9": "748f411e55b45579ea9efb86f8b2e5ba0e6145545cc9f4cbe9ce183908439aa9",
+      "w3km9isl": "5d179aab30de8e88d1511461f5f1b5bb3949b19707c15a7517c82201f0743509",
+      "art_upgrade_p09": "7fc10945d6878ba4c342602daa99c21ae7a78d6363fc4ff0fec8f2a80eb7ea93"
+    },
+    "sha256": "d072af8a942b46d9139799eb5f9473dda195050b34f80f0ac3c18747b110674d"
+  },
+  "archived": [
+    {
+      "name": "C12_rejected_skin · 电话后抢手机",
+      "status": "rejected",
+      "usage": 0
+    },
+    {
+      "name": "C18_rejected_skin_tail · 布丁是不是假的",
+      "status": "rejected",
+      "usage": 0
+    },
+    {
+      "name": "O11_rejected_tail · 月光尾鳍圈影",
+      "status": "rejected",
+      "usage": 0
+    },
+    {
+      "name": "P09_rejected_tail · 常服嘴硬回望",
+      "status": "rejected",
+      "usage": 0
+    }
+  ],
+  "editorCounts": {
+    "items": 476,
+    "physicalFiles": 648
+  },
+  "errors": [],
+  "passed": true
+}

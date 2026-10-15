@@ -9,21 +9,21 @@
   "requested_quality": "max",
   "backend_reported_quality": "medium",
   "usage": {
-    "input_tokens": 4834,
+    "input_tokens": 1767,
     "input_tokens_details": {
-      "image_tokens": 4552,
-      "text_tokens": 282
+      "image_tokens": 1508,
+      "text_tokens": 259
     },
-    "output_tokens": 515,
+    "output_tokens": 1158,
     "output_tokens_details": {
-      "image_tokens": 515,
+      "image_tokens": 1158,
       "text_tokens": 0
     },
-    "total_tokens": 5349
+    "total_tokens": 2925
   },
-  "elapsed_seconds": 55.97,
-  "created": 1791998885,
-  "reference_image_count": 3,
+  "elapsed_seconds": 71.17,
+  "created": 1792079201,
+  "reference_image_count": 1,
   "outputs": [
     "C:\\Users\\袁力阳\\Documents\\Codex\\2026-10-10\\new-chat\\work\\ambient-audio-checkout-proxy\\content\\assets\\art-upgrade\\originals\\O11.png"
   ]

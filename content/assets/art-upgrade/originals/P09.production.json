@@ -1,15 +1,15 @@
 {
-  "prompt": "A transparent-alpha Japanese romance visual-novel acting sprite of the SAME ADULT woman aged24 in the reference. Preserve her recognizable mature face, long blue hair, loop ahoge, cyan bow clips, fin ears, exact OPAQUE navy sailor-collar dress, white socks and closed white shoes, two human legs plus one separate mottled blue whale tail attached behind her lower back. Finely painted anime finish and neutral soft daylight. Preserve head size, framing and generous margins. Whole adult figure, all hair, shoes and tail inside canvas; naturally connected hands and fingers. Hands and emotional action visible around chest or face height above the dialogue area. Clean transparent alpha, no scenery, ground, shadow, glow outline, text, symbols, comic stickers or extra limbs. Acting direction: Affection she is trying to conceal, not sadness. Her shoulders and torso turn partly away as if about to leave, head glances back over her shoulder at the viewer. A faint awkward blush, a tiny restrained almost-smile hidden under a stubborn pout. One hand lightly gathers a lock of hair near her collar, the other relaxed at her side. Independent tail tip betrays her with a small compact upward curl. Do not reproduce a dejected or wounded face; this is a reluctant promise to meet again.",
+  "prompt": "Precise local correction of the tail ONLY in this existing full-body transparent character sprite. Same adult heroine aged24. There are currently THREE fluke-like pointed lobes on the lower-right tail: a left-pointing lower lobe, a down/right-pointing lower lobe, and an EXTRA small upward-curled lobe above them. REMOVE the extra upward-curled lobe entirely and repair that empty region to transparent alpha. Keep ONE smooth continuous blue-and-white whale tail from the lower back, narrowing to ONE terminal joint with EXACTLY TWO broad flukes and a clear central notch. A whale fluke pair is a flattened left/right pair, not three petals, not a fish caudal fan and not an extra appendage. Preserve the existing two lower flukes' placement as much as possible. Keep ALL other pixels/geometry as faithfully as possible: recognizable face, warm shy look back over shoulder, hair strands, bow clips, fin ears, adult body, arms, opaque sailor dress and white double hem stripes, two healthy human legs, white ankle socks and closed white shoes, framing, scale and shoe baseline. Actual transparent alpha background, no scenery, shadow, halo, checkerboard, new jewelry or injuries. Keep original portrait aspect ratio.",
   "requested_model": "gpt-image-2.5-flare",
   "requested_quality": "max",
   "requested_size": "1536x2304",
   "references": [
     {
-      "path": "content/assets/art-upgrade/originals/L12.png",
-      "sha256": "4c199106b4d171304fd62a20d4c39c4813db002a020f26bac62631e2801597df"
+      "path": "content/assets/art-upgrade/originals/P09_rejected_tail.png",
+      "sha256": "e2874b2a4b6a8086a18f2d70e0f86eb15ae87a4a5143452c46e621f77ade66e3"
     }
   ],
-  "output_sha256": "e2874b2a4b6a8086a18f2d70e0f86eb15ae87a4a5143452c46e621f77ade66e3",
+  "output_sha256": "6f85d5b718070b94bd37011f8538c63a9a603409d857fd0644d16acfb14fb5cf",
   "actual_size": [
     1024,
     1536

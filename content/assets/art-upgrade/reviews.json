@@ -523,9 +523,9 @@
   },
   "C12": {
     "status": "approved",
-    "sha256": "2af3e785547477614338e563cea33bf2a6c32a02ec996582a63c094b7d0f4f4e",
-    "note": "逐图核对表情与动作、实际时段/位置和服装，修正后的摘项链与贝壳风铃符合场景；裹毯坐姿为完整覆盖替代动作。",
-    "reviewer": "Codex visual inspection; not final user approval"
+    "sha256": "d81231cbbfc1785e16fbae9f41c9c0074644106cc9c751fad690c0690f16a2db",
+    "note": "逐图对照：手臂、肘部和膝部误画擦伤已去除；保留泪眼、脸部红晕、手机和人物互动。",
+    "reviewer": "Codex visual comparison, 2026-10-16"
   },
   "C13": {
     "status": "approved",
@@ -541,9 +541,9 @@
   },
   "C18": {
     "status": "approved",
-    "sha256": "86549851fa1d724dce010599c59099d4a9f5d6f90429b330afc3eb510a30635b",
-    "note": "逐图核对表情与动作、实际时段/位置和服装，修正后的摘项链与贝壳风铃符合场景；裹毯坐姿为完整覆盖替代动作。",
-    "reviewer": "Codex visual inspection; not final user approval"
+    "sha256": "8674df9f0588b29ff08a68bc49d4cfc4b8acc64a1c808206f84551a9d73dd87c",
+    "note": "逐图对照：前臂、肘部、下边缘膝部误画擦伤已去除；左侧单叶尾端改为同一尾柄相连的双叶鲸尾鳍。",
+    "reviewer": "Codex visual comparison, 2026-10-16"
   },
   "C20": {
     "status": "approved",
@@ -571,9 +571,9 @@
   },
   "O11": {
     "status": "approved",
-    "sha256": "a297b1a2fd5276fea5e608b8c190006dee69bbe8829ed5b9dc4832cbbf14e00b",
-    "note": "复核海面夕阳光照与月光双人影、独立尾巴成立；O11为可编辑备用CG，双影在下方需隐藏对话框观看。",
-    "reviewer": "Codex visual inspection; not final user approval"
+    "sha256": "3c6e3bd002e3841ce6a529e708681ecfc5c4715f2450f146e74833ebb12e5ab8",
+    "note": "逐图对照：单片叶状尾端改为有中央分叉的双叶鲸尾鳍，保留双人、两条人腿、礁石和月光影子；仍是备用CG。",
+    "reviewer": "Codex visual comparison, 2026-10-16"
   },
   "B18": {
     "status": "approved",
@@ -673,9 +673,9 @@
   },
   "P09": {
     "status": "approved",
-    "sha256": "e2874b2a4b6a8086a18f2d70e0f86eb15ae87a4a5143452c46e621f77ade66e3",
-    "note": "本轮逐图视觉复核：回望带小幅嘴硬笑意，与低落背身L12可明确区分。 待实机再查手势遮挡与连续性。",
-    "reviewer": "Codex visual inspection; not final user approval"
+    "sha256": "6f85d5b718070b94bd37011f8538c63a9a603409d857fd0644d16acfb14fb5cf",
+    "note": "灰底合成和全身放大复查：多余第三片上卷尾鳍已去除；保留原双叶、两条人腿、鞋基线、脸和回望动作。透明洞隙未烘焙背景。",
+    "reviewer": "Codex visual comparison, 2026-10-16"
   },
   "P10": {
     "status": "approved",

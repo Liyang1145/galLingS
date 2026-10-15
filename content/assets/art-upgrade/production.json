@@ -3435,32 +3435,26 @@
       "id": "C12",
       "name": "电话后抢手机",
       "kind": "cg",
-      "spec": "手里真的有刚夺来的手机，惊慌/受伤而非俏皮摆拍；室内接B28，不把伤心当滑稽。",
+      "spec": "电话后抢手机，情绪受伤、委屈泪眼；身体皮肤完好，无擦伤、淤青、血痕或绷带。保留手机、姿态、服装和原室内构图。",
       "time": "午后书房",
       "costume": "常服",
       "old_names": [
         "CG_电话"
       ],
       "anchors": [],
-      "dependencies": [
-        "L10",
-        "B28"
-      ],
+      "dependencies": [],
       "references": [
-        "B28",
-        "L10",
-        "user:face",
-        "user:body"
+        "C12_rejected_skin"
       ],
       "status": "generated",
       "review": "approved",
-      "prompt": "One complete 16:9 EVENT CG, a new coherent illustration rather than pasted sprites. The FIRST wide location reference is the target landscape canvas: preserve its 16:9 framing, location, architecture and time of day. The SECOND costume master controls the heroine's exact face, hair, anatomy, outfit and tail. The following user identity images reinforce her recognizable face and style. Characters interact naturally with the environment. Use expressive eyes, believable hands and physically connected actions. When a man is present he is an adult age 26, short black hair, rectangular glasses, white long-sleeved shirt and navy trousers; player-perspective hands/shoulder are preferred when the script allows it. Avoid showing a man's face unnecessarily. No swimsuit or outfit change unless requested. Water scenes still have two human legs and a separate whale tail. Keep the central emotional action visible above dialogue. The final CG must stay landscape even though character-reference images are portrait.\nMatch the two user references: premium finely painted Japanese anime visual novel art, clean delicate outlines, coherent anatomy and perspective, subtle painterly material detail, luminous coastal blue palette, restrained clear highlights, sophisticated soft light. The heroine is the SAME ADULT woman aged 24: blue/periwinkle long hair, blue eyes, loop ahoge, cyan bow clips, blue-white fin ears, two human legs PLUS an independent mottled-blue whale tail growing behind the lower back. Human legs never turn into a mermaid tail. Use exact costume references. No watermark, typography, pseudo-writing, UI, duplicated people, extra limbs, warped fingers, floaty unrelated props or sexualized framing. Important faces and story actions stay above the lower 28% reserved for dialogue.\nScene: 电话后抢手机\nTime/location: 午后书房\nCostume/state: 常服\nExact story action: 手里真的有刚夺来的手机，惊慌/受伤而非俏皮摆拍；室内接B28，不把伤心当滑稽。\nReference order: wide landscape location, exact character/costume master, then user identity originals. Read them in that role order. Highest-finish 16:9 painting.",
+      "prompt": "Edit ONLY the mistaken injury marks in the FIRST full landscape illustration. The woman is the same adult age24. Her distress is EMOTIONAL after a hurtful conversation, not a bodily injury. Restore healthy, intact, unmarked skin on both upper arms, elbows, forearms, hands, knees and visible legs. Remove every red scratch, abrasion, bruise, scrape, blood mark and scab. Preserve natural anatomical shading and sun highlights. Retain EXACTLY her tearful offended expression, blush, watery eyes, phone held to chest, arm pose, face, blue hair, adult body proportions, navy sailor-collar dress, continuous opaque skirt, whale tail, man's foreground hand and the sunlit study. Do not add bandages or scars, do not make her cheerful, do not change the composition or redesign the scene. One finished coherent image with the same 16:9 landscape framing and painting style.",
       "size": [
         1672,
         941
       ],
       "requested_size": "3840x2160",
-      "started": 1791997540.1839967,
+      "started": 1792079068.7904794,
       "generation": {
         "auth_mode": "Codex ChatGPT OAuth",
         "endpoint": "https://chatgpt.com/backend-api/codex/images/edits",
@@ -3472,31 +3466,36 @@
         "requested_quality": "max",
         "backend_reported_quality": "medium",
         "usage": {
-          "input_tokens": 6262,
+          "input_tokens": 1709,
           "input_tokens_details": {
-            "image_tokens": 5774,
-            "text_tokens": 488
+            "image_tokens": 1508,
+            "text_tokens": 201
           },
           "output_tokens": 1158,
           "output_tokens_details": {
             "image_tokens": 1158,
             "text_tokens": 0
           },
-          "total_tokens": 7420
+          "total_tokens": 2867
         },
-        "elapsed_seconds": 82.8,
-        "created": 1791997621,
-        "reference_image_count": 4,
+        "elapsed_seconds": 62.82,
+        "created": 1792079130,
+        "reference_image_count": 1,
         "outputs": [
           "C:\\Users\\袁力阳\\Documents\\Codex\\2026-10-10\\new-chat\\work\\ambient-audio-checkout-proxy\\content\\assets\\art-upgrade\\originals\\C12.png"
         ]
       },
-      "elapsed": 83.0,
+      "elapsed": 63.3,
       "file": "content/assets/art-upgrade/originals/C12.png",
-      "bytes": 2462558,
-      "sha256": "2af3e785547477614338e563cea33bf2a6c32a02ec996582a63c094b7d0f4f4e",
+      "bytes": 2401449,
+      "sha256": "d81231cbbfc1785e16fbae9f41c9c0074644106cc9c751fad690c0690f16a2db",
       "mode": "RGB",
-      "review_note": "逐图核对表情与动作、实际时段/位置和服装，修正后的摘项链与贝壳风铃符合场景；裹毯坐姿为完整覆盖替代动作。"
+      "review_note": "逐图对照：手臂、肘部和膝部误画擦伤已去除；保留泪眼、脸部红晕、手机和人物互动。",
+      "correctionBaseline": {
+        "sha256": "2af3e785547477614338e563cea33bf2a6c32a02ec996582a63c094b7d0f4f4e",
+        "reason": "skin",
+        "original": "originals/C12_rejected_skin.png"
+      }
     },
     "C13": {
       "id": "C13",
@@ -3831,32 +3830,26 @@
       "id": "C18",
       "name": "布丁是不是假的",
       "kind": "cg",
-      "spec": "带鱼摊前的真实受伤与争执；不是搞笑炸毛；同一市场、秋季路人衣着。",
+      "spec": "鱼摊争执时的情绪受伤、抱臂自护；不是身体受伤，裸露皮肤健康无伤痕。一根独立鲸尾末端为明确双叶尾鳍；保留原市场构图和低落表情。",
       "time": "初秋集市",
       "costume": "常服",
       "old_names": [
         "CG_布丁"
       ],
       "anchors": [],
-      "dependencies": [
-        "L10",
-        "B22"
-      ],
+      "dependencies": [],
       "references": [
-        "B22",
-        "L10",
-        "user:face",
-        "user:body"
+        "C18_rejected_skin_tail"
       ],
       "status": "generated",
       "review": "approved",
-      "prompt": "One complete 16:9 EVENT CG, a new coherent illustration rather than pasted sprites. The FIRST wide location reference is the target landscape canvas: preserve its 16:9 framing, location, architecture and time of day. The SECOND costume master controls the heroine's exact face, hair, anatomy, outfit and tail. The following user identity images reinforce her recognizable face and style. Characters interact naturally with the environment. Use expressive eyes, believable hands and physically connected actions. When a man is present he is an adult age 26, short black hair, rectangular glasses, white long-sleeved shirt and navy trousers; player-perspective hands/shoulder are preferred when the script allows it. Avoid showing a man's face unnecessarily. No swimsuit or outfit change unless requested. Water scenes still have two human legs and a separate whale tail. Keep the central emotional action visible above dialogue. The final CG must stay landscape even though character-reference images are portrait.\nMatch the two user references: premium finely painted Japanese anime visual novel art, clean delicate outlines, coherent anatomy and perspective, subtle painterly material detail, luminous coastal blue palette, restrained clear highlights, sophisticated soft light. The heroine is the SAME ADULT woman aged 24: blue/periwinkle long hair, blue eyes, loop ahoge, cyan bow clips, blue-white fin ears, two human legs PLUS an independent mottled-blue whale tail growing behind the lower back. Human legs never turn into a mermaid tail. Use exact costume references. No watermark, typography, pseudo-writing, UI, duplicated people, extra limbs, warped fingers, floaty unrelated props or sexualized framing. Important faces and story actions stay above the lower 28% reserved for dialogue.\nScene: 布丁是不是假的\nTime/location: 初秋集市\nCostume/state: 常服\nExact story action: 带鱼摊前的真实受伤与争执；不是搞笑炸毛；同一市场、秋季路人衣着。\nReference order: wide landscape location, exact character/costume master, then user identity originals. Read them in that role order. Highest-finish 16:9 painting.",
+      "prompt": "Correct ONLY the mistaken physical injuries and the malformed tail end in this full landscape illustration. Same adult heroine aged24, same sad and emotionally hurt face and self-comforting arm-holding pose at the fish stall. Her skin is physically healthy: remove ALL red scratches, abrasions, bruises, bleeding and scabs on the exposed arm, forearm, elbows and legs, including the knee near the lower edge. Keep natural skin shading and blush. No bandages, no wounds. At the LEFT of the heroine replace the single leaf-like tail end with one recognizable WHALE fluke pair: ONE continuous mottled-blue tail stalk comes from behind her lower back, narrows to ONE terminal joint, and ends in EXACTLY TWO broad left/right flukes with a central notch. Keep both flukes clear within the existing left-side space, correctly foreshortened; no third fin, no second tail, no spinal dorsal fin. Her two human legs remain independent from the tail. Keep her identity, hair, opaque navy dress and hem, hands, both adult characters, fish stall products, market buildings, camera, summer daylight and delicate illustration style otherwise unchanged. Same 16:9 full coherent scene, not a pasted silhouette. No text or new props.",
       "size": [
         1672,
         941
       ],
       "requested_size": "3840x2160",
-      "started": 1791997623.1759095,
+      "started": 1792079068.7979906,
       "generation": {
         "auth_mode": "Codex ChatGPT OAuth",
         "endpoint": "https://chatgpt.com/backend-api/codex/images/edits",
@@ -3868,31 +3861,36 @@
         "requested_quality": "max",
         "backend_reported_quality": "medium",
         "usage": {
-          "input_tokens": 6257,
+          "input_tokens": 1780,
           "input_tokens_details": {
-            "image_tokens": 5774,
-            "text_tokens": 483
+            "image_tokens": 1508,
+            "text_tokens": 272
           },
           "output_tokens": 1158,
           "output_tokens_details": {
             "image_tokens": 1158,
             "text_tokens": 0
           },
-          "total_tokens": 7415
+          "total_tokens": 2938
         },
-        "elapsed_seconds": 74.87,
-        "created": 1791997696,
-        "reference_image_count": 4,
+        "elapsed_seconds": 75.57,
+        "created": 1792079142,
+        "reference_image_count": 1,
         "outputs": [
           "C:\\Users\\袁力阳\\Documents\\Codex\\2026-10-10\\new-chat\\work\\ambient-audio-checkout-proxy\\content\\assets\\art-upgrade\\originals\\C18.png"
         ]
       },
-      "elapsed": 75.1,
+      "elapsed": 76.0,
       "file": "content/assets/art-upgrade/originals/C18.png",
-      "bytes": 2651476,
-      "sha256": "86549851fa1d724dce010599c59099d4a9f5d6f90429b330afc3eb510a30635b",
+      "bytes": 2628545,
+      "sha256": "8674df9f0588b29ff08a68bc49d4cfc4b8acc64a1c808206f84551a9d73dd87c",
       "mode": "RGB",
-      "review_note": "逐图核对表情与动作、实际时段/位置和服装，修正后的摘项链与贝壳风铃符合场景；裹毯坐姿为完整覆盖替代动作。"
+      "review_note": "逐图对照：前臂、肘部、下边缘膝部误画擦伤已去除；左侧单叶尾端改为同一尾柄相连的双叶鲸尾鳍。",
+      "correctionBaseline": {
+        "sha256": "86549851fa1d724dce010599c59099d4a9f5d6f90429b330afc3eb510a30635b",
+        "reason": "skin_tail",
+        "original": "originals/C18_rejected_skin_tail.png"
+      }
     },
     "C19": {
       "id": "C19",
@@ -7328,18 +7326,13 @@
       "id": "O11",
       "name": "月光尾鳍圈影",
       "kind": "cg",
-      "spec": "Moonlit shoreline, quiet seated pair seen at a gentle diagonal: heroine and adult male shoulders close, her whale tail curving softly around their two moon-cast shadows on the rock. Show both human legs and tail separately. Intimate visual metaphor, no huge magical circle, same moon and coastline.",
+      "spec": "月光海岸双人坐礁石，独立鲸尾环绕两人影子；一根尾柄连接恰好一对宽扁双叶鲸尾鳍，有中缝、透视体积和礁石接触阴影。备用CG，不新增剧情引用。",
       "old_names": [],
-      "dependencies": [
-        "L34",
-        "B04"
-      ],
+      "dependencies": [],
       "references": [
-        "B04",
-        "L34",
-        "O11_before_review"
+        "O11_rejected_tail"
       ],
-      "prompt": "A NEW wide 16:9 Japanese romance visual-novel illustration, a moonlit composition showing a STORY ACTION rather than a portrait crop. FIRST reference establishes the exact coast and moon. SECOND reference establishes the adult age24 blue-haired whale heroine in opaque navy dress, white socks and closed shoes. THIRD reference identifies the adult age26 man with black hair, rectangular glasses, white long-sleeved shirt and navy trousers. Use a wider elevated diagonal camera: both adults sit shoulder to shoulder in the UPPER LEFT half, their faces tender and clearly recognizable. Show an open flat rock in the CENTER and RIGHT half with TWO unmistakable human moon-cast SHADOWS next to each other. Her separate blue whale tail curls in a soft natural C-shape around those TWO SHADOWS on the rock. Two human legs remain separate from the tail. The tail and shadows must be fully visible above the bottom 28% reserved for dialogue. Moonlight comes from the upper right so the shadows extend consistently toward the foreground left. Ordinary fully clothed adults, no erotic framing, no magic circle, no duplicate people or disconnected tail. This scene is about the shadows enclosed by a real tail, not just a close-up seated couple.",
+      "prompt": "Repair ONLY the malformed whale tail in this complete moonlit coastal illustration. Keep the same two adults, faces, expressions, sitting poses, navy dress, two normal human legs, white shoes, rock, their moon-cast shadows, moon, town and coastline EXACTLY in place. The huge single leaf-shaped blue fin in the right foreground is anatomically wrong. Redraw it as ONE continuous independently attached whale tail from behind her LOWER BACK, tapering smoothly to ONE narrow peduncle and then EXACTLY TWO flattened broad left/right flukes, separated by a visible central notch, seen in natural perspective lying/curving over the rock. The pair must visibly read as a whale tail, not a single crescent blade, three-point fan, leaf, fish fin or separate tails. Keep the recognizable mottled cobalt blue/white skin pattern, plausible volume and the soft curved gesture around the couple's shadows. No added dorsal or side fins and no replacement of her human legs. Match the existing moonlight direction, contact shading, sharpness and painterly anime VN style; no glow outlines. No new text, accessories, wounds or changes to the pair's interaction. Same 16:9 landscape canvas.",
       "size": [
         1672,
         941
@@ -7347,7 +7340,7 @@
       "status": "generated",
       "review": "approved",
       "requested_size": "3840x2160",
-      "started": 1791998831.4063478,
+      "started": 1792079132.0614212,
       "generation": {
         "auth_mode": "Codex ChatGPT OAuth",
         "endpoint": "https://chatgpt.com/backend-api/codex/images/edits",
@@ -7359,32 +7352,37 @@
         "requested_quality": "max",
         "backend_reported_quality": "medium",
         "usage": {
-          "input_tokens": 4834,
+          "input_tokens": 1767,
           "input_tokens_details": {
-            "image_tokens": 4552,
-            "text_tokens": 282
+            "image_tokens": 1508,
+            "text_tokens": 259
           },
-          "output_tokens": 515,
+          "output_tokens": 1158,
           "output_tokens_details": {
-            "image_tokens": 515,
+            "image_tokens": 1158,
             "text_tokens": 0
           },
-          "total_tokens": 5349
+          "total_tokens": 2925
         },
-        "elapsed_seconds": 55.97,
-        "created": 1791998885,
-        "reference_image_count": 3,
+        "elapsed_seconds": 71.17,
+        "created": 1792079201,
+        "reference_image_count": 1,
         "outputs": [
           "C:\\Users\\袁力阳\\Documents\\Codex\\2026-10-10\\new-chat\\work\\ambient-audio-checkout-proxy\\content\\assets\\art-upgrade\\originals\\O11.png"
         ]
       },
-      "elapsed": 56.2,
+      "elapsed": 71.7,
       "file": "content/assets/art-upgrade/originals/O11.png",
-      "bytes": 3196235,
+      "bytes": 2923263,
       "mode": "RGB",
       "round3_queued": true,
-      "sha256": "a297b1a2fd5276fea5e608b8c190006dee69bbe8829ed5b9dc4832cbbf14e00b",
-      "review_note": "复核海面夕阳光照与月光双人影、独立尾巴成立；O11为可编辑备用CG，双影在下方需隐藏对话框观看。"
+      "sha256": "3c6e3bd002e3841ce6a529e708681ecfc5c4715f2450f146e74833ebb12e5ab8",
+      "review_note": "逐图对照：单片叶状尾端改为有中央分叉的双叶鲸尾鳍，保留双人、两条人腿、礁石和月光影子；仍是备用CG。",
+      "correctionBaseline": {
+        "sha256": "a297b1a2fd5276fea5e608b8c190006dee69bbe8829ed5b9dc4832cbbf14e00b",
+        "reason": "tail",
+        "original": "originals/O11_rejected_tail.png"
+      }
     },
     "P01": {
       "id": "P01",
@@ -7917,20 +7915,18 @@
       "id": "P09",
       "name": "常服嘴硬回望",
       "kind": "sprite",
-      "spec": "A transparent-alpha Japanese romance visual-novel acting sprite of the SAME ADULT woman aged24 in the reference. Preserve her recognizable mature face, long blue hair, loop ahoge, cyan bow clips, fin ears, exact OPAQUE navy sailor-collar dress, white socks and closed white shoes, two human legs plus one separate mottled blue whale tail attached behind her lower back. Finely painted anime finish and neutral soft daylight. Preserve head size, framing and generous margins. Whole adult figure, all hair, shoes and tail inside canvas; naturally connected hands and fingers. Hands and emotional action visible around chest or face height above the dialogue area. Clean transparent alpha, no scenery, ground, shadow, glow outline, text, symbols, comic stickers or extra limbs. Acting direction: Affection she is trying to conceal, not sadness. Her shoulders and torso turn partly away as if about to leave, head glances back over her shoulder at the viewer. A faint awkward blush, a tiny restrained almost-smile hidden under a stubborn pout. One hand lightly gathers a lock of hair near her collar, the other relaxed at her side. Independent tail tip betrays her with a small compact upward curl. Do not reproduce a dejected or wounded face; this is a reluctant promise to meet again.",
+      "spec": "常服嘴硬回望：一根从腰后独立生出的鲸尾，仅一对双叶鲸尾鳍，无第三片向上弯曲的鳍。保持原回望姿势、脸、裙摆、两条人腿和透明底；小幅卷动以完整双叶姿态表现。",
       "time": "随场景显示层匹配",
       "costume": "常服",
       "old_names": [],
       "anchors": [],
-      "dependencies": [
-        "L12"
-      ],
+      "dependencies": [],
       "references": [
-        "L12"
+        "P09_rejected_tail"
       ],
       "status": "generated",
       "review": "approved",
-      "prompt": "A transparent-alpha Japanese romance visual-novel acting sprite of the SAME ADULT woman aged24 in the reference. Preserve her recognizable mature face, long blue hair, loop ahoge, cyan bow clips, fin ears, exact OPAQUE navy sailor-collar dress, white socks and closed white shoes, two human legs plus one separate mottled blue whale tail attached behind her lower back. Finely painted anime finish and neutral soft daylight. Preserve head size, framing and generous margins. Whole adult figure, all hair, shoes and tail inside canvas; naturally connected hands and fingers. Hands and emotional action visible around chest or face height above the dialogue area. Clean transparent alpha, no scenery, ground, shadow, glow outline, text, symbols, comic stickers or extra limbs. Acting direction: Affection she is trying to conceal, not sadness. Her shoulders and torso turn partly away as if about to leave, head glances back over her shoulder at the viewer. A faint awkward blush, a tiny restrained almost-smile hidden under a stubborn pout. One hand lightly gathers a lock of hair near her collar, the other relaxed at her side. Independent tail tip betrays her with a small compact upward curl. Do not reproduce a dejected or wounded face; this is a reluctant promise to meet again.",
+      "prompt": "Precise local correction of the tail ONLY in this existing full-body transparent character sprite. Same adult heroine aged24. There are currently THREE fluke-like pointed lobes on the lower-right tail: a left-pointing lower lobe, a down/right-pointing lower lobe, and an EXTRA small upward-curled lobe above them. REMOVE the extra upward-curled lobe entirely and repair that empty region to transparent alpha. Keep ONE smooth continuous blue-and-white whale tail from the lower back, narrowing to ONE terminal joint with EXACTLY TWO broad flukes and a clear central notch. A whale fluke pair is a flattened left/right pair, not three petals, not a fish caudal fan and not an extra appendage. Preserve the existing two lower flukes' placement as much as possible. Keep ALL other pixels/geometry as faithfully as possible: recognizable face, warm shy look back over shoulder, hair strands, bow clips, fin ears, adult body, arms, opaque sailor dress and white double hem stripes, two healthy human legs, white ankle socks and closed white shoes, framing, scale and shoe baseline. Actual transparent alpha background, no scenery, shadow, halo, checkerboard, new jewelry or injuries. Keep original portrait aspect ratio.",
       "size": [
         1024,
         1536
@@ -7938,10 +7934,10 @@
       "source": "R01_clean",
       "approval": "Adult identity, two legs plus independent whale tail, alpha composited on checkerboard inspected",
       "file": "content/assets/art-upgrade/originals/P09.png",
-      "bytes": 1986694,
+      "bytes": 1956391,
       "mode": "RGBA",
-      "alpha_zero": 878728,
-      "alpha_nearly_opaque": 608037,
+      "alpha_zero": 890906,
+      "alpha_nearly_opaque": 594489,
       "generation": {
         "auth_mode": "Codex ChatGPT OAuth",
         "endpoint": "https://chatgpt.com/backend-api/codex/images/edits",
@@ -7953,20 +7949,20 @@
         "requested_quality": "max",
         "backend_reported_quality": "medium",
         "usage": {
-          "input_tokens": 1812,
+          "input_tokens": 1805,
           "input_tokens_details": {
             "image_tokens": 1536,
-            "text_tokens": 276
+            "text_tokens": 269
           },
           "output_tokens": 1372,
           "output_tokens_details": {
             "image_tokens": 1372,
             "text_tokens": 0
           },
-          "total_tokens": 3184
+          "total_tokens": 3177
         },
-        "elapsed_seconds": 62.1,
-        "created": 1792039777,
+        "elapsed_seconds": 71.11,
+        "created": 1792079214,
         "reference_image_count": 1,
         "outputs": [
           "C:\\Users\\袁力阳\\Documents\\Codex\\2026-10-10\\new-chat\\work\\ambient-audio-checkout-proxy\\content\\assets\\art-upgrade\\originals\\P09.png"
@@ -7974,10 +7970,15 @@
       },
       "requested_size": "1536x2304",
       "direction_queued": true,
-      "started": 1792039717.300176,
-      "elapsed": 62.4,
-      "sha256": "e2874b2a4b6a8086a18f2d70e0f86eb15ae87a4a5143452c46e621f77ade66e3",
-      "review_note": "本轮逐图视觉复核：回望带小幅嘴硬笑意，与低落背身L12可明确区分。 待实机再查手势遮挡与连续性。"
+      "started": 1792079144.7892818,
+      "elapsed": 71.6,
+      "sha256": "6f85d5b718070b94bd37011f8538c63a9a603409d857fd0644d16acfb14fb5cf",
+      "review_note": "灰底合成和全身放大复查：多余第三片上卷尾鳍已去除；保留原双叶、两条人腿、鞋基线、脸和回望动作。透明洞隙未烘焙背景。",
+      "correctionBaseline": {
+        "sha256": "e2874b2a4b6a8086a18f2d70e0f86eb15ae87a4a5143452c46e621f77ade66e3",
+        "reason": "tail",
+        "original": "originals/P09_rejected_tail.png"
+      }
     },
     "P10": {
       "id": "P10",

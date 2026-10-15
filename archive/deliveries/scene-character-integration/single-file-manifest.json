@@ -1,0 +1,892 @@
+{
+  "entry": "海风与布丁_场景融合试玩.html",
+  "sha256": "f7b3759f55b95535b03c803da29017557297568cd2075883f2689d5a2c3dc2fb",
+  "bytes": 157682589,
+  "assets": 221,
+  "files": 220,
+  "lines": 3315,
+  "chapters": 18,
+  "scope": "Current complete offline story; hosted online chat still requires the backend.",
+  "media": {
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/C25.webp": {
+      "bytes": 455042,
+      "sha256": "637ba3c6976ca6510dcebf980844c1f8a8698737c7478b6cd176d771f0122d71"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/C01.webp": {
+      "bytes": 599606,
+      "sha256": "1821e49e6ba733ea553ba1a70de3f3e38557178ab94b36fb10f003f3e98c227c"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/C09.webp": {
+      "bytes": 559596,
+      "sha256": "7b850d04bea093edfa0674da591103045803d1979252a7f4b5f836434727a6d9"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/C14.webp": {
+      "bytes": 601760,
+      "sha256": "5049dafccb833219d015b8c53b18c24cb9663c4457997537c8a360821a26a1af"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/C18.webp": {
+      "bytes": 504630,
+      "sha256": "682486c3878d7fc9f25082b436b06c633dc6a2d5556d937b95edde7ae148c33a"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/C07.webp": {
+      "bytes": 568400,
+      "sha256": "1c6224491608e043f02e0c451a77c35c2bc26606c8433d5dd026bcae3ff213a8"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/C11.webp": {
+      "bytes": 693238,
+      "sha256": "1a4fc7f25d1ba6ea6581e10e96350441d4d8e9e192ceedbb986bcdbfcf684230"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/C19.webp": {
+      "bytes": 420632,
+      "sha256": "7b29efe9766d0bd75e9b879945ebefd41e90416a2c62eaeb007e45fd70a3fe81"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/C10.webp": {
+      "bytes": 674876,
+      "sha256": "1ce9f0b78d04ffaa2c32a2ab90fe7638b4216b80a598e8b8e1cfac8151a18153"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/C22.webp": {
+      "bytes": 585032,
+      "sha256": "ea18086627bab1d31c7a53c8ee512ad7a13bad02ded47329c0b13c543c136364"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/C13.webp": {
+      "bytes": 524464,
+      "sha256": "46edea8849b55a5a4d0a0d8f6e29f47736754763c94472c641bf5236de54b1b3"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/C06.webp": {
+      "bytes": 552064,
+      "sha256": "ce7591fb184d53127e7388abda7e3cd81cd0f5166ef2809130e2b912aec8289c"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/C03.webp": {
+      "bytes": 520934,
+      "sha256": "467e06991b00c84a0138b2efc5ba5aa3556b138754564f66afc73efb8d9688bf"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/C16.webp": {
+      "bytes": 321580,
+      "sha256": "8242729d5659d3eaedf81ad7b3a2947b64ea42243b4b132c67e5eab9c5b939f3"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/C12.webp": {
+      "bytes": 432338,
+      "sha256": "ebefb11738a78a7834a9e65b06c1ad436fcf2abd27a1a22453f7a523b2073ef7"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/C04.webp": {
+      "bytes": 537904,
+      "sha256": "42706a539b5e8f6b117b594a8018d61b0b422e04f33c2d43cdbb839946bbdb8d"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/C02.webp": {
+      "bytes": 575422,
+      "sha256": "fe5f53d6d20352e547916ea29399e22b18f68d4c31879d864f9056efdb46f323"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/C15.webp": {
+      "bytes": 525754,
+      "sha256": "311baefc822e2d415bdc0a69f0e16acdfc5882ff752826b69c49c44bb1bcd0d0"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/C08.webp": {
+      "bytes": 600358,
+      "sha256": "82130372509b8bd8a9cea2d97239db0e8293397876a83d0fd53dd92b84328f3b"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/C24.webp": {
+      "bytes": 543472,
+      "sha256": "b6415fa974417f3d9d0526508e39d6695d7948e011dff8242a0601efd1715924"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/se/UI_CG.mp3": {
+      "bytes": 40585,
+      "sha256": "b0f99ac4b065a0345c2a0d69d01eb010d78cb2b1d8b5bfb8b660f8ed56121afd"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/se/UI_好感上升.mp3": {
+      "bytes": 12163,
+      "sha256": "5e359b32f76d1dfcdde9853e986050a331872b8fc2aa2d39f0b0fc5b87cf0da4"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/se/UI_好感下降.mp3": {
+      "bytes": 18433,
+      "sha256": "4423a23b9e09de8489ec766e639ce120bdb8e9e2654722783c3e6e653193d460"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/se/UI_存档.mp3": {
+      "bytes": 21358,
+      "sha256": "c93227030378ed413ad46f01c040cd3b4061d47e57da1dcf2603fdc9b30469f6"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/se/UI_尾鳍标记.mp3": {
+      "bytes": 4640,
+      "sha256": "2a60d6a6186defc40cbaf966a3cc611ca8525299194479039034c499547fbecd"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/se/UI_新结局.mp3": {
+      "bytes": 72768,
+      "sha256": "2689ca8d5ec6ccf78dd6ea8fa4519ddbac601b9ea3b74fbd662768537df91a5b"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/se/UI_话末.mp3": {
+      "bytes": 63154,
+      "sha256": "6168139a9256a51434c74e52938a07af18e7a43c68d161b8928c8770efd9fe87"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/se/UI_超时沉默.mp3": {
+      "bytes": 33585,
+      "sha256": "44dceae380410714f8ef03a735a4c70c124c2858bfdcbb126a46c1a69d4c8f9f"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/se/UI_退潮线倒计时.mp3": {
+      "bytes": 64826,
+      "sha256": "5aa404567c4f2346002f1e40cd1778ccc08eb8de2cea993909f93e9683e05aaa"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/se/UI_选项出现.mp3": {
+      "bytes": 3386,
+      "sha256": "64ae2b413cac2f2072be39ef60ff61e088307581f4f5bd7276fb7f60bd9f5e39"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/se/UI_选项确认.mp3": {
+      "bytes": 5894,
+      "sha256": "299aeb2a4f9a2c5efd3e5b193b469cb8888d0410978db051701bada796fa7fbd"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/B28.webp": {
+      "bytes": 510722,
+      "sha256": "6232af0e6649d361533982def24e7c28b2dc9618b355266f2a375d005e15dff8"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/B30.webp": {
+      "bytes": 542454,
+      "sha256": "dd39838c051a7a83b3bd26c0c6db06189ed64b4a69520454e8a8254647766032"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/B29.webp": {
+      "bytes": 508406,
+      "sha256": "4a7feb709668412ea588a709ef5039877394b414ba7e7319e725c52698ce4176"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/se/剧情_发梢滴水.mp3": {
+      "bytes": 63572,
+      "sha256": "64def569357e0bbcb1cd7d2423a5d645d99ac0b9ab4ff5985efb6557d4a2fb75"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/se/剧情_合上笔记本.mp3": {
+      "bytes": 4432,
+      "sha256": "d2ca44a292ff8379e486b3c983cc057c88b7187fe1e3d86cb94837a680fc620b"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/se/剧情_呛水.mp3": {
+      "bytes": 90740,
+      "sha256": "40f42b2762d295d07da0f32fe6f800173f7a729995bea469b5f0021f55ef8859"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/se/剧情_定格重音.mp3": {
+      "bytes": 20941,
+      "sha256": "a815fbaa0d9631b92ecb62883c69a3216a814a3bb072ff74f13888b2e88f03ce"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/se/剧情_尾巴急甩.mp3": {
+      "bytes": 40167,
+      "sha256": "3614a5e8c1c94a61d81083eb27a4af367da3ace80986471d3ecb6ac3aa3cdfaf"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/se/剧情_尾巴拍平水面.mp3": {
+      "bytes": 30136,
+      "sha256": "357aae63a81dbd65af49ee8a551c49841b886bd6edaa98462076cd74cb4f6137"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/se/剧情_巨大拍水.mp3": {
+      "bytes": 35987,
+      "sha256": "999454e0fba2708a33f8764146b0e7737c54c69e32ee3b897e5b18e9a2933f03"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/se/剧情_心跳.mp3": {
+      "bytes": 89068,
+      "sha256": "732baabad72b3b3e145af7dc9090a34997977cd18b3c80185803e67a574b7a74"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/se/剧情_手机扣礁石.mp3": {
+      "bytes": 38913,
+      "sha256": "675f672aece1c25f6bff27832e9bba7fd76171949b40a7a6bc4a93c23ca4a980"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/se/剧情_手机来电.mp3": {
+      "bytes": 10910,
+      "sha256": "37e2711acfa6c7ae34ccda9cdd54512eb128aa1d5afe5ec7191c510394c12656"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/se/剧情_接挂电话.mp3": {
+      "bytes": 41422,
+      "sha256": "b78b3d4c81177d6e5ed42e2ac7c6c71280a4d4c67f8a2b72b7aece599397bef5"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/se/剧情_撕开小鱼干.mp3": {
+      "bytes": 39749,
+      "sha256": "f8b5e8d8f92c374c5cdbcd3d0d956ef0afd43eb0b30104ff4d763b1ec55a95c9"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/se/剧情_水花溅脸.mp3": {
+      "bytes": 14150,
+      "sha256": "87b10e1c6db77123d900e174fc4b8847903bb83470755a496bdfa34c5195cb2e"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/se/剧情_海鸥.mp3": {
+      "bytes": 80709,
+      "sha256": "674deb9503fe8baded0847a65b6af51aef02472d4a3081f8714c871b669d7a79"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/se/剧情_海鸥叼食.mp3": {
+      "bytes": 73185,
+      "sha256": "15100a147506772ce7b81a4ce3f594731687da2dbf6a09965d69a493241ea1a4"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/se/剧情_深潜水压.mp3": {
+      "bytes": 90322,
+      "sha256": "202508575e2bc041b7a04bd25abb9c62e094823c6e9d190dd4cbf2cecc24998c"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/se/剧情_窸窸窣窣.mp3": {
+      "bytes": 45182,
+      "sha256": "7f6e07ee3f19860fc766c2d60c49a2795bb083fa0da6093d29bc3d469aa5c39a"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/se/剧情_笔尖书写.mp3": {
+      "bytes": 55213,
+      "sha256": "e92d5749955cc2ae117035e9e9153b7b6bf143c5ad219ad91afc127ebbe71763"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/se/剧情_落水.mp3": {
+      "bytes": 46436,
+      "sha256": "e901df7e6f25624c1dec109eff1d002b254568a16dd537caa0124deaae62b704"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/se/剧情_风铃单响.mp3": {
+      "bytes": 34733,
+      "sha256": "565fdd98872f0208a3a8e0dc7915c29e0cf1368468f274a789cfa45ac99b6c30"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/B35.webp": {
+      "bytes": 490216,
+      "sha256": "eb723c3ea0c160e058010da15679c1798cd71baf5ec783af1fdd11e6dab3d970"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/B31.webp": {
+      "bytes": 570382,
+      "sha256": "c74a452005b7bc0af2b4edc57a740def261c0129b69b1c99701657c242e8e33a"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/B26.webp": {
+      "bytes": 782576,
+      "sha256": "b45bad51068e306cc0d99cb4714033ddbb6c222078505082b108f44993beb433"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/B27.webp": {
+      "bytes": 614502,
+      "sha256": "c73a5b168a05b1e7b77991803d95c1c7bbba356963ba0c51bf2af427fcd9688b"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/T01.webp": {
+      "bytes": 627438,
+      "sha256": "a9f001611aa9cfe6b313793f86f3b9f68010ec11629c0e2fa4e6c9f2d3d93cbb"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/B20.webp": {
+      "bytes": 839048,
+      "sha256": "18f3c88bc4fd82f4bad89f2976db8a9ed811559b1f861c36c54bcd80a09c3024"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/se/尾巴_卷圈.mp3": {
+      "bytes": 19269,
+      "sha256": "41eb61cd98703fee10920e2bcbe6dcf7c7d83afd0db1b4c3e389e9c108d03943"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/se/尾巴_慌乱甩圈.mp3": {
+      "bytes": 56467,
+      "sha256": "02ccb305757a0e4dd45b940754231d224f284b402178e268d3121521315d04d4"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/se/尾巴_拍地.mp3": {
+      "bytes": 7566,
+      "sha256": "f95734bfe73eca54dd4e2843dcd085f7ffd5e048908e823179fe1df90f7d7a0e"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/se/尾巴_拍床.mp3": {
+      "bytes": 26374,
+      "sha256": "7e729dc926d127250033b38596cd19ec3fd4f3b72960ddcafe43209d1ca9b2bb"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/se/尾巴_拍桌.mp3": {
+      "bytes": 40167,
+      "sha256": "31877b9ef39af46244fe7fb1a6c17b15619899aeae12c588cce53c024e92d625"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/se/尾巴_拍水.mp3": {
+      "bytes": 26792,
+      "sha256": "32040d67fc9a6a179fb07c083d2106a997225c958aedf7250b7753e7bfce799d"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/se/尾巴_拍沙.mp3": {
+      "bytes": 24181,
+      "sha256": "874ef28464b00d560979e29377a95ea68a384da6a433e294b1c3331b7c0863cc"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/se/尾巴_放平.mp3": {
+      "bytes": 5373,
+      "sha256": "3e02dbffac3a12eb9f3cef44c978bc363a579d321fbb77c6d6975a9bf1e34df2"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/se/尾巴_缠绕.mp3": {
+      "bytes": 65244,
+      "sha256": "376058543f9127d703b3473da82d862819e1b9fa82c8f979a4a8c1ff9ed1762a"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/se/尾巴_翘起.mp3": {
+      "bytes": 21673,
+      "sha256": "d0dc832b312e043209c8b268c956299712c9fd1b9375946622d4e79e05e95e40"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/B16.webp": {
+      "bytes": 585214,
+      "sha256": "f0efe06e6e0cb948d8c541f1ffc3756f2c7569125db3522c7c9c80576f23e2e1"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/B15.webp": {
+      "bytes": 615852,
+      "sha256": "b0604f64730a6264eb74c5971c24990a096fec4b2b3bc7d529108dd510a5693f"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/B17.webp": {
+      "bytes": 473882,
+      "sha256": "1411da12c21b143364b4b16f57fafdbe08f2c0bfe379d91bce295b2ea5dccf78"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/B37.webp": {
+      "bytes": 745542,
+      "sha256": "4fbcb2b96db608ef38d0cdd5cf07a1e24fc753828b5a1e8b873260a69d600527"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/B08.webp": {
+      "bytes": 627726,
+      "sha256": "ffa579c04849319948ba36005134066f8a1bca2bd7e5cf2190351c7578d4e606"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/B09.webp": {
+      "bytes": 636822,
+      "sha256": "d196d550eaa01cb00427581edc3fee0a4353bd3d3d099578cb1dd1ec40c9d142"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/B10.webp": {
+      "bytes": 682280,
+      "sha256": "6c03410101fdc9819c562f55e9841cff33c6795dc0769f48136e91d39d435ba8"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/B02.webp": {
+      "bytes": 633190,
+      "sha256": "13768d088f7e1c0a92f42222ec76a2d1092068138fee03682c2edb234ef0cbfd"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/B04.webp": {
+      "bytes": 629422,
+      "sha256": "32c7a2fb065d68e99e148fd2faf538ecb6e970fb1010bafc3e8e53f06051e3f4"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/B01.webp": {
+      "bytes": 631538,
+      "sha256": "ff629bc9e60d9fc6a361a26467238545fea69ebaf927239472dafdc73971b4d0"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/B03.webp": {
+      "bytes": 644762,
+      "sha256": "72d4b104b8a9a7e6f8da17906145b0f6c2711d03aaef7a95a8a63af194630b07"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/B14.webp": {
+      "bytes": 405812,
+      "sha256": "6223df46623b1d59e097dcf813eb5ce2ad79e5bd1dc6e4e5360cd7aa4fb2048f"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/B11.webp": {
+      "bytes": 535616,
+      "sha256": "f435a5d8b5332f2f4720f0f6731460e25a1c7bcd62ade3870904081e3d044edc"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/B13.webp": {
+      "bytes": 561038,
+      "sha256": "5615f7724f7a4fb93f37befa787e5ce09f5145e8467bfa1b5356af94edc95ee7"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/se/环境_帐篷海风.mp3": {
+      "bytes": 387178,
+      "sha256": "c2f7de0f9c2661a66058ef94fe6ed5fcd4b56e093bad87db08e070025b9e3b0e"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/se/环境_店内底噪.mp3": {
+      "bytes": 960931,
+      "sha256": "bc301811a42c22f84b32698eec08e97d943da87a6f4c480baa19ecd70350a2a3"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/se/环境_水下嗡鸣.mp3": {
+      "bytes": 960931,
+      "sha256": "bfa49d6343fc253455433ff199f212292d0c39bc2786e0bf89779b53e54b9572"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/se/环境_潮声常规.mp3": {
+      "bytes": 481114,
+      "sha256": "71c6657d5c42f65c3932f1503a5fd73e050dcde118a9fa5e344e58d09de1ebb0"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/se/环境_潮声暴烈.mp3": {
+      "bytes": 481114,
+      "sha256": "049dc0cc4f3608a59e1a01afbcb64b0d8e7fe14180ccd99d6e33e2a0efa5a90c"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/se/环境_潮声轻.mp3": {
+      "bytes": 481114,
+      "sha256": "66ff5e985d778a1ec75c4eef7dbc907b15d0fb518f8994090723ce28faa8817b"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/se/环境_潮声远.mp3": {
+      "bytes": 481114,
+      "sha256": "8ed1b9c27d56e65fad641cf49a4c255b8c7c871551d77cdcc76ed62d3d242597"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/se/环境_潮声铺底.mp3": {
+      "bytes": 481114,
+      "sha256": "14aac3175ee4245379b949bf0781ddb3b51f6522a5b6082b6e37a1401677e330"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/se/环境_篝火.mp3": {
+      "bytes": 960931,
+      "sha256": "43d454504a63dc486bb13bb29574cd3022977b7f28b9f0e78608ce3c313a9c7a"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/se/环境_贝壳风铃.mp3": {
+      "bytes": 436392,
+      "sha256": "f193019f578e7652cfeff64f33aa32815865cbd33bfa13bd3a77f0bfa4df15b3"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/se/环境_集市人声.mp3": {
+      "bytes": 960931,
+      "sha256": "2bb7b85b821c55e1c770375357f1351daf4231ee26f40eab08183fe3e06cbe11"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/B05.webp": {
+      "bytes": 667780,
+      "sha256": "cb7b6e7881c115bfcf9777c70bd7c6f43f6d1fdddf1af39b714c5c1c2cf79780"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/B07.webp": {
+      "bytes": 756326,
+      "sha256": "6029b203ac914092db488e791895493ee6aba8cf99001993051f0e098cdad335"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/B06.webp": {
+      "bytes": 680148,
+      "sha256": "1159d379f60531d68c1e07579a5146b6154cb57669d4620caa7d967368ea10cc"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/B42.webp": {
+      "bytes": 484176,
+      "sha256": "80047e9ae816f1af86b8753751acf3c11530a11959b39c1d24113bff86e2f6b5"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/B41.webp": {
+      "bytes": 550914,
+      "sha256": "30c7e436277fccb748d0406192fe62bf34f900f08ca9d9cf686b27f7b0e21f2b"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/B38.webp": {
+      "bytes": 493760,
+      "sha256": "364b0a33468350f7c18ff645585a4e172bc496b574f1a04f943d44049513edfd"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/B25.webp": {
+      "bytes": 696976,
+      "sha256": "61f712dc2fc99457dadf8b55220ee8ba6f662300603dd4f2ad6d3edbcd054232"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/B21.webp": {
+      "bytes": 703580,
+      "sha256": "b18115988420c9f70a60914583b65bbb9324175f0ff6f872cd0d974cf1e20377"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/B24.webp": {
+      "bytes": 652588,
+      "sha256": "2b50b2d74a744cc3f43a9b4edafa0c47a21ed4bb3ea288c3a7b15dbbe728a851"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/B23.webp": {
+      "bytes": 686362,
+      "sha256": "82736a3ae1f01920131cbd878fe79bab681dae51e5f8a781b9c88f09f2cfa14c"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/B34.webp": {
+      "bytes": 585398,
+      "sha256": "5f057c171213d822e76e9cee9df3f1d3b975213eb883ecd1cca0e3b82febd2d0"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/L01.webp": {
+      "bytes": 877778,
+      "sha256": "4f631b0137528e48347b619b4063c9f2127960e3c982b95f951477de2e3f49f0"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/L13.webp": {
+      "bytes": 897356,
+      "sha256": "cd0738a4865dc20165e05979cad68b507f93c516ba5d3e4d1e0d96d6ed3c313c"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/L15.webp": {
+      "bytes": 889230,
+      "sha256": "dd2bf5e3ec4ed70522c64237bca50aa0cc416c404d2d4a97a4a61a61a0665d25"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/L14.webp": {
+      "bytes": 909072,
+      "sha256": "d612811da20cac2202d8dd8686b92a21338a2b7cc6a61610dee69febd977ed34"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/L16.webp": {
+      "bytes": 904886,
+      "sha256": "c5bdf0467b80a490b7bce1fc067caecafe984ff9d92e6a82e250ff9270fd887b"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/L04.webp": {
+      "bytes": 926390,
+      "sha256": "a612ff65a5d223f9d8f7c55bdb7332a5dbb978d3e73479a08de4b377b3c82d30"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/L21.webp": {
+      "bytes": 858172,
+      "sha256": "60006f957cfd732fdb0395af19a76fde8d28a64e482cf0c21f414b3ce3bc8aac"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/L23.webp": {
+      "bytes": 941548,
+      "sha256": "3a5664a882b7204f9d3ca12531a80d2214fed2450386ba739390a6d378ad761d"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/L22.webp": {
+      "bytes": 838778,
+      "sha256": "08ecdfe88c58b75827de28b8b700d18bdc7c2885de0576a5806c9442c4e0a7ab"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/L03.webp": {
+      "bytes": 817370,
+      "sha256": "62127b824b9d5949f3a88644008073c0da57042d5910bdab244d14a6ee893d52"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/L02.webp": {
+      "bytes": 897102,
+      "sha256": "5012386bb8835d5a04eab7e493345b773869cb1b18f96e6b78439cdd596134f0"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/L06.webp": {
+      "bytes": 958002,
+      "sha256": "e8a1fa95578db925123ade27eb971b4ad3d0169bf2e8c95550945a16dddfbdb5"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/L08.webp": {
+      "bytes": 853486,
+      "sha256": "025432eef58afbe82773e2e37081190da376a73fe11e0116c67150e51f0470dd"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/L07.webp": {
+      "bytes": 840886,
+      "sha256": "099c795e28cdba73f18ce42667265b27eb0baccdfdd389ee69cb74d3e5707e29"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/L31.webp": {
+      "bytes": 879170,
+      "sha256": "afa53c8267acf3645074f8c9d3b2237fd1fe05f691062fda4f31482b73df1ed7"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/ch/鲸鱼小姐_泳装.webp": {
+      "bytes": 99740,
+      "sha256": "a4586e67ab12737b7b7f77003c36592244c2bde26c371d61dc03391d508525eb"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/ch/鲸鱼小姐_泳装害羞.webp": {
+      "bytes": 96000,
+      "sha256": "f832b242bbd311e8d8302ec6623030fdb3944e7c965333c0123cf47d9e6c5f3f"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/L19.webp": {
+      "bytes": 1034362,
+      "sha256": "4fa54e86575263b943bf699512d298348c38b023d70ebd2dda0eec4d212af5e0"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/L05.webp": {
+      "bytes": 860832,
+      "sha256": "abd0fc971e888318570d67694df0e74da282a12d2c6cc559c1a3ad3a1af60dae"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/L28.webp": {
+      "bytes": 879622,
+      "sha256": "f24d863f532ccbcc7c4cdf7e067b40fa5d4c585ba8f13de95be489cc64daaa02"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/L24.webp": {
+      "bytes": 891026,
+      "sha256": "12cbbcc5b1ade2a3ba5c77f00ec21068c5938b27090c22ad321bcda99cd776f5"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/L25.webp": {
+      "bytes": 922606,
+      "sha256": "52ff59473cec7c1a1cbee86e3c622333e5e7a478653a0251aa0a8bb4038ece23"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/L26.webp": {
+      "bytes": 891334,
+      "sha256": "3246bf10f2fd87df5ccd218a96e6e99a69a5ff68fdcfcc40e16c43c3d688f4ed"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/L29.webp": {
+      "bytes": 892272,
+      "sha256": "1b35692eb0a1c6b7ba433d91f2f0025807b9376dfb4a08ac95f9cb8456f54ea5"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/L30.webp": {
+      "bytes": 916994,
+      "sha256": "2762e3bf9d7f354112675a0a3a8128b598af7306c888cbc0dcd655a595abfd4f"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/bgm/bgm_emerald_dream_main_v01.mp3": {
+      "bytes": 3066777,
+      "sha256": "02162232f3aa9e5465ea06d1b4968776375f04d6fbeae1c9e39e5623eede44fa"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/audio/amb_a01_waves_normal_v01.ogg": {
+      "bytes": 561884,
+      "sha256": "582551c72c3134488afb04a101f74f2a9678168bc91cbe2b47a10cc549055a86"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/audio/amb_a02_waves_soft_v01.ogg": {
+      "bytes": 587333,
+      "sha256": "e93187f819821801c104f4ff36c20b7fc05f9587a2c17b56d9a506f86543ea65"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/audio/amb_a03_waves_distant_ebb_v01.ogg": {
+      "bytes": 561393,
+      "sha256": "25e1ae1651874202b9cda9ad43f644039849ef366210ff8ac86fc29bbaacf3c6"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/audio/amb_a04_waves_bed_v01.ogg": {
+      "bytes": 545144,
+      "sha256": "8b60950a3b1bbceb26ec077b511bb82f940e33bf22ab11e0b1e26f1ea5f146ad"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/audio/amb_a05_waves_violent_v01.ogg": {
+      "bytes": 507093,
+      "sha256": "29f30c1e8d603a7904e6b1d890ecdf21802bc5dd04f5734e9ee3debd57b8720e"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/audio/amb_a06_seagulls_v01.ogg": {
+      "bytes": 174354,
+      "sha256": "5d86bd5b60c81a948910cdb1cd4b0239855cae6f4dc2d47736bdb6456861e06c"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/audio/amb_a07_underwater_low_hum_v01.ogg": {
+      "bytes": 349208,
+      "sha256": "fb85d79f6fae4026379b5181c70996b7a4859e81c0334f6c3713e101ec842bcb"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/audio/amb_a08_underwater_heartbeat_v01.ogg": {
+      "bytes": 31560,
+      "sha256": "cd458ed455ddd660cc08abcedfbabe1245aebc9c7d22f8dff8c5ba147645d7f5"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/audio/amb_a09_water_splash_v01.ogg": {
+      "bytes": 49749,
+      "sha256": "fe99c4d05b196fe705b0d09f2629ccfe24a8f16991e39942a573abd6d7a70e3f"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/audio/amb_a10_market_crowd_v01.ogg": {
+      "bytes": 679561,
+      "sha256": "7cf792d1b9e68761f366a21abdedcaba42728e0f38dd5012d83fad8c460e5c81"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/audio/amb_a11_shell_wind_chimes_v01.ogg": {
+      "bytes": 494787,
+      "sha256": "6b5f05fb2b0beec640bc53fc8682b2646908bc3581f73e42ca9f92d22ee46218"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/audio/amb_a12_tent_sea_wind_v01.ogg": {
+      "bytes": 276795,
+      "sha256": "6a2eaa7925fd134e0c92eb568681e61fa2baa9350bf122d1b2e7f118a9d6f246"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/audio/amb_a13_lighter_ignites_wick_v01.ogg": {
+      "bytes": 27571,
+      "sha256": "216abeac4de45cc18c5b70bbec46a0948039ad0b92eafc8fecd8c06e9be7c8d5"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/audio/amb_a14_campfire_v01.ogg": {
+      "bytes": 594703,
+      "sha256": "effa9615d28887aa1bc0af0f873301e97f5ea9675ba9aca2f7058c2fa640af42"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/audio/amb_a15_shop_room_tone_v01.ogg": {
+      "bytes": 418289,
+      "sha256": "8d24cbc4692d836b768cc681504534b91c74bfeac2a07c9c76ae9aba697e734e"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/audio/sfx_s01_large_water_slap_v01.ogg": {
+      "bytes": 31531,
+      "sha256": "55b8e864be3c03c7be1a71af127d5b05de83e84a853c6b8a80314d04847deb6b"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/audio/sfx_s02_choking_water_v01.ogg": {
+      "bytes": 102228,
+      "sha256": "4058f4b47a887d1555971141e22e17e8fccc5b3b9357a9510dd84c1468d09df3"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/audio/sfx_s02_fall_into_water_v01.ogg": {
+      "bytes": 39942,
+      "sha256": "34bbe02536c0fe2d0782553257140a30dba57e69d4172434b7dca68c5cdb9bad"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/audio/sfx_s03_splash_on_face_v01.ogg": {
+      "bytes": 38823,
+      "sha256": "e4424b546240a7456ce439002707800240a8947745a2c85d4de5545997b6301a"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/audio/sfx_s04_tail_flattens_water_v01.ogg": {
+      "bytes": 42079,
+      "sha256": "1cf32845defacf923261fe45c7b9f705157086922af9c97abeb9fbc73b71f991"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/audio/sfx_s05_seagull_takes_food_v01.ogg": {
+      "bytes": 46319,
+      "sha256": "8b104c7d70a2d236d9c8f37fbc4606b048167ee3ea326f419286ada4d91042f2"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/audio/sfx_s06_pen_writing_v01.ogg": {
+      "bytes": 55617,
+      "sha256": "d0275d9f5334d76b6cff59a72ad8a0acefe5aac1aa4210ce5d45709bf3ee93a4"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/audio/sfx_s07_notebook_close_v01.ogg": {
+      "bytes": 6481,
+      "sha256": "9689b1279e54e1b1105b6c0092da4dba0f6739456f01ac3517c1f7d79947eaf4"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/audio/sfx_s08_wind_chime_single_v01.ogg": {
+      "bytes": 64601,
+      "sha256": "a16eb44bcbfe010b52147f1a0f38fd1acdf70a3d7ef31744390dd6b98c2b78c1"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/audio/sfx_s09_phone_ringing_v01.ogg": {
+      "bytes": 21883,
+      "sha256": "493795ed2d57ae536af57f1e147bfc6c2cda1e3eb3fe3685b96b8ebcbdf373a5"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/audio/sfx_s10_phone_answer_hangup_v01.ogg": {
+      "bytes": 12675,
+      "sha256": "5a6a9baee3d0dc4607ec32fccfd1b9e8d90c7aba1d04416b450c59f5b4ae3783"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/audio/sfx_s11_tail_quick_swish_v01.ogg": {
+      "bytes": 32792,
+      "sha256": "b5455f80e4c2e80ff5338fb709e9c6823d6db3e865742d20e997c07cd6244952"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/audio/sfx_s12_deep_dive_pressure_v01.ogg": {
+      "bytes": 24298,
+      "sha256": "c98590e60acac27ecb86b39be191565dc05ac59770b9a736c67920e60ffd059d"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/audio/sfx_s13_hair_drips_v01.ogg": {
+      "bytes": 83456,
+      "sha256": "b53b52172c5a576aba25e9fcbbce8216c906a6649db591816507f0b478737117"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/audio/sfx_s14_rustling_v01.ogg": {
+      "bytes": 40494,
+      "sha256": "c6227a5f9ebbdbffba8a194dc797bd31c60c2f53b37fe1ff370adcff86955daf"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/audio/sfx_s15_dried_fish_tear_v01.ogg": {
+      "bytes": 39451,
+      "sha256": "7fee89ceeb3293e64dee35ba1bc374f7ac80d276080641e17219e8b5c77f5771"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/audio/sfx_s16_comic_freeze_sting_v01.ogg": {
+      "bytes": 18691,
+      "sha256": "ed23a5e9822adc1de807749bac7881bf179de44d157c8acca9b20965e8f14ba5"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/audio/sfx_s17_phone_set_on_reef_v01.ogg": {
+      "bytes": 148764,
+      "sha256": "afff6bf5cf00b2865540d6e430bfd5d4b28c18d613b6beb36f6d86cbb787e333"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/B39.webp": {
+      "bytes": 466322,
+      "sha256": "eb8696ba1fcaba8d3c26dcea0c124abaa15059f7d78177f023b10cc3cef18d6a"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/audio/tail_water_light.ogg": {
+      "bytes": 9230,
+      "sha256": "db1b7e1b88f481410fcb77a009eaee102c2adeadd3bc38d21d3e70fa774a3b52"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/audio/tail_water_double.ogg": {
+      "bytes": 14390,
+      "sha256": "26ef5beb595b363d8234829d6fd8545554a6b91d72ca5d38384116c64e4000dc"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/audio/tail_sand.ogg": {
+      "bytes": 10133,
+      "sha256": "cfebc8c81d5d69815cb66cc22e413e111c65b97d43fe85710e2b3fd80e8e3019"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/audio/tail_wood.ogg": {
+      "bytes": 9944,
+      "sha256": "83a90edb8c59215aa34709f5f755ba6b8e086af0aeeb8aa17eef95045ab2cfd6"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/audio/tail_wood_leg.ogg": {
+      "bytes": 10142,
+      "sha256": "d612b34dee7650066df68748ed37f70e302c4ae7294a25d192b62bc4318a746d"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/audio/tail_soft.ogg": {
+      "bytes": 6459,
+      "sha256": "f3f1014930a418e8c778321ad5bd7d13e898117d8135f002b4e2fdec7c8e912f"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/audio/tail_close_door.ogg": {
+      "bytes": 15556,
+      "sha256": "2c096de42148efa81bf78c2099f3937dda6b8057c87d9fa726e72278e4fa6885"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/audio/tail_floor_review.ogg": {
+      "bytes": 8609,
+      "sha256": "55df8f3184b732d9b5dd68a670d6c25bd42a2cbe02ff49322573485072c2f295"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/audio/tail_curl_review.ogg": {
+      "bytes": 15177,
+      "sha256": "b932c150ef6d4fdfb67eeeb0344964f20bae9e2a8282d51e57821cc5fe0ac7b9"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/audio/tail_raise_review.ogg": {
+      "bytes": 105876,
+      "sha256": "0b02b66a8553c11bcb7def7c1400e87f163c931526d19cca36ccc7b013187525"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/audio/tail_fluster_review.ogg": {
+      "bytes": 69249,
+      "sha256": "843f1f4d47ff6de0cd6061b2057895e1dc5a78433a156cf78bfbdba16be64674"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/audio/tail_wrap_review.ogg": {
+      "bytes": 149312,
+      "sha256": "e72e12c0f2ecd7b01553571710a8281ae4a92a1bed8cf826b6c94beb5c2d447e"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/audio/tail_flat_review.ogg": {
+      "bytes": 7406,
+      "sha256": "89efae0ce27a02d5779c762654b8e4a9af1006e82b8c58a4991f0369f66c35e6"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/B36.webp": {
+      "bytes": 466588,
+      "sha256": "bee43396ec934d6c3e87c31b8a81d939b88de5c880b397fc7b1f3c399f9a2422"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/B19.webp": {
+      "bytes": 437016,
+      "sha256": "fb689d74e7e79a33e75cc38634476987df482f8569020f1dcde14248008b902f"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/B40.webp": {
+      "bytes": 499370,
+      "sha256": "3daba2211f6018987dd9376a74d86a149bdb68e215e53843e234b84dbf5ac640"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/B12.webp": {
+      "bytes": 457620,
+      "sha256": "547d06b960b08bdf004d2fd6d12585da1cf57c540e2fd9063060780b5c3a024d"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/B22.webp": {
+      "bytes": 710200,
+      "sha256": "13e86ab003bb9b2a5fcd34111014b97a9ae15688927b9a2f96c4d09c17f3f3f2"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/B33.webp": {
+      "bytes": 608096,
+      "sha256": "06bfa0e1e8ef41b2ead4e010597d994327881fe0d2d8f6de76bd0ebac35b2ba6"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/bgm/atri/bgm_atri_e1_comedy.mp3": {
+      "bytes": 2036697,
+      "sha256": "3342a33f9c41c9bdaed932d287d955a1fcf21e8e64757857114e0e400fcd03c5"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/bgm/atri/bgm_atri_e2_deepsea.mp3": {
+      "bytes": 2322969,
+      "sha256": "70f119348fa351452a0573454ec482dba76a20fe015c2be572a10882a3ea3021"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/bgm/atri/bgm_atri_e7_reflection.mp3": {
+      "bytes": 4466996,
+      "sha256": "1e1f2f226d15142dbf05134aa61c48a5f6ae850dd46e4d985a3754588dfc3fe5"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/bgm/atri/bgm_atri_e5_e6_candidate.mp3": {
+      "bytes": 4089441,
+      "sha256": "372e8b3cd2b991e4188d15df1b586ae3f250f7a63a9844a95ee81e73606d288e"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/C05.webp": {
+      "bytes": 550812,
+      "sha256": "d921994262c0efca203a381454f908236dd04c58ad10fbd2e4624551ba2bba7a"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/C17.webp": {
+      "bytes": 503034,
+      "sha256": "7a434ff3c08fdbb36b50f9e5e93bdf90f34e819b8226be49bc25da5243278f0a"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/C20.webp": {
+      "bytes": 448032,
+      "sha256": "2fb7ec110f35c5d19582f0b544aa6f7a762d6fe858c2012f0bbd6c3ed8fde681"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/C21.webp": {
+      "bytes": 512650,
+      "sha256": "18822b69e75e03ce255929a26f0537cd717a23811454dca79d840102425831e7"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/L09.webp": {
+      "bytes": 854610,
+      "sha256": "d8452ddcbe4fc21a0dd24397ca7ea6351eaf9ffcbbbfb8df996d416c294d44ff"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/L10.webp": {
+      "bytes": 868294,
+      "sha256": "ad23c42d3d4384011200112fa7490b44df9511b12c5a07d4a705519e6f2fee7e"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/L11.webp": {
+      "bytes": 878638,
+      "sha256": "4965426b8c47238094e69485e311bee75fdffb5ca04f0cca48c186626bf91322"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/L12.webp": {
+      "bytes": 840200,
+      "sha256": "0f48302da4a3fdd195bdc1ff21afed38328cd98240fc4228f008c25e9c280182"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/L33.webp": {
+      "bytes": 1048232,
+      "sha256": "75cb80c536130ed4e6fb13a428bd37aeedc7c4ef059e56f3543bc6505c96a6f5"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/L35.webp": {
+      "bytes": 1333524,
+      "sha256": "56729d58c2bca23b3ab030fa0324a758bddba6b57c310ef5df9e9b82fd30cd45"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/L36.webp": {
+      "bytes": 863840,
+      "sha256": "fd70b0113fdcffabee6bcd54c03fa434bc4a86ca1ab18a5f0839cdf616125d5b"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/P01.webp": {
+      "bytes": 888456,
+      "sha256": "f25addf656758d0cd7a1e8f913e56f5ca59d201a5b36c3adcbb04975f3f2b080"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/P02.webp": {
+      "bytes": 840908,
+      "sha256": "3ec3a096c584278fc38689d56d4a5085ada052ddff5362865a9ecbde51537949"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/P03.webp": {
+      "bytes": 1258406,
+      "sha256": "36eccea35ade8bb1c52224f08c27e827fa9e9732f4515672b977f4579cefd463"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/P04.webp": {
+      "bytes": 1299874,
+      "sha256": "9ba2152512f6474d9dbd72b9e1b4b9e3a1757efad5ff9b0282f28853711117b0"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/P05.webp": {
+      "bytes": 1140414,
+      "sha256": "7f28e94bd465d0a4c04c32b0203f995980aa04332ac006ae31d1059769199b2c"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/P06.webp": {
+      "bytes": 893280,
+      "sha256": "c38a5bb32ebf33c322a6ff8f47021bfdea0aa1858fca9aafb621384c26af3ee1"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/P07.webp": {
+      "bytes": 923570,
+      "sha256": "600168a06e666d94680ac088ed67d499e3b7d3aa843005cab2e428223fe48389"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/P08.webp": {
+      "bytes": 929810,
+      "sha256": "1c71f7e42ce19a5c1c81a284b5ddbaff23bbfe844e3d2bf06a89044bf127df03"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/P09.webp": {
+      "bytes": 904854,
+      "sha256": "dbfecaf3adac995d12f1629247657ea97eff1a530504869bf0cbc88af7a4e568"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/P10.webp": {
+      "bytes": 862458,
+      "sha256": "4ebc9f7e2d58ac53dc9d10ed30e2e29a9eb4f3499e4350b0ca87a3935dc42606"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/P11.webp": {
+      "bytes": 1440384,
+      "sha256": "2b947b0778c28c55e294af3e68bcb37bce8cff0a69a5e4497db3ee57a766708f"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/P12.webp": {
+      "bytes": 1288248,
+      "sha256": "4d78f0728891b481987713f71792033118fa9dbec5cdc5e9603af3bf78ac7575"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/P13.webp": {
+      "bytes": 909912,
+      "sha256": "be1b64bc0c5c15721d94f6c0607883849ad501fa4497486f3ae074c552bb1cdb"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/P14.webp": {
+      "bytes": 877820,
+      "sha256": "e00880cb8763532f412832cb3e05b40b2220fc928902968d7c357127e48448da"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/P15.webp": {
+      "bytes": 931100,
+      "sha256": "34e4162d69470c38be481f919a2eab13be2ba8dc91a0b28711cafe325c397a5b"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/P16.webp": {
+      "bytes": 894708,
+      "sha256": "1bf6c18f9853036622865f7b5aa0cd4ce70a94f35166629a1c24366b7e293f6c"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/P17.webp": {
+      "bytes": 900352,
+      "sha256": "dfd6158c767f1d33e42031d6c53179271573cbdb8b0b8effc611f6eafad67249"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/P18.webp": {
+      "bytes": 908032,
+      "sha256": "8e4c8341dd358aaa5a24e304d5e8cb2cb5676285b03e1cf291ac092ed777c28f"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/art-upgrade/C26.webp": {
+      "bytes": 504082,
+      "sha256": "97c8776c182c360ba82366a77d5e290a0d85a8a98d1e0dbd67197d57cff20d71"
+    },
+    "content/imports/vnstudio/海风与布丁/assets/bg/scenes/B38.webp": {
+      "bytes": 233970,
+      "sha256": "834da57804f3e6d23cacb023ad81b69705fc9b099fe0b8f3866c581d4fc46897"
+    }
+  }
+}

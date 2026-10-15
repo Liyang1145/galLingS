@@ -1,0 +1,165 @@
+{
+  "reviewedScenes": 18,
+  "rapidPoseChanges": {
+    "actual": "art_upgrade_p09",
+    "expected": "art_upgrade_p09",
+    "active": 1,
+    "ghosts": 0,
+    "cache": 4
+  },
+  "cgShot": {
+    "reused": true,
+    "resting": {
+      "scale": "1.025",
+      "active": false,
+      "willChange": ""
+    },
+    "cleared": true
+  },
+  "openingRoutes": [
+    {
+      "choice": 0,
+      "picks": 4,
+      "visited": 124,
+      "vars": {
+        "好感": 15,
+        "尾鳍": 6,
+        "贝壳延后": 0,
+        "玩笑": 0,
+        "周目": 1,
+        "结局数": 0
+      },
+      "chapter": "第二话 · 暗号契约",
+      "cache": 6,
+      "ghosts": 0
+    },
+    {
+      "choice": 1,
+      "picks": 4,
+      "visited": 121,
+      "vars": {
+        "好感": -12,
+        "尾鳍": 6,
+        "贝壳延后": 0,
+        "玩笑": 0,
+        "周目": 1,
+        "结局数": 0
+      },
+      "chapter": "第二话 · 暗号契约",
+      "cache": 6,
+      "ghosts": 0
+    },
+    {
+      "choice": 2,
+      "picks": 4,
+      "visited": 121,
+      "vars": {
+        "好感": -5,
+        "尾鳍": 5,
+        "贝壳延后": 0,
+        "玩笑": 0,
+        "周目": 1,
+        "结局数": 0
+      },
+      "chapter": "第二话 · 暗号契约",
+      "cache": 6,
+      "ghosts": 0
+    }
+  ],
+  "choices": [
+    {
+      "width": 1440,
+      "id": "irma08fi",
+      "face": {
+        "x": 678.973274230957,
+        "y": 261.380859375
+      },
+      "buttons": 3,
+      "collisions": 0
+    },
+    {
+      "width": 1440,
+      "id": "vfo56g8o",
+      "face": {
+        "x": 723.9850845336914,
+        "y": 261.380859375
+      },
+      "buttons": 3,
+      "collisions": 0
+    },
+    {
+      "width": 1440,
+      "id": "fm43foif",
+      "face": {
+        "x": 816.4402542114258,
+        "y": 251.091796875
+      },
+      "buttons": 3,
+      "collisions": 0
+    },
+    {
+      "width": 1440,
+      "id": "dk3o5u4e",
+      "face": {
+        "x": 815.607421875,
+        "y": 254.513671875
+      },
+      "buttons": 3,
+      "collisions": 0
+    },
+    {
+      "width": 960,
+      "id": "irma08fi",
+      "face": {
+        "x": 452.6488494873047,
+        "y": 144.25390625
+      },
+      "buttons": 3,
+      "collisions": 0
+    },
+    {
+      "width": 960,
+      "id": "vfo56g8o",
+      "face": {
+        "x": 482.65672302246094,
+        "y": 144.25390625
+      },
+      "buttons": 3,
+      "collisions": 0
+    },
+    {
+      "width": 960,
+      "id": "fm43foif",
+      "face": {
+        "x": 544.2935028076172,
+        "y": 137.39453125
+      },
+      "buttons": 3,
+      "collisions": 0
+    },
+    {
+      "width": 960,
+      "id": "dk3o5u4e",
+      "face": {
+        "x": 543.73828125,
+        "y": 139.67578125
+      },
+      "buttons": 3,
+      "collisions": 0
+    }
+  ],
+  "frameSample": {
+    "frames": 530,
+    "p95": 4.299999999999272,
+    "max": 4.400000000001455,
+    "over50": 0,
+    "cache": 6
+  },
+  "reducedMotion": true,
+  "editor": {
+    "items": 470,
+    "files": 641,
+    "insertUndo": true
+  },
+  "errors": []
+}

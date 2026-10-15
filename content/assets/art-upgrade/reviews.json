@@ -742,5 +742,11 @@
     "sha256": "fc44bc5eb68672e3f2068a39850d73d6d04dd154ddab7778c941990b28b9dff0",
     "note": "全身和局部重审：真实跪坐写诗：两膝前置、小腿折回身下、鞋袜在侧后可读；完整裙摆盖住双腿上方，双手与笔自然；尾巴已改为低位单根、只结束于一对尾鳍。",
     "reviewer": "Codex full-body reinspection after user correction; not final user approval"
+  },
+  "C26": {
+    "status": "approved",
+    "sha256": "7f003ecd17ee95b58dbb29636daa768d27dc979a5b8774cddf07db1dee31191a",
+    "note": "整张审核：坐姿双腿衔接、木台承托、裙褶、手部、单根双叶鲸尾及店内冷暖整体成立；作为草稿采用。与C15的脸型/灯光连续性仍待后续玩家审核，不称最终统一。",
+    "reviewer": "Codex full-image inspection; not final user approval"
   }
 }

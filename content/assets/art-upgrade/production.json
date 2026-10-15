@@ -3184,7 +3184,7 @@
         "S02"
       ],
       "status": "generated",
-      "review": "pending",
+      "review": "approved",
       "prompt": "One 16:9 landscape event CG for a premium finely painted Japanese romance visual novel. FIRST image is the exact moonlit coastal location: keep its cove, coastline, moon, sea and quiet blue lighting. SECOND image controls the same ADULT woman aged24, exact face and hair, loop ahoge, fin ears and bows, opaque navy sailor dress with intact double-white hem, socks and closed shoes, and her newly corrected natural seated-on-folded-heels posture. She is kneeling in an ordinary seiza posture on a broad flat coastal rock, fully dressed, calmly writing a poem in the open dark-blue whale notebook on her lap with a slim blue pen. Both legs fold coherently under her body, no crossed dangling legs. Right hand naturally grips the pen, tip touching the page; left hand steadies the page. Eyes look down toward her writing, a small concentrated expression. One separate whale tail grows behind her lower back, one tapered stalk and exactly one clearly readable two-lobed terminal fluke, resting beside the rock without extra fins. No ring or other jewelry. Place heroine left of centre with plenty of quiet sea to the right; face and writing hands entirely above the lower 28 percent dialogue area. Natural cloth gravity, one continuous unbroken skirt, hands fully above the fabric, no skin holes or fabric clipping. Moonlit shadows agree with the first image. No second person, readable letters, UI or watermarks. New coherent illustration, do not paste a cutout sprite. Complete landscape frame, anatomically consistent, no change of clothing.",
       "size": [
         1672,
@@ -3226,7 +3226,7 @@
       "file": "content/assets/art-upgrade/originals/C08.png",
       "bytes": 2897750,
       "mode": "RGB",
-      "review_note": "本轮逐图视觉复核：已将托腮阅读改为低头握笔写字；笔尖落在页上、另一手扶纸、原海岸和服饰保留。 待实机再查手势遮挡与连续性。",
+      "review_note": "换用已复核的跪坐母图重画全景：两膝向前、小腿折在身下，完整裙摆、自然握笔与扶纸、单根尾巴一对尾鳍；月夜海岸一致，无戒指。书写手部位于对话框上缘以上，仍需实机确认。",
       "direction_queued": true,
       "anatomy_cg_queued": true,
       "sha256": "3fa7e67e2762b26412ff0e08cbf94d5b1706f6c31e17464457ac22545fabc375"
@@ -8712,6 +8712,71 @@
       "detail_refinement_queued": true,
       "sha256": "fc44bc5eb68672e3f2068a39850d73d6d04dd154ddab7778c941990b28b9dff0",
       "review_note": "全身和局部重审：真实跪坐写诗：两膝前置、小腿折回身下、鞋袜在侧后可读；完整裙摆盖住双腿上方，双手与笔自然；尾巴已改为低位单根、只结束于一对尾鳍。"
+    },
+    "C26": {
+      "id": "C26",
+      "name": "打烊柜台坐姿·谈起梦想",
+      "kind": "cg",
+      "spec": "人物与柜台一体生成，最后一盏灯下坐柜台谈梦；不用立绘拼接。",
+      "time": "夜，打烊，最后一盏灯",
+      "costume": "常服，无结局戒指",
+      "old_names": [],
+      "anchors": [],
+      "dependencies": [
+        "B39",
+        "C15",
+        "P18"
+      ],
+      "references": [
+        "B39",
+        "C15",
+        "P18"
+      ],
+      "status": "generated",
+      "review": "approved",
+      "prompt": "Use case: illustration-story. A single complete, coherently painted 16:9 visual novel EVENT CG, not a character cutout pasted onto a background.\nReferences: Image 1 is the exact coastal dessert shop interior at night; preserve its layout: sea-facing windows and tables on the left, wooden staircase at rear center, warm wooden counter and curved dessert display on the right. Image 2 is the adjacent event CG in this same shop; preserve its perspective, heroine identity, outfit and painting quality, but change her standing, arms-open performance into the seated action below. Image 3 is an anatomy/costume guide only, not an image to copy-paste.\nShow the same adult woman, age 24, sitting naturally on the FRONT EDGE OF THE WOODEN COUNTER, to the right of center. The wooden countertop must visibly support her pelvis and skirt. Her thighs project naturally from the seated hips and both knees rest together; two normal human shins descend over the counter front, feet dangling clearly above the floor. Relaxed hands rest naturally on her lap. Opaque navy sailor-collar summer dress with white double hem stripes and pale-blue bow, white ankle socks and closed white low shoes, exactly as the references. Preserve her delicate recognizable face, long blue hair, loop ahoge, cyan bow clips, blue-white fin ears, and ONE separate mottled blue whale tail from her lower back. The tail curls gently beside and behind the counter, one root and one pair of flukes; it never replaces her human legs. No ring or new necklace.\nHer expression is quietly thoughtful and gently determined, looking toward the unseen protagonist at a natural eye level, just before she stands up to announce her dream. No other person needs to be drawn. All pose proportions and furniture perspective must be drawn together from this camera, including correct contact shadow under skirt/hips and realistic overlap with the countertop front edge. The character must be seated ON the wooden countertop, not on the floor, dessert glass, countertop side wall, a stool or an invisible chair.\nAfter closing time, one warm lamp near the counter remains on, most overhead lamps are off. Soft warm light enters one side of face, hair and hands from that lamp, with restrained cool blue moonlight from the sea windows on the other side. Match the gentle materials and shadows across character and room. Keep her skin readable, not orange or blue; preserve blue hair. No white studio front light, emissive hair outlines or arbitrary glow. Quiet intimacy and the promise of a dream, finely painted Japanese romance VN art, clean delicate outlines and nuanced shading.\nLandscape 16:9 composition. Face, hands and the visible contact between seated hips/skirt and wooden counter stay within the upper 68 percent, above the lower dialogue area. Keep the furniture geometry coherent, leave breathing room on the left. Modest neutral framing, continuous natural skirt fabric, no under-skirt view, no broken skirt folds, no crossed-leg anatomy. No text, UI, logo, watermark, extra limbs, extra tail branches or floating silhouette. Paint the entire scene as one finished illustration.",
+      "requested_size": "3840x2160",
+      "started": 1792051416.6553264,
+      "generation": {
+        "auth_mode": "Codex ChatGPT OAuth",
+        "endpoint": "https://chatgpt.com/backend-api/codex/images/edits",
+        "requested_model": "gpt-image-2.5-flare",
+        "backend_reported_model": null,
+        "model_selection_verified": false,
+        "requested_size": "3840x2160",
+        "backend_reported_size": "1672x941",
+        "requested_quality": "max",
+        "backend_reported_quality": "medium",
+        "usage": {
+          "input_tokens": 5220,
+          "input_tokens_details": {
+            "image_tokens": 4552,
+            "text_tokens": 668
+          },
+          "output_tokens": 1158,
+          "output_tokens_details": {
+            "image_tokens": 1158,
+            "text_tokens": 0
+          },
+          "total_tokens": 6378
+        },
+        "elapsed_seconds": 89.95,
+        "created": 1792051484,
+        "reference_image_count": 3,
+        "outputs": [
+          "C:\\Users\\袁力阳\\Documents\\Codex\\2026-10-10\\new-chat\\work\\ambient-audio-checkout-proxy\\content\\assets\\art-upgrade\\originals\\C26.png"
+        ]
+      },
+      "elapsed": 90.3,
+      "file": "content/assets/art-upgrade/originals/C26.png",
+      "bytes": 2546341,
+      "sha256": "7f003ecd17ee95b58dbb29636daa768d27dc979a5b8774cddf07db1dee31191a",
+      "size": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "review_note": "整张审核：坐姿双腿衔接、木台承托、裙褶、手部、单根双叶鲸尾及店内冷暖整体成立；作为草稿采用。与C15的脸型/灯光连续性仍待后续玩家审核，不称最终统一。"
     }
   },
   "mother": {

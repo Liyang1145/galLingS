@@ -49,8 +49,8 @@ html,body{margin:0;height:100%;background:var(--bg);color:var(--fg);font-family:
 #empty{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:120px;color:#ffffff10;pointer-events:none}
 #layer{position:absolute;inset:0;z-index:0}   /* 自成层叠上下文：立绘的 z-index（0,1,2…）不会盖过氛围层 / 对话框 */
 .spr{position:absolute;cursor:move;transform-origin:50% 100%}
-.spr{filter:var(--lk,)}
-.spr.sel{filter:var(--lk,) drop-shadow(0 0 2px var(--acc)) drop-shadow(0 0 1px var(--acc))}
+.spr{filter:var(--scene-light,) var(--lk,)}
+.spr.sel{filter:var(--scene-light,) var(--lk,) drop-shadow(0 0 2px var(--acc)) drop-shadow(0 0 1px var(--acc))}
 #guide{position:absolute;top:0;bottom:0;left:640px;width:1px;background:var(--acc);display:none;pointer-events:none}
 #sprBar{position:absolute;display:none;gap:2px;background:#1b1d24ee;border-radius:8px;padding:3px;transform:translate(-50%,-100%);z-index:5}
 #sprBar .btn{width:30px;height:30px;font-size:14px}
@@ -164,7 +164,7 @@ body.playing #props{display:none}
 /* —— 立绘动画 —— */
 #layer .spr.anim{transition:left .5s ease,top .5s ease,height .5s ease,filter .9s ease}
 #layer .spr{transition:filter .9s ease}
-#layer .spr.dim{filter:var(--lk,) brightness(.62) saturate(.85)}
+#layer .spr.dim{filter:var(--scene-light,) var(--lk,) brightness(.62) saturate(.85)}
 #lookPop{position:absolute;display:none;flex-wrap:wrap;gap:6px;padding:8px;background:#1b1d24f2;border:1px solid var(--line);border-radius:10px;z-index:8;transform:translate(-50%,0);width:400px}
 #lookPop div b{position:absolute;inset:4px 4px 14px;background:center bottom/contain no-repeat}
 #lookPop div{width:64px;height:96px;background:#4a5060;border-radius:6px;border:1px solid var(--line);cursor:pointer;position:relative}
@@ -768,6 +768,33 @@ const LOOKS = [
 ];
 const lookCss = v => (LOOKS.find(x => x[0] === v) || LOOKS[0])[3];
 const lookOk = v => !v || v === 'none' || LOOKS.some(x => x[0] === v);
+// A scene supplies a gentle default grade; each sprite can inherit, disable or override it.
+// Keep this separate from positions and dramatic looks so artist edits remain literal.
+const SCENE_FIT_LIMITS = { brightness: [.6, 1.2, 1], saturation: [.65, 1.2, 1], warmth: [-1, 1, 0] };
+function sceneFitValues(value) {
+  const out = {};
+  Object.entries(SCENE_FIT_LIMITS).forEach(([key, [min, max, fallback]]) => {
+    const n = value?.[key]; out[key] = typeof n === 'number' && Number.isFinite(n) ? Math.max(min, Math.min(max, n)) : fallback;
+  });
+  return out;
+}
+function sceneFitFor(sprite, line) {
+  const override = sprite?.sceneFit, mode = ['off', 'custom'].includes(override?.mode) ? override.mode : 'inherit';
+  const value = mode === 'custom' ? override : mode === 'off' ? null : A(line?.bg)?.sceneFit;
+  return { mode, ...sceneFitValues(value) };
+}
+function sceneFitCss(value) {
+  const { brightness, saturation, warmth } = sceneFitValues(value), filters = [];
+  if (brightness !== 1) filters.push(`brightness(${brightness})`);
+  if (saturation !== 1) filters.push(`saturate(${saturation})`);
+  // Large hue rotations change the blue character design. Keep temperature deliberately subtle.
+  if (warmth > 0) filters.push(`sepia(${+(warmth * .16).toFixed(4)})`);
+  else if (warmth < 0) filters.push(`hue-rotate(${+(warmth * 6).toFixed(3)}deg)`);
+  return filters.join(' ');
+}
+function spriteFilterCss(sprite, line) {
+  return [sceneFitCss(sceneFitFor(sprite, line)), lookCss(sprite?.look)].filter(Boolean).join(' ');
+}
 const SPR_ACT = [['jump', 'chevrons-up', '跳一下'], ['shake', 'vibrate', '发抖/生气'], ['nod', 'chevrons-down', '点头'], ['lean', 'chevrons-right', '探身'], ['flinch', 'vibrate', '怔住/退缩'], ['settle', 'chevrons-down', '坐稳']];
 const isPause = l => !l.text && !l.choices.length && !l.agent;     // 没有文字 = 演出节
 const labels = () => [...new Set(P.lines.map(l => l.label).filter(Boolean))];
@@ -869,9 +896,9 @@ const parseLit = v => { const s = String(v ?? '').trim(); if (s === 'true') retu
 function initVars() { const o = {}; P.vars.forEach(v => { o[v.name] = parseLit(v.init); }); return o; }
 
 
-// 画面指纹：背景 + 每个立绘的素材/位置/大小/翻转。指纹相同 = 画面相同
+// 手动光色也划分关联画面，避免后续调位置覆盖已单独打磨的镜头。
 function visKey(l) {
-  return JSON.stringify([l.bg, l.sprites.map(s => [s.asset, Math.round(s.x), Math.round(s.y), Math.round(s.h), !!s.flip])]);
+  return JSON.stringify([l.bg, l.sprites.map(s => [s.asset, Math.round(s.x), Math.round(s.y), Math.round(s.h), !!s.flip, sceneFitFor(s,l)])]);
 }
 // 当前修改会影响哪些句子
 function affected() {
@@ -1221,7 +1248,7 @@ function renderStage(line, editable) {
     const img = document.createElement('img');
     img.src = a.src; img.draggable = false; img.dataset.uid = s.uid;
     img.className = 'spr' + (editable && s.uid === selUid ? ' sel' : '');
-    placeSprite(img, s);
+    placeSprite(img, s, line);
     layer.appendChild(img);
   });
   placeBar();
@@ -1239,7 +1266,7 @@ function renderPlaySprites(line) {
     let el = have.get(ck);
     if (!el) {
       el = document.createElement('img'); el.draggable = false; el.dataset.ck = ck; el.className = 'spr';
-      el.decoding = 'async'; placeSprite(el, s); layer.appendChild(el);
+      el.decoding = 'async'; placeSprite(el, s, line); layer.appendChild(el);
     } else {
       el.classList.toggle('anim', !fast);
     }
@@ -1258,7 +1285,7 @@ function renderPlaySprites(line) {
           .finished.then(() => ghost.remove(), () => ghost.remove());
       }
       if (changedPose) el.src = a.src;
-      el.dataset.asset = a.id; placeSprite(el, s);
+      el.dataset.asset = a.id; placeSprite(el, s, line);
       if (fast) [...el.classList].filter(c => /^(in|out|act)-/.test(c)).forEach(c => el.classList.remove(c));
       else if (act) sprAnim(el, 'act-' + act);
       else if (!previous && s.in !== 'none') sprAnim(el, 'in-' + (s.in || 'fade'));
@@ -1276,10 +1303,11 @@ function sprAnim(el, cls) {
   [...el.classList].forEach(c => { if (/^(in|out|act)-/.test(c)) el.classList.remove(c); });
   void el.offsetWidth; el.classList.add(cls);
 }
-function placeSprite(img, s) {
+function placeSprite(img, s, line = playing ? P.lines[RT.idx] : L()) {
   img.style.height = s.h + 'px'; img.style.left = s.x + 'px'; img.style.top = s.y + 'px';
   img.style.transform = `translate(-50%,-100%) scaleX(${s.flip ? -1 : 1})`;
   const lk = lookCss(s.look); if (lk) img.style.setProperty('--lk', lk); else img.style.removeProperty('--lk');
+  const light = sceneFitCss(sceneFitFor(s, line)); if (light) img.style.setProperty('--scene-light', light); else img.style.removeProperty('--scene-light');
 }
 function placeBar() {
   const bar = $('#sprBar'), s = L().sprites.find(s => s.uid === selUid);
@@ -1336,7 +1364,7 @@ function cellOf(lane, t) {
   if (lane.kind === 'fx') return l.fx ? { key: l.fx + '#' + t, asset: l.fx } : null;
   if (lane.kind === 'ch') {
     const s = l.sprites.find(s => A(s.asset) && charKey(A(s.asset)) === lane.ch);
-    return s ? { key: [s.asset, Math.round(s.x), Math.round(s.y), Math.round(s.h), !!s.flip, s.look || ''].join('|'), asset: s.asset, spr: s } : null;
+    return s ? { key: [s.asset, Math.round(s.x), Math.round(s.y), Math.round(s.h), !!s.flip, s.look || '', JSON.stringify(sceneFitFor(s,l))].join('|'), asset: s.asset, spr: s } : null;
   }
   return null;
 }
@@ -2631,7 +2659,7 @@ async function makeThumb(l) {
     for (const s of l.sprites) {
       const a = A(s.asset); if (!a) continue; const i = await load(a.src); if (!i) continue;
       const h = s.h * k, w = i.width * h / i.height;
-      x.save(); x.filter = lookCss(s.look) || 'none'; x.translate(s.x * k, s.y * k); if (s.flip) x.scale(-1, 1); x.drawImage(i, -w / 2, -h, w, h); x.restore();
+      x.save(); x.filter = spriteFilterCss(s, l) || 'none'; x.translate(s.x * k, s.y * k); if (s.flip) x.scale(-1, 1); x.drawImage(i, -w / 2, -h, w, h); x.restore();
     }
     return c.toDataURL('image/jpeg', 0.7);
   } catch (e) { return null; }
@@ -2642,7 +2670,7 @@ function miniScene(el, l) {
   (l.sprites || []).forEach(sp => {
     const a = A(sp.asset); if (!a) return;
     const im = document.createElement('img'); im.src = a.src;
-    im.style.cssText = `position:absolute;left:${sp.x / W * 100}%;top:${sp.y / H * 100}%;height:${sp.h / H * 100}%;transform:translate(-50%,-100%)${sp.flip ? ' scaleX(-1)' : ''};pointer-events:none;filter:${lookCss(sp.look) || 'none'}`;
+    im.style.cssText = `position:absolute;left:${sp.x / W * 100}%;top:${sp.y / H * 100}%;height:${sp.h / H * 100}%;transform:translate(-50%,-100%)${sp.flip ? ' scaleX(-1)' : ''};pointer-events:none;filter:${spriteFilterCss(sp, l) || 'none'}`;
     el.appendChild(im);
   });
 }
@@ -3614,6 +3642,8 @@ API.sprite = (c, a, ref) => {
   if (outV) { if (!SPR_OUT.some(x => x[0] === outV)) fail('out 只能是 ' + SPR_OUT.map(x => x[0]).filter(Boolean).join('/')); o.out = outV; }
   const lkV = c.look ?? ref?.look;
   if (lkV && lkV !== 'none') { if (!lookOk(lkV)) fail('look 只能是 none/' + LOOKS.map(x => x[0]).filter(Boolean).join('/')); o.look = lkV; }
+  const fitV = c.sceneFit ?? ref?.sceneFit;
+  if (fitV && typeof fitV === 'object') o.sceneFit = clone(fitV);
   return o;
 };
 const TEXT_EDITABLE = ['speaker', 'text', 'label', 'chapter', 'trans', 'fx', 'mood', 'wait', 'set', 'jump', 'jumpIf', 'choices'];

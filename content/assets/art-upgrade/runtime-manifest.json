@@ -2244,6 +2244,23 @@
       "resized": false,
       "backendQuality": "medium",
       "backendModel": null
+    },
+    "C26": {
+      "path": "content/assets/art-upgrade/runtime/C26.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/C26.png",
+      "sourceSha256": "7f003ecd17ee95b58dbb29636daa768d27dc979a5b8774cddf07db1dee31191a",
+      "sha256": "97c8776c182c360ba82366a77d5e290a0d85a8a98d1e0dbd67197d57cff20d71",
+      "bytes": 504082,
+      "sourceBytes": 2546341,
+      "size": [
+        1672,
+        941
+      ],
+      "lossless": false,
+      "webpQuality": 95,
+      "resized": false,
+      "backendQuality": "medium",
+      "backendModel": null
     }
   }
 }

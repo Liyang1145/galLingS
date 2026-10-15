@@ -1,0 +1,1253 @@
+{
+  "backgroundsWithSprites": 40,
+  "uniqueArtKeys": 38,
+  "totalSpriteLines": 2641,
+  "sourceSha256": {
+    "game.js": "5656aa1fdf93e29d0c1a5c7dcfb9da2f3f3e1fa0329ade3f8535ab93941d0849",
+    "index.html": "ec31e548304693407a0fbd610633e5c6604346d6b5a9e02f24e637f1933d0da9",
+    "game-polish.css": "236950e30bd9ad405814ff8c2bc2c4a9865c4a1d6fc129080e3f75c63d843fc9"
+  },
+  "samples": [
+    {
+      "key": "B01",
+      "background": "ohwph2ga",
+      "name": "浅滩_清晨",
+      "line": "v4l30yab",
+      "index": 351,
+      "instances": 54,
+      "text": "「巡视浅滩。巡视礁石。巡视你来的路。」",
+      "pose": [
+        {
+          "key": "L02",
+          "id": "2qshq03j",
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000
+        }
+      ],
+      "sceneFit": {
+        "brightness": 0.98,
+        "saturation": 0.94,
+        "warmth": 0.12
+      },
+      "filters": [
+        {
+          "asset": "2qshq03j",
+          "filter": "brightness(0.98) saturate(0.94) sepia(0.0192)",
+          "opacity": "1"
+        }
+      ],
+      "screenshot": "01_B01.png"
+    },
+    {
+      "key": "B02",
+      "background": "8eo1nf7q",
+      "name": "浅滩_正午",
+      "line": "opening_tail_warning",
+      "index": 25,
+      "instances": 55,
+      "text": "「鲸鱼的尾巴摸不得。」",
+      "pose": [
+        {
+          "key": "L05",
+          "id": "88v1dull",
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000
+        }
+      ],
+      "sceneFit": {
+        "brightness": 0.98,
+        "saturation": 0.96,
+        "warmth": 0
+      },
+      "filters": [
+        {
+          "asset": "88v1dull",
+          "filter": "brightness(0.98) saturate(0.96)",
+          "opacity": "1"
+        }
+      ],
+      "screenshot": "02_B02.png"
+    },
+    {
+      "key": "B02",
+      "background": "c5saufd0",
+      "name": "浅滩_午后",
+      "line": "huyyx0s8",
+      "index": 90,
+      "instances": 50,
+      "text": "「……喂。」",
+      "pose": [
+        {
+          "key": "P06",
+          "id": "art_upgrade_p06",
+          "x": 768.57,
+          "y": 993.46,
+          "h": 940
+        }
+      ],
+      "sceneFit": {
+        "brightness": 0.98,
+        "saturation": 0.96,
+        "warmth": 0
+      },
+      "filters": [
+        {
+          "asset": "art_upgrade_p06",
+          "filter": "brightness(0.98) saturate(0.96)",
+          "opacity": "1"
+        }
+      ],
+      "screenshot": "03_B02.png"
+    },
+    {
+      "key": "B02",
+      "background": "qla5b3w0",
+      "name": "浅滩_上午",
+      "line": "7ukunjp3",
+      "index": 178,
+      "instances": 18,
+      "text": "「……无关紧要！」",
+      "pose": [
+        {
+          "key": "L06",
+          "id": "z869j1e3",
+          "x": 909.38,
+          "y": 1009.29,
+          "h": 960
+        }
+      ],
+      "sceneFit": {
+        "brightness": 0.98,
+        "saturation": 0.96,
+        "warmth": 0
+      },
+      "filters": [
+        {
+          "asset": "z869j1e3",
+          "filter": "brightness(0.98) saturate(0.96)",
+          "opacity": "1"
+        }
+      ],
+      "screenshot": "04_B02.png"
+    },
+    {
+      "key": "B03",
+      "background": "mzy4oec6",
+      "name": "浅滩_黄昏",
+      "line": "89lweywr",
+      "index": 1577,
+      "instances": 52,
+      "text": "她站在浅水线边上，半个身子已经浸在水里。",
+      "pose": [
+        {
+          "key": "L12",
+          "id": "art_upgrade_l12",
+          "x": 936.25,
+          "y": 1008.12,
+          "h": 960
+        }
+      ],
+      "sceneFit": {
+        "brightness": 0.91,
+        "saturation": 0.87,
+        "warmth": 0.65
+      },
+      "filters": [
+        {
+          "asset": "art_upgrade_l12",
+          "filter": "brightness(0.91) saturate(0.87) sepia(0.104)",
+          "opacity": "1"
+        }
+      ],
+      "screenshot": "05_B03.png"
+    },
+    {
+      "key": "B04",
+      "background": "9ow2x5w5",
+      "name": "浅滩_夜",
+      "line": "h0y3fdtk",
+      "index": 2944,
+      "instances": 53,
+      "text": "她朝深水区走，头也不回，尾巴尖翘得老高。",
+      "pose": [
+        {
+          "key": "L02",
+          "id": "2qshq03j",
+          "x": 982.24,
+          "y": 912.32,
+          "h": 860
+        }
+      ],
+      "sceneFit": {
+        "brightness": 0.78,
+        "saturation": 0.85,
+        "warmth": -0.4
+      },
+      "filters": [
+        {
+          "asset": "2qshq03j",
+          "filter": "brightness(0.78) saturate(0.85) hue-rotate(-2.4deg)",
+          "opacity": "1"
+        }
+      ],
+      "screenshot": "06_B04.png"
+    },
+    {
+      "key": "B05",
+      "background": "9vjefxje",
+      "name": "礁石_上午",
+      "line": "7esq5eqm",
+      "index": 198,
+      "instances": 71,
+      "text": "「销毁证据。」",
+      "pose": [
+        {
+          "key": "L02",
+          "id": "2qshq03j",
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000
+        }
+      ],
+      "sceneFit": {
+        "brightness": 0.98,
+        "saturation": 0.96,
+        "warmth": 0
+      },
+      "filters": [
+        {
+          "asset": "2qshq03j",
+          "filter": "brightness(0.98) saturate(0.96)",
+          "opacity": "1"
+        }
+      ],
+      "screenshot": "07_B05.png"
+    },
+    {
+      "key": "B06",
+      "background": "uhhb6qjn",
+      "name": "礁石_黄昏",
+      "line": "mt31fbu7",
+      "index": 276,
+      "instances": 48,
+      "text": "傍晚。契约签完了，酸梅汤也见底了。",
+      "pose": [
+        {
+          "key": "L07",
+          "id": "wrwcdezj",
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960
+        }
+      ],
+      "sceneFit": {
+        "brightness": 0.91,
+        "saturation": 0.87,
+        "warmth": 0.65
+      },
+      "filters": [
+        {
+          "asset": "wrwcdezj",
+          "filter": "brightness(0.91) saturate(0.87) sepia(0.104)",
+          "opacity": "1"
+        }
+      ],
+      "screenshot": "08_B06.png"
+    },
+    {
+      "key": "B07",
+      "background": "acqkjhf8",
+      "name": "礁石_夜",
+      "line": "pvyjs8ij",
+      "index": 2863,
+      "instances": 300,
+      "text": "她坐在礁石上，尾巴垂在水里，晃。",
+      "pose": [
+        {
+          "key": "P13",
+          "id": "art_upgrade_p13",
+          "x": 698.97,
+          "y": 885.6,
+          "h": 850.95
+        }
+      ],
+      "sceneFit": {
+        "brightness": 0.78,
+        "saturation": 0.85,
+        "warmth": -0.4
+      },
+      "filters": [
+        {
+          "asset": "art_upgrade_p13",
+          "filter": "brightness(0.78) saturate(0.85) hue-rotate(-2.4deg)",
+          "opacity": "1"
+        }
+      ],
+      "screenshot": "09_B07.png"
+    },
+    {
+      "key": "B08",
+      "background": "02e2z9nd",
+      "name": "沙洲_上午",
+      "line": "ud27fzrf",
+      "index": 3034,
+      "instances": 53,
+      "text": "深蓝的泳装。白色过膝袜——袜口松松垮垮，有一边还滑下来一点。",
+      "pose": [
+        {
+          "key": null,
+          "id": "jtp36q4e",
+          "x": 640,
+          "y": 1190,
+          "h": 1150
+        }
+      ],
+      "sceneFit": {
+        "brightness": 0.98,
+        "saturation": 0.96,
+        "warmth": 0
+      },
+      "filters": [
+        {
+          "asset": "jtp36q4e",
+          "filter": "brightness(0.98) saturate(0.96)",
+          "opacity": "1"
+        }
+      ],
+      "screenshot": "10_B08.png"
+    },
+    {
+      "key": "B09",
+      "background": "tafi49ag",
+      "name": "沙洲_午后",
+      "line": "a30uy7ez",
+      "index": 975,
+      "instances": 109,
+      "text": "「……海豚？」",
+      "pose": [
+        {
+          "key": "L01",
+          "id": "xfg3qcn2",
+          "x": 640,
+          "y": 1040,
+          "h": 1000
+        }
+      ],
+      "sceneFit": {
+        "brightness": 0.98,
+        "saturation": 0.96,
+        "warmth": 0
+      },
+      "filters": [
+        {
+          "asset": "xfg3qcn2",
+          "filter": "brightness(0.98) saturate(0.96)",
+          "opacity": "1"
+        }
+      ],
+      "screenshot": "11_B09.png"
+    },
+    {
+      "key": "B10",
+      "background": "g0htlsw4",
+      "name": "沙洲_黄昏",
+      "line": "85b29ygd",
+      "index": 1133,
+      "instances": 103,
+      "text": "「这还差不多。」",
+      "pose": [
+        {
+          "key": "L02",
+          "id": "2qshq03j",
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000
+        }
+      ],
+      "sceneFit": {
+        "brightness": 0.91,
+        "saturation": 0.87,
+        "warmth": 0.65
+      },
+      "filters": [
+        {
+          "asset": "2qshq03j",
+          "filter": "brightness(0.91) saturate(0.87) sepia(0.104)",
+          "opacity": "1"
+        }
+      ],
+      "screenshot": "12_B10.png"
+    },
+    {
+      "key": "B11",
+      "background": "e6cby6b5",
+      "name": "深水区_水下",
+      "line": "f1pdnd2t",
+      "index": 397,
+      "instances": 5,
+      "text": "然后，光回来了。",
+      "pose": [
+        {
+          "key": "L07",
+          "id": "wrwcdezj",
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000
+        }
+      ],
+      "sceneFit": {
+        "brightness": 0.85,
+        "saturation": 0.87,
+        "warmth": -0.25
+      },
+      "filters": [
+        {
+          "asset": "wrwcdezj",
+          "filter": "brightness(0.85) saturate(0.87) hue-rotate(-1.5deg)",
+          "opacity": "1"
+        }
+      ],
+      "screenshot": "13_B11.png"
+    },
+    {
+      "key": "B13",
+      "background": "fxqcg1oj",
+      "name": "深海_珊瑚礁",
+      "line": "wz7popb4",
+      "index": 403,
+      "instances": 83,
+      "text": "「说话呀。」",
+      "pose": [
+        {
+          "key": "L19",
+          "id": "ylbq6xyk",
+          "x": 640,
+          "y": 1040,
+          "h": 1000
+        }
+      ],
+      "sceneFit": {
+        "brightness": 0.85,
+        "saturation": 0.87,
+        "warmth": -0.25
+      },
+      "filters": [
+        {
+          "asset": "ylbq6xyk",
+          "filter": "brightness(0.85) saturate(0.87) hue-rotate(-1.5deg)",
+          "opacity": "1"
+        }
+      ],
+      "screenshot": "14_B13.png"
+    },
+    {
+      "key": "B14",
+      "background": "2mbzwwg2",
+      "name": "海面_黄昏",
+      "line": "ed0zg1gr",
+      "index": 489,
+      "instances": 16,
+      "text": "她先爬上礁石，背对着我，尾巴在身后一下一下地甩水。",
+      "pose": [
+        {
+          "key": "L03",
+          "id": "x013srmu",
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000
+        }
+      ],
+      "sceneFit": {
+        "brightness": 0.91,
+        "saturation": 0.87,
+        "warmth": 0.65
+      },
+      "filters": [
+        {
+          "asset": "x013srmu",
+          "filter": "brightness(0.91) saturate(0.87) sepia(0.104)",
+          "opacity": "1"
+        }
+      ],
+      "screenshot": "15_B14.png"
+    },
+    {
+      "key": "B15",
+      "background": "4g7f8iam",
+      "name": "帐篷_黄昏",
+      "line": "13v81y0j",
+      "index": 3181,
+      "instances": 31,
+      "text": "她坐在小桌边上，尾巴在沙地上铺开，像一张不耐烦的席子。",
+      "pose": [
+        {
+          "key": "L29",
+          "id": "t4lmlnr9",
+          "x": 640,
+          "y": 1040,
+          "h": 1000
+        }
+      ],
+      "sceneFit": {
+        "brightness": 0.91,
+        "saturation": 0.87,
+        "warmth": 0.65
+      },
+      "filters": [
+        {
+          "asset": "t4lmlnr9",
+          "filter": "brightness(0.91) saturate(0.87) sepia(0.104)",
+          "opacity": "1"
+        }
+      ],
+      "screenshot": "16_B15.png"
+    },
+    {
+      "key": "B16",
+      "background": "9hcpz81h",
+      "name": "帐篷_夜",
+      "line": "lldr65m6",
+      "index": 802,
+      "instances": 158,
+      "text": "她的手，抱住了膝盖。",
+      "pose": [
+        {
+          "key": "P11",
+          "id": "art_upgrade_p11",
+          "x": 866.12,
+          "y": 973.12,
+          "h": 940
+        }
+      ],
+      "sceneFit": {
+        "brightness": 0.89,
+        "saturation": 0.87,
+        "warmth": 0.45
+      },
+      "filters": [
+        {
+          "asset": "art_upgrade_p11",
+          "filter": "brightness(0.89) saturate(0.87) sepia(0.072)",
+          "opacity": "1"
+        }
+      ],
+      "screenshot": "17_B16.png"
+    },
+    {
+      "key": "B17",
+      "background": "mcdi4nzi",
+      "name": "帐篷内_夜",
+      "line": "otvpviwd",
+      "index": 3226,
+      "instances": 48,
+      "text": "她抱着膝盖坐在床上，忽然发现我在看她颈间的项链。",
+      "pose": [
+        {
+          "key": "L28",
+          "id": "52119ew2",
+          "x": 640,
+          "y": 1040,
+          "h": 1000
+        }
+      ],
+      "sceneFit": {
+        "brightness": 0.88,
+        "saturation": 0.86,
+        "warmth": 0.38
+      },
+      "filters": [
+        {
+          "asset": "52119ew2",
+          "filter": "brightness(0.88) saturate(0.86) sepia(0.0608)",
+          "opacity": "1"
+        }
+      ],
+      "screenshot": "18_B17.png"
+    },
+    {
+      "key": "B19",
+      "background": "bg_tent_morning_corner_draft",
+      "name": "帐篷内_清晨",
+      "line": "tdeybm9c",
+      "index": 3285,
+      "instances": 13,
+      "text": "正蹲在帐篷角落，检查那两枚贝壳。",
+      "pose": [
+        {
+          "key": "L28",
+          "id": "52119ew2",
+          "x": 640,
+          "y": 1040,
+          "h": 1000
+        }
+      ],
+      "sceneFit": {
+        "brightness": 0.98,
+        "saturation": 0.96,
+        "warmth": 0
+      },
+      "filters": [
+        {
+          "asset": "52119ew2",
+          "filter": "brightness(0.98) saturate(0.96)",
+          "opacity": "1"
+        }
+      ],
+      "screenshot": "19_B19.png"
+    },
+    {
+      "key": "B21",
+      "background": "sr2lo203",
+      "name": "集市_上午",
+      "line": "ehvvmpd6",
+      "index": 3100,
+      "instances": 98,
+      "text": "「……等等。」",
+      "pose": [
+        {
+          "key": "L23",
+          "id": "m6hj48ex",
+          "x": 640,
+          "y": 1040,
+          "h": 1000
+        }
+      ],
+      "sceneFit": {
+        "brightness": 0.98,
+        "saturation": 0.96,
+        "warmth": 0
+      },
+      "filters": [
+        {
+          "asset": "m6hj48ex",
+          "filter": "brightness(0.98) saturate(0.96)",
+          "opacity": "1"
+        }
+      ],
+      "screenshot": "20_B21.png"
+    },
+    {
+      "key": "B22",
+      "background": "scene_b22",
+      "name": "集市街道初秋",
+      "line": "1pyd6tl0",
+      "index": 2328,
+      "instances": 90,
+      "text": "「呜……主人这话是什么意思。什么叫做把我们的记忆安置好了，什么叫做本小姐会记错细节。」",
+      "pose": [
+        {
+          "key": "L05",
+          "id": "88v1dull",
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000
+        }
+      ],
+      "sceneFit": {
+        "brightness": 0.98,
+        "saturation": 0.96,
+        "warmth": 0
+      },
+      "filters": [
+        {
+          "asset": "88v1dull",
+          "filter": "brightness(0.98) saturate(0.96)",
+          "opacity": "1"
+        }
+      ],
+      "screenshot": "21_B22.png"
+    },
+    {
+      "key": "B23",
+      "background": "p8guxpyy",
+      "name": "集市_饰品巷",
+      "line": "b6mcvlqd",
+      "index": 2115,
+      "instances": 87,
+      "text": "摊上有新货。一小碟珍珠。",
+      "pose": [
+        {
+          "key": "L03",
+          "id": "x013srmu",
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000
+        }
+      ],
+      "sceneFit": {
+        "brightness": 0.96,
+        "saturation": 0.9,
+        "warmth": 0.14
+      },
+      "filters": [
+        {
+          "asset": "x013srmu",
+          "filter": "brightness(0.96) saturate(0.9) sepia(0.0224)",
+          "opacity": "1"
+        }
+      ],
+      "screenshot": "22_B23.png"
+    },
+    {
+      "key": "B24",
+      "background": "hihrcqx5",
+      "name": "集市_珍珠摊",
+      "line": "99apnx6j",
+      "index": 2178,
+      "instances": 19,
+      "text": "珍珠摊。她一颗一颗地看过去，拿起，对着天光，放下。",
+      "pose": [
+        {
+          "key": "L01",
+          "id": "xfg3qcn2",
+          "x": 640,
+          "y": 1040,
+          "h": 1000
+        }
+      ],
+      "sceneFit": {
+        "brightness": 0.96,
+        "saturation": 0.9,
+        "warmth": 0.14
+      },
+      "filters": [
+        {
+          "asset": "xfg3qcn2",
+          "filter": "brightness(0.96) saturate(0.9) sepia(0.0224)",
+          "opacity": "1"
+        }
+      ],
+      "screenshot": "23_B24.png"
+    },
+    {
+      "key": "B25",
+      "background": "179f3n2w",
+      "name": "银匠铺",
+      "line": "pv3mdho7",
+      "index": 2193,
+      "instances": 40,
+      "text": "银匠铺。老师傅戴着放大镜，听完需求，慢悠悠地开口。",
+      "pose": [
+        {
+          "key": "L01",
+          "id": "xfg3qcn2",
+          "x": 640,
+          "y": 1040,
+          "h": 1000
+        }
+      ],
+      "sceneFit": {
+        "brightness": 0.96,
+        "saturation": 0.9,
+        "warmth": 0.14
+      },
+      "filters": [
+        {
+          "asset": "xfg3qcn2",
+          "filter": "brightness(0.96) saturate(0.9) sepia(0.0224)",
+          "opacity": "1"
+        }
+      ],
+      "screenshot": "24_B25.png"
+    },
+    {
+      "key": "B26",
+      "background": "9qup2gii",
+      "name": "大房子_院子",
+      "line": "4busw76r",
+      "index": 1277,
+      "instances": 41,
+      "text": "「它说，既然要长住，长就要长得像个家。」",
+      "pose": [
+        {
+          "key": "L02",
+          "id": "2qshq03j",
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000
+        }
+      ],
+      "sceneFit": {
+        "brightness": 0.98,
+        "saturation": 0.94,
+        "warmth": 0.12
+      },
+      "filters": [
+        {
+          "asset": "2qshq03j",
+          "filter": "brightness(0.98) saturate(0.94) sepia(0.0192)",
+          "opacity": "1"
+        }
+      ],
+      "screenshot": "25_B26.png"
+    },
+    {
+      "key": "B27",
+      "background": "2c2u3g9q",
+      "name": "客厅_午后",
+      "line": "jrjvxn8i",
+      "index": 1335,
+      "instances": 118,
+      "text": "——然后，整条尾巴翘了起来。",
+      "pose": [
+        {
+          "key": "L02",
+          "id": "2qshq03j",
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000
+        }
+      ],
+      "sceneFit": {
+        "brightness": 0.98,
+        "saturation": 0.96,
+        "warmth": 0
+      },
+      "filters": [
+        {
+          "asset": "2qshq03j",
+          "filter": "brightness(0.98) saturate(0.96)",
+          "opacity": "1"
+        }
+      ],
+      "screenshot": "26_B27.png"
+    },
+    {
+      "key": "B28",
+      "background": "j5onv73r",
+      "name": "书房_午后",
+      "line": "1399ee4i",
+      "index": 1530,
+      "instances": 83,
+      "text": "「玩笑。」",
+      "pose": [
+        {
+          "key": "L10",
+          "id": "art_upgrade_l10",
+          "x": 638.05,
+          "y": 1044.65,
+          "h": 1000
+        }
+      ],
+      "sceneFit": {
+        "brightness": 0.96,
+        "saturation": 0.9,
+        "warmth": 0.14
+      },
+      "filters": [
+        {
+          "asset": "art_upgrade_l10",
+          "filter": "brightness(0.96) saturate(0.9) sepia(0.0224)",
+          "opacity": "1"
+        }
+      ],
+      "screenshot": "27_B28.png"
+    },
+    {
+      "key": "B29",
+      "background": "ah4t9t6i",
+      "name": "书房_黄昏",
+      "line": "fjthjusc",
+      "index": 1360,
+      "instances": 112,
+      "text": "黄昏。东西都归了位。",
+      "pose": [
+        {
+          "key": "L07",
+          "id": "wrwcdezj",
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960
+        }
+      ],
+      "sceneFit": {
+        "brightness": 0.92,
+        "saturation": 0.87,
+        "warmth": 0.55
+      },
+      "filters": [
+        {
+          "asset": "wrwcdezj",
+          "filter": "brightness(0.92) saturate(0.87) sepia(0.088)",
+          "opacity": "1"
+        }
+      ],
+      "screenshot": "28_B29.png"
+    },
+    {
+      "key": "B30",
+      "background": "rqlji75s",
+      "name": "书房_夜",
+      "line": "eubivfeb",
+      "index": 2035,
+      "instances": 7,
+      "text": "深夜。笔尖落到纸上，忽然就不卡了。",
+      "pose": [
+        {
+          "key": "L02",
+          "id": "2qshq03j",
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000
+        }
+      ],
+      "sceneFit": {
+        "brightness": 0.88,
+        "saturation": 0.86,
+        "warmth": 0.38
+      },
+      "filters": [
+        {
+          "asset": "2qshq03j",
+          "filter": "brightness(0.88) saturate(0.86) sepia(0.0608)",
+          "opacity": "1"
+        }
+      ],
+      "screenshot": "29_B30.png"
+    },
+    {
+      "key": "B31",
+      "background": "ooy2g3al",
+      "name": "厨房_清晨",
+      "line": "28pz9msk",
+      "index": 2543,
+      "instances": 51,
+      "text": "「呜……醒了？」",
+      "pose": [
+        {
+          "key": "L24",
+          "id": "2z0mfu7o",
+          "x": 640,
+          "y": 1040,
+          "h": 1000
+        }
+      ],
+      "sceneFit": {
+        "brightness": 0.98,
+        "saturation": 0.94,
+        "warmth": 0.12
+      },
+      "filters": [
+        {
+          "asset": "2z0mfu7o",
+          "filter": "brightness(0.98) saturate(0.94) sepia(0.0192)",
+          "opacity": "1"
+        }
+      ],
+      "screenshot": "30_B31.png"
+    },
+    {
+      "key": "B33",
+      "background": "scene_b33",
+      "name": "住宅早餐桌日景",
+      "line": "igqkcqlc",
+      "index": 2570,
+      "instances": 85,
+      "text": "饭后，日记共读时间。",
+      "pose": [
+        {
+          "key": "L24",
+          "id": "2z0mfu7o",
+          "x": 640,
+          "y": 1040,
+          "h": 1000
+        }
+      ],
+      "sceneFit": {
+        "brightness": 0.98,
+        "saturation": 0.94,
+        "warmth": 0.12
+      },
+      "filters": [
+        {
+          "asset": "2z0mfu7o",
+          "filter": "brightness(0.98) saturate(0.94) sepia(0.0192)",
+          "opacity": "1"
+        }
+      ],
+      "screenshot": "31_B33.png"
+    },
+    {
+      "key": "B34",
+      "background": "9yvthx8h",
+      "name": "餐厅_夜",
+      "line": "lubk8ptn",
+      "index": 1407,
+      "instances": 88,
+      "text": "饭后，她抱着酸梅汤，忽然把勺子一放。",
+      "pose": [
+        {
+          "key": "L01",
+          "id": "xfg3qcn2",
+          "x": 640,
+          "y": 1040,
+          "h": 1000
+        }
+      ],
+      "sceneFit": {
+        "brightness": 0.88,
+        "saturation": 0.86,
+        "warmth": 0.38
+      },
+      "filters": [
+        {
+          "asset": "xfg3qcn2",
+          "filter": "brightness(0.88) saturate(0.86) sepia(0.0608)",
+          "opacity": "1"
+        }
+      ],
+      "screenshot": "32_B34.png"
+    },
+    {
+      "key": "B35",
+      "background": "zx4c9brc",
+      "name": "卧室_夜",
+      "line": "ycyll3lk",
+      "index": 2808,
+      "instances": 16,
+      "text": "她照旧趴在桌边，尾巴垂下去，一晃一晃。",
+      "pose": [
+        {
+          "key": "L07",
+          "id": "wrwcdezj",
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000
+        }
+      ],
+      "sceneFit": {
+        "brightness": 0.88,
+        "saturation": 0.86,
+        "warmth": 0.38
+      },
+      "filters": [
+        {
+          "asset": "wrwcdezj",
+          "filter": "brightness(0.88) saturate(0.86) sepia(0.0608)",
+          "opacity": "1"
+        }
+      ],
+      "screenshot": "33_B35.png"
+    },
+    {
+      "key": "B36",
+      "background": "bg_house_door_morning_draft",
+      "name": "卧室门口_清晨",
+      "line": "vyvhxfeg",
+      "index": 2693,
+      "instances": 26,
+      "text": "她穿得很整齐。整齐得过分。耳鳍绯红，尾巴在身后绷成一条直线。",
+      "pose": [
+        {
+          "key": "L31",
+          "id": "tp44t1rb",
+          "x": 640,
+          "y": 1040,
+          "h": 1000
+        }
+      ],
+      "sceneFit": {
+        "brightness": 0.98,
+        "saturation": 0.94,
+        "warmth": 0.12
+      },
+      "filters": [
+        {
+          "asset": "tp44t1rb",
+          "filter": "brightness(0.98) saturate(0.94) sepia(0.0192)",
+          "opacity": "1"
+        }
+      ],
+      "screenshot": "34_B36.png"
+    },
+    {
+      "key": "B37",
+      "background": "y417cb1b",
+      "name": "店面_下午",
+      "line": "ihwnbfqg",
+      "index": 1945,
+      "instances": 21,
+      "text": "她脸上的表情，瞬间僵住了。",
+      "pose": [
+        {
+          "key": "L06",
+          "id": "z869j1e3",
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000
+        }
+      ],
+      "sceneFit": {
+        "brightness": 0.98,
+        "saturation": 0.96,
+        "warmth": 0
+      },
+      "filters": [
+        {
+          "asset": "z869j1e3",
+          "filter": "brightness(0.98) saturate(0.96)",
+          "opacity": "1"
+        }
+      ],
+      "screenshot": "35_B37.png"
+    },
+    {
+      "key": "B38",
+      "background": "lr4hgspz",
+      "name": "翡翠之梦_店内",
+      "line": "onp7z3g3",
+      "index": 1994,
+      "instances": 101,
+      "text": "开业筹备。我趁热打铁，发表了一篇演说。",
+      "pose": [
+        {
+          "key": "L01",
+          "id": "xfg3qcn2",
+          "x": 640,
+          "y": 1040,
+          "h": 1000
+        }
+      ],
+      "sceneFit": {
+        "brightness": 0.96,
+        "saturation": 0.9,
+        "warmth": 0.14
+      },
+      "filters": [
+        {
+          "asset": "xfg3qcn2",
+          "filter": "brightness(0.96) saturate(0.9) sepia(0.0224)",
+          "opacity": "1"
+        }
+      ],
+      "screenshot": "36_B38.png"
+    },
+    {
+      "key": "B39",
+      "background": "bg_shop_interior_night",
+      "name": "翡翠之梦_店内夜",
+      "line": "q4tzhuf3",
+      "index": 2022,
+      "instances": 10,
+      "text": "她坐在柜台上，忽然说——",
+      "pose": [
+        {
+          "key": "P18",
+          "id": "art_upgrade_p18",
+          "x": 900,
+          "y": 692,
+          "h": 650
+        }
+      ],
+      "sceneFit": {
+        "brightness": 0.88,
+        "saturation": 0.86,
+        "warmth": 0.38
+      },
+      "filters": [
+        {
+          "asset": "art_upgrade_p18",
+          "filter": "brightness(0.88) saturate(0.86) sepia(0.0608)",
+          "opacity": "1"
+        }
+      ],
+      "screenshot": "37_B39.png"
+    },
+    {
+      "key": "B40",
+      "background": "bg_shop_afternoon_counter_draft",
+      "name": "翡翠之梦_午后未开灯",
+      "line": "01qp63pb",
+      "index": 2436,
+      "instances": 71,
+      "text": "店里没开灯。她坐在柜台后面，背对着门，在擦贝壳盘。",
+      "pose": [
+        {
+          "key": "L05",
+          "id": "88v1dull",
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000
+        }
+      ],
+      "sceneFit": {
+        "brightness": 0.96,
+        "saturation": 0.9,
+        "warmth": 0.14
+      },
+      "filters": [
+        {
+          "asset": "88v1dull",
+          "filter": "brightness(0.96) saturate(0.9) sepia(0.0224)",
+          "opacity": "1"
+        }
+      ],
+      "screenshot": "38_B40.png"
+    },
+    {
+      "key": "B41",
+      "background": "r1teranv",
+      "name": "翡翠之梦_厨房",
+      "line": "sdoc0o7l",
+      "index": 1963,
+      "instances": 70,
+      "text": "后厨。她拿起小碟和竹签，先走到海鲜区。",
+      "pose": [
+        {
+          "key": "L01",
+          "id": "xfg3qcn2",
+          "x": 640,
+          "y": 1040,
+          "h": 1000
+        }
+      ],
+      "sceneFit": {
+        "brightness": 0.96,
+        "saturation": 0.9,
+        "warmth": 0.14
+      },
+      "filters": [
+        {
+          "asset": "xfg3qcn2",
+          "filter": "brightness(0.96) saturate(0.9) sepia(0.0224)",
+          "opacity": "1"
+        }
+      ],
+      "screenshot": "39_B41.png"
+    },
+    {
+      "key": "B42",
+      "background": "lvjql900",
+      "name": "翡翠之梦_二楼夜",
+      "line": "t73m9n4q",
+      "index": 2262,
+      "instances": 87,
+      "text": "「是验收合格的奖励。不许多想。」",
+      "pose": [
+        {
+          "key": "L07",
+          "id": "wrwcdezj",
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000
+        }
+      ],
+      "sceneFit": {
+        "brightness": 0.88,
+        "saturation": 0.86,
+        "warmth": 0.38
+      },
+      "filters": [
+        {
+          "asset": "wrwcdezj",
+          "filter": "brightness(0.88) saturate(0.86) sepia(0.0608)",
+          "opacity": "1"
+        }
+      ],
+      "screenshot": "40_B42.png"
+    }
+  ],
+  "errors": []
+}

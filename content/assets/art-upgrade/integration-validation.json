@@ -4,13 +4,13 @@
   "laterNodesStoryAndAudioFieldsPreserved": 3148,
   "performanceBaselineNodeIdsPreserved": 3315,
   "originalAudioAssetsUnchanged": 103,
-  "activeVisualIds": 117,
-  "activeReplacedVisualIds": 115,
+  "activeVisualIds": 118,
+  "activeReplacedVisualIds": 116,
   "manualWardrobeVisualIds": [
     "nvgbi1x6",
     "jtp36q4e"
   ],
   "wavPlaybackAssets": 0,
   "chapters": 18,
-  "gameSha256": "099a5f0e4be57b4479f5af786896d9b58eeac01a98226ea615297bd3a84c8b4e"
+  "gameSha256": "33948a74ea65ddd4b5d19bc006fac2b41b70c2cce5ee2df48a08a6d30ffdcfe9"
 }

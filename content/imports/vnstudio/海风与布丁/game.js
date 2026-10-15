@@ -461,7 +461,12 @@ window.VN_GAME = {
       "productionArtId": "B28",
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
-      "imageQualityReported": "low"
+      "imageQualityReported": "low",
+      "sceneFit": {
+        "brightness": 0.96,
+        "saturation": 0.9,
+        "warmth": 0.14
+      }
     },
     "rqlji75s": {
       "id": "rqlji75s",
@@ -479,7 +484,12 @@ window.VN_GAME = {
       "productionArtId": "B30",
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
-      "imageQualityReported": "low"
+      "imageQualityReported": "low",
+      "sceneFit": {
+        "brightness": 0.88,
+        "saturation": 0.86,
+        "warmth": 0.38
+      }
     },
     "ah4t9t6i": {
       "id": "ah4t9t6i",
@@ -497,7 +507,12 @@ window.VN_GAME = {
       "productionArtId": "B29",
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
-      "imageQualityReported": "low"
+      "imageQualityReported": "low",
+      "sceneFit": {
+        "brightness": 0.92,
+        "saturation": 0.87,
+        "warmth": 0.55
+      }
     },
     "we9vnprm": {
       "id": "we9vnprm",
@@ -693,7 +708,12 @@ window.VN_GAME = {
       "productionArtId": "B35",
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
-      "imageQualityReported": "low"
+      "imageQualityReported": "low",
+      "sceneFit": {
+        "brightness": 0.88,
+        "saturation": 0.86,
+        "warmth": 0.38
+      }
     },
     "ooy2g3al": {
       "id": "ooy2g3al",
@@ -711,7 +731,12 @@ window.VN_GAME = {
       "productionArtId": "B31",
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
-      "imageQualityReported": "low"
+      "imageQualityReported": "low",
+      "sceneFit": {
+        "brightness": 0.98,
+        "saturation": 0.94,
+        "warmth": 0.12
+      }
     },
     "9qup2gii": {
       "id": "9qup2gii",
@@ -729,7 +754,12 @@ window.VN_GAME = {
       "productionArtId": "B26",
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
-      "imageQualityReported": "low"
+      "imageQualityReported": "low",
+      "sceneFit": {
+        "brightness": 0.98,
+        "saturation": 0.94,
+        "warmth": 0.12
+      }
     },
     "2c2u3g9q": {
       "id": "2c2u3g9q",
@@ -747,7 +777,12 @@ window.VN_GAME = {
       "productionArtId": "B27",
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
-      "imageQualityReported": "medium"
+      "imageQualityReported": "medium",
+      "sceneFit": {
+        "brightness": 0.98,
+        "saturation": 0.96,
+        "warmth": 0
+      }
     },
     "32lrbngt": {
       "id": "32lrbngt",
@@ -777,7 +812,12 @@ window.VN_GAME = {
       "productionArtId": "B20",
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
-      "imageQualityReported": "low"
+      "imageQualityReported": "low",
+      "sceneFit": {
+        "brightness": 0.98,
+        "saturation": 0.96,
+        "warmth": 0
+      }
     },
     "x1tt92z6": {
       "id": "x1tt92z6",
@@ -885,7 +925,12 @@ window.VN_GAME = {
       "productionArtId": "B16",
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
-      "imageQualityReported": "low"
+      "imageQualityReported": "low",
+      "sceneFit": {
+        "brightness": 0.89,
+        "saturation": 0.87,
+        "warmth": 0.45
+      }
     },
     "4g7f8iam": {
       "id": "4g7f8iam",
@@ -901,7 +946,12 @@ window.VN_GAME = {
       "productionArtId": "B15",
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
-      "imageQualityReported": "low"
+      "imageQualityReported": "low",
+      "sceneFit": {
+        "brightness": 0.91,
+        "saturation": 0.87,
+        "warmth": 0.65
+      }
     },
     "mcdi4nzi": {
       "id": "mcdi4nzi",
@@ -917,7 +967,12 @@ window.VN_GAME = {
       "productionArtId": "B17",
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
-      "imageQualityReported": "low"
+      "imageQualityReported": "low",
+      "sceneFit": {
+        "brightness": 0.88,
+        "saturation": 0.86,
+        "warmth": 0.38
+      }
     },
     "y417cb1b": {
       "id": "y417cb1b",
@@ -933,7 +988,12 @@ window.VN_GAME = {
       "productionArtId": "B37",
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
-      "imageQualityReported": "medium"
+      "imageQualityReported": "medium",
+      "sceneFit": {
+        "brightness": 0.98,
+        "saturation": 0.96,
+        "warmth": 0
+      }
     },
     "02e2z9nd": {
       "id": "02e2z9nd",
@@ -949,7 +1009,12 @@ window.VN_GAME = {
       "productionArtId": "B08",
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
-      "imageQualityReported": "low"
+      "imageQualityReported": "low",
+      "sceneFit": {
+        "brightness": 0.98,
+        "saturation": 0.96,
+        "warmth": 0
+      }
     },
     "tafi49ag": {
       "id": "tafi49ag",
@@ -965,7 +1030,12 @@ window.VN_GAME = {
       "productionArtId": "B09",
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
-      "imageQualityReported": "low"
+      "imageQualityReported": "low",
+      "sceneFit": {
+        "brightness": 0.98,
+        "saturation": 0.96,
+        "warmth": 0
+      }
     },
     "g0htlsw4": {
       "id": "g0htlsw4",
@@ -981,7 +1051,12 @@ window.VN_GAME = {
       "productionArtId": "B10",
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
-      "imageQualityReported": "low"
+      "imageQualityReported": "low",
+      "sceneFit": {
+        "brightness": 0.91,
+        "saturation": 0.87,
+        "warmth": 0.65
+      }
     },
     "qla5b3w0": {
       "id": "qla5b3w0",
@@ -999,7 +1074,12 @@ window.VN_GAME = {
       "productionArtId": "B02",
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
-      "imageQualityReported": "medium"
+      "imageQualityReported": "medium",
+      "sceneFit": {
+        "brightness": 0.98,
+        "saturation": 0.96,
+        "warmth": 0
+      }
     },
     "c5saufd0": {
       "id": "c5saufd0",
@@ -1016,7 +1096,12 @@ window.VN_GAME = {
       "productionArtId": "B02",
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
-      "imageQualityReported": "medium"
+      "imageQualityReported": "medium",
+      "sceneFit": {
+        "brightness": 0.98,
+        "saturation": 0.96,
+        "warmth": 0
+      }
     },
     "9ow2x5w5": {
       "id": "9ow2x5w5",
@@ -1034,7 +1119,12 @@ window.VN_GAME = {
       "productionArtId": "B04",
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
-      "imageQualityReported": "low"
+      "imageQualityReported": "low",
+      "sceneFit": {
+        "brightness": 0.78,
+        "saturation": 0.85,
+        "warmth": -0.4
+      }
     },
     "8eo1nf7q": {
       "id": "8eo1nf7q",
@@ -1051,7 +1141,12 @@ window.VN_GAME = {
       "productionArtId": "B02",
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
-      "imageQualityReported": "medium"
+      "imageQualityReported": "medium",
+      "sceneFit": {
+        "brightness": 0.98,
+        "saturation": 0.96,
+        "warmth": 0
+      }
     },
     "ohwph2ga": {
       "id": "ohwph2ga",
@@ -1067,7 +1162,12 @@ window.VN_GAME = {
       "productionArtId": "B01",
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
-      "imageQualityReported": "medium"
+      "imageQualityReported": "medium",
+      "sceneFit": {
+        "brightness": 0.98,
+        "saturation": 0.94,
+        "warmth": 0.12
+      }
     },
     "mzy4oec6": {
       "id": "mzy4oec6",
@@ -1085,7 +1185,12 @@ window.VN_GAME = {
       "productionArtId": "B03",
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
-      "imageQualityReported": "low"
+      "imageQualityReported": "low",
+      "sceneFit": {
+        "brightness": 0.91,
+        "saturation": 0.87,
+        "warmth": 0.65
+      }
     },
     "2mbzwwg2": {
       "id": "2mbzwwg2",
@@ -1101,7 +1206,12 @@ window.VN_GAME = {
       "productionArtId": "B14",
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
-      "imageQualityReported": "low"
+      "imageQualityReported": "low",
+      "sceneFit": {
+        "brightness": 0.91,
+        "saturation": 0.87,
+        "warmth": 0.65
+      }
     },
     "e6cby6b5": {
       "id": "e6cby6b5",
@@ -1117,7 +1227,12 @@ window.VN_GAME = {
       "productionArtId": "B11",
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
-      "imageQualityReported": "low"
+      "imageQualityReported": "low",
+      "sceneFit": {
+        "brightness": 0.85,
+        "saturation": 0.87,
+        "warmth": -0.25
+      }
     },
     "fxqcg1oj": {
       "id": "fxqcg1oj",
@@ -1135,7 +1250,12 @@ window.VN_GAME = {
       "productionArtId": "B13",
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
-      "imageQualityReported": "medium"
+      "imageQualityReported": "medium",
+      "sceneFit": {
+        "brightness": 0.85,
+        "saturation": 0.87,
+        "warmth": -0.25
+      }
     },
     "gjflu4vq": {
       "id": "gjflu4vq",
@@ -1250,7 +1370,12 @@ window.VN_GAME = {
       "productionArtId": "B05",
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
-      "imageQualityReported": "low"
+      "imageQualityReported": "low",
+      "sceneFit": {
+        "brightness": 0.98,
+        "saturation": 0.96,
+        "warmth": 0
+      }
     },
     "acqkjhf8": {
       "id": "acqkjhf8",
@@ -1268,7 +1393,12 @@ window.VN_GAME = {
       "productionArtId": "B07",
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
-      "imageQualityReported": "medium"
+      "imageQualityReported": "medium",
+      "sceneFit": {
+        "brightness": 0.78,
+        "saturation": 0.85,
+        "warmth": -0.4
+      }
     },
     "uhhb6qjn": {
       "id": "uhhb6qjn",
@@ -1284,7 +1414,12 @@ window.VN_GAME = {
       "productionArtId": "B06",
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
-      "imageQualityReported": "low"
+      "imageQualityReported": "low",
+      "sceneFit": {
+        "brightness": 0.91,
+        "saturation": 0.87,
+        "warmth": 0.65
+      }
     },
     "lvjql900": {
       "id": "lvjql900",
@@ -1302,7 +1437,12 @@ window.VN_GAME = {
       "productionArtId": "B42",
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
-      "imageQualityReported": "medium"
+      "imageQualityReported": "medium",
+      "sceneFit": {
+        "brightness": 0.88,
+        "saturation": 0.86,
+        "warmth": 0.38
+      }
     },
     "r1teranv": {
       "id": "r1teranv",
@@ -1320,7 +1460,12 @@ window.VN_GAME = {
       "productionArtId": "B41",
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
-      "imageQualityReported": "medium"
+      "imageQualityReported": "medium",
+      "sceneFit": {
+        "brightness": 0.96,
+        "saturation": 0.9,
+        "warmth": 0.14
+      }
     },
     "lr4hgspz": {
       "id": "lr4hgspz",
@@ -1338,7 +1483,12 @@ window.VN_GAME = {
       "productionArtId": "B38",
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
-      "imageQualityReported": "medium"
+      "imageQualityReported": "medium",
+      "sceneFit": {
+        "brightness": 0.96,
+        "saturation": 0.9,
+        "warmth": 0.14
+      }
     },
     "179f3n2w": {
       "id": "179f3n2w",
@@ -1354,7 +1504,12 @@ window.VN_GAME = {
       "productionArtId": "B25",
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
-      "imageQualityReported": "medium"
+      "imageQualityReported": "medium",
+      "sceneFit": {
+        "brightness": 0.96,
+        "saturation": 0.9,
+        "warmth": 0.14
+      }
     },
     "sr2lo203": {
       "id": "sr2lo203",
@@ -1372,7 +1527,12 @@ window.VN_GAME = {
       "productionArtId": "B21",
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
-      "imageQualityReported": "medium"
+      "imageQualityReported": "medium",
+      "sceneFit": {
+        "brightness": 0.98,
+        "saturation": 0.96,
+        "warmth": 0
+      }
     },
     "hihrcqx5": {
       "id": "hihrcqx5",
@@ -1388,7 +1548,12 @@ window.VN_GAME = {
       "productionArtId": "B24",
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
-      "imageQualityReported": "medium"
+      "imageQualityReported": "medium",
+      "sceneFit": {
+        "brightness": 0.96,
+        "saturation": 0.9,
+        "warmth": 0.14
+      }
     },
     "p8guxpyy": {
       "id": "p8guxpyy",
@@ -1404,7 +1569,12 @@ window.VN_GAME = {
       "productionArtId": "B23",
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
-      "imageQualityReported": "low"
+      "imageQualityReported": "low",
+      "sceneFit": {
+        "brightness": 0.96,
+        "saturation": 0.9,
+        "warmth": 0.14
+      }
     },
     "9yvthx8h": {
       "id": "9yvthx8h",
@@ -1422,7 +1592,12 @@ window.VN_GAME = {
       "productionArtId": "B34",
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
-      "imageQualityReported": "low"
+      "imageQualityReported": "low",
+      "sceneFit": {
+        "brightness": 0.88,
+        "saturation": 0.86,
+        "warmth": 0.38
+      }
     },
     "xfg3qcn2": {
       "id": "xfg3qcn2",
@@ -2136,7 +2311,12 @@ window.VN_GAME = {
       "productionArtId": "B39",
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
-      "imageQualityReported": "medium"
+      "imageQualityReported": "medium",
+      "sceneFit": {
+        "brightness": 0.88,
+        "saturation": 0.86,
+        "warmth": 0.38
+      }
     },
     "sfx_tail_water_light": {
       "id": "sfx_tail_water_light",
@@ -2352,7 +2532,12 @@ window.VN_GAME = {
       "productionArtId": "B36",
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
-      "imageQualityReported": "low"
+      "imageQualityReported": "low",
+      "sceneFit": {
+        "brightness": 0.98,
+        "saturation": 0.94,
+        "warmth": 0.12
+      }
     },
     "bg_tent_morning_corner_draft": {
       "id": "bg_tent_morning_corner_draft",
@@ -2372,7 +2557,12 @@ window.VN_GAME = {
       "productionArtId": "B19",
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
-      "imageQualityReported": "low"
+      "imageQualityReported": "low",
+      "sceneFit": {
+        "brightness": 0.98,
+        "saturation": 0.96,
+        "warmth": 0
+      }
     },
     "bg_shop_afternoon_counter_draft": {
       "id": "bg_shop_afternoon_counter_draft",
@@ -2393,7 +2583,12 @@ window.VN_GAME = {
       "productionArtId": "B40",
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
-      "imageQualityReported": "medium"
+      "imageQualityReported": "medium",
+      "sceneFit": {
+        "brightness": 0.96,
+        "saturation": 0.9,
+        "warmth": 0.14
+      }
     },
     "scene_b12": {
       "id": "scene_b12",
@@ -2409,7 +2604,12 @@ window.VN_GAME = {
       "productionArtId": "B12",
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
-      "imageQualityReported": "low"
+      "imageQualityReported": "low",
+      "sceneFit": {
+        "brightness": 0.85,
+        "saturation": 0.87,
+        "warmth": -0.25
+      }
     },
     "scene_b18": {
       "id": "scene_b18",
@@ -2425,7 +2625,12 @@ window.VN_GAME = {
       "productionArtId": "B18",
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
-      "imageQualityReported": "low"
+      "imageQualityReported": "low",
+      "sceneFit": {
+        "brightness": 0.88,
+        "saturation": 0.86,
+        "warmth": 0.38
+      }
     },
     "scene_b22": {
       "id": "scene_b22",
@@ -2441,7 +2646,12 @@ window.VN_GAME = {
       "productionArtId": "B22",
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
-      "imageQualityReported": "medium"
+      "imageQualityReported": "medium",
+      "sceneFit": {
+        "brightness": 0.98,
+        "saturation": 0.96,
+        "warmth": 0
+      }
     },
     "scene_b32": {
       "id": "scene_b32",
@@ -2457,7 +2667,12 @@ window.VN_GAME = {
       "productionArtId": "B32",
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
-      "imageQualityReported": "low"
+      "imageQualityReported": "low",
+      "sceneFit": {
+        "brightness": 0.98,
+        "saturation": 0.96,
+        "warmth": 0
+      }
     },
     "scene_b33": {
       "id": "scene_b33",
@@ -2473,7 +2688,12 @@ window.VN_GAME = {
       "productionArtId": "B33",
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
-      "imageQualityReported": "medium"
+      "imageQualityReported": "medium",
+      "sceneFit": {
+        "brightness": 0.98,
+        "saturation": 0.94,
+        "warmth": 0.12
+      }
     },
     "scene_o01": {
       "id": "scene_o01",
@@ -2489,7 +2709,12 @@ window.VN_GAME = {
       "productionArtId": "O01",
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
-      "imageQualityReported": "low"
+      "imageQualityReported": "low",
+      "sceneFit": {
+        "brightness": 0.98,
+        "saturation": 0.94,
+        "warmth": 0.12
+      }
     },
     "scene_o02": {
       "id": "scene_o02",
@@ -2505,7 +2730,12 @@ window.VN_GAME = {
       "productionArtId": "O02",
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
-      "imageQualityReported": "medium"
+      "imageQualityReported": "medium",
+      "sceneFit": {
+        "brightness": 0.98,
+        "saturation": 0.96,
+        "warmth": 0
+      }
     },
     "bgm_atri_e1_comedy": {
       "id": "bgm_atri_e1_comedy",
@@ -2860,7 +3090,12 @@ window.VN_GAME = {
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
       "imageQualityReported": "medium",
-      "previousSourcePath": "assets/art-upgrade/O04.webp"
+      "previousSourcePath": "assets/art-upgrade/O04.webp",
+      "sceneFit": {
+        "brightness": 0.98,
+        "saturation": 0.96,
+        "warmth": 0
+      }
     },
     "art_upgrade_o05": {
       "id": "art_upgrade_o05",
@@ -2875,7 +3110,12 @@ window.VN_GAME = {
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
       "imageQualityReported": "medium",
-      "previousSourcePath": "assets/art-upgrade/O05.webp"
+      "previousSourcePath": "assets/art-upgrade/O05.webp",
+      "sceneFit": {
+        "brightness": 0.98,
+        "saturation": 0.96,
+        "warmth": 0
+      }
     },
     "art_upgrade_o06": {
       "id": "art_upgrade_o06",
@@ -2890,7 +3130,12 @@ window.VN_GAME = {
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
       "imageQualityReported": "medium",
-      "previousSourcePath": "assets/art-upgrade/O06.webp"
+      "previousSourcePath": "assets/art-upgrade/O06.webp",
+      "sceneFit": {
+        "brightness": 0.98,
+        "saturation": 0.96,
+        "warmth": 0
+      }
     },
     "art_upgrade_o07": {
       "id": "art_upgrade_o07",
@@ -2905,7 +3150,12 @@ window.VN_GAME = {
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
       "imageQualityReported": "medium",
-      "previousSourcePath": "assets/art-upgrade/O07.webp"
+      "previousSourcePath": "assets/art-upgrade/O07.webp",
+      "sceneFit": {
+        "brightness": 0.98,
+        "saturation": 0.96,
+        "warmth": 0
+      }
     },
     "art_upgrade_o08": {
       "id": "art_upgrade_o08",
@@ -2920,7 +3170,12 @@ window.VN_GAME = {
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
       "imageQualityReported": "medium",
-      "previousSourcePath": "assets/art-upgrade/O08.webp"
+      "previousSourcePath": "assets/art-upgrade/O08.webp",
+      "sceneFit": {
+        "brightness": 0.98,
+        "saturation": 0.96,
+        "warmth": 0
+      }
     },
     "art_upgrade_o09": {
       "id": "art_upgrade_o09",
@@ -2935,7 +3190,12 @@ window.VN_GAME = {
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
       "imageQualityReported": "medium",
-      "previousSourcePath": "assets/art-upgrade/O09.webp"
+      "previousSourcePath": "assets/art-upgrade/O09.webp",
+      "sceneFit": {
+        "brightness": 0.98,
+        "saturation": 0.96,
+        "warmth": 0
+      }
     },
     "art_upgrade_o10": {
       "id": "art_upgrade_o10",
@@ -2950,7 +3210,12 @@ window.VN_GAME = {
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
       "imageQualityReported": "medium",
-      "previousSourcePath": "assets/art-upgrade/O10.webp"
+      "previousSourcePath": "assets/art-upgrade/O10.webp",
+      "sceneFit": {
+        "brightness": 0.98,
+        "saturation": 0.96,
+        "warmth": 0
+      }
     },
     "art_upgrade_o11": {
       "id": "art_upgrade_o11",
@@ -2965,7 +3230,12 @@ window.VN_GAME = {
       "modelRequested": "gpt-image-2.5-flare",
       "modelReported": null,
       "imageQualityReported": "medium",
-      "previousSourcePath": "assets/art-upgrade/O11.webp"
+      "previousSourcePath": "assets/art-upgrade/O11.webp",
+      "sceneFit": {
+        "brightness": 0.98,
+        "saturation": 0.96,
+        "warmth": 0
+      }
     },
     "art_upgrade_p01": {
       "id": "art_upgrade_p01",
@@ -3356,6 +3626,20 @@ window.VN_GAME = {
       "modelReported": null,
       "imageQualityReported": "medium",
       "character": "鲸鱼小姐"
+    },
+    "art_upgrade_c26": {
+      "id": "art_upgrade_c26",
+      "name": "CG_打烊柜台坐姿·谈起梦想",
+      "type": "bg",
+      "cg": true,
+      "src": "assets/art-upgrade/C26.webp",
+      "w": 1672,
+      "h": 941,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/C26.png",
+      "productionArtId": "C26",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     }
   },
   "lines": [
@@ -32044,7 +32328,7 @@ window.VN_GAME = {
       "id": "h356tshs",
       "speaker": "",
       "text": "",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [],
       "ambience": [
         {
@@ -32081,7 +32365,7 @@ window.VN_GAME = {
       "id": "b9l98qf4",
       "speaker": "",
       "text": "第七天。夜。",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [],
       "ambience": [
         {
@@ -32116,7 +32400,7 @@ window.VN_GAME = {
       "id": "r69b4om4",
       "speaker": "",
       "text": "我在笔记本上写诗。",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [],
       "ambience": [
         {
@@ -32151,7 +32435,7 @@ window.VN_GAME = {
       "id": "xg5du52u",
       "speaker": "",
       "text": "已经撕了四页。",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [],
       "ambience": [
         {
@@ -32186,7 +32470,7 @@ window.VN_GAME = {
       "id": "kn774t2s",
       "speaker": "",
       "text": "她趴在礁石上，无聊地拍着水。",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "m6j4rvz3",
@@ -32230,7 +32514,7 @@ window.VN_GAME = {
       "id": "02ovcg4n",
       "speaker": "鲸鱼小姐",
       "text": "「喂。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "m6j4rvz3",
@@ -32274,7 +32558,7 @@ window.VN_GAME = {
       "id": "atzjfh2r",
       "speaker": "鲸鱼小姐",
       "text": "「你那张纸，比本小姐的尾巴拍水还皱。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "m6j4rvz3",
@@ -32318,7 +32602,7 @@ window.VN_GAME = {
       "id": "u0q2g08i",
       "speaker": "我",
       "text": "「在写诗。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "m6j4rvz3",
@@ -32362,7 +32646,7 @@ window.VN_GAME = {
       "id": "7zz02992",
       "speaker": "鲸鱼小姐",
       "text": "「哦？」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "m6j4rvz3",
@@ -32406,7 +32690,7 @@ window.VN_GAME = {
       "id": "el7s8bw4",
       "speaker": "鲸鱼小姐",
       "text": "「念来听听。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "m6j4rvz3",
@@ -32450,7 +32734,7 @@ window.VN_GAME = {
       "id": "js6oscye",
       "speaker": "我",
       "text": "「大海啊，全是水——」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "m6j4rvz3",
@@ -32494,7 +32778,7 @@ window.VN_GAME = {
       "id": "fy8wiiit",
       "speaker": "鲸鱼小姐",
       "text": "「停。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "m6j4rvz3",
@@ -32538,7 +32822,7 @@ window.VN_GAME = {
       "id": "m9cu1k5u",
       "speaker": "",
       "text": "她抬起一只尾巴尖，像举起一面停战旗。",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "m6j4rvz3",
@@ -32582,7 +32866,7 @@ window.VN_GAME = {
       "id": "vyt7l05e",
       "speaker": "鲸鱼小姐",
       "text": "「水，占了七成体积，是吗。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "m6j4rvz3",
@@ -32626,7 +32910,7 @@ window.VN_GAME = {
       "id": "qcg3brjp",
       "speaker": "鲸鱼小姐",
       "text": "「下一句是不是‘鲸鱼啊，四条腿’？」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "m6j4rvz3",
@@ -32670,7 +32954,7 @@ window.VN_GAME = {
       "id": "7xv7j9ll",
       "speaker": "我",
       "text": "「……鲸鱼没有腿。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "m6j4rvz3",
@@ -32735,7 +33019,7 @@ window.VN_GAME = {
       "id": "328r2a4x",
       "speaker": "鲸鱼小姐",
       "text": "「你也知道？！」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "m6j4rvz3",
@@ -32779,7 +33063,7 @@ window.VN_GAME = {
       "id": "umvmp756",
       "speaker": "鲸鱼小姐",
       "text": "「本小姐来写？」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "m6j4rvz3",
@@ -32823,7 +33107,7 @@ window.VN_GAME = {
       "id": "lyq8ajvo",
       "speaker": "",
       "text": "她眼睛亮了一瞬，又立刻别过脸。",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "m6j4rvz3",
@@ -32867,7 +33151,7 @@ window.VN_GAME = {
       "id": "97qtxass",
       "speaker": "鲸鱼小姐",
       "text": "「哼，写诗这种小事，本小姐闭着眼睛——」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "m6j4rvz3",
@@ -32911,7 +33195,7 @@ window.VN_GAME = {
       "id": "v1wnoebx",
       "speaker": "鲸鱼小姐",
       "text": "「不写。困了。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "m6j4rvz3",
@@ -32955,7 +33239,7 @@ window.VN_GAME = {
       "id": "c3viafv4",
       "speaker": "",
       "text": "她说“不写”的时候，指尖在礁石上划了个“桂”字。",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "m6j4rvz3",
@@ -32999,7 +33283,7 @@ window.VN_GAME = {
       "id": "gwlgzqbs",
       "speaker": "",
       "text": "她的手比她的嘴诚实。",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "m6j4rvz3",
@@ -33043,7 +33327,7 @@ window.VN_GAME = {
       "id": "rc6edv7a",
       "speaker": "",
       "text": "而且她刚才眼睛亮的那一下——不像没读过书的人。",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "m6j4rvz3",
@@ -33087,7 +33371,7 @@ window.VN_GAME = {
       "id": "ky2bo9j3",
       "speaker": "",
       "text": "（尾鳍拍水一下。）",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "m6j4rvz3",
@@ -33137,7 +33421,7 @@ window.VN_GAME = {
       "id": "zv7uxy3y",
       "speaker": "鲸鱼小姐",
       "text": "「大巧不工？」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "m6j4rvz3",
@@ -33181,7 +33465,7 @@ window.VN_GAME = {
       "id": "pznzusjq",
       "speaker": "鲸鱼小姐",
       "text": "「人类，把‘没词了’说得这么风雅，也是本事。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "m6j4rvz3",
@@ -33225,7 +33509,7 @@ window.VN_GAME = {
       "id": "i0nn5u0t",
       "speaker": "",
       "text": "（尾鳍拍水一下。）",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "m6j4rvz3",
@@ -33275,7 +33559,7 @@ window.VN_GAME = {
       "id": "8ubbrr2y",
       "speaker": "鲸鱼小姐",
       "text": "「……」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "m6j4rvz3",
@@ -33319,7 +33603,7 @@ window.VN_GAME = {
       "id": "jfz8mbk1",
       "speaker": "",
       "text": "整条尾巴立出水面，静止三秒。",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "m6j4rvz3",
@@ -33363,7 +33647,7 @@ window.VN_GAME = {
       "id": "hp63bq6o",
       "speaker": "",
       "text": "然后以雷霆万钧之势拍下。",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [],
       "ambience": [
         {
@@ -33404,7 +33688,7 @@ window.VN_GAME = {
       "id": "alirttem",
       "speaker": "",
       "text": "水花浇了我一头。",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [],
       "ambience": [
         {
@@ -33439,7 +33723,7 @@ window.VN_GAME = {
       "id": "s977dbzv",
       "speaker": "鲸鱼小姐",
       "text": "「这叫打击乐。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "0idxpv64",
@@ -33483,7 +33767,7 @@ window.VN_GAME = {
       "id": "frwsvm8y",
       "speaker": "鲸鱼小姐",
       "text": "「有节奏吗？」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "0idxpv64",
@@ -33527,7 +33811,7 @@ window.VN_GAME = {
       "id": "3ua9v325",
       "speaker": "",
       "text": "（尾鳍拍水五下。报复成功，心情极好。）",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "0idxpv64",
@@ -33577,7 +33861,7 @@ window.VN_GAME = {
       "id": "2ecib8lq",
       "speaker": "鲸鱼小姐",
       "text": "「呆呆学者。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "0idxpv64",
@@ -33622,7 +33906,7 @@ window.VN_GAME = {
       "id": "smzkkqnd",
       "speaker": "我",
       "text": "「……叫谁？」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "0idxpv64",
@@ -33666,7 +33950,7 @@ window.VN_GAME = {
       "id": "nq4gdwe3",
       "speaker": "鲸鱼小姐",
       "text": "「叫你了。你的名字。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "0idxpv64",
@@ -33710,7 +33994,7 @@ window.VN_GAME = {
       "id": "q6yhbg3w",
       "speaker": "鲸鱼小姐",
       "text": "「以后写不出诗的时候，这么叫。写出来了——勉强升级成学者。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "0idxpv64",
@@ -33754,7 +34038,7 @@ window.VN_GAME = {
       "id": "sx0w2ilt",
       "speaker": "",
       "text": "（尾鳍卷了一个圈。命名权，她先拿走了。）",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "0idxpv64",
@@ -33798,7 +34082,7 @@ window.VN_GAME = {
       "id": "xxjgnyxp",
       "speaker": "",
       "text": "她忽然伸手，把笔记本抽走了。",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "0idxpv64",
@@ -33842,7 +34126,7 @@ window.VN_GAME = {
       "id": "gr09w4yo",
       "speaker": "鲸鱼小姐",
       "text": "「看不下去了。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "0idxpv64",
@@ -33886,7 +34170,7 @@ window.VN_GAME = {
       "id": "9jdcvaw3",
       "speaker": "鲸鱼小姐",
       "text": "「本小姐教你。看好了——」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "0idxpv64",
@@ -33932,17 +34216,8 @@ window.VN_GAME = {
       "id": "jifyqa4p",
       "speaker": "",
       "text": "她盘起尾巴，跪坐在礁石上，借着我手电的光，提笔。",
-      "bg": "9ow2x5w5",
-      "sprites": [
-        {
-          "uid": "0idxpv64",
-          "asset": "art_upgrade_p05",
-          "x": 658.36,
-          "y": 753.25,
-          "h": 734.91,
-          "flip": false
-        }
-      ],
+      "bg": "r0t0azno",
+      "sprites": [],
       "ambience": [
         {
           "id": "amb_a02_waves_soft_v01",
@@ -33976,17 +34251,8 @@ window.VN_GAME = {
       "id": "ks5nh1es",
       "speaker": "",
       "text": "没有犹豫。没有删改。",
-      "bg": "9ow2x5w5",
-      "sprites": [
-        {
-          "uid": "0idxpv64",
-          "asset": "art_upgrade_p05",
-          "x": 658.36,
-          "y": 753.25,
-          "h": 734.91,
-          "flip": false
-        }
-      ],
+      "bg": "r0t0azno",
+      "sprites": [],
       "ambience": [
         {
           "id": "amb_a02_waves_soft_v01",
@@ -34020,17 +34286,8 @@ window.VN_GAME = {
       "id": "a7qkea9z",
       "speaker": "",
       "text": "笔尖落在纸上，沙沙作响，像退潮。",
-      "bg": "9ow2x5w5",
-      "sprites": [
-        {
-          "uid": "0idxpv64",
-          "asset": "art_upgrade_p05",
-          "x": 658.36,
-          "y": 753.25,
-          "h": 734.91,
-          "flip": false
-        }
-      ],
+      "bg": "r0t0azno",
+      "sprites": [],
       "ambience": [
         {
           "id": "amb_a02_waves_soft_v01",
@@ -34070,17 +34327,8 @@ window.VN_GAME = {
       "id": "gt5easnp",
       "speaker": "鲸鱼小姐",
       "text": "「写好了。」",
-      "bg": "9ow2x5w5",
-      "sprites": [
-        {
-          "uid": "0idxpv64",
-          "asset": "art_upgrade_p05",
-          "x": 658.36,
-          "y": 753.25,
-          "h": 734.91,
-          "flip": false
-        }
-      ],
+      "bg": "r0t0azno",
+      "sprites": [],
       "ambience": [
         {
           "id": "amb_a02_waves_soft_v01",
@@ -34114,17 +34362,8 @@ window.VN_GAME = {
       "id": "9mamop11",
       "speaker": "",
       "text": "她把本子转过来，一脸“不过如此”。",
-      "bg": "9ow2x5w5",
-      "sprites": [
-        {
-          "uid": "0idxpv64",
-          "asset": "art_upgrade_p05",
-          "x": 658.36,
-          "y": 753.25,
-          "h": 734.91,
-          "flip": false
-        }
-      ],
+      "bg": "r0t0azno",
+      "sprites": [],
       "ambience": [
         {
           "id": "amb_a02_waves_soft_v01",
@@ -34158,17 +34397,8 @@ window.VN_GAME = {
       "id": "rg4rkhr4",
       "speaker": "鲸鱼小姐",
       "text": "「随便写的。比你那张皱纸强一点点而已。」",
-      "bg": "9ow2x5w5",
-      "sprites": [
-        {
-          "uid": "0idxpv64",
-          "asset": "art_upgrade_p05",
-          "x": 658.36,
-          "y": 753.25,
-          "h": 734.91,
-          "flip": false
-        }
-      ],
+      "bg": "r0t0azno",
+      "sprites": [],
       "ambience": [
         {
           "id": "amb_a02_waves_soft_v01",
@@ -34466,7 +34696,7 @@ window.VN_GAME = {
       "id": "yojg9kqy",
       "speaker": "",
       "text": "我抬起头。",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "zrqbrwy8",
@@ -34510,7 +34740,7 @@ window.VN_GAME = {
       "id": "ysnw9505",
       "speaker": "",
       "text": "她本来在得意地晃尾巴尖。",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "zrqbrwy8",
@@ -34554,7 +34784,7 @@ window.VN_GAME = {
       "id": "yk9zdwh2",
       "speaker": "",
       "text": "对上我视线的瞬间，整条尾巴僵住了。",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "zrqbrwy8",
@@ -34598,7 +34828,7 @@ window.VN_GAME = {
       "id": "bnjbwtuf",
       "speaker": "鲸鱼小姐",
       "text": "「……看、看什么看。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "zrqbrwy8",
@@ -34642,7 +34872,7 @@ window.VN_GAME = {
       "id": "55r4f9cz",
       "speaker": "鲸鱼小姐",
       "text": "「巧合。汉字那么多，巧合很正常。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "zrqbrwy8",
@@ -34686,7 +34916,7 @@ window.VN_GAME = {
       "id": "m0hp6vmo",
       "speaker": "鲸鱼小姐",
       "text": "「你要是对着任何一个句子抠字眼，能抠出一百个暗号。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "zrqbrwy8",
@@ -34730,7 +34960,7 @@ window.VN_GAME = {
       "id": "poq7igb9",
       "speaker": "我",
       "text": "「这是诗，不是句子。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "zrqbrwy8",
@@ -34774,7 +35004,7 @@ window.VN_GAME = {
       "id": "yne4x64m",
       "speaker": "鲸鱼小姐",
       "text": "「————」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "zrqbrwy8",
@@ -34818,7 +35048,7 @@ window.VN_GAME = {
       "id": "w42mske9",
       "speaker": "",
       "text": "她把笔记本抢回去，“啪”地合上。",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "zrqbrwy8",
@@ -34870,7 +35100,7 @@ window.VN_GAME = {
       "id": "n9y1zqwt",
       "speaker": "鲸鱼小姐",
       "text": "「诗归本小姐管了！」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "zrqbrwy8",
@@ -34914,7 +35144,7 @@ window.VN_GAME = {
       "id": "yczevjck",
       "speaker": "鲸鱼小姐",
       "text": "「这是替你保管！免得你乱抠字眼！」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "zrqbrwy8",
@@ -34958,7 +35188,7 @@ window.VN_GAME = {
       "id": "2jhyzzxp",
       "speaker": "",
       "text": "喊完，她安静了两秒，声音突然低下去：",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "zrqbrwy8",
@@ -35002,7 +35232,7 @@ window.VN_GAME = {
       "id": "yee8euhu",
       "speaker": "鲸鱼小姐",
       "text": "「……后天。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "zrqbrwy8",
@@ -35046,7 +35276,7 @@ window.VN_GAME = {
       "id": "k469ttqs",
       "speaker": "鲸鱼小姐",
       "text": "「后天还来吗？」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "zrqbrwy8",
@@ -35090,7 +35320,7 @@ window.VN_GAME = {
       "id": "en5kz0xa",
       "speaker": "",
       "text": "（尾鳍整条蜷了起来。物理防御姿态。）",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "zrqbrwy8",
@@ -35134,7 +35364,7 @@ window.VN_GAME = {
       "id": "5ggqqa56",
       "speaker": "鲸鱼小姐",
       "text": "「教你？」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "zrqbrwy8",
@@ -35178,7 +35408,7 @@ window.VN_GAME = {
       "id": "n5sdjzbv",
       "speaker": "",
       "text": "她眼睛一亮，尾巴尖翘起来。",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "zrqbrwy8",
@@ -35222,7 +35452,7 @@ window.VN_GAME = {
       "id": "emrkrsj9",
       "speaker": "鲸鱼小姐",
       "text": "「哼，看在你这么诚恳的份上——」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "zrqbrwy8",
@@ -35266,7 +35496,7 @@ window.VN_GAME = {
       "id": "o0g82lj3",
       "speaker": "鲸鱼小姐",
       "text": "「学费，一个布丁。不对，两个。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "zrqbrwy8",
@@ -35310,7 +35540,7 @@ window.VN_GAME = {
       "id": "81i5dfoy",
       "speaker": "鲸鱼小姐",
       "text": "「先交学费再上课，这是本小姐的规矩。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "zrqbrwy8",
@@ -35354,7 +35584,7 @@ window.VN_GAME = {
       "id": "zj7zrfob",
       "speaker": "",
       "text": "（尾鳍翘了起来。）",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "zrqbrwy8",
@@ -35398,7 +35628,7 @@ window.VN_GAME = {
       "id": "3bu4bzeb",
       "speaker": "",
       "text": "我看着诗，没有说话。",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "zrqbrwy8",
@@ -35442,7 +35672,7 @@ window.VN_GAME = {
       "id": "8w0cxlr5",
       "speaker": "",
       "text": "退潮线退到了底。",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "zrqbrwy8",
@@ -35486,7 +35716,7 @@ window.VN_GAME = {
       "id": "ikzt81rv",
       "speaker": "",
       "text": "她本来翘着的尾巴尖，一点一点放平了。",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "zrqbrwy8",
@@ -35530,7 +35760,7 @@ window.VN_GAME = {
       "id": "m6a5wh9r",
       "speaker": "鲸鱼小姐",
       "text": "「……喂。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "zrqbrwy8",
@@ -35574,7 +35804,7 @@ window.VN_GAME = {
       "id": "a1ba7s6w",
       "speaker": "鲸鱼小姐",
       "text": "「不说话是什么意思。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "zrqbrwy8",
@@ -35618,7 +35848,7 @@ window.VN_GAME = {
       "id": "t3j0f0sc",
       "speaker": "鲸鱼小姐",
       "text": "「好还是不好，给句痛快话。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "zrqbrwy8",
@@ -35662,7 +35892,7 @@ window.VN_GAME = {
       "id": "ki9zs3du",
       "speaker": "",
       "text": "我还是没说话。",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "zrqbrwy8",
@@ -35706,7 +35936,7 @@ window.VN_GAME = {
       "id": "ejcl1ehu",
       "speaker": "",
       "text": "只是把手电举高一点，让光落在诗上，落在她的字上。",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "zrqbrwy8",
@@ -35750,7 +35980,7 @@ window.VN_GAME = {
       "id": "u2behb5i",
       "speaker": "",
       "text": "她盯着我的侧脸看了几秒，忽然自己败下阵来。",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "zrqbrwy8",
@@ -35794,7 +36024,7 @@ window.VN_GAME = {
       "id": "cnl74prg",
       "speaker": "鲸鱼小姐",
       "text": "「……沉默就是默认。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "zrqbrwy8",
@@ -35838,7 +36068,7 @@ window.VN_GAME = {
       "id": "lmq0apzi",
       "speaker": "鲸鱼小姐",
       "text": "「默认就是满分。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "zrqbrwy8",
@@ -35882,7 +36112,7 @@ window.VN_GAME = {
       "id": "v1vc1n1l",
       "speaker": "鲸鱼小姐",
       "text": "「这是本小姐词典里的规定，现在生效了。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "zrqbrwy8",
@@ -35926,7 +36156,7 @@ window.VN_GAME = {
       "id": "8xhndchn",
       "speaker": "",
       "text": "她飞快地把笔记本合上，抱进怀里。",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "zrqbrwy8",
@@ -35976,7 +36206,7 @@ window.VN_GAME = {
       "id": "qsv3qy4i",
       "speaker": "",
       "text": "没还。",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "zrqbrwy8",
@@ -36020,7 +36250,7 @@ window.VN_GAME = {
       "id": "6ui1nn3h",
       "speaker": "",
       "text": "（尾鳍卷了一个圈。很慢。）",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "zrqbrwy8",
@@ -36064,7 +36294,7 @@ window.VN_GAME = {
       "id": "znxhnbic",
       "speaker": "",
       "text": "夜深了。",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "zrqbrwy8",
@@ -36110,7 +36340,7 @@ window.VN_GAME = {
       "id": "xhi458wd",
       "speaker": "",
       "text": "她抱着我的笔记本，脑袋一点一点的。",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "zrqbrwy8",
@@ -36154,7 +36384,7 @@ window.VN_GAME = {
       "id": "kpg5y070",
       "speaker": "鲸鱼小姐",
       "text": "「……这首诗，本小姐没收了。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "zrqbrwy8",
@@ -36198,7 +36428,7 @@ window.VN_GAME = {
       "id": "u03rcmtx",
       "speaker": "鲸鱼小姐",
       "text": "「免得你拿去到处念。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "zrqbrwy8",
@@ -36242,7 +36472,7 @@ window.VN_GAME = {
       "id": "j94wjdla",
       "speaker": "鲸鱼小姐",
       "text": "「你的水平，念出去丢的是本小姐的脸。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "zrqbrwy8",
@@ -36286,7 +36516,7 @@ window.VN_GAME = {
       "id": "m5dwwuss",
       "speaker": "我",
       "text": "「那我的水平什么时候能不丢你的脸？」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "zrqbrwy8",
@@ -36330,7 +36560,7 @@ window.VN_GAME = {
       "id": "p325yj2w",
       "speaker": "",
       "text": "她半眯着眼睛，声音含糊——",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "zrqbrwy8",
@@ -36374,7 +36604,7 @@ window.VN_GAME = {
       "id": "ajel2du7",
       "speaker": "鲸鱼小姐",
       "text": "「等你能看出来每句的第一个字的时候。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "zrqbrwy8",
@@ -36418,7 +36648,7 @@ window.VN_GAME = {
       "id": "a1ua2a35",
       "speaker": "",
       "text": "说完，她自己顿住了。",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "zrqbrwy8",
@@ -36462,7 +36692,7 @@ window.VN_GAME = {
       "id": "os0jmr77",
       "speaker": "鲸鱼小姐",
       "text": "「……」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "zrqbrwy8",
@@ -36506,7 +36736,7 @@ window.VN_GAME = {
       "id": "iml2pc3h",
       "speaker": "鲸鱼小姐",
       "text": "「本小姐什么都没说。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "zrqbrwy8",
@@ -36550,7 +36780,7 @@ window.VN_GAME = {
       "id": "3oc2vhul",
       "speaker": "鲸鱼小姐",
       "text": "「刚才那句，你没听见。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "zrqbrwy8",
@@ -36594,7 +36824,7 @@ window.VN_GAME = {
       "id": "7vx8cjgu",
       "speaker": "",
       "text": "（尾鳍半卷。）",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "zrqbrwy8",
@@ -91919,17 +92149,8 @@ window.VN_GAME = {
       "id": "hkq3m6vy",
       "speaker": "",
       "text": "打烊。最后一盏灯。",
-      "bg": "bg_shop_interior_night",
-      "sprites": [
-        {
-          "uid": "2vi7xbhx",
-          "asset": "wrwcdezj",
-          "x": 637.4,
-          "y": 1043.26,
-          "h": 1000.0,
-          "flip": false
-        }
-      ],
+      "bg": "art_upgrade_c26",
+      "sprites": [],
       "ambience": [
         {
           "id": "amb_a15_shop_room_tone_v01",
@@ -91965,17 +92186,8 @@ window.VN_GAME = {
       "id": "q4tzhuf3",
       "speaker": "",
       "text": "她坐在柜台上，忽然说——",
-      "bg": "bg_shop_interior_night",
-      "sprites": [
-        {
-          "uid": "2vi7xbhx",
-          "asset": "wrwcdezj",
-          "x": 637.4,
-          "y": 1043.26,
-          "h": 1000.0,
-          "flip": false
-        }
-      ],
+      "bg": "art_upgrade_c26",
+      "sprites": [],
       "ambience": [
         {
           "id": "amb_a15_shop_room_tone_v01",
@@ -92009,17 +92221,8 @@ window.VN_GAME = {
       "id": "3qbbi7qb",
       "speaker": "鲸鱼小姐",
       "text": "「喂。这一个月，本小姐想明白了一件事。」",
-      "bg": "bg_shop_interior_night",
-      "sprites": [
-        {
-          "uid": "2vi7xbhx",
-          "asset": "wrwcdezj",
-          "x": 637.4,
-          "y": 1043.26,
-          "h": 1000.0,
-          "flip": false
-        }
-      ],
+      "bg": "art_upgrade_c26",
+      "sprites": [],
       "ambience": [
         {
           "id": "amb_a15_shop_room_tone_v01",
@@ -92053,17 +92256,8 @@ window.VN_GAME = {
       "id": "te30pxv6",
       "speaker": "鲸鱼小姐",
       "text": "「以前，吃东西是为了验收。现在不是了。」",
-      "bg": "bg_shop_interior_night",
-      "sprites": [
-        {
-          "uid": "2vi7xbhx",
-          "asset": "wrwcdezj",
-          "x": 637.4,
-          "y": 1043.26,
-          "h": 1000.0,
-          "flip": false
-        }
-      ],
+      "bg": "art_upgrade_c26",
+      "sprites": [],
       "ambience": [
         {
           "id": "amb_a15_shop_room_tone_v01",
@@ -92097,17 +92291,8 @@ window.VN_GAME = {
       "id": "1qnucnh3",
       "speaker": "鲸鱼小姐",
       "text": "「现在，本小姐想做出这片海域最好吃的东西。比外婆的糍粑还好吃。」",
-      "bg": "bg_shop_interior_night",
-      "sprites": [
-        {
-          "uid": "2vi7xbhx",
-          "asset": "wrwcdezj",
-          "x": 637.4,
-          "y": 1043.26,
-          "h": 1000.0,
-          "flip": false
-        }
-      ],
+      "bg": "art_upgrade_c26",
+      "sprites": [],
       "ambience": [
         {
           "id": "amb_a15_shop_room_tone_v01",
@@ -127985,7 +128170,7 @@ window.VN_GAME = {
       "id": "pz8195kk",
       "speaker": "",
       "text": "打烊。浅滩。夜。",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [],
       "ambience": [
         {
@@ -128022,7 +128207,7 @@ window.VN_GAME = {
       "id": "ar4m5eb6",
       "speaker": "",
       "text": "三个月前，我就是在这里醒过来的。",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [],
       "ambience": [
         {
@@ -128057,7 +128242,7 @@ window.VN_GAME = {
       "id": "zayyfd2c",
       "speaker": "",
       "text": "礁石还在。潮声还是那个频率。月亮比那天圆一点。",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [],
       "ambience": [
         {
@@ -128092,7 +128277,7 @@ window.VN_GAME = {
       "id": "pvyjs8ij",
       "speaker": "",
       "text": "她坐在礁石上，尾巴垂在水里，晃。",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -128137,7 +128322,7 @@ window.VN_GAME = {
       "id": "x7jyamen",
       "speaker": "",
       "text": "旁边放着两样东西——",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -128182,7 +128367,7 @@ window.VN_GAME = {
       "id": "xjo7fnms",
       "speaker": "",
       "text": "我的初遇篇手稿。和她的手。",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -128227,7 +128412,7 @@ window.VN_GAME = {
       "id": "j6taov0s",
       "speaker": "",
       "text": "她的手搁在膝上。指间，那枚刻着“验”的戒指，泛着一点天青。",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -128272,7 +128457,7 @@ window.VN_GAME = {
       "id": "kupuqhew",
       "speaker": "",
       "text": "我手上的“存”，是配套的。她验过的。",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -128317,7 +128502,7 @@ window.VN_GAME = {
       "id": "meudaeb0",
       "speaker": "我",
       "text": "「戒指戴着呢。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -128362,7 +128547,7 @@ window.VN_GAME = {
       "id": "8nxhllnu",
       "speaker": "鲸鱼小姐",
       "text": "「嗯。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -128407,7 +128592,7 @@ window.VN_GAME = {
       "id": "48psdl1a",
       "speaker": "鲸鱼小姐",
       "text": "「说明书写好了：洗澡要摘，睡觉要摘，见外婆——」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -128452,7 +128637,7 @@ window.VN_GAME = {
       "id": "rte1qnt4",
       "speaker": "",
       "text": "她顿了顿。",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -128497,7 +128682,7 @@ window.VN_GAME = {
       "id": "nj1i1iv4",
       "speaker": "鲸鱼小姐",
       "text": "「见外婆，不许摘。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -128542,7 +128727,7 @@ window.VN_GAME = {
       "id": "livwvbn2",
       "speaker": "",
       "text": "（尾鳍卷了一个圈。“见外婆不许摘”——那见谁要摘，她没说。）",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -128712,7 +128897,7 @@ window.VN_GAME = {
       "id": "fdp1qtcz",
       "speaker": "鲸鱼小姐",
       "text": "「接下来的故事——你想要什么样的？」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -128757,7 +128942,7 @@ window.VN_GAME = {
       "id": "v0p0spea",
       "speaker": "",
       "text": "她沉默了一会儿。",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -128802,7 +128987,7 @@ window.VN_GAME = {
       "id": "8tph43ss",
       "speaker": "鲸鱼小姐",
       "text": "「……本小姐要的那种，说出来，你可不许笑。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -128847,7 +129032,7 @@ window.VN_GAME = {
       "id": "fn70qy8g",
       "speaker": "我",
       "text": "「不笑。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -128892,7 +129077,7 @@ window.VN_GAME = {
       "id": "u27hspuo",
       "speaker": "鲸鱼小姐",
       "text": "「学者留住鲸鱼小姐的心——」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -128937,7 +129122,7 @@ window.VN_GAME = {
       "id": "qimqf0ed",
       "speaker": "鲸鱼小姐",
       "text": "「不是靠什么花言巧语，和奇怪的比喻。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -128982,7 +129167,7 @@ window.VN_GAME = {
       "id": "ox9sc4j7",
       "speaker": "鲸鱼小姐",
       "text": "「是因为他每天老老实实地去集市挑食材。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -129027,7 +129212,7 @@ window.VN_GAME = {
       "id": "ndbu4m8o",
       "speaker": "鲸鱼小姐",
       "text": "「会记得给她的布丁，多加一层焦糖。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -129072,7 +129257,7 @@ window.VN_GAME = {
       "id": "1n0oai41",
       "speaker": "鲸鱼小姐",
       "text": "「会在她忙了一天之后，还愿意给她按肩膀。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -129117,7 +129302,7 @@ window.VN_GAME = {
       "id": "wv5cuac9",
       "speaker": "鲸鱼小姐",
       "text": "「你把这些写进初遇篇里——」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -129162,7 +129347,7 @@ window.VN_GAME = {
       "id": "5h8dtlwh",
       "speaker": "鲸鱼小姐",
       "text": "「比写什么公主和王子的童话，都有用。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -129207,7 +129392,7 @@ window.VN_GAME = {
       "id": "0mwt1rw6",
       "speaker": "",
       "text": "（尾鳍放平了。说这段话的时候，她没有看手稿，她看着我。）",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -129252,7 +129437,7 @@ window.VN_GAME = {
       "id": "oe2vmjgt",
       "speaker": "鲸鱼小姐",
       "text": "「公主和王子？」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -129297,7 +129482,7 @@ window.VN_GAME = {
       "id": "6yr6uset",
       "speaker": "鲸鱼小姐",
       "text": "「王子有什么好的。坐船来的，还是不会游泳的那种？」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -129342,7 +129527,7 @@ window.VN_GAME = {
       "id": "19js3h5w",
       "speaker": "鲸鱼小姐",
       "text": "「……不过，公主可以考虑。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -129387,7 +129572,7 @@ window.VN_GAME = {
       "id": "8bukas9s",
       "speaker": "鲸鱼小姐",
       "text": "「公主挑食吗？公主管账吗？公主的珍珠是什么颜色的？」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -129432,7 +129617,7 @@ window.VN_GAME = {
       "id": "fi3v9wc8",
       "speaker": "",
       "text": "（尾鳍翘了起来。自动代入了。）",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -129477,7 +129662,7 @@ window.VN_GAME = {
       "id": "tlygugmd",
       "speaker": "鲸鱼小姐",
       "text": "「都行？」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -129522,7 +129707,7 @@ window.VN_GAME = {
       "id": "bkyovh13",
       "speaker": "鲸鱼小姐",
       "text": "「什么叫都行？」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -129567,7 +129752,7 @@ window.VN_GAME = {
       "id": "6pwic004",
       "speaker": "鲸鱼小姐",
       "text": "「这是要写进灵枢里的东西，你说都行？！」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -129612,7 +129797,7 @@ window.VN_GAME = {
       "id": "kxbbx9ca",
       "speaker": "鲸鱼小姐",
       "text": "「今晚回去重写三页！明天早饭前交！」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -129657,7 +129842,7 @@ window.VN_GAME = {
       "id": "r4zi6oa8",
       "speaker": "",
       "text": "（尾鳍拍了一下沙子。）",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -129708,7 +129893,7 @@ window.VN_GAME = {
       "id": "1pzuaf7p",
       "speaker": "",
       "text": "稿子合上了。",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -129761,7 +129946,7 @@ window.VN_GAME = {
       "id": "kk0gkl53",
       "speaker": "",
       "text": "她忽然说——",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -129806,7 +129991,7 @@ window.VN_GAME = {
       "id": "utztrk9n",
       "speaker": "鲸鱼小姐",
       "text": "「喂。有件事，本小姐瞒了你三个月。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -129851,7 +130036,7 @@ window.VN_GAME = {
       "id": "cflx3g9u",
       "speaker": "我",
       "text": "「嗯？」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -129896,7 +130081,7 @@ window.VN_GAME = {
       "id": "kfype6dy",
       "speaker": "鲸鱼小姐",
       "text": "「初遇那天。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -129941,7 +130126,7 @@ window.VN_GAME = {
       "id": "4zgki6xf",
       "speaker": "鲸鱼小姐",
       "text": "「本小姐说，只是路过。顺便。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -129986,7 +130171,7 @@ window.VN_GAME = {
       "id": "39s7warq",
       "speaker": "",
       "text": "她看着海面，尾巴尖在水下慢慢画圈。",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -130031,7 +130216,7 @@ window.VN_GAME = {
       "id": "cu1jv9pd",
       "speaker": "鲸鱼小姐",
       "text": "「那天不是。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -130076,7 +130261,7 @@ window.VN_GAME = {
       "id": "x0n4swm1",
       "speaker": "鲸鱼小姐",
       "text": "「你掉进这片海的前一天，本小姐就感觉到海里多了个东西。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -130121,7 +130306,7 @@ window.VN_GAME = {
       "id": "43dcjtyw",
       "speaker": "鲸鱼小姐",
       "text": "「第二天，你醒了。抱着你的本子，坐在水底下发呆。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -130166,7 +130351,7 @@ window.VN_GAME = {
       "id": "sfgxomrb",
       "speaker": "鲸鱼小姐",
       "text": "「本小姐在礁石后面，看了三天。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -130211,7 +130396,7 @@ window.VN_GAME = {
       "id": "69nugc0p",
       "speaker": "鲸鱼小姐",
       "text": "「看你给本子擦水。看你写那些看不懂的字。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -130256,7 +130441,7 @@ window.VN_GAME = {
       "id": "rwd3qe0r",
       "speaker": "鲸鱼小姐",
       "text": "「看你对着大海念叨‘智能的原理’。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -130301,7 +130486,7 @@ window.VN_GAME = {
       "id": "pevt6ns0",
       "speaker": "鲸鱼小姐",
       "text": "「看你啃了半块泡烂的糍粑——那是海鸥送错的，本来不是给你的。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -130346,7 +130531,7 @@ window.VN_GAME = {
       "id": "3v4znyeh",
       "speaker": "我",
       "text": "「那本来是给谁的？」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -130391,7 +130576,7 @@ window.VN_GAME = {
       "id": "6st4rp02",
       "speaker": "鲸鱼小姐",
       "text": "「给本小姐的！」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -130436,7 +130621,7 @@ window.VN_GAME = {
       "id": "5sg23cos",
       "speaker": "鲸鱼小姐",
       "text": "「……重点不是这个！」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -130481,7 +130666,7 @@ window.VN_GAME = {
       "id": "1pzh80i8",
       "speaker": "",
       "text": "她深吸一口气。",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -130526,7 +130711,7 @@ window.VN_GAME = {
       "id": "my1hybkh",
       "speaker": "鲸鱼小姐",
       "text": "「重点是，第四天，本小姐才想出来‘路过’这个理由。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -130571,7 +130756,7 @@ window.VN_GAME = {
       "id": "fde1uw7m",
       "speaker": "鲸鱼小姐",
       "text": "「想了三天，就只想出来这个。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -130616,7 +130801,7 @@ window.VN_GAME = {
       "id": "wvm4yd31",
       "speaker": "鲸鱼小姐",
       "text": "「所以你要是敢在初遇篇里写‘偶遇’——」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -130661,7 +130846,7 @@ window.VN_GAME = {
       "id": "x4sh81id",
       "speaker": "鲸鱼小姐",
       "text": "「写吧。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -130706,7 +130891,7 @@ window.VN_GAME = {
       "id": "zuwiy48w",
       "speaker": "鲸鱼小姐",
       "text": "「『浅滩上的偶遇』，就写偶遇。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -130751,7 +130936,7 @@ window.VN_GAME = {
       "id": "0kiu7o7s",
       "speaker": "鲸鱼小姐",
       "text": "「反正全世界，只有本小姐知道不是。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -130796,7 +130981,7 @@ window.VN_GAME = {
       "id": "4d7rdwgb",
       "speaker": "",
       "text": "『她说“看了三天”的时候，忽然明白了什么，声音低下去——』",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -130841,7 +131026,7 @@ window.VN_GAME = {
       "id": "904t9lfc",
       "speaker": "",
       "text": "『“原来从那时候起，就是本小姐先看你的。”』",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -130886,7 +131071,7 @@ window.VN_GAME = {
       "id": "wnxemp29",
       "speaker": "",
       "text": "『她输在了起跑线上。』",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -130931,7 +131116,7 @@ window.VN_GAME = {
       "id": "1g4niwwu",
       "speaker": "",
       "text": "『这件事，她不准备写进任何人的日记。』",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -130976,7 +131161,7 @@ window.VN_GAME = {
       "id": "nkfemir9",
       "speaker": "",
       "text": "（尾鳍在月光下，圈起了两个人的影子。一个很浅很浅的圈。）",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -131021,7 +131206,7 @@ window.VN_GAME = {
       "id": "dfgw38nd",
       "speaker": "",
       "text": "夜深了。该回去了。",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -131070,7 +131255,7 @@ window.VN_GAME = {
       "id": "re6akd65",
       "speaker": "",
       "text": "她站起来，忽然又坐下。",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -131115,7 +131300,7 @@ window.VN_GAME = {
       "id": "p8f4p70m",
       "speaker": "鲸鱼小姐",
       "text": "「最后一件事。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -131160,7 +131345,7 @@ window.VN_GAME = {
       "id": "txd4qs42",
       "speaker": "",
       "text": "她把手稿递还给我。",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -131205,7 +131390,7 @@ window.VN_GAME = {
       "id": "6zy7clrr",
       "speaker": "鲸鱼小姐",
       "text": "「初遇篇，到这里为止，验收——」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -131250,7 +131435,7 @@ window.VN_GAME = {
       "id": "uxdrpmrb",
       "speaker": "",
       "text": "她顿了顿。",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -131295,7 +131480,7 @@ window.VN_GAME = {
       "id": "gjbw4wb1",
       "speaker": "鲸鱼小姐",
       "text": "「通过。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -131340,7 +131525,7 @@ window.VN_GAME = {
       "id": "dywyopih",
       "speaker": "鲸鱼小姐",
       "text": "「但是不许完结。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -131385,7 +131570,7 @@ window.VN_GAME = {
       "id": "3qroszxg",
       "speaker": "鲸鱼小姐",
       "text": "「日记继续。早安继续。焦糖继续。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -131430,7 +131615,7 @@ window.VN_GAME = {
       "id": "578j5uk8",
       "speaker": "鲸鱼小姐",
       "text": "「这个故事没有‘完’这个字。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -131475,7 +131660,7 @@ window.VN_GAME = {
       "id": "9xhxnr36",
       "speaker": "鲸鱼小姐",
       "text": "「有‘待续’。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "ssu9vjyy",
@@ -132291,7 +132476,7 @@ window.VN_GAME = {
       "id": "kyg6ltxc",
       "speaker": "",
       "text": "她顿了顿，又顿了顿。",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "bahb65vw",
@@ -132336,7 +132521,7 @@ window.VN_GAME = {
       "id": "l06i6ylj",
       "speaker": "鲸鱼小姐",
       "text": "「……暂不通过。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "bahb65vw",
@@ -132381,7 +132566,7 @@ window.VN_GAME = {
       "id": "9lcegbhh",
       "speaker": "我",
       "text": "「哪里写得不好？」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "bahb65vw",
@@ -132426,7 +132611,7 @@ window.VN_GAME = {
       "id": "qgl5b51z",
       "speaker": "鲸鱼小姐",
       "text": "「不是写得不好。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "bahb65vw",
@@ -132471,7 +132656,7 @@ window.VN_GAME = {
       "id": "1um8d9e9",
       "speaker": "鲸鱼小姐",
       "text": "「是你好多次，没听懂。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "bahb65vw",
@@ -132516,7 +132701,7 @@ window.VN_GAME = {
       "id": "k0ochdbk",
       "speaker": "",
       "text": "她把手稿翻回前面，一页一页地点给我看。",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "bahb65vw",
@@ -132561,7 +132746,7 @@ window.VN_GAME = {
       "id": "4bpjq825",
       "speaker": "鲸鱼小姐",
       "text": "「这里，本小姐说‘随便’，你就真的随便了。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "bahb65vw",
@@ -132606,7 +132791,7 @@ window.VN_GAME = {
       "id": "4hmx6ind",
       "speaker": "鲸鱼小姐",
       "text": "「这里，本小姐说‘才不稀罕’，你就真的没买。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "bahb65vw",
@@ -132651,7 +132836,7 @@ window.VN_GAME = {
       "id": "bknvwwl0",
       "speaker": "鲸鱼小姐",
       "text": "「还有这里。你说，那是个玩笑。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "bahb65vw",
@@ -132696,7 +132881,7 @@ window.VN_GAME = {
       "id": "o3kdq5la",
       "speaker": "",
       "text": "她的手指在那一行停了很久，没有翻过去。",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "bahb65vw",
@@ -132741,7 +132926,7 @@ window.VN_GAME = {
       "id": "q4rkztvo",
       "speaker": "鲸鱼小姐",
       "text": "「本小姐的话，十句里有九句是反着说的。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "bahb65vw",
@@ -132786,7 +132971,7 @@ window.VN_GAME = {
       "id": "7arfwvi6",
       "speaker": "鲸鱼小姐",
       "text": "「剩下那一句，写在尾巴上。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "bahb65vw",
@@ -132831,7 +133016,7 @@ window.VN_GAME = {
       "id": "db3uw28r",
       "speaker": "鲸鱼小姐",
       "text": "「你看了三个月，还是只看了一半。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "bahb65vw",
@@ -132876,7 +133061,7 @@ window.VN_GAME = {
       "id": "4c2q13i3",
       "speaker": "",
       "text": "我没有反驳。",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "bahb65vw",
@@ -132921,7 +133106,7 @@ window.VN_GAME = {
       "id": "xx98hf40",
       "speaker": "",
       "text": "因为她说的每一页，我都记得。",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "bahb65vw",
@@ -132966,7 +133151,7 @@ window.VN_GAME = {
       "id": "p747txh3",
       "speaker": "",
       "text": "记得，但当时没懂。",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "bahb65vw",
@@ -133011,7 +133196,7 @@ window.VN_GAME = {
       "id": "nzmc5roq",
       "speaker": "",
       "text": "（尾鳍在水里，慢慢地、慢慢地摆了一下。不是生气。是在等。）",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "bahb65vw",
@@ -133056,7 +133241,7 @@ window.VN_GAME = {
       "id": "e88c8o7p",
       "speaker": "",
       "text": "她从口袋里拿出那条银链。",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [],
       "ambience": [
         {
@@ -133091,7 +133276,7 @@ window.VN_GAME = {
       "id": "jb79ngo4",
       "speaker": "",
       "text": "天青色的珍珠，在她掌心里转了一圈。",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [],
       "ambience": [
         {
@@ -133126,7 +133311,7 @@ window.VN_GAME = {
       "id": "5mj60150",
       "speaker": "",
       "text": "她没有戴上。",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [],
       "ambience": [
         {
@@ -133161,7 +133346,7 @@ window.VN_GAME = {
       "id": "yzm74mz2",
       "speaker": "鲸鱼小姐",
       "text": "「这个，先放本小姐这儿保管。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "daeghqdt",
@@ -133206,7 +133391,7 @@ window.VN_GAME = {
       "id": "ibibg9bd",
       "speaker": "鲸鱼小姐",
       "text": "「不是不要。是你还没答对。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "daeghqdt",
@@ -133251,7 +133436,7 @@ window.VN_GAME = {
       "id": "v10y4a4z",
       "speaker": "鲸鱼小姐",
       "text": "「初遇篇，打回去重写。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "daeghqdt",
@@ -133296,7 +133481,7 @@ window.VN_GAME = {
       "id": "nk1zf5pg",
       "speaker": "鲸鱼小姐",
       "text": "「日记照写。早安照说。布丁照做。焦糖——」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "daeghqdt",
@@ -133341,7 +133526,7 @@ window.VN_GAME = {
       "id": "p7hu2gmh",
       "speaker": "鲸鱼小姐",
       "text": "「……焦糖，可以先少一层。等你补回来。」",
-      "bg": "9ow2x5w5",
+      "bg": "acqkjhf8",
       "sprites": [
         {
           "uid": "daeghqdt",
@@ -147654,7 +147839,7 @@ window.VN_GAME = {
   },
   "artUpgrade": {
     "date": "2026-10-15",
-    "copiedReviewedArt": 132,
+    "copiedReviewedArt": 133,
     "activeOriginalWardrobeGaps": [
       {
         "asset": "nvgbi1x6",

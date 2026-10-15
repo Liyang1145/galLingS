@@ -139,13 +139,30 @@ window.VNArtLibrary = (() => {
       const index=Number(select.value), sprite=L().sprites[index], area=box.querySelector('#artNumbers');
       if (!sprite){area.innerHTML='<p>当前没有角色，先从美术素材库添加。</p>';return;}
       selUid=sprite.uid;renderStage(L(),true);
-      area.innerHTML=[['x','横向位置'],['y','纵向位置'],['h','人物高度']].map(([key,label])=>'<label>'+label+'<input type="number" data-position="'+key+'" step="1" value="'+sprite[key]+'"></label>').join('')+'<label><input type="checkbox" id="artFlip"'+(sprite.flip?' checked':'')+'>水平翻转</label>';
+      const fit=sceneFitFor(sprite,L()),fitLabels={brightness:'人物明度',saturation:'人物饱和度',warmth:'色温（负值偏冷，正值偏暖）'};
+      area.innerHTML=[['x','横向位置'],['y','纵向位置'],['h','人物高度']].map(([key,label])=>'<label>'+label+'<input type="number" data-position="'+key+'" step="1" value="'+sprite[key]+'"></label>').join('')+'<label><input type="checkbox" id="artFlip"'+(sprite.flip?' checked':'')+'>水平翻转</label>'
+        +'<label>场景光色<select id="artSceneFit"><option value="inherit"'+(fit.mode==='inherit'?' selected':'')+'>跟随背景</option><option value="off"'+(fit.mode==='off'?' selected':'')+'>保留立绘原色</option><option value="custom"'+(fit.mode==='custom'?' selected':'')+'>手动微调</option></select></label>'
+        +Object.entries(SCENE_FIT_LIMITS).map(([key,[min,max]])=>'<label>'+fitLabels[key]+'<input type="number" data-scene-fit="'+key+'" min="'+min+'" max="'+max+'" step="0.02" value="'+fit[key]+'"'+(fit.mode==='custom'?'':' disabled')+'></label>').join('')
+        +'<small>只调整人物的光色，不改原图、人物位置和演出动作。跟随背景时，换景自动采用对应光色。</small>';
       area.querySelectorAll('[data-position]').forEach(input=>input.onchange=()=>{
         const value=Number(input.value);if (!Number.isFinite(value))return;
         const key=input.dataset.position,v=key==='h'?Math.max(1,Math.min(3000,value)):Math.max(-3000,Math.min(5000,value));
         edit(l=>{if(l.sprites[index])l.sprites[index][key]=v;});input.value=v;
       });
       area.querySelector('#artFlip').onchange=e=>edit(l=>{if(l.sprites[index])l.sprites[index].flip=e.target.checked;});
+      const target=l=>l.sprites.find(s=>s.uid===sprite.uid)||l.sprites[index];
+      area.querySelector('#artSceneFit').onchange=e=>{
+        const mode=e.target.value;
+        edit(l=>{const s=target(l);if(!s)return;if(mode==='inherit')delete s.sceneFit;else s.sceneFit=mode==='off'?{mode:'off'}:{mode:'custom',...sceneFitValues(sceneFitFor(s,l))};});
+        fields();
+      };
+      area.querySelectorAll('[data-scene-fit]').forEach(input=>input.onchange=()=>{
+        const key=input.dataset.sceneFit,value=Number(input.value);
+        if(!input.value.trim()||!Number.isFinite(value)){input.value=fit[key];return;}
+        const normalized=sceneFitValues({...sceneFitFor(sprite,L()),[key]:value})[key];
+        edit(l=>{const s=target(l);if(s)s.sceneFit={mode:'custom',...sceneFitValues(sceneFitFor(s,l)),[key]:normalized};});
+        input.value=normalized;
+      });
     };select.onchange=fields;fields();
   }
   function playableProject() {

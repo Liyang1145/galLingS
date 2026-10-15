@@ -185,6 +185,9 @@ body.playing #props{display:none}
 .spr.act-jump{animation:aJump .5s ease-out}
 .spr.act-shake{animation:aShake .5s linear}
 .spr.act-nod{animation:aNod .6s ease-in-out}
+.spr.act-lean{animation:aLean .55s ease-in-out}
+.spr.act-flinch{animation:aFlinch .38s ease-out}
+.spr.act-settle{animation:aSettle .55s ease-out}
 @keyframes sIn{from{opacity:0}to{opacity:1}}
 @keyframes sInL{from{opacity:0;translate:-280px 0}to{opacity:1;translate:0 0}}
 @keyframes sInR{from{opacity:0;translate:280px 0}to{opacity:1;translate:0 0}}
@@ -193,6 +196,9 @@ body.playing #props{display:none}
 @keyframes aJump{0%,100%{translate:0 0}30%{translate:0 -42px}55%{translate:0 0}75%{translate:0 -12px}}
 @keyframes aShake{0%,100%{translate:0 0}15%{translate:-12px 0}30%{translate:10px 0}45%{translate:-8px 0}60%{translate:6px 0}80%{translate:-3px 0}}
 @keyframes aNod{0%,100%{translate:0 0}35%{translate:0 22px}60%{translate:0 0}80%{translate:0 10px}}
+@keyframes aLean{0%,100%{translate:0 0;rotate:0deg}45%{translate:-10px 0;rotate:-1.2deg}}
+@keyframes aFlinch{0%,100%{translate:0 0}25%{translate:14px 1px}55%{translate:8px 0}}
+@keyframes aSettle{0%{translate:0 -16px}65%{translate:0 3px}100%{translate:0 0}}
 #animPop{position:absolute;display:none;flex-direction:column;gap:4px;padding:8px;background:#1b1d24f2;border:1px solid var(--line);border-radius:10px;z-index:8;transform:translate(-50%,0)}
 #animPop .row{display:flex;gap:3px;align-items:center}
 #animPop .row>i{width:22px;font-style:normal;color:var(--dim);font-size:13px}
@@ -762,7 +768,7 @@ const LOOKS = [
 ];
 const lookCss = v => (LOOKS.find(x => x[0] === v) || LOOKS[0])[3];
 const lookOk = v => !v || v === 'none' || LOOKS.some(x => x[0] === v);
-const SPR_ACT = [['jump', 'chevrons-up', '跳一下'], ['shake', 'vibrate', '发抖/生气'], ['nod', 'chevrons-down', '点头']];
+const SPR_ACT = [['jump', 'chevrons-up', '跳一下'], ['shake', 'vibrate', '发抖/生气'], ['nod', 'chevrons-down', '点头'], ['lean', 'chevrons-right', '探身'], ['flinch', 'vibrate', '怔住/退缩'], ['settle', 'chevrons-down', '坐稳']];
 const isPause = l => !l.text && !l.choices.length && !l.agent;     // 没有文字 = 演出节
 const labels = () => [...new Set(P.lines.map(l => l.label).filter(Boolean))];
 const labelIndex = name => P.lines.findIndex(l => l.label === name);
@@ -785,7 +791,7 @@ const A = id => P.assets[id];
 const charOf = name => P.chars.find(c => c.name === name);
 // 表情组：素材名“角色_表情”
 const splitName = n => { const m = String(n).match(/^(.+?)[_\-—](.+)$/); return m ? [m[1], m[2]] : [String(n), '']; };
-const charKey = a => splitName(a.name)[0];
+const charKey = a => a.character || splitName(a.name)[0];
 const siblings = id => { const k = charKey(A(id)); return Object.values(P.assets).filter(a => a.type === 'ch' && charKey(a) === k); };
 const exprNames = name => Object.values(P.assets).filter(a => a.type === 'ch' && charKey(a) === name).map(a => splitName(a.name)[1] || '默认');
 
@@ -2282,11 +2288,21 @@ function retrigger(el, cls) { el.classList.remove(cls); void el.offsetWidth; el.
 function setName(el, name) { el.textContent = name || ''; el.style.color = charOf(name)?.color || ''; }
 function showPlay(first) {
   clearTimers();
+  // Finished hit effects must not keep overriding later scene transitions.
+  stage.classList.remove('fade', 'shake', 'zoom', 'quake');
+  $('#veil').classList.remove('go', 'blink');
   const l = P.lines[RT.idx], prev = lastShown;
   renderStage(l, false);
   $('#choices').className = ''; $('#pin').classList.remove('show');
-  if (!first && lastShown && visKey(lastShown) !== visKey(l)) {
-    if (l.trans === 'fade') retrigger(stage, 'fade');
+  // Pose changes reuse the actor without fading the entire room and dialogue scene.
+  if (!first && lastShown && lastShown.bg !== l.bg) {
+    if (l.trans === 'fade') {
+      stage.classList.remove('fade');
+      // The animated children need a style flush, even when the stage size is unchanged.
+      void getComputedStyle(bgEl).animationName;
+      stage.classList.add('fade');
+      void getComputedStyle(bgEl).animationName;
+    }
     if (l.trans === 'black' || l.trans === 'flash') { const v = $('#veil'); v.style.background = l.trans === 'black' ? '#000' : '#fff'; retrigger(v, 'go'); }
   }
   if (!RT.skip) playFx(l.fx);

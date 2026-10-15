@@ -13,9 +13,19 @@ def verify():
     assert [i for i in new_ids if i in set(old_ids)]==old_ids
     by_id={l['id']:l for l in current['lines']}
     for old in before['lines'][160:]:
-        a={k:v for k,v in old.items() if k not in {'bg','sprites'}}
-        b={k:v for k,v in by_id[old['id']].items() if k not in {'bg','sprites'}}
+        a={k:v for k,v in old.items() if k not in {'bg','sprites','acts','fx'}}
+        b={k:v for k,v in by_id[old['id']].items() if k not in {'bg','sprites','acts','fx'}}
         assert a==b,old['id']
+    performance_baseline=ROOT/'archive/deliveries/character-performance/before-game.js'
+    if current.get('characterPerformance'):
+        performance_before=project(performance_baseline)
+        assert [l['id'] for l in performance_before['lines']]==new_ids
+        for a,b in zip(performance_before['lines'],current['lines']):
+            assert {k:v for k,v in a.items() if k not in {'bg','sprites','acts','fx','trans'}}=={k:v for k,v in b.items() if k not in {'bg','sprites','acts','fx','trans'}},a['id']
+            if a.get('fx')!=b.get('fx'):
+                assert a['id'] in {'opening_second_hit_rebuke','opening_retrieve_notebook'} and not b['fx'],a['id']
+        for k,a in performance_before['assets'].items():
+            if a['type'] not in {'bg','ch'}:assert current['assets'][k]==a,k
     audio={k:a for k,a in before['assets'].items() if a['type'] not in {'bg','ch'}}
     assert all(current['assets'][k]==a for k,a in audio.items())
     for a in current['assets'].values():assert (GAME/a['src']).is_file(),a['id']
@@ -32,7 +42,8 @@ def verify():
     assert by_id['kbwv46du']['set']==next(l['set'] for l in before['lines'] if l['id']=='kbwv46du')
     for k in ('127wrb75','1sjdneqt','7b2f3g26'):assert not by_id[k]['text']
     report={'originalLineIdsPreserved':len(old_ids),'newLines':len(new_ids)-len(old_ids),
-        'laterNodesNonVisualFieldsPreserved':len(before['lines'])-160,
+        'laterNodesStoryAndAudioFieldsPreserved':len(before['lines'])-160,
+        'performanceBaselineNodeIdsPreserved':len(new_ids) if current.get('characterPerformance') else None,
         'originalAudioAssetsUnchanged':len(audio),'activeVisualIds':len(active),
         'activeReplacedVisualIds':len(active)-len(remaining),'manualWardrobeVisualIds':remaining,
         'wavPlaybackAssets':0,'chapters':sum(bool(l.get('chapter')) for l in current['lines']),

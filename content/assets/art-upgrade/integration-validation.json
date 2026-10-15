@@ -1,15 +1,16 @@
 {
   "originalLineIdsPreserved": 3308,
   "newLines": 7,
-  "laterNodesNonVisualFieldsPreserved": 3148,
+  "laterNodesStoryAndAudioFieldsPreserved": 3148,
+  "performanceBaselineNodeIdsPreserved": 3315,
   "originalAudioAssetsUnchanged": 103,
-  "activeVisualIds": 92,
-  "activeReplacedVisualIds": 90,
+  "activeVisualIds": 104,
+  "activeReplacedVisualIds": 102,
   "manualWardrobeVisualIds": [
     "nvgbi1x6",
     "jtp36q4e"
   ],
   "wavPlaybackAssets": 0,
   "chapters": 18,
-  "gameSha256": "28e639a5c504bc61b4c874548f7051d6e9bcd9e5daae5e1c921733a546f77b80"
+  "gameSha256": "819338c6275b708d609e548860b85b646f7a1a11b6e5c5ab94e6a0605016b4b0"
 }

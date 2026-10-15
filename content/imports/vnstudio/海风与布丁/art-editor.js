@@ -14,7 +14,7 @@ window.VNArtLibrary = (() => {
   function assetFor(item) {
     if (!A(item.id)) P.assets[item.id] = Object.assign({}, item.asset || {}, {id:item.id, name:item.name,
       type:item.category === 'ch' ? 'ch' : 'bg', src:media(item), w:item.w, h:item.h,
-      cg:item.category === 'cg', libraryStatus:item.status, libraryPath:item.path});
+      cg:item.category === 'cg', character:item.character, libraryStatus:item.status, libraryPath:item.path});
     return item.id;
   }
   function apply(item, scope) {

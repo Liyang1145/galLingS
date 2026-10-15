@@ -241,20 +241,20 @@
   },
   "L02": {
     "status": "approved",
-    "sha256": "840bec3e7f33f302ec705e899b8ab476abfac7e2f4eea7febdb0f1363713343d",
-    "note": "逐图检查身份、双腿与独立尾巴、服装、动作、时段与布局，画面可作当前草稿；最终人为定稿另行完成。",
+    "sha256": "998a2bd6cb048709195765dde7e64c4808d98c06d126a0a5818f397e3cb6a0fd",
+    "note": "动作返工逐图检查：扶胸叉腰、侧身抱臂害羞、脸旁V手势、双手惊慌、合手柔和、抱臂监视的上半身轮廓与尾姿明显不同；手指、独立尾根与服装一致，须再核对实际对话框遮挡。",
     "reviewer": "Codex visual inspection; not final user approval"
   },
   "L03": {
     "status": "approved",
-    "sha256": "11bb7b06fc50a1e9df6120dd3a73cf47d50486b31fecf12d2612705d2819f067",
-    "note": "逐图检查身份、双腿与独立尾巴、服装、动作、时段与布局，画面可作当前草稿；最终人为定稿另行完成。",
+    "sha256": "9db53a2f71ab999a1608f2a8356a6127d1ff3c11ed2255654b4bc8c00814be59",
+    "note": "动作返工逐图检查：扶胸叉腰、侧身抱臂害羞、脸旁V手势、双手惊慌、合手柔和、抱臂监视的上半身轮廓与尾姿明显不同；手指、独立尾根与服装一致，须再核对实际对话框遮挡。",
     "reviewer": "Codex visual inspection; not final user approval"
   },
   "L04": {
     "status": "approved",
-    "sha256": "26e69b084870be9643ae8b6468f12e0a21d069c6d6c5b423f7765d1dca7b0801",
-    "note": "逐图检查身份、双腿与独立尾巴、服装、动作、时段与布局，画面可作当前草稿；最终人为定稿另行完成。",
+    "sha256": "af4f2568be10789a00349b0061ebf4f3a51fe111cef985cd9d3b13626df728cc",
+    "note": "动作返工逐图检查：扶胸叉腰、侧身抱臂害羞、脸旁V手势、双手惊慌、合手柔和、抱臂监视的上半身轮廓与尾姿明显不同；手指、独立尾根与服装一致，须再核对实际对话框遮挡。",
     "reviewer": "Codex visual inspection; not final user approval"
   },
   "L05": {
@@ -265,14 +265,14 @@
   },
   "L06": {
     "status": "approved",
-    "sha256": "fc4510b884f80f17ee44ee27d33d96dbe508b92f60317cabdda394457a144b35",
-    "note": "逐图检查身份、双腿与独立尾巴、服装、动作、时段与布局，画面可作当前草稿；最终人为定稿另行完成。",
+    "sha256": "f0e3bfe92023767ff616a1e151539f5cebf195136459b406d3d155cc55fe78eb",
+    "note": "动作返工逐图检查：扶胸叉腰、侧身抱臂害羞、脸旁V手势、双手惊慌、合手柔和、抱臂监视的上半身轮廓与尾姿明显不同；手指、独立尾根与服装一致，须再核对实际对话框遮挡。",
     "reviewer": "Codex visual inspection; not final user approval"
   },
   "L07": {
     "status": "approved",
-    "sha256": "1b04367129639071af0feac8529569fdf53c08caf43a8ce81ef25a84a43b1eaf",
-    "note": "逐图检查身份、双腿与独立尾巴、服装、动作、时段与布局，画面可作当前草稿；最终人为定稿另行完成。",
+    "sha256": "2d27375071e767c1a4f3a76740cb699d7e3ecd5b65ac279829119a3d08a3ea6f",
+    "note": "动作返工逐图检查：扶胸叉腰、侧身抱臂害羞、脸旁V手势、双手惊慌、合手柔和、抱臂监视的上半身轮廓与尾姿明显不同；手指、独立尾根与服装一致，须再核对实际对话框遮挡。",
     "reviewer": "Codex visual inspection; not final user approval"
   },
   "L08": {
@@ -289,8 +289,8 @@
   },
   "L10": {
     "status": "approved",
-    "sha256": "1848f1c00c1514b7b1065b475a710d692562c9207cb9a0a39c4f177fa0502230",
-    "note": "逐图检查身份、双腿与独立尾巴、服装、动作、时段与布局，画面可作当前草稿；最终人为定稿另行完成。",
+    "sha256": "ef9bc56745316df33dbf3329fc3c47af243df15780e895f3561edc4168df2260",
+    "note": "逐图复核已去除手臂与膝部擦伤，保留情绪受伤的低头与握臂姿态；衣饰、脸部和独立尾巴一致。",
     "reviewer": "Codex visual inspection; not final user approval"
   },
   "L11": {
@@ -337,8 +337,8 @@
   },
   "L34": {
     "status": "approved",
-    "sha256": "c4013f6d6876f3719c81749f332a28d6a6c3fc5c43bb1210fba53c097b254954",
-    "note": "逐图检查身份、双腿与独立尾巴、服装、动作、时段与布局，画面可作当前草稿；最终人为定稿另行完成。",
+    "sha256": "c8fca0d848547a21d5b66122abb97ad70e7572f3657095132c1ca2226d703631",
+    "note": "复核读书坐姿已睁眼，举高笔记本姿势与蓝色螺旋本一致；身体与手部可读，透明背景须在游戏内再核对。",
     "reviewer": "Codex visual inspection; not final user approval"
   },
   "L36": {
@@ -621,6 +621,30 @@
     "status": "approved",
     "sha256": "6433c276fddc93a04b56efe4317946c6f744353f84777a73704825e940fd8276",
     "note": "成人正装、清晨室内和独立鲸尾、手部成立；后端返回low，保留真实档位。构图未展示踮脚且室内灯仍亮，记入人工演出微调，不称最高质量已验收。",
+    "reviewer": "Codex visual inspection; not final user approval"
+  },
+  "P01": {
+    "status": "approved",
+    "sha256": "a26ebf046aebf2b8121f7af83ba9a424d9a420c27b71c90be4d31aa994de41cc",
+    "note": "动作返工逐图检查：扶胸叉腰、侧身抱臂害羞、脸旁V手势、双手惊慌、合手柔和、抱臂监视的上半身轮廓与尾姿明显不同；手指、独立尾根与服装一致，须再核对实际对话框遮挡。",
+    "reviewer": "Codex visual inspection; not final user approval"
+  },
+  "P02": {
+    "status": "approved",
+    "sha256": "0985adf849b8f7e5552c3ae639e7f1ca210b30cacad6ac99f5856003d071a803",
+    "note": "复核读书坐姿已睁眼，举高笔记本姿势与蓝色螺旋本一致；身体与手部可读，透明背景须在游戏内再核对。",
+    "reviewer": "Codex visual inspection; not final user approval"
+  },
+  "P03": {
+    "status": "approved",
+    "sha256": "f3b0aa760b5e8b15a543172f7a8dee06f595a818c0f7807a6db1cd6b71a7e4f2",
+    "note": "逐图复核：同一坐姿裹毯、奶油色开衫与完整裤装；P03抬手惊讶、P04握毯探身受伤生气，眉眼和手势明显不同。透明底已合成检查，须继续核对游戏内裁切。",
+    "reviewer": "Codex visual inspection; not final user approval"
+  },
+  "P04": {
+    "status": "approved",
+    "sha256": "06b0cd8e3815feed949d4de52ee4e59858991a4c90b468f5e5f72b768ab4e83c",
+    "note": "逐图复核：同一坐姿裹毯、奶油色开衫与完整裤装；P03抬手惊讶、P04握毯探身受伤生气，眉眼和手势明显不同。透明底已合成检查，须继续核对游戏内裁切。",
     "reviewer": "Codex visual inspection; not final user approval"
   }
 }

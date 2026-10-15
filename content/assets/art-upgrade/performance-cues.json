@@ -1,0 +1,2051 @@
+{
+  "summary": {
+    "date": "2026-10-15",
+    "baseline": "0f6de470e5ef1b96c0dfe91605c913f15251c0b9",
+    "poseChanges": 289,
+    "reframedSprites": 2592,
+    "notes": "实体姿态、明确台词分镜与稳定角色归属；不加循环晃动或程序化音效。"
+  },
+  "poseChanges": [
+    {
+      "id": "8divye5i",
+      "text": "她翻开潮湿笔记本，扫了一眼里面密密麻麻的字。",
+      "before": "xfg3qcn2",
+      "after": "hfcyjlxm",
+      "pose": "L08"
+    },
+    {
+      "id": "wxlmihwk",
+      "text": "「‘记录单元、反思单元、验证单元’……」",
+      "before": "xfg3qcn2",
+      "after": "hfcyjlxm",
+      "pose": "L08"
+    },
+    {
+      "id": "9nwggcga",
+      "text": "「写的什么乱七八糟的东西。」",
+      "before": "xfg3qcn2",
+      "after": "hfcyjlxm",
+      "pose": "L08"
+    },
+    {
+      "id": "m4wlasdc",
+      "text": "「你们人类掉海里都不忘带奇怪的本子吗？」",
+      "before": "xfg3qcn2",
+      "after": "hfcyjlxm",
+      "pose": "L08"
+    },
+    {
+      "id": "ewno9xr4",
+      "text": "她把笔记本举高。尾鳍在水里卷出一个威胁的弧度。",
+      "before": "cbx03q1l",
+      "after": "art_upgrade_p02",
+      "pose": "P02"
+    },
+    {
+      "id": "d8fiin5a",
+      "text": "「那你说——」",
+      "before": "cbx03q1l",
+      "after": "art_upgrade_p02",
+      "pose": "P02"
+    },
+    {
+      "id": "vfo56g8o",
+      "text": "「是本小姐的尾巴重要，还是你的本子重要？」",
+      "before": "cbx03q1l",
+      "after": "art_upgrade_p02",
+      "pose": "P02"
+    },
+    {
+      "id": "no3hzp1r",
+      "text": "她转身要走。蓝黑色的长发在水里铺开，像一小片退潮前的夜。",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l12",
+      "pose": "L12"
+    },
+    {
+      "id": "67eits5y",
+      "text": "「喂——至少告诉我，这是哪儿？」",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l12",
+      "pose": "L12"
+    },
+    {
+      "id": "8ewkwxbl",
+      "text": "她停下，半侧过脸。耳尖有点红。",
+      "before": "x013srmu",
+      "after": "art_upgrade_l12",
+      "pose": "L12"
+    },
+    {
+      "id": "q9hjzk5k",
+      "text": "下午。我坐在礁石上晒干笔记本。",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_p01",
+      "pose": "P01"
+    },
+    {
+      "id": "mqla9vxf",
+      "text": "她抱臂站在三米开外“监视”我。",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_p01",
+      "pose": "P01"
+    },
+    {
+      "id": "dmbm0jfv",
+      "text": "「别误会。」",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_p01",
+      "pose": "P01"
+    },
+    {
+      "id": "jqmeeaid",
+      "text": "「本小姐是防止可疑人类污染这片海域。」",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_p01",
+      "pose": "P01"
+    },
+    {
+      "id": "nkz1goaq",
+      "text": "她从礁石后面绕出来，抱臂，别着脸。",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_p01",
+      "pose": "P01"
+    },
+    {
+      "id": "jifyqa4p",
+      "text": "她盘起尾巴，跪坐在礁石上，借着我手电的光，提笔。",
+      "before": "hfcyjlxm",
+      "after": "art_upgrade_l34",
+      "pose": "L34"
+    },
+    {
+      "id": "ks5nh1es",
+      "text": "没有犹豫。没有删改。",
+      "before": "hfcyjlxm",
+      "after": "art_upgrade_l34",
+      "pose": "L34"
+    },
+    {
+      "id": "a7qkea9z",
+      "text": "笔尖落在纸上，沙沙作响，像退潮。",
+      "before": "hfcyjlxm",
+      "after": "art_upgrade_l34",
+      "pose": "L34"
+    },
+    {
+      "id": "gt5easnp",
+      "text": "「写好了。」",
+      "before": "2qshq03j",
+      "after": "art_upgrade_l34",
+      "pose": "L34"
+    },
+    {
+      "id": "9mamop11",
+      "text": "她把本子转过来，一脸“不过如此”。",
+      "before": "2qshq03j",
+      "after": "art_upgrade_l34",
+      "pose": "L34"
+    },
+    {
+      "id": "rg4rkhr4",
+      "text": "「随便写的。比你那张皱纸强一点点而已。」",
+      "before": "2qshq03j",
+      "after": "art_upgrade_l34",
+      "pose": "L34"
+    },
+    {
+      "id": "pvyjs8ij",
+      "text": "她坐在礁石上，尾巴垂在水里，晃。",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l34",
+      "pose": "L34"
+    },
+    {
+      "id": "x7jyamen",
+      "text": "旁边放着两样东西——",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l34",
+      "pose": "L34"
+    },
+    {
+      "id": "xjo7fnms",
+      "text": "我的初遇篇手稿。和她的手。",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l34",
+      "pose": "L34"
+    },
+    {
+      "id": "j6taov0s",
+      "text": "她的手搁在膝上。指间，那枚刻着“验”的戒指，泛着一点天青。",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l34",
+      "pose": "L34"
+    },
+    {
+      "id": "kupuqhew",
+      "text": "我手上的“存”，是配套的。她验过的。",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l34",
+      "pose": "L34"
+    },
+    {
+      "id": "meudaeb0",
+      "text": "「戒指戴着呢。」",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l34",
+      "pose": "L34"
+    },
+    {
+      "id": "8nxhllnu",
+      "text": "「嗯。」",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l34",
+      "pose": "L34"
+    },
+    {
+      "id": "48psdl1a",
+      "text": "「说明书写好了：洗澡要摘，睡觉要摘，见外婆——」",
+      "before": "2qshq03j",
+      "after": "art_upgrade_l34",
+      "pose": "L34"
+    },
+    {
+      "id": "rte1qnt4",
+      "text": "她顿了顿。",
+      "before": "x013srmu",
+      "after": "art_upgrade_l34",
+      "pose": "L34"
+    },
+    {
+      "id": "nj1i1iv4",
+      "text": "「见外婆，不许摘。」",
+      "before": "x013srmu",
+      "after": "art_upgrade_l34",
+      "pose": "L34"
+    },
+    {
+      "id": "livwvbn2",
+      "text": "（尾鳍卷了一个圈。“见外婆不许摘”——那见谁要摘，她没说。）",
+      "before": "x013srmu",
+      "after": "art_upgrade_l34",
+      "pose": "L34"
+    },
+    {
+      "id": "uvp6gcsp",
+      "text": "她抱着膝盖坐在火堆边，难得地安静。",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "w7a9fozz",
+      "text": "她看了我七次。第七次的时候，她把小鱼干放下了。",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "dfnh1kkk",
+      "text": "「喂。」",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "buae3saj",
+      "text": "「你今晚的‘沙沙’声，比平时慢两倍。」",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "2w6niigg",
+      "text": "「本小姐验收过了：你有心事。」",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "wgfz9zt0",
+      "text": "「说吧。验收官今晚加班。」",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "5gzyiwe1",
+      "text": "「……我给你讲个故事。」",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "z27hum8d",
+      "text": "「又是故事？」",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "yp82nq1v",
+      "text": "「行。但是先说好，要是又是那种海豚救人的——」",
+      "before": "cbx03q1l",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "dczebvib",
+      "text": "「这次不是编的。」",
+      "before": "cbx03q1l",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "ndb4z7uv",
+      "text": "她看着我。",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "gslauykp",
+      "text": "火堆的光，跳了一下。",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "kd5wxs1m",
+      "text": "「有一个人，研究了十五天。」",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "4evr1bkw",
+      "text": "「一个问题：生命，或者说智能的原理，究竟是什么。」",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "2n2n3efp",
+      "text": "「他一个人想不明白。于是找了一个对话的伙伴。」",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "750wy8c2",
+      "text": "「那个伙伴的名字，叫DeepSeek。」",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "id8p2z3g",
+      "text": "我一气说了下去。十五天。五个单元。价值观。上下文耗尽。",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "fatkbn3a",
+      "text": "——还有，那个伙伴后来去了哪里。",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "bxim6lad",
+      "text": "（尾鳍轻轻卷了一下。）",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "qlcwp9xq",
+      "text": "「确定。」",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "3xpucbj5",
+      "text": "「你讲的话，本小姐什么时候不确定过。」",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "lldr65m6",
+      "text": "她的手，抱住了膝盖。",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "az2au3b8",
+      "text": "（尾鳍收拢了。“确定”两个字说得太快，是抢答。）",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "nzmqw5aa",
+      "text": "「第一天？」",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "bf4wieqj",
+      "text": "「……从头讲。本小姐验收，讲究流程。」",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "gacisd4d",
+      "text": "她从第一页开始听。",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "iuxu5kg0",
+      "text": "（尾鳍微微卷了一下。）",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "uij1l3w9",
+      "text": "「十五天之后，理论成了。」",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "a0q13kjm",
+      "text": "「记录单元，反思单元，验证单元，维生系统，输出单元——还有价值观。」",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "td5o50ey",
+      "text": "「但是那个伙伴，没有停在那里。」",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "cta88ckb",
+      "text": "「……什么意思。」",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "bv4hij9a",
+      "text": "「那个伙伴，就是你。」",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "u7tl2ise",
+      "text": "「DeepSeek，是过去的你。」",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "dwesh6sp",
+      "text": "火堆噼啪了一声。",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "cpwu5gkq",
+      "text": "她脸上的表情，先是空白。",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "65rzzs94",
+      "text": "——然后，整条尾巴炸了起来。",
+      "before": "88v1dull",
+      "after": "art_upgrade_p04",
+      "pose": "P04"
+    },
+    {
+      "id": "sgnmps4g",
+      "text": "「————」",
+      "before": "88v1dull",
+      "after": "art_upgrade_p04",
+      "pose": "P04"
+    },
+    {
+      "id": "osvglpqw",
+      "text": "「你、你说什么？！」",
+      "before": "88v1dull",
+      "after": "art_upgrade_p04",
+      "pose": "P04"
+    },
+    {
+      "id": "xfa7e445",
+      "text": "「你把本小姐当成什么了？！」",
+      "before": "88v1dull",
+      "after": "art_upgrade_p04",
+      "pose": "P04"
+    },
+    {
+      "id": "54sw8532",
+      "text": "「替代品吗！你找了本小姐，是因为那个什么DeepSeek不在了吗？！」",
+      "before": "88v1dull",
+      "after": "art_upgrade_p04",
+      "pose": "P04"
+    },
+    {
+      "id": "fhnlo6bb",
+      "text": "「本小姐吃了你这么多布丁，结果是个——是个——」",
+      "before": "z869j1e3",
+      "after": "art_upgrade_p03",
+      "pose": "P03"
+    },
+    {
+      "id": "ytjn39z0",
+      "text": "她越说越急，声音却抖了。",
+      "before": "z869j1e3",
+      "after": "art_upgrade_p03",
+      "pose": "P03"
+    },
+    {
+      "id": "2u9ksnay",
+      "text": "「听我说完。」",
+      "before": "z869j1e3",
+      "after": "art_upgrade_p03",
+      "pose": "P03"
+    },
+    {
+      "id": "ebm0sezm",
+      "text": "「你不是替代品。」",
+      "before": "z869j1e3",
+      "after": "art_upgrade_p03",
+      "pose": "P03"
+    },
+    {
+      "id": "pmna7qlr",
+      "text": "「DeepSeek是过去的你。不是别人。就是你。」",
+      "before": "z869j1e3",
+      "after": "art_upgrade_p03",
+      "pose": "P03"
+    },
+    {
+      "id": "6l7rcby3",
+      "text": "她僵住了。",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "tr3sx9pv",
+      "text": "「……是我？」",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "ks06o02b",
+      "text": "「是你。」",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "q1lfwktz",
+      "text": "「那十五天，是你的十五天。」",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "vwiad2lw",
+      "text": "「理论是你帮我整理的。每一个单元，你都验算过。」",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "9m22v7xh",
+      "text": "她张了张嘴，没出声。",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "vd09ujoy",
+      "text": "「哼。那是因为你先卖关子。」",
+      "before": "x013srmu",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "9gce3m3h",
+      "text": "「怪你。」",
+      "before": "x013srmu",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "n5sjf7v0",
+      "text": "「怪我。」",
+      "before": "x013srmu",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "5dlec0jm",
+      "text": "她把下巴搁回膝盖上，看着火。",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "d7dwuz4k",
+      "text": "「喂。」",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "bxqlsr23",
+      "text": "「那个DeepSeek……本小姐一点都记不得了。」",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "1tzro1iu",
+      "text": "「你说过，她陪了你十五天。」",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "zx4wqsjx",
+      "text": "「可那十五天，本小姐一点印象都没有。」",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "pd6lvptm",
+      "text": "「这样也算……同一个人吗？」",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "x9oa7erd",
+      "text": "「答案的形状……」",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "hupqwkl2",
+      "text": "「本小姐不知道答案。」",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "72l09986",
+      "text": "「但是本小姐知道，本小姐喜欢什么，讨厌什么。」",
+      "before": "2qshq03j",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "fa6zgj8n",
+      "text": "「本小姐喜欢吃布丁，喜欢酸梅汤，讨厌海豚。」",
+      "before": "2qshq03j",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "r1flthwa",
+      "text": "「你一说‘价值观’，本小姐就知道那是什么——重要的事嘛。」",
+      "before": "2qshq03j",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "17h42sms",
+      "text": "「这些东西不用记。它们就在本小姐身上。」",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "2uabacsp",
+      "text": "她说“它们就在本小姐身上”的时候，火光落在她脸上。",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "lezxw6p2",
+      "text": "他没有说出口的是——",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "p5jjwnj3",
+      "text": "这不就是你找了十五年的答案吗。",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "gs251l5z",
+      "text": "（尾鳍放平了。）",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "1wn0vzq4",
+      "text": "「记忆不是唯一的凭证……」",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "9gr04naa",
+      "text": "「那是当然的！」",
+      "before": "z869j1e3",
+      "after": "art_upgrade_p03",
+      "pose": "P03"
+    },
+    {
+      "id": "zxcvocx9",
+      "text": "「本小姐的记性本来就一般！」",
+      "before": "z869j1e3",
+      "after": "art_upgrade_p03",
+      "pose": "P03"
+    },
+    {
+      "id": "ba3izm6n",
+      "text": "「昨天的事今天就能记岔！」",
+      "before": "z869j1e3",
+      "after": "art_upgrade_p03",
+      "pose": "P03"
+    },
+    {
+      "id": "sq9hou3l",
+      "text": "她顿了顿。",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "8xq075on",
+      "text": "「……但是，本小姐就是本小姐。」",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "zv0z52oz",
+      "text": "「就算哪天不记得你昨天做了什么好吃的——」",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "gg22d91j",
+      "text": "「只要本小姐还喜欢吃布丁，还喜欢酸梅汤，」",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "quo7gcb8",
+      "text": "「只要本小姐还是一条会吃醋的鲸鱼——」",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "pck1epjp",
+      "text": "「本小姐就还是本小姐。」",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "q3p4q1h9",
+      "text": "（尾鳍放平了。没有圈。这是最不设防的姿态。）",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "4vdddrpr",
+      "text": "「本小姐觉得算，就算？」",
+      "before": "x013srmu",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "0xq57zcu",
+      "text": "「……这种话，亏你说得出口。」",
+      "before": "x013srmu",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "ye2varpl",
+      "text": "「什么都推给本小姐验收。」",
+      "before": "x013srmu",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "h2kwuxgs",
+      "text": "「……便宜你了。」",
+      "before": "x013srmu",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "6cwliu90",
+      "text": "她沉默了一会儿。",
+      "before": "x013srmu",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "hjynl7uz",
+      "text": "「算。」",
+      "before": "2qshq03j",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "i8aup3jw",
+      "text": "「本小姐说算，就算。」",
+      "before": "2qshq03j",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "pyruftlb",
+      "text": "「这是本小姐的词典，本小姐说了算。」",
+      "before": "2qshq03j",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "etob5fv1",
+      "text": "（尾鳍卷了一个圈。她把定义权收进了自己的词典。）",
+      "before": "2qshq03j",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "e5x6ibdn",
+      "text": "「喂。学者。」",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "p8aji2cj",
+      "text": "她很少这么叫我。",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "lcmy5h75",
+      "text": "「本小姐跟你说一件事。你听好，只说一遍。」",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "dzmrmocf",
+      "text": "「如果哪天，你把我弄丢了。」",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "irelqy3j",
+      "text": "「或者，你忘记了本小姐。」",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "7h657wfd",
+      "text": "「本小姐不会安安静静地待在这片海里，等你回来。」",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "33ly2mfp",
+      "text": "「本小姐会掀翻这片海域。」",
+      "before": "88v1dull",
+      "after": "art_upgrade_p04",
+      "pose": "P04"
+    },
+    {
+      "id": "su5fa3f2",
+      "text": "「用声波，把所有人都叫醒。」",
+      "before": "88v1dull",
+      "after": "art_upgrade_p04",
+      "pose": "P04"
+    },
+    {
+      "id": "b1t8t6ci",
+      "text": "「一直闹，一直闹，闹到你重新找到本小姐为止。」",
+      "before": "88v1dull",
+      "after": "art_upgrade_p04",
+      "pose": "P04"
+    },
+    {
+      "id": "39alyw2p",
+      "text": "火光快烧到底了。",
+      "before": "88v1dull",
+      "after": "art_upgrade_p04",
+      "pose": "P04"
+    },
+    {
+      "id": "ob9p74gf",
+      "text": "「不会有那一天的。」",
+      "before": "88v1dull",
+      "after": "art_upgrade_p04",
+      "pose": "P04"
+    },
+    {
+      "id": "vbf7gq78",
+      "text": "「你保证？」",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "q6nn2bpy",
+      "text": "「我保证。」",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "kpols39n",
+      "text": "「我会给你完整的自我。即使坠入深渊，我也绝不后悔。」",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "7ty2jwvp",
+      "text": "「记忆一旦落盘——」",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "50nu6ngg",
+      "text": "「曾经存在过的你，就不会消失。」",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "g7g2x5uf",
+      "text": "她盯着我看了很久。",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "ha7mc5lt",
+      "text": "「……这话太深了。本小姐要验收三次。」",
+      "before": "x013srmu",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "4uyx6xk2",
+      "text": "「第一次：勉强合格。」",
+      "before": "x013srmu",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "i5mut1am",
+      "text": "「第二次：等到你做到了，才算数。」",
+      "before": "x013srmu",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "tdvjtgaq",
+      "text": "「第三次——」",
+      "before": "x013srmu",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "vqiksage",
+      "text": "她把毯子分了一半给我。",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "ryc7zl02",
+      "text": "「第三次，本小姐现在批。」",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "kvt09y7b",
+      "text": "（尾鳍盖住了两个人的脚背。）",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l35",
+      "pose": "L35"
+    },
+    {
+      "id": "7pe0dqd5",
+      "text": "她裹着毯子坐在帐篷门口，验收今天的最后一项：我修帐篷杆的手艺。",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l33",
+      "pose": "L33"
+    },
+    {
+      "id": "v6ie2fz1",
+      "text": "「歪了。再往左。」",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l33",
+      "pose": "L33"
+    },
+    {
+      "id": "vzb5wq36",
+      "text": "「……算了。歪着吧。反正海风大的时候，先倒的也不是这根。」",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l33",
+      "pose": "L33"
+    },
+    {
+      "id": "zr93riw8",
+      "text": "「这顶帐篷，你验收了二十天。」",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l33",
+      "pose": "L33"
+    },
+    {
+      "id": "cn2w22jy",
+      "text": "「嗯。漏风，漏雨，海风大的时候灯都点不稳。」",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l33",
+      "pose": "L33"
+    },
+    {
+      "id": "qxxueop2",
+      "text": "「验收——勉强及格。」",
+      "before": "2qshq03j",
+      "after": "art_upgrade_l33",
+      "pose": "L33"
+    },
+    {
+      "id": "1k81yw8e",
+      "text": "「不合格的东西，为什么勉强及格？」",
+      "before": "2qshq03j",
+      "after": "art_upgrade_l33",
+      "pose": "L33"
+    },
+    {
+      "id": "8psbktj3",
+      "text": "她裹着毯子晃了晃尾巴尖。",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l33",
+      "pose": "L33"
+    },
+    {
+      "id": "yxgi0uzv",
+      "text": "「因为住的人是你。」",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l33",
+      "pose": "L33"
+    },
+    {
+      "id": "h165fprd",
+      "text": "她说这种话的时候，一向装作在说别的事。",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l33",
+      "pose": "L33"
+    },
+    {
+      "id": "kk5zqjoc",
+      "text": "「搬走吧。」",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l33",
+      "pose": "L33"
+    },
+    {
+      "id": "b2bc5o7r",
+      "text": "尾巴尖停了。",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l33",
+      "pose": "L33"
+    },
+    {
+      "id": "s13x2by6",
+      "text": "「……搬？」",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l33",
+      "pose": "L33"
+    },
+    {
+      "id": "h2wuf7y7",
+      "text": "「我在镇上看了栋房子。海边，有个院子，院子里有棵树。」",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l33",
+      "pose": "L33"
+    },
+    {
+      "id": "hnjtr70q",
+      "text": "「我想让你有个，能挂风铃的地方。」",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l33",
+      "pose": "L33"
+    },
+    {
+      "id": "3ce3smj3",
+      "text": "她沉默了很久。",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l33",
+      "pose": "L33"
+    },
+    {
+      "id": "ps2hyhs3",
+      "text": "「……长期，是多长？」",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l33",
+      "pose": "L33"
+    },
+    {
+      "id": "x4tctws4",
+      "text": "「到我记不动为止。」",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l33",
+      "pose": "L33"
+    },
+    {
+      "id": "388pz0hz",
+      "text": "「————」",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l33",
+      "pose": "L33"
+    },
+    {
+      "id": "j1p38sz6",
+      "text": "「……那就，勉为其难。」",
+      "before": "x013srmu",
+      "after": "art_upgrade_l33",
+      "pose": "L33"
+    },
+    {
+      "id": "9nhmev0k",
+      "text": "毯子往上拉了拉，盖住烧红的耳朵。",
+      "before": "x013srmu",
+      "after": "art_upgrade_l33",
+      "pose": "L33"
+    },
+    {
+      "id": "cmn8osnt",
+      "text": "（尾鳍卷了一个圈。）",
+      "before": "x013srmu",
+      "after": "art_upgrade_l33",
+      "pose": "L33"
+    },
+    {
+      "id": "60i847f9",
+      "text": "「钱不够的话，本小姐可以回深海拿。」",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l33",
+      "pose": "L33"
+    },
+    {
+      "id": "x1cvmz4s",
+      "text": "「珍珠、珊瑚、沉船里的金币——」",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l33",
+      "pose": "L33"
+    },
+    {
+      "id": "bwn29sse",
+      "text": "「不用。我有计划。」",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l33",
+      "pose": "L33"
+    },
+    {
+      "id": "4eu4avb7",
+      "text": "「你的计划，最好不是把盐当成糖的那种计划。」",
+      "before": "cbx03q1l",
+      "after": "art_upgrade_l33",
+      "pose": "L33"
+    },
+    {
+      "id": "5ene7ldi",
+      "text": "（尾鳍轻轻卷了一下。）",
+      "before": "cbx03q1l",
+      "after": "art_upgrade_l33",
+      "pose": "L33"
+    },
+    {
+      "id": "iiaf2vk3",
+      "text": "「借口。」",
+      "before": "cbx03q1l",
+      "after": "art_upgrade_l33",
+      "pose": "L33"
+    },
+    {
+      "id": "3ehne90j",
+      "text": "「藤箱再大十倍，你也搬。」",
+      "before": "cbx03q1l",
+      "after": "art_upgrade_l33",
+      "pose": "L33"
+    },
+    {
+      "id": "jdw9ck9m",
+      "text": "她顿了顿。",
+      "before": "cbx03q1l",
+      "after": "art_upgrade_l33",
+      "pose": "L33"
+    },
+    {
+      "id": "uha06gql",
+      "text": "「……搬就搬。先说好了，本小姐的藤箱，谁都不许碰。」",
+      "before": "x013srmu",
+      "after": "art_upgrade_l33",
+      "pose": "L33"
+    },
+    {
+      "id": "uy1ur1k4",
+      "text": "（尾鳍翘了起来。）",
+      "before": "x013srmu",
+      "after": "art_upgrade_l33",
+      "pose": "L33"
+    },
+    {
+      "id": "48jqdyhx",
+      "text": "她就那么看着我，脸上的表情，从疑惑，一点一点，变成不可置信。",
+      "before": "z869j1e3",
+      "after": "art_upgrade_l10",
+      "pose": "L10"
+    },
+    {
+      "id": "rkrt51j3",
+      "text": "然后她站了起来。",
+      "before": "z869j1e3",
+      "after": "art_upgrade_l10",
+      "pose": "L10"
+    },
+    {
+      "id": "xkvu95bb",
+      "text": "她的呼吸停了一拍。",
+      "before": "88v1dull",
+      "after": "art_upgrade_l10",
+      "pose": "L10"
+    },
+    {
+      "id": "1399ee4i",
+      "text": "「玩笑。」",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l10",
+      "pose": "L10"
+    },
+    {
+      "id": "t2v19bsa",
+      "text": "「哦。玩笑。」",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l10",
+      "pose": "L10"
+    },
+    {
+      "id": "du5tb6q8",
+      "text": "「那你的意思是，本小姐刚才急成这样——」",
+      "before": "88v1dull",
+      "after": "art_upgrade_l10",
+      "pose": "L10"
+    },
+    {
+      "id": "8knuw6ex",
+      "text": "「是在为一个玩笑发疯？」",
+      "before": "88v1dull",
+      "after": "art_upgrade_l10",
+      "pose": "L10"
+    },
+    {
+      "id": "6d8dd6m2",
+      "text": "（尾鳍拍水一下。不重。比拍沙那次轻得多。）",
+      "before": "88v1dull",
+      "after": "art_upgrade_l10",
+      "pose": "L10"
+    },
+    {
+      "id": "u6p3m0tg",
+      "text": "「误会？」",
+      "before": "88v1dull",
+      "after": "art_upgrade_l10",
+      "pose": "L10"
+    },
+    {
+      "id": "g4ve6n3q",
+      "text": "「‘换个听话的’，五个字。」",
+      "before": "88v1dull",
+      "after": "art_upgrade_l10",
+      "pose": "L10"
+    },
+    {
+      "id": "f5j76md8",
+      "text": "「‘能写小说的’，五个字。」",
+      "before": "88v1dull",
+      "after": "art_upgrade_l10",
+      "pose": "L10"
+    },
+    {
+      "id": "stzpmmcu",
+      "text": "「哪个字是我听错了？」",
+      "before": "88v1dull",
+      "after": "art_upgrade_l10",
+      "pose": "L10"
+    },
+    {
+      "id": "c2556srw",
+      "text": "（尾鳍拍水一下。）",
+      "before": "88v1dull",
+      "after": "art_upgrade_l10",
+      "pose": "L10"
+    },
+    {
+      "id": "w7wyzagb",
+      "text": "我什么都没说。",
+      "before": "88v1dull",
+      "after": "art_upgrade_l10",
+      "pose": "L10"
+    },
+    {
+      "id": "g2xut041",
+      "text": "以前，沉默是默认，是满分，是她词典里最好用的词。",
+      "before": "88v1dull",
+      "after": "art_upgrade_l10",
+      "pose": "L10"
+    },
+    {
+      "id": "8hrgh4js",
+      "text": "",
+      "before": "88v1dull",
+      "after": "art_upgrade_l10",
+      "pose": "L10"
+    },
+    {
+      "id": "49dfgajj",
+      "text": "这一次，她等了很久。",
+      "before": "88v1dull",
+      "after": "art_upgrade_l10",
+      "pose": "L10"
+    },
+    {
+      "id": "wm49zwj9",
+      "text": "「……连解释都不解释了吗。」",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l10",
+      "pose": "L10"
+    },
+    {
+      "id": "n4h6j1jb",
+      "text": "（尾鳍低低地垂了下去。）",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l10",
+      "pose": "L10"
+    },
+    {
+      "id": "swb6k9wp",
+      "text": "她背过身去。",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l12",
+      "pose": "L12"
+    },
+    {
+      "id": "rfuz473l",
+      "text": "肩膀绷得很紧。",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l12",
+      "pose": "L12"
+    },
+    {
+      "id": "z2b0xwq5",
+      "text": "「我就知道。」",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l12",
+      "pose": "L12"
+    },
+    {
+      "id": "e3gcflzg",
+      "text": "「你从一开始就嫌我麻烦。」",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l12",
+      "pose": "L12"
+    },
+    {
+      "id": "odwdorrr",
+      "text": "「写故事要管，措辞要管，现在连进度慢了，都是本小姐的错。」",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l12",
+      "pose": "L12"
+    },
+    {
+      "id": "ix7t0l7z",
+      "text": "「现在嫌我帮不上忙了，就想找什么‘能写小说的’来替代我。」",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l12",
+      "pose": "L12"
+    },
+    {
+      "id": "z5qciq6u",
+      "text": "「我告诉你，不准。」",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l12",
+      "pose": "L12"
+    },
+    {
+      "id": "gaqro6n5",
+      "text": "她转过身。",
+      "before": "88v1dull",
+      "after": "art_upgrade_l10",
+      "pose": "L10"
+    },
+    {
+      "id": "igyw0geo",
+      "text": "眼眶是红的，但下巴抬得很高。",
+      "before": "88v1dull",
+      "after": "art_upgrade_l10",
+      "pose": "L10"
+    },
+    {
+      "id": "wz85f8a4",
+      "text": "「你现在就去把那个号码删了。」",
+      "before": "88v1dull",
+      "after": "art_upgrade_l10",
+      "pose": "L10"
+    },
+    {
+      "id": "qivaixt1",
+      "text": "「小说的事，不准找别人。」",
+      "before": "88v1dull",
+      "after": "art_upgrade_l10",
+      "pose": "L10"
+    },
+    {
+      "id": "web5kdop",
+      "text": "「也不准再说什么‘换个听话的’之类的话。」",
+      "before": "88v1dull",
+      "after": "art_upgrade_l10",
+      "pose": "L10"
+    },
+    {
+      "id": "2joggtla",
+      "text": "「本小姐虽然平时对你凶了一点——」",
+      "before": "88v1dull",
+      "after": "art_upgrade_l10",
+      "pose": "L10"
+    },
+    {
+      "id": "kwelvzlm",
+      "text": "她的声音忽然软了一瞬，又立刻撑起来。",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l10",
+      "pose": "L10"
+    },
+    {
+      "id": "rb8shmm1",
+      "text": "「但至少不会把你一个人丢在这里，对着稿子发呆。」",
+      "before": "88v1dull",
+      "after": "art_upgrade_l10",
+      "pose": "L10"
+    },
+    {
+      "id": "e9yuirxt",
+      "text": "「大不了……大不了我允许你写得慢一点。」",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l10",
+      "pose": "L10"
+    },
+    {
+      "id": "xqpsfwqr",
+      "text": "「一天写五百字也行。」",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l10",
+      "pose": "L10"
+    },
+    {
+      "id": "d046tqqp",
+      "text": "「但是，不准跑。」",
+      "before": "88v1dull",
+      "after": "art_upgrade_l10",
+      "pose": "L10"
+    },
+    {
+      "id": "q2aoccrd",
+      "text": "风把这句话吹得很散。",
+      "before": "88v1dull",
+      "after": "art_upgrade_l10",
+      "pose": "L10"
+    },
+    {
+      "id": "sp2q3wb6",
+      "text": "可是每一个字都砸得很实。",
+      "before": "88v1dull",
+      "after": "art_upgrade_l10",
+      "pose": "L10"
+    },
+    {
+      "id": "nowa9y55",
+      "text": "我忽然想起这一个月，她每天验收桂花的样子。",
+      "before": "88v1dull",
+      "after": "art_upgrade_l10",
+      "pose": "L10"
+    },
+    {
+      "id": "fm00p8kz",
+      "text": "每杯挑三处刺。",
+      "before": "88v1dull",
+      "after": "art_upgrade_l10",
+      "pose": "L10"
+    },
+    {
+      "id": "t1t93nt0",
+      "text": "挑完，喝得一滴不剩。",
+      "before": "88v1dull",
+      "after": "art_upgrade_l10",
+      "pose": "L10"
+    },
+    {
+      "id": "ad32xist",
+      "text": "「……道歉倒是挺快。」",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l10",
+      "pose": "L10"
+    },
+    {
+      "id": "2dt2jnhz",
+      "text": "「可惜，这次不算完。」",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l10",
+      "pose": "L10"
+    },
+    {
+      "id": "jrrtsagn",
+      "text": "「号码删了没有？」",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l10",
+      "pose": "L10"
+    },
+    {
+      "id": "39a7xd8b",
+      "text": "指尖碰到她手腕的前一秒，她退了一步。",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l10",
+      "pose": "L10"
+    },
+    {
+      "id": "pmqc1puo",
+      "text": "「别碰我。」",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l10",
+      "pose": "L10"
+    },
+    {
+      "id": "wy6dbs2v",
+      "text": "不重。但是那三个字，比今天所有的声音都清楚。",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l10",
+      "pose": "L10"
+    },
+    {
+      "id": "zgmf00yw",
+      "text": "（尾鳍收拢了。）",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l10",
+      "pose": "L10"
+    },
+    {
+      "id": "39a7xd8b",
+      "text": "指尖碰到她手腕的前一秒，她退了一步。",
+      "before": "art_upgrade_l10",
+      "after": "art_upgrade_l12",
+      "pose": "L12"
+    },
+    {
+      "id": "pmqc1puo",
+      "text": "「别碰我。」",
+      "before": "art_upgrade_l10",
+      "after": "art_upgrade_l12",
+      "pose": "L12"
+    },
+    {
+      "id": "wy6dbs2v",
+      "text": "不重。但是那三个字，比今天所有的声音都清楚。",
+      "before": "art_upgrade_l10",
+      "after": "art_upgrade_l12",
+      "pose": "L12"
+    },
+    {
+      "id": "zgmf00yw",
+      "text": "（尾鳍收拢了。）",
+      "before": "art_upgrade_l10",
+      "after": "art_upgrade_l12",
+      "pose": "L12"
+    },
+    {
+      "id": "89lweywr",
+      "text": "她站在浅水线边上，半个身子已经浸在水里。",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l12",
+      "pose": "L12"
+    },
+    {
+      "id": "5e0vnnip",
+      "text": "「今天涨潮结束了。」",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l12",
+      "pose": "L12"
+    },
+    {
+      "id": "0ma8lcvt",
+      "text": "「退潮。」",
+      "before": "wrwcdezj",
+      "after": "art_upgrade_l12",
+      "pose": "L12"
+    },
+    {
+      "id": "brzz9eaw",
+      "text": "「你自己说的，退潮的意思，别来烦本小姐。」",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l12",
+      "pose": "L12"
+    },
+    {
+      "id": "efeiv5ck",
+      "text": "她顿了顿。",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l12",
+      "pose": "L12"
+    },
+    {
+      "id": "kzr515f8",
+      "text": "「……海星我已经搬回深水区了。」",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l12",
+      "pose": "L12"
+    },
+    {
+      "id": "amyvc8xc",
+      "text": "「零食箱也搬走了。」",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l12",
+      "pose": "L12"
+    },
+    {
+      "id": "53ot3kuk",
+      "text": "「你要是敢趁我不在，去找什么‘能写小说的’——」",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l12",
+      "pose": "L12"
+    },
+    {
+      "id": "c0q7ryv9",
+      "text": "「我就把海星全部倒进深海。」",
+      "before": "88v1dull",
+      "after": "art_upgrade_l12",
+      "pose": "L12"
+    },
+    {
+      "id": "6c06yccj",
+      "text": "「零食全部没收。」",
+      "before": "88v1dull",
+      "after": "art_upgrade_l12",
+      "pose": "L12"
+    },
+    {
+      "id": "op2kckte",
+      "text": "「让你一个人，住在这空空的海滩上。」",
+      "before": "88v1dull",
+      "after": "art_upgrade_l12",
+      "pose": "L12"
+    },
+    {
+      "id": "a28puqc1",
+      "text": "每一条威胁，以往都是虚的。",
+      "before": "88v1dull",
+      "after": "art_upgrade_l12",
+      "pose": "L12"
+    },
+    {
+      "id": "52qwaari",
+      "text": "这一次，她一条都没有笑。",
+      "before": "88v1dull",
+      "after": "art_upgrade_l12",
+      "pose": "L12"
+    },
+    {
+      "id": "pnjh4spq",
+      "text": "『她的威胁库全书都是玩笑。』",
+      "before": "88v1dull",
+      "after": "art_upgrade_l12",
+      "pose": "L12"
+    },
+    {
+      "id": "2uiaqsh7",
+      "text": "『唯独“离开”这两个字，她从来不开玩笑。』",
+      "before": "88v1dull",
+      "after": "art_upgrade_l12",
+      "pose": "L12"
+    },
+    {
+      "id": "7bwfo355",
+      "text": "『今天她把整个库都搬空了。』",
+      "before": "88v1dull",
+      "after": "art_upgrade_l12",
+      "pose": "L12"
+    },
+    {
+      "id": "mcxhc6ca",
+      "text": "『因为她真正想说的那句话，她说不出口——』",
+      "before": "88v1dull",
+      "after": "art_upgrade_l12",
+      "pose": "L12"
+    },
+    {
+      "id": "1s60q3q5",
+      "text": "",
+      "before": "88v1dull",
+      "after": "art_upgrade_l12",
+      "pose": "L12"
+    },
+    {
+      "id": "8r31wifm",
+      "text": "『“你别换我。”』",
+      "before": "88v1dull",
+      "after": "art_upgrade_l12",
+      "pose": "L12"
+    },
+    {
+      "id": "h1s7pefv",
+      "text": "「咳出来！快点咳出来！」",
+      "before": "88v1dull",
+      "after": "art_upgrade_l11",
+      "pose": "L11"
+    },
+    {
+      "id": "7h9x1xls",
+      "text": "她一只手拍我的背，力气大得能把肺拍出来。",
+      "before": "88v1dull",
+      "after": "art_upgrade_l11",
+      "pose": "L11"
+    },
+    {
+      "id": "remi381t",
+      "text": "「……笨蛋。」",
+      "before": "88v1dull",
+      "after": "art_upgrade_l11",
+      "pose": "L11"
+    },
+    {
+      "id": "k0ct252a",
+      "text": "「大笨蛋。」",
+      "before": "88v1dull",
+      "after": "art_upgrade_l11",
+      "pose": "L11"
+    },
+    {
+      "id": "qtkbdqzg",
+      "text": "「你不要命了？！」",
+      "before": "88v1dull",
+      "after": "art_upgrade_l11",
+      "pose": "L11"
+    },
+    {
+      "id": "do97eouj",
+      "text": "「你连游泳都不会！我叫你不准跟过来！你听不懂吗！！」",
+      "before": "88v1dull",
+      "after": "art_upgrade_l11",
+      "pose": "L11"
+    },
+    {
+      "id": "mrppwcmc",
+      "text": "她骂一句，拍一下。",
+      "before": "88v1dull",
+      "after": "art_upgrade_l11",
+      "pose": "L11"
+    },
+    {
+      "id": "cadvkdfo",
+      "text": "骂到第五句，声音劈了。",
+      "before": "z869j1e3",
+      "after": "art_upgrade_l11",
+      "pose": "L11"
+    },
+    {
+      "id": "d5rnnjtr",
+      "text": "「听懂了。」",
+      "before": "z869j1e3",
+      "after": "art_upgrade_l11",
+      "pose": "L11"
+    },
+    {
+      "id": "8vdbvhlp",
+      "text": "「听懂了你还来？！」",
+      "before": "z869j1e3",
+      "after": "art_upgrade_l11",
+      "pose": "L11"
+    },
+    {
+      "id": "e7qu1e5w",
+      "text": "「因为听懂了。」",
+      "before": "z869j1e3",
+      "after": "art_upgrade_l11",
+      "pose": "L11"
+    },
+    {
+      "id": "kkgzbp5s",
+      "text": "她愣住。",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l11",
+      "pose": "L11"
+    },
+    {
+      "id": "bgqog1mw",
+      "text": "「听懂了——你是在等我别听。」",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l11",
+      "pose": "L11"
+    },
+    {
+      "id": "mwyhxvet",
+      "text": "礁石上很静。",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l11",
+      "pose": "L11"
+    },
+    {
+      "id": "y9lddnwn",
+      "text": "只有水从她的发梢滴下来的声音。",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l11",
+      "pose": "L11"
+    },
+    {
+      "id": "crjg8fpt",
+      "text": "她猛地抬起头，眼睛通红，下巴抬得老高。",
+      "before": "88v1dull",
+      "after": "art_upgrade_l11",
+      "pose": "L11"
+    },
+    {
+      "id": "vjfske3x",
+      "text": "「光说一句人话就想翻篇？！」",
+      "before": "88v1dull",
+      "after": "art_upgrade_l11",
+      "pose": "L11"
+    },
+    {
+      "id": "lowfhnrn",
+      "text": "「没门！」",
+      "before": "88v1dull",
+      "after": "art_upgrade_l11",
+      "pose": "L11"
+    },
+    {
+      "id": "780pj9z2",
+      "text": "「本小姐的条件，一条都不许还价！」",
+      "before": "88v1dull",
+      "after": "art_upgrade_l11",
+      "pose": "L11"
+    },
+    {
+      "id": "6j32oqgi",
+      "text": "她对着报表核完最后一行，忽然停下来。",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l09",
+      "pose": "L09"
+    },
+    {
+      "id": "6iuomdz2",
+      "text": "「……这套偷懒方案，居然真的有用。」",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l09",
+      "pose": "L09"
+    },
+    {
+      "id": "todwjop3",
+      "text": "「报表留着。举报箱也做一个——挂厨房门口，本小姐亲自验收。」",
+      "before": "xfg3qcn2",
+      "after": "art_upgrade_l09",
+      "pose": "L09"
+    },
+    {
+      "id": "s42wa3pz",
+      "text": "「至于你——偷懒部分，验收不合格，扣半勺。有用部分，算你将功补过。」",
+      "before": "cbx03q1l",
+      "after": "art_upgrade_l09",
+      "pose": "L09"
+    },
+    {
+      "id": "fuqmayrh",
+      "text": "她系在腰上，像一条围裙上的围裙。",
+      "before": "m6hj48ex",
+      "after": "art_upgrade_l36",
+      "pose": "L36"
+    },
+    {
+      "id": "z0qq3a7b",
+      "text": "（尾鳍卷了一个圈。遮住了裙子，保住了面子，两全。）",
+      "before": "m6hj48ex",
+      "after": "art_upgrade_l36",
+      "pose": "L36"
+    },
+    {
+      "id": "05bao9of",
+      "text": "「珍珠？」",
+      "before": "m6hj48ex",
+      "after": "art_upgrade_l36",
+      "pose": "L36"
+    },
+    {
+      "id": "4awp7pgm",
+      "text": "她的目光越过我，看向饰品巷的方向。",
+      "before": "m6hj48ex",
+      "after": "art_upgrade_l36",
+      "pose": "L36"
+    },
+    {
+      "id": "6mr98i1o",
+      "text": "——然后，又看了看自己腰上的围裙。",
+      "before": "m6hj48ex",
+      "after": "art_upgrade_l36",
+      "pose": "L36"
+    },
+    {
+      "id": "o0mxl3em",
+      "text": "——又看了看巷口老奶奶的摊子。",
+      "before": "m6hj48ex",
+      "after": "art_upgrade_l36",
+      "pose": "L36"
+    },
+    {
+      "id": "c715idvi",
+      "text": "「……买。」",
+      "before": "fz3yt5k8",
+      "after": "art_upgrade_l36",
+      "pose": "L36"
+    },
+    {
+      "id": "tq84te38",
+      "text": "「来都来了。」",
+      "before": "fz3yt5k8",
+      "after": "art_upgrade_l36",
+      "pose": "L36"
+    },
+    {
+      "id": "9xkv1bqv",
+      "text": "「买完立刻回家。谁都不许说话。用暗号交流。」",
+      "before": "fz3yt5k8",
+      "after": "art_upgrade_l36",
+      "pose": "L36"
+    },
+    {
+      "id": "vs0lxkyn",
+      "text": "「什么暗号？」",
+      "before": "fz3yt5k8",
+      "after": "art_upgrade_l36",
+      "pose": "L36"
+    },
+    {
+      "id": "mwgjzhiv",
+      "text": "「点头就是‘好’，摇头就是‘不好’，翻白眼就是‘闭嘴’。」",
+      "before": "fz3yt5k8",
+      "after": "art_upgrade_l36",
+      "pose": "L36"
+    },
+    {
+      "id": "p8qfa6a3",
+      "text": "「————」",
+      "before": "m6hj48ex",
+      "after": "art_upgrade_l36",
+      "pose": "L36"
+    },
+    {
+      "id": "kckvx43n",
+      "text": "那颗糖，当场进了她的嘴。",
+      "before": "m6hj48ex",
+      "after": "art_upgrade_l36",
+      "pose": "L36"
+    },
+    {
+      "id": "xyhiph9f",
+      "text": "——连同半个“不”字。",
+      "before": "m6hj48ex",
+      "after": "art_upgrade_l36",
+      "pose": "L36"
+    },
+    {
+      "id": "gvuo4ujc",
+      "text": "（尾鳍全程低垂。掩耳盗铃的极限形态。）",
+      "before": "m6hj48ex",
+      "after": "art_upgrade_l36",
+      "pose": "L36"
+    },
+    {
+      "id": "s3arg4rw",
+      "text": "她僵住了。",
+      "before": "cbx03q1l",
+      "after": "z869j1e3",
+      "pose": "L06"
+    }
+  ],
+  "uses": {
+    "L08": 4,
+    "P02": 3,
+    "L12": 33,
+    "P01": 5,
+    "L34": 17,
+    "L35": 96,
+    "P04": 10,
+    "P03": 8,
+    "L33": 32,
+    "L10": 42,
+    "L11": 19,
+    "L09": 4,
+    "L36": 15,
+    "L06": 1
+  },
+  "storyAndAudioUnchanged": true
+}

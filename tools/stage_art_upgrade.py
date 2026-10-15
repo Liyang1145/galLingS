@@ -23,7 +23,7 @@ def build():
     for asset in draft['assets'].values():
         if asset['type'] not in ['bg','ch']:continue
         match=re.search(r'/scenes/([BO]\d\d)\.webp$',asset['src'])
-        key=match[1] if match else by_name.get(asset['name'])
+        key=asset.get('productionArtId') or (match[1] if match else by_name.get(asset['name']))
         if key not in approved:continue
         item=approved[key];master=output(key);source=ROOT/runtime[key]['path']
         assert hashlib.sha256(master.read_bytes()).hexdigest()==item['sha256']
@@ -31,6 +31,7 @@ def build():
         with Image.open(source) as im:asset['w'],asset['h']=im.size
         asset.setdefault('previousSourcePath',asset['src'])
         asset['src']=source.as_uri();asset['sourceMasterPath']=master.relative_to(ROOT).as_posix();asset['productionArtId']=key
+        if item['kind']=='sprite':asset['character']='鲸鱼小姐'
         asset['modelRequested']=item['generation']['requested_model'];asset['modelReported']=item['generation'].get('backend_reported_model');asset['imageQualityReported']=item['generation'].get('backend_reported_quality')
         target_assets[key]=asset['id'];changes.append({'asset':asset['id'],'name':asset['name'],'art':key})
     for key,item in approved.items():
@@ -38,6 +39,9 @@ def build():
         master=output(key);source=ROOT/runtime[key]['path'];new_id='art_upgrade_'+key.lower()
         with Image.open(source) as im:w,h=im.size
         draft['assets'][new_id]={'id':new_id,'name':('CG_' if item['kind']=='cg' else '')+item['name'],'type':'ch' if item['kind']=='sprite' else 'bg','cg':item['kind']=='cg','src':source.as_uri(),'w':w,'h':h,'sourceMasterPath':master.relative_to(ROOT).as_posix(),'productionArtId':key,'modelRequested':item['generation']['requested_model'],'modelReported':item['generation'].get('backend_reported_model'),'imageQualityReported':item['generation'].get('backend_reported_quality')}
+        if item['kind']=='sprite':
+            draft['assets'][new_id]['character']='鲸鱼小姐'
+            draft['assets'][new_id]['name']='鲸鱼小姐_'+item['name']
         target_assets[key]=new_id
     # Restore replaced bad CG only at the author's original matching line IDs.
     author=project(ROOT/'archive/deliveries/larry-vn/original-overridden-files/game.js')

@@ -1,0 +1,17 @@
+{
+  "prompt": "A full-body transparent-alpha production sprite for a Japanese romance visual novel. Reference is the exact SAME adult woman aged24, same long blue hair, loop ahoge, fin ears and cyan bows, navy sailor-collar dress, white socks, closed white shoes, two human legs and ONE separate whale tail from the lower back. Preserve her recognizable adult face and exact costume, head size and full-body canvas framing, body proportions, painting finish and neutral daylight. The user asks for a clear ACTING POSE, not merely a changed facial expression. Redraw the shoulders, arms, hands and tail into the specified pose. Keep important expressive hands and tail gesture in the UPPER HALF of the character canvas, visible above a game's lower dialogue box. Full figure inside the canvas, natural five-finger hands, coherent anatomy. No scenery, ground shadow, text, stickers, detached symbols, props not requested, duplicate arms or halo. Real clean transparent alpha. Pose: Self-assured teasing pride: torso upright, chin slightly raised, one hand laid lightly across her upper chest with an open graceful palm, the other hand on her waist. Slight three-quarter shoulder turn and a confident closed-mouth smile, eyes looking toward the viewer. Her independent whale tail curls UP behind her side, with its flukes visible around shoulder height. The silhouette must plainly differ from relaxed arms hanging down.",
+  "requested_model": "gpt-image-2.5-flare",
+  "requested_quality": "max",
+  "requested_size": "1536x2304",
+  "references": [
+    {
+      "path": "content/assets/art-upgrade/originals/L01.png",
+      "sha256": "566e6bd87c0a715a1b641f0d0549c6fd4380630484897d301cd0d7c7462f2b49"
+    }
+  ],
+  "output_sha256": "998a2bd6cb048709195765dde7e64c4808d98c06d126a0a5818f397e3cb6a0fd",
+  "actual_size": [
+    1024,
+    1536
+  ]
+}

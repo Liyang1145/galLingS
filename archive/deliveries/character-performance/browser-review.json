@@ -1,0 +1,132 @@
+{
+  "errors": [],
+  "shots": [
+    {
+      "id": "s3arg4rw",
+      "text": "她僵住了。",
+      "poses": [
+        "L06"
+      ],
+      "actorCount": 1
+    },
+    {
+      "id": "ewno9xr4",
+      "text": "她把笔记本举高。尾鳍在水里卷出一个威胁的弧度。",
+      "poses": [
+        "P02"
+      ],
+      "actorCount": 1
+    },
+    {
+      "id": "mqla9vxf",
+      "text": "她抱臂站在三米开外“监视”我。",
+      "poses": [
+        "P01"
+      ],
+      "actorCount": 1
+    },
+    {
+      "id": "ljqevszk",
+      "text": "她游近了半米。",
+      "poses": [
+        "L07"
+      ],
+      "actorCount": 1
+    },
+    {
+      "id": "sb63ua0q",
+      "text": "「哦？」",
+      "poses": [
+        "L04"
+      ],
+      "actorCount": 1
+    },
+    {
+      "id": "0ryh3dec",
+      "text": "她整个人像被噎了一下。耳鳍都立了起来。",
+      "poses": [
+        "L06"
+      ],
+      "actorCount": 1
+    },
+    {
+      "id": "uvp6gcsp",
+      "text": "她抱着膝盖坐在火堆边，难得地安静。",
+      "poses": [
+        "L35"
+      ],
+      "actorCount": 1
+    },
+    {
+      "id": "ytjn39z0",
+      "text": "她越说越急，声音却抖了。",
+      "poses": [
+        "P03"
+      ],
+      "actorCount": 1
+    },
+    {
+      "id": "65rzzs94",
+      "text": "——然后，整条尾巴炸了起来。",
+      "poses": [
+        "P04"
+      ],
+      "actorCount": 1
+    },
+    {
+      "id": "xkvu95bb",
+      "text": "她的呼吸停了一拍。",
+      "poses": [
+        "L10"
+      ],
+      "actorCount": 1
+    },
+    {
+      "id": "39a7xd8b",
+      "text": "指尖碰到她手腕的前一秒，她退了一步。",
+      "poses": [
+        "L12"
+      ],
+      "actorCount": 1
+    },
+    {
+      "id": "crjg8fpt",
+      "text": "她猛地抬起头，眼睛通红，下巴抬得老高。",
+      "poses": [
+        "L11"
+      ],
+      "actorCount": 1
+    },
+    {
+      "id": "jifyqa4p",
+      "text": "她盘起尾巴，跪坐在礁石上，借着我手电的光，提笔。",
+      "poses": [
+        "L34"
+      ],
+      "actorCount": 1
+    },
+    {
+      "id": "fuqmayrh",
+      "text": "她系在腰上，像一条围裙上的围裙。",
+      "poses": [
+        "L36"
+      ],
+      "actorCount": 1
+    }
+  ],
+  "switching": {
+    "visual": {
+      "idx": 1529,
+      "bg": "j5onv73r",
+      "animation": "0.45s fade, none",
+      "cls": "fade",
+      "display": "block"
+    },
+    "sameActorElement": true,
+    "character": "鲸鱼小姐",
+    "sameBgFades": 0,
+    "changedBgFades": 2,
+    "activeActors": 1,
+    "tailAlpha": "1"
+  }
+}

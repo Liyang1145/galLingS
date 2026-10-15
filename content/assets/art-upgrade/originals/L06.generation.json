@@ -9,20 +9,20 @@
   "requested_quality": "max",
   "backend_reported_quality": "medium",
   "usage": {
-    "input_tokens": 1894,
+    "input_tokens": 1825,
     "input_tokens_details": {
       "image_tokens": 1536,
-      "text_tokens": 358
+      "text_tokens": 289
     },
     "output_tokens": 1372,
     "output_tokens_details": {
       "image_tokens": 1372,
       "text_tokens": 0
     },
-    "total_tokens": 3266
+    "total_tokens": 3197
   },
-  "elapsed_seconds": 63.58,
-  "created": 1791988174,
+  "elapsed_seconds": 76.97,
+  "created": 1792036076,
   "reference_image_count": 1,
   "outputs": [
     "C:\\Users\\袁力阳\\Documents\\Codex\\2026-10-10\\new-chat\\work\\ambient-audio-checkout-proxy\\content\\assets\\art-upgrade\\originals\\L06.png"

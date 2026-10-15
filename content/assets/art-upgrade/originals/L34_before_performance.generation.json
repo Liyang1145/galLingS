@@ -1,0 +1,30 @@
+{
+  "auth_mode": "Codex ChatGPT OAuth",
+  "endpoint": "https://chatgpt.com/backend-api/codex/images/edits",
+  "requested_model": "gpt-image-2.5-flare",
+  "backend_reported_model": null,
+  "model_selection_verified": false,
+  "requested_size": "1536x2304",
+  "backend_reported_size": "1024x1536",
+  "requested_quality": "max",
+  "backend_reported_quality": "medium",
+  "usage": {
+    "input_tokens": 4661,
+    "input_tokens_details": {
+      "image_tokens": 4266,
+      "text_tokens": 395
+    },
+    "output_tokens": 1372,
+    "output_tokens_details": {
+      "image_tokens": 1372,
+      "text_tokens": 0
+    },
+    "total_tokens": 6033
+  },
+  "elapsed_seconds": 81.8,
+  "created": 1791988659,
+  "reference_image_count": 3,
+  "outputs": [
+    "C:\\Users\\袁力阳\\Documents\\Codex\\2026-10-10\\new-chat\\work\\ambient-audio-checkout-proxy\\content\\assets\\art-upgrade\\originals\\L34.png"
+  ]
+}

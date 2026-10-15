@@ -134,5 +134,102 @@
       "B15"
     ],
     "prompt": "One finely painted Japanese romance visual novel 16:9 PROP EVENT CG. The single reference defines the exact coastal cream canvas tent, coast, camping materials and sunset lighting. Show a small unattended gift outside the open tent entrance: ONE bamboo skewer holding three small appetizing grilled squid, resting neatly on a small plain ceramic plate on the wooden threshold. A faint natural hint of warmth, realistic gentle food texture. Nobody is present: no person, girl, hands, feet, tail, or portrait. No grill or cooking action. No ribbon, thread, note, lettering, or jewelry. The story is the quiet discovery of a still-warm gift after its giver has left. Use a closer low three-quarter view toward the entrance, with familiar bedding and a strip of sunset sea softly visible in the background. Keep the entire plate and skewer in the middle third ABOVE the lower 28 percent dialogue area, generous breathing room below. Subtle coastal blue and golden evening light, delicate anime painting, coherent perspective, no watermark."
+  },
+  "L02": {
+    "prompt": "A full-body transparent-alpha production sprite for a Japanese romance visual novel. Reference is the exact SAME adult woman aged24, same long blue hair, loop ahoge, fin ears and cyan bows, navy sailor-collar dress, white socks, closed white shoes, two human legs and ONE separate whale tail from the lower back. Preserve her recognizable adult face and exact costume, head size and full-body canvas framing, body proportions, painting finish and neutral daylight. The user asks for a clear ACTING POSE, not merely a changed facial expression. Redraw the shoulders, arms, hands and tail into the specified pose. Keep important expressive hands and tail gesture in the UPPER HALF of the character canvas, visible above a game's lower dialogue box. Full figure inside the canvas, natural five-finger hands, coherent anatomy. No scenery, ground shadow, text, stickers, detached symbols, props not requested, duplicate arms or halo. Real clean transparent alpha. Pose: Self-assured teasing pride: torso upright, chin slightly raised, one hand laid lightly across her upper chest with an open graceful palm, the other hand on her waist. Slight three-quarter shoulder turn and a confident closed-mouth smile, eyes looking toward the viewer. Her independent whale tail curls UP behind her side, with its flukes visible around shoulder height. The silhouette must plainly differ from relaxed arms hanging down.",
+    "references": [
+      "L01"
+    ],
+    "dependencies": [
+      "L01"
+    ]
+  },
+  "L03": {
+    "prompt": "A full-body transparent-alpha production sprite for a Japanese romance visual novel. Reference is the exact SAME adult woman aged24, same long blue hair, loop ahoge, fin ears and cyan bows, navy sailor-collar dress, white socks, closed white shoes, two human legs and ONE separate whale tail from the lower back. Preserve her recognizable adult face and exact costume, head size and full-body canvas framing, body proportions, painting finish and neutral daylight. The user asks for a clear ACTING POSE, not merely a changed facial expression. Redraw the shoulders, arms, hands and tail into the specified pose. Keep important expressive hands and tail gesture in the UPPER HALF of the character canvas, visible above a game's lower dialogue box. Full figure inside the canvas, natural five-finger hands, coherent anatomy. No scenery, ground shadow, text, stickers, detached symbols, props not requested, duplicate arms or halo. Real clean transparent alpha. Pose: Caught being kind and trying to hide it: shoulders turned about thirty degrees away, head turned back toward the viewer, eyes glancing aside with a small embarrassed pout and modest blush. One hand near her cheek, the other lightly holding the opposite upper arm across her chest. Shoulders drawn inward, separate whale tail tip curling into a small compact loop behind her. Both expressive hands are near face/chest, not down at the skirt.",
+    "references": [
+      "L01"
+    ],
+    "dependencies": [
+      "L01"
+    ]
+  },
+  "L04": {
+    "prompt": "A full-body transparent-alpha production sprite for a Japanese romance visual novel. Reference is the exact SAME adult woman aged24, same long blue hair, loop ahoge, fin ears and cyan bows, navy sailor-collar dress, white socks, closed white shoes, two human legs and ONE separate whale tail from the lower back. Preserve her recognizable adult face and exact costume, head size and full-body canvas framing, body proportions, painting finish and neutral daylight. The user asks for a clear ACTING POSE, not merely a changed facial expression. Redraw the shoulders, arms, hands and tail into the specified pose. Keep important expressive hands and tail gesture in the UPPER HALF of the character canvas, visible above a game's lower dialogue box. Full figure inside the canvas, natural five-finger hands, coherent anatomy. No scenery, ground shadow, text, stickers, detached symbols, props not requested, duplicate arms or halo. Real clean transparent alpha. Pose: Mischievous playful victory: lean her upper torso slightly toward the viewer, lift one hand into a clear V-sign BESIDE her face, the other hand rests casually at her waist. One eyebrow raised, a small asymmetrical cheeky grin, lively direct eye contact. Tail makes a buoyant upward curve behind her. A teasing adult heroine, not an aggressive villain smile. Keep fingers and V-sign naturally formed and visible.",
+    "references": [
+      "L01"
+    ],
+    "dependencies": [
+      "L01"
+    ]
+  },
+  "L06": {
+    "prompt": "A full-body transparent-alpha production sprite for a Japanese romance visual novel. Reference is the exact SAME adult woman aged24, same long blue hair, loop ahoge, fin ears and cyan bows, navy sailor-collar dress, white socks, closed white shoes, two human legs and ONE separate whale tail from the lower back. Preserve her recognizable adult face and exact costume, head size and full-body canvas framing, body proportions, painting finish and neutral daylight. The user asks for a clear ACTING POSE, not merely a changed facial expression. Redraw the shoulders, arms, hands and tail into the specified pose. Keep important expressive hands and tail gesture in the UPPER HALF of the character canvas, visible above a game's lower dialogue box. Full figure inside the canvas, natural five-finger hands, coherent anatomy. No scenery, ground shadow, text, stickers, detached symbols, props not requested, duplicate arms or halo. Real clean transparent alpha. Pose: Startled and flustered: both hands lifted OPEN beside her shoulders, palms forward with naturally spread fingers, elbows away from the torso, body leaning back slightly. Wide blue eyes, a surprised open mouth, fin ears visibly raised. Whale tail rises sharply behind her side with flukes near shoulder level. Readable comic surprise through the whole upper-body silhouette. No floating sweat stickers or symbols.",
+    "references": [
+      "L01"
+    ],
+    "dependencies": [
+      "L01"
+    ]
+  },
+  "L07": {
+    "prompt": "A full-body transparent-alpha production sprite for a Japanese romance visual novel. Reference is the exact SAME adult woman aged24, same long blue hair, loop ahoge, fin ears and cyan bows, navy sailor-collar dress, white socks, closed white shoes, two human legs and ONE separate whale tail from the lower back. Preserve her recognizable adult face and exact costume, head size and full-body canvas framing, body proportions, painting finish and neutral daylight. The user asks for a clear ACTING POSE, not merely a changed facial expression. Redraw the shoulders, arms, hands and tail into the specified pose. Keep important expressive hands and tail gesture in the UPPER HALF of the character canvas, visible above a game's lower dialogue box. Full figure inside the canvas, natural five-finger hands, coherent anatomy. No scenery, ground shadow, text, stickers, detached symbols, props not requested, duplicate arms or halo. Real clean transparent alpha. Pose: Quiet sincere warmth: shoulders relaxed, head upright with attentive gentle eye contact and a small soft smile. BOTH hands held together lightly in front of her upper waist, palms and fingers relaxed, arms clearly gathered in front rather than hanging at the sides. Tail rests in a low relaxed curve. No intense blush, no teasing wink, no notebook. A distinct calm trusting stance.",
+    "references": [
+      "L01"
+    ],
+    "dependencies": [
+      "L01"
+    ]
+  },
+  "P01": {
+    "prompt": "A full-body transparent-alpha production sprite for a Japanese romance visual novel. Reference is the exact SAME adult woman aged24, same long blue hair, loop ahoge, fin ears and cyan bows, navy sailor-collar dress, white socks, closed white shoes, two human legs and ONE separate whale tail from the lower back. Preserve her recognizable adult face and exact costume, head size and full-body canvas framing, body proportions, painting finish and neutral daylight. The user asks for a clear ACTING POSE, not merely a changed facial expression. Redraw the shoulders, arms, hands and tail into the specified pose. Keep important expressive hands and tail gesture in the UPPER HALF of the character canvas, visible above a game's lower dialogue box. Full figure inside the canvas, natural five-finger hands, coherent anatomy. No scenery, ground shadow, text, stickers, detached symbols, props not requested, duplicate arms or halo. Real clean transparent alpha. Pose: Guarded tsundere watchfulness: ARMS CROSSED visibly over the chest, torso angled a little away, chin raised slightly, a restrained wary pout and sidelong gaze toward the viewer. Both forearms and hands clearly and naturally connected across her upper torso. Her separate whale tail held in an alert shallow S curve behind her. This is the arms-folded pose for watching a stranger from three metres away, not a smile or a hand-on-hip pose.",
+    "references": [
+      "L01"
+    ],
+    "dependencies": [
+      "L01"
+    ]
+  },
+  "L34": {
+    "references": [
+      "L34_before_performance"
+    ],
+    "dependencies": [],
+    "prompt": "Edit ONLY the eyes and small facial expression in the reference sprite of the fully clothed ADULT woman age24 reading a book. Open BOTH blue eyes naturally: she is AWAKE, looking attentively toward the viewer with a small fond thoughtful smile. Keep the exact seated body, hand against cheek, other hand and open book on her lap, exact opaque navy sailor dress, white socks, closed white shoes, hair, fin ears, loop ahoge and independent whale tail. Preserve canvas and scale. No clothing, leg, pose, framing, or background change. Clean transparent alpha; no scenery or text."
+  },
+  "P02": {
+    "references": [
+      "L08"
+    ],
+    "dependencies": [
+      "L08"
+    ],
+    "prompt": "A full-body transparent-alpha visual-novel acting sprite of the exact same ADULT woman aged24 in the reference. Preserve her adult identity, blue hair, fin ears, loop ahoge, navy sailor-collar dress, white socks and closed shoes, two human legs and one separate whale tail. Change the acting pose clearly: she holds the SAME closed blue whale-cover spiral notebook ALOFT in one raised hand, high beside her head and just above the ahoge, teasing the viewer by keeping it out of reach. Other hand on her waist, shoulders slightly turned, confident challenging sidelong smile. The book and holding hand must both remain INSIDE generous canvas margins, visibly above shoulder height. Tail curls alertly upward behind her, naturally rooted behind her lower back. Natural fingers gripping the notebook, no extra arms, no duplicate books. Keep original face size and full-body framing; neutral daylight, clean transparent alpha, no text, scenery or floating symbols."
+  },
+  "P03": {
+    "name": "裹毯夜谈怔住",
+    "references": [
+      "L35"
+    ],
+    "dependencies": [
+      "L35"
+    ],
+    "prompt": "Edit this transparent sprite of a fully clothed ADULT woman age24 sitting under a thick opaque whale blanket. Keep her exact recognizable adult identity, hair, ears, ahoge, cream cardigan, loose full-length trousers under the blanket, closed shoes, seated covered legs and independent whale tail. Change ONLY facial expression, shoulders and hands ABOVE the blanket: she has just heard an unexpected personal revelation, blue eyes wide, lips parted in surprise, shoulders slightly lifted, one open hand raised near her upper chest while the other rests on top of the blanket. Preserve the covered lower-body silhouette and identical canvas framing. Natural fingers, no uncovered legs or clothing removal, no text/scenery, clean transparent alpha."
+  },
+  "P04": {
+    "name": "裹毯夜谈受伤生气",
+    "references": [
+      "L35"
+    ],
+    "dependencies": [
+      "L35"
+    ],
+    "prompt": "Edit this transparent sprite of a fully clothed ADULT woman age24 sitting under a thick opaque whale blanket. Preserve exact adult face identity, blue hair, fin ears, ahoge, cream cardigan, loose full-length trousers under the blanket, closed shoes, covered seated legs and separate whale tail. Change the UPPER-BODY ACTING: she leans forward slightly from the shoulders, both hands grip the TOP EDGE of the blanket at chest level, brows furrowed, blue eyes glossy with hurt, mouth speaking in tense indignation. Fin ears alert, independent tail slightly tense to the side. This is fear of being treated as a replacement, not a comic grin. Keep all clothing and the opaque covered lower-body silhouette unchanged. Natural connected hands, no clothing removal, no text, scenery or symbols, clean transparent alpha."
+  },
+  "L10": {
+    "references": [
+      "L10_before_performance"
+    ],
+    "dependencies": [],
+    "prompt": "Edit ONLY the skin detail in this transparent sprite of a fully clothed ADULT woman age24. Remove ALL red scratches, scrape marks, wounds, bruises and bleeding from her arms and legs; restore healthy uninjured skin. Her hurt is EMOTIONAL after an upsetting phone conversation, not a physical injury. Keep the EXACT existing dejected expression, folded arm holding the opposite upper arm, lowered shoulders, navy sailor dress, opaque white socks and closed white shoes, blue hair, fin ears, loop ahoge, independent whale tail, full body framing and transparent alpha. No other pose, wardrobe, face or background changes."
   }
 }

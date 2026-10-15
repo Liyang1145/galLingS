@@ -1,0 +1,48 @@
+{
+  "editor": {
+    "items": 433,
+    "files": 583
+  },
+  "newPosesSameActor": [
+    {
+      "id": "art_upgrade_l10",
+      "key": "L10",
+      "character": "鲸鱼小姐"
+    },
+    {
+      "id": "art_upgrade_l34",
+      "key": "L34",
+      "character": "鲸鱼小姐"
+    },
+    {
+      "id": "art_upgrade_p01",
+      "key": "P01",
+      "character": "鲸鱼小姐"
+    },
+    {
+      "id": "art_upgrade_p02",
+      "key": "P02",
+      "character": "鲸鱼小姐"
+    },
+    {
+      "id": "art_upgrade_p03",
+      "key": "P03",
+      "character": "鲸鱼小姐"
+    },
+    {
+      "id": "art_upgrade_p04",
+      "key": "P04",
+      "character": "鲸鱼小姐"
+    }
+  ],
+  "editorInsertAndUndo": true,
+  "offlineStartupSeconds": 1.44,
+  "decodedImages": 104,
+  "decodedAudio": 103,
+  "actualBgmPlayback": true,
+  "openingBranch": {
+    "delta": "好感 -= 10",
+    "score": -10
+  },
+  "errors": []
+}

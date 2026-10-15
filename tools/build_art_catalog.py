@@ -129,6 +129,7 @@ def build() -> dict:
             "runtimeIds": [a["id"] for a in refs], "usage": len(indices), "firstLine": indices[0] if indices else None,
             "scene": scene[0] if scene else None,
             "productionArtId":art_key,
+            "character":'鲸鱼小姐' if upgraded and category=='ch' else (asset or {}).get('character'),
             "sourceMasterPath":asset.get('sourceMasterPath') if asset else None,
             "asset": asset,
             "provenance": provenance,

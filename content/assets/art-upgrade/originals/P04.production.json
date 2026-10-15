@@ -1,0 +1,17 @@
+{
+  "prompt": "Edit this transparent sprite of a fully clothed ADULT woman age24 sitting under a thick opaque whale blanket. Preserve exact adult face identity, blue hair, fin ears, ahoge, cream cardigan, loose full-length trousers under the blanket, closed shoes, covered seated legs and separate whale tail. Change the UPPER-BODY ACTING: she leans forward slightly from the shoulders, both hands grip the TOP EDGE of the blanket at chest level, brows furrowed, blue eyes glossy with hurt, mouth speaking in tense indignation. Fin ears alert, independent tail slightly tense to the side. This is fear of being treated as a replacement, not a comic grin. Keep all clothing and the opaque covered lower-body silhouette unchanged. Natural connected hands, no clothing removal, no text, scenery or symbols, clean transparent alpha.",
+  "requested_model": "gpt-image-2.5-flare",
+  "requested_quality": "max",
+  "requested_size": "1536x2304",
+  "references": [
+    {
+      "path": "content/assets/art-upgrade/originals/L35.png",
+      "sha256": "4953a9108a8ae99832306884cba76ff64aff944768ad66da297267165aabd8f7"
+    }
+  ],
+  "output_sha256": "06b0cd8e3815feed949d4de52ee4e59858991a4c90b468f5e5f72b768ab4e83c",
+  "actual_size": [
+    1024,
+    1536
+  ]
+}

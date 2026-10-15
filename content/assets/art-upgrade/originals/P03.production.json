@@ -1,0 +1,17 @@
+{
+  "prompt": "Edit this transparent sprite of a fully clothed ADULT woman age24 sitting under a thick opaque whale blanket. Keep her exact recognizable adult identity, hair, ears, ahoge, cream cardigan, loose full-length trousers under the blanket, closed shoes, seated covered legs and independent whale tail. Change ONLY facial expression, shoulders and hands ABOVE the blanket: she has just heard an unexpected personal revelation, blue eyes wide, lips parted in surprise, shoulders slightly lifted, one open hand raised near her upper chest while the other rests on top of the blanket. Preserve the covered lower-body silhouette and identical canvas framing. Natural fingers, no uncovered legs or clothing removal, no text/scenery, clean transparent alpha.",
+  "requested_model": "gpt-image-2.5-flare",
+  "requested_quality": "max",
+  "requested_size": "1536x2304",
+  "references": [
+    {
+      "path": "content/assets/art-upgrade/originals/L35.png",
+      "sha256": "4953a9108a8ae99832306884cba76ff64aff944768ad66da297267165aabd8f7"
+    }
+  ],
+  "output_sha256": "f3b0aa760b5e8b15a543172f7a8dee06f595a818c0f7807a6db1cd6b71a7e4f2",
+  "actual_size": [
+    1024,
+    1536
+  ]
+}

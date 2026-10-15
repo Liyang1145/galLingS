@@ -1,0 +1,17 @@
+{
+  "prompt": "Edit ONLY the necklace on this fully clothed ADULT age24 pajama character sprite. Replace the single pink heart/gem pendant with EXACTLY TWO small separate PINK SCALLOP SHELLS on a simple colored cord. Each shell has a fan outline and fine radiating shell ridges; they are two independent real shell pieces, not a heart-shaped stone, not pearls. Preserve the exact adult face, long blue hair, fin ears, blue whale pajamas with full-length trousers, stuffed whale cushion, hands, shoes, tail and framing. Transparent alpha, no scenery, no clothing changes.",
+  "requested_model": "gpt-image-2.5-flare",
+  "requested_quality": "max",
+  "requested_size": "1536x2304",
+  "references": [
+    {
+      "path": "content/assets/art-upgrade/originals/L28_before_review.png",
+      "sha256": "e5cefe0754b7470991cb6e7d2bb514c8058658406d26ff3c1d0f3bd3fdf6ea1e"
+    }
+  ],
+  "output_sha256": "c8567392025721df0bb103fafd55223c2394ba8726b9dd8a36c35a1ad522c020",
+  "actual_size": [
+    1024,
+    1536
+  ]
+}

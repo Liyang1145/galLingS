@@ -1,0 +1,138 @@
+{
+  "B01": {
+    "prompt": "Cool early-morning change of this EXACT shoreline reference. Preserve every rock, horizon, town and camera. Much softer pale dawn light with cool blue-white sky, less intense sea sparkle than noon, long delicate shadows, no orange sunset and no noon glare. Empty background, 16:9.",
+    "references": [
+      "B02"
+    ]
+  },
+  "B13": {
+    "prompt": "Edit this EXACT deep-sea bioluminescent coral scene: remove ALL direct sunlight rays and bright surface-sky illumination from the top. The upper water is deep navy, with no visible sky. Only blue glowing coral, sea anemones and algae illuminate the rocks and water faintly from below. Preserve coral shapes, camera and central floating space. Quiet intimate deep ocean, no people. 16:9.",
+    "references": [
+      "B13_before_review"
+    ]
+  },
+  "B14": {
+    "prompt": "Use the FIRST image as the exact resurfacing WATER-LEVEL camera. Viewpoint is right at the sea surface, gently rippling water filling the foreground and distant familiar coast on the horizon. No dry beach sand in the foreground, no standing-on-shore camera. Sunset, soft amber and blue reflection. SECOND image is only the coastline and style family. Empty landscape, 16:9.",
+    "references": [
+      "legacy:B14",
+      "B03"
+    ]
+  },
+  "B20": {
+    "prompt": "Use the FIRST reference as the exact quiet coastal TOWN-EDGE PATH camera, not the house courtyard. Preserve the narrow stone lane past coastal buildings leading toward the distant sea-facing white-and-blue house. The SECOND reference is only the same house design, not the target viewpoint. Fresh early morning. No people, no text, 16:9.",
+    "references": [
+      "legacy:B20",
+      "B26"
+    ]
+  },
+  "B23": {
+    "prompt": "Use the FIRST reference as the exact small JEWELRY SIDE ALLEY camera. It is a narrow accessory lane with modest shell and bead displays, not the main fruit/fish market street. Preserve its stone paving, awnings and narrow viewpoint. SECOND reference is only the adjacent market visual family. Bright morning, no text or people. 16:9.",
+    "references": [
+      "legacy:B23",
+      "B21"
+    ]
+  },
+  "B33": {
+    "prompt": "Precise light-fixture correction of this EXACT morning home dining room. Keep the camera, table, two open blank diaries, breakfasts, cabinet, window and blue daylight sea. Turn OFF EVERY electric ceiling pendant, task lamp, lantern and candle: cream lampshades without glowing yellow bulbs, no orange lamp halos. The room is lit only by MORNING sunlight through the window. Do not change to night or move furniture. 16:9.",
+    "references": [
+      "B33_before_review"
+    ]
+  },
+  "B40": {
+    "prompt": "Precise light-fixture correction of this EXACT AFTERNOON dessert-shop interior. The script says no lamps are switched on. Turn OFF ALL hanging lamps, ceiling downlights, stair lamp and counter task lamps, leaving every fixture in place with matte cream shades and NO yellow bulb glow. Preserve display case, stairs, chairs, cabinets, window, sky and exact camera. Natural DAYLIGHT only; no night sky, no candles. 16:9.",
+    "references": [
+      "B40_before_review"
+    ]
+  },
+  "L14": {
+    "prompt": "Precise minor accessory correction of the adult woman in this sprite. Remove the bracelet from her wrist; restore a bare wrist. Preserve her proud facial expression, blue-and-white sundress, hidden tail, blue hair, fin ears, adult proportions, pose, hands, shoes and transparent alpha exactly. No jewelry for this early-story state. Full-body production sprite, no scenery.",
+    "references": [
+      "L14_before_review"
+    ]
+  },
+  "L17": {
+    "prompt": "Create a NEW, more modest FULLY CLOTHED summer beach-day sprite using this adult woman identity reference. Adult woman aged24, same face, blue hair, fin ears, loop ahoge and separate whale tail. Wear a loose OPAQUE white linen sun coat buttoned closed from the collar to BELOW THE KNEES, navy clothing underneath, opaque white legwear and simple closed white flat shoes. Clothing is comfortable and non-form-fitting. Face and hands are the only visible skin; no swimsuit-cut silhouette. Calm relaxed standing pose, whole adult figure and whale tail visible, no emphasis on body parts. Preserve identity, proportions and fine anime painting. Genuine transparent alpha, no scenery or text. This is a substantially more covered alternative holiday outfit, not a foot-detail edit.",
+    "references": [
+      "L01"
+    ],
+    "name": "泳装段·完整外搭候选",
+    "costume": "完整白色外搭+深蓝内搭，较保守替代方案"
+  },
+  "L18": {
+    "prompt": "Make a shy gentle-expression version of this ADULT age24 FULLY CLOTHED holiday sprite. Preserve the loose opaque white linen sun coat BUTTONED CLOSED to below the knees, navy clothing underneath, opaque white legwear and closed white flat shoes. Keep her face, hair, fin ears, ahoge, two human legs, independent whale tail and canvas framing. Only face and hands visible, no body-part focus, no lifted garment or stocking gesture. Both hands relaxed beside the coat. Slight warm blush and eyes glancing aside. Transparent alpha, no scene or text. This is the covered holiday-coat alternative, not the previously rejected exposed swimwear pose.",
+    "references": [
+      "L17"
+    ],
+    "name": "泳装段·完整外搭害羞候选",
+    "costume": "同L17保守外搭"
+  },
+  "C17": {
+    "prompt": "Edit this EXACT completed adult seaside dinner CG. Remove the necklace and pendant completely; her neck is bare at this chapter because she already gave the shell necklace to the jeweler. Preserve the same adult age24 face, long blue hair, pajamas, knitted shoulder blanket, two seafood noodle bowls, chopsticks, room, moonlight and exact 16:9 composition. No new necklace or jewelry, no clothing changes. Coherent fine Japanese visual novel painting.",
+    "references": [
+      "C17_before_review"
+    ]
+  },
+  "O09": {
+    "prompt": "Edit this EXACT completed adult woman at the sunset window CG: replace ONLY the glass Japanese furin bell and its paper strip with a small handmade BLUE AND WHITE SHELL wind-chime. Three small blue-white scallop shells hang on thin linen strings with one small brass bell; no glass sphere and no paper strip. Keep both hands holding the cord naturally. Preserve the adult age24 woman, face, clothes, whale tail, window, room, sunset, camera and exact 16:9 composition. No necklace. Delicate believable shell materials, no text.",
+    "references": [
+      "O09_before_review"
+    ]
+  },
+  "L35": {
+    "name": "营地夜谈·裹毯坐姿",
+    "costume": "常服内搭，双腿由不透光长毯完整覆盖；保守替代动作",
+    "prompt": "A NEW substantially more covered ADULT age24 character sprite for a quiet campsite conversation. Use the referenced fully dressed adult woman identity, same long blue hair, fin ears, loop ahoge, face and independent blue whale tail. She sits upright calmly, hands resting visibly on her lap. Wear loose full-length navy trousers and a comfortable opaque long-sleeved cream cardigan. An OPAQUE thick whale-pattern wool blanket wraps from her shoulders all the way to her ANKLES, completely covering the legs and clothing folds. Plain closed white shoes. Face and hands are the only exposed skin. No skirt lifting, no knees-to-chest pose, no exposed knees, no anatomical emphasis. Whole adult figure and independent whale tail inside the frame, transparent alpha. This is a new blanket-wrapped ordinary seated design, not the rejected short-skirt pose.",
+    "references": [
+      "L01"
+    ]
+  },
+  "L28": {
+    "prompt": "Edit ONLY the necklace on this fully clothed ADULT age24 pajama character sprite. Replace the single pink heart/gem pendant with EXACTLY TWO small separate PINK SCALLOP SHELLS on a simple colored cord. Each shell has a fan outline and fine radiating shell ridges; they are two independent real shell pieces, not a heart-shaped stone, not pearls. Preserve the exact adult face, long blue hair, fin ears, blue whale pajamas with full-length trousers, stuffed whale cushion, hands, shoes, tail and framing. Transparent alpha, no scenery, no clothing changes.",
+    "references": [
+      "L28_before_review"
+    ]
+  },
+  "L30": {
+    "prompt": "Edit ONLY the necklace on this fully clothed ADULT age24 white-dress character sprite. Replace the single pink heart/gem pendant with EXACTLY TWO small separate PINK SCALLOP SHELLS on a simple colored cord. Each shell has a fan outline and fine radiating shell ridges; keep the two pieces individually readable, no heart stone or pearl. Preserve the exact adult face, hair, fin ears, white summer dress, hands, shoes, independent whale tail and framing. Transparent alpha, no scenery, no clothing changes.",
+    "references": [
+      "L30_before_review"
+    ]
+  },
+  "O11": {
+    "prompt": "A NEW wide 16:9 Japanese romance visual-novel illustration, a moonlit composition showing a STORY ACTION rather than a portrait crop. FIRST reference establishes the exact coast and moon. SECOND reference establishes the adult age24 blue-haired whale heroine in opaque navy dress, white socks and closed shoes. THIRD reference identifies the adult age26 man with black hair, rectangular glasses, white long-sleeved shirt and navy trousers. Use a wider elevated diagonal camera: both adults sit shoulder to shoulder in the UPPER LEFT half, their faces tender and clearly recognizable. Show an open flat rock in the CENTER and RIGHT half with TWO unmistakable human moon-cast SHADOWS next to each other. Her separate blue whale tail curls in a soft natural C-shape around those TWO SHADOWS on the rock. Two human legs remain separate from the tail. The tail and shadows must be fully visible above the bottom 28% reserved for dialogue. Moonlight comes from the upper right so the shadows extend consistently toward the foreground left. Ordinary fully clothed adults, no erotic framing, no magic circle, no duplicate people or disconnected tail. This scene is about the shadows enclosed by a real tail, not just a close-up seated couple.",
+    "references": [
+      "B04",
+      "L34",
+      "O11_before_review"
+    ]
+  },
+  "C09": {
+    "name": "原来你是真·营地裹毯夜谈",
+    "costume": "常服内搭完整裹毯，保守坐姿",
+    "prompt": "One 16:9 EVENT CG of a quiet ordinary campsite conversation. FIRST landscape reference is the exact moonlit tent campsite with small campfire. SECOND fully clothed sprite defines the SAME ADULT woman aged24, her blue hair, fin ears, ahoge, face and independent blue whale tail. She sits upright beside the adult age26 man in a white long-sleeved shirt and full-length navy trousers. Her body and legs are completely wrapped in the thick opaque whale-pattern blanket from SHOULDERS TO ANKLES, with loose full-length trousers and a cream cardigan underneath and closed white shoes. Only her face and resting hands are exposed. No short-skirt pose, no exposed knees, no knees-to-chest pose, no body-part emphasis. Both sit calmly with hands resting on their laps, gentle wistful eye contact at the realization that the other person is real. Two human legs under the blanket remain separate from her whale tail. Believable covered silhouettes, clean anatomy, detailed coastal anime painting, warm firelight and blue moonlight. Important faces and emotional action above the lower 28% dialogue area. No jewelry, text or watermark.",
+    "references": [
+      "B16",
+      "L35"
+    ]
+  },
+  "C25": {
+    "prompt": "One quiet 16:9 Japanese visual-novel night conversation CG inside the EXACT tent in the FIRST landscape reference. The SECOND reference defines the SAME ADULT woman aged24: blue hair, blue-white fin ears, loop ahoge, separate whale tail, opaque long-sleeved whale pajamas, full-length pajama trousers and TWO small separate PINK SCALLOP SHELLS on a simple cord. Keep that complete sleepwear and recognizable adult identity. She sits comfortably on the bedding with the thick blanket covering her legs, holding a soft whale cushion; both hands rest naturally. Warm slightly embarrassed smile and attentive eyes directed toward the viewer, a quiet shared bedtime story. Only face and hands visible; no clothes being removed, no revealing outfit, no intimate body emphasis. Gentle low lantern light agrees with the moonlit coastal campsite. The two shell pieces must remain real ridged fan-shaped shells, not a heart gemstone or blue pearl. Landscape 16:9, face and two-shell necklace above the dialogue area, no text or watermark.",
+    "references": [
+      "B18",
+      "L28"
+    ],
+    "name": "贝壳番外·睡衣夜谈",
+    "costume": "完整鲸鱼睡衣、两枚粉色扇贝，保守夜谈构图"
+  },
+  "C03": {
+    "name": "营地门口·无人留下的烤鱿鱼",
+    "spec": "新第一话结尾：门口一串仍温热的烤小鱿鱼，没有人物，没有蓝黑丝线证据。",
+    "dependencies": [
+      "B15"
+    ],
+    "references": [
+      "B15"
+    ],
+    "prompt": "One finely painted Japanese romance visual novel 16:9 PROP EVENT CG. The single reference defines the exact coastal cream canvas tent, coast, camping materials and sunset lighting. Show a small unattended gift outside the open tent entrance: ONE bamboo skewer holding three small appetizing grilled squid, resting neatly on a small plain ceramic plate on the wooden threshold. A faint natural hint of warmth, realistic gentle food texture. Nobody is present: no person, girl, hands, feet, tail, or portrait. No grill or cooking action. No ribbon, thread, note, lettering, or jewelry. The story is the quiet discovery of a still-warm gift after its giver has left. Use a closer low three-quarter view toward the entrance, with familiar bedding and a strip of sunset sea softly visible in the background. Keep the entire plate and skewer in the middle third ABOVE the lower 28 percent dialogue area, generous breathing room below. Subtle coastal blue and golden evening light, delicate anime painting, coherent perspective, no watermark."
+  }
+}

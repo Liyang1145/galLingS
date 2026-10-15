@@ -1,0 +1,29 @@
+{
+  "prompt": "One complete 16:9 EVENT CG, a new coherent illustration rather than pasted sprites. The FIRST wide location reference is the target landscape canvas: preserve its 16:9 framing, location, architecture and time of day. The SECOND costume master controls the heroine's exact face, hair, anatomy, outfit and tail. The following user identity images reinforce her recognizable face and style. Characters interact naturally with the environment. Use expressive eyes, believable hands and physically connected actions. When a man is present he is an adult age 26, short black hair, rectangular glasses, white long-sleeved shirt and navy trousers; player-perspective hands/shoulder are preferred when the script allows it. Avoid showing a man's face unnecessarily. No swimsuit or outfit change unless requested. Water scenes still have two human legs and a separate whale tail. Keep the central emotional action visible above dialogue. The final CG must stay landscape even though character-reference images are portrait.\nMatch the two user references: premium finely painted Japanese anime visual novel art, clean delicate outlines, coherent anatomy and perspective, subtle painterly material detail, luminous coastal blue palette, restrained clear highlights, sophisticated soft light. The heroine is the SAME ADULT woman aged 24: blue/periwinkle long hair, blue eyes, loop ahoge, cyan bow clips, blue-white fin ears, two human legs PLUS an independent mottled-blue whale tail growing behind the lower back. Human legs never turn into a mermaid tail. Use exact costume references. No watermark, typography, pseudo-writing, UI, duplicated people, extra limbs, warped fingers, floaty unrelated props or sexualized framing. Important faces and story actions stay above the lower 28% reserved for dialogue.\nMorning at the home dining table: two open small diaries side by side, the same adult heroine reading one and pointing to a line with a finger; viewer opposite. Blank non-readable pages for later typography, two breakfast settings, intimate domestic atmosphere.",
+  "requested_model": "gpt-image-2.5-flare",
+  "requested_quality": "max",
+  "requested_size": "3840x2160",
+  "references": [
+    {
+      "path": "content/assets/art-upgrade/originals/B33.png",
+      "sha256": "f820511947832366ba3f9f7ec9bbf0cedf49cb4ca801d5f81c8fc42f0ef0750e"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/L01.png",
+      "sha256": "566e6bd87c0a715a1b641f0d0549c6fd4380630484897d301cd0d7c7462f2b49"
+    },
+    {
+      "path": "content/assets/art-upgrade/references/user_face_style.jpg",
+      "sha256": "ab541ccc7a42eb2e21b172b7d9638cd76b9a75f68b04dce8bd1f866db94c9d9f"
+    },
+    {
+      "path": "content/assets/art-upgrade/references/user_fullbody_tail.jpg",
+      "sha256": "5e30a13cbc31bba3534de26d6432f539a23d09a0e632cf2136ac6b55a4b33302"
+    }
+  ],
+  "output_sha256": "bc28cadca9a4d57e895565ca462c69da305502310e30aa7fbef99428de964ed1",
+  "actual_size": [
+    1672,
+    941
+  ]
+}

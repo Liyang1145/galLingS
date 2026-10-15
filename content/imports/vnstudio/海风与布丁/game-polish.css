@@ -12,6 +12,7 @@ body.game #main { background:#101b20; }
 #title .cbg { animation:none; }
 #title.glass button { animation:none; }
 #title.cover::after { animation:none; background:none; }
+#title h1.t-left { font-size:44px; line-height:1.25; letter-spacing:8px; text-shadow:0 2px 7px #123a50,0 0 20px #123a5055; }
 #title .menu.m-left { left:68px; bottom:68px; gap:12px; }
 #title.glass button { width:220px; padding:10px 22px; border-radius:5px; border:1px solid #edf0da73; background:#183a3cbb; color:#fbf6e9; font-size:19px; letter-spacing:.18em; box-shadow:none; backdrop-filter:blur(6px); }
 #title.glass button:hover { background:#2e5658ee; box-shadow:none; color:#fff; }

@@ -1,0 +1,17 @@
+{
+  "prompt": "Edit this EXACT completed adult seaside dinner CG. Remove the necklace and pendant completely; her neck is bare at this chapter because she already gave the shell necklace to the jeweler. Preserve the same adult age24 face, long blue hair, pajamas, knitted shoulder blanket, two seafood noodle bowls, chopsticks, room, moonlight and exact 16:9 composition. No new necklace or jewelry, no clothing changes. Coherent fine Japanese visual novel painting.",
+  "requested_model": "gpt-image-2.5-flare",
+  "requested_quality": "max",
+  "requested_size": "3840x2160",
+  "references": [
+    {
+      "path": "content/assets/art-upgrade/originals/C17_before_review.png",
+      "sha256": "f46bb23dc0cb8c250eb79d916c4dfa2e32d783baf54e319bdd224c4d6e067d96"
+    }
+  ],
+  "output_sha256": "a57afe9820b64deea2fc598e35f9e879283b362f50d72a3d37313b3002f698d3",
+  "actual_size": [
+    1672,
+    941
+  ]
+}

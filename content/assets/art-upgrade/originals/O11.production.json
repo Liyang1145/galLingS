@@ -1,0 +1,25 @@
+{
+  "prompt": "A NEW wide 16:9 Japanese romance visual-novel illustration, a moonlit composition showing a STORY ACTION rather than a portrait crop. FIRST reference establishes the exact coast and moon. SECOND reference establishes the adult age24 blue-haired whale heroine in opaque navy dress, white socks and closed shoes. THIRD reference identifies the adult age26 man with black hair, rectangular glasses, white long-sleeved shirt and navy trousers. Use a wider elevated diagonal camera: both adults sit shoulder to shoulder in the UPPER LEFT half, their faces tender and clearly recognizable. Show an open flat rock in the CENTER and RIGHT half with TWO unmistakable human moon-cast SHADOWS next to each other. Her separate blue whale tail curls in a soft natural C-shape around those TWO SHADOWS on the rock. Two human legs remain separate from the tail. The tail and shadows must be fully visible above the bottom 28% reserved for dialogue. Moonlight comes from the upper right so the shadows extend consistently toward the foreground left. Ordinary fully clothed adults, no erotic framing, no magic circle, no duplicate people or disconnected tail. This scene is about the shadows enclosed by a real tail, not just a close-up seated couple.",
+  "requested_model": "gpt-image-2.5-flare",
+  "requested_quality": "max",
+  "requested_size": "3840x2160",
+  "references": [
+    {
+      "path": "content/assets/art-upgrade/originals/B04.png",
+      "sha256": "4e1993c85947e783505e30fd13c32c0edca64106d568bc6d0651495d5143eace"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/L34.png",
+      "sha256": "c4013f6d6876f3719c81749f332a28d6a6c3fc5c43bb1210fba53c097b254954"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/O11_before_review.png",
+      "sha256": "98f00eb2754bfb05599955aa005d58cae1fdb8080f65c05cf88e8c12cc32d5c6"
+    }
+  ],
+  "output_sha256": "a297b1a2fd5276fea5e608b8c190006dee69bbe8829ed5b9dc4832cbbf14e00b",
+  "actual_size": [
+    1672,
+    941
+  ]
+}

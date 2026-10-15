@@ -23,26 +23,22 @@ def build(output: Path, project_file: Path | None = None) -> dict:
         project = json.loads(project_file.read_text(encoding="utf-8-sig"))
         if not isinstance(project.get("assets"), dict) or not isinstance(project.get("lines"), list):
             raise ValueError("Expected a saved VN Studio project with assets and lines")
-        used = set()
-        def scan(value):
-            if isinstance(value, str):
-                used.add(value)
-            elif isinstance(value, list):
-                for item in value:
-                    scan(item)
-            elif isinstance(value, dict):
-                for item in value.values():
-                    scan(item)
-        for key, value in project.items():
-            if key not in {"assets", "recent"}:
-                scan(value)
-        project["assets"] = {key:asset for key, asset in project["assets"].items()
-                             if not asset.get("libraryPath") or key in used}
         project["cur"] = 0
         project.pop("recent", None)
     else:
         source = (GAME / "game.js").read_text(encoding="utf-8-sig")
         project = json.loads(source[source.index("=") + 1:].strip().removesuffix(";"))
+    used = set()
+    def scan(value):
+        if isinstance(value,str):used.add(value)
+        elif isinstance(value,list):
+            for item in value:scan(item)
+        elif isinstance(value,dict):
+            for item in value.values():scan(item)
+    for key,value in project.items():
+        if key not in {'assets','recent'}:scan(value)
+    project['assets']={key:a for key,a in project['assets'].items()
+        if key in used or (not a.get('libraryPath') and a['type'] not in {'bg','ch'})}
     cache, hashes = {}, {}
     def embed(src: str, library_path: str = "") -> str:
         if src.startswith("data:"):

@@ -1,0 +1,17 @@
+{
+  "prompt": "Edit ONLY the necklace on this fully clothed ADULT age24 white-dress character sprite. Replace the single pink heart/gem pendant with EXACTLY TWO small separate PINK SCALLOP SHELLS on a simple colored cord. Each shell has a fan outline and fine radiating shell ridges; keep the two pieces individually readable, no heart stone or pearl. Preserve the exact adult face, hair, fin ears, white summer dress, hands, shoes, independent whale tail and framing. Transparent alpha, no scenery, no clothing changes.",
+  "requested_model": "gpt-image-2.5-flare",
+  "requested_quality": "max",
+  "requested_size": "1536x2304",
+  "references": [
+    {
+      "path": "content/assets/art-upgrade/originals/L30_before_review.png",
+      "sha256": "8414cd9ed4d9b812634849962f07cdac2cd9926306516b477dcaa397295f0917"
+    }
+  ],
+  "output_sha256": "c665b2340614f703802b7586be739331da71cf2a44014c237caa8e8cc1d64fc9",
+  "actual_size": [
+    1024,
+    1536
+  ]
+}

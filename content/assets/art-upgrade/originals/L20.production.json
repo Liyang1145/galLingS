@@ -1,0 +1,17 @@
+{
+  "prompt": "One full-body production CHARACTER SPRITE. Real transparent alpha background, no scenery, floor, shadow, halo or painted checkerboard. Opaque figure interiors, clean antialiased edges and transparent holes between hair, limbs and tail. Same framing, body size and shoe baseline as the costume master; preserve adult face, hairstyle, clothes and tail geometry exactly. Include whole ahoge, both feet and both whale flukes inside generous margins. Soft neutral daylight, no scene-specific colored glow. Single character only.\nMatch the two user references: premium finely painted Japanese anime visual novel art, clean delicate outlines, coherent anatomy and perspective, subtle painterly material detail, luminous coastal blue palette, restrained clear highlights, sophisticated soft light. The heroine is the SAME ADULT woman aged 24: blue/periwinkle long hair, blue eyes, loop ahoge, cyan bow clips, blue-white fin ears, two human legs PLUS an independent mottled-blue whale tail growing behind the lower back. Human legs never turn into a mermaid tail. Use exact costume references. No watermark, typography, pseudo-writing, UI, duplicated people, extra limbs, warped fingers, floaty unrelated props or sexualized framing. Important faces and story actions stay above the lower 28% reserved for dialogue.\nAsset: 水下悬浮看光\nCostume: 常服水下姿态\nChange requested: 漂浮姿态自然、发丝和衣摆受水流，双腿和尾不合并。\nThe first image is the exact character/costume master. The other two images define identity only. For expression variants change only facial expression, ear-fin emotion and indicated gestures; keep torso position, head size, dress hem, shoes and tail unchanged.",
+  "requested_model": "gpt-image-2.5-flare",
+  "requested_quality": "max",
+  "requested_size": "1536x2304",
+  "references": [
+    {
+      "path": "content/assets/art-upgrade/originals/L19.png",
+      "sha256": "59491d262ec16e9211e0c2c81b1424b92d05c325c07e042336bce678cc5cc09e"
+    }
+  ],
+  "output_sha256": "9e7406f1cb8f70ff930ab348f7cc4a4881811e495025cdc3942cfbcc6df52970",
+  "actual_size": [
+    1024,
+    1536
+  ]
+}

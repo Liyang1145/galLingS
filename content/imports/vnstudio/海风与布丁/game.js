@@ -1,4 +1,4 @@
-window.VN_GAME ={
+window.VN_GAME = {
   "v": 3,
   "id": "bqlsg5c2-local-fusion",
   "title": "海风与布丁",
@@ -7,33 +7,57 @@ window.VN_GAME ={
       "id": "md2p8m90",
       "type": "bg",
       "name": "CG_人鱼公主",
-      "src": "assets/bg/CG_人鱼公主.jpg",
-      "w": 1280,
-      "h": 720
+      "src": "assets/art-upgrade/C25.webp",
+      "w": 1672,
+      "h": 941,
+      "previousSourcePath": "assets/bg/CG_人鱼公主.jpg",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/C25.png",
+      "productionArtId": "C25",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "yvwvivzm": {
       "id": "yvwvivzm",
       "type": "bg",
       "name": "CG_初登场",
-      "src": "assets/bg/CG_初登场.jpg",
-      "w": 1920,
-      "h": 1080
+      "src": "assets/art-upgrade/C01.webp",
+      "w": 1672,
+      "h": 941,
+      "previousSourcePath": "assets/bg/CG_初登场.jpg",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/C01.png",
+      "productionArtId": "C01",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "ehbun5kh": {
       "id": "ehbun5kh",
       "type": "bg",
       "name": "CG_原来是你",
-      "src": "assets/bg/CG_原来是你.jpg",
-      "w": 1920,
-      "h": 1080
+      "src": "assets/art-upgrade/C09.webp",
+      "w": 1672,
+      "h": 941,
+      "previousSourcePath": "assets/bg/CG_原来是你.jpg",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/C09.png",
+      "productionArtId": "C09",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "pmngp4pk": {
       "id": "pmngp4pk",
       "type": "bg",
       "name": "CG_和解",
-      "src": "assets/bg/CG_和解.jpg",
-      "w": 1920,
-      "h": 1080
+      "src": "assets/art-upgrade/C14.webp",
+      "w": 1672,
+      "h": 941,
+      "previousSourcePath": "assets/bg/CG_和解.jpg",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/C14.png",
+      "productionArtId": "C14",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "yjxp4irw": {
       "id": "yjxp4irw",
@@ -50,149 +74,245 @@ window.VN_GAME ={
       "id": "w3km9isl",
       "type": "bg",
       "name": "CG_布丁",
-      "src": "assets/bg/CG_布丁.jpg",
-      "w": 1920,
-      "h": 1080
+      "src": "assets/art-upgrade/C18.webp",
+      "w": 1672,
+      "h": 941,
+      "previousSourcePath": "assets/bg/CG_布丁.jpg",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/C18.png",
+      "productionArtId": "C18",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "ez0vsxzc": {
       "id": "ez0vsxzc",
       "type": "bg",
       "name": "CG_手链",
-      "src": "assets/bg/CG_手链.jpg",
-      "w": 1280,
-      "h": 720,
-      "previewExcluded": true,
+      "src": "assets/art-upgrade/C07.webp",
+      "w": 1672,
+      "h": 941,
+      "previewExcluded": false,
       "reviewStatus": "withdrawn_mismatch",
-      "reviewNote": "本地复核撤出播放/鉴赏；原文件保留，准确CG待补。"
+      "reviewNote": "本地复核撤出播放/鉴赏；原文件保留，准确CG待补。",
+      "previousSourcePath": "assets/bg/CG_手链.jpg",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/C07.png",
+      "productionArtId": "C07",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "jxxr16ez": {
       "id": "jxxr16ez",
       "type": "bg",
       "name": "CG_新家",
-      "src": "assets/bg/CG_新家.jpg",
-      "w": 1920,
-      "h": 1080,
-      "previewExcluded": true,
+      "src": "assets/art-upgrade/C11.webp",
+      "w": 1672,
+      "h": 941,
+      "previewExcluded": false,
       "reviewStatus": "withdrawn_mismatch",
-      "reviewNote": "本地复核撤出播放/鉴赏；原文件保留，准确CG待补。"
+      "reviewNote": "本地复核撤出播放/鉴赏；原文件保留，准确CG待补。",
+      "previousSourcePath": "assets/bg/CG_新家.jpg",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/C11.png",
+      "productionArtId": "C11",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "sqnct5dc": {
       "id": "sqnct5dc",
       "type": "bg",
       "name": "CG_早安",
-      "src": "assets/bg/CG_早安.jpg",
-      "w": 1920,
-      "h": 1080,
-      "previewExcluded": true,
+      "src": "assets/art-upgrade/C19.webp",
+      "w": 1672,
+      "h": 941,
+      "previewExcluded": false,
       "reviewStatus": "withdrawn_mismatch",
-      "reviewNote": "本地复核撤出播放/鉴赏；原文件保留，准确CG待补。"
+      "reviewNote": "本地复核撤出播放/鉴赏；原文件保留，准确CG待补。",
+      "previousSourcePath": "assets/bg/CG_早安.jpg",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/C19.png",
+      "productionArtId": "C19",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "low"
     },
     "supaesch": {
       "id": "supaesch",
       "type": "bg",
       "name": "CG_海豚",
-      "src": "assets/bg/CG_海豚.jpg",
-      "w": 1920,
-      "h": 1080
+      "src": "assets/art-upgrade/C10.webp",
+      "w": 1672,
+      "h": 941,
+      "previousSourcePath": "assets/bg/CG_海豚.jpg",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/C10.png",
+      "productionArtId": "C10",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "wnpuk9dy": {
       "id": "wnpuk9dy",
       "type": "bg",
       "name": "CG_海风与布丁",
-      "src": "assets/bg/CG_海风与布丁.jpg",
-      "w": 1920,
-      "h": 1080
+      "src": "assets/art-upgrade/C22.webp",
+      "w": 1672,
+      "h": 941,
+      "previousSourcePath": "assets/bg/CG_海风与布丁.jpg",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/C22.png",
+      "productionArtId": "C22",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "ij6ed2gn": {
       "id": "ij6ed2gn",
       "type": "bg",
       "name": "CG_深水区",
-      "src": "assets/bg/CG_深水区.jpg",
-      "w": 1920,
-      "h": 1080
+      "src": "assets/art-upgrade/C13.webp",
+      "w": 1672,
+      "h": 941,
+      "previousSourcePath": "assets/bg/CG_深水区.jpg",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/C13.png",
+      "productionArtId": "C13",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "low"
     },
     "kful0adz": {
       "id": "kful0adz",
       "type": "bg",
       "name": "CG_深海之光",
-      "src": "assets/bg/CG_深海之光.jpg",
-      "w": 1920,
-      "h": 1080
+      "src": "assets/art-upgrade/C06.webp",
+      "w": 1672,
+      "h": 941,
+      "previousSourcePath": "assets/bg/CG_深海之光.jpg",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/C06.png",
+      "productionArtId": "C06",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "akugkagj": {
       "id": "akugkagj",
       "type": "bg",
       "name": "CG_烤鱿鱼",
-      "src": "assets/bg/CG_烤鱿鱼.jpg",
-      "w": 1920,
-      "h": 1080
+      "src": "assets/art-upgrade/C03.webp",
+      "w": 1672,
+      "h": 941,
+      "previousSourcePath": "assets/bg/CG_烤鱿鱼.jpg",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/C03.png",
+      "productionArtId": "C03",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "z639wmth": {
       "id": "z639wmth",
       "type": "bg",
       "name": "CG_珍珠",
-      "src": "assets/bg/CG_珍珠.jpg",
-      "w": 1920,
-      "h": 1080,
-      "previewExcluded": true,
+      "src": "assets/art-upgrade/C16.webp",
+      "w": 1672,
+      "h": 941,
+      "previewExcluded": false,
       "reviewStatus": "withdrawn_mismatch",
-      "reviewNote": "本地复核撤出播放/鉴赏；原文件保留，准确CG待补。"
+      "reviewNote": "本地复核撤出播放/鉴赏；原文件保留，准确CG待补。",
+      "previousSourcePath": "assets/bg/CG_珍珠.jpg",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/C16.png",
+      "productionArtId": "C16",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "ak1lber9": {
       "id": "ak1lber9",
       "type": "bg",
       "name": "CG_电话",
-      "src": "assets/bg/CG_电话.jpg",
-      "w": 1920,
-      "h": 1080
+      "src": "assets/art-upgrade/C12.webp",
+      "w": 1672,
+      "h": 941,
+      "previousSourcePath": "assets/bg/CG_电话.jpg",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/C12.png",
+      "productionArtId": "C12",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "xndnkx8k": {
       "id": "xndnkx8k",
       "type": "bg",
       "name": "CG_立约",
-      "src": "assets/bg/CG_立约.jpg",
-      "w": 1920,
-      "h": 1080
+      "src": "assets/art-upgrade/C04.webp",
+      "w": 1672,
+      "h": 941,
+      "previousSourcePath": "assets/bg/CG_立约.jpg",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/C04.png",
+      "productionArtId": "C04",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "c6r2xcnj": {
       "id": "c6r2xcnj",
       "type": "bg",
       "name": "CG_糍粑",
-      "src": "assets/bg/CG_糍粑.jpg",
-      "w": 1920,
-      "h": 1080,
-      "previewExcluded": true,
+      "src": "assets/art-upgrade/C02.webp",
+      "w": 1672,
+      "h": 941,
+      "previewExcluded": false,
       "reviewStatus": "withdrawn_mismatch",
-      "reviewNote": "本地复核撤出播放/鉴赏；原文件保留，准确CG待补。"
+      "reviewNote": "本地复核撤出播放/鉴赏；原文件保留，准确CG待补。",
+      "previousSourcePath": "assets/bg/CG_糍粑.jpg",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/C02.png",
+      "productionArtId": "C02",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "7jj07jqh": {
       "id": "7jj07jqh",
       "type": "bg",
       "name": "CG_翡翠之梦",
-      "src": "assets/bg/bg_emerald_dream_interior_night.png",
+      "src": "assets/art-upgrade/C15.webp",
       "w": 1672,
       "h": 941,
       "libraryAsset": "bg_emerald_dream_interior_night",
       "lighting": "night",
-      "previewExcluded": true,
+      "previewExcluded": false,
       "reviewStatus": "withdrawn_mismatch",
-      "reviewNote": "本地复核撤出播放/鉴赏；原文件保留，准确CG待补。"
+      "reviewNote": "本地复核撤出播放/鉴赏；原文件保留，准确CG待补。",
+      "previousSourcePath": "assets/bg/bg_emerald_dream_interior_night.png",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/C15.png",
+      "productionArtId": "C15",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "r0t0azno": {
       "id": "r0t0azno",
       "type": "bg",
       "name": "CG_诗句",
-      "src": "assets/bg/CG_诗句.jpg",
-      "w": 1920,
-      "h": 1080
+      "src": "assets/art-upgrade/C08.webp",
+      "w": 1672,
+      "h": 941,
+      "previousSourcePath": "assets/bg/CG_诗句.jpg",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/C08.png",
+      "productionArtId": "C08",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "dxmnyp7j": {
       "id": "dxmnyp7j",
       "type": "bg",
       "name": "CG_集市女仆",
-      "src": "assets/bg/CG_集市女仆.jpg",
-      "w": 1920,
-      "h": 1080
+      "src": "assets/art-upgrade/C24.webp",
+      "w": 1672,
+      "h": 941,
+      "previousSourcePath": "assets/bg/CG_集市女仆.jpg",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/C24.png",
+      "productionArtId": "C24",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "mni51ori": {
       "id": "mni51ori",
@@ -297,37 +417,55 @@ window.VN_GAME ={
       "id": "j5onv73r",
       "type": "bg",
       "name": "书房_午后",
-      "src": "assets/bg/scenes/B28.webp",
-      "w": 1280,
-      "h": 720,
+      "src": "assets/art-upgrade/B28.webp",
+      "w": 1672,
+      "h": 941,
       "libraryAsset": "bg_house_study_day_v01",
       "lighting": "day",
       "scenePlanId": "B28",
-      "sceneReserve": false
+      "sceneReserve": false,
+      "previousSourcePath": "assets/bg/scenes/B28.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/B28.png",
+      "productionArtId": "B28",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "low"
     },
     "rqlji75s": {
       "id": "rqlji75s",
       "type": "bg",
       "name": "书房_夜",
-      "src": "assets/bg/scenes/B30.webp",
-      "w": 1280,
-      "h": 720,
+      "src": "assets/art-upgrade/B30.webp",
+      "w": 1672,
+      "h": 941,
       "libraryAsset": "bg_house_study_night_v01",
       "lighting": "night",
       "scenePlanId": "B30",
-      "sceneReserve": false
+      "sceneReserve": false,
+      "previousSourcePath": "assets/bg/scenes/B30.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/B30.png",
+      "productionArtId": "B30",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "low"
     },
     "ah4t9t6i": {
       "id": "ah4t9t6i",
       "type": "bg",
       "name": "书房_黄昏",
-      "src": "assets/bg/scenes/B29.webp",
-      "w": 1280,
-      "h": 720,
+      "src": "assets/art-upgrade/B29.webp",
+      "w": 1672,
+      "h": 941,
       "libraryAsset": "bg_house_study_sunset",
       "lighting": "sunset",
       "scenePlanId": "B29",
-      "sceneReserve": false
+      "sceneReserve": false,
+      "previousSourcePath": "assets/bg/scenes/B29.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/B29.png",
+      "productionArtId": "B29",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "low"
     },
     "we9vnprm": {
       "id": "we9vnprm",
@@ -513,65 +651,101 @@ window.VN_GAME ={
       "id": "zx4c9brc",
       "type": "bg",
       "name": "卧室_夜",
-      "src": "assets/bg/scenes/B35.webp",
-      "w": 1280,
-      "h": 720,
+      "src": "assets/art-upgrade/B35.webp",
+      "w": 1672,
+      "h": 941,
       "scenePlanId": "B35",
-      "sceneReserve": false
+      "sceneReserve": false,
+      "previousSourcePath": "assets/bg/scenes/B35.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/B35.png",
+      "productionArtId": "B35",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "low"
     },
     "ooy2g3al": {
       "id": "ooy2g3al",
       "type": "bg",
       "name": "厨房_清晨",
-      "src": "assets/bg/scenes/B31.webp",
-      "w": 1280,
-      "h": 720,
+      "src": "assets/art-upgrade/B31.webp",
+      "w": 1672,
+      "h": 941,
       "libraryAsset": "bg_house_kitchen_morning",
       "lighting": "morning",
       "scenePlanId": "B31",
-      "sceneReserve": false
+      "sceneReserve": false,
+      "previousSourcePath": "assets/bg/scenes/B31.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/B31.png",
+      "productionArtId": "B31",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "low"
     },
     "9qup2gii": {
       "id": "9qup2gii",
       "type": "bg",
       "name": "大房子_院子",
-      "src": "assets/bg/scenes/B26.webp",
-      "w": 1280,
-      "h": 720,
+      "src": "assets/art-upgrade/B26.webp",
+      "w": 1672,
+      "h": 941,
       "libraryAsset": "bg_house_courtyard_morning_v01",
       "lighting": "morning",
       "scenePlanId": "B26",
-      "sceneReserve": false
+      "sceneReserve": false,
+      "previousSourcePath": "assets/bg/scenes/B26.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/B26.png",
+      "productionArtId": "B26",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "low"
     },
     "2c2u3g9q": {
       "id": "2c2u3g9q",
       "type": "bg",
       "name": "客厅_午后",
-      "src": "assets/bg/scenes/B27.webp",
-      "w": 1280,
-      "h": 720,
+      "src": "assets/art-upgrade/B27.webp",
+      "w": 1672,
+      "h": 941,
       "libraryAsset": "bg_house_living_day",
       "lighting": "day",
       "scenePlanId": "B27",
-      "sceneReserve": false
+      "sceneReserve": false,
+      "previousSourcePath": "assets/bg/scenes/B27.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/B27.png",
+      "productionArtId": "B27",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "32lrbngt": {
       "id": "32lrbngt",
       "type": "bg",
       "name": "封面_ISLAND",
-      "src": "assets/bg/封面_ISLAND.jpg",
-      "w": 1280,
-      "h": 720
+      "src": "assets/art-upgrade/T01.webp",
+      "w": 1672,
+      "h": 941,
+      "previousSourcePath": "assets/bg/封面_ISLAND.jpg",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/T01.png",
+      "productionArtId": "T01",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "rpkibqqw": {
       "id": "rpkibqqw",
       "type": "bg",
       "name": "小镇_清晨",
-      "src": "assets/bg/scenes/B20.webp",
-      "w": 1280,
-      "h": 720,
+      "src": "assets/art-upgrade/B20.webp",
+      "w": 1672,
+      "h": 941,
       "scenePlanId": "B20",
-      "sceneReserve": false
+      "sceneReserve": false,
+      "previousSourcePath": "assets/bg/scenes/B20.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/B20.png",
+      "productionArtId": "B20",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "low"
     },
     "x1tt92z6": {
       "id": "x1tt92z6",
@@ -667,173 +841,269 @@ window.VN_GAME ={
       "id": "9hcpz81h",
       "type": "bg",
       "name": "帐篷_夜",
-      "src": "assets/bg/scenes/B16.webp",
-      "w": 1280,
-      "h": 720,
+      "src": "assets/art-upgrade/B16.webp",
+      "w": 1672,
+      "h": 941,
       "libraryAsset": "bg_beach_campsite_night_v01",
       "lighting": "night",
       "scenePlanId": "B16",
-      "sceneReserve": false
+      "sceneReserve": false,
+      "previousSourcePath": "assets/bg/scenes/B16.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/B16.png",
+      "productionArtId": "B16",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "low"
     },
     "4g7f8iam": {
       "id": "4g7f8iam",
       "type": "bg",
       "name": "帐篷_黄昏",
-      "src": "assets/bg/scenes/B15.webp",
-      "w": 1280,
-      "h": 720,
+      "src": "assets/art-upgrade/B15.webp",
+      "w": 1672,
+      "h": 941,
       "scenePlanId": "B15",
-      "sceneReserve": false
+      "sceneReserve": false,
+      "previousSourcePath": "assets/bg/scenes/B15.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/B15.png",
+      "productionArtId": "B15",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "low"
     },
     "mcdi4nzi": {
       "id": "mcdi4nzi",
       "type": "bg",
       "name": "帐篷内_夜",
-      "src": "assets/bg/scenes/B17.webp",
-      "w": 1280,
-      "h": 720,
+      "src": "assets/art-upgrade/B17.webp",
+      "w": 1672,
+      "h": 941,
       "scenePlanId": "B17",
-      "sceneReserve": false
+      "sceneReserve": false,
+      "previousSourcePath": "assets/bg/scenes/B17.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/B17.png",
+      "productionArtId": "B17",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "low"
     },
     "y417cb1b": {
       "id": "y417cb1b",
       "type": "bg",
       "name": "店面_下午",
-      "src": "assets/bg/scenes/B37.webp",
-      "w": 1280,
-      "h": 720,
+      "src": "assets/art-upgrade/B37.webp",
+      "w": 1672,
+      "h": 941,
       "scenePlanId": "B37",
-      "sceneReserve": false
+      "sceneReserve": false,
+      "previousSourcePath": "assets/bg/scenes/B37.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/B37.png",
+      "productionArtId": "B37",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "02e2z9nd": {
       "id": "02e2z9nd",
       "type": "bg",
       "name": "沙洲_上午",
-      "src": "assets/bg/scenes/B08.webp",
-      "w": 1280,
-      "h": 720,
+      "src": "assets/art-upgrade/B08.webp",
+      "w": 1672,
+      "h": 941,
       "scenePlanId": "B08",
-      "sceneReserve": false
+      "sceneReserve": false,
+      "previousSourcePath": "assets/bg/scenes/B08.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/B08.png",
+      "productionArtId": "B08",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "low"
     },
     "tafi49ag": {
       "id": "tafi49ag",
       "type": "bg",
       "name": "沙洲_午后",
-      "src": "assets/bg/scenes/B09.webp",
-      "w": 1280,
-      "h": 720,
+      "src": "assets/art-upgrade/B09.webp",
+      "w": 1672,
+      "h": 941,
       "scenePlanId": "B09",
-      "sceneReserve": false
+      "sceneReserve": false,
+      "previousSourcePath": "assets/bg/scenes/B09.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/B09.png",
+      "productionArtId": "B09",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "low"
     },
     "g0htlsw4": {
       "id": "g0htlsw4",
       "type": "bg",
       "name": "沙洲_黄昏",
-      "src": "assets/bg/scenes/B10.webp",
-      "w": 1280,
-      "h": 720,
+      "src": "assets/art-upgrade/B10.webp",
+      "w": 1672,
+      "h": 941,
       "scenePlanId": "B10",
-      "sceneReserve": false
+      "sceneReserve": false,
+      "previousSourcePath": "assets/bg/scenes/B10.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/B10.png",
+      "productionArtId": "B10",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "low"
     },
     "qla5b3w0": {
       "id": "qla5b3w0",
       "type": "bg",
       "name": "浅滩_上午",
-      "src": "assets/bg/scenes/B02.webp",
-      "w": 1280,
-      "h": 720,
+      "src": "assets/art-upgrade/B02.webp",
+      "w": 1672,
+      "h": 941,
       "libraryAsset": "bg_shallows_day_v01",
       "lighting": "day",
       "scenePlanId": "B02",
-      "sceneReserve": false
+      "sceneReserve": false,
+      "previousSourcePath": "assets/bg/scenes/B02.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/B02.png",
+      "productionArtId": "B02",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "c5saufd0": {
       "id": "c5saufd0",
       "type": "bg",
       "name": "浅滩_午后",
-      "src": "assets/bg/scenes/B02.webp",
-      "w": 1280,
-      "h": 720,
+      "src": "assets/art-upgrade/B02.webp",
+      "w": 1672,
+      "h": 941,
       "libraryAsset": "bg_shallows_day_v01",
       "lighting": "day",
-      "scenePlanId": "B02"
+      "scenePlanId": "B02",
+      "previousSourcePath": "assets/bg/scenes/B02.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/B02.png",
+      "productionArtId": "B02",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "9ow2x5w5": {
       "id": "9ow2x5w5",
       "type": "bg",
       "name": "浅滩_夜",
-      "src": "assets/bg/scenes/B04.webp",
-      "w": 1280,
-      "h": 720,
+      "src": "assets/art-upgrade/B04.webp",
+      "w": 1672,
+      "h": 941,
       "libraryAsset": "bg_shallows_night_v01",
       "lighting": "night",
       "scenePlanId": "B04",
-      "sceneReserve": false
+      "sceneReserve": false,
+      "previousSourcePath": "assets/bg/scenes/B04.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/B04.png",
+      "productionArtId": "B04",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "low"
     },
     "8eo1nf7q": {
       "id": "8eo1nf7q",
       "type": "bg",
       "name": "浅滩_正午",
-      "src": "assets/bg/scenes/B02.webp",
-      "w": 1280,
-      "h": 720,
+      "src": "assets/art-upgrade/B02.webp",
+      "w": 1672,
+      "h": 941,
       "libraryAsset": "bg_shallows_day_v01",
       "lighting": "day",
-      "scenePlanId": "B02"
+      "scenePlanId": "B02",
+      "previousSourcePath": "assets/bg/scenes/B02.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/B02.png",
+      "productionArtId": "B02",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "ohwph2ga": {
       "id": "ohwph2ga",
       "type": "bg",
       "name": "浅滩_清晨",
-      "src": "assets/bg/scenes/B01.webp",
-      "w": 1280,
-      "h": 720,
+      "src": "assets/art-upgrade/B01.webp",
+      "w": 1672,
+      "h": 941,
       "scenePlanId": "B01",
-      "sceneReserve": false
+      "sceneReserve": false,
+      "previousSourcePath": "assets/bg/scenes/B01.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/B01.png",
+      "productionArtId": "B01",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "mzy4oec6": {
       "id": "mzy4oec6",
       "type": "bg",
       "name": "浅滩_黄昏",
-      "src": "assets/bg/scenes/B03.webp",
-      "w": 1280,
-      "h": 720,
+      "src": "assets/art-upgrade/B03.webp",
+      "w": 1672,
+      "h": 941,
       "libraryAsset": "bg_shallows_sunset_v01",
       "lighting": "sunset",
       "scenePlanId": "B03",
-      "sceneReserve": false
+      "sceneReserve": false,
+      "previousSourcePath": "assets/bg/scenes/B03.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/B03.png",
+      "productionArtId": "B03",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "low"
     },
     "2mbzwwg2": {
       "id": "2mbzwwg2",
       "type": "bg",
       "name": "海面_黄昏",
-      "src": "assets/bg/scenes/B14.webp",
-      "w": 1280,
-      "h": 720,
+      "src": "assets/art-upgrade/B14.webp",
+      "w": 1672,
+      "h": 941,
       "scenePlanId": "B14",
-      "sceneReserve": false
+      "sceneReserve": false,
+      "previousSourcePath": "assets/bg/scenes/B14.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/B14.png",
+      "productionArtId": "B14",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "low"
     },
     "e6cby6b5": {
       "id": "e6cby6b5",
       "type": "bg",
       "name": "深水区_水下",
-      "src": "assets/bg/scenes/B11.webp",
-      "w": 1280,
-      "h": 720,
+      "src": "assets/art-upgrade/B11.webp",
+      "w": 1672,
+      "h": 941,
       "scenePlanId": "B11",
-      "sceneReserve": false
+      "sceneReserve": false,
+      "previousSourcePath": "assets/bg/scenes/B11.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/B11.png",
+      "productionArtId": "B11",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "low"
     },
     "fxqcg1oj": {
       "id": "fxqcg1oj",
       "type": "bg",
       "name": "深海_珊瑚礁",
-      "src": "assets/bg/scenes/B13.webp",
-      "w": 1280,
-      "h": 720,
+      "src": "assets/art-upgrade/B13.webp",
+      "w": 1672,
+      "h": 941,
       "libraryAsset": "bg_deepsea_coral_glow_v01",
       "lighting": "underwater",
       "scenePlanId": "B13",
-      "sceneReserve": false
+      "sceneReserve": false,
+      "previousSourcePath": "assets/bg/scenes/B13.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/B13.png",
+      "productionArtId": "B13",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "gjflu4vq": {
       "id": "gjflu4vq",
@@ -938,251 +1208,413 @@ window.VN_GAME ={
       "id": "9vjefxje",
       "type": "bg",
       "name": "礁石_上午",
-      "src": "assets/bg/scenes/B05.webp",
-      "w": 1280,
-      "h": 720,
+      "src": "assets/art-upgrade/B05.webp",
+      "w": 1672,
+      "h": 941,
       "scenePlanId": "B05",
-      "sceneReserve": false
+      "sceneReserve": false,
+      "previousSourcePath": "assets/bg/scenes/B05.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/B05.png",
+      "productionArtId": "B05",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "low"
     },
     "acqkjhf8": {
       "id": "acqkjhf8",
       "type": "bg",
       "name": "礁石_夜",
-      "src": "assets/bg/scenes/B07.webp",
-      "w": 1280,
-      "h": 720,
+      "src": "assets/art-upgrade/B07.webp",
+      "w": 1672,
+      "h": 941,
       "libraryAsset": "bg_shallows_night_v01",
       "lighting": "night",
       "scenePlanId": "B07",
-      "sceneReserve": false
+      "sceneReserve": false,
+      "previousSourcePath": "assets/bg/scenes/B07.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/B07.png",
+      "productionArtId": "B07",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "uhhb6qjn": {
       "id": "uhhb6qjn",
       "type": "bg",
       "name": "礁石_黄昏",
-      "src": "assets/bg/scenes/B06.webp",
-      "w": 1280,
-      "h": 720,
+      "src": "assets/art-upgrade/B06.webp",
+      "w": 1672,
+      "h": 941,
       "scenePlanId": "B06",
-      "sceneReserve": false
+      "sceneReserve": false,
+      "previousSourcePath": "assets/bg/scenes/B06.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/B06.png",
+      "productionArtId": "B06",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "low"
     },
     "lvjql900": {
       "id": "lvjql900",
       "type": "bg",
       "name": "翡翠之梦_二楼夜",
-      "src": "assets/bg/scenes/B42.webp",
-      "w": 1280,
-      "h": 720,
+      "src": "assets/art-upgrade/B42.webp",
+      "w": 1672,
+      "h": 941,
       "libraryAsset": "bg_emerald_dream_upstairs_night_v01",
       "lighting": "night",
       "scenePlanId": "B42",
-      "sceneReserve": false
+      "sceneReserve": false,
+      "previousSourcePath": "assets/bg/scenes/B42.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/B42.png",
+      "productionArtId": "B42",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "r1teranv": {
       "id": "r1teranv",
       "type": "bg",
       "name": "翡翠之梦_厨房",
-      "src": "assets/bg/scenes/B41.webp",
-      "w": 1280,
-      "h": 720,
+      "src": "assets/art-upgrade/B41.webp",
+      "w": 1672,
+      "h": 941,
       "libraryAsset": "bg_emerald_dream_kitchen_day",
       "lighting": "day",
       "scenePlanId": "B41",
-      "sceneReserve": false
+      "sceneReserve": false,
+      "previousSourcePath": "assets/bg/scenes/B41.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/B41.png",
+      "productionArtId": "B41",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "lr4hgspz": {
       "id": "lr4hgspz",
       "type": "bg",
       "name": "翡翠之梦_店内",
-      "src": "assets/bg/scenes/B38.webp",
-      "w": 1280,
-      "h": 720,
+      "src": "assets/art-upgrade/B38.webp",
+      "w": 1672,
+      "h": 941,
       "libraryAsset": "bg_emerald_dream_interior_day_v01",
       "lighting": "day",
       "scenePlanId": "B38",
-      "sceneReserve": false
+      "sceneReserve": false,
+      "previousSourcePath": "assets/bg/scenes/B38.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/B38.png",
+      "productionArtId": "B38",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "179f3n2w": {
       "id": "179f3n2w",
       "type": "bg",
       "name": "银匠铺",
-      "src": "assets/bg/scenes/B25.webp",
-      "w": 1280,
-      "h": 720,
+      "src": "assets/art-upgrade/B25.webp",
+      "w": 1672,
+      "h": 941,
       "scenePlanId": "B25",
-      "sceneReserve": false
+      "sceneReserve": false,
+      "previousSourcePath": "assets/bg/scenes/B25.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/B25.png",
+      "productionArtId": "B25",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "sr2lo203": {
       "id": "sr2lo203",
       "type": "bg",
       "name": "集市_上午",
-      "src": "assets/bg/scenes/B21.webp",
-      "w": 1280,
-      "h": 720,
+      "src": "assets/art-upgrade/B21.webp",
+      "w": 1672,
+      "h": 941,
       "libraryAsset": "bg_town_market_day_v01",
       "lighting": "day",
       "scenePlanId": "B21",
-      "sceneReserve": false
+      "sceneReserve": false,
+      "previousSourcePath": "assets/bg/scenes/B21.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/B21.png",
+      "productionArtId": "B21",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "hihrcqx5": {
       "id": "hihrcqx5",
       "type": "bg",
       "name": "集市_珍珠摊",
-      "src": "assets/bg/scenes/B24.webp",
-      "w": 1280,
-      "h": 720,
+      "src": "assets/art-upgrade/B24.webp",
+      "w": 1672,
+      "h": 941,
       "scenePlanId": "B24",
-      "sceneReserve": false
+      "sceneReserve": false,
+      "previousSourcePath": "assets/bg/scenes/B24.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/B24.png",
+      "productionArtId": "B24",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "p8guxpyy": {
       "id": "p8guxpyy",
       "type": "bg",
       "name": "集市_饰品巷",
-      "src": "assets/bg/scenes/B23.webp",
-      "w": 1280,
-      "h": 720,
+      "src": "assets/art-upgrade/B23.webp",
+      "w": 1672,
+      "h": 941,
       "scenePlanId": "B23",
-      "sceneReserve": false
+      "sceneReserve": false,
+      "previousSourcePath": "assets/bg/scenes/B23.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/B23.png",
+      "productionArtId": "B23",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "low"
     },
     "9yvthx8h": {
       "id": "9yvthx8h",
       "type": "bg",
       "name": "餐厅_夜",
-      "src": "assets/bg/scenes/B34.webp",
-      "w": 1280,
-      "h": 720,
+      "src": "assets/art-upgrade/B34.webp",
+      "w": 1672,
+      "h": 941,
       "libraryAsset": "bg_house_dining_night",
       "lighting": "night",
       "scenePlanId": "B34",
-      "sceneReserve": false
+      "sceneReserve": false,
+      "previousSourcePath": "assets/bg/scenes/B34.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/B34.png",
+      "productionArtId": "B34",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "low"
     },
     "xfg3qcn2": {
       "id": "xfg3qcn2",
       "type": "ch",
       "name": "鲸鱼小姐",
-      "src": "assets/ch/鲸鱼小姐.webp",
-      "w": 497,
-      "h": 1300
+      "src": "assets/art-upgrade/L01.webp",
+      "w": 1024,
+      "h": 1536,
+      "previousSourcePath": "assets/ch/鲸鱼小姐.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/L01.png",
+      "productionArtId": "L01",
+      "modelRequested": "gpt-image-2.5-sunburst",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "6i0w6nq5": {
       "id": "6i0w6nq5",
       "type": "ch",
       "name": "鲸鱼小姐_吊带裙",
-      "src": "assets/ch/鲸鱼小姐_吊带裙.webp",
-      "w": 564,
-      "h": 1300
+      "src": "assets/art-upgrade/L13.webp",
+      "w": 1024,
+      "h": 1536,
+      "previousSourcePath": "assets/ch/鲸鱼小姐_吊带裙.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/L13.png",
+      "productionArtId": "L13",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "6xha9feh": {
       "id": "6xha9feh",
       "type": "ch",
       "name": "鲸鱼小姐_吊带裙害羞",
-      "src": "assets/ch/鲸鱼小姐_吊带裙害羞.webp",
-      "w": 564,
-      "h": 1300
+      "src": "assets/art-upgrade/L15.webp",
+      "w": 1024,
+      "h": 1536,
+      "previousSourcePath": "assets/ch/鲸鱼小姐_吊带裙害羞.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/L15.png",
+      "productionArtId": "L15",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "mp0q0cx2": {
       "id": "mp0q0cx2",
       "type": "ch",
       "name": "鲸鱼小姐_吊带裙得意",
-      "src": "assets/ch/鲸鱼小姐_吊带裙得意.webp",
-      "w": 549,
-      "h": 1300
+      "src": "assets/art-upgrade/L14.webp",
+      "w": 1024,
+      "h": 1536,
+      "previousSourcePath": "assets/ch/鲸鱼小姐_吊带裙得意.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/L14.png",
+      "productionArtId": "L14",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "vjwh9nmj": {
       "id": "vjwh9nmj",
       "type": "ch",
       "name": "鲸鱼小姐_吊带裙生气",
-      "src": "assets/ch/鲸鱼小姐_吊带裙生气.webp",
-      "w": 552,
-      "h": 1300
+      "src": "assets/art-upgrade/L16.webp",
+      "w": 1024,
+      "h": 1536,
+      "previousSourcePath": "assets/ch/鲸鱼小姐_吊带裙生气.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/L16.png",
+      "productionArtId": "L16",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "cbx03q1l": {
       "id": "cbx03q1l",
       "type": "ch",
       "name": "鲸鱼小姐_坏笑",
-      "src": "assets/ch/鲸鱼小姐_坏笑.webp",
-      "w": 468,
-      "h": 1191
+      "src": "assets/art-upgrade/L04.webp",
+      "w": 1024,
+      "h": 1536,
+      "previousSourcePath": "assets/ch/鲸鱼小姐_坏笑.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/L04.png",
+      "productionArtId": "L04",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "fz3yt5k8": {
       "id": "fz3yt5k8",
       "type": "ch",
       "name": "鲸鱼小姐_女仆装",
-      "src": "assets/ch/鲸鱼小姐_女仆装.webp",
-      "w": 552,
-      "h": 1300
+      "src": "assets/art-upgrade/L21.webp",
+      "w": 1024,
+      "h": 1536,
+      "previousSourcePath": "assets/ch/鲸鱼小姐_女仆装.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/L21.png",
+      "productionArtId": "L21",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "m6hj48ex": {
       "id": "m6hj48ex",
       "type": "ch",
       "name": "鲸鱼小姐_女仆装害羞",
-      "src": "assets/ch/鲸鱼小姐_女仆装害羞.webp",
-      "w": 552,
-      "h": 1300
+      "src": "assets/art-upgrade/L23.webp",
+      "w": 1024,
+      "h": 1536,
+      "previousSourcePath": "assets/ch/鲸鱼小姐_女仆装害羞.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/L23.png",
+      "productionArtId": "L23",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "ff7robzo": {
       "id": "ff7robzo",
       "type": "ch",
       "name": "鲸鱼小姐_女仆装得意",
-      "src": "assets/ch/鲸鱼小姐_女仆装得意.webp",
-      "w": 586,
-      "h": 1300
+      "src": "assets/art-upgrade/L22.webp",
+      "w": 1024,
+      "h": 1536,
+      "previousSourcePath": "assets/ch/鲸鱼小姐_女仆装得意.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/L22.png",
+      "productionArtId": "L22",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "x013srmu": {
       "id": "x013srmu",
       "type": "ch",
       "name": "鲸鱼小姐_害羞",
-      "src": "assets/ch/鲸鱼小姐_害羞.webp",
-      "w": 457,
-      "h": 1168
+      "src": "assets/art-upgrade/L03.webp",
+      "w": 1024,
+      "h": 1536,
+      "previousSourcePath": "assets/ch/鲸鱼小姐_害羞.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/L03.png",
+      "productionArtId": "L03",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "2qshq03j": {
       "id": "2qshq03j",
       "type": "ch",
       "name": "鲸鱼小姐_得意",
-      "src": "assets/ch/鲸鱼小姐_得意.webp",
-      "w": 507,
-      "h": 1300
+      "src": "assets/art-upgrade/L02.webp",
+      "w": 1024,
+      "h": 1536,
+      "previousSourcePath": "assets/ch/鲸鱼小姐_得意.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/L02.png",
+      "productionArtId": "L02",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "z869j1e3": {
       "id": "z869j1e3",
       "type": "ch",
       "name": "鲸鱼小姐_慌乱",
-      "src": "assets/ch/鲸鱼小姐_慌乱.webp",
-      "w": 586,
-      "h": 1192
+      "src": "assets/art-upgrade/L06.webp",
+      "w": 1024,
+      "h": 1536,
+      "previousSourcePath": "assets/ch/鲸鱼小姐_慌乱.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/L06.png",
+      "productionArtId": "L06",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "hfcyjlxm": {
       "id": "hfcyjlxm",
       "type": "ch",
       "name": "鲸鱼小姐_抱本子",
-      "src": "assets/ch/鲸鱼小姐_抱本子.webp",
-      "w": 441,
-      "h": 1121
+      "src": "assets/art-upgrade/L08.webp",
+      "w": 1024,
+      "h": 1536,
+      "previousSourcePath": "assets/ch/鲸鱼小姐_抱本子.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/L08.png",
+      "productionArtId": "L08",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "wrwcdezj": {
       "id": "wrwcdezj",
       "type": "ch",
       "name": "鲸鱼小姐_柔和",
-      "src": "assets/ch/鲸鱼小姐_柔和.webp",
-      "w": 445,
-      "h": 1139
+      "src": "assets/art-upgrade/L07.webp",
+      "w": 1024,
+      "h": 1536,
+      "previousSourcePath": "assets/ch/鲸鱼小姐_柔和.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/L07.png",
+      "productionArtId": "L07",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "tp44t1rb": {
       "id": "tp44t1rb",
       "type": "ch",
       "name": "鲸鱼小姐_正装",
-      "src": "assets/ch/鲸鱼小姐_正装.webp",
-      "w": 501,
-      "h": 1300
+      "src": "assets/art-upgrade/L31.webp",
+      "w": 1024,
+      "h": 1536,
+      "previousSourcePath": "assets/ch/鲸鱼小姐_正装.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/L31.png",
+      "productionArtId": "L31",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "eqidiyyr": {
       "id": "eqidiyyr",
       "type": "ch",
       "name": "鲸鱼小姐_正装柔和",
-      "src": "assets/ch/鲸鱼小姐_正装柔和.webp",
-      "w": 501,
-      "h": 1300
+      "src": "assets/art-upgrade/L32.webp",
+      "w": 1024,
+      "h": 1536,
+      "previousSourcePath": "assets/ch/鲸鱼小姐_正装柔和.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/L32.png",
+      "productionArtId": "L32",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "nvgbi1x6": {
       "id": "nvgbi1x6",
@@ -1204,65 +1636,113 @@ window.VN_GAME ={
       "id": "ylbq6xyk",
       "type": "ch",
       "name": "鲸鱼小姐_潜水",
-      "src": "assets/ch/鲸鱼小姐_潜水.webp",
-      "w": 669,
-      "h": 1300
+      "src": "assets/art-upgrade/L19.webp",
+      "w": 1024,
+      "h": 1536,
+      "previousSourcePath": "assets/ch/鲸鱼小姐_潜水.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/L19.png",
+      "productionArtId": "L19",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "88v1dull": {
       "id": "88v1dull",
       "type": "ch",
       "name": "鲸鱼小姐_生气",
-      "src": "assets/ch/鲸鱼小姐_生气.webp",
-      "w": 652,
-      "h": 1300
+      "src": "assets/art-upgrade/L05.webp",
+      "w": 1024,
+      "h": 1536,
+      "previousSourcePath": "assets/ch/鲸鱼小姐_生气.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/L05.png",
+      "productionArtId": "L05",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "52119ew2": {
       "id": "52119ew2",
       "type": "ch",
       "name": "鲸鱼小姐_睡衣项链",
-      "src": "assets/ch/鲸鱼小姐_睡衣项链.webp",
-      "w": 493,
-      "h": 1300
+      "src": "assets/art-upgrade/L28.webp",
+      "w": 1024,
+      "h": 1536,
+      "previousSourcePath": "assets/ch/鲸鱼小姐_睡衣项链.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/L28.png",
+      "productionArtId": "L28",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "2z0mfu7o": {
       "id": "2z0mfu7o",
       "type": "ch",
       "name": "鲸鱼小姐_睡袍",
-      "src": "assets/ch/鲸鱼小姐_睡袍.webp",
-      "w": 595,
-      "h": 1300
+      "src": "assets/art-upgrade/L24.webp",
+      "w": 1024,
+      "h": 1536,
+      "previousSourcePath": "assets/ch/鲸鱼小姐_睡袍.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/L24.png",
+      "productionArtId": "L24",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "368tmc5i": {
       "id": "368tmc5i",
       "type": "ch",
       "name": "鲸鱼小姐_睡袍害羞",
-      "src": "assets/ch/鲸鱼小姐_睡袍害羞.webp",
-      "w": 495,
-      "h": 1300
+      "src": "assets/art-upgrade/L25.webp",
+      "w": 1024,
+      "h": 1536,
+      "previousSourcePath": "assets/ch/鲸鱼小姐_睡袍害羞.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/L25.png",
+      "productionArtId": "L25",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "xtwug3dy": {
       "id": "xtwug3dy",
       "type": "ch",
       "name": "鲸鱼小姐_睡袍慌乱",
-      "src": "assets/ch/鲸鱼小姐_睡袍慌乱.webp",
-      "w": 569,
-      "h": 1300
+      "src": "assets/art-upgrade/L26.webp",
+      "w": 1024,
+      "h": 1536,
+      "previousSourcePath": "assets/ch/鲸鱼小姐_睡袍慌乱.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/L26.png",
+      "productionArtId": "L26",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "t4lmlnr9": {
       "id": "t4lmlnr9",
       "type": "ch",
       "name": "鲸鱼小姐_长裙",
-      "src": "assets/ch/鲸鱼小姐_长裙.webp",
-      "w": 544,
-      "h": 1300
+      "src": "assets/art-upgrade/L29.webp",
+      "w": 1024,
+      "h": 1536,
+      "previousSourcePath": "assets/ch/鲸鱼小姐_长裙.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/L29.png",
+      "productionArtId": "L29",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "7fvck9ya": {
       "id": "7fvck9ya",
       "type": "ch",
       "name": "鲸鱼小姐_长裙项链",
-      "src": "assets/ch/鲸鱼小姐_长裙项链.webp",
-      "w": 544,
-      "h": 1300
+      "src": "assets/art-upgrade/L30.webp",
+      "w": 1024,
+      "h": 1536,
+      "previousSourcePath": "assets/ch/鲸鱼小姐_长裙项链.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/L30.png",
+      "productionArtId": "L30",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "bgm_emerald_dream_main_v01": {
       "id": "bgm_emerald_dream_main_v01",
@@ -1555,14 +2035,20 @@ window.VN_GAME ={
       "id": "bg_shop_interior_night",
       "type": "bg",
       "name": "翡翠之梦_店内夜",
-      "src": "assets/bg/scenes/B39.webp",
-      "w": 1280,
-      "h": 720,
+      "src": "assets/art-upgrade/B39.webp",
+      "w": 1672,
+      "h": 941,
       "libraryAsset": "bg_emerald_dream_interior_night",
       "lighting": "night",
       "draftPlaceholder": false,
       "scenePlanId": "B39",
-      "sceneReserve": false
+      "sceneReserve": false,
+      "previousSourcePath": "assets/bg/scenes/B39.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/B39.png",
+      "productionArtId": "B39",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "sfx_tail_water_light": {
       "id": "sfx_tail_water_light",
@@ -1763,115 +2249,175 @@ window.VN_GAME ={
       "id": "bg_house_door_morning_draft",
       "type": "bg",
       "name": "卧室门口_清晨",
-      "src": "assets/bg/scenes/B36.webp",
-      "w": 1280,
-      "h": 720,
+      "src": "assets/art-upgrade/B36.webp",
+      "w": 1672,
+      "h": 941,
       "libraryAsset": "bg_house_living_day",
       "lighting": "morning",
       "cg": false,
       "reviewStatus": "temporary_framing",
       "reviewNote": "借住宅入口侧作门口草稿；不是已完成的卧室门口差分。",
       "scenePlanId": "B36",
-      "sceneReserve": false
+      "sceneReserve": false,
+      "previousSourcePath": "assets/bg/scenes/B36.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/B36.png",
+      "productionArtId": "B36",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "low"
     },
     "bg_tent_morning_corner_draft": {
       "id": "bg_tent_morning_corner_draft",
       "type": "bg",
       "name": "帐篷内_清晨",
-      "src": "assets/bg/scenes/B19.webp",
-      "w": 1280,
-      "h": 720,
+      "src": "assets/art-upgrade/B19.webp",
+      "w": 1672,
+      "h": 941,
       "cg": false,
       "lighting": "morning",
       "reviewStatus": "temporary_framing",
       "reviewNote": "取床垫与帐篷地面近景，避开灯与夜空；仍需真正清晨帐篷内差分。",
       "scenePlanId": "B19",
-      "sceneReserve": false
+      "sceneReserve": false,
+      "previousSourcePath": "assets/bg/scenes/B19.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/B19.png",
+      "productionArtId": "B19",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "low"
     },
     "bg_shop_afternoon_counter_draft": {
       "id": "bg_shop_afternoon_counter_draft",
       "type": "bg",
       "name": "翡翠之梦_午后未开灯",
-      "src": "assets/bg/scenes/B40.webp",
-      "w": 1280,
-      "h": 720,
+      "src": "assets/art-upgrade/B40.webp",
+      "w": 1672,
+      "h": 941,
       "libraryAsset": "bg_emerald_dream_interior_day_v01",
       "lighting": "day",
       "cg": false,
       "reviewStatus": "temporary_framing",
       "reviewNote": "午后日光下的柜台近景，避开亮着的吊灯；仍需同机位关灯差分。",
       "scenePlanId": "B40",
-      "sceneReserve": false
+      "sceneReserve": false,
+      "previousSourcePath": "assets/bg/scenes/B40.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/B40.png",
+      "productionArtId": "B40",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "scene_b12": {
       "id": "scene_b12",
       "type": "bg",
       "name": "深水区黑暗水下",
-      "src": "assets/bg/scenes/B12.webp",
-      "w": 1280,
-      "h": 720,
+      "src": "assets/art-upgrade/B12.webp",
+      "w": 1672,
+      "h": 941,
       "scenePlanId": "B12",
-      "sceneReserve": false
+      "sceneReserve": false,
+      "previousSourcePath": "assets/bg/scenes/B12.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/B12.png",
+      "productionArtId": "B12",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "low"
     },
     "scene_b18": {
       "id": "scene_b18",
       "type": "bg",
       "name": "帐篷内夜灯暗",
-      "src": "assets/bg/scenes/B18.webp",
-      "w": 1280,
-      "h": 720,
+      "src": "assets/art-upgrade/B18.webp",
+      "w": 1672,
+      "h": 941,
       "scenePlanId": "B18",
-      "sceneReserve": true
+      "sceneReserve": true,
+      "previousSourcePath": "assets/bg/scenes/B18.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/B18.png",
+      "productionArtId": "B18",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "low"
     },
     "scene_b22": {
       "id": "scene_b22",
       "type": "bg",
       "name": "集市街道初秋",
-      "src": "assets/bg/scenes/B22.webp",
-      "w": 1280,
-      "h": 720,
+      "src": "assets/art-upgrade/B22.webp",
+      "w": 1672,
+      "h": 941,
       "scenePlanId": "B22",
-      "sceneReserve": false
+      "sceneReserve": false,
+      "previousSourcePath": "assets/bg/scenes/B22.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/B22.png",
+      "productionArtId": "B22",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "scene_b32": {
       "id": "scene_b32",
       "type": "bg",
       "name": "住宅厨房夜",
-      "src": "assets/bg/scenes/B32.webp",
-      "w": 1280,
-      "h": 720,
+      "src": "assets/art-upgrade/B32.webp",
+      "w": 1672,
+      "h": 941,
       "scenePlanId": "B32",
-      "sceneReserve": true
+      "sceneReserve": true,
+      "previousSourcePath": "assets/bg/scenes/B32.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/B32.png",
+      "productionArtId": "B32",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "low"
     },
     "scene_b33": {
       "id": "scene_b33",
       "type": "bg",
       "name": "住宅早餐桌日景",
-      "src": "assets/bg/scenes/B33.webp",
-      "w": 1280,
-      "h": 720,
+      "src": "assets/art-upgrade/B33.webp",
+      "w": 1672,
+      "h": 941,
       "scenePlanId": "B33",
-      "sceneReserve": false
+      "sceneReserve": false,
+      "previousSourcePath": "assets/bg/scenes/B33.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/B33.png",
+      "productionArtId": "B33",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "scene_o01": {
       "id": "scene_o01",
       "type": "bg",
       "name": "营地外清晨",
-      "src": "assets/bg/scenes/O01.webp",
-      "w": 1280,
-      "h": 720,
+      "src": "assets/art-upgrade/O01.webp",
+      "w": 1672,
+      "h": 941,
       "scenePlanId": "O01",
-      "sceneReserve": true
+      "sceneReserve": true,
+      "previousSourcePath": "assets/bg/scenes/O01.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/O01.png",
+      "productionArtId": "O01",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "low"
     },
     "scene_o02": {
       "id": "scene_o02",
       "type": "bg",
       "name": "翡翠之梦店外初秋",
-      "src": "assets/bg/scenes/O02.webp",
-      "w": 1280,
-      "h": 720,
+      "src": "assets/art-upgrade/O02.webp",
+      "w": 1672,
+      "h": 941,
       "scenePlanId": "O02",
-      "sceneReserve": true
+      "sceneReserve": true,
+      "previousSourcePath": "assets/bg/scenes/O02.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/O02.png",
+      "productionArtId": "O02",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     },
     "bgm_atri_e1_comedy": {
       "id": "bgm_atri_e1_comedy",
@@ -1936,6 +2482,328 @@ window.VN_GAME ={
       "sourceSha256": "372e8b3cd2b991e4188d15df1b586ae3f250f7a63a9844a95ee81e73606d288e",
       "purposeStatus": "candidate",
       "sourceCurrentPath": "content/assets/music/mp3/E6或E5.mp3"
+    },
+    "art_upgrade_c05": {
+      "id": "art_upgrade_c05",
+      "name": "CG_入水回头确认",
+      "type": "bg",
+      "cg": true,
+      "src": "assets/art-upgrade/C05.webp",
+      "w": 1672,
+      "h": 941,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/C05.png",
+      "productionArtId": "C05",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "low"
+    },
+    "art_upgrade_c17": {
+      "id": "art_upgrade_c17",
+      "name": "CG_打烊后披毯与海鲜面",
+      "type": "bg",
+      "cg": true,
+      "src": "assets/art-upgrade/C17.webp",
+      "w": 1672,
+      "h": 941,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/C17.png",
+      "productionArtId": "C17",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
+    },
+    "art_upgrade_c20": {
+      "id": "art_upgrade_c20",
+      "name": "CG_尾巴缠手腕约定",
+      "type": "bg",
+      "cg": true,
+      "src": "assets/art-upgrade/C20.webp",
+      "w": 1672,
+      "h": 941,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/C20.png",
+      "productionArtId": "C20",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
+    },
+    "art_upgrade_c21": {
+      "id": "art_upgrade_c21",
+      "name": "CG_月下共读初遇稿",
+      "type": "bg",
+      "cg": true,
+      "src": "assets/art-upgrade/C21.webp",
+      "w": 1672,
+      "h": 941,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/C21.png",
+      "productionArtId": "C21",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
+    },
+    "art_upgrade_l09": {
+      "id": "art_upgrade_l09",
+      "name": "常服认真验收",
+      "type": "ch",
+      "cg": false,
+      "src": "assets/art-upgrade/L09.webp",
+      "w": 1024,
+      "h": 1536,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/L09.png",
+      "productionArtId": "L09",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
+    },
+    "art_upgrade_l10": {
+      "id": "art_upgrade_l10",
+      "name": "常服受伤低落",
+      "type": "ch",
+      "cg": false,
+      "src": "assets/art-upgrade/L10.webp",
+      "w": 1024,
+      "h": 1536,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/L10.png",
+      "productionArtId": "L10",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
+    },
+    "art_upgrade_l11": {
+      "id": "art_upgrade_l11",
+      "name": "常服救援后红眼",
+      "type": "ch",
+      "cg": false,
+      "src": "assets/art-upgrade/L11.webp",
+      "w": 1024,
+      "h": 1536,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/L11.png",
+      "productionArtId": "L11",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
+    },
+    "art_upgrade_l12": {
+      "id": "art_upgrade_l12",
+      "name": "常服冷淡背侧身",
+      "type": "ch",
+      "cg": false,
+      "src": "assets/art-upgrade/L12.webp",
+      "w": 1024,
+      "h": 1536,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/L12.png",
+      "productionArtId": "L12",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
+    },
+    "art_upgrade_l20": {
+      "id": "art_upgrade_l20",
+      "name": "水下悬浮看光",
+      "type": "ch",
+      "cg": false,
+      "src": "assets/art-upgrade/L20.webp",
+      "w": 1024,
+      "h": 1536,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/L20.png",
+      "productionArtId": "L20",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
+    },
+    "art_upgrade_l27": {
+      "id": "art_upgrade_l27",
+      "name": "鲸鱼睡衣无项链",
+      "type": "ch",
+      "cg": false,
+      "src": "assets/art-upgrade/L27.webp",
+      "w": 1024,
+      "h": 1536,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/L27.png",
+      "productionArtId": "L27",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
+    },
+    "art_upgrade_l33": {
+      "id": "art_upgrade_l33",
+      "name": "常服裹毯",
+      "type": "ch",
+      "cg": false,
+      "src": "assets/art-upgrade/L33.webp",
+      "w": 1024,
+      "h": 1536,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/L33.png",
+      "productionArtId": "L33",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
+    },
+    "art_upgrade_l34": {
+      "id": "art_upgrade_l34",
+      "name": "礁石坐姿持本",
+      "type": "ch",
+      "cg": false,
+      "src": "assets/art-upgrade/L34.webp",
+      "w": 1024,
+      "h": 1536,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/L34.png",
+      "productionArtId": "L34",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
+    },
+    "art_upgrade_l35": {
+      "id": "art_upgrade_l35",
+      "name": "营地夜谈·裹毯坐姿",
+      "type": "ch",
+      "cg": false,
+      "src": "assets/art-upgrade/L35.webp",
+      "w": 1024,
+      "h": 1536,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/L35.png",
+      "productionArtId": "L35",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
+    },
+    "art_upgrade_l36": {
+      "id": "art_upgrade_l36",
+      "name": "女仆腰系男士外套",
+      "type": "ch",
+      "cg": false,
+      "src": "assets/art-upgrade/L36.webp",
+      "w": 1024,
+      "h": 1536,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/L36.png",
+      "productionArtId": "L36",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
+    },
+    "art_upgrade_o03": {
+      "id": "art_upgrade_o03",
+      "name": "常服薄外套",
+      "type": "ch",
+      "cg": false,
+      "src": "assets/art-upgrade/O03.webp",
+      "w": 1024,
+      "h": 1536,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/O03.png",
+      "productionArtId": "O03",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
+    },
+    "art_upgrade_o04": {
+      "id": "art_upgrade_o04",
+      "name": "CG_未通过结局",
+      "type": "bg",
+      "cg": true,
+      "src": "assets/art-upgrade/O04.webp",
+      "w": 1672,
+      "h": 941,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/O04.png",
+      "productionArtId": "O04",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
+    },
+    "art_upgrade_o05": {
+      "id": "art_upgrade_o05",
+      "name": "CG_海盐布丁制作",
+      "type": "bg",
+      "cg": true,
+      "src": "assets/art-upgrade/O05.webp",
+      "w": 1672,
+      "h": 941,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/O05.png",
+      "productionArtId": "O05",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
+    },
+    "art_upgrade_o06": {
+      "id": "art_upgrade_o06",
+      "name": "CG_家庭日记共读",
+      "type": "bg",
+      "cg": true,
+      "src": "assets/art-upgrade/O06.webp",
+      "w": 1672,
+      "h": 941,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/O06.png",
+      "productionArtId": "O06",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
+    },
+    "art_upgrade_o07": {
+      "id": "art_upgrade_o07",
+      "name": "CG_采购天青珍珠",
+      "type": "bg",
+      "cg": true,
+      "src": "assets/art-upgrade/O07.webp",
+      "w": 1672,
+      "h": 941,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/O07.png",
+      "productionArtId": "O07",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
+    },
+    "art_upgrade_o08": {
+      "id": "art_upgrade_o08",
+      "name": "CG_秋千验收",
+      "type": "bg",
+      "cg": true,
+      "src": "assets/art-upgrade/O08.webp",
+      "w": 1672,
+      "h": 941,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/O08.png",
+      "productionArtId": "O08",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
+    },
+    "art_upgrade_o09": {
+      "id": "art_upgrade_o09",
+      "name": "CG_窗前铃铛",
+      "type": "bg",
+      "cg": true,
+      "src": "assets/art-upgrade/O09.webp",
+      "w": 1672,
+      "h": 941,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/O09.png",
+      "productionArtId": "O09",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
+    },
+    "art_upgrade_o10": {
+      "id": "art_upgrade_o10",
+      "name": "CG_开张时僵住",
+      "type": "bg",
+      "cg": true,
+      "src": "assets/art-upgrade/O10.webp",
+      "w": 1672,
+      "h": 941,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/O10.png",
+      "productionArtId": "O10",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
+    },
+    "art_upgrade_o11": {
+      "id": "art_upgrade_o11",
+      "name": "CG_月光尾鳍圈影",
+      "type": "bg",
+      "cg": true,
+      "src": "assets/art-upgrade/O11.webp",
+      "w": 1672,
+      "h": 941,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/O11.png",
+      "productionArtId": "O11",
+      "modelRequested": "gpt-image-2.5-flare",
+      "modelReported": null,
+      "imageQualityReported": "medium"
     }
   },
   "lines": [
@@ -2151,7 +3019,7 @@ window.VN_GAME ={
       "ending": "",
       "id": "uie8rbxl",
       "speaker": "",
-      "text": "手里还死死抱着一个笔记本。封皮湿透了，字迹晕开一片。",
+      "text": "手里还死死抱着一个……呃……似乎很重要的……笔记本？",
       "bg": "8eo1nf7q",
       "sprites": [],
       "ambience": [
@@ -2221,7 +3089,7 @@ window.VN_GAME ={
       "ending": "",
       "id": "solebexx",
       "speaker": "",
-      "text": "最后的记忆，是坐在屏幕前敲了十五天的字。",
+      "text": "最后的记忆，……好像是……是坐在屏幕前对着大肥鱼敲了50天的字。",
       "bg": "8eo1nf7q",
       "sprites": [],
       "ambience": [
@@ -2326,7 +3194,7 @@ window.VN_GAME ={
       "ending": "",
       "id": "15lmqdee",
       "speaker": "",
-      "text": "凉的。滑的。带着鳞片的纹路。",
+      "text": "凉凉的。滑滑的。似乎还带着一点鳞片的纹路。",
       "bg": "8eo1nf7q",
       "sprites": [],
       "ambience": [
@@ -2395,7 +3263,7 @@ window.VN_GAME ={
       "amb2v": 0.6,
       "ending": "",
       "id": "ktsw1bk3",
-      "speaker": "？？？",
+      "speaker": "???",
       "text": "「——！！」",
       "bg": "8eo1nf7q",
       "sprites": [
@@ -2530,7 +3398,7 @@ window.VN_GAME ={
       "ending": "",
       "id": "2g8ulb4e",
       "speaker": "",
-      "text": "被拍得横着飞出去三米，结结实实喝了一大口海水。",
+      "text": "被拍得横着飞出去三米多远，结结实实喝了一大口海水。",
       "bg": "8eo1nf7q",
       "sprites": [],
       "ambience": [
@@ -2586,6 +3454,78 @@ window.VN_GAME ={
     {
       "label": "",
       "chapter": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": null,
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "opening_notebook_cry",
+      "speaker": "我",
+      "text": "不！！！！！！！！",
+      "bg": "8eo1nf7q",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.8
+        }
+      ],
+      "seEvents": []
+    },
+    {
+      "label": "",
+      "chapter": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": null,
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "opening_notebook_pause",
+      "speaker": "",
+      "text": "在那——",
+      "bg": "8eo1nf7q",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.8
+        }
+      ],
+      "seEvents": []
+    },
+    {
+      "label": "",
+      "chapter": "",
       "trans": "flash",
       "fx": "",
       "mood": "",
@@ -2609,7 +3549,7 @@ window.VN_GAME ={
       "id": "1ab8nnfn",
       "speaker": "",
       "text": "一只手接住了它。",
-      "bg": "yvwvivzm",
+      "bg": "8eo1nf7q",
       "sprites": [],
       "ambience": [
         {
@@ -2617,6 +3557,42 @@ window.VN_GAME ={
           "gain": 0.8
         }
       ]
+    },
+    {
+      "label": "",
+      "chapter": "",
+      "trans": "flash",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": null,
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "opening_mysterious_rescuer",
+      "speaker": "",
+      "text": "你看着眼前这个似乎是罪魁祸首，又似乎是……救命恩人的家伙。",
+      "bg": "yvwvivzm",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.8
+        }
+      ],
+      "seEvents": []
     },
     {
       "label": "",
@@ -2642,7 +3618,7 @@ window.VN_GAME ={
       "amb2v": 0.6,
       "ending": "",
       "id": "58oo02cv",
-      "speaker": "？？？",
+      "speaker": "鲸鱼小姐",
       "text": "「人类。」",
       "bg": "yvwvivzm",
       "sprites": [],
@@ -2678,7 +3654,7 @@ window.VN_GAME ={
       "amb2v": 0.6,
       "ending": "",
       "id": "986487og",
-      "speaker": "？？？",
+      "speaker": "鲸鱼小姐",
       "text": "「你刚才，摸的是本小姐的尾巴尖。」",
       "bg": "yvwvivzm",
       "sprites": [],
@@ -2710,10 +3686,10 @@ window.VN_GAME ={
           "set": ""
         },
         {
-          "text": "「对不起！」",
+          "text": "「沉默」",
           "target": "c1q1b",
           "cond": "",
-          "set": ""
+          "set": "好感 -= 10"
         },
         {
           "text": "「……手感不错。」",
@@ -2808,7 +3784,7 @@ window.VN_GAME ={
       "acts": {},
       "voice": null,
       "se": null,
-      "set": "尾鳍 += 1",
+      "set": "",
       "choices": [],
       "ctime": 0,
       "cdef": "",
@@ -2821,9 +3797,9 @@ window.VN_GAME ={
       "amb2": null,
       "amb2v": 0.6,
       "ending": "",
-      "id": "xrkgmlhg",
+      "id": "opening_tail_warning",
       "speaker": "鲸鱼小姐",
-      "text": "「尾巴尖。也不行。」",
+      "text": "「鲸鱼的尾巴摸不得。」",
       "bg": "8eo1nf7q",
       "sprites": [
         {
@@ -2839,6 +3815,57 @@ window.VN_GAME ={
         {
           "id": "amb_a01_waves_normal_v01",
           "gain": 0.7
+        }
+      ],
+      "seEvents": []
+    },
+    {
+      "label": "",
+      "chapter": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "尾鳍 += 1",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "xrkgmlhg",
+      "speaker": "",
+      "text": "（尾鳍拍水两下。）",
+      "bg": "8eo1nf7q",
+      "sprites": [
+        {
+          "uid": "wvnywozo",
+          "asset": "88v1dull",
+          "x": 640,
+          "y": 1190,
+          "h": 1150,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ],
+      "seEvents": [
+        {
+          "id": "sfx_tail_water_double",
+          "gain": 0.6
         }
       ]
     },
@@ -2866,8 +3893,8 @@ window.VN_GAME ={
       "amb2v": 0.6,
       "ending": "",
       "id": "v17izdvn",
-      "speaker": "",
-      "text": "（尾鳍拍水两下。收着力。）",
+      "speaker": "鲸鱼小姐",
+      "text": "「尾巴尖。也不行。」",
       "bg": "8eo1nf7q",
       "sprites": [
         {
@@ -2885,12 +3912,7 @@ window.VN_GAME ={
           "gain": 0.7
         }
       ],
-      "seEvents": [
-        {
-          "id": "sfx_tail_water_double",
-          "gain": 0.6
-        }
-      ]
+      "seEvents": []
     },
     {
       "label": "c1q1b",
@@ -2917,7 +3939,7 @@ window.VN_GAME ={
       "ending": "",
       "id": "lt5k0xiy",
       "speaker": "鲸鱼小姐",
-      "text": "「道歉倒是挺快。」",
+      "text": "「喂！你这家伙，碰到了别人不知道道歉么！」",
       "bg": "8eo1nf7q",
       "sprites": [
         {
@@ -2960,8 +3982,8 @@ window.VN_GAME ={
       "amb2v": 0.6,
       "ending": "",
       "id": "wxrs0f0l",
-      "speaker": "鲸鱼小姐",
-      "text": "「可惜，晚了。」",
+      "speaker": "",
+      "text": "（尾鳍拍水两下。）",
       "bg": "8eo1nf7q",
       "sprites": [
         {
@@ -2977,6 +3999,12 @@ window.VN_GAME ={
         {
           "id": "amb_a01_waves_normal_v01",
           "gain": 0.7
+        }
+      ],
+      "seEvents": [
+        {
+          "id": "sfx_tail_water_double",
+          "gain": 0.6
         }
       ]
     },
@@ -3004,8 +4032,8 @@ window.VN_GAME ={
       "amb2v": 0.6,
       "ending": "",
       "id": "5stlid22",
-      "speaker": "",
-      "text": "（尾鳍拍水两下。）",
+      "speaker": "鲸鱼小姐",
+      "text": "「真是没礼貌。」",
       "bg": "8eo1nf7q",
       "sprites": [
         {
@@ -3023,12 +4051,7 @@ window.VN_GAME ={
           "gain": 0.7
         }
       ],
-      "seEvents": [
-        {
-          "id": "sfx_tail_water_double",
-          "gain": 0.6
-        }
-      ]
+      "seEvents": []
     },
     {
       "label": "c1q1c",
@@ -3231,7 +4254,7 @@ window.VN_GAME ={
       "ending": "",
       "id": "oe46ay0q",
       "speaker": "",
-      "text": "第二记尾击。这次是三米半。",
+      "text": "第二记尾击。这次的力道更重。",
       "bg": "8eo1nf7q",
       "sprites": [],
       "ambience": [
@@ -3246,6 +4269,42 @@ window.VN_GAME ={
           "gain": 0.9
         }
       ]
+    },
+    {
+      "label": "",
+      "chapter": "",
+      "trans": "fade",
+      "fx": "quake",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "opening_second_hit_rebuke",
+      "speaker": "鲸鱼小姐",
+      "text": "「流氓！」",
+      "bg": "8eo1nf7q",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ],
+      "seEvents": []
     },
     {
       "label": "",
@@ -3272,7 +4331,7 @@ window.VN_GAME ={
       "ending": "",
       "id": "kbwv46du",
       "speaker": "",
-      "text": "（尾鳍拍水五下——落点都在浅处。）",
+      "text": "（尾鳍拍水五下。）",
       "bg": "8eo1nf7q",
       "sprites": [],
       "ambience": [
@@ -3283,10 +4342,21 @@ window.VN_GAME ={
       ],
       "seEvents": [
         {
-          "id": "sfx_tail_water_light",
+          "id": "sfx_tail_water_double",
           "gain": 0.6
+        },
+        {
+          "id": "sfx_tail_water_double",
+          "gain": 0.6,
+          "delayMs": 2400
+        },
+        {
+          "id": "sfx_tail_water_light",
+          "gain": 0.6,
+          "delayMs": 4800
         }
-      ]
+      ],
+      "motionCount": 5
     },
     {
       "label": "c1m1",
@@ -3313,7 +4383,7 @@ window.VN_GAME ={
       "ending": "",
       "id": "8divye5i",
       "speaker": "",
-      "text": "她单手翻开笔记本，扫了一眼里面密密麻麻的字。",
+      "text": "她翻开潮湿笔记本，扫了一眼里面密密麻麻的字。",
       "bg": "8eo1nf7q",
       "sprites": [
         {
@@ -3507,6 +4577,51 @@ window.VN_GAME ={
           "gain": 0.7
         }
       ]
+    },
+    {
+      "label": "",
+      "chapter": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "opening_notebook_importance",
+      "speaker": "",
+      "text": "对呀！重要！为什么重要！快想想！快……",
+      "bg": "8eo1nf7q",
+      "sprites": [
+        {
+          "uid": "mq79wt9x",
+          "asset": "xfg3qcn2",
+          "x": 640,
+          "y": 1190,
+          "h": 1150,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ],
+      "seEvents": []
     },
     {
       "label": "",
@@ -3816,7 +4931,7 @@ window.VN_GAME ={
       "ending": "",
       "id": "yi5zxuq9",
       "speaker": "",
-      "text": "她把笔记本抛回给我。动作不重，刚好落进怀里。",
+      "text": "她把笔记本抛回给你。刚好落进怀里。",
       "bg": "8eo1nf7q",
       "sprites": [
         {
@@ -4036,7 +5151,7 @@ window.VN_GAME ={
       "ending": "",
       "id": "kqplf5u8",
       "speaker": "",
-      "text": "笔记本以一个完美的抛物线飞向深水区。",
+      "text": "笔记本以一个完美的抛物线飞向深水区……快去捡回来！",
       "bg": "8eo1nf7q",
       "sprites": [
         {
@@ -4054,6 +5169,51 @@ window.VN_GAME ={
           "gain": 0.7
         }
       ]
+    },
+    {
+      "label": "",
+      "chapter": "",
+      "trans": "fade",
+      "fx": "zoom",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "opening_retrieve_notebook",
+      "speaker": "",
+      "text": "你的心里如是说。",
+      "bg": "8eo1nf7q",
+      "sprites": [
+        {
+          "uid": "mq79wt9x",
+          "asset": "cbx03q1l",
+          "x": 640,
+          "y": 1190,
+          "h": 1150,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ],
+      "seEvents": []
     },
     {
       "label": "",
@@ -4268,7 +5428,7 @@ window.VN_GAME ={
       "ending": "",
       "id": "udtz7wdn",
       "speaker": "鲸鱼小姐",
-      "text": "「人类，贪心是会被淹死的。」",
+      "text": "「人类，太贪心是会被淹死的。」",
       "bg": "8eo1nf7q",
       "sprites": [
         {
@@ -4892,7 +6052,7 @@ window.VN_GAME ={
       "ending": "",
       "id": "ab6i4shm",
       "speaker": "",
-      "text": "我低头看了一眼。没说话。",
+      "text": "你低头看了一眼。",
       "bg": "8eo1nf7q",
       "sprites": [
         {
@@ -5026,7 +6186,7 @@ window.VN_GAME ={
       "ending": "",
       "id": "k0pgamyg",
       "speaker": "",
-      "text": "（尾鳍慌乱地甩了个圈。此地无银三百两。）",
+      "text": "（尾鳍慌乱甩圈。此地无银。）",
       "bg": "8eo1nf7q",
       "sprites": [
         {
@@ -5479,7 +6639,7 @@ window.VN_GAME ={
       "ending": "",
       "id": "ott3er5w",
       "speaker": "",
-      "text": "——以及我正在用衣角一页页吸干笔记本上的水。",
+      "text": "——以及我正在用衣角一页页吸干的笔记本上。",
       "bg": "c5saufd0",
       "sprites": [
         {
@@ -5850,7 +7010,7 @@ window.VN_GAME ={
       "ending": "",
       "id": "ryvqt5v6",
       "speaker": "我",
-      "text": "「‘生命，或者说智能的原理，究竟是什么。’」",
+      "text": "「生命，或者说智能的原理，究竟是什么。」",
       "bg": "c5saufd0",
       "sprites": [
         {
@@ -6164,7 +7324,7 @@ window.VN_GAME ={
       "ending": "",
       "id": "8rb00mus",
       "speaker": "",
-      "text": "（嘴上嫌弃，耳朵却红透了。之后她一直没看我。）",
+      "text": "（嘴上嫌弃，耳朵红了。）",
       "bg": "c5saufd0",
       "sprites": [
         {
@@ -6473,17 +7633,8 @@ window.VN_GAME ={
       "id": "u7ne78gd",
       "speaker": "",
       "text": "她哼了一声，把剩下的半块糍粑掰成两半。",
-      "bg": "c5saufd0",
-      "sprites": [
-        {
-          "uid": "xpmf5x7z",
-          "asset": "xfg3qcn2",
-          "x": 760,
-          "y": 1100,
-          "h": 1060,
-          "flip": false
-        }
-      ],
+      "bg": "c6r2xcnj",
+      "sprites": [],
       "ambience": [
         {
           "id": "amb_a01_waves_normal_v01",
@@ -6517,17 +7668,8 @@ window.VN_GAME ={
       "id": "wpivfe7f",
       "speaker": "",
       "text": "大的那一半，塞进自己嘴里。",
-      "bg": "c5saufd0",
-      "sprites": [
-        {
-          "uid": "xpmf5x7z",
-          "asset": "xfg3qcn2",
-          "x": 760,
-          "y": 1100,
-          "h": 1060,
-          "flip": false
-        }
-      ],
+      "bg": "c6r2xcnj",
+      "sprites": [],
       "ambience": [
         {
           "id": "amb_a01_waves_normal_v01",
@@ -6561,17 +7703,8 @@ window.VN_GAME ={
       "id": "9gso8zi0",
       "speaker": "",
       "text": "小的那一半——塞进我手里。",
-      "bg": "c5saufd0",
-      "sprites": [
-        {
-          "uid": "xpmf5x7z",
-          "asset": "xfg3qcn2",
-          "x": 760,
-          "y": 1100,
-          "h": 1060,
-          "flip": false
-        }
-      ],
+      "bg": "c6r2xcnj",
+      "sprites": [],
       "ambience": [
         {
           "id": "amb_a01_waves_normal_v01",
@@ -6605,17 +7738,8 @@ window.VN_GAME ={
       "id": "macs2evb",
       "speaker": "鲸鱼小姐",
       "text": "「答案哪有那么好找的。」",
-      "bg": "c5saufd0",
-      "sprites": [
-        {
-          "uid": "xpmf5x7z",
-          "asset": "xfg3qcn2",
-          "x": 760,
-          "y": 1100,
-          "h": 1060,
-          "flip": false
-        }
-      ],
+      "bg": "c6r2xcnj",
+      "sprites": [],
       "ambience": [
         {
           "id": "amb_a01_waves_normal_v01",
@@ -6649,17 +7773,8 @@ window.VN_GAME ={
       "id": "twdgdg8k",
       "speaker": "鲸鱼小姐",
       "text": "「你们人类就是爱想这些没用的。」",
-      "bg": "c5saufd0",
-      "sprites": [
-        {
-          "uid": "xpmf5x7z",
-          "asset": "xfg3qcn2",
-          "x": 760,
-          "y": 1100,
-          "h": 1060,
-          "flip": false
-        }
-      ],
+      "bg": "c6r2xcnj",
+      "sprites": [],
       "ambience": [
         {
           "id": "amb_a01_waves_normal_v01",
@@ -6693,17 +7808,8 @@ window.VN_GAME ={
       "id": "q0cw392y",
       "speaker": "我",
       "text": "「这个是——」",
-      "bg": "c5saufd0",
-      "sprites": [
-        {
-          "uid": "xpmf5x7z",
-          "asset": "xfg3qcn2",
-          "x": 760,
-          "y": 1100,
-          "h": 1060,
-          "flip": false
-        }
-      ],
+      "bg": "c6r2xcnj",
+      "sprites": [],
       "ambience": [
         {
           "id": "amb_a01_waves_normal_v01",
@@ -6737,17 +7843,8 @@ window.VN_GAME ={
       "id": "unfmnv5c",
       "speaker": "鲸鱼小姐",
       "text": "「酬劳！」",
-      "bg": "c5saufd0",
-      "sprites": [
-        {
-          "uid": "xpmf5x7z",
-          "asset": "xfg3qcn2",
-          "x": 760,
-          "y": 1100,
-          "h": 1060,
-          "flip": false
-        }
-      ],
+      "bg": "c6r2xcnj",
+      "sprites": [],
       "ambience": [
         {
           "id": "amb_a01_waves_normal_v01",
@@ -6780,18 +7877,9 @@ window.VN_GAME ={
       "ending": "",
       "id": "tyxffvv9",
       "speaker": "",
-      "text": "她抢在我问出口之前凶巴巴地宣布。",
-      "bg": "c5saufd0",
-      "sprites": [
-        {
-          "uid": "xpmf5x7z",
-          "asset": "xfg3qcn2",
-          "x": 760,
-          "y": 1100,
-          "h": 1060,
-          "flip": false
-        }
-      ],
+      "text": "她抢在你问出口之前凶巴巴地宣布。",
+      "bg": "c6r2xcnj",
+      "sprites": [],
       "ambience": [
         {
           "id": "amb_a01_waves_normal_v01",
@@ -6915,7 +8003,7 @@ window.VN_GAME ={
           "text": "（默默吃掉）",
           "target": "c1q4c",
           "cond": "",
-          "set": ""
+          "set": "好感 -= 1"
         }
       ],
       "ctime": 0,
@@ -7817,7 +8905,7 @@ window.VN_GAME ={
       "ending": "",
       "id": "sh7dcaxu",
       "speaker": "",
-      "text": "她愣住。",
+      "text": "……她愣住。",
       "bg": "mzy4oec6",
       "sprites": [
         {
@@ -8492,7 +9580,7 @@ window.VN_GAME ={
       "choices": [],
       "ctime": 0,
       "cdef": "",
-      "jump": "",
+      "jump": "c1new_diary_note",
       "jumpIf": "",
       "agent": null,
       "bgm": null,
@@ -8503,7 +9591,7 @@ window.VN_GAME ={
       "ending": "",
       "id": "luv45vih",
       "speaker": "",
-      "text": "这附近没有住户。海鸥也不会生火。",
+      "text": "这附近没有什么住户。当然……海鸥也不会生火。",
       "bg": "akugkagj",
       "sprites": [],
       "ambience": [
@@ -8542,7 +9630,7 @@ window.VN_GAME ={
       "ending": "",
       "id": "127wrb75",
       "speaker": "",
-      "text": "串签上，缠着一小截蓝黑色的线。",
+      "text": "",
       "bg": "akugkagj",
       "sprites": [],
       "ambience": [
@@ -8554,7 +9642,8 @@ window.VN_GAME ={
           "id": "amb_a02_waves_soft_v01",
           "gain": 0.4
         }
-      ]
+      ],
+      "seEvents": []
     },
     {
       "label": "",
@@ -8581,7 +9670,7 @@ window.VN_GAME ={
       "ending": "",
       "id": "1sjdneqt",
       "speaker": "",
-      "text": "像是从什么东西上，扯下来的。",
+      "text": "",
       "bg": "akugkagj",
       "sprites": [],
       "ambience": [
@@ -8593,10 +9682,11 @@ window.VN_GAME ={
           "id": "amb_a02_waves_soft_v01",
           "gain": 0.4
         }
-      ]
+      ],
+      "seEvents": []
     },
     {
-      "label": "",
+      "label": "c1new_diary_note",
       "chapter": "",
       "trans": "fade",
       "fx": "",
@@ -8620,7 +9710,7 @@ window.VN_GAME ={
       "ending": "",
       "id": "69m07oj9",
       "speaker": "",
-      "text": "我低头，在笔记本的日期下面，补了一行小字。",
+      "text": "你低头，在笔记本的日期下面，补了一行小字。",
       "bg": "4g7f8iam",
       "sprites": [],
       "ambience": [
@@ -8648,7 +9738,7 @@ window.VN_GAME ={
       "choices": [],
       "ctime": 0,
       "cdef": "",
-      "jump": "",
+      "jump": "c1new_diary_coda",
       "jumpIf": "",
       "agent": null,
       "bgm": null,
@@ -8698,7 +9788,7 @@ window.VN_GAME ={
       "ending": "",
       "id": "7b2f3g26",
       "speaker": "",
-      "text": "『例：她对糍粑的所有权意识，强得惊人。』",
+      "text": "",
       "bg": "4g7f8iam",
       "sprites": [],
       "ambience": [
@@ -8710,10 +9800,11 @@ window.VN_GAME ={
           "id": "amb_a02_waves_soft_v01",
           "gain": 0.4
         }
-      ]
+      ],
+      "seEvents": []
     },
     {
-      "label": "",
+      "label": "c1new_diary_coda",
       "chapter": "",
       "trans": "fade",
       "fx": "",
@@ -18709,17 +19800,8 @@ window.VN_GAME ={
       "id": "vl8i53gt",
       "speaker": "",
       "text": "下潜。",
-      "bg": "e6cby6b5",
-      "sprites": [
-        {
-          "uid": "lnzzxv9u",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1190,
-          "h": 1150,
-          "flip": false
-        }
-      ],
+      "bg": "art_upgrade_c05",
+      "sprites": [],
       "ambience": [
         {
           "id": "amb_a07_underwater_low_hum_v01",
@@ -18761,17 +19843,8 @@ window.VN_GAME ={
       "id": "a6d9apre",
       "speaker": "",
       "text": "前十米，光还追得下来。",
-      "bg": "e6cby6b5",
-      "sprites": [
-        {
-          "uid": "lnzzxv9u",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1190,
-          "h": 1150,
-          "flip": false
-        }
-      ],
+      "bg": "art_upgrade_c05",
+      "sprites": [],
       "ambience": [
         {
           "id": "amb_a07_underwater_low_hum_v01",
@@ -18805,17 +19878,8 @@ window.VN_GAME ={
       "id": "jzhcx1mt",
       "speaker": "",
       "text": "第二十米，光变成了一层薄薄的、抖动的膜。",
-      "bg": "e6cby6b5",
-      "sprites": [
-        {
-          "uid": "lnzzxv9u",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1190,
-          "h": 1150,
-          "flip": false
-        }
-      ],
+      "bg": "art_upgrade_c05",
+      "sprites": [],
       "ambience": [
         {
           "id": "amb_a07_underwater_low_hum_v01",
@@ -28952,17 +30016,8 @@ window.VN_GAME ={
       "id": "ii0wejed",
       "speaker": "",
       "text": "她忽然把手链摘下来，递给我。",
-      "bg": "mzy4oec6",
-      "sprites": [
-        {
-          "uid": "9quu0zkp",
-          "asset": "6xha9feh",
-          "x": 640,
-          "y": 1190,
-          "h": 1150,
-          "flip": false
-        }
-      ],
+      "bg": "ez0vsxzc",
+      "sprites": [],
       "ambience": [
         {
           "id": "amb_a02_waves_soft_v01",
@@ -28996,17 +30051,8 @@ window.VN_GAME ={
       "id": "grmaytdg",
       "speaker": "我",
       "text": "「不要了？」",
-      "bg": "mzy4oec6",
-      "sprites": [
-        {
-          "uid": "9quu0zkp",
-          "asset": "6xha9feh",
-          "x": 640,
-          "y": 1190,
-          "h": 1150,
-          "flip": false
-        }
-      ],
+      "bg": "ez0vsxzc",
+      "sprites": [],
       "ambience": [
         {
           "id": "amb_a02_waves_soft_v01",
@@ -29040,17 +30086,8 @@ window.VN_GAME ={
       "id": "82u9n7le",
       "speaker": "鲸鱼小姐",
       "text": "「……代管。」",
-      "bg": "mzy4oec6",
-      "sprites": [
-        {
-          "uid": "9quu0zkp",
-          "asset": "6xha9feh",
-          "x": 640,
-          "y": 1190,
-          "h": 1150,
-          "flip": false
-        }
-      ],
+      "bg": "ez0vsxzc",
+      "sprites": [],
       "ambience": [
         {
           "id": "amb_a02_waves_soft_v01",
@@ -29084,17 +30121,8 @@ window.VN_GAME ={
       "id": "fn8j4ids",
       "speaker": "鲸鱼小姐",
       "text": "「赠品这种东西，本小姐戴一天意思意思就够了。」",
-      "bg": "mzy4oec6",
-      "sprites": [
-        {
-          "uid": "9quu0zkp",
-          "asset": "6xha9feh",
-          "x": 640,
-          "y": 1190,
-          "h": 1150,
-          "flip": false
-        }
-      ],
+      "bg": "ez0vsxzc",
+      "sprites": [],
       "ambience": [
         {
           "id": "amb_a02_waves_soft_v01",
@@ -29128,17 +30156,8 @@ window.VN_GAME ={
       "id": "wqr5d8bu",
       "speaker": "鲸鱼小姐",
       "text": "「放你那儿。反正你那个本子，什么都能存。」",
-      "bg": "mzy4oec6",
-      "sprites": [
-        {
-          "uid": "9quu0zkp",
-          "asset": "6xha9feh",
-          "x": 640,
-          "y": 1190,
-          "h": 1150,
-          "flip": false
-        }
-      ],
+      "bg": "ez0vsxzc",
+      "sprites": [],
       "ambience": [
         {
           "id": "amb_a02_waves_soft_v01",
@@ -29172,17 +30191,8 @@ window.VN_GAME ={
       "id": "d0yth26k",
       "speaker": "",
       "text": "我接过来。",
-      "bg": "mzy4oec6",
-      "sprites": [
-        {
-          "uid": "9quu0zkp",
-          "asset": "6xha9feh",
-          "x": 640,
-          "y": 1190,
-          "h": 1150,
-          "flip": false
-        }
-      ],
+      "bg": "ez0vsxzc",
+      "sprites": [],
       "ambience": [
         {
           "id": "amb_a02_waves_soft_v01",
@@ -29216,17 +30226,8 @@ window.VN_GAME ={
       "id": "rigd2hkm",
       "speaker": "",
       "text": "蓝贝壳在手心里，还是温的。",
-      "bg": "mzy4oec6",
-      "sprites": [
-        {
-          "uid": "9quu0zkp",
-          "asset": "6xha9feh",
-          "x": 640,
-          "y": 1190,
-          "h": 1150,
-          "flip": false
-        }
-      ],
+      "bg": "ez0vsxzc",
+      "sprites": [],
       "ambience": [
         {
           "id": "amb_a02_waves_soft_v01",
@@ -57980,7 +58981,7 @@ window.VN_GAME ={
       "id": "6zssdq0a",
       "speaker": "",
       "text": "两层。白墙。蓝色的屋顶。院子里一棵不知名的树，树下挂着一副秋千。",
-      "bg": "9qup2gii",
+      "bg": "jxxr16ez",
       "sprites": [],
       "ambience": [
         {
@@ -58015,7 +59016,7 @@ window.VN_GAME ={
       "id": "ufuse1qs",
       "speaker": "",
       "text": "厨房的烟囱，是热的。",
-      "bg": "9qup2gii",
+      "bg": "jxxr16ez",
       "sprites": [],
       "ambience": [
         {
@@ -58050,7 +59051,7 @@ window.VN_GAME ={
       "id": "g6i5zfxw",
       "speaker": "我",
       "text": "「……我看的那栋，好像不长这样。」",
-      "bg": "9qup2gii",
+      "bg": "jxxr16ez",
       "sprites": [],
       "ambience": [
         {
@@ -58085,7 +59086,7 @@ window.VN_GAME ={
       "id": "06qb66fn",
       "speaker": "我",
       "text": "「而且昨天来，这里还只有一片礁石。」",
-      "bg": "9qup2gii",
+      "bg": "jxxr16ez",
       "sprites": [],
       "ambience": [
         {
@@ -58120,7 +59121,7 @@ window.VN_GAME ={
       "id": "y8o8c15n",
       "speaker": "鲸鱼小姐",
       "text": "「哦。这个啊。」",
-      "bg": "9qup2gii",
+      "bg": "jxxr16ez",
       "sprites": [],
       "ambience": [
         {
@@ -58155,7 +59156,7 @@ window.VN_GAME ={
       "id": "wel7nhkx",
       "speaker": "鲸鱼小姐",
       "text": "「昨晚你跟镇长办手续的时候，本小姐跟这片地商量了一下。」",
-      "bg": "9qup2gii",
+      "bg": "jxxr16ez",
       "sprites": [],
       "ambience": [
         {
@@ -90441,18 +91442,8 @@ window.VN_GAME ={
       "id": "1albn6n2",
       "speaker": "",
       "text": "她在柜台上站起来，张开手臂，尾巴在身后展开成一面蓝色的帆。",
-      "bg": "bg_shop_interior_night",
-      "sprites": [
-        {
-          "uid": "pflp8ttx",
-          "asset": "2qshq03j",
-          "x": 640,
-          "y": 1190,
-          "h": 1150,
-          "flip": false,
-          "in": "pop"
-        }
-      ],
+      "bg": "7jj07jqh",
+      "sprites": [],
       "ambience": [
         {
           "id": "amb_a15_shop_room_tone_v01",
@@ -90486,18 +91477,8 @@ window.VN_GAME ={
       "id": "ahxwfvyg",
       "speaker": "鲸鱼小姐",
       "text": "「这是本小姐的梦！」",
-      "bg": "bg_shop_interior_night",
-      "sprites": [
-        {
-          "uid": "pflp8ttx",
-          "asset": "2qshq03j",
-          "x": 640,
-          "y": 1190,
-          "h": 1150,
-          "flip": false,
-          "in": "pop"
-        }
-      ],
+      "bg": "7jj07jqh",
+      "sprites": [],
       "ambience": [
         {
           "id": "amb_a15_shop_room_tone_v01",
@@ -90531,18 +91512,8 @@ window.VN_GAME ={
       "id": "7yme9cq6",
       "speaker": "鲸鱼小姐",
       "text": "「翡翠之梦！本小姐的！」",
-      "bg": "bg_shop_interior_night",
-      "sprites": [
-        {
-          "uid": "pflp8ttx",
-          "asset": "2qshq03j",
-          "x": 640,
-          "y": 1190,
-          "h": 1150,
-          "flip": false,
-          "in": "pop"
-        }
-      ],
+      "bg": "7jj07jqh",
+      "sprites": [],
       "ambience": [
         {
           "id": "amb_a15_shop_room_tone_v01",
@@ -90576,18 +91547,8 @@ window.VN_GAME ={
       "id": "k2v082xj",
       "speaker": "",
       "text": "然后她低头看我，眼睛亮得吓人。",
-      "bg": "bg_shop_interior_night",
-      "sprites": [
-        {
-          "uid": "pflp8ttx",
-          "asset": "2qshq03j",
-          "x": 640,
-          "y": 1190,
-          "h": 1150,
-          "flip": false,
-          "in": "pop"
-        }
-      ],
+      "bg": "7jj07jqh",
+      "sprites": [],
       "ambience": [
         {
           "id": "amb_a15_shop_room_tone_v01",
@@ -99174,17 +100135,8 @@ window.VN_GAME ={
       "id": "ft79wxbo",
       "speaker": "",
       "text": "两枚戒指躺在绒布上。天青色，一对，安静地泛着光。",
-      "bg": "179f3n2w",
-      "sprites": [
-        {
-          "uid": "hftb0hyy",
-          "asset": "2qshq03j",
-          "x": 640,
-          "y": 1190,
-          "h": 1150,
-          "flip": false
-        }
-      ],
+      "bg": "z639wmth",
+      "sprites": [],
       "ambience": [
         {
           "id": "amb_a10_market_crowd_v01",
@@ -99218,17 +100170,8 @@ window.VN_GAME ={
       "id": "ypp2wel7",
       "speaker": "鲸鱼小姐",
       "text": "「……」",
-      "bg": "179f3n2w",
-      "sprites": [
-        {
-          "uid": "hftb0hyy",
-          "asset": "2qshq03j",
-          "x": 640,
-          "y": 1190,
-          "h": 1150,
-          "flip": false
-        }
-      ],
+      "bg": "z639wmth",
+      "sprites": [],
       "ambience": [
         {
           "id": "amb_a10_market_crowd_v01",
@@ -99262,17 +100205,8 @@ window.VN_GAME ={
       "id": "poo0ulnk",
       "speaker": "",
       "text": "她盯着看了很久。",
-      "bg": "179f3n2w",
-      "sprites": [
-        {
-          "uid": "hftb0hyy",
-          "asset": "2qshq03j",
-          "x": 640,
-          "y": 1190,
-          "h": 1150,
-          "flip": false
-        }
-      ],
+      "bg": "z639wmth",
+      "sprites": [],
       "ambience": [
         {
           "id": "amb_a10_market_crowd_v01",
@@ -99306,17 +100240,8 @@ window.VN_GAME ={
       "id": "7ygu15vs",
       "speaker": "",
       "text": "——然后抓起刻“验”的那枚，套进手指，动作快得像怕被人抢。",
-      "bg": "179f3n2w",
-      "sprites": [
-        {
-          "uid": "hftb0hyy",
-          "asset": "2qshq03j",
-          "x": 640,
-          "y": 1190,
-          "h": 1150,
-          "flip": false
-        }
-      ],
+      "bg": "z639wmth",
+      "sprites": [],
       "ambience": [
         {
           "id": "amb_a10_market_crowd_v01",
@@ -99350,17 +100275,8 @@ window.VN_GAME ={
       "id": "0dmyfzwd",
       "speaker": "鲸鱼小姐",
       "text": "「尺寸合格。光泽合格。」",
-      "bg": "179f3n2w",
-      "sprites": [
-        {
-          "uid": "hftb0hyy",
-          "asset": "2qshq03j",
-          "x": 640,
-          "y": 1190,
-          "h": 1150,
-          "flip": false
-        }
-      ],
+      "bg": "z639wmth",
+      "sprites": [],
       "ambience": [
         {
           "id": "amb_a10_market_crowd_v01",
@@ -99394,17 +100310,8 @@ window.VN_GAME ={
       "id": "s3hgbbim",
       "speaker": "鲸鱼小姐",
       "text": "「刻字——」",
-      "bg": "179f3n2w",
-      "sprites": [
-        {
-          "uid": "hftb0hyy",
-          "asset": "2qshq03j",
-          "x": 640,
-          "y": 1190,
-          "h": 1150,
-          "flip": false
-        }
-      ],
+      "bg": "z639wmth",
+      "sprites": [],
       "ambience": [
         {
           "id": "amb_a10_market_crowd_v01",
@@ -99438,17 +100345,8 @@ window.VN_GAME ={
       "id": "2f3e2ns1",
       "speaker": "",
       "text": "她把戒指举到灯下。",
-      "bg": "179f3n2w",
-      "sprites": [
-        {
-          "uid": "hftb0hyy",
-          "asset": "2qshq03j",
-          "x": 640,
-          "y": 1190,
-          "h": 1150,
-          "flip": false
-        }
-      ],
+      "bg": "z639wmth",
+      "sprites": [],
       "ambience": [
         {
           "id": "amb_a10_market_crowd_v01",
@@ -99482,17 +100380,8 @@ window.VN_GAME ={
       "id": "yfd68r01",
       "speaker": "鲸鱼小姐",
       "text": "「合格。」",
-      "bg": "179f3n2w",
-      "sprites": [
-        {
-          "uid": "hftb0hyy",
-          "asset": "2qshq03j",
-          "x": 640,
-          "y": 1190,
-          "h": 1150,
-          "flip": false
-        }
-      ],
+      "bg": "z639wmth",
+      "sprites": [],
       "ambience": [
         {
           "id": "amb_a10_market_crowd_v01",
@@ -100717,7 +101606,7 @@ window.VN_GAME ={
       "id": "b6uhjwem",
       "speaker": "",
       "text": "楼下的灯一盏一盏灭掉。只剩二楼窗边的这一盏。",
-      "bg": "lvjql900",
+      "bg": "art_upgrade_c17",
       "sprites": [],
       "ambience": [
         {
@@ -100752,7 +101641,7 @@ window.VN_GAME ={
       "id": "h7310tp2",
       "speaker": "",
       "text": "我煮了两碗海鲜面。她的那碗，贝肉加倍。",
-      "bg": "lvjql900",
+      "bg": "art_upgrade_c17",
       "sprites": [],
       "ambience": [
         {
@@ -100787,17 +101676,8 @@ window.VN_GAME ={
       "id": "0kgo0rxc",
       "speaker": "鲸鱼小姐",
       "text": "「你碗里那块最大的贝肉——」",
-      "bg": "lvjql900",
-      "sprites": [
-        {
-          "uid": "y7zsso22",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1190,
-          "h": 1150,
-          "flip": false
-        }
-      ],
+      "bg": "art_upgrade_c17",
+      "sprites": [],
       "ambience": [
         {
           "id": "amb_a11_shell_wind_chimes_v01",
@@ -119570,17 +120450,8 @@ window.VN_GAME ={
       "id": "hjiyaq0l",
       "speaker": "",
       "text": "她踮起脚。",
-      "bg": "bg_house_door_morning_draft",
-      "sprites": [
-        {
-          "uid": "ftydxsiy",
-          "asset": "eqidiyyr",
-          "x": 640,
-          "y": 1190,
-          "h": 1150,
-          "flip": false
-        }
-      ],
+      "bg": "sqnct5dc",
+      "sprites": [],
       "ambience": [
         {
           "id": "amb_a11_shell_wind_chimes_v01",
@@ -119614,17 +120485,8 @@ window.VN_GAME ={
       "id": "y8vi2xae",
       "speaker": "",
       "text": "——很轻地，碰了一下。",
-      "bg": "bg_house_door_morning_draft",
-      "sprites": [
-        {
-          "uid": "ftydxsiy",
-          "asset": "eqidiyyr",
-          "x": 640,
-          "y": 1190,
-          "h": 1150,
-          "flip": false
-        }
-      ],
+      "bg": "sqnct5dc",
+      "sprites": [],
       "ambience": [
         {
           "id": "amb_a11_shell_wind_chimes_v01",
@@ -119658,17 +120520,8 @@ window.VN_GAME ={
       "id": "mekeu17c",
       "speaker": "",
       "text": "快到像一片浪沾了沾礁石。",
-      "bg": "bg_house_door_morning_draft",
-      "sprites": [
-        {
-          "uid": "ftydxsiy",
-          "asset": "eqidiyyr",
-          "x": 640,
-          "y": 1190,
-          "h": 1150,
-          "flip": false
-        }
-      ],
+      "bg": "sqnct5dc",
+      "sprites": [],
       "ambience": [
         {
           "id": "amb_a11_shell_wind_chimes_v01",
@@ -119702,17 +120555,8 @@ window.VN_GAME ={
       "id": "83d4m1z4",
       "speaker": "鲸鱼小姐",
       "text": "「——验收通过。」",
-      "bg": "bg_house_door_morning_draft",
-      "sprites": [
-        {
-          "uid": "ftydxsiy",
-          "asset": "eqidiyyr",
-          "x": 640,
-          "y": 1190,
-          "h": 1150,
-          "flip": false
-        }
-      ],
+      "bg": "sqnct5dc",
+      "sprites": [],
       "ambience": [
         {
           "id": "amb_a11_shell_wind_chimes_v01",
@@ -119746,17 +120590,8 @@ window.VN_GAME ={
       "id": "g5mky371",
       "speaker": "鲸鱼小姐",
       "text": "「交易完成。两讫。」",
-      "bg": "bg_house_door_morning_draft",
-      "sprites": [
-        {
-          "uid": "ftydxsiy",
-          "asset": "eqidiyyr",
-          "x": 640,
-          "y": 1190,
-          "h": 1150,
-          "flip": false
-        }
-      ],
+      "bg": "sqnct5dc",
+      "sprites": [],
       "ambience": [
         {
           "id": "amb_a11_shell_wind_chimes_v01",
@@ -120649,17 +121484,8 @@ window.VN_GAME ={
       "id": "hvxv91vl",
       "speaker": "",
       "text": "（尾巴尖，慢慢卷上了我的手腕。）",
-      "bg": "bg_house_door_morning_draft",
-      "sprites": [
-        {
-          "uid": "k6t3r0l2",
-          "asset": "tp44t1rb",
-          "x": 640,
-          "y": 1190,
-          "h": 1150,
-          "flip": false
-        }
-      ],
+      "bg": "art_upgrade_c20",
+      "sprites": [],
       "ambience": [
         {
           "id": "amb_a11_shell_wind_chimes_v01",
@@ -120693,17 +121519,8 @@ window.VN_GAME ={
       "id": "8aoh56l4",
       "speaker": "鲸鱼小姐",
       "text": "「……就一下。」",
-      "bg": "bg_house_door_morning_draft",
-      "sprites": [
-        {
-          "uid": "k6t3r0l2",
-          "asset": "tp44t1rb",
-          "x": 640,
-          "y": 1190,
-          "h": 1150,
-          "flip": false
-        }
-      ],
+      "bg": "art_upgrade_c20",
+      "sprites": [],
       "ambience": [
         {
           "id": "amb_a11_shell_wind_chimes_v01",
@@ -120737,17 +121554,8 @@ window.VN_GAME ={
       "id": "w4411q0j",
       "speaker": "鲸鱼小姐",
       "text": "「下不为例。」",
-      "bg": "bg_house_door_morning_draft",
-      "sprites": [
-        {
-          "uid": "k6t3r0l2",
-          "asset": "tp44t1rb",
-          "x": 640,
-          "y": 1190,
-          "h": 1150,
-          "flip": false
-        }
-      ],
+      "bg": "art_upgrade_c20",
+      "sprites": [],
       "ambience": [
         {
           "id": "amb_a11_shell_wind_chimes_v01",
@@ -127069,17 +127877,8 @@ window.VN_GAME ={
       "id": "4lbhobyw",
       "speaker": "",
       "text": "她把手稿摊在膝盖上。",
-      "bg": "9ow2x5w5",
-      "sprites": [
-        {
-          "uid": "ssu9vjyy",
-          "asset": "hfcyjlxm",
-          "x": 640,
-          "y": 1190,
-          "h": 1150,
-          "flip": false
-        }
-      ],
+      "bg": "art_upgrade_c21",
+      "sprites": [],
       "ambience": [
         {
           "id": "amb_a02_waves_soft_v01",
@@ -127114,17 +127913,8 @@ window.VN_GAME ={
       "id": "de2y1wgh",
       "speaker": "鲸鱼小姐",
       "text": "「初遇篇，本小姐又通读了一遍。」",
-      "bg": "9ow2x5w5",
-      "sprites": [
-        {
-          "uid": "ssu9vjyy",
-          "asset": "hfcyjlxm",
-          "x": 640,
-          "y": 1190,
-          "h": 1150,
-          "flip": false
-        }
-      ],
+      "bg": "art_upgrade_c21",
+      "sprites": [],
       "ambience": [
         {
           "id": "amb_a02_waves_soft_v01",
@@ -127158,17 +127948,8 @@ window.VN_GAME ={
       "id": "s2w6soc7",
       "speaker": "鲸鱼小姐",
       "text": "「最后问你一次。」",
-      "bg": "9ow2x5w5",
-      "sprites": [
-        {
-          "uid": "ssu9vjyy",
-          "asset": "wrwcdezj",
-          "x": 640,
-          "y": 1190,
-          "h": 1150,
-          "flip": false
-        }
-      ],
+      "bg": "art_upgrade_c21",
+      "sprites": [],
       "ambience": [
         {
           "id": "amb_a02_waves_soft_v01",
@@ -146019,7 +146800,8 @@ window.VN_GAME ={
     "cover": {
       "img": "32lrbngt",
       "menu": "left",
-      "title": "hide"
+      "title": "left",
+      "ty": 135
     },
     "theme": {
       "preset": "default",
@@ -146051,5 +146833,49 @@ window.VN_GAME ={
       "bgm_emerald_dream_main_v01"
     ],
     "cueReport": "archive/deliveries/atri-music/接入清单.json"
+  },
+  "openingRevision": {
+    "date": "2026-10-15",
+    "author": "音乐负责人提供的新文案",
+    "retainedOriginalIds": true,
+    "addedIds": [
+      "opening_notebook_cry",
+      "opening_notebook_pause",
+      "opening_mysterious_rescuer",
+      "opening_tail_warning",
+      "opening_second_hit_rebuke",
+      "opening_notebook_importance",
+      "opening_retrieve_notebook"
+    ],
+    "retiredTextIds": [
+      "127wrb75",
+      "1sjdneqt",
+      "7b2f3g26"
+    ],
+    "sourceBeforeSha256": "f4bbc7924c784fa7c05bf05ddff524bd2e8a048e957614c19d165b35bb3cf78b",
+    "editorialNormalizations": [
+      "衣负 → 衣角；统一引号和省略号；删除孤立（）占位符；在那补停顿破折号"
+    ],
+    "continuityGap": "第一话敲字50天与第六话旧回忆15天有差异，其他章节原文保留待人工统一。"
+  },
+  "artUpgrade": {
+    "date": "2026-10-15",
+    "copiedReviewedArt": 112,
+    "activeOriginalWardrobeGaps": [
+      {
+        "asset": "nvgbi1x6",
+        "name": "鲸鱼小姐_泳装",
+        "reason": "原文泳装服饰留待人工处理，用户2026-10-15决定"
+      },
+      {
+        "asset": "jtp36q4e",
+        "name": "鲸鱼小姐_泳装害羞",
+        "reason": "原文泳装服饰留待人工处理，用户2026-10-15决定"
+      }
+    ],
+    "unmadeCg": "C23 泳装礁石CG：保留原文服饰待人工，不用外搭候选顶替；当前不恢复旧错误CG。",
+    "requestedModel": "gpt-image-2.5-flare",
+    "modelRouteVerified": false,
+    "nativeResolution": "立绘1024×1536；横图1672×941。未上采样；请求max不等于实际档位。"
   }
 };

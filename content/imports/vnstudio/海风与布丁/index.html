@@ -1955,8 +1955,23 @@ function playAmbience(specs, restore = [], fadeMs = 900) {
   }
 }
 function stopEffects() {
+  cancelScheduledEffects();
   for (const el of activeEffects) { el.pause(); el.removeAttribute('src'); el.load(); }
   activeEffects.clear();
+}
+const scheduledEffects = new Set();
+function cancelScheduledEffects() {
+  for (const timer of scheduledEffects) clearTimeout(timer);
+  scheduledEffects.clear();
+}
+function scheduleSe(event) {
+  const delay = Math.max(0, Math.min(10000, Number(event.delayMs) || 0));
+  if (!delay) { playSe(event.id, event.gain ?? 1); return; }
+  const timer = setTimeout(() => {
+    scheduledEffects.delete(timer);
+    if (!RT.skip && playing) playSe(event.id, event.gain ?? 1);
+  }, delay);
+  scheduledEffects.add(timer);
 }
 function playSe(id, gain = 1) {
   if (!id || !A(id) || effectVolume() <= 0 || audioFocusPaused || audioLibraryOpen) return;
@@ -1977,12 +1992,13 @@ function captureAudioState() {
     ambience: [...ambientTracks].map(([id, t]) => ({ id, time: t.el.currentTime })) };
 }
 function applyLineAudio(line, restore, suppressSe = false) {
+  cancelScheduledEffects();
   playBgm(line.bgm, line._musicFadeOutMs ?? 600, restore?.bgm?.id === line.bgm ? restore.bgm.time : undefined);
   playAmbience(line.ambience || [], restore?.ambience || [], restore ? 250 : 900);
   if (RT.skip) stopEffects();
   else if (!suppressSe) {
     if (line.se) playSe(line.se, line._seGain ?? 1);
-    for (const event of line.seEvents || []) playSe(event.id, event.gain ?? 1);
+    for (const event of line.seEvents || []) scheduleSe(event);
   }
 }
 function stopAllAudio() {

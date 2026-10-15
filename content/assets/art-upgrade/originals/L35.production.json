@@ -1,0 +1,17 @@
+{
+  "prompt": "A NEW substantially more covered ADULT age24 character sprite for a quiet campsite conversation. Use the referenced fully dressed adult woman identity, same long blue hair, fin ears, loop ahoge, face and independent blue whale tail. She sits upright calmly, hands resting visibly on her lap. Wear loose full-length navy trousers and a comfortable opaque long-sleeved cream cardigan. An OPAQUE thick whale-pattern wool blanket wraps from her shoulders all the way to her ANKLES, completely covering the legs and clothing folds. Plain closed white shoes. Face and hands are the only exposed skin. No skirt lifting, no knees-to-chest pose, no exposed knees, no anatomical emphasis. Whole adult figure and independent whale tail inside the frame, transparent alpha. This is a new blanket-wrapped ordinary seated design, not the rejected short-skirt pose.",
+  "requested_model": "gpt-image-2.5-flare",
+  "requested_quality": "max",
+  "requested_size": "1536x2304",
+  "references": [
+    {
+      "path": "content/assets/art-upgrade/originals/L01.png",
+      "sha256": "566e6bd87c0a715a1b641f0d0549c6fd4380630484897d301cd0d7c7462f2b49"
+    }
+  ],
+  "output_sha256": "4953a9108a8ae99832306884cba76ff64aff944768ad66da297267165aabd8f7",
+  "actual_size": [
+    1024,
+    1536
+  ]
+}

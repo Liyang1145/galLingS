@@ -1,30 +1,30 @@
 {
-  "auth_mode": "Codex ChatGPT OAuth",
-  "endpoint": "https://chatgpt.com/backend-api/codex/images/edits",
-  "requested_model": "gpt-image-2.5-flare",
+  "id": "C25",
+  "kind": "CG",
+  "source": "content/imports/vnstudio/海风与布丁/assets/art-upgrade/C25.webp",
+  "source_sha256": "637ba3c6976ca6510dcebf980844c1f8a8698737c7478b6cd176d771f0122d71",
+  "model": "gpt-image-2.5",
+  "endpoint": "https://api.rinko.ai/v1/images/edits",
+  "size": [
+    2752,
+    1536
+  ],
+  "quality": "high",
+  "background": "opaque",
+  "stream": true,
+  "output_sha256": "409d4dbb93a6832e34b402a60d4a1795ba281c75b11f112ac09a6070db23d219",
+  "runtime_webp_sha256": "ba57b8b1ca717444162ce7fd88079d8f6ffbdcad530ce495e84f1832bd358a73",
+  "status": "待团队目视验收（自审通过）",
+  "requested_model": "gpt-image-2.5",
   "backend_reported_model": null,
   "model_selection_verified": false,
-  "requested_size": "3840x2160",
-  "backend_reported_size": "1672x941",
-  "requested_quality": "max",
-  "backend_reported_quality": "medium",
-  "usage": {
-    "input_tokens": 3279,
-    "input_tokens_details": {
-      "image_tokens": 3044,
-      "text_tokens": 235
-    },
-    "output_tokens": 1158,
-    "output_tokens_details": {
-      "image_tokens": 1158,
-      "text_tokens": 0
-    },
-    "total_tokens": 4437
-  },
-  "elapsed_seconds": 64.96,
-  "created": 1792020689,
-  "reference_image_count": 2,
-  "outputs": [
-    "C:\\Users\\袁力阳\\Documents\\Codex\\2026-10-10\\new-chat\\work\\ambient-audio-checkout-proxy\\content\\assets\\art-upgrade\\originals\\C25.png"
-  ]
+  "requested_size": "2752x1536",
+  "backend_reported_size": "2752x1536",
+  "requested_quality": "high",
+  "master_path": "content/assets/art-upgrade/originals/C25.webp",
+  "master_format": "WebP lossless",
+  "master_sha256": "d7f9910e5cbdcf32602d2f9bb682487a375d0f34efd0991174ae5a47f476e060",
+  "superseded_master": "content/assets/art-upgrade/originals/C25_superseded_before_image25_pass2.png",
+  "date": "2026-10-17",
+  "batch": "image25-pass2"
 }

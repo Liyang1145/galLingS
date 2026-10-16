@@ -2,7 +2,7 @@
 
 用户在当前会话中的明确要求优先于这些协作约定。这里帮助并行工作，不增加每次修改都要问用户的审批流程。
 
-- 当前仓库是 **https://github.com/Liyang1145/galLingS**，私有，默认分支 `main`。旧的 `TanPowasd/galLingS` 是迁移来源，不是默认推送目标。不得在未获用户明确指示时公开仓库、增加外部协作者或把内容发到公共仓库。
+- 当前仓库是 **https://github.com/Liyang1145/galLingS**，公开（2026-10-16按用户明确要求从私有改为公开），默认分支 `main`。旧的 `TanPowasd/galLingS` 是迁移来源，不是默认推送目标。不得在未获用户明确指示时再更改可见性、增加外部协作者或把内容另发到其他公共仓库。此前私有状态按历史记录理解，见[可见性记录](docs/collab/work-ledger/repository-public-visibility.md)。
 - 开工先读 [共享台账](docs/collab/coordination-ledger.md)、[决策记录](docs/decisions.md)，再读本次工作涉及的接口/素材说明。历史记录、草稿建议、当前有效决定要区分，不把别的 agent 的推测当成用户要求。
 - 查看 [任务记录目录](docs/collab/work-ledger/)。在自己的任务记录中说明负责人、分支、基线提交、影响文件、接口变化、依赖和验证结果。初始化记录不等于任务已经由其联系人认领；开始实际修改时由执行者更新。
 - 新任务按 [模板](docs/collab/work-ledger/_template.md) 建独立文件。主要更新自己的记录，保留别人的记录；共享台账只维护基线和跨模块问题，避免多人反复重写同一张总表。

@@ -6,6 +6,8 @@
 
 ## 1. 当前共同基线
 
+2026-10-16可见性更新：用户明确要求“仓库公开”，`Liyang1145/galLingS`已由PRIVATE改为PUBLIC，GitHub回读`isPrivate=false`。此前迁移为私有的记录保留为历史；本次仅修改远端可见性，不推送本地待交付成果或自动合并分支，见[执行记录](work-ledger/repository-public-visibility.md)。
+
 2026-10-15后续：tanpowasd/dev经PR #6合入main `0213575`，包含导入器/galcore剧情接管、快照存读档与目录迁移。参考重制与用户新第一话见 [本轮美术记录](work-ledger/image25-art-upgrade.md)：原3308句ID不重编号，新增7句，当前3315节点；112项审核后装配/备用，泳装3项明确留待人工。现有103音频资产不变。开发库418项/564文件；旧表中“人物先放着”和3308总节点数是历史快照，不能整包回退覆盖此次授权。
 
 最新统筹：音乐负责人的场景/音频融合与用户转交的boliyer GalAgent已合并到同一作品，参见 [最新游玩与模块状态](latest-play.md)、[本次接入](work-ledger/boliyer-galagent-integration.md)。根目录 `游玩.html` 与 `start.bat` 使用同一 `content/imports/vnstudio/海风与布丁/`。下表早期交付快照中“无主曲”“接口预留”等描述按该快照理解，当前状态以最新统筹记录为准。
@@ -14,7 +16,7 @@
 
 | 项目 | 已核实状态 | 协作含义 |
 |---|---|---|
-| 仓库 | [Liyang1145/galLingS](https://github.com/Liyang1145/galLingS)，私有，默认 `main` | 后续默认提交到此处。旧公开仓库尚未由其管理员关闭，不能把迁移等同于旧内容已经不公开。 |
+| 仓库 | [Liyang1145/galLingS](https://github.com/Liyang1145/galLingS)，公开（2026-10-16按用户要求），默认 `main` | 后续默认提交到此处。旧仓库为迁移来源，不是默认推送目标。 |
 | 迁移基线 | 原 `main` 为 `fa4d95d64d46f412baf9a25d8fa4838dfb6783fd`；5个分支、1个既有标签、53个提交完整迁入 | 这是迁移时的快照；本台账及之后的协作提交会继续推进 `main`。不要为保持旧 SHA 而覆盖新提交。 |
 | 外层作品页 | Larry 的 PR #4 已合并；`web/vn.html`、`web/vn.js`、`/api/vn/games`、`/ws/soul` 在 `main` | 后端、作品页和作品内容是三层，接口存在不代表最新作品已经装好。 |
 | Larry 分支 | `larrye/haifeng-vn-studio` 为 `695a9d638dde6bd4558eab66ec3e78559b211ca5` | 在合并基线之后增加了环境音设置的说明/注释；不是一个新的完整游戏导出包。 |

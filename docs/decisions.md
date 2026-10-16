@@ -64,3 +64,7 @@
 37. 用户要求仓库最终只有一个 galgame / galagent，并确认“按照 plan 走”。剧情以 galcore 为唯一运行时：Larry 的 VN Studio 作品（`content/imports/vnstudio/海风与布丁/game.js`）经导入器 `compiler/vnstudio.py` 变成 OP 程序（句子 ID 原样保留，条件、变量、选项效果、结局由引擎执行）；画面仍是作品自己的播放器，由 `web/galcore.vnplugin.js` 把“下一句 / 选项 / 结局”改问引擎。依据决定 32，不恢复旧播放器。引擎新增通用整数变量、`SET`、`JUMP_IF`、选项 `set/cond`、`start`（从章节开头开局）；旧章节的 state_hash 不变。作者原件不改。
 38. 存读档对齐（2026-10-14，用户“开始”）：作品存档附带引擎快照，读档由引擎从快照接着跑并开新时间线；作品存档格式只新增字段，旧存档照常由作品自身读取。
 39. 目录按 inventory §4 迁移（2026-10-14，用户“全部放在我自己的分支就行了”）：仅在 tanpowasd/dev 上，引用同步改写；候选图目录因美术编辑器运行时读取而保留在 content/assets/；合入 main 前请音乐与美术编辑器负责人确认。
+
+## 当前仓库公开（2026-10-16）
+
+40. 用户明确要求“仓库公开”。已将`Liyang1145/galLingS`从PRIVATE改为PUBLIC并经GitHub回读确认；该决定取代第34条的当前私有可见性状态。默认分支、成员权限与本地待推送内容没有因此修改，不自动推送或合并本地成果。见[执行记录](collab/work-ledger/repository-public-visibility.md)。

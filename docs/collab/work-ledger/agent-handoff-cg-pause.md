@@ -1,5 +1,7 @@
 # agent接手与CG暂停记录
 
+**2026-10-17后续交付：** 原先仅本地的407份素材/运行内容已纳入`fix/character-performance`补齐资源提交`f7f6c92`，见[入库记录](completion-package-publication.md)。下文“仅文档、未上传”为当时历史状态；CG暂停、C27退选保持有效。
+
 - 日期：2026-10-17；执行：Codex。用户要求弃用当前图、先不做CG，并写好交接给其他agent。
 - 接续入口：[接手说明](../接手说明.md)。它优先于旧制作顺序、候选审图意见和生图计划；其余采用CG保留。
 - 仓库/分支：`Liyang1145/galLingS` / `fix/character-performance`；交接前本地及远端HEAD均为`f55cf0e6989726dd56521cecbc286a542dee4d27`，远端main为`0f6de470e5ef1b96c0dfe91605c913f15251c0b9`。

@@ -1,0 +1,52 @@
+{
+  "gameSha256": "fbe54379d81ce6663e0b4264282f2676d8c9aa38bbcba189acbffab65bf0bd3b",
+  "lines": 3315,
+  "cgProduction": "paused",
+  "withdrawnNodes": [
+    {
+      "entry": "folder",
+      "lineId": "utu1zxyd",
+      "restored": true
+    },
+    {
+      "entry": "folder",
+      "lineId": "ab6i4shm",
+      "restored": true
+    },
+    {
+      "entry": "folder",
+      "lineId": "3iq8cnx2",
+      "restored": true
+    },
+    {
+      "entry": "folder",
+      "lineId": "i99npm13",
+      "restored": true
+    },
+    {
+      "entry": "single",
+      "lineId": "utu1zxyd",
+      "restored": true
+    },
+    {
+      "entry": "single",
+      "lineId": "ab6i4shm",
+      "restored": true
+    },
+    {
+      "entry": "single",
+      "lineId": "3iq8cnx2",
+      "restored": true
+    },
+    {
+      "entry": "single",
+      "lineId": "i99npm13",
+      "restored": true
+    }
+  ],
+  "C27GalleryAbsent": true,
+  "C27DeveloperEntriesAllRejected": 7,
+  "offlineImagesDecoded": 118,
+  "browserErrors": [],
+  "scope": "仅本次C27撤出、导出一致性、图库退选和离线解码；既有全季审美/听感仍未终验。"
+}

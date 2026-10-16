@@ -6,6 +6,8 @@
 
 ## 1. 当前共同基线
 
+2026-10-17补齐：按用户要求将原407份本地补齐内容纳入`fix/character-performance`，资源提交`f7f6c92`；其后补交接发布说明及[音效缺失清单](../content/sfx-gaps.md)。新修图/原件/运行文件不再仅本地，完整检出本分支最新提交即可取得；main未合并。最早《翡翠之梦》改为见面曲、主曲另定，全部CG仍暂停、C27全退选。见[接手说明](接手说明.md)与[入库记录](work-ledger/completion-package-publication.md)。
+
 2026-10-16音乐同步：接续分支为`fix/character-performance`，M1浅滩（曲名未定）与E4《日落空守》（暂定名）已选曲并接入，两曲原件、运行副本、逐句映射和验证同完整作品一起保存。当前6首实际BGM、1首E5/E6候选；见[音乐进度总表](../content/music-progress.md)和[同步记录](work-ledger/music-progress-sync.md)。不要用main的旧game.js整包覆盖这条分支，不自动合并main。
 
 2026-10-16可见性更新：用户明确要求“仓库公开”，`Liyang1145/galLingS`已由PRIVATE改为PUBLIC，GitHub回读`isPrivate=false`。此前迁移为私有的记录保留为历史；本次仅修改远端可见性，不推送本地待交付成果或自动合并分支，见[执行记录](work-ledger/repository-public-visibility.md)。

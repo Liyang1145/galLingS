@@ -6,6 +6,8 @@
 
 ## 1. 当前共同基线
 
+2026-10-16音乐同步：接续分支为`fix/character-performance`，M1浅滩（曲名未定）与E4《日落空守》（暂定名）已选曲并接入，两曲原件、运行副本、逐句映射和验证同完整作品一起保存。当前6首实际BGM、1首E5/E6候选；见[音乐进度总表](../content/music-progress.md)和[同步记录](work-ledger/music-progress-sync.md)。不要用main的旧game.js整包覆盖这条分支，不自动合并main。
+
 2026-10-16可见性更新：用户明确要求“仓库公开”，`Liyang1145/galLingS`已由PRIVATE改为PUBLIC，GitHub回读`isPrivate=false`。此前迁移为私有的记录保留为历史；本次仅修改远端可见性，不推送本地待交付成果或自动合并分支，见[执行记录](work-ledger/repository-public-visibility.md)。
 
 2026-10-15后续：tanpowasd/dev经PR #6合入main `0213575`，包含导入器/galcore剧情接管、快照存读档与目录迁移。参考重制与用户新第一话见 [本轮美术记录](work-ledger/image25-art-upgrade.md)：原3308句ID不重编号，新增7句，当前3315节点；112项审核后装配/备用，泳装3项明确留待人工。现有103音频资产不变。开发库418项/564文件；旧表中“人物先放着”和3308总节点数是历史快照，不能整包回退覆盖此次授权。

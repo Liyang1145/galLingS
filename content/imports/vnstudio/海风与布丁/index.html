@@ -546,18 +546,13 @@ body.game #pin{bottom:250px}
 <!-- WHALE_UI_APPROVED_END -->
 <!-- WHALE_UI_REPO_ADAPTER_START -->
 <style id="whale-ui-repo-adapter">
-/* galLingS 仓库适配（2026-10-17）：鲸鱼 UI 原稿按作者原包的 4 项右侧主页设计；
-   本仓库主页为 7 项左列、底栏带文字标签、选项按左右侧排布（见 game-polish.css 与玩家体验打磨记录），
-   这里只调整位置与尺寸，皮肤、透明度与渐变保持原稿。 */
-body.game #title .menu{left:68px;right:auto;bottom:68px;width:362px;gap:10px}
-body.game #title .menu button{height:48px;min-height:48px}
-body.game #title .menu button:nth-child(1){left:72px}
-body.game #title .menu button:nth-child(2){left:60px}
-body.game #title .menu button:nth-child(3){left:48px}
-body.game #title .menu button:nth-child(4){left:36px}
-body.game #title .menu button:nth-child(5){left:24px}
-body.game #title .menu button:nth-child(6){left:12px}
-body.game #title .menu button:nth-child(7){left:0}
+/* galLingS 仓库适配（2026-10-17）：主页按作者原稿放右侧、每项向左错位 18 px（用户确认，封面不改）；
+   仓库主页有 7 项，原稿间距 44 px 会超出画面，故间距收为 26 px，第 5–7 项按同一步长继续错位。
+   底栏保留玩家体验打磨确定的文字标签宽度，其余皮肤、透明度与渐变保持原稿。 */
+body.game #title .menu{gap:26px}
+body.game #title .menu button:nth-child(5){left:-72px}
+body.game #title .menu button:nth-child(6){left:-90px}
+body.game #title .menu button:nth-child(7){left:-108px}
 body.game #pctl{right:22px;bottom:8px;gap:6px}
 body.game #pctl .btn{width:auto;min-width:48px;height:30px;padding:0 8px;display:inline-flex;align-items:center;gap:5px}
 @media (pointer:coarse){body.game #pctl{gap:8px}body.game #pctl .btn{width:auto;min-width:76px;height:44px}}

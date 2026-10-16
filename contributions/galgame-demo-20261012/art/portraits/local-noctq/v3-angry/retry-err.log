@@ -6,9 +6,9 @@
 [32m[INFO][0m setup plugin alembic.autogenerate.comments
 [32m[INFO][0m setup plugin alembic.ext.checkconstraint_byname
 [1m[33m[WARNING][0m On windows we are currently forcing single GPU mode in ComfyUI due to a Nvidia related issue, if you want to disable this use: --cuda-device all
-[32m[INFO][0m Adding extra search path diffusion_models <USERPROFILE>\Desktop\NoctQ-ComfyUI\ComfyUI-0.38.0\models\diffusion_models
-[32m[INFO][0m Adding extra search path text_encoders <USERPROFILE>\Desktop\NoctQ-ComfyUI\ComfyUI-0.38.0\models\text_encoders
-[32m[INFO][0m Adding extra search path vae <USERPROFILE>\Desktop\NoctQ-ComfyUI\ComfyUI-0.38.0\models\vae
+[32m[INFO][0m Adding extra search path diffusion_models C:\Users\huang\Desktop\NoctQ-ComfyUI\ComfyUI-0.38.0\models\diffusion_models
+[32m[INFO][0m Adding extra search path text_encoders C:\Users\huang\Desktop\NoctQ-ComfyUI\ComfyUI-0.38.0\models\text_encoders
+[32m[INFO][0m Adding extra search path vae C:\Users\huang\Desktop\NoctQ-ComfyUI\ComfyUI-0.38.0\models\vae
 [32m[INFO][0m Found comfy_kitchen backend hip: {'available': False, 'disabled': False, 'unavailable_reason': 'PyTorch ROCm/HIP runtime not available', 'capabilities': []}
 [32m[INFO][0m Found comfy_kitchen backend ascend: {'available': False, 'disabled': False, 'unavailable_reason': "torch-npu is not installed: No module named 'torch_npu'", 'capabilities': []}
 [32m[INFO][0m Found comfy_kitchen backend eager: {'available': True, 'disabled': False, 'unavailable_reason': None, 'capabilities': ['adaln', 'apply_rope', 'apply_rope1', 'apply_rope1_', 'apply_rope_', 'apply_rope_split_half', 'apply_rope_split_half1', 'apply_rope_split_half1_', 'apply_rope_split_half_', 'convrot_w4a4_linear', 'dequantize_convrot_w4a4_weight', 'dequantize_int8_convrot_weight', 'dequantize_int8_convrot_weight_dtype', 'dequantize_int8_embedding', 'dequantize_int8_simple', 'dequantize_int8_simple_dtype', 'dequantize_mxfp8', 'dequantize_nvfp4', 'dequantize_per_tensor_fp8', 'dequantize_w4a8_int8_weight', 'fp16_conv3d', 'fp16_conv3d_out', 'fp16_linear', 'gemv_awq_w4a16', 'group_norm_silu_pad3d', 'group_norm_silu_pad3d_out', 'int8_linear', 'na3d', 'prepare_int4_weight_for_int8_linear', 'quantize_and_rotate_rowwise', 'quantize_convrot_w4a4_weight', 'quantize_int8_convrot_weight', 'quantize_int8_rowwise', 'quantize_int8_tensorwise', 'quantize_mxfp8', 'quantize_nvfp4', 'quantize_per_tensor_fp8', 'quantize_svdquant_w4a4', 'quantize_w4a8_int8_weight', 'rms_adaln', 'rms_rope', 'rms_rope1', 'rms_rope1_', 'rms_rope_', 'rms_rope_split_half', 'rms_rope_split_half1', 'rms_rope_split_half1_', 'rms_rope_split_half_', 'rotate_int8_convrot_weight', 'scaled_mm_mxfp8', 'scaled_mm_nvfp4', 'scaled_mm_svdquant_w4a4', 'sol_attn', 'stochastic_rounding_fp8', 'w4a8_int8_linear']}
@@ -35,7 +35,7 @@
 [32m[INFO][0m comfyui-embedded-docs version: 0.5.12
 [32m[INFO][0m comfy-kitchen version: 0.2.36
 [32m[INFO][0m comfy-aimdo version: 0.5.5
-[32m[INFO][0m [Prompt Server] web root: <USERPROFILE>\Desktop\NoctQ-ComfyUI\.venv\Lib\site-packages\comfyui_frontend_package\static
+[32m[INFO][0m [Prompt Server] web root: C:\Users\huang\Desktop\NoctQ-ComfyUI\.venv\Lib\site-packages\comfyui_frontend_package\static
 [32m[INFO][0m Asset seeder disabled
 [32m[INFO][0m No OpenGL_accelerate module loaded: No module named 'OpenGL_accelerate'
 [32m[INFO][0m Skipping loading of custom nodes
@@ -46,13 +46,13 @@
 
 [32m[INFO][0m To see the GUI go to: http://127.0.0.1:8189
 [32m[INFO][0m got prompt
-[32m[INFO][0m Model storage policy: fast_disk=True paths=['<USERPROFILE>\\Desktop\\NoctQ-ComfyUI\\ComfyUI-0.38.0\\models\\vae\\qwen_image_2.1_vae_bf16.safetensors']
+[32m[INFO][0m Model storage policy: fast_disk=True paths=['C:\\Users\\huang\\Desktop\\NoctQ-ComfyUI\\ComfyUI-0.38.0\\models\\vae\\qwen_image_2.1_vae_bf16.safetensors']
 [32m[INFO][0m Using pytorch attention in VAE
 [32m[INFO][0m Using pytorch attention in VAE
 [32m[INFO][0m VAE load device: cuda:0, offload device: cpu, dtype: torch.bfloat16
 [32m[INFO][0m Found quantization metadata version 1
 [32m[INFO][0m Using MixedPrecisionOps for text encoder
-[32m[INFO][0m Model storage policy: fast_disk=True paths=['<USERPROFILE>\\Desktop\\NoctQ-ComfyUI\\ComfyUI-0.38.0\\models\\text_encoders\\qwen3vl_8b_int8_convrot.safetensors']
+[32m[INFO][0m Model storage policy: fast_disk=True paths=['C:\\Users\\huang\\Desktop\\NoctQ-ComfyUI\\ComfyUI-0.38.0\\models\\text_encoders\\qwen3vl_8b_int8_convrot.safetensors']
 [32m[INFO][0m CLIP/text encoder model load device: cuda:0, offload device: cpu, current: cpu, dtype: torch.float16
 [32m[INFO][0m Requested to load WanVAE
 [32m[INFO][0m Model WanVAE prepared for dynamic VRAM loading. 644MB Staged. 0 patches attached. Force pre-loaded 68 weights: 102 KB.
@@ -66,10 +66,10 @@
 [32m[INFO][0m Native ops: float8_e5m2, float8_e4m3fn, asym_w4a8_int8, w6a8_int8, convrot_w4a4, int8_tensorwise , emulated ops: mxfp8, nvfp4
 [32m[INFO][0m model weight dtype torch.bfloat16, manual cast: torch.bfloat16
 [32m[INFO][0m model_type FLUX
-[32m[INFO][0m Model storage policy: fast_disk=True paths=['<USERPROFILE>\\Desktop\\NoctQ-ComfyUI\\ComfyUI-0.38.0\\models\\diffusion_models\\NoctQA_V1_int8_convrot.safetensors']
+[32m[INFO][0m Model storage policy: fast_disk=True paths=['C:\\Users\\huang\\Desktop\\NoctQ-ComfyUI\\ComfyUI-0.38.0\\models\\diffusion_models\\NoctQA_V1_int8_convrot.safetensors']
 [32m[INFO][0m Requested to load QwenImage21
 [32m[INFO][0m Model QwenImage21 prepared for dynamic VRAM loading. 6920MB Staged. 0 patches attached. Force pre-loaded 65 weights: 63 KB.
-  0%|          | 0/28 [00:00<?, ?it/s]  0%|          | 0/28 [00:00<?, ?it/s,   Model Initializing ...  ]  0%|          | 0/28 [00:05<?, ?it/s,  Model Initialization complete!  ]  4%|â–Ž         | 1/28 [00:05<02:32,  5.66s/it,  Model Initialization complete!  ]  4%|â–Ž         | 1/28 [00:09<02:32,  5.66s/it]                                     7%|â–‹         | 2/28 [00:09<02:06,  4.88s/it] 11%|â–ˆ         | 3/28 [00:14<02:03,  4.94s/it] 14%|â–ˆâ–        | 4/28 [00:19<01:57,  4.88s/it] 18%|â–ˆâ–Š        | 5/28 [00:24<01:51,  4.84s/it] 21%|â–ˆâ–ˆâ–       | 6/28 [00:29<01:46,  4.83s/it] 25%|â–ˆâ–ˆâ–Œ       | 7/28 [00:34<01:43,  4.91s/it] 29%|â–ˆâ–ˆâ–Š       | 8/28 [00:39<01:37,  4.86s/it] 32%|â–ˆâ–ˆâ–ˆâ–      | 9/28 [00:43<01:32,  4.87s/it] 36%|â–ˆâ–ˆâ–ˆâ–Œ      | 10/28 [00:48<01:28,  4.89s/it] 39%|â–ˆâ–ˆâ–ˆâ–‰      | 11/28 [00:53<01:23,  4.90s/it] 43%|â–ˆâ–ˆâ–ˆâ–ˆâ–Ž     | 12/28 [00:58<01:18,  4.93s/it] 46%|â–ˆâ–ˆâ–ˆâ–ˆâ–‹     | 13/28 [01:03<01:13,  4.88s/it] 50%|â–ˆâ–ˆâ–ˆâ–ˆâ–ˆ     | 14/28 [01:08<01:08,  4.87s/it] 54%|â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–Ž    | 15/28 [01:13<01:03,  4.87s/it] 57%|â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‹    | 16/28 [01:18<00:58,  4.88s/it] 61%|â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ    | 17/28 [01:23<00:53,  4.89s/it] 64%|â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–   | 18/28 [01:27<00:49,  4.93s/it] 68%|â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–Š   | 19/28 [01:32<00:44,  4.90s/it] 71%|â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–  | 20/28 [01:37<00:39,  4.90s/it] 75%|â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–Œ  | 21/28 [01:42<00:34,  4.90s/it] 79%|â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–Š  | 22/28 [01:47<00:29,  4.90s/it] 82%|â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ– | 23/28 [01:52<00:24,  4.89s/it] 86%|â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–Œ | 24/28 [01:57<00:19,  4.93s/it] 89%|â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‰ | 25/28 [02:02<00:14,  4.96s/it] 93%|â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–Ž| 26/28 [02:07<00:09,  4.99s/it] 96%|â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‹| 27/28 [02:12<00:04,  4.99s/it]100%|â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ| 28/28 [02:17<00:00,  4.99s/it]100%|â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ| 28/28 [02:17<00:00,  4.90s/it]
+  0%|          | 0/28 [00:00<?, ?it/s]  0%|          | 0/28 [00:00<?, ?it/s,   Model Initializing ...  ]  0%|          | 0/28 [00:05<?, ?it/s,  Model Initialization complete!  ]  4%|¨†         | 1/28 [00:05<02:32,  5.66s/it,  Model Initialization complete!  ]  4%|¨†         | 1/28 [00:09<02:32,  5.66s/it]                                     7%|¨ƒ         | 2/28 [00:09<02:06,  4.88s/it] 11%|¨€         | 3/28 [00:14<02:03,  4.94s/it] 14%|¨€¨…        | 4/28 [00:19<01:57,  4.88s/it] 18%|¨€¨‚        | 5/28 [00:24<01:51,  4.84s/it] 21%|¨€¨€¨‡       | 6/28 [00:29<01:46,  4.83s/it] 25%|¨€¨€¨„       | 7/28 [00:34<01:43,  4.91s/it] 29%|¨€¨€¨‚       | 8/28 [00:39<01:37,  4.86s/it] 32%|¨€¨€¨€¨‡      | 9/28 [00:43<01:32,  4.87s/it] 36%|¨€¨€¨€¨„      | 10/28 [00:48<01:28,  4.89s/it] 39%|¨€¨€¨€¨      | 11/28 [00:53<01:23,  4.90s/it] 43%|¨€¨€¨€¨€¨†     | 12/28 [00:58<01:18,  4.93s/it] 46%|¨€¨€¨€¨€¨ƒ     | 13/28 [01:03<01:13,  4.88s/it] 50%|¨€¨€¨€¨€¨€     | 14/28 [01:08<01:08,  4.87s/it] 54%|¨€¨€¨€¨€¨€¨†    | 15/28 [01:13<01:03,  4.87s/it] 57%|¨€¨€¨€¨€¨€¨ƒ    | 16/28 [01:18<00:58,  4.88s/it] 61%|¨€¨€¨€¨€¨€¨€    | 17/28 [01:23<00:53,  4.89s/it] 64%|¨€¨€¨€¨€¨€¨€¨…   | 18/28 [01:27<00:49,  4.93s/it] 68%|¨€¨€¨€¨€¨€¨€¨‚   | 19/28 [01:32<00:44,  4.90s/it] 71%|¨€¨€¨€¨€¨€¨€¨€¨‡  | 20/28 [01:37<00:39,  4.90s/it] 75%|¨€¨€¨€¨€¨€¨€¨€¨„  | 21/28 [01:42<00:34,  4.90s/it] 79%|¨€¨€¨€¨€¨€¨€¨€¨‚  | 22/28 [01:47<00:29,  4.90s/it] 82%|¨€¨€¨€¨€¨€¨€¨€¨€¨‡ | 23/28 [01:52<00:24,  4.89s/it] 86%|¨€¨€¨€¨€¨€¨€¨€¨€¨„ | 24/28 [01:57<00:19,  4.93s/it] 89%|¨€¨€¨€¨€¨€¨€¨€¨€¨ | 25/28 [02:02<00:14,  4.96s/it] 93%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨†| 26/28 [02:07<00:09,  4.99s/it] 96%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨ƒ| 27/28 [02:12<00:04,  4.99s/it]100%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€| 28/28 [02:17<00:00,  4.99s/it]100%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€| 28/28 [02:17<00:00,  4.90s/it]
 [32m[INFO][0m Comfy model compiler graph breaks: 9, rogues: 0
 [32m[INFO][0m Model WanVAE prepared for dynamic VRAM loading. 644MB Staged. 0 patches attached. Force pre-loaded 68 weights: 102 KB.
 [32m[INFO][0m [32mPrompt executed in 153.69 seconds[0m

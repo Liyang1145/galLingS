@@ -4,7 +4,7 @@
 
 # GALgame Live2D 交接：先修改眼睛，再逐步完成模型
 
-交接日期：2026-10-11，Asia/Shanghai。工作目录：`.`。
+交接日期：2026-10-11，Asia/Shanghai。工作目录：`C:/Users/huang/Desktop/GALgame demo`。
 
 ## 先读这里
 
@@ -27,7 +27,7 @@
 
 ## 文件与权威状态
 
-模型目录：`./output/whale-girl-live2d-base/`。
+模型目录：`C:/Users/huang/Desktop/GALgame demo/output/whale-girl-live2d-base/`。
 
 | 文件 | 当前意义 |
 |---|---|
@@ -51,7 +51,7 @@
 旧包检查命令：
 
 ```powershell
-node './output/whale-girl-live2d-base/check-runtime-v3.cjs' '<USERPROFILE>/Desktop/galagent/prototypes/live2d/vendor/CubismSdkForWeb-5-r.5/Core/live2dcubismcore.js'
+node 'C:/Users/huang/Desktop/GALgame demo/output/whale-girl-live2d-base/check-runtime-v3.cjs' 'C:/Users/huang/Desktop/galagent/prototypes/live2d/vendor/CubismSdkForWeb-5-r.5/Core/live2dcubismcore.js'
 ```
 
 `check-runtime.cjs` 更旧。新导出要适配检查对象和目录，不能跑旧脚本后宣称新模型通过。
@@ -60,17 +60,17 @@ node './output/whale-girl-live2d-base/check-runtime-v3.cjs' '<USERPROFILE>/Deskt
 
 最新站姿原图（已查看）：
 
-`<USERPROFILE>/Desktop/诡异药剂师_v0.20/.codex-remote-attachments/01a12656-7864-7751-8dae-f7e1f0eb851b/110dc645-649c-4d2d-ba7c-a31cead93942/1-1000053179.jpg`
+`C:/Users/huang/Desktop/诡异药剂师_v0.20/.codex-remote-attachments/01a12656-7864-7751-8dae-f7e1f0eb851b/110dc645-649c-4d2d-ba7c-a31cead93942/1-1000053179.jpg`
 
 此前两张原图（站姿与俯视水边）：
 
-`<USERPROFILE>/Desktop/诡异药剂师_v0.20/.codex-remote-attachments/01a12656-7864-7751-8dae-f7e1f0eb851b/bdb6ccae-79f3-4a61-bc3a-b150894babfb/1-1000053179.jpg`
+`C:/Users/huang/Desktop/诡异药剂师_v0.20/.codex-remote-attachments/01a12656-7864-7751-8dae-f7e1f0eb851b/bdb6ccae-79f3-4a61-bc3a-b150894babfb/1-1000053179.jpg`
 
-`<USERPROFILE>/Desktop/诡异药剂师_v0.20/.codex-remote-attachments/01a12656-7864-7751-8dae-f7e1f0eb851b/bdb6ccae-79f3-4a61-bc3a-b150894babfb/2-1000053181.jpg`
+`C:/Users/huang/Desktop/诡异药剂师_v0.20/.codex-remote-attachments/01a12656-7864-7751-8dae-f7e1f0eb851b/bdb6ccae-79f3-4a61-bc3a-b150894babfb/2-1000053181.jpg`
 
 站姿判断通常比例与气质，俯视图参考绘画语言及投影，不直接把俯视比例移到正面。
 
-找回的参考稿：原文件`<USERPROFILE>/.codex/generated_images/01a12656-7864-7751-8dae-f7e1f0eb851b/exec-5d977faa-b7bf-4336-aacb-29901db8c1fb.png`，2,082,634字节，18:07:30。已复制到项目的eye-reference-v5。上眼睑遮住虹膜、眼神较放松；但头倾斜偏大、鼻尖高光仍白、下巴仍有角度，不应整头无审查替换。
+找回的参考稿：原文件`C:/Users/huang/.codex/generated_images/01a12656-7864-7751-8dae-f7e1f0eb851b/exec-5d977faa-b7bf-4336-aacb-29901db8c1fb.png`，2,082,634字节，18:07:30。已复制到项目的eye-reference-v5。上眼睑遮住虹膜、眼神较放松；但头倾斜偏大、鼻尖高光仍白、下巴仍有角度，不应整头无审查替换。
 
 ## 已有眼睛结构
 
@@ -108,11 +108,11 @@ Eye[L/R]_Placement
 
 ## Computer-use恢复与操作纪律
 
-已安装本机Cubism Editor5.3.04 FREE，路径根：`<USERPROFILE>/Desktop/galagent/.tools/CubismEditor/`。曾通过`CubismEditor5.exe`启动。
+已安装本机Cubism Editor5.3.04 FREE，路径根：`C:/Users/huang/Desktop/galagent/.tools/CubismEditor/`。曾通过`CubismEditor5.exe`启动。
 
 新会话先读取：
 
-`<USERPROFILE>/.codex/plugins/cache/openai-bundled/computer-use/26.928.21956/skills/computer-use/SKILL.md`
+`C:/Users/huang/.codex/plugins/cache/openai-bundled/computer-use/26.928.21956/skills/computer-use/SKILL.md`
 
 及其引用的guidance/api/confirmations。**必须用node_repl + @oai/sky，不能自造桌面控制脚本绕过。** 当前旧会话的node_repl执行工具被移除，这是用户新开会话的原因；技能文件存在并不等于执行工具可用。
 
@@ -127,7 +127,7 @@ Eye[L/R]_Placement
 - 保存时出现“未使用的原画，是否删除”选择**否**，保留旧PSD。
 - 物理Esc停止CU时立刻停止本轮Windows输入，告知用户。上次SaveAs v5被Esc中断；文件核实v5不存在。
 
-历史崩溃：2026-10-11 16:02:48 JVM申请约4.36GB原生内存失败。保存源完整，重启只载一个v3后恢复。日志`<USERPROFILE>/Desktop/galagent/.tools/CubismEditor/hs_err_pid41492.log`。不要无故停其他大任务或改系统页文件；尽量少开源模型标签。
+历史崩溃：2026-10-11 16:02:48 JVM申请约4.36GB原生内存失败。保存源完整，重启只载一个v3后恢复。日志`C:/Users/huang/Desktop/galagent/.tools/CubismEditor/hs_err_pid41492.log`。不要无故停其他大任务或改系统页文件；尽量少开源模型标签。
 
 FREE原生PNG导出限制1280x720，1024x1536导出曾失败并取消。没有干净的大尺寸原生预览PNG。不要绕过授权或宣称导出成功。Viewer可用于真实干净预览，但其Update按钮曾**不重新加载模型**，应重新打开准确路径并核对标题时间。
 
@@ -152,9 +152,9 @@ FREE原生PNG导出限制1280x720，1024x1536导出曾失败并取消。没有�
 
 用户仓库：`https://github.com/TanPowasd/galLingS`。用户自述是维护者且授权：**本机测试跑通之后**，在空闲/独立位置上传，通过Git汇总，不覆盖别人的提交产物。远端权限和当前仓库状态尚需实际检查，不等同于已验证。
 
-本机项目可能在`./galLingS`，另有早期RenPy Seabreeze；本轮未重新核实，接入前查实际项目与AGENTS，不猜引擎。
+本机项目可能在`C:/Users/huang/Desktop/GALgame demo/galLingS`，另有早期RenPy Seabreeze；本轮未重新核实，接入前查实际项目与AGENTS，不猜引擎。
 
-`<USERPROFILE>/Desktop/galagent/prototypes/live2d/renderer.ts`及其SDK曾只读查看，是其他原型与Haru样例。不能覆盖其代码或用换皮无关模型代替目标角色。可在当前工作区建独立检查页使用合法SDK。
+`C:/Users/huang/Desktop/galagent/prototypes/live2d/renderer.ts`及其SDK曾只读查看，是其他原型与Haru样例。不能覆盖其代码或用换皮无关模型代替目标角色。可在当前工作区建独立检查页使用合法SDK。
 
 最终验收：辨识度与静态美术、全身完整、自然眼神及口型、两眼独立眨眼、可信转头透视、表情、合理发衣尾物理与连接、稳定脚部、原生源与真实运行资产齐全、本机GALgame实际运行通过，之后才Git汇总。
 
@@ -162,7 +162,7 @@ FREE原生PNG导出限制1280x720，1024x1536导出曾失败并取消。没有�
 
 ## 建议新会话开场消息
 
-“请先读取 `./HANDOFF-LIVE2D.md`，恢复 computer-use 后继续本机 Cubism 制作。先改眼睛，收窄眼裂、压下上眼睑、减少眼白并统一阴影；按交接中的最新反馈逐步完成高质量 GALgame 全身 Live2D。本机游戏验收通过前不要上传GitHub。不要把静态参考PNG当作模型完成。”
+“请先读取 `C:/Users/huang/Desktop/GALgame demo/HANDOFF-LIVE2D.md`，恢复 computer-use 后继续本机 Cubism 制作。先改眼睛，收窄眼裂、压下上眼睑、减少眼白并统一阴影；按交接中的最新反馈逐步完成高质量 GALgame 全身 Live2D。本机游戏验收通过前不要上传GitHub。不要把静态参考PNG当作模型完成。”
 
 ## 2026-10-11 18:38 本会话 computer-use 恢复及眼睛初改
 

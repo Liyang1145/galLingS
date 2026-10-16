@@ -1,0 +1,134 @@
+{
+  "baseline": "C:\\Users\\huang\\Desktop\\GALgame demo\\output\\whale-girl-live2d-base\\runtime-test-v6-lash-crossfade-wip\\whale-girl-v6-lash-crossfade-wip.model3.json",
+  "candidate": "C:\\Users\\huang\\Desktop\\GALgame demo\\output\\whale-girl-live2d-base\\runtime-test-v6-positive-blink-probe\\whale-girl-v6-positive-blink-probe.model3.json",
+  "testedAt": "2026-10-14T00:25:11.512Z",
+  "scope": "Default native drawable vertex positions and opacity only; does not render masks, color blending or physics.",
+  "maxDeltaModelPixels": 0.0001220703125,
+  "rows": [
+    {
+      "id": "HairCap",
+      "maxDeltaModelPixels": 0,
+      "opacityDelta": 0
+    },
+    {
+      "id": "HairFrontStrands",
+      "maxDeltaModelPixels": 0,
+      "opacityDelta": 0
+    },
+    {
+      "id": "Coverup",
+      "maxDeltaModelPixels": 0,
+      "opacityDelta": 0
+    },
+    {
+      "id": "BodyCore",
+      "maxDeltaModelPixels": 0,
+      "opacityDelta": 0
+    },
+    {
+      "id": "ArmL",
+      "maxDeltaModelPixels": 0,
+      "opacityDelta": 0
+    },
+    {
+      "id": "ArmR",
+      "maxDeltaModelPixels": 0,
+      "opacityDelta": 0
+    },
+    {
+      "id": "HairBack",
+      "maxDeltaModelPixels": 0,
+      "opacityDelta": 0
+    },
+    {
+      "id": "Tail",
+      "maxDeltaModelPixels": 0,
+      "opacityDelta": 0
+    },
+    {
+      "id": "Iris_Test",
+      "maxDeltaModelPixels": 0,
+      "opacityDelta": 0
+    },
+    {
+      "id": "Lash_Overlay_Test",
+      "maxDeltaModelPixels": 0,
+      "opacityDelta": 0
+    },
+    {
+      "id": "Sclera_Only_Test",
+      "maxDeltaModelPixels": 0,
+      "opacityDelta": 0
+    },
+    {
+      "id": "Iris_Test2",
+      "maxDeltaModelPixels": 0,
+      "opacityDelta": 0
+    },
+    {
+      "id": "Lash_Overlay_Test2",
+      "maxDeltaModelPixels": 0.0001220703125,
+      "opacityDelta": 0
+    },
+    {
+      "id": "Sclera_Only_Test2",
+      "maxDeltaModelPixels": 0.0001220703125,
+      "opacityDelta": 0
+    },
+    {
+      "id": "Face_Static_v4",
+      "maxDeltaModelPixels": 0,
+      "opacityDelta": 0
+    },
+    {
+      "id": "ClosedLash_Hi_v5",
+      "maxDeltaModelPixels": 0,
+      "opacityDelta": 0
+    },
+    {
+      "id": "ClosedLash_Hi_L_v5",
+      "maxDeltaModelPixels": 0,
+      "opacityDelta": 0
+    },
+    {
+      "id": "MouthOpen_v6",
+      "maxDeltaModelPixels": 0,
+      "opacityDelta": 0
+    },
+    {
+      "id": "MouthClosed_v6",
+      "maxDeltaModelPixels": 0,
+      "opacityDelta": 0
+    },
+    {
+      "id": "JawNeckShadow_v6",
+      "maxDeltaModelPixels": 0,
+      "opacityDelta": 0
+    },
+    {
+      "id": "BangsCenterShadow_v6",
+      "maxDeltaModelPixels": 0,
+      "opacityDelta": 0
+    },
+    {
+      "id": "BangsSideShadow_ViewerRight_v6",
+      "maxDeltaModelPixels": 0,
+      "opacityDelta": 0
+    },
+    {
+      "id": "BangsSideShadow_ViewerLeft_v6",
+      "maxDeltaModelPixels": 0,
+      "opacityDelta": 0
+    },
+    {
+      "id": "Brow_ViewerRight_v6",
+      "maxDeltaModelPixels": 0,
+      "opacityDelta": 0
+    },
+    {
+      "id": "Brow_ViewerLeft_v6",
+      "maxDeltaModelPixels": 0,
+      "opacityDelta": 0
+    }
+  ]
+}

@@ -4,8 +4,8 @@ import json, shutil, urllib.request
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'art/portraits/local-noctq/v2'
 OUT.mkdir(parents=True,exist_ok=True)
-comfy=Path(r'<USERPROFILE>\Desktop\NoctQ-ComfyUI\ComfyUI-0.38.0')
-refs=[(r'<USERPROFILE>\Desktop\53b8dbf8a737ea418bad7d1a938a99de.png','seabreeze_body_tail_ref.png'),(r'<USERPROFILE>\Desktop\download.png','seabreeze_face_ref.png')]
+comfy=Path(r'C:\Users\huang\Desktop\NoctQ-ComfyUI\ComfyUI-0.38.0')
+refs=[(r'C:\Users\huang\Desktop\53b8dbf8a737ea418bad7d1a938a99de.png','seabreeze_body_tail_ref.png'),(r'C:\Users\huang\Desktop\download.png','seabreeze_face_ref.png')]
 for src,name in refs: shutil.copy2(src,comfy/'input'/name)
 prompt='''TASK: Draw ONE complete full-body standing character sprite for a Japanese visual novel, redesigning the same ocean-themed woman shown in the two reference pictures. This is a new standing pose and new everyday outfit, not a recreation of the reference camera or swimsuit pose.
 

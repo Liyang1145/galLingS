@@ -1,5 +1,5 @@
 {
-  "output": "./output/whale-girl-live2d-base/closed-lash-import-v5.psd",
+  "output": "C:/Users/huang/Desktop/GALgame demo/output/whale-girl-live2d-base/closed-lash-import-v5.psd",
   "height": 1536,
   "width": 1024,
   "layers": [
@@ -13,7 +13,7 @@
       "top": 242,
       "width": 55,
       "height": 10,
-      "file": "./output/whale-girl-live2d-base/layers/closed-lash-candidate-v5.png",
+      "file": "C:/Users/huang/Desktop/GALgame demo/output/whale-girl-live2d-base/layers/closed-lash-candidate-v5.png",
       "opacity": 0,
       "left": 516,
       "name": "ClosedLash_L_v5"
@@ -28,7 +28,7 @@
       "top": 242,
       "width": 55,
       "height": 10,
-      "file": "./output/whale-girl-live2d-base/layers/closed-lash-candidate-v5.png",
+      "file": "C:/Users/huang/Desktop/GALgame demo/output/whale-girl-live2d-base/layers/closed-lash-candidate-v5.png",
       "opacity": 0,
       "left": 435,
       "name": "ClosedLash_R_v5"

@@ -1,0 +1,1617 @@
+{
+  "modelFile": "C:\\Users\\huang\\Desktop\\GALgame demo\\output\\whale-girl-live2d-base\\runtime-test-v6-brows-y\\whale-girl-v6-brows-y.model3.json",
+  "testedAt": "2026-10-13T18:34:56.863Z",
+  "scope": "Single parameter endpoint influence at mouth open 0 and 1. Does not validate artwork or physics.",
+  "rows": [
+    {
+      "id": "ParamAngleX",
+      "mouthOpen": 0,
+      "affected": [
+        {
+          "id": "HairCap",
+          "maxVertexDelta": 0.01654580608010292,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "HairFrontStrands",
+          "maxVertexDelta": 0.015202108770608902,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "HairBack",
+          "maxVertexDelta": 0.011568926274776459,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Iris_Test",
+          "maxVertexDelta": 0.01715856045484543,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Lash_Overlay_Test",
+          "maxVertexDelta": 0.01653030514717102,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Sclera_Only_Test",
+          "maxVertexDelta": 0.01649362314492464,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Iris_Test2",
+          "maxVertexDelta": 0.016923680901527405,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Lash_Overlay_Test2",
+          "maxVertexDelta": 0.01642748713493347,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Sclera_Only_Test2",
+          "maxVertexDelta": 0.016398869454860687,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Face_Static_v4",
+          "maxVertexDelta": 0.01640558522194624,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "ClosedLash_Hi_v5",
+          "maxVertexDelta": 0.017259672284126282,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "ClosedLash_Hi_L_v5",
+          "maxVertexDelta": 0.0173635333776474,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "MouthOpen_v6",
+          "maxVertexDelta": 0.012867738027125597,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "MouthClosed_v6",
+          "maxVertexDelta": 0.013316615484654903,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "JawNeckShadow_v6",
+          "maxVertexDelta": 0.01050340011715889,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "BangsCenterShadow_v6",
+          "maxVertexDelta": 0.016486352309584618,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "BangsSideShadow_ViewerRight_v6",
+          "maxVertexDelta": 0.01764547824859619,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "BangsSideShadow_ViewerLeft_v6",
+          "maxVertexDelta": 0.017614103853702545,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Brow_ViewerRight_v6",
+          "maxVertexDelta": 0.015666790306568146,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Brow_ViewerLeft_v6",
+          "maxVertexDelta": 0.01568874716758728,
+          "maxOpacityDelta": 0
+        }
+      ]
+    },
+    {
+      "id": "ParamAngleY",
+      "mouthOpen": 0,
+      "affected": [
+        {
+          "id": "HairCap",
+          "maxVertexDelta": 0.007407546043395996,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "HairFrontStrands",
+          "maxVertexDelta": 0.006814390420913696,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "HairBack",
+          "maxVertexDelta": 0.004909336566925049,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Iris_Test",
+          "maxVertexDelta": 0.007068634033203125,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Lash_Overlay_Test",
+          "maxVertexDelta": 0.0070686936378479,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Sclera_Only_Test",
+          "maxVertexDelta": 0.007068634033203125,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Iris_Test2",
+          "maxVertexDelta": 0.00705265998840332,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Lash_Overlay_Test2",
+          "maxVertexDelta": 0.007052779197692871,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Sclera_Only_Test2",
+          "maxVertexDelta": 0.007052719593048096,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Face_Static_v4",
+          "maxVertexDelta": 0.007277488708496094,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "ClosedLash_Hi_v5",
+          "maxVertexDelta": 0.006996959447860718,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "ClosedLash_Hi_L_v5",
+          "maxVertexDelta": 0.007069915533065796,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "MouthOpen_v6",
+          "maxVertexDelta": 0.005973219871520996,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "MouthClosed_v6",
+          "maxVertexDelta": 0.005973219871520996,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "JawNeckShadow_v6",
+          "maxVertexDelta": 0.004395872354507446,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "BangsCenterShadow_v6",
+          "maxVertexDelta": 0.006700992584228516,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "BangsSideShadow_ViewerRight_v6",
+          "maxVertexDelta": 0.007407575845718384,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "BangsSideShadow_ViewerLeft_v6",
+          "maxVertexDelta": 0.007407546043395996,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Brow_ViewerRight_v6",
+          "maxVertexDelta": 0.006143689155578613,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Brow_ViewerLeft_v6",
+          "maxVertexDelta": 0.006143689155578613,
+          "maxOpacityDelta": 0
+        }
+      ]
+    },
+    {
+      "id": "ParamAngleZ",
+      "mouthOpen": 0,
+      "affected": [
+        {
+          "id": "HairCap",
+          "maxVertexDelta": 0.030929040163755417,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "HairFrontStrands",
+          "maxVertexDelta": 0.02373041957616806,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "HairBack",
+          "maxVertexDelta": 0.04260715376585722,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Iris_Test",
+          "maxVertexDelta": 0.009351219981908798,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Lash_Overlay_Test",
+          "maxVertexDelta": 0.007947590202093124,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Sclera_Only_Test",
+          "maxVertexDelta": 0.007388796657323837,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Iris_Test2",
+          "maxVertexDelta": 0.00944996252655983,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Lash_Overlay_Test2",
+          "maxVertexDelta": 0.008126761764287949,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Sclera_Only_Test2",
+          "maxVertexDelta": 0.007211271673440933,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Face_Static_v4",
+          "maxVertexDelta": 0.02352979313582182,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "ClosedLash_Hi_v5",
+          "maxVertexDelta": 0.010120928287506104,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "ClosedLash_Hi_L_v5",
+          "maxVertexDelta": 0.009908463805913925,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "MouthOpen_v6",
+          "maxVertexDelta": 0.00310727022588253,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "MouthClosed_v6",
+          "maxVertexDelta": 0.0036225225776433945,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "JawNeckShadow_v6",
+          "maxVertexDelta": 0.0028805434703826904,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "BangsCenterShadow_v6",
+          "maxVertexDelta": 0.009119104593992233,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "BangsSideShadow_ViewerRight_v6",
+          "maxVertexDelta": 0.00860166922211647,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "BangsSideShadow_ViewerLeft_v6",
+          "maxVertexDelta": 0.007925637066364288,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Brow_ViewerRight_v6",
+          "maxVertexDelta": 0.009885221719741821,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Brow_ViewerLeft_v6",
+          "maxVertexDelta": 0.009919323027133942,
+          "maxOpacityDelta": 0
+        }
+      ]
+    },
+    {
+      "id": "ParamEyeLOpen",
+      "mouthOpen": 0,
+      "affected": [
+        {
+          "id": "Iris_Test",
+          "maxVertexDelta": 0,
+          "maxOpacityDelta": 1
+        },
+        {
+          "id": "Lash_Overlay_Test",
+          "maxVertexDelta": 0.012919247150421143,
+          "maxOpacityDelta": 1
+        },
+        {
+          "id": "Sclera_Only_Test",
+          "maxVertexDelta": 0.012473821640014648,
+          "maxOpacityDelta": 1
+        },
+        {
+          "id": "ClosedLash_Hi_L_v5",
+          "maxVertexDelta": 0,
+          "maxOpacityDelta": 1
+        }
+      ]
+    },
+    {
+      "id": "ParamEyeLSmile",
+      "mouthOpen": 0,
+      "affected": []
+    },
+    {
+      "id": "ParamEyeROpen",
+      "mouthOpen": 0,
+      "affected": [
+        {
+          "id": "Iris_Test2",
+          "maxVertexDelta": 0,
+          "maxOpacityDelta": 1
+        },
+        {
+          "id": "Lash_Overlay_Test2",
+          "maxVertexDelta": 0.013705015182495117,
+          "maxOpacityDelta": 1
+        },
+        {
+          "id": "Sclera_Only_Test2",
+          "maxVertexDelta": 0.009091734886169434,
+          "maxOpacityDelta": 1
+        },
+        {
+          "id": "ClosedLash_Hi_v5",
+          "maxVertexDelta": 0,
+          "maxOpacityDelta": 1
+        }
+      ]
+    },
+    {
+      "id": "ParamEyeRSmile",
+      "mouthOpen": 0,
+      "affected": []
+    },
+    {
+      "id": "ParamEyeBallX",
+      "mouthOpen": 0,
+      "affected": [
+        {
+          "id": "Iris_Test",
+          "maxVertexDelta": 0.004872500896453857,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Iris_Test2",
+          "maxVertexDelta": 0.004872500896453857,
+          "maxOpacityDelta": 0
+        }
+      ]
+    },
+    {
+      "id": "ParamEyeBallY",
+      "mouthOpen": 0,
+      "affected": [
+        {
+          "id": "Iris_Test",
+          "maxVertexDelta": 0.001949012279510498,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Iris_Test2",
+          "maxVertexDelta": 0.001949012279510498,
+          "maxOpacityDelta": 0
+        }
+      ]
+    },
+    {
+      "id": "ParamBrowLY",
+      "mouthOpen": 0,
+      "affected": [
+        {
+          "id": "Brow_ViewerRight_v6",
+          "maxVertexDelta": 0.0038979649543762207,
+          "maxOpacityDelta": 0
+        }
+      ]
+    },
+    {
+      "id": "ParamBrowRY",
+      "mouthOpen": 0,
+      "affected": [
+        {
+          "id": "Brow_ViewerLeft_v6",
+          "maxVertexDelta": 0.0038979649543762207,
+          "maxOpacityDelta": 0
+        }
+      ]
+    },
+    {
+      "id": "ParamBrowLX",
+      "mouthOpen": 0,
+      "affected": []
+    },
+    {
+      "id": "ParamBrowRX",
+      "mouthOpen": 0,
+      "affected": []
+    },
+    {
+      "id": "ParamBrowLAngle",
+      "mouthOpen": 0,
+      "affected": []
+    },
+    {
+      "id": "ParamBrowRAngle",
+      "mouthOpen": 0,
+      "affected": []
+    },
+    {
+      "id": "ParamBrowLForm",
+      "mouthOpen": 0,
+      "affected": []
+    },
+    {
+      "id": "ParamBrowRForm",
+      "mouthOpen": 0,
+      "affected": []
+    },
+    {
+      "id": "ParamMouthForm",
+      "mouthOpen": 0,
+      "affected": [
+        {
+          "id": "MouthOpen_v6",
+          "maxVertexDelta": 0.0011614859104156494,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "MouthClosed_v6",
+          "maxVertexDelta": 0.0011275410652160645,
+          "maxOpacityDelta": 0
+        }
+      ]
+    },
+    {
+      "id": "ParamMouthOpenY",
+      "mouthOpen": 0,
+      "affected": [
+        {
+          "id": "MouthOpen_v6",
+          "maxVertexDelta": 0.010462969541549683,
+          "maxOpacityDelta": 1
+        },
+        {
+          "id": "MouthClosed_v6",
+          "maxVertexDelta": 0,
+          "maxOpacityDelta": 1
+        }
+      ]
+    },
+    {
+      "id": "ParamCheek",
+      "mouthOpen": 0,
+      "affected": []
+    },
+    {
+      "id": "ParamBodyAngleX",
+      "mouthOpen": 0,
+      "affected": []
+    },
+    {
+      "id": "ParamBodyAngleY",
+      "mouthOpen": 0,
+      "affected": []
+    },
+    {
+      "id": "ParamBodyAngleZ",
+      "mouthOpen": 0,
+      "affected": [
+        {
+          "id": "HairCap",
+          "maxVertexDelta": 0.02497400902211666,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "HairFrontStrands",
+          "maxVertexDelta": 0.020096026360988617,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Coverup",
+          "maxVertexDelta": 0.018226237036287785,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "BodyCore",
+          "maxVertexDelta": 0.0192363653331995,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "ArmL",
+          "maxVertexDelta": 0.01671205461025238,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "ArmR",
+          "maxVertexDelta": 0.01679033786058426,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "HairBack",
+          "maxVertexDelta": 0.02363249659538269,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Tail",
+          "maxVertexDelta": 0.0021152645349502563,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Iris_Test",
+          "maxVertexDelta": 0.01956239342689514,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Lash_Overlay_Test",
+          "maxVertexDelta": 0.01921822875738144,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Sclera_Only_Test",
+          "maxVertexDelta": 0.019085170701146126,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Iris_Test2",
+          "maxVertexDelta": 0.019581381231546402,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Lash_Overlay_Test2",
+          "maxVertexDelta": 0.019257288426160812,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Sclera_Only_Test2",
+          "maxVertexDelta": 0.019050627946853638,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Face_Static_v4",
+          "maxVertexDelta": 0.023136193864047527,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "ClosedLash_Hi_v5",
+          "maxVertexDelta": 0.01974024623632431,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "ClosedLash_Hi_L_v5",
+          "maxVertexDelta": 0.019694827497005463,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "MouthOpen_v6",
+          "maxVertexDelta": 0.01804252155125141,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "MouthClosed_v6",
+          "maxVertexDelta": 0.018171144649386406,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "JawNeckShadow_v6",
+          "maxVertexDelta": 0.017536701634526253,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "BangsCenterShadow_v6",
+          "maxVertexDelta": 0.019530899822711945,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "BangsSideShadow_ViewerRight_v6",
+          "maxVertexDelta": 0.019369330257177353,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "BangsSideShadow_ViewerLeft_v6",
+          "maxVertexDelta": 0.019190959632396698,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Brow_ViewerRight_v6",
+          "maxVertexDelta": 0.019687402993440628,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Brow_ViewerLeft_v6",
+          "maxVertexDelta": 0.019689559936523438,
+          "maxOpacityDelta": 0
+        }
+      ]
+    },
+    {
+      "id": "ParamBreath",
+      "mouthOpen": 0,
+      "affected": [
+        {
+          "id": "HairCap",
+          "maxVertexDelta": 0.002937018871307373,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "HairFrontStrands",
+          "maxVertexDelta": 0.0028885602951049805,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Coverup",
+          "maxVertexDelta": 0.007024526596069336,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "BodyCore",
+          "maxVertexDelta": 0.007131099700927734,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "ArmL",
+          "maxVertexDelta": 0.006979644298553467,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "ArmR",
+          "maxVertexDelta": 0.007086396217346191,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "HairBack",
+          "maxVertexDelta": 0.0030570626258850098,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Tail",
+          "maxVertexDelta": 0.0013319402933120728,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Iris_Test",
+          "maxVertexDelta": 0.002756565809249878,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Lash_Overlay_Test",
+          "maxVertexDelta": 0.00275343656539917,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Sclera_Only_Test",
+          "maxVertexDelta": 0.002750575542449951,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Iris_Test2",
+          "maxVertexDelta": 0.0028221607208251953,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Lash_Overlay_Test2",
+          "maxVertexDelta": 0.0028307437896728516,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Sclera_Only_Test2",
+          "maxVertexDelta": 0.002818286418914795,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Face_Static_v4",
+          "maxVertexDelta": 0.0028471946716308594,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "ClosedLash_Hi_v5",
+          "maxVertexDelta": 0.002829998731613159,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "ClosedLash_Hi_L_v5",
+          "maxVertexDelta": 0.0027570724487304688,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "MouthOpen_v6",
+          "maxVertexDelta": 0.0027745962142944336,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "MouthClosed_v6",
+          "maxVertexDelta": 0.0027745962142944336,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "JawNeckShadow_v6",
+          "maxVertexDelta": 0.0027895867824554443,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "BangsCenterShadow_v6",
+          "maxVertexDelta": 0.002792835235595703,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "BangsSideShadow_ViewerRight_v6",
+          "maxVertexDelta": 0.002721428871154785,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "BangsSideShadow_ViewerLeft_v6",
+          "maxVertexDelta": 0.0028312504291534424,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Brow_ViewerRight_v6",
+          "maxVertexDelta": 0.002752840518951416,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Brow_ViewerLeft_v6",
+          "maxVertexDelta": 0.002830326557159424,
+          "maxOpacityDelta": 0
+        }
+      ]
+    },
+    {
+      "id": "ParamHairFront",
+      "mouthOpen": 0,
+      "affected": []
+    },
+    {
+      "id": "ParamHairSide",
+      "mouthOpen": 0,
+      "affected": []
+    },
+    {
+      "id": "ParamHairBack",
+      "mouthOpen": 0,
+      "affected": [
+        {
+          "id": "HairBack",
+          "maxVertexDelta": 0.016883254051208496,
+          "maxOpacityDelta": 0
+        }
+      ]
+    },
+    {
+      "id": "ParamTailSway",
+      "mouthOpen": 0,
+      "affected": [
+        {
+          "id": "Tail",
+          "maxVertexDelta": 0.029248535633087158,
+          "maxOpacityDelta": 0
+        }
+      ]
+    },
+    {
+      "id": "ParamAngleX",
+      "mouthOpen": 1,
+      "affected": [
+        {
+          "id": "HairCap",
+          "maxVertexDelta": 0.01654580608010292,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "HairFrontStrands",
+          "maxVertexDelta": 0.015202108770608902,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "HairBack",
+          "maxVertexDelta": 0.011568926274776459,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Iris_Test",
+          "maxVertexDelta": 0.01715856045484543,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Lash_Overlay_Test",
+          "maxVertexDelta": 0.01653030514717102,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Sclera_Only_Test",
+          "maxVertexDelta": 0.01649362314492464,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Iris_Test2",
+          "maxVertexDelta": 0.016923680901527405,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Lash_Overlay_Test2",
+          "maxVertexDelta": 0.01642748713493347,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Sclera_Only_Test2",
+          "maxVertexDelta": 0.016398869454860687,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Face_Static_v4",
+          "maxVertexDelta": 0.01640558522194624,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "ClosedLash_Hi_v5",
+          "maxVertexDelta": 0.017259672284126282,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "ClosedLash_Hi_L_v5",
+          "maxVertexDelta": 0.0173635333776474,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "MouthOpen_v6",
+          "maxVertexDelta": 0.013613474555313587,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "MouthClosed_v6",
+          "maxVertexDelta": 0.013316615484654903,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "JawNeckShadow_v6",
+          "maxVertexDelta": 0.01050340011715889,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "BangsCenterShadow_v6",
+          "maxVertexDelta": 0.016486352309584618,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "BangsSideShadow_ViewerRight_v6",
+          "maxVertexDelta": 0.01764547824859619,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "BangsSideShadow_ViewerLeft_v6",
+          "maxVertexDelta": 0.017614103853702545,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Brow_ViewerRight_v6",
+          "maxVertexDelta": 0.015666790306568146,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Brow_ViewerLeft_v6",
+          "maxVertexDelta": 0.01568874716758728,
+          "maxOpacityDelta": 0
+        }
+      ]
+    },
+    {
+      "id": "ParamAngleY",
+      "mouthOpen": 1,
+      "affected": [
+        {
+          "id": "HairCap",
+          "maxVertexDelta": 0.007407546043395996,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "HairFrontStrands",
+          "maxVertexDelta": 0.006814390420913696,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "HairBack",
+          "maxVertexDelta": 0.004909336566925049,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Iris_Test",
+          "maxVertexDelta": 0.007068634033203125,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Lash_Overlay_Test",
+          "maxVertexDelta": 0.0070686936378479,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Sclera_Only_Test",
+          "maxVertexDelta": 0.007068634033203125,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Iris_Test2",
+          "maxVertexDelta": 0.00705265998840332,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Lash_Overlay_Test2",
+          "maxVertexDelta": 0.007052779197692871,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Sclera_Only_Test2",
+          "maxVertexDelta": 0.007052719593048096,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Face_Static_v4",
+          "maxVertexDelta": 0.007277488708496094,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "ClosedLash_Hi_v5",
+          "maxVertexDelta": 0.006996959447860718,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "ClosedLash_Hi_L_v5",
+          "maxVertexDelta": 0.007069915533065796,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "MouthOpen_v6",
+          "maxVertexDelta": 0.005973190069198608,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "MouthClosed_v6",
+          "maxVertexDelta": 0.005973219871520996,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "JawNeckShadow_v6",
+          "maxVertexDelta": 0.004395872354507446,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "BangsCenterShadow_v6",
+          "maxVertexDelta": 0.006700992584228516,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "BangsSideShadow_ViewerRight_v6",
+          "maxVertexDelta": 0.007407575845718384,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "BangsSideShadow_ViewerLeft_v6",
+          "maxVertexDelta": 0.007407546043395996,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Brow_ViewerRight_v6",
+          "maxVertexDelta": 0.006143689155578613,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Brow_ViewerLeft_v6",
+          "maxVertexDelta": 0.006143689155578613,
+          "maxOpacityDelta": 0
+        }
+      ]
+    },
+    {
+      "id": "ParamAngleZ",
+      "mouthOpen": 1,
+      "affected": [
+        {
+          "id": "HairCap",
+          "maxVertexDelta": 0.030929040163755417,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "HairFrontStrands",
+          "maxVertexDelta": 0.02373041957616806,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "HairBack",
+          "maxVertexDelta": 0.04260715376585722,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Iris_Test",
+          "maxVertexDelta": 0.009351219981908798,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Lash_Overlay_Test",
+          "maxVertexDelta": 0.007947590202093124,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Sclera_Only_Test",
+          "maxVertexDelta": 0.007388796657323837,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Iris_Test2",
+          "maxVertexDelta": 0.00944996252655983,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Lash_Overlay_Test2",
+          "maxVertexDelta": 0.008126761764287949,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Sclera_Only_Test2",
+          "maxVertexDelta": 0.007211271673440933,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Face_Static_v4",
+          "maxVertexDelta": 0.02352979313582182,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "ClosedLash_Hi_v5",
+          "maxVertexDelta": 0.010120928287506104,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "ClosedLash_Hi_L_v5",
+          "maxVertexDelta": 0.009908463805913925,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "MouthOpen_v6",
+          "maxVertexDelta": 0.003963278140872717,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "MouthClosed_v6",
+          "maxVertexDelta": 0.0036225225776433945,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "JawNeckShadow_v6",
+          "maxVertexDelta": 0.0028805434703826904,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "BangsCenterShadow_v6",
+          "maxVertexDelta": 0.009119104593992233,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "BangsSideShadow_ViewerRight_v6",
+          "maxVertexDelta": 0.00860166922211647,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "BangsSideShadow_ViewerLeft_v6",
+          "maxVertexDelta": 0.007925637066364288,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Brow_ViewerRight_v6",
+          "maxVertexDelta": 0.009885221719741821,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Brow_ViewerLeft_v6",
+          "maxVertexDelta": 0.009919323027133942,
+          "maxOpacityDelta": 0
+        }
+      ]
+    },
+    {
+      "id": "ParamEyeLOpen",
+      "mouthOpen": 1,
+      "affected": [
+        {
+          "id": "Iris_Test",
+          "maxVertexDelta": 0,
+          "maxOpacityDelta": 1
+        },
+        {
+          "id": "Lash_Overlay_Test",
+          "maxVertexDelta": 0.012919247150421143,
+          "maxOpacityDelta": 1
+        },
+        {
+          "id": "Sclera_Only_Test",
+          "maxVertexDelta": 0.012473821640014648,
+          "maxOpacityDelta": 1
+        },
+        {
+          "id": "ClosedLash_Hi_L_v5",
+          "maxVertexDelta": 0,
+          "maxOpacityDelta": 1
+        }
+      ]
+    },
+    {
+      "id": "ParamEyeLSmile",
+      "mouthOpen": 1,
+      "affected": []
+    },
+    {
+      "id": "ParamEyeROpen",
+      "mouthOpen": 1,
+      "affected": [
+        {
+          "id": "Iris_Test2",
+          "maxVertexDelta": 0,
+          "maxOpacityDelta": 1
+        },
+        {
+          "id": "Lash_Overlay_Test2",
+          "maxVertexDelta": 0.013705015182495117,
+          "maxOpacityDelta": 1
+        },
+        {
+          "id": "Sclera_Only_Test2",
+          "maxVertexDelta": 0.009091734886169434,
+          "maxOpacityDelta": 1
+        },
+        {
+          "id": "ClosedLash_Hi_v5",
+          "maxVertexDelta": 0,
+          "maxOpacityDelta": 1
+        }
+      ]
+    },
+    {
+      "id": "ParamEyeRSmile",
+      "mouthOpen": 1,
+      "affected": []
+    },
+    {
+      "id": "ParamEyeBallX",
+      "mouthOpen": 1,
+      "affected": [
+        {
+          "id": "Iris_Test",
+          "maxVertexDelta": 0.004872500896453857,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Iris_Test2",
+          "maxVertexDelta": 0.004872500896453857,
+          "maxOpacityDelta": 0
+        }
+      ]
+    },
+    {
+      "id": "ParamEyeBallY",
+      "mouthOpen": 1,
+      "affected": [
+        {
+          "id": "Iris_Test",
+          "maxVertexDelta": 0.001949012279510498,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Iris_Test2",
+          "maxVertexDelta": 0.001949012279510498,
+          "maxOpacityDelta": 0
+        }
+      ]
+    },
+    {
+      "id": "ParamBrowLY",
+      "mouthOpen": 1,
+      "affected": [
+        {
+          "id": "Brow_ViewerRight_v6",
+          "maxVertexDelta": 0.0038979649543762207,
+          "maxOpacityDelta": 0
+        }
+      ]
+    },
+    {
+      "id": "ParamBrowRY",
+      "mouthOpen": 1,
+      "affected": [
+        {
+          "id": "Brow_ViewerLeft_v6",
+          "maxVertexDelta": 0.0038979649543762207,
+          "maxOpacityDelta": 0
+        }
+      ]
+    },
+    {
+      "id": "ParamBrowLX",
+      "mouthOpen": 1,
+      "affected": []
+    },
+    {
+      "id": "ParamBrowRX",
+      "mouthOpen": 1,
+      "affected": []
+    },
+    {
+      "id": "ParamBrowLAngle",
+      "mouthOpen": 1,
+      "affected": []
+    },
+    {
+      "id": "ParamBrowRAngle",
+      "mouthOpen": 1,
+      "affected": []
+    },
+    {
+      "id": "ParamBrowLForm",
+      "mouthOpen": 1,
+      "affected": []
+    },
+    {
+      "id": "ParamBrowRForm",
+      "mouthOpen": 1,
+      "affected": []
+    },
+    {
+      "id": "ParamMouthForm",
+      "mouthOpen": 1,
+      "affected": [
+        {
+          "id": "MouthOpen_v6",
+          "maxVertexDelta": 0.0011275112628936768,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "MouthClosed_v6",
+          "maxVertexDelta": 0.0011275410652160645,
+          "maxOpacityDelta": 0
+        }
+      ]
+    },
+    {
+      "id": "ParamMouthOpenY",
+      "mouthOpen": 1,
+      "affected": [
+        {
+          "id": "MouthOpen_v6",
+          "maxVertexDelta": 0.010462969541549683,
+          "maxOpacityDelta": 1
+        },
+        {
+          "id": "MouthClosed_v6",
+          "maxVertexDelta": 0,
+          "maxOpacityDelta": 1
+        }
+      ]
+    },
+    {
+      "id": "ParamCheek",
+      "mouthOpen": 1,
+      "affected": []
+    },
+    {
+      "id": "ParamBodyAngleX",
+      "mouthOpen": 1,
+      "affected": []
+    },
+    {
+      "id": "ParamBodyAngleY",
+      "mouthOpen": 1,
+      "affected": []
+    },
+    {
+      "id": "ParamBodyAngleZ",
+      "mouthOpen": 1,
+      "affected": [
+        {
+          "id": "HairCap",
+          "maxVertexDelta": 0.02497400902211666,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "HairFrontStrands",
+          "maxVertexDelta": 0.020096026360988617,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Coverup",
+          "maxVertexDelta": 0.018226237036287785,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "BodyCore",
+          "maxVertexDelta": 0.0192363653331995,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "ArmL",
+          "maxVertexDelta": 0.01671205461025238,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "ArmR",
+          "maxVertexDelta": 0.01679033786058426,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "HairBack",
+          "maxVertexDelta": 0.02363249659538269,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Tail",
+          "maxVertexDelta": 0.0021152645349502563,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Iris_Test",
+          "maxVertexDelta": 0.01956239342689514,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Lash_Overlay_Test",
+          "maxVertexDelta": 0.01921822875738144,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Sclera_Only_Test",
+          "maxVertexDelta": 0.019085170701146126,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Iris_Test2",
+          "maxVertexDelta": 0.019581381231546402,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Lash_Overlay_Test2",
+          "maxVertexDelta": 0.019257288426160812,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Sclera_Only_Test2",
+          "maxVertexDelta": 0.019050627946853638,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Face_Static_v4",
+          "maxVertexDelta": 0.023136193864047527,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "ClosedLash_Hi_v5",
+          "maxVertexDelta": 0.01974024623632431,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "ClosedLash_Hi_L_v5",
+          "maxVertexDelta": 0.019694827497005463,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "MouthOpen_v6",
+          "maxVertexDelta": 0.018256207928061485,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "MouthClosed_v6",
+          "maxVertexDelta": 0.018171144649386406,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "JawNeckShadow_v6",
+          "maxVertexDelta": 0.017536701634526253,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "BangsCenterShadow_v6",
+          "maxVertexDelta": 0.019530899822711945,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "BangsSideShadow_ViewerRight_v6",
+          "maxVertexDelta": 0.019369330257177353,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "BangsSideShadow_ViewerLeft_v6",
+          "maxVertexDelta": 0.019190959632396698,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Brow_ViewerRight_v6",
+          "maxVertexDelta": 0.019687402993440628,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Brow_ViewerLeft_v6",
+          "maxVertexDelta": 0.019689559936523438,
+          "maxOpacityDelta": 0
+        }
+      ]
+    },
+    {
+      "id": "ParamBreath",
+      "mouthOpen": 1,
+      "affected": [
+        {
+          "id": "HairCap",
+          "maxVertexDelta": 0.002937018871307373,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "HairFrontStrands",
+          "maxVertexDelta": 0.0028885602951049805,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Coverup",
+          "maxVertexDelta": 0.007024526596069336,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "BodyCore",
+          "maxVertexDelta": 0.007131099700927734,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "ArmL",
+          "maxVertexDelta": 0.006979644298553467,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "ArmR",
+          "maxVertexDelta": 0.007086396217346191,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "HairBack",
+          "maxVertexDelta": 0.0030570626258850098,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Tail",
+          "maxVertexDelta": 0.0013319402933120728,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Iris_Test",
+          "maxVertexDelta": 0.002756565809249878,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Lash_Overlay_Test",
+          "maxVertexDelta": 0.00275343656539917,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Sclera_Only_Test",
+          "maxVertexDelta": 0.002750575542449951,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Iris_Test2",
+          "maxVertexDelta": 0.0028221607208251953,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Lash_Overlay_Test2",
+          "maxVertexDelta": 0.0028307437896728516,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Sclera_Only_Test2",
+          "maxVertexDelta": 0.002818286418914795,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Face_Static_v4",
+          "maxVertexDelta": 0.0028471946716308594,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "ClosedLash_Hi_v5",
+          "maxVertexDelta": 0.002829998731613159,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "ClosedLash_Hi_L_v5",
+          "maxVertexDelta": 0.0027570724487304688,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "MouthOpen_v6",
+          "maxVertexDelta": 0.002774566411972046,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "MouthClosed_v6",
+          "maxVertexDelta": 0.0027745962142944336,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "JawNeckShadow_v6",
+          "maxVertexDelta": 0.0027895867824554443,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "BangsCenterShadow_v6",
+          "maxVertexDelta": 0.002792835235595703,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "BangsSideShadow_ViewerRight_v6",
+          "maxVertexDelta": 0.002721428871154785,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "BangsSideShadow_ViewerLeft_v6",
+          "maxVertexDelta": 0.0028312504291534424,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Brow_ViewerRight_v6",
+          "maxVertexDelta": 0.002752840518951416,
+          "maxOpacityDelta": 0
+        },
+        {
+          "id": "Brow_ViewerLeft_v6",
+          "maxVertexDelta": 0.002830326557159424,
+          "maxOpacityDelta": 0
+        }
+      ]
+    },
+    {
+      "id": "ParamHairFront",
+      "mouthOpen": 1,
+      "affected": []
+    },
+    {
+      "id": "ParamHairSide",
+      "mouthOpen": 1,
+      "affected": []
+    },
+    {
+      "id": "ParamHairBack",
+      "mouthOpen": 1,
+      "affected": [
+        {
+          "id": "HairBack",
+          "maxVertexDelta": 0.016883254051208496,
+          "maxOpacityDelta": 0
+        }
+      ]
+    },
+    {
+      "id": "ParamTailSway",
+      "mouthOpen": 1,
+      "affected": [
+        {
+          "id": "Tail",
+          "maxVertexDelta": 0.029248535633087158,
+          "maxOpacityDelta": 0
+        }
+      ]
+    }
+  ]
+}

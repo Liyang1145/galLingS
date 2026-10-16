@@ -4,9 +4,9 @@ import json, urllib.request, shutil
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'art/portraits/local-noctq'
 OUT.mkdir(parents=True,exist_ok=True)
-comfy=Path(r'<USERPROFILE>\Desktop\NoctQ-ComfyUI\ComfyUI-0.38.0')
+comfy=Path(r'C:\Users\huang\Desktop\NoctQ-ComfyUI\ComfyUI-0.38.0')
 reference='seabreeze_reference_20261009.png'
-shutil.copy2(Path(r'<USERPROFILE>\Desktop\download.png'),comfy/'input'/reference)
+shutil.copy2(Path(r'C:\Users\huang\Desktop\download.png'),comfy/'input'/reference)
 text='''Create a full-body character sprite for a romantic Japanese visual novel, based on the woman in Picture 1. Clearly adult woman age 25, mature facial proportions. Preserve her recognizable long flowing navy-blue and violet hair with pale blue highlights, blue eyes, small fin-like ears, ocean themed color palette. Front three-quarter view, upright relaxed pose, arms loosely crossed, slightly proud shy expression. She is a whale mermaid: human upper body wearing a modest opaque white and navy sleeveless sailor blouse with a blue ribbon, waist completely covered; below the waist a single long gracefully curved whale tail, dark indigo upper surface and white underside, ending in two broad whale flukes. No human legs. Entire character from top of head to both tail flukes fully visible with generous margin on all sides. Remove sunglasses, maid headdress, popsicle and all background objects. Flat uniform pale gray background, no scenery or floor, no cast shadow. Beautiful clean anime line art and soft cel shading, crisp readable silhouette, detailed hands with five fingers. One character only, no words, no watermark, nonsexual everyday character design.'''
 negative='cropped head, cropped tail, cut off body, closeup, multiple people, child, young girl, nudity, bikini, lingerie, cleavage, suggestive pose, human legs, extra limbs, extra fingers, malformed hands, text, watermark, photo, 3d render, busy background'
 p={

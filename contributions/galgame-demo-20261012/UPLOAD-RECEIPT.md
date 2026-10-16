@@ -1,17 +1,27 @@
-# 工作区上传回执
+# 工作区上传回执（2026-10-16 傲娇精修完成版）
 
-日期：2026-10-12，Asia/Shanghai。制作按用户要求暂停，上传交接已完成。
+日期：2026-10-16，Asia/Shanghai。
 
-- 独立分支：<https://github.com/TanPowasd/galLingS/tree/handoff/galgame-workspace-20261012/contributions/galgame-demo-20261012>
-- 完整工作区及清单：<https://github.com/TanPowasd/galLingS/releases/tag/workspace-20261012>
-- 从 `UPLOAD-HANDOFF.md`、`HANDOFF-LIVE2D.md`、`output/whale-girl-live2d-base/PLAN-v6.md` 开始接手。
-- 完整包包含 6,788 个清理后文件；可浏览分支包含其中 277 个源码、模型、素材和记录文件。`.tools/` 与 `dist/` 的大文件全部在完整包，位置对应 `DELIVERY-MAP.json`。
-- GitHub 四个附件均为 uploaded：完整ZIP 856,071,256 字节；另外是逐文件清单、隐私报告和下载哈希清单。服务端 SHA-256 全部与本地一致。
-- 完整 ZIP 的逐文件 SHA-256 和压缩包 CRC 已检查；分支 277 个快照文件字节哈希通过。
-- 完整ZIP SHA-256：`6851c7d918686cf5ed5b42b489da712c4314133644ba3562433766d7d51840a8`。
-- 隐私扫描 PASS：个人绝对路径脱敏、图片元数据剥离、ZIP内部递归清理、账号密钥形状扫描。排除清单含本机虚拟环境、Git本地记录、个人存档及派生缓存；未删除本机原资产或存档。
-- 分支从实际远端检出创建，不强推、不合并；本次所有变化位于此前不存在的 `contributions/galgame-demo-20261012/`。团队 main 的后续变化属于其他工作，未被此上传覆盖。
-- 当前原生模型9,055,673字节、2026-10-11 23:59:11保存；新嘴薄口缘已接入。模型尚未完成、无v6导出验收、无游戏Live2D接入验收。
-- 最后一次Computer Use保存尝试收到物理Esc停止信号，未执行；暂停前没有新增未保存形变。
+- 仓库地址：<https://github.com/Liyang1145/galLingS>
+- 独立分支与目录：<https://github.com/Liyang1145/galLingS/tree/handoff/galgame-workspace-20261012/contributions/galgame-demo-20261012>
+- 历史完整依赖包 Release：<https://github.com/Liyang1145/galLingS/releases/tag/workspace-20261012>
 
-本回执是上传完成后的补充记录；`WORKSPACE-MANIFEST.json` 对应完整ZIP制作时的文件快照，不包括随后生成的本回执及Git传输用的 `.gitattributes`。模型制作目标维持暂停，未经用户要求不自动恢复。
+## 本次更新内容（2026-10-16）
+
+1. **面部五官比例、眼睑、鼻点与下颌线重构（`Face_Static_v4`, `Warp10`, `Warp12`）**：
+   - 修复前任模型留下的下颌平底与尖角、鼻点过高过宽、上眼睑塌陷无神、嘴部偏位及前发阴影过重问题。
+   - 鼻三角向内收窄约 48% 并下移对准双眸下方黄金比例点，下颊采用柔和二次元圆润弧线收拢至小圆下巴。
+   - 重建双眼 `6×10` 弯曲变形网格（`Warp10` / `Warp12`），消除压眼感，恢复明亮有神的蓝宝石大眼。
+2. **傲娇（Tsundere）性格全套表情与动态参数绑定**：
+   - 嘴形 `ParamMouthForm`（`Warp15`）：支持 `-1.0` 傲娇 `へ` 字撇嘴、`0.0` 自然上扬微笑、`+1.0` 开心露笑。
+   - 张口 `ParamMouthOpenY`（`MouthOpen_v6`）：开口纵向行程增强至 `3.1x`，清晰呈现高精口腔、小虎牙与舌面。
+   - 双眉角度 `ParamBrowLAngle` / `ParamBrowRAngle`（`Rotation15` / `Rotation16`）：行程扩展至 `±14°`，支持傲娇蹙眉（`\ /`）与害羞八字眉（`/ \`）。
+   - 头部俯仰与偏头（`ParamAngleY` / `ParamAngleZ`）：支持大幅度傲娇歪头斜睨与低头脸红姿态。
+3. **工程保存与 Runtime 导出**：
+   - 权威 Cubism 工程文件：`output/whale-girl-live2d-base/whale-girl-body-x-wip-v6.cmo3` 及 `whale-girl-face-refinement-v6.cmo3`。
+   - 导出 Runtime 模型：`output/whale-girl-live2d-base/runtime-test-v6-body-x-wip/whale-girl-v6-body-x-wip.moc3`（122,688 字节）及 `runtime-test-v6/whale-girl-v6.moc3`。
+4. **Live2D 实时互动预览器（`output/whale-girl-live2d-base/live2d-viewer/`）**：
+   - 内置基于 Cubism SDK 5 WebGL 的 60 FPS 实时互动预览器与一键启动脚本 `启动鲸鱼小姐Live2D互动预览.cmd`。
+   - 支持 5 组傲娇表情预设切换、镜头景别切换（面部特写 / Galgame半身 / 全身立绘）、鼠标视线/头部实时跟随及 13 项核心参数滑块实时微调。
+5. **渲染验收图集**：
+   - 见 `output/whale-girl-live2d-base/previews-v6-final/`（含修复前后对比、多姿态傲娇表情特写与全身渲染、互动预览器实机截图）。

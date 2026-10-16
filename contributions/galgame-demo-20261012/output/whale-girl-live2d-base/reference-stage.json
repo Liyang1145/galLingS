@@ -1,6 +1,6 @@
 {
   "width": 1024,
   "height": 1536,
-  "layers": [{"name":"Reference_assembled_NOT_RIGGED","file":"./output/whale-girl-live2d-base/fullbody-base-v1.png"}],
-  "output":"./output/whale-girl-live2d-base/reference-stage.psd"
+  "layers": [{"name":"Reference_assembled_NOT_RIGGED","file":"C:/Users/huang/Desktop/GALgame demo/output/whale-girl-live2d-base/fullbody-base-v1.png"}],
+  "output":"C:/Users/huang/Desktop/GALgame demo/output/whale-girl-live2d-base/reference-stage.psd"
 }

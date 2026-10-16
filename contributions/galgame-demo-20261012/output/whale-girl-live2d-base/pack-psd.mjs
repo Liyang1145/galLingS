@@ -1,8 +1,8 @@
 // Component assembly/PSD packaging only; all painted artwork is produced by image_gen.
 import {readFile, writeFile} from 'node:fs/promises';
 import {createRequire} from 'node:module';
-const sharp=createRequire('file:///<USERPROFILE>/Desktop/galagent/package.json')('sharp');
-import {writePsdBuffer,readPsd,initializeCanvas} from 'file:///<USERPROFILE>/Desktop/galagent/.tools/psd/node_modules/ag-psd/dist/index.js';
+const sharp=createRequire('file:///C:/Users/huang/Desktop/galagent/package.json')('sharp');
+import {writePsdBuffer,readPsd,initializeCanvas} from 'file:///C:/Users/huang/Desktop/galagent/.tools/psd/node_modules/ag-psd/dist/index.js';
 initializeCanvas(()=>{throw Error('Canvas unused');},(width,height)=>({width,height,data:new Uint8ClampedArray(width*height*4)}));
 const cfg=JSON.parse((await readFile(process.argv[2],'utf8')).replace(/^\uFEFF/,''));
 const children=[];

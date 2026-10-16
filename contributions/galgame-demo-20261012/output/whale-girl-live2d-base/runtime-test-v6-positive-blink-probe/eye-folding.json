@@ -1,0 +1,31 @@
+{
+  "modelFile": "C:\\Users\\huang\\Desktop\\GALgame demo\\output\\whale-girl-live2d-base\\runtime-test-v6-positive-blink-probe\\whale-girl-v6-positive-blink-probe.model3.json",
+  "testedAt": "2026-10-14T00:24:21.148Z",
+  "scope": "Viewer-left eye triangle signs relative to default pose, opacity>=.02, XYZ x Smile x near-closed Open samples. Painted flips require >=3 alpha>=128 UV samples at 2px stride. Does not render masks, painted silhouettes, or physics.",
+  "meshes": [
+    {
+      "id": "Lash_Overlay_Test2",
+      "vertexCount": 219,
+      "triangleCount": 315,
+      "paintedTriangles": 171
+    },
+    {
+      "id": "Sclera_Only_Test2",
+      "vertexCount": 144,
+      "triangleCount": 226,
+      "paintedTriangles": 183
+    },
+    {
+      "id": "ClosedLash_Hi_v5",
+      "vertexCount": 81,
+      "triangleCount": 128,
+      "paintedTriangles": 22
+    }
+  ],
+  "poses": 1215,
+  "trianglesChecked": 696438,
+  "nearDegenerate": 0,
+  "failureCount": 0,
+  "paintedFailureCount": 0,
+  "failures": []
+}

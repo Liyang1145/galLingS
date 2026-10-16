@@ -2,7 +2,7 @@
   "layers": [
     {
       "name": "MouthClosed_v6",
-      "file": "./output/whale-girl-live2d-base/layers/mouth-closed-candidate-v6-b.png",
+      "file": "C:/Users/huang/Desktop/GALgame demo/output/whale-girl-live2d-base/layers/mouth-closed-candidate-v6-b.png",
       "crop": {
         "left": 340,
         "width": 590,
@@ -13,7 +13,7 @@
       "top": 540
     },
     {
-      "file": "./output/whale-girl-live2d-base/layers/mouth-open-thin-v6.png",
+      "file": "C:/Users/huang/Desktop/GALgame demo/output/whale-girl-live2d-base/layers/mouth-open-thin-v6.png",
       "opacity": 0,
       "name": "MouthOpen_v6",
       "crop": {
@@ -27,6 +27,6 @@
     }
   ],
   "width": 1280,
-  "output": "./output/whale-girl-live2d-base/mouth-thin-replacement-v6.psd",
+  "output": "C:/Users/huang/Desktop/GALgame demo/output/whale-girl-live2d-base/mouth-thin-replacement-v6.psd",
   "height": 1280
 }

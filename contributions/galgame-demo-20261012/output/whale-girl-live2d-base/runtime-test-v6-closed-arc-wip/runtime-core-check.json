@@ -1,0 +1,443 @@
+{
+  "testedAt": "2026-10-13T22:10:52.464Z",
+  "scope": "Native export loading, adopted/obsolete meshes, shadow mask IDs and opacity, mouth/head/blink, gaze/head/blink, independent brow Y/angle/form/head/blink, and smile/head/blink/gaze finite geometry combinations. Does not verify parameter influence, painted quality, geometric folding, physics playback, or game acceptance.",
+  "drawableCount": 25,
+  "drawableIds": [
+    "HairCap",
+    "HairFrontStrands",
+    "Coverup",
+    "BodyCore",
+    "ArmL",
+    "ArmR",
+    "HairBack",
+    "Tail",
+    "Iris_Test",
+    "Lash_Overlay_Test",
+    "Sclera_Only_Test",
+    "Iris_Test2",
+    "Lash_Overlay_Test2",
+    "Sclera_Only_Test2",
+    "Face_Static_v4",
+    "ClosedLash_Hi_v5",
+    "ClosedLash_Hi_L_v5",
+    "MouthOpen_v6",
+    "MouthClosed_v6",
+    "JawNeckShadow_v6",
+    "BangsCenterShadow_v6",
+    "BangsSideShadow_ViewerRight_v6",
+    "BangsSideShadow_ViewerLeft_v6",
+    "Brow_ViewerRight_v6",
+    "Brow_ViewerLeft_v6"
+  ],
+  "parameterCount": 28,
+  "shadows": [
+    {
+      "id": "BangsCenterShadow_v6",
+      "opacity": 0.3999999761581421,
+      "drawOrder": 500,
+      "masks": [
+        "Face_Static_v4"
+      ]
+    },
+    {
+      "id": "JawNeckShadow_v6",
+      "opacity": 0.3499999940395355,
+      "drawOrder": 500,
+      "masks": [
+        "BodyCore"
+      ]
+    }
+  ],
+  "combinations": 3645,
+  "gazeCombinations": 6075,
+  "browCombinations": 177147,
+  "smileCombinations": 19683,
+  "blink": [
+    {
+      "eye": "ParamEyeLOpen",
+      "value": 0,
+      "drawables": [
+        {
+          "id": "Iris_Test",
+          "opacity": 0
+        },
+        {
+          "id": "Lash_Overlay_Test",
+          "opacity": 0
+        },
+        {
+          "id": "Sclera_Only_Test",
+          "opacity": 0
+        },
+        {
+          "id": "Iris_Test2",
+          "opacity": 1
+        },
+        {
+          "id": "Lash_Overlay_Test2",
+          "opacity": 1
+        },
+        {
+          "id": "Sclera_Only_Test2",
+          "opacity": 1
+        },
+        {
+          "id": "ClosedLash_Hi_v5",
+          "opacity": 0
+        },
+        {
+          "id": "ClosedLash_Hi_L_v5",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "eye": "ParamEyeLOpen",
+      "value": 0.25,
+      "drawables": [
+        {
+          "id": "Iris_Test",
+          "opacity": 1
+        },
+        {
+          "id": "Lash_Overlay_Test",
+          "opacity": 0.5
+        },
+        {
+          "id": "Sclera_Only_Test",
+          "opacity": 0.5
+        },
+        {
+          "id": "Iris_Test2",
+          "opacity": 1
+        },
+        {
+          "id": "Lash_Overlay_Test2",
+          "opacity": 1
+        },
+        {
+          "id": "Sclera_Only_Test2",
+          "opacity": 1
+        },
+        {
+          "id": "ClosedLash_Hi_v5",
+          "opacity": 0
+        },
+        {
+          "id": "ClosedLash_Hi_L_v5",
+          "opacity": 0.5
+        }
+      ]
+    },
+    {
+      "eye": "ParamEyeLOpen",
+      "value": 0.5,
+      "drawables": [
+        {
+          "id": "Iris_Test",
+          "opacity": 1
+        },
+        {
+          "id": "Lash_Overlay_Test",
+          "opacity": 1
+        },
+        {
+          "id": "Sclera_Only_Test",
+          "opacity": 1
+        },
+        {
+          "id": "Iris_Test2",
+          "opacity": 1
+        },
+        {
+          "id": "Lash_Overlay_Test2",
+          "opacity": 1
+        },
+        {
+          "id": "Sclera_Only_Test2",
+          "opacity": 1
+        },
+        {
+          "id": "ClosedLash_Hi_v5",
+          "opacity": 0
+        },
+        {
+          "id": "ClosedLash_Hi_L_v5",
+          "opacity": 0
+        }
+      ]
+    },
+    {
+      "eye": "ParamEyeLOpen",
+      "value": 0.75,
+      "drawables": [
+        {
+          "id": "Iris_Test",
+          "opacity": 1
+        },
+        {
+          "id": "Lash_Overlay_Test",
+          "opacity": 1
+        },
+        {
+          "id": "Sclera_Only_Test",
+          "opacity": 1
+        },
+        {
+          "id": "Iris_Test2",
+          "opacity": 1
+        },
+        {
+          "id": "Lash_Overlay_Test2",
+          "opacity": 1
+        },
+        {
+          "id": "Sclera_Only_Test2",
+          "opacity": 1
+        },
+        {
+          "id": "ClosedLash_Hi_v5",
+          "opacity": 0
+        },
+        {
+          "id": "ClosedLash_Hi_L_v5",
+          "opacity": 0
+        }
+      ]
+    },
+    {
+      "eye": "ParamEyeLOpen",
+      "value": 1,
+      "drawables": [
+        {
+          "id": "Iris_Test",
+          "opacity": 1
+        },
+        {
+          "id": "Lash_Overlay_Test",
+          "opacity": 1
+        },
+        {
+          "id": "Sclera_Only_Test",
+          "opacity": 1
+        },
+        {
+          "id": "Iris_Test2",
+          "opacity": 1
+        },
+        {
+          "id": "Lash_Overlay_Test2",
+          "opacity": 1
+        },
+        {
+          "id": "Sclera_Only_Test2",
+          "opacity": 1
+        },
+        {
+          "id": "ClosedLash_Hi_v5",
+          "opacity": 0
+        },
+        {
+          "id": "ClosedLash_Hi_L_v5",
+          "opacity": 0
+        }
+      ]
+    },
+    {
+      "eye": "ParamEyeROpen",
+      "value": 0,
+      "drawables": [
+        {
+          "id": "Iris_Test",
+          "opacity": 1
+        },
+        {
+          "id": "Lash_Overlay_Test",
+          "opacity": 1
+        },
+        {
+          "id": "Sclera_Only_Test",
+          "opacity": 1
+        },
+        {
+          "id": "Iris_Test2",
+          "opacity": 0
+        },
+        {
+          "id": "Lash_Overlay_Test2",
+          "opacity": 0
+        },
+        {
+          "id": "Sclera_Only_Test2",
+          "opacity": 0
+        },
+        {
+          "id": "ClosedLash_Hi_v5",
+          "opacity": 1
+        },
+        {
+          "id": "ClosedLash_Hi_L_v5",
+          "opacity": 0
+        }
+      ]
+    },
+    {
+      "eye": "ParamEyeROpen",
+      "value": 0.25,
+      "drawables": [
+        {
+          "id": "Iris_Test",
+          "opacity": 1
+        },
+        {
+          "id": "Lash_Overlay_Test",
+          "opacity": 1
+        },
+        {
+          "id": "Sclera_Only_Test",
+          "opacity": 1
+        },
+        {
+          "id": "Iris_Test2",
+          "opacity": 1
+        },
+        {
+          "id": "Lash_Overlay_Test2",
+          "opacity": 0.5
+        },
+        {
+          "id": "Sclera_Only_Test2",
+          "opacity": 0.5
+        },
+        {
+          "id": "ClosedLash_Hi_v5",
+          "opacity": 0.5
+        },
+        {
+          "id": "ClosedLash_Hi_L_v5",
+          "opacity": 0
+        }
+      ]
+    },
+    {
+      "eye": "ParamEyeROpen",
+      "value": 0.5,
+      "drawables": [
+        {
+          "id": "Iris_Test",
+          "opacity": 1
+        },
+        {
+          "id": "Lash_Overlay_Test",
+          "opacity": 1
+        },
+        {
+          "id": "Sclera_Only_Test",
+          "opacity": 1
+        },
+        {
+          "id": "Iris_Test2",
+          "opacity": 1
+        },
+        {
+          "id": "Lash_Overlay_Test2",
+          "opacity": 1
+        },
+        {
+          "id": "Sclera_Only_Test2",
+          "opacity": 1
+        },
+        {
+          "id": "ClosedLash_Hi_v5",
+          "opacity": 0
+        },
+        {
+          "id": "ClosedLash_Hi_L_v5",
+          "opacity": 0
+        }
+      ]
+    },
+    {
+      "eye": "ParamEyeROpen",
+      "value": 0.75,
+      "drawables": [
+        {
+          "id": "Iris_Test",
+          "opacity": 1
+        },
+        {
+          "id": "Lash_Overlay_Test",
+          "opacity": 1
+        },
+        {
+          "id": "Sclera_Only_Test",
+          "opacity": 1
+        },
+        {
+          "id": "Iris_Test2",
+          "opacity": 1
+        },
+        {
+          "id": "Lash_Overlay_Test2",
+          "opacity": 1
+        },
+        {
+          "id": "Sclera_Only_Test2",
+          "opacity": 1
+        },
+        {
+          "id": "ClosedLash_Hi_v5",
+          "opacity": 0
+        },
+        {
+          "id": "ClosedLash_Hi_L_v5",
+          "opacity": 0
+        }
+      ]
+    },
+    {
+      "eye": "ParamEyeROpen",
+      "value": 1,
+      "drawables": [
+        {
+          "id": "Iris_Test",
+          "opacity": 1
+        },
+        {
+          "id": "Lash_Overlay_Test",
+          "opacity": 1
+        },
+        {
+          "id": "Sclera_Only_Test",
+          "opacity": 1
+        },
+        {
+          "id": "Iris_Test2",
+          "opacity": 1
+        },
+        {
+          "id": "Lash_Overlay_Test2",
+          "opacity": 1
+        },
+        {
+          "id": "Sclera_Only_Test2",
+          "opacity": 1
+        },
+        {
+          "id": "ClosedLash_Hi_v5",
+          "opacity": 0
+        },
+        {
+          "id": "ClosedLash_Hi_L_v5",
+          "opacity": 0
+        }
+      ]
+    }
+  ],
+  "files": [
+    "whale-girl-v6-closed-arc-wip.moc3",
+    "whale-girl-v6-closed-arc-wip.2048/texture_00.png",
+    "whale-girl-v6-closed-arc-wip.physics3.json",
+    "whale-girl-v6-closed-arc-wip.cdi3.json"
+  ]
+}

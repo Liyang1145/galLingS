@@ -25,7 +25,7 @@ secret_patterns = [
     re.compile(rb'AKIA[0-9A-Z]{16}'),
     re.compile(rb'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----'),
 ]
-private_dirs = {'.git', '.venv', '__pycache__', '.pytest_cache', 'saves', 'test-saves'}
+private_dirs = {'.git', '.venv', '__pycache__', '.pytest_cache', 'saves', 'test-saves', '.userdata'}
 text_ext = {'.md','.txt','.log','.json','.jsonl','.yaml','.yml','.toml','.cfg','.ini',
             '.py','.rpy','.js','.mjs','.cjs','.ts','.html','.css','.bat','.ps1','.xml',
             '.csv','.sh','.rst','.gitignore','.gitattributes','.license'}

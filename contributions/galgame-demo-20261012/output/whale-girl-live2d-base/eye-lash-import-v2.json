@@ -1,10 +1,10 @@
 {
   "width": 1280,
   "height": 1280,
-  "output": "./output/whale-girl-live2d-base/eye-lash-import-v2.psd",
+  "output": "C:/Users/huang/Desktop/GALgame demo/output/whale-girl-live2d-base/eye-lash-import-v2.psd",
   "layers": [
     {
-      "file": "./output/whale-girl-live2d-base/layers/eyelash-overlay-candidate-v2.png",
+      "file": "C:/Users/huang/Desktop/GALgame demo/output/whale-girl-live2d-base/layers/eyelash-overlay-candidate-v2.png",
       "name": "Lash_Overlay_Test"
     }
   ]

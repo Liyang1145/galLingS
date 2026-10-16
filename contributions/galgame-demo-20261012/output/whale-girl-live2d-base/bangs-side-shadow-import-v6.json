@@ -1,0 +1,31 @@
+{
+  "width": 1280,
+  "layers": [
+    {
+      "crop": {
+        "width": 100,
+        "left": 390,
+        "top": 690,
+        "height": 210
+      },
+      "name": "BangsSideShadow_ViewerLeft_v6",
+      "left": 200,
+      "top": 400,
+      "file": "C:/Users/huang/Desktop/GALgame demo/output/whale-girl-live2d-base/layers/bangs-cast-shadow-thin-candidate-v6.png"
+    },
+    {
+      "crop": {
+        "width": 110,
+        "left": 780,
+        "top": 640,
+        "height": 260
+      },
+      "name": "BangsSideShadow_ViewerRight_v6",
+      "left": 1000,
+      "top": 350,
+      "file": "C:/Users/huang/Desktop/GALgame demo/output/whale-girl-live2d-base/layers/bangs-cast-shadow-thin-candidate-v6.png"
+    }
+  ],
+  "height": 1280,
+  "output": "C:/Users/huang/Desktop/GALgame demo/output/whale-girl-live2d-base/bangs-side-shadow-import-v6.psd"
+}

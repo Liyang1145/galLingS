@@ -1,0 +1,19 @@
+{
+  "output": "C:/Users/huang/Desktop/GALgame demo/output/whale-girl-live2d-base/jaw-neck-shadow-dark-replacement-v6.psd",
+  "width": 1280,
+  "layers": [
+    {
+      "name": "JawNeckShadow_v6",
+      "file": "C:/Users/huang/Desktop/GALgame demo/output/whale-girl-live2d-base/layers/jaw-neck-shadow-dark-v6.png",
+      "crop": {
+        "width": 740,
+        "top": 510,
+        "height": 300,
+        "left": 260
+      },
+      "top": 510,
+      "left": 260
+    }
+  ],
+  "height": 1280
+}

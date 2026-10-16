@@ -1,0 +1,2061 @@
+{
+  "modelFile": "C:\\Users\\huang\\Desktop\\GALgame demo\\output\\whale-girl-live2d-base\\runtime-test-v6-opaque-closed-stroke-wip\\whale-girl-v6-opaque-closed-stroke-wip.model3.json",
+  "testedAt": "2026-10-14T06:26:57.464Z",
+  "scope": "Native single parameter endpoint displacement and Breath x BodyZ combinations. BodyCore support region is the lowest 15 percent of default mesh vertex heights; these may include transparent geometry and do not prove painted-foot stability, seam quality, or physics.",
+  "parameters": [
+    {
+      "id": "ParamBreath",
+      "min": 0,
+      "max": 1,
+      "default": 0
+    },
+    {
+      "id": "ParamBodyAngleX",
+      "min": -10,
+      "max": 10,
+      "default": 0
+    },
+    {
+      "id": "ParamBodyAngleY",
+      "min": -10,
+      "max": 10,
+      "default": 0
+    },
+    {
+      "id": "ParamBodyAngleZ",
+      "min": -10,
+      "max": 10,
+      "default": 0
+    }
+  ],
+  "supportVertices": [
+    9,
+    10,
+    11,
+    12,
+    30,
+    31,
+    32
+  ],
+  "endpointRows": [
+    {
+      "values": {
+        "ParamBreath": 0
+      },
+      "affected": [
+        {
+          "id": "BodyCore",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "Coverup",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "ArmL",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "ArmR",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "Face_Static_v4",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "HairCap",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "HairBack",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "Tail",
+          "maxDeltaModelPixels": 0
+        }
+      ],
+      "supportMaxDeltaModelPixels": 0,
+      "support": [
+        {
+          "vertex": 9,
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "vertex": 10,
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "vertex": 11,
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "vertex": 12,
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "vertex": 30,
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "vertex": 31,
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "vertex": 32,
+          "dx": 0,
+          "dy": 0
+        }
+      ]
+    },
+    {
+      "values": {
+        "ParamBreath": 1
+      },
+      "affected": [
+        {
+          "id": "BodyCore",
+          "maxDeltaModelPixels": 7.433435070531222
+        },
+        {
+          "id": "Coverup",
+          "maxDeltaModelPixels": 7.290608084858107
+        },
+        {
+          "id": "ArmL",
+          "maxDeltaModelPixels": 7.218621763209159
+        },
+        {
+          "id": "ArmR",
+          "maxDeltaModelPixels": 7.388939996705968
+        },
+        {
+          "id": "Face_Static_v4",
+          "maxDeltaModelPixels": 2.9170789471956384
+        },
+        {
+          "id": "HairCap",
+          "maxDeltaModelPixels": 3.0102646945843587
+        },
+        {
+          "id": "HairBack",
+          "maxDeltaModelPixels": 3.158070843562015
+        },
+        {
+          "id": "Tail",
+          "maxDeltaModelPixels": 1.3669328819688562
+        }
+      ],
+      "supportMaxDeltaModelPixels": 0.0002499136253991577,
+      "support": [
+        {
+          "vertex": 9,
+          "dx": 0.00005340576171875,
+          "dy": 0.000244140625
+        },
+        {
+          "vertex": 10,
+          "dx": 0.000026702880859375,
+          "dy": 0.00006103515625
+        },
+        {
+          "vertex": 11,
+          "dx": 0.00003814697265625,
+          "dy": 0
+        },
+        {
+          "vertex": 12,
+          "dx": 0.00003814697265625,
+          "dy": -0.0001220703125
+        },
+        {
+          "vertex": 30,
+          "dx": 0.000049591064453125,
+          "dy": 0.0001220703125
+        },
+        {
+          "vertex": 31,
+          "dx": 0.00005340576171875,
+          "dy": 0.0001220703125
+        },
+        {
+          "vertex": 32,
+          "dx": 0.000080108642578125,
+          "dy": 0.00006103515625
+        }
+      ]
+    },
+    {
+      "values": {
+        "ParamBodyAngleX": -10
+      },
+      "affected": [
+        {
+          "id": "BodyCore",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "Coverup",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "ArmL",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "ArmR",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "Face_Static_v4",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "HairCap",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "HairBack",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "Tail",
+          "maxDeltaModelPixels": 0
+        }
+      ],
+      "supportMaxDeltaModelPixels": 0,
+      "support": [
+        {
+          "vertex": 9,
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "vertex": 10,
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "vertex": 11,
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "vertex": 12,
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "vertex": 30,
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "vertex": 31,
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "vertex": 32,
+          "dx": 0,
+          "dy": 0
+        }
+      ]
+    },
+    {
+      "values": {
+        "ParamBodyAngleX": 0
+      },
+      "affected": [
+        {
+          "id": "BodyCore",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "Coverup",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "ArmL",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "ArmR",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "Face_Static_v4",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "HairCap",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "HairBack",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "Tail",
+          "maxDeltaModelPixels": 0
+        }
+      ],
+      "supportMaxDeltaModelPixels": 0,
+      "support": [
+        {
+          "vertex": 9,
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "vertex": 10,
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "vertex": 11,
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "vertex": 12,
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "vertex": 30,
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "vertex": 31,
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "vertex": 32,
+          "dx": 0,
+          "dy": 0
+        }
+      ]
+    },
+    {
+      "values": {
+        "ParamBodyAngleX": 10
+      },
+      "affected": [
+        {
+          "id": "BodyCore",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "Coverup",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "ArmL",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "ArmR",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "Face_Static_v4",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "HairCap",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "HairBack",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "Tail",
+          "maxDeltaModelPixels": 0
+        }
+      ],
+      "supportMaxDeltaModelPixels": 0,
+      "support": [
+        {
+          "vertex": 9,
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "vertex": 10,
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "vertex": 11,
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "vertex": 12,
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "vertex": 30,
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "vertex": 31,
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "vertex": 32,
+          "dx": 0,
+          "dy": 0
+        }
+      ]
+    },
+    {
+      "values": {
+        "ParamBodyAngleY": -10
+      },
+      "affected": [
+        {
+          "id": "BodyCore",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "Coverup",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "ArmL",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "ArmR",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "Face_Static_v4",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "HairCap",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "HairBack",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "Tail",
+          "maxDeltaModelPixels": 0
+        }
+      ],
+      "supportMaxDeltaModelPixels": 0,
+      "support": [
+        {
+          "vertex": 9,
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "vertex": 10,
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "vertex": 11,
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "vertex": 12,
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "vertex": 30,
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "vertex": 31,
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "vertex": 32,
+          "dx": 0,
+          "dy": 0
+        }
+      ]
+    },
+    {
+      "values": {
+        "ParamBodyAngleY": 0
+      },
+      "affected": [
+        {
+          "id": "BodyCore",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "Coverup",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "ArmL",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "ArmR",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "Face_Static_v4",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "HairCap",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "HairBack",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "Tail",
+          "maxDeltaModelPixels": 0
+        }
+      ],
+      "supportMaxDeltaModelPixels": 0,
+      "support": [
+        {
+          "vertex": 9,
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "vertex": 10,
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "vertex": 11,
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "vertex": 12,
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "vertex": 30,
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "vertex": 31,
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "vertex": 32,
+          "dx": 0,
+          "dy": 0
+        }
+      ]
+    },
+    {
+      "values": {
+        "ParamBodyAngleY": 10
+      },
+      "affected": [
+        {
+          "id": "BodyCore",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "Coverup",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "ArmL",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "ArmR",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "Face_Static_v4",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "HairCap",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "HairBack",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "Tail",
+          "maxDeltaModelPixels": 0
+        }
+      ],
+      "supportMaxDeltaModelPixels": 0,
+      "support": [
+        {
+          "vertex": 9,
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "vertex": 10,
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "vertex": 11,
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "vertex": 12,
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "vertex": 30,
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "vertex": 31,
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "vertex": 32,
+          "dx": 0,
+          "dy": 0
+        }
+      ]
+    },
+    {
+      "values": {
+        "ParamBodyAngleZ": -10
+      },
+      "affected": [
+        {
+          "id": "BodyCore",
+          "maxDeltaModelPixels": 19.6980247501341
+        },
+        {
+          "id": "Coverup",
+          "maxDeltaModelPixels": 18.663639068603516
+        },
+        {
+          "id": "ArmL",
+          "maxDeltaModelPixels": 17.113128662136585
+        },
+        {
+          "id": "ArmR",
+          "maxDeltaModelPixels": 17.19328308108177
+        },
+        {
+          "id": "Face_Static_v4",
+          "maxDeltaModelPixels": 23.697424904177094
+        },
+        {
+          "id": "HairCap",
+          "maxDeltaModelPixels": 25.568926518647448
+        },
+        {
+          "id": "HairBack",
+          "maxDeltaModelPixels": 24.208667036282577
+        },
+        {
+          "id": "Tail",
+          "maxDeltaModelPixels": 2.165939335778649
+        }
+      ],
+      "supportMaxDeltaModelPixels": 0.00031280517578125,
+      "support": [
+        {
+          "vertex": 9,
+          "dx": 0.00008392333984375,
+          "dy": 0
+        },
+        {
+          "vertex": 10,
+          "dx": 0.0000705718994140625,
+          "dy": -0.0001220703125
+        },
+        {
+          "vertex": 11,
+          "dx": 0.0000762939453125,
+          "dy": -0.000244140625
+        },
+        {
+          "vertex": 12,
+          "dx": 0.00006866455078125,
+          "dy": -0.00030517578125
+        },
+        {
+          "vertex": 30,
+          "dx": 0.000095367431640625,
+          "dy": -0.0001220703125
+        },
+        {
+          "vertex": 31,
+          "dx": 0.0000934600830078125,
+          "dy": -0.0001220703125
+        },
+        {
+          "vertex": 32,
+          "dx": 0.000118255615234375,
+          "dy": -0.00018310546875
+        }
+      ]
+    },
+    {
+      "values": {
+        "ParamBodyAngleZ": 0
+      },
+      "affected": [
+        {
+          "id": "BodyCore",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "Coverup",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "ArmL",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "ArmR",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "Face_Static_v4",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "HairCap",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "HairBack",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "Tail",
+          "maxDeltaModelPixels": 0
+        }
+      ],
+      "supportMaxDeltaModelPixels": 0,
+      "support": [
+        {
+          "vertex": 9,
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "vertex": 10,
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "vertex": 11,
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "vertex": 12,
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "vertex": 30,
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "vertex": 31,
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "vertex": 32,
+          "dx": 0,
+          "dy": 0
+        }
+      ]
+    },
+    {
+      "values": {
+        "ParamBodyAngleZ": 10
+      },
+      "affected": [
+        {
+          "id": "BodyCore",
+          "maxDeltaModelPixels": 19.698038101574525
+        },
+        {
+          "id": "Coverup",
+          "maxDeltaModelPixels": 18.66366672515869
+        },
+        {
+          "id": "ArmL",
+          "maxDeltaModelPixels": 17.113143920925648
+        },
+        {
+          "id": "ArmR",
+          "maxDeltaModelPixels": 17.193305969265364
+        },
+        {
+          "id": "Face_Static_v4",
+          "maxDeltaModelPixels": 23.69503195495068
+        },
+        {
+          "id": "HairCap",
+          "maxDeltaModelPixels": 25.5843484541242
+        },
+        {
+          "id": "HairBack",
+          "maxDeltaModelPixels": 24.235395137983485
+        },
+        {
+          "id": "Tail",
+          "maxDeltaModelPixels": 2.1660308885128248
+        }
+      ],
+      "supportMaxDeltaModelPixels": 0.00031280517578125,
+      "support": [
+        {
+          "vertex": 9,
+          "dx": 0.00008392333984375,
+          "dy": 0
+        },
+        {
+          "vertex": 10,
+          "dx": 0.0000705718994140625,
+          "dy": -0.0001220703125
+        },
+        {
+          "vertex": 11,
+          "dx": 0.0000762939453125,
+          "dy": -0.000244140625
+        },
+        {
+          "vertex": 12,
+          "dx": 0.00006866455078125,
+          "dy": -0.00030517578125
+        },
+        {
+          "vertex": 30,
+          "dx": 0.000095367431640625,
+          "dy": -0.0001220703125
+        },
+        {
+          "vertex": 31,
+          "dx": 0.0000934600830078125,
+          "dy": -0.0001220703125
+        },
+        {
+          "vertex": 32,
+          "dx": 0.000118255615234375,
+          "dy": -0.00018310546875
+        }
+      ]
+    }
+  ],
+  "combinedRows": [
+    {
+      "values": {
+        "ParamBreath": 0,
+        "ParamBodyAngleZ": -10
+      },
+      "affected": [
+        {
+          "id": "BodyCore",
+          "maxDeltaModelPixels": 19.6980247501341
+        },
+        {
+          "id": "Coverup",
+          "maxDeltaModelPixels": 18.663639068603516
+        },
+        {
+          "id": "ArmL",
+          "maxDeltaModelPixels": 17.113128662136585
+        },
+        {
+          "id": "ArmR",
+          "maxDeltaModelPixels": 17.19328308108177
+        },
+        {
+          "id": "Face_Static_v4",
+          "maxDeltaModelPixels": 23.697424904177094
+        },
+        {
+          "id": "HairCap",
+          "maxDeltaModelPixels": 25.568926518647448
+        },
+        {
+          "id": "HairBack",
+          "maxDeltaModelPixels": 24.208667036282577
+        },
+        {
+          "id": "Tail",
+          "maxDeltaModelPixels": 2.165939335778649
+        }
+      ],
+      "supportMaxDeltaModelPixels": 0.00031280517578125,
+      "support": [
+        {
+          "vertex": 9,
+          "dx": 0.00008392333984375,
+          "dy": 0
+        },
+        {
+          "vertex": 10,
+          "dx": 0.0000705718994140625,
+          "dy": -0.0001220703125
+        },
+        {
+          "vertex": 11,
+          "dx": 0.0000762939453125,
+          "dy": -0.000244140625
+        },
+        {
+          "vertex": 12,
+          "dx": 0.00006866455078125,
+          "dy": -0.00030517578125
+        },
+        {
+          "vertex": 30,
+          "dx": 0.000095367431640625,
+          "dy": -0.0001220703125
+        },
+        {
+          "vertex": 31,
+          "dx": 0.0000934600830078125,
+          "dy": -0.0001220703125
+        },
+        {
+          "vertex": 32,
+          "dx": 0.000118255615234375,
+          "dy": -0.00018310546875
+        }
+      ]
+    },
+    {
+      "values": {
+        "ParamBreath": 0,
+        "ParamBodyAngleZ": 0
+      },
+      "affected": [
+        {
+          "id": "BodyCore",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "Coverup",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "ArmL",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "ArmR",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "Face_Static_v4",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "HairCap",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "HairBack",
+          "maxDeltaModelPixels": 0
+        },
+        {
+          "id": "Tail",
+          "maxDeltaModelPixels": 0
+        }
+      ],
+      "supportMaxDeltaModelPixels": 0,
+      "support": [
+        {
+          "vertex": 9,
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "vertex": 10,
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "vertex": 11,
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "vertex": 12,
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "vertex": 30,
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "vertex": 31,
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "vertex": 32,
+          "dx": 0,
+          "dy": 0
+        }
+      ]
+    },
+    {
+      "values": {
+        "ParamBreath": 0,
+        "ParamBodyAngleZ": 10
+      },
+      "affected": [
+        {
+          "id": "BodyCore",
+          "maxDeltaModelPixels": 19.698038101574525
+        },
+        {
+          "id": "Coverup",
+          "maxDeltaModelPixels": 18.66366672515869
+        },
+        {
+          "id": "ArmL",
+          "maxDeltaModelPixels": 17.113143920925648
+        },
+        {
+          "id": "ArmR",
+          "maxDeltaModelPixels": 17.193305969265364
+        },
+        {
+          "id": "Face_Static_v4",
+          "maxDeltaModelPixels": 23.69503195495068
+        },
+        {
+          "id": "HairCap",
+          "maxDeltaModelPixels": 25.5843484541242
+        },
+        {
+          "id": "HairBack",
+          "maxDeltaModelPixels": 24.235395137983485
+        },
+        {
+          "id": "Tail",
+          "maxDeltaModelPixels": 2.1660308885128248
+        }
+      ],
+      "supportMaxDeltaModelPixels": 0.00031280517578125,
+      "support": [
+        {
+          "vertex": 9,
+          "dx": 0.00008392333984375,
+          "dy": 0
+        },
+        {
+          "vertex": 10,
+          "dx": 0.0000705718994140625,
+          "dy": -0.0001220703125
+        },
+        {
+          "vertex": 11,
+          "dx": 0.0000762939453125,
+          "dy": -0.000244140625
+        },
+        {
+          "vertex": 12,
+          "dx": 0.00006866455078125,
+          "dy": -0.00030517578125
+        },
+        {
+          "vertex": 30,
+          "dx": 0.000095367431640625,
+          "dy": -0.0001220703125
+        },
+        {
+          "vertex": 31,
+          "dx": 0.0000934600830078125,
+          "dy": -0.0001220703125
+        },
+        {
+          "vertex": 32,
+          "dx": 0.000118255615234375,
+          "dy": -0.00018310546875
+        }
+      ]
+    },
+    {
+      "values": {
+        "ParamBreath": 0.25,
+        "ParamBodyAngleZ": -10
+      },
+      "affected": [
+        {
+          "id": "BodyCore",
+          "maxDeltaModelPixels": 19.77314652587088
+        },
+        {
+          "id": "Coverup",
+          "maxDeltaModelPixels": 18.754817449203685
+        },
+        {
+          "id": "ArmL",
+          "maxDeltaModelPixels": 17.053017094471585
+        },
+        {
+          "id": "ArmR",
+          "maxDeltaModelPixels": 17.438430792683434
+        },
+        {
+          "id": "Face_Static_v4",
+          "maxDeltaModelPixels": 23.731075123574648
+        },
+        {
+          "id": "HairCap",
+          "maxDeltaModelPixels": 25.539732121020812
+        },
+        {
+          "id": "HairBack",
+          "maxDeltaModelPixels": 24.17770053714647
+        },
+        {
+          "id": "Tail",
+          "maxDeltaModelPixels": 2.1769269379541485
+        }
+      ],
+      "supportMaxDeltaModelPixels": 0.0003165049516707083,
+      "support": [
+        {
+          "vertex": 9,
+          "dx": 0.00008392333984375,
+          "dy": 0
+        },
+        {
+          "vertex": 10,
+          "dx": 0.0000782012939453125,
+          "dy": -0.0001220703125
+        },
+        {
+          "vertex": 11,
+          "dx": 0.000091552734375,
+          "dy": -0.000244140625
+        },
+        {
+          "vertex": 12,
+          "dx": 0.00008392333984375,
+          "dy": -0.00030517578125
+        },
+        {
+          "vertex": 30,
+          "dx": 0.000110626220703125,
+          "dy": -0.0001220703125
+        },
+        {
+          "vertex": 31,
+          "dx": 0.0001201629638671875,
+          "dy": -0.0001220703125
+        },
+        {
+          "vertex": 32,
+          "dx": 0.000156402587890625,
+          "dy": -0.00018310546875
+        }
+      ]
+    },
+    {
+      "values": {
+        "ParamBreath": 0.25,
+        "ParamBodyAngleZ": 0
+      },
+      "affected": [
+        {
+          "id": "BodyCore",
+          "maxDeltaModelPixels": 1.8583844657334903
+        },
+        {
+          "id": "Coverup",
+          "maxDeltaModelPixels": 1.8227088207622533
+        },
+        {
+          "id": "ArmL",
+          "maxDeltaModelPixels": 1.8046456880345851
+        },
+        {
+          "id": "ArmR",
+          "maxDeltaModelPixels": 1.8472628124148696
+        },
+        {
+          "id": "Face_Static_v4",
+          "maxDeltaModelPixels": 0.7290324124424227
+        },
+        {
+          "id": "HairCap",
+          "maxDeltaModelPixels": 0.7521601282093803
+        },
+        {
+          "id": "HairBack",
+          "maxDeltaModelPixels": 0.7886306459061828
+        },
+        {
+          "id": "Tail",
+          "maxDeltaModelPixels": 0.3417442587816808
+        }
+      ],
+      "supportMaxDeltaModelPixels": 0.00012419754483108296,
+      "support": [
+        {
+          "vertex": 9,
+          "dx": 0,
+          "dy": 0
+        },
+        {
+          "vertex": 10,
+          "dx": 0.00000762939453125,
+          "dy": 0
+        },
+        {
+          "vertex": 11,
+          "dx": 0.0000152587890625,
+          "dy": 0
+        },
+        {
+          "vertex": 12,
+          "dx": 0.00002288818359375,
+          "dy": -0.0001220703125
+        },
+        {
+          "vertex": 30,
+          "dx": 0.000011444091796875,
+          "dy": 0
+        },
+        {
+          "vertex": 31,
+          "dx": 0.00002288818359375,
+          "dy": 0
+        },
+        {
+          "vertex": 32,
+          "dx": 0.00003814697265625,
+          "dy": 0
+        }
+      ]
+    },
+    {
+      "values": {
+        "ParamBreath": 0.25,
+        "ParamBodyAngleZ": 10
+      },
+      "affected": [
+        {
+          "id": "BodyCore",
+          "maxDeltaModelPixels": 19.71365177744734
+        },
+        {
+          "id": "Coverup",
+          "maxDeltaModelPixels": 18.713351978824164
+        },
+        {
+          "id": "ArmL",
+          "maxDeltaModelPixels": 17.321713126415016
+        },
+        {
+          "id": "ArmR",
+          "maxDeltaModelPixels": 17.08684310709945
+        },
+        {
+          "id": "Face_Static_v4",
+          "maxDeltaModelPixels": 23.744897761858788
+        },
+        {
+          "id": "HairCap",
+          "maxDeltaModelPixels": 25.653508950720074
+        },
+        {
+          "id": "HairBack",
+          "maxDeltaModelPixels": 24.3137545253645
+        },
+        {
+          "id": "Tail",
+          "maxDeltaModelPixels": 2.221923169828735
+        }
+      ],
+      "supportMaxDeltaModelPixels": 0.0003165049516707083,
+      "support": [
+        {
+          "vertex": 9,
+          "dx": 0.00008392333984375,
+          "dy": 0
+        },
+        {
+          "vertex": 10,
+          "dx": 0.0000782012939453125,
+          "dy": -0.0001220703125
+        },
+        {
+          "vertex": 11,
+          "dx": 0.000091552734375,
+          "dy": -0.000244140625
+        },
+        {
+          "vertex": 12,
+          "dx": 0.00008392333984375,
+          "dy": -0.00030517578125
+        },
+        {
+          "vertex": 30,
+          "dx": 0.000110626220703125,
+          "dy": -0.0001220703125
+        },
+        {
+          "vertex": 31,
+          "dx": 0.0001201629638671875,
+          "dy": -0.0001220703125
+        },
+        {
+          "vertex": 32,
+          "dx": 0.000156402587890625,
+          "dy": -0.00018310546875
+        }
+      ]
+    },
+    {
+      "values": {
+        "ParamBreath": 0.5,
+        "ParamBodyAngleZ": -10
+      },
+      "affected": [
+        {
+          "id": "BodyCore",
+          "maxDeltaModelPixels": 19.857073339998568
+        },
+        {
+          "id": "Coverup",
+          "maxDeltaModelPixels": 18.86255725720359
+        },
+        {
+          "id": "ArmL",
+          "maxDeltaModelPixels": 17.03143935289853
+        },
+        {
+          "id": "ArmR",
+          "maxDeltaModelPixels": 17.715172166526028
+        },
+        {
+          "id": "Face_Static_v4",
+          "maxDeltaModelPixels": 23.785015263689925
+        },
+        {
+          "id": "HairCap",
+          "maxDeltaModelPixels": 25.53018849379859
+        },
+        {
+          "id": "HairBack",
+          "maxDeltaModelPixels": 24.167963713980207
+        },
+        {
+          "id": "Tail",
+          "maxDeltaModelPixels": 2.24048318439815
+        }
+      ],
+      "supportMaxDeltaModelPixels": 0.00032592787724752543,
+      "support": [
+        {
+          "vertex": 9,
+          "dx": 0.00009918212890625,
+          "dy": 0.0001220703125
+        },
+        {
+          "vertex": 10,
+          "dx": 0.0000896453857421875,
+          "dy": -0.0001220703125
+        },
+        {
+          "vertex": 11,
+          "dx": 0.0001068115234375,
+          "dy": -0.000244140625
+        },
+        {
+          "vertex": 12,
+          "dx": 0.00011444091796875,
+          "dy": -0.00030517578125
+        },
+        {
+          "vertex": 30,
+          "dx": 0.0001220703125,
+          "dy": 0
+        },
+        {
+          "vertex": 31,
+          "dx": 0.0001430511474609375,
+          "dy": -0.0001220703125
+        },
+        {
+          "vertex": 32,
+          "dx": 0.000202178955078125,
+          "dy": -0.00018310546875
+        }
+      ]
+    },
+    {
+      "values": {
+        "ParamBreath": 0.5,
+        "ParamBodyAngleZ": 0
+      },
+      "affected": [
+        {
+          "id": "BodyCore",
+          "maxDeltaModelPixels": 3.7167760662570934
+        },
+        {
+          "id": "Coverup",
+          "maxDeltaModelPixels": 3.645364261413
+        },
+        {
+          "id": "ArmL",
+          "maxDeltaModelPixels": 3.609345380756505
+        },
+        {
+          "id": "ArmR",
+          "maxDeltaModelPixels": 3.6945014070022286
+        },
+        {
+          "id": "Face_Static_v4",
+          "maxDeltaModelPixels": 1.4582445716902606
+        },
+        {
+          "id": "HairCap",
+          "maxDeltaModelPixels": 1.5045615493219522
+        },
+        {
+          "id": "HairBack",
+          "maxDeltaModelPixels": 1.5778095288852183
+        },
+        {
+          "id": "Tail",
+          "maxDeltaModelPixels": 0.6834604779278889
+        }
+      ],
+      "supportMaxDeltaModelPixels": 0.00012789195720092934,
+      "support": [
+        {
+          "vertex": 9,
+          "dx": 0.00000762939453125,
+          "dy": 0.0001220703125
+        },
+        {
+          "vertex": 10,
+          "dx": 0.0000171661376953125,
+          "dy": 0.00006103515625
+        },
+        {
+          "vertex": 11,
+          "dx": 0.000030517578125,
+          "dy": 0
+        },
+        {
+          "vertex": 12,
+          "dx": 0.00003814697265625,
+          "dy": -0.0001220703125
+        },
+        {
+          "vertex": 30,
+          "dx": 0.000026702880859375,
+          "dy": 0.00006103515625
+        },
+        {
+          "vertex": 31,
+          "dx": 0.000049591064453125,
+          "dy": 0
+        },
+        {
+          "vertex": 32,
+          "dx": 0.000087738037109375,
+          "dy": 0
+        }
+      ]
+    },
+    {
+      "values": {
+        "ParamBreath": 0.5,
+        "ParamBodyAngleZ": 10
+      },
+      "affected": [
+        {
+          "id": "BodyCore",
+          "maxDeltaModelPixels": 19.73802554194965
+        },
+        {
+          "id": "Coverup",
+          "maxDeltaModelPixels": 18.77962371430021
+        },
+        {
+          "id": "ArmL",
+          "maxDeltaModelPixels": 17.56521227540428
+        },
+        {
+          "id": "ArmR",
+          "maxDeltaModelPixels": 17.01581539532389
+        },
+        {
+          "id": "Face_Static_v4",
+          "maxDeltaModelPixels": 23.816149904203492
+        },
+        {
+          "id": "HairCap",
+          "maxDeltaModelPixels": 25.742621045659025
+        },
+        {
+          "id": "HairBack",
+          "maxDeltaModelPixels": 24.413204247018502
+        },
+        {
+          "id": "Tail",
+          "maxDeltaModelPixels": 2.3273168909009083
+        }
+      ],
+      "supportMaxDeltaModelPixels": 0.00032592787724752543,
+      "support": [
+        {
+          "vertex": 9,
+          "dx": 0.00009918212890625,
+          "dy": 0.0001220703125
+        },
+        {
+          "vertex": 10,
+          "dx": 0.0000896453857421875,
+          "dy": -0.0001220703125
+        },
+        {
+          "vertex": 11,
+          "dx": 0.0001068115234375,
+          "dy": -0.000244140625
+        },
+        {
+          "vertex": 12,
+          "dx": 0.00011444091796875,
+          "dy": -0.00030517578125
+        },
+        {
+          "vertex": 30,
+          "dx": 0.0001220703125,
+          "dy": 0
+        },
+        {
+          "vertex": 31,
+          "dx": 0.0001430511474609375,
+          "dy": -0.0001220703125
+        },
+        {
+          "vertex": 32,
+          "dx": 0.000202178955078125,
+          "dy": -0.00018310546875
+        }
+      ]
+    },
+    {
+      "values": {
+        "ParamBreath": 0.75,
+        "ParamBodyAngleZ": -10
+      },
+      "affected": [
+        {
+          "id": "BodyCore",
+          "maxDeltaModelPixels": 19.949561855053933
+        },
+        {
+          "id": "Coverup",
+          "maxDeltaModelPixels": 18.986464188397978
+        },
+        {
+          "id": "ArmL",
+          "maxDeltaModelPixels": 17.048710902672372
+        },
+        {
+          "id": "ArmR",
+          "maxDeltaModelPixels": 18.0219439298082
+        },
+        {
+          "id": "Face_Static_v4",
+          "maxDeltaModelPixels": 23.85902261266295
+        },
+        {
+          "id": "HairCap",
+          "maxDeltaModelPixels": 25.56518037039922
+        },
+        {
+          "id": "HairBack",
+          "maxDeltaModelPixels": 24.17941118200045
+        },
+        {
+          "id": "Tail",
+          "maxDeltaModelPixels": 2.3523410461206695
+        }
+      ],
+      "supportMaxDeltaModelPixels": 0.0002696319129497115,
+      "support": [
+        {
+          "vertex": 9,
+          "dx": 0.00011444091796875,
+          "dy": 0.000244140625
+        },
+        {
+          "vertex": 10,
+          "dx": 0.0000972747802734375,
+          "dy": -0.00006103515625
+        },
+        {
+          "vertex": 11,
+          "dx": 0.0001068115234375,
+          "dy": -0.000244140625
+        },
+        {
+          "vertex": 12,
+          "dx": 0.00011444091796875,
+          "dy": -0.000244140625
+        },
+        {
+          "vertex": 30,
+          "dx": 0.000141143798828125,
+          "dy": 0.00006103515625
+        },
+        {
+          "vertex": 31,
+          "dx": 0.0001468658447265625,
+          "dy": -0.00006103515625
+        },
+        {
+          "vertex": 32,
+          "dx": 0.0001983642578125,
+          "dy": -0.0001220703125
+        }
+      ]
+    },
+    {
+      "values": {
+        "ParamBreath": 0.75,
+        "ParamBodyAngleZ": 0
+      },
+      "affected": [
+        {
+          "id": "BodyCore",
+          "maxDeltaModelPixels": 5.575137687911045
+        },
+        {
+          "id": "Coverup",
+          "maxDeltaModelPixels": 5.468019080538679
+        },
+        {
+          "id": "ArmL",
+          "maxDeltaModelPixels": 5.414008432946997
+        },
+        {
+          "id": "ArmR",
+          "maxDeltaModelPixels": 5.541738563486671
+        },
+        {
+          "id": "Face_Static_v4",
+          "maxDeltaModelPixels": 2.187512235947856
+        },
+        {
+          "id": "HairCap",
+          "maxDeltaModelPixels": 2.2572029596613725
+        },
+        {
+          "id": "HairBack",
+          "maxDeltaModelPixels": 2.367680024890397
+        },
+        {
+          "id": "Tail",
+          "maxDeltaModelPixels": 1.0251853244687144
+        }
+      ],
+      "supportMaxDeltaModelPixels": 0.0002499136253991577,
+      "support": [
+        {
+          "vertex": 9,
+          "dx": 0.00005340576171875,
+          "dy": 0.000244140625
+        },
+        {
+          "vertex": 10,
+          "dx": 0.000026702880859375,
+          "dy": 0.00006103515625
+        },
+        {
+          "vertex": 11,
+          "dx": 0.00003814697265625,
+          "dy": 0
+        },
+        {
+          "vertex": 12,
+          "dx": 0.00003814697265625,
+          "dy": -0.0001220703125
+        },
+        {
+          "vertex": 30,
+          "dx": 0.000049591064453125,
+          "dy": 0.0001220703125
+        },
+        {
+          "vertex": 31,
+          "dx": 0.00005340576171875,
+          "dy": 0.0001220703125
+        },
+        {
+          "vertex": 32,
+          "dx": 0.000080108642578125,
+          "dy": 0.00006103515625
+        }
+      ]
+    },
+    {
+      "values": {
+        "ParamBreath": 0.75,
+        "ParamBodyAngleZ": 10
+      },
+      "affected": [
+        {
+          "id": "BodyCore",
+          "maxDeltaModelPixels": 19.771159314539435
+        },
+        {
+          "id": "Coverup",
+          "maxDeltaModelPixels": 18.862286050712637
+        },
+        {
+          "id": "ArmL",
+          "maxDeltaModelPixels": 17.842081193121448
+        },
+        {
+          "id": "ArmR",
+          "maxDeltaModelPixels": 16.98075465117848
+        },
+        {
+          "id": "Face_Static_v4",
+          "maxDeltaModelPixels": 23.908648292163303
+        },
+        {
+          "id": "HairCap",
+          "maxDeltaModelPixels": 25.851530321541567
+        },
+        {
+          "id": "HairBack",
+          "maxDeltaModelPixels": 24.53356546174057
+        },
+        {
+          "id": "Tail",
+          "maxDeltaModelPixels": 2.477139554216364
+        }
+      ],
+      "supportMaxDeltaModelPixels": 0.0002696319129497115,
+      "support": [
+        {
+          "vertex": 9,
+          "dx": 0.00011444091796875,
+          "dy": 0.000244140625
+        },
+        {
+          "vertex": 10,
+          "dx": 0.0000972747802734375,
+          "dy": -0.00006103515625
+        },
+        {
+          "vertex": 11,
+          "dx": 0.0001068115234375,
+          "dy": -0.000244140625
+        },
+        {
+          "vertex": 12,
+          "dx": 0.00011444091796875,
+          "dy": -0.000244140625
+        },
+        {
+          "vertex": 30,
+          "dx": 0.000141143798828125,
+          "dy": 0.00006103515625
+        },
+        {
+          "vertex": 31,
+          "dx": 0.0001468658447265625,
+          "dy": -0.00006103515625
+        },
+        {
+          "vertex": 32,
+          "dx": 0.0001983642578125,
+          "dy": -0.0001220703125
+        }
+      ]
+    },
+    {
+      "values": {
+        "ParamBreath": 1,
+        "ParamBodyAngleZ": -10
+      },
+      "affected": [
+        {
+          "id": "BodyCore",
+          "maxDeltaModelPixels": 20.050500876824902
+        },
+        {
+          "id": "Coverup",
+          "maxDeltaModelPixels": 19.126200734021307
+        },
+        {
+          "id": "ArmL",
+          "maxDeltaModelPixels": 17.10451961639721
+        },
+        {
+          "id": "ArmR",
+          "maxDeltaModelPixels": 18.35730055099663
+        },
+        {
+          "id": "Face_Static_v4",
+          "maxDeltaModelPixels": 23.952942556141053
+        },
+        {
+          "id": "HairCap",
+          "maxDeltaModelPixels": 25.620869449028625
+        },
+        {
+          "id": "HairBack",
+          "maxDeltaModelPixels": 24.21205586212369
+        },
+        {
+          "id": "Tail",
+          "maxDeltaModelPixels": 2.506072296009902
+        }
+      ],
+      "supportMaxDeltaModelPixels": 0.0002696319129497115,
+      "support": [
+        {
+          "vertex": 9,
+          "dx": 0.00011444091796875,
+          "dy": 0.000244140625
+        },
+        {
+          "vertex": 10,
+          "dx": 0.0000972747802734375,
+          "dy": -0.00006103515625
+        },
+        {
+          "vertex": 11,
+          "dx": 0.0001068115234375,
+          "dy": -0.000244140625
+        },
+        {
+          "vertex": 12,
+          "dx": 0.00011444091796875,
+          "dy": -0.000244140625
+        },
+        {
+          "vertex": 30,
+          "dx": 0.000141143798828125,
+          "dy": 0.00006103515625
+        },
+        {
+          "vertex": 31,
+          "dx": 0.0001468658447265625,
+          "dy": -0.00006103515625
+        },
+        {
+          "vertex": 32,
+          "dx": 0.0001983642578125,
+          "dy": -0.0001220703125
+        }
+      ]
+    },
+    {
+      "values": {
+        "ParamBreath": 1,
+        "ParamBodyAngleZ": 0
+      },
+      "affected": [
+        {
+          "id": "BodyCore",
+          "maxDeltaModelPixels": 7.433435070531222
+        },
+        {
+          "id": "Coverup",
+          "maxDeltaModelPixels": 7.290608084858107
+        },
+        {
+          "id": "ArmL",
+          "maxDeltaModelPixels": 7.218621763209159
+        },
+        {
+          "id": "ArmR",
+          "maxDeltaModelPixels": 7.388939996705968
+        },
+        {
+          "id": "Face_Static_v4",
+          "maxDeltaModelPixels": 2.9170789471956384
+        },
+        {
+          "id": "HairCap",
+          "maxDeltaModelPixels": 3.0102646945843587
+        },
+        {
+          "id": "HairBack",
+          "maxDeltaModelPixels": 3.158070843562015
+        },
+        {
+          "id": "Tail",
+          "maxDeltaModelPixels": 1.3669328819688562
+        }
+      ],
+      "supportMaxDeltaModelPixels": 0.0002499136253991577,
+      "support": [
+        {
+          "vertex": 9,
+          "dx": 0.00005340576171875,
+          "dy": 0.000244140625
+        },
+        {
+          "vertex": 10,
+          "dx": 0.000026702880859375,
+          "dy": 0.00006103515625
+        },
+        {
+          "vertex": 11,
+          "dx": 0.00003814697265625,
+          "dy": 0
+        },
+        {
+          "vertex": 12,
+          "dx": 0.00003814697265625,
+          "dy": -0.0001220703125
+        },
+        {
+          "vertex": 30,
+          "dx": 0.000049591064453125,
+          "dy": 0.0001220703125
+        },
+        {
+          "vertex": 31,
+          "dx": 0.00005340576171875,
+          "dy": 0.0001220703125
+        },
+        {
+          "vertex": 32,
+          "dx": 0.000080108642578125,
+          "dy": 0.00006103515625
+        }
+      ]
+    },
+    {
+      "values": {
+        "ParamBreath": 1,
+        "ParamBodyAngleZ": 10
+      },
+      "affected": [
+        {
+          "id": "BodyCore",
+          "maxDeltaModelPixels": 19.813031966604903
+        },
+        {
+          "id": "Coverup",
+          "maxDeltaModelPixels": 18.961210674064382
+        },
+        {
+          "id": "ArmL",
+          "maxDeltaModelPixels": 18.15093944382867
+        },
+        {
+          "id": "ArmR",
+          "maxDeltaModelPixels": 16.981888882838597
+        },
+        {
+          "id": "Face_Static_v4",
+          "maxDeltaModelPixels": 24.022152901421503
+        },
+        {
+          "id": "HairCap",
+          "maxDeltaModelPixels": 25.979977445395043
+        },
+        {
+          "id": "HairBack",
+          "maxDeltaModelPixels": 24.674519968172916
+        },
+        {
+          "id": "Tail",
+          "maxDeltaModelPixels": 2.6710989882459515
+        }
+      ],
+      "supportMaxDeltaModelPixels": 0.0002696319129497115,
+      "support": [
+        {
+          "vertex": 9,
+          "dx": 0.00011444091796875,
+          "dy": 0.000244140625
+        },
+        {
+          "vertex": 10,
+          "dx": 0.0000972747802734375,
+          "dy": -0.00006103515625
+        },
+        {
+          "vertex": 11,
+          "dx": 0.0001068115234375,
+          "dy": -0.000244140625
+        },
+        {
+          "vertex": 12,
+          "dx": 0.00011444091796875,
+          "dy": -0.000244140625
+        },
+        {
+          "vertex": 30,
+          "dx": 0.000141143798828125,
+          "dy": 0.00006103515625
+        },
+        {
+          "vertex": 31,
+          "dx": 0.0001468658447265625,
+          "dy": -0.00006103515625
+        },
+        {
+          "vertex": 32,
+          "dx": 0.0001983642578125,
+          "dy": -0.0001220703125
+        }
+      ]
+    }
+  ]
+}

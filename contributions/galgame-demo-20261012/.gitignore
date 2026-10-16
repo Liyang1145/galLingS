@@ -7,3 +7,4 @@ dist/
 **/log.txt
 **/traceback.txt
 **/errors.txt
+**/.userdata/

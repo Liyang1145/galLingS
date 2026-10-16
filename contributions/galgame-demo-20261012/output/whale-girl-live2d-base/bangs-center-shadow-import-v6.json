@@ -1,0 +1,19 @@
+{
+  "height": 1536,
+  "width": 1024,
+  "output": "C:/Users/huang/Desktop/GALgame demo/output/whale-girl-live2d-base/bangs-center-shadow-import-v6.psd",
+  "layers": [
+    {
+      "left": 450,
+      "top": 200,
+      "crop": {
+        "height": 150,
+        "top": 810,
+        "left": 490,
+        "width": 280
+      },
+      "name": "BangsCenterShadow_v6",
+      "file": "C:/Users/huang/Desktop/GALgame demo/output/whale-girl-live2d-base/layers/bangs-cast-shadow-thin-candidate-v6.png"
+    }
+  ]
+}

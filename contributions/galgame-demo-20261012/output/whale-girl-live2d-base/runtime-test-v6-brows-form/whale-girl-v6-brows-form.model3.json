@@ -1,0 +1,28 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "whale-girl-v6-brows-form.moc3",
+		"Textures": [
+			"whale-girl-v6-brows-form.2048/texture_00.png"
+		],
+		"Physics": "whale-girl-v6-brows-form.physics3.json",
+		"DisplayInfo": "whale-girl-v6-brows-form.cdi3.json"
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": [
+				"ParamEyeLOpen",
+				"ParamEyeROpen"
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Name": "LipSync",
+			"Ids": [
+				"ParamMouthOpenY"
+			]
+		}
+	]
+}

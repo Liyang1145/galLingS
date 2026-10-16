@@ -115,7 +115,7 @@ python tools/build_chapter.py
 1. **场景背景**：
    - 存放在 `Seabreeze/game/images/scenes/`。
    - 运行时标准显示分辨率为 1280×720，高分辨率原图会自动通过 `Transform` 缩放到 1280×720。
-   - 场景风格与构图规范请详阅 [SCENES.md](file:///<USERPROFILE>/Desktop/GALgame%20demo/SCENES.md)。
+   - 场景风格与构图规范请详阅 [SCENES.md](file:///c:/Users/huang/Desktop/GALgame%20demo/SCENES.md)。
 2. **角色立绘（鲸鱼小姐）**：
    - 规格：透明 PNG 格式，画面需完整保留下半身的鲸尾。
    - 当前在 `core.rpy` 中通过 `define show_portrait_placeholder = False` 暂时隐藏了纯文字占位框。

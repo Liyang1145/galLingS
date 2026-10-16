@@ -2,7 +2,7 @@ import {createRequire} from 'node:module';
 import {readdir,writeFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
-const sharp=createRequire('file:///<USERPROFILE>/Desktop/galagent/package.json')('sharp');
+const sharp=createRequire('file:///C:/Users/huang/Desktop/galagent/package.json')('sharp');
 const dir=new URL('./layers/',import.meta.url);
 const assets=[];
 for(const file of await readdir(dir)){

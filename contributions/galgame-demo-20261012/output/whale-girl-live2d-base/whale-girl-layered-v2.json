@@ -4,7 +4,7 @@
   "layers": [
     {
       "name": "Tail",
-      "file": "./output/whale-girl-live2d-base/layers/tail-draft-v1.png",
+      "file": "C:/Users/huang/Desktop/GALgame demo/output/whale-girl-live2d-base/layers/tail-draft-v1.png",
       "left": 560,
       "top": 755,
       "crop": {
@@ -17,7 +17,7 @@
     },
     {
       "name": "HairBack",
-      "file": "./output/whale-girl-live2d-base/layers/rear-hair-draft-v1.png",
+      "file": "C:/Users/huang/Desktop/GALgame demo/output/whale-girl-live2d-base/layers/rear-hair-draft-v1.png",
       "left": 205,
       "top": 75,
       "crop": {
@@ -30,7 +30,7 @@
     },
     {
       "name": "ArmR",
-      "file": "./output/whale-girl-live2d-base/layers/arm-viewer-left-draft-v1.png",
+      "file": "C:/Users/huang/Desktop/GALgame demo/output/whale-girl-live2d-base/layers/arm-viewer-left-draft-v1.png",
       "left": 224,
       "top": 332,
       "crop": {
@@ -43,7 +43,7 @@
     },
     {
       "name": "ArmL",
-      "file": "./output/whale-girl-live2d-base/layers/arm-viewer-right-draft-v1.png",
+      "file": "C:/Users/huang/Desktop/GALgame demo/output/whale-girl-live2d-base/layers/arm-viewer-right-draft-v1.png",
       "left": 620,
       "top": 332,
       "crop": {
@@ -56,7 +56,7 @@
     },
     {
       "name": "BodyCore",
-      "file": "./output/whale-girl-live2d-base/layers/body-core-draft-v1.png",
+      "file": "C:/Users/huang/Desktop/GALgame demo/output/whale-girl-live2d-base/layers/body-core-draft-v1.png",
       "left": 365,
       "top": 260,
       "crop": {
@@ -69,7 +69,7 @@
     },
     {
       "name": "Coverup",
-      "file": "./output/whale-girl-live2d-base/layers/white-coverup-draft-v2.png",
+      "file": "C:/Users/huang/Desktop/GALgame demo/output/whale-girl-live2d-base/layers/white-coverup-draft-v2.png",
       "left": 302,
       "top": 292,
       "crop": {
@@ -82,7 +82,7 @@
     },
     {
       "name": "Face",
-      "file": "./output/whale-girl-live2d-base/layers/face-base-draft-v2.png",
+      "file": "C:/Users/huang/Desktop/GALgame demo/output/whale-girl-live2d-base/layers/face-base-draft-v2.png",
       "left": 418,
       "top": 78,
       "crop": {
@@ -95,7 +95,7 @@
     },
     {
       "name": "EyeR_Open",
-      "file": "./output/whale-girl-live2d-base/layers/eye-viewer-left-draft-v1.png",
+      "file": "C:/Users/huang/Desktop/GALgame demo/output/whale-girl-live2d-base/layers/eye-viewer-left-draft-v1.png",
       "left": 435,
       "top": 226,
       "crop": {
@@ -109,7 +109,7 @@
     },
     {
       "name": "EyeL_Open",
-      "file": "./output/whale-girl-live2d-base/layers/eye-viewer-right-draft-v1.png",
+      "file": "C:/Users/huang/Desktop/GALgame demo/output/whale-girl-live2d-base/layers/eye-viewer-right-draft-v1.png",
       "left": 516,
       "top": 226,
       "crop": {
@@ -123,7 +123,7 @@
     },
     {
       "name": "EyeR_Closed",
-      "file": "./output/whale-girl-live2d-base/layers/closed-eye-viewer-left-draft-v1.png",
+      "file": "C:/Users/huang/Desktop/GALgame demo/output/whale-girl-live2d-base/layers/closed-eye-viewer-left-draft-v1.png",
       "left": 435,
       "top": 246,
       "crop": {
@@ -138,7 +138,7 @@
     },
     {
       "name": "EyeL_Closed",
-      "file": "./output/whale-girl-live2d-base/layers/closed-eye-viewer-right-draft-v1.png",
+      "file": "C:/Users/huang/Desktop/GALgame demo/output/whale-girl-live2d-base/layers/closed-eye-viewer-right-draft-v1.png",
       "left": 516,
       "top": 246,
       "crop": {
@@ -153,7 +153,7 @@
     },
     {
       "name": "Eyebrows",
-      "file": "./output/whale-girl-live2d-base/layers/eyebrows-draft-v1.png",
+      "file": "C:/Users/huang/Desktop/GALgame demo/output/whale-girl-live2d-base/layers/eyebrows-draft-v1.png",
       "left": 434,
       "top": 211,
       "crop": {
@@ -167,7 +167,7 @@
     },
     {
       "name": "MouthOpen",
-      "file": "./output/whale-girl-live2d-base/layers/mouth-open-draft-v1.png",
+      "file": "C:/Users/huang/Desktop/GALgame demo/output/whale-girl-live2d-base/layers/mouth-open-draft-v1.png",
       "left": 490,
       "top": 272,
       "crop": {
@@ -182,7 +182,7 @@
     },
     {
       "name": "MouthClosed",
-      "file": "./output/whale-girl-live2d-base/layers/mouth-closed-draft-v1.png",
+      "file": "C:/Users/huang/Desktop/GALgame demo/output/whale-girl-live2d-base/layers/mouth-closed-draft-v1.png",
       "left": 490,
       "top": 279,
       "crop": {
@@ -196,7 +196,7 @@
     },
     {
       "name": "HairFrontStrands",
-      "file": "./output/whale-girl-live2d-base/layers/front-strands-draft-v1.png",
+      "file": "C:/Users/huang/Desktop/GALgame demo/output/whale-girl-live2d-base/layers/front-strands-draft-v1.png",
       "left": 385,
       "top": 210,
       "crop": {
@@ -209,7 +209,7 @@
     },
     {
       "name": "HairCap",
-      "file": "./output/whale-girl-live2d-base/layers/bangs-accessories-draft-v1.png",
+      "file": "C:/Users/huang/Desktop/GALgame demo/output/whale-girl-live2d-base/layers/bangs-accessories-draft-v1.png",
       "left": 326,
       "top": 18,
       "crop": {
@@ -221,7 +221,7 @@
       "width": 350
     }
   ],
-  "output": "./output/whale-girl-live2d-base/whale-girl-layered-v2.psd",
-  "preview": "./output/whale-girl-live2d-base/assembly-preview-v2.png",
+  "output": "C:/Users/huang/Desktop/GALgame demo/output/whale-girl-live2d-base/whale-girl-layered-v2.psd",
+  "preview": "C:/Users/huang/Desktop/GALgame demo/output/whale-girl-live2d-base/assembly-preview-v2.png",
   "status": "initial assembly; native rig pending"
 }

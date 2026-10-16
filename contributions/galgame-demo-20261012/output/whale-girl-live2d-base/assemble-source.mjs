@@ -4,7 +4,7 @@ import {readFile,writeFile} from 'node:fs/promises';
 import {createRequire} from 'node:module';
 import {fileURLToPath} from 'node:url';
 import {existsSync} from 'node:fs';
-const sharp=createRequire('file:///<USERPROFILE>/Desktop/galagent/package.json')('sharp');
+const sharp=createRequire('file:///C:/Users/huang/Desktop/galagent/package.json')('sharp');
 const root=fileURLToPath(new URL('./',import.meta.url)).replaceAll('\\','/');
 // Back-to-front drawing order. Coordinates are an initial assembly, subject to visual QA.
 const specs=[

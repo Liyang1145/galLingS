@@ -1,0 +1,21 @@
+{
+  "prompt": "Repair the SINGLE DETACHED TAIL in FIRST full landscape CG. The tail currently appears to grow out of the player ankle and is disconnected from the woman. Use SECOND reference only to understand a CONTINUOUS attached tail gently curving around a limb, and its refined slim blue/white texture, two-fluke tip and white circular marine emblem. Keep FIRST heroine adult age24, same face looking aside, opaque navy sailor dress, hair, folded arms, two independent human legs, clear sunny water and camera. Redraw the TAIL AS ONE VISIBLE CONTINUOUS PATH: thick root emerges from behind her lower back at right just below the waterline, travels diagonally LEFT along the surface UNDER WATER towards the player ankle, makes a loose open U-shaped nudge BEHIND the ankle, then narrows and returns right to end at centre-left in TWO flattened flukes on one terminal joint with central notch. Show the root-to-ankle segment clearly across middle foreground; no disconnected fin or second tail. It must NOT emerge from a human leg. Put contact at x=38% y=53% and flukes x=52% y=46% so both remain ABOVE the bottom dialogue area. Gentle rescue with natural water occlusion, no restraint or injuries. No extra limbs, lettering or UI.",
+  "requested_model": "gpt-image-2.5-flare",
+  "requested_quality": "max",
+  "requested_size": "3840x2160",
+  "references": [
+    {
+      "path": "content/assets/art-upgrade/originals/C27_rejected_detached_tail.png",
+      "sha256": "8f5480656c61d8c5a0677bb413ba0254c197371098adba6b79f39a2492021443"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C20_teammate_refined.png",
+      "sha256": "a1e3180019ede4935439ce34e7e66d7eb6792c690c4e4a7a9f8528db0984ffc8"
+    }
+  ],
+  "output_sha256": "48205327e1a58b7d2c9ae79d417911aa0ac0d1a45402dd3b87337e2dfc11a8bd",
+  "actual_size": [
+    1672,
+    941
+  ]
+}

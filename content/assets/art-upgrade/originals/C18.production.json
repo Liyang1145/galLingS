@@ -1,17 +1,12 @@
 {
-  "prompt": "Correct ONLY the mistaken physical injuries and the malformed tail end in this full landscape illustration. Same adult heroine aged24, same sad and emotionally hurt face and self-comforting arm-holding pose at the fish stall. Her skin is physically healthy: remove ALL red scratches, abrasions, bruises, bleeding and scabs on the exposed arm, forearm, elbows and legs, including the knee near the lower edge. Keep natural skin shading and blush. No bandages, no wounds. At the LEFT of the heroine replace the single leaf-like tail end with one recognizable WHALE fluke pair: ONE continuous mottled-blue tail stalk comes from behind her lower back, narrows to ONE terminal joint, and ends in EXACTLY TWO broad left/right flukes with a central notch. Keep both flukes clear within the existing left-side space, correctly foreshortened; no third fin, no second tail, no spinal dorsal fin. Her two human legs remain independent from the tail. Keep her identity, hair, opaque navy dress and hem, hands, both adult characters, fish stall products, market buildings, camera, summer daylight and delicate illustration style otherwise unchanged. Same 16:9 full coherent scene, not a pasted silhouette. No text or new props.",
-  "requested_model": "gpt-image-2.5-flare",
-  "requested_quality": "max",
-  "requested_size": "3840x2160",
-  "references": [
-    {
-      "path": "content/assets/art-upgrade/originals/C18_rejected_skin_tail.png",
-      "sha256": "86549851fa1d724dce010599c59099d4a9f5d6f90429b330afc3eb510a30635b"
-    }
-  ],
-  "output_sha256": "8674df9f0588b29ff08a68bc49d4cfc4b8acc64a1c808206f84551a9d73dd87c",
-  "actual_size": [
-    1672,
-    941
-  ]
+  "workflow": "user-supplied-refinement",
+  "sourceDelivery": "archive/deliveries/refined-cg-20261016/originals/C18.png",
+  "sourceDeliverySha256": "d7f1238d1360111f0b9c7b22a7e9ae5bf20130b6c440a591b068a6f3c1ef0bee",
+  "archiveSha256": "63786b58ca44ce2255a23964bee84d5e6d70cc3260d7c1b6e1633aeff74b7e04",
+  "requested_model": null,
+  "backend_reported_model": null,
+  "model_selection_verified": false,
+  "requested_quality": null,
+  "backend_reported_quality": null,
+  "note": "用户提供精修成品；未提供该包模型/提示词/原生分辨率记录，不继承旧生成元数据。"
 }

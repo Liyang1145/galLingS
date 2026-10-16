@@ -14,6 +14,21 @@ def verify():
     assert [i for i in new_ids if i in set(old_ids)]==old_ids
     story_lines=copy.deepcopy(current['lines'])
     by_id={l['id']:l for l in story_lines}
+    sfx_report=ART/'opening-art-sound-corrections.json'
+    corrected_sound_nodes=0
+    if sfx_report.exists():
+        # Six story actions were explicitly repaired after the art/music checkpoint.
+        # Undo only these documented SFX deltas for the historical preservation audit.
+        corrections=json.loads(sfx_report.read_text(encoding='utf-8'))
+        rows=corrections['soundNodeChanges']
+        assert {r['lineId'] for r in rows}=={'o6vhcy2x','n7sguoiy','frtp4eyj','3ua9v325','kbwv46du','0xhf540s'}
+        assert len(rows)==6
+        for row in rows:
+            line=by_id[row['lineId']]
+            assert line['seEvents']==row['after'],row['lineId']
+            if row['before']['present']:line['seEvents']=row['before']['value']
+            else:line.pop('seEvents',None)
+        corrected_sound_nodes=len(rows)
     overlay_nodes=0
     overlay_counts={}
     overlay_ids=set()
@@ -86,6 +101,7 @@ def verify():
         'originalAudioAssetsUnchanged':len(audio),'activeVisualIds':len(active),
         'explicitMusicOverlayNodes':overlay_nodes,
         'explicitMusicOverlayCounts':overlay_counts,
+        'explicitSoundCorrectionNodes':corrected_sound_nodes,
         'currentAudioAssets':sum(a['type'] not in {'bg','ch'} for a in current['assets'].values()),
         'activeReplacedVisualIds':len(active)-len(remaining),'manualWardrobeVisualIds':remaining,
         'wavPlaybackAssets':0,'chapters':sum(bool(l.get('chapter')) for l in current['lines']),

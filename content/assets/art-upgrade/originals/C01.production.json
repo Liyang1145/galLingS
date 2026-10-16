@@ -1,0 +1,21 @@
+{
+  "prompt": "Precise design-unification edit: keep FIRST landscape illustration exactly unchanged except the whale tail. Same adult woman aged24. Her single hand catching the flying damp notebook, book and every loose page fully in frame, face, other hand, opaque navy dress, healthy skin, coast, water and daylight must stay unchanged. Replace the overly bulky mottled tail at right with the slim smoothly tapering blue-and-white independent whale tail design of SECOND illustration. ONE tail connects behind her lower back beneath water, curves naturally up on right, then ONE narrow terminal joint ends in EXACTLY TWO broad flattened whale flukes with clear central notch. Use the refined blue surface, white underside/fin edging and the same small WHITE CIRCULAR marine emblem on ONE fluke as SECOND reference. Both flukes fully within image, no third petal or fish fan. Match actual sunlight and water, no added letters or UI. Same 16:9 landscape camera.",
+  "requested_model": "gpt-image-2.5-flare",
+  "requested_quality": "max",
+  "requested_size": "3840x2160",
+  "references": [
+    {
+      "path": "content/assets/art-upgrade/originals/C01_rejected_direction_before_delivery.png",
+      "sha256": "764c056affc8f7dac30b2428bf4251a6d3dfd6e0eabb561e274c8f687abbab85"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C04_teammate_refined.png",
+      "sha256": "e0d3bb0bb50abc9e5129f5cec864d359d65e5ad10e9093bf13a25dd15ce00160"
+    }
+  ],
+  "output_sha256": "cae104d839d04042808b06934dd47d5f77fdea941e7d6f9f8abe635c52d81f5e",
+  "actual_size": [
+    1672,
+    941
+  ]
+}

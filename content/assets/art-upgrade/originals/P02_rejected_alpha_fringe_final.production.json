@@ -1,0 +1,21 @@
+{
+  "prompt": "Recreate the FIRST adult woman age24 full-body acting sprite as a clean production transparent PNG, using SECOND reference for clean painted edges and neutral soft daylight. Preserve FIRST character identity, raised notebook arm, other hand on hip, face, hair, exact opaque navy sailor dress, skirt, two human legs, socks, closed shoes, and its long tail curling UP with TWO clear flattened flukes and white circular marine emblem. Keep original portrait framing, head size and foot baseline. Important production requirement: ACTUAL transparent alpha outside figure and in enclosed gaps. OPAQUE clean white notebook pages, collar stripes, socks and shoes inside the figure. Delicate antialiased blue hair edges with no bright cyan speckles, white dots, white matte, dark fringe or holes in the body. Render clean natural strand boundaries; do not apply a crude white color-key that punches holes in light clothing. No solid backdrop, scenery, halo, floor shadow, new text, extra fin, extra limb or costume change.",
+  "requested_model": "gpt-image-2.5-flare",
+  "requested_quality": "max",
+  "requested_size": "1536x2304",
+  "references": [
+    {
+      "path": "content/assets/art-upgrade/originals/P02_teammate_refined.png",
+      "sha256": "9b9e92697a78da3b84a74bd8ffb125420d91d12effeb1cbeb59fb9a0d4844271"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/P02_rejected_direction_before_delivery.png",
+      "sha256": "2bbab738568822e3416fbe0cf1ebd0b8edde72e1d683ace40feec8216aad0ba8"
+    }
+  ],
+  "output_sha256": "e65e395649814a60ced0349890a61c26b544ac3bb572054e2e3f076ca5ef3c99",
+  "actual_size": [
+    1025,
+    1535
+  ]
+}

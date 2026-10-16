@@ -1,0 +1,17 @@
+{
+  "prompt": "Reframe this COMPLETE 16:9 anime visual novel CG without changing its correctly connected character anatomy. Same two ADULTS aged24/26, same adult faces, navy opaque sailor dress, white shirt/navy trousers, two human legs each, same sunny bay. The woman's ONE independent whale tail visibly begins behind her lower back, curves left and tapers to TWO terminal flukes at the player's heel: preserve this continuous path exactly. This side-view composition is correct but ankle action is too LOW for game dialogue. Move camera BACK and slightly upward so BOTH figures appear at roughly 75% of their present size, placed in UPPER TWO THIRDS of frame. Leave more uninterrupted clear shallow water/sand in bottom THIRD. The two-fluke contact at the player's ankle must be at x=39% and y=54% of the final image, her face at x=67% y=18%, her entire tail root-to-tip visible ABOVE y=61%. Man's whole head can now fit inside frame. Both naturally standing in shallow water at same normal relative scale. No giant foreground leg, extra limbs, floating tail or different action. Maintain coherent perspective, sunlight and exact refined blue/white paired tail with white circular emblem. No lettering, UI or borders. Landscape 16:9 remains landscape, not a collage or blank extension.",
+  "requested_model": "gpt-image-2.5-flare",
+  "requested_quality": "max",
+  "requested_size": "3840x2160",
+  "references": [
+    {
+      "path": "content/assets/art-upgrade/originals/C27_rejected_action_under_dialogue.png",
+      "sha256": "4d722496bacba3f12ad26400ae3b400924c126231b7e37d55d5c1f26b24940c4"
+    }
+  ],
+  "output_sha256": "def3103a815011e5b236b9202b1ce8a024cd44f525b8c455f1299d5d98668ebd",
+  "actual_size": [
+    1672,
+    941
+  ]
+}

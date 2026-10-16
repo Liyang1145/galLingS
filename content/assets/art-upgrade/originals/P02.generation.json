@@ -9,21 +9,21 @@
   "requested_quality": "max",
   "backend_reported_quality": "medium",
   "usage": {
-    "input_tokens": 1744,
+    "input_tokens": 3305,
     "input_tokens_details": {
-      "image_tokens": 1536,
-      "text_tokens": 208
+      "image_tokens": 3072,
+      "text_tokens": 233
     },
     "output_tokens": 1372,
     "output_tokens_details": {
       "image_tokens": 1372,
       "text_tokens": 0
     },
-    "total_tokens": 3116
+    "total_tokens": 4677
   },
-  "elapsed_seconds": 57.75,
-  "created": 1792036853,
-  "reference_image_count": 1,
+  "elapsed_seconds": 75.83,
+  "created": 1792154003,
+  "reference_image_count": 2,
   "outputs": [
     "C:\\Users\\袁力阳\\Documents\\Codex\\2026-10-10\\new-chat\\work\\ambient-audio-checkout-proxy\\content\\assets\\art-upgrade\\originals\\P02.png"
   ]

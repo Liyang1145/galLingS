@@ -10,6 +10,7 @@
     "bgm_e4_sunset_wait": 77,
     "bgm_m1_shallows_day": 61
   },
+  "explicitSoundCorrectionNodes": 6,
   "currentAudioAssets": 105,
   "activeReplacedVisualIds": 116,
   "manualWardrobeVisualIds": [
@@ -18,5 +19,5 @@
   ],
   "wavPlaybackAssets": 0,
   "chapters": 18,
-  "gameSha256": "fd0d31d8be4cdabdf3313ed34e68745770724665fbfb6e686044553e5e3e46bf"
+  "gameSha256": "fbe54379d81ce6663e0b4264282f2676d8c9aa38bbcba189acbffab65bf0bd3b"
 }

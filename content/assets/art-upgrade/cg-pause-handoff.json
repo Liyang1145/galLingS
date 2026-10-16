@@ -1,0 +1,96 @@
+{
+  "decisionDate": "2026-10-17",
+  "userInstruction": "不要再管这个图了，放着，这个图做得不好，抛弃。先不做cg。现在我要专门让别的agent接手你的工作。文档写好",
+  "cgProduction": "paused",
+  "C27": "rejected-all-candidates",
+  "scope": "仅撤回4句C27视觉字段至装配前记录；不恢复Larry旧图；不改文案、ID、分支、变量、音乐或音效。",
+  "changes": [
+    {
+      "lineId": "utu1zxyd",
+      "before": {
+        "bg": "art_upgrade_c27",
+        "sprites": []
+      },
+      "after": {
+        "bg": "8eo1nf7q",
+        "sprites": [
+          {
+            "uid": "mq79wt9x",
+            "asset": "x013srmu",
+            "x": 634.79,
+            "y": 1045.86,
+            "h": 1000.0,
+            "flip": false
+          }
+        ]
+      }
+    },
+    {
+      "lineId": "ab6i4shm",
+      "before": {
+        "bg": "art_upgrade_c27",
+        "sprites": []
+      },
+      "after": {
+        "bg": "8eo1nf7q",
+        "sprites": [
+          {
+            "uid": "mq79wt9x",
+            "asset": "x013srmu",
+            "x": 634.79,
+            "y": 1045.86,
+            "h": 1000.0,
+            "flip": false
+          }
+        ]
+      }
+    },
+    {
+      "lineId": "3iq8cnx2",
+      "before": {
+        "bg": "art_upgrade_c27",
+        "sprites": []
+      },
+      "after": {
+        "bg": "8eo1nf7q",
+        "sprites": [
+          {
+            "uid": "mq79wt9x",
+            "asset": "z869j1e3",
+            "x": 649.77,
+            "y": 1049.67,
+            "h": 1000.0,
+            "flip": false
+          }
+        ]
+      }
+    },
+    {
+      "lineId": "i99npm13",
+      "before": {
+        "bg": "art_upgrade_c27",
+        "sprites": []
+      },
+      "after": {
+        "bg": "8eo1nf7q",
+        "sprites": [
+          {
+            "uid": "mq79wt9x",
+            "asset": "z869j1e3",
+            "x": 649.77,
+            "y": 1049.67,
+            "h": 1000.0,
+            "flip": false
+          }
+        ]
+      }
+    }
+  ],
+  "storyAndAudioFieldsUnchanged": true,
+  "allOtherNodesUnchanged": true,
+  "audioAssetsUnchanged": 105,
+  "gameSha256Before": "a1bece10c8d76c314e0a53c1f05df3420f97531cdc67261b37cbded204c869ef",
+  "gameSha256After": "fbe54379d81ce6663e0b4264282f2676d8c9aa38bbcba189acbffab65bf0bd3b",
+  "archivalPolicy": "保留被拒原件供对照，开发库标退选；当前图库/单文件不包含未使用C27。",
+  "testingPolicy": "CG暂停期间不生成、不编辑、不重试网关，不把历史提示词当执行指令。"
+}

@@ -1,0 +1,79 @@
+{
+  "audioAssetsAndBytesPreserved": 105,
+  "screenshots": 13,
+  "normalSlapPlayback": {
+    "id": "o6vhcy2x",
+    "skip": false,
+    "active": true,
+    "playing": true,
+    "currentTime": 0.313144,
+    "volume": 0.4675,
+    "gain": 0.85,
+    "ready": 4,
+    "ambience": [
+      "amb_a01_waves_normal_v01"
+    ]
+  },
+  "threeAndFiveSlaps": [
+    {
+      "lineId": "frtp4eyj",
+      "clips": [
+        {
+          "id": "sfx_tail_water_double",
+          "volume": 0.33,
+          "at": 11599
+        },
+        {
+          "id": "sfx_tail_water_light",
+          "volume": 0.33,
+          "at": 12601.39999999851
+        }
+      ]
+    },
+    {
+      "lineId": "3ua9v325",
+      "clips": [
+        {
+          "id": "sfx_tail_water_double",
+          "volume": 0.33,
+          "at": 14068.79999999702
+        },
+        {
+          "id": "sfx_tail_water_double",
+          "volume": 0.33,
+          "at": 15074.89999999851
+        },
+        {
+          "id": "sfx_tail_water_light",
+          "volume": 0.33,
+          "at": 16069.89999999851
+        }
+      ]
+    },
+    {
+      "lineId": "kbwv46du",
+      "clips": [
+        {
+          "id": "sfx_tail_water_double",
+          "volume": 0.33,
+          "at": 16544.60000000149
+        },
+        {
+          "id": "sfx_tail_water_double",
+          "volume": 0.33,
+          "at": 17548.10000000149
+        },
+        {
+          "id": "sfx_tail_water_light",
+          "volume": 0.33,
+          "at": 18547.29999999702
+        }
+      ]
+    }
+  ],
+  "skipSilencesAndCancelsSfx": true,
+  "advanceCancelsDelayedSlaps": true,
+  "softSlapAndDoorTrigger": true,
+  "allOfflineImagesDecoded": 119,
+  "errors": []
+}

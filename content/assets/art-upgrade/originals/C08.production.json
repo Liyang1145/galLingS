@@ -1,21 +1,12 @@
 {
-  "prompt": "One 16:9 landscape event CG for a premium finely painted Japanese romance visual novel. FIRST image is the exact moonlit coastal location: keep its cove, coastline, moon, sea and quiet blue lighting. SECOND image controls the same ADULT woman aged24, exact face and hair, loop ahoge, fin ears and bows, opaque navy sailor dress with intact double-white hem, socks and closed shoes, and her newly corrected natural seated-on-folded-heels posture. She is kneeling in an ordinary seiza posture on a broad flat coastal rock, fully dressed, calmly writing a poem in the open dark-blue whale notebook on her lap with a slim blue pen. Both legs fold coherently under her body, no crossed dangling legs. Right hand naturally grips the pen, tip touching the page; left hand steadies the page. Eyes look down toward her writing, a small concentrated expression. One separate whale tail grows behind her lower back, one tapered stalk and exactly one clearly readable two-lobed terminal fluke, resting beside the rock without extra fins. No ring or other jewelry. Place heroine left of centre with plenty of quiet sea to the right; face and writing hands entirely above the lower 28 percent dialogue area. Natural cloth gravity, one continuous unbroken skirt, hands fully above the fabric, no skin holes or fabric clipping. Moonlit shadows agree with the first image. No second person, readable letters, UI or watermarks. New coherent illustration, do not paste a cutout sprite. Complete landscape frame, anatomically consistent, no change of clothing.",
-  "requested_model": "gpt-image-2.5-flare",
-  "requested_quality": "max",
-  "requested_size": "3840x2160",
-  "references": [
-    {
-      "path": "content/assets/art-upgrade/originals/B04.png",
-      "sha256": "4e1993c85947e783505e30fd13c32c0edca64106d568bc6d0651495d5143eace"
-    },
-    {
-      "path": "content/assets/art-upgrade/originals/S02.png",
-      "sha256": "fc44bc5eb68672e3f2068a39850d73d6d04dd154ddab7778c941990b28b9dff0"
-    }
-  ],
-  "output_sha256": "3fa7e67e2762b26412ff0e08cbf94d5b1706f6c31e17464457ac22545fabc375",
-  "actual_size": [
-    1672,
-    941
-  ]
+  "workflow": "user-supplied-refinement",
+  "sourceDelivery": "archive/deliveries/refined-cg-20261016/originals/C08.png",
+  "sourceDeliverySha256": "f3d5a77e7b9f46ab8afd078343a606d5635eefdc50b1d31b5b30710a76a855b9",
+  "archiveSha256": "63786b58ca44ce2255a23964bee84d5e6d70cc3260d7c1b6e1633aeff74b7e04",
+  "requested_model": null,
+  "backend_reported_model": null,
+  "model_selection_verified": false,
+  "requested_quality": null,
+  "backend_reported_quality": null,
+  "note": "用户提供精修成品；未提供该包模型/提示词/原生分辨率记录，不继承旧生成元数据。"
 }

@@ -1,0 +1,17 @@
+{
+  "prompt": "Repair ONLY the malformed tail on this transparent full-body sprite. The same ADULT woman age24 as the reference, long cobalt/periwinkle blue hair, loop ahoge, cyan bow clips, blue-and-white fin ears, blue eyes, exact opaque navy sailor-collar dress with cyan chest bow and white double hem stripes. Healthy intact skin. Preserve her recognizable face, mature proportions, delicate painted anime VN finish. Exactly ONE independent blue-and-white mammalian whale tail attaches behind her lower back, separate from her TWO human legs. It tapers to ONE narrow peduncle ending in EXACTLY TWO broad flattened left/right flukes with a deep visible central notch. Show both lobes clearly in the same plane, with believable volume. No single leaf, overlapping petal, third fin, fish fan, dorsal fin, disconnected lobe, tubular pointed tip or additional tail.The existing fork looks like two long crossing leaves at different heights. Redraw the terminal pair as a single natural horizontal whale fluke pair at her right side: one short curved peduncle joins both broad lobes at the same joint, central notch unmistakable, no crossing blades. Give tail enough space inside the canvas. Preserve exact adult face, expression, arm raised holding small notebook, other hand on waist, hair, clothing, legs, white socks, shoes and original head/shoe baselines. Clean transparent alpha, no scenery, ground shadow, halo or text. Same portrait dimensions.",
+  "requested_model": "gpt-image-2.5-flare",
+  "requested_quality": "max",
+  "requested_size": "1536x2304",
+  "references": [
+    {
+      "path": "content/assets/art-upgrade/originals/P02_rejected_tail_opening.png",
+      "sha256": "0985adf849b8f7e5552c3ae639e7f1ca210b30cacad6ac99f5856003d071a803"
+    }
+  ],
+  "output_sha256": "1e57944880cf8a401b556c0cbe1dabfc2cc333cf295518f5911511a1f3f8c591",
+  "actual_size": [
+    1024,
+    1536
+  ]
+}

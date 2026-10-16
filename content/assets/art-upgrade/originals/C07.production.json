@@ -1,0 +1,12 @@
+{
+  "workflow": "user-supplied-refinement",
+  "sourceDelivery": "archive/deliveries/refined-cg-20261016/originals/C07.png",
+  "sourceDeliverySha256": "e38015619a196cafa187f9557b4589d2fba508d2edcd0aa35ea6c4a03282a25f",
+  "archiveSha256": "63786b58ca44ce2255a23964bee84d5e6d70cc3260d7c1b6e1633aeff74b7e04",
+  "requested_model": null,
+  "backend_reported_model": null,
+  "model_selection_verified": false,
+  "requested_quality": null,
+  "backend_reported_quality": null,
+  "note": "用户提供精修成品；未提供该包模型/提示词/原生分辨率记录，不继承旧生成元数据。"
+}

@@ -1,0 +1,17 @@
+{
+  "prompt": "Prepare the supplied ADULT woman age24 full-body visual novel sprite for game integration. Remove ONLY the solid WHITE BACKGROUND to actual transparent alpha, including enclosed spaces between hair strands, the raised arm, the body and the tail. Preserve the exact drawing: adult face and expression, hair, fin ears, loop ahoge, two bow clips, opaque navy sailor dress and skirt, raised hand holding notebook, hand on hip, two human legs, white socks and closed shoes. Preserve the refined tail exactly: one long smooth blue/white tail stalk connects behind lower back, curls UP on her right, ending in EXACTLY TWO broad flattened flukes at one narrow joint, central notch and white circular emblem on one lobe. No leaf-like single tip, no third fin. Keep original head/shoe placement and portrait framing. No white matte, halo, shadow, generated text or redesign. Finished crisp transparent PNG.",
+  "requested_model": "gpt-image-2.5-flare",
+  "requested_quality": "max",
+  "requested_size": "1536x2304",
+  "references": [
+    {
+      "path": "content/assets/art-upgrade/originals/P02_teammate_refined.png",
+      "sha256": "9b9e92697a78da3b84a74bd8ffb125420d91d12effeb1cbeb59fb9a0d4844271"
+    }
+  ],
+  "output_sha256": "c7b75b727a270356f6df2381037e34d1dabdcdebd59dc5fb264c7db7544e5b0f",
+  "actual_size": [
+    1025,
+    1535
+  ]
+}

@@ -1,15 +1,19 @@
 {
-  "prompt": "A full-body transparent-alpha visual-novel acting sprite of the exact same ADULT woman aged24 in the reference. Preserve her adult identity, blue hair, fin ears, loop ahoge, navy sailor-collar dress, white socks and closed shoes, two human legs and one separate whale tail. Change the acting pose clearly: she holds the SAME closed blue whale-cover spiral notebook ALOFT in one raised hand, high beside her head and just above the ahoge, teasing the viewer by keeping it out of reach. Other hand on her waist, shoulders slightly turned, confident challenging sidelong smile. The book and holding hand must both remain INSIDE generous canvas margins, visibly above shoulder height. Tail curls alertly upward behind her, naturally rooted behind her lower back. Natural fingers gripping the notebook, no extra arms, no duplicate books. Keep original face size and full-body framing; neutral daylight, clean transparent alpha, no text, scenery or floating symbols.",
+  "prompt": "Correct the malformed tail in the FIRST transparent sprite by following the anatomically coherent tail in the SECOND sprite. FIRST sprite adult woman aged24 must retain EXACTLY her face, smile, hair, raised notebook hand, notebook, hand on hip, navy opaque sailor dress, human legs, socks, white shoes, framing and head/shoe positions. Replace the ENTIRE whale tail on her right with a natural descending C curve like SECOND reference: the thick tail root starts behind the right hip, curves out and DOWN, narrows to a clearly visible slim terminal stalk at knee height, then ends in a broad LEFT and RIGHT fluke pair lower beside the calves, like a horizontally spread whale-tail silhouette tilted slightly towards camera. TWO terminal lobes on the same joint, deep central notch, not two big leaves directly attached to the hip, not overlapping petals. Use the SECOND reference tail silhouette and proportions, including blue-white pattern. Both lobes entirely inside canvas. Clean transparent alpha, no background, no halo, no text or other changes.",
   "requested_model": "gpt-image-2.5-flare",
   "requested_quality": "max",
   "requested_size": "1536x2304",
   "references": [
     {
-      "path": "content/assets/art-upgrade/originals/L08.png",
-      "sha256": "93a55fe82ada7e4375b0d7f1efa24d307f77fd1e9015bf478265129a77a1acc7"
+      "path": "content/assets/art-upgrade/originals/P02_rejected_tail_candidate.png",
+      "sha256": "1e57944880cf8a401b556c0cbe1dabfc2cc333cf295518f5911511a1f3f8c591"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/L01.png",
+      "sha256": "566e6bd87c0a715a1b641f0d0549c6fd4380630484897d301cd0d7c7462f2b49"
     }
   ],
-  "output_sha256": "0985adf849b8f7e5552c3ae639e7f1ca210b30cacad6ac99f5856003d071a803",
+  "output_sha256": "2bbab738568822e3416fbe0cf1ebd0b8edde72e1d683ace40feec8216aad0ba8",
   "actual_size": [
     1024,
     1536

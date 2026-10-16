@@ -1,0 +1,21 @@
+{
+  "prompt": "Create ONE 16:9 complete visual novel CG matching the exact coastal bay and bright daylight of FIRST reference and same adult woman age24 identity/opaque navy sailor dress of SECOND reference. Cinematic slightly downward looking composition: heroine at right waist deep in clear water, face upper-right looking away in embarrassed denial, arms folded. Viewer is an adult man standing in shallows: ONE trouser-covered ankle at middle-left, x=38% y=50%, with lower leg entering diagonally from bottom-left. Her whale TAIL STALK starts behind her lower back on the right, curves left UNDER the water behind his ankle, gently nudging him towards shore, then curves back to the right to end in a clearly visible PAIR of small broad flattened whale flukes near image CENTRE x=55% y=53%. The OPEN C around the ankle is formed by the continuous tapered TAIL STALK, NOT by bending one of the terminal lobes into a tube. The terminal left/right flukes stay flat, distinct, symmetrical at one narrow joint with central notch, like SECOND reference. One tail and exactly two terminal lobes; no extra fin, single leaf or snake tip. Her TWO human legs remain separate below opaque dress/water on right. Contact and both terminal flukes must be ABOVE y=60% because bottom30% holds dialogue. Natural low-force support, no restraint or injuries. Coherent transparent water refraction and volume, no giant limb, cut-and-paste, lettering or UI.",
+  "requested_model": "gpt-image-2.5-flare",
+  "requested_quality": "max",
+  "requested_size": "3840x2160",
+  "references": [
+    {
+      "path": "content/assets/art-upgrade/originals/B02.png",
+      "sha256": "3f91be97769fe8f0a18834122f12d862961819ce8645da6be4f621d706d24e74"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/L01.png",
+      "sha256": "566e6bd87c0a715a1b641f0d0549c6fd4380630484897d301cd0d7c7462f2b49"
+    }
+  ],
+  "output_sha256": "8f5480656c61d8c5a0677bb413ba0254c197371098adba6b79f39a2492021443",
+  "actual_size": [
+    1672,
+    941
+  ]
+}

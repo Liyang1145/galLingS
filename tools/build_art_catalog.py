@@ -71,7 +71,13 @@ def build() -> dict:
                 if not record.exists() and art_key=='L01':record=upgrade_dir/'originals/R01_clean.generation.json'
             if record.is_file():
                 generation = json.loads(record.read_text(encoding="utf-8-sig"))
-        if generation:
+        if generation and generation.get('workflow')=='user-supplied-refinement':
+            provenance = {"creator":"用户转交的队友精修图", "tool":"精修工具未登记",
+                "requestedModel":"", "reportedModel":"", "requestedQuality":"", "reportedQuality":"",
+                "routeVerified":False, "label":"队友精修成品；模型与提示词未随包提供",
+                "evidence":"archive/deliveries/refined-cg-20261016/manifest.json",
+                "action":"保留精修原件；按剧情和结构逐项审核，不继承旧图生成参数"}
+        elif generation:
             provenance = {"creator":"Codex 图像请求", "tool":"Codex OAuth 图像桥",
                 "requestedModel":generation.get("requested_model", ""),
                 "reportedModel":generation.get("backend_reported_model") or "",

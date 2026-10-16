@@ -1,30 +1,12 @@
 {
-  "auth_mode": "Codex ChatGPT OAuth",
-  "endpoint": "https://chatgpt.com/backend-api/codex/images/edits",
-  "requested_model": "gpt-image-2.5-flare",
+  "workflow": "user-supplied-refinement",
+  "sourceDelivery": "archive/deliveries/refined-cg-20261016/originals/C24.png",
+  "sourceDeliverySha256": "136e69bc730c026be0f32cbc597ab610f5b50cfb2ad15931c523af483f2d148e",
+  "archiveSha256": "63786b58ca44ce2255a23964bee84d5e6d70cc3260d7c1b6e1633aeff74b7e04",
+  "requested_model": null,
   "backend_reported_model": null,
   "model_selection_verified": false,
-  "requested_size": "3840x2160",
-  "backend_reported_size": "1672x941",
-  "requested_quality": "max",
-  "backend_reported_quality": "medium",
-  "usage": {
-    "input_tokens": 6271,
-    "input_tokens_details": {
-      "image_tokens": 5774,
-      "text_tokens": 497
-    },
-    "output_tokens": 1158,
-    "output_tokens_details": {
-      "image_tokens": 1158,
-      "text_tokens": 0
-    },
-    "total_tokens": 7429
-  },
-  "elapsed_seconds": 82.11,
-  "created": 1791988030,
-  "reference_image_count": 4,
-  "outputs": [
-    "C:\\Users\\袁力阳\\Documents\\Codex\\2026-10-10\\new-chat\\work\\ambient-audio-checkout-proxy\\content\\assets\\art-upgrade\\originals\\C24.png"
-  ]
+  "requested_quality": null,
+  "backend_reported_quality": null,
+  "note": "用户提供精修成品；未提供该包模型/提示词/原生分辨率记录，不继承旧生成元数据。"
 }

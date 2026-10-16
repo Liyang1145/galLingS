@@ -1,0 +1,210 @@
+{
+  "sourceName": "修复后CG图包.zip",
+  "sourceBytes": 123809313,
+  "sourceSha256": "63786b58ca44ce2255a23964bee84d5e6d70cc3260d7c1b6e1633aeff74b7e04",
+  "sourceUserRequest": "这是别人精修后的图包，你理解它的思想然后顺着继续改",
+  "date": "2026-10-16",
+  "items": {
+    "C02": {
+      "path": "archive/deliveries/refined-cg-20261016/originals/C02.png",
+      "sha256": "5e11ca641ffc9e10ca38e588bf7da934ed7c53b4c76c947952818545169eadbc",
+      "size": [
+        2752,
+        1536
+      ],
+      "mode": "RGB",
+      "bytes": 5674071
+    },
+    "C04": {
+      "path": "archive/deliveries/refined-cg-20261016/originals/C04.png",
+      "sha256": "e0d3bb0bb50abc9e5129f5cec864d359d65e5ad10e9093bf13a25dd15ce00160",
+      "size": [
+        2752,
+        1536
+      ],
+      "mode": "RGB",
+      "bytes": 5387292
+    },
+    "C05": {
+      "path": "archive/deliveries/refined-cg-20261016/originals/C05.png",
+      "sha256": "84989ef6f7fb9eb40b2c5c0f96d0666779367a2c2bba21acc65e2704d7e7cb10",
+      "size": [
+        2730,
+        1536
+      ],
+      "mode": "RGB",
+      "bytes": 5332085
+    },
+    "C06": {
+      "path": "archive/deliveries/refined-cg-20261016/originals/C06.png",
+      "sha256": "01bb3c749ce41d12c7708d5771095c5863d25702ce1f9002404dd85aee2b76c0",
+      "size": [
+        2752,
+        1536
+      ],
+      "mode": "RGB",
+      "bytes": 5714328
+    },
+    "C07": {
+      "path": "archive/deliveries/refined-cg-20261016/originals/C07.png",
+      "sha256": "e38015619a196cafa187f9557b4589d2fba508d2edcd0aa35ea6c4a03282a25f",
+      "size": [
+        2752,
+        1536
+      ],
+      "mode": "RGB",
+      "bytes": 5724464
+    },
+    "C08": {
+      "path": "archive/deliveries/refined-cg-20261016/originals/C08.png",
+      "sha256": "f3d5a77e7b9f46ab8afd078343a606d5635eefdc50b1d31b5b30710a76a855b9",
+      "size": [
+        3344,
+        1882
+      ],
+      "mode": "RGB",
+      "bytes": 7980575
+    },
+    "C09": {
+      "path": "archive/deliveries/refined-cg-20261016/originals/C09.png",
+      "sha256": "dd09c865f176834f589a3fdc1ad7c465d7d905e27538b04c192f7c4b364ad8d9",
+      "size": [
+        3344,
+        1882
+      ],
+      "mode": "RGB",
+      "bytes": 8277250
+    },
+    "C10": {
+      "path": "archive/deliveries/refined-cg-20261016/originals/C10.png",
+      "sha256": "35dc39fc6ba154b25a5931fe6b8ef6b7c0880169f168675239d118489a883e2f",
+      "size": [
+        2752,
+        1536
+      ],
+      "mode": "RGB",
+      "bytes": 6188440
+    },
+    "C11": {
+      "path": "archive/deliveries/refined-cg-20261016/originals/C11.png",
+      "sha256": "c72936ed550dcfddd6e645935be57c5d2a57d88799370898c689d8864e5aaceb",
+      "size": [
+        2752,
+        1536
+      ],
+      "mode": "RGB",
+      "bytes": 6377155
+    },
+    "C12": {
+      "path": "archive/deliveries/refined-cg-20261016/originals/C12.png",
+      "sha256": "3e53d6fcda31dba3c54af1abda564cf129d590af643ccde335c58f301aa14bc3",
+      "size": [
+        3344,
+        1882
+      ],
+      "mode": "RGB",
+      "bytes": 6688785
+    },
+    "C13": {
+      "path": "archive/deliveries/refined-cg-20261016/originals/C13.png",
+      "sha256": "8f45b3fe0e9bec3def09fa078d80ca29b9c42b61efaa204ce9bf8bd3da266b69",
+      "size": [
+        3344,
+        1882
+      ],
+      "mode": "RGB",
+      "bytes": 7552325
+    },
+    "C15": {
+      "path": "archive/deliveries/refined-cg-20261016/originals/C15.png",
+      "sha256": "6d4e8679e794b6e67d5f7943161cdbb67254c570e144eeeabf8b9ba26ec5de7f",
+      "size": [
+        3344,
+        1882
+      ],
+      "mode": "RGB",
+      "bytes": 7803052
+    },
+    "C17": {
+      "path": "archive/deliveries/refined-cg-20261016/originals/C17.png",
+      "sha256": "fab2c4af730d198a9298b443814174c1bd852232fa39a7688ea1a42daaf7eaeb",
+      "size": [
+        3344,
+        1882
+      ],
+      "mode": "RGB",
+      "bytes": 7432894
+    },
+    "C18": {
+      "path": "archive/deliveries/refined-cg-20261016/originals/C18.png",
+      "sha256": "d7f1238d1360111f0b9c7b22a7e9ae5bf20130b6c440a591b068a6f3c1ef0bee",
+      "size": [
+        2752,
+        1536
+      ],
+      "mode": "RGB",
+      "bytes": 5483792
+    },
+    "C19": {
+      "path": "archive/deliveries/refined-cg-20261016/originals/C19.png",
+      "sha256": "84037b68d7a55de7a6c3c6437fb258a3a7305473fd122e2397f60af2ca8b5834",
+      "size": [
+        2752,
+        1536
+      ],
+      "mode": "RGB",
+      "bytes": 4906445
+    },
+    "C20": {
+      "path": "archive/deliveries/refined-cg-20261016/originals/C20.png",
+      "sha256": "a1e3180019ede4935439ce34e7e66d7eb6792c690c4e4a7a9f8528db0984ffc8",
+      "size": [
+        2752,
+        1536
+      ],
+      "mode": "RGB",
+      "bytes": 5037236
+    },
+    "C21": {
+      "path": "archive/deliveries/refined-cg-20261016/originals/C21.png",
+      "sha256": "3c867e80b31d87602585ead34ec5f7dedc998bef5ee8ef78ca5ee15f03f88414",
+      "size": [
+        2752,
+        1536
+      ],
+      "mode": "RGB",
+      "bytes": 5433374
+    },
+    "C22": {
+      "path": "archive/deliveries/refined-cg-20261016/originals/C22.png",
+      "sha256": "f1f9097ede9917bcbbde5722d797102aad1234d8790c346dff81ef6f7b303123",
+      "size": [
+        3344,
+        1882
+      ],
+      "mode": "RGB",
+      "bytes": 8233258
+    },
+    "C24": {
+      "path": "archive/deliveries/refined-cg-20261016/originals/C24.png",
+      "sha256": "136e69bc730c026be0f32cbc597ab610f5b50cfb2ad15931c523af483f2d148e",
+      "size": [
+        2752,
+        1536
+      ],
+      "mode": "RGB",
+      "bytes": 5883394
+    },
+    "P02": {
+      "path": "archive/deliveries/refined-cg-20261016/originals/P02.png",
+      "sha256": "9b9e92697a78da3b84a74bd8ffb125420d91d12effeb1cbeb59fb9a0d4844271",
+      "size": [
+        1686,
+        2528
+      ],
+      "mode": "RGB",
+      "bytes": 2935822
+    }
+  },
+  "review": "19 CG visually reviewed and adopted; P02 white-background source retained, alpha derivative separately reviewed"
+}

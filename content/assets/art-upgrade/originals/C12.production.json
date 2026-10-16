@@ -1,17 +1,12 @@
 {
-  "prompt": "Edit ONLY the mistaken injury marks in the FIRST full landscape illustration. The woman is the same adult age24. Her distress is EMOTIONAL after a hurtful conversation, not a bodily injury. Restore healthy, intact, unmarked skin on both upper arms, elbows, forearms, hands, knees and visible legs. Remove every red scratch, abrasion, bruise, scrape, blood mark and scab. Preserve natural anatomical shading and sun highlights. Retain EXACTLY her tearful offended expression, blush, watery eyes, phone held to chest, arm pose, face, blue hair, adult body proportions, navy sailor-collar dress, continuous opaque skirt, whale tail, man's foreground hand and the sunlit study. Do not add bandages or scars, do not make her cheerful, do not change the composition or redesign the scene. One finished coherent image with the same 16:9 landscape framing and painting style.",
-  "requested_model": "gpt-image-2.5-flare",
-  "requested_quality": "max",
-  "requested_size": "3840x2160",
-  "references": [
-    {
-      "path": "content/assets/art-upgrade/originals/C12_rejected_skin.png",
-      "sha256": "2af3e785547477614338e563cea33bf2a6c32a02ec996582a63c094b7d0f4f4e"
-    }
-  ],
-  "output_sha256": "d81231cbbfc1785e16fbae9f41c9c0074644106cc9c751fad690c0690f16a2db",
-  "actual_size": [
-    1672,
-    941
-  ]
+  "workflow": "user-supplied-refinement",
+  "sourceDelivery": "archive/deliveries/refined-cg-20261016/originals/C12.png",
+  "sourceDeliverySha256": "3e53d6fcda31dba3c54af1abda564cf129d590af643ccde335c58f301aa14bc3",
+  "archiveSha256": "63786b58ca44ce2255a23964bee84d5e6d70cc3260d7c1b6e1633aeff74b7e04",
+  "requested_model": null,
+  "backend_reported_model": null,
+  "model_selection_verified": false,
+  "requested_quality": null,
+  "backend_reported_quality": null,
+  "note": "用户提供精修成品；未提供该包模型/提示词/原生分辨率记录，不继承旧生成元数据。"
 }

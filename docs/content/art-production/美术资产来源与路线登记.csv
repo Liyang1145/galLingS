@@ -11,7 +11,7 @@ ooy2g3al,厨房_清晨,bg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-i
 32lrbngt,封面_ISLAND,bg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/imports/vnstudio/海风与布丁/assets/art-upgrade/T01.webp,保留已审核图；路线信息待核实
 rpkibqqw,小镇_清晨,bg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,2,content/imports/vnstudio/海风与布丁/assets/art-upgrade/B20.webp,保留已审核图；路线信息待核实
 9hcpz81h,帐篷_夜,bg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,217,content/imports/vnstudio/海风与布丁/assets/art-upgrade/B16.webp,保留已审核图；路线信息待核实
-4g7f8iam,帐篷_黄昏,bg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,43,content/imports/vnstudio/海风与布丁/assets/art-upgrade/B15.webp,保留已审核图；路线信息待核实
+4g7f8iam,帐篷_黄昏,bg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,42,content/imports/vnstudio/海风与布丁/assets/art-upgrade/B15.webp,保留已审核图；路线信息待核实
 mcdi4nzi,帐篷内_夜,bg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,62,content/imports/vnstudio/海风与布丁/assets/art-upgrade/B17.webp,保留已审核图；路线信息待核实
 bg_tent_morning_corner_draft,帐篷内_清晨,bg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,15,content/imports/vnstudio/海风与布丁/assets/art-upgrade/B19.webp,保留已审核图；路线信息待核实
 y417cb1b,店面_下午,bg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,21,content/imports/vnstudio/海风与布丁/assets/art-upgrade/B37.webp,保留已审核图；路线信息待核实
@@ -19,7 +19,7 @@ y417cb1b,店面_下午,bg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-i
 tafi49ag,沙洲_午后,bg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,163,content/imports/vnstudio/海风与布丁/assets/art-upgrade/B09.webp,保留已审核图；路线信息待核实
 g0htlsw4,沙洲_黄昏,bg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,103,content/imports/vnstudio/海风与布丁/assets/art-upgrade/B10.webp,保留已审核图；路线信息待核实
 9ow2x5w5,浅滩_夜,bg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,65,content/imports/vnstudio/海风与布丁/assets/art-upgrade/B04.webp,保留已审核图；路线信息待核实
-8eo1nf7q,浅滩_正午,bg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,174,content/imports/vnstudio/海风与布丁/assets/art-upgrade/B02.webp,保留已审核图；路线信息待核实
+8eo1nf7q,浅滩_正午,bg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,173,content/imports/vnstudio/海风与布丁/assets/art-upgrade/B02.webp,保留已审核图；路线信息待核实
 ohwph2ga,浅滩_清晨,bg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,60,content/imports/vnstudio/海风与布丁/assets/art-upgrade/B01.webp,保留已审核图；路线信息待核实
 mzy4oec6,浅滩_黄昏,bg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,76,content/imports/vnstudio/海风与布丁/assets/art-upgrade/B03.webp,保留已审核图；路线信息待核实
 2mbzwwg2,海面_黄昏,bg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,17,content/imports/vnstudio/海风与布丁/assets/art-upgrade/B14.webp,保留已审核图；路线信息待核实
@@ -225,60 +225,89 @@ art_f7156ede2231fb95,O01 · 营地外清晨,bg,source,Codex 图像请求,Codex O
 art_f932b7961e59adb7,O02 · 翡翠之梦店外初秋,bg,source,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/scene-backgrounds/originals/O02.png,保留已审核图；路线信息待核实
 art_37f74f9850a378b8,O02 · 翡翠之梦店外初秋,bg,source,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/imports/vnstudio/海风与布丁/assets/bg/scenes/O02.webp,保留已审核图；路线信息待核实
 md2p8m90,CG_人鱼公主,cg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,9,content/imports/vnstudio/海风与布丁/assets/art-upgrade/C25.webp,保留已审核图；路线信息待核实
-art_upgrade_c05,CG_入水回头确认,cg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,3,content/imports/vnstudio/海风与布丁/assets/art-upgrade/C05.webp,保留已审核图；路线信息待核实
-yvwvivzm,CG_初登场,cg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,3,content/imports/vnstudio/海风与布丁/assets/art-upgrade/C01.webp,保留已审核图；路线信息待核实
-ehbun5kh,CG_原来是你,cg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,5,content/imports/vnstudio/海风与布丁/assets/art-upgrade/C09.webp,保留已审核图；路线信息待核实
+art_upgrade_c05,CG_入水回头确认,cg,adopted,用户转交的队友精修图,精修工具未登记,,,False,3,content/imports/vnstudio/海风与布丁/assets/art-upgrade/C05.webp,保留精修原件；按剧情和结构逐项审核，不继承旧图生成参数
+yvwvivzm,CG_初登场,cg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,4,content/imports/vnstudio/海风与布丁/assets/art-upgrade/C01.webp,保留已审核图；路线信息待核实
+ehbun5kh,CG_原来是你,cg,adopted,用户转交的队友精修图,精修工具未登记,,,False,5,content/imports/vnstudio/海风与布丁/assets/art-upgrade/C09.webp,保留精修原件；按剧情和结构逐项审核，不继承旧图生成参数
 pmngp4pk,CG_和解,cg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,5,content/imports/vnstudio/海风与布丁/assets/art-upgrade/C14.webp,保留已审核图；路线信息待核实
-art_upgrade_c20,CG_尾巴缠手腕约定,cg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,3,content/imports/vnstudio/海风与布丁/assets/art-upgrade/C20.webp,保留已审核图；路线信息待核实
-w3km9isl,CG_布丁,cg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,4,content/imports/vnstudio/海风与布丁/assets/art-upgrade/C18.webp,保留已审核图；路线信息待核实
-ez0vsxzc,CG_手链,cg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,7,content/imports/vnstudio/海风与布丁/assets/art-upgrade/C07.webp,保留已审核图；路线信息待核实
-art_upgrade_c17,CG_打烊后披毯与海鲜面,cg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,3,content/imports/vnstudio/海风与布丁/assets/art-upgrade/C17.webp,保留已审核图；路线信息待核实
+art_upgrade_c20,CG_尾巴缠手腕约定,cg,adopted,用户转交的队友精修图,精修工具未登记,,,False,3,content/imports/vnstudio/海风与布丁/assets/art-upgrade/C20.webp,保留精修原件；按剧情和结构逐项审核，不继承旧图生成参数
+w3km9isl,CG_布丁,cg,adopted,用户转交的队友精修图,精修工具未登记,,,False,4,content/imports/vnstudio/海风与布丁/assets/art-upgrade/C18.webp,保留精修原件；按剧情和结构逐项审核，不继承旧图生成参数
+ez0vsxzc,CG_手链,cg,adopted,用户转交的队友精修图,精修工具未登记,,,False,7,content/imports/vnstudio/海风与布丁/assets/art-upgrade/C07.webp,保留精修原件；按剧情和结构逐项审核，不继承旧图生成参数
+art_upgrade_c17,CG_打烊后披毯与海鲜面,cg,adopted,用户转交的队友精修图,精修工具未登记,,,False,3,content/imports/vnstudio/海风与布丁/assets/art-upgrade/C17.webp,保留精修原件；按剧情和结构逐项审核，不继承旧图生成参数
 art_upgrade_c26,CG_打烊柜台坐姿·谈起梦想,cg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,5,content/imports/vnstudio/海风与布丁/assets/art-upgrade/C26.webp,保留已审核图；路线信息待核实
-jxxr16ez,CG_新家,cg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,6,content/imports/vnstudio/海风与布丁/assets/art-upgrade/C11.webp,保留已审核图；路线信息待核实
-sqnct5dc,CG_早安,cg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,5,content/imports/vnstudio/海风与布丁/assets/art-upgrade/C19.webp,保留已审核图；路线信息待核实
-art_upgrade_c21,CG_月下共读初遇稿,cg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,3,content/imports/vnstudio/海风与布丁/assets/art-upgrade/C21.webp,保留已审核图；路线信息待核实
-supaesch,CG_海豚,cg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,5,content/imports/vnstudio/海风与布丁/assets/art-upgrade/C10.webp,保留已审核图；路线信息待核实
-wnpuk9dy,CG_海风与布丁,cg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,5,content/imports/vnstudio/海风与布丁/assets/art-upgrade/C22.webp,保留已审核图；路线信息待核实
-ij6ed2gn,CG_深水区,cg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,9,content/imports/vnstudio/海风与布丁/assets/art-upgrade/C13.webp,保留已审核图；路线信息待核实
-kful0adz,CG_深海之光,cg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,5,content/imports/vnstudio/海风与布丁/assets/art-upgrade/C06.webp,保留已审核图；路线信息待核实
-akugkagj,CG_烤鱿鱼,cg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,4,content/imports/vnstudio/海风与布丁/assets/art-upgrade/C03.webp,保留已审核图；路线信息待核实
+jxxr16ez,CG_新家,cg,adopted,用户转交的队友精修图,精修工具未登记,,,False,6,content/imports/vnstudio/海风与布丁/assets/art-upgrade/C11.webp,保留精修原件；按剧情和结构逐项审核，不继承旧图生成参数
+sqnct5dc,CG_早安,cg,adopted,用户转交的队友精修图,精修工具未登记,,,False,5,content/imports/vnstudio/海风与布丁/assets/art-upgrade/C19.webp,保留精修原件；按剧情和结构逐项审核，不继承旧图生成参数
+art_upgrade_c21,CG_月下共读初遇稿,cg,adopted,用户转交的队友精修图,精修工具未登记,,,False,3,content/imports/vnstudio/海风与布丁/assets/art-upgrade/C21.webp,保留精修原件；按剧情和结构逐项审核，不继承旧图生成参数
+supaesch,CG_海豚,cg,adopted,用户转交的队友精修图,精修工具未登记,,,False,5,content/imports/vnstudio/海风与布丁/assets/art-upgrade/C10.webp,保留精修原件；按剧情和结构逐项审核，不继承旧图生成参数
+wnpuk9dy,CG_海风与布丁,cg,adopted,用户转交的队友精修图,精修工具未登记,,,False,5,content/imports/vnstudio/海风与布丁/assets/art-upgrade/C22.webp,保留精修原件；按剧情和结构逐项审核，不继承旧图生成参数
+ij6ed2gn,CG_深水区,cg,adopted,用户转交的队友精修图,精修工具未登记,,,False,9,content/imports/vnstudio/海风与布丁/assets/art-upgrade/C13.webp,保留精修原件；按剧情和结构逐项审核，不继承旧图生成参数
+kful0adz,CG_深海之光,cg,adopted,用户转交的队友精修图,精修工具未登记,,,False,5,content/imports/vnstudio/海风与布丁/assets/art-upgrade/C06.webp,保留精修原件；按剧情和结构逐项审核，不继承旧图生成参数
 z639wmth,CG_珍珠,cg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,8,content/imports/vnstudio/海风与布丁/assets/art-upgrade/C16.webp,保留已审核图；路线信息待核实
-ak1lber9,CG_电话,cg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,5,content/imports/vnstudio/海风与布丁/assets/art-upgrade/C12.webp,保留已审核图；路线信息待核实
-xndnkx8k,CG_立约,cg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,12,content/imports/vnstudio/海风与布丁/assets/art-upgrade/C04.webp,保留已审核图；路线信息待核实
-c6r2xcnj,CG_糍粑,cg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,8,content/imports/vnstudio/海风与布丁/assets/art-upgrade/C02.webp,保留已审核图；路线信息待核实
-7jj07jqh,CG_翡翠之梦,cg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,4,content/imports/vnstudio/海风与布丁/assets/art-upgrade/C15.webp,保留已审核图；路线信息待核实
-r0t0azno,CG_诗句,cg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,13,content/imports/vnstudio/海风与布丁/assets/art-upgrade/C08.webp,保留已审核图；路线信息待核实
-dxmnyp7j,CG_集市女仆,cg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,4,content/imports/vnstudio/海风与布丁/assets/art-upgrade/C24.webp,保留已审核图；路线信息待核实
-art_cc387e2e6c3094d0,C01 · 主角初登场,cg,reserve,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C01.png,保留已审核图；路线信息待核实
-art_52a3bc6ebac087ad,C02 · 下午分享糍粑,cg,reserve,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C02.png,保留已审核图；路线信息待核实
+ak1lber9,CG_电话,cg,adopted,用户转交的队友精修图,精修工具未登记,,,False,5,content/imports/vnstudio/海风与布丁/assets/art-upgrade/C12.webp,保留精修原件；按剧情和结构逐项审核，不继承旧图生成参数
+xndnkx8k,CG_立约,cg,adopted,用户转交的队友精修图,精修工具未登记,,,False,12,content/imports/vnstudio/海风与布丁/assets/art-upgrade/C04.webp,保留精修原件；按剧情和结构逐项审核，不继承旧图生成参数
+c6r2xcnj,CG_糍粑,cg,adopted,用户转交的队友精修图,精修工具未登记,,,False,8,content/imports/vnstudio/海风与布丁/assets/art-upgrade/C02.webp,保留精修原件；按剧情和结构逐项审核，不继承旧图生成参数
+7jj07jqh,CG_翡翠之梦,cg,adopted,用户转交的队友精修图,精修工具未登记,,,False,4,content/imports/vnstudio/海风与布丁/assets/art-upgrade/C15.webp,保留精修原件；按剧情和结构逐项审核，不继承旧图生成参数
+r0t0azno,CG_诗句,cg,adopted,用户转交的队友精修图,精修工具未登记,,,False,13,content/imports/vnstudio/海风与布丁/assets/art-upgrade/C08.webp,保留精修原件；按剧情和结构逐项审核，不继承旧图生成参数
+dxmnyp7j,CG_集市女仆,cg,adopted,用户转交的队友精修图,精修工具未登记,,,False,4,content/imports/vnstudio/海风与布丁/assets/art-upgrade/C24.webp,保留精修原件；按剧情和结构逐项审核，不继承旧图生成参数
+art_upgrade_o12,门口温热烤小鱿鱼,cg,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,5,content/imports/vnstudio/海风与布丁/assets/art-upgrade/O12.webp,保留已审核图；路线信息待核实
+art_cae104d839d04042,C01 · 主角初登场,cg,reserve,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C01.png,保留已审核图；路线信息待核实
+art_6f389f9de6246cc9,C01_rejected_catch_crop · 主角初登场,cg,rejected,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C01_rejected_catch_crop.png,保留已审核图；路线信息待核实
+art_764c056affc8f7da,C01_rejected_direction_before_delivery · 主角初登场,cg,rejected,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C01_rejected_direction_before_delivery.png,保留已审核图；路线信息待核实
+art_cc387e2e6c3094d0,C01_rejected_story_catch · 主角初登场,cg,rejected,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C01_rejected_story_catch.png,保留已审核图；路线信息待核实
+art_5e11ca641ffc9e10,C02 · 下午分享糍粑,cg,reserve,用户转交的队友精修图,精修工具未登记,,,False,0,content/assets/art-upgrade/originals/C02.png,保留精修原件；按剧情和结构逐项审核，不继承旧图生成参数
+art_52a3bc6ebac087ad,C02_rejected_before_teammate_refinement · 下午分享糍粑,cg,rejected,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C02_rejected_before_teammate_refinement.png,保留已审核图；路线信息待核实
 art_bcba5b7eee03cd03,C03 · 营地门口·无人留下的烤鱿鱼,cg,reserve,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C03.png,保留已审核图；路线信息待核实
 art_a63393330b1c77c2,C03_before_opening_revision · 营地门口·无人留下的烤鱿鱼,cg,rejected,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C03_before_opening_revision.png,保留已审核图；路线信息待核实
-art_a2f2b71a0a329f25,C04 · 礁石写契约,cg,reserve,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C04.png,保留已审核图；路线信息待核实
-art_6444737e4c197cc8,C05 · 入水回头确认,cg,reserve,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C05.png,保留已审核图；路线信息待核实
-art_8cc8f64166ad485e,C06 · 深海星光定情,cg,reserve,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C06.png,保留已审核图；路线信息待核实
-art_5d34554b0bd2318e,C07 · 黄昏手链代管,cg,reserve,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C07.png,保留已审核图；路线信息待核实
-art_3fa7e67e2762b264,C08 · 诗签礁石写字,cg,reserve,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C08.png,保留已审核图；路线信息待核实
+art_e0d3bb0bb50abc9e,C04 · 礁石写契约,cg,reserve,用户转交的队友精修图,精修工具未登记,,,False,0,content/assets/art-upgrade/originals/C04.png,保留精修原件；按剧情和结构逐项审核，不继承旧图生成参数
+art_4c9e0bbc54e77539,C04_rejected_before_teammate_refinement · 礁石写契约,cg,rejected,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C04_rejected_before_teammate_refinement.png,保留已审核图；路线信息待核实
+art_a2f2b71a0a329f25,C04_rejected_tail_opening · 礁石写契约,cg,rejected,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C04_rejected_tail_opening.png,保留已审核图；路线信息待核实
+art_84989ef6f7fb9eb4,C05 · 入水回头确认,cg,reserve,用户转交的队友精修图,精修工具未登记,,,False,0,content/assets/art-upgrade/originals/C05.png,保留精修原件；按剧情和结构逐项审核，不继承旧图生成参数
+art_6444737e4c197cc8,C05_rejected_before_teammate_refinement · 入水回头确认,cg,rejected,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C05_rejected_before_teammate_refinement.png,保留已审核图；路线信息待核实
+art_01bb3c749ce41d12,C06 · 深海星光定情,cg,reserve,用户转交的队友精修图,精修工具未登记,,,False,0,content/assets/art-upgrade/originals/C06.png,保留精修原件；按剧情和结构逐项审核，不继承旧图生成参数
+art_8cc8f64166ad485e,C06_rejected_before_teammate_refinement · 深海星光定情,cg,rejected,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C06_rejected_before_teammate_refinement.png,保留已审核图；路线信息待核实
+art_e38015619a196caf,C07 · 黄昏手链代管,cg,reserve,用户转交的队友精修图,精修工具未登记,,,False,0,content/assets/art-upgrade/originals/C07.png,保留精修原件；按剧情和结构逐项审核，不继承旧图生成参数
+art_5d34554b0bd2318e,C07_rejected_before_teammate_refinement · 黄昏手链代管,cg,rejected,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C07_rejected_before_teammate_refinement.png,保留已审核图；路线信息待核实
+art_f3d5a77e7b9f46ab,C08 · 诗签礁石写字,cg,reserve,用户转交的队友精修图,精修工具未登记,,,False,0,content/assets/art-upgrade/originals/C08.png,保留精修原件；按剧情和结构逐项审核，不继承旧图生成参数
 art_5fc67545616918d2,C08_before_direction · 诗签礁石写字,cg,rejected,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C08_before_direction.png,保留已审核图；路线信息待核实
-art_4579b40d8f042c6b,C09 · 原来你是真·营地裹毯夜谈,cg,reserve,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C09.png,保留已审核图；路线信息待核实
-art_3503c3bb22f94619,C10 · 沙洲海豚与吃醋,cg,reserve,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C10.png,保留已审核图；路线信息待核实
-art_73055c18fa29bea2,C11 · 新家第一次揭示,cg,reserve,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C11.png,保留已审核图；路线信息待核实
-art_d81231cbbfc1785e,C12 · 电话后抢手机,cg,reserve,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C12.png,保留已审核图；路线信息待核实
+art_3fa7e67e2762b264,C08_rejected_before_teammate_refinement · 诗签礁石写字,cg,rejected,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C08_rejected_before_teammate_refinement.png,保留已审核图；路线信息待核实
+art_dd09c865f176834f,C09 · 原来你是真·营地裹毯夜谈,cg,reserve,用户转交的队友精修图,精修工具未登记,,,False,0,content/assets/art-upgrade/originals/C09.png,保留精修原件；按剧情和结构逐项审核，不继承旧图生成参数
+art_4579b40d8f042c6b,C09_rejected_before_teammate_refinement · 原来你是真·营地裹毯夜谈,cg,rejected,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C09_rejected_before_teammate_refinement.png,保留已审核图；路线信息待核实
+art_35dc39fc6ba154b2,C10 · 沙洲海豚与吃醋,cg,reserve,用户转交的队友精修图,精修工具未登记,,,False,0,content/assets/art-upgrade/originals/C10.png,保留精修原件；按剧情和结构逐项审核，不继承旧图生成参数
+art_3503c3bb22f94619,C10_rejected_before_teammate_refinement · 沙洲海豚与吃醋,cg,rejected,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C10_rejected_before_teammate_refinement.png,保留已审核图；路线信息待核实
+art_c72936ed550dcfdd,C11 · 新家第一次揭示,cg,reserve,用户转交的队友精修图,精修工具未登记,,,False,0,content/assets/art-upgrade/originals/C11.png,保留精修原件；按剧情和结构逐项审核，不继承旧图生成参数
+art_73055c18fa29bea2,C11_rejected_before_teammate_refinement · 新家第一次揭示,cg,rejected,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C11_rejected_before_teammate_refinement.png,保留已审核图；路线信息待核实
+art_3e53d6fcda31dba3,C12 · 电话后抢手机,cg,reserve,用户转交的队友精修图,精修工具未登记,,,False,0,content/assets/art-upgrade/originals/C12.png,保留精修原件；按剧情和结构逐项审核，不继承旧图生成参数
+art_d81231cbbfc1785e,C12_rejected_before_teammate_refinement · 电话后抢手机,cg,rejected,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C12_rejected_before_teammate_refinement.png,保留已审核图；路线信息待核实
 art_2af3e78554747761,C12_rejected_skin · 电话后抢手机,cg,rejected,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C12_rejected_skin.png,保留已审核图；路线信息待核实
-art_eb44284970bc4c95,C13 · 深水区救援,cg,reserve,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C13.png,保留已审核图；路线信息待核实
+art_8f45b3fe0e9bec3d,C13 · 深水区救援,cg,reserve,用户转交的队友精修图,精修工具未登记,,,False,0,content/assets/art-upgrade/originals/C13.png,保留精修原件；按剧情和结构逐项审核，不继承旧图生成参数
+art_eb44284970bc4c95,C13_rejected_before_teammate_refinement · 深水区救援,cg,rejected,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C13_rejected_before_teammate_refinement.png,保留已审核图；路线信息待核实
 art_45d77cfe130698df,C14 · 月夜和解,cg,reserve,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C14.png,保留已审核图；路线信息待核实
-art_662780920e3122b7,C15 · 翡翠之梦尾帆,cg,reserve,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C15.png,保留已审核图；路线信息待核实
+art_6d4e8679e794b6e6,C15 · 翡翠之梦尾帆,cg,reserve,用户转交的队友精修图,精修工具未登记,,,False,0,content/assets/art-upgrade/originals/C15.png,保留精修原件；按剧情和结构逐项审核，不继承旧图生成参数
+art_662780920e3122b7,C15_rejected_before_teammate_refinement · 翡翠之梦尾帆,cg,rejected,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C15_rejected_before_teammate_refinement.png,保留已审核图；路线信息待核实
 art_33d414e370b3e58c,C16 · 同款珍珠戒指,cg,reserve,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C16.png,保留已审核图；路线信息待核实
-art_a57afe9820b64dee,C17 · 打烊后披毯与海鲜面,cg,reserve,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C17.png,保留已审核图；路线信息待核实
+art_fab2c4af730d198a,C17 · 打烊后披毯与海鲜面,cg,reserve,用户转交的队友精修图,精修工具未登记,,,False,0,content/assets/art-upgrade/originals/C17.png,保留精修原件；按剧情和结构逐项审核，不继承旧图生成参数
 art_f46bb23dc0cb8c25,C17_before_review · 打烊后披毯与海鲜面,cg,rejected,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C17_before_review.png,保留已审核图；路线信息待核实
-art_8674df9f0588b29f,C18 · 布丁是不是假的,cg,reserve,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C18.png,保留已审核图；路线信息待核实
+art_a57afe9820b64dee,C17_rejected_before_teammate_refinement · 打烊后披毯与海鲜面,cg,rejected,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C17_rejected_before_teammate_refinement.png,保留已审核图；路线信息待核实
+art_d7f1238d1360111f,C18 · 布丁是不是假的,cg,reserve,用户转交的队友精修图,精修工具未登记,,,False,0,content/assets/art-upgrade/originals/C18.png,保留精修原件；按剧情和结构逐项审核，不继承旧图生成参数
+art_8674df9f0588b29f,C18_rejected_before_teammate_refinement · 布丁是不是假的,cg,rejected,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C18_rejected_before_teammate_refinement.png,保留已审核图；路线信息待核实
 art_86549851fa1d724d,C18_rejected_skin_tail · 布丁是不是假的,cg,rejected,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C18_rejected_skin_tail.png,保留已审核图；路线信息待核实
-art_6433c276fddc93a0,C19 · 正装门口早安,cg,reserve,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C19.png,保留已审核图；路线信息待核实
-art_7111eea7d7ba3e39,C20 · 尾巴缠手腕约定,cg,reserve,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C20.png,保留已审核图；路线信息待核实
-art_d3e82077e454a5ab,C21 · 月下共读初遇稿,cg,reserve,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C21.png,保留已审核图；路线信息待核实
-art_c0cc45926510f299,C22 · 海风与布丁终幕,cg,reserve,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C22.png,保留已审核图；路线信息待核实
-art_65d1f96544be2f4e,C24 · 集市上的女仆,cg,reserve,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C24.png,保留已审核图；路线信息待核实
+art_84037b68d7a55de7,C19 · 正装门口早安,cg,reserve,用户转交的队友精修图,精修工具未登记,,,False,0,content/assets/art-upgrade/originals/C19.png,保留精修原件；按剧情和结构逐项审核，不继承旧图生成参数
+art_6433c276fddc93a0,C19_rejected_before_teammate_refinement · 正装门口早安,cg,rejected,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C19_rejected_before_teammate_refinement.png,保留已审核图；路线信息待核实
+art_a1e3180019ede493,C20 · 尾巴缠手腕约定,cg,reserve,用户转交的队友精修图,精修工具未登记,,,False,0,content/assets/art-upgrade/originals/C20.png,保留精修原件；按剧情和结构逐项审核，不继承旧图生成参数
+art_7111eea7d7ba3e39,C20_rejected_before_teammate_refinement · 尾巴缠手腕约定,cg,rejected,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C20_rejected_before_teammate_refinement.png,保留已审核图；路线信息待核实
+art_3c867e80b31d8760,C21 · 月下共读初遇稿,cg,reserve,用户转交的队友精修图,精修工具未登记,,,False,0,content/assets/art-upgrade/originals/C21.png,保留精修原件；按剧情和结构逐项审核，不继承旧图生成参数
+art_d3e82077e454a5ab,C21_rejected_before_teammate_refinement · 月下共读初遇稿,cg,rejected,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C21_rejected_before_teammate_refinement.png,保留已审核图；路线信息待核实
+art_f1f9097ede9917bc,C22 · 海风与布丁终幕,cg,reserve,用户转交的队友精修图,精修工具未登记,,,False,0,content/assets/art-upgrade/originals/C22.png,保留精修原件；按剧情和结构逐项审核，不继承旧图生成参数
+art_c0cc45926510f299,C22_rejected_before_teammate_refinement · 海风与布丁终幕,cg,rejected,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C22_rejected_before_teammate_refinement.png,保留已审核图；路线信息待核实
+art_136e69bc730c026b,C24 · 集市上的女仆,cg,reserve,用户转交的队友精修图,精修工具未登记,,,False,0,content/assets/art-upgrade/originals/C24.png,保留精修原件；按剧情和结构逐项审核，不继承旧图生成参数
+art_65d1f96544be2f4e,C24_rejected_before_teammate_refinement · 集市上的女仆,cg,rejected,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C24_rejected_before_teammate_refinement.png,保留已审核图；路线信息待核实
 art_28d936de8493d313,C25 · 贝壳番外·睡衣夜谈,cg,reserve,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C25.png,保留已审核图；路线信息待核实
 art_7f003ecd17ee95b5,C26 · 打烊柜台坐姿·谈起梦想,cg,reserve,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C26.png,保留已审核图；路线信息待核实
+art_cf6d96f95439182e,C27 · 尾鳍悄悄带向岸边,cg,rejected,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C27.png,用户明确要求弃用这张图并停止全部CG工作。全部C27候选及网关/Rinko测试均退选，不能自动恢复。
+art_4d722496bacba3f1,C27_rejected_action_under_dialogue · 尾鳍悄悄带向岸边,cg,rejected,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C27_rejected_action_under_dialogue.png,保留已审核图；路线信息待核实
+art_8f5480656c61d8c5,C27_rejected_detached_tail · 尾鳍悄悄带向岸边,cg,rejected,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C27_rejected_detached_tail.png,保留已审核图；路线信息待核实
+art_48205327e1a58b7d,C27_rejected_failed_root_connection · 尾鳍悄悄带向岸边,cg,rejected,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C27_rejected_failed_root_connection.png,保留已审核图；路线信息待核实
+art_84e8968f873c5247,C27_rejected_tail_contact · 尾鳍悄悄带向岸边,cg,rejected,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C27_rejected_tail_contact.png,保留已审核图；路线信息待核实
+art_def3103a815011e5,C27_rejected_tail_too_long · 尾鳍悄悄带向岸边,cg,rejected,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/C27_rejected_tail_too_long.png,保留已审核图；路线信息待核实
 art_f4561fea623a4efb,CG_人鱼公主,cg,replaced,LarryE135 完整作品,未登记,,,False,0,content/imports/vnstudio/海风与布丁/assets/bg/CG_人鱼公主.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
 art_f66a9ff8d0bce3ba,CG_初登场,cg,replaced,LarryE135 完整作品,未登记,,,False,0,content/imports/vnstudio/海风与布丁/assets/bg/CG_初登场.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
 art_b29ef4c891b86e77,CG_原来是你,cg,replaced,LarryE135 完整作品,未登记,,,False,0,content/imports/vnstudio/海风与布丁/assets/bg/CG_原来是你.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
@@ -297,6 +326,7 @@ art_cb77080672580576,CG_海豚,cg,replaced,LarryE135 完整作品,未登记,,,Fa
 art_0f10f407f5d67246,CG_海风与布丁,cg,replaced,LarryE135 完整作品,未登记,,,False,0,content/imports/vnstudio/海风与布丁/assets/bg/CG_海风与布丁.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
 art_96cbed9d787644a7,CG_深水区,cg,replaced,LarryE135 完整作品,未登记,,,False,0,content/imports/vnstudio/海风与布丁/assets/bg/CG_深水区.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
 art_e6a4823c40cdf6e5,CG_深海之光,cg,replaced,LarryE135 完整作品,未登记,,,False,0,content/imports/vnstudio/海风与布丁/assets/bg/CG_深海之光.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
+akugkagj,CG_烤鱿鱼,cg,reserve,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/imports/vnstudio/海风与布丁/assets/art-upgrade/C03.webp,保留已审核图；路线信息待核实
 art_6d60dd93f81889db,CG_烤鱿鱼,cg,replaced,LarryE135 完整作品,未登记,,,False,0,content/imports/vnstudio/海风与布丁/assets/bg/CG_烤鱿鱼.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
 art_5ac84d017013d097,CG_珍珠,cg,replaced,LarryE135 完整作品,未登记,,,False,0,content/imports/vnstudio/海风与布丁/assets/bg/CG_珍珠.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
 art_075f7829b1cd52c3,CG_电话,cg,replaced,LarryE135 完整作品,未登记,,,False,0,content/imports/vnstudio/海风与布丁/assets/bg/CG_电话.jpg,使用中的人物/CG/封面待统一重制；旧背景留档
@@ -319,6 +349,8 @@ art_84bbafd13a02ae13,O10 · 开张时僵住,cg,reserve,Codex 图像请求,Codex 
 art_3c6e3bd002e3841c,O11 · 月光尾鳍圈影,cg,reserve,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/O11.png,保留已审核图；路线信息待核实
 art_98f00eb2754bfb05,O11_before_review · 月光尾鳍圈影,cg,rejected,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/O11_before_review.png,保留已审核图；路线信息待核实
 art_a297b1a2fd5276fe,O11_rejected_tail · 月光尾鳍圈影,cg,rejected,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/O11_rejected_tail.png,保留已审核图；路线信息待核实
+art_7a8fb1341aad484f,O12 · 门口温热烤小鱿鱼,cg,reserve,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/O12.png,保留已审核图；路线信息待核实
+art_upgrade_c27,尾鳍悄悄带向岸边,cg,rejected,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/imports/vnstudio/海风与布丁/assets/art-upgrade/C27.webp,用户明确要求弃用这张图并停止全部CG工作。全部C27候选及网关/Rinko测试均退选，不能自动恢复。
 art_upgrade_l36,女仆腰系男士外套,ch,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,15,content/imports/vnstudio/海风与布丁/assets/art-upgrade/L36.webp,保留已审核图；路线信息待核实
 art_upgrade_l12,常服冷淡背侧身,ch,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,30,content/imports/vnstudio/海风与布丁/assets/art-upgrade/L12.webp,保留已审核图；路线信息待核实
 art_upgrade_l10,常服受伤低落,ch,adopted,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,29,content/imports/vnstudio/海风与布丁/assets/art-upgrade/L10.webp,保留已审核图；路线信息待核实
@@ -372,8 +404,9 @@ t4lmlnr9,鲸鱼小姐_长裙,ch,adopted,Codex 图像请求,Codex OAuth 图像桥
 art_566e6bd87c0a715a,L01 · 常服中性,ch,reserve,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-sunburst,,False,0,content/assets/art-upgrade/originals/L01.png,保留已审核图；路线信息待核实
 art_998a2bd6cb048709,L02 · 常服得意,ch,reserve,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/L02.png,保留已审核图；路线信息待核实
 art_840bec3e7f33f302,L02_before_performance · 常服得意,ch,rejected,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/L02_before_performance.png,保留已审核图；路线信息待核实
-art_9db53a2f71ab999a,L03 · 常服害羞,ch,reserve,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/L03.png,保留已审核图；路线信息待核实
+art_38d50c24e5c4a98e,L03 · 常服害羞,ch,reserve,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/L03.png,保留已审核图；路线信息待核实
 art_11bb7b06fc50a1e9,L03_before_performance · 常服害羞,ch,rejected,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/L03_before_performance.png,保留已审核图；路线信息待核实
+art_9db53a2f71ab999a,L03_rejected_tail_opening · 常服害羞,ch,rejected,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/L03_rejected_tail_opening.png,保留已审核图；路线信息待核实
 art_af4f2568be10789a,L04 · 常服坏笑,ch,reserve,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/L04.png,保留已审核图；路线信息待核实
 art_26e69b084870be96,L04_before_performance · 常服坏笑,ch,rejected,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/L04_before_performance.png,保留已审核图；路线信息待核实
 art_bdf939d0b3f7e91f,L05 · 常服生气,ch,reserve,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/L05.png,保留已审核图；路线信息待核实
@@ -419,7 +452,12 @@ art_4953a9108a8ae998,L35 · 营地夜谈·裹毯坐姿,ch,reserve,Codex 图像�
 art_6cd24eececa2f9eb,L36 · 女仆腰系男士外套,ch,reserve,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/L36.png,保留已审核图；路线信息待核实
 art_40b237aad9847b7e,O03 · 常服薄外套,ch,reserve,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/O03.png,保留已审核图；路线信息待核实
 art_a26ebf046aebf2b8,P01 · 常服抱臂监视,ch,reserve,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/P01.png,保留已审核图；路线信息待核实
-art_0985adf849b8f7e5,P02 · 常服举高笔记本,ch,reserve,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/P02.png,保留已审核图；路线信息待核实
+art_2bbab738568822e3,P02 · 常服举高笔记本,ch,reserve,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/P02.png,保留已审核图；路线信息待核实
+art_e65e395649814a60,P02_rejected_alpha_fringe_final · 常服举高笔记本,ch,rejected,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/P02_rejected_alpha_fringe_final.png,保留已审核图；路线信息待核实
+art_c7b75b727a270356,P02_rejected_alpha_fringing · 常服举高笔记本,ch,rejected,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/P02_rejected_alpha_fringing.png,保留已审核图；路线信息待核实
+art_1e57944880cf8a40,P02_rejected_tail_candidate · 常服举高笔记本,ch,rejected,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/P02_rejected_tail_candidate.png,保留已审核图；路线信息待核实
+art_0985adf849b8f7e5,P02_rejected_tail_opening · 常服举高笔记本,ch,rejected,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/P02_rejected_tail_opening.png,保留已审核图；路线信息待核实
+art_9b9e92697a78da3b,P02_teammate_refined · 常服举高笔记本,ch,rejected,LarryE135 完整作品,未登记,,,False,0,content/assets/art-upgrade/originals/P02_teammate_refined.png,使用中的人物/CG/封面待统一重制；旧背景留档
 art_f3b0aa760b5e8b15,P03 · 裹毯夜谈怔住,ch,reserve,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/P03.png,保留已审核图；路线信息待核实
 art_06b0cd8e3815feed,P04 · 裹毯夜谈受伤生气,ch,reserve,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/P04.png,保留已审核图；路线信息待核实
 art_fc44bc5eb68672e3,P05 · 常服跪坐写诗,ch,reserve,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/P05.png,保留已审核图；路线信息待核实
@@ -434,7 +472,8 @@ art_eb2ec4eb0ed1af24,P11 · 裹毯夜谈抱膝沉思,ch,reserve,Codex 图像请�
 art_1866da7f7a5656c1,P12 · 裹毯夜谈分毯,ch,reserve,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/P12.png,保留已审核图；路线信息待核实
 art_6b802bcd09650ff1,P13 · 常服并膝坐姿·戒指,ch,reserve,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/P13.png,保留已审核图；路线信息待核实
 art_a011917be030cc78,P13_rejected_anatomy · 常服并膝坐姿·戒指,ch,rejected,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/P13_rejected_anatomy.png,保留已审核图；路线信息待核实
-art_82c4bd6e28bba323,P14 · 常服翻开笔记本检查,ch,reserve,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/P14.png,保留已审核图；路线信息待核实
+art_2499152e81eadcdf,P14 · 常服翻开笔记本检查,ch,reserve,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/P14.png,保留已审核图；路线信息待核实
+art_82c4bd6e28bba323,P14_rejected_notebook · 常服翻开笔记本检查,ch,rejected,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/P14_rejected_notebook.png,保留已审核图；路线信息待核实
 art_b830babb6a006fcb,P15 · 常服并膝坐姿·害羞,ch,reserve,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/P15.png,保留已审核图；路线信息待核实
 art_7038f772e3425b57,P15_rejected_anatomy · 常服并膝坐姿·害羞,ch,rejected,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/P15_rejected_anatomy.png,保留已审核图；路线信息待核实
 art_f894a6295ab63c5c,P16 · 常服并膝坐姿·得意,ch,reserve,Codex 图像请求,Codex OAuth 图像桥,gpt-image-2.5-flare,,False,0,content/assets/art-upgrade/originals/P16.png,坐姿结构和裙摆已修复；左手天青珍珠戒指漏画，局部补画被接口拒绝，留待人工。

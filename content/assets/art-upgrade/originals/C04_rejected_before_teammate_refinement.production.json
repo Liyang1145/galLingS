@@ -1,0 +1,17 @@
+{
+  "prompt": "Precise local correction in this complete 16:9 rocky-shore contract-writing CG. The same ADULT woman age24 as the reference, long cobalt/periwinkle blue hair, loop ahoge, cyan bow clips, blue-and-white fin ears, blue eyes, exact opaque navy sailor-collar dress with cyan chest bow and white double hem stripes. Healthy intact skin. Preserve her recognizable face, mature proportions, delicate painted anime VN finish. Keep face, pen-holding hand, other hand, open notebook, adult man, navy dress, two human legs, rocks, coast, daylight, framing and all interaction unchanged. At upper LEFT the tail currently ends in ONE giant leaf. Replace the leaf with the proper TWO-lobed whale fluke silhouette, BOTH lobes clearly within the frame and the distinct central notch visible against blue sky. One lobe can be foreshortened but must remain clearly separate from the other. Exactly ONE independent blue-and-white mammalian whale tail attaches behind her lower back, separate from her TWO human legs. It tapers to ONE narrow peduncle ending in EXACTLY TWO broad flattened left/right flukes with a deep visible central notch. Show both lobes clearly in the same plane, with believable volume. No single leaf, overlapping petal, third fin, fish fan, dorsal fin, disconnected lobe, tubular pointed tip or additional tail. Keep mottled cobalt/white tail markings, consistent sunlight and painted outlines. No readable text, new props, background change or UI.",
+  "requested_model": "gpt-image-2.5-flare",
+  "requested_quality": "max",
+  "requested_size": "3840x2160",
+  "references": [
+    {
+      "path": "content/assets/art-upgrade/originals/C04_rejected_tail_opening.png",
+      "sha256": "a2f2b71a0a329f25c35313ef6837c5d0b3bb38f2920fcab4f6d7ae4d9174b049"
+    }
+  ],
+  "output_sha256": "4c9e0bbc54e77539c7e67e43cba6711b5ecec5c2645265a38e67f35451c8f375",
+  "actual_size": [
+    1672,
+    941
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "created": 1792158816,
+  "usage": {
+    "input_tokens": 2597,
+    "output_tokens": 1640,
+    "total_tokens": 4237,
+    "input_tokens_details": {
+      "text_tokens": 154,
+      "image_tokens": 2443,
+      "cached_tokens": 0
+    },
+    "output_tokens_details": {
+      "text_tokens": 0,
+      "image_tokens": 1640,
+      "reasoning_tokens": 0
+    }
+  },
+  "topLevelKeys": [
+    "created",
+    "data",
+    "usage"
+  ],
+  "returnedImages": 1,
+  "images": [
+    {
+      "file": "C27_gateway_test_1.png",
+      "size": [
+        1672,
+        940
+      ],
+      "mode": "RGB",
+      "sha256": "cfe0ba873a79cf59d00d43a740b34c138f784625414e2a41aab0f5f13c4f610b",
+      "bytes": 3131487
+    }
+  ],
+  "requestedModel": "gpt-image-2.5-sunburst",
+  "requestedQuality": "max",
+  "requestedSize": "3840x2160",
+  "reportedModel": null,
+  "reportedQuality": null,
+  "httpStatus": 200,
+  "elapsedSeconds": 69.668411,
+  "routeVerified": false,
+  "adoptedInGame": false,
+  "endpointPath": "/v1/images/edits"
+}

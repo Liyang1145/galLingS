@@ -247,9 +247,9 @@
   },
   "L03": {
     "status": "approved",
-    "sha256": "9db53a2f71ab999a1608f2a8356a6127d1ff3c11ed2255654b4bc8c00814be59",
-    "note": "动作返工逐图检查：扶胸叉腰、侧身抱臂害羞、脸旁V手势、双手惊慌、合手柔和、抱臂监视的上半身轮廓与尾姿明显不同；手指、独立尾根与服装一致，须再核对实际对话框遮挡。",
-    "reviewer": "Codex visual inspection; not final user approval"
+    "sha256": "38d50c24e5c4a98e1322d0a18b8b6844368af8384250d5ea4e9f6e80b5ced882",
+    "note": "单叶卷钩改成一根尾柄接成对鲸尾鳍，人物姿势保持。",
+    "reviewer": "Codex full-source visual inspection, 2026-10-16"
   },
   "L04": {
     "status": "approved",
@@ -355,15 +355,15 @@
   },
   "C01": {
     "status": "approved",
-    "sha256": "cc387e2e6c3094d0173a6826bdd58f06182ba4aa72e060f793348d7cbff33737",
-    "note": "逐图检查身份、双腿与独立尾巴、服装、动作、时段与布局，画面可作当前草稿；最终人为定稿另行完成。",
-    "reviewer": "Codex visual inspection; not final user approval"
+    "sha256": "cae104d839d04042808b06934dd47d5f77fdea941e7d6f9f8abe635c52d81f5e",
+    "note": "单手空中接本，全部本角在框内，独立双叶尾鳍采用精修包纹样。",
+    "reviewer": "Codex full-source visual inspection, 2026-10-16"
   },
   "C02": {
     "status": "approved",
-    "sha256": "52a3bc6ebac087ad7115b5b67bf9cfccb1dace006f2d53d1730d1d85413e3713",
-    "note": "逐图检查身份、双腿与独立尾巴、服装、动作、时段与布局，画面可作当前草稿；最终人为定稿另行完成。",
-    "reviewer": "Codex visual inspection; not final user approval"
+    "sha256": "5e11ca641ffc9e10ca38e588bf7da934ed7c53b4c76c947952818545169eadbc",
+    "note": "与原CG逐项对照：尾柄连续、双叶与纹样明确；身份、服装、时段和互动保留。C12/C18皮肤完好。",
+    "reviewer": "Codex visual review, 2026-10-16"
   },
   "C03": {
     "status": "approved",
@@ -373,39 +373,39 @@
   },
   "C04": {
     "status": "approved",
-    "sha256": "a2f2b71a0a329f25c35313ef6837c5d0b3bb38f2920fcab4f6d7ae4d9174b049",
-    "note": "逐图检查身份、双腿与独立尾巴、服装、动作、时段与布局，画面可作当前草稿；最终人为定稿另行完成。",
-    "reviewer": "Codex visual inspection; not final user approval"
+    "sha256": "e0d3bb0bb50abc9e5129f5cec864d359d65e5ad10e9093bf13a25dd15ce00160",
+    "note": "与原CG逐项对照：尾柄连续、双叶与纹样明确；身份、服装、时段和互动保留。C12/C18皮肤完好。",
+    "reviewer": "Codex visual review, 2026-10-16"
   },
   "C07": {
     "status": "approved",
-    "sha256": "5d34554b0bd2318ea89740ae802a41e2a8fef89a570faebf70c4b05fa38a572a",
-    "note": "逐图检查身份、双腿与独立尾巴、服装、动作、时段与布局，画面可作当前草稿；最终人为定稿另行完成。",
-    "reviewer": "Codex visual inspection; not final user approval"
+    "sha256": "e38015619a196cafa187f9557b4589d2fba508d2edcd0aa35ea6c4a03282a25f",
+    "note": "与原CG逐项对照：尾柄连续、双叶与纹样明确；身份、服装、时段和互动保留。C12/C18皮肤完好。",
+    "reviewer": "Codex visual review, 2026-10-16"
   },
   "C11": {
     "status": "approved",
-    "sha256": "73055c18fa29bea24c022977dca944232e53f8309239af828d2c8bd4c20cdc17",
-    "note": "逐图检查身份、双腿与独立尾巴、服装、动作、时段与布局，画面可作当前草稿；最终人为定稿另行完成。",
-    "reviewer": "Codex visual inspection; not final user approval"
+    "sha256": "c72936ed550dcfddd6e645935be57c5d2a57d88799370898c689d8864e5aaceb",
+    "note": "与原CG逐项对照：尾柄连续、双叶与纹样明确；身份、服装、时段和互动保留。C12/C18皮肤完好。",
+    "reviewer": "Codex visual review, 2026-10-16"
   },
   "C15": {
     "status": "approved",
-    "sha256": "662780920e3122b7e8037c40ca2d83013e20edbac3de373252b08a58e8f92d57",
-    "note": "逐图检查身份、双腿与独立尾巴、服装、动作、时段与布局，画面可作当前草稿；最终人为定稿另行完成。",
-    "reviewer": "Codex visual inspection; not final user approval"
+    "sha256": "6d4e8679e794b6e67d5f7943161cdbb67254c570e144eeeabf8b9ba26ec5de7f",
+    "note": "与原CG逐项对照：尾柄连续、双叶与纹样明确；身份、服装、时段和互动保留。C12/C18皮肤完好。",
+    "reviewer": "Codex visual review, 2026-10-16"
   },
   "C22": {
     "status": "approved",
-    "sha256": "c0cc45926510f299410e12b6a60a7225f031800540918c1d176680242dcb5a95",
-    "note": "逐图检查身份、双腿与独立尾巴、服装、动作、时段与布局，画面可作当前草稿；最终人为定稿另行完成。",
-    "reviewer": "Codex visual inspection; not final user approval"
+    "sha256": "f1f9097ede9917bcbbde5722d797102aad1234d8790c346dff81ef6f7b303123",
+    "note": "与原CG逐项对照：尾柄连续、双叶与纹样明确；身份、服装、时段和互动保留。C12/C18皮肤完好。",
+    "reviewer": "Codex visual review, 2026-10-16"
   },
   "C24": {
     "status": "approved",
-    "sha256": "65d1f96544be2f4e32f9c55f68bdef68b88e38350af6c0b1461b8eb6943adbb9",
-    "note": "逐图检查身份、双腿与独立尾巴、服装、动作、时段与布局，画面可作当前草稿；最终人为定稿另行完成。",
-    "reviewer": "Codex visual inspection; not final user approval"
+    "sha256": "136e69bc730c026be0f32cbc597ab610f5b50cfb2ad15931c523af483f2d148e",
+    "note": "与原CG逐项对照：尾柄连续、双叶与纹样明确；身份、服装、时段和互动保留。C12/C18皮肤完好。",
+    "reviewer": "Codex visual review, 2026-10-16"
   },
   "O05": {
     "status": "approved",
@@ -433,9 +433,9 @@
   },
   "C17": {
     "status": "approved",
-    "sha256": "a57afe9820b64deea2fc598e35f9e879283b362f50d72a3d37313b3002f698d3",
-    "note": "逐图核对表情与动作、实际时段/位置和服装，修正后的摘项链与贝壳风铃符合场景；裹毯坐姿为完整覆盖替代动作。",
-    "reviewer": "Codex visual inspection; not final user approval"
+    "sha256": "fab2c4af730d198a9298b443814174c1bd852232fa39a7688ea1a42daaf7eaeb",
+    "note": "与原CG逐项对照：尾柄连续、双叶与纹样明确；身份、服装、时段和互动保留。C12/C18皮肤完好。",
+    "reviewer": "Codex visual review, 2026-10-16"
   },
   "O09": {
     "status": "approved",
@@ -505,33 +505,33 @@
   },
   "C05": {
     "status": "approved",
-    "sha256": "6444737e4c197cc88edb199b5400fc3a6d4f193c2ac8b92f250049b62658d299",
-    "note": "逐图核对表情与动作、实际时段/位置和服装，修正后的摘项链与贝壳风铃符合场景；裹毯坐姿为完整覆盖替代动作。",
-    "reviewer": "Codex visual inspection; not final user approval"
+    "sha256": "84989ef6f7fb9eb40b2c5c0f96d0666779367a2c2bba21acc65e2704d7e7cb10",
+    "note": "与原CG逐项对照：尾柄连续、双叶与纹样明确；身份、服装、时段和互动保留。C12/C18皮肤完好。",
+    "reviewer": "Codex visual review, 2026-10-16"
   },
   "C08": {
     "status": "approved",
-    "sha256": "3fa7e67e2762b26412ff0e08cbf94d5b1706f6c31e17464457ac22545fabc375",
-    "note": "换用已复核的跪坐母图重画全景：两膝向前、小腿折在身下，完整裙摆、自然握笔与扶纸、单根尾巴一对尾鳍；月夜海岸一致，无戒指。书写手部位于对话框上缘以上，仍需实机确认。",
-    "reviewer": "Codex full-body and prop reinspection after user correction; not final user approval"
+    "sha256": "f3d5a77e7b9f46ab8afd078343a606d5635eefdc50b1d31b5b30710a76a855b9",
+    "note": "与原CG逐项对照：尾柄连续、双叶与纹样明确；身份、服装、时段和互动保留。C12/C18皮肤完好。",
+    "reviewer": "Codex visual review, 2026-10-16"
   },
   "C10": {
     "status": "approved",
-    "sha256": "3503c3bb22f94619981f1113d8ea39ed67b7aab53b729b6b1bebbd1828a7b050",
-    "note": "逐图核对表情与动作、实际时段/位置和服装，修正后的摘项链与贝壳风铃符合场景；裹毯坐姿为完整覆盖替代动作。",
-    "reviewer": "Codex visual inspection; not final user approval"
+    "sha256": "35dc39fc6ba154b25a5931fe6b8ef6b7c0880169f168675239d118489a883e2f",
+    "note": "与原CG逐项对照：尾柄连续、双叶与纹样明确；身份、服装、时段和互动保留。C12/C18皮肤完好。",
+    "reviewer": "Codex visual review, 2026-10-16"
   },
   "C12": {
     "status": "approved",
-    "sha256": "d81231cbbfc1785e16fbae9f41c9c0074644106cc9c751fad690c0690f16a2db",
-    "note": "逐图对照：手臂、肘部和膝部误画擦伤已去除；保留泪眼、脸部红晕、手机和人物互动。",
-    "reviewer": "Codex visual comparison, 2026-10-16"
+    "sha256": "3e53d6fcda31dba3c54af1abda564cf129d590af643ccde335c58f301aa14bc3",
+    "note": "与原CG逐项对照：尾柄连续、双叶与纹样明确；身份、服装、时段和互动保留。C12/C18皮肤完好。",
+    "reviewer": "Codex visual review, 2026-10-16"
   },
   "C13": {
     "status": "approved",
-    "sha256": "eb44284970bc4c95ce4c441930e4db849814d04c3f43328a6c0741c1b024dc89",
-    "note": "逐图核对表情与动作、实际时段/位置和服装，修正后的摘项链与贝壳风铃符合场景；裹毯坐姿为完整覆盖替代动作。",
-    "reviewer": "Codex visual inspection; not final user approval"
+    "sha256": "8f45b3fe0e9bec3def09fa078d80ca29b9c42b61efaa204ce9bf8bd3da266b69",
+    "note": "与原CG逐项对照：尾柄连续、双叶与纹样明确；身份、服装、时段和互动保留。C12/C18皮肤完好。",
+    "reviewer": "Codex visual review, 2026-10-16"
   },
   "C14": {
     "status": "approved",
@@ -541,21 +541,21 @@
   },
   "C18": {
     "status": "approved",
-    "sha256": "8674df9f0588b29ff08a68bc49d4cfc4b8acc64a1c808206f84551a9d73dd87c",
-    "note": "逐图对照：前臂、肘部、下边缘膝部误画擦伤已去除；左侧单叶尾端改为同一尾柄相连的双叶鲸尾鳍。",
-    "reviewer": "Codex visual comparison, 2026-10-16"
+    "sha256": "d7f1238d1360111f0b9c7b22a7e9ae5bf20130b6c440a591b068a6f3c1ef0bee",
+    "note": "与原CG逐项对照：尾柄连续、双叶与纹样明确；身份、服装、时段和互动保留。C12/C18皮肤完好。",
+    "reviewer": "Codex visual review, 2026-10-16"
   },
   "C20": {
     "status": "approved",
-    "sha256": "7111eea7d7ba3e39508e72f6e1b349198db191900bf6c0ffe23989da84a17456",
-    "note": "逐图核对表情与动作、实际时段/位置和服装，修正后的摘项链与贝壳风铃符合场景；裹毯坐姿为完整覆盖替代动作。",
-    "reviewer": "Codex visual inspection; not final user approval"
+    "sha256": "a1e3180019ede4935439ce34e7e66d7eb6792c690c4e4a7a9f8528db0984ffc8",
+    "note": "与原CG逐项对照：尾柄连续、双叶与纹样明确；身份、服装、时段和互动保留。C12/C18皮肤完好。",
+    "reviewer": "Codex visual review, 2026-10-16"
   },
   "C21": {
     "status": "approved",
-    "sha256": "d3e82077e454a5abef8626dd96f13f73288eb13ff64bc1a9ca204dd7cc07e1b4",
-    "note": "逐图核对表情与动作、实际时段/位置和服装，修正后的摘项链与贝壳风铃符合场景；裹毯坐姿为完整覆盖替代动作。",
-    "reviewer": "Codex visual inspection; not final user approval"
+    "sha256": "3c867e80b31d87602585ead34ec5f7dedc998bef5ee8ef78ca5ee15f03f88414",
+    "note": "与原CG逐项对照：尾柄连续、双叶与纹样明确；身份、服装、时段和互动保留。C12/C18皮肤完好。",
+    "reviewer": "Codex visual review, 2026-10-16"
   },
   "O04": {
     "status": "approved",
@@ -583,15 +583,15 @@
   },
   "C06": {
     "status": "approved",
-    "sha256": "8cc8f64166ad485e270d384fd2fec18182ed4a457e4d765da00c4f18e9cfbe8a",
-    "note": "复核两枚粉色扇贝、同款天青珍珠戒指、成年角色身份与连贯姿态，关键道具已修正；营地CG采用完整裹毯构图。",
-    "reviewer": "Codex visual inspection; not final user approval"
+    "sha256": "01bb3c749ce41d12c7708d5771095c5863d25702ce1f9002404dd85aee2b76c0",
+    "note": "与原CG逐项对照：尾柄连续、双叶与纹样明确；身份、服装、时段和互动保留。C12/C18皮肤完好。",
+    "reviewer": "Codex visual review, 2026-10-16"
   },
   "C09": {
     "status": "approved",
-    "sha256": "4579b40d8f042c6b5d2d098e943e5903896fb7e20a85e5cc4fd3bb2075829ff2",
-    "note": "复核两枚粉色扇贝、同款天青珍珠戒指、成年角色身份与连贯姿态，关键道具已修正；营地CG采用完整裹毯构图。",
-    "reviewer": "Codex visual inspection; not final user approval"
+    "sha256": "dd09c865f176834f589a3fdc1ad7c465d7d905e27538b04c192f7c4b364ad8d9",
+    "note": "与原CG逐项对照：尾柄连续、双叶与纹样明确；身份、服装、时段和互动保留。C12/C18皮肤完好。",
+    "reviewer": "Codex visual review, 2026-10-16"
   },
   "C16": {
     "status": "approved",
@@ -619,9 +619,9 @@
   },
   "C19": {
     "status": "approved",
-    "sha256": "6433c276fddc93a04b56efe4317946c6f744353f84777a73704825e940fd8276",
-    "note": "成人正装、清晨室内和独立鲸尾、手部成立；后端返回low，保留真实档位。构图未展示踮脚且室内灯仍亮，记入人工演出微调，不称最高质量已验收。",
-    "reviewer": "Codex visual inspection; not final user approval"
+    "sha256": "84037b68d7a55de7a6c3c6437fb258a3a7305473fd122e2397f60af2ca8b5834",
+    "note": "与原CG逐项对照：尾柄连续、双叶与纹样明确；身份、服装、时段和互动保留。C12/C18皮肤完好。",
+    "reviewer": "Codex visual review, 2026-10-16"
   },
   "P01": {
     "status": "approved",
@@ -631,9 +631,9 @@
   },
   "P02": {
     "status": "approved",
-    "sha256": "0985adf849b8f7e5552c3ae639e7f1ca210b30cacad6ac99f5856003d071a803",
-    "note": "复核读书坐姿已睁眼，举高笔记本姿势与蓝色螺旋本一致；身体与手部可读，透明背景须在游戏内再核对。",
-    "reviewer": "Codex visual inspection; not final user approval"
+    "sha256": "2bbab738568822e3416fbe0cf1ebd0b8edde72e1d683ace40feec8216aad0ba8",
+    "note": "透明化衍生杂边退选；重新审核较早干净双叶候选，举本姿势及Alpha保持。队友白底精确抠图另列缺口。",
+    "reviewer": "Codex full-source visual inspection, 2026-10-16"
   },
   "P03": {
     "status": "approved",
@@ -703,9 +703,9 @@
   },
   "P14": {
     "status": "approved",
-    "sha256": "82c4bd6e28bba323181828d568c0928ecb06cd3ee25336d8dcd240afa26980ad",
-    "note": "实看打开的蓝色螺旋本、自然双手、检查目光；透明底已合成灰底检查，无蓝色光晕。开本封面朝向玩家，页朝向角色，符合查看本子。",
-    "reviewer": "Codex visual inspection; not final user approval"
+    "sha256": "2499152e81eadcdfb45231b6a58045a9f2a6b82e294e2791dd92f993c898fb73",
+    "note": "同一装订轴的两张内页，大小与透视合理，人物透明底完整。",
+    "reviewer": "Codex full-source visual inspection, 2026-10-16"
   },
   "P15": {
     "status": "approved",
@@ -748,5 +748,17 @@
     "sha256": "7f003ecd17ee95b58dbb29636daa768d27dc979a5b8774cddf07db1dee31191a",
     "note": "整张审核：坐姿双腿衔接、木台承托、裙褶、手部、单根双叶鲸尾及店内冷暖整体成立；作为草稿采用。与C15的脸型/灯光连续性仍待后续玩家审核，不称最终统一。",
     "reviewer": "Codex full-image inspection; not final user approval"
+  },
+  "C27": {
+    "status": "rejected",
+    "sha256": "cf6d96f95439182ec5a2136c3bc7ec6185e6cdd73d64ee79666279b637e60884",
+    "note": "用户明确要求弃用这张图并停止全部CG工作。全部C27候选及网关/Rinko测试均退选，不能自动恢复。",
+    "reviewer": "用户明确弃用，2026-10-17；Codex仅执行撤出"
+  },
+  "O12": {
+    "status": "approved",
+    "sha256": "7a8fb1341aad484fc8f4a23a4a2b7a391d5020aecc7c5c35e790699e0da7e24d",
+    "note": "同一黄昏帐篷门口，一串烤小鱿鱼，食物在画面中段可读。",
+    "reviewer": "Codex full-source visual inspection, 2026-10-16"
   }
 }

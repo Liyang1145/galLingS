@@ -1,0 +1,25 @@
+{
+  "prompt": "A completely NEW 16:9 coastal visual novel CG, NOT a first-person picture and NOT a repair of the old floating-tail composition. FIRST reference establishes the sunny rocky bay. SECOND reference establishes the same adult heroine age24 and navy sailor dress. THIRD reference establishes her correct blue-and-white whale tail: slender continuous stalk, broad paired flattened flukes, small white circular marine emblem.\nUse a calm SIDE VIEW medium-wide two-person composition from the shore, both people seen at ordinary eye height with gentle downward angle. LEFT: adult man age26 wearing opaque white long-sleeved shirt and navy trousers, seen in three-quarter back view standing normally in shin/knee-deep clear water, TWO legs at natural proportions, his face not visible. RIGHT: heroine stands about one metre away in her opaque navy sailor dress, arms folded, face angled away with embarrassed defensive expression, her own TWO human legs separate under the water. Show the WHOLE blue tail path behind her and between them: ONE thick ROOT visibly emerges behind her lower back, curves down and left through shallow water toward his right ankle, narrows to ONE joint just behind his heel and ends in TWO flattened whale flukes. ONE of those broad flukes lightly cups the BACK OF HIS HEEL to guide him one step shorewards; other fluke clearly visible beside it, central notch obvious. No wrapping ring, no tail growing from a trouser cuff, no disconnected tail, no extra limbs. Both figures and whole continuous root-to-flukes path visible together. Keep the ankle contact and two flukes near the CENTRE of the image, at y=55%, above bottom28% reserved for dialogue. No foreground giant leg or foot. Ordinary gentle helpful gesture, physically connected anatomy, correct occlusion and reflections in clear shallow water. One coherent painting with detailed anime lighting, matching identity and clothes. No speech bubbles, letters or UI.",
+  "requested_model": "gpt-image-2.5-flare",
+  "requested_quality": "max",
+  "requested_size": "3840x2160",
+  "references": [
+    {
+      "path": "content/assets/art-upgrade/originals/B02.png",
+      "sha256": "3f91be97769fe8f0a18834122f12d862961819ce8645da6be4f621d706d24e74"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/L01.png",
+      "sha256": "566e6bd87c0a715a1b641f0d0549c6fd4380630484897d301cd0d7c7462f2b49"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C04_teammate_refined.png",
+      "sha256": "e0d3bb0bb50abc9e5129f5cec864d359d65e5ad10e9093bf13a25dd15ce00160"
+    }
+  ],
+  "output_sha256": "4d722496bacba3f12ad26400ae3b400924c126231b7e37d55d5c1f26b24940c4",
+  "actual_size": [
+    1672,
+    941
+  ]
+}

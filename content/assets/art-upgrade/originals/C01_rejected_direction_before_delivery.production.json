@@ -1,0 +1,17 @@
+{
+  "prompt": "Keep this complete landscape illustration exactly the same except the small notebook and the hand/forearm catching it. The notebook is CUT OFF at the top edge; redraw the catching right arm bent a little lower so the WHOLE book, every loose page and both cover corners are fully within the frame with at least 70 pixels clear sky ABOVE it. One hand still catches the airborne damp book beside her head, open fan of pages and water drops convey interrupted flight. Do not change face, eyes, hair, dress, independent two-lobed whale tail, other hand, viewpoint, bay, water or sunlight. Same adult woman aged24, healthy skin, opaque outfit. Do not zoom or crop the scene. No text/UI.",
+  "requested_model": "gpt-image-2.5-flare",
+  "requested_quality": "max",
+  "requested_size": "3840x2160",
+  "references": [
+    {
+      "path": "content/assets/art-upgrade/originals/C01_rejected_catch_crop.png",
+      "sha256": "6f389f9de6246cc92ec7cb281e4d6c183e0a0703ae4f5482f59d03f4e6c1e814"
+    }
+  ],
+  "output_sha256": "764c056affc8f7dac30b2428bf4251a6d3dfd6e0eabb561e274c8f687abbab85",
+  "actual_size": [
+    1672,
+    941
+  ]
+}

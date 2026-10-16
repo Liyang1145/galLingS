@@ -1,0 +1,17 @@
+{
+  "prompt": "Create a story-specific 16:9 coastal-campsite still-life CG based on this EXACT sunset tent reference. Same cream canvas tent, blue bedding, lantern on wooden crate, rocky beach, sunset over the ocean and delicate painted anime style. Move the camera closer to the OPEN TENT ENTRANCE: a single bamboo skewer with THREE SMALL WHOLE GRILLED SQUID rests on a small plain ceramic dish on a low wooden board at the threshold. The squid have recognizable tapered mantles and curled short tentacles, lightly browned glossy surface, subtle grill marks and a faint wisp of warmth; NOT round fish, sausage, octopus, empty skewer or raw squid. This is a modest gift for ONE person, not a feast. Place the dish and skewer at image centre-left around x=40%, y=53%, clearly visible ABOVE the bottom 30% dialogue area, big enough to recognize at 720p. Tent entrance and familiar lantern immediately behind it, sea and warm sunset on the right. No people, heroine, hands, writing, UI or invented house. Coherent close perspective, warm natural shadows, same location; no pasted sticker food.",
+  "requested_model": "gpt-image-2.5-flare",
+  "requested_quality": "max",
+  "requested_size": "3840x2160",
+  "references": [
+    {
+      "path": "content/assets/art-upgrade/originals/B15.png",
+      "sha256": "1a60a0c796cbf7694f0c8b326869c1815a7dadcd9361fd7fa222b1371ee8a65c"
+    }
+  ],
+  "output_sha256": "7a8fb1341aad484fc8f4a23a4a2b7a391d5020aecc7c5c35e790699e0da7e24d",
+  "actual_size": [
+    1672,
+    941
+  ]
+}

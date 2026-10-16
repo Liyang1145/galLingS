@@ -1,0 +1,21 @@
+{
+  "prompt": "Redraw this opening event as ONE complete landscape 16:9 CG using FIRST image for the exact sunny shallow coastal bay, town, rocky shore, daylight and paint style; SECOND image for the heroine identity. The same ADULT woman age24 as the reference, long cobalt/periwinkle blue hair, loop ahoge, cyan bow clips, blue-and-white fin ears, blue eyes, exact opaque navy sailor-collar dress with cyan chest bow and white double hem stripes. Healthy intact skin. Preserve her recognizable face, mature proportions, delicate painted anime VN finish. Specific script action: after the player has been thrown into the water, his small spiral-bound notebook has flown up out of his hands. She swiftly CATCHES it with ONE hand in mid-air beside and slightly above her face. Her right hand visibly closes on the lower corner of the notebook just as it arrives, loose damp pages and a few water drops showing the interrupted flight. Her other hand remains clearly away from the notebook at waist level. No handover, no offering the book to the viewer, no two-handed grip, no player hand touching it. The small A5 notebook has the same light blue-and-white whale-tail cover seen in the other opening props, a single spine, equal-sized covers, no readable lettering. Determined surprised eyes looking at the caught book, not posing. Viewpoint at water height from the player a few metres away; she stands in waist-deep clear shallows, naturally water-occluded lower body, opaque dress. One independent whale tail arches behind to the right, its two flukes clearly visible above water. Exactly ONE independent blue-and-white mammalian whale tail attaches behind her lower back, separate from her TWO human legs. It tapers to ONE narrow peduncle ending in EXACTLY TWO broad flattened left/right flukes with a deep visible central notch. Show both lobes clearly in the same plane, with believable volume. No single leaf, overlapping petal, third fin, fish fan, dorsal fin, disconnected lobe, tubular pointed tip or additional tail. Main hand-book contact and face in top 65% above the dialogue panel. Coherent perspective, sunlight and water contact, not a pasted sprite. No UI, text or logo.",
+  "requested_model": "gpt-image-2.5-flare",
+  "requested_quality": "max",
+  "requested_size": "3840x2160",
+  "references": [
+    {
+      "path": "content/assets/art-upgrade/originals/B02.png",
+      "sha256": "3f91be97769fe8f0a18834122f12d862961819ce8645da6be4f621d706d24e74"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/L01.png",
+      "sha256": "566e6bd87c0a715a1b641f0d0549c6fd4380630484897d301cd0d7c7462f2b49"
+    }
+  ],
+  "output_sha256": "6f389f9de6246cc92ec7cb281e4d6c183e0a0703ae4f5482f59d03f4e6c1e814",
+  "actual_size": [
+    1672,
+    941
+  ]
+}

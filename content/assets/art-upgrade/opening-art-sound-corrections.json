@@ -1,0 +1,704 @@
+{
+  "baseline": "33fba8eb176b992013483108215a36197be7e042",
+  "deliverySha256": "63786b58ca44ce2255a23964bee84d5e6d70cc3260d7c1b6e1633aeff74b7e04",
+  "art": {
+    "C02": {
+      "origin": "user-refined-package",
+      "oldSource": "C02_rejected_before_teammate_refinement",
+      "oldSha256": "52a3bc6ebac087ad7115b5b67bf9cfccb1dace006f2d53d1730d1d85413e3713",
+      "sourceSha256": "5e11ca641ffc9e10ca38e588bf7da934ed7c53b4c76c947952818545169eadbc",
+      "sourceDelivery": "archive/deliveries/refined-cg-20261016/originals/C02.png",
+      "assetIds": [
+        "c6r2xcnj"
+      ],
+      "runtimeSha256": "363be5bf7a0231f0aafd26f4ccf523f0f354118a951f54f287de54724b8b5075",
+      "size": [
+        2752,
+        1536
+      ]
+    },
+    "C04": {
+      "origin": "user-refined-package",
+      "oldSource": "C04_rejected_before_teammate_refinement",
+      "oldSha256": "4c9e0bbc54e77539c7e67e43cba6711b5ecec5c2645265a38e67f35451c8f375",
+      "sourceSha256": "e0d3bb0bb50abc9e5129f5cec864d359d65e5ad10e9093bf13a25dd15ce00160",
+      "sourceDelivery": "archive/deliveries/refined-cg-20261016/originals/C04.png",
+      "assetIds": [
+        "xndnkx8k"
+      ],
+      "runtimeSha256": "ef3c8c3aa6d1bc21e2c8d38bfe7962f6580768db1c9574c730690bc13316f969",
+      "size": [
+        2752,
+        1536
+      ]
+    },
+    "C05": {
+      "origin": "user-refined-package",
+      "oldSource": "C05_rejected_before_teammate_refinement",
+      "oldSha256": "6444737e4c197cc88edb199b5400fc3a6d4f193c2ac8b92f250049b62658d299",
+      "sourceSha256": "84989ef6f7fb9eb40b2c5c0f96d0666779367a2c2bba21acc65e2704d7e7cb10",
+      "sourceDelivery": "archive/deliveries/refined-cg-20261016/originals/C05.png",
+      "assetIds": [
+        "art_upgrade_c05"
+      ],
+      "runtimeSha256": "3e7203c79941e4e9c71ae268fc4d433e266f019033d3fe885e0588ffebb7c084",
+      "size": [
+        2730,
+        1536
+      ]
+    },
+    "C06": {
+      "origin": "user-refined-package",
+      "oldSource": "C06_rejected_before_teammate_refinement",
+      "oldSha256": "8cc8f64166ad485e270d384fd2fec18182ed4a457e4d765da00c4f18e9cfbe8a",
+      "sourceSha256": "01bb3c749ce41d12c7708d5771095c5863d25702ce1f9002404dd85aee2b76c0",
+      "sourceDelivery": "archive/deliveries/refined-cg-20261016/originals/C06.png",
+      "assetIds": [
+        "kful0adz"
+      ],
+      "runtimeSha256": "f1c62d59d1bb262b613b8d5e60496a79dd96a197756366ef296e6d962c728bf4",
+      "size": [
+        2752,
+        1536
+      ]
+    },
+    "C07": {
+      "origin": "user-refined-package",
+      "oldSource": "C07_rejected_before_teammate_refinement",
+      "oldSha256": "5d34554b0bd2318ea89740ae802a41e2a8fef89a570faebf70c4b05fa38a572a",
+      "sourceSha256": "e38015619a196cafa187f9557b4589d2fba508d2edcd0aa35ea6c4a03282a25f",
+      "sourceDelivery": "archive/deliveries/refined-cg-20261016/originals/C07.png",
+      "assetIds": [
+        "ez0vsxzc"
+      ],
+      "runtimeSha256": "ae6d09d6a20afd15871ea0175cd6c003a0343d6caf016b8eaef4e38978e56992",
+      "size": [
+        2752,
+        1536
+      ]
+    },
+    "C08": {
+      "origin": "user-refined-package",
+      "oldSource": "C08_rejected_before_teammate_refinement",
+      "oldSha256": "3fa7e67e2762b26412ff0e08cbf94d5b1706f6c31e17464457ac22545fabc375",
+      "sourceSha256": "f3d5a77e7b9f46ab8afd078343a606d5635eefdc50b1d31b5b30710a76a855b9",
+      "sourceDelivery": "archive/deliveries/refined-cg-20261016/originals/C08.png",
+      "assetIds": [
+        "r0t0azno"
+      ],
+      "runtimeSha256": "c5f4d02a11ca5f77e55fcbf353071909e96facd09d60d2b4c7e9507c6541589b",
+      "size": [
+        3344,
+        1882
+      ]
+    },
+    "C09": {
+      "origin": "user-refined-package",
+      "oldSource": "C09_rejected_before_teammate_refinement",
+      "oldSha256": "4579b40d8f042c6b5d2d098e943e5903896fb7e20a85e5cc4fd3bb2075829ff2",
+      "sourceSha256": "dd09c865f176834f589a3fdc1ad7c465d7d905e27538b04c192f7c4b364ad8d9",
+      "sourceDelivery": "archive/deliveries/refined-cg-20261016/originals/C09.png",
+      "assetIds": [
+        "ehbun5kh"
+      ],
+      "runtimeSha256": "885fb7a9f1576d000e18278da2b45ae262b80af46ce7196f7784c5afced828d6",
+      "size": [
+        3344,
+        1882
+      ]
+    },
+    "C10": {
+      "origin": "user-refined-package",
+      "oldSource": "C10_rejected_before_teammate_refinement",
+      "oldSha256": "3503c3bb22f94619981f1113d8ea39ed67b7aab53b729b6b1bebbd1828a7b050",
+      "sourceSha256": "35dc39fc6ba154b25a5931fe6b8ef6b7c0880169f168675239d118489a883e2f",
+      "sourceDelivery": "archive/deliveries/refined-cg-20261016/originals/C10.png",
+      "assetIds": [
+        "supaesch"
+      ],
+      "runtimeSha256": "2c434cb8be00baffb6aae48613045bd248f76989fcd5ab305d37d97e991320e7",
+      "size": [
+        2752,
+        1536
+      ]
+    },
+    "C11": {
+      "origin": "user-refined-package",
+      "oldSource": "C11_rejected_before_teammate_refinement",
+      "oldSha256": "73055c18fa29bea24c022977dca944232e53f8309239af828d2c8bd4c20cdc17",
+      "sourceSha256": "c72936ed550dcfddd6e645935be57c5d2a57d88799370898c689d8864e5aaceb",
+      "sourceDelivery": "archive/deliveries/refined-cg-20261016/originals/C11.png",
+      "assetIds": [
+        "jxxr16ez"
+      ],
+      "runtimeSha256": "2c44e5398bd14f387b42b961355925da7ed0e17d3981cd5fc7a51d378ab0a61f",
+      "size": [
+        2752,
+        1536
+      ]
+    },
+    "C12": {
+      "origin": "user-refined-package",
+      "oldSource": "C12_rejected_before_teammate_refinement",
+      "oldSha256": "d81231cbbfc1785e16fbae9f41c9c0074644106cc9c751fad690c0690f16a2db",
+      "sourceSha256": "3e53d6fcda31dba3c54af1abda564cf129d590af643ccde335c58f301aa14bc3",
+      "sourceDelivery": "archive/deliveries/refined-cg-20261016/originals/C12.png",
+      "assetIds": [
+        "ak1lber9"
+      ],
+      "runtimeSha256": "b88c882d3ad5c85c7e782b46e6ed8a69d35c82549c13c41f88fbbf51aafc62e3",
+      "size": [
+        3344,
+        1882
+      ]
+    },
+    "C13": {
+      "origin": "user-refined-package",
+      "oldSource": "C13_rejected_before_teammate_refinement",
+      "oldSha256": "eb44284970bc4c95ce4c441930e4db849814d04c3f43328a6c0741c1b024dc89",
+      "sourceSha256": "8f45b3fe0e9bec3def09fa078d80ca29b9c42b61efaa204ce9bf8bd3da266b69",
+      "sourceDelivery": "archive/deliveries/refined-cg-20261016/originals/C13.png",
+      "assetIds": [
+        "ij6ed2gn"
+      ],
+      "runtimeSha256": "5df448c724f9bbe8da17527555d7aa00657418865609839879a0f627197039ad",
+      "size": [
+        3344,
+        1882
+      ]
+    },
+    "C15": {
+      "origin": "user-refined-package",
+      "oldSource": "C15_rejected_before_teammate_refinement",
+      "oldSha256": "662780920e3122b7e8037c40ca2d83013e20edbac3de373252b08a58e8f92d57",
+      "sourceSha256": "6d4e8679e794b6e67d5f7943161cdbb67254c570e144eeeabf8b9ba26ec5de7f",
+      "sourceDelivery": "archive/deliveries/refined-cg-20261016/originals/C15.png",
+      "assetIds": [
+        "7jj07jqh"
+      ],
+      "runtimeSha256": "d3e3d0997c6670a9cc4b14f8dd0a5eb656d054b7560042d465be2e4b15dc4c45",
+      "size": [
+        3344,
+        1882
+      ]
+    },
+    "C17": {
+      "origin": "user-refined-package",
+      "oldSource": "C17_rejected_before_teammate_refinement",
+      "oldSha256": "a57afe9820b64deea2fc598e35f9e879283b362f50d72a3d37313b3002f698d3",
+      "sourceSha256": "fab2c4af730d198a9298b443814174c1bd852232fa39a7688ea1a42daaf7eaeb",
+      "sourceDelivery": "archive/deliveries/refined-cg-20261016/originals/C17.png",
+      "assetIds": [
+        "art_upgrade_c17"
+      ],
+      "runtimeSha256": "fc9a7f16c0035d2b9f95bb67c58df00936931358d9dfc290c44a02b88222f0a7",
+      "size": [
+        3344,
+        1882
+      ]
+    },
+    "C18": {
+      "origin": "user-refined-package",
+      "oldSource": "C18_rejected_before_teammate_refinement",
+      "oldSha256": "8674df9f0588b29ff08a68bc49d4cfc4b8acc64a1c808206f84551a9d73dd87c",
+      "sourceSha256": "d7f1238d1360111f0b9c7b22a7e9ae5bf20130b6c440a591b068a6f3c1ef0bee",
+      "sourceDelivery": "archive/deliveries/refined-cg-20261016/originals/C18.png",
+      "assetIds": [
+        "w3km9isl"
+      ],
+      "runtimeSha256": "3a9d30de684ae1e5ddb9f9648bdb832d539d89c568a4cdb6a301ed58c71a5f20",
+      "size": [
+        2752,
+        1536
+      ]
+    },
+    "C19": {
+      "origin": "user-refined-package",
+      "oldSource": "C19_rejected_before_teammate_refinement",
+      "oldSha256": "6433c276fddc93a04b56efe4317946c6f744353f84777a73704825e940fd8276",
+      "sourceSha256": "84037b68d7a55de7a6c3c6437fb258a3a7305473fd122e2397f60af2ca8b5834",
+      "sourceDelivery": "archive/deliveries/refined-cg-20261016/originals/C19.png",
+      "assetIds": [
+        "sqnct5dc"
+      ],
+      "runtimeSha256": "35dbcca701c33978ae01728c59b16e4c80556d277d62c3adf80c95089f21aa1c",
+      "size": [
+        2752,
+        1536
+      ]
+    },
+    "C20": {
+      "origin": "user-refined-package",
+      "oldSource": "C20_rejected_before_teammate_refinement",
+      "oldSha256": "7111eea7d7ba3e39508e72f6e1b349198db191900bf6c0ffe23989da84a17456",
+      "sourceSha256": "a1e3180019ede4935439ce34e7e66d7eb6792c690c4e4a7a9f8528db0984ffc8",
+      "sourceDelivery": "archive/deliveries/refined-cg-20261016/originals/C20.png",
+      "assetIds": [
+        "art_upgrade_c20"
+      ],
+      "runtimeSha256": "46f26b86e60f1606f5f864909450cf6d3a8379f2d2ab2365669f14c20cda6c79",
+      "size": [
+        2752,
+        1536
+      ]
+    },
+    "C21": {
+      "origin": "user-refined-package",
+      "oldSource": "C21_rejected_before_teammate_refinement",
+      "oldSha256": "d3e82077e454a5abef8626dd96f13f73288eb13ff64bc1a9ca204dd7cc07e1b4",
+      "sourceSha256": "3c867e80b31d87602585ead34ec5f7dedc998bef5ee8ef78ca5ee15f03f88414",
+      "sourceDelivery": "archive/deliveries/refined-cg-20261016/originals/C21.png",
+      "assetIds": [
+        "art_upgrade_c21"
+      ],
+      "runtimeSha256": "fc3f2b813cc0094c643704494bb5b877544f8c38a79c2546c5c011eb81e34bbd",
+      "size": [
+        2752,
+        1536
+      ]
+    },
+    "C22": {
+      "origin": "user-refined-package",
+      "oldSource": "C22_rejected_before_teammate_refinement",
+      "oldSha256": "c0cc45926510f299410e12b6a60a7225f031800540918c1d176680242dcb5a95",
+      "sourceSha256": "f1f9097ede9917bcbbde5722d797102aad1234d8790c346dff81ef6f7b303123",
+      "sourceDelivery": "archive/deliveries/refined-cg-20261016/originals/C22.png",
+      "assetIds": [
+        "wnpuk9dy"
+      ],
+      "runtimeSha256": "5d7b3450d016e47d08e292cbcbef5c721423d461ce56f3527e00a4585d747f57",
+      "size": [
+        3344,
+        1882
+      ]
+    },
+    "C24": {
+      "origin": "user-refined-package",
+      "oldSource": "C24_rejected_before_teammate_refinement",
+      "oldSha256": "65d1f96544be2f4e32f9c55f68bdef68b88e38350af6c0b1461b8eb6943adbb9",
+      "sourceSha256": "136e69bc730c026be0f32cbc597ab610f5b50cfb2ad15931c523af483f2d148e",
+      "sourceDelivery": "archive/deliveries/refined-cg-20261016/originals/C24.png",
+      "assetIds": [
+        "dxmnyp7j"
+      ],
+      "runtimeSha256": "5f3b63ac7ef45835420e1cb8180df72af5090de3f3ebdf3245f56c255e3cbeff",
+      "size": [
+        2752,
+        1536
+      ]
+    },
+    "C01": {
+      "origin": "codex-oauth-edit",
+      "sourceSha256": "cae104d839d04042808b06934dd47d5f77fdea941e7d6f9f8abe635c52d81f5e",
+      "review": "单手接住空中飞出的湿笔记本；松散书页与水珠，完整本角，保持另一只手远离本子；尾柄/双叶/白色纹样跟随精修包。",
+      "requestedModel": "gpt-image-2.5-flare",
+      "reportedModel": null,
+      "reportedQuality": "medium",
+      "routeVerified": false,
+      "assetIds": [
+        "yvwvivzm"
+      ],
+      "runtimeSha256": "a0cc1e8f14c6b02d9a7752e1202a7947746175277476fc2a2e1087f142878ff4",
+      "size": [
+        1672,
+        941
+      ]
+    },
+    "P14": {
+      "origin": "codex-oauth-edit",
+      "sourceSha256": "2499152e81eadcdfb45231b6a58045a9f2a6b82e294e2791dd92f993c898fb73",
+      "review": "左右内页共用一根装订轴、页高一致、大小透视合理；内页为浅线纸而不是错放的外封面。脸、手势与全身比例保留。",
+      "requestedModel": "gpt-image-2.5-flare",
+      "reportedModel": null,
+      "reportedQuality": "medium",
+      "routeVerified": false,
+      "assetIds": [
+        "art_upgrade_p14"
+      ],
+      "runtimeSha256": "5c0527e5cae66bda1f45504a49654a862488e374884a115519e3fa7835df988b",
+      "size": [
+        1024,
+        1536
+      ]
+    },
+    "L03": {
+      "origin": "codex-oauth-edit",
+      "sourceSha256": "38d50c24e5c4a98e1322d0a18b8b6844368af8384250d5ea4e9f6e80b5ced882",
+      "review": "单卷叶改为一根尾柄连接的双叶尾鳍；保留思考与防备动作。",
+      "requestedModel": "gpt-image-2.5-flare",
+      "reportedModel": null,
+      "reportedQuality": "medium",
+      "routeVerified": false,
+      "assetIds": [
+        "x013srmu"
+      ],
+      "runtimeSha256": "d8bad76576d74005a69157cb9c78993f8b512ae2c0e7c9110abe9d27e3bd2f80",
+      "size": [
+        1024,
+        1536
+      ]
+    },
+    "O12": {
+      "origin": "codex-oauth-edit",
+      "sourceSha256": "7a8fb1341aad484fc8f4a23a4a2b7a391d5020aecc7c5c35e790699e0da7e24d",
+      "review": "烤小鱿鱼在帐篷门口、同一黄昏营地，食物在对话框上方可读；只用于发现礼物的三句。",
+      "requestedModel": "gpt-image-2.5-flare",
+      "reportedModel": null,
+      "reportedQuality": "medium",
+      "routeVerified": false,
+      "assetIds": [
+        "art_upgrade_o12"
+      ],
+      "runtimeSha256": "f38750551daa51b672a277d365e71e71ad3d493efb512b54a6e4deff1bf265c1",
+      "size": [
+        1672,
+        941
+      ]
+    },
+    "P02": {
+      "origin": "codex-oauth-edit",
+      "sourceSha256": "2bbab738568822e3416fbe0cf1ebd0b8edde72e1d683ace40feec8216aad0ba8",
+      "review": "队友白底版的透明衍生有杂边，未采用；重新选用本轮较早的干净双叶版，保持举本与另一手叉腰。队友上扬尾势留在编辑库待精确抠图。",
+      "requestedModel": "gpt-image-2.5-flare",
+      "reportedModel": null,
+      "reportedQuality": "medium",
+      "routeVerified": false,
+      "assetIds": [
+        "art_upgrade_p02"
+      ],
+      "runtimeSha256": "b0930ca2ef1c20854bdad960d3fe5ee0bc54b52f3a018bf8b56e8e059911b1fa",
+      "size": [
+        1024,
+        1536
+      ]
+    },
+    "C27": {
+      "origin": "codex-oauth-edit",
+      "sourceSha256": "cf6d96f95439182ec5a2136c3bc7ec6185e6cdd73d64ee79666279b637e60884",
+      "review": "重新构图为侧面双人中景；完整尾根与尾柄连接她腰后，尾鳍轻触男主脚踝，非从男主裤腿长出的孤立尾巴。",
+      "requestedModel": "gpt-image-2.5-flare",
+      "reportedModel": null,
+      "reportedQuality": "medium",
+      "routeVerified": false,
+      "assetIds": [
+        "art_upgrade_c27"
+      ],
+      "runtimeSha256": "657f7cf19b06d5d1ce2408a00f71df0c32c1c2e680e8a2b802007fb4bcb35140",
+      "size": [
+        1672,
+        941
+      ]
+    }
+  },
+  "visualNodeChanges": [
+    {
+      "lineId": "1ab8nnfn",
+      "artId": "C01",
+      "before": {
+        "bg": "8eo1nf7q",
+        "sprites": []
+      },
+      "after": {
+        "bg": "yvwvivzm",
+        "sprites": []
+      }
+    },
+    {
+      "lineId": "utu1zxyd",
+      "artId": "C27",
+      "before": {
+        "bg": "8eo1nf7q",
+        "sprites": [
+          {
+            "uid": "mq79wt9x",
+            "asset": "x013srmu",
+            "x": 634.79,
+            "y": 1045.86,
+            "h": 1000.0,
+            "flip": false
+          }
+        ]
+      },
+      "after": {
+        "bg": "art_upgrade_c27",
+        "sprites": []
+      }
+    },
+    {
+      "lineId": "ab6i4shm",
+      "artId": "C27",
+      "before": {
+        "bg": "8eo1nf7q",
+        "sprites": [
+          {
+            "uid": "mq79wt9x",
+            "asset": "x013srmu",
+            "x": 634.79,
+            "y": 1045.86,
+            "h": 1000.0,
+            "flip": false
+          }
+        ]
+      },
+      "after": {
+        "bg": "art_upgrade_c27",
+        "sprites": []
+      }
+    },
+    {
+      "lineId": "3iq8cnx2",
+      "artId": "C27",
+      "before": {
+        "bg": "8eo1nf7q",
+        "sprites": [
+          {
+            "uid": "mq79wt9x",
+            "asset": "z869j1e3",
+            "x": 649.77,
+            "y": 1049.67,
+            "h": 1000.0,
+            "flip": false
+          }
+        ]
+      },
+      "after": {
+        "bg": "art_upgrade_c27",
+        "sprites": []
+      }
+    },
+    {
+      "lineId": "i99npm13",
+      "artId": "C27",
+      "before": {
+        "bg": "8eo1nf7q",
+        "sprites": [
+          {
+            "uid": "mq79wt9x",
+            "asset": "z869j1e3",
+            "x": 649.77,
+            "y": 1049.67,
+            "h": 1000.0,
+            "flip": false
+          }
+        ]
+      },
+      "after": {
+        "bg": "art_upgrade_c27",
+        "sprites": []
+      }
+    },
+    {
+      "lineId": "lsjm2p6r",
+      "artId": "O12",
+      "before": {
+        "bg": "4g7f8iam",
+        "sprites": []
+      },
+      "after": {
+        "bg": "art_upgrade_o12",
+        "sprites": []
+      }
+    },
+    {
+      "lineId": "wupi03c8",
+      "artId": "O12",
+      "before": {
+        "bg": "akugkagj",
+        "sprites": []
+      },
+      "after": {
+        "bg": "art_upgrade_o12",
+        "sprites": []
+      }
+    },
+    {
+      "lineId": "luv45vih",
+      "artId": "O12",
+      "before": {
+        "bg": "akugkagj",
+        "sprites": []
+      },
+      "after": {
+        "bg": "art_upgrade_o12",
+        "sprites": []
+      }
+    },
+    {
+      "lineId": "127wrb75",
+      "artId": "O12",
+      "before": {
+        "bg": "akugkagj",
+        "sprites": []
+      },
+      "after": {
+        "bg": "art_upgrade_o12",
+        "sprites": []
+      }
+    },
+    {
+      "lineId": "1sjdneqt",
+      "artId": "O12",
+      "before": {
+        "bg": "akugkagj",
+        "sprites": []
+      },
+      "after": {
+        "bg": "art_upgrade_o12",
+        "sprites": []
+      }
+    }
+  ],
+  "soundNodeChanges": [
+    {
+      "lineId": "o6vhcy2x",
+      "before": {
+        "present": true,
+        "value": [
+          {
+            "id": "sfx_s04_tail_flattens_water_v01",
+            "gain": 0.4
+          }
+        ]
+      },
+      "after": [
+        {
+          "id": "sfx_s04_tail_flattens_water_v01",
+          "gain": 0.85
+        }
+      ],
+      "reason": "原拍平声偏轻；增益0.4→0.85，保留原真实音源；快进仍静音。"
+    },
+    {
+      "lineId": "n7sguoiy",
+      "before": {
+        "present": false,
+        "value": null
+      },
+      "after": [
+        {
+          "id": "sfx_tail_water_light",
+          "gain": 0.25
+        }
+      ],
+      "reason": "第一话轻得几乎没有的拍水补真实轻拍声。"
+    },
+    {
+      "lineId": "frtp4eyj",
+      "before": {
+        "present": true,
+        "value": [
+          {
+            "id": "sfx_tail_water_light",
+            "gain": 0.6
+          }
+        ]
+      },
+      "after": [
+        {
+          "id": "sfx_tail_water_double",
+          "gain": 0.6
+        },
+        {
+          "id": "sfx_tail_water_light",
+          "gain": 0.6,
+          "delayMs": 1000
+        }
+      ],
+      "reason": "第二话三下：两下成品加一次轻拍。"
+    },
+    {
+      "lineId": "3ua9v325",
+      "before": {
+        "present": true,
+        "value": [
+          {
+            "id": "sfx_tail_water_light",
+            "gain": 0.6
+          }
+        ]
+      },
+      "after": [
+        {
+          "id": "sfx_tail_water_double",
+          "gain": 0.6
+        },
+        {
+          "id": "sfx_tail_water_double",
+          "gain": 0.6,
+          "delayMs": 1000
+        },
+        {
+          "id": "sfx_tail_water_light",
+          "gain": 0.6,
+          "delayMs": 2000
+        }
+      ],
+      "reason": "第五话五下：两次双拍加一次单拍，原来只有一下。"
+    },
+    {
+      "lineId": "kbwv46du",
+      "before": {
+        "present": true,
+        "value": [
+          {
+            "id": "sfx_tail_water_double",
+            "gain": 0.6
+          },
+          {
+            "id": "sfx_tail_water_double",
+            "gain": 0.6,
+            "delayMs": 2400
+          },
+          {
+            "id": "sfx_tail_water_light",
+            "gain": 0.6,
+            "delayMs": 4800
+          }
+        ]
+      },
+      "after": [
+        {
+          "id": "sfx_tail_water_double",
+          "gain": 0.6
+        },
+        {
+          "id": "sfx_tail_water_double",
+          "gain": 0.6,
+          "delayMs": 1000
+        },
+        {
+          "id": "sfx_tail_water_light",
+          "gain": 0.6,
+          "delayMs": 2000
+        }
+      ],
+      "reason": "第一话五下保持次数，收紧原4.8秒跨度；离开本句取消余下声音。"
+    },
+    {
+      "lineId": "0xhf540s",
+      "before": {
+        "present": false,
+        "value": null
+      },
+      "after": [
+        {
+          "id": "sfx_tail_close_door",
+          "gain": 0.5
+        }
+      ],
+      "reason": "番外关门动作补队友真实关门录音；非电子提示。"
+    }
+  ],
+  "storyNodes": 3315,
+  "allTextChoicesVariablesAndMusicUnchanged": true,
+  "all105AudioAssetsUnchanged": true,
+  "adoptedArtCount": 25,
+  "gameSha256": "a1bece10c8d76c314e0a53c1f05df3420f97531cdc67261b37cbded204c869ef",
+  "supersededBy": "cg-pause-handoff.json",
+  "latestDisposition": {
+    "C27": "rejected-all-candidates",
+    "cgProduction": "paused",
+    "withdrawnVisualNodes": 4,
+    "note": "visualNodeChanges保留采用时历史；当前实际字段见cg-pause-handoff.json。"
+  }
+}

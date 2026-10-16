@@ -1,21 +1,12 @@
 {
-  "prompt": "One 16:9 EVENT CG of a quiet ordinary campsite conversation. FIRST landscape reference is the exact moonlit tent campsite with small campfire. SECOND fully clothed sprite defines the SAME ADULT woman aged24, her blue hair, fin ears, ahoge, face and independent blue whale tail. She sits upright beside the adult age26 man in a white long-sleeved shirt and full-length navy trousers. Her body and legs are completely wrapped in the thick opaque whale-pattern blanket from SHOULDERS TO ANKLES, with loose full-length trousers and a cream cardigan underneath and closed white shoes. Only her face and resting hands are exposed. No short-skirt pose, no exposed knees, no knees-to-chest pose, no body-part emphasis. Both sit calmly with hands resting on their laps, gentle wistful eye contact at the realization that the other person is real. Two human legs under the blanket remain separate from her whale tail. Believable covered silhouettes, clean anatomy, detailed coastal anime painting, warm firelight and blue moonlight. Important faces and emotional action above the lower 28% dialogue area. No jewelry, text or watermark.",
-  "requested_model": "gpt-image-2.5-flare",
-  "requested_quality": "max",
-  "requested_size": "3840x2160",
-  "references": [
-    {
-      "path": "content/assets/art-upgrade/originals/B16.png",
-      "sha256": "a0e3e1ba5c8d03cedc2e73dc5cac52ffcad5694c95ab0402aaa18c60da29f02a"
-    },
-    {
-      "path": "content/assets/art-upgrade/originals/L35.png",
-      "sha256": "4953a9108a8ae99832306884cba76ff64aff944768ad66da297267165aabd8f7"
-    }
-  ],
-  "output_sha256": "4579b40d8f042c6b5d2d098e943e5903896fb7e20a85e5cc4fd3bb2075829ff2",
-  "actual_size": [
-    1672,
-    941
-  ]
+  "workflow": "user-supplied-refinement",
+  "sourceDelivery": "archive/deliveries/refined-cg-20261016/originals/C09.png",
+  "sourceDeliverySha256": "dd09c865f176834f589a3fdc1ad7c465d7d905e27538b04c192f7c4b364ad8d9",
+  "archiveSha256": "63786b58ca44ce2255a23964bee84d5e6d70cc3260d7c1b6e1633aeff74b7e04",
+  "requested_model": null,
+  "backend_reported_model": null,
+  "model_selection_verified": false,
+  "requested_quality": null,
+  "backend_reported_quality": null,
+  "note": "用户提供精修成品；未提供该包模型/提示词/原生分辨率记录，不继承旧生成元数据。"
 }

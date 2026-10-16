@@ -67,10 +67,11 @@
     "costume": "同L17保守外搭"
   },
   "C17": {
-    "prompt": "Edit this EXACT completed adult seaside dinner CG. Remove the necklace and pendant completely; her neck is bare at this chapter because she already gave the shell necklace to the jeweler. Preserve the same adult age24 face, long blue hair, pajamas, knitted shoulder blanket, two seafood noodle bowls, chopsticks, room, moonlight and exact 16:9 composition. No new necklace or jewelry, no clothing changes. Coherent fine Japanese visual novel painting.",
+    "prompt": "用户提供《修复后CG图包.zip》中的C17：以成品为准，统一细长连续尾柄、双叶尾鳍和白色圆形海洋纹样；保留角色与剧情动作。原始提示词未随包提供。",
     "references": [
       "C17_before_review"
-    ]
+    ],
+    "sourceDelivery": "archive/deliveries/refined-cg-20261016/originals/C17.png"
   },
   "O09": {
     "prompt": "Edit this EXACT completed adult woman at the sunset window CG: replace ONLY the glass Japanese furin bell and its paper strip with a small handmade BLUE AND WHITE SHELL wind-chime. Three small blue-white scallop shells hang on thin linen strings with one small brass bell; no glass sphere and no paper strip. Keep both hands holding the cord naturally. Preserve the adult age24 woman, face, clothes, whale tail, window, room, sunset, camera and exact 16:9 composition. No necklace. Delicate believable shell materials, no text.",
@@ -109,11 +110,12 @@
   "C09": {
     "name": "原来你是真·营地裹毯夜谈",
     "costume": "常服内搭完整裹毯，保守坐姿",
-    "prompt": "One 16:9 EVENT CG of a quiet ordinary campsite conversation. FIRST landscape reference is the exact moonlit tent campsite with small campfire. SECOND fully clothed sprite defines the SAME ADULT woman aged24, her blue hair, fin ears, ahoge, face and independent blue whale tail. She sits upright beside the adult age26 man in a white long-sleeved shirt and full-length navy trousers. Her body and legs are completely wrapped in the thick opaque whale-pattern blanket from SHOULDERS TO ANKLES, with loose full-length trousers and a cream cardigan underneath and closed white shoes. Only her face and resting hands are exposed. No short-skirt pose, no exposed knees, no knees-to-chest pose, no body-part emphasis. Both sit calmly with hands resting on their laps, gentle wistful eye contact at the realization that the other person is real. Two human legs under the blanket remain separate from her whale tail. Believable covered silhouettes, clean anatomy, detailed coastal anime painting, warm firelight and blue moonlight. Important faces and emotional action above the lower 28% dialogue area. No jewelry, text or watermark.",
+    "prompt": "用户提供《修复后CG图包.zip》中的C09：以成品为准，统一细长连续尾柄、双叶尾鳍和白色圆形海洋纹样；保留角色与剧情动作。原始提示词未随包提供。",
     "references": [
       "B16",
       "L35"
-    ]
+    ],
+    "sourceDelivery": "archive/deliveries/refined-cg-20261016/originals/C09.png"
   },
   "C25": {
     "prompt": "One quiet 16:9 Japanese visual-novel night conversation CG inside the EXACT tent in the FIRST landscape reference. The SECOND reference defines the SAME ADULT woman aged24: blue hair, blue-white fin ears, loop ahoge, separate whale tail, opaque long-sleeved whale pajamas, full-length pajama trousers and TWO small separate PINK SCALLOP SHELLS on a simple cord. Keep that complete sleepwear and recognizable adult identity. She sits comfortably on the bedding with the thick blanket covering her legs, holding a soft whale cushion; both hands rest naturally. Warm slightly embarrassed smile and attentive eyes directed toward the viewer, a quiet shared bedtime story. Only face and hands visible; no clothes being removed, no revealing outfit, no intimate body emphasis. Gentle low lantern light agrees with the moonlit coastal campsite. The two shell pieces must remain real ridged fan-shaped shells, not a heart gemstone or blue pearl. Landscape 16:9, face and two-shell necklace above the dialogue area, no text or watermark.",
@@ -145,13 +147,11 @@
     ]
   },
   "L03": {
-    "prompt": "A full-body transparent-alpha production sprite for a Japanese romance visual novel. Reference is the exact SAME adult woman aged24, same long blue hair, loop ahoge, fin ears and cyan bows, navy sailor-collar dress, white socks, closed white shoes, two human legs and ONE separate whale tail from the lower back. Preserve her recognizable adult face and exact costume, head size and full-body canvas framing, body proportions, painting finish and neutral daylight. The user asks for a clear ACTING POSE, not merely a changed facial expression. Redraw the shoulders, arms, hands and tail into the specified pose. Keep important expressive hands and tail gesture in the UPPER HALF of the character canvas, visible above a game's lower dialogue box. Full figure inside the canvas, natural five-finger hands, coherent anatomy. No scenery, ground shadow, text, stickers, detached symbols, props not requested, duplicate arms or halo. Real clean transparent alpha. Pose: Caught being kind and trying to hide it: shoulders turned about thirty degrees away, head turned back toward the viewer, eyes glancing aside with a small embarrassed pout and modest blush. One hand near her cheek, the other lightly holding the opposite upper arm across her chest. Shoulders drawn inward, separate whale tail tip curling into a small compact loop behind her. Both expressive hands are near face/chest, not down at the skirt.",
+    "prompt": "Repair ONLY the tail anatomy in this transparent full-body sprite. The same ADULT woman age24 as the reference, long cobalt/periwinkle blue hair, loop ahoge, cyan bow clips, blue-and-white fin ears, blue eyes, exact opaque navy sailor-collar dress with cyan chest bow and white double hem stripes. Healthy intact skin. Preserve her recognizable face, mature proportions, delicate painted anime VN finish. Exactly ONE independent blue-and-white mammalian whale tail attaches behind her lower back, separate from her TWO human legs. It tapers to ONE narrow peduncle ending in EXACTLY TWO broad flattened left/right flukes with a deep visible central notch. Show both lobes clearly in the same plane, with believable volume. No single leaf, overlapping petal, third fin, fish fan, dorsal fin, disconnected lobe, tubular pointed tip or additional tail.The terminal single hooked crescent/leaf is WRONG. Replace that end with a recognizable broad TWO-lobed whale fluke pair, gently tilted to the side at one joint, separated by a central V notch. The whole tail can curve softly, but its tip cannot be a single hook or roll of fabric. Preserve exact thoughtful guarded face, chin hand, other arm, hair, dress, legs, socks, shoes, head position and framing. No new jewelry or wounds. Clean transparent alpha background, no scenery or glow. Same portrait dimensions.",
     "references": [
-      "L01"
+      "L03_rejected_tail_opening"
     ],
-    "dependencies": [
-      "L01"
-    ]
+    "dependencies": []
   },
   "L04": {
     "prompt": "A full-body transparent-alpha production sprite for a Japanese romance visual novel. Reference is the exact SAME adult woman aged24, same long blue hair, loop ahoge, fin ears and cyan bows, navy sailor-collar dress, white socks, closed white shoes, two human legs and ONE separate whale tail from the lower back. Preserve her recognizable adult face and exact costume, head size and full-body canvas framing, body proportions, painting finish and neutral daylight. The user asks for a clear ACTING POSE, not merely a changed facial expression. Redraw the shoulders, arms, hands and tail into the specified pose. Keep important expressive hands and tail gesture in the UPPER HALF of the character canvas, visible above a game's lower dialogue box. Full figure inside the canvas, natural five-finger hands, coherent anatomy. No scenery, ground shadow, text, stickers, detached symbols, props not requested, duplicate arms or halo. Real clean transparent alpha. Pose: Mischievous playful victory: lean her upper torso slightly toward the viewer, lift one hand into a clear V-sign BESIDE her face, the other hand rests casually at her waist. One eyebrow raised, a small asymmetrical cheeky grin, lively direct eye contact. Tail makes a buoyant upward curve behind her. A teasing adult heroine, not an aggressive villain smile. Keep fingers and V-sign naturally formed and visible.",
@@ -201,12 +201,11 @@
   },
   "P02": {
     "references": [
-      "L08"
+      "P02_rejected_tail_candidate",
+      "L01"
     ],
-    "dependencies": [
-      "L08"
-    ],
-    "prompt": "A full-body transparent-alpha visual-novel acting sprite of the exact same ADULT woman aged24 in the reference. Preserve her adult identity, blue hair, fin ears, loop ahoge, navy sailor-collar dress, white socks and closed shoes, two human legs and one separate whale tail. Change the acting pose clearly: she holds the SAME closed blue whale-cover spiral notebook ALOFT in one raised hand, high beside her head and just above the ahoge, teasing the viewer by keeping it out of reach. Other hand on her waist, shoulders slightly turned, confident challenging sidelong smile. The book and holding hand must both remain INSIDE generous canvas margins, visibly above shoulder height. Tail curls alertly upward behind her, naturally rooted behind her lower back. Natural fingers gripping the notebook, no extra arms, no duplicate books. Keep original face size and full-body framing; neutral daylight, clean transparent alpha, no text, scenery or floating symbols."
+    "dependencies": [],
+    "prompt": "Correct the malformed tail in the FIRST transparent sprite by following the anatomically coherent tail in the SECOND sprite. FIRST sprite adult woman aged24 must retain EXACTLY her face, smile, hair, raised notebook hand, notebook, hand on hip, navy opaque sailor dress, human legs, socks, white shoes, framing and head/shoe positions. Replace the ENTIRE whale tail on her right with a natural descending C curve like SECOND reference: the thick tail root starts behind the right hip, curves out and DOWN, narrows to a clearly visible slim terminal stalk at knee height, then ends in a broad LEFT and RIGHT fluke pair lower beside the calves, like a horizontally spread whale-tail silhouette tilted slightly towards camera. TWO terminal lobes on the same joint, deep central notch, not two big leaves directly attached to the hip, not overlapping petals. Use the SECOND reference tail silhouette and proportions, including blue-white pattern. Both lobes entirely inside canvas. Clean transparent alpha, no background, no halo, no text or other changes.\n"
   },
   "P03": {
     "name": "裹毯夜谈怔住",
@@ -325,7 +324,7 @@
     "prompt": "Edit the FIRST reference sprite of the same fully clothed ADULT woman age24. Keep her exact NEW knees-together seated anatomy, pelvis and thigh foreshortening, two distinct bent knees, parallel lower legs, both closed white shoes, independent single whale tail and generous full-body framing unchanged. Keep the opaque navy sailor dress as ONE INTACT garment: its lap surface, complete skirt silhouette, folds and continuous double-white hem stripes remain unchanged. Hands stay clearly ABOVE the fabric, with no skin hole, opening, cutout or hand piercing the skirt. Preserve her adult face identity, blue hair, bows, ears, ahoge, socks, lighting and true transparent alpha. Change only the upper-body acting requested. No crossed legs, scenery, letters, new tail branch or extra jewelry. Keep the exact quiet neutral face, shoulders and hands resting loosely on her lap. Add ONE small sky-blue pearl ring with a simple silver band to her left ring finger. No other jewelry or object. Do not change a single lower-body fold or leg position."
   },
   "C08": {
-    "prompt": "One 16:9 landscape event CG for a premium finely painted Japanese romance visual novel. FIRST image is the exact moonlit coastal location: keep its cove, coastline, moon, sea and quiet blue lighting. SECOND image controls the same ADULT woman aged24, exact face and hair, loop ahoge, fin ears and bows, opaque navy sailor dress with intact double-white hem, socks and closed shoes, and her newly corrected natural seated-on-folded-heels posture. She is kneeling in an ordinary seiza posture on a broad flat coastal rock, fully dressed, calmly writing a poem in the open dark-blue whale notebook on her lap with a slim blue pen. Both legs fold coherently under her body, no crossed dangling legs. Right hand naturally grips the pen, tip touching the page; left hand steadies the page. Eyes look down toward her writing, a small concentrated expression. One separate whale tail grows behind her lower back, one tapered stalk and exactly one clearly readable two-lobed terminal fluke, resting beside the rock without extra fins. No ring or other jewelry. Place heroine left of centre with plenty of quiet sea to the right; face and writing hands entirely above the lower 28 percent dialogue area. Natural cloth gravity, one continuous unbroken skirt, hands fully above the fabric, no skin holes or fabric clipping. Moonlit shadows agree with the first image. No second person, readable letters, UI or watermarks. New coherent illustration, do not paste a cutout sprite. Complete landscape frame, anatomically consistent, no change of clothing.",
+    "prompt": "用户提供《修复后CG图包.zip》中的C08：以成品为准，统一细长连续尾柄、双叶尾鳍和白色圆形海洋纹样；保留角色与剧情动作。原始提示词未随包提供。",
     "references": [
       "B04",
       "S02"
@@ -333,17 +332,16 @@
     "dependencies": [
       "B04",
       "S02"
-    ]
+    ],
+    "sourceDelivery": "archive/deliveries/refined-cg-20261016/originals/C08.png"
   },
   "P14": {
     "name": "常服翻开笔记本检查",
     "references": [
-      "L08"
+      "P14_rejected_notebook"
     ],
-    "dependencies": [
-      "L08"
-    ],
-    "prompt": "A transparent-alpha Japanese romance visual-novel acting sprite of the SAME ADULT woman aged24 in the reference. Preserve her recognizable mature face, long blue hair, loop ahoge, cyan bow clips, fin ears, exact OPAQUE navy sailor-collar dress, white socks and closed white shoes, two human legs plus one separate mottled blue whale tail attached behind her lower back. Finely painted anime finish and neutral soft daylight. Preserve head size, framing and generous margins. Whole adult figure, all hair, shoes and tail inside canvas; naturally connected hands and fingers. Hands and emotional action visible around chest or face height above the dialogue area. Clean transparent alpha, no scenery, ground, shadow, glow outline, text, symbols, comic stickers or extra limbs. Acting direction: She has just opened the rescued notebook and is skeptical of its contents. Hold an OPEN light-blue spiral whale notebook in both hands at chest height, one hand under the spine and the other holding the upper outside corner. Two distinct paper pages visible, faint indistinct marks only, no readable typography. Her gaze looks slightly down at the open pages, one eyebrow raised, lips parted in a dry questioning expression. Keep the notebook high enough to read above dialogue. Not a closed book hugged against her chest, no pen, no second notebook."
+    "dependencies": [],
+    "prompt": "Precise local prop correction of this transparent full-body acting sprite. The same ADULT woman age24 as the reference, long cobalt/periwinkle blue hair, loop ahoge, cyan bow clips, blue-and-white fin ears, blue eyes, exact opaque navy sailor-collar dress with cyan chest bow and white double hem stripes. Healthy intact skin. Preserve her recognizable face, mature proportions, delicate painted anime VN finish. Keep the exact face, mouth, hair, shoulders, standing pose, dress, skirt, legs, socks, shoes, tail, head position and framing unchanged. Correct the OPEN NOTEBOOK held at chest height: it is a real A5 spiral notebook opened to two facing inner pages; BOTH leaves have identical physical width and height. The upper edges align at the same top binding ring and bottom edges align at the same bottom ring, sharing ONE straight vertical binding spine and coherent perspective. Show a clean shallow V opening so that the left page is not a tiny rectangle and the right page is not an oversized trapezoid. Inner pages on BOTH sides are off-white with faint unreadable pencil lines; the light-blue outer cover is only a narrow rim behind the pages, not a huge graphic on the inside page. Adjust only fingers touching the book as needed for natural support; exactly five fingers per hand. No readable text. Actual transparent alpha, no background or halo, preserve original portrait canvas."
   },
   "P15": {
     "name": "常服并膝坐姿·害羞",
@@ -396,19 +394,119 @@
     "prompt": "One full-body transparent-alpha production sprite of the SAME fully clothed ADULT woman aged24 in the reference, matching her adult face identity, blue hair, ears, bows, loop ahoge, opaque navy sailor dress, white socks and closed shoes, and separate whale tail. New ordinary sitting pose for writing a poem on a flat rock: a natural Japanese seiza posture, seated on her folded heels, spine upright, both knees together pointing forward, both lower legs folded underneath her. The opaque skirt drapes naturally over her lap and knees with one continuous double-white hem stripe. Anatomically coherent pelvis, thighs, knees and folded legs. Do not cross the legs or draw two long shins hanging from the front of the skirt. Her body weight is supported on her folded legs, not hovering. An open dark-blue whale notebook rests on her lap, her right hand naturally holds a slim blue pen with its tip touching the page, left hand steadies the upper page. Eyes focus thoughtfully down toward her writing. Whole adult figure and separate single tail with exactly one two-lobed fluke inside generous margins. Natural hands and cloth, no fabric holes or extra limbs. No ring, scenery, rock, ground shadow, letters or annotations. Match the reference finely painted anime quality and neutral soft daylight. Real clean transparent alpha, opaque figure interior."
   },
   "C12": {
-    "prompt": "Edit ONLY the mistaken injury marks in the FIRST full landscape illustration. The woman is the same adult age24. Her distress is EMOTIONAL after a hurtful conversation, not a bodily injury. Restore healthy, intact, unmarked skin on both upper arms, elbows, forearms, hands, knees and visible legs. Remove every red scratch, abrasion, bruise, scrape, blood mark and scab. Preserve natural anatomical shading and sun highlights. Retain EXACTLY her tearful offended expression, blush, watery eyes, phone held to chest, arm pose, face, blue hair, adult body proportions, navy sailor-collar dress, continuous opaque skirt, whale tail, man's foreground hand and the sunlit study. Do not add bandages or scars, do not make her cheerful, do not change the composition or redesign the scene. One finished coherent image with the same 16:9 landscape framing and painting style.",
+    "prompt": "用户提供《修复后CG图包.zip》中的C12：以成品为准，统一细长连续尾柄、双叶尾鳍和白色圆形海洋纹样；保留角色与剧情动作。原始提示词未随包提供。",
     "references": [
       "C12_rejected_skin"
     ],
     "dependencies": [],
-    "spec": "电话后抢手机，情绪受伤、委屈泪眼；身体皮肤完好，无擦伤、淤青、血痕或绷带。保留手机、姿态、服装和原室内构图。"
+    "spec": "电话后抢手机，情绪受伤、委屈泪眼；身体皮肤完好，无擦伤、淤青、血痕或绷带。保留手机、姿态、服装和原室内构图。",
+    "sourceDelivery": "archive/deliveries/refined-cg-20261016/originals/C12.png"
   },
   "C18": {
-    "prompt": "Correct ONLY the mistaken physical injuries and the malformed tail end in this full landscape illustration. Same adult heroine aged24, same sad and emotionally hurt face and self-comforting arm-holding pose at the fish stall. Her skin is physically healthy: remove ALL red scratches, abrasions, bruises, bleeding and scabs on the exposed arm, forearm, elbows and legs, including the knee near the lower edge. Keep natural skin shading and blush. No bandages, no wounds. At the LEFT of the heroine replace the single leaf-like tail end with one recognizable WHALE fluke pair: ONE continuous mottled-blue tail stalk comes from behind her lower back, narrows to ONE terminal joint, and ends in EXACTLY TWO broad left/right flukes with a central notch. Keep both flukes clear within the existing left-side space, correctly foreshortened; no third fin, no second tail, no spinal dorsal fin. Her two human legs remain independent from the tail. Keep her identity, hair, opaque navy dress and hem, hands, both adult characters, fish stall products, market buildings, camera, summer daylight and delicate illustration style otherwise unchanged. Same 16:9 full coherent scene, not a pasted silhouette. No text or new props.",
+    "prompt": "用户提供《修复后CG图包.zip》中的C18：以成品为准，统一细长连续尾柄、双叶尾鳍和白色圆形海洋纹样；保留角色与剧情动作。原始提示词未随包提供。",
     "references": [
       "C18_rejected_skin_tail"
     ],
     "dependencies": [],
-    "spec": "鱼摊争执时的情绪受伤、抱臂自护；不是身体受伤，裸露皮肤健康无伤痕。一根独立鲸尾末端为明确双叶尾鳍；保留原市场构图和低落表情。"
+    "spec": "鱼摊争执时的情绪受伤、抱臂自护；不是身体受伤，裸露皮肤健康无伤痕。一根独立鲸尾末端为明确双叶尾鳍；保留原市场构图和低落表情。",
+    "sourceDelivery": "archive/deliveries/refined-cg-20261016/originals/C18.png"
+  },
+  "C01": {
+    "prompt": "Precise design-unification edit: keep FIRST landscape illustration exactly unchanged except the whale tail. Same adult woman aged24. Her single hand catching the flying damp notebook, book and every loose page fully in frame, face, other hand, opaque navy dress, healthy skin, coast, water and daylight must stay unchanged. Replace the overly bulky mottled tail at right with the slim smoothly tapering blue-and-white independent whale tail design of SECOND illustration. ONE tail connects behind her lower back beneath water, curves naturally up on right, then ONE narrow terminal joint ends in EXACTLY TWO broad flattened whale flukes with clear central notch. Use the refined blue surface, white underside/fin edging and the same small WHITE CIRCULAR marine emblem on ONE fluke as SECOND reference. Both flukes fully within image, no third petal or fish fan. Match actual sunlight and water, no added letters or UI. Same 16:9 landscape camera.",
+    "references": [
+      "C01_rejected_direction_before_delivery",
+      "C04_teammate_refined"
+    ],
+    "dependencies": []
+  },
+  "C04": {
+    "prompt": "用户提供《修复后CG图包.zip》中的C04：以成品为准，统一细长连续尾柄、双叶尾鳍和白色圆形海洋纹样；保留角色与剧情动作。原始提示词未随包提供。",
+    "references": [
+      "C04_rejected_tail_opening"
+    ],
+    "dependencies": [],
+    "sourceDelivery": "archive/deliveries/refined-cg-20261016/originals/C04.png"
+  },
+  "O12": {
+    "id": "O12",
+    "name": "门口温热烤小鱿鱼",
+    "kind": "cg",
+    "spec": "Create a story-specific 16:9 coastal-campsite still-life CG based on this EXACT sunset tent reference. Same cream canvas tent, blue bedding, lantern on wooden crate, rocky beach, sunset over the ocean and delicate painted anime style. Move the camera closer to the OPEN TENT ENTRANCE: a single bamboo skewer with THREE SMALL WHOLE GRILLED SQUID rests on a small plain ceramic dish on a low wooden board at the threshold. The squid have recognizable tapered mantles and curled short tentacles, lightly browned glossy surface, subtle grill marks and a faint wisp of warmth; NOT round fish, sausage, octopus, empty skewer or raw squid. This is a modest gift for ONE person, not a feast. Place the dish and skewer at image centre-left around x=40%, y=53%, clearly visible ABOVE the bottom 30% dialogue area, big enough to recognize at 720p. Tent entrance and familiar lantern immediately behind it, sea and warm sunset on the right. No people, heroine, hands, writing, UI or invented house. Coherent close perspective, warm natural shadows, same location; no pasted sticker food.",
+    "prompt": "Create a story-specific 16:9 coastal-campsite still-life CG based on this EXACT sunset tent reference. Same cream canvas tent, blue bedding, lantern on wooden crate, rocky beach, sunset over the ocean and delicate painted anime style. Move the camera closer to the OPEN TENT ENTRANCE: a single bamboo skewer with THREE SMALL WHOLE GRILLED SQUID rests on a small plain ceramic dish on a low wooden board at the threshold. The squid have recognizable tapered mantles and curled short tentacles, lightly browned glossy surface, subtle grill marks and a faint wisp of warmth; NOT round fish, sausage, octopus, empty skewer or raw squid. This is a modest gift for ONE person, not a feast. Place the dish and skewer at image centre-left around x=40%, y=53%, clearly visible ABOVE the bottom 30% dialogue area, big enough to recognize at 720p. Tent entrance and familiar lantern immediately behind it, sea and warm sunset on the right. No people, heroine, hands, writing, UI or invented house. Coherent close perspective, warm natural shadows, same location; no pasted sticker food.",
+    "old_names": [],
+    "dependencies": [],
+    "references": [
+      "B15"
+    ],
+    "requested_size": "3840x2160",
+    "status": "queued",
+    "review": "pending"
+  },
+  "C27": {
+    "id": "C27",
+    "name": "尾鳍悄悄带向岸边",
+    "kind": "cg",
+    "spec": "One fully coherent 16:9 story CG in the exact sunny shallow bay of FIRST reference. SECOND reference controls the same heroine identity and opaque navy dress. The same ADULT woman age24 as the reference, long cobalt/periwinkle blue hair, loop ahoge, cyan bow clips, blue-and-white fin ears, blue eyes, exact opaque navy sailor-collar dress with cyan chest bow and white double hem stripes. Healthy intact skin. Preserve her recognizable face, mature proportions, delicate painted anime VN finish. Script: she secretly nudges the adult male player towards shore with the curved end of her independent whale tail, while pretending it is the sea current. Compose a downward-looking waist-height player viewpoint: at left foreground, just one of his trouser-covered lower legs and ankle under transparent shallow water; her smooth blue-and-white tail stalk curves into a loose OPEN C near the ankle and gently supports it from the seaward side, no tight binding. The two flat flukes remain visibly connected at the far tip to the right of the ankle. Both lobes and their central notch clearly readable through the water at centre image, around y=52%, above dialogue. Background upper-right: heroine waist-deep in water, face looking away with embarrassed defensive expression, two arms naturally folded, her two human legs independent beneath water. Near shoreline rocks on left show direction of gentle nudge towards land. Exactly ONE independent blue-and-white mammalian whale tail attaches behind her lower back, separate from her TWO human legs. It tapers to ONE narrow peduncle ending in EXACTLY TWO broad flattened left/right flukes with a deep visible central notch. Show both lobes clearly in the same plane, with believable volume. No single leaf, overlapping petal, third fin, fish fan, dorsal fin, disconnected lobe, tubular pointed tip or additional tail. Wholesome quiet rescue, no violent restraint, injuries, extra limbs, forced perspective giant feet or hand contact. Sunlight refracts through ripples, tail and human limb have coherent occlusion and scale. No lettering or UI.",
+    "prompt": "Correct the CHARACTER DISTANCE and EXCESSIVE TAIL LENGTH in this exact side-view CG. Same two ADULTS age24/26, clothes, recognizable faces, folded arms, exact sunny bay, landscape framing and bottom-third empty water. The man currently stands too far to the left and the tail has been stretched unnaturally like a rope. MOVE THE MAN bodily one step RIGHT, close beside her: his right ankle should be only about 25-30 cm from her LEFT ankle. Keep him normal adult size, standing with TWO natural legs, white shirt and navy rolled trousers, back/side toward viewer. Do not merely shrink or stretch an isolated leg. The heroine stays at her present location and scale. Her ONE blue-and-white whale tail must be COMPACT and proportional to her standard character design: total curved root-to-tip length about HALF her height, thick muscular base behind her lower back, smooth short taper, one small terminal joint with EXACTLY TWO flattened flukes. Remove the excessively long horizontal middle section. A short natural downward C arc at her left side reaches the nearby man's right heel, ONE terminal fluke lightly hooking the BACK of his ankle and the other clearly visible beside it with the central notch. No long snake, thin rope, tube, extra fin, floating tail or growth from the man's body. Preserve white circular marine emblem on one fluke. The whole short connected root-to-ankle action should read in one glance between their two CLOSE bodies, centred around x=52%, y=54%, ABOVE y=62%. Keep her two independent human legs, physically healthy skin, opaque dress, correct hands, coherent daylight and shallow-water contact. No lettering, UI or extra objects.",
+    "old_names": [],
+    "dependencies": [],
+    "references": [
+      "C27_rejected_tail_too_long"
+    ],
+    "requested_size": "3840x2160",
+    "status": "queued",
+    "review": "pending"
+  },
+  "C02": {
+    "prompt": "用户提供《修复后CG图包.zip》中的C02：以成品为准，统一细长连续尾柄、双叶尾鳍和白色圆形海洋纹样；保留角色与剧情动作。原始提示词未随包提供。",
+    "sourceDelivery": "archive/deliveries/refined-cg-20261016/originals/C02.png"
+  },
+  "C05": {
+    "prompt": "用户提供《修复后CG图包.zip》中的C05：以成品为准，统一细长连续尾柄、双叶尾鳍和白色圆形海洋纹样；保留角色与剧情动作。原始提示词未随包提供。",
+    "sourceDelivery": "archive/deliveries/refined-cg-20261016/originals/C05.png"
+  },
+  "C06": {
+    "prompt": "用户提供《修复后CG图包.zip》中的C06：以成品为准，统一细长连续尾柄、双叶尾鳍和白色圆形海洋纹样；保留角色与剧情动作。原始提示词未随包提供。",
+    "sourceDelivery": "archive/deliveries/refined-cg-20261016/originals/C06.png"
+  },
+  "C07": {
+    "prompt": "用户提供《修复后CG图包.zip》中的C07：以成品为准，统一细长连续尾柄、双叶尾鳍和白色圆形海洋纹样；保留角色与剧情动作。原始提示词未随包提供。",
+    "sourceDelivery": "archive/deliveries/refined-cg-20261016/originals/C07.png"
+  },
+  "C10": {
+    "prompt": "用户提供《修复后CG图包.zip》中的C10：以成品为准，统一细长连续尾柄、双叶尾鳍和白色圆形海洋纹样；保留角色与剧情动作。原始提示词未随包提供。",
+    "sourceDelivery": "archive/deliveries/refined-cg-20261016/originals/C10.png"
+  },
+  "C11": {
+    "prompt": "用户提供《修复后CG图包.zip》中的C11：以成品为准，统一细长连续尾柄、双叶尾鳍和白色圆形海洋纹样；保留角色与剧情动作。原始提示词未随包提供。",
+    "sourceDelivery": "archive/deliveries/refined-cg-20261016/originals/C11.png"
+  },
+  "C13": {
+    "prompt": "用户提供《修复后CG图包.zip》中的C13：以成品为准，统一细长连续尾柄、双叶尾鳍和白色圆形海洋纹样；保留角色与剧情动作。原始提示词未随包提供。",
+    "sourceDelivery": "archive/deliveries/refined-cg-20261016/originals/C13.png"
+  },
+  "C15": {
+    "prompt": "用户提供《修复后CG图包.zip》中的C15：以成品为准，统一细长连续尾柄、双叶尾鳍和白色圆形海洋纹样；保留角色与剧情动作。原始提示词未随包提供。",
+    "sourceDelivery": "archive/deliveries/refined-cg-20261016/originals/C15.png"
+  },
+  "C19": {
+    "prompt": "用户提供《修复后CG图包.zip》中的C19：以成品为准，统一细长连续尾柄、双叶尾鳍和白色圆形海洋纹样；保留角色与剧情动作。原始提示词未随包提供。",
+    "sourceDelivery": "archive/deliveries/refined-cg-20261016/originals/C19.png"
+  },
+  "C20": {
+    "prompt": "用户提供《修复后CG图包.zip》中的C20：以成品为准，统一细长连续尾柄、双叶尾鳍和白色圆形海洋纹样；保留角色与剧情动作。原始提示词未随包提供。",
+    "sourceDelivery": "archive/deliveries/refined-cg-20261016/originals/C20.png"
+  },
+  "C21": {
+    "prompt": "用户提供《修复后CG图包.zip》中的C21：以成品为准，统一细长连续尾柄、双叶尾鳍和白色圆形海洋纹样；保留角色与剧情动作。原始提示词未随包提供。",
+    "sourceDelivery": "archive/deliveries/refined-cg-20261016/originals/C21.png"
+  },
+  "C22": {
+    "prompt": "用户提供《修复后CG图包.zip》中的C22：以成品为准，统一细长连续尾柄、双叶尾鳍和白色圆形海洋纹样；保留角色与剧情动作。原始提示词未随包提供。",
+    "sourceDelivery": "archive/deliveries/refined-cg-20261016/originals/C22.png"
+  },
+  "C24": {
+    "prompt": "用户提供《修复后CG图包.zip》中的C24：以成品为准，统一细长连续尾柄、双叶尾鳍和白色圆形海洋纹样；保留角色与剧情动作。原始提示词未随包提供。",
+    "sourceDelivery": "archive/deliveries/refined-cg-20261016/originals/C24.png"
   }
 }

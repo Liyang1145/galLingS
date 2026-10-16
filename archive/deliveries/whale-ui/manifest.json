@@ -1,0 +1,21 @@
+{
+  "delivery": "透明鲸鱼UI与平滑渐变（作者本地修改包 larry-complete-game.zip）",
+  "received": "2026-10-17",
+  "archive_filename": "larry-complete-game.zip",
+  "archive_bytes": 135199594,
+  "archive_sha256": "b7b8e11d658d828662ad333c6413a774b33c0044e93cca9b40556fce66a1d693",
+  "archive_in_repo": false,
+  "baseline": "archive/deliveries/larry-vn（2026-10-13 作者原包）",
+  "files": [
+    {"path": "游戏文件夹/index.html", "sha256": "69ac613cffa077638a5a825649b23fc015bd3c45baf277cd68593bfac509921f", "status": "修改；原件存于 original-files/index.html，已三方合并进运行目录"},
+    {"path": "游戏文件夹/game.js", "sha256": "6552b761378f25e120a87d49b0ada382da096103f84511bceda248ff69fb514e", "status": "与 10-13 原包相同；未入库（仓库运行版已含美术重制与新第一话）"},
+    {"path": "游戏文件夹/assets/（135 项）", "status": "逐文件 SHA 与 archive/deliveries/larry-vn/manifest.json 全部一致；未入库"},
+    {"path": "海风与布丁.html", "sha256": "1b34d2d2643888fdc52c586aa34009f4a4095fe9b6c9adb8da9778cc68ef2f20", "status": "单文件版，内嵌旧数据；未入库"},
+    {"path": "修改备份/", "status": "作者本地回退备份；按更新说明不入库"}
+  ],
+  "runtime_result": {
+    "path": "content/imports/vnstudio/海风与布丁/index.html",
+    "sha256": "52b7ee93bb61c25f7a481fb6b91b8517f6e4570347c3e85e89268473025f25c1",
+    "bytes": 360935
+  }
+}

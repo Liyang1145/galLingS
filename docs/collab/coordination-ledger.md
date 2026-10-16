@@ -8,6 +8,8 @@
 
 2026-10-15后续：tanpowasd/dev经PR #6合入main `0213575`，包含导入器/galcore剧情接管、快照存读档与目录迁移。参考重制与用户新第一话见 [本轮美术记录](work-ledger/image25-art-upgrade.md)：原3308句ID不重编号，新增7句，当前3315节点；112项审核后装配/备用，泳装3项明确留待人工。现有103音频资产不变。开发库418项/564文件；旧表中“人物先放着”和3308总节点数是历史快照，不能整包回退覆盖此次授权。
 
+2026-10-17：透明鲸鱼UI与平滑渐变已三方合并进运行目录 `index.html`，只动播放器壳，见 [任务记录](work-ledger/whale-ui-fades.md)。
+
 最新统筹：音乐负责人的场景/音频融合与用户转交的boliyer GalAgent已合并到同一作品，参见 [最新游玩与模块状态](latest-play.md)、[本次接入](work-ledger/boliyer-galagent-integration.md)。根目录 `游玩.html` 与 `start.bat` 使用同一 `content/imports/vnstudio/海风与布丁/`。下表早期交付快照中“无主曲”“接口预留”等描述按该快照理解，当前状态以最新统筹记录为准。
 
 后续玩家审美打磨：只调整作品及外层界面，game.js与所有资产未改；403画面取样、57选择点及操作验证通过。[审核与优先缺口](../content/player-aesthetic-review.md) 把角色/CG统一、缺曲、动作素材验收单独列出，界面已打磨不等于美术音乐全部完成。

@@ -1,0 +1,2406 @@
+{
+  "snapshotDate": "2026-10-17",
+  "scope": "仅本机待交付文件元信息，不含文件本体；排除本次发布文档以便提交后核对保护状态。",
+  "branch": "fix/character-performance",
+  "baseCommit": "f55cf0e6989726dd56521cecbc286a542dee4d27",
+  "count": 397,
+  "bytes": 427979153,
+  "untrackedCount": 256,
+  "trackedCount": 141,
+  "sizeMeaning": "当前文件完整大小之和，含重复母版/运行副本；不是Git新增体积，仓库外outputs不在此清单。",
+  "publicationPaths": [
+    "AGENTS.md",
+    "docs/collab/待办总表.md",
+    "docs/collab/latest-play.md",
+    "docs/content/art-production/精修图包接续标准.md",
+    "docs/collab/work-ledger/opening-art-sound-corrections.md",
+    "docs/collab/work-ledger/todo-document-sync.md",
+    "docs/collab/接手说明.md",
+    "docs/collab/work-ledger/agent-handoff-cg-pause.md",
+    "docs/collab/handoff/local-pending-files.json"
+  ],
+  "files": [
+    {
+      "path": "archive/deliveries/refined-cg-20261016/manifest.json",
+      "status": "untracked",
+      "bytes": 5908,
+      "sha256": "6493e2738cc28049aaa2e9ee4540f757cf0456b5c93515b90759464e8ef15b00"
+    },
+    {
+      "path": "archive/deliveries/refined-cg-20261016/originals/C02.png",
+      "status": "untracked",
+      "bytes": 5674071,
+      "sha256": "5e11ca641ffc9e10ca38e588bf7da934ed7c53b4c76c947952818545169eadbc"
+    },
+    {
+      "path": "archive/deliveries/refined-cg-20261016/originals/C04.png",
+      "status": "untracked",
+      "bytes": 5387292,
+      "sha256": "e0d3bb0bb50abc9e5129f5cec864d359d65e5ad10e9093bf13a25dd15ce00160"
+    },
+    {
+      "path": "archive/deliveries/refined-cg-20261016/originals/C05.png",
+      "status": "untracked",
+      "bytes": 5332085,
+      "sha256": "84989ef6f7fb9eb40b2c5c0f96d0666779367a2c2bba21acc65e2704d7e7cb10"
+    },
+    {
+      "path": "archive/deliveries/refined-cg-20261016/originals/C06.png",
+      "status": "untracked",
+      "bytes": 5714328,
+      "sha256": "01bb3c749ce41d12c7708d5771095c5863d25702ce1f9002404dd85aee2b76c0"
+    },
+    {
+      "path": "archive/deliveries/refined-cg-20261016/originals/C07.png",
+      "status": "untracked",
+      "bytes": 5724464,
+      "sha256": "e38015619a196cafa187f9557b4589d2fba508d2edcd0aa35ea6c4a03282a25f"
+    },
+    {
+      "path": "archive/deliveries/refined-cg-20261016/originals/C08.png",
+      "status": "untracked",
+      "bytes": 7980575,
+      "sha256": "f3d5a77e7b9f46ab8afd078343a606d5635eefdc50b1d31b5b30710a76a855b9"
+    },
+    {
+      "path": "archive/deliveries/refined-cg-20261016/originals/C09.png",
+      "status": "untracked",
+      "bytes": 8277250,
+      "sha256": "dd09c865f176834f589a3fdc1ad7c465d7d905e27538b04c192f7c4b364ad8d9"
+    },
+    {
+      "path": "archive/deliveries/refined-cg-20261016/originals/C10.png",
+      "status": "untracked",
+      "bytes": 6188440,
+      "sha256": "35dc39fc6ba154b25a5931fe6b8ef6b7c0880169f168675239d118489a883e2f"
+    },
+    {
+      "path": "archive/deliveries/refined-cg-20261016/originals/C11.png",
+      "status": "untracked",
+      "bytes": 6377155,
+      "sha256": "c72936ed550dcfddd6e645935be57c5d2a57d88799370898c689d8864e5aaceb"
+    },
+    {
+      "path": "archive/deliveries/refined-cg-20261016/originals/C12.png",
+      "status": "untracked",
+      "bytes": 6688785,
+      "sha256": "3e53d6fcda31dba3c54af1abda564cf129d590af643ccde335c58f301aa14bc3"
+    },
+    {
+      "path": "archive/deliveries/refined-cg-20261016/originals/C13.png",
+      "status": "untracked",
+      "bytes": 7552325,
+      "sha256": "8f45b3fe0e9bec3def09fa078d80ca29b9c42b61efaa204ce9bf8bd3da266b69"
+    },
+    {
+      "path": "archive/deliveries/refined-cg-20261016/originals/C15.png",
+      "status": "untracked",
+      "bytes": 7803052,
+      "sha256": "6d4e8679e794b6e67d5f7943161cdbb67254c570e144eeeabf8b9ba26ec5de7f"
+    },
+    {
+      "path": "archive/deliveries/refined-cg-20261016/originals/C17.png",
+      "status": "untracked",
+      "bytes": 7432894,
+      "sha256": "fab2c4af730d198a9298b443814174c1bd852232fa39a7688ea1a42daaf7eaeb"
+    },
+    {
+      "path": "archive/deliveries/refined-cg-20261016/originals/C18.png",
+      "status": "untracked",
+      "bytes": 5483792,
+      "sha256": "d7f1238d1360111f0b9c7b22a7e9ae5bf20130b6c440a591b068a6f3c1ef0bee"
+    },
+    {
+      "path": "archive/deliveries/refined-cg-20261016/originals/C19.png",
+      "status": "untracked",
+      "bytes": 4906445,
+      "sha256": "84037b68d7a55de7a6c3c6437fb258a3a7305473fd122e2397f60af2ca8b5834"
+    },
+    {
+      "path": "archive/deliveries/refined-cg-20261016/originals/C20.png",
+      "status": "untracked",
+      "bytes": 5037236,
+      "sha256": "a1e3180019ede4935439ce34e7e66d7eb6792c690c4e4a7a9f8528db0984ffc8"
+    },
+    {
+      "path": "archive/deliveries/refined-cg-20261016/originals/C21.png",
+      "status": "untracked",
+      "bytes": 5433374,
+      "sha256": "3c867e80b31d87602585ead34ec5f7dedc998bef5ee8ef78ca5ee15f03f88414"
+    },
+    {
+      "path": "archive/deliveries/refined-cg-20261016/originals/C22.png",
+      "status": "untracked",
+      "bytes": 8233258,
+      "sha256": "f1f9097ede9917bcbbde5722d797102aad1234d8790c346dff81ef6f7b303123"
+    },
+    {
+      "path": "archive/deliveries/refined-cg-20261016/originals/C24.png",
+      "status": "untracked",
+      "bytes": 5883394,
+      "sha256": "136e69bc730c026be0f32cbc597ab610f5b50cfb2ad15931c523af483f2d148e"
+    },
+    {
+      "path": "archive/deliveries/refined-cg-20261016/originals/P02.png",
+      "status": "untracked",
+      "bytes": 2935822,
+      "sha256": "9b9e92697a78da3b84a74bd8ffb125420d91d12effeb1cbeb59fb9a0d4844271"
+    },
+    {
+      "path": "content/assets/art-upgrade/acting-frames.json",
+      "status": "tracked-modified",
+      "bytes": 6606,
+      "sha256": "76ca5756ea62b0bddf65b5c80c113edc12c03804c2931fb35cdfd5b2374b958b"
+    },
+    {
+      "path": "content/assets/art-upgrade/cg-pause-handoff.json",
+      "status": "untracked",
+      "bytes": 2633,
+      "sha256": "df5170935de56fa65ed2ed9bbe343aa0c06baa11e0664a57396ec04f96f3d3fa"
+    },
+    {
+      "path": "content/assets/art-upgrade/gateway-test-result.json",
+      "status": "untracked",
+      "bytes": 1042,
+      "sha256": "a859948013ee82cc827b10e67d1bc10d3c0fda8fe8a36a4bfb9317acc867d57e"
+    },
+    {
+      "path": "content/assets/art-upgrade/integration-validation.json",
+      "status": "tracked-modified",
+      "bytes": 671,
+      "sha256": "f60d0c5fb779986895ce444abd8958bc2dad92cdf3c22417e0423d2c29591db2"
+    },
+    {
+      "path": "content/assets/art-upgrade/opening-art-sound-corrections.json",
+      "status": "untracked",
+      "bytes": 22220,
+      "sha256": "35daf3d7fc30f3a6f6422486143a5c70b45e7f23d86516b88e3dddb679b91f4f"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C01.generation.json",
+      "status": "tracked-modified",
+      "bytes": 926,
+      "sha256": "2ac14c94919d749445a4a89bbd0bc0c31252c096c99fbe3a005d6382f4b5fe7f"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C01.png",
+      "status": "tracked-modified",
+      "bytes": 2787040,
+      "sha256": "cae104d839d04042808b06934dd47d5f77fdea941e7d6f9f8abe635c52d81f5e"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C01.production.json",
+      "status": "untracked",
+      "bytes": 1612,
+      "sha256": "59aba0e6320b0b7cbb42b951c07edc02b4f46ced09c190c383e02b5d238290f8"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C01_rejected_catch_crop.generation.json",
+      "status": "untracked",
+      "bytes": 927,
+      "sha256": "aab6df1c37a748d594325539fb44baea7f958aff248a2453b4696e3f620a6d3f"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C01_rejected_catch_crop.png",
+      "status": "untracked",
+      "bytes": 2892379,
+      "sha256": "6f389f9de6246cc92ec7cb281e4d6c183e0a0703ae4f5482f59d03f4e6c1e814"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C01_rejected_catch_crop.production.json",
+      "status": "untracked",
+      "bytes": 2786,
+      "sha256": "dcbf2546616a62cba05eafefdeb543c91df4b7f332759e78f39fbf568cc500a3"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C01_rejected_direction_before_delivery.generation.json",
+      "status": "untracked",
+      "bytes": 925,
+      "sha256": "747e147ef557ac087916018881c49e44bf107e65e3d02b6990fc7387c13a149c"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C01_rejected_direction_before_delivery.png",
+      "status": "untracked",
+      "bytes": 2800131,
+      "sha256": "764c056affc8f7dac30b2428bf4251a6d3dfd6e0eabb561e274c8f687abbab85"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C01_rejected_direction_before_delivery.production.json",
+      "status": "untracked",
+      "bytes": 1152,
+      "sha256": "5a9ed46c43af4a46c6dde80fdb374d98365dcc8cb091d5df4fec3d1f579bf03d"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C01_rejected_story_catch.generation.json",
+      "status": "untracked",
+      "bytes": 927,
+      "sha256": "59d891deabe24209fe60c1920930ef091d050e2e54c262897015da9c5912f123"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C01_rejected_story_catch.png",
+      "status": "untracked",
+      "bytes": 2891663,
+      "sha256": "cc387e2e6c3094d0173a6826bdd58f06182ba4aa72e060f793348d7cbff33737"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C02.generation.json",
+      "status": "tracked-modified",
+      "bytes": 608,
+      "sha256": "4d48f4f6e55bbb82af79273f03e51d5e9f806eaa28a227918246da6da1bce474"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C02.png",
+      "status": "tracked-modified",
+      "bytes": 5674071,
+      "sha256": "5e11ca641ffc9e10ca38e588bf7da934ed7c53b4c76c947952818545169eadbc"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C02.production.json",
+      "status": "untracked",
+      "bytes": 608,
+      "sha256": "4d48f4f6e55bbb82af79273f03e51d5e9f806eaa28a227918246da6da1bce474"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C02_rejected_before_teammate_refinement.generation.json",
+      "status": "untracked",
+      "bytes": 927,
+      "sha256": "efb6eed783409894da46dbd6f966670add3843abdfe940509f17d7e41c63b3ae"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C02_rejected_before_teammate_refinement.png",
+      "status": "untracked",
+      "bytes": 2777928,
+      "sha256": "52a3bc6ebac087ad7115b5b67bf9cfccb1dace006f2d53d1730d1d85413e3713"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C04.generation.json",
+      "status": "tracked-modified",
+      "bytes": 608,
+      "sha256": "bd9086ab3add61b91559c1bdfe348d12ea04e13cd65b78b34c869cac0186bab2"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C04.png",
+      "status": "tracked-modified",
+      "bytes": 5387292,
+      "sha256": "e0d3bb0bb50abc9e5129f5cec864d359d65e5ad10e9093bf13a25dd15ce00160"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C04.production.json",
+      "status": "untracked",
+      "bytes": 608,
+      "sha256": "bd9086ab3add61b91559c1bdfe348d12ea04e13cd65b78b34c869cac0186bab2"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C04_rejected_before_teammate_refinement.generation.json",
+      "status": "untracked",
+      "bytes": 927,
+      "sha256": "a50b014ad41d35b566c8a2dc3d05c8c351654dbaccd9bbbbc00f604b8cea7411"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C04_rejected_before_teammate_refinement.png",
+      "status": "untracked",
+      "bytes": 2647894,
+      "sha256": "4c9e0bbc54e77539c7e67e43cba6711b5ecec5c2645265a38e67f35451c8f375"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C04_rejected_before_teammate_refinement.production.json",
+      "status": "untracked",
+      "bytes": 1926,
+      "sha256": "1c3d378d91c25533c5113af562fcb24c33d1dd6a78776bc0b484607f586b241f"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C04_rejected_tail_opening.generation.json",
+      "status": "untracked",
+      "bytes": 926,
+      "sha256": "1fcf8757dea40e0b36c9d140c09d3ef4117fa48d63d983e8b7f6a70b3727c972"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C04_rejected_tail_opening.png",
+      "status": "untracked",
+      "bytes": 2708559,
+      "sha256": "a2f2b71a0a329f25c35313ef6837c5d0b3bb38f2920fcab4f6d7ae4d9174b049"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C04_teammate_refined.png",
+      "status": "untracked",
+      "bytes": 5387292,
+      "sha256": "e0d3bb0bb50abc9e5129f5cec864d359d65e5ad10e9093bf13a25dd15ce00160"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C05.generation.json",
+      "status": "tracked-modified",
+      "bytes": 608,
+      "sha256": "126332a28334867d037ec384d027091b690939ac1cd449516c10f7e8d171fbcc"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C05.png",
+      "status": "tracked-modified",
+      "bytes": 5332085,
+      "sha256": "84989ef6f7fb9eb40b2c5c0f96d0666779367a2c2bba21acc65e2704d7e7cb10"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C05.production.json",
+      "status": "tracked-modified",
+      "bytes": 608,
+      "sha256": "126332a28334867d037ec384d027091b690939ac1cd449516c10f7e8d171fbcc"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C05_rejected_before_teammate_refinement.generation.json",
+      "status": "untracked",
+      "bytes": 921,
+      "sha256": "bcee681b159f4526348ca3de70fbb1548c917f8c033ba0c49d949296fffcc14e"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C05_rejected_before_teammate_refinement.png",
+      "status": "untracked",
+      "bytes": 2668240,
+      "sha256": "6444737e4c197cc88edb199b5400fc3a6d4f193c2ac8b92f250049b62658d299"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C05_rejected_before_teammate_refinement.production.json",
+      "status": "untracked",
+      "bytes": 3136,
+      "sha256": "95cbfaaa4053610c601fa888dea4dfde39507f18036123a7034aa0038e3dc358"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C06.generation.json",
+      "status": "tracked-modified",
+      "bytes": 608,
+      "sha256": "f52cd5e289f84de350491fde8891ed16dd2f7be68ad700b9013ef4344efc783b"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C06.png",
+      "status": "tracked-modified",
+      "bytes": 5714328,
+      "sha256": "01bb3c749ce41d12c7708d5771095c5863d25702ce1f9002404dd85aee2b76c0"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C06.production.json",
+      "status": "tracked-modified",
+      "bytes": 608,
+      "sha256": "f52cd5e289f84de350491fde8891ed16dd2f7be68ad700b9013ef4344efc783b"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C06_rejected_before_teammate_refinement.generation.json",
+      "status": "untracked",
+      "bytes": 927,
+      "sha256": "59381f70e8094e57f9c149d7969b92ca87512c2684308b93e882454f293f0db5"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C06_rejected_before_teammate_refinement.png",
+      "status": "untracked",
+      "bytes": 2727068,
+      "sha256": "8cc8f64166ad485e270d384fd2fec18182ed4a457e4d765da00c4f18e9cfbe8a"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C06_rejected_before_teammate_refinement.production.json",
+      "status": "untracked",
+      "bytes": 3154,
+      "sha256": "121c5b1c4e63d8f479dcc199a8fecf81cde0c9d87ba8d9f5b08112258652e0fb"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C07.generation.json",
+      "status": "tracked-modified",
+      "bytes": 608,
+      "sha256": "877ff1e0de0ee12650739ba75f9ce09813bdaf9fe3fafc719b12e810ed5e5956"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C07.png",
+      "status": "tracked-modified",
+      "bytes": 5724464,
+      "sha256": "e38015619a196cafa187f9557b4589d2fba508d2edcd0aa35ea6c4a03282a25f"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C07.production.json",
+      "status": "untracked",
+      "bytes": 608,
+      "sha256": "877ff1e0de0ee12650739ba75f9ce09813bdaf9fe3fafc719b12e810ed5e5956"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C07_rejected_before_teammate_refinement.generation.json",
+      "status": "untracked",
+      "bytes": 927,
+      "sha256": "ed4d8fba74bbcfa8ae90a64afb43b2eebb335b4eac462946a8083fd66bd24537"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C07_rejected_before_teammate_refinement.png",
+      "status": "untracked",
+      "bytes": 2793676,
+      "sha256": "5d34554b0bd2318ea89740ae802a41e2a8fef89a570faebf70c4b05fa38a572a"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C08.generation.json",
+      "status": "tracked-modified",
+      "bytes": 608,
+      "sha256": "9a6bd87c5d93ec1b662ac2a241c1a2d43e7be4315b0170d4d4282e489b2179e5"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C08.png",
+      "status": "tracked-modified",
+      "bytes": 7980575,
+      "sha256": "f3d5a77e7b9f46ab8afd078343a606d5635eefdc50b1d31b5b30710a76a855b9"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C08.production.json",
+      "status": "tracked-modified",
+      "bytes": 608,
+      "sha256": "9a6bd87c5d93ec1b662ac2a241c1a2d43e7be4315b0170d4d4282e489b2179e5"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C08_rejected_before_teammate_refinement.generation.json",
+      "status": "untracked",
+      "bytes": 895,
+      "sha256": "1c1afbc98e766daabbd60f9bfd642963841175713e80073d33ebcb89d1ec3655"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C08_rejected_before_teammate_refinement.png",
+      "status": "untracked",
+      "bytes": 2897750,
+      "sha256": "3fa7e67e2762b26412ff0e08cbf94d5b1706f6c31e17464457ac22545fabc375"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C08_rejected_before_teammate_refinement.production.json",
+      "status": "untracked",
+      "bytes": 2133,
+      "sha256": "2e5017f5e1c185e5e85f66f1f44e74321799b50c655100dadc9df52b59730b5c"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C09.generation.json",
+      "status": "tracked-modified",
+      "bytes": 608,
+      "sha256": "db49aecfb6b8ed2d518d090051cfd2ebe3d60f84c5cee6366f0db5fe425e78b3"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C09.png",
+      "status": "tracked-modified",
+      "bytes": 8277250,
+      "sha256": "dd09c865f176834f589a3fdc1ad7c465d7d905e27538b04c192f7c4b364ad8d9"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C09.production.json",
+      "status": "tracked-modified",
+      "bytes": 608,
+      "sha256": "db49aecfb6b8ed2d518d090051cfd2ebe3d60f84c5cee6366f0db5fe425e78b3"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C09_rejected_before_teammate_refinement.generation.json",
+      "status": "untracked",
+      "bytes": 927,
+      "sha256": "3ad10ab8cfa24a794a7d65781844e5642795af8f465f378790bfc1fa75e916dc"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C09_rejected_before_teammate_refinement.png",
+      "status": "untracked",
+      "bytes": 2842140,
+      "sha256": "4579b40d8f042c6b5d2d098e943e5903896fb7e20a85e5cc4fd3bb2075829ff2"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C09_rejected_before_teammate_refinement.production.json",
+      "status": "untracked",
+      "bytes": 1739,
+      "sha256": "6b63b61428eb4fcd678175aa3cb952cccbbd6b0a4be454ff9dacb62342f8ed72"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C10.generation.json",
+      "status": "tracked-modified",
+      "bytes": 608,
+      "sha256": "2d35991a390052045c003939e725f3836aa1eb90595092ba5bf312b68a098fdb"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C10.png",
+      "status": "tracked-modified",
+      "bytes": 6188440,
+      "sha256": "35dc39fc6ba154b25a5931fe6b8ef6b7c0880169f168675239d118489a883e2f"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C10.production.json",
+      "status": "tracked-modified",
+      "bytes": 608,
+      "sha256": "2d35991a390052045c003939e725f3836aa1eb90595092ba5bf312b68a098fdb"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C10_rejected_before_teammate_refinement.generation.json",
+      "status": "untracked",
+      "bytes": 927,
+      "sha256": "f994e63a186f8aea5282bd1e8615c1bbd8678053f0f4ceab198971eaca161d40"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C10_rejected_before_teammate_refinement.png",
+      "status": "untracked",
+      "bytes": 3072189,
+      "sha256": "3503c3bb22f94619981f1113d8ea39ed67b7aab53b729b6b1bebbd1828a7b050"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C10_rejected_before_teammate_refinement.production.json",
+      "status": "untracked",
+      "bytes": 3142,
+      "sha256": "b7750f0aad0d23c263f571e8b973c2711a038fa080f432caee61fd36030bdabf"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C11.generation.json",
+      "status": "tracked-modified",
+      "bytes": 608,
+      "sha256": "215fcc8c2c2542a3400479d8c9cf6932849cd266bbfac67771f24904b73719f0"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C11.png",
+      "status": "tracked-modified",
+      "bytes": 6377155,
+      "sha256": "c72936ed550dcfddd6e645935be57c5d2a57d88799370898c689d8864e5aaceb"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C11.production.json",
+      "status": "untracked",
+      "bytes": 608,
+      "sha256": "215fcc8c2c2542a3400479d8c9cf6932849cd266bbfac67771f24904b73719f0"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C11_rejected_before_teammate_refinement.generation.json",
+      "status": "untracked",
+      "bytes": 927,
+      "sha256": "b6699950c1228616be8c4a23b54fdb6da18a38fdc8b61539fec03a65f38a0b45"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C11_rejected_before_teammate_refinement.png",
+      "status": "untracked",
+      "bytes": 3121080,
+      "sha256": "73055c18fa29bea24c022977dca944232e53f8309239af828d2c8bd4c20cdc17"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C12.generation.json",
+      "status": "tracked-modified",
+      "bytes": 608,
+      "sha256": "d233f916d645a8e87e30bfc42c5a93deccd9bf5fb207775297bfab1418cfd9c5"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C12.png",
+      "status": "tracked-modified",
+      "bytes": 6688785,
+      "sha256": "3e53d6fcda31dba3c54af1abda564cf129d590af643ccde335c58f301aa14bc3"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C12.production.json",
+      "status": "tracked-modified",
+      "bytes": 608,
+      "sha256": "d233f916d645a8e87e30bfc42c5a93deccd9bf5fb207775297bfab1418cfd9c5"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C12_rejected_before_teammate_refinement.generation.json",
+      "status": "untracked",
+      "bytes": 927,
+      "sha256": "e86608685e81b9eda7a0b0b53a17083535bdb946b534985f771c92442086805f"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C12_rejected_before_teammate_refinement.png",
+      "status": "untracked",
+      "bytes": 2401449,
+      "sha256": "d81231cbbfc1785e16fbae9f41c9c0074644106cc9c751fad690c0690f16a2db"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C12_rejected_before_teammate_refinement.production.json",
+      "status": "untracked",
+      "bytes": 1333,
+      "sha256": "b2d643ade0aac8610cca2c7cfbafe71b07204065e12403bf1777829ed6594ff3"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C13.generation.json",
+      "status": "tracked-modified",
+      "bytes": 608,
+      "sha256": "90d39ba7ac61ed5e8da8b87a2bbf553033e8b770f42293952cf9091c609e71a7"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C13.png",
+      "status": "tracked-modified",
+      "bytes": 7552325,
+      "sha256": "8f45b3fe0e9bec3def09fa078d80ca29b9c42b61efaa204ce9bf8bd3da266b69"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C13.production.json",
+      "status": "tracked-modified",
+      "bytes": 608,
+      "sha256": "90d39ba7ac61ed5e8da8b87a2bbf553033e8b770f42293952cf9091c609e71a7"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C13_rejected_before_teammate_refinement.generation.json",
+      "status": "untracked",
+      "bytes": 921,
+      "sha256": "7d6061bf5b76dc6aac39ff1190e63c9a39ab69fd35e33814536e5cd00c8e7a54"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C13_rejected_before_teammate_refinement.png",
+      "status": "untracked",
+      "bytes": 2704641,
+      "sha256": "eb44284970bc4c95ce4c441930e4db849814d04c3f43328a6c0741c1b024dc89"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C13_rejected_before_teammate_refinement.production.json",
+      "status": "untracked",
+      "bytes": 3159,
+      "sha256": "6ec73916ad465c84cf4ec96501b02cfa9141820943c3815c43f349ee5001ebeb"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C15.generation.json",
+      "status": "tracked-modified",
+      "bytes": 608,
+      "sha256": "bbe4d74e08958c6abf3f4ca98acabff9ab5238a58d481911587b39f860fe338d"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C15.png",
+      "status": "tracked-modified",
+      "bytes": 7803052,
+      "sha256": "6d4e8679e794b6e67d5f7943161cdbb67254c570e144eeeabf8b9ba26ec5de7f"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C15.production.json",
+      "status": "untracked",
+      "bytes": 608,
+      "sha256": "bbe4d74e08958c6abf3f4ca98acabff9ab5238a58d481911587b39f860fe338d"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C15_rejected_before_teammate_refinement.generation.json",
+      "status": "untracked",
+      "bytes": 927,
+      "sha256": "dc79b2f4ebf313cfb0f78d6151685c435baeccb62e60f260c8d3c2fcd4669283"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C15_rejected_before_teammate_refinement.png",
+      "status": "untracked",
+      "bytes": 2665086,
+      "sha256": "662780920e3122b7e8037c40ca2d83013e20edbac3de373252b08a58e8f92d57"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C17.generation.json",
+      "status": "tracked-modified",
+      "bytes": 608,
+      "sha256": "e1bd3570a10ce3a26943c41f8666e9f54e4806a4c179d55a6aee017b0054b580"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C17.png",
+      "status": "tracked-modified",
+      "bytes": 7432894,
+      "sha256": "fab2c4af730d198a9298b443814174c1bd852232fa39a7688ea1a42daaf7eaeb"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C17.production.json",
+      "status": "tracked-modified",
+      "bytes": 608,
+      "sha256": "e1bd3570a10ce3a26943c41f8666e9f54e4806a4c179d55a6aee017b0054b580"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C17_rejected_before_teammate_refinement.generation.json",
+      "status": "untracked",
+      "bytes": 927,
+      "sha256": "3c027df72854fb504294662af14f00f38398f069ac79d6c0f4ffe969db2d1ad6"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C17_rejected_before_teammate_refinement.png",
+      "status": "untracked",
+      "bytes": 2602672,
+      "sha256": "a57afe9820b64deea2fc598e35f9e879283b362f50d72a3d37313b3002f698d3"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C17_rejected_before_teammate_refinement.production.json",
+      "status": "untracked",
+      "bytes": 917,
+      "sha256": "b9bf95fb0ca6ec43f87c029d56e4678f5a066e6581a535bde44c5d6e1f716a43"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C18.generation.json",
+      "status": "tracked-modified",
+      "bytes": 608,
+      "sha256": "a8ad7aaa4b3a42d06614c86cdb71adaa80c6a8a914f8411cb39658435230c042"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C18.png",
+      "status": "tracked-modified",
+      "bytes": 5483792,
+      "sha256": "d7f1238d1360111f0b9c7b22a7e9ae5bf20130b6c440a591b068a6f3c1ef0bee"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C18.production.json",
+      "status": "tracked-modified",
+      "bytes": 608,
+      "sha256": "a8ad7aaa4b3a42d06614c86cdb71adaa80c6a8a914f8411cb39658435230c042"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C18_rejected_before_teammate_refinement.generation.json",
+      "status": "untracked",
+      "bytes": 927,
+      "sha256": "d3437c7d877537a81fba2badeeb256ac602bf71d7f8e84c820013afbdef4f753"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C18_rejected_before_teammate_refinement.png",
+      "status": "untracked",
+      "bytes": 2628545,
+      "sha256": "8674df9f0588b29ff08a68bc49d4cfc4b8acc64a1c808206f84551a9d73dd87c"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C18_rejected_before_teammate_refinement.production.json",
+      "status": "untracked",
+      "bytes": 1685,
+      "sha256": "dd21cb27db6da12769de78d0ca406bb5c1a29537c683c058198c6a927d2d76fc"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C19.generation.json",
+      "status": "tracked-modified",
+      "bytes": 608,
+      "sha256": "933b4b1333a0b4fa25954e013d014510985f0330b6f078feff59bc7fc7b19211"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C19.png",
+      "status": "tracked-modified",
+      "bytes": 4906445,
+      "sha256": "84037b68d7a55de7a6c3c6437fb258a3a7305473fd122e2397f60af2ca8b5834"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C19.production.json",
+      "status": "tracked-modified",
+      "bytes": 608,
+      "sha256": "933b4b1333a0b4fa25954e013d014510985f0330b6f078feff59bc7fc7b19211"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C19_rejected_before_teammate_refinement.generation.json",
+      "status": "untracked",
+      "bytes": 922,
+      "sha256": "66711480d0433ad9e2b59e48c60a7c507540a39c07bc37d7ecccacd9cc0503db"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C19_rejected_before_teammate_refinement.png",
+      "status": "untracked",
+      "bytes": 2394253,
+      "sha256": "6433c276fddc93a04b56efe4317946c6f744353f84777a73704825e940fd8276"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C19_rejected_before_teammate_refinement.production.json",
+      "status": "untracked",
+      "bytes": 2963,
+      "sha256": "5d7f5a0ece1f583360014d100ee188bbd3f173abfe9f5ec0069893db97c58870"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C20.generation.json",
+      "status": "tracked-modified",
+      "bytes": 608,
+      "sha256": "956c83a78e74cd6d69ab411b0dbfa481382757e71dad0845375a89e810e85d20"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C20.png",
+      "status": "tracked-modified",
+      "bytes": 5037236,
+      "sha256": "a1e3180019ede4935439ce34e7e66d7eb6792c690c4e4a7a9f8528db0984ffc8"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C20.production.json",
+      "status": "tracked-modified",
+      "bytes": 608,
+      "sha256": "956c83a78e74cd6d69ab411b0dbfa481382757e71dad0845375a89e810e85d20"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C20_rejected_before_teammate_refinement.generation.json",
+      "status": "untracked",
+      "bytes": 927,
+      "sha256": "b647cebd1cccc56244b2e4b8898b76d69129787ad57fa0fedb798acd109ead75"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C20_rejected_before_teammate_refinement.png",
+      "status": "untracked",
+      "bytes": 2480839,
+      "sha256": "7111eea7d7ba3e39508e72f6e1b349198db191900bf6c0ffe23989da84a17456"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C20_rejected_before_teammate_refinement.production.json",
+      "status": "untracked",
+      "bytes": 3150,
+      "sha256": "349f95a760a9a2f005c5fc26c9b4583acb272a7dd709d7bd754614f421524770"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C20_teammate_refined.png",
+      "status": "untracked",
+      "bytes": 5037236,
+      "sha256": "a1e3180019ede4935439ce34e7e66d7eb6792c690c4e4a7a9f8528db0984ffc8"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C21.generation.json",
+      "status": "tracked-modified",
+      "bytes": 608,
+      "sha256": "c63c11e5198d314ba578f0176d58f97e42ed1436a8ece42212ee917576528c7e"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C21.png",
+      "status": "tracked-modified",
+      "bytes": 5433374,
+      "sha256": "3c867e80b31d87602585ead34ec5f7dedc998bef5ee8ef78ca5ee15f03f88414"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C21.production.json",
+      "status": "tracked-modified",
+      "bytes": 608,
+      "sha256": "c63c11e5198d314ba578f0176d58f97e42ed1436a8ece42212ee917576528c7e"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C21_rejected_before_teammate_refinement.generation.json",
+      "status": "untracked",
+      "bytes": 927,
+      "sha256": "048a900516b0ccdadd2dcb2f8f63bc1c6f4a3aac2b2409e98d063abe51c49a63"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C21_rejected_before_teammate_refinement.png",
+      "status": "untracked",
+      "bytes": 2691706,
+      "sha256": "d3e82077e454a5abef8626dd96f13f73288eb13ff64bc1a9ca204dd7cc07e1b4"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C21_rejected_before_teammate_refinement.production.json",
+      "status": "untracked",
+      "bytes": 3162,
+      "sha256": "a66ba092b8810c8a1a5e58e7a0cf3a13784f65b1a01e8adb216498164966fa17"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C22.generation.json",
+      "status": "tracked-modified",
+      "bytes": 608,
+      "sha256": "02deb41ff8258b5d0c25f38f3fdf3ac164598283bf26e5f45163741824178032"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C22.png",
+      "status": "tracked-modified",
+      "bytes": 8233258,
+      "sha256": "f1f9097ede9917bcbbde5722d797102aad1234d8790c346dff81ef6f7b303123"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C22.production.json",
+      "status": "untracked",
+      "bytes": 608,
+      "sha256": "02deb41ff8258b5d0c25f38f3fdf3ac164598283bf26e5f45163741824178032"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C22_rejected_before_teammate_refinement.generation.json",
+      "status": "untracked",
+      "bytes": 926,
+      "sha256": "6ea069b8617bf4b9669d4feb9f975a18b5770a6834188d07acee28ba48e419a4"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C22_rejected_before_teammate_refinement.png",
+      "status": "untracked",
+      "bytes": 2928915,
+      "sha256": "c0cc45926510f299410e12b6a60a7225f031800540918c1d176680242dcb5a95"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C24.generation.json",
+      "status": "tracked-modified",
+      "bytes": 608,
+      "sha256": "52068f40be7ff172bf7718beb3a54787409ae1d0c463a8e7387349e04459c54c"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C24.png",
+      "status": "tracked-modified",
+      "bytes": 5883394,
+      "sha256": "136e69bc730c026be0f32cbc597ab610f5b50cfb2ad15931c523af483f2d148e"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C24.production.json",
+      "status": "untracked",
+      "bytes": 608,
+      "sha256": "52068f40be7ff172bf7718beb3a54787409ae1d0c463a8e7387349e04459c54c"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C24_rejected_before_teammate_refinement.generation.json",
+      "status": "untracked",
+      "bytes": 927,
+      "sha256": "cc3b894ced0d45ba8c835af4e84458e5d6e6d83bbb421d68cd3e85fc219e5c76"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C24_rejected_before_teammate_refinement.png",
+      "status": "untracked",
+      "bytes": 2813963,
+      "sha256": "65d1f96544be2f4e32f9c55f68bdef68b88e38350af6c0b1461b8eb6943adbb9"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C27.generation.json",
+      "status": "untracked",
+      "bytes": 927,
+      "sha256": "5d0f950c08ea172d6c3f2a35429f812fad36ce4c0bc8c4c3157f37c1503a2d78"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C27.png",
+      "status": "untracked",
+      "bytes": 3108289,
+      "sha256": "cf6d96f95439182ec5a2136c3bc7ec6185e6cdd73d64ee79666279b637e60884"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C27.production.json",
+      "status": "untracked",
+      "bytes": 2138,
+      "sha256": "8932ebb040b26780a922fa797d182a57e9557969061128870619a2d496933164"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C27_rejected_action_under_dialogue.generation.json",
+      "status": "untracked",
+      "bytes": 927,
+      "sha256": "f219b0cb9f3227936231aa3be369634b04cf4d75f896910317ebfade2a5d2bd5"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C27_rejected_action_under_dialogue.png",
+      "status": "untracked",
+      "bytes": 3042067,
+      "sha256": "4d722496bacba3f12ad26400ae3b400924c126231b7e37d55d5c1f26b24940c4"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C27_rejected_action_under_dialogue.production.json",
+      "status": "untracked",
+      "bytes": 2734,
+      "sha256": "084c011c4998bd23b366381315a7cb59e99f541e546387566380720a2c28cc43"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C27_rejected_detached_tail.generation.json",
+      "status": "untracked",
+      "bytes": 927,
+      "sha256": "1e203fc0bf4e12cbda67ad3acf27f144f99c67a5b2782e7ff6abd688dd3ee9b1"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C27_rejected_detached_tail.png",
+      "status": "untracked",
+      "bytes": 3129587,
+      "sha256": "8f5480656c61d8c5a0677bb413ba0254c197371098adba6b79f39a2492021443"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C27_rejected_detached_tail.production.json",
+      "status": "untracked",
+      "bytes": 2039,
+      "sha256": "78ff766337f85dd1f336ad5cf0b552005a8b1f6cc105b0f0056135d96a15af28"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C27_rejected_failed_root_connection.generation.json",
+      "status": "untracked",
+      "bytes": 922,
+      "sha256": "779e1f34aef40d778771816b7b7f6c0cf97a31fd6a985b7f47fa90b850cea40d"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C27_rejected_failed_root_connection.png",
+      "status": "untracked",
+      "bytes": 3018071,
+      "sha256": "48205327e1a58b7d2c9ae79d417911aa0ac0d1a45402dd3b87337e2dfc11a8bd"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C27_rejected_failed_root_connection.production.json",
+      "status": "untracked",
+      "bytes": 1872,
+      "sha256": "05e0b3d310ed4b4013108ce681b182e51340b27774d3c93206d982d0f87678be"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C27_rejected_tail_contact.generation.json",
+      "status": "untracked",
+      "bytes": 928,
+      "sha256": "b31ab1586ac97a52d168e9ed64cdab10754d6ac4970d915662f58b815c080391"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C27_rejected_tail_contact.png",
+      "status": "untracked",
+      "bytes": 3071276,
+      "sha256": "84e8968f873c5247380acb27aa49de3f30cca53ae2aba6b534ee8380aae1af99"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C27_rejected_tail_contact.production.json",
+      "status": "untracked",
+      "bytes": 2703,
+      "sha256": "8812b00d4ce5286385577e2a96357a84f5dcf909819873b25fdc84e816ede194"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C27_rejected_tail_too_long.generation.json",
+      "status": "untracked",
+      "bytes": 927,
+      "sha256": "08be68f72dc4e3715d6b2bc3f0f29b989b09094d20d5a650ccd744f6111ae5bf"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C27_rejected_tail_too_long.png",
+      "status": "untracked",
+      "bytes": 3201078,
+      "sha256": "def3103a815011e5b236b9202b1ce8a024cd44f525b8c455f1299d5d98668ebd"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/C27_rejected_tail_too_long.production.json",
+      "status": "untracked",
+      "bytes": 1756,
+      "sha256": "08c344517defaa42985bc3b3fe081ad30589f387cc4ffac640638240d1259a7f"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/L03.generation.json",
+      "status": "tracked-modified",
+      "bytes": 928,
+      "sha256": "f3f1d3a389b3e13c42acbf26b2dc3838c1344e9fffec7911b5a2672e4f907e08"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/L03.png",
+      "status": "tracked-modified",
+      "bytes": 1882694,
+      "sha256": "38d50c24e5c4a98e1322d0a18b8b6844368af8384250d5ea4e9f6e80b5ced882"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/L03.production.json",
+      "status": "tracked-modified",
+      "bytes": 1834,
+      "sha256": "a0baa19fdf934104779abc058be86f2c11fc1184f8d8eb22c0a156a7b3dedaf9"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/L03_rejected_tail_opening.generation.json",
+      "status": "untracked",
+      "bytes": 928,
+      "sha256": "eba0a16d0b49d4c52c6cdf49a56ab47d4bb03ac1016a0d6f1707b8e5339cc9f3"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/L03_rejected_tail_opening.png",
+      "status": "untracked",
+      "bytes": 1872533,
+      "sha256": "9db53a2f71ab999a1608f2a8356a6127d1ff3c11ed2255654b4bc8c00814be59"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/L03_rejected_tail_opening.production.json",
+      "status": "untracked",
+      "bytes": 1858,
+      "sha256": "b2c34d3c5546bd1a26c5b75a20b04a7a67c045584020b3c0eccbf295755fcd3e"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/O12.generation.json",
+      "status": "untracked",
+      "bytes": 927,
+      "sha256": "ae79184e393760ee9e3dbe07bfbdb73a18a387ca65587478f8665b980221aa06"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/O12.png",
+      "status": "untracked",
+      "bytes": 2657762,
+      "sha256": "7a8fb1341aad484fc8f4a23a4a2b7a391d5020aecc7c5c35e790699e0da7e24d"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/O12.production.json",
+      "status": "untracked",
+      "bytes": 1527,
+      "sha256": "f00b4d39758c48dc2fa15abe4dec678ea6f3a12ba63699f74b81b96e4470f3e7"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/P02.generation.json",
+      "status": "tracked-modified",
+      "bytes": 928,
+      "sha256": "6fbcfe227987bbf28b3a3e907749032e575aeb4b4d6dd5a4f30294b5646fd87d"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/P02.png",
+      "status": "tracked-modified",
+      "bytes": 1901941,
+      "sha256": "2bbab738568822e3416fbe0cf1ebd0b8edde72e1d683ace40feec8216aad0ba8"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/P02.production.json",
+      "status": "tracked-modified",
+      "bytes": 1691,
+      "sha256": "cfb4d477a970fe59516b78fa411df6c271a9aef96190366992d6b3241c61f791"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/P02_rejected_alpha_fringe_final.generation.json",
+      "status": "untracked",
+      "bytes": 928,
+      "sha256": "f541b56517d55d3c8cc591310a4793343a5596b5345152f36a442e329c01e1a9"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/P02_rejected_alpha_fringe_final.png",
+      "status": "untracked",
+      "bytes": 1283660,
+      "sha256": "e65e395649814a60ced0349890a61c26b544ac3bb572054e2e3f076ca5ef3c99"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/P02_rejected_alpha_fringe_final.production.json",
+      "status": "untracked",
+      "bytes": 1681,
+      "sha256": "2cd026e6896efcd33790740c9259c656c0747963fdb1a68dd26f9f9b7579e34f"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/P02_rejected_alpha_fringing.generation.json",
+      "status": "untracked",
+      "bytes": 928,
+      "sha256": "16ea0b542856a781b087a59a25d9433382b4ca54f69f82fc43cb580f11215e28"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/P02_rejected_alpha_fringing.png",
+      "status": "untracked",
+      "bytes": 1280018,
+      "sha256": "c7b75b727a270356f6df2381037e34d1dabdcdebd59dc5fb264c7db7544e5b0f"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/P02_rejected_alpha_fringing.production.json",
+      "status": "untracked",
+      "bytes": 1366,
+      "sha256": "d9afc2034097da4e6ac7ab034a6dd3ff5a26f085c5adbf6ec2f5278793953b27"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/P02_rejected_direction_before_delivery.generation.json",
+      "status": "untracked",
+      "bytes": 928,
+      "sha256": "6fbcfe227987bbf28b3a3e907749032e575aeb4b4d6dd5a4f30294b5646fd87d"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/P02_rejected_direction_before_delivery.png",
+      "status": "untracked",
+      "bytes": 1901941,
+      "sha256": "2bbab738568822e3416fbe0cf1ebd0b8edde72e1d683ace40feec8216aad0ba8"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/P02_rejected_direction_before_delivery.production.json",
+      "status": "untracked",
+      "bytes": 1691,
+      "sha256": "cfb4d477a970fe59516b78fa411df6c271a9aef96190366992d6b3241c61f791"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/P02_rejected_tail_candidate.generation.json",
+      "status": "untracked",
+      "bytes": 928,
+      "sha256": "f71d95bf1b150610eaab8010d8bea1355bc34f4167b3ed19b4075aa0c86aa7c6"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/P02_rejected_tail_candidate.png",
+      "status": "untracked",
+      "bytes": 1811821,
+      "sha256": "1e57944880cf8a401b556c0cbe1dabfc2cc333cf295518f5911511a1f3f8c591"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/P02_rejected_tail_candidate.production.json",
+      "status": "untracked",
+      "bytes": 1912,
+      "sha256": "7827ddd05486d4824447668f3fb83c4d1cfade1949adda3da162fed27fbcd201"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/P02_rejected_tail_opening.generation.json",
+      "status": "untracked",
+      "bytes": 928,
+      "sha256": "bb88203a1b0c4e258f697711cecd0ef9cef91920c7f67877c38d6a5c05c70d0f"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/P02_rejected_tail_opening.png",
+      "status": "untracked",
+      "bytes": 1881634,
+      "sha256": "0985adf849b8f7e5552c3ae639e7f1ca210b30cacad6ac99f5856003d071a803"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/P02_rejected_tail_opening.production.json",
+      "status": "untracked",
+      "bytes": 1413,
+      "sha256": "8b488e1b39b0b0923e90ba3510b4bda013801039a49facea4259851fc0c14b38"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/P02_teammate_refined.png",
+      "status": "untracked",
+      "bytes": 2935822,
+      "sha256": "9b9e92697a78da3b84a74bd8ffb125420d91d12effeb1cbeb59fb9a0d4844271"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/P14.generation.json",
+      "status": "tracked-modified",
+      "bytes": 928,
+      "sha256": "0d918b1a19cf5b6839c3d4a07981e32ae7469333d84df17820274c2d323c6bbb"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/P14.png",
+      "status": "tracked-modified",
+      "bytes": 1926455,
+      "sha256": "2499152e81eadcdfb45231b6a58045a9f2a6b82e294e2791dd92f993c898fb73"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/P14.production.json",
+      "status": "tracked-modified",
+      "bytes": 1867,
+      "sha256": "9c52b551b459c252ea93333dfd50c053583a600cb48f99f957210d820a81b155"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/P14_rejected_notebook.generation.json",
+      "status": "untracked",
+      "bytes": 898,
+      "sha256": "32d4c45e7433fa7bd3db00059649a04372a323fd7e61ea6d823855fdcfd1a5b5"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/P14_rejected_notebook.png",
+      "status": "untracked",
+      "bytes": 1932716,
+      "sha256": "82c4bd6e28bba323181828d568c0928ecb06cd3ee25336d8dcd240afa26980ad"
+    },
+    {
+      "path": "content/assets/art-upgrade/originals/P14_rejected_notebook.production.json",
+      "status": "untracked",
+      "bytes": 1779,
+      "sha256": "137042e6b15c913c3f916db30e0391fd80bb4d0cc563f787ef701888f1687219"
+    },
+    {
+      "path": "content/assets/art-upgrade/overrides.json",
+      "status": "tracked-modified",
+      "bytes": 61908,
+      "sha256": "e8e5fc0dce145187f9ae994df917d6f7f74bf2a8f654090e7e92a4b7a4c910d1"
+    },
+    {
+      "path": "content/assets/art-upgrade/production.json",
+      "status": "tracked-modified",
+      "bytes": 525482,
+      "sha256": "b61444325a7e9c052d309b40a64a8207cff86c240dd75cf0c6023811b750ee53"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/C01.txt",
+      "status": "tracked-modified",
+      "bytes": 948,
+      "sha256": "f457c1202c6ab690ea92563f3f10ff97104e1173fe41436285f507902aaffc0d"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/C01_rejected_catch_crop.txt",
+      "status": "untracked",
+      "bytes": 2174,
+      "sha256": "64d5bc1f207cdba31f6460e6b91d52e7442983e05db72c2c490ffacb24675786"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/C01_rejected_direction_before_delivery.txt",
+      "status": "untracked",
+      "bytes": 682,
+      "sha256": "efe073ed4f14e322823646b3da09efda07dbf97cde65a900ed4f16c0cbd80255"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/C01_rejected_story_catch.txt",
+      "status": "untracked",
+      "bytes": 2173,
+      "sha256": "c2f7f98cd2bddd8e5e8691e5425ce974151742f4836cf602acae29d9f2fe8316"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/C02.txt",
+      "status": "tracked-modified",
+      "bytes": 203,
+      "sha256": "2b944ee5f7ee25f684b2a202e5807249219e8979354af116b9e248e7321b3c1e"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/C02_rejected_before_teammate_refinement.txt",
+      "status": "untracked",
+      "bytes": 2178,
+      "sha256": "e2f02c475dd6ed60c376eb11ac862685b2e43f52c7e4b9b934355d15d905972e"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/C04.txt",
+      "status": "tracked-modified",
+      "bytes": 203,
+      "sha256": "e70e129c073bb21c514dce1d30f3a9ad0d843cc8df8a41429d6c6f4f9b9977ad"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/C04_rejected_before_teammate_refinement.txt",
+      "status": "untracked",
+      "bytes": 1454,
+      "sha256": "1da60d54af8798f52a2370031f843ab471180453a9c073772e846fec802981a8"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/C04_rejected_tail_opening.txt",
+      "status": "untracked",
+      "bytes": 2161,
+      "sha256": "d1ec2dd3a8f454ec69c53731c8f6688abe1ff77debfa385bf69c206eba82da2d"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/C05.txt",
+      "status": "tracked-modified",
+      "bytes": 203,
+      "sha256": "fd1d80e36b9b765f644e52aaff3033a059e9bdc31093227536f1504edae1dfe2"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/C05_rejected_before_teammate_refinement.txt",
+      "status": "untracked",
+      "bytes": 2171,
+      "sha256": "e26c5589f7cc948082eae30d1e81e9fe7aacba628f197d01458b4132faf3af68"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/C06.txt",
+      "status": "tracked-modified",
+      "bytes": 203,
+      "sha256": "51e7a274368858f51d4556ef03b266db8ebb387115d35ed51a9358a7d81238d0"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/C06_rejected_before_teammate_refinement.txt",
+      "status": "untracked",
+      "bytes": 2189,
+      "sha256": "7770214af7ac4d31e2c9f5bc99d65d5e48c618d7b51a99b349f1745de921883c"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/C07.txt",
+      "status": "tracked-modified",
+      "bytes": 203,
+      "sha256": "7614cc26b03aa32f05fee15712a9ef3049569e373c71de6480b7493fdebae11a"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/C07_rejected_before_teammate_refinement.txt",
+      "status": "untracked",
+      "bytes": 2186,
+      "sha256": "6892ba628cf22fc42c23a6b69af825f036a5e8bcbfd6e0793d506828f5640a6e"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/C08.txt",
+      "status": "tracked-modified",
+      "bytes": 203,
+      "sha256": "e1eb76c8ce95ec99f422679e315c72aa84017da6b74f5f393bc970a02f06a9b5"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/C08_rejected_before_teammate_refinement.txt",
+      "status": "untracked",
+      "bytes": 1541,
+      "sha256": "71b3f676aac3fb0c56e9d35948d409f20e40ff59b5c346446208a505381ce004"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/C09.txt",
+      "status": "tracked-modified",
+      "bytes": 203,
+      "sha256": "1bf6d83e058c4ff0720c042bc649f1f53a597aa7d73396e512103467cb8de5b8"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/C09_rejected_before_teammate_refinement.txt",
+      "status": "untracked",
+      "bytes": 1127,
+      "sha256": "a76afa56463796c24cb0f5b28cf532c58552f67641048d489be525ffb186ac8a"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/C10.txt",
+      "status": "tracked-modified",
+      "bytes": 203,
+      "sha256": "3aff1c98f487db88142549825b5c1670aee012b7bc9f353c556d73a440d96684"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/C10_rejected_before_teammate_refinement.txt",
+      "status": "untracked",
+      "bytes": 2177,
+      "sha256": "021f103507188a6e0dd3d2ecb2dbeb3b379b218e44c15141b4e2eb9249adfc70"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/C11.txt",
+      "status": "tracked-modified",
+      "bytes": 203,
+      "sha256": "4a216987a750ba0c61a4a89928624736d0572d3ffde48be09f1018fccb01cdaf"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/C11_rejected_before_teammate_refinement.txt",
+      "status": "untracked",
+      "bytes": 2183,
+      "sha256": "1fe5aa8dcc5879243b945c97c6a32ad8555881c6ae544416cb29d5ec401d37da"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/C12.txt",
+      "status": "tracked-modified",
+      "bytes": 203,
+      "sha256": "5292651cd1afad91310b9c709a171b945f9d2304e263ffe5b51f953c76f1156d"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/C12_rejected_before_teammate_refinement.txt",
+      "status": "untracked",
+      "bytes": 868,
+      "sha256": "3d6474f3ba7872ef850c86b8856c8295e04023ac48e90de0bf8b83e86e894950"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/C13.txt",
+      "status": "tracked-modified",
+      "bytes": 203,
+      "sha256": "7e654bb1f599f4b3ee94ee7038652d5c74ff0767762a6120abacfc032a8b6dc7"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/C13_rejected_before_teammate_refinement.txt",
+      "status": "untracked",
+      "bytes": 2194,
+      "sha256": "2c562100c5e4954d73bd1a57e693d94f1a4c0a69bdfc9a530e075786b93fe127"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/C15.txt",
+      "status": "tracked-modified",
+      "bytes": 203,
+      "sha256": "edc848df0a60fedd39f3fd790f6312794efc1659764ae340acbe542f26a4b9d8"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/C15_rejected_before_teammate_refinement.txt",
+      "status": "untracked",
+      "bytes": 2189,
+      "sha256": "6c7fdcd4ca3edbc5e9689e75867abd1f9cefebd2065761c412362d1d37a891e0"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/C17.txt",
+      "status": "tracked-modified",
+      "bytes": 203,
+      "sha256": "974b93692142623278e4294f7e8a0dbdd23bbfc29786f1e583e412660ac901ac"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/C17_rejected_before_teammate_refinement.txt",
+      "status": "untracked",
+      "bytes": 453,
+      "sha256": "464c7b794a9420d75b84b06bed2081896872ace41b8f6cb87d1f3ac23c8e18bf"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/C18.txt",
+      "status": "tracked-modified",
+      "bytes": 203,
+      "sha256": "5d6d950ca223c48d183170fb77cf0362763664f77e32fe5e44b190dfa666efdf"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/C18_rejected_before_teammate_refinement.txt",
+      "status": "untracked",
+      "bytes": 1215,
+      "sha256": "92f691d714127d3ad625f638f3ae688ac7b977011d2937043207f9ff6f2db274"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/C19.txt",
+      "status": "tracked-modified",
+      "bytes": 203,
+      "sha256": "a351e18dd24c4c136bd52ab51618d778dd6d50309c9d44207ee29c4c8d4ae76e"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/C19_rejected_before_teammate_refinement.txt",
+      "status": "untracked",
+      "bytes": 2176,
+      "sha256": "a40f42492da535f88a14eaeb568d82d2db2321737617f9e3677ea9e3fbf73a90"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/C20.txt",
+      "status": "tracked-modified",
+      "bytes": 203,
+      "sha256": "22957c7ed8ae5a1f72f2a15df2b23a61a1f6b9bc6c8a417f7b83b90ac8825c7b"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/C20_rejected_before_teammate_refinement.txt",
+      "status": "untracked",
+      "bytes": 2185,
+      "sha256": "c6be35200fc85aa9b38ee23e3c379c4e90c90d0e3f24c0937b11a17e6a0aecbb"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/C21.txt",
+      "status": "tracked-modified",
+      "bytes": 203,
+      "sha256": "d83c5ce2d0a579b88632637edd5cbdacb20b4ea9c556bf21b58e7aee3aade90f"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/C21_rejected_before_teammate_refinement.txt",
+      "status": "untracked",
+      "bytes": 2197,
+      "sha256": "2007d81b64bbfac0f012b4d7d94e3917e803df2f6be5e6cbbfb749b2209891ef"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/C22.txt",
+      "status": "tracked-modified",
+      "bytes": 203,
+      "sha256": "c8c6f59d75e17ddeb4836f96c50a83efee2a5dbc0e65a8548308da3a8d56103b"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/C22_rejected_before_teammate_refinement.txt",
+      "status": "untracked",
+      "bytes": 2222,
+      "sha256": "469d33e8fe85e63d69f0d3f2756d84c4315e18cd19b685d83beab3eebcfb57bd"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/C24.txt",
+      "status": "tracked-modified",
+      "bytes": 203,
+      "sha256": "80a9d7e517ef70b75feaa2b715e4478d19cb68eb4111574f9859315786b6d210"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/C24_rejected_before_teammate_refinement.txt",
+      "status": "untracked",
+      "bytes": 2203,
+      "sha256": "9bfe1a388053d5c18b072d59807aea4befa38af6a31e99561f2cf77ca6ed9b14"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/C27.txt",
+      "status": "untracked",
+      "bytes": 1665,
+      "sha256": "7f8b020c97b2e1ad094a87241447b73fa893497b981dd43d1ee1f74ad15513af"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/C27_rejected_action_under_dialogue.txt",
+      "status": "untracked",
+      "bytes": 1943,
+      "sha256": "ab871792fc3939966df0b719b5979983b985a9393c54994383e95411b7a5acb0"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/C27_rejected_detached_tail.txt",
+      "status": "untracked",
+      "bytes": 1427,
+      "sha256": "ed98778cba270d7ee596257d86f3bb7f95c74ac7735e4e08082abc7b94427e0d"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/C27_rejected_failed_root_connection.txt",
+      "status": "untracked",
+      "bytes": 1220,
+      "sha256": "259ed35e9b60b2444ac49fb3b35af9275a8a25b798adc1770c89da0d71b09e16"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/C27_rejected_tail_contact.txt",
+      "status": "untracked",
+      "bytes": 2091,
+      "sha256": "597b61e7046de553e9a426c576f2ddf17ff4fa9a04d961398c9fa3ed5199087b"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/C27_rejected_tail_too_long.txt",
+      "status": "untracked",
+      "bytes": 1275,
+      "sha256": "d4c30831174fcfb0ce4da50c7a600bd029dc62f57ac6891300e9bd73ee0a467d"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/L03.txt",
+      "status": "tracked-modified",
+      "bytes": 1361,
+      "sha256": "09cb9cc2fec820954490f3407ce5bbf31e11c870d497bc58a8b03ada8ca3781b"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/L03_rejected_tail_opening.txt",
+      "status": "untracked",
+      "bytes": 1407,
+      "sha256": "c30d0b63b4ad046fb3364bad5df003e1aae399e09194d2bbbca05a58859d302b"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/O12.txt",
+      "status": "untracked",
+      "bytes": 1077,
+      "sha256": "3d76fe02a563f7012860c777af5e055b8195f368203edcdccfc9c209d6703219"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/P02.txt",
+      "status": "tracked-modified",
+      "bytes": 1054,
+      "sha256": "7b1976c9a9da01bef6b662c14305b70717d16d752858c9432c4d38892ba0651e"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/P02_rejected_alpha_fringe_final.txt",
+      "status": "untracked",
+      "bytes": 1016,
+      "sha256": "6ec4093b657d2b0c780483136e0264783dc7b40a03ff6ba2d191c71292aa343c"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/P02_rejected_alpha_fringing.txt",
+      "status": "untracked",
+      "bytes": 898,
+      "sha256": "de640e1c299ad666872102b571997ccb2d0f41cde9465a0877b4839adf797269"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/P02_rejected_direction_before_delivery.txt",
+      "status": "untracked",
+      "bytes": 1054,
+      "sha256": "7b1976c9a9da01bef6b662c14305b70717d16d752858c9432c4d38892ba0651e"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/P02_rejected_tail_candidate.txt",
+      "status": "untracked",
+      "bytes": 1439,
+      "sha256": "be0d19bcb62e094a4b8f0314976fe350798011194c86d9d7e4c0b6df1b9ea315"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/P02_rejected_tail_opening.txt",
+      "status": "untracked",
+      "bytes": 962,
+      "sha256": "2d42260981b578ffb3df51b0278478438825661c38c3777b35d711a9ef507012"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/P14.txt",
+      "status": "tracked-modified",
+      "bytes": 1398,
+      "sha256": "1423b3f4e16320a207a20785f665fa915c4c7365cba94632124fe8fc3ee662b5"
+    },
+    {
+      "path": "content/assets/art-upgrade/prompts/P14_rejected_notebook.txt",
+      "status": "untracked",
+      "bytes": 1344,
+      "sha256": "a0b5f90ba1084bb85eb07e4c61ec213b6f4508bce3bef9c5c60ce9ce710b0589"
+    },
+    {
+      "path": "content/assets/art-upgrade/review/opening-art-sound/direction-validation.json",
+      "status": "untracked",
+      "bytes": 3022,
+      "sha256": "f8d50539e10baa518ed82da5a46606a524b5c6d546e2a552daf8a5ca2f591a1f"
+    },
+    {
+      "path": "content/assets/art-upgrade/review/opening-art-sound/opening-validation.json",
+      "status": "untracked",
+      "bytes": 1741,
+      "sha256": "8932284f0f15287789ad1600c7e476023800d347832956e2e602d407b54a2f48"
+    },
+    {
+      "path": "content/assets/art-upgrade/review/opening-art-sound/scene-integration-validation.json",
+      "status": "untracked",
+      "bytes": 21065,
+      "sha256": "dce846d1259d92dbe0449586a3ea6466669a6e492fc687ed46f34323b9533ef8"
+    },
+    {
+      "path": "content/assets/art-upgrade/review/opening-art-sound/举本.png",
+      "status": "untracked",
+      "bytes": 1727312,
+      "sha256": "6c2ee24b4f0895d0623b203627c47e4dbd5dc7420fb32a948ccd4ecf69a5a576"
+    },
+    {
+      "path": "content/assets/art-upgrade/review/opening-art-sound/契约尾鳍.png",
+      "status": "untracked",
+      "bytes": 1675090,
+      "sha256": "6ca5cb6eeec7c3c0c87e3c0db6e62a2081d9764bfd04a57c3ceb7cb361ac560b"
+    },
+    {
+      "path": "content/assets/art-upgrade/review/opening-art-sound/带向岸边.png",
+      "status": "untracked",
+      "bytes": 2020872,
+      "sha256": "e89c12a2172312cf4e35673e021d9b04e8551e39caca90785f35d3fa69e78b31"
+    },
+    {
+      "path": "content/assets/art-upgrade/review/opening-art-sound/空中接本.png",
+      "status": "untracked",
+      "bytes": 1865067,
+      "sha256": "da3858c3ff1dec96e3d9d672d05b9a268689eff1e0dd222e0edd27e54dcc65b7"
+    },
+    {
+      "path": "content/assets/art-upgrade/review/opening-art-sound/翻本.png",
+      "status": "untracked",
+      "bytes": 1814137,
+      "sha256": "f9936bcdaa9dcaea952ee9b8a8cb3d904c8a30a421954f92d1020220a0e9d843"
+    },
+    {
+      "path": "content/assets/art-upgrade/review/opening-art-sound/门口烤鱿鱼.png",
+      "status": "untracked",
+      "bytes": 1764798,
+      "sha256": "95d457d1265869f6fb4010e8210a25c6739c352fe858efb9bbd462dbab31946d"
+    },
+    {
+      "path": "content/assets/art-upgrade/reviews.json",
+      "status": "tracked-modified",
+      "bytes": 45877,
+      "sha256": "6b6ed77c3cea1d558f0c709ccac847c7b40fa212b37c29268042e197c9bdf6e3"
+    },
+    {
+      "path": "content/assets/art-upgrade/runtime-manifest.json",
+      "status": "tracked-modified",
+      "bytes": 79162,
+      "sha256": "f88ddcc11d293c7ed834caf1bd06d0b82fa04ace4f64837cc299cb58bca2252f"
+    },
+    {
+      "path": "content/assets/art-upgrade/runtime/C01.webp",
+      "status": "tracked-modified",
+      "bytes": 593142,
+      "sha256": "a0cc1e8f14c6b02d9a7752e1202a7947746175277476fc2a2e1087f142878ff4"
+    },
+    {
+      "path": "content/assets/art-upgrade/runtime/C02.webp",
+      "status": "tracked-modified",
+      "bytes": 1043610,
+      "sha256": "363be5bf7a0231f0aafd26f4ccf523f0f354118a951f54f287de54724b8b5075"
+    },
+    {
+      "path": "content/assets/art-upgrade/runtime/C04.webp",
+      "status": "tracked-modified",
+      "bytes": 950388,
+      "sha256": "ef3c8c3aa6d1bc21e2c8d38bfe7962f6580768db1c9574c730690bc13316f969"
+    },
+    {
+      "path": "content/assets/art-upgrade/runtime/C05.webp",
+      "status": "tracked-modified",
+      "bytes": 902804,
+      "sha256": "3e7203c79941e4e9c71ae268fc4d433e266f019033d3fe885e0588ffebb7c084"
+    },
+    {
+      "path": "content/assets/art-upgrade/runtime/C06.webp",
+      "status": "tracked-modified",
+      "bytes": 966628,
+      "sha256": "f1c62d59d1bb262b613b8d5e60496a79dd96a197756366ef296e6d962c728bf4"
+    },
+    {
+      "path": "content/assets/art-upgrade/runtime/C07.webp",
+      "status": "tracked-modified",
+      "bytes": 1012448,
+      "sha256": "ae6d09d6a20afd15871ea0175cd6c003a0343d6caf016b8eaef4e38978e56992"
+    },
+    {
+      "path": "content/assets/art-upgrade/runtime/C08.webp",
+      "status": "tracked-modified",
+      "bytes": 1306262,
+      "sha256": "c5f4d02a11ca5f77e55fcbf353071909e96facd09d60d2b4c7e9507c6541589b"
+    },
+    {
+      "path": "content/assets/art-upgrade/runtime/C09.webp",
+      "status": "tracked-modified",
+      "bytes": 1274312,
+      "sha256": "885fb7a9f1576d000e18278da2b45ae262b80af46ce7196f7784c5afced828d6"
+    },
+    {
+      "path": "content/assets/art-upgrade/runtime/C10.webp",
+      "status": "tracked-modified",
+      "bytes": 1217044,
+      "sha256": "2c434cb8be00baffb6aae48613045bd248f76989fcd5ab305d37d97e991320e7"
+    },
+    {
+      "path": "content/assets/art-upgrade/runtime/C11.webp",
+      "status": "tracked-modified",
+      "bytes": 1223756,
+      "sha256": "2c44e5398bd14f387b42b961355925da7ed0e17d3981cd5fc7a51d378ab0a61f"
+    },
+    {
+      "path": "content/assets/art-upgrade/runtime/C12.webp",
+      "status": "tracked-modified",
+      "bytes": 972352,
+      "sha256": "b88c882d3ad5c85c7e782b46e6ed8a69d35c82549c13c41f88fbbf51aafc62e3"
+    },
+    {
+      "path": "content/assets/art-upgrade/runtime/C13.webp",
+      "status": "tracked-modified",
+      "bytes": 1134154,
+      "sha256": "5df448c724f9bbe8da17527555d7aa00657418865609839879a0f627197039ad"
+    },
+    {
+      "path": "content/assets/art-upgrade/runtime/C15.webp",
+      "status": "tracked-modified",
+      "bytes": 1230984,
+      "sha256": "d3e3d0997c6670a9cc4b14f8dd0a5eb656d054b7560042d465be2e4b15dc4c45"
+    },
+    {
+      "path": "content/assets/art-upgrade/runtime/C17.webp",
+      "status": "tracked-modified",
+      "bytes": 1132314,
+      "sha256": "fc9a7f16c0035d2b9f95bb67c58df00936931358d9dfc290c44a02b88222f0a7"
+    },
+    {
+      "path": "content/assets/art-upgrade/runtime/C18.webp",
+      "status": "tracked-modified",
+      "bytes": 874410,
+      "sha256": "3a9d30de684ae1e5ddb9f9648bdb832d539d89c568a4cdb6a301ed58c71a5f20"
+    },
+    {
+      "path": "content/assets/art-upgrade/runtime/C19.webp",
+      "status": "tracked-modified",
+      "bytes": 753280,
+      "sha256": "35dbcca701c33978ae01728c59b16e4c80556d277d62c3adf80c95089f21aa1c"
+    },
+    {
+      "path": "content/assets/art-upgrade/runtime/C20.webp",
+      "status": "tracked-modified",
+      "bytes": 752836,
+      "sha256": "46f26b86e60f1606f5f864909450cf6d3a8379f2d2ab2365669f14c20cda6c79"
+    },
+    {
+      "path": "content/assets/art-upgrade/runtime/C21.webp",
+      "status": "tracked-modified",
+      "bytes": 913000,
+      "sha256": "fc3f2b813cc0094c643704494bb5b877544f8c38a79c2546c5c011eb81e34bbd"
+    },
+    {
+      "path": "content/assets/art-upgrade/runtime/C22.webp",
+      "status": "tracked-modified",
+      "bytes": 1397786,
+      "sha256": "5d7b3450d016e47d08e292cbcbef5c721423d461ce56f3527e00a4585d747f57"
+    },
+    {
+      "path": "content/assets/art-upgrade/runtime/C24.webp",
+      "status": "tracked-modified",
+      "bytes": 1026402,
+      "sha256": "5f3b63ac7ef45835420e1cb8180df72af5090de3f3ebdf3245f56c255e3cbeff"
+    },
+    {
+      "path": "content/assets/art-upgrade/runtime/C27.webp",
+      "status": "untracked",
+      "bytes": 712042,
+      "sha256": "657f7cf19b06d5d1ce2408a00f71df0c32c1c2e680e8a2b802007fb4bcb35140"
+    },
+    {
+      "path": "content/assets/art-upgrade/runtime/L03.webp",
+      "status": "tracked-modified",
+      "bytes": 822196,
+      "sha256": "d8bad76576d74005a69157cb9c78993f8b512ae2c0e7c9110abe9d27e3bd2f80"
+    },
+    {
+      "path": "content/assets/art-upgrade/runtime/O12.webp",
+      "status": "untracked",
+      "bytes": 500314,
+      "sha256": "f38750551daa51b672a277d365e71e71ad3d493efb512b54a6e4deff1bf265c1"
+    },
+    {
+      "path": "content/assets/art-upgrade/runtime/P02.webp",
+      "status": "tracked-modified",
+      "bytes": 841558,
+      "sha256": "b0930ca2ef1c20854bdad960d3fe5ee0bc54b52f3a018bf8b56e8e059911b1fa"
+    },
+    {
+      "path": "content/assets/art-upgrade/runtime/P14.webp",
+      "status": "tracked-modified",
+      "bytes": 882688,
+      "sha256": "5c0527e5cae66bda1f45504a49654a862488e374884a115519e3fa7835df988b"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/art-catalog.js",
+      "status": "tracked-modified",
+      "bytes": 558095,
+      "sha256": "27d73845f073a874e5ce3912f8660d5889c097df94243335648a24ed1543eabe"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/art-upgrade/C01.webp",
+      "status": "tracked-modified",
+      "bytes": 593142,
+      "sha256": "a0cc1e8f14c6b02d9a7752e1202a7947746175277476fc2a2e1087f142878ff4"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/art-upgrade/C02.webp",
+      "status": "tracked-modified",
+      "bytes": 1043610,
+      "sha256": "363be5bf7a0231f0aafd26f4ccf523f0f354118a951f54f287de54724b8b5075"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/art-upgrade/C04.webp",
+      "status": "tracked-modified",
+      "bytes": 950388,
+      "sha256": "ef3c8c3aa6d1bc21e2c8d38bfe7962f6580768db1c9574c730690bc13316f969"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/art-upgrade/C05.webp",
+      "status": "tracked-modified",
+      "bytes": 902804,
+      "sha256": "3e7203c79941e4e9c71ae268fc4d433e266f019033d3fe885e0588ffebb7c084"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/art-upgrade/C06.webp",
+      "status": "tracked-modified",
+      "bytes": 966628,
+      "sha256": "f1c62d59d1bb262b613b8d5e60496a79dd96a197756366ef296e6d962c728bf4"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/art-upgrade/C07.webp",
+      "status": "tracked-modified",
+      "bytes": 1012448,
+      "sha256": "ae6d09d6a20afd15871ea0175cd6c003a0343d6caf016b8eaef4e38978e56992"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/art-upgrade/C08.webp",
+      "status": "tracked-modified",
+      "bytes": 1306262,
+      "sha256": "c5f4d02a11ca5f77e55fcbf353071909e96facd09d60d2b4c7e9507c6541589b"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/art-upgrade/C09.webp",
+      "status": "tracked-modified",
+      "bytes": 1274312,
+      "sha256": "885fb7a9f1576d000e18278da2b45ae262b80af46ce7196f7784c5afced828d6"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/art-upgrade/C10.webp",
+      "status": "tracked-modified",
+      "bytes": 1217044,
+      "sha256": "2c434cb8be00baffb6aae48613045bd248f76989fcd5ab305d37d97e991320e7"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/art-upgrade/C11.webp",
+      "status": "tracked-modified",
+      "bytes": 1223756,
+      "sha256": "2c44e5398bd14f387b42b961355925da7ed0e17d3981cd5fc7a51d378ab0a61f"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/art-upgrade/C12.webp",
+      "status": "tracked-modified",
+      "bytes": 972352,
+      "sha256": "b88c882d3ad5c85c7e782b46e6ed8a69d35c82549c13c41f88fbbf51aafc62e3"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/art-upgrade/C13.webp",
+      "status": "tracked-modified",
+      "bytes": 1134154,
+      "sha256": "5df448c724f9bbe8da17527555d7aa00657418865609839879a0f627197039ad"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/art-upgrade/C15.webp",
+      "status": "tracked-modified",
+      "bytes": 1230984,
+      "sha256": "d3e3d0997c6670a9cc4b14f8dd0a5eb656d054b7560042d465be2e4b15dc4c45"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/art-upgrade/C17.webp",
+      "status": "tracked-modified",
+      "bytes": 1132314,
+      "sha256": "fc9a7f16c0035d2b9f95bb67c58df00936931358d9dfc290c44a02b88222f0a7"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/art-upgrade/C18.webp",
+      "status": "tracked-modified",
+      "bytes": 874410,
+      "sha256": "3a9d30de684ae1e5ddb9f9648bdb832d539d89c568a4cdb6a301ed58c71a5f20"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/art-upgrade/C19.webp",
+      "status": "tracked-modified",
+      "bytes": 753280,
+      "sha256": "35dbcca701c33978ae01728c59b16e4c80556d277d62c3adf80c95089f21aa1c"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/art-upgrade/C20.webp",
+      "status": "tracked-modified",
+      "bytes": 752836,
+      "sha256": "46f26b86e60f1606f5f864909450cf6d3a8379f2d2ab2365669f14c20cda6c79"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/art-upgrade/C21.webp",
+      "status": "tracked-modified",
+      "bytes": 913000,
+      "sha256": "fc3f2b813cc0094c643704494bb5b877544f8c38a79c2546c5c011eb81e34bbd"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/art-upgrade/C22.webp",
+      "status": "tracked-modified",
+      "bytes": 1397786,
+      "sha256": "5d7b3450d016e47d08e292cbcbef5c721423d461ce56f3527e00a4585d747f57"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/art-upgrade/C24.webp",
+      "status": "tracked-modified",
+      "bytes": 1026402,
+      "sha256": "5f3b63ac7ef45835420e1cb8180df72af5090de3f3ebdf3245f56c255e3cbeff"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/art-upgrade/C27.webp",
+      "status": "untracked",
+      "bytes": 712042,
+      "sha256": "657f7cf19b06d5d1ce2408a00f71df0c32c1c2e680e8a2b802007fb4bcb35140"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/art-upgrade/L03.webp",
+      "status": "tracked-modified",
+      "bytes": 822196,
+      "sha256": "d8bad76576d74005a69157cb9c78993f8b512ae2c0e7c9110abe9d27e3bd2f80"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/art-upgrade/O12.webp",
+      "status": "untracked",
+      "bytes": 500314,
+      "sha256": "f38750551daa51b672a277d365e71e71ad3d493efb512b54a6e4deff1bf265c1"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/art-upgrade/P02.webp",
+      "status": "tracked-modified",
+      "bytes": 841558,
+      "sha256": "b0930ca2ef1c20854bdad960d3fe5ee0bc54b52f3a018bf8b56e8e059911b1fa"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/art-upgrade/P14.webp",
+      "status": "tracked-modified",
+      "bytes": 882688,
+      "sha256": "5c0527e5cae66bda1f45504a49654a862488e374884a115519e3fa7835df988b"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/01bb3c749ce41d12.webp",
+      "status": "untracked",
+      "bytes": 24022,
+      "sha256": "3a2f54422cb2bb63c4f5c61eb63bdda9ba946e20e1ace1a0a5bf3f2526148a63"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/136e69bc730c026b.webp",
+      "status": "untracked",
+      "bytes": 26344,
+      "sha256": "5e970f1803b87ab9ae8d83720f708598bf438d6f4374447ae91a6bed004b7add"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/1e57944880cf8a40.webp",
+      "status": "untracked",
+      "bytes": 15488,
+      "sha256": "3ff9be5292a7444f42977ca9bbaac6b31e545dea1b445b9957a4258861689615"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/2499152e81eadcdf.webp",
+      "status": "untracked",
+      "bytes": 17616,
+      "sha256": "8bf667c13778d83a429507b770b2e99b531a2fb0d1701b9d5e75665a5ebbfdc5"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/2bbab738568822e3.webp",
+      "status": "untracked",
+      "bytes": 16066,
+      "sha256": "1480f90b57be11ff1a529f03e58a3928d658a4b413533df87b673f91f80e6bf0"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/2c434cb8be00baff.webp",
+      "status": "untracked",
+      "bytes": 25144,
+      "sha256": "f7c35af74c68fa01ea030559cf05f85529be0d48b2ddd868bde348f897d5b949"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/2c44e5398bd14f38.webp",
+      "status": "untracked",
+      "bytes": 26782,
+      "sha256": "972b3922006f69b73debcb10acdf411c2e6f37df012eb23ae392650d0f98328e"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/35dbcca701c33978.webp",
+      "status": "untracked",
+      "bytes": 15142,
+      "sha256": "f7c227f768605d0d7e0486910cff1e60db1e1f45a85a65d5360e820b2e9a0fae"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/35dc39fc6ba154b2.webp",
+      "status": "untracked",
+      "bytes": 25048,
+      "sha256": "76f2fe3e5e8b03151dce89f81e129960edab844be0208b9f4b7b60687ae212ee"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/363be5bf7a0231f0.webp",
+      "status": "untracked",
+      "bytes": 22590,
+      "sha256": "c3d99c4f99998ec2af6a3a804d9bc5de970b3fcf9350a2645d4a4e85751a0075"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/38d50c24e5c4a98e.webp",
+      "status": "untracked",
+      "bytes": 15522,
+      "sha256": "058fddceca2c1a0b9f6cf78764f739846e823583ac935d19d737cfa805ee5444"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/3a9d30de684ae1e5.webp",
+      "status": "untracked",
+      "bytes": 23504,
+      "sha256": "c91a19b4e78d515e6c8c00fd46272575815b41589cbec34e772841368a52d307"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/3c867e80b31d8760.webp",
+      "status": "untracked",
+      "bytes": 19016,
+      "sha256": "c1154600a820d9a8d6d40041da257039eef44c25a20aa1186fd40c7d5557a91b"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/3e53d6fcda31dba3.webp",
+      "status": "untracked",
+      "bytes": 19154,
+      "sha256": "b7c37d81c25d1ada37691a6053eb6f5725d1050b1bf4abe7fc608fb9f0574cb4"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/3e7203c79941e4e9.webp",
+      "status": "untracked",
+      "bytes": 21138,
+      "sha256": "68f3908d646c7e954e42eb452f20a2b0b42c28ae11d971400c0966b2bdc6f9c4"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/46f26b86e60f1606.webp",
+      "status": "untracked",
+      "bytes": 18410,
+      "sha256": "1d739ba00279dc8c8c615e21d2f188f4f1e07ea65c2dd4401d3fae95800ccf48"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/48205327e1a58b7d.webp",
+      "status": "untracked",
+      "bytes": 27000,
+      "sha256": "07acc2bd3e299538c535f615a82f6de60e432706bcf0ae6f635e68b26441460a"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/4c9e0bbc54e77539.webp",
+      "status": "untracked",
+      "bytes": 23446,
+      "sha256": "5bb2e73ced3bc3d693873ddb353a936fb41da1a9971e1a9852c285226b36d17e"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/4d722496bacba3f1.webp",
+      "status": "untracked",
+      "bytes": 25872,
+      "sha256": "9ec840be7e20a8bcddd10502f6172c878df2490ff73bfb1ffc78bd1176474c3f"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/5c0527e5cae66bda.webp",
+      "status": "untracked",
+      "bytes": 17616,
+      "sha256": "8bf667c13778d83a429507b770b2e99b531a2fb0d1701b9d5e75665a5ebbfdc5"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/5d7b3450d016e47d.webp",
+      "status": "untracked",
+      "bytes": 22458,
+      "sha256": "85b594f721e62a3fecced09d6ae2cb8231435b13becb5ec225178dc6047d1757"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/5df448c724f9bbe8.webp",
+      "status": "untracked",
+      "bytes": 19190,
+      "sha256": "bbdf7006cea3e91a1c9b591290188cb88b6361e904e57fdd78c61fc051f336f5"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/5e11ca641ffc9e10.webp",
+      "status": "untracked",
+      "bytes": 22584,
+      "sha256": "32034d5cd83307f14d1a521d2524312ca5b0601ef84d6f78a05c929880328b71"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/5f3b63ac7ef45835.webp",
+      "status": "untracked",
+      "bytes": 25868,
+      "sha256": "7dbd878e9dc66f7594a407b2f820bf45d04d2113629ea619fa014215534bf5a0"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/657f7cf19b06d5d1.webp",
+      "status": "untracked",
+      "bytes": 27908,
+      "sha256": "b33ed93a87acec9139e750c8f0f907564e353b01b9e9fe05906c1702fcc59362"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/6d4e8679e794b6e6.webp",
+      "status": "untracked",
+      "bytes": 20822,
+      "sha256": "a9afdf3873fe53fd6d087b4bae011e353b85aa98bf1e4fec7f30a2120799b956"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/6f389f9de6246cc9.webp",
+      "status": "untracked",
+      "bytes": 26940,
+      "sha256": "34e3e40a1da3eff360dcf57700079cb526497163429afb18528602e56f9635fe"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/764c056affc8f7da.webp",
+      "status": "untracked",
+      "bytes": 26836,
+      "sha256": "edebbd61dfac46e281aacbe0deaafd74af3e94c1be19b65c6965f164abf636b1"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/7a8fb1341aad484f.webp",
+      "status": "untracked",
+      "bytes": 25544,
+      "sha256": "c5ae8490cf1f22c73f2fdeaffe4f65d510d5180197d43b5fbbccb358d5bffe66"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/84037b68d7a55de7.webp",
+      "status": "untracked",
+      "bytes": 15132,
+      "sha256": "00b946db1044ee53c0763b99dac4634e5aaab1a8da631cd71318ea6e7ec3a262"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/84989ef6f7fb9eb4.webp",
+      "status": "untracked",
+      "bytes": 21320,
+      "sha256": "0d33699071c0ccc2c349386f1a13a122fa1fda70e944a85a2d26fb667a11dca9"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/84e8968f873c5247.webp",
+      "status": "untracked",
+      "bytes": 27798,
+      "sha256": "a6c88f34da23ff02850d03a1e465a93026157f29640a9434b8a9feb4320b26e6"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/885fb7a9f1576d00.webp",
+      "status": "untracked",
+      "bytes": 23298,
+      "sha256": "8bb17d0d589f2d5b96303a92e28e8c553f9f69ae4fe19d797cc61259ab9b2665"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/8f45b3fe0e9bec3d.webp",
+      "status": "untracked",
+      "bytes": 19340,
+      "sha256": "c8a12d4e6600fa214b354b509e957f01c1ea937ff247f13807006d439953cdaf"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/8f5480656c61d8c5.webp",
+      "status": "untracked",
+      "bytes": 27616,
+      "sha256": "f81a020b457ac181dfd595a0de9108799c2841f51955f85b4d3faf21911c85a3"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/9b9e92697a78da3b.webp",
+      "status": "untracked",
+      "bytes": 7532,
+      "sha256": "e78e4852d252f176ef36b38bbf8e659b69b8ccd4cfa17b16a46de5f735b94e14"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/a0cc1e8f14c6b02d.webp",
+      "status": "untracked",
+      "bytes": 26874,
+      "sha256": "da5aec1a47aadfe19bc7439fe46c46cc4eb9d04820a95439e4f7db2607e7f332"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/a1e3180019ede493.webp",
+      "status": "untracked",
+      "bytes": 18496,
+      "sha256": "94344a0f2685a80ce9d94019511bc6e5fc4dea4bb7d478a2aa5bd5790c0d514e"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/ae6d09d6a20afd15.webp",
+      "status": "untracked",
+      "bytes": 22192,
+      "sha256": "17362aaf806bad356c33b90ca72fd2af8911b898ce292ac9aec7e7797cc31c47"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/b0930ca2ef1c2085.webp",
+      "status": "untracked",
+      "bytes": 16066,
+      "sha256": "1480f90b57be11ff1a529f03e58a3928d658a4b413533df87b673f91f80e6bf0"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/b88c882d3ad5c85c.webp",
+      "status": "untracked",
+      "bytes": 19088,
+      "sha256": "f7814b0da629be0a31f549d149a306d4910ce332634bf4fa2065019146ee5a1e"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/c5f4d02a11ca5f77.webp",
+      "status": "untracked",
+      "bytes": 20610,
+      "sha256": "b60e438bcf83600f35fdfa77c3beacd82f0ed0c578391af4f41d29884e56ffec"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/c72936ed550dcfdd.webp",
+      "status": "untracked",
+      "bytes": 26902,
+      "sha256": "f04fc09bf7722e06e1c3784853458e0c43f45fabbd0e135cc8c8466d653d795b"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/c7b75b727a270356.webp",
+      "status": "untracked",
+      "bytes": 16402,
+      "sha256": "9789b5724dee5221d43ae92cbb3489b20204bf680343459a665c968a689bf238"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/cae104d839d04042.webp",
+      "status": "untracked",
+      "bytes": 26998,
+      "sha256": "1bf6255cfb2dee274f952142ada8d4fb379cd2b5734429ed63e9c9b7d5f522db"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/cf6d96f95439182e.webp",
+      "status": "untracked",
+      "bytes": 28114,
+      "sha256": "953e201164f2828532283ee6fe39e8a0e46885a06c763f5c59d8e04eb813ed10"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/d3e3d0997c6670a9.webp",
+      "status": "untracked",
+      "bytes": 20772,
+      "sha256": "a0f80909e66a44e8dd589aadebcb227e7df5fec46962aa4652348c3e41d8960e"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/d7f1238d1360111f.webp",
+      "status": "untracked",
+      "bytes": 23604,
+      "sha256": "b049ee32994531aa679babdec1a58f192acfc0fc99d40f9e73e5912490a17651"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/d8bad76576d74005.webp",
+      "status": "untracked",
+      "bytes": 15522,
+      "sha256": "058fddceca2c1a0b9f6cf78764f739846e823583ac935d19d737cfa805ee5444"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/dd09c865f176834f.webp",
+      "status": "untracked",
+      "bytes": 23032,
+      "sha256": "4af9ccb79762986f31fa3981c126fac29df6d94cec49f70b0edf7c5541847d38"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/def3103a815011e5.webp",
+      "status": "untracked",
+      "bytes": 27992,
+      "sha256": "9586f87437cd72c666ea7085d88436222c8087ebb66e36f848339d2909bcf3d5"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/e0d3bb0bb50abc9e.webp",
+      "status": "untracked",
+      "bytes": 21552,
+      "sha256": "4871597970eb431b5abaa657e3e35995522987df745ede4eb93026ed5f53d1a2"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/e38015619a196caf.webp",
+      "status": "untracked",
+      "bytes": 22200,
+      "sha256": "8222c313d34ea2235e4bcd06cdb3f520bc527550afb3e7bc25d9df79d47fa682"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/e65e395649814a60.webp",
+      "status": "untracked",
+      "bytes": 16306,
+      "sha256": "b426c205d2c8434b4c74c1b2ff92d70f91f40cd4cc993d45f922505dd7c9b188"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/ef3c8c3aa6d1bc21.webp",
+      "status": "untracked",
+      "bytes": 21496,
+      "sha256": "dd2c307f705ddced6c05b32ccb2151e119a07683cae81351f786b73405043f43"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/f1c62d59d1bb262b.webp",
+      "status": "untracked",
+      "bytes": 24030,
+      "sha256": "f6caedcce0d4712a7b3f184cf767a7de92a365ef459021771eec48f20db83585"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/f1f9097ede9917bc.webp",
+      "status": "untracked",
+      "bytes": 22444,
+      "sha256": "1102ff99b7415df85b9b2747514992c359c363db31ab8e0ff4ff376d7c219f8a"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/f38750551daa51b6.webp",
+      "status": "untracked",
+      "bytes": 25618,
+      "sha256": "cede401f133d1e83ac1968ac6b2ba352c5693e7a3d966b1b2fe429f946fb42b0"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/f3d5a77e7b9f46ab.webp",
+      "status": "untracked",
+      "bytes": 20430,
+      "sha256": "82b05e5853ac7eeec68a8f5a151ecf1f8b68ac3ebdecf6a6996058c58143b7bd"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/fab2c4af730d198a.webp",
+      "status": "untracked",
+      "bytes": 21654,
+      "sha256": "a164a6ea0536050422227f127f4f0bcf2dca0e4d89fddcf295b56f021a05760e"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/fc3f2b813cc0094c.webp",
+      "status": "untracked",
+      "bytes": 18960,
+      "sha256": "dd60ee7b47952607d3bae9bf5db2fe6471a7d0cdfcb4cef108db501455d0da9d"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/assets/editor-thumbs/fc9a7f16c0035d2b.webp",
+      "status": "untracked",
+      "bytes": 21588,
+      "sha256": "ec497c0b11c3b41f5a472f8cb5a5e6b1d0c72ec522e8f8f71458fd220fe33bd5"
+    },
+    {
+      "path": "content/imports/vnstudio/海风与布丁/game.js",
+      "status": "tracked-modified",
+      "bytes": 1813230,
+      "sha256": "fbe54379d81ce6663e0b4264282f2676d8c9aa38bbcba189acbffab65bf0bd3b"
+    },
+    {
+      "path": "docs/content/art-production/美术资产来源与路线登记.csv",
+      "status": "tracked-modified",
+      "bytes": 120239,
+      "sha256": "2a8f0922216f9424fe8e8dde743c1de50be01edfb23157fdfee4f1136f46234b"
+    },
+    {
+      "path": "tools/adopt_opening_refined_art.py",
+      "status": "untracked",
+      "bytes": 9640,
+      "sha256": "0854412e1d4f4232781fa9a3d221edaa332f91184fbcd5359f4ba3f02e8b7d4c"
+    },
+    {
+      "path": "tools/build_art_catalog.py",
+      "status": "tracked-modified",
+      "bytes": 10503,
+      "sha256": "e58677a62ec58a4e26ed7a29e1c1e7c3955b7ef1ab722b0512aad061e4046d7d"
+    },
+    {
+      "path": "tools/check_opening_art_sound.py",
+      "status": "untracked",
+      "bytes": 6495,
+      "sha256": "3aea963b82512c63753a36025af5c30192dd5b2716aaf23729ac542b2fb7477d"
+    },
+    {
+      "path": "tools/continue_refined_cg_direction.py",
+      "status": "untracked",
+      "bytes": 5186,
+      "sha256": "a83cdbff8c51ea98870378afb68d98c89be4add0e8b0a90c99a6f04b88e964ca"
+    },
+    {
+      "path": "tools/prepare_opening_art_corrections.py",
+      "status": "untracked",
+      "bytes": 10511,
+      "sha256": "f1bacf7f52bbe0f00d60358e5dc36501d2be6fae92094230d9607ed6b9f0509b"
+    },
+    {
+      "path": "tools/queue_art_revision.py",
+      "status": "untracked",
+      "bytes": 1634,
+      "sha256": "92121ed3a689fc6ca3d1ccb38b5c71fe12eeb9e7d8fde75b1aa186a8fa9cf281"
+    },
+    {
+      "path": "tools/refine_opening_candidates.py",
+      "status": "untracked",
+      "bytes": 4992,
+      "sha256": "77e074c656ec52de429e3af5e7ccc4b81b654bd293ef23e57ba03539a876aa91"
+    },
+    {
+      "path": "tools/verify_art_upgrade.py",
+      "status": "tracked-modified",
+      "bytes": 6819,
+      "sha256": "6ea7c0e7ae75f6fb14080e93fa3075f938c04f933a3ab1210e08a42dfb2e1279"
+    }
+  ]
+}

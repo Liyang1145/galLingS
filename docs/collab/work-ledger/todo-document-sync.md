@@ -6,3 +6,7 @@
 - 文件：`AGENTS.md`、`docs/collab/待办总表.md`、`docs/collab/latest-play.md`、`docs/collab/work-ledger/opening-art-sound-corrections.md`、`docs/content/art-production/精修图包接续标准.md`及本记录。
 - 范围说明：表内119个播放视觉ID、515项开发库等属于本机精修快照；相关图片、归档、装配JSON及运行改动未随本次文档同步。远端游戏仍保留既有内容；不自动合并main，不编发布号。
 - 验证：53个唯一任务编号、文档相对链接、提交内容与凭据检查；文档改动不重复运行游戏测试。推送后回读远端提交和文档内容。
+
+## 2026-10-17后继交接
+
+上文保留10月16日文档同步事实。用户随后明确弃用C27、暂停全部CG并要求其他agent接手，优先读[接手说明](../接手说明.md)和[暂停记录](agent-handoff-cg-pause.md)。53项编号保留，但CG制作与接口测试已暂停；旧推荐顺序不再执行。新文档发布仍不等于上传本地源码/素材。

@@ -1,0 +1,38 @@
+{
+  "id": "bgm_m1_shallows_day",
+  "trackCode": "M1",
+  "title": null,
+  "workingLabel": "浅滩日常",
+  "titleStatus": "untitled",
+  "selectedBy": "Liyang1145",
+  "selectedOn": "2026-10-16",
+  "originalFilename": "录音机-20261011-1642(1).mp3",
+  "archivePath": "content/assets/audio/bgm/bgm_m1_shallows_day.mp3",
+  "runtimePath": "content/imports/vnstudio/海风与布丁/assets/bgm/bgm_m1_shallows_day.mp3",
+  "sha256": "08dae55fe051327cad76c7f3938dc297ef234f314a50ffa2f2ef911e2646e325",
+  "bytes": 2380041,
+  "audio": {
+    "codec": "mp3",
+    "duration": 99.6935,
+    "channels": 2,
+    "sample_rate": 48000
+  },
+  "measuredLUFS": -13.78,
+  "playbackGain": 0.6569,
+  "targetReferenceLUFS": -17.43,
+  "processing": {
+    "edited": false,
+    "reencoded": false,
+    "loudnessNormalized": false,
+    "seamlessLoopPrepared": false
+  },
+  "loopStart": null,
+  "loopEnd": null,
+  "loopPointStatus": "待音乐负责人试听与人工微调",
+  "source": {
+    "tool": "Suno（源文件标签）",
+    "model": null,
+    "generationPrompt": null
+  },
+  "role": "普通浅滩/沙洲地图日常，显式事件曲和剧情停奏优先"
+}

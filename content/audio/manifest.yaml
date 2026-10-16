@@ -69,3 +69,30 @@ tracks:
       loudness_normalized: false
       seamless_loop_prepared: false
     notes: 曲名暂定。完整原MP3不转码不裁剪；只用播放器音量衰减至主曲参考以下约4dB。第九话黄昏、第十话数日等待、第十一话救援后尚未解冻的回答；通话争执和水下救援保留停奏。
+  - id: bgm_m1_shallows_day
+    title: null
+    working_label: 浅滩日常
+    title_status: untitled
+    track_code: M1
+    role: coastal_daily_map
+    status: selected_scene_track
+    original_filename: 录音机-20261011-1642(1).mp3
+    archived_filename: bgm_m1_shallows_day.mp3
+    file: ../assets/audio/bgm/bgm_m1_shallows_day.mp3
+    availability: repository
+    selected_on: "2026-10-16"
+    selected_by: Liyang1145
+    bytes: 2380041
+    duration_seconds: 99.6935
+    sha256: 08dae55fe051327cad76c7f3938dc297ef234f314a50ffa2f2ef911e2646e325
+    integrated_lufs: -13.78
+    playback_gain: 0.6569
+    cue_report: m1-integration.json
+    loop_start: null
+    loop_end: null
+    loop_units: samples
+    processing:
+      edited: false
+      loudness_normalized: false
+      seamless_loop_prepared: false
+    notes: 按用户提供的约1分40秒文件完整保存，不拉伸或凑时长；M1先用于第三话下潜前准备、第七话沙洲捡贝壳。原角色主题、E1/E2/E4/E7及其停奏保持；播放器暂按主曲参考以下约3dB播放。

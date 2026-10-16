@@ -1,0 +1,51 @@
+{
+  "baselineCommit": "5f519963856608ea796c372b2a3f15552a7bd580",
+  "onlyMusicAssignmentsChanged": 61,
+  "existingAudioAssetsAndBytesUnchanged": 104,
+  "allVisualAndStoryFieldsUnchanged": true,
+  "cues": [
+    {
+      "startLineId": "qfuowzma",
+      "lastLineId": "hnqx7w6w",
+      "playing": true,
+      "sameTrackAcrossLines": true,
+      "nextTrack": "bgm_atri_e2_deepsea",
+      "oldTrackPaused": true,
+      "id": "bgm_m1_shallows_day",
+      "duration": 99.6935,
+      "time": 0.985662,
+      "volume": 0.229915,
+      "expectedVolume": 0.229915,
+      "loop": true,
+      "error": null
+    },
+    {
+      "startLineId": "cpvlwvrk",
+      "lastLineId": "ceip84bi",
+      "playing": true,
+      "sameTrackAcrossLines": true,
+      "nextTrack": null,
+      "oldTrackPaused": true,
+      "id": "bgm_m1_shallows_day",
+      "duration": 99.6935,
+      "time": 1.001066,
+      "volume": 0.229915,
+      "expectedVolume": 0.229915,
+      "loop": true,
+      "error": null
+    }
+  ],
+  "errors": [],
+  "audioStateRestored": {
+    "id": "bgm_m1_shallows_day",
+    "time": 37.74019
+  },
+  "fullFileLoopWraps": true,
+  "stopAllStopsM1": true,
+  "e4StillPlays": true,
+  "offlineEmbeddedSha256": "08dae55fe051327cad76c7f3938dc297ef234f314a50ffa2f2ef911e2646e325",
+  "offlinePlayback": true,
+  "gameSha256": "fd0d31d8be4cdabdf3313ed34e68745770724665fbfb6e686044553e5e3e46bf",
+  "singleFileSha256": "d618cf4e3f3d1b641b8c4d49b18b9713eadfa15605119a3f64badd80f3f41ee2",
+  "passed": true
+}

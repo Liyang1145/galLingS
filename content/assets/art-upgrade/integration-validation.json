@@ -5,8 +5,12 @@
   "performanceBaselineNodeIdsPreserved": 3315,
   "originalAudioAssetsUnchanged": 103,
   "activeVisualIds": 118,
-  "explicitMusicOverlayNodes": 77,
-  "currentAudioAssets": 104,
+  "explicitMusicOverlayNodes": 138,
+  "explicitMusicOverlayCounts": {
+    "bgm_e4_sunset_wait": 77,
+    "bgm_m1_shallows_day": 61
+  },
+  "currentAudioAssets": 105,
   "activeReplacedVisualIds": 116,
   "manualWardrobeVisualIds": [
     "nvgbi1x6",
@@ -14,5 +18,5 @@
   ],
   "wavPlaybackAssets": 0,
   "chapters": 18,
-  "gameSha256": "39ab7ce0f501f6952bee5eb5f884fe975b451bf0b1623f9ec202ebed70ca13ba"
+  "gameSha256": "fd0d31d8be4cdabdf3313ed34e68745770724665fbfb6e686044553e5e3e46bf"
 }

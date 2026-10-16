@@ -2321,6 +2321,22 @@
       "provenance": "音乐负责人提供并指定用于E4，名称暂定",
       "archived_on": "2026-10-16",
       "license": "未指定开放许可证；不默认适用引擎代码许可证"
+    },
+    {
+      "id": "bgm_m1_shallows_day",
+      "title": "浅滩日常（功能名）",
+      "title_status": "untitled",
+      "track_code": "M1",
+      "category": "bgm",
+      "path": "audio/bgm/bgm_m1_shallows_day.mp3",
+      "format": "mp3",
+      "bytes": 2380041,
+      "sha256": "08dae55fe051327cad76c7f3938dc297ef234f314a50ffa2f2ef911e2646e325",
+      "duration_seconds": 99.6935,
+      "source_filename": "录音机-20261011-1642(1).mp3",
+      "provenance": "音乐负责人提供并指定用于M1，正式曲名未定",
+      "archived_on": "2026-10-16",
+      "license": "未指定开放许可证；不默认适用引擎代码许可证"
     }
   ]
 }

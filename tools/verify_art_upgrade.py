@@ -14,23 +14,33 @@ def verify():
     assert [i for i in new_ids if i in set(old_ids)]==old_ids
     story_lines=copy.deepcopy(current['lines'])
     by_id={l['id']:l for l in story_lines}
-    music_overlay=ROOT/'content/audio/e4-integration.json'
     overlay_nodes=0
-    if music_overlay.exists():
-        # The music lead explicitly added E4 after the art checkpoint. Only the
+    overlay_counts={}
+    overlay_ids=set()
+    for filename,expected_asset_id,expected_before in [
+        ('e4-integration.json','bgm_e4_sunset_wait',None),
+        ('m1-integration.json','bgm_m1_shallows_day','bgm_emerald_dream_main_v01'),
+    ]:
+        music_overlay=ROOT/'content/audio'/filename
+        if not music_overlay.exists():continue
+        # The music lead explicitly added tracks after the art checkpoint. Only the
         # documented music assignments may differ; keep all story checks strict.
         music=json.loads(music_overlay.read_text(encoding='utf-8'))
         asset_id=music['assetId'];rows=music['nodeChanges']
+        assert asset_id==expected_asset_id
         assert len(rows)==music['changedNodes'] and len({r['lineId'] for r in rows})==len(rows)
         assert {l['id'] for l in current['lines'] if l['bgm']==asset_id}=={r['lineId'] for r in rows}
         for row in rows:
             assert current['lines'][row['index']]['id']==row['lineId']
             line=by_id[row['lineId']]
-            assert line['bgm']==row['after']==asset_id and row['before'] is None
+            assert row['lineId'] not in overlay_ids
+            overlay_ids.add(row['lineId'])
+            assert line['bgm']==row['after']==asset_id and row['before']==expected_before
             line['bgm']=row['before']
         audio_file=GAME/current['assets'][asset_id]['src']
         assert hashlib.sha256(audio_file.read_bytes()).hexdigest()==music['sourceSha256']
-        overlay_nodes=len(rows)
+        overlay_nodes+=len(rows)
+        overlay_counts[asset_id]=len(rows)
     for old in before['lines'][160:]:
         a={k:v for k,v in old.items() if k not in {'bg','sprites','acts','fx'}}
         b={k:v for k,v in by_id[old['id']].items() if k not in {'bg','sprites','acts','fx'}}
@@ -75,6 +85,7 @@ def verify():
         'performanceBaselineNodeIdsPreserved':len(new_ids) if current.get('characterPerformance') else None,
         'originalAudioAssetsUnchanged':len(audio),'activeVisualIds':len(active),
         'explicitMusicOverlayNodes':overlay_nodes,
+        'explicitMusicOverlayCounts':overlay_counts,
         'currentAudioAssets':sum(a['type'] not in {'bg','ch'} for a in current['assets'].values()),
         'activeReplacedVisualIds':len(active)-len(remaining),'manualWardrobeVisualIds':remaining,
         'wavPlaybackAssets':0,'chapters':sum(bool(l.get('chapter')) for l in current['lines']),

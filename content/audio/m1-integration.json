@@ -1,0 +1,402 @@
+{
+  "assetId": "bgm_m1_shallows_day",
+  "workingLabel": "浅滩日常",
+  "titleStatus": "untitled",
+  "baselineCommit": "5f519963856608ea796c372b2a3f15552a7bd580",
+  "sourceGameSha256": "39ab7ce0f501f6952bee5eb5f884fe975b451bf0b1623f9ec202ebed70ca13ba",
+  "sourceSha256": "08dae55fe051327cad76c7f3938dc297ef234f314a50ffa2f2ef911e2646e325",
+  "cues": [
+    {
+      "startLineId": "qfuowzma",
+      "lastLineId": "hnqx7w6w",
+      "startIndex": 360,
+      "endExclusive": 391,
+      "nodeCount": 31,
+      "note": "第三话：浅滩游泳准备与下水规矩；下潜时交给既有E2"
+    },
+    {
+      "startLineId": "cpvlwvrk",
+      "lastLineId": "ceip84bi",
+      "startIndex": 924,
+      "endExclusive": 954,
+      "nodeCount": 30,
+      "note": "第七话：沙洲捡贝壳、轻松闲谈到午后阴凉；随后保留原停奏"
+    }
+  ],
+  "nodeChanges": [
+    {
+      "index": 360,
+      "lineId": "qfuowzma",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 361,
+      "lineId": "umzij01g",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 362,
+      "lineId": "15dtdlke",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 363,
+      "lineId": "r4yo2fzi",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 364,
+      "lineId": "kzdef7fm",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 365,
+      "lineId": "7qvsxg27",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 366,
+      "lineId": "v8iy8yts",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 367,
+      "lineId": "1m0kzayl",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 368,
+      "lineId": "z99zryf9",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 369,
+      "lineId": "7d04pu5e",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 370,
+      "lineId": "ywlwnvjj",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 371,
+      "lineId": "rvd1ng5c",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 372,
+      "lineId": "estubhxy",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 373,
+      "lineId": "kgxlg156",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 374,
+      "lineId": "r6zrjfon",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 375,
+      "lineId": "47ebqavh",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 376,
+      "lineId": "pked97hj",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 377,
+      "lineId": "qkf81oix",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 378,
+      "lineId": "zyrsebhd",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 379,
+      "lineId": "2mk6hh8s",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 380,
+      "lineId": "iq3sn23m",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 381,
+      "lineId": "57jh2n60",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 382,
+      "lineId": "wzlhswby",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 383,
+      "lineId": "0b8dkvg1",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 384,
+      "lineId": "3f7yi56d",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 385,
+      "lineId": "7sk0qcoy",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 386,
+      "lineId": "su3sekev",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 387,
+      "lineId": "x4beuvgs",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 388,
+      "lineId": "aeujeswh",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 389,
+      "lineId": "kob1ew2x",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 390,
+      "lineId": "hnqx7w6w",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 924,
+      "lineId": "cpvlwvrk",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 925,
+      "lineId": "3f5uvoko",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 926,
+      "lineId": "pa1h0s12",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 927,
+      "lineId": "8inqrr5i",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 928,
+      "lineId": "lf46dopa",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 929,
+      "lineId": "duaibm68",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 930,
+      "lineId": "x0h6uel7",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 931,
+      "lineId": "hxfruk5n",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 932,
+      "lineId": "j0gh3sy9",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 933,
+      "lineId": "aag5u1a4",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 934,
+      "lineId": "c9gufbwv",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 935,
+      "lineId": "swby1puz",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 936,
+      "lineId": "jat78niv",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 937,
+      "lineId": "5ue3tkoh",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 938,
+      "lineId": "94lwiexy",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 939,
+      "lineId": "73ceprlo",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 940,
+      "lineId": "zyfdse7f",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 941,
+      "lineId": "5a4c7gn4",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 942,
+      "lineId": "pyk7cnvk",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 943,
+      "lineId": "vh2jak9d",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 944,
+      "lineId": "slpxwmn7",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 945,
+      "lineId": "1wiyscev",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 946,
+      "lineId": "q9vppunm",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 947,
+      "lineId": "q0i9xjy7",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 948,
+      "lineId": "2yilbdrv",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 949,
+      "lineId": "dmfv1udl",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 950,
+      "lineId": "gt85vn7g",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 951,
+      "lineId": "fwecdcyr",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 952,
+      "lineId": "im8sf0q5",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    },
+    {
+      "index": 953,
+      "lineId": "ceip84bi",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_m1_shallows_day"
+    }
+  ],
+  "changedNodes": 61,
+  "playbackGain": 0.6569,
+  "allOtherLineFieldsPreserved": true,
+  "existingAssetsPreserved": 242,
+  "originalAudioAssetsPreserved": 104,
+  "firstAppearanceAndCharacterThemePreserved": true,
+  "eventTracksAndSilencePreserved": true,
+  "loopPoint": "播放器完整MP3循环，未制作无缝循环点"
+}

@@ -6,9 +6,9 @@
   "date": "2026-10-17",
   "batch": "image25-pass2",
   "base": "content/assets/art-upgrade/originals/C05.png (teammate refined)",
-  "output_sha256": "4b0060ddea4e9c12d5ab09b2f3d943e6807ef20e5a016afa0f7603ab686627c5",
-  "master_sha256": "b321d23ff1f88ba0bcc8a851ee3ddc614a72af94f9702d28816b2c1e1d03d4ad",
-  "runtime_webp_sha256": "cce4d1d9ecca2141e068d555a5f7d5448ee8d409e07cca048739532b10d83b9a",
-  "revision": 4,
-  "revision_note": "原生分辨率合成：右腿区域外与精修原图逐像素一致"
+  "output_sha256": "17ca8715e01b4c7e472f6876f207d6e30b3c02f86f066024ea7c91259d735782",
+  "master_sha256": "5f238054e24d3515ec13e0d8c894afba49b5eeffe1a297a2d44f66718d57e767",
+  "runtime_webp_sha256": "f8a7cd74a337b6ad17fb86bb9d0bbe3080fe76bbdab7e821e33ba14a394f4c37",
+  "revision": 5,
+  "revision_note": "右腿自然化：Image2.5 局部重绘右腿（去掉膝盖鼓包、腿型顺滑、与左腿同粗同长、脚出画），仅合成右腿与右下海底区域 bbox (1596,987)-(2730,1536)；其余与精修原图逐像素一致"
 }

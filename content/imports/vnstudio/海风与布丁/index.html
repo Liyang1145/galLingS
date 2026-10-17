@@ -577,7 +577,7 @@ body.playing #soulTab.show{display:flex}
       </div>
       <div id="dlg"><input id="nm" spellcheck="false"><textarea id="tx" spellcheck="false"></textarea></div>
       <div id="pdlg"><div id="pnm"></div><div id="ptx"></div>
-        <div id="pctl"><button class="btn" data-pc="log" data-tip="pcLog" aria-label="回看" title="回看"><i data-ic="scroll-text"></i><span class="pc-label">回看</span></button><button class="btn" data-pc="auto" data-tip="pcAuto" aria-label="自动" title="自动"><i data-ic="circle-play"></i><span class="pc-label">自动</span></button><button class="btn" data-pc="skip" data-tip="pcSkip" aria-label="快进" title="快进"><i data-ic="fast-forward"></i><span class="pc-label">快进</span></button><button class="btn" data-pc="save" data-tip="pcSave" aria-label="存档" title="存档"><i data-ic="save"></i><span class="pc-label">存档</span></button><button class="btn" data-pc="load" data-tip="pcLoad" aria-label="读档" title="读档"><i data-ic="folder-open"></i><span class="pc-label">读档</span></button><button class="btn" data-pc="set" data-tip="pcSet" aria-label="设置" title="设置"><i data-ic="settings"></i><span class="pc-label">设置</span></button><button class="btn" data-pc="hide" aria-label="查看完整画面" title="查看完整画面（H），点击画面恢复"><i data-ic="eye"></i><span class="pc-label">画面</span></button><button class="btn" data-pc="exit" data-tip="pcExit" aria-label="标题" title="标题"><i data-ic="log-out"></i><span class="pc-label">标题</span></button></div>
+        <div id="pctl"><button class="btn" data-pc="prev" aria-label="上一句" title="上一句（←）"><i data-ic="arrow-left"></i><span class="pc-label">上一句</span></button><button class="btn" data-pc="log" data-tip="pcLog" aria-label="回看" title="回看"><i data-ic="scroll-text"></i><span class="pc-label">回看</span></button><button class="btn" data-pc="auto" data-tip="pcAuto" aria-label="自动" title="自动"><i data-ic="circle-play"></i><span class="pc-label">自动</span></button><button class="btn" data-pc="skip" data-tip="pcSkip" aria-label="快进" title="快进"><i data-ic="fast-forward"></i><span class="pc-label">快进</span></button><button class="btn" data-pc="save" data-tip="pcSave" aria-label="存档" title="存档"><i data-ic="save"></i><span class="pc-label">存档</span></button><button class="btn" data-pc="load" data-tip="pcLoad" aria-label="读档" title="读档"><i data-ic="folder-open"></i><span class="pc-label">读档</span></button><button class="btn" data-pc="set" data-tip="pcSet" aria-label="设置" title="设置"><i data-ic="settings"></i><span class="pc-label">设置</span></button><button class="btn" data-pc="hide" aria-label="查看完整画面" title="查看完整画面（H），点击画面恢复"><i data-ic="eye"></i><span class="pc-label">画面</span></button><button class="btn" data-pc="exit" data-tip="pcExit" aria-label="标题" title="标题"><i data-ic="log-out"></i><span class="pc-label">标题</span></button></div>
       </div>
       <div id="pin"><input id="pinput" autocomplete="off" spellcheck="false"><button class="btn" id="pinEnd" data-tip="pinEnd"><i data-ic="square"></i></button></div>
       <div id="exprPop"></div>
@@ -2343,6 +2343,7 @@ function startPlay(fromIdx, state) {
   RT.idx = Math.max(0, Math.min(P.lines.length - 1, fromIdx ?? P.cur));
   RT.vars = applyGlobals(state?.vars ? clone(state.vars) : initVars());
   RT.back = state?.back ? clone(state.back) : [];
+  RT.hist = [];                             // 走过的句子（←键回上一句用）
   if (state) { const last = RT.back[RT.back.length - 1], l0 = P.lines[RT.idx]; if (last && (last.t === l0.text || last.t === shownText(l0, RT.vars))) RT.back.pop(); }
   RT.auto = RT.skip = false; RT.chat = null; lastShown = null; updPctl();
   CH_AT = null; RT.soul = state?.soul ? clone(state.soul) : soulFresh(); RT.soul.busy = 0;
@@ -2402,6 +2403,7 @@ function showPlay(first) {
   stage.classList.toggle('nodlg', isPause(l));
   lastShown = l;
   RT.varsBefore = clone(RT.vars);           // 存档存“进入这句之前”的变量，读档时不会重复加
+  (RT.hist || (RT.hist = [])).push({ i: RT.idx, v: clone(RT.varsBefore), b: RT.back.length }); if (RT.hist.length > 500) RT.hist.shift();
   safeSet(l.set, RT.vars); syncGlobals(); soulOnLine(l, RT.varsBefore);
   if (!first) { const vb = RT.varsBefore, va = clone(RT.vars); if (l.se && !RT.skip) setTimeout(() => { if (playing) uiVarSe(vb, va); }, 350); else uiVarSe(vb, va); }   // 本句还有音效：好感/尾鳍声晚一点，不叠在一起
   if (!first && l.bg && l.bg !== prev?.bg && isCG(A(l.bg))) playUi('cg');
@@ -2534,6 +2536,17 @@ function advance() {
   if (l.ending) return showEnding(l.ending);      // 结局：记下来，回标题
   goNext(nextIndex(l));
 }
+// ←键 / “上一句”按钮：回到刚才那一句，变量和回看记录一起退回
+function goBack() {
+  if (!playing || overlayOpen() || RT.chat) return;
+  if (!RT.hist || RT.hist.length < 2) return;
+  stopChoiceTimer(); clearTimers(); RT.auto = RT.skip = false; updPctl();
+  RT.hist.pop(); const p = RT.hist.pop();
+  RT.idx = p.i; RT.vars = clone(p.v); syncGlobals();
+  if (RT.back.length > p.b) RT.back.length = p.b;
+  RT.audioSkipEntrySe = true;
+  showPlay(false);
+}
 function nextIndex(l) {
   if (l.jump && cond(l.jumpIf, RT.vars)) { const j = labelIndex(l.jump); if (j >= 0) return j; }
   return RT.idx + 1;
@@ -2613,6 +2626,7 @@ $('#pctl').addEventListener('click', e => {
   e.stopPropagation();
   const b = e.target.closest('[data-pc]'); if (!b) return;
   const a = b.dataset.pc;
+  if (a === 'prev') return goBack();
   if (a === 'log') showBacklog();
   if (a === 'hide') setHideUI(true);
   if (a === 'save' || a === 'load') showSlots(a);
@@ -3378,7 +3392,8 @@ document.addEventListener('keydown', e => {
     }
     if (overlayOpen() || ([' ', 'Enter'].includes(e.key) && e.target.closest('button,summary,[role=button]'))) return;
     if (e.key.toLowerCase() === 'h' && !e.ctrlKey && !overlayOpen()) return setHideUI(!stage.classList.contains('hideui'));
-    if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); if (stage.classList.contains('hideui')) return setHideUI(false); return advance(); }
+    if (e.key === ' ' || e.key === 'Enter' || e.key === 'ArrowRight') { e.preventDefault(); if (stage.classList.contains('hideui')) return setHideUI(false); return advance(); }
+    if (e.key === 'ArrowLeft') { e.preventDefault(); if (stage.classList.contains('hideui')) setHideUI(false); return goBack(); }
     if (e.key === 'Control' && !RT.skip && !RT.chat) { RT.skip = true; RT.auto = false; updPctl(); kick(); }
     if (e.key.toLowerCase() === 'a' && !e.ctrlKey) { RT.auto = !RT.auto; RT.skip = false; updPctl(); kick(); }
     return;

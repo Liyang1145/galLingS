@@ -1,30 +1,14 @@
 {
   "id": "L29",
   "kind": "sprite",
-  "source": "content/imports/vnstudio/海风与布丁/assets/art-upgrade/L29.webp",
-  "source_sha256": "1b35692eb0a1c6b7ba433d91f2f0025807b9376dfb4a08ac95f9cb8456f54ea5",
-  "model": "gpt-image-2.5",
   "endpoint": "https://api.rinko.ai/v1/images/edits",
-  "size": [
-    1024,
-    1536
-  ],
-  "quality": "high",
-  "background": "transparent",
-  "stream": true,
-  "output_sha256": "d0e93cdfba83d8e893143443ac291477dca45eb38c02dc6a9666adb5b12708e7",
-  "runtime_webp_sha256": "00ebd48c11edaaa33edbef7e29dec3f7de17ad56ea67cf16307610350314e618",
-  "status": "待团队目视验收（自审通过）",
   "requested_model": "gpt-image-2.5",
-  "backend_reported_model": null,
-  "model_selection_verified": false,
-  "requested_size": "1024x1536",
-  "backend_reported_size": "1024x1536",
   "requested_quality": "high",
-  "master_path": "content/assets/art-upgrade/originals/L29.webp",
-  "master_format": "WebP lossless",
-  "master_sha256": "5eb3cf4b0fc3148a406242978434378c09301de1f9e2f75dbe24ce1106ba9692",
-  "superseded_master": "content/assets/art-upgrade/originals/L29_superseded_before_image25_pass2.png",
   "date": "2026-10-17",
-  "batch": "image25-pass2"
+  "batch": "tail-unify-c05",
+  "note": "Tail redrawn to refined C05 standard (user 2026-10-17 09:56); sprites: second pass cut to transparent alpha.",
+  "output_sha256": "2d81462396b442463788bff0cd020a5c97a36573e496f729ff928076e4ed008d",
+  "master_sha256": "fa9cf59654a46cd12866f40b8141714860f9b0df5e088c09d3a9de87849c9ef6",
+  "runtime_webp_sha256": "efe9b7f92754027221a24743a0a9e3d75f0b634e4149bd67435bf7b8c87f86ee",
+  "superseded_master": "content/assets/art-upgrade/originals/L29_superseded_before_tail_c05.webp"
 }

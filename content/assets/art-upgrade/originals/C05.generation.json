@@ -6,9 +6,9 @@
   "date": "2026-10-17",
   "batch": "image25-pass2",
   "base": "content/assets/art-upgrade/originals/C05.png (teammate refined)",
-  "output_sha256": "17ca8715e01b4c7e472f6876f207d6e30b3c02f86f066024ea7c91259d735782",
-  "master_sha256": "5f238054e24d3515ec13e0d8c894afba49b5eeffe1a297a2d44f66718d57e767",
-  "runtime_webp_sha256": "f8a7cd74a337b6ad17fb86bb9d0bbe3080fe76bbdab7e821e33ba14a394f4c37",
-  "revision": 5,
-  "revision_note": "右腿自然化：Image2.5 局部重绘右腿（去掉膝盖鼓包、腿型顺滑、与左腿同粗同长、脚出画），仅合成右腿与右下海底区域 bbox (1596,987)-(2730,1536)；其余与精修原图逐像素一致"
+  "output_sha256": "8b9307b2d08619e84e380a9cd7916102f61de4d889bbafb6b5b4b6f16059d1b0",
+  "master_sha256": "aac7a4e95ef9e4fbaba646a8c0306d45507c54ff51b14d68f1d9ec15051a9c1a",
+  "runtime_webp_sha256": "9cbdbb15091df88b7ab1b95fc570ee72edcc03fff546d43bf81328f516ae4ec0",
+  "revision": 6,
+  "revision_note": "双腿完整化：Image2.5 重绘画面右下（裙下双腿），膝盖自然弯曲、小腿与双脚完整留在画面内，不再被底边截断；上半身/脸/头发与精修原图逐像素一致，改动区 bbox (1000,571)-(2730,1536)"
 }

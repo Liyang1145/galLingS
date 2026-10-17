@@ -1840,10 +1840,10 @@
     "C25": {
       "path": "content/assets/art-upgrade/runtime/C25.webp",
       "sourceMasterPath": "content/assets/art-upgrade/originals/C25.webp",
-      "sourceSha256": "d7f9910e5cbdcf32602d2f9bb682487a375d0f34efd0991174ae5a47f476e060",
-      "sha256": "ba57b8b1ca717444162ce7fd88079d8f6ffbdcad530ce495e84f1832bd358a73",
-      "bytes": 530076,
-      "sourceBytes": 3661796,
+      "sourceSha256": "091bc3fb75cf3b252a2a70b7b081a71449675462daac5cd5b53e8857ec5f4bd2",
+      "sha256": "be5e06de70c39b363b9c924536934628a2a438e10a64883c45438eb69c3fc2c4",
+      "bytes": 582068,
+      "sourceBytes": 3854094,
       "size": [
         2752,
         1536

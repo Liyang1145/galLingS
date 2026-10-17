@@ -26,3 +26,5 @@ pytest 86 passed；WASM 与 Python 逐步 hash、快照一致；离线包用纯�
 ## 下一位 agent 的接续点
 
 需要 AI 模式的桌面版时，可把 Python 服务打成 sidecar 由 Tauri 启动，引擎桥按现有 `/ws` 连接即可。
+
+- 2026-10-18：合入 main（#8/#9 透明鲸鱼 UI），引擎桥钩子无改动；离线包重建（802 文件 195.0 MB，剧本哈希 b5665a7637f124c2 不变），Chromium 实测开局/选项/时间轴回放/存读档通过；pytest 86 passed 2 skipped。

@@ -6,9 +6,9 @@
   "date": "2026-10-17",
   "batch": "image25-pass2",
   "base": "content/assets/art-upgrade/originals/C05.png (teammate refined)",
-  "output_sha256": "b304c8db0b7c02a3203ba388fe2c851904260e4cbff21043a62a34d73fc6aab4",
-  "master_sha256": "e36b1ef87995c12bc3e28da0b8cc08459157c3955c0641b12219a335b131e62a",
-  "runtime_webp_sha256": "e8c90a20a7ccfaaea2581294b4badbb15a39cc5f1b2adf609e9746f4f8e2f4fc",
-  "revision": 2,
-  "revision_note": "user 2026-10-17: right (rear) leg too short — restore full calf/ankle length"
+  "output_sha256": "a9cac2694bd77c18a49c2fa7deac4b4cb5ae8fd063d5a88d3965ffbf13cba14e",
+  "master_sha256": "ebb0c2f58c0e6073857fbee346310b534b573f1a69746a0e05caf719e58b7c23",
+  "runtime_webp_sha256": "d7a51ff3b156e90dbb17c463843d1c2dc7686310cc1e5b1b198da7e2a4519ff5",
+  "revision": 3,
+  "revision_note": "仅延长右腿（脚可出画），其余与精修原图逐像素一致；取代 910ffc0a 版（尾巴偏移）"
 }

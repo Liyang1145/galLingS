@@ -1364,12 +1364,12 @@
     "C05": {
       "path": "content/assets/art-upgrade/runtime/C05.webp",
       "sourceMasterPath": "content/assets/art-upgrade/originals/C05.webp",
-      "sourceSha256": "e36b1ef87995c12bc3e28da0b8cc08459157c3955c0641b12219a335b131e62a",
-      "sha256": "e8c90a20a7ccfaaea2581294b4badbb15a39cc5f1b2adf609e9746f4f8e2f4fc",
-      "bytes": 574012,
-      "sourceBytes": 3703058,
+      "sourceSha256": "ebb0c2f58c0e6073857fbee346310b534b573f1a69746a0e05caf719e58b7c23",
+      "sha256": "d7a51ff3b156e90dbb17c463843d1c2dc7686310cc1e5b1b198da7e2a4519ff5",
+      "bytes": 632646,
+      "sourceBytes": 4017386,
       "size": [
-        2752,
+        2730,
         1536
       ],
       "lossless": false,

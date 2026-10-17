@@ -1,14 +1,13 @@
 {
   "id": "P14",
-  "kind": "sprite",
+  "date": "2026-10-18",
+  "batch": "playtest-ledger-20261018",
+  "note": "试玩账本 #40：笔记本左右页大小不一，Image2.5 仅修笔记本为对称开本，再本地抠图。",
   "endpoint": "https://api.rinko.ai/v1/images/edits",
   "requested_model": "gpt-image-2.5",
   "requested_quality": "high",
-  "date": "2026-10-17",
-  "batch": "tail-unify-c05",
-  "note": "Tail redrawn to refined C05 standard (user 2026-10-17 09:56); sprites: second pass cut to transparent alpha.",
-  "output_sha256": "188aef26afde66ed2718db750f718dd78ec2dfd1a438f1f24f7851a8677d70cd",
-  "master_sha256": "cb5a1c4e1e866e5303299fa9e2a77fabb9efe5ef69f991bc206db3fde34c06dd",
-  "runtime_webp_sha256": "575926c0cc30b148145a702c64f3e42edc19080e414b9471f3ef18f966aa7691",
-  "superseded_master": "content/assets/art-upgrade/originals/P14_superseded_before_tail_c05.webp"
+  "matting": "local rembg isnet-anime + white decontamination",
+  "master_sha256": "906dbc3edcbcd0a9fa3bc91e05f98c3dc13358ff1154280b5af4494652e30d98",
+  "runtime_webp_sha256": "d8f4ea815143edbdd2c2d1512d3769f0b14c5d084cbbac11419ca62eec54d1c2",
+  "superseded_master": "content/assets/art-upgrade/originals/P14_superseded_before_playtest_20261018.webp"
 }

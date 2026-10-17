@@ -1,0 +1,13 @@
+{
+  "id": "B02A",
+  "date": "2026-10-18",
+  "batch": "playtest-ledger-20261018",
+  "note": "试玩账本 #82：新背景 浅滩_午后_晒笔记本（午后金光，礁石上摊开晾晒的笔记本与压石散页），以 B02 为底重绘，2752x1536。",
+  "endpoint": "https://api.rinko.ai/v1/images/edits",
+  "requested_model": "gpt-image-2.5",
+  "requested_quality": "high",
+  "matting": null,
+  "master_sha256": "2d39f22139b59677505022b6f7ce46b5069c473034e67265ace6173b96f4ce10",
+  "runtime_webp_sha256": "2a454708e0f514bce2e4885d3983bf91a2363f501de624f9a3517015f304ecaa",
+  "superseded_master": null
+}

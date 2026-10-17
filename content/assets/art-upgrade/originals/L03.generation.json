@@ -1,14 +1,13 @@
 {
   "id": "L03",
-  "kind": "sprite",
+  "date": "2026-10-18",
+  "batch": "playtest-ledger-20261018",
+  "note": "试玩账本(第三份) #1311：发梢白边/抠图脏 → 白底合成后本地 isnet-anime 重抠去白边，画面不变。",
   "endpoint": "https://api.rinko.ai/v1/images/edits",
   "requested_model": "gpt-image-2.5",
   "requested_quality": "high",
-  "date": "2026-10-17",
-  "batch": "tail-unify-c05",
-  "note": "Tail redrawn to refined C05 standard (user 2026-10-17 09:56); sprites: second pass cut to transparent alpha.",
-  "output_sha256": "de9fdf7ece688e915badf3fc466deea4d9cb0c040b50a8957e929e69e24f5356",
-  "master_sha256": "1eb29787229f2c146cc918299fbd1b5c54a115f1f3cd95cd7702b614619fcbf0",
-  "runtime_webp_sha256": "dd05142bc32c3203ec4d1ebdea7a68a19bce03fea87a6854f908032cba86c35d",
-  "superseded_master": "content/assets/art-upgrade/originals/L03_superseded_before_tail_c05.webp"
+  "matting": "local rembg isnet-anime + white decontamination",
+  "master_sha256": "7de21bd56bb0cdb1e5111c987d4d055d1d02a0fefb0ca9599f6ce7481fb36a69",
+  "runtime_webp_sha256": "c14803ef005e3d6f004260baa1531e9ca8c8302f1d8eedb817b5eeaaba37f7f6",
+  "superseded_master": "content/assets/art-upgrade/originals/L03_superseded_before_playtest_20261018.webp"
 }

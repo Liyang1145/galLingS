@@ -1,12 +1,13 @@
 {
-  "workflow": "user-supplied-refinement",
-  "sourceDelivery": "archive/deliveries/refined-cg-20261016/originals/C06.png",
-  "sourceDeliverySha256": "01bb3c749ce41d12c7708d5771095c5863d25702ce1f9002404dd85aee2b76c0",
-  "archiveSha256": "63786b58ca44ce2255a23964bee84d5e6d70cc3260d7c1b6e1633aeff74b7e04",
-  "requested_model": null,
-  "backend_reported_model": null,
-  "model_selection_verified": false,
-  "requested_quality": null,
-  "backend_reported_quality": null,
-  "note": "用户提供精修成品；未提供该包模型/提示词/原生分辨率记录，不继承旧生成元数据。"
+  "id": "C06",
+  "date": "2026-10-18",
+  "batch": "playtest-ledger-20261018",
+  "note": "试玩账本 #439：CG 深海之光 去掉鞋袜改赤脚；仅脚部区域截取放大重画后羽化合成，其余与原图一致。",
+  "endpoint": "https://api.rinko.ai/v1/images/edits",
+  "requested_model": "gpt-image-2.5",
+  "requested_quality": "high",
+  "matting": null,
+  "master_sha256": "fcbefc1d840466e80b74a67870292bd3b75abefc860dce8f580316b07ce66fff",
+  "runtime_webp_sha256": "e630717f2fa22425d7455ba6063e6f91ad5ba27ca184a785cf0e08dd75b8ea5e",
+  "superseded_master": null
 }

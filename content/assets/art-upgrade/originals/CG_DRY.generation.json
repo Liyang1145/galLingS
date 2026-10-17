@@ -1,0 +1,13 @@
+{
+  "id": "CG_DRY",
+  "date": "2026-10-18",
+  "batch": "playtest-ledger-20261018",
+  "note": "试玩账本 #82：新 CG 晒笔记本（B02A 午后浅滩为底，礁石上晾着笔记本与散页，她抱臂站在三米外水中监视，海鸥）。用于第一话 #80–84。",
+  "endpoint": "https://api.rinko.ai/v1/images/edits",
+  "requested_model": "gpt-image-2.5",
+  "requested_quality": "high",
+  "matting": null,
+  "master_sha256": "4719f92463721a6d4b7162a62172e54eb0a88ad211104f26913fa4009a2beebc",
+  "runtime_webp_sha256": "cb750b891cbd137a308e47a4861e63032cb5b53713c10ed242da374e086720bb",
+  "superseded_master": null
+}

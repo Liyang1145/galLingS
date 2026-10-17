@@ -1,14 +1,13 @@
 {
   "id": "L19",
-  "kind": "sprite",
+  "date": "2026-10-18",
+  "batch": "playtest-ledger-20261018",
+  "note": "试玩账本 #453：膝盖方向错、尾巴未从背后出 → 照 C05 鲸尾标准整张重画（回眸拎裙），本地抠图。",
   "endpoint": "https://api.rinko.ai/v1/images/edits",
   "requested_model": "gpt-image-2.5",
   "requested_quality": "high",
-  "date": "2026-10-17",
-  "batch": "tail-unify-c05",
-  "note": "Tail redrawn to refined C05 standard (user 2026-10-17 09:56); sprites: second pass cut to transparent alpha.",
-  "output_sha256": "892d6fde6e0a096bf0493f108f31ab3f20ec956e8a768502301e9670873ad05b",
-  "master_sha256": "c77fbe3f7749342e15e525ea10c045f18b0910d575fa0506d656d3990d361f3d",
-  "runtime_webp_sha256": "6b3669ec3768ded8137544addd12c3cde98326ddcdee69b9f02e2a07c11702cf",
-  "superseded_master": "content/assets/art-upgrade/originals/L19_superseded_before_tail_c05.webp"
+  "matting": "local rembg isnet-anime + white decontamination",
+  "master_sha256": "77581b8801f8f62e5cc3a3524ed4a7b99fde1f4fe6cadcd4f0881427431da842",
+  "runtime_webp_sha256": "c45e02914414d864bbdcf6f401e451bc561d21878521681110dee1924a97749b",
+  "superseded_master": "content/assets/art-upgrade/originals/L19_superseded_before_playtest_20261018.webp"
 }

@@ -1,14 +1,13 @@
 {
   "id": "L06",
-  "kind": "sprite",
+  "date": "2026-10-18",
+  "batch": "playtest-ledger-20261018",
+  "note": "试玩账本(第三份) #1331：尾巴从两腿间穿到前面 → 仅改尾巴为后腰出、绕到身后上扬，人物不动，本地抠图。",
   "endpoint": "https://api.rinko.ai/v1/images/edits",
   "requested_model": "gpt-image-2.5",
   "requested_quality": "high",
-  "date": "2026-10-17",
-  "batch": "tail-unify-c05",
-  "note": "Tail redrawn to refined C05 standard (user 2026-10-17 09:56); sprites: second pass cut to transparent alpha.",
-  "output_sha256": "989cedcadad4e5f5a955ae0f243458ab8c1890b5a1a043b9829fa675c1b96f67",
-  "master_sha256": "a49c92e1b1f1ab5338fa5576ec3d7b6bc2828aa67cf2a3441a9f1e128aae93b7",
-  "runtime_webp_sha256": "d96f9af0a1034d47a48bf3bedacdbf29e2b9ca855d56e3bca1b93b3595023d78",
-  "superseded_master": "content/assets/art-upgrade/originals/L06_superseded_before_tail_c05.webp"
+  "matting": "local rembg isnet-anime + white decontamination",
+  "master_sha256": "bf1b8e38a18f7e121143403bdce7f7deca82715e021c0fdcc92fbb9341313be5",
+  "runtime_webp_sha256": "7426f6757d6477f368e31d717da2972be3962eaf82b7370079a58ccec13385e6",
+  "superseded_master": "content/assets/art-upgrade/originals/L06_superseded_before_playtest_20261018.webp"
 }

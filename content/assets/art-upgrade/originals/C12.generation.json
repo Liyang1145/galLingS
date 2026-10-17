@@ -1,12 +1,13 @@
 {
-  "workflow": "user-supplied-refinement",
-  "sourceDelivery": "archive/deliveries/refined-cg-20261016/originals/C12.png",
-  "sourceDeliverySha256": "3e53d6fcda31dba3c54af1abda564cf129d590af643ccde335c58f301aa14bc3",
-  "archiveSha256": "63786b58ca44ce2255a23964bee84d5e6d70cc3260d7c1b6e1633aeff74b7e04",
-  "requested_model": null,
-  "backend_reported_model": null,
-  "model_selection_verified": false,
-  "requested_quality": null,
-  "backend_reported_quality": null,
-  "note": "用户提供精修成品；未提供该包模型/提示词/原生分辨率记录，不继承旧生成元数据。"
+  "id": "C12",
+  "date": "2026-10-18",
+  "batch": "playtest-ledger-20261018",
+  "note": "用户 10-18 01:50 截图 #1515：CG_电话 手部有瑕疵 → 截取手部区域放大，Image2.5 重画她握手机的双手与左下伸来的手，羽化合成回原图，其余不变。",
+  "endpoint": "https://api.rinko.ai/v1/images/edits",
+  "requested_model": "gpt-image-2.5",
+  "requested_quality": "high",
+  "matting": null,
+  "master_sha256": "daf9be12d9b8c886d1813624de12cb373161a9436b2d37fd86d86a4b89e51103",
+  "runtime_webp_sha256": "67a5dac75f6e49415d053cdf7b2f001cbee61c5b7a9ef4b242c020fc52aa6061",
+  "superseded_master": null
 }

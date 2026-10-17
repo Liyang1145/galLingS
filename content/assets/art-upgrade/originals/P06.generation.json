@@ -1,14 +1,13 @@
 {
   "id": "P06",
-  "kind": "sprite",
+  "date": "2026-10-18",
+  "batch": "playtest-ledger-20261018",
+  "note": "试玩账本 #93/#136：原图跑形，照 P01 角色与 C05 鲸尾标准整张重画（戒备中好奇：别脸抱臂、偷瞄），白底生成后本地 isnet-anime 抠图。",
   "endpoint": "https://api.rinko.ai/v1/images/edits",
   "requested_model": "gpt-image-2.5",
   "requested_quality": "high",
-  "date": "2026-10-17",
-  "batch": "tail-unify-c05",
-  "note": "Tail redrawn to refined C05 standard (user 2026-10-17 09:56); sprites: second pass cut to transparent alpha.",
-  "output_sha256": "83820a72beda1e33410b7aefb1db5505003ceadb8f6bab96223969036881c961",
-  "master_sha256": "9f53c31fc1c8152ff0639a3ae0d9855582231a40e26f705870a4951d8ecf1b6d",
-  "runtime_webp_sha256": "22839ef5382a381ef07d9772dec40d95ee70f88a406909f17575f94d5b56056f",
-  "superseded_master": "content/assets/art-upgrade/originals/P06_superseded_before_tail_c05.webp"
+  "matting": "local rembg isnet-anime + white decontamination",
+  "master_sha256": "5a18d6229d495379c07ca4facd406e452e3f5346ec9a7f63659375d8d8537422",
+  "runtime_webp_sha256": "4601f42d8dc04797f4f503f2a7cdbfe5abc1dbd843a05d133047a47401c6852c",
+  "superseded_master": "content/assets/art-upgrade/originals/P06_superseded_before_playtest_20261018.webp"
 }

@@ -1,0 +1,13 @@
+{
+  "id": "B15A",
+  "date": "2026-10-18",
+  "batch": "playtest-ledger-20261018",
+  "note": "试玩账本 #161：帐篷_黄昏 加门口小木桌与一盘烤小鱿鱼（与 O12 一致），第一话 #161–167 使用，避免鱿鱼凭空消失。",
+  "endpoint": "https://api.rinko.ai/v1/images/edits",
+  "requested_model": "gpt-image-2.5",
+  "requested_quality": "high",
+  "matting": null,
+  "master_sha256": "9cd1e22ebc6795c2de8973dffd0dfc805a1cfd121e8c8ea708e10c0493c1c86b",
+  "runtime_webp_sha256": "303b7f07fc84966d49e0f1c3a00fdbc4c6176ff484b7f928eeb5a6e6a42b5a88",
+  "superseded_master": null
+}

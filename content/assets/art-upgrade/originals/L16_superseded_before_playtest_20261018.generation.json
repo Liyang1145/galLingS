@@ -1,0 +1,30 @@
+{
+  "id": "L16",
+  "kind": "sprite",
+  "source": "content/imports/vnstudio/海风与布丁/assets/art-upgrade/L16.webp",
+  "source_sha256": "c5bdf0467b80a490b7bce1fc067caecafe984ff9d92e6a82e250ff9270fd887b",
+  "model": "gpt-image-2.5",
+  "endpoint": "https://api.rinko.ai/v1/images/edits",
+  "size": [
+    1024,
+    1536
+  ],
+  "quality": "high",
+  "background": "transparent",
+  "stream": true,
+  "output_sha256": "20eccaf0ef418369715bf1cf0644e0e0ed9a17a77dd30079ada599475b227cbb",
+  "runtime_webp_sha256": "7fd0b33beae8ae6cdd0f7e89f2410c5c98cc0c2a282a78a288376536aa236eb7",
+  "status": "待团队目视验收（自审通过）",
+  "requested_model": "gpt-image-2.5",
+  "backend_reported_model": null,
+  "model_selection_verified": false,
+  "requested_size": "1024x1536",
+  "backend_reported_size": "1024x1536",
+  "requested_quality": "high",
+  "master_path": "content/assets/art-upgrade/originals/L16.webp",
+  "master_format": "WebP lossless",
+  "master_sha256": "fb6542d95251c6565d3097752bd1de299a5c572ac01eb73d60f63d0bef42495b",
+  "superseded_master": "content/assets/art-upgrade/originals/L16_superseded_before_image25_pass2.png",
+  "date": "2026-10-17",
+  "batch": "image25-pass2"
+}

@@ -1,14 +1,13 @@
 {
   "id": "L09",
-  "kind": "sprite",
+  "date": "2026-10-18",
+  "batch": "playtest-ledger-20261018",
+  "note": "全面审视：常服认真验收原图腿被裙子与尾巴挡没、像美人鱼下半身，补出双腿与鞋袜，尾巴改为后腰附加",
   "endpoint": "https://api.rinko.ai/v1/images/edits",
   "requested_model": "gpt-image-2.5",
   "requested_quality": "high",
-  "date": "2026-10-17",
-  "batch": "tail-unify-c05",
-  "note": "Tail redrawn to refined C05 standard (user 2026-10-17 09:56); sprites: second pass cut to transparent alpha.",
-  "output_sha256": "2b18db61ca691eebad979acc71ef7da9cf1e28cb8300b64ea6ace32cea807d06",
-  "master_sha256": "da81d5c2332ba71082d49478a8b590a4e9469127d016534e2e99c53809250406",
-  "runtime_webp_sha256": "35c92f07304f58d08d5c06358fb7bb26152142396fac5cecdf3dfe11778b7cfb",
-  "superseded_master": "content/assets/art-upgrade/originals/L09_superseded_before_tail_c05.webp"
+  "matting": "local rembg isnet-anime + white decontamination",
+  "master_sha256": "1629c82abc41f82820a418d2078aa14b144fb33800c1e17497e1f1859e10600c",
+  "runtime_webp_sha256": "a5d37833126fea78bc407574f6dec2130fe37554c04f0556e370bfab61b54f1e",
+  "superseded_master": "content/assets/art-upgrade/originals/L09_superseded_before_playtest_20261018.webp"
 }

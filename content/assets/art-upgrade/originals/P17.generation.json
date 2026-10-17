@@ -1,14 +1,13 @@
 {
   "id": "P17",
-  "kind": "sprite",
+  "date": "2026-10-18",
+  "batch": "playtest-ledger-20261018",
+  "note": "全面审视：坐姿嗔怪原图发色发型、蝴蝶结与 P13/P15/P16 不一致，以 P16 为底只改表情手势",
   "endpoint": "https://api.rinko.ai/v1/images/edits",
   "requested_model": "gpt-image-2.5",
   "requested_quality": "high",
-  "date": "2026-10-17",
-  "batch": "tail-unify-c05",
-  "note": "Tail redrawn to refined C05 standard (user 2026-10-17 09:56); sprites: second pass cut to transparent alpha.",
-  "output_sha256": "bf1f83e4efab59a307772844356e5dbf066587f8eb96a37f801a57c21cd3479d",
-  "master_sha256": "699426fff76525ba0c6624a014ed77d6295290e627fb9740e4d3485f55a60a2a",
-  "runtime_webp_sha256": "0a77f8d79fedaf5372121617f511b87dff2e312578dad802d8ce6bf9f0a57466",
-  "superseded_master": "content/assets/art-upgrade/originals/P17_superseded_before_tail_c05.webp"
+  "matting": "local rembg isnet-anime + white decontamination",
+  "master_sha256": "b25b44565f0faec67eebd3940a730ac518b42432c803c903a3ccf18d38d5921b",
+  "runtime_webp_sha256": "5e1a809727b47665c2155820cd309b2b31c7c47b3e949c0cb175661f49f4e565",
+  "superseded_master": "content/assets/art-upgrade/originals/P17_superseded_before_playtest_20261018.webp"
 }

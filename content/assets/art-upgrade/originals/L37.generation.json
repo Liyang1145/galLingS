@@ -1,0 +1,13 @@
+{
+  "id": "L37",
+  "date": "2026-10-18",
+  "batch": "playtest-ledger-20261018",
+  "note": "全面审视：旧版泳装立绘画风/发色与现行设定不符，按现行角色+鲸尾标准重画（深蓝泳装、松垮白过膝袜一边滑落）",
+  "endpoint": "https://api.rinko.ai/v1/images/edits",
+  "requested_model": "gpt-image-2.5",
+  "requested_quality": "high",
+  "matting": "local rembg isnet-anime + white decontamination",
+  "master_sha256": "26d52530de7b58d89091d922203f18a29c2d4926f950e7e0eece65ef8be35529",
+  "runtime_webp_sha256": "751f59fe27cb7b98601bdad8046e40f9467329cbac9eb8dee739a9cb0cd81c2d",
+  "superseded_master": null
+}

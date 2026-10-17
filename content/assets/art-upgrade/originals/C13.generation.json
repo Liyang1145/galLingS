@@ -1,12 +1,13 @@
 {
-  "workflow": "user-supplied-refinement",
-  "sourceDelivery": "archive/deliveries/refined-cg-20261016/originals/C13.png",
-  "sourceDeliverySha256": "8f45b3fe0e9bec3def09fa078d80ca29b9c42b61efaa204ce9bf8bd3da266b69",
-  "archiveSha256": "63786b58ca44ce2255a23964bee84d5e6d70cc3260d7c1b6e1633aeff74b7e04",
-  "requested_model": null,
-  "backend_reported_model": null,
-  "model_selection_verified": false,
-  "requested_quality": null,
-  "backend_reported_quality": null,
-  "note": "用户提供精修成品；未提供该包模型/提示词/原生分辨率记录，不继承旧生成元数据。"
+  "id": "C13",
+  "date": "2026-10-18",
+  "batch": "playtest-ledger-20261018",
+  "note": "全面审视：深水区水下仍穿鞋袜，改赤脚（同 C06 处理）",
+  "endpoint": "https://api.rinko.ai/v1/images/edits",
+  "requested_model": "gpt-image-2.5",
+  "requested_quality": "high",
+  "matting": null,
+  "master_sha256": "41fe747662660920e2d0181d8a48b0f4d24ff80bb76f9a8c9b6d72ddb6e07095",
+  "runtime_webp_sha256": "bc27e960d0d5be2a39b8789aff0a18edab4aaf7ce097de70f27f8c74675bc86c",
+  "superseded_master": null
 }

@@ -803,10 +803,10 @@
     "L06": {
       "path": "content/assets/art-upgrade/runtime/L06.webp",
       "sourceMasterPath": "content/assets/art-upgrade/originals/L06.webp",
-      "sourceSha256": "bf1b8e38a18f7e121143403bdce7f7deca82715e021c0fdcc92fbb9341313be5",
-      "sha256": "7426f6757d6477f368e31d717da2972be3962eaf82b7370079a58ccec13385e6",
-      "bytes": 223316,
-      "sourceBytes": 923344,
+      "sourceSha256": "ef0a1c84a30c7cb2cb8227fe382ab3a43e12aeca60bdec59174f7c71213a3e44",
+      "sha256": "756554ff5a20ccf0d77eabbc81b0996a66ca6c4ffe81f60c956efff9cc17e6b4",
+      "bytes": 210518,
+      "sourceBytes": 881248,
       "size": [
         1024,
         1536
@@ -854,10 +854,10 @@
     "L09": {
       "path": "content/assets/art-upgrade/runtime/L09.webp",
       "sourceMasterPath": "content/assets/art-upgrade/originals/L09.webp",
-      "sourceSha256": "da81d5c2332ba71082d49478a8b590a4e9469127d016534e2e99c53809250406",
-      "sha256": "35c92f07304f58d08d5c06358fb7bb26152142396fac5cecdf3dfe11778b7cfb",
-      "bytes": 264984,
-      "sourceBytes": 932614,
+      "sourceSha256": "1629c82abc41f82820a418d2078aa14b144fb33800c1e17497e1f1859e10600c",
+      "sha256": "a5d37833126fea78bc407574f6dec2130fe37554c04f0556e370bfab61b54f1e",
+      "bytes": 199038,
+      "sourceBytes": 778672,
       "size": [
         1024,
         1536
@@ -1431,11 +1431,11 @@
     },
     "C13": {
       "path": "content/assets/art-upgrade/runtime/C13.webp",
-      "sourceMasterPath": "content/assets/art-upgrade/originals/C13.png",
-      "sourceSha256": "8f45b3fe0e9bec3def09fa078d80ca29b9c42b61efaa204ce9bf8bd3da266b69",
-      "sha256": "5df448c724f9bbe8da17527555d7aa00657418865609839879a0f627197039ad",
-      "bytes": 1134154,
-      "sourceBytes": 7552325,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/C13.webp",
+      "sourceSha256": "41fe747662660920e2d0181d8a48b0f4d24ff80bb76f9a8c9b6d72ddb6e07095",
+      "sha256": "bc27e960d0d5be2a39b8789aff0a18edab4aaf7ce097de70f27f8c74675bc86c",
+      "bytes": 748064,
+      "sourceBytes": 5012144,
       "size": [
         3344,
         1882
@@ -1704,10 +1704,10 @@
     "L13": {
       "path": "content/assets/art-upgrade/runtime/L13.webp",
       "sourceMasterPath": "content/assets/art-upgrade/originals/L13.webp",
-      "sourceSha256": "fafa262c4500b2080f8ef13b7b74e66c91fd03c1cf0571648703ece3a8b642f2",
-      "sha256": "709ad3ee5e769f5ae9c625639e4e05059b182b7adce8b125b0f97ac4b092ba28",
-      "bytes": 219012,
-      "sourceBytes": 922788,
+      "sourceSha256": "f600497ec3325ae7d4d046e9d455662f3999dc88d57f03ef4704f09e2eb3e51a",
+      "sha256": "f180cf204d28ce680c930d5e669f5d7a1438026fa12b6214b3fdbae67a82765c",
+      "bytes": 212356,
+      "sourceBytes": 921990,
       "size": [
         1024,
         1536
@@ -1942,10 +1942,10 @@
     "P03": {
       "path": "content/assets/art-upgrade/runtime/P03.webp",
       "sourceMasterPath": "content/assets/art-upgrade/originals/P03.webp",
-      "sourceSha256": "7ae11f9eaa5e5db60f554c3e3d8566d6651f6f98eff9ea90b520764a0516b6ea",
-      "sha256": "77d8fd072e0d00c572f1b12029cdb5eb8dd8242f763baa08cf7844d8daa121f3",
-      "bytes": 336326,
-      "sourceBytes": 1400422,
+      "sourceSha256": "953a04585b077062b7f71b6dc431ce4bc2ff47907ef84f95b98e767a478c1d1c",
+      "sha256": "4e314273f380ffdc2a301c892d991352aab6adcf6f97a494bc053d4e8dda3e84",
+      "bytes": 324926,
+      "sourceBytes": 1333746,
       "size": [
         1024,
         1536
@@ -2180,10 +2180,10 @@
     "P17": {
       "path": "content/assets/art-upgrade/runtime/P17.webp",
       "sourceMasterPath": "content/assets/art-upgrade/originals/P17.webp",
-      "sourceSha256": "699426fff76525ba0c6624a014ed77d6295290e627fb9740e4d3485f55a60a2a",
-      "sha256": "0a77f8d79fedaf5372121617f511b87dff2e312578dad802d8ce6bf9f0a57466",
-      "bytes": 319448,
-      "sourceBytes": 1031514,
+      "sourceSha256": "b25b44565f0faec67eebd3940a730ac518b42432c803c903a3ccf18d38d5921b",
+      "sha256": "5e1a809727b47665c2155820cd309b2b31c7c47b3e949c0cb175661f49f4e565",
+      "bytes": 210334,
+      "sourceBytes": 887406,
       "size": [
         1024,
         1536
@@ -2321,6 +2321,36 @@
       "sourceBytes": 4298368,
       "size": [
         2752,
+        1536
+      ]
+    },
+    "L37": {
+      "path": "content/assets/art-upgrade/runtime/L37.webp",
+      "lossless": false,
+      "resized": false,
+      "backendModel": null,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/L37.webp",
+      "sha256": "751f59fe27cb7b98601bdad8046e40f9467329cbac9eb8dee739a9cb0cd81c2d",
+      "bytes": 168424,
+      "sourceSha256": "26d52530de7b58d89091d922203f18a29c2d4926f950e7e0eece65ef8be35529",
+      "sourceBytes": 659052,
+      "size": [
+        1024,
+        1536
+      ]
+    },
+    "L38": {
+      "path": "content/assets/art-upgrade/runtime/L38.webp",
+      "lossless": false,
+      "resized": false,
+      "backendModel": null,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/L38.webp",
+      "sha256": "7d0fe1343649fef698aac4063b2536b9b9e99c73a7d45d84a13172769cbf54cf",
+      "bytes": 167064,
+      "sourceSha256": "83e7f68c5ce022b71ae18381e601a5db9906fa1358ff70861a4d2103931ce861",
+      "sourceBytes": 665098,
+      "size": [
+        1024,
         1536
       ]
     }

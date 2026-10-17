@@ -1,14 +1,13 @@
 {
   "id": "P03",
-  "kind": "sprite",
+  "date": "2026-10-18",
+  "batch": "playtest-ledger-20261018",
+  "note": "试玩账本 #816：头发与 L35 不统一（左侧半透明鼓包）→ 仅改头发对齐 L35，本地抠图。",
   "endpoint": "https://api.rinko.ai/v1/images/edits",
   "requested_model": "gpt-image-2.5",
   "requested_quality": "high",
-  "date": "2026-10-17",
-  "batch": "tail-unify-c05",
-  "note": "Tail redrawn to refined C05 standard (user 2026-10-17 09:56); sprites: second pass cut to transparent alpha.",
-  "output_sha256": "c14420bfff5aaa6aa4913c68187507b0d9f0910187cf99875daa57176aaa9a26",
-  "master_sha256": "5ac38f352b37796237a0b65368f72e9318713e2dd115feb20f5952f78355aa4f",
-  "runtime_webp_sha256": "cdb41dac71851f8fcc40a95e3baceb9c1ba1bedc362dc3f96545c3751496a2d3",
-  "superseded_master": "content/assets/art-upgrade/originals/P03_superseded_before_tail_c05.webp"
+  "matting": "local rembg isnet-anime + white decontamination",
+  "master_sha256": "7ae11f9eaa5e5db60f554c3e3d8566d6651f6f98eff9ea90b520764a0516b6ea",
+  "runtime_webp_sha256": "77d8fd072e0d00c572f1b12029cdb5eb8dd8242f763baa08cf7844d8daa121f3",
+  "superseded_master": "content/assets/art-upgrade/originals/P03_superseded_before_playtest_20261018.webp"
 }

@@ -2,12 +2,12 @@
   "id": "L06",
   "date": "2026-10-18",
   "batch": "playtest-ledger-20261018",
-  "note": "试玩账本(第三份) #1331：尾巴从两腿间穿到前面 → 仅改尾巴为后腰出、绕到身后上扬，人物不动，本地抠图。",
+  "note": "全面审视：去掉脚下与发梢的灰色投影残留",
   "endpoint": "https://api.rinko.ai/v1/images/edits",
   "requested_model": "gpt-image-2.5",
   "requested_quality": "high",
   "matting": "local rembg isnet-anime + white decontamination",
-  "master_sha256": "bf1b8e38a18f7e121143403bdce7f7deca82715e021c0fdcc92fbb9341313be5",
-  "runtime_webp_sha256": "7426f6757d6477f368e31d717da2972be3962eaf82b7370079a58ccec13385e6",
+  "master_sha256": "ef0a1c84a30c7cb2cb8227fe382ab3a43e12aeca60bdec59174f7c71213a3e44",
+  "runtime_webp_sha256": "756554ff5a20ccf0d77eabbc81b0996a66ca6c4ffe81f60c956efff9cc17e6b4",
   "superseded_master": "content/assets/art-upgrade/originals/L06_superseded_before_playtest_20261018.webp"
 }

@@ -1,30 +1,13 @@
 {
   "id": "L13",
-  "kind": "sprite",
-  "source": "content/imports/vnstudio/海风与布丁/assets/art-upgrade/L13.webp",
-  "source_sha256": "cd0738a4865dc20165e05979cad68b507f93c516ba5d3e4d1e0d96d6ed3c313c",
-  "model": "gpt-image-2.5",
+  "date": "2026-10-18",
+  "batch": "playtest-ledger-20261018",
+  "note": "试玩账本 #529：白吊带裙尾巴换为 C05 标准鲸尾（后腰出、扇贝分界、双翼尾鳍、新月纹），人物不动。",
   "endpoint": "https://api.rinko.ai/v1/images/edits",
-  "size": [
-    1024,
-    1536
-  ],
-  "quality": "high",
-  "background": "transparent",
-  "stream": true,
-  "output_sha256": "b334a970e104cb80a21a219fc37291ec2768593bf2959d2a3b682dd08e64df71",
-  "runtime_webp_sha256": "fa318a7db52b88a8056129302a6ba50d8d54ba164d6e1f6feb20d7e669cd1d9e",
-  "status": "待团队目视验收（自审通过）",
   "requested_model": "gpt-image-2.5",
-  "backend_reported_model": null,
-  "model_selection_verified": false,
-  "requested_size": "1024x1536",
-  "backend_reported_size": "1024x1536",
   "requested_quality": "high",
-  "master_path": "content/assets/art-upgrade/originals/L13.webp",
-  "master_format": "WebP lossless",
-  "master_sha256": "aabb23ff64e15aa388d85932a564f9277b4a847d61d6d0a956bf4742d296cf41",
-  "superseded_master": "content/assets/art-upgrade/originals/L13_superseded_before_image25_pass2.png",
-  "date": "2026-10-17",
-  "batch": "image25-pass2"
+  "matting": "local rembg isnet-anime + white decontamination",
+  "master_sha256": "fafa262c4500b2080f8ef13b7b74e66c91fd03c1cf0571648703ece3a8b642f2",
+  "runtime_webp_sha256": "709ad3ee5e769f5ae9c625639e4e05059b182b7adce8b125b0f97ac4b092ba28",
+  "superseded_master": "content/assets/art-upgrade/originals/L13_superseded_before_playtest_20261018.webp"
 }

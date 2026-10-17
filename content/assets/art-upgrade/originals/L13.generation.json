@@ -2,12 +2,12 @@
   "id": "L13",
   "date": "2026-10-18",
   "batch": "playtest-ledger-20261018",
-  "note": "试玩账本 #529：白吊带裙尾巴换为 C05 标准鲸尾（后腰出、扇贝分界、双翼尾鳍、新月纹），人物不动。",
+  "note": "全面审视：吊带裙尾巴悬空不接身体，改为后腰尾根清楚、沿腿侧垂下",
   "endpoint": "https://api.rinko.ai/v1/images/edits",
   "requested_model": "gpt-image-2.5",
   "requested_quality": "high",
   "matting": "local rembg isnet-anime + white decontamination",
-  "master_sha256": "fafa262c4500b2080f8ef13b7b74e66c91fd03c1cf0571648703ece3a8b642f2",
-  "runtime_webp_sha256": "709ad3ee5e769f5ae9c625639e4e05059b182b7adce8b125b0f97ac4b092ba28",
+  "master_sha256": "f600497ec3325ae7d4d046e9d455662f3999dc88d57f03ef4704f09e2eb3e51a",
+  "runtime_webp_sha256": "f180cf204d28ce680c930d5e669f5d7a1438026fa12b6214b3fdbae67a82765c",
   "superseded_master": "content/assets/art-upgrade/originals/L13_superseded_before_playtest_20261018.webp"
 }

@@ -1,0 +1,13 @@
+{
+  "id": "L38",
+  "date": "2026-10-18",
+  "batch": "playtest-ledger-20261018",
+  "note": "全面审视：泳装害羞同上重画，耳鳍泛红、拽裙摆",
+  "endpoint": "https://api.rinko.ai/v1/images/edits",
+  "requested_model": "gpt-image-2.5",
+  "requested_quality": "high",
+  "matting": "local rembg isnet-anime + white decontamination",
+  "master_sha256": "83e7f68c5ce022b71ae18381e601a5db9906fa1358ff70861a4d2103931ce861",
+  "runtime_webp_sha256": "7d0fe1343649fef698aac4063b2536b9b9e99c73a7d45d84a13172769cbf54cf",
+  "superseded_master": null
+}

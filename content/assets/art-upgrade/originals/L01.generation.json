@@ -1,0 +1,14 @@
+{
+  "id": "L01",
+  "kind": "sprite",
+  "endpoint": "https://api.rinko.ai/v1/images/edits",
+  "requested_model": "gpt-image-2.5",
+  "requested_quality": "high",
+  "date": "2026-10-17",
+  "batch": "tail-unify-c05",
+  "note": "Tail redrawn to refined C05 standard (user 2026-10-17 09:56); sprites: second pass cut to transparent alpha.",
+  "output_sha256": "a9aceeb3e9f3000268c0f8df935590a7bdb98bbe8e8f4bbdbe858e23c36c76a6",
+  "master_sha256": "670c83ba222800ef3488af5f3568479fbea08b3cd3808707a9bb2991204bcca8",
+  "runtime_webp_sha256": "f07abe2f04d30f766a9be54f6474aad883daf7f6d41ed3772454c2e23a1e7e2d",
+  "superseded_master": "content/assets/art-upgrade/originals/L01_superseded_before_tail_c05.webp"
+}

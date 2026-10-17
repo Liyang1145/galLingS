@@ -1,30 +1,14 @@
 {
-  "auth_mode": "Codex ChatGPT OAuth",
-  "endpoint": "https://chatgpt.com/backend-api/codex/images/edits",
-  "requested_model": "gpt-image-2.5-flare",
-  "backend_reported_model": null,
-  "model_selection_verified": false,
-  "requested_size": "1536x2304",
-  "backend_reported_size": "1024x1536",
-  "requested_quality": "max",
-  "backend_reported_quality": "medium",
-  "usage": {
-    "input_tokens": 4685,
-    "input_tokens_details": {
-      "image_tokens": 4266,
-      "text_tokens": 419
-    },
-    "output_tokens": 1372,
-    "output_tokens_details": {
-      "image_tokens": 1372,
-      "text_tokens": 0
-    },
-    "total_tokens": 6057
-  },
-  "elapsed_seconds": 52.19,
-  "created": 1791981776,
-  "reference_image_count": 3,
-  "outputs": [
-    "C:\\Users\\袁力阳\\Documents\\Codex\\2026-10-10\\new-chat\\work\\ambient-audio-checkout-proxy\\content\\assets\\art-upgrade\\originals\\L27.png"
-  ]
+  "id": "L27",
+  "kind": "sprite",
+  "endpoint": "https://api.rinko.ai/v1/images/edits",
+  "requested_model": "gpt-image-2.5",
+  "requested_quality": "high",
+  "date": "2026-10-17",
+  "batch": "tail-unify-c05",
+  "note": "Tail redrawn to refined C05 standard (user 2026-10-17 09:56); sprites: second pass cut to transparent alpha.",
+  "output_sha256": "7c08e8358b2da7beeaf79aa4a6ec4dad568d15662eddb278cc0095c876fcea5f",
+  "master_sha256": "a7e9925a4ecf70fc4a6a2dd6ead08c2c5b84f24d598aab38f36b902fcc6a76f7",
+  "runtime_webp_sha256": "fb45b2dfb9f577ab6c83c845d9bb14b6db9200e276fa6901df409bf8c0e494ea",
+  "superseded_master": "content/assets/art-upgrade/originals/L27_superseded_before_tail_c05.webp"
 }

@@ -1,1 +1,4 @@
-用户提供《修复后CG图包.zip》中的C05：以成品为准，统一细长连续尾柄、双叶尾鳍和白色圆形海洋纹样；保留角色与剧情动作。原始提示词未随包提供。
+Her right leg (the rear leg under the whale tail, whose short shin and bare foot are at the lower right) is too short. Inside the editable area only, redraw it so that the leg is about as long as her left leg: continue the shin naturally from the knee down and to the right, with a proper long calf and ankle, the foot exiting past the bottom-right edge of the frame (the foot does not need to be visible). Fill the rest of the area with the same sunlit sandy seabed and rocks. Match skin tone, caustic light pattern, line art and rendering exactly.
+
+[Revision 3: mask-limited edit; only lower-right leg region (x>=1820,y>=1215 in 2730x1536) composited onto teammate original refined/C05.png; tail/body/everything else pixel-identical to original. Replaces revision 2 (910ffc0a) which shifted the tail.]
+

@@ -1,0 +1,30 @@
+{
+  "id": "O10",
+  "kind": "CG",
+  "source": "content/imports/vnstudio/海风与布丁/assets/art-upgrade/O10.webp",
+  "source_sha256": "5441643c3d8d021d91855de6d1aed91c16bc72fc623eec5985d048aa1229522e",
+  "model": "gpt-image-2.5",
+  "endpoint": "https://api.rinko.ai/v1/images/edits",
+  "size": [
+    2752,
+    1536
+  ],
+  "quality": "high",
+  "background": "opaque",
+  "stream": true,
+  "output_sha256": "f4aa769a5839c644968f359c0357e531e12b1adaa9059e51826f6e3440fb89b1",
+  "runtime_webp_sha256": "4c41d56a5832e9060d7c4996b5ffa247d59c56953a74471052881301cf61154c",
+  "status": "待团队目视验收（自审通过）",
+  "requested_model": "gpt-image-2.5",
+  "backend_reported_model": null,
+  "model_selection_verified": false,
+  "requested_size": "2752x1536",
+  "backend_reported_size": "2752x1536",
+  "requested_quality": "high",
+  "master_path": "content/assets/art-upgrade/originals/O10.webp",
+  "master_format": "WebP lossless",
+  "master_sha256": "e9e89ee051b0d32067dfb27a06b4c72df8febb429d59e54ad7b291138db5e468",
+  "superseded_master": "content/assets/art-upgrade/originals/O10_superseded_before_image25_pass2.png",
+  "date": "2026-10-17",
+  "batch": "image25-pass2"
+}

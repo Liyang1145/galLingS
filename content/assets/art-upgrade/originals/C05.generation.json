@@ -6,9 +6,9 @@
   "date": "2026-10-17",
   "batch": "image25-pass2",
   "base": "content/assets/art-upgrade/originals/C05.png (teammate refined)",
-  "output_sha256": "693d4c8a47a1e892ef7eddc162438aa423a67fc8eed8146bf2bc79d96767be67",
-  "master_sha256": "e6bfb290d54ed6ee28e8d77dd4a103a1689ecfbf7f7bda3402f51e1ae783fa02",
-  "runtime_webp_sha256": "22721a20b405ae954976aa34a8fb3f83fbd08c39bacc17dee2a86a8c63709bda",
-  "revision": 7,
-  "revision_note": "恢复原构图（双腿斜向右下出画）；裙下整块腿区涂空后由 Image2.5 从零重绘双腿与右下海底，消除旧腿的鼓包/接缝瑕疵；腿区外与精修原图逐像素一致"
+  "output_sha256": "00dc5089ebb3863659876c7551f02bd48273c46ef6f6fa9a4334a37b035dc723",
+  "master_sha256": "b5ab9e662860da8e064ccf7e96002731cef8fd9c5efd83f14ece16c8ad27f087",
+  "runtime_webp_sha256": "672cf7080c832727bf3ae33e435ab114750eb25318f27c1b126206da6fb53953",
+  "revision": 8,
+  "revision_note": "回到队友精修原图重做：左腿完全不动，仅右腿区域涂空后由 Image2.5 照左腿感觉重绘（同样修长、斜向右下出画）及右侧海底；改动 bbox (1593, 1027, 2730, 1536)，其余与精修原图逐像素一致"
 }

@@ -1363,13 +1363,13 @@
     },
     "C05": {
       "path": "content/assets/art-upgrade/runtime/C05.webp",
-      "sourceMasterPath": "content/assets/art-upgrade/originals/C05.png",
-      "sourceSha256": "84989ef6f7fb9eb40b2c5c0f96d0666779367a2c2bba21acc65e2704d7e7cb10",
-      "sha256": "3e7203c79941e4e9c71ae268fc4d433e266f019033d3fe885e0588ffebb7c084",
-      "bytes": 902804,
-      "sourceBytes": 5332085,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/C05.webp",
+      "sourceSha256": "e36b1ef87995c12bc3e28da0b8cc08459157c3955c0641b12219a335b131e62a",
+      "sha256": "e8c90a20a7ccfaaea2581294b4badbb15a39cc5f1b2adf609e9746f4f8e2f4fc",
+      "bytes": 574012,
+      "sourceBytes": 3703058,
       "size": [
-        2730,
+        2752,
         1536
       ],
       "lossless": false,

@@ -1,12 +1,14 @@
 {
-  "workflow": "user-supplied-refinement",
-  "sourceDelivery": "archive/deliveries/refined-cg-20261016/originals/C05.png",
-  "sourceDeliverySha256": "84989ef6f7fb9eb40b2c5c0f96d0666779367a2c2bba21acc65e2704d7e7cb10",
-  "archiveSha256": "63786b58ca44ce2255a23964bee84d5e6d70cc3260d7c1b6e1633aeff74b7e04",
-  "requested_model": null,
-  "backend_reported_model": null,
-  "model_selection_verified": false,
-  "requested_quality": null,
-  "backend_reported_quality": null,
-  "note": "用户提供精修成品；未提供该包模型/提示词/原生分辨率记录，不继承旧生成元数据。"
+  "id": "C05",
+  "endpoint": "https://api.rinko.ai/v1/images/edits",
+  "requested_model": "gpt-image-2.5",
+  "requested_quality": "high",
+  "date": "2026-10-17",
+  "batch": "image25-pass2",
+  "base": "content/assets/art-upgrade/originals/C05.png (teammate refined)",
+  "output_sha256": "b304c8db0b7c02a3203ba388fe2c851904260e4cbff21043a62a34d73fc6aab4",
+  "master_sha256": "e36b1ef87995c12bc3e28da0b8cc08459157c3955c0641b12219a335b131e62a",
+  "runtime_webp_sha256": "e8c90a20a7ccfaaea2581294b4badbb15a39cc5f1b2adf609e9746f4f8e2f4fc",
+  "revision": 2,
+  "revision_note": "user 2026-10-17: right (rear) leg too short — restore full calf/ankle length"
 }

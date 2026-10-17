@@ -6,9 +6,9 @@
   "date": "2026-10-17",
   "batch": "image25-pass2",
   "base": "content/assets/art-upgrade/originals/C05.png (teammate refined)",
-  "output_sha256": "a79c4a4099f495d622eda9dea87eef85dc06afc298503e13bdfa8e4882be0927",
-  "master_sha256": "fca1f72a390eda514a60b7d5d4ee7aacb2bbe3e514b26d3f6c065635bb297fe2",
-  "runtime_webp_sha256": "b783e7f85c9cdd698ad76bad3ca0ce79af718990216261946fcd8a9b256704d3",
-  "revision": 9,
-  "revision_note": "从精修原图改：左腿不动，右腿以左腿裁图为参考由 Image2.5 重绘，补出膝盖、大腿体积、阴影与水光纹，不再像光滑棍子；改动 bbox (1596, 1028, 2730, 1536)，其余与精修原图逐像素一致"
+  "output_sha256": "373c6a5a8e1a430a7a16cc74a58756daf28bcaaf781f11a76086d4f689f3c2eb",
+  "master_sha256": "85647a358e1d34fa53753ae3af5bc937b826bb2016095f06a18a32e976b4240c",
+  "runtime_webp_sha256": "a48293382c63ff6c2e781b7f0f3d74987cef02b7d050534e68245115484a6d0f",
+  "revision": 10,
+  "revision_note": "按用户指定的第1版（右腿伸直、脚在右下）为底：尾巴放回精修原图位置（尾巴及上半身直接取精修原图），右腿以左腿裁图为参考由 Image2.5 画丰满；改动 bbox (1593, 1026, 2730, 1536)，其余与精修原图逐像素一致"
 }

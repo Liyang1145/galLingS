@@ -2316,10 +2316,10 @@
       "resized": false,
       "backendModel": null,
       "sourceMasterPath": "content/assets/art-upgrade/originals/CG_DRY.webp",
-      "sha256": "cb750b891cbd137a308e47a4861e63032cb5b53713c10ed242da374e086720bb",
-      "bytes": 650956,
-      "sourceSha256": "4719f92463721a6d4b7162a62172e54eb0a88ad211104f26913fa4009a2beebc",
-      "sourceBytes": 4298368,
+      "sha256": "5e11fdcbe9fefb39be58c83ea5b8e31e97575e38d36786ccadabba5d3e51e294",
+      "bytes": 1056368,
+      "sourceSha256": "33f8b18c7687817b812abcd1b3c3c1d3e76b107965b3e59874cefed33fdb453d",
+      "sourceBytes": 4298802,
       "size": [
         2752,
         1536

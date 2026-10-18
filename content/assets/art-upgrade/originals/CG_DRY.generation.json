@@ -7,7 +7,10 @@
   "requested_model": "gpt-image-2.5",
   "requested_quality": "high",
   "matting": null,
-  "master_sha256": "4719f92463721a6d4b7162a62172e54eb0a88ad211104f26913fa4009a2beebc",
-  "runtime_webp_sha256": "cb750b891cbd137a308e47a4861e63032cb5b53713c10ed242da374e086720bb",
-  "superseded_master": null
+  "master_sha256": "33f8b18c7687817b812abcd1b3c3c1d3e76b107965b3e59874cefed33fdb453d",
+  "runtime_webp_sha256": "5e11fdcbe9fefb39be58c83ea5b8e31e97575e38d36786ccadabba5d3e51e294",
+  "superseded_master": null,
+  "revision": 1,
+  "output_sha256": "98a78dcecfb3159c3c84716d13f8da956ff854b6d67942686111a60cef909714",
+  "revision_note": "尾巴末端去掉多出的小尾鳍，照 L01 改为一对完整尾鳍、尾端入水（Image2.5 局部重画后只合成尾巴区）"
 }

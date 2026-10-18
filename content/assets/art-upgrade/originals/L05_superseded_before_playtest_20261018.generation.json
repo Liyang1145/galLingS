@@ -1,14 +1,13 @@
 {
   "id": "L05",
-  "kind": "sprite",
+  "date": "2026-10-18",
+  "batch": "playtest-ledger-20261018",
+  "note": "试玩账本 #24：抠图残留白雾/残影，改为白底合成后本地 isnet-anime 重新抠图并去白边；画面内容不变。",
   "endpoint": "https://api.rinko.ai/v1/images/edits",
   "requested_model": "gpt-image-2.5",
   "requested_quality": "high",
-  "date": "2026-10-17",
-  "batch": "tail-unify-c05",
-  "note": "Tail redrawn to refined C05 standard (user 2026-10-17 09:56); sprites: second pass cut to transparent alpha.",
-  "output_sha256": "d5a76878fdc5cfa263660149f4f50ae3442d2c310500d08bb6b43bed5dcfa25b",
-  "master_sha256": "bab953104c216861a01eaf9b6af6f72cd6922d4c8b6aef80ca7671cf9b900e3d",
-  "runtime_webp_sha256": "bdb272f94b5408d14c44f152e0da0db4c8efe09cf8e5b700bdec680a87582c87",
-  "superseded_master": "content/assets/art-upgrade/originals/L05_superseded_before_tail_c05.webp"
+  "matting": "local rembg isnet-anime + white decontamination",
+  "master_sha256": "b2dcf3a031e212363d4ebec45814f0cf97bad72cb29806f54903e529d1b54d32",
+  "runtime_webp_sha256": "883717a078a51625b7d05ab6fad3b2f9d02eba0e19d3d59420e8a90f72414dd9",
+  "superseded_master": "content/assets/art-upgrade/originals/L05_superseded_before_playtest_20261018.webp"
 }

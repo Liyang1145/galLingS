@@ -2,12 +2,12 @@
   "id": "L05",
   "date": "2026-10-18",
   "batch": "playtest-ledger-20261018",
-  "note": "试玩账本 #24：抠图残留白雾/残影，改为白底合成后本地 isnet-anime 重新抠图并去白边；画面内容不变。",
+  "note": "用户 10-18 11:45 亲自改好的 L05 生气（透明底 1254x1254）原样换入：按旧版人物高度缩放进 1024x1536 画布、脚底对齐，清掉 alpha<16% 薄雾。原稿存 docs/collab/playtest/L05_用户改稿_20261018.png。",
   "endpoint": "https://api.rinko.ai/v1/images/edits",
   "requested_model": "gpt-image-2.5",
   "requested_quality": "high",
   "matting": "local rembg isnet-anime + white decontamination",
-  "master_sha256": "b2dcf3a031e212363d4ebec45814f0cf97bad72cb29806f54903e529d1b54d32",
-  "runtime_webp_sha256": "883717a078a51625b7d05ab6fad3b2f9d02eba0e19d3d59420e8a90f72414dd9",
+  "master_sha256": "4af8bd9151d9bd7a8e9aedf2bc6f0fac71bcdb789905b0e69d2b53d3ba4ad5b5",
+  "runtime_webp_sha256": "c13aafdde5a2480a178a0ed276367022adb0eeea1bf1cd38d315c46959a69117",
   "superseded_master": "content/assets/art-upgrade/originals/L05_superseded_before_playtest_20261018.webp"
 }

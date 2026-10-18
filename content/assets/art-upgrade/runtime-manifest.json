@@ -786,10 +786,10 @@
     "L05": {
       "path": "content/assets/art-upgrade/runtime/L05.webp",
       "sourceMasterPath": "content/assets/art-upgrade/originals/L05.webp",
-      "sourceSha256": "b2dcf3a031e212363d4ebec45814f0cf97bad72cb29806f54903e529d1b54d32",
-      "sha256": "883717a078a51625b7d05ab6fad3b2f9d02eba0e19d3d59420e8a90f72414dd9",
-      "bytes": 215878,
-      "sourceBytes": 823366,
+      "sourceSha256": "4af8bd9151d9bd7a8e9aedf2bc6f0fac71bcdb789905b0e69d2b53d3ba4ad5b5",
+      "sha256": "c13aafdde5a2480a178a0ed276367022adb0eeea1bf1cd38d315c46959a69117",
+      "bytes": 230806,
+      "sourceBytes": 888390,
       "size": [
         1024,
         1536

@@ -599,10 +599,10 @@
     "C02": {
       "path": "content/assets/art-upgrade/runtime/C02.webp",
       "sourceMasterPath": "content/assets/art-upgrade/originals/C02.png",
-      "sourceSha256": "5e11ca641ffc9e10ca38e588bf7da934ed7c53b4c76c947952818545169eadbc",
-      "sha256": "363be5bf7a0231f0aafd26f4ccf523f0f354118a951f54f287de54724b8b5075",
-      "bytes": 1043610,
-      "sourceBytes": 5674071,
+      "sourceSha256": "ccffc63ed7a07d44c01c03484fad4413ff759fdd7bc58c2312379a90691e2602",
+      "sha256": "cd187701e35497fa454d3deff3085894e666aea3852ecb0071b4ed34535854d7",
+      "bytes": 585682,
+      "sourceBytes": 5098070,
       "size": [
         2752,
         1536

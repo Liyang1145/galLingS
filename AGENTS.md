@@ -1,10 +1,6 @@
 # 团队 agent 开工入口
 
-- **2026-10-17音乐新决定：最早《翡翠之梦》定义为见面曲，主曲另定。** 原MP3、稳定ID及当前播放位置暂保留；新主曲与变奏基准未定，不能因旧ID含main或M6/E3/M7同SHA就标主曲完成。先读[音乐进度](docs/content/music-progress.md)和[定位记录](docs/collab/work-ledger/emerald-meeting-cue.md)。
-
-- **2026-10-17角色配音：** 鲸鱼小姐与配角台词用 qwen-audio-3.1-tts-next 配音，主角不配；已接入530/1525句（`voice`字段+`assets/vo/`），其余待百炼账户充值后用同一参考音续配。见[配音记录](docs/collab/work-ledger/voice-over.md)与`content/audio/voice-over.json`，不改文案/视觉/BGM。
-
-- **2026-10-17补齐包内容已纳入`fix/character-performance`分支：** 407份原件/运行图/game.js/开发库/音效记录和音乐定义文档，另补[音效缺失清单](docs/content/sfx-gaps.md)。先读[接手说明](docs/collab/接手说明.md)与[入库记录](docs/collab/work-ledger/completion-package-publication.md)；旧“本地未上传”是历史快照，不再要求手动补包。**全部CG暂停、C27全弃用仍有效**，不能借此恢复制作。main不自动合并，项目不发新版本。
+- **现行状态（2026-10-18）先读 [接手说明](docs/collab/接手说明.md) 和 [待办总表](docs/collab/待办总表.md)。** 10-17 用户已撤销“CG 全部暂停”，恢复用 Image2.5 修图；鲸尾一律按精修包 C05 标准做。接续分支是 `fix/character-performance`，已合入 art/image25-pass2 和 Atri 的鲸鱼 UI（PR #8/#9）；main 没有合并本分支。下面 10-17 及更早的条目（包括“全部CG暂停”“530句配音待续”“M1/E4”等数字）都是历史快照。
 
 下列带日期记录和数字为各次历史快照；与最新接手说明冲突时，以用户新指令及接手说明为准。
 

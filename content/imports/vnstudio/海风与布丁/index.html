@@ -507,8 +507,63 @@ body.playing #soulTab.show{display:flex}
 #plgToast.show{opacity:1;transform:translate(-50%,0)}
 #endcard button.pb{background:var(--acc);color:#000;border-color:transparent;font-weight:600}
 #title.glass button:nth-child(5){animation-delay:.83s}#title.glass button:nth-child(6){animation-delay:.95s}#title.glass button:nth-child(7){animation-delay:1.07s}
+/* 玩家操作统一叠化；只改变视觉，不延迟剧情、变量或存档。 */
+body.playing #stage button{transition:background-color .18s ease,color .18s ease,border-color .18s ease,box-shadow .18s ease,opacity .18s ease,transform .25s ease}
+body.playing #choices.show{animation:vnChoiceIn .28s ease-out both}
+@keyframes vnChoiceIn{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){body.playing #choices.show{animation:none}body.playing #stage button{transition:none}}
 </style>
 <link rel="stylesheet" href="game-polish.css">
+<!-- WHALE_UI_APPROVED_START -->
+<style id="whale-approved-ui">
+/* Approved whale UI. Artwork is embedded by apply-whale-ui.cjs; no external dependencies. */
+body.game #stage{--whale-menu:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MjAiIGhlaWdodD0iNzYiIHZpZXdCb3g9IjIwIDM0IDUyMCA3NiIgZmlsbD0ibm9uZSI+Cjx0aXRsZT5D54mI5byA5pS+5Y+M5rC05bmz57q/IMK3IOS4u+mhteS/ruato+eJiDwvdGl0bGU+CjxkZWZzPgogPGxpbmVhckdyYWRpZW50IGlkPSJ3YXNoIj48c3RvcCBzdG9wLWNvbG9yPSIjNDI2RDk2IiBzdG9wLW9wYWNpdHk9IjAiLz48c3RvcCBvZmZzZXQ9Ii4xNiIgc3RvcC1jb2xvcj0iIzQyNkQ5NiIgc3RvcC1vcGFjaXR5PSIuNTQiLz48c3RvcCBvZmZzZXQ9Ii4zOCIgc3RvcC1jb2xvcj0iIzhCQjlEQyIgc3RvcC1vcGFjaXR5PSIuNzgiLz48c3RvcCBvZmZzZXQ9Ii43IiBzdG9wLWNvbG9yPSIjOEJCOURDIiBzdG9wLW9wYWNpdHk9Ii43NCIvPjxzdG9wIG9mZnNldD0iLjg2IiBzdG9wLWNvbG9yPSIjNDI2RDk2IiBzdG9wLW9wYWNpdHk9Ii41NCIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzQyNkQ5NiIgc3RvcC1vcGFjaXR5PSIwIi8+PC9saW5lYXJHcmFkaWVudD4KIDxsaW5lYXJHcmFkaWVudCBpZD0ibGluZSI+PHN0b3Agc3RvcC1jb2xvcj0iI0RERjJGRiIgc3RvcC1vcGFjaXR5PSIwIi8+PHN0b3Agb2Zmc2V0PSIuMSIgc3RvcC1jb2xvcj0iI0RERjJGRiIgc3RvcC1vcGFjaXR5PSIuNzIiLz48c3RvcCBvZmZzZXQ9Ii45IiBzdG9wLWNvbG9yPSIjRERGMkZGIiBzdG9wLW9wYWNpdHk9Ii43MiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI0RERjJGRiIgc3RvcC1vcGFjaXR5PSIwIi8+PC9saW5lYXJHcmFkaWVudD4KIDxzeW1ib2wgaWQ9IndoYWxlIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTIzLjc0OCA0LjQ4MmMtLjI1NC0uMTI0LS4zNjQuMTEzLS41MTIuMjM0LS4wNTEuMDM5LS4wOTQuMDktLjEzNy4xMzYtLjM3Mi4zOTctLjgwNi42NTctMS4zNzMuNjI2LS44MjktLjA0Ni0xLjUzNy4yMTQtMi4xNjMuODQ4LS4xMzMtLjc4Mi0uNTc1LTEuMjQ4LTEuMjQ3LTEuNTQ4LS4zNTItLjE1Ni0uNzA4LS4zMTEtLjk1NS0uNjUtLjE3Mi0uMjQxLS4yMTktLjUxLS4zMDUtLjc3NC0uMDU1LS4xNi0uMTEtLjMyMy0uMjkzLS4zNS0uMi0uMDMxLS4yNzguMTM2LS4zNTYuMjc2LS4zMTMuNTcyLS40MzQgMS4yMDItLjQyMiAxLjg0LjAyNyAxLjQzNi42MzMgMi41OCAxLjgzOCAzLjM5My4xMzcuMDkzLjE3Mi4xODcuMTI5LjMyMy0uMDgyLjI4LS4xOC41NTItLjI2Ni44MzMtLjA1NS4xNzktLjEzNy4yMTctLjMyOS4xNGE1LjUyNiA1LjUyNiAwIDAxLTEuNzM2LTEuMThjLS44NTctLjgyOC0xLjYzMS0xLjc0Mi0yLjU5Ny0yLjQ1OGExMS4zNjUgMTEuMzY1IDAgMDAtLjY4OS0uNDcxYy0uOTg1LS45NTcuMTMtMS43NDMuMzg4LTEuODM2LjI3LS4wOTguMDkzLS40MzItLjc3OS0uNDI4LS44NzIuMDA0LTEuNjcuMjk1LTIuNjg3LjY4NGEzLjA1NSAzLjA1NSAwIDAxLS40NjUuMTM3IDkuNTk3IDkuNTk3IDAgMDAtMi44ODMtLjEwMmMtMS44ODUuMjEtMy4zOSAxLjEwMi00LjQ5NyAyLjYyM0MuMDgyIDguNjA2LS4yMzEgMTAuNjg0LjE1MiAxMi44NWMuNDAzIDIuMjg0IDEuNTY5IDQuMTc1IDMuMzYgNS42NTMgMS44NTggMS41MzMgMy45OTcgMi4yODQgNi40MzggMi4xNCAxLjQ4Mi0uMDg1IDMuMTMzLS4yODQgNC45OTQtMS44Ni40Ny4yMzQuOTYyLjMyNyAxLjc4LjM5Ny42My4wNTkgMS4yMzYtLjAzIDEuNzA1LS4xMjguNzM1LS4xNTYuNjg0LS44MzcuNDE5LS45NjEtMi4xNTUtMS4wMDQtMS42ODItLjU5NS0yLjExMy0uOTI2IDEuMDk2LTEuMjk2IDIuNzQ2LTIuNjQyIDMuMzkyLTcuMDAzLjA1LS4zNDcuMDA3LS41NjUgMC0uODQ1LS4wMDQtLjE3LjAzNS0uMjM3LjIzLS4yNTZhNC4xNzMgNC4xNzMgMCAwMDEuNTQ1LS40NzVjMS4zOTYtLjc2MyAxLjk2LTIuMDE1IDIuMDkzLTMuNTE3LjAyLS4yMy0uMDA0LS40NjctLjI0Ny0uNTg4ek0xMS41ODEgMThjLTIuMDg5LTEuNjQyLTMuMTAyLTIuMTgzLTMuNTItMi4xNi0uMzkyLjAyNC0uMzIxLjQ3MS0uMjM1Ljc2My4wOS4yODguMjA3LjQ4Ni4zNzEuNzM5LjExNC4xNjcuMTkyLjQxNi0uMTEzLjYwMy0uNjczLjQxNi0xLjg0Mi0uMTQtMS44OTctLjE2Ny0xLjM2MS0uODAyLTIuNS0xLjg2LTMuMzAxLTMuMzA3LS43NzQtMS4zOTMtMS4yMjQtMi44ODctMS4yOTgtNC40ODItLjAyLS4zODYuMDkzLS41MjIuNDc3LS41OTJhNC42OTYgNC42OTYgMCAwMTEuNTI5LS4wMzljMi4xMzIuMzEyIDMuOTQ2IDEuMjY1IDUuNDY4IDIuNzc0Ljg2OC44NiAxLjUyNSAxLjg4NyAyLjIwMiAyLjg5MS43MiAxLjA2NiAxLjQ5NCAyLjA4MiAyLjQ4IDIuOTE0LjM0OC4yOTIuNjI1LjUxNC44OTEuNjc3LS44MDIuMDktMi4xNC4xMS0zLjA1NC0uNjE0em0xLTYuNDRhLjMwNi4zMDYgMCAwMS40MTUtLjI4Ny4zMDIuMzAyIDAgMDEuMi4yODguMzA2LjMwNiAwIDAxLS4zMS4zMDcuMzAzLjMwMyAwIDAxLS4zMDQtLjMwOHptMy4xMSAxLjU5NmMtLjIuMDgxLS4zOTkuMTUxLS41OS4xNmExLjI0NSAxLjI0NSAwIDAxLS43OTgtLjI1NGMtLjI3NC0uMjMtLjQ3LS4zNTgtLjU1Mi0uNzU4YTEuNzMgMS43MyAwIDAxLjAxNi0uNTg4Yy4wNy0uMzI3LS4wMDgtLjUzNy0uMjM5LS43MjctLjE4Ny0uMTU2LS40MjYtLjE5OS0uNjg4LS4xOTlhLjU1OS41NTkgMCAwMS0uMjU0LS4wNzhjLS4xMS0uMDU0LS4yLS4xOS0uMTE0LS4zNTguMDI4LS4wNTQuMTYtLjE4Ni4xOTItLjIxLjM1Ni0uMjAyLjc2Ny0uMTM2IDEuMTQ2LjAxNi4zNTIuMTQ0LjYxOC40MDggMS4wMDEuNzgyLjM5MS40NTEuNDYyLjU3Ni42ODUuOTE0LjE3Ni4yNjUuMzM2LjUzNy40NDUuODQ4LjA2Ny4xOTUtLjAxOS4zNTQtLjI1LjQ1MnoiLz48L3N5bWJvbD4KPC9kZWZzPgo8IS0tIE5vIHJvdW5kZWQgYm94LCBubyBzaWRlIHN0cm9rZXMsIG5vIGNvcm5lciBzdHJva2VzLiBPbmx5IHR3byBvcGVuIGhvcml6b250YWwgbGluZXMuIC0tPgo8cGF0aCBkPSJNMjAgMzRINTQwVjExMEgyMFoiIGZpbGw9InVybCgjd2FzaCkiLz4KPHBhdGggZGF0YS1yb2xlPSJob3Jpem9udGFsLWxpbmVzIiBkPSJNMTM0IDM0LjVINTA4TTUyIDEwOS41SDUwOCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ1cmwoI2xpbmUpIiBzdHJva2Utd2lkdGg9IjEuNiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjx1c2UgaHJlZj0iI3doYWxlIiB4PSI0OSIgeT0iNTIiIHdpZHRoPSI0MiIgaGVpZ2h0PSI0MiIgZmlsbD0iI0U3RjZGRiIgb3BhY2l0eT0iLjI1Ii8+Cjwvc3ZnPg==");--whale-choice:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MjAiIGhlaWdodD0iNzYiIHZpZXdCb3g9IjIwIDM0IDUyMCA3NiIgZmlsbD0ibm9uZSI+Cjx0aXRsZT5E54mIIMK3IOWbm+inkuW8gOaUvui+ueahhiAvIERlZXBTZWVrIOmyuOmxvOe6ueeQhjwvdGl0bGU+CjxkZWZzPgogPHJhZGlhbEdyYWRpZW50IGlkPSJnIiBjeD0iNTAlIiBjeT0iNTAlIiByPSI3MCUiPjxzdG9wIHN0b3AtY29sb3I9IiM4QkI5REMiIHN0b3Atb3BhY2l0eT0iLjc4Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjNDI2RDk2IiBzdG9wLW9wYWNpdHk9Ii41NCIvPjwvcmFkaWFsR3JhZGllbnQ+CiA8bGluZWFyR3JhZGllbnQgaWQ9ImVkZ2UiIHgxPSIwIiB5MT0iMCIgeDI9Ii44IiB5Mj0iMSI+PHN0b3Agc3RvcC1jb2xvcj0iI0RERjJGRiIgc3RvcC1vcGFjaXR5PSIuNTgiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNCNkQ1RUQiIHN0b3Atb3BhY2l0eT0iLjI0Ii8+PC9saW5lYXJHcmFkaWVudD4KIDxzeW1ib2wgaWQ9IndoYWxlIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTIzLjc0OCA0LjQ4MmMtLjI1NC0uMTI0LS4zNjQuMTEzLS41MTIuMjM0LS4wNTEuMDM5LS4wOTQuMDktLjEzNy4xMzYtLjM3Mi4zOTctLjgwNi42NTctMS4zNzMuNjI2LS44MjktLjA0Ni0xLjUzNy4yMTQtMi4xNjMuODQ4LS4xMzMtLjc4Mi0uNTc1LTEuMjQ4LTEuMjQ3LTEuNTQ4LS4zNTItLjE1Ni0uNzA4LS4zMTEtLjk1NS0uNjUtLjE3Mi0uMjQxLS4yMTktLjUxLS4zMDUtLjc3NC0uMDU1LS4xNi0uMTEtLjMyMy0uMjkzLS4zNS0uMi0uMDMxLS4yNzguMTM2LS4zNTYuMjc2LS4zMTMuNTcyLS40MzQgMS4yMDItLjQyMiAxLjg0LjAyNyAxLjQzNi42MzMgMi41OCAxLjgzOCAzLjM5My4xMzcuMDkzLjE3Mi4xODcuMTI5LjMyMy0uMDgyLjI4LS4xOC41NTItLjI2Ni44MzMtLjA1NS4xNzktLjEzNy4yMTctLjMyOS4xNGE1LjUyNiA1LjUyNiAwIDAxLTEuNzM2LTEuMThjLS44NTctLjgyOC0xLjYzMS0xLjc0Mi0yLjU5Ny0yLjQ1OGExMS4zNjUgMTEuMzY1IDAgMDAtLjY4OS0uNDcxYy0uOTg1LS45NTcuMTMtMS43NDMuMzg4LTEuODM2LjI3LS4wOTguMDkzLS40MzItLjc3OS0uNDI4LS44NzIuMDA0LTEuNjcuMjk1LTIuNjg3LjY4NGEzLjA1NSAzLjA1NSAwIDAxLS40NjUuMTM3IDkuNTk3IDkuNTk3IDAgMDAtMi44ODMtLjEwMmMtMS44ODUuMjEtMy4zOSAxLjEwMi00LjQ5NyAyLjYyM0MuMDgyIDguNjA2LS4yMzEgMTAuNjg0LjE1MiAxMi44NWMuNDAzIDIuMjg0IDEuNTY5IDQuMTc1IDMuMzYgNS42NTMgMS44NTggMS41MzMgMy45OTcgMi4yODQgNi40MzggMi4xNCAxLjQ4Mi0uMDg1IDMuMTMzLS4yODQgNC45OTQtMS44Ni40Ny4yMzQuOTYyLjMyNyAxLjc4LjM5Ny42My4wNTkgMS4yMzYtLjAzIDEuNzA1LS4xMjguNzM1LS4xNTYuNjg0LS44MzcuNDE5LS45NjEtMi4xNTUtMS4wMDQtMS42ODItLjU5NS0yLjExMy0uOTI2IDEuMDk2LTEuMjk2IDIuNzQ2LTIuNjQyIDMuMzkyLTcuMDAzLjA1LS4zNDcuMDA3LS41NjUgMC0uODQ1LS4wMDQtLjE3LjAzNS0uMjM3LjIzLS4yNTZhNC4xNzMgNC4xNzMgMCAwMDEuNTQ1LS40NzVjMS4zOTYtLjc2MyAxLjk2LTIuMDE1IDIuMDkzLTMuNTE3LjAyLS4yMy0uMDA0LS40NjctLjI0Ny0uNTg4ek0xMS41ODEgMThjLTIuMDg5LTEuNjQyLTMuMTAyLTIuMTgzLTMuNTItMi4xNi0uMzkyLjAyNC0uMzIxLjQ3MS0uMjM1Ljc2My4wOS4yODguMjA3LjQ4Ni4zNzEuNzM5LjExNC4xNjcuMTkyLjQxNi0uMTEzLjYwMy0uNjczLjQxNi0xLjg0Mi0uMTQtMS44OTctLjE2Ny0xLjM2MS0uODAyLTIuNS0xLjg2LTMuMzAxLTMuMzA3LS43NzQtMS4zOTMtMS4yMjQtMi44ODctMS4yOTgtNC40ODItLjAyLS4zODYuMDkzLS41MjIuNDc3LS41OTJhNC42OTYgNC42OTYgMCAwMTEuNTI5LS4wMzljMi4xMzIuMzEyIDMuOTQ2IDEuMjY1IDUuNDY4IDIuNzc0Ljg2OC44NiAxLjUyNSAxLjg4NyAyLjIwMiAyLjg5MS43MiAxLjA2NiAxLjQ5NCAyLjA4MiAyLjQ4IDIuOTE0LjM0OC4yOTIuNjI1LjUxNC44OTEuNjc3LS44MDIuMDktMi4xNC4xMS0zLjA1NC0uNjE0em0xLTYuNDRhLjMwNi4zMDYgMCAwMS40MTUtLjI4Ny4zMDIuMzAyIDAgMDEuMi4yODguMzA2LjMwNiAwIDAxLS4zMS4zMDcuMzAzLjMwMyAwIDAxLS4zMDQtLjMwOHptMy4xMSAxLjU5NmMtLjIuMDgxLS4zOTkuMTUxLS41OS4xNmExLjI0NSAxLjI0NSAwIDAxLS43OTgtLjI1NGMtLjI3NC0uMjMtLjQ3LS4zNTgtLjU1Mi0uNzU4YTEuNzMgMS43MyAwIDAxLjAxNi0uNTg4Yy4wNy0uMzI3LS4wMDgtLjUzNy0uMjM5LS43MjctLjE4Ny0uMTU2LS40MjYtLjE5OS0uNjg4LS4xOTlhLjU1OS41NTkgMCAwMS0uMjU0LS4wNzhjLS4xMS0uMDU0LS4yLS4xOS0uMTE0LS4zNTguMDI4LS4wNTQuMTYtLjE4Ni4xOTItLjIxLjM1Ni0uMjAyLjc2Ny0uMTM2IDEuMTQ2LjAxNi4zNTIuMTQ0LjYxOC40MDggMS4wMDEuNzgyLjM5MS40NTEuNDYyLjU3Ni42ODUuOTE0LjE3Ni4yNjUuMzM2LjUzNy40NDUuODQ4LjA2Ny4xOTUtLjAxOS4zNTQtLjI1LjQ1MnoiLz48L3N5bWJvbD4KIDxjbGlwUGF0aCBpZD0iYm9keSI+PHJlY3QgeD0iMjAiIHk9IjM0IiB3aWR0aD0iNTIwIiBoZWlnaHQ9Ijc2IiByeD0iMTQiLz48L2NsaXBQYXRoPgo8L2RlZnM+CjxyZWN0IHg9IjIwIiB5PSIzNCIgd2lkdGg9IjUyMCIgaGVpZ2h0PSI3NiIgcng9IjE0IiBmaWxsPSJ1cmwoI2cpIi8+CjxwYXRoIGQ9Ik0yMC41IDU4VjQ0UTIwLjUgMzQuNSAzMCAzNC41SDUxTTUwOSAzNC41SDUzMFE1MzkuNSAzNC41IDUzOS41IDQ0VjU4TTUzOS41IDg2VjEwMFE1MzkuNSAxMDkuNSA1MzAgMTA5LjVINTA5TTUxIDEwOS41SDMwUTIwLjUgMTA5LjUgMjAuNSAxMDBWODYiIHN0cm9rZT0idXJsKCNlZGdlKSIgc3Ryb2tlLXdpZHRoPSIxIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPGcgY2xpcC1wYXRoPSJ1cmwoI2JvZHkpIiBmaWxsPSIjRTdGNkZGIj4KIDx1c2UgaHJlZj0iI3doYWxlIiB4PSI0OSIgeT0iNTIiIHdpZHRoPSI0MiIgaGVpZ2h0PSI0MiIgb3BhY2l0eT0iLjI1Ii8+CiA8dXNlIGhyZWY9IiN3aGFsZSIgeD0iNTAwIiB5PSI4MyIgd2lkdGg9IjM2IiBoZWlnaHQ9IjM2IiBvcGFjaXR5PSIuMTA1IiB0cmFuc2Zvcm09InJvdGF0ZSgxMiA1MTggMTAxKSIvPgo8L2c+PC9zdmc+");--whale-dialogue:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMTYwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDExNjAgMjAwIiBmaWxsPSJub25lIj4KPHRpdGxlPkTniYjlr7nor53moYYgwrcg5LiK5a6e5LiL6YCPPC90aXRsZT4KPGRlZnM+CiA8bGluZWFyR3JhZGllbnQgaWQ9InBhbmVsIiB4MT0iMCIgeTE9IjAiIHgyPSIwIiB5Mj0iMSI+PHN0b3Agc3RvcC1jb2xvcj0iIzFDM0I1OSIgc3RvcC1vcGFjaXR5PSIuNzgiLz48c3RvcCBvZmZzZXQ9Ii41MiIgc3RvcC1jb2xvcj0iIzJENTQ3NSIgc3RvcC1vcGFjaXR5PSIuNTUiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiM2MzhGQUMiIHN0b3Atb3BhY2l0eT0iLjIyIi8+PC9saW5lYXJHcmFkaWVudD4KIDxsaW5lYXJHcmFkaWVudCBpZD0icmltIiB4MT0iMCIgeTE9IjAiIHgyPSIuOCIgeTI9IjEiPjxzdG9wIHN0b3AtY29sb3I9IiNERUYyRkYiIHN0b3Atb3BhY2l0eT0iLjY2Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjQkREQ0YyIiBzdG9wLW9wYWNpdHk9Ii4yMyIvPjwvbGluZWFyR3JhZGllbnQ+CiA8c3ltYm9sIGlkPSJ3IiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTIzLjc0OCA0LjQ4MmMtLjI1NC0uMTI0LS4zNjQuMTEzLS41MTIuMjM0LS4wNTEuMDM5LS4wOTQuMDktLjEzNy4xMzYtLjM3Mi4zOTctLjgwNi42NTctMS4zNzMuNjI2LS44MjktLjA0Ni0xLjUzNy4yMTQtMi4xNjMuODQ4LS4xMzMtLjc4Mi0uNTc1LTEuMjQ4LTEuMjQ3LTEuNTQ4LS4zNTItLjE1Ni0uNzA4LS4zMTEtLjk1NS0uNjUtLjE3Mi0uMjQxLS4yMTktLjUxLS4zMDUtLjc3NC0uMDU1LS4xNi0uMTEtLjMyMy0uMjkzLS4zNS0uMi0uMDMxLS4yNzguMTM2LS4zNTYuMjc2LS4zMTMuNTcyLS40MzQgMS4yMDItLjQyMiAxLjg0LjAyNyAxLjQzNi42MzMgMi41OCAxLjgzOCAzLjM5My4xMzcuMDkzLjE3Mi4xODcuMTI5LjMyMy0uMDgyLjI4LS4xOC41NTItLjI2Ni44MzMtLjA1NS4xNzktLjEzNy4yMTctLjMyOS4xNGE1LjUyNiA1LjUyNiAwIDAxLTEuNzM2LTEuMThjLS44NTctLjgyOC0xLjYzMS0xLjc0Mi0yLjU5Ny0yLjQ1OGExMS4zNjUgMTEuMzY1IDAgMDAtLjY4OS0uNDcxYy0uOTg1LS45NTcuMTMtMS43NDMuMzg4LTEuODM2LjI3LS4wOTguMDkzLS40MzItLjc3OS0uNDI4LS44NzIuMDA0LTEuNjcuMjk1LTIuNjg3LjY4NGEzLjA1NSAzLjA1NSAwIDAxLS40NjUuMTM3IDkuNTk3IDkuNTk3IDAgMDAtMi44ODMtLjEwMmMtMS44ODUuMjEtMy4zOSAxLjEwMi00LjQ5NyAyLjYyM0MuMDgyIDguNjA2LS4yMzEgMTAuNjg0LjE1MiAxMi44NWMuNDAzIDIuMjg0IDEuNTY5IDQuMTc1IDMuMzYgNS42NTMgMS44NTggMS41MzMgMy45OTcgMi4yODQgNi40MzggMi4xNCAxLjQ4Mi0uMDg1IDMuMTMzLS4yODQgNC45OTQtMS44Ni40Ny4yMzQuOTYyLjMyNyAxLjc4LjM5Ny42My4wNTkgMS4yMzYtLjAzIDEuNzA1LS4xMjguNzM1LS4xNTYuNjg0LS44MzcuNDE5LS45NjEtMi4xNTUtMS4wMDQtMS42ODItLjU5NS0yLjExMy0uOTI2IDEuMDk2LTEuMjk2IDIuNzQ2LTIuNjQyIDMuMzkyLTcuMDAzLjA1LS4zNDcuMDA3LS41NjUgMC0uODQ1LS4wMDQtLjE3LjAzNS0uMjM3LjIzLS4yNTZhNC4xNzMgNC4xNzMgMCAwMDEuNTQ1LS40NzVjMS4zOTYtLjc2MyAxLjk2LTIuMDE1IDIuMDkzLTMuNTE3LjAyLS4yMy0uMDA0LS40NjctLjI0Ny0uNTg4ek0xMS41ODEgMThjLTIuMDg5LTEuNjQyLTMuMTAyLTIuMTgzLTMuNTItMi4xNi0uMzkyLjAyNC0uMzIxLjQ3MS0uMjM1Ljc2My4wOS4yODguMjA3LjQ4Ni4zNzEuNzM5LjExNC4xNjcuMTkyLjQxNi0uMTEzLjYwMy0uNjczLjQxNi0xLjg0Mi0uMTQtMS44OTctLjE2Ny0xLjM2MS0uODAyLTIuNS0xLjg2LTMuMzAxLTMuMzA3LS43NzQtMS4zOTMtMS4yMjQtMi44ODctMS4yOTgtNC40ODItLjAyLS4zODYuMDkzLS41MjIuNDc3LS41OTJhNC42OTYgNC42OTYgMCAwMTEuNTI5LS4wMzljMi4xMzIuMzEyIDMuOTQ2IDEuMjY1IDUuNDY4IDIuNzc0Ljg2OC44NiAxLjUyNSAxLjg4NyAyLjIwMiAyLjg5MS43MiAxLjA2NiAxLjQ5NCAyLjA4MiAyLjQ4IDIuOTE0LjM0OC4yOTIuNjI1LjUxNC44OTEuNjc3LS44MDIuMDktMi4xNC4xMS0zLjA1NC0uNjE0em0xLTYuNDRhLjMwNi4zMDYgMCAwMS40MTUtLjI4Ny4zMDIuMzAyIDAgMDEuMi4yODguMzA2LjMwNiAwIDAxLS4zMS4zMDcuMzAzLjMwMyAwIDAxLS4zMDQtLjMwOHptMy4xMSAxLjU5NmMtLjIuMDgxLS4zOTkuMTUxLS41OS4xNmExLjI0NSAxLjI0NSAwIDAxLS43OTgtLjI1NGMtLjI3NC0uMjMtLjQ3LS4zNTgtLjU1Mi0uNzU4YTEuNzMgMS43MyAwIDAxLjAxNi0uNTg4Yy4wNy0uMzI3LS4wMDgtLjUzNy0uMjM5LS43MjctLjE4Ny0uMTU2LS40MjYtLjE5OS0uNjg4LS4xOTlhLjU1OS41NTkgMCAwMS0uMjU0LS4wNzhjLS4xMS0uMDU0LS4yLS4xOS0uMTE0LS4zNTguMDI4LS4wNTQuMTYtLjE4Ni4xOTItLjIxLjM1Ni0uMjAyLjc2Ny0uMTM2IDEuMTQ2LjAxNi4zNTIuMTQ0LjYxOC40MDggMS4wMDEuNzgyLjM5MS40NTEuNDYyLjU3Ni42ODUuOTE0LjE3Ni4yNjUuMzM2LjUzNy40NDUuODQ4LjA2Ny4xOTUtLjAxOS4zNTQtLjI1LjQ1MnoiLz48L3N5bWJvbD4KIDxjbGlwUGF0aCBpZD0icCI+PHJlY3QgeD0iMSIgeT0iMSIgd2lkdGg9IjExNTgiIGhlaWdodD0iMTk4IiByeD0iMTQiLz48L2NsaXBQYXRoPgo8L2RlZnM+CjxyZWN0IHg9IjEiIHk9IjEiIHdpZHRoPSIxMTU4IiBoZWlnaHQ9IjE5OCIgcng9IjE0IiBmaWxsPSJ1cmwoI3BhbmVsKSIvPgo8cGF0aCBkPSJNMSAzNlYxNVExIDEgMTUgMUg1Nk0xMTA0IDFIMTE0NVExMTU5IDEgMTE1OSAxNVYzNk0xMTU5IDE2NFYxODVRMTE1OSAxOTkgMTE0NSAxOTlIMTEwNE01NiAxOTlIMTVRMSAxOTkgMSAxODVWMTY0IiBzdHJva2U9InVybCgjcmltKSIgc3Ryb2tlLXdpZHRoPSIxLjE1IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPGcgY2xpcC1wYXRoPSJ1cmwoI3ApIiBmaWxsPSIjREFGMEZGIj48dXNlIGhyZWY9IiN3IiB4PSIxMDk2IiB5PSIxMzEiIHdpZHRoPSI1NyIgaGVpZ2h0PSI1NyIgb3BhY2l0eT0iLjExIi8+PC9nPgo8L3N2Zz4=")}
+/* Main menu: open top/bottom strokes; stagger with left, never transform (fade safe). */
+body.game #title .menu{left:auto;right:66px;bottom:85px;width:362px;align-items:stretch;gap:44px}
+body.game #title.cover::after{display:none}
+body.game #title .menu button{position:relative;left:0;width:362px;min-height:53px;height:53px;padding:0 54px 0 80px;border:0;border-radius:0;background:var(--whale-menu) center/100% 100% no-repeat;color:#f0f8ff;font-family:"Microsoft YaHei","PingFang SC",sans-serif;font-size:23px;font-weight:400;letter-spacing:4.2px;text-align:center;line-height:1.3;text-shadow:0 1px 3px #092c4dcc,0 0 7px #15324940;box-shadow:none;backdrop-filter:none;animation:none;transform:none;transition:filter .2s ease,translate .2s ease}
+body.game #title .menu button:nth-child(2){left:-18px}
+body.game #title .menu button:nth-child(3){left:-36px}
+body.game #title .menu button:nth-child(4){left:-54px}
+body.game #title .menu button:hover{background:var(--whale-menu) center/100% 100% no-repeat;box-shadow:none;transform:none;filter:brightness(1.16)}
+body.game #title .menu button:active{filter:brightness(.95);translate:0 1px}
+body.game #title .menu button:focus-visible{outline:1px solid #def1ff88;outline-offset:5px}
+/* Choices retain the approved D corner frame and their actual story text/callbacks. */
+body.game #choices{gap:26px}
+body.game #choices>button{box-sizing:border-box;width:520px;min-width:520px;max-width:1040px;min-height:76px;padding:17px 74px;border:0;border-radius:0;background:var(--whale-choice) center/100% 100% no-repeat;color:#f0f8ff;box-shadow:none;font-size:25px;font-weight:400;line-height:1.6;text-align:center;overflow-wrap:anywhere;text-shadow:0 1px 3px #15354e88;transition:filter .2s ease,translate .2s ease}
+body.game #choices>button:hover{background:var(--whale-choice) center/100% 100% no-repeat;color:#fff;filter:brightness(1.16)}
+body.game #choices>button:active{translate:0 1px;filter:brightness(.95)}
+body.game #choices>button:focus-visible{outline:1px solid #def1ff88;outline-offset:4px}
+body.game #choices .ctimer{margin-top:0}
+/* Dialogue: separate fading skin so silent performance can keep its controls visible. */
+body.game #pdlg{left:60px;right:60px;bottom:38px;height:200px;padding:46px 40px 46px;background:none;border:0;border-radius:14px;box-shadow:none;isolation:isolate}
+body.game #pdlg::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:var(--whale-dialogue) center/100% 100% no-repeat;opacity:1;transition:opacity .4s ease}
+body.game #stage.nodlg #pdlg::before{opacity:0}
+body.game #pnm{top:-22px;left:28px;min-width:170px;height:40px;padding:0 24px;border-radius:10px;border:1px solid #c0e1fa55;background:linear-gradient(#315679d9,#234565b8);font-size:22px;font-weight:400;letter-spacing:3px;text-shadow:0 1px 3px #153049}
+body.game #ptx{color:#f0f8ff;line-height:1.8;letter-spacing:1px;text-shadow:0 1px 3px #102e4d77;overflow-y:auto;overflow-wrap:anywhere;scrollbar-width:thin}
+body.game #pctl{right:35px;bottom:12px;gap:5px}
+body.game #pctl .btn{width:34px;height:28px;min-width:0;min-height:0;border:0;border-radius:4px;background:#b9dff910;color:#e9f6ff;opacity:.85}
+body.game #pctl .btn:hover,body.game #pctl .btn.on{background:#b9dff92c;opacity:1}
+body.game #pin{bottom:250px}
+@media (pointer:coarse){body.game #pctl{gap:6px}body.game #pctl .btn{width:48px;height:42px;font-size:22px}body.game #pdlg{padding-bottom:62px}}
+@media (prefers-reduced-motion:reduce){body.game #title .menu button,body.game #choices>button,body.game #pdlg::before{transition:none}}
+
+</style>
+<!-- WHALE_UI_APPROVED_END -->
+<!-- WHALE_UI_REPO_ADAPTER_START -->
+<style id="whale-ui-repo-adapter">
+/* galLingS 仓库适配（2026-10-17）：主页按作者原稿放右侧、每项向左错位 18 px（用户确认，封面不改）；
+   仓库主页有 7 项，原稿间距 44 px 会超出画面，故间距收为 26 px，第 5–7 项按同一步长继续错位。
+   底栏保留玩家体验打磨确定的文字标签宽度，其余皮肤、透明度与渐变保持原稿。 */
+body.game #title .menu{gap:26px}
+body.game #title .menu button:nth-child(5){left:-72px}
+body.game #title .menu button:nth-child(6){left:-90px}
+body.game #title .menu button:nth-child(7){left:-108px}
+body.game #pctl{right:22px;bottom:8px;gap:6px}
+body.game #pctl .btn{width:auto;min-width:48px;height:30px;padding:0 8px;display:inline-flex;align-items:center;gap:5px}
+@media (pointer:coarse){body.game #pctl{gap:8px}body.game #pctl .btn{width:auto;min-width:76px;height:44px}}
+</style>
+<!-- WHALE_UI_REPO_ADAPTER_END -->
 </head>
 <body>
 <div id="app">
@@ -2385,7 +2440,7 @@ function showPlay(first) {
   renderStage(l, false);
   $('#choices').className = ''; $('#pin').classList.remove('show');
   // Pose changes reuse the actor without fading the entire room and dialogue scene.
-  if (!first && lastShown && lastShown.bg !== l.bg) {
+  if (!first && lastShown && lastShown.bg !== l.bg && !VN_FADE.running()) {
     if (l.trans === 'fade') {
       stage.classList.remove('fade');
       // The animated children need a style flush, even when the stage size is unchanged.
@@ -2632,7 +2687,7 @@ $('#pctl').addEventListener('click', e => {
   if (a === 'save' || a === 'load') showSlots(a);
   if (a === 'set') showPrefs();
   if (a === 'exit') stopPlay();
-  if (a === 'auto' || a === 'skip') { RT[a] = !RT[a]; RT[a === 'auto' ? 'skip' : 'auto'] = false; updPctl(); kick(); }
+  if (a === 'auto' || a === 'skip') { RT[a] = !RT[a]; RT[a === 'auto' ? 'skip' : 'auto'] = false; if (RT.skip) VN_FADE.cancel(); updPctl(); kick(); }
 });
 $('#soulTab').addEventListener('click', e => { e.stopPropagation(); if ($('#soul').classList.contains('show')) hideSoul(); else showSoul(); });
 function showPrefs() {
@@ -2692,6 +2747,7 @@ const saveKey = () => 'saves:' + P.id;
 async function showSlots(mode) {
   clearTimeout(RT.timer); RT.timer = null; RT.auto = RT.skip = false; updPctl();
   const saves = (await idbGet(saveKey())) || {}, box = $('#slots');
+  VN_FADE.begin(); // 异步读取完成后、真正替换列表前再采样。
   box.innerHTML = '<header class="panel-heading"><small>旅途记录</small><h2>' + (mode === 'save' ? '保存进度' : '读取进度') + '</h2><p>' + (mode === 'save' ? '选一个位置，把这一刻留下。' : Object.keys(saves).length ? '回到上次停下的地方。' : '还没有保存的进度。开始游戏后，随时可以存档。') + '</p></header><div class="grid2"></div>';
   const g = box.querySelector('.grid2');
   for (let k = 1; k <= 6; k++) {
@@ -4439,6 +4495,125 @@ function showPluginsOvl() {
   addClose(box); box.classList.add('show');
   box.onclick = e => { e.stopPropagation(); if (e.target === box) box.classList.remove('show'); };
 }
+/* ========== 玩家界面平滑过渡（独立视觉层，不参与 RT / 存档） ========== */
+const VN_FADE = (() => {
+  const duration = 360;
+  let pending = null, active = null, frame = 0;
+  const reduced = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function dispose(item) {
+    if (!item) return;
+    clearTimeout(item.timeout); item.animation?.cancel(); item.host.remove();
+    if (active === item) active = null;
+  }
+  function capture() {
+    const host = document.createElement('div');
+    host.dataset.vnFade = ''; host.setAttribute('aria-hidden', 'true'); host.inert = true;
+    host.style.cssText = 'position:absolute;inset:0;z-index:1000;pointer-events:none;overflow:hidden;contain:layout paint;';
+    const shadow = host.attachShadow({ mode: 'closed' });
+    const styles = document.createElement('style');
+    // assetCss 只有编辑时间轴使用，单文件版其中可能含巨大的 data URL，不复制它。
+    styles.textContent = [...document.styleSheets].filter(sh => sh.ownerNode?.id !== 'assetCss').map(sh => {
+      try { return [...sh.cssRules].map(r => r.cssText).join('\n'); } catch (e) { return ''; }
+    }).join('\n') + '\n* ,*::before,*::after{animation:none!important;transition:none!important;caret-color:transparent!important}';
+    const body = document.createElement('body'); body.className = document.body.className;
+    body.style.cssText = 'position:relative;margin:0;width:1280px;height:720px;overflow:hidden;background:transparent;';
+    const copy = stage.cloneNode(true);
+    copy.querySelectorAll('[data-vn-fade]').forEach(el => el.remove());
+    const sources = [stage, ...stage.querySelectorAll('*')].filter(el => !el.closest('[data-vn-fade]'));
+    const copies = [copy, ...copy.querySelectorAll('*')];
+    sources.forEach((el, i) => {
+      const twin = copies[i]; if (!twin) return;
+      if ('value' in el) twin.value = el.value;
+      if ('checked' in el) twin.checked = el.checked;
+      if (el.getClientRects().length) {
+        const cs = getComputedStyle(el);
+        for (const key of ['opacity', 'transform', 'filter', 'translate', 'rotate', 'scale']) twin.style.setProperty(key, cs.getPropertyValue(key), 'important');
+      }
+    });
+    copy.style.setProperty('transform', 'none', 'important');
+    copy.style.setProperty('left', '0px', 'important'); copy.style.setProperty('top', '0px', 'important');
+    body.appendChild(copy); shadow.append(styles, body); stage.appendChild(host);
+    // cloneNode 不保留滚动位置；必须在接入布局之后恢复。
+    sources.forEach((el, i) => { if (copies[i]) { copies[i].scrollTop = el.scrollTop; copies[i].scrollLeft = el.scrollLeft; } });
+    return { host, animation: null, timeout: null };
+  }
+  function reveal(item) {
+    if (pending !== item) return;
+    pending = null;
+    if (!item.host.isConnected || (RT.skip && !item.force) || reduced()) return dispose(item);
+    active = item;
+    if (typeof item.host.animate !== 'function') return dispose(item);
+    item.animation = item.host.animate([{ opacity: 1 }, { opacity: 0 }], { duration, easing: 'ease-in-out', fill: 'forwards' });
+    item.animation.finished.then(() => dispose(item), () => dispose(item));
+    item.timeout = setTimeout(() => dispose(item), duration + 200);
+  }
+  function begin(force = false) {
+    if (!playing || (RT.skip && !force) || reduced() || pending) return;
+    try {
+      dispose(active);
+      pending = capture(); pending.force = force;
+      const item = pending;
+      // 让新 DOM 先布局；资源未解码时最多等 180ms，绝不延迟剧情执行。
+      frame = requestAnimationFrame(() => {
+        frame = 0;
+        const images = [...layer.querySelectorAll('img')].filter(img => !img.complete);
+        const ready = images.map(img => img.decode?.().catch(() => {}));
+        if (ready.length) Promise.race([Promise.all(ready), new Promise(r => setTimeout(r, 180))]).then(() => reveal(item));
+        else reveal(item);
+      });
+    } catch (e) {
+      pending?.host.remove(); pending = null;
+      console.warn('渐变不可用，保留正常播放', e);
+    }
+  }
+  function wrap(fn, should = () => true, force = true) {
+    return function (...args) { if (should(...args)) begin(force); return fn.apply(this, args); };
+  }
+  function cancel() {
+    cancelAnimationFrame(frame); frame = 0;
+    const item = pending; pending = null; dispose(item); dispose(active);
+  }
+  function dockPage(el) {
+    if (!el || reduced()) return;
+    el.getAnimations().forEach(a => a.cancel());
+    el.animate?.([{ opacity: 0 }, { opacity: 1 }], { duration: 280, easing: 'ease-out' });
+  }
+  return { begin, wrap, cancel, dockPage, running: () => !!pending || !!active };
+})();
+// 顶层事务在改变标题/立绘前采样，嵌套调用同一帧只保留一个旧画面。
+startPlay = VN_FADE.wrap(startPlay);
+stopPlay = VN_FADE.wrap(stopPlay);
+showTitle = VN_FADE.wrap(showTitle);
+showPrefs = VN_FADE.wrap(showPrefs);
+showBacklog = VN_FADE.wrap(showBacklog);
+showGallery = VN_FADE.wrap(showGallery);
+showEnding = VN_FADE.wrap(showEnding);
+choose = VN_FADE.wrap(choose);
+setHideUI = VN_FADE.wrap(setHideUI);
+hideSoul = VN_FADE.wrap(hideSoul);
+const showSoulImmediately = showSoul;
+showSoul = function (page) {
+  const dock = SOUL_DOCK, changed = !!page && page !== soulPage;
+  if (!dock) VN_FADE.begin(true);
+  const result = showSoulImmediately(page);
+  if (dock && changed) VN_FADE.dockPage(dock.querySelector('.pg'));
+  return result;
+};
+showPlay = VN_FADE.wrap(showPlay, () => {
+  const l = P.lines[RT.idx];
+  return !!lastShown && (visKey(lastShown) !== visKey(l) || lastShown.mood !== l.mood || isPause(lastShown) !== isPause(l) || $('#choices').classList.contains('show'));
+}, false);
+// 覆盖内联关闭回调及 CG 打开/关闭；不为音量滑条、输入、自动/快进状态制造整屏动画。
+stage.addEventListener('click', e => {
+  const t = e.target;
+  if (t.closest('.ovx,#cgview,#gallery .cg:not(.lock),#endcard button,#backlog,[data-seg],[data-tg],[data-soul=test],#pinEnd') || (t.matches('.ovl:not(#title):not(#soul),.ovl>h2'))) VN_FADE.begin(true);
+}, true);
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && !e.isComposing && playing && document.querySelector('.ovl.show,#cgview.show')) VN_FADE.begin(true);
+}, true);
+// 跳转、快进、失焦和异常中断都不能遗留遮罩。
+document.addEventListener('keydown', e => { if (e.key === 'Control') VN_FADE.cancel(); }, true);
+window.addEventListener('pagehide', VN_FADE.cancel);
 
 /* ========== 启动 ========== */
 (async () => {

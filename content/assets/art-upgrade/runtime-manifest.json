@@ -939,10 +939,10 @@
     "L15": {
       "path": "content/assets/art-upgrade/runtime/L15.webp",
       "sourceMasterPath": "content/assets/art-upgrade/originals/L15.webp",
-      "sourceSha256": "0b8b4aab95995313842270877da851cf25992f1da4a1034deddd2c7cba9ed0ec",
-      "sha256": "9e6b133316c0f8cff2446d24a7690c84136c8be8feb35fc694d6a610bfc21006",
-      "bytes": 212478,
-      "sourceBytes": 861634,
+      "sourceSha256": "6bd7ea08fef646e93568cee09913f515a178f25b4824a99092e069ccf7323358",
+      "sha256": "f78ee9e7eecf542e28aa0f098328a66bb975793fe94ba1a2c25df55f94dd5b7c",
+      "bytes": 209980,
+      "sourceBytes": 851906,
       "size": [
         1024,
         1536

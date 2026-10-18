@@ -6,9 +6,9 @@
   "date": "2026-10-17",
   "batch": "image25-pass2",
   "base": "content/assets/art-upgrade/originals/C05.png (teammate refined)",
-  "output_sha256": "373c6a5a8e1a430a7a16cc74a58756daf28bcaaf781f11a76086d4f689f3c2eb",
-  "master_sha256": "85647a358e1d34fa53753ae3af5bc937b826bb2016095f06a18a32e976b4240c",
-  "runtime_webp_sha256": "a48293382c63ff6c2e781b7f0f3d74987cef02b7d050534e68245115484a6d0f",
-  "revision": 10,
-  "revision_note": "按用户指定的第1版（右腿伸直、脚在右下）为底：尾巴放回精修原图位置（尾巴及上半身直接取精修原图），右腿以左腿裁图为参考由 Image2.5 画丰满；改动 bbox (1593, 1026, 2730, 1536)，其余与精修原图逐像素一致"
+  "output_sha256": "cf3ffb4193e17b75ede4ff07974fc3610621b737f88786b6111755ff6585527b",
+  "master_sha256": "64ffb338cb0644465c80b59efff847ca7badad319691741733641c3f3aa151ff",
+  "runtime_webp_sha256": "d557f4e994054917f6285d47a5a084b0519aa11f7ebbedb3bd52ee06c3e88e3e",
+  "revision": 11,
+  "revision_note": "用户朋友手修版（2000x1116 原稿 LANCZOS 放大到 2730x1536，整张替换；原稿存 docs/collab/playtest/C05_friend_20261018.webp）"
 }

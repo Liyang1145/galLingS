@@ -905,10 +905,10 @@
     "L12": {
       "path": "content/assets/art-upgrade/runtime/L12.webp",
       "sourceMasterPath": "content/assets/art-upgrade/originals/L12.webp",
-      "sourceSha256": "196bf9d0b2d7742df190975b667495cae250b3214a4e13c2420002244d8fbe46",
-      "sha256": "9ace97c9d4eeaeaacbf2f99fa27115b2da3230d4cd32696fd133a2661a825f11",
-      "bytes": 264170,
-      "sourceBytes": 916394,
+      "sourceSha256": "fcdbfa9239c90106cdc8d9140f040130fac4d8ca7544c3c3e3c1d29688213a8f",
+      "sha256": "39d4732362d816dadbdac9b669427a543351daf09b7c6e4cea8be87e4a81c8c0",
+      "bytes": 230960,
+      "sourceBytes": 846852,
       "size": [
         1024,
         1536

@@ -113,3 +113,94 @@ body.game #backlog .e b { font-weight:500; margin-bottom:5px; }
 /* 2026-10-18 审查：触屏不显示悬停提示；亮场景控制栏加字影 */
 @media (hover:none){ #tip{ display:none !important; } }
 body.game #pctl .btn{ text-shadow:0 1px 2px #000c,0 0 6px #0009; }
+
+/* ===== fix9 界面体验（2026-10-18）===== */
+/* B2 标题菜单：封面角色在右侧，菜单按 settings.cover.menu = "left" 放到左侧水面上，
+   阶梯方向朝下往左收（最下一项贴左边），避开脸和脚；皮肤、字体、间距沿用鲸鱼 UI。 */
+body.game #title .menu.m-left{left:68px;right:auto;bottom:64px;width:340px;gap:12px;align-items:stretch}
+body.game #title .menu.m-left button{width:340px;height:48px;min-height:48px;padding:0 48px 0 74px;font-size:22px}
+body.game #title .menu.m-left button:nth-child(1){left:108px}
+body.game #title .menu.m-left button:nth-child(2){left:90px}
+body.game #title .menu.m-left button:nth-child(3){left:72px}
+body.game #title .menu.m-left button:nth-child(4){left:54px}
+body.game #title .menu.m-left button:nth-child(5){left:36px}
+body.game #title .menu.m-left button:nth-child(6){left:18px}
+body.game #title .menu.m-left button:nth-child(7){left:0}
+@media (pointer:coarse){ body.game #title .play-help{display:none} }
+
+/* B1 横屏小屏（画面缩到 0.75 倍以下，如 844×390）：--u = 1 个屏幕像素，正文≥15px、按钮≥36px */
+body.game.smallstage #pdlg{left:calc(10*var(--u));right:calc(10*var(--u));bottom:calc(5*var(--u));height:calc(140*var(--u));padding:calc(22*var(--u)) calc(18*var(--u)) calc(46*var(--u))}
+body.game.smallstage #ptx{font-size:max(var(--tSize),calc(15*var(--u)));line-height:1.55;letter-spacing:0}
+body.game.smallstage #pnm{top:calc(-13*var(--u));left:calc(14*var(--u));height:calc(26*var(--u));line-height:calc(26*var(--u));min-width:calc(80*var(--u));padding:0 calc(12*var(--u));font-size:calc(14*var(--u))}
+body.game.smallstage #pctl{right:calc(10*var(--u));bottom:calc(5*var(--u));gap:calc(5*var(--u))}
+body.game.smallstage #pctl .btn{height:calc(36*var(--u));min-width:calc(48*var(--u));padding:0 calc(6*var(--u));gap:calc(3*var(--u));font-size:calc(15*var(--u));border-radius:calc(5*var(--u))}
+body.game.smallstage #pctl .pc-label{font-size:calc(12*var(--u))}
+body.game.smallstage #pin{bottom:calc(150*var(--u))}
+body.game.smallstage #choices[data-many]{top:calc(18*var(--u))!important;gap:calc(8*var(--u))}
+body.game.smallstage #choices>button{font-size:max(25px,calc(15*var(--u)))!important;min-height:calc(40*var(--u));padding:calc(6*var(--u)) calc(30*var(--u))!important;line-height:1.45}
+body.game.smallstage #choices[data-many="false"]{width:calc(300*var(--u))}
+body.game.smallstage #title h1.t-left{top:calc(26*var(--u))}
+/* 横屏小屏标题：菜单收窄贴左，最下两项落在左下水面，避开右下方的脚 */
+body.game.smallstage #title .menu.m-left{left:calc(18*var(--u));bottom:calc(12*var(--u));width:calc(160*var(--u));gap:calc(6*var(--u))}
+body.game.smallstage #title .menu.m-left button{width:calc(160*var(--u));height:calc(36*var(--u));min-height:0;font-size:calc(15*var(--u));letter-spacing:calc(2*var(--u));padding:0 calc(18*var(--u)) 0 calc(34*var(--u))}
+body.game.smallstage #title .menu.m-left button:nth-child(n){left:0}
+body.game.smallstage .ovl:not(#title):not(#cgview){zoom:var(--ovZ)}
+body.game.smallstage .ovl:not(#title):not(#cgview):not(#soul){padding:24px 34px 30px}
+body.game.smallstage .ovl .ovx{margin:-10px -20px 0 0;width:44px;height:44px;font-size:22px}
+body.game.smallstage #soulTab{zoom:var(--ovZ)}
+@media (pointer:coarse){
+  body.game.smallstage #psettings .tg{min-height:68px;font-size:28px}          /* ×0.54 ≈ 36px 高、15px 字 */
+  body.game.smallstage #psettings .row .dim{font-size:28px}
+  body.game.smallstage #backlog .e{font-size:29px}body.game.smallstage #backlog .e b{font-size:26px}
+  body.game.smallstage #slots .slot b{font-size:30px}body.game.smallstage #slots .slot small{font-size:26px}
+  body.game.smallstage #slots .slot p{font-size:28px}body.game.smallstage #slots .slot time{font-size:24px}
+}
+@media (pointer:coarse){ body.game.smallstage #psettings,body.game.smallstage #backlog,body.game.smallstage #slots{zoom:1!important} }  /* 这三层已有触屏放大规则，不再叠加 */
+
+/* B1 竖屏（选“就这样竖着玩”，或窄长窗口）：画面按宽度铺在上方，下方放对话框 / 选项 / 按钮。
+   这些层用 zoom = 1/缩放，里面全部按真实屏幕像素排版。--vp* 变量由 fit() 算好。 */
+body.game.vport #stage{background:linear-gradient(#0c1d22,#10282d 45%,#0a171b)}
+body.game.vport #bgEl,body.game.vport #layer,body.game.vport #moodFx,body.game.vport #empty{top:var(--vpTop);bottom:auto;height:720px}
+body.game.vport #layer{overflow:clip}
+body.game.vport #pdlg{zoom:var(--vpZ);left:12px;right:12px;top:var(--vpDlgTop);bottom:auto;height:var(--vpDlgH);padding:28px 18px 14px;border-radius:12px}
+body.game.vport #pdlg::before{background:linear-gradient(180deg,#1c3b59d9,#2d5475a6 55%,#43698aa0);border:1px solid #def2ff4d;border-radius:12px}
+body.game.vport #pnm{top:-15px;left:14px;min-width:92px;height:30px;line-height:30px;padding:0 14px;font-size:16px;letter-spacing:2px;border-radius:8px}
+body.game.vport #ptx{font-size:calc(var(--tSize) * .68);line-height:1.7;letter-spacing:.5px}
+body.game.vport #pctl{position:absolute;top:calc(100% + var(--vpCtlOff));bottom:auto;left:-6px;right:-6px;display:flex;flex-wrap:wrap;justify-content:center;gap:8px 6px}
+body.game.vport #pctl .btn{flex:0 0 calc(20% - 5px);width:auto;min-width:0;height:46px;padding:0 2px;justify-content:center;gap:3px;font-size:16px;border-radius:8px;background:#b9dff914}
+body.game.vport #pctl .pc-label{font-size:14px;letter-spacing:0}
+body.game.vport #choices{zoom:var(--vpZ);top:var(--vpChTop)!important;height:var(--vpChH);bottom:auto!important;left:12px!important;right:12px!important;width:auto!important;justify-content:center;align-items:stretch;gap:10px;overflow-y:auto;grid-template-columns:none!important}
+body.game.vport #choices.show{display:flex}
+body.game.vport #choices>button{width:100%!important;min-width:0!important;max-width:none!important;min-height:48px;padding:10px 20px!important;font-size:16px!important;line-height:1.5;text-align:center!important;border-radius:12px;border:1px solid #ddf2ff59;background:radial-gradient(ellipse at center,#8bb9dcc4,#426d968c)}
+body.game.vport #choices>button:hover{background:radial-gradient(ellipse at center,#9dc6e6d6,#4c789fa0)}
+body.game.vport #choices .ctimer{width:100%;max-width:100%}
+body.game.vport #pin{zoom:var(--vpZ);left:12px;right:12px;top:var(--vpChTop);bottom:auto;height:44px}
+body.game.vport #soulTab{zoom:var(--vpZ);top:calc(var(--vpTopPx) + 16px);width:34px;height:46px;font-size:18px}
+body.game.vport .ovl:not(#title):not(#cgview){zoom:var(--vpZ)}  /* 竖屏弹出层 1:1 屏幕像素：正文≥16px */
+body.game.vport .ovl:not(#title):not(#cgview):not(#soul){padding:26px 16px 32px}
+body.game.vport .ovl .ovx{margin:-12px -6px 0 0;width:44px;height:44px;font-size:22px}
+body.game.vport .panel-heading h2{font-size:26px}
+body.game.vport #pchapters .chapter-grid,body.game.vport .audio-grid{grid-template-columns:1fr}
+body.game.vport [data-audio-panel="music"] button{min-height:120px;padding:20px;font-size:22px}
+body.game.vport .audio-tabs{flex-wrap:wrap}
+body.game.vport .audio-tabs button{padding:8px 16px;font-size:17px}
+body.game.vport #slots .slot{height:150px}
+body.game.vport #psettings .rows{font-size:18px;gap:12px}
+body.game.vport #psettings .row>span{width:100px}
+body.game.vport #psettings .tg{min-height:44px;padding:8px 14px;font-size:16px}
+body.game.vport #psettings #soulUrl{height:44px;font-size:16px}
+body.game.vport #psettings input[type=range]{height:36px;flex:1;min-width:140px}
+body.game.vport #backlog .e{font-size:17px;padding:12px 2px}
+body.game.vport #backlog .e b{font-size:15px}
+/* 竖屏标题：封面铺满，菜单居中放在下半部（角色脸在上半部），按钮 ≥44px */
+body.game.vport #title{zoom:var(--vpZ)}
+body.game.vport #title .cbg{background-position:66% center}
+body.game.vport #title.cover::after{display:block;content:"";position:absolute;top:auto;left:0;right:0;bottom:0;height:56%;background:linear-gradient(#0c1d2200,#0c1d22b0 60%,#0c1d22e0);z-index:0;pointer-events:none}
+body.game.vport #title h1.t-left{top:calc(var(--vpTopPx) + 28px);left:24px;font-size:30px;letter-spacing:6px}
+body.game.vport #title .menu.m-left,body.game.vport #title .menu{left:0;right:0;bottom:36px;width:auto;gap:10px;align-items:center}
+body.game.vport #title .menu button,body.game.vport #title .menu button:nth-child(n){left:0;width:280px;height:44px;min-height:44px;padding:0 36px 0 56px;font-size:18px;letter-spacing:3px}
+body.game.vport #title .play-help{display:none}
+/* 设置里的好感数值行 */
+body.game #psettings .stats-row{flex-wrap:wrap}
+body.game #psettings .stats-now{margin-left:12px;color:#b9cbc3}
+body.game #psettings .stats-now:empty{display:none}

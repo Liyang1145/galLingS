@@ -1,14 +1,13 @@
 {
   "id": "L07",
-  "kind": "sprite",
+  "date": "2026-10-18",
+  "batch": "playtest-ledger-20261018",
+  "note": "用户 10-18 12:20 亲自改好的 L07 柔和（白底带假棋盘格 1254x1254）换入：抠图，去掉发丝间残留的浅灰/白，按旧版人物高度缩放进 1024x1536 画布、脚底对齐。原稿存 docs/collab/playtest/L07_用户改稿_20261018.png。",
   "endpoint": "https://api.rinko.ai/v1/images/edits",
   "requested_model": "gpt-image-2.5",
   "requested_quality": "high",
-  "date": "2026-10-17",
-  "batch": "tail-unify-c05",
-  "note": "Tail redrawn to refined C05 standard (user 2026-10-17 09:56); sprites: second pass cut to transparent alpha.",
-  "output_sha256": "590b8cd0a276f76864609d53426ee8c12a415b4b5409095ec93ebf8be75d57b0",
-  "master_sha256": "af248444c03a733331a3c0e3f4f716e64a06b57c6ef1da6256f5e2d24fa8c3c2",
-  "runtime_webp_sha256": "cbfb4fd008549a11a3de506a450158c988d16c435c24d06b94636447d4f8a13a",
-  "superseded_master": "content/assets/art-upgrade/originals/L07_superseded_before_tail_c05.webp"
+  "matting": "local rembg isnet-anime + white decontamination",
+  "master_sha256": "782d353b4f95d003ea3cb7eb8cb019d98ccd192dc81b32321c4733e1a1174ece",
+  "runtime_webp_sha256": "5152c4ae312e52d9a72ce608100e6c8bd093895527839fc0bf64f1b972e4b624",
+  "superseded_master": "content/assets/art-upgrade/originals/L07_superseded_before_playtest_20261018.webp"
 }

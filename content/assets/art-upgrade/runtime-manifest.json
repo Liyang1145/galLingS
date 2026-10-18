@@ -820,10 +820,10 @@
     "L07": {
       "path": "content/assets/art-upgrade/runtime/L07.webp",
       "sourceMasterPath": "content/assets/art-upgrade/originals/L07.webp",
-      "sourceSha256": "af248444c03a733331a3c0e3f4f716e64a06b57c6ef1da6256f5e2d24fa8c3c2",
-      "sha256": "cbfb4fd008549a11a3de506a450158c988d16c435c24d06b94636447d4f8a13a",
-      "bytes": 260388,
-      "sourceBytes": 925030,
+      "sourceSha256": "782d353b4f95d003ea3cb7eb8cb019d98ccd192dc81b32321c4733e1a1174ece",
+      "sha256": "5152c4ae312e52d9a72ce608100e6c8bd093895527839fc0bf64f1b972e4b624",
+      "bytes": 237602,
+      "sourceBytes": 899660,
       "size": [
         1024,
         1536

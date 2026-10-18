@@ -2,12 +2,12 @@
   "id": "L06",
   "date": "2026-10-18",
   "batch": "playtest-ledger-20261018",
-  "note": "全面审视：去掉脚下与发梢的灰色投影残留",
+  "note": "用户 10-18 10:35：发卷之间被模型涂满浅蓝。改用 Image2.5 直接透明底（background=transparent）重出，发丝间真实镂空；再一次透明底编辑去掉腿间露出的尾巴，尾巴保持原位；alpha 去 <16% 薄雾。",
   "endpoint": "https://api.rinko.ai/v1/images/edits",
   "requested_model": "gpt-image-2.5",
   "requested_quality": "high",
   "matting": "local rembg isnet-anime + white decontamination",
-  "master_sha256": "ef0a1c84a30c7cb2cb8227fe382ab3a43e12aeca60bdec59174f7c71213a3e44",
-  "runtime_webp_sha256": "756554ff5a20ccf0d77eabbc81b0996a66ca6c4ffe81f60c956efff9cc17e6b4",
+  "master_sha256": "2603a72f45e6e163bc67b529a84f682706997aec7b359459874dca2ead2a9ffd",
+  "runtime_webp_sha256": "c8772a767ef217e19798ad32bfdd5090568e53ebd5d24ba800048009e4bae7c3",
   "superseded_master": "content/assets/art-upgrade/originals/L06_superseded_before_playtest_20261018.webp"
 }

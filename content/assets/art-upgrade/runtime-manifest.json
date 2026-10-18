@@ -803,10 +803,10 @@
     "L06": {
       "path": "content/assets/art-upgrade/runtime/L06.webp",
       "sourceMasterPath": "content/assets/art-upgrade/originals/L06.webp",
-      "sourceSha256": "ef0a1c84a30c7cb2cb8227fe382ab3a43e12aeca60bdec59174f7c71213a3e44",
-      "sha256": "756554ff5a20ccf0d77eabbc81b0996a66ca6c4ffe81f60c956efff9cc17e6b4",
-      "bytes": 210518,
-      "sourceBytes": 881248,
+      "sourceSha256": "2603a72f45e6e163bc67b529a84f682706997aec7b359459874dca2ead2a9ffd",
+      "sha256": "c8772a767ef217e19798ad32bfdd5090568e53ebd5d24ba800048009e4bae7c3",
+      "bytes": 221930,
+      "sourceBytes": 905574,
       "size": [
         1024,
         1536

@@ -973,10 +973,10 @@
     "L19": {
       "path": "content/assets/art-upgrade/runtime/L19.webp",
       "sourceMasterPath": "content/assets/art-upgrade/originals/L19.webp",
-      "sourceSha256": "77581b8801f8f62e5cc3a3524ed4a7b99fde1f4fe6cadcd4f0881427431da842",
-      "sha256": "c45e02914414d864bbdcf6f401e451bc561d21878521681110dee1924a97749b",
-      "bytes": 225510,
-      "sourceBytes": 871696,
+      "sourceSha256": "197992449ec1cf5462d9889211efe0775aa0f837b6bca64b4df5d8d9d56d8e74",
+      "sha256": "06df35ebc40865cb3c8b221bd6a52808eabb3141129e56562022cc2aa6c8c7a3",
+      "bytes": 195470,
+      "sourceBytes": 787606,
       "size": [
         1024,
         1536
@@ -1546,7 +1546,8 @@
       "webpQuality": 92,
       "resized": false,
       "backendQuality": "high",
-      "backendModel": null
+      "backendModel": null,
+      "retired": "2026-10-18 用户：与 L19 重复，只用 L19"
     },
     "L35": {
       "path": "content/assets/art-upgrade/runtime/L35.webp",
@@ -2044,10 +2045,10 @@
     "P09": {
       "path": "content/assets/art-upgrade/runtime/P09.webp",
       "sourceMasterPath": "content/assets/art-upgrade/originals/P09.webp",
-      "sourceSha256": "3236ceeb5d628dfe368eb21421a93d0aecbcb99eb6174755fea883cee56b7b22",
-      "sha256": "f058825dfd3ea5d0c62bb438b17a970adb6aa9f34d99c3d8c1cf4a487f38c5e8",
-      "bytes": 269240,
-      "sourceBytes": 940542,
+      "sourceSha256": "3757cbea2d8bea3334e1081d75c583d229b7d82c4b3a42d8b8873624b56c1aaa",
+      "sha256": "4f2280d9871666bca8339fc6fba37cc78ebbae76868344038dddc6df36933654",
+      "bytes": 205058,
+      "sourceBytes": 847254,
       "size": [
         1024,
         1536

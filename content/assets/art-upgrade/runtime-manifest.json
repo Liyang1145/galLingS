@@ -1875,10 +1875,10 @@
     "O11": {
       "path": "content/assets/art-upgrade/runtime/O11.webp",
       "sourceMasterPath": "content/assets/art-upgrade/originals/O11.webp",
-      "sourceSha256": "83942155e033f7868bf23a7ca8c4f16f0fcfe415d0e7677383f3ade3d1a8727b",
-      "sha256": "36796a7a679f25b04cff55bf65c5e8c88c9c635157295160501e67e5ad53c22c",
-      "bytes": 547014,
-      "sourceBytes": 3712022,
+      "sourceSha256": "3c03f1bc4dba887b5f648475b005a5ee1f708b92e47747a5e089e608f58b7d20",
+      "sha256": "d6afb1ef761b6a442711b2b47de61c9ea22e6aab7e443b0f1a79177024964651",
+      "bytes": 925320,
+      "sourceBytes": 3678786,
       "size": [
         2752,
         1536

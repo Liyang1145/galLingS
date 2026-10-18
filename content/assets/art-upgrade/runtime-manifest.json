@@ -1126,10 +1126,10 @@
     "L32": {
       "path": "content/assets/art-upgrade/runtime/L32.webp",
       "sourceMasterPath": "content/assets/art-upgrade/originals/L32.webp",
-      "sourceSha256": "396ebc13f4dbf6340a02b0a48cc1ab34535362fae81c4704f883de526fd65a4c",
-      "sha256": "630ceb1f15b65a0755c30a4c116576bff08609b235707d78e2fe5e4d5c4a2ce0",
-      "bytes": 254970,
-      "sourceBytes": 903472,
+      "sourceSha256": "69050f04f589eb9644f9305f87410334412bd19ec9c54d4503c5574987a3ec3f",
+      "sha256": "509af909343affb2c12600c6e9f67275b9671fa97b3d730c1fc4e0013ca73106",
+      "bytes": 196798,
+      "sourceBytes": 870924,
       "size": [
         1024,
         1536

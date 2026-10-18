@@ -2,12 +2,12 @@
   "id": "L03",
   "date": "2026-10-18",
   "batch": "playtest-ledger-20261018",
-  "note": "试玩账本(第三份) #1311：发梢白边/抠图脏 → 白底合成后本地 isnet-anime 重抠去白边，画面不变。",
+  "note": "用户 10-18 11:27 亲自改好的 L03（白底 1254x1254）替换进游戏：rembg 抠图 + 发丝间白色镂空，按旧版人物高度缩放到 1024x1536 画布、脚底对齐。用户原稿存 docs/collab/playtest/L03_用户改稿_20261018.png。",
   "endpoint": "https://api.rinko.ai/v1/images/edits",
   "requested_model": "gpt-image-2.5",
   "requested_quality": "high",
   "matting": "local rembg isnet-anime + white decontamination",
-  "master_sha256": "7de21bd56bb0cdb1e5111c987d4d055d1d02a0fefb0ca9599f6ce7481fb36a69",
-  "runtime_webp_sha256": "c14803ef005e3d6f004260baa1531e9ca8c8302f1d8eedb817b5eeaaba37f7f6",
+  "master_sha256": "8df4eb7f731b78144c8e790743eca3b0d1ecd755d34b96a7d355ae9c0dc3db1a",
+  "runtime_webp_sha256": "7cc520902e17ee2d59dbbf016847142c977dcc9c9eda61dc0ec6c04b65ebb542",
   "superseded_master": "content/assets/art-upgrade/originals/L03_superseded_before_playtest_20261018.webp"
 }

@@ -888,10 +888,10 @@
     "L11": {
       "path": "content/assets/art-upgrade/runtime/L11.webp",
       "sourceMasterPath": "content/assets/art-upgrade/originals/L11.webp",
-      "sourceSha256": "048720f42ff0e2f84adb95065a40ec6118276a06f1f9b55cae5ab7143e19463f",
-      "sha256": "582ec9e009fd6c35420b292e9c435ea752a23a8eefe6b0950b70f999b6d95829",
-      "bytes": 250064,
-      "sourceBytes": 998138,
+      "sourceSha256": "88e1c316ebc1db1b3e04c7f49a717bde288e9a023cf476e19da7f19ce6df9929",
+      "sha256": "b2f357c66f052cfb0f838414136813fe3b19472ad0c4e8f48ff3353812b697bc",
+      "bytes": 257882,
+      "sourceBytes": 952948,
       "size": [
         1024,
         1536

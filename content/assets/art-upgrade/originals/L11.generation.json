@@ -2,12 +2,12 @@
   "id": "L11",
   "date": "2026-10-18",
   "batch": "playtest-ledger-20261018",
-  "note": "用户 10-18 13:21 给的 L11（救援后红眼）用 gpt-image-2.5-sunburst 照 L01 对齐尾巴，人物不动，透明底直出；用户原稿存 docs/collab/playtest/L11_user_20261018.webp",
+  "note": "10-18 13:56 用户：sunburst 版头发不干净，只动尾巴。以用户原 L11 为底，只在右下尾巴区合成 sunburst 第2版的尾巴（皮肤、裙子、头发全保留原稿）",
   "endpoint": "https://api.rinko.ai/v1/images/edits",
   "requested_model": "gpt-image-2.5",
   "requested_quality": "high",
   "matting": "local rembg isnet-anime + white decontamination",
-  "master_sha256": "048720f42ff0e2f84adb95065a40ec6118276a06f1f9b55cae5ab7143e19463f",
-  "runtime_webp_sha256": "582ec9e009fd6c35420b292e9c435ea752a23a8eefe6b0950b70f999b6d95829",
+  "master_sha256": "88e1c316ebc1db1b3e04c7f49a717bde288e9a023cf476e19da7f19ce6df9929",
+  "runtime_webp_sha256": "b2f357c66f052cfb0f838414136813fe3b19472ad0c4e8f48ff3353812b697bc",
   "superseded_master": "content/assets/art-upgrade/originals/L11_superseded_before_playtest_20261018.webp"
 }

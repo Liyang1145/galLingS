@@ -115,17 +115,7 @@ body.game #backlog .e b { font-weight:500; margin-bottom:5px; }
 body.game #pctl .btn{ text-shadow:0 1px 2px #000c,0 0 6px #0009; }
 
 /* ===== fix9 界面体验（2026-10-18）===== */
-/* B2 标题菜单：封面角色在右侧，菜单按 settings.cover.menu = "left" 放到左侧水面上，
-   阶梯方向朝下往左收（最下一项贴左边），避开脸和脚；皮肤、字体、间距沿用鲸鱼 UI。 */
-body.game #title .menu.m-left{left:68px;right:auto;bottom:64px;width:340px;gap:12px;align-items:stretch}
-body.game #title .menu.m-left button{width:340px;height:48px;min-height:48px;padding:0 48px 0 74px;font-size:22px}
-body.game #title .menu.m-left button:nth-child(1){left:108px}
-body.game #title .menu.m-left button:nth-child(2){left:90px}
-body.game #title .menu.m-left button:nth-child(3){left:72px}
-body.game #title .menu.m-left button:nth-child(4){left:54px}
-body.game #title .menu.m-left button:nth-child(5){left:36px}
-body.game #title .menu.m-left button:nth-child(6){left:18px}
-body.game #title .menu.m-left button:nth-child(7){left:0}
+/* B2 标题菜单：保持作者鲸鱼 UI 原稿的右侧错位（用户 2026-10-17 确认），桌面不改位置；小屏只缩小尺寸。 */
 @media (pointer:coarse){ body.game #title .play-help{display:none} }
 
 /* B1 横屏小屏（画面缩到 0.75 倍以下，如 844×390）：--u = 1 个屏幕像素，正文≥15px、按钮≥36px */
@@ -141,9 +131,9 @@ body.game.smallstage #choices>button{font-size:max(25px,calc(15*var(--u)))!impor
 body.game.smallstage #choices[data-many="false"]{width:calc(300*var(--u))}
 body.game.smallstage #title h1.t-left{top:calc(26*var(--u))}
 /* 横屏小屏标题：菜单收窄贴左，最下两项落在左下水面，避开右下方的脚 */
-body.game.smallstage #title .menu.m-left{left:calc(18*var(--u));bottom:calc(12*var(--u));width:calc(160*var(--u));gap:calc(6*var(--u))}
-body.game.smallstage #title .menu.m-left button{width:calc(160*var(--u));height:calc(36*var(--u));min-height:0;font-size:calc(15*var(--u));letter-spacing:calc(2*var(--u));padding:0 calc(18*var(--u)) 0 calc(34*var(--u))}
-body.game.smallstage #title .menu.m-left button:nth-child(n){left:0}
+body.game.smallstage #title .menu{left:auto;right:calc(18*var(--u));bottom:calc(12*var(--u));width:calc(160*var(--u));gap:calc(6*var(--u))}
+body.game.smallstage #title .menu button{width:calc(160*var(--u));height:calc(36*var(--u));min-height:0;font-size:calc(15*var(--u));letter-spacing:calc(2*var(--u));padding:0 calc(18*var(--u)) 0 calc(34*var(--u))}
+body.game.smallstage #title .menu button:nth-child(n){left:0}
 body.game.smallstage .ovl:not(#title):not(#cgview){zoom:var(--ovZ)}
 body.game.smallstage .ovl:not(#title):not(#cgview):not(#soul){padding:24px 34px 30px}
 body.game.smallstage .ovl .ovx{margin:-10px -20px 0 0;width:44px;height:44px;font-size:22px}

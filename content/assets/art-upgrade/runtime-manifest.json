@@ -2331,10 +2331,10 @@
       "resized": false,
       "backendModel": null,
       "sourceMasterPath": "content/assets/art-upgrade/originals/L37.webp",
-      "sha256": "751f59fe27cb7b98601bdad8046e40f9467329cbac9eb8dee739a9cb0cd81c2d",
-      "bytes": 168424,
-      "sourceSha256": "26d52530de7b58d89091d922203f18a29c2d4926f950e7e0eece65ef8be35529",
-      "sourceBytes": 659052,
+      "sha256": "92df0e4d7c24e5829a3fe4cc0ad26a25970d43b834c17f4e6ff736f2d4689d71",
+      "bytes": 150378,
+      "sourceSha256": "cba4cdad3e0f9bca9a93f757ec18eccbf53fac2a27e67e32a0f41ab3521954ab",
+      "sourceBytes": 631428,
       "size": [
         1024,
         1536

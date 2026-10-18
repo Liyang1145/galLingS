@@ -20,3 +20,5 @@ dist/
 # galcore 本地构建产物（maturin develop）
 core/python/galcore/*.so
 core/python/galcore/*.pyd
+desktop/src-tauri/target/
+desktop/src-tauri/gen/

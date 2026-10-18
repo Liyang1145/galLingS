@@ -85,3 +85,6 @@
 46. 背身尾巴按 L12 定稿的做法：裙子完整，尾根藏在后摆下，裙边压在尾巴上，不能做成从裙子上穿洞出来。
 47. 配乐节奏：同一首连续不到约 45 秒就被切走，或夹在同一首中间不到约 60 秒的段落，并入前后一首；停奏段不动（明细在 `game.js` 的 `musicPacing`）。用户提供的配音按序号直接替换。
 
+## 桌面封装：引擎进浏览器（2026-10-16）
+
+40. 用户要求“封装”成可直接运行的程序。galcore 加编 `wasm32-unknown-unknown`（`core/src/lib.rs` 的 `mod wasm`，不依赖 wasm-bindgen），接口与 Python 绑定一一对应，state_hash 与快照逐字节一致（`tests/demo/test_wasm_parity.py`）。`web/offline/local-session.js` 在页面里实现 `/ws` 的纯选项部分；`tools/build_desktop_dist.py` 打离线包（路径与服务端路由相同）；`desktop/` 用 Tauri 2 包成 Windows 程序（本地协议读离线包，支持 Range），由 `.github/workflows/desktop.yml` 在 Windows 机器上出安装包和免安装版。离线包只有纯选项模式；AI 模式、结局后聊天、灵枢记忆仍走 Python 服务（start.bat），Python 后端不变。

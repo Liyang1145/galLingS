@@ -1534,10 +1534,10 @@
     "L20": {
       "path": "content/assets/art-upgrade/runtime/L20.webp",
       "sourceMasterPath": "content/assets/art-upgrade/originals/L20.webp",
-      "sourceSha256": "12057121433989520365d2b04f009ec1ca48cba84e1719d938ce8135025f77cd",
-      "sha256": "d4e8d9f5e159d25294c9e057205a0e72856f49dcf161a20b8fb417ea0c03f94a",
-      "bytes": 189000,
-      "sourceBytes": 794006,
+      "sourceSha256": "f1c2ebe364dbdc11477ca0bc1597a34edc3ea1bf37a61e84e3f0c3de11f6bf52",
+      "sha256": "bd70e3a762213df26a2ff7f0c4f05717cde83119e0fb34eaef2acb3cb426ab64",
+      "bytes": 185908,
+      "sourceBytes": 785432,
       "size": [
         1024,
         1536

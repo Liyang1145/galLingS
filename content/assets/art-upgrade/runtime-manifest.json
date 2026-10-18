@@ -2096,10 +2096,10 @@
     "P12": {
       "path": "content/assets/art-upgrade/runtime/P12.webp",
       "sourceMasterPath": "content/assets/art-upgrade/originals/P12.webp",
-      "sourceSha256": "63387e8e46245379bed3f4735ea0d04c8ee1b7ebd14737185325f0946e1f6cdf",
-      "sha256": "f5f64a2e52b7ca87f4e81ba01a28a8d828b235005f4c4321281f7b30143b6bfd",
-      "bytes": 256748,
-      "sourceBytes": 1101104,
+      "sourceSha256": "c06918ece6cd5f89b448d00d7da3827d1aa697895bb8057e24daf47f85f07c39",
+      "sha256": "344cc76aed3fb5ab3ee82b866dcb9a04f5c88af3534ba7f4393097f21fca7d82",
+      "bytes": 258318,
+      "sourceBytes": 1100606,
       "size": [
         1024,
         1536

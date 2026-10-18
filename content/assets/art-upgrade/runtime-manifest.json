@@ -2249,10 +2249,10 @@
     "C26": {
       "path": "content/assets/art-upgrade/runtime/C26.webp",
       "sourceMasterPath": "content/assets/art-upgrade/originals/C26.webp",
-      "sourceSha256": "983bfdc6e1e2850d571e83f05a6689b748b4089f1c97ba22a9ae4524c7949262",
-      "sha256": "9b34ae1f794fcf606195ccf435ccc9fb23f9d77e7ed7905a8221105bc1b06847",
-      "bytes": 545838,
-      "sourceBytes": 3598666,
+      "sourceSha256": "f2324072bbbf6400048c051406047d5728e9abbb0e49b1e4d9465c8bfefdbc4a",
+      "sha256": "1c6274095adbba9aea537401ddad4450b1f0792fa10784f3ff764905ab320d07",
+      "bytes": 727478,
+      "sourceBytes": 3273240,
       "size": [
         2752,
         1536

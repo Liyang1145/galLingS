@@ -7,8 +7,10 @@
   "date": "2026-10-17",
   "batch": "tail-unify-c05",
   "note": "Tail redrawn to refined C05 standard (user 2026-10-17 09:56); sprites: second pass cut to transparent alpha.",
-  "output_sha256": "e814bfaa793f86858a6a1dd93d5501c23b808320cf92a5909c85646e9a1f93f2",
-  "master_sha256": "983bfdc6e1e2850d571e83f05a6689b748b4089f1c97ba22a9ae4524c7949262",
-  "runtime_webp_sha256": "9b34ae1f794fcf606195ccf435ccc9fb23f9d77e7ed7905a8221105bc1b06847",
-  "superseded_master": "content/assets/art-upgrade/originals/C26_superseded_before_tail_c05.webp"
+  "output_sha256": "b3cd82f84577f329a97b05c8700c0ecd723ed66872453a685c29008eca5ebdb7",
+  "master_sha256": "f2324072bbbf6400048c051406047d5728e9abbb0e49b1e4d9465c8bfefdbc4a",
+  "runtime_webp_sha256": "1c6274095adbba9aea537401ddad4450b1f0792fa10784f3ff764905ab320d07",
+  "superseded_master": "content/assets/art-upgrade/originals/C26_superseded_before_tail_c05.webp",
+  "revision": 1,
+  "revision_note": "用户提供版（1672x941 原稿 LANCZOS 放大，整张替换；原稿存 docs/collab/playtest/C26_user_20261018.webp）"
 }

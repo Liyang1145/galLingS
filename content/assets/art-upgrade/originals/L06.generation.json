@@ -2,12 +2,12 @@
   "id": "L06",
   "date": "2026-10-18",
   "batch": "playtest-ledger-20261018",
-  "note": "用户 10-18 10:35：发卷之间被模型涂满浅蓝。改用 Image2.5 直接透明底（background=transparent）重出，发丝间真实镂空；再一次透明底编辑去掉腿间露出的尾巴，尾巴保持原位；alpha 去 <16% 薄雾。",
+  "note": "用户 10-18 10:35：发卷之间被模型涂满浅蓝。改用 Image2.5 直接透明底（background=transparent）重出，发丝间真实镂空；再一次透明底编辑去掉腿间露出的尾巴，尾巴保持原位；alpha 去 <16% 薄雾。 用户 10:56 指出腿画坏（膝盖拧、右大腿接错、腿间一缕蓝）：参照旧版腿透明底重画，只把裙下腿部区域合成回去，头发和尾巴不变。",
   "endpoint": "https://api.rinko.ai/v1/images/edits",
   "requested_model": "gpt-image-2.5",
   "requested_quality": "high",
   "matting": "local rembg isnet-anime + white decontamination",
-  "master_sha256": "2603a72f45e6e163bc67b529a84f682706997aec7b359459874dca2ead2a9ffd",
-  "runtime_webp_sha256": "c8772a767ef217e19798ad32bfdd5090568e53ebd5d24ba800048009e4bae7c3",
+  "master_sha256": "ab34f0cec605c0c3f748089f45eee2de525b1791591288ab0653806a527d92f7",
+  "runtime_webp_sha256": "41ea5441323827bdd0bd3ca80e0a691a539857c573fb756ede36f2fbdaa6012e",
   "superseded_master": "content/assets/art-upgrade/originals/L06_superseded_before_playtest_20261018.webp"
 }

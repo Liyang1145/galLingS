@@ -88,3 +88,7 @@
 ## 桌面封装：引擎进浏览器（2026-10-16）
 
 40. 用户要求“封装”成可直接运行的程序。galcore 加编 `wasm32-unknown-unknown`（`core/src/lib.rs` 的 `mod wasm`，不依赖 wasm-bindgen），接口与 Python 绑定一一对应，state_hash 与快照逐字节一致（`tests/demo/test_wasm_parity.py`）。`web/offline/local-session.js` 在页面里实现 `/ws` 的纯选项部分；`tools/build_desktop_dist.py` 打离线包（路径与服务端路由相同）；`desktop/` 用 Tauri 2 包成 Windows 程序（本地协议读离线包，支持 Range），由 `.github/workflows/desktop.yml` 在 Windows 机器上出安装包和免安装版。离线包只有纯选项模式；AI 模式、结局后聊天、灵枢记忆仍走 Python 服务（start.bat），Python 后端不变。
+
+## 家居曲（2026-10-18）
+
+43. 音乐负责人明确：《翡翠之梦》只有见面曲和沙滩曲两个用途，Atri 的 E3=M6=M7 新版偏家居曲。据此把居家/店铺段落（10 段 518 句）改用 `bgm_atri_e3m6m7_v2`，不再是仅试听；初遇、礁石、季终读稿等见面相关段落仍用《翡翠之梦》。Atri 版 M1 保持仅试听。

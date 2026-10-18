@@ -109,3 +109,7 @@ body.game #backlog .e b { font-weight:500; margin-bottom:5px; }
   body.game #pctl { gap:8px; }
   body.game .audio-grid button { min-height:104px; }
 }
+
+/* 2026-10-18 审查：触屏不显示悬停提示；亮场景控制栏加字影 */
+@media (hover:none){ #tip{ display:none !important; } }
+body.game #pctl .btn{ text-shadow:0 1px 2px #000c,0 0 6px #0009; }

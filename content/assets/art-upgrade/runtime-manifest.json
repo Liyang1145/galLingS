@@ -2011,10 +2011,10 @@
     "P07": {
       "path": "content/assets/art-upgrade/runtime/P07.webp",
       "sourceMasterPath": "content/assets/art-upgrade/originals/P07.webp",
-      "sourceSha256": "94be751df580dc5dfa2f1f95072d161fea4a490189e479981067e05485561ff2",
-      "sha256": "61f3c7b8441cea7f622b27c69b6c3b38f82fe3740d4ad6fead310ec93c5efa8e",
-      "bytes": 289398,
-      "sourceBytes": 987872,
+      "sourceSha256": "0b0adad8eb66258ed22c0f97ea119928c342be61f1ac677b46d4779e42c42981",
+      "sha256": "dddf00ae1f9d1ed94ea1858b05d1820661b6e4a4f24c6210d8926166e7a8b035",
+      "bytes": 247164,
+      "sourceBytes": 938820,
       "size": [
         1024,
         1536

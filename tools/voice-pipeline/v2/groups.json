@@ -1,0 +1,517 @@
+[
+{
+"ids": [
+"58oo02cv",
+"986487og"
+],
+"mood": "冷硬点名，压着火气一字一句逼近",
+"tags": {
+"986487og": "[serious]"
+}
+},
+{
+"ids": [
+"irma08fi",
+"k1t4gr6o"
+],
+"mood": "低声逼问，给对方最后一次机会"
+},
+{
+"ids": [
+"opening_tail_warning"
+],
+"mood": "居高临下宣告戒律，冷得不可动摇"
+},
+{
+"ids": [
+"v17izdvn"
+],
+"mood": "冷冷补刀，堵死对方退路"
+},
+{
+"ids": [
+"lt5k0xiy"
+],
+"mood": "突然恼火拔高声量，语速加快",
+"tags": {
+"lt5k0xiy": "[angry]"
+}
+},
+{
+"ids": [
+"5stlid22"
+],
+"mood": "音量回落，轻蔑地哼着收尾"
+},
+{
+"ids": [
+"gjwqntp5"
+],
+"mood": "沉默后压着声音开口，暴风前的静止"
+},
+{
+"ids": [
+"opening_second_hit_rebuke"
+],
+"mood": "爆发式短喝，羞恼冲顶干脆有力",
+"tags": {
+"opening_second_hit_rebuke": "[shouting]"
+}
+},
+{
+"ids": [
+"wxlmihwk"
+],
+"mood": "低声默读，尾音带一丝困惑"
+},
+{
+"ids": [
+"9nwggcga",
+"m4wlasdc"
+],
+"mood": "随口嫌弃，转成看笑话的嘲讽",
+"tags": {
+"m4wlasdc": "[sarcastic]"
+}
+},
+{
+"ids": [
+"p4p4l5nc"
+],
+"mood": "挑眉反问，轻慢里藏着威胁"
+},
+{
+"ids": [
+"d8fiin5a",
+"vfo56g8o"
+],
+"mood": "故意吊着话尾，居高临下审问"
+},
+{
+"ids": [
+"2360dvsq",
+"v3dynf75"
+],
+"mood": "轻哼一声，故作淡然地勉强认可",
+"tags": {
+"v3dynf75": "[reluctantly]"
+}
+},
+{
+"ids": [
+"sb63ua0q",
+"mb2zb98l",
+"n4owcxly"
+],
+"mood": "来了兴趣，随即冷静地开出威胁",
+"tags": {
+"sb63ua0q": "[curious]",
+"n4owcxly": "[mischievously]"
+}
+},
+{
+"ids": [
+"f8iqmtlj"
+],
+"mood": "忍不住的嫌弃，压着音量不想被听见"
+},
+{
+"ids": [
+"7y5p4ecl",
+"udtz7wdn"
+],
+"mood": "先轻挑反问，随即低声告诫",
+"tags": {
+"udtz7wdn": "[serious]"
+}
+},
+{
+"ids": [
+"8bl6cnrg",
+"du33qrza"
+],
+"mood": "指路干脆，末尾故意卖关子吊人",
+"tags": {
+"du33qrza": "[mischievously]"
+}
+},
+{
+"ids": [
+"ofo60hm7"
+],
+"mood": "前半自豪后转嫌弃，语速快尾音凉"
+},
+{
+"ids": [
+"oxt0ch9a"
+],
+"mood": "立刻拔高音量，急声强烈否认",
+"tags": {
+"oxt0ch9a": "[shouting]"
+}
+},
+{
+"ids": [
+"0npzmlbh",
+"9nq3isso"
+],
+"mood": "硬撑着大声狡辩，越说越急露怯",
+"tags": {
+"9nq3isso": "[panicked]"
+}
+},
+{
+"ids": [
+"3iq8cnx2",
+"i99npm13"
+],
+"mood": "被看穿后喝止，越辩越快没底气",
+"tags": {
+"3iq8cnx2": "[panicked]"
+}
+},
+{
+"ids": [
+"dmbm0jfv",
+"jqmeeaid"
+],
+"mood": "压低声音装平静，一本正经找台阶"
+},
+{
+"ids": [
+"huyyx0s8"
+],
+"mood": "沉默后极小声开口，带点试探",
+"tags": {
+"huyyx0s8": "[whispers]"
+}
+},
+{
+"ids": [
+"jpgy8sfu",
+"fm43foif"
+],
+"mood": "装作随口试探，问到后面认真起来",
+"tags": {
+"fm43foif": "[curious]"
+}
+},
+{
+"ids": [
+"o1frkrlk"
+],
+"mood": "轻声接话，语气不自觉软下来"
+},
+{
+"ids": [
+"x5l5e2zq",
+"gdn4c513"
+],
+"mood": "困惑停顿后立刻转为慌乱嫌弃，语速回升",
+"tags": {}
+},
+{
+"ids": [
+"l96c0f8q",
+"clfnykuw"
+],
+"mood": "轻哼一声后立刻强硬宣布，找借口般急切",
+"tags": {
+"l96c0f8q": "[scornful]"
+}
+},
+{
+"ids": [
+"7oxowej6"
+],
+"mood": "撇嘴故作无所谓，掩饰看不懂的尴尬",
+"tags": {}
+},
+{
+"ids": [
+"macs2evb"
+],
+"mood": "语速放慢，语气偏轻认真，像不小心说了真心话",
+"tags": {}
+},
+{
+"ids": [
+"twdgdg8k"
+],
+"mood": "语气重新变硬，带嫌弃收场但不如之前尖锐",
+"tags": {}
+},
+{
+"ids": [
+"unfmnv5c"
+],
+"mood": "抢先喊出，音量高语气急，堵住对方疑问",
+"tags": {
+"unfmnv5c": "[shouting]"
+}
+},
+{
+"ids": [
+"ysfx3a0y",
+"wb0jt6bd"
+],
+"mood": "宣读罪状般平稳但已变软，故作大方傲慢中带温度",
+"tags": {}
+},
+{
+"ids": [
+"dk3o5u4e"
+],
+"mood": "语速加快强硬下逐客令，但音量比预期小",
+"tags": {}
+},
+{
+"ids": [
+"19j7cn4u",
+"otgvk12p",
+"yh5ghjft"
+],
+"mood": "慌张心虚连声否认，越说越急越站不住脚",
+"tags": {
+"19j7cn4u": "[panicked]"
+}
+},
+{
+"ids": [
+"zv50a61e",
+"n1u3boys"
+],
+"mood": "气急败坏立刻反驳，音量拔高又恼火又无奈",
+"tags": {}
+},
+{
+"ids": [
+"il5kovq6",
+"rfxtpyjg"
+],
+"mood": "停顿后小声应，压着语气慢速给出勉强认可",
+"tags": {
+"il5kovq6": "[whispers]"
+}
+},
+{
+"ids": [
+"s8tmtnhe"
+],
+"mood": "沉默后小声催促，语气温和不习惯被看着",
+"tags": {}
+},
+{
+"ids": [
+"q975yrh8"
+],
+"mood": "条件反射般硬声短喝，冲口而出有点急",
+"tags": {
+"q975yrh8": "[shouting]"
+}
+},
+{
+"ids": [
+"dg7yx2u8"
+],
+"mood": "沉默许久后轻声出口，语调平，压着情绪",
+"tags": {
+"dg7yx2u8": "[reluctantly]"
+}
+},
+{
+"ids": [
+"iuosg2a2",
+"gleiylad"
+],
+"mood": "漂远了还大声喊回来，凶巴巴却藏不住期待",
+"tags": {
+"iuosg2a2": "[shouting]"
+}
+},
+{
+"ids": [
+"f3o1uyy0"
+],
+"mood": "别过脸小声否认，生硬里透着点慌张",
+"tags": {
+"f3o1uyy0": "[reluctantly]"
+}
+},
+{
+"ids": [
+"f8e6wh8c",
+"cvelvwin"
+],
+"mood": "故作严肃找借口，嘴硬补一句掩不住在意"
+},
+{
+"ids": [
+"7ukunjp3",
+"pzcqedbf"
+],
+"mood": "急促打断自己，马上生硬地转移话题",
+"tags": {
+"7ukunjp3": "[panicked]"
+}
+},
+{
+"ids": [
+"c6aajftq",
+"vkft1lib",
+"d2nuypd0"
+],
+"mood": "当场炸毛大声吼，气急败坏地连声质问",
+"tags": {
+"c6aajftq": "[shouting]"
+}
+},
+{
+"ids": [
+"5p228zu3",
+"sb0dfj4m"
+],
+"mood": "喝完短促一哼，端架子挑刺不肯认好喝",
+"tags": {
+"sb0dfj4m": "[serious]"
+}
+},
+{
+"ids": [
+"e72ipq1f",
+"g3zkq3se"
+],
+"mood": "先小声嘟囔抱怨，再故意拿腔拿调摆规矩",
+"tags": {
+"g3zkq3se": "[serious]"
+}
+},
+{
+"ids": [
+"kwsqkrhm",
+"qptgrijt",
+"4x70thl5"
+],
+"mood": "边喝边一条条随口挑刺，挑剔里透着满足"
+},
+{
+"ids": [
+"7esq5eqm"
+],
+"mood": "理直气壮找借口，轻快里带点小得意",
+"tags": {
+"7esq5eqm": "[mischievously]"
+}
+},
+{
+"ids": [
+"6s4ciafk",
+"dfkb4sfb"
+],
+"mood": "迟疑着低声开口，语气放软像在回忆",
+"tags": {
+"6s4ciafk": "[whispers]"
+}
+},
+{
+"ids": [
+"rkd43n5l",
+"w34adbpj"
+],
+"mood": "故作考官口吻收尾，转郑重宣布带点骄傲",
+"tags": {
+"w34adbpj": "[serious]"
+}
+},
+{
+"ids": [
+"7atacaud",
+"90lgbmcw"
+],
+"mood": "压低声音讲规则，末尾透出俏皮的强调",
+"tags": {}
+},
+{
+"ids": [
+"pkayznot",
+"ga1pjox5"
+],
+"mood": "挑眉反问催促，转短促轻蔑地回问",
+"tags": {
+"ga1pjox5": "[scornful]"
+}
+},
+{
+"ids": [
+"ta9pcdes",
+"o48jgiqf"
+],
+"mood": "傲气宣示主权，末句忽然放低像要吐露",
+"tags": {
+"o48jgiqf": "[whispers]"
+}
+},
+{
+"ids": [
+"akyb83h7",
+"c8sbjdev",
+"pluotwwi"
+],
+"mood": "声音轻软地回味细节，转而珍重笃定",
+"tags": {
+"c8sbjdev": "[whispers]"
+}
+},
+{
+"ids": [
+"cti6ecmm",
+"oihue35n"
+],
+"mood": "惊讶反问，难以置信地重复确认",
+"tags": {
+"cti6ecmm": "[amazed]"
+}
+},
+{
+"ids": [
+"owfvy7rh",
+"t1bp3pex"
+],
+"mood": "羞怒连声喊出，急急强压不许反驳",
+"tags": {
+"owfvy7rh": "[shouting]"
+}
+},
+{
+"ids": [
+"buecga5x",
+"uy92oyxq"
+],
+"mood": "得意轻哼后卖关子，语气轻快上扬",
+"tags": {}
+},
+{
+"ids": [
+"al61w9p3"
+],
+"mood": "干脆伸手讨要，理所当然的简短命令",
+"tags": {}
+},
+{
+"ids": [
+"bd1u0b5w",
+"vck6fztl"
+],
+"mood": "随口打断，转理直气壮地炫耀辩解",
+"tags": {}
+},
+{
+"ids": [
+"3awuittl"
+],
+"mood": "愣了半拍才低声吐槽，藏着触动",
+"tags": {
+"3awuittl": "[whispers]"
+}
+}
+]

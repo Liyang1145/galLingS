@@ -1,0 +1,558 @@
+[
+{
+"ids": [
+"u7fab4y8",
+"urwxpwpj"
+],
+"mood": "一本正经地宣读，轻快里带点小仪式感"
+},
+{
+"ids": [
+"1ysm319j",
+"toipot06"
+],
+"mood": "干脆过渡到条款二，装严肃宣判，尾音藏着笑"
+},
+{
+"ids": [
+"vqks6qld",
+"toiw2hsb"
+],
+"mood": "孩子气地较真，逐条加重惩罚，越说越得意"
+},
+{
+"ids": [
+"k8xf3if4"
+],
+"mood": "不容反驳地打断抗议，音量略提却不喊不急"
+},
+{
+"ids": [
+"v7m6mpzz",
+"z8w99xv9"
+],
+"mood": "骄傲霸道地宣布特权，短促下令，字字带刺不催"
+},
+{
+"ids": [
+"kg8xkzda"
+],
+"mood": "简短命令，尾音有点发紧，像在等回应"
+},
+{
+"ids": [
+"mgmzmu9k",
+"v1te4c45"
+],
+"mood": "低声郑重念出，认真里藏着紧张，故作威胁"
+},
+{
+"ids": [
+"medydevq",
+"mel30c1l"
+],
+"mood": "嘴硬地坚持，小声找借口，尾音放软",
+"tags": {
+"mel30c1l": "[whispers]"
+}
+},
+{
+"ids": [
+"ee55vw64",
+"6sp5iou0"
+],
+"mood": "挑眉疑惑反问，转而傲气认真地宣告",
+"tags": {
+"ee55vw64": "[curious]"
+}
+},
+{
+"ids": [
+"v1qxertc"
+],
+"mood": "轻笑着重复，玩味里透着危险"
+},
+{
+"ids": [
+"hwgm8mxk",
+"szo91re8",
+"9jxix8yv"
+],
+"mood": "笑里带刺地威胁，停顿从容，数字轻描淡写"
+},
+{
+"ids": [
+"t8r1ystg"
+],
+"mood": "满意地轻声夸，语气放软带点宠溺"
+},
+{
+"ids": [
+"dwy8u0bl"
+],
+"mood": "轻声呼唤，比平时温柔，带点犹豫停顿",
+"tags": {
+"dwy8u0bl": "[whispers]"
+}
+},
+{
+"ids": [
+"4wcig7s7"
+],
+"mood": "压低声音认真试探，欲言又止，带点紧张",
+"tags": {
+"4wcig7s7": "[serious]"
+}
+},
+{
+"ids": [
+"5d1gx8hr"
+],
+"mood": "小声自我解嘲地承认，语气低落又带点无奈",
+"tags": {
+"5d1gx8hr": "[sad]"
+}
+},
+{
+"ids": [
+"tafoincj",
+"4f99m6q7"
+],
+"mood": "低声诉说，带落寞不安，自我剖析中透出脆弱",
+"tags": {
+"tafoincj": "[sad]"
+}
+},
+{
+"ids": [
+"a7c5njix"
+],
+"mood": "小心翼翼收尾，压低声音带担忧试探",
+"tags": {
+"a7c5njix": "[trembling]"
+}
+},
+{
+"ids": [
+"whyy1s3e"
+],
+"mood": "被说中心事，猛然回神，语气带紧张和小慌",
+"tags": {
+"whyy1s3e": "[panicked]"
+}
+},
+{
+"ids": [
+"li3y809n",
+"slxkh5nb"
+],
+"mood": "小声嘴硬反驳，语气发紧不知所措，声音微微发抖",
+"tags": {
+"li3y809n": "[reluctantly]",
+"slxkh5nb": "[trembling]"
+}
+},
+{
+"ids": [
+"b88ptsjs"
+],
+"mood": "轻声骂出口，语气却软得没有攻击性，带哽咽感"
+},
+{
+"ids": [
+"uvtoc02j"
+],
+"mood": "情绪转折后小声认下，带羞涩妥协，停顿后低声开口",
+"tags": {
+"uvtoc02j": "[reluctantly]"
+}
+},
+{
+"ids": [
+"fxl393bw"
+],
+"mood": "轻声小心确认，带意外和隐隐期待",
+"tags": {
+"fxl393bw": "[curious]"
+}
+},
+{
+"ids": [
+"5f7xxj54"
+],
+"mood": "故意别扭地嘴硬反驳，不喊不急，甜软中带点感动藏底下",
+"tags": {
+"5f7xxj54": "[sarcastic]"
+}
+},
+{
+"ids": [
+"12ib88ay"
+],
+"mood": "小声认命妥协，[sighing]叹气带落落寞感",
+"tags": {
+"12ib88ay": "[sad]"
+}
+},
+{
+"ids": [
+"6b6yfsh8"
+],
+"mood": "故作施恩宣布，傲娇语气里藏着信任，从容不急",
+"tags": {
+"6b6yfsh8": "[mischievously]"
+}
+},
+{
+"ids": [
+"3bymlu28"
+],
+"mood": "炸毛否认，不喊不急，甜软嗓音字字带刺从容反击"
+},
+{
+"ids": [
+"ajgkhqy0"
+],
+"mood": "越说越气但不急不喊，带点自曝糗事的恼怒，从容毒舌"
+},
+{
+"ids": [
+"7ev68l3r",
+"tyqbvu4h"
+],
+"mood": "强硬下令收尾，带羞恼孩子气，不喊不急语气笃定",
+"tags": {
+"7ev68l3r": "[serious]"
+}
+},
+{
+"ids": [
+"t779xb9d"
+],
+"mood": "故作随意轻描淡写，掩饰不舍的别扭",
+"tags": {}
+},
+{
+"ids": [
+"cpdfhp17",
+"3aua7rck"
+],
+"mood": "嘴硬澄清后声音放软，停顿中藏着不舍",
+"tags": {
+"3aua7rck": "[reluctantly]"
+}
+},
+{
+"ids": [
+"qsews8jw"
+],
+"mood": "干脆认真地逐条复述，语气清晰利落",
+"tags": {}
+},
+{
+"ids": [
+"6psxxipg",
+"afyc4302"
+],
+"mood": "先轻快俏皮再故作凶巴巴，不喊不急",
+"tags": {
+"afyc4302": "[sarcastic]"
+}
+},
+{
+"ids": [
+"g3dcgcse"
+],
+"mood": "停顿后压低声音，带点害羞的悄悄话感",
+"tags": {
+"g3dcgcse": "[whispers]"
+}
+},
+{
+"ids": [
+"sfpzh3jx"
+],
+"mood": "小声收尾，温柔藏不住喜欢",
+"tags": {
+"sfpzh3jx": "[whispers]"
+}
+},
+{
+"ids": [
+"nthjz7h6",
+"o1bis57q"
+],
+"mood": "远远喊回来清亮雀跃，带笑意虚张声势，不喊不急",
+"tags": {
+"o1bis57q": "[mischievously]"
+}
+},
+{
+"ids": [
+"ngfxexp1"
+],
+"mood": "故作轻松带过，别扭地不想被担心",
+"tags": {
+"ngfxexp1": "[scornful]"
+}
+},
+{
+"ids": [
+"ferlzwz9",
+"4rftz0fk"
+],
+"mood": "先嫌弃带委屈，再心虚找借口停顿掩饰尴尬",
+"tags": {
+"4rftz0fk": "[panicked]"
+}
+},
+{
+"ids": [
+"v4l30yab"
+],
+"mood": "故作严肃一本正经，强装权威不容质疑",
+"tags": {
+"v4l30yab": "[serious]"
+}
+},
+{
+"ids": [
+"xwkcpjzz"
+],
+"mood": "随口一说后犹疑停顿，声音渐弱收住",
+"tags": {}
+},
+{
+"ids": [
+"qzokr0g1"
+],
+"mood": "慌张急忙纠正自己，语气短促带窘迫",
+"tags": {
+"qzokr0g1": "[panicked]"
+}
+},
+{
+"ids": [
+"98quplm8"
+],
+"mood": "重新找回气场，带点炫耀和得意的轻快",
+"tags": {
+"98quplm8": "[excited]"
+}
+},
+{
+"ids": [
+"66aqdd5q",
+"qfuowzma"
+],
+"mood": "先压低声音卖关子，再严肃带出命令感",
+"tags": {
+"66aqdd5q": "[serious]"
+}
+},
+{
+"ids": [
+"umzij01g"
+],
+"mood": "郑重逐条强调规则，语气坚定不容反驳",
+"tags": {
+"umzij01g": "[serious]"
+}
+},
+{
+"ids": [
+"15dtdlke"
+],
+"mood": "停顿后声音沉下来，带一丝凝重神秘",
+"tags": {
+"15dtdlke": "[whispers]"
+}
+},
+{
+"ids": [
+"kzdef7fm"
+],
+"mood": "语气柔下来，带点向往和珍视",
+"tags": {}
+},
+{
+"ids": [
+"7qvsxg27",
+"v8iy8yts"
+],
+"mood": "笑意收起，压低声音沉声警告",
+"tags": {
+"7qvsxg27": "[serious]"
+}
+},
+{
+"ids": [
+"1m0kzayl"
+],
+"mood": "压得极低，尾音不落地悬着",
+"tags": {}
+},
+{
+"ids": [
+"ywlwnvjj"
+],
+"mood": "利落简短，恢复平常的平静",
+"tags": {}
+},
+{
+"ids": [
+"estubhxy",
+"kgxlg156"
+],
+"mood": "别扭地问完，轻挑一声带点讽",
+"tags": {
+"kgxlg156": "[sarcastic]"
+}
+},
+{
+"ids": [
+"r6zrjfon",
+"47ebqavh"
+],
+"mood": "傲气甩话，不喊不急又嘴硬",
+"tags": {}
+},
+{
+"ids": [
+"zyrsebhd",
+"2mk6hh8s"
+],
+"mood": "嫌弃里忍着笑，甜甜地吐槽",
+"tags": {}
+},
+{
+"ids": [
+"iq3sn23m",
+"57jh2n60"
+],
+"mood": "绷着紧张下令，说漏嘴后发虚",
+"tags": {
+"57jh2n60": "[panicked]"
+}
+},
+{
+"ids": [
+"3f7yi56d",
+"7sk0qcoy",
+"su3sekev"
+],
+"mood": "低声重复，无奈里透着心软",
+"tags": {
+"su3sekev": "[whispers]"
+}
+},
+{
+"ids": [
+"aeujeswh",
+"kob1ew2x"
+],
+"mood": "放低声音，郑重又温柔地叮嘱",
+"tags": {
+"kob1ew2x": "[serious]"
+}
+},
+{
+"ids": [
+"wz7popb4"
+],
+"mood": "闷声急切，带点撒娇地催人",
+"tags": {}
+},
+{
+"ids": [
+"45um76ye"
+],
+"mood": "闷闷的气泡音，好奇又带挑逗",
+"tags": {}
+},
+{
+"ids": [
+"p0qw841g"
+],
+"mood": "小声嫌弃，笑意藏在唇角",
+"tags": {}
+},
+{
+"ids": [
+"8qrf8zlp",
+"8zfioky4",
+"y932tpsh"
+],
+"mood": "轻轻应着，认真里透出害羞",
+"tags": {}
+},
+{
+"ids": [
+"66xs252k"
+],
+"mood": "疑惑反问，尾音轻挑带点不解"
+},
+{
+"ids": [
+"56v75w35",
+"v1lq0dbo"
+],
+"mood": "愣怔后低声茫然，像在回忆里摸索"
+},
+{
+"ids": [
+"xrqh9glz"
+],
+"mood": "压着惊惶的低声制止，不喊不急，字字不让"
+},
+{
+"ids": [
+"x3ohaufm",
+"sqp1yf73"
+],
+"mood": "声音发颤，压着恐惧字字追问",
+"tags": {
+"x3ohaufm": "[trembling]"
+}
+},
+{
+"ids": [
+"raw1hwhm",
+"ubolwxyw"
+],
+"mood": "委屈渐起又收住，轻声落下",
+"tags": {
+"ubolwxyw": "[sighing]"
+}
+},
+{
+"ids": [
+"mj6g6kev",
+"4hvg45xv"
+],
+"mood": "小声嘟囔别扭，转而温和叮嘱",
+"tags": {
+"mj6g6kev": "[reluctantly]"
+}
+},
+{
+"ids": [
+"yxpfn556",
+"u3z4fnv0"
+],
+"mood": "随口呼唤后转认真，平静讲述"
+},
+{
+"ids": [
+"xwilfrxk"
+],
+"mood": "语气放缓，郑重又温柔"
+},
+{
+"ids": [
+"vfh87n2b",
+"azrf8xjb"
+],
+"mood": "轻声感慨，温柔怅然地讲给它听"
+}
+]

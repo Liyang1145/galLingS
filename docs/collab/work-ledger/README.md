@@ -19,6 +19,7 @@
 - [opening-art-sound-corrections.md](opening-art-sound-corrections.md) — 开场画面与动作音效修正
 
 ## 美术
+- [hd-art-music-20261019.md](hd-art-music-20261019.md) — 10-19 背景/CG 48 张高清化（3840）、深海下潜过渡 B11A、P04 尾巴、E2 起点与家居曲退出翡翠之梦营业段
 - [art-layout-20261019.md](art-layout-20261019.md) — 10-19 剧本美术编排：烤鱿鱼改场景、8 张 CG 接入鉴赏全解锁、C14 合并、未出场立绘加入与立绘重排
 - [art-selfaudit-20261019.md](art-selfaudit-20261019.md) — 美术全量自查（鉴赏解锁、尾巴两套画法、比例、分辨率、薄雾）
 - [art-acceptance-20261018.md](art-acceptance-20261018.md) — 10-18 晚图片验收修改

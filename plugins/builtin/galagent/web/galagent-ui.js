@@ -2,6 +2,7 @@
  *
  *   GalAgent.Client        WebSocket 客户端（galagent/1）
  *   GalAgent.MockClient    离线模拟（不连后端也能调界面、调流程）
+ *   GalAgent.ApiClient     直连 OpenAI 兼容模型（游戏设置里的 AI 模型），浏览器里跑 agent 循环 + 前端工具
  *   GalAgent.WorkflowView  一轮对话的“工作流程”块：总折叠 + 分步折叠
  *   GalAgent.ChatView      聊天窗口（调试台用）
  *   GalAgent.WorkDock      galgame 画面里的工作进度胶囊（默认折叠）+ 点开后铺满画面的工作流程面板
@@ -295,7 +296,7 @@
         .map(([name, effect, policy]) => ({ name, effect, policy, source: 'mock' }))
         .concat((this.o.clientTools || []).map(t => ({ name: t.name, effect: t.effect || 'perform', policy: 'auto', source: 'client' })));
       this.info = { type: 'ready', protocol: PROTOCOL, session: 'mock', character: this.o.character || {}, tools, llm: true };
-      this.status = 'online'; setTimeout(() => { this.emit('status', { status: 'online' }); this.emit('ready', this.info); }, 0);
+      this.ready = true; this.status = 'online'; setTimeout(() => { this.emit('status', { status: 'online' }); this.emit('ready', this.info); }, 0);
       return this.info;
     }
     _e(m) { this.emit(m.type, m); }
@@ -372,7 +373,124 @@
       this._e({ type: 'turn_end', turn: this.turn, ms: 0, steps: 0, tool_calls: 0, reply: '', stopped: true, error: null });
     }
     reset() { this._e({ type: 'reset_done' }); }
-    close() { this.stop(); }
+    close() { this.stop(); this.ready = false; }
+  }
+
+  /* ---------------------------------------------------------------- 直连模型（不经过 galLingS 后端） */
+  // 游戏自己调 OpenAI 兼容接口（VN Studio 的 vn.model / 设置 → AI 模型），在浏览器里跑 agent 循环：
+  // 流式台词 → say_delta，推理模型的思考 → think 步骤，function calling → 前端工具（clientTools）。事件和 galagent/1 后端完全一样，界面不用改。
+  // opts: { llm:{ chat(opts), describe() }, character, context, clientTools, title, history }
+  class ApiClient extends Emitter {
+    constructor(opts = {}) { super(); this.o = opts; this.turn = 0; this.msgs = []; this.waiting = null; this.always = new Set(); this.ctl = null; this.noTools = false; }
+    get tools() {
+      return (this.o.clientTools || []).map(t => ({ name: t.name, description: t.description, parameters: t.parameters, effect: t.effect || 'perform', policy: t.ask ? 'ask' : 'auto', source: 'client', handler: t.handler }));
+    }
+    async connect() {
+      const d = (this.o.llm && this.o.llm.describe && this.o.llm.describe()) || {};
+      this.info = { type: 'ready', protocol: PROTOCOL, session: 'api', character: this.o.character || {}, llm: true, model: d.model || '', provider: d.provider || '',
+        tools: this.tools.map(({ handler, ...t }) => t) };
+      for (const h of this.o.history || []) this.msgs.push({ role: h.role === 'user' || h.role === 'player' ? 'user' : 'assistant', content: h.text || '' });
+      this.ready = true; this.status = 'online';
+      setTimeout(() => { this.emit('status', { status: 'online' }); this.emit('ready', this.info); }, 0);
+      return this.info;
+    }
+    system() {
+      const c = this.o.character || {}, x = this.o.context || {}, name = c.name || '角色';
+      const emos = (c.expressions || []).filter(Boolean), tools = this.noTools ? [] : this.tools;
+      const L = [];
+      L.push(`你是${this.o.title ? '视觉小说《' + this.o.title + '》里的' : ''}「${name}」。` + (c.persona ? '人物设定：' + c.persona : ''));
+      if (x.ending) L.push(`故事已经走到结局「${x.ending}」。现在是结局之后，玩家可以继续和你自由聊天，也可以请你帮忙做点事。`);
+      else L.push('这是剧情里的一段自由对话。');
+      if (x.goal) L.push('聊天方向：' + x.goal);
+      if (x.story) L.push('刚刚发生的剧情（最后几句）：\n' + x.story);
+      if (x.vars && Object.keys(x.vars).length) L.push('游戏变量（开场时）：' + JSON.stringify(x.vars));
+      L.push(`始终用${name}的口吻、第一人称说话，像 galgame 对话框里的台词：一次一到三句，口语，不用列表、标题或 Markdown；不要说自己是 AI、模型或助手。`);
+      if (tools.length) L.push('你能用的工具：' + tools.map(t => t.name).join('、') + '。需要时直接调用，做完用角色口吻告诉玩家结果。你只能用这些工具，不能操作玩家电脑上的文件或程序；做不到就照实说。');
+      if (emos.length) L.push(`想换表情时，在那句话前写【表情】，表情只能从：${emos.join('、')} 里选（例：【${emos[0]}】）。不换就不写。`);
+      return L.join('\n');
+    }
+    async send(text) {
+      if (this.busy) return; this.busy = true;
+      const turn = ++this.turn, t0 = Date.now(), emos = new Set(((this.o.character || {}).expressions || []).filter(Boolean));
+      let steps = 0, calls = 0, rounds = 0, reply = '', error = null, stopped = false;
+      this.ctl = new AbortController(); const signal = this.ctl.signal, mark = this.msgs.length;
+      this.emit('turn_start', { type: 'turn_start', turn, input: text });
+      this.msgs.push({ role: 'user', content: text });
+      try {
+        for (let round = 1; round <= 8; round++) {
+          rounds = round;
+          this.emit('round_start', { type: 'round_start', turn, round });
+          let think = null, said = '', hold = '';
+          const endThink = () => { if (think) { this.emit('step_end', { type: 'step_end', turn, step: think.id, ok: true, ms: Date.now() - think.t }); think = null; } };
+          // 【表情】标记：流式里先扣住，认出是表情就换表情、不显示
+          const flush = (piece, final) => {
+            hold += piece; let out = '';
+            for (;;) {
+              const i = hold.search(/[【\[]/);
+              if (i < 0) { out += hold; hold = ''; break; }
+              out += hold.slice(0, i); hold = hold.slice(i);
+              const j = hold.search(/[】\]]/);
+              if (j < 0) { if (final || hold.length > 12) { out += hold; hold = ''; } break; }
+              const tag = hold.slice(1, j).trim();
+              if (emos.has(tag)) this.emit('emotion', { type: 'emotion', turn, name: tag }); else out += hold.slice(0, j + 1);
+              hold = hold.slice(j + 1);
+            }
+            if (out) { endThink(); said += out; this.emit('say_delta', { type: 'say_delta', turn, round, text: out }); }
+          };
+          let r;
+          try {
+            r = await this.o.llm.chat({
+              messages: [{ role: 'system', content: this.system() }, ...this.msgs], tools: this.noTools ? [] : this.tools, temperature: 0.85, signal,
+              onThink: t => { if (!think) { think = { id: 's' + (++steps), t: Date.now() }; this.emit('step_start', { type: 'step_start', turn, step: think.id, kind: 'think' }); } this.emit('think_delta', { type: 'think_delta', turn, step: think.id, text: t }); },
+              onDelta: t => flush(t, false),
+            });
+          } catch (e) {
+            // 有的模型 / 服务商不支持 function calling：去掉工具重来一次
+            if (!signal.aborted && !this.noTools && this.tools.length && /tool|function/i.test(e.message || '')) { this.noTools = true; endThink(); round--; continue; }
+            throw e;
+          }
+          flush('', true); endThink();
+          const tcs = this.noTools ? [] : r.tool_calls || [];
+          this.emit('round_end', { type: 'round_end', turn, round, tool_calls: tcs.length });
+          const msg = { role: 'assistant', content: r.content || '' };
+          if (tcs.length) msg.tool_calls = tcs.map(c => ({ id: c.id, type: 'function', function: { name: c.name, arguments: c.raw || JSON.stringify(c.args || {}) } }));
+          this.msgs.push(msg);
+          if (!tcs.length) { reply = said.trim(); break; }
+          for (const c of tcs) {
+            const t = this.tools.find(x => x.name === c.name), id = 's' + (++steps), ts = Date.now(); calls++;
+            this.emit('tool_start', { type: 'tool_start', turn, step: id, call_id: c.id, name: c.name, args: c.args, source: 'client', policy: t ? t.policy : 'auto' });
+            let ok = true, result = null, err = null;
+            if (!t) { ok = false; err = '没有这个工具：' + c.name; }
+            else if (t.policy === 'ask' && !this.always.has(t.name)) {
+              this.emit('approval_required', { type: 'approval_required', turn, step: id, call_id: c.id, name: c.name, args: c.args, effect: t.effect });
+              const [allow, remember] = await new Promise(res => { this.waiting = { cid: c.id, res }; signal.addEventListener('abort', () => res([false, false]), { once: true }); });
+              this.waiting = null;
+              this.emit('approval_resolved', { type: 'approval_resolved', turn, step: id, call_id: c.id, allow });
+              if (remember && allow) this.always.add(t.name);
+              if (!allow) { ok = false; err = '玩家没有同意这次操作'; }
+            }
+            if (ok) { try { result = await t.handler(c.args || {}); } catch (e) { ok = false; err = String(e.message || e); } }
+            this.emit('tool_end', { type: 'tool_end', turn, step: id, call_id: c.id, name: c.name, ok, result: ok ? result : null, error: err, ms: Date.now() - ts });
+            this.msgs.push({ role: 'tool', tool_call_id: c.id, content: JSON.stringify(ok ? (result ?? { ok: true }) : { error: err }) });
+            if (signal.aborted) break;
+          }
+          if (signal.aborted) break;
+        }
+      } catch (e) {
+        if (signal.aborted) stopped = true; else error = String(e.message || e);
+      } finally {
+        if (signal.aborted) stopped = true;
+        if (error || stopped) this.msgs.length = mark;   // 没答完的这一轮不留在上下文里（免得留下没有结果的工具调用）
+        if (this.msgs.length > 60) this.msgs.splice(0, this.msgs.length - 60);
+        while (this.msgs.length && this.msgs[0].role !== 'user') this.msgs.shift();
+        this.busy = false; this.ctl = null;
+        this.emit('turn_end', { type: 'turn_end', turn, ms: Date.now() - t0, rounds, steps, tool_calls: calls, reply, stopped, error });
+      }
+    }
+    approve(cid, allow, remember) { if (this.waiting && this.waiting.cid === cid) { const w = this.waiting; this.waiting = null; w.res([!!allow, !!remember]); } }
+    stop() { if (this.ctl) this.ctl.abort(); }
+    reset() { this.stop(); this.msgs = []; this.emit('reset_done', { type: 'reset_done' }); }
+    close() { this.stop(); this.ready = false; this.status = 'offline'; }
   }
 
   /* ---------------------------------------------------------------- 一轮的工作流程 */
@@ -765,5 +883,5 @@
 
   function mount(container, opts) { return new ChatView(container, opts); }
 
-  root.GalAgent = { PROTOCOL, version: '0.3.0', Client, MockClient, WorkflowView, ChatView, WorkDock, GalStage, mount, registerToolRenderer, registerToolTitle, LABELS, fmtMs, _ic: ic };
+  root.GalAgent = { PROTOCOL, version: '0.4.0', Client, MockClient, ApiClient, WorkflowView, ChatView, WorkDock, GalStage, mount, registerToolRenderer, registerToolTitle, LABELS, fmtMs, _ic: ic };
 })(typeof window !== 'undefined' ? window : globalThis);

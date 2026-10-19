@@ -5,15 +5,15 @@
   VNPlugin.define({
     id: 'gallings.galagent',
     name: 'GalAgent',
-    version: '0.3.0',
+    version: '0.4.0',
     api: 1,
     author: 'galLingS',
     icon: 'bot',
     homepage: 'https://github.com/Liyang1145/galLingS',
-    description: '结局后和角色继续聊天；剧情里的 @agent 也能让角色调用工具帮你做事。思考和工具步骤收在名字牌旁的胶囊里，点开铺满画面。',
+    description: '结局后和角色继续聊天；剧情里的 @agent 也能让角色调用工具帮你做事。连 galLingS 后端，或直接用游戏「设置 → AI 模型」里的模型。思考和工具步骤收在名字牌旁的胶囊里，点开铺满画面。',
     permissions: ['network', 'agent', 'script', 'vars', 'tools'],
     settings: [
-      { key: 'url', label: '后端地址', type: 'text', placeholder: '留空 = 离线模拟；ws://127.0.0.1:8765/ws/post_ending', help: '在 galLingS 作品页里玩时留空即可，自动连同一个 galLingS。' },
+      { key: 'url', label: '后端地址', type: 'text', placeholder: '留空 = 用「设置 → AI 模型」；ws://127.0.0.1:8765/ws/post_ending', help: '在 galLingS 作品页里玩时留空即可，自动连同一个 galLingS。双击打开的游戏留空，就直接用游戏设置里的 AI 模型；两样都没有时是离线模拟。' },
       { key: 'token', label: '令牌', type: 'password', local: true, placeholder: '双击打开（file://）时必填', help: '见 galLingS 启动日志或 ~/.gallings/post_ending_token.txt。只存在这台电脑上。' },
       { key: 'char', label: '结局后聊天', type: 'char', allowEmpty: '（自动：@postchat 或手账角色）', default: '' },
       { key: 'tools', label: '后端工具', type: 'bool', default: true, help: '允许角色用 powershell、读写文件等（危险操作仍会先问你）。' },
@@ -43,12 +43,18 @@
           handler: ({ name }) => { try { vn.audio.se(name); } catch (e) { throw new Error('没有这个音效，可用：' + vn.audio.list().join('、')); } return { played: name }; } },
       ];
       let dock = null;
+      // 选连接：有后端地址（或在 galLingS 作品页里）→ galLingS；否则游戏设置里填了 AI 模型 → 直连模型；都没有 → 离线模拟
+      const model = vn.model || null;
+      const linkMode = () => url() ? 'gallings' : model && model.ready() ? 'model' : 'mock';
       const newClient = o => {
-        const opts = Object.assign({ url: url(), token: S('token'), clientTools }, o);
-        return !opts.url || opts.mock ? new GA.MockClient(opts) : new GA.Client(opts);
+        const opts = Object.assign({ url: url(), token: S('token'), clientTools, llm: model, title: vn.project.title }, o);
+        if (opts.mock) return new GA.MockClient(opts);
+        if (opts.url) return new GA.Client(opts);
+        if (model && model.ready() && !opts.forceMock) return new GA.ApiClient(opts);
+        return new GA.MockClient(opts);
       };
       Object.assign(vn.exports, {
-        GalAgent: GA, clientTools, newClient, charInfo,
+        GalAgent: GA, clientTools, newClient, charInfo, linkMode,
         addClientTool(t) { clientTools.push(t); return () => { const i = clientTools.indexOf(t); if (i >= 0) clientTools.splice(i, 1); }; },
         get dock() { return dock; },
       });
@@ -86,7 +92,7 @@
           let emo = '', said = '';
           const finish = m => {
             offs.forEach(f => f()); if (dock) dock.feed(m);
-            resolve({ text: plain(m.reply || m.error || said || (m.stopped ? '（被打断了）' : '……')), emotion: emo, set: '', end: false });
+            resolve({ text: plain(m.reply || (m.error ? '（' + m.error + '）' : '') || said || (m.stopped ? '（被打断了）' : '……')), emotion: emo, set: '', end: false });
           };
           const offs = [
             client.on('say_delta', m => { said += m.text; }),
@@ -139,7 +145,8 @@
         vn.ui.endingCard.hide();
         vn.chat.start({
           char: pc.char, goal: pc.goal || '', provider: 'galagent', turns: 9999,
-          greeting: pc.greeting || '……', placeholder: `说点什么，或者请${pc.char}帮你做点事…`,
+          greeting: linkMode() === 'mock' ? '（现在是离线模拟。在「设置 → AI 模型」里填好密钥，就能真的和' + pc.char + '聊天。）' : pc.greeting || '……',
+          placeholder: `说点什么，或者请${pc.char}帮你做点事…`,
           onExit: () => { vn.ui.el('input').placeholder = ''; vn.ui.endingCard.show(); },
           extra: { post: true, endingName: ending, serverTools: pc.tools !== false && S('tools') !== false,
             ctx: { ending, goal: pc.goal || '', vars: vn.vars.all(), story: vn.story.backlog(12).map(b => (b.speaker ? b.speaker + '：' : '') + b.text).join('\n') } },
@@ -173,7 +180,7 @@
       <label>角色<select data-g="char">${(chars.length ? chars : ['（先在“角色”里加角色）']).map(n => `<option ${n === pcChar ? 'selected' : ''}>${esc(n)}</option>`).join('')}</select></label>
       <label>结局名（上下文）<input data-g="ending" placeholder="例如：真结局"></label>
       <label>聊天方向<input data-g="goal" value="${esc(vn.data.get().postChat?.goal || '')}"></label>
-      <label>后端地址（留空 = 离线模拟）<input data-g="url" value="${esc(vn.settings.get('url') || '')}" placeholder="ws://127.0.0.1:8765/ws/post_ending"></label>
+      <label>后端地址（留空 = AI 模型 / 离线模拟）<input data-g="url" value="${esc(vn.settings.get('url') || '')}" placeholder="ws://127.0.0.1:8765/ws/post_ending"></label>
       <label>令牌<input data-g="token" type="password" value="${esc(vn.settings.get('token') || '')}"></label>
       <label class="gd-ck"><input type="checkbox" data-g="tools" ${vn.settings.get('tools') === false ? '' : 'checked'}> 允许后端工具（powershell 等）</label>
       <div class="gd-btns"><button data-g="go" class="pri">开始聊天</button><button data-g="close">关闭</button></div>
@@ -187,7 +194,7 @@
       if (view) view.destroy();
       const name = q('char').value, main = ov.querySelector('.gd-main'); main.innerHTML = '';
       const client = X.newClient({ character: X.charInfo(name), server_tools: q('tools').checked, context: { ending: q('ending').value.trim(), goal: q('goal').value.trim(), vars: vn.vars.all() } });
-      client.on('ready', m => { ov.querySelector('.gd-tools').innerHTML = '<b>可用工具</b>' + (m.tools || []).map(t => `<div><code>${esc(t.name)}</code> <small>${esc(t.source)} · ${esc(t.policy)}</small></div>`).join('') + (client instanceof GA.MockClient ? '<p>（离线模拟中）</p>' : ''); });
+      client.on('ready', m => { ov.querySelector('.gd-tools').innerHTML = '<b>可用工具</b>' + (m.tools || []).map(t => `<div><code>${esc(t.name)}</code> <small>${esc(t.source)} · ${esc(t.policy)}</small></div>`).join('') + (client instanceof GA.MockClient ? '<p>（离线模拟中）</p>' : client instanceof GA.ApiClient ? `<p>（直连模型：${esc((m.provider || '') + ' ' + (m.model || ''))}）</p>` : ''); });
       view = GA.mount(main, { client, character: X.charInfo(name), greeting: '', onEmotion: e => { ov.querySelector('.gd-tools').insertAdjacentHTML('beforeend', `<div>表情 → ${esc(e)}</div>`); } });
     };
   }

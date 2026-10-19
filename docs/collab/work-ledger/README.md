@@ -11,6 +11,7 @@
 - [repo-tidy-20261019.md](repo-tidy-20261019.md) — 10-19 仓库整理（入口、索引、历史文档归档）
 
 ## 剧情与界面
+- [game-ai-model-20261020.md](game-ai-model-20261020.md) — 10-20 游戏内「设置 → AI 模型」直连大模型（灵枢 / GalAgent / @agent / vn.model），GalAgent 随作品打包，修 B08
 - [opening-performance-20261019.md](opening-performance-20261019.md) — 10-19 开场 #9–21「摸尾巴被拍」演出重做（新近景 B02T、横甩/水下/慢动作效果、见面曲提前到 #19）
 - [script-fix-20261018.md](script-fix-20261018.md) — 剧情矛盾修正（fix9）
 - [ui-fix-20261018.md](ui-fix-20261018.md) — 界面修复（竖横屏、好感开关、按钮音效）

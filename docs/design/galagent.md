@@ -35,7 +35,10 @@ python -m server.api.post_ending --config config.galagent.example.yaml
 启动日志会打印**令牌**（也存在 `~/.gallings/post_ending_token.txt`）。VN Studio 双击打开时是 `file://`，必须在设置里填这个令牌。
 
 ### 1.3 不连后端，先看界面
-`/galagent?mock=1`，或 VN Studio 里 GalAgent 地址留空：用内置的 `MockClient` 模拟思考、工具调用和确认流程。
+`/galagent?mock=1`，或 VN Studio 里 GalAgent 地址留空且没填 AI 模型：用内置的 `MockClient` 模拟思考、工具调用和确认流程。
+
+### 1.4 不开后端，直连模型
+VN Studio 游戏「设置 → AI 模型」填好服务商和密钥，GalAgent 地址留空，就用 `GalAgent.ApiClient` 在浏览器里直连 OpenAI 兼容模型（只有前端工具）。见 [ai-model.md](ai-model.md)。
 
 ---
 
@@ -180,7 +183,7 @@ def open_post_ending(self, *, llm_chain, send, manager=None) -> Session: ...
 VN Studio v0.20 起有插件接口（vn-plugin/1，规范见 VN Studio 的 `PLUGIN_API.md`），GalAgent 的前端整个做成了一个插件文件 **`plugins/builtin/galagent/web/galagent.vnplugin.js`**（由 `build_vnplugin.py` 把 `galagent-ui.js` + `vnplugin.src.js` 拼成）。界面、功能、扩展方式和以前一样：
 
 - **在 galLingS 作品页里玩**：什么都不用做。`gallings.tool.galagent` 开着（`game.post_ending.mode` 不是 off，`config.example.yaml` 默认就开着）时，`/api/vn/plugins` 会把这个插件提供给游戏，游戏自动装上、自动连同源 `/ws/post_ending`（同源不需要令牌）。顶栏和游戏开始界面都有“插件”按钮，可以看状态、改设置、停用。
-- **只用 VN Studio / 双击打开的游戏**：编辑器顶栏“插件”→ 导入 `galagent.vnplugin.js`（随导出的游戏一起带走）；或者玩家在游戏开始界面“插件”里导入。插件设置里填后端地址 `ws://127.0.0.1:8765/ws/post_ending` 和令牌（file:// 打开时必填），留空 = 离线模拟。
+- **只用 VN Studio / 双击打开的游戏**：编辑器顶栏“插件”→ 导入 `galagent.vnplugin.js`（随导出的游戏一起带走）；或者玩家在游戏开始界面“插件”里导入。插件设置里填后端地址 `ws://127.0.0.1:8765/ws/post_ending` 和令牌（file:// 打开时必填）；留空 = 用游戏「设置 → AI 模型」直连模型，没填模型才是离线模拟。《海风与布丁》已把 GalAgent 写进 game.js 随作品打包（`tools/embed_galagent_plugin.py`）。
 - 剧情 @agent：编辑器设置 → 机器人选 **GalAgent**。结局后聊天：剧本 `@postchat 角色 [auto=on] [tools=off] goal=…`；没写时用插件设置里的角色，再没有就用 @soul 手账角色（《海风与布丁》就是鲸鱼小姐）。
 - 名字牌旁的胶囊显示工作进度（默认折叠），点开后工作流程面板平滑铺满画面，每一步可展开；一轮结束显示“已完成，耗时 X 秒”。
 

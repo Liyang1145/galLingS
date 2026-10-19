@@ -196,7 +196,7 @@ body.game.vport #slots .slot{height:150px}
 body.game.vport #psettings .rows{font-size:18px;gap:12px}
 body.game.vport #psettings .row>span{width:100px}
 body.game.vport #psettings .tg{min-height:44px;padding:8px 14px;font-size:16px}
-body.game.vport #psettings #soulUrl{height:44px;font-size:16px}
+body.game.vport #psettings #soulUrl,body.game.vport #psettings .fld{height:44px;font-size:16px}
 body.game.vport #psettings input[type=range]{height:36px;flex:1;min-width:140px}
 body.game.vport #backlog .e{font-size:17px;padding:12px 2px}
 body.game.vport #backlog .e b{font-size:15px}
@@ -228,3 +228,11 @@ body.game #psettings input[type="range"]{background-size:100% 4px!important;back
 }
 body.game.vport #psettings input[type="range"]{height:40px}
 body.game.vport #psettings output[data-value]{font-size:16px;min-width:56px}
+
+/* —— 设置 → AI 模型：输入框、下拉跟按钮同一套海底配色 —— */
+body.game #psettings .fld,body.game #psettings #soulUrl{border-radius:3px;background:#0a1d25;color:#d8ffff;border:1px solid #6bc3cc77;transition:border-color .15s,background .15s}
+body.game #psettings .fld:focus,body.game #psettings #soulUrl:focus{outline:none;border-color:#7ee5e9;background:#123642;box-shadow:0 0 10px #75d4dd26}
+body.game #psettings .fld::placeholder{color:#6f9aa3}
+body.game #psettings select.fld option{background:#0a1d25;color:#d8ffff}
+body.game #psettings a.tg{display:inline-flex;align-items:center}
+@media (pointer:coarse){body.game #psettings .fld{min-height:44px}body.game.smallstage #psettings .fld,body.game.smallstage #psettings #soulUrl{min-height:68px;font-size:28px}}

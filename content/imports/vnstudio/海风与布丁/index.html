@@ -453,7 +453,10 @@ body.playing #soulTab.show{display:flex}
 #psettings .row.sep>span{width:auto;white-space:nowrap;color:#e8d3b8}
 #psettings .seg{display:flex;gap:6px;flex-wrap:wrap}
 #psettings .row.hid{display:none}
-#psettings #soulUrl{flex:1;height:34px;border-radius:8px;border:1px solid #ffffff40;background:#ffffff10;color:#fff;padding:0 10px;font-size:15px}
+#psettings #soulUrl,#psettings .fld{flex:1;min-width:0;height:34px;border-radius:8px;border:1px solid #ffffff40;background:#ffffff10;color:#fff;padding:0 10px;font-size:15px;font-family:inherit}
+#psettings select.fld{flex:0 1 220px;cursor:pointer}#psettings select.fld option{background:#1b2130;color:#fff}
+#psettings a.tg{text-decoration:none;white-space:nowrap;font-size:15px}
+#psettings .ai-info{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis}
 #psettings .dot{width:12px;height:12px;border-radius:50%;background:#777;flex:none}
 #psettings .dot.ok{background:#5fd18a}#psettings .dot.bad{background:#e2725b}#psettings .dot.wait{background:#e6c14d;animation:soulblink 1s infinite}
 @media (pointer:coarse){#soulTab{width:60px;height:80px;font-size:30px}#soul.ovl{width:620px}#soul .hd{font-size:30px}#soul .tabs button{height:52px;font-size:26px}#soul .it p,#soul .talk .her{font-size:27px;line-height:38px}#soul .it small{font-size:18px}#soul .talk .me{font-size:22px}#soul .face{width:64px;height:64px}#soul .win input{height:56px;font-size:23px}#soul .win .btn{width:60px;height:56px}#soul .ovx{width:48px;height:48px;font-size:24px}}
@@ -2791,13 +2794,59 @@ function showPrefs() {
     ${sl('readerScale', '文字大小', 1, 1.25, 0.05)}${sl('speed', '文字速度', 5, 80, 5, 85)}${sl('autoMul', '自动播放等待', 0.4, 2.5, 0.1)}${sl('ghost', '对话框不透明度', 0.35, 0.95, 0.05)}
     <div class="row"><span>快进</span><button class="tg ${pref('skipRead') ? 'on' : ''}" data-tg="skipRead">只快进已读</button></div>
     ${uiSe('btnClick') || uiSe('btnHover') ? `<div class="row"><span>按钮音效</span><button class="tg ${pref('btnSe') !== false ? 'on' : ''}" data-tg="btnSe" data-def="1">点按 / 悬停时轻响</button></div>` : ''}
-    <div class="row stats-row"><span>好感数值</span><button class="tg ${pref('showStats') ? 'on' : ''}" data-tg="showStats">显示（剧透向）</button><small class="dim stats-now">${statsText(true)}</small></div>${soulPrefsHtml()}</div>`;
+    <div class="row stats-row"><span>好感数值</span><button class="tg ${pref('showStats') ? 'on' : ''}" data-tg="showStats">显示（剧透向）</button><small class="dim stats-now">${statsText(true)}</small></div>${modelPrefsHtml()}${soulPrefsHtml()}</div>`;
   const syncSlider = r => { const min=Number(r.min)||0, max=Number(r.max)||1, value=Number(r.value); const pct=max>min ? Math.max(0,Math.min(100,(value-min)/(max-min)*100)) : 0; r.style.setProperty('--slider-pct', pct+'%'); };
   box.querySelectorAll('input[type=range]').forEach(r => { const output=box.querySelector(`output[data-value="${r.dataset.k}"]`); syncSlider(r); if(output) output.textContent=fmt(r.dataset.k,r.value,r.dataset.inv); r.oninput = () => { setPref(r.dataset.k, r.dataset.inv ? +r.dataset.inv - +r.value : +r.value); syncSlider(r); if(output) output.textContent=fmt(r.dataset.k,r.value,r.dataset.inv); }; });
   box.querySelectorAll('[data-tg]').forEach(b => b.onclick = e => { e.stopPropagation(); const cur = b.dataset.def ? pref(b.dataset.tg) !== false : !!pref(b.dataset.tg), v = !cur; setPref(b.dataset.tg, v); b.classList.toggle('on', v); if (b.dataset.tg === 'showStats') box.querySelector('.stats-now').textContent = statsText(true); });
-  soulPrefsBind(box);
+  soulPrefsBind(box); modelPrefsBind(box);
   addClose(box, kick); box.classList.add('show');
   box.onclick = e => { e.stopPropagation(); if (e.target === box) { box.classList.remove('show'); kick(); } };
+}
+// —— 设置 → AI 模型（游戏里；编辑器在“设置”弹窗里）——
+function modelStatusText() {
+  const d = VNModel.describe();
+  if (!d.ready) return VNModel.conf().noKey ? '填好模型名就能用' : '未设置：填好密钥就能用';
+  if (VNModel.state === 'wait') return '连接中……';
+  if (VNModel.state === 'ok') return '可用 · ' + (VNModel.info || d.model);
+  if (VNModel.state === 'bad') return '出错：' + VNModel.lastError;
+  return '已填好 · ' + d.provider + ' / ' + d.model + '（可以点测试）';
+}
+const modelDotCls = () => !VNModel.ready() ? '' : VNModel.state === 'off' ? '' : VNModel.state;
+function modelPrefsHtml() {
+  if (HOSTED) return `<div class="row sep"><span>${ic('sparkle')} AI 模型</span><small class="dim">在 galLingS 里玩：模型和密钥由 galLingS 统一管理</small></div>`;
+  const c = VNModel.get(), p = VNModel.preset(c.preset), k = VNModel.conf().key;
+  return `<div class="row sep"><span>${ic('sparkle')} AI 模型</span><small class="dim">结局后聊天、灵枢悄悄话都用它；密钥只存在这台设备</small></div>
+    <div class="row"><span>服务商</span><select class="fld" id="aiPreset">${MODEL_PRESETS.map(x => `<option value="${x.id}" ${x.id === p.id ? 'selected' : ''}>${esc(x.name)}</option>`).join('')}</select>${p.keyUrl ? `<a class="tg" href="${esc(p.keyUrl)}" target="_blank" rel="noopener">获取密钥</a>` : ''}</div>
+    <div class="row ${p.noKey ? 'hid' : ''}"><span>密钥</span><input class="fld" id="aiKey" type="password" autocomplete="off" spellcheck="false" value="${esc(k)}" placeholder="sk-……"></div>
+    <div class="row"><span>模型</span><input class="fld" id="aiModel" list="aiModels" spellcheck="false" value="${esc(c.model)}" placeholder="${esc(p.models[0] || '模型名')}"><datalist id="aiModels">${p.models.map(m => `<option value="${esc(m)}">`).join('')}</datalist></div>
+    <div class="row"><span>接口地址</span><input class="fld" id="aiBase" spellcheck="false" value="${esc(c.base)}" placeholder="${esc(p.base || 'https://……/v1')}"></div>
+    <div class="row"><span>状态</span><button class="tg" data-ai="test">${ic('plug')} 测试</button>${k || c.model || c.base ? `<button class="tg" data-ai="clear">${ic('eraser')} 清除</button>` : ''}<i class="dot ${modelDotCls()}" id="aiDot"></i><small class="dim ai-info" id="aiInfo">${esc(modelStatusText())}</small></div>`;
+}
+function modelPrefsBind(box) {
+  const q = sel => box.querySelector(sel); if (!q('#aiPreset')) return;
+  const upd = () => {
+    const d = q('#aiDot'), info = q('#aiInfo'); if (d) d.className = 'dot ' + modelDotCls(); if (info) info.textContent = modelStatusText();
+    const sb = soulBackend(), sd = q('#soulDot');
+    if (!pref('soulBackend') && q('#soulApiRow')) {   // 玩家没手动选过：填好模型后灵枢自动改用 AI 模型
+      box.querySelectorAll('[data-seg=soulBackend]').forEach(x => x.classList.toggle('on', x.dataset.v === sb));
+      q('#soulApiRow').classList.toggle('hid', sb !== 'api');
+    }
+    const sa = q('#soulApiRow small'); if (sa) sa.textContent = VNModel.ready() ? '用上面「AI 模型」的设置：' + VNModel.conf().name + ' / ' + VNModel.conf().model : '上面「AI 模型」还没填，先用离线回复';
+    if (sd && sb === 'api') sd.className = 'dot ' + soulDotCls('api');
+  };
+  const rerender = () => { const st = box.scrollTop, rows = q('.rows'), rt = rows ? rows.scrollTop : 0; showPrefs(); box.scrollTop = st; const r2 = box.querySelector('.rows'); if (r2) r2.scrollTop = rt; };
+  const save = () => { VNModel.set({ key: q('#aiKey')?.value.trim() || '', model: q('#aiModel').value.trim(), base: q('#aiBase').value.trim() }); upd(); };
+  ['#aiPreset', '#aiKey', '#aiModel', '#aiBase'].forEach(sel => { const el = q(sel); if (!el) return; el.addEventListener('click', e => e.stopPropagation()); el.addEventListener('keydown', e => { e.stopPropagation(); if (e.key === 'Enter' && el.tagName === 'INPUT') el.blur(); }); });
+  q('#aiPreset').onchange = () => { VNModel.set({ preset: q('#aiPreset').value, model: '', base: '' }); rerender(); };
+  ['#aiKey', '#aiModel', '#aiBase'].forEach(sel => { const el = q(sel); if (el) el.onchange = save; });
+  box.querySelectorAll('a.tg').forEach(a => a.addEventListener('click', e => e.stopPropagation()));
+  q('[data-ai=test]').onclick = e => {
+    e.stopPropagation(); save();
+    if (!VNModel.ready()) { upd(); return; }
+    VNModel.state = 'wait'; upd();
+    VNModel.test().then(upd, upd);
+  };
+  q('[data-ai=clear]')?.addEventListener('click', e => { e.stopPropagation(); if (!confirm('清除这台设备上保存的 AI 模型设置和密钥？')) return; VNModel.clear(); rerender(); });
 }
 function hideOverlays() { document.querySelectorAll('.ovl').forEach(o => o.classList.remove('show')); }
 function showBacklog() {
@@ -2977,6 +3026,28 @@ const SOUL_BRAINS = {
       return Object.assign(await SOUL_BRAINS.local.whisper(req), { src: 'local' });
     },
   },
+  // 游戏直连 AI 模型（设置 → AI 模型）：人设 + 手账记忆 + 最近悄悄话 → 用她的口吻回一张纸条；没填 / 出错就用离线回复
+  api: {
+    name: 'AI 模型',
+    remember(ev) { return SOUL_BRAINS.local.remember(ev); },
+    async whisper(req) {
+      if (VNModel.ready()) try {
+        const emos = exprNames(req.char).filter(Boolean);
+        const len = { short: '一句话，20 字以内', mid: '一到两句', long: '两到四句，可以带一句（括号里的小动作）' }[req.talk] || '一到两句';
+        const mem = (req.memory || []).map(m => '- ' + (m.ch ? '[' + m.ch + '] ' : '') + m.t).join('\n');
+        const sys = modelPersona(req.char) + `\n\n玩家在你的手账「悄悄话」页给你写纸条，你回一张（${len}）。现在剧情在「${req.chapter || '开头'}」。` +
+          (mem ? '\n你手账里记着的事（按时间先后）：\n' + mem : '') +
+          `\n只输出 JSON：{"text":"回给玩家的话","emotion":"表情"}，emotion 从【${emos.join('、') || '无'}】里选一个，或者留空。`;
+        const msgs = [{ role: 'system', content: sys }];
+        for (const h of (req.history || []).slice(-10)) msgs.push(h.me ? { role: 'user', content: h.t } : { role: 'assistant', content: JSON.stringify({ text: h.t, emotion: h.e || '' }) });
+        if (msgs[msgs.length - 1].role !== 'user') msgs.push({ role: 'user', content: req.input });
+        const r = await VNModel.chat({ messages: msgs, temperature: 0.9, timeout: 40000 });
+        const j = modelJson(r.content), text = String(j?.text ?? r.content ?? '').trim().replace(/^「|」$/g, '');
+        if (text) return { text, emotion: emos.includes(j?.emotion) ? j.emotion : '', src: 'llm' };
+      } catch (e) { console.warn('[灵枢] AI 模型出错，先用离线回复：', e.message); }
+      return Object.assign(await SOUL_BRAINS.local.whisper(req), { src: 'local' });
+    },
+  },
 };
 // —— 与 galLingS 的连接：一个 WebSocket，按 id 配对请求和回复；断了下次用时自动重连 ——
 const soulSock = {
@@ -3028,7 +3099,7 @@ function soulEventText(ev) {
 function soulTl() { const T = RT.soul.tl; T.turn++; return { lineage: T.lin, turn: T.turn }; }
 function soulVis() { const T = RT.soul.tl; return [...T.anc, { lineage: T.lin, turn: 2 ** 53 }]; }
 const soulNewTl = () => ({ lin: 'L' + Date.now().toString(36) + Math.random().toString(36).slice(2, 5), turn: 0, anc: [] });
-const soulBackend = () => HOSTED ? 'galLingS' : (pref('soulBackend') || 'local');
+const soulBackend = () => HOSTED ? 'galLingS' : (pref('soulBackend') || (VNModel.ready() ? 'api' : 'local'));
 const soulBrain = () => SOUL_BRAINS[soulBackend()] || SOUL_BRAINS.local;
 function soulAdd(list, item) {
   const S = RT.soul; if (!S) return;
@@ -3088,7 +3159,7 @@ function showSoul(page) {
     const left = soulLeft();
     body = `<div class="talk">${S.talk.map(x => x.me ? `<div class="me"><p>${esc(x.t)}</p></div>` : `<div class="her">${soulFace(x.e)}<p>${esc(x.t)}</p></div>`).join('') || `<div class="empty">在这页写一句话，她会回。</div>`}</div>
       <div class="win"><input id="soulIn" maxlength="60" autocomplete="off" spellcheck="false" placeholder="${left === 0 ? '这一话的纸写满了' : '写给' + esc(c.char) + '……'}" ${left === 0 ? 'disabled' : ''}><button class="btn" id="soulSend" data-tip="soulSend" ${left === 0 ? 'disabled' : ''}>${ic('send')}</button></div>
-      <div class="left">${soulBackend() === 'galLingS' ? `<i class="dot ${soulSock.state}"></i>${soulSock.state === 'ok' ? '灵枢在线' : '灵枢未连上，先用离线回复'}　` : ''}${left == null ? '' : '这一话还能写 ' + left + ' 句'}</div>`;
+      <div class="left">${soulBackend() === 'galLingS' ? `<i class="dot ${soulSock.state}"></i>${soulSock.state === 'ok' ? '灵枢在线' : '灵枢未连上，先用离线回复'}　` : soulBackend() === 'api' ? (VNModel.ready() ? `<i class="dot ${VNModel.state === 'bad' ? 'bad' : 'ok'}"></i>${VNModel.state === 'bad' ? 'AI 模型出错，先用离线回复' : 'AI 模型'}　` : '<i class="dot"></i>AI 模型未设置，先用离线回复　') : ''}${left == null ? '' : '这一话还能写 ' + left + ' 句'}</div>`;
   }
   box.innerHTML = `<div class="hd">${ic('book-heart')}<span>${esc(c.char)}的手账</span></div>
     <div class="tabs">${tabs.map(t => `<button data-sp="${t[0]}" class="${t[0] === soulPage ? 'on' : ''}" title="${t[2]}">${ic(t[1])}</button>`).join('')}</div>
@@ -3143,15 +3214,17 @@ function soulPrefsHtml() {
     <div class="row"><span>陪伴</span>${seg('soulMode', 'mix', [['off', '纯剧本'], ['mix', '剧本+即兴'], ['free', '自由']])}</div>
     <div class="row"><span>她的话量</span>${seg('soulTalk', 'mid', [['short', '简短'], ['mid', '适中'], ['long', '话多']])}</div>
     <div class="row"><span>记忆</span><small class="dim">${playing && RT.soul ? RT.soul.mem.length + ' 条' : '开始游戏后记录'}</small>${playing && RT.soul ? `<button class="tg" data-soul="forget">${ic('eraser')} 全部遗忘</button>` : ''}</div>
-    ${HOSTED ? `<div class="row"><span>连接</span><small class="dim">galLingS（模型、记忆在 galLingS 设置里统一管理）</small><i class="dot ${soulSock.state}" id="soulDot"></i></div>` : `<div class="row"><span>连接</span>${seg('soulBackend', 'local', [['local', '离线'], ['galLingS', 'galLingS']])}<i class="dot ${(pref('soulBackend') || 'local') === 'local' ? 'ok' : soulSock.state}" id="soulDot"></i></div>
-    <div class="row ${(pref('soulBackend') || 'local') === 'galLingS' ? '' : 'hid'}" id="soulUrlRow"><span>后端地址</span><input id="soulUrl" value="${esc(pref('soulUrl') || 'ws://127.0.0.1:8765/ws/soul')}" spellcheck="false"><button class="tg" data-soul="test">${ic('plug')} 测试</button></div>
-    <div class="row ${(pref('soulBackend') || 'local') === 'galLingS' ? '' : 'hid'}" id="soulInfoRow"><span></span><small class="dim" id="soulInfo">${soulSock.state === 'ok' && soulSock.info ? '已连上：' + esc(soulSock.info.card?.name || '') : ''}</small></div>`}`;
+    ${HOSTED ? `<div class="row"><span>连接</span><small class="dim">galLingS（模型、记忆在 galLingS 设置里统一管理）</small><i class="dot ${soulSock.state}" id="soulDot"></i></div>` : `<div class="row"><span>连接</span>${seg('soulBackend', soulBackend(), [['local', '离线'], ['api', 'AI 模型'], ['galLingS', 'galLingS']])}<i class="dot ${soulDotCls(soulBackend())}" id="soulDot"></i></div>
+    <div class="row ${soulBackend() === 'api' ? '' : 'hid'}" id="soulApiRow"><span></span><small class="dim">${VNModel.ready() ? '用上面「AI 模型」的设置：' + esc(VNModel.conf().name + ' / ' + VNModel.conf().model) : '上面「AI 模型」还没填，先用离线回复'}</small></div>
+    <div class="row ${soulBackend() === 'galLingS' ? '' : 'hid'}" id="soulUrlRow"><span>后端地址</span><input id="soulUrl" value="${esc(pref('soulUrl') || 'ws://127.0.0.1:8765/ws/soul')}" spellcheck="false"><button class="tg" data-soul="test">${ic('plug')} 测试</button></div>
+    <div class="row ${soulBackend() === 'galLingS' ? '' : 'hid'}" id="soulInfoRow"><span></span><small class="dim" id="soulInfo">${soulSock.state === 'ok' && soulSock.info ? '已连上：' + esc(soulSock.info.card?.name || '') : ''}</small></div>`}`;
 }
+const soulDotCls = b => b === 'local' ? 'ok' : b === 'api' ? (VNModel.ready() ? (VNModel.state === 'bad' ? 'bad' : 'ok') : '') : soulSock.state;
 function soulPrefsBind(box) {
   box.querySelectorAll('[data-seg]').forEach(b => b.onclick = e => {
     e.stopPropagation(); setPref(b.dataset.seg, b.dataset.v);
     box.querySelectorAll(`[data-seg="${b.dataset.seg}"]`).forEach(x => x.classList.toggle('on', x === b));
-    if (b.dataset.seg === 'soulBackend') { box.querySelector('#soulUrlRow').classList.toggle('hid', b.dataset.v !== 'galLingS'); box.querySelector('#soulInfoRow').classList.toggle('hid', b.dataset.v !== 'galLingS'); if (b.dataset.v === 'local') soulSock.close(); const d = box.querySelector('#soulDot'); d.className = 'dot' + (b.dataset.v === 'local' ? ' ok' : ''); }
+    if (b.dataset.seg === 'soulBackend') { box.querySelector('#soulUrlRow').classList.toggle('hid', b.dataset.v !== 'galLingS'); box.querySelector('#soulInfoRow').classList.toggle('hid', b.dataset.v !== 'galLingS'); box.querySelector('#soulApiRow').classList.toggle('hid', b.dataset.v !== 'api'); if (b.dataset.v !== 'galLingS') soulSock.close(); const d = box.querySelector('#soulDot'); d.className = 'dot ' + (b.dataset.v === 'galLingS' ? '' : soulDotCls(b.dataset.v)); }
     soulTabUpd();
   });
   const url = box.querySelector('#soulUrl'); if (url) { url.onkeydown = e => e.stopPropagation(); url.onchange = () => setPref('soulUrl', url.value.trim()); }
@@ -3166,9 +3239,125 @@ function soulPrefsBind(box) {
       .catch(er => { d.className = 'dot bad'; info.textContent = '连不上（' + er.message + '），会自动用离线回复'; });
   });
 }
+/* ========== AI 模型接口（OpenAI 兼容 chat/completions）：游戏自己直连大模型 ========== */
+// 玩家在“设置 → AI 模型”里选服务商、填密钥；配置只存这台设备（localStorage vnmodel:<作品id>，编辑器是 vnmodel:studio），不进项目、不随游戏导出。
+// 用到它的：灵枢“连接 → AI 模型”的悄悄话、GalAgent 结局后聊天（没连 galLingS 时）、剧情 @agent 的“AI 模型”大脑；插件用 vn.model。
+// 在 galLingS 作品页里玩（HOSTED）时模型由 galLingS 统一管理，这里不用填。
+const MODEL_PRESETS = [
+  { id: 'deepseek', name: 'DeepSeek', base: 'https://api.deepseek.com', models: ['deepseek-chat', 'deepseek-reasoner'], keyUrl: 'https://platform.deepseek.com/api_keys' },
+  { id: 'qwen', name: '通义千问', base: 'https://dashscope.aliyuncs.com/compatible-mode/v1', models: ['qwen-plus', 'qwen-turbo', 'qwen-max'], keyUrl: 'https://bailian.console.aliyun.com/' },
+  { id: 'siliconflow', name: '硅基流动', base: 'https://api.siliconflow.cn/v1', models: ['deepseek-ai/DeepSeek-V3', 'Qwen/Qwen2.5-72B-Instruct'], keyUrl: 'https://cloud.siliconflow.cn/account/ak' },
+  { id: 'moonshot', name: 'Kimi', base: 'https://api.moonshot.cn/v1', models: ['moonshot-v1-8k', 'moonshot-v1-32k'], keyUrl: 'https://platform.moonshot.cn/console/api-keys' },
+  { id: 'openrouter', name: 'OpenRouter', base: 'https://openrouter.ai/api/v1', models: ['deepseek/deepseek-chat', 'openai/gpt-4o-mini'], keyUrl: 'https://openrouter.ai/keys' },
+  { id: 'openai', name: 'OpenAI', base: 'https://api.openai.com/v1', models: ['gpt-4o-mini', 'gpt-4o'], keyUrl: 'https://platform.openai.com/api-keys' },
+  { id: 'ollama', name: 'Ollama（本机）', base: 'http://127.0.0.1:11434/v1', models: ['qwen2.5:7b', 'llama3.1:8b'], noKey: true },
+  { id: 'custom', name: '自定义', base: '', models: [] },
+];
+const VNModel = {
+  state: 'off', info: '', lastError: '',
+  key: () => 'vnmodel:' + (gameMode ? P.id : 'studio'),
+  get() { let c = {}; try { c = JSON.parse(localStorage.getItem(this.key()) || '{}') || {}; } catch (e) {} return Object.assign({ preset: 'deepseek', base: '', model: '', keys: {} }, c); },
+  // 密钥按服务商分开记（换服务商再换回来不用重填）
+  set(o) { const c = Object.assign(this.get(), o); if ('key' in o) { c.keys = Object.assign({}, c.keys, { [c.preset]: String(o.key || '') }); delete c.key; } try { localStorage.setItem(this.key(), JSON.stringify(c)); } catch (e) {} this.state = 'off'; this.info = ''; VNPlugins.emit('model:changed', this.describe()); return c; },
+  clear() { try { localStorage.removeItem(this.key()); } catch (e) {} this.state = 'off'; this.info = ''; VNPlugins.emit('model:changed', this.describe()); },
+  preset(id) { return MODEL_PRESETS.find(p => p.id === id) || MODEL_PRESETS[MODEL_PRESETS.length - 1]; },
+  conf() {
+    const c = this.get(), p = this.preset(c.preset);
+    return { preset: p.id, name: p.name, base: String(c.base || p.base || '').trim().replace(/\/+$/, '').replace(/\/chat\/completions$/, ''), key: String((c.keys || {})[p.id] || '').trim(), model: String(c.model || p.models[0] || '').trim(), noKey: !!p.noKey };
+  },
+  ready() { const c = this.conf(); return !!(c.base && c.model && (c.key || c.noKey)); },
+  // 不带密钥的描述（给界面、插件看）
+  describe() { const c = this.conf(); return { ready: this.ready(), preset: c.preset, provider: c.name, base: c.base, model: c.model, state: this.state, info: this.info }; },
+  _err(status, body) {
+    let m = ''; try { const j = JSON.parse(body); m = j.error?.message || j.message || j.error || ''; } catch (e) { m = String(body || '').slice(0, 160); }
+    const hint = status === 401 || status === 403 ? '密钥不对或没有权限' : status === 402 ? '账户余额不足' : status === 404 ? '地址或模型名不对' : status === 429 ? '请求太频繁或额度用完' : status >= 500 ? '服务商那边出错了' : '';
+    return new Error((hint ? hint + '（' + status + '）' : 'HTTP ' + status) + (m ? '：' + String(m).slice(0, 160) : ''));
+  },
+  /** chat({ messages, tools?, temperature?, max_tokens?, onDelta?(text), onThink?(text), signal?, timeout? })
+   *  → { content, reasoning, tool_calls:[{id, name, args, raw}], finish }   流式读取；工具调用按 OpenAI function calling。 */
+  async chat(o = {}) {
+    const c = this.conf();
+    if (!this.ready()) throw new Error('还没设置 AI 模型（设置 → AI 模型）');
+    const ctl = new AbortController(), timeout = o.timeout || 90000;
+    let timer = setTimeout(() => ctl.abort(), timeout);
+    const bump = () => { clearTimeout(timer); timer = setTimeout(() => ctl.abort(), timeout); };
+    const onAbort = () => ctl.abort(); o.signal?.addEventListener('abort', onAbort);
+    const body = { model: c.model, messages: o.messages || [], stream: true };
+    if (o.temperature != null) body.temperature = o.temperature;
+    if (o.max_tokens) body.max_tokens = o.max_tokens;
+    if (o.tools && o.tools.length) body.tools = o.tools.map(t => ({ type: 'function', function: { name: t.name, description: t.description || '', parameters: t.parameters || { type: 'object', properties: {} } } }));
+    const headers = { 'Content-Type': 'application/json' };
+    if (c.key) headers.Authorization = 'Bearer ' + c.key;
+    if (c.preset === 'openrouter') headers['X-Title'] = 'VN Studio';
+    const out = { content: '', reasoning: '', tool_calls: [], finish: '' }, calls = [];
+    try {
+      let r;
+      try { r = await fetch(c.base + '/chat/completions', { method: 'POST', headers, body: JSON.stringify(body), signal: ctl.signal }); }
+      catch (e) { if (ctl.signal.aborted) throw e; throw new Error('连不上 ' + c.base + '（地址不对、没联网，或这个服务不允许网页直连）'); }
+      if (!r.ok) throw this._err(r.status, await r.text().catch(() => ''));
+      const take = j => {
+        const ch = j.choices?.[0]; if (!ch) return;
+        const d = ch.delta || ch.message || {};
+        const th = d.reasoning_content ?? d.reasoning;
+        if (th) { out.reasoning += th; o.onThink?.(th); }
+        if (d.content) { out.content += d.content; o.onDelta?.(d.content); }
+        for (const tc of d.tool_calls || []) {
+          const k = tc.index ?? calls.length, x = calls[k] ||= { id: '', name: '', raw: '' };
+          if (tc.id) x.id = tc.id; if (tc.function?.name) x.name += tc.function.name; if (tc.function?.arguments) x.raw += tc.function.arguments;
+        }
+        if (ch.finish_reason) out.finish = ch.finish_reason;
+      };
+      if (!r.body || !/event-stream/.test(r.headers.get('content-type') || '')) { take(await r.json()); }
+      else {
+        const rd = r.body.getReader(), dec = new TextDecoder(); let buf = '';
+        for (;;) {
+          const { done, value } = await rd.read(); if (done) break;
+          bump(); buf += dec.decode(value, { stream: true });
+          let i; while ((i = buf.indexOf('\n')) >= 0) {
+            const line = buf.slice(0, i).trim(); buf = buf.slice(i + 1);
+            if (!line.startsWith('data:')) continue;
+            const data = line.slice(5).trim(); if (data === '[DONE]') continue;
+            let j; try { j = JSON.parse(data); } catch (e) { continue; }
+            if (j.error) throw this._err(+j.error.code || 400, JSON.stringify(j));
+            take(j);
+          }
+        }
+      }
+      out.tool_calls = calls.filter(x => x.name).map((x, k) => { let args = {}; try { args = x.raw ? JSON.parse(x.raw) : {}; } catch (e) { args = { _raw: x.raw }; } return { id: x.id || 'call_' + k + '_' + Date.now().toString(36), name: x.name, args, raw: x.raw || '{}' }; });
+      this.state = 'ok'; this.lastError = '';
+      return out;
+    } catch (e) {
+      if (ctl.signal.aborted && !o.signal?.aborted) e = new Error('等太久没回应（超时）');
+      if (!o.signal?.aborted) { this.state = 'bad'; this.lastError = e.message; }
+      throw e;
+    } finally { clearTimeout(timer); o.signal?.removeEventListener('abort', onAbort); }
+  },
+  async test() {
+    const t0 = Date.now(); this.state = 'wait';
+    try {
+      const r = await this.chat({ messages: [{ role: 'user', content: '只回复一个字：好' }], max_tokens: 16, timeout: 20000 });
+      this.info = this.conf().model + ' · ' + ((Date.now() - t0) / 1000).toFixed(1) + ' 秒' + (r.content ? ' · 回复「' + r.content.trim().slice(0, 10) + '」' : r.reasoning ? ' · 推理模型' : '');
+      return this.info;
+    } catch (e) { this.info = ''; throw e; }
+  },
+};
+window.VNModel = VNModel;
+// 从模型回复里取 JSON（容忍 ```json 包裹和前后多余的话）
+function modelJson(s) {
+  s = String(s || '').replace(/```(?:json)?/gi, '');
+  const i = s.indexOf('{'), j = s.lastIndexOf('}');
+  if (i >= 0 && j > i) { try { return JSON.parse(s.slice(i, j + 1)); } catch (e) {} }
+  return null;
+}
+// 角色扮演的共同人设段（灵枢悄悄话、@agent 的 AI 模型大脑共用）
+function modelPersona(name) {
+  const c = charOf(name) || { name, persona: '' };
+  return `你在视觉小说《${P.title}》里扮演「${c.name}」。` + (c.persona ? `人物设定：${c.persona}` : '') +
+    `\n始终用${c.name}的口吻、第一人称说话，像 galgame 里的台词：口语、简短，不用列表、标题或 Markdown；不要说自己是 AI 或语言模型；不剧透玩家还没看到的剧情。`;
+}
 /* ========== 角色扮演 Agent 接口 ========== */
 // 约定：任何“大脑”只要实现  chat(request) → Promise<{ text, emotion?, set?, end? }>  就能接进来。
-// 内置两个：mock（离线模拟，用来调流程）、http（POST 到你自己的后端，密钥只放后端）。
+// 内置三个：mock（离线模拟，用来调流程）、http（POST 到你自己的后端，密钥只放后端）、model（直连“AI 模型”设置里的模型）。
 // 也可以在控制台或插件里 VNAgent.register('名字', async (req, settings) => ({ text: '...' }))。
 const VNAgent = {
   providers: {},
@@ -3192,6 +3381,17 @@ VNAgent.register('http', async (req, s) => {
     if (typeof j?.text !== 'string') throw new Error('返回格式不对');
     return j;
   } finally { clearTimeout(t); }
+});
+VNAgent.register('model', async req => {
+  const ch = req.character, sc = req.scene;
+  const sys = modelPersona(ch.name) + '\n\n这是剧情里的一段自由对话。' + (sc.goal ? '这段对话的目标：' + sc.goal + '。' : '') + (sc.setup ? '\n场景：' + sc.setup : '') +
+    `\n现在是第 ${sc.turn}/${sc.maxTurns} 回合。当前变量：${JSON.stringify(req.vars)}` +
+    `\n只输出 JSON：{"text":"你的台词","emotion":"表情或空","set":"变量修改（如 好感+=5），没有就空","end":false}。` +
+    `emotion 从【${(ch.expressions || []).filter(Boolean).join('、') || '无'}】里选；set 只能改：${(req.allowedVars || []).join('、') || '（不能改）'}；达到目标或话题聊完时 end 为 true。`;
+  const msgs = [{ role: 'system', content: sys }, ...req.history.map(h => ({ role: h.role === 'player' ? 'user' : 'assistant', content: h.text }))];
+  const r = await VNModel.chat({ messages: msgs, temperature: 0.85, timeout: 45000 });
+  const j = modelJson(r.content);
+  return { text: String(j?.text ?? r.content ?? '').trim() || '……', emotion: typeof j?.emotion === 'string' ? j.emotion : '', set: typeof j?.set === 'string' ? j.set : '', end: j?.end === true };
 });
 function buildAgentRequest(C, input) {
   const l = C.line, c = charOf(l.agent.char) || { name: l.agent.char, persona: '' };
@@ -3270,8 +3470,12 @@ function openSettings() {
     <div class="row"><span>${ic('music')}</span><input type="range" min="0" max="1" step="0.05" value="${s.vbgm}" data-r="vbgm"></div>
     <div class="row"><span>${ic('bell')}</span><input type="range" min="0" max="1" step="0.05" value="${s.vse}" data-r="vse"></div>
     <div class="row"><span>${ic('waves')}</span><input type="range" min="0" max="1" step="0.05" value="${s.vamb ?? 0.8}" data-r="vamb"></div>
-    <div class="row"><span>${ic('bot')}</span>${seg('agentProvider', [['mock', '模拟'], ['http', '接口'], ...VNPlugins.providers()])}</div>
-    <div class="row"><span>接口</span><input data-i="agentUrl" value="${esc(s.agentUrl)}" placeholder="http://localhost:8787/agent"></div>`,
+    <div class="row"><span>${ic('bot')}</span>${seg('agentProvider', [['mock', '模拟'], ['http', '接口'], ['model', 'AI 模型'], ...VNPlugins.providers()])}</div>
+    <div class="row"><span>接口</span><input data-i="agentUrl" value="${esc(s.agentUrl)}" placeholder="http://localhost:8787/agent"></div>
+    <div class="row"><span>${ic('sparkle')}</span><select data-m="preset">${MODEL_PRESETS.map(x => `<option value="${x.id}" ${x.id === VNModel.conf().preset ? 'selected' : ''}>${esc(x.name)}</option>`).join('')}</select><input data-m="model" value="${esc(VNModel.get().model)}" placeholder="${esc(VNModel.preset(VNModel.conf().preset).models[0] || '模型名')}" style="flex:1"></div>
+    <div class="row"><span>密钥</span><input data-m="key" type="password" autocomplete="off" value="${esc(VNModel.conf().key)}" placeholder="AI 模型的密钥（只存在这台电脑，不进项目）" style="flex:1"></div>
+    <div class="row"><span>地址</span><input data-m="base" value="${esc(VNModel.get().base)}" placeholder="${esc(VNModel.preset(VNModel.conf().preset).base || 'https://……/v1')}" style="flex:1"><button data-m="test">${ic('plug')} 测试</button></div>
+    <div class="row"><span></span><small class="dim" data-m="info">剧情 @agent 选“AI 模型”、GalAgent 调试台用它；玩家在游戏设置里填自己的。</small></div>`,
     b => {
       b.querySelectorAll('.seg').forEach(g => { const on = g.querySelector('.on'); if (on) s[g.dataset.k] = on.dataset.v; });
       s.ghost = +b.querySelector('[data-r=ghost]').value;
@@ -3279,11 +3483,20 @@ function openSettings() {
       s.vbgm = +b.querySelector('[data-r=vbgm]').value; s.vse = +b.querySelector('[data-r=vse]').value; s.vamb = +b.querySelector('[data-r=vamb]').value;
       P.title = b.querySelector('[data-i=title]').value.trim();
       s.agentUrl = b.querySelector('[data-i=agentUrl]').value.trim();
+      saveModelFields(b);
       changed();
     });
+  const mq = k => box.querySelector(`[data-m=${k}]`);
+  mq('preset').onchange = () => { const p = VNModel.preset(mq('preset').value); mq('model').placeholder = p.models[0] || '模型名'; mq('base').placeholder = p.base || 'https://……/v1'; mq('model').value = ''; mq('base').value = ''; };
+  mq('test').onclick = () => { saveModelFields(box); mq('info').textContent = '连接中……'; VNModel.test().then(t => { mq('info').textContent = '可用：' + t; }, er => { mq('info').textContent = '出错：' + er.message; }); };
   box.querySelectorAll('.seg button').forEach(btn => btn.onclick = () => {
     btn.parentNode.querySelectorAll('button').forEach(x => x.classList.remove('on')); btn.classList.add('on');
   });
+}
+function saveModelFields(b) {
+  const v = k => b.querySelector(`[data-m=${k}]`)?.value.trim() ?? '';
+  if (v('preset') !== VNModel.get().preset) VNModel.set({ preset: v('preset') });
+  VNModel.set({ model: v('model'), base: v('base'), key: v('key') });
 }
 // 通用“表格编辑”弹窗：变量、角色都用它
 function listEditor(rows, fields, onOk) {
@@ -4326,6 +4539,14 @@ const VNPlugins = (() => {
         // 开始界面菜单里多一项：{ label, onClick, show() }
         addTitleButton(b) { const x = Object.assign({ plugin: id }, b); R.titleBtns.push(x); return track(removeFrom(R.titleBtns, x)); },
         endingCard: { show: () => $('#endcard').classList.add('show'), hide: () => $('#endcard').classList.remove('show') },
+      },
+      // AI 模型（玩家 / 作者在设置里填的 OpenAI 兼容模型）。chat 选项见 VNModel.chat；拿不到密钥本身
+      model: {
+        ready: () => VNModel.ready(),
+        info: () => VNModel.describe(),
+        chat: o => VNModel.chat(o),
+        presets: () => MODEL_PRESETS.map(p => ({ id: p.id, name: p.name, base: p.base, models: [...p.models] })),
+        openSettings: () => gameMode ? showPrefs() : openSettings(),
       },
       get raw() { return { P, RT, VNAgent, stage }; },   // 逃生口：直接碰内部数据。不保证以后版本不变
       log: (...a) => console.log('[' + id + ']', ...a),

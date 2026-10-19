@@ -26,5 +26,24 @@
   "reference_image_count": 3,
   "outputs": [
     "C:\\Users\\袁力阳\\Documents\\Codex\\2026-10-10\\new-chat\\work\\ambient-audio-checkout-proxy\\content\\assets\\art-upgrade\\originals\\B07.png"
-  ]
+  ],
+  "hd_revision": {
+    "date": "2026-10-19",
+    "task": "A34",
+    "endpoint": "https://api.rinko.ai/v1/images/edits",
+    "requested_model": "gpt-image-2.5-sunburst",
+    "requested_size": "3840x2160",
+    "output_size": "3840x2160",
+    "note": "2026-10-19 高清化（A34）：gpt-image-2.5-sunburst 3840×2160 忠实重绘 + 低频色彩校正回原图色调（fin = 新图 + 模糊(原图放大) − 模糊(新图)，r=10），构图不变、平移 0；上一版 1672×941 母版保留在 originals/B07.png。",
+    "master_path": "content/assets/art-upgrade/originals/B07.webp",
+    "master_sha256": "5d9b4b109542e304caf3a135e5913c48a0db4ee10444cb2bb217da643a8238dc",
+    "runtime_webp_sha256": "9a9d3ef09eb03e4bcade159b511984fc2baa6316d281de160704ba181518f7e2",
+    "runtime_webp_quality": 90,
+    "superseded_master": "content/assets/art-upgrade/originals/B07.png",
+    "metrics_vs_previous": {
+      "meanDiff": 11.64,
+      "ssim": 0.972,
+      "worstBlock": 0.942
+    }
+  }
 }

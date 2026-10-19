@@ -29,3 +29,8 @@
 | 角色演出 | `queue_character_direction.py`、`direct_character_scenes.py`、`check_character_direction.py`、`queue_character_performance.py`、`queue_character_performance_round2.py`、`restore_character_performance.py` |
 | 场景融合 | `integrate_scene_staging.py`、`check_scene_integration.py` |
 | 音乐接入 | `integrate_atri_music.py`、`integrate_e4_music.py`、`integrate_m1_music.py` |
+
+## tools/hark/（Hark 接手期间的小工具）
+- `rinko_edit.py`：Rinko Image2.5 多图编辑（stream，CC≤2，默认 sunburst）。
+- `commit_tree.py` / `push_retry.sh`：blobless 浅克隆下不 checkout 直接提交、按需补 blob 推送。
+- `graykey_composite.py`：灰底抠图、局部修图按差异区合成回原图。

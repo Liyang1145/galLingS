@@ -1321,20 +1321,21 @@
     },
     "C15": {
       "path": "content/assets/art-upgrade/runtime/C15.webp",
-      "sourceMasterPath": "content/assets/art-upgrade/originals/C15.png",
-      "sourceSha256": "6d4e8679e794b6e67d5f7943161cdbb67254c570e144eeeabf8b9ba26ec5de7f",
-      "sha256": "d3e3d0997c6670a9cc4b14f8dd0a5eb656d054b7560042d465be2e4b15dc4c45",
-      "bytes": 1230984,
-      "sourceBytes": 7803052,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/C15.webp",
+      "sourceSha256": "984da054dda6e892282d674ad5347a3107f0e0d50f9e3f18e39fee7d615eaccd",
+      "sha256": "46d213ac2027ec1ff9e148250f10d7a6b1cd2d8aea7a7cb5e8beb186f3ace5c0",
+      "bytes": 853474,
+      "sourceBytes": 5593766,
       "size": [
         3344,
         1882
       ],
       "lossless": false,
-      "webpQuality": 95,
+      "webpQuality": 90,
       "resized": false,
-      "backendQuality": null,
-      "backendModel": null
+      "backendQuality": "high",
+      "backendModel": "gpt-image-2.5-sunburst",
+      "derivedFrom": "C15 旧母版（content/assets/art-upgrade/originals/C15_superseded_before_tail_l01_20261019.png）+ L01 尾巴参考，Sunburst 局部重画尾巴后只合成尾巴区域（2026-10-19）"
     },
     "C22": {
       "path": "content/assets/art-upgrade/runtime/C22.webp",

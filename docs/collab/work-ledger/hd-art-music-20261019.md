@@ -127,3 +127,12 @@
 
 - L37 实际文件 1264×1536，manifest 原写 1024×1536，也一并改正。
 - 引擎画立绘只用节点里的 `h`，资产 `w/h` 只是元数据（编辑器默认高度、素材库显示用），不影响现有画面。L37/L38 在大画布下人物可能偏小的问题仍待看（A30 剩这一半）。
+
+## 7. C15 尾巴按 L01 重画（10-19 夜，用户确认替换）
+基于 `5b4068b`。剧本、节点、配乐不变；C15「CG_翡翠之梦」（资产 `7jj07jqh`，#2026–2029 柜台上张开手臂那段）整张替换。
+
+- **做法**：Sunburst（`gpt-image-2.5-sunburst`，high）双图编辑——图1 为 C15 尾巴区裁切（1432×1432，按 1536×1536 出图），图2 为 L01 尾巴参考；保持原姿势、位置、大小、弧线和店内暖光，改成 L01 标准（斑驳中蓝背面、浅蓝腹面、波浪分界、深蓝描边、一对尾鳍、单个白色新月旋纹）。两版里选 t1（用户确认）。
+- **只合成尾巴区域**（约 x1840–2572、y644–1858）回旧母版，其余像素与旧母版逐一相同（合成底图用的是旧无损母版，不是运行图）。尺寸仍 3344×1882，`game.js` 资产 `w/h` 不用改。
+- **文件**：新母版 `originals/C15.webp`（无损）；运行图 `runtime/C15.webp` 与作品目录 `assets/art-upgrade/C15.webp` 同一文件（webp q90，原 q95）。旧母版 PNG 改名保存为 `originals/C15_superseded_before_tail_l01_20261019.png`，旧 `generation.json`/`production.json` 随之改名为同前缀；`archive/deliveries/refined-cg-20261016/originals/C15.png` 原交付件不动。
+- **记录**：`originals/C15.generation.json` 改写为 revision 2（来源、参考图、合成范围、新旧哈希）；manifest C15 条目改 `sourceMasterPath`、哈希、字节数、`webpQuality` 90，并加 `derivedFrom`；`game.js` 中 `7jj07jqh` 的 `sourceMasterPath` 指向新 webp 母版。
+- **回归**（fix6/reg.py）：nbad 0、nerrs 0，走完 3315 节点，存档读档一致，← 正常。未重建单文件版。

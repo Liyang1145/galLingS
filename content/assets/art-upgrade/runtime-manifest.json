@@ -296,7 +296,26 @@
           "ssim": 0.952,
           "worstBlock": 0.899
         }
-      }
+      },
+      "referenced": false,
+      "usageNote": "2026-10-19 起剧本不再引用：第三话 #394–398 改用 B11A「深水区_下潜」（用户指示）。图保留，未退选。"
+    },
+    "B11A": {
+      "path": "content/assets/art-upgrade/runtime/B11A.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/B11A.webp",
+      "sourceSha256": "45617ba176aa0d17b4fa0df366fc5b9beef46d256435f9f309556f229f4bb98c",
+      "sha256": "25809cdd8d8e44a79192bfa7f23e7b86285458956a2d0ace33fadcc7bb45d8a5",
+      "bytes": 448904,
+      "sourceBytes": 3472202,
+      "size": [
+        2752,
+        1536
+      ],
+      "lossless": false,
+      "webpQuality": 90,
+      "resized": false,
+      "backendQuality": "high",
+      "backendModel": "gpt-image-2.5-sunburst"
     },
     "B12": {
       "path": "content/assets/art-upgrade/runtime/B12.webp",
@@ -2722,10 +2741,10 @@
     "P04": {
       "path": "content/assets/art-upgrade/runtime/P04.webp",
       "sourceMasterPath": "content/assets/art-upgrade/originals/P04.webp",
-      "sourceSha256": "78fd34d6e5b87ea98208c4e063f3b1cb2d02345c16b95fc7de396b0fe56ebfc8",
-      "sha256": "1bca1d79decb0f1a4ea5497d8033b963e86f8cc01be5791acf6ccc29c35b92ab",
-      "bytes": 329192,
-      "sourceBytes": 1275270,
+      "sourceSha256": "7c2e38576354a670e046061f20b180bb28eb1bb916d0dc61a7898127c1cc5284",
+      "sha256": "c33675be69a5b82a15ec0245b9f5144efd9ff4b98936e59e7e68ddf3d6b8843a",
+      "bytes": 316882,
+      "sourceBytes": 1222736,
       "size": [
         1024,
         1536
@@ -3152,7 +3171,7 @@
       "backendQuality": "medium",
       "backendModel": null,
       "status": "rejected",
-      "reason": "用户明确要求弃用这张图并停止全部CG工作。全部C27候选及网关/Rinko测试均退选，不能自动恢复。"
+      "reason": "用户明确要求弃用这张图并停止全部CG工作。全部C27候选及网关/Rinko测试均退选，不能自动恢复。 2026-10-19 用户再次确认不用（不做高清化、不进剧情、不进鉴赏），文件保留。"
     }
   }
 }

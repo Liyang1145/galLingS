@@ -4,11 +4,13 @@
   "endpoint": "https://api.rinko.ai/v1/images/edits",
   "requested_model": "gpt-image-2.5",
   "requested_quality": "high",
-  "date": "2026-10-17",
-  "batch": "tail-unify-c05",
-  "note": "Tail redrawn to refined C05 standard (user 2026-10-17 09:56); sprites: second pass cut to transparent alpha.",
-  "output_sha256": "f6867b412362a401dede7ac234436a61af69b14d0cb63d310830e7164b67b8b4",
-  "master_sha256": "78fd34d6e5b87ea98208c4e063f3b1cb2d02345c16b95fc7de396b0fe56ebfc8",
-  "runtime_webp_sha256": "1bca1d79decb0f1a4ea5497d8033b963e86f8cc01be5791acf6ccc29c35b92ab",
-  "superseded_master": "content/assets/art-upgrade/originals/P04_superseded_before_tail_c05.webp"
+  "date": "2026-10-19",
+  "batch": "p04-tail-l01-20261019",
+  "note": "尾巴按 L01 标准重画（fix6/P04_v1：从毯子下摆后方长出、粗尾根、一对尾鳍带中缝与白色新月旋纹、斑驳蓝+浅色腹面+波浪分界+深蓝描边）。只把尾巴区域合成回旧图，其余像素逐一不变；灰底抠成透明（alpha 由与灰底的色差求出，尾巴内部填实，清除 <16% 薄雾）。",
+  "output_sha256": "1a7ad940f89ef0d54ae92181aed8e45109f668c0085725ca92a5da3e13340a2c",
+  "master_sha256": "7c2e38576354a670e046061f20b180bb28eb1bb916d0dc61a7898127c1cc5284",
+  "runtime_webp_sha256": "c33675be69a5b82a15ec0245b9f5144efd9ff4b98936e59e7e68ddf3d6b8843a",
+  "superseded_master": "content/assets/art-upgrade/originals/P04_superseded_before_tail_l01_20261019.webp",
+  "revision": 2,
+  "previous_superseded_master": "content/assets/art-upgrade/originals/P04_superseded_before_tail_c05.webp"
 }

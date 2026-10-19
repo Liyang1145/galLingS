@@ -1,0 +1,18 @@
+{
+  "id": "B11A",
+  "kind": "background",
+  "date": "2026-10-19",
+  "batch": "deep-dive-transition-20261019",
+  "note": "新背景 深水区_下潜：沿礁壁向深处下潜，上亮下暗（顶部水面光线 → 中段冷蓝 → 底部深海暗处零星蓝光），衔接 B11 浅层水下与 B13 深海珊瑚礁。用于第三话 #394–398（原 B11）。参考图 B11、B13，2752x1536。",
+  "endpoint": "https://api.rinko.ai/v1/images/edits",
+  "requested_model": "gpt-image-2.5-sunburst",
+  "requested_size": "2752x1536",
+  "reference_images": [
+    "content/assets/art-upgrade/originals/B11.png",
+    "content/assets/art-upgrade/originals/B13.png"
+  ],
+  "matting": null,
+  "master_sha256": "45617ba176aa0d17b4fa0df366fc5b9beef46d256435f9f309556f229f4bb98c",
+  "runtime_webp_sha256": "25809cdd8d8e44a79192bfa7f23e7b86285458956a2d0ace33fadcc7bb45d8a5",
+  "superseded_master": null
+}

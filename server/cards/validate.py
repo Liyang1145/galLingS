@@ -16,9 +16,10 @@ import yaml
 ROOT = Path(__file__).resolve().parents[2]
 CARD_SCHEMA = json.loads((ROOT / "schemas" / "card.schema.json").read_text(encoding="utf-8"))
 
-# 幼态化等全局红线词（卡只能收紧，不能放宽；PLAN §10）
-CHILDLIKE = re.compile(r"萝莉|幼女|小女孩|未成年|少女|loli", re.IGNORECASE)
-AGE_NUM = re.compile(r"(\d{1,3})\s*岁")
+from server.guard import lexicon
+
+# 幼态化等全局红线词（卡只能收紧，不能放宽；PLAN §10）：与上屏守卫共用 server/guard/lexicon.py 的同一份词表
+CHILDLIKE = lexicon.CHILDLIKE
 
 # 场景标签 → 与之冲突的人设关键词（适配度守卫，只提示）
 FIT_RULES = [
@@ -53,14 +54,21 @@ def validate_card(card: dict[str, Any], chapter: dict[str, Any] | None = None) -
     if out:
         return out
     anchor = card["identity"].get("adult_anchor", "")
-    if "成年" not in anchor and not any(int(n) >= 18 for n in AGE_NUM.findall(anchor)):
+    anchor_ages = lexicon.ages(anchor)
+    if "成年" not in anchor and not any(n >= 18 for n in anchor_ages):
         out.append(Finding("error", "identity.adult_anchor", "成年锚点必须写明成年（如“外表约 24 岁的成年女性”）"))
-    for n in AGE_NUM.findall(anchor):
+    for n in anchor_ages:
         if int(n) < 18:
             out.append(Finding("error", "identity.adult_anchor", f"年龄 {n} 岁未成年"))
-    hit = CHILDLIKE.search(_text_of({k: v for k, v in card.items() if k not in ("red_lines", "build_record")}))
+    body = _text_of({k: v for k, v in card.items() if k not in ("red_lines", "build_record")})
+    hit = CHILDLIKE.search(body) or CHILDLIKE.search(lexicon.compact(body))
     if hit:
         out.append(Finding("error", "<全卡>", f"出现幼态化表述「{hit.group(0)}」，违反全局红线"))
+    # 风格示例是她要说出口的台词：与上屏守卫同一把尺子查未成年年龄
+    for ex in card.get("style_examples") or []:
+        n = lexicon.minor_age(str(ex))
+        if n is not None:
+            out.append(Finding("error", "style_examples", f"风格示例「{ex}」出现未成年年龄（{n} 岁）"))
     if len(card["honesty_signals"]) < 3:
         out.append(Finding("error", "honesty_signals", "诚实信号至少 3 条"))
     meanings = {s["meaning"] for s in card["honesty_signals"]}

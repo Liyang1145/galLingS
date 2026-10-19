@@ -26,7 +26,7 @@ python -m server
 
 ## 二、旧版演示脚本（历史记录，对应 PLAN §20）
 
-以下流程依赖已删除的旧播放器，当前不能按此进行网页试玩。后端会话、角色卡、记录与回放能力继续保留；新技术 DEMO 与后端的连接待实现。
+以下流程原本依赖已删除的旧播放器。现在作品页（`/vn.html`）里的《海风与布丁》由 `web/galcore.vnplugin.js` 接到后端：下一句、选项、结局都问引擎（/ws），好感、尾鳍、守卫、记忆、录像都生效；调试时间轴在作品页右侧栏。2026-10-19 用最新资源包（3315 节点）在托管模式下真浏览器跑过（`tools/check_hosted_galcore.py`，假模型）：连推 120 步、过 3 个选项点，引擎与作品 0 分歧、0 页面报错。AI 模式（选项点“自己说”）走同一条桥，尚未用真模型在浏览器里联调。
 
 | 时段 | 操作 | 看点 |
 |---|---|---|
@@ -58,7 +58,17 @@ python -m server
 | 跨局记忆 | 🔌 预留：配置 `game.cross_run_memory`；时间线机制已可复用 | |
 | 外部 Agent 端口 | 🔌 预留：`GET /api/agent/tools` 导出工具注册表；`POST /api/agent/call`（501） | `schemas/tools.json` |
 | 动态混音 | 🔌 预留：工具 `propose_music_mood` | |
-| 录制回放演示模式 | 🔌 半成品：日志可逐条回放；整局"重播给观众看"未做 | |
+| 录制回放演示模式 | ✅ 整局按原节奏重播给观众看：倍速 / 暂停 / 单步 / 跳到第 N 步，逐步校验 `state_hash`，不调用模型 | `server/replay.py`（`ReplayPlayer`）、`/ws/replay`、`/api/replays`、`web/galcore.vnplugin.js`、作品页顶栏“重播” |
+
+### 录制回放演示模式用法
+
+每一局都会自动录成 `data_dir/sessions/<局 id>/events.jsonl`：事件行（引擎吃的）之外，还有 `sent` 行——那一刻真正发给前端的画面消息（ops / screen / notice），所以 AI 回合的即兴台词、换卡演绎的台词都原样留着。重播只把日志里的事件喂给引擎，**绝不调用模型、不查记忆**；每走一步都比对 `state_hash`，不一致立即停下并报第一处分歧（第几步、seq、事件种类、录制值与实际值）。
+
+- **作品页**：顶栏「重播」→ 选一局（只能选录的是当前作品、剧本没改过的局）、选倍速 → 开始重播。重播时作品画面照常渲染，但点击、选项、输入都不生效；选项按录制自动选中并高亮一下，AI 即兴台词出现在对话框里。再点「重播」可暂停 / 继续 / 单步 / 跳到第 N 步 / 换倍速 / 停止；调试时间轴点某一行也会跳过去。作品标题画面也有「重播录像」（插件设置里可指定局 id 和倍速，留空 = 最近一局）。
+- **现场断网**：`python -m server.replay <events.jsonl 或局 id> --serve [--speed 2] [--port 8765]`。先离线校验整局，再起本机服务，打印 `http://127.0.0.1:8765/vn.html?replay=<局>&speed=2`，打开即自动开播；日志用的是导入的 VN Studio 作品时会自动把服务器当前作品切成那一部。`python -m server.replay --list` 列出录下的局；`python -m server.replay <日志>` 仍是逐条校验。
+- **协议**：`WS /ws/replay?log=<局>&speed=1[&paused=1][&from=N][&max_gap=8]`（也可用 `/ws?replay=<局>`）。下发与实时局相同的 `hello`（多一个 `replay` 字段）/ `timeline` / `ops` / `screen` / `notice`，另有 `{"type":"replay","event":"step|choose|input|control|jumped|done|diverged"}`；客户端发 `pause` / `resume` / `step` / `speed{speed}` / `jump{step}` / `stop`，发实时局的玩家消息会回 `ignored`。节奏 = 录制时相邻事件的 `wall_ms` 间隔 ÷ 倍速（单个间隔最长 `max_gap` 秒，默认 8）。`GET /api/replays` 列出录下的局。
+- 旧日志（没有 `sent` 行）也能重播：画面消息按会话的上屏规则从事件重建（演绎台词取 `perform` 事件，降级台词取 `fallback` 事件），测试里与实际下发逐条比对过。
+- 局限：离线包（galcore.wasm）没有录像，重播要起 Python 服务；跳步 = 从头静默重放到第 N 步（同样逐条校验）。
 
 ## 四、测试
 
@@ -71,7 +81,8 @@ python -m pytest -q            # 全部 Python 测试（正式剧本在场时多
 
 ## 五、已知限制
 
-- 没用真模型跑过评测集（PLAN §19.2）：需要 key，按约定先征得同意再跑。
+- 评测集已建好（`tests/evals/`），scripted 模式基线报表在 `tests/evals/reports/`；没用真模型跑过（PLAN §19.2）：会花钱，按约定先征得同意再跑。
 - 换卡演绎是"开局后台分段生成 + 本机缓存"，第一次开新卡的头几句可能要等几秒。
 - 灵枢插件在本机需先配好灵枢自身的身份 / 令牌；没配时用本地记忆插件（`gallings.memory.local`）。
-- 本地技术 DEMO 与后端尚未接入，不能把其画面试听视作 AI 会话联调完成。
+- 作品页托管模式已接后端并用假模型跑通（见第二节）；AI 模式自由输入、换卡演绎还要用真模型在浏览器里联调一次（B01）。
+- 评测集与跑分器见 `tests/evals/`；scripted 模式只验证守卫 / 裁决 / 引回 / 召回管线，模型本身的风格与延迟要 config 模式真跑。

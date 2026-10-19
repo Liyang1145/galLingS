@@ -81,7 +81,8 @@ function tick() {
   $("gameBrand").textContent = s.title || "海风与布丁";
   $("chapterTitle").textContent = s.chapter ? "· " + s.chapter : "";
   // Character statistics and infrastructure state belong in settings, outside the story view.
-  const statusText = s.unread > 0 && !docked ? '手账有新记录' : '';
+  const statusText = RPS.on ? `重播中 ${RPS.at}/${RPS.steps}${RPS.paused ? " · 暂停" : ""}${RPS.diverged ? " · 已停在分歧处" : ""}` : s.unread > 0 && !docked ? '手账有新记录' : '';
+  $("replayBtn").classList.toggle("on", RPS.on);
   if ($("status").textContent !== statusText) $("status").textContent = statusText;
   $("status").hidden = !statusText;
   $("gameSel").closest('.game-select-group').hidden = $("gameSel").options.length < 2;
@@ -191,6 +192,78 @@ $("sTest").onclick = async () => {
   const r = await (await fetch("/api/settings/test", { method: "POST" })).json();
   $("sTestOut").innerHTML = (r.ok ? gi("check") + " 通了：" : gi("x") + " ") + esc(r.message);
 };
+
+// ---------------------------------------------------------------- 重播（录制回放演示模式）：外框只管选局和遥控，画面由作品里的 galcore 桥按服务器下发的 ops 渲染
+const RPS = { on: false, at: 0, steps: 0, speed: 1, paused: false, diverged: null, pick: "", pending: null };
+const SPEEDS = [["0.5", "0.5×"], ["1", "1×"], ["2", "2×"], ["4", "4×"]];
+const postGame = (m) => game.contentWindow?.postMessage(m, location.origin);
+const rpCtl = (msg) => postGame({ gallings: "galcore-replay-ctl", msg });
+{
+  const q = new URLSearchParams(location.search);
+  if (q.get("replay")) RPS.pending = { log: q.get("replay"), speed: q.get("speed") || "1" };   // python -m server.replay … --serve 给的链接
+}
+function speedSeg(box, cur, on) {
+  box.innerHTML = SPEEDS.map(([v, t]) => `<button type="button" data-v="${v}" class="${+v === +cur ? "on" : ""}">${t}</button>`).join("");
+  box.querySelectorAll("button").forEach((b) => b.onclick = () => { box.querySelectorAll("button").forEach((x) => x.classList.toggle("on", x === b)); on(b.dataset.v); });
+}
+let rpSpeedPick = localStorage.getItem("gl.vn.rpspeed") || "1";
+async function openReplay() {
+  if (document.fullscreenElement) await document.exitFullscreen();
+  renderReplayCtl();
+  speedSeg($("rpSpeed"), rpSpeedPick, (v) => { rpSpeedPick = v; localStorage.setItem("gl.vn.rpspeed", v); });
+  $("rpOut").textContent = ""; $("rpList").innerHTML = `<li class="off"><small>读取中……</small></li>`;
+  $("replayDlg").showModal();
+  try {
+    const r = await (await fetch("/api/replays")).json();
+    const logs = r.logs || [];
+    if (!RPS.pick || !logs.some((x) => x.id === RPS.pick)) RPS.pick = (logs.find((x) => x.current_chapter) || {}).id || "";
+    $("rpList").innerHTML = logs.length ? logs.map((x) => {
+      const t = x.started_ms ? new Date(x.started_ms).toLocaleString() : "";
+      const dur = Math.round((x.duration_ms || 0) / 1000);
+      return `<li data-id="${esc(x.id)}" class="${x.current_chapter ? "" : "off"} ${x.id === RPS.pick ? "on" : ""}" title="${x.current_chapter ? "" : "录的不是现在这部作品 / 剧本已改"}">
+        <b>${esc(t)}</b><small>${esc(x.card_name || x.card_id || "")} · ${x.events} 步 · 选项 ${x.choices} · AI 回合 ${x.ai_turns} · ${Math.floor(dur / 60)}分${dur % 60}秒${x.recorded_screen ? "" : " · 旧日志"}</small></li>`;
+    }).join("") : `<li class="off"><small>还没有录下的局：先玩一局，每局都会自动录下。</small></li>`;
+    $("rpList").querySelectorAll("li[data-id]:not(.off)").forEach((li) => li.onclick = () => {
+      RPS.pick = li.dataset.id; $("rpList").querySelectorAll("li").forEach((x) => x.classList.toggle("on", x === li));
+    });
+  } catch (e) { $("rpList").innerHTML = `<li class="off"><small>读不到录像列表：本地服务没开？</small></li>`; }
+}
+function renderReplayCtl() {
+  $("rpCtlSec").hidden = !RPS.on;
+  if (!RPS.on) return;
+  $("rpProg").textContent = `第 ${RPS.at} / ${RPS.steps} 步`;
+  $("rpPause").innerHTML = RPS.paused ? gi("play") + " 继续" : gi("pause") + " 暂停";
+  $("rpStep").innerHTML = gi("step-forward") + " 单步"; $("rpStop").innerHTML = gi("square") + " 停止";
+  $("rpJump").max = String(RPS.steps);
+  $("rpNote").textContent = RPS.diverged ? `第一处分歧：第 ${RPS.diverged.step} 步（seq=${RPS.diverged.seq}，${RPS.diverged.kind}）` : "重播时点击、选项和输入都不生效；时间轴点某一行也会跳过去。";
+  speedSeg($("rpSpeedNow"), RPS.speed, (v) => rpCtl({ type: "speed", speed: +v }));
+}
+function startReplay(log, speed) {
+  if (!log) { $("rpOut").textContent = "先选一局"; return; }
+  postGame({ gallings: "galcore-replay", log, speed });
+  $("replayDlg").close(); game.focus();
+}
+$("replayBtn").onclick = openReplay;
+$("rpClose").onclick = () => { $("replayDlg").close(); game.focus(); };
+$("rpGo").onclick = () => startReplay(RPS.pick, rpSpeedPick);
+$("rpPause").onclick = () => rpCtl({ type: RPS.paused ? "resume" : "pause" });
+$("rpStep").onclick = () => rpCtl({ type: "step" });
+$("rpStop").onclick = () => { postGame({ gallings: "galcore-replay-stop" }); };
+$("rpJumpGo").onclick = () => { const n = parseInt($("rpJump").value, 10); if (n >= 0) rpCtl({ type: "jump", step: n }); };
+window.addEventListener("message", (ev) => {
+  if (ev.origin !== location.origin || ev.data?.gallings !== "galcore") return;
+  const m = ev.data;
+  if (m.ev === "replay-ready" && RPS.pending) { const p = RPS.pending; RPS.pending = null; postGame({ gallings: "galcore-replay", log: p.log, speed: p.speed }); }
+  if (m.ev !== "replay") return;
+  if (m.event === "start") Object.assign(RPS, { on: true, at: m.at || 0, steps: m.steps, speed: m.speed, paused: !!m.paused, diverged: null });
+  else if (m.event === "step") Object.assign(RPS, { at: m.at, steps: m.steps });
+  else if (m.event === "control") Object.assign(RPS, { at: m.at, speed: m.speed, paused: m.paused });
+  else if (m.event === "jumped") Object.assign(RPS, { at: m.at, diverged: null });
+  else if (m.event === "diverged") RPS.diverged = m;
+  else if (m.event === "stopped" || m.event === "closed") RPS.on = false;
+  if ($("replayDlg").open) renderReplayCtl();
+  tick();
+});
 
 loadSettings().catch(() => {});
 loadGames().catch(() => { $("empty").hidden = false; $("empty").textContent = "作品暂时无法加载，请检查本地服务后刷新。"; });

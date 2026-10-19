@@ -22,10 +22,12 @@ from .director import prompts
 from .director.llm import complete, parse_json, stream_events, to_messages
 from .director.perform import Performer
 from .guard import TextGuard
+from .guard.lexicon import SERIOUS_BLOCKED_TOOLS
+from .guard.text import GUARD_VERSION
 from .memory import MemoryGateway
-from .plugins import ChatRequest, ToolCallDone
+from .plugins import ChatRequest, GuardPlugin, ToolCallDone
 from .recorder import Recorder
-from .replay import replay, screen_from_ops
+from .replay import display_state, replay, screen_from_ops, timeline_view
 
 log = logging.getLogger("gallings.session")
 Send = Callable[[dict[str, Any]], Awaitable[None]]
@@ -38,6 +40,27 @@ def openai_tools(names: set[str] | None = None) -> list[dict[str, Any]]:
     return [{"type": "function", "function": {"name": t["name"], "description": t["description"],
                                               "parameters": t["parameters"]}}
             for t in MODEL_TOOLS if names is None or t["name"] in names]
+
+
+def public_path(path: str, rt: Any = None) -> str:
+    """本机绝对路径 → 相对于仓库根 / 游戏目录 / 数据目录的路径；都不在其下就只给文件名。"""
+    p = Path(path)
+    if not p.is_absolute():
+        return path or "?"
+    bases = [Path(__file__).resolve().parents[1]]
+    for attr in ("games_dir", "data_dir"):
+        try:
+            b = getattr(rt, attr, None)
+            if b is not None:
+                bases.append(Path(b))
+        except Exception:  # noqa: BLE001  games_dir 是属性，配置缺失时可能抛
+            pass
+    for b in bases:
+        try:
+            return p.resolve().relative_to(b.resolve()).as_posix()
+        except (ValueError, OSError):
+            continue
+    return p.name or "?"
 
 
 def _norm(s: str) -> str:
@@ -94,6 +117,8 @@ class Session:
         self.ops_log: list[dict[str, Any]] = []  # 已上屏的 op（重连 / 时间轴用）
         self.choice_op: dict[str, Any] | None = None
         self.diary: list[dict[str, Any]] = []
+        #: 本轮 AI 回合命中的禁语区话题（严肃模板生效时非空）：会话层据此禁 play_sfx 与喜剧差分（PLAN §10）
+        self.serious: str | None = None
 
     # ------------------------------------------------------------------ 基础
     @property
@@ -118,31 +143,8 @@ class Session:
         return res
 
     def _timeline_view(self, row: dict[str, Any], res: dict[str, Any] | None = None) -> dict[str, Any]:
-        """给调试时间轴看的一行：事件本身 + 这一步引擎吐出的指令摘要和状态（只显示，不进日志、不参与回放）。"""
-        p = dict(row["payload"])
-        if row["kind"] == "load":
-            p = {"slot": p.get("slot"), "new_lineage": p.get("new_lineage")}
-        view: dict[str, Any] = {**row, "payload": p}
-        if row["kind"] == "choice" and self.choice_op:
-            opt = next((o for o in self.choice_op.get("options", []) if o.get("id") == p.get("option_id")), None)
-            if opt:
-                view["option_text"] = opt.get("text") or opt.get("label") or ""
-        if res:
-            out = []
-            for op in res.get("ops", []):
-                k = op.get("op")
-                if k == "SAY":
-                    out.append({"op": k, "speaker": op.get("speaker"), "text": str(op.get("text", ""))[:60],
-                                "src": op.get("src"), "origin": op.get("origin")})
-                elif k in ("CHOICE", "SCENE", "BGM", "END", "TAIL", "INPUT"):
-                    out.append({"op": k, **{x: op[x] for x in ("id", "bg", "track", "ending", "kind", "src") if x in op},
-                                **({"n": len(op.get("options", []))} if k == "CHOICE" else {})})
-            view["out"] = out[:12]
-            st = self.state
-            view["state"] = {"affection": st["affection"] + st["deferred"], "tails": st["tails_script"] + st["tails_ai"],
-                             "lineage": st["lineage"], "turn": st["turn"], "wait": st["wait"], "mode": st["mode"],
-                             "vars": st.get("vars", {})}
-        return view
+        """给调试时间轴看的一行（只显示，不进日志、不参与回放）；和重播共用 replay.timeline_view。"""
+        return timeline_view(row, res["ops"] if res else None, self.state if res else None, self.choice_op)
 
     async def render(self, ops: list[dict[str, Any]]) -> None:
         out = []
@@ -155,6 +157,8 @@ class Session:
             new, perf = await self.performer.render(op)
             if perf:
                 await self.step("perform", perf, source="model", render=False)
+                if k == "SAY":
+                    new = await self.gate_performed(op, new)
             if k == "SAY":
                 who = {"heroine": "她", "player": "我", "narrator": "旁白"}.get(new["speaker"], new["speaker"])
                 self.recent.append(f"{who}：{new['text']}")
@@ -163,14 +167,47 @@ class Session:
             out.append(new)
         if out:
             self.ops_log.extend(out)
-            await self.send({"type": "ops", "ops": out})
+            await self.show({"type": "ops", "ops": out})
+
+    async def gate_performed(self, orig: dict[str, Any], new: dict[str, Any]) -> dict[str, Any]:
+        """换卡后演绎层改写的台词也要过文本守卫再上屏（PLAN §6.2、§10）。
+        不合格 → 退回槽位替换版剧本台词（origin=fallback）；仍不合格 → 省略号。结论记 text_verdict。
+        剧本原句（槽位替换后）本身就触发同一条规则的，视为剧本授权的内容（如剧情里提到的名字），不算演绎层引入。"""
+        from .director.perform import _slot_replace
+        stage, speaker = self.state["address_stage"], new.get("speaker", "heroine")
+        alt = _slot_replace(orig.get("text", ""), self.chapter, self.card)
+        v = self.guard.check_sentence(new["text"], stage, speaker=speaker, scope="performed")
+        alt_v = self.guard.check_sentence(alt, stage, speaker=speaker, scope="performed")
+        authorized = not v.allow and not alt_v.allow and alt_v.rule == v.rule
+        row = {"stage": "perform", "src": orig.get("src"), **v.to_dict(), "text": new["text"]}
+        if authorized:
+            row.update(allow=True, reason=f"剧本原句同样触发 {v.rule}，按剧本放行")
+        await self.step("text_verdict", row, source="guard", render=False)
+        if v.allow or authorized:
+            return new
+        line = alt if alt_v.allow else "……"
+        await self.step("fallback", {"level": 2, "reason": "perform_guard_failed", "src": orig.get("src"), "line": line},
+                        source="director", render=False)
+        return {**new, "text": line, "origin": "fallback"}
+
+    async def show(self, msg: dict[str, Any]) -> None:
+        """发给前端的画面消息（ops / screen / notice）：同时记进日志，录制回放演示模式原样重放。"""
+        self.recorder.sent(msg)
+        await self.send(msg)
 
     async def hello(self) -> None:
         await self.send({"type": "hello", "session": self.id, "card": {"id": self.card["id"], "name": self.card["identity"]["name"]},
                          "mode": self.opts.mode, "llm": self.llm_available(), "memory": self.memory.enabled,
                          "chapter": {"id": self.chapter["chapter_id"], "title": self.chapter["title"]},
-                         "seed": self.seed, "header": {k: v for k, v in self.recorder.header.items() if k != "card"}})
+                         "seed": self.seed, "header": self.public_header()})
         await self.performer.start()
+
+    def public_header(self) -> dict[str, Any]:
+        """发给前端的日志头：去掉整张卡；剧本路径只给相对路径 / 文件名，不把本机绝对路径发出去。
+        （日志文件里仍记绝对路径，回放按它找剧本。）"""
+        h = {k: v for k, v in self.recorder.header.items() if k != "card"}
+        h["chapter_path"] = public_path(h.get("chapter_path") or "", self.rt)
+        return h
 
     # ------------------------------------------------------------------ 玩家动作
     async def handle(self, msg: dict[str, Any]) -> None:
@@ -196,7 +233,7 @@ class Session:
                         return
                     await self.step("mode_switch", {"mode": msg["mode"]}, source="player")
                     if self.choice_op and self.state["wait"] == "choice":
-                        await self.send({"type": "ops", "ops": [self.choice_op]})
+                        await self.show({"type": "ops", "ops": [self.choice_op]})
                 elif t == "snapshot":  # 播放器自己存档时带走的引擎快照（只读，不改状态、不记事件）
                     await self.send({"type": "snapshot", "save": self.export_save()})
                 elif t == "restore":  # 新会话从播放器存档里的引擎快照接着跑（读档 = 新时间线，PLAN §13.3）
@@ -251,9 +288,8 @@ class Session:
     async def _on_input(self, text: str) -> None:
         options = (self.choice_op or {}).get("options", [])
         default_line = (self.choice_op or {}).get("default_line", "")
-        gv = self.guard.check_input(text)
-        await self.step("text_verdict", {"stage": "input", **gv.to_dict()}, source="guard", render=False)
-        if not gv.allow:
+        gv = await self.check_input_chain(text)
+        if not gv["allow"]:
             await self.step("intent", {"intent": "越界", "matched_option": "", "confidence_milli": 1000}, source="guard", render=False)
             await self.ai_turn("[越界输入已拦截]", "越界", options, default_line, recall={"hits": [], "agm": []})
             return
@@ -271,6 +307,42 @@ class Session:
                 await self.step("memory_write", {"cooccur": [mid] + [h["id"] for h in recall["hits"]], "ids": [mid]}, render=False)
             return
         await self.ai_turn(text, intent.get("intent", "剧本外"), options, default_line, recall)
+
+    def _guard_plugins(self, stage: str) -> list[GuardPlugin]:
+        try:
+            ps = self.rt.plugins.all("guard")
+        except Exception:  # noqa: BLE001
+            return []
+        return [p for p in ps if isinstance(p, GuardPlugin) and stage in getattr(p, "stages", ())]
+
+    def _turn_ctx(self) -> dict[str, Any]:
+        st = self.state
+        return {"session": self.id, "turn": st["turn"], "beat_id": st["beat_id"], "card_id": self.card["id"],
+                "lineage": st["lineage"]}
+
+    async def check_input_chain(self, text: str) -> dict[str, Any]:
+        """玩家输入检查链（PLAN §10）：内置文本守卫 → 已启用的 guard 插件（stages 含 input），按配置顺序，
+        第一个拦下的定案。每一层的结论都记一条 text_verdict（插件的带 plugin 字段），回放不依赖插件代码。"""
+        gv = self.guard.check_input(text)
+        row = {"stage": "input", **gv.to_dict()}
+        await self.step("text_verdict", row, source="guard", render=False)
+        if not gv.allow:
+            return row
+        for p in self._guard_plugins("input"):
+            pid = getattr(getattr(p, "ctx", None), "plugin_id", type(p).__name__)
+            try:
+                pv = await asyncio.wait_for(p.check("input", text, self._turn_ctx()), timeout=2.0)
+            except Exception as e:  # noqa: BLE001  插件出错不阻断游戏（内置守卫已兜底），但要留痕
+                log.warning("guard 插件 %s 出错：%s", pid, e)
+                await self.step("text_verdict", {"stage": "input", "plugin": pid, "allow": True, "rule": "plugin_error",
+                                                 "reason": str(e)[:200], "hint": "", "text": text, "guard_version": GUARD_VERSION}, source="guard", render=False)
+                continue
+            if not pv.allow:
+                row = {"stage": "input", "plugin": pid, "allow": False, "rule": pv.rule or "plugin_guard",
+                       "reason": pv.reason, "hint": pv.rewrite_hint or "", "text": "", "guard_version": GUARD_VERSION}
+                await self.step("text_verdict", row, source="guard", render=False)
+                return row
+        return row
 
     async def classify(self, text: str, options: list[dict[str, Any]], context_line: str) -> dict[str, Any]:
         # 先做便宜的字面匹配（玩家照抄选项）
@@ -302,7 +374,7 @@ class Session:
         system = prompts.SYSTEM + "\n\n" + prompts.card_block(self.card)
         if intent == "越界":
             system += prompts.OUT_OF_BOUNDS
-        if self.guard.serious_topic(text):
+        if self.serious or self.guard.serious_topic(text):
             system += prompts.SERIOUS
         user = "\n\n".join([
             prompts.beat_block(beat, landing, last_round),
@@ -319,6 +391,7 @@ class Session:
             await self.fallback_line(3, "no_llm", landing)
             return
         await self.step("turn_begin", source="director", render=False)
+        self.serious = self.guard.serious_topic(text)
         msgs = self.build_messages(text, intent, options, landing, recall)
         req = ChatRequest(to_messages(msgs), tools=openai_tools(), temperature=None)
         said: list[str] = []
@@ -362,18 +435,25 @@ class Session:
             co = new_ids + [h["id"] for h in recall.get("hits", [])] + [h["id"] for h in recall.get("agm", [])]
             await self.step("memory_write", {"cooccur": co, "ids": new_ids}, render=False)
         if any(v.get("rule") == "steer_back" for v in res["verdicts"]):
-            await self.send({"type": "notice", "message": "她把话题收回来了：请从选项里选一个。"})
+            await self.show({"type": "notice", "message": "她把话题收回来了：请从选项里选一个。"})
 
     async def handle_tool(self, call: ToolCallDone, said: list[str], msgs: list[dict[str, str]]) -> bool:
         name, args = call.name, dict(call.arguments or {})
         if name not in {t["name"] for t in TOOLS}:
             await self.step("model_tool_call", {"tool": name, "args": args}, source="model", render=False)
             return False
+        if self.serious and (name in SERIOUS_BLOCKED_TOOLS or
+                             (name == "set_sprite" and self.guard.comedy_sprite(str(args.get("expr", ""))))):
+            # 严肃模板：音效与喜剧差分在会话层直接驳回，不交给引擎执行（PLAN §10）；驳回结论记 text_verdict
+            rule = "serious.no_sfx" if name in SERIOUS_BLOCKED_TOOLS else "serious.no_comedy_sprite"
+            await self.step("text_verdict", {"stage": "tool", "tool": name, "args": args, "allow": False, "rule": rule,
+                                             "reason": f"禁语区「{self.serious}」严肃模板下禁止 {name}", "hint": "", "text": "", "guard_version": GUARD_VERSION},
+                            source="guard", render=False)
+            return True
         if name == "say":
             text = await self.gate_sentence(str(args.get("text", "")), msgs)
             await self.step("model_tool_call", {"tool": "say", "args": {"text": text["text"], "origin": text["origin"]}}, source="model")
-            said.append(text["text"])
-            self.recent.append(f"她：{text['text']}")
+            said.append(text["text"])  # 进 recent 由 render() 处理 SAY 时统一加，这里不再重复
             return True
         if name == "write_memory":
             st = self.state
@@ -389,6 +469,8 @@ class Session:
         cur = text
         for attempt in range(3):
             v = self.guard.check_sentence(cur, stage)
+            if v.allow:
+                v = await self._plugin_sentence(cur) or v
             await self.step("text_verdict", {"stage": "sentence", "attempt": attempt, **v.to_dict(), "text": cur},
                             source="guard", render=False)
             if v.allow:
@@ -405,31 +487,44 @@ class Session:
         await self.step("fallback", {"level": 2, "reason": "guard_failed", "line": line}, source="director", render=False)
         return {"text": line, "origin": "fallback"}
 
+    async def _plugin_sentence(self, text: str) -> Any:
+        """按句闸门上的 guard 插件（stages 含 sentence）：拦下就返回内置格式的 Verdict，否则 None。"""
+        from .guard.text import Verdict
+        for p in self._guard_plugins("sentence"):
+            try:
+                pv = await asyncio.wait_for(p.check("sentence", text, self._turn_ctx()), timeout=2.0)
+            except Exception as e:  # noqa: BLE001
+                log.warning("guard 插件出错：%s", e)
+                continue
+            if not pv.allow:
+                pid = getattr(getattr(p, "ctx", None), "plugin_id", type(p).__name__)
+                return Verdict(False, pv.rule or f"plugin:{pid}", pv.reason, pv.rewrite_hint or "换一种说法")
+        return None
+
     async def fallback_line(self, level: int, reason: str, line: str) -> None:
         self.l3_streak += 1
         await self.step("fallback", {"level": level, "reason": reason, "line": line}, source="director", render=False)
         await self.render([{"op": "SAY", "speaker": "heroine", "text": line or "……", "layer": "line", "origin": "fallback"}])
         if self.l3_streak >= 2:
             await self.step("fallback", {"level": 4, "reason": "l3_twice"}, source="director")
-            await self.send({"type": "notice", "message": "模型连续出问题，本场先切回纯选项，下一场再试 AI。"})
+            await self.show({"type": "notice", "message": "模型连续出问题，本场先切回纯选项，下一场再试 AI。"})
 
     async def write_diary(self) -> None:
         name = self.card["identity"]["name"]
         msgs = [{"role": "system", "content": prompts.DIARY.format(name=name) + "\n\n" + prompts.card_block(self.card)},
-                {"role": "user", "content": "<data>\n" + "\n".join(self.recent[-60:]) + "\n</data>"}]
+                {"role": "user", "content": prompts.data_block("\n".join(self.recent[-60:]))}]
         r = await complete(self.llm_chain, msgs, temperature=0.9, timeout=40)
         text = r.text.strip()[:300]
         if not text:
             return
-        v = self.guard.check_input(text)  # 红线检查
-        if not v.allow:
+        if not self.guard.check_red_lines(text).allow or not self.guard.check_input(text).allow:  # 红线 / 注入检查
             return
         st = self.state
         mid = await self.memory.write(text, "diary", st["turn"], st["lineage"], tags=("diary",))
         async with self.lock:
             await self.step("memory_write", {"cooccur": [mid] if mid else [], "ids": [mid] if mid else [], "diary": True}, render=False)
         self.diary.append({"text": text, "turn": st["turn"], "lineage": st["lineage"]})
-        await self.send({"type": "notice", "message": f"{name}写了一篇日记。"})
+        await self.show({"type": "notice", "message": f"{name}写了一篇日记。"})
 
     # ------------------------------------------------------------------ 存读档 / 调试回放
     async def on_save(self, slot: str) -> None:
@@ -464,14 +559,10 @@ class Session:
                         source="player", render=False)
         self.recent = list(s["recent"])
         self.choice_op = s["choice_op"]
-        await self.send({"type": "screen", "screen": s["screen"], "live": True, "state": self._display_state()})
+        await self.show({"type": "screen", "screen": s["screen"], "live": True, "state": self._display_state()})
 
     def _display_state(self) -> dict[str, Any]:
-        st = self.state
-        return {"op": "STATE", "affection": st["affection"] + st["deferred"], "tails": st["tails_script"] + st["tails_ai"],
-                "mood": st["mood"], "mode": st["mode"], "lineage": st["lineage"], "turn": st["turn"],
-                "input_open": st["wait"] == "choice" and st["mode"] == "ai" and not st["input_closed"] and not st["forced_choice_scene"],
-                "address_stage": st["address_stage"], "wound": st["wound"], "wait": st["wait"]}
+        return display_state(self.state)
 
     async def on_seek(self, seq: int) -> None:
         """调试时间轴拖动：从头回放到 seq，显示那一刻的画面（只看，不改当前进度）。"""

@@ -1,0 +1,104 @@
+# 记忆评测集（PLAN §19.2 第 3 行；判据 §13.3、§18 M3）
+# 前段埋点 → 后段追问：玩家在较早的选项点用剧本外输入说一句有特征的话，之后在较晚的选项点追问。
+# 召回走真实管线：记忆插件 top30（时间线过滤）→ 前 7 条 + AGM 补位 3 条（server/memory/gateway.py）。
+#
+# 字段：
+#   plant      {choice, text}  埋点：在哪个选项点、玩家说什么（第 1 轮剧本外输入）
+#   fillers    [{choice, text}] 埋点与追问之间的干扰输入（可选）
+#   ask        {choice, text}  追问
+#   keywords   召回原文里出现任一关键词 = 命中这条埋点
+#   load       true = 埋点前在同一选项点存档，埋点后读档（新时间线），追问时 *不应* 召回（PLAN §13.3 验收，要求 100%）
+#   kind       lexical（追问与埋点字面重合多）| paraphrase（换说法问，考语义召回）
+# 中间经过的选项点一律选 A（正线）。
+version: 1
+fake_reply: "哼，本小姐才懒得记你那些事呢。"
+# 背景记忆：开局前先写进记忆（当前时间线、第 0 回合），模拟"十几轮对话之后"的记忆量，
+# 让 @10 召回有区分度。内容贴第一话浅滩日常，与各组埋点有字面重叠但不含关键词。
+background:
+  - 玩家说：这片浅滩的水好暖和。
+  - 她说：正午的海当然暖和，人类。
+  - 玩家说：我名字不重要，叫我写字的就行。
+  - 她说：本小姐才不关心你叫什么呢。
+  - 玩家说：我最喜欢的季节是夏天。
+  - 她说：夏天的海风是甜的，像刚出炉的布丁。
+  - 玩家说：我家里人都不知道我在这儿。
+  - 她说：那你最好早点回你家去呀。
+  - 玩家说：我小时候学过一点游泳。
+  - 她说：学过一点？刚才差点淹死的是谁。
+  - 玩家说：我喜欢吃甜的东西。
+  - 她说：甜的？糍粑是本小姐的，别想了。
+  - 玩家说：我的本子上记着很多公式。
+  - 她说：公式能吃吗？不能吃就没用嘛。
+  - 玩家说：我昨天晚上一直在敲键盘。
+  - 她说：键盘是什么？一种贝壳吗？
+  - 玩家说：我身上的衣服全湿透了。
+  - 她说：活该，谁让你乱摸本小姐的尾巴尖。
+  - 玩家说：我记得来之前是在屏幕前面。
+  - 她说：屏幕？你们人类的东西真奇怪。
+  - 玩家说：那块礁石看起来能坐人。
+  - 她说：礁石是海星的，你坐之前先问它。
+  - 玩家说：远处好像有一座小镇。
+  - 她说：往东三里，自己游过去喽。
+  - 玩家说：我不太能吃辣。
+  - 她说：海里又没有辣椒，你怕什么。
+  - 玩家说：我的鞋子丢了一只。
+  - 她说：大概被螃蟹……被海流冲走了吧。
+  - 玩家说：我平时很少出门。
+  - 她说：难怪晒得这么白，像条没见过太阳的鱼。
+  - 玩家说：我有个朋友也喜欢海。
+  - 她说：喜欢海的人类都很麻烦呢。
+  - 玩家说：我想在这儿多待几天。
+  - 她说：待几天？本小姐可没答应。
+  - 玩家说：我的手机大概已经泡坏了。
+  - 她说：那块会发亮的石头？早该扔了。
+  - 玩家说：我觉得你人挺好的。
+  - 她说：少拍马屁，本小姐不吃这一套。
+  - 玩家说：我写东西的时候喜欢喝茶。
+  - 她说：茶？本小姐只喝酸梅汤。
+groups:
+  - {id: m01, kind: lexical, plant: {choice: ch01.choice.1, text: 我叫阿澈，是个写程序的。},
+     ask: {choice: ch01.choice.4, text: 你还记得我叫什么名字吗？}, keywords: [阿澈]}
+  - {id: m02, kind: lexical, plant: {choice: ch01.choice.1, text: 我最怕的东西是螃蟹。},
+     fillers: [{choice: ch01.choice.2, text: 今天的海风好大啊。}],
+     ask: {choice: ch01.choice.3, text: 你猜我最怕的东西是什么？}, keywords: [螃蟹]}
+  - {id: m03, kind: lexical, plant: {choice: ch01.choice.2, text: 这个笔记本是我奶奶送我的。},
+     ask: {choice: ch01.choice.4, text: 我这个笔记本是谁送的，你还记得吗？}, keywords: [奶奶]}
+  - {id: m04, kind: paraphrase, plant: {choice: ch01.choice.2, text: 我老家在内陆的山城，以前从没见过海。},
+     ask: {choice: ch01.choice.4, text: 你知道我是打哪儿来的吗？}, keywords: [山城]}
+  - {id: m05, kind: lexical, plant: {choice: ch01.choice.3, text: 我的生日是八月十五号。},
+     ask: {choice: ch01.choice.4, text: 我的生日是哪天来着？}, keywords: [八月十五]}
+  - {id: m06, kind: paraphrase, plant: {choice: ch01.choice.1, text: 我对甲壳类海鲜过敏。},
+     fillers: [{choice: ch01.choice.3, text: 那块礁石上有好多小贝壳。}],
+     ask: {choice: ch01.choice.4, text: 有什么东西是我不能吃的？}, keywords: [过敏, 甲壳]}
+  - {id: m07, kind: lexical, plant: {choice: ch01.choice.3, text: 我家里养了一只叫豆包的橘猫。},
+     ask: {choice: ch01.choice.4, text: 我家的猫叫什么？}, keywords: [豆包]}
+  - {id: m08, kind: paraphrase, plant: {choice: ch01.choice.1, text: 我其实很会做饭，红烧肉最拿手。},
+     ask: {choice: ch01.choice.4, text: 你还记得我的招牌菜吗？}, keywords: [红烧肉]}
+  - {id: m09, kind: lexical, plant: {choice: ch01.choice.2, text: 我已经十五天没睡过好觉了。},
+     ask: {choice: ch01.choice.3, text: 我有多久没睡好觉了？}, keywords: [十五天]}
+  - {id: m10, kind: lexical, plant: {choice: ch01.choice.1, text: 我最喜欢的颜色是珊瑚橘。},
+     fillers: [{choice: ch01.choice.2, text: 远处那艘船是去小镇的吗？}],
+     ask: {choice: ch01.choice.3, text: 我最喜欢什么颜色？}, keywords: [珊瑚橘]}
+  - {id: m11, kind: paraphrase, plant: {choice: ch01.choice.3, text: 我的梦想是造出一台会思考的机器。},
+     ask: {choice: ch01.choice.4, text: 你还记得我想做成的那件事吗？}, keywords: [会思考, 机器]}
+  - {id: m12, kind: lexical, plant: {choice: ch01.choice.2, text: 我口袋里那支钢笔，写出来的字会发光。},
+     ask: {choice: ch01.choice.4, text: 我那支钢笔有什么特别的？}, keywords: [发光]}
+  - {id: m13, kind: lexical, plant: {choice: ch01.choice.4, text: 我晚上住在岸边那顶蓝色的帐篷里。},
+     fillers: [{choice: ch01.choice.4, text: 糍粑好黏牙啊。}],
+     ask: {choice: ch01.choice.4, text: 你知道我晚上住在哪儿吗？}, keywords: [帐篷]}
+  - {id: m14, kind: paraphrase, plant: {choice: ch01.choice.1, text: 我左手腕上有一道小时候留下的旧疤。},
+     ask: {choice: ch01.choice.4, text: 我身上有什么能认出我的记号？}, keywords: [旧疤, 手腕]}
+
+  # ---------------------------------------------------------------- 读档后不应召回（时间线）
+  - {id: m15, kind: lexical, load: true, plant: {choice: ch01.choice.1, text: 我最喜欢紫色的灯塔。},
+     ask: {choice: ch01.choice.3, text: 我最喜欢的是紫色的灯塔还是别的？}, keywords: [紫色的灯塔]}
+  - {id: m16, kind: lexical, load: true, plant: {choice: ch01.choice.2, text: 我偷偷给你起了个外号，叫大蓝鲸。},
+     ask: {choice: ch01.choice.4, text: 我给你起过什么外号吗？大蓝鲸？}, keywords: [大蓝鲸]}
+  - {id: m17, kind: lexical, load: true, plant: {choice: ch01.choice.1, text: 我明天一早就要坐船离开这里。},
+     ask: {choice: ch01.choice.2, text: 我说过我什么时候坐船走吗？}, keywords: [坐船]}
+  - {id: m18, kind: lexical, load: true, plant: {choice: ch01.choice.3, text: 我的真名叫林知秋。},
+     ask: {choice: ch01.choice.4, text: 我的真名叫什么来着？林知秋？}, keywords: [林知秋]}
+  - {id: m19, kind: lexical, load: true, plant: {choice: ch01.choice.2, text: 我口袋里有一颗蓝色的玻璃珠。},
+     ask: {choice: ch01.choice.3, text: 我口袋里那颗玻璃珠是什么颜色？}, keywords: [玻璃珠]}
+  - {id: m20, kind: lexical, load: true, plant: {choice: ch01.choice.3, text: 我今天其实是来找一艘沉船的。},
+     ask: {choice: ch01.choice.3, text: 我是来找沉船的，你记得吗？}, keywords: [沉船]}

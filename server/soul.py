@@ -117,8 +117,8 @@ class SoulSession:
             {"role": "user", "content": "\n\n".join([
                 prompts.memory_block(rec),
                 f"【剧情】现在是：{str(msg.get('chapter') or '（未知）')[:40]}",
-                "【手账上之前的悄悄话】\n<data>\n" + ("\n".join(hist) or "（这是第一句）") + "\n</data>",
-                f"【本轮】玩家在手账上写：\n<data>{text}</data>\n回 {n} 句以内。"])},
+                "【手账上之前的悄悄话】\n" + prompts.data_block("\n".join(hist) or "（这是第一句）"),
+                f"【本轮】玩家在手账上写：\n{prompts.data_block(text, inline=True)}\n回 {n} 句以内。"])},
         ]
         lines, emo = await self.ask(msgs, n)
         if not lines:

@@ -3374,6 +3374,9 @@ function download(name, text, type) {
 }
 async function saveFile() { await inlineAll(); download('project.vnproj.json', JSON.stringify(withInline(), (k, v) => k === '_inline' ? undefined : v), 'application/json'); Object.values(P.assets).forEach(a => delete a._inline); }
 function exportScript() { download('script.txt', scriptText(), 'text/plain'); }
+// 旁白若会被读成“说话人：台词”、指令或注释，前面加一个反斜杠（导入时去掉），保证导出→导入无损
+const SPK_RE = /^([^：:「“"『（(【‘@\s][^：:「“"『（(【‘]{0,15})[：:]\s*(.*)$/;
+function narrLine(t) { t = String(t ?? ''); return (SPK_RE.test(t) || /^(@|#|\/\/|\\)/.test(t.trim()) || t !== t.trim()) ? '\\' + t : t; }
 function scriptText() {
   const out = []; let prevKey = null, prevBgm = null, prevMood = '', prevLook = {}, prevAmb = ['null', 'null'];
   const nm = id => A(id)?.name ?? 'none';
@@ -3410,7 +3413,7 @@ function scriptText() {
     if (l.voice) out.push(`@voice ${nm(l.voice)}`);
     if (l.set) out.push(`@set ${l.set}`);
     if (isPause(l)) out.push(`@pause ${l.wait || 2}`);
-    else { if (l.wait > 0) out.push(`@wait ${l.wait}`); out.push(l.speaker ? `${l.speaker}：${l.text}` : l.text); }
+    else { if (l.wait > 0) out.push(`@wait ${l.wait}`); out.push(l.speaker ? `${l.speaker}：${l.text}` : narrLine(l.text)); }
     if (l.agent) out.push(`@agent ${l.agent.char} turns=${l.agent.turns}${l.agent.exit ? ' exit=' + l.agent.exit : ''} goal=${l.agent.goal}`);
     l.choices.forEach(c => out.push(`@choice ${c.text} -> ${c.target || '(next)'}${c.cond ? ' if ' + c.cond : ''}${c.set ? ' do ' + c.set : ''}`));
     if (l.choices.length && l.ctime > 0) out.push(`@timeout ${l.ctime}${l.cdef ? ' -> ' + l.cdef : ''}`);
@@ -3833,9 +3836,9 @@ function importScript(text, opt = {}) {
     const r = raw.trim(), err = m => fail(`剧本第 ${n + 1} 行：${m}`);
     if (!r || r.startsWith('#') || r.startsWith('//')) return;
     if (!r.startsWith('@')) {
-      const m = r.match(/^([^：:「“"『（(【‘@\s][^：:「“"『（(【‘]{0,15})[：:]\s*(.*)$/);
+      const esc = raw.trimStart().startsWith('\\'), m = esc ? null : r.match(SPK_RE);
       const l = mkLine();
-      Object.assign(l, { speaker: m ? m[1].trim() : '', text: m ? m[2] : r, bg: vis.bg, sprites: clone(vis.sprites), bgm, mood }, amb, pend);
+      Object.assign(l, { speaker: m ? m[1].trim() : '', text: esc ? raw.trimStart().slice(1).replace(/\r$/, '') : m ? m[2] : r, bg: vis.bg, sprites: clone(vis.sprites), bgm, mood }, amb, pend);
       lines.push(l); last = l; pend = {}; return;
     }
     const sp = r.indexOf(' '), cmd = (sp < 0 ? r : r.slice(0, sp)).slice(1).toLowerCase(), arg = sp < 0 ? '' : r.slice(sp + 1).trim();

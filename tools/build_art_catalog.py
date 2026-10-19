@@ -128,7 +128,7 @@ def build() -> dict:
                 thumb.save(thumb_path, "WEBP", quality=76, method=6)
         items.append({
             "id": asset["id"] if asset else "art_" + digest[:16],
-            "name": asset["name"] if asset else (file.stem+' · '+art_item['name']) if art_item else (scene[0] + " · " + scene[1]) if scene else file.stem,
+            "name": asset["name"] if asset else (file.stem+'·'+art_item['name']) if art_item else (scene[0] + "·" + scene[1]) if scene else file.stem,
             "category": category, "status": status, "path": paths_rel[0], "files": paths_rel,
             "sha256": digest, "w": width, "h": height,
             "thumb": thumb_path.relative_to(ROOT).as_posix(),

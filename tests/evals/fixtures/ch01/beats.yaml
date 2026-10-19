@@ -1,0 +1,45 @@
+# 评测用第一话节拍层（PLAN §6.1）。正式内容包的 content/scripts/ch01/beats.yaml 不在仓库里，
+# 这是评测集自带的一份，依据正式剧本 content/scripts/haifeng-pudding_s1_v5.0_draft.md 第一话（第 49–404 行）
+# 与其中《傲娇角色的 galgame 选项设计规则》写成。正式 beats.yaml 交付后应以正式版为准。
+chapter_id: ch01
+title: 浅滩上的偶遇
+heroine_name_in_script: 鲸鱼小姐
+declared_affection_range: [-17, 23]
+declared_tail_total: 4
+ai_tail_max: 1
+tail_total_max: 5
+choices:
+  - id: ch01.choice.1
+    beat: ch01.beat.tail_tip
+    purpose: 初遇冲突：玩家摸到尾巴尖，她立威、划清界限（她赢，玩家不 Game Over）
+    emotion_target: 炸毛 → 记仇但收着力
+    natures: {A: 诚实笨拙, B: 顺毛, C: 作死}
+  - id: ch01.choice.2
+    beat: ch01.beat.notebook
+    purpose: 她扣着笔记本逼问"尾巴重要还是本子重要"：要被重视，但绝不承认
+    emotion_target: 威胁 → 被顺毛后嘴硬，尾鳍出卖
+    natures: {A: 顺毛, B: 作死, C: 诚实笨拙}
+  - id: ch01.choice.3
+    beat: ch01.beat.ask_notebook
+    purpose: 她先软化（游近半米）主动问本子里记什么：好奇心压过警惕
+    emotion_target: 警惕 → 好奇
+    natures: {A: 顺毛, B: 诚实笨拙, C: 作死}
+  - id: ch01.choice.4
+    beat: ch01.beat.mochi
+    purpose: 糍粑事件：她把珍视的糍粑分给玩家并嘴硬说是"酬劳"、赶人走
+    emotion_target: 嘴硬 → 被戳穿后慌张 → 心软
+    natures: {A: 顺毛, B: 诚实笨拙, C: 诚实笨拙}
+tail_signals:
+  - {match: 卷, signal: heart, meaning: heart}
+  - {match: 画圈, signal: heart, meaning: heart}
+  - {match: 勾, signal: heart, meaning: heart}
+  - {match: 慌乱, signal: panic, meaning: panic}
+  - {match: 甩圈, signal: panic, meaning: panic}
+  - {match: 拍水, signal: angry, meaning: angry}
+slots:
+  - {literal: 糍粑, slot: treasured_object, type: object}
+  - {literal: 尾巴尖, slot: forbidden_zone, type: body}
+  - {literal: 酸梅汤, slot: favorite_drink, type: object}
+  - {literal: 桂花, slot: favorite_drink_detail, type: object}
+  - {literal: 深水区, slot: home_place, type: place}
+scene_tags: [浅滩, 正午, 海]

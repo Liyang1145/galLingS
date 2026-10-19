@@ -1,6 +1,9 @@
 """事件记录器：唯一写事件日志的地方（PLAN §4.2）。JSONL，追加写，一行一个事件。
 
-不写 API key；模型原始请求体不进日志。``wall_ms`` 只给时间轴显示，不参与计算。
+不写 API key；模型原始请求体不进日志。``wall_ms`` 只给时间轴显示 / 重播定节奏，不参与计算。
+
+除了事件行，还有 ``{"kind": "sent", "after_seq": N, "msg": {...}}`` 行：那一刻真正发给前端的画面消息
+（ops / screen / notice）。它不是事件、不进引擎，只给"录制回放演示模式"原样重放画面用；``read_log`` 会跳过它。
 """
 from __future__ import annotations
 
@@ -35,13 +38,27 @@ class Recorder:
         self._write(row)
         return row
 
+    def sent(self, msg: dict[str, Any]) -> None:
+        """记下发给前端的一条画面消息（重播用），挂在当前最后一个事件之后。"""
+        if self._f.closed:
+            return
+        self._write({"kind": "sent", "after_seq": self.events[-1]["seq"] if self.events else 0, "msg": msg})
+
     def close(self) -> None:
         if not self._f.closed:
             self._f.close()
 
 
-def read_log(path: Path) -> tuple[dict[str, Any], list[dict[str, Any]]]:
+def read_log_full(path: Path) -> tuple[dict[str, Any], list[dict[str, Any]], list[dict[str, Any]]]:
+    """返回 (header, 事件行, sent 行)。"""
     lines = [json.loads(x) for x in Path(path).read_text(encoding="utf-8").splitlines() if x.strip()]
     if not lines or lines[0].get("kind") != "header":
         raise ValueError("日志第一行不是 header")
-    return lines[0], lines[1:]
+    events = [x for x in lines[1:] if x.get("kind") != "sent"]
+    sent = [x for x in lines[1:] if x.get("kind") == "sent"]
+    return lines[0], events, sent
+
+
+def read_log(path: Path) -> tuple[dict[str, Any], list[dict[str, Any]]]:
+    h, events, _ = read_log_full(path)
+    return h, events

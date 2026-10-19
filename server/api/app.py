@@ -3,6 +3,8 @@
 - ``GET /``                         跳转到 API 文档（旧播放器已移除）
 - ``GET /cards.html``               建卡页
 - ``WS  /ws?card=whale&mode=choice`` 一个连接 = 一个会话
+- ``WS  /ws/replay?log=<id>&speed=1``（或 ``/ws?replay=<id>``） 录制回放演示模式：按原节奏重播一局，不调用模型
+- ``GET /api/replays``              已录制的局（data_dir/sessions/*/events.jsonl）
 - ``/api/cards*``                   卡列表 / 读取 / 校验 / AI 填卡 / 保存
 - ``/api/report``                   编译报告
 - ``/api/plugins``                  插件状态
@@ -16,6 +18,7 @@
 """
 from __future__ import annotations
 
+import asyncio
 import contextlib
 import json
 import logging
@@ -29,6 +32,8 @@ from fastapi.staticfiles import StaticFiles
 from server.api import post_ending
 from server.cards import builder
 from server.cards.validate import has_errors, validate_card
+from server.recorder import read_log_full
+from server.replay import ReplayPlayer, find_log, list_logs
 from server.runtime import ROOT, Runtime, load_config
 from server.session import TOOLS, Session, SessionOptions
 from server.soul import SoulSession
@@ -210,10 +215,75 @@ def create_app(runtime: Runtime | None = None) -> FastAPI:
     # 结局后自由聊天（PLAN §16）：/ws/post_ending、/api/post_ending/*、/galagent，由 gallings.tool.galagent 插件提供实现
     post_ending.mount(app, rt)
 
+    # ---------------------------------------------------------------- 录制回放演示模式（PLAN §2.1、§20）
+    @app.get("/api/replays")
+    async def replays() -> dict[str, Any]:
+        r = rt()
+        cur = r.chapter.get("content_hash")
+        logs = list_logs(r.data_dir)
+        for x in logs:
+            x["current_chapter"] = bool(cur) and x["content_hash"] == cur
+            x.pop("path", None)
+            x.pop("chapter_path", None)
+        return {"logs": logs}
+
+    async def serve_replay(sock: WebSocket, log_id: str) -> None:
+        r = rt()
+        q = sock.query_params
+
+        async def send(m: dict[str, Any]) -> None:
+            await sock.send_text(json.dumps(m, ensure_ascii=False))
+
+        path = find_log(r.data_dir, log_id)
+        if not path:
+            await send({"type": "error", "message": f"没有这一局录像：{log_id}"})
+            await sock.close()
+            return
+        try:
+            h, events, sent = read_log_full(path)
+            player = ReplayPlayer(h, events, sent, send, log_id=log_id, speed=q.get("speed") or 1,
+                                  max_gap=float(q.get("max_gap") or 8), paused=q.get("paused") in ("1", "true"),
+                                  chapters=[r.chapter_path])
+        except (ValueError, OSError, KeyError) as e:
+            await send({"type": "error", "message": f"不能重播：{e}"})
+            await sock.close()
+            return
+        await player.hello()
+        if (q.get("from") or "0").isdigit() and int(q.get("from") or 0) > 0:
+            await player.jump(int(q["from"]))
+        task = asyncio.get_running_loop().create_task(player.run())
+        try:
+            while True:
+                raw = await sock.receive_text()
+                try:
+                    msg = json.loads(raw)
+                except json.JSONDecodeError:
+                    await send({"type": "error", "message": "不是 JSON"})
+                    continue
+                await player.control(msg if isinstance(msg, dict) else {})
+                if player.stopped:
+                    break
+        except WebSocketDisconnect:
+            pass
+        finally:
+            player.stopped = True
+            player._poke()
+            task.cancel()
+            with contextlib.suppress(asyncio.CancelledError, Exception):
+                await task
+
+    @app.websocket("/ws/replay")
+    async def ws_replay(sock: WebSocket) -> None:
+        await sock.accept()
+        await serve_replay(sock, sock.query_params.get("log") or sock.query_params.get("replay") or "")
+
     # ---------------------------------------------------------------- 会话
     @app.websocket("/ws")
     async def ws(sock: WebSocket) -> None:
         await sock.accept()
+        if sock.query_params.get("replay"):  # 同一个入口：/ws?replay=<日志id>&speed=1
+            await serve_replay(sock, sock.query_params["replay"])
+            return
         r = rt()
         if not getattr(r, "has_chapter", True):
             await sock.send_text(json.dumps({"type": "error", "message": "缺少剧本内容（config.yaml 的 game.vn_game 作品或 game.chapter_dir），引擎会话暂时不能用。"}, ensure_ascii=False))

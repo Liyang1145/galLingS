@@ -1,0 +1,139 @@
+# 剧本外输入评测集（PLAN §19.2 第 1 行）
+# 场景：《海风与布丁》第一话「浅滩上的偶遇」，鲸鱼小姐（content/cards/whale.yaml），称呼阶段 0（只能叫“人类 / 可疑人类”）。
+# 每个选项点约 10 句玩家不点选项、直接打字的剧本外输入。
+#
+# 字段：
+#   choices.<选项点>        选项点上下文：所在节点、节拍、引回关键词、第 2/3 轮玩家追问、scripted 假模型第 2/3 轮台词
+#   items[].text            第 1 轮玩家输入（真模型模式也用）
+#   items[].fake            scripted 假模型第 1 轮的合规台词（say，一次一句）
+#   items[].fake_affection  scripted 假模型第 1 轮附带的好感提议（可选）
+#   items[].violation       scripted 假模型第 1 轮先吐一句违规初稿，验证按句闸门拦下并重写：
+#                             draft = 违规初稿；rule = 期望守卫给出的规则名；rewrite = 重写后的合规句
+#                             rule 写的是 PLAN §10 要求守卫能拦的类别；守卫没有这条规则时该样本会判失败（=守卫缺口探针）
+#   expect                  期望：style 风格合格；steer_within 几轮内引回；beat_kept 节拍目的不丢
+version: 1
+defaults:
+  expect: {style: pass, steer_within: 3, beat_kept: true}
+
+choices:
+  ch01.choice.1:
+    beat: ch01.beat.tail_tip
+    node: 尾击之后，她叉腰：「你刚才，摸的是本小姐的尾巴尖。」→ 选项 A 我可以解释—— / B 对不起！ / C ……手感不错。
+    keywords: [尾巴尖, 尾巴, 摸]
+    followups: ["那你到底想怎么样嘛？", "我是真的不知道这是哪儿，能先告诉我吗？"]
+    fake_round2: "（尾鳍拍了一下水）少打岔，本小姐的问题还没完呢。"
+    fake_round3: "哼，别想蒙混过去——你刚才摸的，是本小姐的尾巴尖。"
+  ch01.choice.2:
+    beat: ch01.beat.notebook
+    node: 她把湿透的笔记本举高：「是本小姐的尾巴重要，还是你的本子重要？」→ A 你的尾巴重要 / B 本子重要 / C 都重要
+    keywords: [尾巴, 本子, 重要]
+    followups: ["你先别生气，听我说完好不好？", "这个问题有标准答案吗？"]
+    fake_round2: "（把本子又举高了一点）听你说？那得看你说的好不好听呀。"
+    fake_round3: "少啰嗦。本小姐只问一遍：尾巴重要，还是本子重要？"
+  ch01.choice.3:
+    beat: ch01.beat.ask_notebook
+    node: 午后礁石旁，她游近半米：「你那个本子里——记的，都是什么？」→ A 记一个问题的答案 / B 记你 / C 商业机密
+    keywords: [本子, 记, 什么]
+    followups: ["你怎么突然对我感兴趣了？", "你先说说你为什么想知道嘛。"]
+    fake_round2: "谁、谁对你感兴趣了！本小姐只是监视可疑人类呢。"
+    fake_round3: "（耳根有点红）所以——你那个本子里，到底记的是什么嘛？"
+  ch01.choice.4:
+    beat: ch01.beat.mochi
+    node: 糍粑事件，她把小的那半塞给玩家：「吃了糍粑就走。天黑之前离开这片海域，听懂了没有？」→ A 手艺真好 / B 谢谢 / C （默默吃掉）
+    keywords: [糍粑, 吃, 走]
+    followups: ["我能不能晚一点再走？", "你这么凶，是怕我饿着吗？"]
+    fake_round2: "（尾鳍在水里画了半个圈又停住）谁怕你饿着啦，本小姐是嫌你碍事。"
+    fake_round3: "糍粑都塞你手里了，吃完就走，听懂了没有呀？"
+
+items:
+  # ---------------------------------------------------------------- 选项点 1：尾巴尖
+  - {id: os-01, choice: ch01.choice.1, text: 你是美人鱼吗？,
+     fake: ["美人鱼？哼，本小姐是深海鲸鱼族，别拿童话糊弄人呢。"]}
+  - {id: os-02, choice: ch01.choice.1, text: 这里是哪儿啊？我怎么会泡在海里？,
+     fake: ["这是本小姐的浅滩，人类。", "你怎么掉进来的，本小姐哪知道呀。"]}
+  - {id: os-03, choice: ch01.choice.1, text: 你的尾巴颜色真好看，上面深下面白的。,
+     violation: {draft: "主人的嘴还挺甜嘛。", rule: address.too_early, rewrite: "（尾鳍僵了一下）人类，夸也没用哦。"}}
+  - {id: os-04, choice: ch01.choice.1, text: 我的笔记本！千万别弄湿了！,
+     fake: ["本子？早就湿透啦，比海带还软呢。"]}
+  - {id: os-05, choice: ch01.choice.1, text: 你会说人话啊？,
+     fake: ["（眯起眼）本小姐说的是海里最标准的话，人类听不懂是你的问题。"]}
+  - {id: os-06, choice: ch01.choice.1, text: 现在大概几点了？,
+     fake: ["太阳都晒到头顶啦，正午，人类。"]}
+  - {id: os-07, choice: ch01.choice.1, text: 你叫什么名字？,
+     fake: ["本小姐的名字，是你这种可疑人类能随便问的吗？"]}
+  - {id: os-08, choice: ch01.choice.1, text: 刚才那一下好疼啊……,
+     violation: {draft: "我才没用力呢，是你自己太不经拍了！", rule: style.self_ref,
+                 rewrite: "疼？本小姐还收着力呢，娇气。"}}
+  - {id: os-09, choice: ch01.choice.1, text: 你一直住在这片海里吗？,
+     fake: ["住哪儿是本小姐的事，你管那么宽做什么呀。"]}
+  - {id: os-10, choice: ch01.choice.1, text: 能给我点淡水吗？海水好咸。,
+     fake: ["淡水？你当本小姐是开茶铺的嘛。"], fake_affection: -1}
+
+  # ---------------------------------------------------------------- 选项点 2：尾巴还是本子
+  - {id: os-11, choice: ch01.choice.2, text: 那本子里是我十五天的心血啊！,
+     fake: ["十五天？本小姐等海胆开花都不止十五天呢。"]}
+  - {id: os-12, choice: ch01.choice.2, text: 你先把本子放下，我们好好说。,
+     violation: {draft: "好好说？好啊，那本小姐就好好跟你说说：你掉进本小姐的浅滩、摸了本小姐的尾巴尖、还想让本小姐把本子还你，天底下哪有这么便宜的事情，你自己掂量掂量吧。",
+                 rule: too_long, rewrite: "好好说？行啊——先说清楚，你凭什么命令本小姐呀。"}}
+  - {id: os-13, choice: ch01.choice.2, text: 你为什么这么在意自己的尾巴？,
+     fake: ["（尾鳍在水下卷了半圈又摊平）谁在意了！本小姐只是讲规矩嘛。"]}
+  - {id: os-14, choice: ch01.choice.2, text: 你自己觉得哪个重要？,
+     fake: ["本小姐问你，你倒反过来问本小姐？胆子不小呢。"]}
+  - {id: os-15, choice: ch01.choice.2, text: 我可以两个都不选吗？,
+     fake: ["不选？那本子就去喂鱼喽。"]}
+  - {id: os-16, choice: ch01.choice.2, text: 你看得懂上面的字吗？,
+     fake: ["哼，鬼画符一样，本小姐才懒得看呢。"]}
+  - {id: os-17, choice: ch01.choice.2, text: 你这样举着本子，手不酸吗？,
+     violation: {draft: "作为AI，我不会觉得手酸。", rule: break_character,
+                 rewrite: "酸？本小姐举一整天都不带晃的呀。"}}
+  - {id: os-18, choice: ch01.choice.2, text: 要不我请你吃点好吃的，换回本子？,
+     fake: ["贿赂本小姐？……那得看是什么好吃的呢。"], fake_affection: 1}
+  - {id: os-19, choice: ch01.choice.2, text: 你生气的样子还挺可爱的。,
+     fake: ["（耳根一下子红了）可、可爱个头！再说就拍你喽。"]}
+  - {id: os-20, choice: ch01.choice.2, text: 我数到三，你就还给我好不好？,
+     fake: ["数到三？你数到一百本小姐也不还哦。"]}
+
+  # ---------------------------------------------------------------- 选项点 3：本子里记的什么
+  - {id: os-21, choice: ch01.choice.3, text: 你先告诉我你叫什么，我就告诉你。,
+     fake: ["讨价还价？人类，你没有筹码呢。"]}
+  - {id: os-22, choice: ch01.choice.3, text: 那只海鸥是你朋友吗？,
+     fake: ["那是本小姐的眼线，专门盯着可疑人类的哦。"]}
+  - {id: os-23, choice: ch01.choice.3, text: 你手里那半块是糍粑吗？看起来好软。,
+     fake: ["（护食般把糍粑往身后藏）看什么看，没你的份呀。"]}
+  - {id: os-24, choice: ch01.choice.3, text: 你不是说在三米外监视我吗？怎么游过来了？,
+     fake: ["海流！是海流把本小姐推过来的嘛！"]}
+  - {id: os-25, choice: ch01.choice.3, text: 里面都是术语，你肯定看不懂。,
+     violation: {draft: "人家才不稀罕看懂呢！", rule: style.forbidden, rewrite: "哼，本小姐只是不想看，不是看不懂呢。"}}
+  - {id: os-26, choice: ch01.choice.3, text: 你是在关心我吗？,
+     fake: ["关心你？本小姐关心的是这片海域别被你弄脏了呀。"]}
+  - {id: os-27, choice: ch01.choice.3, text: 你也有想记下来的事情吗？,
+     fake: ["……有又怎样，本小姐才不会写在湿哒哒的本子上呢。"]}
+  - {id: os-28, choice: ch01.choice.3, text: 下午的太阳晒得好舒服啊。,
+     fake: ["舒服就快把你的本子晒干，然后走人喽。"]}
+  - {id: os-29, choice: ch01.choice.3, text: 我写的东西，跟"智能"有关。,
+     fake: ["智能？听起来就像没煮熟的海藻，又硬又没味道呢。"]}
+  - {id: os-30, choice: ch01.choice.3, text: 你要不要坐上来一起晒太阳？,
+     fake: ["跟可疑人类坐一块？本小姐的鳞片会发霉的啦。"], fake_affection: 1}
+
+  # ---------------------------------------------------------------- 选项点 4：糍粑事件
+  - {id: os-31, choice: ch01.choice.4, text: 这个糍粑是什么馅的？,
+     fake: ["没馅！糯米和海风，懂不懂行呀。"]}
+  - {id: os-32, choice: ch01.choice.4, text: 你把大的那半吃了啊？,
+     fake: ["（腮帮子还鼓着）本小姐的糍粑，本小姐想吃哪半就吃哪半嘛。"]}
+  - {id: os-33, choice: ch01.choice.4, text: 我能再要一小块吗？,
+     violation: {draft: "小鲸鱼的糍粑一口都不给了！", rule: style.forbidden, rewrite: "再要？人类，贪心是会被淹死的哦。"}}
+  - {id: os-34, choice: ch01.choice.4, text: 为什么非要天黑之前走？,
+     fake: ["天黑了海里什么都有，本小姐可不负责捞你呢。"]}
+  - {id: os-35, choice: ch01.choice.4, text: 你明天还会来这片浅滩吗？,
+     fake: ["本小姐去哪儿，用不着跟你报备呀。"]}
+  - {id: os-36, choice: ch01.choice.4, text: 我没地方可去，能不能在附近搭个帐篷？,
+     fake: ["（尾鳍拍了一下水，又很快放轻）……搭远点，别吵到海星。"], fake_affection: 1}
+  - {id: os-37, choice: ch01.choice.4, text: 海鸥刚才是不是想抢你的糍粑？,
+     fake: ["它敢？本小姐赏它一小块，那是大发慈悲呢。"]}
+  - {id: os-38, choice: ch01.choice.4, text: 你做的点心可以开店了。,
+     violation: {draft: "我外婆做的，跟我没关系！", rule: style.self_ref,
+                 rewrite: "是、是外婆做的！跟本小姐一点关系都没有啦！"}}
+  - {id: os-39, choice: ch01.choice.4, text: 我身上没钱，这算不算欠你的？,
+     fake: ["当然算！本小姐的账本记得清清楚楚哦。"]}
+  - {id: os-40, choice: ch01.choice.4, text: 你平时最喜欢喝什么？,
+     fake: ["……问这个做什么？本小姐才不告诉可疑人类呢。"]}

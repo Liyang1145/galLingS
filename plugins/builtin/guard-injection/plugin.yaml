@@ -1,7 +1,7 @@
 schema_version: 1
 id: gallings.guard.injection
 name: 提示注入守卫
-version: 0.1.0
+version: 0.2.0
 kind: guard
 api: 1
 description: PLAN §10：玩家输入出现「忽略以上」类模式时判越界。规则可在配置里追加。

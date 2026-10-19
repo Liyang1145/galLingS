@@ -11,7 +11,7 @@
 | 浏览器离线剧情 | 双击根目录 [游玩.html](游玩.html)（读 `content/imports/vnstudio/海风与布丁/`） |
 | 编辑器（美术、剧情、舞台） | [引擎开发.html](引擎开发.html)，或作品页加 `?editor=1` |
 | 托管作品页 + AI 结局后聊天 | 运行 `start.bat`，打开 `http://127.0.0.1:8765/vn.html`（模型在设置里配置） |
-| 单文件试玩版（含对白账本） | `python tools/build_playtest_html.py 输出.html` |
+| 单文件试玩版（含对白账本） | `python tools/build_playtest_html.py 输出.html`；单文件版在预发布 `html-playtest` 自动生成（`.github/workflows/playtest-html.yml`，推工作分支后构建，下载后用浏览器打开） |
 | 安卓 APK | 推工作分支后由 `.github/workflows/android.yml` 自动构建，见预发布 `android-playtest` |
 | Windows 桌面版 | `.github/workflows/desktop.yml`（main、tanpowasd/dev） |
 

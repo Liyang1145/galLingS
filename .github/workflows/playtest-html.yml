@@ -1,0 +1,56 @@
+# 单文件试玩版（含对白账本）：把作品文件夹（content/imports/vnstudio/海风与布丁）的素材全部内嵌成一个 HTML。
+# 文件约 160MB，超过 GitHub 普通文件 100MB 上限，所以不进仓库，由本 workflow 构建后放到预发布 html-playtest 的附件。
+# 设置与本地一致：tools/build_playtest_html.py 默认参数（不透明图 ≤1600、透明图 ≤1280 转 webp，音频原样），Python 3.12 + Pillow 13.0.0。
+name: playtest-html
+on:
+  push:
+    branches: [fix/character-performance]
+    paths:
+      - "content/imports/vnstudio/**"
+      - "tools/build_playtest_html.py"
+      - "tools/playtest_ledger.js"
+      - ".github/workflows/playtest-html.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: playtest-html
+  cancel-in-progress: true
+
+jobs:
+  html:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          sparse-checkout: |
+            tools
+            content/imports/vnstudio
+          sparse-checkout-cone-mode: true
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: 构建
+        run: |
+          pip install "pillow==13.0.0"
+          mkdir -p out
+          python tools/build_playtest_html.py out/haifeng-pudding-playtest.html "content/imports/vnstudio/海风与布丁"
+          ls -l out
+          sha256sum out/haifeng-pudding-playtest.html | tee out/sha256.txt
+      - name: 预发布附件
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          SIZE=$(stat -c %s out/haifeng-pudding-playtest.html)
+          MB=$(( (SIZE + 524288) / 1048576 ))
+          SUM=$(cut -d' ' -f1 out/sha256.txt)
+          NOTES="自动构建 ${GITHUB_SHA:0:7}（${GITHUB_SHA}，第 ${GITHUB_RUN_NUMBER} 次）：单文件试玩版（含对白账本），素材全部内嵌，约 ${MB}MB。
+          打开方式：下载附件 haifeng-pudding-playtest.html，用浏览器（Chrome / Edge / Safari）直接打开即可，无需安装、无需联网；右上角「📒 账本」写批注，批注存在本机浏览器里，可导出 CSV / JSON / Markdown。
+          SHA-256：${SUM}"
+          gh release view html-playtest -R "$GITHUB_REPOSITORY" >/dev/null 2>&1 || \
+            gh release create html-playtest -R "$GITHUB_REPOSITORY" --prerelease --target "$GITHUB_SHA" \
+              --title "海风与布丁 单文件试玩版（HTML）" --notes "$NOTES"
+          gh release upload html-playtest out/haifeng-pudding-playtest.html -R "$GITHUB_REPOSITORY" --clobber
+          gh release edit html-playtest -R "$GITHUB_REPOSITORY" --notes "$NOTES"

@@ -15,6 +15,8 @@
 
 安卓包相关脚本在 `mobile/`（`prepare_assets.py`、`host.js`），由 `.github/workflows/android.yml` 调用。
 
+单文件版在预发布 `html-playtest` 自动生成：推送工作分支且改了作品文件夹、`build_playtest_html.py` 或 `playtest_ledger.js` 时，`.github/workflows/playtest-html.yml` 用本脚本默认设置构建并上传附件 `haifeng-pudding-playtest.html`（也可在 Actions 里手动触发）。
+
 ## 历次流水线（已执行，留作复现与审计）
 下列脚本对应 10-13～10-16 各轮美术、音乐、演出接入，详情见对应 work-ledger。**它们基于当时的基线，直接重跑会覆盖之后的修改，不要在现行分支上重跑。**
 

@@ -19,6 +19,7 @@
 - [opening-art-sound-corrections.md](opening-art-sound-corrections.md) — 开场画面与动作音效修正
 
 ## 美术
+- [art-selfaudit-20261019.md](art-selfaudit-20261019.md) — 美术全量自查（鉴赏解锁、尾巴两套画法、比例、分辨率、薄雾）
 - [art-acceptance-20261018.md](art-acceptance-20261018.md) — 10-18 晚图片验收修改
 - [tails-20261018-evening.md](tails-20261018-evening.md) — 10-18 傍晚尾巴与换图
 - [l37-tail-l01-20261018.md](l37-tail-l01-20261018.md) — L37 尾巴对齐 L01

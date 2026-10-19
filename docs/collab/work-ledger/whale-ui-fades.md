@@ -5,7 +5,7 @@
 - 更新时间：2026-10-17
 - 任务分支：`feat/whale-ui-fades`
 - 基线提交：`0f6de470e5ef1b96c0dfe91605c913f15251c0b9`
-- 交付提交 / PR / 私有附件：见本分支 PR；交付清单 [archive/deliveries/whale-ui](../../../archive/deliveries/whale-ui/README.md)
+- 交付提交 / PR / 附件：见本分支 PR；交付清单 [archive/deliveries/whale-ui](../../../archive/deliveries/whale-ui/README.md)
 
 ## 本次目标与影响范围
 

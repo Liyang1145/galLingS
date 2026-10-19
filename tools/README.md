@@ -9,13 +9,14 @@
 | `check_full_regression.py` | 全作回归：走完 3315 节点，报 nbad / nerrs |
 | `check_editor_roundtrip.py` | D04：编辑器 JSON / 单文件 HTML / 文件夹导出往返无损 |
 | `check_hosted_galcore.py` | B02：托管作品页下 galcore 接管剧情、连推、0 分歧 |
+| `check_md_links.py` | 文档检查：仓库内所有 `.md` 的相对链接都指向存在的文件（`python tools/check_md_links.py`，有断链时退出码 1） |
 | `build_art_catalog.py` | 生成编辑器用的美术目录 `art-catalog.js` |
 | `build_current_art_gallery.py` | 只含当前在用图片的图库 |
 | `compress_art_upgrade.py`、`compress_wav_assets.py` | 生成播放副本（webp / mp3），母图和 WAV 原件不动 |
 
 安卓包相关脚本在 `mobile/`（`prepare_assets.py`、`host.js`），由 `.github/workflows/android.yml` 调用。
 
-单文件版在预发布 `html-playtest` 自动生成：推送工作分支且改了作品文件夹、`build_playtest_html.py` 或 `playtest_ledger.js` 时，`.github/workflows/playtest-html.yml` 用本脚本默认设置构建并上传附件 `haifeng-pudding-playtest.html`（也可在 Actions 里手动触发）。
+预发布 `html-playtest` 的自动构建（`.github/workflows/playtest-html.yml`：推送工作分支且改了作品文件夹、`build_playtest_html.py` 或 `playtest_ledger.js` 时用本脚本构建并上传 `haifeng-pudding-playtest.html`）已于 2026-10-20 按用户要求暂停；删不删先问用户（见 [待办总表](../docs/collab/待办总表.md) C06）。需要单文件时本地运行本脚本。
 
 ## 历次流水线（已执行，留作复现与审计）
 下列脚本对应 10-13～10-16 各轮美术、音乐、演出接入，详情见对应 work-ledger。**它们基于当时的基线，直接重跑会覆盖之后的修改，不要在现行分支上重跑。**

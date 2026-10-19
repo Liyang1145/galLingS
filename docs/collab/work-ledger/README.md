@@ -1,8 +1,9 @@
 # 任务记录索引（work-ledger）
 
-每次任务一份记录，新任务按 [_template.md](_template.md) 建。下面按主题排，同主题内新的在前。现行状态以 [接手说明](../接手说明.md) 和 [待办总表](../待办总表.md) 为准，这里是历史依据。
+每次任务一份记录，新任务按 [_template.md](_template.md) 建。下面按主题排，同主题内新的在前。现行状态以 [Hark 会话交接 20261020](../handoff/Hark会话交接_20261020.md)、[接手说明](../接手说明.md) 和 [待办总表](../待办总表.md) 为准，这里是历史依据。
 
 ## 总览与审查
+- [docs-cleanup-20261020.md](docs-cleanup-20261020.md) — 10-20 全仓文档整理（入口、对齐交接、矛盾消除、断链检查、待办 B08 登记、仓库公开说法统一）
 - [atri-ui-sync-android-20261019.md](atri-ui-sync-android-20261019.md) — 10-19 Atri 界面同步到文件夹版 + 安卓试玩包
 - [backend-demo-closeout-20261019.md](backend-demo-closeout-20261019.md) — 10-19 后端与 DEMO 未完成项收尾（Schema、回放、评测、守卫、D04、B02）
 - [2026-10-18-full-audit.md](2026-10-18-full-audit.md) — 10-18 晚全面审查（剧本 / 美术 / 音频与界面）
@@ -21,13 +22,14 @@
 
 ## 美术
 - [hd-art-music-20261019.md](hd-art-music-20261019.md) — 10-19 背景/CG 48 张高清化（3840）、深海下潜过渡 B11A、P04 尾巴、E2 起点与家居曲退出翡翠之梦营业段
+- [chapter1-cg-animations-20261019.md](chapter1-cg-animations-20261019.md) — 10-19 第一话关键剧情 CG 动画集（55447aa；CG01 未接入，等用户定）
 - [art-layout-20261019.md](art-layout-20261019.md) — 10-19 剧本美术编排：烤鱿鱼改场景、8 张 CG 接入鉴赏全解锁、C14 合并、未出场立绘加入与立绘重排
 - [art-selfaudit-20261019.md](art-selfaudit-20261019.md) — 美术全量自查（鉴赏解锁、尾巴两套画法、比例、分辨率、薄雾）
 - [art-acceptance-20261018.md](art-acceptance-20261018.md) — 10-18 晚图片验收修改
 - [tails-20261018-evening.md](tails-20261018-evening.md) — 10-18 傍晚尾巴与换图
 - [l37-tail-l01-20261018.md](l37-tail-l01-20261018.md) — L37 尾巴对齐 L01
 - [c02-afternoon-sky-20261018.md](c02-afternoon-sky-20261018.md) — C02 天空改午后
-- [tail-unify-c05.md](tail-unify-c05.md) — 鲸尾统一（C05 标准，10-17）
+- [tail-unify-c05.md](tail-unify-c05.md) — 鲸尾统一（C05 标准，10-17；历史，现行基准为 L01）
 - [image25-pass2.md](image25-pass2.md) — Image2.5 第二轮修图（10-17）
 - [agent-handoff-cg-pause.md](agent-handoff-cg-pause.md) — agent 接手与 CG 暂停（已撤销）
 - [tail-skin-corrections.md](tail-skin-corrections.md) — 鲸尾结构与误画擦伤修正
@@ -43,7 +45,7 @@
 - [vo-ch1-7-new-voice-20261019.md](vo-ch1-7-new-voice-20261019.md) — 鲸鱼小姐第一～七话新音色
 - [atri-feedback-vo-20261018.md](atri-feedback-vo-20261018.md) — Atri 试玩反馈与配音清单
 - [atri-home-cue-20261018.md](atri-home-cue-20261018.md) — Atri 家居曲接入
-- [atri-music-v11.md](atri-music-v11.md) — Atri 配乐 v1.1 + 前 200 句配音
+- [atri-music-v11.md](atri-music-v11.md) — Atri 配乐 v1.1 + 前 200 句配音（逐段明细 [atri-music-v11-cues.csv](atri-music-v11-cues.csv)）
 - [sfx-20261018.md](sfx-20261018.md) — 缺失音效接入
 - [voice-over.md](voice-over.md) — 角色配音（Qwen TTS）
 - [music-progress-sync.md](music-progress-sync.md) — 音乐进度同步
@@ -69,3 +71,6 @@
 - [collaborator-invitations-20261016.md](collaborator-invitations-20261016.md) — 新协作者邀请
 - [coordination-setup.md](coordination-setup.md) — 迁移与共享台账建立
 - [todo-document-sync.md](todo-document-sync.md) — 待办文档同步
+
+## 模板
+- [_template.md](_template.md) — 新任务记录模板

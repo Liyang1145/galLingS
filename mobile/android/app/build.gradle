@@ -1,0 +1,24 @@
+plugins { id 'com.android.application' }
+
+android {
+    namespace 'net.gallings.haifeng'
+    compileSdk 34
+    defaultConfig {
+        applicationId 'net.gallings.haifeng'
+        minSdk 24
+        targetSdk 34
+        versionCode((System.getenv('APK_VERSION_CODE') ?: '1') as int)
+        versionName(System.getenv('APK_VERSION_NAME') ?: 'playtest')
+    }
+    buildTypes {
+        // 试玩包用调试签名，可直接安装；正式发布时换团队自己的签名
+        release { signingConfig signingConfigs.debug; minifyEnabled false }
+    }
+    androidResources { noCompress += ['mp3', 'ogg', 'webp', 'png', 'jpg'] }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies { implementation 'androidx.webkit:webkit:1.11.0' }

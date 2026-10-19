@@ -57,8 +57,8 @@ html,body{margin:0;height:100%;background:var(--bg);color:var(--fg);font-family:
 /* 对话框 */
 #stage{--dBg:linear-gradient(#0c0f1ad0,#0c0f1af0);--dBorder:1px solid #ffffff22;--dRad:14px;--dSide:60px;--dBot:28px;--dH:190px;--dShadow:none;--nBg:#2b3655;--nFg:#fff;--nRad:10px;--nBorder:1px solid #ffffff30;--tFg:#fff;--tSize:26px;--font:inherit;--cBg:#0c0f1ad8;--cHover:#2b3655;--cBorder:1px solid #ffffff40;--cRad:12px}
 #dlg,#pdlg{position:absolute;left:var(--dSide);right:var(--dSide);bottom:var(--dBot);height:var(--dH);border-radius:var(--dRad);background:var(--dBg);border:var(--dBorder);box-shadow:var(--dShadow);padding:46px 36px 20px;z-index:4;font-family:var(--font)}
-#dlg{opacity:var(--ghost);transition:opacity .15s}
-#dlg:hover,#dlg:focus-within,#stage[data-dlg=show] #dlg{opacity:1}
+#dlg,#pdlg{opacity:var(--ghost);transition:opacity .15s}
+#dlg:hover,#dlg:focus-within,#stage[data-dlg=show] #dlg,#stage[data-dlg=show] #pdlg{opacity:1}
 #stage[data-dlg=hidden] #dlg{display:none}
 #nm,#pnm{position:absolute;top:-20px;left:28px;min-width:140px;height:40px;padding:0 18px;border-radius:var(--nRad);background:var(--nBg);border:var(--nBorder);color:var(--nFg);font-family:var(--font);font-weight:600;font-size:22px;line-height:40px}
 #nm{outline:none;width:180px}
@@ -536,8 +536,8 @@ body.game #choices>button:active{translate:0 1px;filter:brightness(.95)}
 body.game #choices>button:focus-visible{outline:1px solid #def1ff88;outline-offset:4px}
 body.game #choices .ctimer{margin-top:0}
 /* Dialogue: separate fading skin so silent performance can keep its controls visible. */
-body.game #pdlg{left:60px;right:60px;bottom:38px;height:200px;padding:46px 40px 46px;background:none;border:0;border-radius:14px;box-shadow:none;isolation:isolate}
-body.game #pdlg::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:var(--whale-dialogue) center/100% 100% no-repeat;opacity:1;transition:opacity .4s ease}
+body.game #pdlg{left:60px;right:60px;bottom:38px;height:200px;padding:46px 40px 46px;background:none;border:0;border-radius:14px;box-shadow:none;isolation:isolate;opacity:1}
+body.game #pdlg::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:var(--whale-dialogue) center/100% 100% no-repeat;opacity:var(--ghost);transition:opacity .4s ease}
 body.game #stage.nodlg #pdlg::before{opacity:0}
 body.game #pnm{top:-22px;left:28px;min-width:170px;height:40px;padding:0 24px;border-radius:10px;border:1px solid #c0e1fa55;background:linear-gradient(#315679d9,#234565b8);font-size:22px;font-weight:400;letter-spacing:3px;text-shadow:0 1px 3px #153049}
 body.game #ptx{color:#f0f8ff;line-height:1.8;letter-spacing:1px;text-shadow:0 1px 3px #102e4d77;overflow-y:auto;overflow-wrap:anywhere;scrollbar-width:thin}
@@ -1377,7 +1377,7 @@ function renderDialog() {
   if (document.activeElement !== $('#tx')) $('#tx').value = l.text;
   $('#nm').style.color = charOf(l.speaker)?.color || '';
   stage.dataset.dlg = P.settings.dlg;
-  document.documentElement.style.setProperty('--ghost', P.settings.ghost);
+  document.documentElement.style.setProperty('--ghost', Math.max(.35, Math.min(.95, +(pref('ghost') ?? .35))));
 }
 /* ========== 多轨时间轴（参考剪辑软件） ========== */
 // 横向一格 = 一“节”（一句台词）。上：立绘轨（每个角色一条）；中：文本轨；下：场景、音乐、音效轨。
@@ -2320,6 +2320,7 @@ function setPref(k, v) {
   else { P.settings[k] = v; autosave(); }
   refreshAudioVolumes(k);
   if (k === 'readerScale') applyTheme();
+  if (k === 'ghost') { v = Math.max(.35, Math.min(.95, +v || .35)); if (gameMode) PREF[k] = v; else P.settings[k] = v; document.documentElement.style.setProperty('--ghost', v); }
   if (k === 'vvo' && voEl) voEl.volume = v;
 }
 /* —— 已读记录：所有存档共用，用来“只快进已读” —— */
@@ -2504,7 +2505,7 @@ function showPlay(first) {
   applyLineAudio(l,RT.audioRestore,RT.audioSkipEntrySe); RT.audioRestore=null;RT.audioSkipEntrySe=false;
   setName($('#pnm'), l.speaker);
   const shown = fillVars(l.text);
-  if (l.text) { RT.back.push({ s: l.speaker, t: shown, v: l.voice || undefined }); if (RT.back.length > 300) RT.back.shift(); }
+  if (l.text) { RT.back.push({ s: l.speaker, t: shown, v: l.voice || undefined, h: RT.hist.length - 1 }); if (RT.back.length > 300) RT.back.shift(); }
   VNPlugins.emit('line', { index: RT.idx, line: l, text: shown });
   const stats = pref('showStats') && SAVE_POINT_RE.test(l.text || '') ? statsText() : '';
   typeText(stats ? shown + '　' + stats : shown, () => afterText(l));
@@ -2650,6 +2651,17 @@ function goBack() {
   RT.audioSkipEntrySe = true;
   showPlay(false);
 }
+// 从历史记录中的指定对白恢复当时的变量、回看位置和剧情节点。
+function goBackToHistory(h) {
+  if (!playing || overlayOpen() || RT.chat || !Number.isInteger(h)) return;
+  const p = RT.hist?.[h]; if (!p) return;
+  stopChoiceTimer(); clearTimers(); RT.auto = RT.skip = false; updPctl();
+  RT.hist.length = h;
+  RT.idx = p.i; RT.vars = clone(p.v); syncGlobals();
+  if (RT.back.length > p.b) RT.back.length = p.b;
+  RT.audioSkipEntrySe = true;
+  showPlay(false);
+}
 function nextIndex(l) {
   if (l.jump && cond(l.jumpIf, RT.vars)) { const j = labelIndex(l.jump); if (j >= 0) return j; }
   return RT.idx + 1;
@@ -2749,14 +2761,16 @@ $('#soulTab').addEventListener('click', e => { e.stopPropagation(); if ($('#soul
 function showPrefs() {
   clearTimeout(RT.timer); RT.timer = null;
   const box = $('#psettings');
-  const sl = (k, label, min, max, step, inv) => `<div class="row"><span>${label}</span><input type="range" min="${min}" max="${max}" step="${step}" data-k="${k}" ${inv ? 'data-inv="' + inv + '"' : ''} value="${inv ? inv - pref(k) : (pref(k) ?? 1)}"></div>`;
+  const fmt = (k, raw, inv) => { const value=inv ? inv - Number(raw) : Number(raw); if(k==='vbgm'||k==='vse'||k==='vamb'||k==='vvo'||k==='ghost') return Math.round(value*100)+'%'; if(k==='readerScale') return Math.round(value*100)+'%'; if(k==='speed') return Math.round(value)+'ms'; if(k==='autoMul') return value.toFixed(1)+'×'; return String(value); };
+  const sl = (k, label, min, max, step, inv) => { const raw=inv ? inv - pref(k) : (pref(k) ?? 1); return `<div class="row"><span>${label}</span><div class="control"><input type="range" min="${min}" max="${max}" step="${step}" data-k="${k}" ${inv ? 'data-inv="' + inv + '"' : ''} value="${raw}"><output data-value="${k}">${fmt(k,raw,inv)}</output></div></div>`; };
   box.innerHTML = `<header class="panel-heading"><small>按自己的节奏</small><h2>声音与阅读</h2></header><div class="rows">
     ${sl('vbgm', ic('music') + ' 音乐', 0, 1, 0.05)}${sl('vse', ic('bell') + ' 音效', 0, 1, 0.05)}${sl('vamb', ic('waves') + ' 环境音', 0, 1, 0.05)}${P.lines.some(l => l.voice) ? sl('vvo', ic('mic') + ' 语音', 0, 1, 0.05) : ''}
-    ${sl('readerScale', '文字大小', 1, 1.25, 0.05)}${sl('speed', '文字速度', 5, 80, 5, 85)}${sl('autoMul', '自动播放等待', 0.4, 2.5, 0.1)}
+    ${sl('readerScale', '文字大小', 1, 1.25, 0.05)}${sl('speed', '文字速度', 5, 80, 5, 85)}${sl('autoMul', '自动播放等待', 0.4, 2.5, 0.1)}${sl('ghost', '对话框不透明度', 0.35, 0.95, 0.05)}
     <div class="row"><span>快进</span><button class="tg ${pref('skipRead') ? 'on' : ''}" data-tg="skipRead">只快进已读</button></div>
     ${uiSe('btnClick') || uiSe('btnHover') ? `<div class="row"><span>按钮音效</span><button class="tg ${pref('btnSe') !== false ? 'on' : ''}" data-tg="btnSe" data-def="1">点按 / 悬停时轻响</button></div>` : ''}
     <div class="row stats-row"><span>好感数值</span><button class="tg ${pref('showStats') ? 'on' : ''}" data-tg="showStats">显示（剧透向）</button><small class="dim stats-now">${statsText(true)}</small></div>${soulPrefsHtml()}</div>`;
-  box.querySelectorAll('input[type=range]').forEach(r => r.oninput = () => setPref(r.dataset.k, r.dataset.inv ? +r.dataset.inv - +r.value : +r.value));
+  const syncSlider = r => { const min=Number(r.min)||0, max=Number(r.max)||1, value=Number(r.value); const pct=max>min ? Math.max(0,Math.min(100,(value-min)/(max-min)*100)) : 0; r.style.setProperty('--slider-pct', pct+'%'); };
+  box.querySelectorAll('input[type=range]').forEach(r => { const output=box.querySelector(`output[data-value="${r.dataset.k}"]`); syncSlider(r); if(output) output.textContent=fmt(r.dataset.k,r.value,r.dataset.inv); r.oninput = () => { setPref(r.dataset.k, r.dataset.inv ? +r.dataset.inv - +r.value : +r.value); syncSlider(r); if(output) output.textContent=fmt(r.dataset.k,r.value,r.dataset.inv); }; });
   box.querySelectorAll('[data-tg]').forEach(b => b.onclick = e => { e.stopPropagation(); const cur = b.dataset.def ? pref(b.dataset.tg) !== false : !!pref(b.dataset.tg), v = !cur; setPref(b.dataset.tg, v); b.classList.toggle('on', v); if (b.dataset.tg === 'showStats') box.querySelector('.stats-now').textContent = statsText(true); });
   soulPrefsBind(box);
   addClose(box, kick); box.classList.add('show');
@@ -2770,6 +2784,12 @@ function showBacklog() {
     if (x.s) { const n = document.createElement('b'); if (x.s === '▶') n.innerHTML = ic('chevron-right'); else n.textContent = x.s; d.appendChild(n); }
     d.append(x.t);
     if (x.v && A(x.v)) { const p = document.createElement('button'); p.className = 'vo'; p.innerHTML = ic('volume-2'); p.onclick = e => { e.stopPropagation(); playVoice(x.v); }; d.appendChild(p); }
+    if (Number.isInteger(x.h)) {
+      const rb = document.createElement('button'); rb.className = 'back'; rb.type = 'button'; rb.textContent = '回退到这里';
+      rb.title = '恢复到这句对白开始前的状态';
+      rb.onclick = e => { e.stopPropagation(); b.classList.remove('show'); goBackToHistory(x.h); };
+      d.appendChild(rb);
+    }
     b.appendChild(d);
   });
   addClose(b); b.classList.add('show'); b.scrollTop = b.scrollHeight;

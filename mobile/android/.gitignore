@@ -1,0 +1,5 @@
+app/src/main/assets/game/
+app/src/main/res/mipmap-*/
+build/
+app/build/
+.gradle/

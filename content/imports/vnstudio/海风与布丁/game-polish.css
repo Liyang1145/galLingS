@@ -100,10 +100,28 @@ body.game #psettings .row>span { width:210px; color:#d4e2d4; }
 body.game #psettings input[type="range"] { accent-color:#b6cead; }
 body.game #psettings .tg { color:#e5ecdf; border-color:#a3c1b450; background:#233f3e; }
 body.game #psettings .tg.on { background:#53766c; }
+/* C 海底刻度：只作用于游戏内设置面板，设置页外控件保持原样。 */
+body.game #psettings .rows{position:relative;}
+body.game #psettings .row{border-top:1px solid #62b1c326;padding:7px 0;}
+body.game #psettings .row>span{color:#b8d9df;letter-spacing:.025em;}
+body.game #psettings input[type="range"]{appearance:none;height:4px;border-radius:1px;accent-color:#75d4dd;background:linear-gradient(90deg,#75d4dd 0%,#75d4dd var(--slider-pct,0%),#ffffff22 var(--slider-pct,0%),#ffffff22 100%);cursor:pointer;}
+body.game #psettings input[type="range"]:focus{outline:1px solid #7ee5e9;outline-offset:5px;}
+body.game #psettings input[type="range"]::-webkit-slider-thumb{appearance:none;width:15px;height:15px;border-radius:3px;background:#d4ffff;border:1px solid #67d7e1;box-shadow:0 0 10px #75d4ddaa;cursor:grab;}
+body.game #psettings input[type="range"]::-moz-range-thumb{width:11px;height:11px;border-radius:3px;background:#d4ffff;border:1px solid #67d7e1;box-shadow:0 0 10px #75d4ddaa;cursor:grab;}
+body.game #psettings output[data-value]{flex:0 0 58px;text-align:right;color:#f0cc82;font-size:13px;font-variant-numeric:tabular-nums;white-space:nowrap;}
+body.game #psettings .tg,body.game #psettings .seg button{border-radius:3px;background:#0a1d25;color:#b8d9df;border:1px solid #6bc3cc77;padding:7px 14px;cursor:pointer;transition:background .15s,border-color .15s,color .15s,transform .08s;}
+body.game #psettings .tg:hover,body.game #psettings .seg button:hover{border-color:#7ee5e9;color:#e1ffff;background:#123642;}
+body.game #psettings .tg:active,body.game #psettings .seg button:active{transform:translateY(1px);}
+body.game #psettings .tg.on,body.game #psettings .seg button.on{background:#225d68;color:#d8ffff;border-color:#7ee5e9;box-shadow:0 0 10px #75d4dd26;}
+body.game #psettings .ovx{border-radius:3px;background:#0a1d25;color:#83e4e8;border:1px solid #6bc3cc77;}
+body.game #psettings .ovx:hover{background:#225d68;border-color:#7ee5e9;}
+@media (pointer:coarse){body.game #psettings .tg,body.game #psettings .seg button{min-height:44px;padding:9px 16px;}}
 body.game #gallery .tabs { margin:20px 0 26px; }
 body.game #gallery .lock { background:linear-gradient(145deg,#233c3c,#172c30); color:#abc3b1; border:1px dashed #9db6a740; }
 body.game #backlog .e { padding:18px 4px; border-bottom:1px solid #a5c0b229; font-size:25px; line-height:1.65; }
 body.game #backlog .e b { font-weight:500; margin-bottom:5px; }
+body.game #backlog .e .back{display:block;margin-top:9px;padding:5px 10px;border:1px solid #6bc3cc77;border-radius:3px;background:#0a1d25;color:#b8d9df;font:inherit;font-size:13px;cursor:pointer;}
+body.game #backlog .e .back:hover{background:#225d68;color:#d8ffff;border-color:#7ee5e9;}
 @media (pointer:coarse) {
   body.game #pctl .btn { width:auto; min-width:76px; height:44px; }
   body.game #pctl { gap:8px; }
@@ -194,3 +212,7 @@ body.game.vport #title .play-help{display:none}
 body.game #psettings .stats-row{flex-wrap:wrap}
 body.game #psettings .stats-now{margin-left:12px;color:#b9cbc3}
 body.game #psettings .stats-now:empty{display:none}
+
+/* 10-19 Atri 设置滑条移植：滑条与数值同一行 */
+#psettings .row .control{flex:1;display:flex;align-items:center;gap:12px;min-width:0}
+#psettings .row .control input[type=range]{flex:1;min-width:0}

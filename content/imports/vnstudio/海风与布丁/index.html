@@ -4705,7 +4705,7 @@ showSoul = function (page) {
 };
 showPlay = VN_FADE.wrap(showPlay, () => {
   const l = P.lines[RT.idx];
-  return !!lastShown && (visKey(lastShown) !== visKey(l) || lastShown.mood !== l.mood || isPause(lastShown) !== isPause(l) || $('#choices').classList.contains('show'));
+  return !!lastShown && l.trans !== 'cut' && (visKey(lastShown) !== visKey(l) || lastShown.mood !== l.mood || isPause(lastShown) !== isPause(l) || $('#choices').classList.contains('show'));
 }, false);
 // 覆盖内联关闭回调及 CG 打开/关闭；不为音量滑条、输入、自动/快进状态制造整屏动画。
 stage.addEventListener('click', e => {

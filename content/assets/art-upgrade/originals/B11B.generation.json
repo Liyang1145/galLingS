@@ -1,0 +1,17 @@
+{
+  "id": "B11B",
+  "kind": "background",
+  "date": "2026-10-19",
+  "batch": "deep-dive-transition-20261019",
+  "note": "新背景 深水区_光没了：B11A 压暗版（程序处理，非模型生成），光完全消失。用于第三话 #395–396（「光没了。」及其后空行）。2752x1536。用户 2026-10-19 确认下潜过渡方案。",
+  "endpoint": null,
+  "requested_model": null,
+  "requested_size": "2752x1536",
+  "reference_images": [
+    "content/assets/art-upgrade/originals/B11A.webp"
+  ],
+  "matting": null,
+  "master_sha256": "fe66ff3f485100025604079bf4fc190427060d7fcfae946f52bb44a2d6458b08",
+  "runtime_webp_sha256": "de44d0ecaa6d01723c518701d28e5fc708acc8d7089d3593a76fe337b1a52248",
+  "superseded_master": null
+}

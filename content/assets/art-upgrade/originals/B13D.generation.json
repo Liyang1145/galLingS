@@ -1,0 +1,17 @@
+{
+  "id": "B13D",
+  "kind": "background",
+  "date": "2026-10-19",
+  "batch": "deep-dive-transition-20261019",
+  "note": "新背景 深海_荧光初亮：以 B13 为参考，同构图几乎全暗，只剩荧光珊瑚/海藻的点点蓝光初亮，作为 B13 前一帧。用于第三话 #397–398（「然后，光回来了。」「不是太阳的光。」），#399 起接 B13。3840x2160。用户 2026-10-19 确认下潜过渡方案。",
+  "endpoint": "https://api.rinko.ai/v1/images/edits",
+  "requested_model": "gpt-image-2.5-sunburst",
+  "requested_size": "3840x2160",
+  "reference_images": [
+    "content/assets/art-upgrade/originals/B13.webp"
+  ],
+  "matting": null,
+  "master_sha256": "afcfa3a4e27c5558f33d388e3767d79921281dd3153f3cdd2d5d086425263624",
+  "runtime_webp_sha256": "e7b09c75ecc22af667aa6f394b496897aae67d5845514d4809cbd6561b2366f4",
+  "superseded_master": null
+}

@@ -317,6 +317,25 @@
       "backendQuality": "high",
       "backendModel": "gpt-image-2.5-sunburst"
     },
+    "B11B": {
+      "path": "content/assets/art-upgrade/runtime/B11B.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/B11B.webp",
+      "sourceSha256": "fe66ff3f485100025604079bf4fc190427060d7fcfae946f52bb44a2d6458b08",
+      "sha256": "de44d0ecaa6d01723c518701d28e5fc708acc8d7089d3593a76fe337b1a52248",
+      "bytes": 156496,
+      "sourceBytes": 1311576,
+      "size": [
+        2752,
+        1536
+      ],
+      "lossless": false,
+      "webpQuality": 90,
+      "resized": false,
+      "backendQuality": null,
+      "backendModel": null,
+      "derivedFrom": "B11A",
+      "derivation": "B11A 程序压暗（非模型生成），光完全消失；用于第三话 #395–396「光没了。」"
+    },
     "B12": {
       "path": "content/assets/art-upgrade/runtime/B12.webp",
       "sourceMasterPath": "content/assets/art-upgrade/originals/B12.webp",
@@ -383,6 +402,25 @@
           "worstBlock": 0.897
         }
       }
+    },
+    "B13D": {
+      "path": "content/assets/art-upgrade/runtime/B13D.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/B13D.webp",
+      "sourceSha256": "afcfa3a4e27c5558f33d388e3767d79921281dd3153f3cdd2d5d086425263624",
+      "sha256": "e7b09c75ecc22af667aa6f394b496897aae67d5845514d4809cbd6561b2366f4",
+      "bytes": 615994,
+      "sourceBytes": 4111356,
+      "size": [
+        3840,
+        2160
+      ],
+      "lossless": false,
+      "webpQuality": 90,
+      "resized": false,
+      "backendQuality": "high",
+      "backendModel": "gpt-image-2.5-sunburst",
+      "derivedFrom": "B13",
+      "derivation": "以 B13 为参考图生成，同构图几乎全暗、只剩荧光点初亮；用于第三话 #397–398「然后，光回来了。」"
     },
     "B14": {
       "path": "content/assets/art-upgrade/runtime/B14.webp",
@@ -3133,7 +3171,7 @@
       "sourceSha256": "e39b81a9982b3da58b73b6f6ede9a5ea5db56de880cc3e9cad6600e91eac22ba",
       "sourceBytes": 671166,
       "size": [
-        1024,
+        1264,
         1536
       ]
     },

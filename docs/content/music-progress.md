@@ -20,7 +20,7 @@
 | E7 独白/思考 | [E7](../../content/assets/music/mp3/E7.mp3) | Atri-Lobato | 3:06.12 | 73句；明确的验证/回溯思考。 |
 | E4 退潮/等待/关系受伤 | [日落空守（暂定名）](../../content/assets/audio/bgm/bgm_e4_sunset_wait.mp3) | 音乐负责人 | 2:24.81 | 第九话黄昏、第十话数日等待、第十一话救援后尚未解冻，3段77句。 |
 | M1 普通浅滩/沙洲地图 | [浅滩日常（功能名，曲名未定）](../../content/assets/audio/bgm/bgm_m1_shallows_day.mp3) | 音乐负责人 | 1:39.69 | 第三话下潜准备、第七话捡贝壳，2段61句；角色重点段落保留。 |
-| E5/E6候选 | [E6或E5](../../content/assets/music/mp3/E6或E5.mp3) | Atri-Lobato | 2:58.41 | 0句，仅试听；用途未定，不算两首已完成曲。 |
+| E5/E6候选 | [E6](../../content/assets/music/mp3/E6.mp3) · [E5](../../content/assets/music/mp3/E5.mp3) | Atri-Lobato | 2:58.41 | 0句，仅试听；用途未定，不算两首已完成曲。 |
 
 句数是节点引用数，同曲跨句连续播放，不随切句重播。时长来自实际MP3，不把生成提示词的目标时长当成交付事实。
 

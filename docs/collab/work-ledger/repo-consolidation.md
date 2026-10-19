@@ -9,7 +9,7 @@
 
 ## 本次目标与影响范围
 
-按 PLAN 把仓库收敛成一个引擎、一份内容、一个画面。盘点见 [inventory.md](../../inventory.md)。第二步（本次）：剧情交给 galcore 运行。
+按 PLAN 把仓库收敛成一个引擎、一份内容、一个画面。盘点见 [inventory.md](../handoff/仓库盘点_20261014_历史.md)。第二步（本次）：剧情交给 galcore 运行。
 
 - `compiler/vnstudio.py`（新）：VN Studio `game.js` → 章节 JSON / OP 程序 + 导入报告；确定性。
 - `core/src/engine.rs`：`State.vars`（空时不序列化）、`Config.vars_init`、OP `SET` / `JUMP_IF`、选项 `set` / `cond`、事件 `start`。
@@ -44,5 +44,5 @@
 
 ## 下一位 agent 的接续点
 
-1. 目录迁移已在本分支完成（见 [inventory §4.1](../../inventory.md)）；合入 main 前请 @Liyang1145（音乐）与美术编辑器负责人确认路径变化。
+1. 目录迁移已在本分支完成（见 [inventory §4.1](../handoff/仓库盘点_20261014_历史.md)）；合入 main 前请 @Liyang1145（音乐）与美术编辑器负责人确认路径变化。
 2. AI 模式浏览器联调（用户：对 demo 不急，延后）。

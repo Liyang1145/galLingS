@@ -1,54 +1,59 @@
-# galLingS
+# galLingS ·《海风与布丁》
 
-团队与 agent 开工入口：[AGENTS.md](AGENTS.md) · [共享台账与兼容协调](docs/collab/coordination-ledger.md) · [任务记录](docs/collab/work-ledger/)。当前协作仓库为 [Liyang1145/galLingS](https://github.com/Liyang1145/galLingS)，私有。
+团队 Galgame《海风与布丁》的仓库：完整作品（十六话 + 两篇番外，3315 个节点）、AI 驱动的后端引擎，以及桌面版、安卓试玩包的打包。
 
-Larry 最新完整作品已由音乐负责人代提交：[交付说明与校验清单](archive/deliveries/larry-vn/README.md)，可运行目录为 `content/imports/vnstudio/海风与布丁/`。当前已装配本地音乐音效与场景背景，接入范围、原件保存及验证见 [场景与音频装配记录](docs/collab/work-ledger/local-scene-audio-assembly.md)。
+**开工先读**：[AGENTS.md](AGENTS.md) → [接手说明](docs/collab/接手说明.md) → [待办总表](docs/collab/待办总表.md) → [工作流速查](docs/collab/工作流速查.md)。文档总目录见 [docs/README.md](docs/README.md)。
 
-AI 驱动、角色卡驱动的 Galgame 后端引擎。剧本决定"发生什么"，角色卡决定"谁来演"，大模型以 agent 身份实时演出，确定性引擎负责校验、落账、存档与回放。
+## 怎么玩
 
-**当前阶段：第一话后端会话能力已实现，旧版网页试玩已移除，Larry完整作品已交付。** 运行说明见 [docs/design/demo.md](docs/design/demo.md)；作品页入口见 [docs/design/vn-page.md](docs/design/vn-page.md)。完整内容交付不等于AI后端、音乐和所有资产均已验收，音乐仍处于探索阶段。
+| 方式 | 入口 |
+|---|---|
+| 浏览器离线剧情 | 双击根目录 [游玩.html](游玩.html)（读 `content/imports/vnstudio/海风与布丁/`） |
+| 编辑器（美术、剧情、舞台） | [引擎开发.html](引擎开发.html)，或作品页加 `?editor=1` |
+| 托管作品页 + AI 结局后聊天 | 运行 `start.bat`，打开 `http://127.0.0.1:8765/vn.html`（模型在设置里配置） |
+| 单文件试玩版（含对白账本） | `python tools/build_playtest_html.py 输出.html` |
+| 安卓 APK | 推工作分支后由 `.github/workflows/android.yml` 自动构建，见预发布 `android-playtest` |
+| Windows 桌面版 | `.github/workflows/desktop.yml`（main、tanpowasd/dev） |
 
-- 后端运行与试玩状态：[docs/design/demo.md](docs/design/demo.md)
-- 详细计划：[docs/PLAN.md](docs/PLAN.md)
-- 决策记录：[docs/decisions.md](docs/decisions.md)
-- 音乐方向与负责人：[docs/content/music-direction.md](docs/content/music-direction.md)
-- 记忆系统实测：[docs/design/memory-bench.md](docs/design/memory-bench.md)
-- 灵枢外部端口（给 VN Studio 手账用）：[docs/design/soul-port.md](docs/design/soul-port.md)
-- 作品页（在 galLingS 里玩完整作品，窗口 / 全屏，设置集中）：[docs/design/vn-page.md](docs/design/vn-page.md)
+## 现状（2026-10-19）
 
-Demo：《海风与布丁》第一话「浅滩上的偶遇」。技术栈：Python + Rust（PyO3），默认模型 DeepSeek，记忆为灵枢（dsh-memory）底座 + AGM 补位。
+- 接续分支 `fix/character-performance`；合 main 要先问音乐负责人 @Liyang1145。
+- 作品：Larry 的 VN Studio 作品为基线，接入了用户新写的第一话、Image2.5 修图、Atri 与用户的配乐、鲸鱼小姐配音（第一～七话新音色）、Atri 的回退/设置界面。
+- 后端：Rust 确定性核心 galcore 接管剧情；Schema 与契约测试、整局录制回放、评测集（scripted）、守卫修复已完成。真模型评测、灵枢记忆接入、现场彩排待办。
+- 待拍板事项见 [待办总表](docs/collab/待办总表.md)。
 
 ## 目录
 
 | 目录 | 内容 |
 |---|---|
-| `core/` | Rust 确定性核心 galcore：OP 解释器、状态机、裁决、快照、时间线、AGM、状态哈希 |
+| `content/imports/vnstudio/海风与布丁/` | **可运行的作品本体**：`index.html` 播放器 + 编辑器、`game.js` 剧本与资源表、`assets/` 运行素材 |
+| `content/assets/` | 素材原件：美术母图（`art-upgrade/originals/`）、场景背景、音乐、音效、配音参考 |
+| `content/scripts/`、`content/cards/` | 剧本草稿、角色卡（鲸鱼小姐） |
+| `core/` | Rust 核心 galcore：OP 解释器、状态机、裁决、快照、时间线、AGM、状态哈希 |
 | `compiler/` | 剧本编译器：Markdown → OP 程序 + 校验报告 |
-| `server/` | 导演、守卫、记忆网关、演绎层、事件记录与回放、HTTP/WS |
-| `plugins/builtin/` | 内置插件（模型、记忆、守卫、工具） |
-| `web/` | 建卡页、作品页与共享样式；旧播放器已移除 |
-| `schemas/` | 插件清单、角色卡、工具注册表 |
-| `tests/` | Rust 之外的全部测试；`fixtures/` 是原创迷你章节 |
+| `server/` | 导演、守卫、记忆网关、演绎层、事件录制与回放、HTTP / WS |
+| `plugins/` | 插件：模型、记忆（本地 / 灵枢）、守卫、GalAgent 等，格式见 [plugin-format](docs/design/plugin-format.md) |
+| `schemas/` | 编译产物、事件、WS 协议、插件、角色卡的 JSON Schema |
+| `web/` | 托管作品页（galcore 桥、回放）与建卡页 |
+| `desktop/` | Tauri 桌面外壳 |
+| `mobile/` | 安卓 WebView 外壳、APK 专用横竖屏脚本、素材整理 |
+| `tools/` | 构建、检查与历次素材流水线脚本，索引见 [tools/README.md](tools/README.md) |
+| `tests/` | Python 测试、契约测试（`contract/`）、评测（`evals/`） |
+| `docs/` | 计划、决策、设计、内容方向、协作记录 |
+| `archive/deliveries/` | 各次交付的原件清单、校验与验证截图 |
 
-最新游玩入口：[游玩.html](游玩.html)（离线剧情）；`start.bat` 启动作品页后可使用 GalAgent 结局后聊天与插件管理，模型需在设置中配置。接入范围见 [本次统筹记录](docs/collab/work-ledger/boliyer-galagent-integration.md)。
-
-## 插件插座
-
-引擎是插座，模型、生图、语音、记忆、工具、守卫、导入导出都是插件。格式见 [`docs/design/plugin-format.md`](docs/design/plugin-format.md)。
-
-结局后聊天 GalAgent 和 VN Studio 插件规范见 [GalAgent说明](docs/design/galagent.md)。
+## 开发
 
 ```bash
 pip install -e ".[dev]"
-python -m server.plugins list
+python -m pytest                                   # 灵枢集成测试需设 GALLINGS_TEST_DSH=<dsh-memory 检出>
+python tools/check_full_regression.py              # 全作 3315 节点回归（需要 playwright）
 python -m server.plugins check --config config.example.yaml
-python -m pytest            # 灵枢集成测试需设 GALLINGS_TEST_DSH=<dsh-memory 检出>
+python -m server.replay <日志或局ID> --serve        # 整局回放，不调用模型
 ```
 
-## 素材库
+协议、剧本语法、角色卡格式：[protocol](docs/protocol.md) · [script-syntax](docs/script-syntax.md) · [card-format](docs/card-format.md)。
 
-《海风与布丁》的背景素材、预览和命名约定见 [素材库](content/assets/README.md)。最新 [44张场景背景库](content/assets/scene-backgrounds/README.md) 包含原件、提示词与审核；游戏使用40张，另外4张备用，角色和人物CG暂缓更换。
+## 授权
 
-音效素材：已收录 15 个环境音和 18 个剧情音效，索引见 [音效素材库](content/assets/audio/sfx/README.md)。
-
-配乐探索素材：[翡翠之梦](content/assets/audio/bgm/README.md)。当前选曲、音乐理解与制作分工见 [音乐方向](docs/content/music-direction.md)。
+仓库公开，但剧本、美术、音乐、配音的内容授权尚未决定，不等于开源授权。

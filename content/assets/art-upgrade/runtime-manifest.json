@@ -2371,6 +2371,25 @@
         }
       }
     },
+    "B02T": {
+      "path": "content/assets/art-upgrade/runtime/B02T.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/B02T.webp",
+      "sourceSha256": "6d64017f5020e1020a9ea985e7bb2d54c5a6d16f6b9a991d40c0bbd20dae98b7",
+      "sha256": "b16114d0b46a2770ac4b9a1cd1fa4f433d3c5ed5811f13177b696ea8300e5a19",
+      "bytes": 766258,
+      "sourceBytes": 5429204,
+      "size": [
+        3840,
+        2160
+      ],
+      "lossless": false,
+      "webpQuality": 90,
+      "resized": false,
+      "backendQuality": "high",
+      "backendModel": "gpt-image-2.5-sunburst",
+      "derivedFrom": "B02 + L01 尾巴",
+      "derivation": "以 B02（风格/光线）与 L01 尾鳍裁图为参考生成的第一人称水下近景：指尖刚碰到尾鳍尖；用于第一话开场 #9–11"
+    },
     "B19": {
       "path": "content/assets/art-upgrade/runtime/B19.webp",
       "sourceMasterPath": "content/assets/art-upgrade/originals/B19.webp",

@@ -1,0 +1,22 @@
+{
+  "id": "B02T",
+  "kind": "background",
+  "date": "2026-10-19",
+  "batch": "opening-performance-20261019",
+  "note": "新背景 浅滩_指尖触尾：第一人称、正午清澈浅滩水下近景，人类手指刚碰到鲸鱼尾鳍尖（不出现人脸与全身；尾巴按 L01：斑驳蓝、浅色腹面、波浪分界、深蓝描边，只露尾尖故不画旋纹）。用于第一话开场 #9–11（3tp1qwm9 / 15lmqdee / 929w6urb）。3840x2160。两张候选中选第 1 张（两片尾鳍可辨认、触点在对话框之上、手部自然）。",
+  "endpoint": "https://api.rinko.ai/v1/images/edits",
+  "requested_model": "gpt-image-2.5-sunburst",
+  "requested_quality": "high",
+  "requested_size": "3840x2160",
+  "reference_images": [
+    "content/assets/art-upgrade/originals/B02.webp（缩到 1920x1080 作风格/光线参考）",
+    "content/assets/art-upgrade/originals/L01.webp 尾巴裁图（尾鳍部分，腿与裙子涂白）"
+  ],
+  "prompt_path": "content/assets/art-upgrade/prompts/B02T.txt",
+  "matting": null,
+  "output_sha256": "5cfcdf7e142d596f5507d48ce059cab45698974743e49358adfc9f4a2f2235f4",
+  "master_sha256": "6d64017f5020e1020a9ea985e7bb2d54c5a6d16f6b9a991d40c0bbd20dae98b7",
+  "runtime_webp_sha256": "b16114d0b46a2770ac4b9a1cd1fa4f433d3c5ed5811f13177b696ea8300e5a19",
+  "superseded_master": null,
+  "rejected_candidate": "未入库，本地保留 /workspace/work/gal/tailtouch/cand_2.png（单片尾鳍，手指形态略僵）"
+}

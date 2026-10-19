@@ -930,122 +930,236 @@
     },
     "B37": {
       "path": "content/assets/art-upgrade/runtime/B37.webp",
-      "sourceMasterPath": "content/assets/art-upgrade/originals/B37.png",
-      "sourceSha256": "58c50dfe03a2460dc76a1a77c0acb29a20d8b89d08e6a1dd7a74c69dadb9a5ec",
-      "sha256": "4fbcb2b96db608ef38d0cdd5cf07a1e24fc753828b5a1e8b873260a69d600527",
-      "bytes": 745542,
-      "sourceBytes": 3228263,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/B37.webp",
+      "sourceSha256": "683f4d80481d73b7e3c5110ca2175e7174329d81db9f821fca9a0bb10ada2b05",
+      "sha256": "3c9b815fd2a7024e0e40345c2ce77eaa8816a07fa0b62e9f5d19f90cf816ff87",
+      "bytes": 1656412,
+      "sourceBytes": 9420798,
       "size": [
-        1672,
-        941
+        3840,
+        2160
       ],
       "lossless": false,
-      "webpQuality": 95,
+      "webpQuality": 90,
       "resized": false,
-      "backendQuality": "medium",
-      "backendModel": null
+      "backendQuality": "high",
+      "backendModel": "gpt-image-2.5-sunburst",
+      "hdUpscale": {
+        "date": "2026-10-19",
+        "task": "A34",
+        "previousSize": [
+          1672,
+          941
+        ],
+        "previousMaster": "content/assets/art-upgrade/originals/B37.png",
+        "previousRuntimeSha256": "4fbcb2b96db608ef38d0cdd5cf07a1e24fc753828b5a1e8b873260a69d600527",
+        "previousRuntimeBytes": 745542,
+        "metricsVsPrevious": {
+          "meanDiff": 16.09,
+          "ssim": 0.928,
+          "worstBlock": 0.861
+        }
+      }
     },
     "B38": {
       "path": "content/assets/art-upgrade/runtime/B38.webp",
-      "sourceMasterPath": "content/assets/art-upgrade/originals/B38.png",
-      "sourceSha256": "5f5742aa6e690a580cd9f044799b0111f54a0858dd4ae5a60533e5f7b0914525",
-      "sha256": "364b0a33468350f7c18ff645585a4e172bc496b574f1a04f943d44049513edfd",
-      "bytes": 493760,
-      "sourceBytes": 2543466,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/B38.webp",
+      "sourceSha256": "990a91f96d0e62bce99d6b6ad2140332b12c362533fb4a4b9b69a6436c67ad63",
+      "sha256": "5d377890769f42ffb1678e09ecf2b05015445c2be4da74ea8f657bd3fdb473df",
+      "bytes": 1080544,
+      "sourceBytes": 7953190,
       "size": [
-        1672,
-        941
+        3840,
+        2160
       ],
       "lossless": false,
-      "webpQuality": 95,
+      "webpQuality": 90,
       "resized": false,
-      "backendQuality": "medium",
-      "backendModel": null
+      "backendQuality": "high",
+      "backendModel": "gpt-image-2.5-sunburst",
+      "hdUpscale": {
+        "date": "2026-10-19",
+        "task": "A34",
+        "previousSize": [
+          1672,
+          941
+        ],
+        "previousMaster": "content/assets/art-upgrade/originals/B38.png",
+        "previousRuntimeSha256": "364b0a33468350f7c18ff645585a4e172bc496b574f1a04f943d44049513edfd",
+        "previousRuntimeBytes": 493760,
+        "metricsVsPrevious": {
+          "meanDiff": 9.21,
+          "ssim": 0.961,
+          "worstBlock": 0.926
+        }
+      }
     },
     "B39": {
       "path": "content/assets/art-upgrade/runtime/B39.webp",
-      "sourceMasterPath": "content/assets/art-upgrade/originals/B39.png",
-      "sourceSha256": "d581b3c5a3f646f9d2b70ac7b1d10111cd6a37eb1a035816ada1b4a2c2ea22ab",
-      "sha256": "eb8696ba1fcaba8d3c26dcea0c124abaa15059f7d78177f023b10cc3cef18d6a",
-      "bytes": 466322,
-      "sourceBytes": 2439713,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/B39.webp",
+      "sourceSha256": "cd67b1905a37692d822f43174e823a8dab223af4a64c9ccdff33ecb715b6ab2b",
+      "sha256": "07cbd5ddd24c1eebc2d2ff9e4ef06b0c74672a81ed9bd3bd185598017b9b3785",
+      "bytes": 952876,
+      "sourceBytes": 7565536,
       "size": [
-        1672,
-        941
+        3840,
+        2160
       ],
       "lossless": false,
-      "webpQuality": 95,
+      "webpQuality": 90,
       "resized": false,
-      "backendQuality": "medium",
-      "backendModel": null
+      "backendQuality": "high",
+      "backendModel": "gpt-image-2.5-sunburst",
+      "hdUpscale": {
+        "date": "2026-10-19",
+        "task": "A34",
+        "previousSize": [
+          1672,
+          941
+        ],
+        "previousMaster": "content/assets/art-upgrade/originals/B39.png",
+        "previousRuntimeSha256": "eb8696ba1fcaba8d3c26dcea0c124abaa15059f7d78177f023b10cc3cef18d6a",
+        "previousRuntimeBytes": 466322,
+        "metricsVsPrevious": {
+          "meanDiff": 10.16,
+          "ssim": 0.921,
+          "worstBlock": 0.823
+        }
+      }
     },
     "B40": {
       "path": "content/assets/art-upgrade/runtime/B40.webp",
-      "sourceMasterPath": "content/assets/art-upgrade/originals/B40.png",
-      "sourceSha256": "44c1462a91bd9fb41e5a24d9aae6621953c721c3583375f2a02ada5fe9669032",
-      "sha256": "3daba2211f6018987dd9376a74d86a149bdb68e215e53843e234b84dbf5ac640",
-      "bytes": 499370,
-      "sourceBytes": 2528826,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/B40.webp",
+      "sourceSha256": "9ebe65167025464d2cb37060468b42244e2d674879489d9396f669a9d1185c4c",
+      "sha256": "569ad0b4828671120b95c878918e01017474b35f962e4147d226febd1b3ba704",
+      "bytes": 1111384,
+      "sourceBytes": 8105272,
       "size": [
-        1672,
-        941
+        3840,
+        2160
       ],
       "lossless": false,
-      "webpQuality": 95,
+      "webpQuality": 90,
       "resized": false,
-      "backendQuality": "medium",
-      "backendModel": null
+      "backendQuality": "high",
+      "backendModel": "gpt-image-2.5-sunburst",
+      "hdUpscale": {
+        "date": "2026-10-19",
+        "task": "A34",
+        "previousSize": [
+          1672,
+          941
+        ],
+        "previousMaster": "content/assets/art-upgrade/originals/B40.png",
+        "previousRuntimeSha256": "3daba2211f6018987dd9376a74d86a149bdb68e215e53843e234b84dbf5ac640",
+        "previousRuntimeBytes": 499370,
+        "metricsVsPrevious": {
+          "meanDiff": 8.34,
+          "ssim": 0.97,
+          "worstBlock": 0.948
+        }
+      }
     },
     "B41": {
       "path": "content/assets/art-upgrade/runtime/B41.webp",
-      "sourceMasterPath": "content/assets/art-upgrade/originals/B41.png",
-      "sourceSha256": "ad11ec2fe625dd11fd1816f62bdf515a25b9f6fb484f4516ef76ebc054cb4661",
-      "sha256": "30c7e436277fccb748d0406192fe62bf34f900f08ca9d9cf686b27f7b0e21f2b",
-      "bytes": 550914,
-      "sourceBytes": 2763621,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/B41.webp",
+      "sourceSha256": "856b554565f534da1370a5f980d8beb3ebd87b864895787b224a3651d4ed2eb3",
+      "sha256": "00efa7c430d1e15525fe50047759524f0ec59bc5ddcf9f730140a563d3a8b7af",
+      "bytes": 1036882,
+      "sourceBytes": 7991708,
       "size": [
-        1672,
-        941
+        3840,
+        2160
       ],
       "lossless": false,
-      "webpQuality": 95,
+      "webpQuality": 90,
       "resized": false,
-      "backendQuality": "medium",
-      "backendModel": null
+      "backendQuality": "high",
+      "backendModel": "gpt-image-2.5-sunburst",
+      "hdUpscale": {
+        "date": "2026-10-19",
+        "task": "A34",
+        "previousSize": [
+          1672,
+          941
+        ],
+        "previousMaster": "content/assets/art-upgrade/originals/B41.png",
+        "previousRuntimeSha256": "30c7e436277fccb748d0406192fe62bf34f900f08ca9d9cf686b27f7b0e21f2b",
+        "previousRuntimeBytes": 550914,
+        "metricsVsPrevious": {
+          "meanDiff": 10.36,
+          "ssim": 0.955,
+          "worstBlock": 0.876
+        },
+        "reviewNote": "重做第2版（首版勺子排列被改）"
+      }
     },
     "B42": {
       "path": "content/assets/art-upgrade/runtime/B42.webp",
-      "sourceMasterPath": "content/assets/art-upgrade/originals/B42.png",
-      "sourceSha256": "13303b54d3356ea79922518812f775fa4a86a5d252a187586a629e44f8c1ed58",
-      "sha256": "80047e9ae816f1af86b8753751acf3c11530a11959b39c1d24113bff86e2f6b5",
-      "bytes": 484176,
-      "sourceBytes": 2494608,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/B42.webp",
+      "sourceSha256": "b9de693b273628a8604e0fd6b8068f50d580283a08243249e2d61cac5a7ef6bb",
+      "sha256": "3a79a47efd040383cd6b1ba815c665bed1fd8bfd837c613fe5025dc3255f285b",
+      "bytes": 1056282,
+      "sourceBytes": 7782852,
       "size": [
-        1672,
-        941
+        3840,
+        2160
       ],
       "lossless": false,
-      "webpQuality": 95,
+      "webpQuality": 90,
       "resized": false,
-      "backendQuality": "medium",
-      "backendModel": null
+      "backendQuality": "high",
+      "backendModel": "gpt-image-2.5-sunburst",
+      "hdUpscale": {
+        "date": "2026-10-19",
+        "task": "A34",
+        "previousSize": [
+          1672,
+          941
+        ],
+        "previousMaster": "content/assets/art-upgrade/originals/B42.png",
+        "previousRuntimeSha256": "80047e9ae816f1af86b8753751acf3c11530a11959b39c1d24113bff86e2f6b5",
+        "previousRuntimeBytes": 484176,
+        "metricsVsPrevious": {
+          "meanDiff": 9.96,
+          "ssim": 0.942,
+          "worstBlock": 0.851
+        }
+      }
     },
     "C01": {
       "path": "content/assets/art-upgrade/runtime/C01.webp",
-      "sourceMasterPath": "content/assets/art-upgrade/originals/C01.png",
-      "sourceSha256": "cae104d839d04042808b06934dd47d5f77fdea941e7d6f9f8abe635c52d81f5e",
-      "sha256": "a0cc1e8f14c6b02d9a7752e1202a7947746175277476fc2a2e1087f142878ff4",
-      "bytes": 593142,
-      "sourceBytes": 2787040,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/C01.webp",
+      "sourceSha256": "6da394fa48f1b5a99f92a3c3235844390f79e3c48879c2249310fec59e55c90a",
+      "sha256": "5a5c005510cfdbe4dc33b2e60375cf8cb53facce3ae56550e94e724fd6f0ba8f",
+      "bytes": 1220938,
+      "sourceBytes": 8166790,
       "size": [
-        1672,
-        941
+        3840,
+        2160
       ],
       "lossless": false,
-      "webpQuality": 95,
+      "webpQuality": 90,
       "resized": false,
-      "backendQuality": "medium",
-      "backendModel": null
+      "backendQuality": "high",
+      "backendModel": "gpt-image-2.5-sunburst",
+      "hdUpscale": {
+        "date": "2026-10-19",
+        "task": "A34",
+        "previousSize": [
+          1672,
+          941
+        ],
+        "previousMaster": "content/assets/art-upgrade/originals/C01.png",
+        "previousRuntimeSha256": "a0cc1e8f14c6b02d9a7752e1202a7947746175277476fc2a2e1087f142878ff4",
+        "previousRuntimeBytes": 593142,
+        "metricsVsPrevious": {
+          "meanDiff": 7.98,
+          "ssim": 0.977,
+          "worstBlock": 0.952
+        },
+        "reviewNote": "脸/尾巴保持"
+      }
     },
     "C02": {
       "path": "content/assets/art-upgrade/runtime/C02.webp",
@@ -1066,20 +1180,36 @@
     },
     "C03": {
       "path": "content/assets/art-upgrade/runtime/C03.webp",
-      "sourceMasterPath": "content/assets/art-upgrade/originals/C03.png",
-      "sourceSha256": "bcba5b7eee03cd0364716d980588c601d08929fb091e22ba41b2922a6646926e",
-      "sha256": "467e06991b00c84a0138b2efc5ba5aa3556b138754564f66afc73efb8d9688bf",
-      "bytes": 520934,
-      "sourceBytes": 2717999,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/C03.webp",
+      "sourceSha256": "6286f7902b0ce1f520273dc5ec0f7adf9ce60f5ce581cfd94b612451996a4802",
+      "sha256": "cda632e739067820f278079f7356e24b73e2fdd2b9eda06ea9d673e4406d45ad",
+      "bytes": 1175654,
+      "sourceBytes": 8362766,
       "size": [
-        1672,
-        941
+        3840,
+        2160
       ],
       "lossless": false,
-      "webpQuality": 95,
+      "webpQuality": 90,
       "resized": false,
-      "backendQuality": "medium",
-      "backendModel": null
+      "backendQuality": "high",
+      "backendModel": "gpt-image-2.5-sunburst",
+      "hdUpscale": {
+        "date": "2026-10-19",
+        "task": "A34",
+        "previousSize": [
+          1672,
+          941
+        ],
+        "previousMaster": "content/assets/art-upgrade/originals/C03.png",
+        "previousRuntimeSha256": "467e06991b00c84a0138b2efc5ba5aa3556b138754564f66afc73efb8d9688bf",
+        "previousRuntimeBytes": 520934,
+        "metricsVsPrevious": {
+          "meanDiff": 12.17,
+          "ssim": 0.935,
+          "worstBlock": 0.878
+        }
+      }
     },
     "C04": {
       "path": "content/assets/art-upgrade/runtime/C04.webp",
@@ -1661,37 +1791,70 @@
     },
     "O01": {
       "path": "content/assets/art-upgrade/runtime/O01.webp",
-      "sourceMasterPath": "content/assets/art-upgrade/originals/O01.png",
-      "sourceSha256": "16ea0ffdf7624b7b794562d55a7f55a0b8a9472a8784f891072a0ebab6c952cf",
-      "sha256": "7bf6512d1104e4bc5b5200391ddc5f3c7a485cbefce7ce44f9de233909ea1ddd",
-      "bytes": 610440,
-      "sourceBytes": 2997117,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/O01.webp",
+      "sourceSha256": "7d1e8b76e63f8cd268935a0359932688d49dcb5c94bfb3b3bc55fafd2819e62b",
+      "sha256": "9d5b6d86d3711796f3e122474075d53e4de848378ab0408d78eba66e3cf649f8",
+      "bytes": 1286666,
+      "sourceBytes": 8585186,
       "size": [
-        1672,
-        941
+        3840,
+        2160
       ],
       "lossless": false,
-      "webpQuality": 95,
+      "webpQuality": 90,
       "resized": false,
-      "backendQuality": "low",
-      "backendModel": null
+      "backendQuality": "high",
+      "backendModel": "gpt-image-2.5-sunburst",
+      "hdUpscale": {
+        "date": "2026-10-19",
+        "task": "A34",
+        "previousSize": [
+          1672,
+          941
+        ],
+        "previousMaster": "content/assets/art-upgrade/originals/O01.png",
+        "previousRuntimeSha256": "7bf6512d1104e4bc5b5200391ddc5f3c7a485cbefce7ce44f9de233909ea1ddd",
+        "previousRuntimeBytes": 610440,
+        "metricsVsPrevious": {
+          "meanDiff": 12.93,
+          "ssim": 0.929,
+          "worstBlock": 0.78
+        },
+        "reviewNote": "草丛纹理重绘，内容一致"
+      }
     },
     "O02": {
       "path": "content/assets/art-upgrade/runtime/O02.webp",
-      "sourceMasterPath": "content/assets/art-upgrade/originals/O02.png",
-      "sourceSha256": "b417ed45af9ae91b046858592fd962e2785ea4f37804d6bef1c971f738155ee4",
-      "sha256": "c5c21bfd247daaa583a9050919530d5517aaa39506c9b89ced5ae43d4dd5661a",
-      "bytes": 770680,
-      "sourceBytes": 3314070,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/O02.webp",
+      "sourceSha256": "df384b12b79327be6cba753e47ea529914168ae4e1750798e827e62dfda6039d",
+      "sha256": "cdb430fc337d5cd8a08948010bddd2741f1fb5eb86f69346e1d9f0cdf1c44433",
+      "bytes": 1636360,
+      "sourceBytes": 9428046,
       "size": [
-        1672,
-        941
+        3840,
+        2160
       ],
       "lossless": false,
-      "webpQuality": 95,
+      "webpQuality": 90,
       "resized": false,
-      "backendQuality": "medium",
-      "backendModel": null
+      "backendQuality": "high",
+      "backendModel": "gpt-image-2.5-sunburst",
+      "hdUpscale": {
+        "date": "2026-10-19",
+        "task": "A34",
+        "previousSize": [
+          1672,
+          941
+        ],
+        "previousMaster": "content/assets/art-upgrade/originals/O02.png",
+        "previousRuntimeSha256": "c5c21bfd247daaa583a9050919530d5517aaa39506c9b89ced5ae43d4dd5661a",
+        "previousRuntimeBytes": 770680,
+        "metricsVsPrevious": {
+          "meanDiff": 12.21,
+          "ssim": 0.967,
+          "worstBlock": 0.934
+        }
+      }
     },
     "O03": {
       "path": "content/assets/art-upgrade/runtime/O03.webp",
@@ -2405,20 +2568,37 @@
     },
     "C16": {
       "path": "content/assets/art-upgrade/runtime/C16.webp",
-      "sourceMasterPath": "content/assets/art-upgrade/originals/C16.png",
-      "sourceSha256": "33d414e370b3e58cc871fc3ed769d5917a5260cacd9859504a38eb5e5aaf4223",
-      "sha256": "8242729d5659d3eaedf81ad7b3a2947b64ea42243b4b132c67e5eab9c5b939f3",
-      "bytes": 321580,
-      "sourceBytes": 2190208,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/C16.webp",
+      "sourceSha256": "b69fcec02e77b4cf034264cc2e16d27c93028a7aa659b5c59238a2b84b1b0224",
+      "sha256": "1ede74d42d867bc525c15594c41587fa4599cd3ef44ad1d0e06d09dc7c0456ed",
+      "bytes": 835928,
+      "sourceBytes": 7229982,
       "size": [
-        1672,
-        941
+        3840,
+        2160
       ],
       "lossless": false,
-      "webpQuality": 95,
+      "webpQuality": 90,
       "resized": false,
-      "backendQuality": "medium",
-      "backendModel": null
+      "backendQuality": "high",
+      "backendModel": "gpt-image-2.5-sunburst",
+      "hdUpscale": {
+        "date": "2026-10-19",
+        "task": "A34",
+        "previousSize": [
+          1672,
+          941
+        ],
+        "previousMaster": "content/assets/art-upgrade/originals/C16.png",
+        "previousRuntimeSha256": "8242729d5659d3eaedf81ad7b3a2947b64ea42243b4b132c67e5eab9c5b939f3",
+        "previousRuntimeBytes": 321580,
+        "metricsVsPrevious": {
+          "meanDiff": 9.52,
+          "ssim": 0.936,
+          "worstBlock": 0.857
+        },
+        "reviewNote": "背景景深虚化变清晰→待用户判断"
+      }
     },
     "C25": {
       "path": "content/assets/art-upgrade/runtime/C25.webp",
@@ -2847,20 +3027,36 @@
     },
     "O12": {
       "path": "content/assets/art-upgrade/runtime/O12.webp",
-      "sourceMasterPath": "content/assets/art-upgrade/originals/O12.png",
-      "sourceSha256": "7a8fb1341aad484fc8f4a23a4a2b7a391d5020aecc7c5c35e790699e0da7e24d",
-      "sha256": "f38750551daa51b672a277d365e71e71ad3d493efb512b54a6e4deff1bf265c1",
-      "bytes": 500314,
-      "sourceBytes": 2657762,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/O12.webp",
+      "sourceSha256": "a73f07e1f6ef0ecddf8d5e548649d35b9cf8dfd8a6acf86510efcaea3725d358",
+      "sha256": "9017a6cc0f548f4414b85c6c42dab782f5346388deaaa2ba106b7a776fe9b2d6",
+      "bytes": 1124220,
+      "sourceBytes": 8154704,
       "size": [
-        1672,
-        941
+        3840,
+        2160
       ],
       "lossless": false,
-      "webpQuality": 95,
+      "webpQuality": 90,
       "resized": false,
-      "backendQuality": "medium",
-      "backendModel": null
+      "backendQuality": "high",
+      "backendModel": "gpt-image-2.5-sunburst",
+      "hdUpscale": {
+        "date": "2026-10-19",
+        "task": "A34",
+        "previousSize": [
+          1672,
+          941
+        ],
+        "previousMaster": "content/assets/art-upgrade/originals/O12.png",
+        "previousRuntimeSha256": "f38750551daa51b672a277d365e71e71ad3d493efb512b54a6e4deff1bf265c1",
+        "previousRuntimeBytes": 500314,
+        "metricsVsPrevious": {
+          "meanDiff": 10.0,
+          "ssim": 0.957,
+          "worstBlock": 0.918
+        }
+      }
     },
     "B02A": {
       "path": "content/assets/art-upgrade/runtime/B02A.webp",

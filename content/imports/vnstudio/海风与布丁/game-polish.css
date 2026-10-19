@@ -216,3 +216,15 @@ body.game #psettings .stats-now:empty{display:none}
 /* 10-19 Atri 设置滑条移植：滑条与数值同一行 */
 #psettings .row .control{flex:1;display:flex;align-items:center;gap:12px;min-width:0}
 #psettings .row .control input[type=range]{flex:1;min-width:0}
+
+/* 10-19 触屏下 Atri“海底刻度”滑条：点按区域保持加高，但画出来的轨道仍是细线（不再变成粗色块）；手柄和数值按缩放放大 */
+body.game #psettings input[type="range"]{background-size:100% 4px!important;background-position:center!important;background-repeat:no-repeat!important}
+@media (pointer:coarse){
+  body.game #psettings input[type="range"]::-webkit-slider-thumb{width:24px;height:24px;border-radius:4px}
+  body.game #psettings output[data-value]{font-size:20px;min-width:64px}
+  body.game.smallstage #psettings input[type="range"]{height:72px;background-size:100% 8px!important}
+  body.game.smallstage #psettings input[type="range"]::-webkit-slider-thumb{width:40px;height:40px;border-radius:6px}
+  body.game.smallstage #psettings output[data-value]{font-size:28px;min-width:96px}
+}
+body.game.vport #psettings input[type="range"]{height:40px}
+body.game.vport #psettings output[data-value]{font-size:16px;min-width:56px}

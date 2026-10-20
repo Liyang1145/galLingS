@@ -8,6 +8,3 @@ archive/deliveries/larry-vn/original-overridden-files/** -text
 archive/deliveries/opening-revision/** -text
 archive/deliveries/character-performance/** -text
 archive/deliveries/character-direction/** -text
-
-# 后台启动器：wscript 要 UTF-16 LE 才能显示中文，按原样保存
-tools/launcher/*.vbs -text

@@ -30,7 +30,7 @@ plugins:
     - plugins/builtin
     - ~/.gallings/plugins          # 玩家 / 第三方插件
   select:                          # 单例 kind：列表 = 主用 + 降级备选（按顺序）
-    llm: [gallings.llm.openai-compat]
+    llm: [gallings.llm.router, gallings.llm.openai-compat]   # 多模型 + 分配规则（网页设置里管理）；路由还没配模型时用旧的单模型
     memory: [gallings.memory.local]
     # memory: [gallings.memory.lingshu, gallings.memory.local]   # 装了灵枢就用灵枢，失败退本地
     # image: [...]   # 生图（预留）

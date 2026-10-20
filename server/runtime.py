@@ -103,5 +103,21 @@ class Runtime:
     async def stop(self) -> None:
         await self.plugins.stop()
 
-    def llm_chain(self) -> list[LLMPlugin]:
-        return [p for p in self.plugins.chain("llm") if isinstance(p, LLMPlugin)]
+    def llm_chain(self, purpose: str | None = None) -> list[Any]:
+        """这次调用的模型降级链。purpose：story / soul / chat / cards（见 gallings.llm.router 的分配规则）。
+
+        选了多模型路由插件（gallings.llm.router）且它有可用模型时：链 = 路由按用途给的模型 + 其余非 openai-compat 的 llm 插件
+        （路由里配的就是实际用的，旧的单模型插件不再悄悄兜底）；路由还没配模型时照旧走其余插件。
+        """
+        chain = [p for p in self.plugins.chain("llm") if isinstance(p, LLMPlugin)]
+        router = next((p for p in chain if hasattr(p, "chain_for")), None)
+        if router is None:
+            return chain
+        routed = router.chain_for(purpose)
+        rest = [p for p in chain if p is not router and (not routed or p.ctx.plugin_id != "gallings.llm.openai-compat")]
+        return routed + rest
+
+    def plugin(self, plugin_id: str) -> Any | None:
+        """按 id 取运行中的插件实例（设置面板接口用）。"""
+        st = self.plugins.states.get(plugin_id)
+        return st.instance if st is not None and st.status == "running" else None

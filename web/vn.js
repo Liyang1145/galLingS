@@ -143,7 +143,7 @@ function renderServer() {
   $("sBase").value = s.llm.base_url; $("sModel").value = s.llm.model; $("sKey").value = "";
   $("sKey").placeholder = s.llm.key_set ? `已设置（末 4 位 ${s.llm.key_tail || "****"}），留空 = 不改` : "未设置";
   $("keyHint").textContent = s.llm.key_from_env ? "系统环境变量 GALLINGS_LLM_API_KEY 已设置，它优先；这里填的不生效。" : "只保存在本机 galLingS 数据文件夹里，网页拿不到原文。";
-  $("llmState").innerHTML = `<i class="ldot ${s.llm_ready ? "ok" : "bad"}"></i>${s.llm_ready ? "可用" : "未启用"}`; $("llmState").className = s.llm_ready ? "ok" : "bad";
+  renderLlmState(s);
   const memFell = s.memory.use === "lingshu" && s.memory_active && s.memory_active !== "gallings.memory.lingshu";
   const memTxt = !s.memory_ready ? "未启用" : memFell ? "灵枢没启动，正在用本地" : s.memory_active === "gallings.memory.lingshu" ? "灵枢可用" : "本地可用";
   $("memState").innerHTML = `<i class="ldot ${!s.memory_ready ? "bad" : memFell ? "warn" : "ok"}"></i>${memTxt}`; $("memState").className = !s.memory_ready ? "bad" : memFell ? "warn" : "ok";
@@ -163,6 +163,47 @@ function friendlyFail(id, v) {
   if (id.startsWith("gallings.llm")) return /缺少.*密钥/.test(v) ? "还没填 API 密钥，模型没启动（悄悄话用离线回复）。" : "模型没启动（悬停看原因）。";
   return `${id} 没启动（悬停看原因）。`;
 }
+// ---------------------------------------------------------------- 插件设置面板（plugin-format §10）：运行中的插件带 web/panel.js 就挂进设置
+const PANELS = { loaded: {}, mounted: {} };
+const loadAsset = (tag, url) => new Promise((ok, bad) => {
+  const el = document.createElement(tag);
+  if (tag === "link") { el.rel = "stylesheet"; el.href = url; } else { el.src = url; }
+  el.onload = ok; el.onerror = () => bad(new Error("加载失败：" + url)); document.head.appendChild(el);
+});
+async function mountPanels() {
+  let list = [];
+  try { list = (await (await fetch("/api/plugin-panels")).json()).panels || []; } catch (e) { return; }
+  const live = new Set(list.map((p) => p.id));
+  for (const [id, m] of Object.entries(PANELS.mounted)) if (!live.has(id)) { m.inst?.destroy?.(); m.box.remove(); delete PANELS.mounted[id]; }
+  for (const p of list) {
+    try {
+      if (!PANELS.loaded[p.id]) { if (p.css) await loadAsset("link", p.css); await loadAsset("script", p.js); PANELS.loaded[p.id] = true; }
+      const def = window.GLPanels?.[p.id];
+      if (!def) continue;
+      if (PANELS.mounted[p.id]) { PANELS.mounted[p.id].inst?.refresh?.(); continue; }
+      let box;
+      if (p.slot === "llm" && !$("llmPanel").dataset.owner) { box = $("llmPanel"); box.dataset.owner = p.id; }
+      else { box = document.createElement("div"); box.className = "plugin-panel"; box.dataset.owner = p.id; $("pluginPanels").appendChild(box); }
+      const ctx = {
+        api: async (action, body) => {
+          const r = await fetch(`/api/plugin/${encodeURIComponent(p.id)}/${encodeURIComponent(action)}`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body || {}) });
+          if (!r.ok) throw new Error(`HTTP ${r.status}`);
+          return r.json();
+        },
+        changed: () => { loadSettings().then(renderLlmState).catch(() => {}); H?.connect?.().catch(() => {}); },
+      };
+      PANELS.mounted[p.id] = { box, inst: def.mount(box, ctx) };
+    } catch (e) { console.warn("插件设置面板", p.id, e); }
+  }
+  const llmOwned = !!PANELS.mounted[$("llmPanel").dataset.owner];
+  if (!llmOwned) delete $("llmPanel").dataset.owner;
+  $("llmPanel").hidden = !llmOwned; $("llmLegacy").hidden = llmOwned;
+  $("pluginPanels").hidden = !$("pluginPanels").querySelector(".plugin-panel");
+}
+function renderLlmState(s = srv) {
+  if (!s) return;
+  $("llmState").innerHTML = `<i class="ldot ${s.llm_ready ? "ok" : "bad"}"></i>${s.llm_ready ? "可用" : "未启用"}`; $("llmState").className = s.llm_ready ? "ok" : "bad";
+}
 function syncMem() { document.querySelectorAll("#sMem button").forEach((b) => b.classList.toggle("on", b.dataset.v === memUse)); $("sDshRow").hidden = memUse !== "lingshu"; }
 document.querySelectorAll("#sMem button").forEach((b) => b.onclick = () => { memUse = b.dataset.v; syncMem(); });
 $("setBtn").onclick = async () => {
@@ -170,18 +211,22 @@ $("setBtn").onclick = async () => {
   $("saveOut").textContent = ""; $("sTestOut").textContent = "";
   renderGamePrefs(); $("setDlg").showModal();
   try { renderServer(await loadSettings()); } catch (e) { $("saveOut").textContent = "连接设置暂时无法读取，剧情仍可继续。"; }
+  mountPanels();
 };
 $("sClose").onclick = () => { $("setDlg").close(); game.focus(); };
 $("sForget").onclick = () => { if (confirm("让她忘掉这一局记下的所有事？（剧情进度不变）")) { H?.forget(); renderGamePrefs(); } };
 $("sSave").onclick = async () => {
   $("saveOut").classList.remove("bad"); $("saveOut").title = "";
-  const body = { llm: { base_url: $("sBase").value.trim(), model: $("sModel").value.trim() },
-                 memory: { use: memUse, dsh_memory_path: $("sDsh").value.trim() }, vn: { games_dir: $("sGames").value.trim() } };
-  if ($("sKey").value.trim()) body.llm.api_key = $("sKey").value.trim();
+  const body = { memory: { use: memUse, dsh_memory_path: $("sDsh").value.trim() }, vn: { games_dir: $("sGames").value.trim() } };
+  if ($("llmLegacy").hidden === false) {   // 多模型面板接管时，它自己即时保存；这里不再写旧的单模型设置
+    body.llm = { base_url: $("sBase").value.trim(), model: $("sModel").value.trim() };
+    if ($("sKey").value.trim()) body.llm.api_key = $("sKey").value.trim();
+  }
   $("sSave").disabled = true; $("saveOut").textContent = "保存中，正在重启模型和记忆……";
   try {
     srv = await (await fetch("/api/settings", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) })).json();
     renderServer(srv); if (!$("saveOut").textContent) $("saveOut").textContent = "已保存。";
+    mountPanels();   // 保存会重启插件：面板重新取一次状态
     if (srv.warn && body.memory.use === "lingshu") { memUse = "lingshu"; $("sDsh").value = body.memory.dsh_memory_path; syncMem(); }  // 路径不对：留在灵枢页让人改
     H?.connect().catch(() => {});
   } catch (e) { $("saveOut").textContent = "保存失败：" + e.message; }

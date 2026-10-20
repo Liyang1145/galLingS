@@ -18,6 +18,8 @@
 - [design/vn-page.md](design/vn-page.md) — 托管作品页
 - [design/plugin-format.md](design/plugin-format.md) — 插件格式
 - [design/galagent.md](design/galagent.md) — 结局后聊天 GalAgent（离线版结局入口缺失见待办 B08）
+- [design/llm-router.md](design/llm-router.md) — 托管版多模型插件：模型列表、主模型、按用途分配（设置 → 模型）
+- [design/ai-model.md](design/ai-model.md) — 作品内「设置 → AI 模型」（离线 / 单文件 / APK 直连模型）
 - [design/memory-bench.md](design/memory-bench.md) — 记忆系统实测
 - [design/soul-port.md](design/soul-port.md) — 灵枢外部端口
 - [design/art-editor.md](design/art-editor.md) — 美术编辑器

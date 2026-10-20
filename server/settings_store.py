@@ -14,6 +14,7 @@ from pathlib import Path
 from typing import Any
 
 LLM_ID = "gallings.llm.openai-compat"
+ROUTER_ID = "gallings.llm.router"
 KEY_ENV = "GALLINGS_LLM_API_KEY"
 MEM_IDS = {"local": ["gallings.memory.local"], "lingshu": ["gallings.memory.lingshu", "gallings.memory.local"]}
 
@@ -73,6 +74,11 @@ class SettingsStore:
                     c[k] = str(llm[k]).strip()
             if LLM_ID not in (sel.get("llm") or []):
                 sel["llm"] = [LLM_ID] + list(sel.get("llm") or [])
+        # 多模型路由第一次启动时用旧的单模型设置建第一条（有密钥才建）
+        if ROUTER_ID in (sel.get("llm") or []):
+            old = conf.get(LLM_ID) or {}
+            if old.get("base_url"):
+                conf.setdefault(ROUTER_ID, {}).setdefault("seed", {"base_url": str(old["base_url"]), "model": str(old.get("model") or "")})
         mem = s.get("memory") or {}
         if mem.get("use") in MEM_IDS:
             sel["memory"] = list(MEM_IDS[mem["use"]])

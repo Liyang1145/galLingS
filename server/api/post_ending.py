@@ -32,6 +32,14 @@ from fastapi.responses import FileResponse, JSONResponse, Response
 log = logging.getLogger("gallings.post_ending")
 
 
+def _chain(rt: Any) -> list[Any]:
+    """结局后聊天用的模型链（多模型路由里的“结局后聊天”分配）；老的运行时替身不收参数时照旧。"""
+    try:
+        return rt.llm_chain("chat")
+    except TypeError:
+        return rt.llm_chain()
+
+
 def _cfg(rt: Any) -> dict[str, Any]:
     return (getattr(rt, "game", None) or {}).get("post_ending") or {}
 
@@ -120,7 +128,7 @@ def mount(app: FastAPI, get_rt: Callable[[], Any]) -> None:
             await sock.close()
             return
         pid, provider = prov
-        session = provider.open_post_ending(llm_chain=rt.llm_chain(), send=send, manager=rt.plugins)
+        session = provider.open_post_ending(llm_chain=_chain(rt), send=send, manager=rt.plugins)
         authed = False
         try:
             while True:
@@ -160,7 +168,7 @@ def mount(app: FastAPI, get_rt: Callable[[], Any]) -> None:
             from_reg = await _registry_entries(rt, prov[1])
             tools = [{"name": e.spec.name, "effect": e.spec.effect, "policy": e.policy, "source": e.source} for e in from_reg]
         return _cors(JSONResponse({"enabled": enabled(rt), "provider": prov[0] if prov else None,
-                                   "mode": _cfg(rt).get("mode", "off"), "llm": bool(rt.llm_chain()),
+                                   "mode": _cfg(rt).get("mode", "off"), "llm": bool(_chain(rt)),
                                    "protocol": "galagent/1", "tools": tools}), request.headers.get("origin"))
 
     @app.post("/api/post_ending/chat")
@@ -247,7 +255,7 @@ async def run_once(rt: Any, provider: Any, body: dict[str, Any]) -> dict[str, An
         if m["type"] in ("turn_end",) or (m["type"] == "error" and m.get("fatal")):
             done.set()
 
-    s = provider.open_post_ending(llm_chain=rt.llm_chain(), send=send, manager=rt.plugins)
+    s = provider.open_post_ending(llm_chain=_chain(rt), send=send, manager=rt.plugins)
     holder["s"] = s
     ch = body.get("character") or {}
     scene = body.get("scene") or {}
@@ -285,9 +293,14 @@ class _MiniRuntime:
         self.game = config.get("game") or {}
         self.plugins = PluginManager(PluginSettings.from_dict(config.get("plugins"), base_dir=ROOT), self.data_dir)
 
-    def llm_chain(self) -> list[Any]:
+    def llm_chain(self, purpose: str | None = None) -> list[Any]:
         from server.plugins import LLMPlugin
-        return [p for p in self.plugins.chain("llm") if isinstance(p, LLMPlugin)]
+        chain = [p for p in self.plugins.chain("llm") if isinstance(p, LLMPlugin)]
+        router = next((p for p in chain if hasattr(p, "chain_for")), None)
+        if router is None:
+            return chain
+        routed = router.chain_for(purpose)
+        return routed + [p for p in chain if p is not router and (not routed or p.ctx.plugin_id != "gallings.llm.openai-compat")]
 
 
 def create_standalone_app(config: dict[str, Any]) -> FastAPI:

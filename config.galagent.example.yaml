@@ -22,7 +22,7 @@ plugins:
     - plugins/builtin
     - ~/.gallings/plugins
   select:
-    llm: [gallings.llm.openai-compat]
+    llm: [gallings.llm.router, gallings.llm.openai-compat]
   tools:
     - gallings.tool.galagent
     # - yourname.tool.weather        # 扩展插件：清单里写 capabilities: [galagent] 就会出现在聊天里

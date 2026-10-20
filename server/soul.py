@@ -65,7 +65,7 @@ class SoulSession:
 
     @property
     def llm(self) -> list[Any]:
-        return self.rt.llm_chain()
+        return self.rt.llm_chain("soul")
 
     def stage(self) -> int:
         """手账在剧情之外：用卡里女主对玩家的最高称呼阶段，免得守卫误拦后期称呼。"""

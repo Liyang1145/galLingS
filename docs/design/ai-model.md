@@ -31,6 +31,8 @@
 - Ollama 从 `file://` 打开时要设 `OLLAMA_ORIGINS=*`。
 - 密钥只给玩家自己的设备用；作者不要把自己的密钥写进作品。
 
+> 托管版（galLingS 作品页）另有服务端的多模型插件 `gallings.llm.router`：模型列表、主模型、按用途分配，见 [llm-router.md](llm-router.md)。作品内这套是离线 / 单文件 / APK 没有后端时用的，两边互不覆盖。
+
 ## 4. 谁在用它
 
 | 用处 | 怎么接 |

@@ -100,7 +100,7 @@ class Session:
                                      json.dumps(self.engine_config), self.seed)
         self.guard = TextGuard(self.card)
         self.memory = MemoryGateway(rt.plugins.get("memory"), agm_fill=self.opts.agm_fill)
-        self.llm_chain = rt.llm_chain()
+        self.llm_chain = rt.llm_chain("story")
         self.performer = Performer(self.chapter, self.card, self.card_hash, self.llm_chain, rt.data_dir / "perform")
         self.dir = rt.data_dir / "sessions" / self.id
         self.recorder = Recorder(self.dir / "events.jsonl", {

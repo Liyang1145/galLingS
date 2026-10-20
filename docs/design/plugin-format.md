@@ -145,6 +145,7 @@ python -m server.plugins check --config config.yaml        # 按配置全部启�
 | id | kind | 说明 |
 |---|---|---|
 | gallings.llm.openai-compat | llm | DeepSeek 等 OpenAI 兼容接口，SSE → 五种事件 |
+| gallings.llm.router | llm | 多模型 + 按用途分配（剧情即兴 / 手账悄悄话 / 结局后聊天 / 建卡）+ 失败降级；自带设置面板，见 [llm-router.md](llm-router.md) |
 | gallings.llm.scripted | llm | 按脚本回放，测试 / CI / 离线彩排 |
 | gallings.memory.lingshu | memory | 灵枢 MCP 子进程；时间线标签 `tl:<lineage>@<turn>` 与可见性过滤 |
 | gallings.tool.proposals | tool | `propose_affection`、`propose_mood`，只出提议 |
@@ -155,7 +156,17 @@ python -m server.plugins check --config config.yaml        # 按配置全部启�
 
 > 另：VN Studio（前端游戏）有自己的插件格式 vn-plugin/1（一个 .js 文件），见 VN Studio 的 `PLUGIN_API.md`；GalAgent 两边都有：后端是这里的 tool 插件，前端是 `plugins/builtin/galagent/web/galagent.vnplugin.js`。
 
-## 10. 尚未做（按需再加）
+## 10. 设置面板（可选）
+
+插件可以在作品页「设置」里挂一块自己的面板（第一个用上的是 `gallings.llm.router`）：
+
+- 插件目录里放 `web/panel.js`（可选 `web/panel.css`）。插件**运行中**时，`GET /api/plugin-panels` 会列出它，作品页打开设置时加载。
+- `panel.js` 登记 `window.GLPanels[<插件 id>] = { mount(el, ctx) }`。`ctx.api(action, body)` = `POST /api/plugin/<id>/<action>`，调插件实例的 `async api(action, body) -> dict`；`ctx.changed()` 让宿主刷新状态（例如模型“可用 / 未启用”）。`mount` 可返回 `{ refresh(), destroy() }`。
+- 挂在哪：插件类属性 `panel_slot`。`"llm"` = 替换设置里“模型”一节的旧单模型输入框；其它值放进“插件设置”一节。
+- 静态文件只从 `<插件目录>/web/` 下发（`/plugin-web/<id>/<文件>`）。接口受本机来源保护（`LocalOnlyGuard`），`api()` 返回的东西会进网页，**不要放密钥原文**。
+- 样式跟作品页设置对话框同一套配色（`web/vn-polish.css` 的深青色），选择器加上自己的前缀，避免影响宿主。
+
+## 11. 尚未做（按需再加）
 
 - 沙箱：`permissions` 目前只声明不强制；第三方插件上线前要么跑在 MCP 子进程里，要么加进程隔离。
 - 插件 SDK 独立成包（现在插件 `from server.plugins import ...`）。

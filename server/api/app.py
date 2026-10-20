@@ -188,7 +188,7 @@ def create_app(runtime: Runtime | None = None) -> FastAPI:
         desc = str(body.get("description", "")).strip()
         if len(desc) < 10:
             return JSONResponse({"ok": False, "error": "描述太短，至少写一两句人设"}, 400)
-        return JSONResponse(await builder.generate(desc[:3000], rt().llm_chain(), rt().chapter))
+        return JSONResponse(await builder.generate(desc[:3000], rt().llm_chain("cards"), rt().chapter))
 
     @app.post("/api/cards")
     async def save(body: dict[str, Any]) -> JSONResponse:
@@ -292,7 +292,7 @@ def create_app(runtime: Runtime | None = None) -> FastAPI:
         q = sock.query_params
         card_id = q.get("card") or r.game.get("default_card", "whale")
         mode = q.get("mode") or r.game.get("default_mode", "choice")
-        if mode == "ai" and not r.llm_chain():
+        if mode == "ai" and not r.llm_chain("story"):
             mode = "choice"
 
         async def send(m: dict[str, Any]) -> None:
@@ -388,6 +388,44 @@ def create_app(runtime: Runtime | None = None) -> FastAPI:
         r.settings.save(body)
         await r.reload_plugins()
         return {**await get_settings(), "warn": warn}
+
+    # ---------------------------------------------------------------- 插件设置面板（plugin-format §10）
+    # 运行中的插件若带 web/panel.js，就在作品页设置里挂一块面板；面板通过 POST /api/plugin/<id>/<action> 调插件的 api()。
+    @app.get("/api/plugin-panels")
+    async def plugin_panels() -> dict[str, Any]:
+        r = rt()
+        out = []
+        for pid, st in r.plugins.states.items():
+            inst = st.instance if st.status == "running" else None
+            web = Path(st.manifest.root) / "web"
+            if inst is None or not (web / "panel.js").is_file():
+                continue
+            out.append({"id": pid, "name": st.manifest.name, "slot": getattr(inst, "panel_slot", "") or "plugins",
+                        "js": f"/plugin-web/{pid}/panel.js",
+                        "css": f"/plugin-web/{pid}/panel.css" if (web / "panel.css").is_file() else ""})
+        return {"panels": out}
+
+    @app.get("/plugin-web/{pid}/{path:path}")
+    async def plugin_web(pid: str, path: str) -> FileResponse:
+        st = rt().plugins.states.get(pid)
+        if st is None or st.status != "running":
+            raise HTTPException(404)
+        root = (Path(st.manifest.root) / "web").resolve()
+        f = (root / path).resolve()
+        if root not in f.parents or not f.is_file():
+            raise HTTPException(404)
+        return FileResponse(f, headers={"Cache-Control": "no-cache"})
+
+    @app.post("/api/plugin/{pid}/{action}")
+    async def plugin_api(pid: str, action: str, body: dict[str, Any] | None = None) -> dict[str, Any]:
+        inst = rt().plugin(pid)
+        if inst is None or not callable(getattr(inst, "api", None)):
+            raise HTTPException(404, f"插件 {pid} 没在运行或没有设置接口")
+        try:
+            return await inst.api(action, body or {})
+        except Exception as e:  # noqa: BLE001 - 插件自己的异常不拖垮服务
+            log.exception("插件接口出错：%s %s", pid, action)
+            return {"ok": False, "message": f"{type(e).__name__}: {e}"[:200]}
 
     @app.post("/api/settings/test")
     async def test_llm() -> dict[str, Any]:

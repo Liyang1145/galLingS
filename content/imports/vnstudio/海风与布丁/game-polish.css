@@ -236,3 +236,6 @@ body.game #psettings .fld::placeholder{color:#6f9aa3}
 body.game #psettings select.fld option{background:#0a1d25;color:#d8ffff}
 body.game #psettings a.tg{display:inline-flex;align-items:center}
 @media (pointer:coarse){body.game #psettings .fld{min-height:44px}body.game.smallstage #psettings .fld,body.game.smallstage #psettings #soulUrl{min-height:68px;font-size:28px}}
+
+/* 标题菜单：按钮全部与“开始游戏”左右对齐（取消引擎里逐个左移 18px 的阶梯排布，插件等新增按钮也一并对齐） */
+body.game #title .menu button:nth-child(n):not(#_){left:0}

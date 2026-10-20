@@ -31,7 +31,7 @@
 | 场景融合 | `integrate_scene_staging.py`、`check_scene_integration.py` |
 | 音乐接入 | `integrate_atri_music.py`、`integrate_e4_music.py`、`integrate_m1_music.py` |
 
-## tools/hark/（Hark 接手期间的小工具）
-- `rinko_edit.py`：Rinko Image2.5 多图编辑（stream，CC≤2，默认 sunburst）。
+## tools/hark/（保留仓库提交工具）
 - `commit_tree.py` / `push_retry.sh`：blobless 浅克隆下不 checkout 直接提交、按需补 blob 推送。
-- `graykey_composite.py`：灰底抠图、局部修图按差异区合成回原图。
+
+生图和配音生产工作流已按负责人要求下载转本地，见[清理记录](../docs/collab/work-ledger/local-production-workflows-20261020.md)。

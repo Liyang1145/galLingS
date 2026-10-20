@@ -27,3 +27,5 @@
 | 角色演出 | `queue_character_direction.py`、`direct_character_scenes.py`、`check_character_direction.py`、`queue_character_performance.py`、`queue_character_performance_round2.py`、`restore_character_performance.py` |
 | 场景融合 | `integrate_scene_staging.py`、`check_scene_integration.py` |
 | 音乐接入 | `integrate_atri_music.py`、`integrate_e4_music.py`、`integrate_m1_music.py` |
+
+生图和配音生产工作流已按负责人要求下载转本地，见[清理记录](../docs/collab/work-ledger/local-production-workflows-20261020.md)。

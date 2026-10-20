@@ -239,3 +239,61 @@ body.game #psettings a.tg{display:inline-flex;align-items:center}
 
 /* 标题菜单：按钮全部与“开始游戏”左右对齐（取消引擎里逐个左移 18px 的阶梯排布，插件等新增按钮也一并对齐） */
 body.game #title .menu button:nth-child(n):not(#_){left:0}
+
+/* —— 设置 → 在线聊天与连接（galLingS 里玩时出现，在“灵枢 → 连接”下面）：沿用设置里的行 / 按钮 / 输入框；多模型面板换成海底配色 —— */
+body.game #psettings .gl-online{display:flex;flex-direction:column;gap:inherit}
+body.game #psettings .gl-online [hidden]{display:none!important}
+body.game #psettings .gl-online .row:not(.sep) .dim{white-space:normal}
+body.game #psettings .gl-online .gl-wrap{flex:1;min-width:0;line-height:1.4}
+body.game #psettings .gl-online .dim.ok{color:#8fe0b0}
+body.game #psettings .gl-online .dim.bad{color:#f0a48f}
+body.game #psettings .gl-online .gl-foot{border-top:1px dashed #62b1c340}
+body.game #psettings .gl-online a.tg{font-size:inherit;min-height:44px}
+body.game #psettings .gl-panel{padding:4px 0 6px}
+/* 多模型面板（plugins/builtin/llm-router/web/panel.css）在游戏里：字号跟设置行走，颜色换成青色海底刻度 */
+body.game #psettings .lm{--lm-line:#62b1c340;--lm-ink:#d8ffff;--lm-ink2:#9cc6cd;--lm-acc:#7ee5e9;--lm-card:#0a1d25e6;font-size:18px}
+body.game #psettings .lm .lm-lead{font-size:15px;color:#8fb7be;margin:0 0 10px}
+body.game #psettings .lm-list{border-radius:3px;background:#06161ccc}
+body.game #psettings .lm-item.on{background:linear-gradient(90deg,#225d6855,transparent 75%)}
+body.game #psettings .lm .lm-pick{padding:14px 14px 14px 16px}
+body.game #psettings .lm-l1 b{font-size:20px;color:#e1ffff}
+body.game #psettings .lm-l2,body.game #psettings .lm-l2 code{font-size:15px}
+body.game #psettings .lm-l2 code{color:#bfe9ee}
+body.game #psettings .lm-prov{font-size:13px;line-height:22px;border-radius:2px}
+body.game #psettings .lm-cur{font-size:13px;line-height:22px;border-radius:2px;background:#7ee5e9;color:#06232b}
+body.game #psettings .lm-ring{width:20px;height:20px;border-color:#6bc3cc99}
+body.game #psettings .lm-item.on .lm-ring{border-width:6px}
+body.game #psettings .lm .lm-acts{opacity:.8}
+body.game #psettings .lm .lm-acts button{width:40px;height:40px;min-height:0;padding:0;border-radius:3px;background:transparent;border:1px solid transparent;color:#9cc6cd}
+body.game #psettings .lm .lm-acts button:hover:not(:disabled){background:#123642;border-color:#7ee5e9;color:#e1ffff}
+body.game #psettings .lm .lm-acts button[data-act="del"]:hover{color:#f0a48f}
+body.game #psettings .lm .gi{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+body.game #psettings .lm .lm-new{height:52px;border-radius:3px;border:1px dashed #6bc3cc88;background:transparent;color:#9fe6ea;font-size:18px;min-height:0}
+body.game #psettings .lm .lm-new:hover{background:#123642;border-color:#7ee5e9;color:#e1ffff}
+body.game #psettings .lm-edit{box-shadow:inset 3px 0 0 #7ee5e9;padding:14px 18px}
+body.game #psettings .lm-ftitle{font-size:15px}
+body.game #psettings .lm-form .set-row{display:flex;align-items:center;gap:12px;margin:10px 0;font-size:17px}
+body.game #psettings .lm-form .set-row>span{flex:0 0 96px;color:#b8d9df}
+body.game #psettings .lm-form .set-row>input{flex:1;min-width:0;min-height:44px;padding:0 10px;border-radius:3px;background:#06161c;color:#d8ffff;border:1px solid #6bc3cc77;font:inherit;font-size:16px}
+body.game #psettings .lm-form .set-row>input:focus{outline:none;border-color:#7ee5e9;background:#123642}
+body.game #psettings .lm-form .set-row>input::placeholder{color:#6f9aa3}
+body.game #psettings .lm-form .set-row>button{min-height:44px;padding:0 14px;border-radius:3px;background:#0a1d25;color:#b8d9df;border:1px solid #6bc3cc77;font-size:15px;cursor:pointer;white-space:nowrap}
+body.game #psettings .lm-form .set-row>button:hover{border-color:#7ee5e9;color:#e1ffff;background:#123642}
+body.game #psettings .lm-form .lm-hintrow{margin:-4px 0 4px}
+body.game #psettings .lm-form .lm-hintrow small{font-size:14px;color:#8fb7be}
+body.game #psettings .lm-form a{color:#9fe6ea}
+body.game #psettings .lm .lm-chips button{height:auto;min-height:38px;padding:4px 14px;border-radius:3px;background:#0a1d25;border:1px solid #6bc3cc55;color:#b8d9df;font-size:15px}
+body.game #psettings .lm .lm-chips button:hover{background:#123642;border-color:#7ee5e9;color:#e1ffff}
+body.game #psettings .lm .lm-chips button.on{background:#225d68;border-color:#7ee5e9;color:#d8ffff}
+body.game #psettings .lm .lm-think button{min-height:40px;padding:4px 18px}
+body.game #psettings .lm .lm-fbar{border-top-color:#62b1c340}
+body.game #psettings .lm .lm-fbar button{height:auto;min-height:44px;padding:0 18px;border-radius:3px;font-size:16px}
+body.game #psettings .lm .lm-fbar button:not(.primary){background:#0a1d25;border:1px solid #6bc3cc77;color:#b8d9df}
+body.game #psettings .lm .lm-fbar button:not(.primary):hover{background:#123642;border-color:#7ee5e9;color:#e1ffff}
+body.game #psettings .lm .lm-fbar .primary{background:#7ee5e9;color:#06232b}
+body.game #psettings .lm .lm-out{font-size:14px}
+body.game #psettings .lm .lm-out.ok{color:#8fe0b0} body.game #psettings .lm .lm-out.bad{color:#f0a48f}
+body.game #psettings .lm .ldot{display:inline-block;width:9px;height:9px;border-radius:50%;background:#6f8a90;margin-right:6px}
+body.game #psettings .lm .ldot.ok{background:#5fd18a} body.game #psettings .lm .ldot.bad{background:#e2725b} body.game #psettings .lm .ldot.wait{background:#e6c14d}
+body.game.vport #psettings .lm-form .set-row{flex-wrap:wrap}
+body.game.vport #psettings .lm-form .set-row>span{flex-basis:100%}

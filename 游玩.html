@@ -1,11 +1,114 @@
 <!doctype html>
 <html lang="zh-CN">
+<head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta http-equiv="refresh" content="0;url=content/imports/vnstudio/海风与布丁/index.html">
-<title>海风与布丁 · 最新游玩</title>
+<title>海风与布丁 · 游玩</title>
+<!--
+  双击打开：在后台启动 galLingS（不弹黑窗口），起来后自动进入作品页玩《海风与布丁》；在线聊天与连接设置在游戏「设置」里。
+  做法：先探测 http://127.0.0.1:8765 有没有 galLingS（载入 /api/ping.js）；没有就打开 gallings-launch: 链接，
+  由 tools/launcher/gallings-bg.vbs 在后台跑 start.bat --bg。这个链接在第一次运行 start.bat 时登记（只写当前用户注册表）。
+  网页本身不能直接开进程，所以第一次要先双击一次 start.bat。
+-->
+<style>
+  :root { color-scheme: dark; }
+  html, body { height: 100%; margin: 0; }
+  body { display: grid; place-items: center; background: radial-gradient(120% 90% at 70% 10%, #1d4650 0%, #0f272d 55%, #0a1a1f 100%); color: #d8ecea;
+    font: 16px/1.6 "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", sans-serif; }
+  main { width: min(560px, calc(100vw - 48px)); }
+  h1 { margin: 0 0 4px; font-size: 34px; font-weight: 600; letter-spacing: .18em; color: #eef8f4; text-shadow: 0 2px 10px #0008; }
+  .sub { margin: 0 0 28px; color: #8fb7be; letter-spacing: .05em; }
+  .state { display: flex; align-items: center; gap: 12px; padding: 16px 18px; border: 1px solid #62b1c340; border-radius: 4px; background: #0a1d25cc; }
+  .spin { width: 18px; height: 18px; flex: none; border-radius: 50%; border: 2px solid #7ee5e944; border-top-color: #7ee5e9; animation: r 1s linear infinite; }
+  .state.bad .spin { animation: none; border-color: #f0a48f; }
+  .state.ok .spin { animation: none; border-color: #5fd18a; }
+  @keyframes r { to { transform: rotate(360deg); } }
+  #msg { flex: 1; }
+  #msg small { display: block; color: #8fb7be; }
+  .acts { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+  [hidden] { display: none !important; }
+  button, a.btn { min-height: 44px; padding: 0 18px; border-radius: 3px; border: 1px solid #6bc3cc77; background: #0a1d25; color: #b8d9df; font: inherit; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; }
+  button:hover, a.btn:hover { background: #123642; border-color: #7ee5e9; color: #e1ffff; }
+  button.primary { background: #7ee5e9; border-color: #7ee5e9; color: #06232b; font-weight: 600; }
+  button.primary:hover { background: #a6f1f3; }
+  .help { margin-top: 18px; padding: 14px 16px; border-left: 3px solid #7ee5e9; background: #0a1d2599; color: #a9cbd0; font-size: 14.5px; }
+  .help ol { margin: 6px 0 0; padding-left: 20px; }
+  code { font-family: ui-monospace, Consolas, monospace; color: #d8ffff; }
+  @media (prefers-reduced-motion: reduce) { .spin { animation: none; } }
+</style>
+</head>
 <body>
-<p><a href="content/imports/vnstudio/海风与布丁/index.html">进入《海风与布丁》</a></p>
-<p>结局后和鲸鱼小姐聊天：在游戏「设置 → AI 模型」里选服务商、填自己的密钥就能直接聊；也可以运行同目录的 start.bat，从作品页游玩（模型在 galLingS 里统一设置）。只玩剧情不需要配置模型。</p>
+<main>
+  <h1>海风与布丁</h1>
+  <p class="sub">galLingS · 鲸鱼小姐的手账</p>
+  <div class="state" id="state"><i class="spin" aria-hidden="true"></i><div id="msg" aria-live="polite">正在找 galLingS……</div></div>
+  <div class="acts" id="acts" hidden>
+    <button type="button" class="primary" id="launch">启动 galLingS</button>
+    <a class="btn" id="offline" href="content/imports/vnstudio/海风与布丁/index.html">不连 galLingS，直接玩剧情</a>
+  </div>
+  <div class="help" id="help" hidden>
+    一直没反应的话：
+    <ol>
+      <li>第一次用，先双击同一文件夹里的 <code>start.bat</code> 一次。它会装好依赖，并登记后台启动；以后双击 <code>游玩.html</code> 就会自动在后台启动。</li>
+      <li>浏览器问“要打开 galLingS 启动器吗”，选“打开”。</li>
+      <li>后台启动的日志在 <code>logs\gallings-bg.log</code>。</li>
+    </ol>
+  </div>
+</main>
+<script>
+"use strict";
+const HOST = "http://127.0.0.1:8765";
+const GAME = "海风与布丁";
+const WIN = /Win/i.test(navigator.userAgentData?.platform || navigator.platform || "");
+const $ = (id) => document.getElementById(id);
+let done = false, launchedAt = 0;
+
+function say(html, cls) { $("msg").innerHTML = html; $("state").className = "state " + (cls || ""); }
+function go() {
+  if (done) return; done = true;
+  say("galLingS 已就绪，正在进入游戏……", "ok");
+  location.replace(`${HOST}/vn.html?game=${encodeURIComponent(GAME)}`);
+}
+// 探测：载入 /api/ping.js，它会调 window.GL_PING。用 <script> 而不是 fetch：file:// 页面跨源也能载入脚本
+function probe() {
+  return new Promise((ok) => {
+    const s = document.createElement("script");
+    const t = setTimeout(() => { s.remove(); ok(false); }, 1500);
+    window.GL_PING = () => { clearTimeout(t); s.remove(); ok(true); };
+    s.onerror = () => { clearTimeout(t); s.remove(); ok(false); };
+    s.src = `${HOST}/api/ping.js?t=${Date.now()}`;
+    document.head.appendChild(s);
+  });
+}
+// 打开 gallings-launch: 链接 → Windows 交给 tools/launcher/gallings-bg.vbs 在后台启动（隐藏的 iframe，页面不跳走）
+function launch() {
+  launchedAt = Date.now();
+  const f = document.createElement("iframe");
+  f.style.display = "none"; f.src = "gallings-launch:start";
+  document.body.appendChild(f); setTimeout(() => f.remove(), 3000);
+}
+
+(async () => {
+  if (await probe()) return go();
+  $("acts").hidden = false;
+  $("launch").onclick = () => { launch(); say("正在后台启动 galLingS……"); };
+  if (!WIN) {
+    say("没找到正在运行的 galLingS。<small>自动后台启动只支持 Windows；请在 galLingS 文件夹里运行 <code>python -m server</code>，这一页会自动进入游戏。</small>");
+    $("launch").hidden = true;
+  } else {
+    launch();
+    say("正在后台启动 galLingS……<small>第一次启动要装依赖，可能要几分钟。</small>");
+  }
+  // 等它起来：每秒探测一次，最多 10 分钟（第一次装依赖比较慢）
+  const t0 = Date.now();
+  while (!done && Date.now() - t0 < 10 * 60e3) {
+    await new Promise((r) => setTimeout(r, 1000));
+    if (await probe()) return go();
+    const waited = (Date.now() - (launchedAt || t0)) / 1000;
+    if (WIN && waited > 12) { $("help").hidden = false; say(`还在等 galLingS 启动（${Math.round(waited)} 秒）……<small>第一次要装依赖；如果从没运行过 start.bat，请看下面。</small>`); }
+  }
+  if (!done) say("galLingS 没有启动起来。<small>看下面的办法，或者先直接玩剧情。</small>", "bad");
+})();
+</script>
 </body>
 </html>

@@ -39,7 +39,6 @@ body.vnpage { --ink:#edf0e4; --ink2:#bccbc7; --paper:#16282e; --sea:#537d77; --s
 .vnpage #setDlg .set-foot { background:#13282d; }
 .vnpage #setDlg .set-foot .primary { background:#d9e6d4; color:#233e39; font-weight:600; }
 .vnpage #setDlg .set-body { padding-top:14px; }
-.vnpage #setDlg .online-settings { margin:18px 0 12px; border-top:1px solid #aec6bb33; padding-top:16px; }
 .vnpage #setDlg summary { cursor:pointer; color:#c5d6ca; font-size:14px; padding:8px 0; }
 .vnpage #setDlg a { color:#c5dfcf; }
 .vnpage #setDlg::backdrop { background:#071416a8; }

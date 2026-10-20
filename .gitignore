@@ -22,3 +22,4 @@ core/python/galcore/*.so
 core/python/galcore/*.pyd
 desktop/src-tauri/target/
 desktop/src-tauri/gen/
+logs/

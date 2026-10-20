@@ -1,7 +1,7 @@
 /* gallings.llm.router 设置面板。表单直接用作品页设置的 set-row / seg / ldot（web/style.css + vn-polish.css），这里只补列表和服务商标签。
    宿主给 #setDlg 里的按钮加了带 id 的样式，需要压过去的地方用 :is(#setDlg, .lm) 拿到同样的优先级。 */
 .lm { --lm-line: #aec6bb33; --lm-ink: #edf0e4; --lm-ink2: #b4c5bf; --lm-acc: #94bcab; --lm-card: #1d3338; }
-.lm .gi { width: 16px; height: 16px; }
+.lm .gi { width: 16px; height: 16px; flex: none; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .lm-lead { display: block; margin: -2px 0 8px; }
 .lm-empty { margin: 4px 0 10px; }
 

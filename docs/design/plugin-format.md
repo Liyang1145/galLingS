@@ -158,13 +158,13 @@ python -m server.plugins check --config config.yaml        # 按配置全部启�
 
 ## 10. 设置面板（可选）
 
-插件可以在作品页「设置」里挂一块自己的面板（第一个用上的是 `gallings.llm.router`）：
+插件可以在设置里挂一块自己的面板（第一个用上的是 `gallings.llm.router`）。2026-10-20 起面板挂在**游戏自己的「设置 → 在线聊天与连接」**里（作品 index.html 的 `GL_ONLINE`，在 galLingS 作品页里玩时出现，在“灵枢 → 连接”下面），作品页外框的设置只剩声音与手账：
 
-- 插件目录里放 `web/panel.js`（可选 `web/panel.css`）。插件**运行中**时，`GET /api/plugin-panels` 会列出它，作品页打开设置时加载。
+- 插件目录里放 `web/panel.js`（可选 `web/panel.css`）。插件**运行中**时，`GET /api/plugin-panels` 会列出它，打开游戏设置时载入游戏页面（同源）。
 - `panel.js` 登记 `window.GLPanels[<插件 id>] = { mount(el, ctx) }`。`ctx.api(action, body)` = `POST /api/plugin/<id>/<action>`，调插件实例的 `async api(action, body) -> dict`；`ctx.changed()` 让宿主刷新状态（例如模型“可用 / 未启用”）。`mount` 可返回 `{ refresh(), destroy() }`。
 - 挂在哪：插件类属性 `panel_slot`。`"llm"` = 替换设置里“模型”一节的旧单模型输入框；其它值放进“插件设置”一节。
 - 静态文件只从 `<插件目录>/web/` 下发（`/plugin-web/<id>/<文件>`）。接口受本机来源保护（`LocalOnlyGuard`），`api()` 返回的东西会进网页，**不要放密钥原文**。
-- 样式跟作品页设置对话框同一套配色（`web/vn-polish.css` 的深青色），选择器加上自己的前缀，避免影响宿主。
+- 面板 DOM 用 `set-row` / `seg` / `ldot` 这几个通用类，选择器加上自己的前缀；游戏里的配色由作品的 `game-polish.css`（`body.game #psettings …`）统一换成游戏设置的样子。
 
 ## 11. 尚未做（按需再加）
 

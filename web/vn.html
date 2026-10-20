@@ -70,30 +70,8 @@
       <div id="gSoul"></div>
       <div class="set-row"><span>她记得的事</span><small class="muted" id="memCount"></small><button type="button" id="sForget">全部遗忘</button></div>
     </section>
-    <details id="onlineSettings" class="online-settings"><summary>在线聊天与连接设置</summary><p class="muted">剧情和配乐可直接游玩；想在结局后继续聊天，再配置在线模型。</p>
-    <section>
-      <h4>模型 <small id="llmState"></small></h4>
-      <div id="llmPanel" hidden></div><!-- 多模型插件（gallings.llm.router）的设置面板挂在这里，挂上后隐藏下面的单模型输入框 -->
-      <div id="llmLegacy">
-      <label class="set-row"><span>服务地址</span><input id="sBase" spellcheck="false" placeholder="https://api.deepseek.com"></label>
-      <label class="set-row"><span>模型</span><input id="sModel" spellcheck="false" placeholder="deepseek-flash"></label>
-      <label class="set-row"><span>API 密钥</span><input id="sKey" type="password" autocomplete="off" spellcheck="false"></label>
-      <div class="set-row"><span></span><small class="muted" id="keyHint"></small></div>
-      <div class="set-row"><span></span><button type="button" id="sTest">测试模型</button><small id="sTestOut" class="muted"></small></div>
-      </div>
-    </section>
-    <section id="pluginPanels" hidden><h4>插件设置</h4></section>
-    <section>
-      <h4>记忆 <small id="memState"></small></h4>
-      <div class="set-row"><span>记忆底座</span><div class="seg" id="sMem"><button type="button" data-v="local">本地</button><button type="button" data-v="lingshu">灵枢 dsh-memory</button></div></div>
-      <label class="set-row" id="sDshRow"><span>dsh-memory 路径</span><input id="sDsh" spellcheck="false" placeholder="C:/path/to/dsh-memory"></label>
-    </section>
-    <section><h4>作品与工具</h4>
-      <label class="set-row"><span>作品文件夹</span><input id="sGames" spellcheck="false" placeholder="默认：galLingS/content/imports/vnstudio"></label>
-<p class="muted"><a href="/docs" target="_blank" rel="noopener">查看接口文档</a></p></section>
-    </details>
   </div>
-  <div class="set-foot"><small class="muted" id="saveOut"></small><button type="button" id="sClose">关闭</button><button type="button" class="primary" id="sSave">保存</button></div>
+  <div class="set-foot"><small class="muted">在线聊天与连接（模型、记忆、作品文件夹）在游戏自己的「设置」里，灵枢一组下面。</small><button type="button" class="primary" id="sClose">关闭</button></div>
 </dialog>
 
 <dialog id="replayDlg">

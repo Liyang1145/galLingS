@@ -2794,14 +2794,134 @@ function showPrefs() {
     ${sl('readerScale', '文字大小', 1, 1.25, 0.05)}${sl('speed', '文字速度', 5, 80, 5, 85)}${sl('autoMul', '自动播放等待', 0.4, 2.5, 0.1)}${sl('ghost', '对话框不透明度', 0.35, 0.95, 0.05)}
     <div class="row"><span>快进</span><button class="tg ${pref('skipRead') ? 'on' : ''}" data-tg="skipRead">只快进已读</button></div>
     ${uiSe('btnClick') || uiSe('btnHover') ? `<div class="row"><span>按钮音效</span><button class="tg ${pref('btnSe') !== false ? 'on' : ''}" data-tg="btnSe" data-def="1">点按 / 悬停时轻响</button></div>` : ''}
-    <div class="row stats-row"><span>好感数值</span><button class="tg ${pref('showStats') ? 'on' : ''}" data-tg="showStats">显示（剧透向）</button><small class="dim stats-now">${statsText(true)}</small></div>${modelPrefsHtml()}${soulPrefsHtml()}</div>`;
+    <div class="row stats-row"><span>好感数值</span><button class="tg ${pref('showStats') ? 'on' : ''}" data-tg="showStats">显示（剧透向）</button><small class="dim stats-now">${statsText(true)}</small></div>${modelPrefsHtml()}${soulPrefsHtml()}${GL_ONLINE.on() ? '<div class="gl-online-slot" id="glOnline"></div>' : ''}</div>`;
   const syncSlider = r => { const min=Number(r.min)||0, max=Number(r.max)||1, value=Number(r.value); const pct=max>min ? Math.max(0,Math.min(100,(value-min)/(max-min)*100)) : 0; r.style.setProperty('--slider-pct', pct+'%'); };
   box.querySelectorAll('input[type=range]').forEach(r => { const output=box.querySelector(`output[data-value="${r.dataset.k}"]`); syncSlider(r); if(output) output.textContent=fmt(r.dataset.k,r.value,r.dataset.inv); r.oninput = () => { setPref(r.dataset.k, r.dataset.inv ? +r.dataset.inv - +r.value : +r.value); syncSlider(r); if(output) output.textContent=fmt(r.dataset.k,r.value,r.dataset.inv); }; });
   box.querySelectorAll('[data-tg]').forEach(b => b.onclick = e => { e.stopPropagation(); const cur = b.dataset.def ? pref(b.dataset.tg) !== false : !!pref(b.dataset.tg), v = !cur; setPref(b.dataset.tg, v); b.classList.toggle('on', v); if (b.dataset.tg === 'showStats') box.querySelector('.stats-now').textContent = statsText(true); });
   soulPrefsBind(box); modelPrefsBind(box);
+  if (GL_ONLINE.on()) GL_ONLINE.mount(box.querySelector('#glOnline'));
   addClose(box, kick); box.classList.add('show');
   box.onclick = e => { e.stopPropagation(); if (e.target === box) { box.classList.remove('show'); kick(); } };
 }
+// —— 在线聊天与连接（只在 galLingS 作品页里玩时出现，HOSTED）：模型 / 记忆 / 作品文件夹 / 插件设置面板 ——
+// 游戏和 galLingS 同源，直接调它的接口：GET/POST /api/settings、POST /api/settings/test、GET /api/plugin-panels、POST /api/plugin/<id>/<action>。
+// 整块 DOM 只建一次、常驻内存：设置页每次重画只是把它挂回 #glOnline，插件面板（多模型等）不用重新加载，填了一半的输入也不会丢。
+const GL_ONLINE = {
+  root: null, srv: null, memUse: 'local', panels: {},
+  // 桌面离线版（作品页带 GALLINGS_OFFLINE，没有后端）不显示
+  on() { try { return HOSTED && !parent.GALLINGS_OFFLINE; } catch (e) { return false; } },
+  mount(slot) {
+    if (!slot) return;
+    if (!this.root) this.build();
+    slot.appendChild(this.root);
+    this.load();
+  },
+  q(sel) { return this.root.querySelector(sel); },
+  build() {
+    const r = this.root = document.createElement('div');
+    r.className = 'gl-online';
+    r.innerHTML = `<div class="row sep"><span>${ic('plug')} 在线聊天与连接</span><small class="dim">galLingS 的模型、记忆</small></div>
+      <div class="row"><span>模型</span><i class="dot" id="glLlmDot"></i><small class="dim" id="glLlmState">读取中……</small></div>
+      <div class="gl-panel" id="glLlmPanel" hidden></div>
+      <div id="glLlmLegacy" hidden>
+        <div class="row"><span>服务地址</span><input class="fld" id="glBase" spellcheck="false" placeholder="https://api.deepseek.com"></div>
+        <div class="row"><span>模型名</span><input class="fld" id="glModel" spellcheck="false" placeholder="deepseek-chat"></div>
+        <div class="row"><span>API 密钥</span><input class="fld" id="glKey" type="password" autocomplete="off" spellcheck="false"></div>
+        <div class="row"><span></span><small class="dim" id="glKeyHint"></small></div>
+        <div class="row"><span></span><button class="tg" id="glTest">${ic('plug')} 测试模型</button><small class="dim gl-wrap" id="glTestOut"></small></div>
+      </div>
+      <div id="glPanels"></div>
+      <div class="row"><span>记忆底座</span><div class="seg" id="glMem"><button class="tg" data-mem="local">本地</button><button class="tg" data-mem="lingshu">灵枢 dsh-memory</button></div><i class="dot" id="glMemDot"></i><small class="dim" id="glMemState"></small></div>
+      <div class="row hid" id="glDshRow"><span>dsh-memory 路径</span><input class="fld" id="glDsh" spellcheck="false" placeholder="C:/path/to/dsh-memory"></div>
+      <div class="row"><span>作品文件夹</span><input class="fld" id="glGames" spellcheck="false" placeholder="默认：galLingS/content/imports/vnstudio"></div>
+      <div class="row gl-foot"><span></span><button class="tg on" id="glSave">保存</button><small class="dim gl-wrap" id="glOut">模型改动立即生效；记忆和作品文件夹点保存后生效</small><a class="tg" href="/docs" target="_blank" rel="noopener">接口文档</a></div>`;
+    // 输入框里打字不触发游戏快捷键（空格 / 回车推进、Esc 关面板由各自处理）
+    r.addEventListener('keydown', e => { e.stopPropagation(); if (e.key === 'Enter' && e.target.matches('input.fld')) e.target.blur(); });
+    r.addEventListener('click', e => e.stopPropagation());
+    r.querySelectorAll('[data-mem]').forEach(b => b.onclick = () => { this.memUse = b.dataset.mem; this.syncMem(); });
+    this.q('#glSave').onclick = () => this.save();
+    this.q('#glTest').onclick = async () => {
+      const o = this.q('#glTestOut'); o.textContent = '测试中……';
+      try { const t = await (await fetch('/api/settings/test', { method: 'POST' })).json(); o.textContent = (t.ok ? '通了：' : '') + t.message; o.className = 'dim gl-wrap ' + (t.ok ? 'ok' : 'bad'); }
+      catch (e) { o.textContent = '测试失败：' + e.message; o.className = 'dim gl-wrap bad'; }
+    };
+  },
+  async load() {
+    try { this.srv = await (await fetch('/api/settings')).json(); }
+    catch (e) { this.q('#glLlmState').textContent = '连接设置暂时无法读取，剧情仍可继续'; return; }
+    this.render(); this.mountPanels();
+  },
+  render() {
+    const s = this.srv, q = k => this.q(k);
+    q('#glBase').value = s.llm.base_url || ''; q('#glModel').value = s.llm.model || ''; q('#glKey').value = '';
+    q('#glKey').placeholder = s.llm.key_set ? `已设置（末 4 位 ${s.llm.key_tail || '****'}），留空 = 不改` : '未设置';
+    q('#glKeyHint').textContent = s.llm.key_from_env ? '系统环境变量 GALLINGS_LLM_API_KEY 已设置，它优先；这里填的不生效' : '只保存在本机 galLingS 数据文件夹里，网页拿不到原文';
+    this.renderLlm();
+    const fell = s.memory.use === 'lingshu' && s.memory_active && s.memory_active !== 'gallings.memory.lingshu';
+    q('#glMemDot').className = 'dot ' + (!s.memory_ready ? 'bad' : fell ? 'wait' : 'ok');
+    q('#glMemState').textContent = !s.memory_ready ? '未启用' : fell ? '灵枢没启动，正在用本地' : s.memory_active === 'gallings.memory.lingshu' ? '灵枢可用' : '本地可用';
+    this.memUse = s.memory.use; q('#glDsh').value = s.memory.dsh_memory_path || ''; q('#glGames').value = s.vn.games_dir || '';
+    this.syncMem();
+    const msg = s.warn || Object.entries(s.failed || {}).filter(([k, v]) => !(k.startsWith('gallings.llm') && /缺少.*密钥/.test(v))).map(([k]) =>
+      k === 'gallings.memory.lingshu' ? '灵枢没启动，已自动改用本地记忆' : k.startsWith('gallings.llm') ? '模型没启动' : k + ' 没启动').join('；');
+    if (msg) { q('#glOut').textContent = msg; q('#glOut').className = 'dim gl-wrap bad'; q('#glOut').title = Object.entries(s.failed || {}).map(([k, v]) => k + '：' + v).join('\n'); }
+  },
+  renderLlm() {
+    const s = this.srv; if (!s) return;
+    this.q('#glLlmDot').className = 'dot ' + (s.llm_ready ? 'ok' : 'bad');
+    this.q('#glLlmState').textContent = s.llm_ready ? '可用' : '未启用（悄悄话先用离线回复）';
+  },
+  syncMem() {
+    this.root.querySelectorAll('[data-mem]').forEach(b => b.classList.toggle('on', b.dataset.mem === this.memUse));
+    this.q('#glDshRow').classList.toggle('hid', this.memUse !== 'lingshu');
+  },
+  // 插件设置面板（plugin-format §10）：运行中的插件带 web/panel.js 就挂进来；slot=llm 的接管“模型”这一节
+  async mountPanels() {
+    let list = [];
+    try { list = (await (await fetch('/api/plugin-panels')).json()).panels || []; } catch (e) { list = []; }
+    const live = new Set(list.map(p => p.id)), llmBox = this.q('#glLlmPanel');
+    for (const [id, m] of Object.entries(this.panels)) if (!live.has(id)) { try { m.inst?.destroy?.(); } catch (e) {} m.box.remove(); delete this.panels[id]; if (llmBox.dataset.owner === id) delete llmBox.dataset.owner; }
+    const asset = (tag, url) => new Promise((ok, bad) => { const el = document.createElement(tag); if (tag === 'link') { el.rel = 'stylesheet'; el.href = url; } else el.src = url; el.onload = ok; el.onerror = () => bad(new Error('加载失败：' + url)); document.head.appendChild(el); });
+    for (const p of list) {
+      try {
+        if (this.panels[p.id]) { this.panels[p.id].inst?.refresh?.(); continue; }
+        if (!window.GLPanels?.[p.id]) { if (p.css) await asset('link', p.css); await asset('script', p.js); }
+        const def = window.GLPanels?.[p.id]; if (!def) continue;
+        let box;
+        if (p.slot === 'llm' && !llmBox.dataset.owner) { box = llmBox; box.dataset.owner = p.id; }
+        else { box = document.createElement('div'); box.className = 'gl-panel'; this.q('#glPanels').appendChild(box); }
+        const ctx = {
+          api: async (action, body) => {
+            const r = await fetch(`/api/plugin/${encodeURIComponent(p.id)}/${encodeURIComponent(action)}`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body || {}) });
+            if (!r.ok) throw new Error('HTTP ' + r.status);
+            return r.json();
+          },
+          changed: () => { fetch('/api/settings').then(r => r.json()).then(s => { this.srv = s; this.renderLlm(); }).catch(() => {}); soulSock.close(); soulSock.open().catch(() => {}); },
+        };
+        this.panels[p.id] = { box, inst: def.mount(box, ctx) };
+      } catch (e) { console.warn('插件设置面板', p.id, e); }
+    }
+    const owned = !!(llmBox.dataset.owner && this.panels[llmBox.dataset.owner]);
+    llmBox.hidden = !owned; this.q('#glLlmLegacy').hidden = owned;
+  },
+  async save() {
+    const q = k => this.q(k), out = q('#glOut'), btn = q('#glSave');
+    const body = { memory: { use: this.memUse, dsh_memory_path: q('#glDsh').value.trim() }, vn: { games_dir: q('#glGames').value.trim() } };
+    if (!q('#glLlmLegacy').hidden) {   // 多模型面板接管时它自己即时保存；这里不写旧的单模型设置
+      body.llm = { base_url: q('#glBase').value.trim(), model: q('#glModel').value.trim() };
+      if (q('#glKey').value.trim()) body.llm.api_key = q('#glKey').value.trim();
+    }
+    btn.disabled = true; out.className = 'dim gl-wrap'; out.title = ''; out.textContent = '保存中，正在重启模型和记忆……';
+    try {
+      this.srv = await (await fetch('/api/settings', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) })).json();
+      out.textContent = '已保存'; out.className = 'dim gl-wrap ok';
+      this.render(); this.mountPanels();
+      if (this.srv.warn && body.memory.use === 'lingshu') { this.memUse = 'lingshu'; q('#glDsh').value = body.memory.dsh_memory_path; this.syncMem(); }
+      soulSock.close(); soulSock.open().catch(() => {});
+    } catch (e) { out.textContent = '保存失败：' + e.message; out.className = 'dim gl-wrap bad'; }
+    btn.disabled = false;
+  },
+};
 // —— 设置 → AI 模型（游戏里；编辑器在“设置”弹窗里）——
 function modelStatusText() {
   const d = VNModel.describe();
@@ -2813,7 +2933,7 @@ function modelStatusText() {
 }
 const modelDotCls = () => !VNModel.ready() ? '' : VNModel.state === 'off' ? '' : VNModel.state;
 function modelPrefsHtml() {
-  if (HOSTED) return `<div class="row sep"><span>${ic('sparkle')} AI 模型</span><small class="dim">在 galLingS 里玩：模型和密钥由 galLingS 统一管理</small></div>`;
+  if (HOSTED) return '';   // 在 galLingS 里玩：模型在下面“在线聊天与连接”里设（GL_ONLINE）
   const c = VNModel.get(), p = VNModel.preset(c.preset), k = VNModel.conf().key;
   return `<div class="row sep"><span>${ic('sparkle')} AI 模型</span><small class="dim">结局后聊天、灵枢悄悄话都用它；密钥只存在这台设备</small></div>
     <div class="row"><span>服务商</span><select class="fld" id="aiPreset">${MODEL_PRESETS.map(x => `<option value="${x.id}" ${x.id === p.id ? 'selected' : ''}>${esc(x.name)}</option>`).join('')}</select>${p.keyUrl ? `<a class="tg" href="${esc(p.keyUrl)}" target="_blank" rel="noopener">获取密钥</a>` : ''}</div>
@@ -3214,7 +3334,7 @@ function soulPrefsHtml() {
     <div class="row"><span>陪伴</span>${seg('soulMode', 'mix', [['off', '纯剧本'], ['mix', '剧本+即兴'], ['free', '自由']])}</div>
     <div class="row"><span>她的话量</span>${seg('soulTalk', 'mid', [['short', '简短'], ['mid', '适中'], ['long', '话多']])}</div>
     <div class="row"><span>记忆</span><small class="dim">${playing && RT.soul ? RT.soul.mem.length + ' 条' : '开始游戏后记录'}</small>${playing && RT.soul ? `<button class="tg" data-soul="forget">${ic('eraser')} 全部遗忘</button>` : ''}</div>
-    ${HOSTED ? `<div class="row"><span>连接</span><small class="dim">galLingS（模型、记忆在 galLingS 设置里统一管理）</small><i class="dot ${soulSock.state}" id="soulDot"></i></div>` : `<div class="row"><span>连接</span>${seg('soulBackend', soulBackend(), [['local', '离线'], ['api', 'AI 模型'], ['galLingS', 'galLingS']])}<i class="dot ${soulDotCls(soulBackend())}" id="soulDot"></i></div>
+    ${HOSTED ? `<div class="row"><span>连接</span><small class="dim">galLingS（模型、记忆在下面设置）</small><i class="dot ${soulSock.state}" id="soulDot"></i></div>` : `<div class="row"><span>连接</span>${seg('soulBackend', soulBackend(), [['local', '离线'], ['api', 'AI 模型'], ['galLingS', 'galLingS']])}<i class="dot ${soulDotCls(soulBackend())}" id="soulDot"></i></div>
     <div class="row ${soulBackend() === 'api' ? '' : 'hid'}" id="soulApiRow"><span></span><small class="dim">${VNModel.ready() ? '用上面「AI 模型」的设置：' + esc(VNModel.conf().name + ' / ' + VNModel.conf().model) : '上面「AI 模型」还没填，先用离线回复'}</small></div>
     <div class="row ${soulBackend() === 'galLingS' ? '' : 'hid'}" id="soulUrlRow"><span>后端地址</span><input id="soulUrl" value="${esc(pref('soulUrl') || 'ws://127.0.0.1:8765/ws/soul')}" spellcheck="false"><button class="tg" data-soul="test">${ic('plug')} 测试</button></div>
     <div class="row ${soulBackend() === 'galLingS' ? '' : 'hid'}" id="soulInfoRow"><span></span><small class="dim" id="soulInfo">${soulSock.state === 'ok' && soulSock.info ? '已连上：' + esc(soulSock.info.card?.name || '') : ''}</small></div>`}`;

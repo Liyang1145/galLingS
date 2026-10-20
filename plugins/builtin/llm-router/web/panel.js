@@ -1,4 +1,4 @@
-// gallings.llm.router 设置面板：作品页「设置 → 在线聊天与连接设置 → 模型」。
+// gallings.llm.router 设置面板：游戏「设置 → 在线聊天与连接 → 模型」（作品 index.html 的 GL_ONLINE 挂载；作品页外框也能挂）。
 // 写法跟设置里其它几节一样：一行一个模型，左边单选“当前使用”，右边 测试 / 编辑 / 删除；编辑在列表里就地展开（标签 + 输入框的 set-row），不弹窗。
 // 所有改动立即保存到插件（POST /api/plugin/<id>/<action>），不用点设置底部的“保存”。
 // 宿主约定（plugin-format §10）：window.GLPanels[<插件 id>] = { mount(el, ctx) }；ctx.api(action, body) 调插件 api()，ctx.changed() 让宿主刷新状态。
@@ -49,7 +49,7 @@
       if (pr?.busy) state = `<i class="ldot wait"></i>测试中……`;
       else if (pr) state = `<i class="ldot ${pr.ok ? "ok" : "bad"}"></i>${esc(pr.msg)}`;
       else if (!m.usable) state = `<i class="ldot bad"></i>${m.key_set || m.no_key ? "没填完整" : "还没填密钥"}`;
-      else state = `<i class="ldot ${cur ? "ok" : ""}"></i>${m.no_key ? "本机服务" : `密钥 ···${esc(m.key_tail || "已设置")}`}`;
+      else state = `<i class="ldot ${cur ? "ok" : ""}"></i>${m.no_key ? "本机服务" : (m.key_tail ? `密钥 ···${esc(m.key_tail)}` : "密钥已设置")}`;
       return `<li class="lm-item ${cur ? "on" : ""}" data-id="${esc(m.id)}">
         <button type="button" class="lm-pick" role="radio" aria-checked="${cur}" title="${cur ? "正在用" : "改用这个模型"}">
           <span class="lm-ring" aria-hidden="true"></span>

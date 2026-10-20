@@ -36,7 +36,6 @@ from server.runtime import load_config, resolve_games_dir  # noqa: E402
 WASM_DEFAULT = ROOT / "core" / "target" / "wasm32-unknown-unknown" / "release" / "galcore.wasm"
 OFFLINE_HEAD = (
     '<script>window.GALLINGS_OFFLINE = true;</script>\n'
-    '<style>#onlineSettings{display:none}</style>\n'
 )
 
 

@@ -7,7 +7,7 @@ api: 1
 description: >-
   在网页设置里管理多个 OpenAI 兼容模型（DeepSeek、通义千问、硅基流动、Kimi、OpenRouter、OpenAI、Ollama、自定义），
   点一下切换正在用的模型，每个模型可设思考等级（关 / 中 / 高）。自带设置面板（web/panel.js），
-  挂进作品页「设置 → 在线聊天与连接设置」的模型一节。
+  挂进游戏「设置 → 在线聊天与连接」的模型一节（在 galLingS 作品页里玩时）。
 requires:
   gallings: ">=0.1,<0.2"
   python: ">=3.11"

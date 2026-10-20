@@ -44,7 +44,7 @@ M1当前创作偏好：减少钢琴篇幅、轻鼓、较多bell旋律填句、�
 - **E4**：原交付名`日落空守.mp3`，稳定ID`bgm_e4_sunset_wait`，SHA-256 `4fa6f18e5f96795912cee922b7fa46c58fdb6557b18fc874a06c3240645f6684`。[接入记录](../collab/work-ledger/e4-sunset-wait.md)、[逐句映射](../../content/audio/e4-integration.json)、[播放验证](../../content/audio/e4-validation.json)。
 - 原MP3、游戏副本、单文件内嵌字节均匹配。M1/E4共138句仅改BGM；3315句的其他字段、图像、动作、环境音和音效保留。M1接入前104项音频元数据与文件Git blob逐项不变。
 - 已验证段内连续播放、切曲/停奏、存储音轨位置恢复、退出停止及断网单文件播放；M1文件末端循环通过，E4回归播放通过。播放验证不代替人工听审。
-- 检出本分支后，根目录[游玩.html](../../游玩.html)、[引擎开发.html](../../引擎开发.html)读取同一完整作品。运行`python tools/build_single_file_game.py`可重建单文件；约165MB的HTML留在本地outputs，不进Git。没有新发行版本号。
+- 检出本分支后，根目录`游玩.html`、[引擎开发.html](../../引擎开发.html)读取同一完整作品。运行`python tools/build_single_file_game.py`可重建单文件；约165MB的HTML留在本地outputs，不进Git。没有新发行版本号。
 
 详细参考见[曲目规划](music-tracklist.md)，元数据见[音乐清单](../../content/audio/manifest.yaml)。早期文档的“缺M1/E4”“未推送”等是当时快照，当前进度以本表和接续分支实际文件为准。
 

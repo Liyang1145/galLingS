@@ -8,7 +8,7 @@
 
 | 方式 | 入口 |
 |---|---|
-| 游玩（自动后台启动 galLingS） | 双击根目录 [游玩.html](游玩.html)：后台启动 galLingS（不弹黑窗口），起来后自动进入作品页。第一次要先运行一次 `start.bat`（装依赖、登记后台启动）。启动不了时页面上可以直接玩离线剧情。见 [launcher](docs/design/launcher.md) |
+| 游玩（单文件，可直接发给别人） | 先运行 `python tools/build_single_file_game.py` 生成根目录 `游玩.html`（约 240 MB，含全部剧情、美术、配乐和 GalAgent 插件，不进仓库），双击就能玩、没有外框；结局后聊天在游戏「设置 → 在线聊天与连接」里填 AI 模型密钥，不用开 galLingS |
 | 编辑器（美术、剧情、舞台） | [引擎开发.html](引擎开发.html)，或作品页加 `?editor=1` |
 | 托管作品页 + AI 结局后聊天 | 运行 `start.bat`，打开 `http://127.0.0.1:8765/vn.html`（游戏「设置 → 在线聊天与连接」：模型、记忆、作品文件夹；多模型见 [llm-router](docs/design/llm-router.md)） |
 | 单文件试玩版（含对白账本） | `python tools/build_playtest_html.py 输出.html`；预发布 `html-playtest` 的自动构建（`.github/workflows/playtest-html.yml`）已于 10-20 按用户要求暂停 |

@@ -13,7 +13,7 @@
 ## 剧情与界面
 - [game-ai-model-20261020.md](game-ai-model-20261020.md) — 10-20 游戏内「设置 → AI 模型」直连大模型（灵枢 / GalAgent / @agent / vn.model），GalAgent 随作品打包，修 B08
 - [gallings-llm-router-20261020.md](gallings-llm-router-20261020.md) — 10-20 galLingS 多模型插件：设置 → 模型 的模型列表、切换正在用的模型、思考等级（关/中/高）；插件设置面板规范
-- [play-launcher-online-settings-20261020.md](play-launcher-online-settings-20261020.md) — 10-20 双击 游玩.html 自动后台启动 galLingS；在线聊天与连接设置挪进游戏设置（灵枢 → 连接 下面）
+- [play-launcher-online-settings-20261020.md](play-launcher-online-settings-20261020.md) — 10-20 游玩.html 改成单文件游戏（无外框、可直接发给别人，不进仓库）；在线聊天与连接设置挪到游戏设置灵枢“连接”下面
 - [opening-performance-20261019.md](opening-performance-20261019.md) — 10-19 开场 #9–21「摸尾巴被拍」演出重做（新近景 B02T、横甩/水下/慢动作效果、见面曲提前到 #19）
 - [script-fix-20261018.md](script-fix-20261018.md) — 剧情矛盾修正（fix9）
 - [ui-fix-20261018.md](ui-fix-20261018.md) — 界面修复（竖横屏、好感开关、按钮音效）

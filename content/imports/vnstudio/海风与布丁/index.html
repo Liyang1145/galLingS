@@ -2794,7 +2794,7 @@ function showPrefs() {
     ${sl('readerScale', '文字大小', 1, 1.25, 0.05)}${sl('speed', '文字速度', 5, 80, 5, 85)}${sl('autoMul', '自动播放等待', 0.4, 2.5, 0.1)}${sl('ghost', '对话框不透明度', 0.35, 0.95, 0.05)}
     <div class="row"><span>快进</span><button class="tg ${pref('skipRead') ? 'on' : ''}" data-tg="skipRead">只快进已读</button></div>
     ${uiSe('btnClick') || uiSe('btnHover') ? `<div class="row"><span>按钮音效</span><button class="tg ${pref('btnSe') !== false ? 'on' : ''}" data-tg="btnSe" data-def="1">点按 / 悬停时轻响</button></div>` : ''}
-    <div class="row stats-row"><span>好感数值</span><button class="tg ${pref('showStats') ? 'on' : ''}" data-tg="showStats">显示（剧透向）</button><small class="dim stats-now">${statsText(true)}</small></div>${modelPrefsHtml()}${soulPrefsHtml()}${GL_ONLINE.on() ? '<div class="gl-online-slot" id="glOnline"></div>' : ''}</div>`;
+    <div class="row stats-row"><span>好感数值</span><button class="tg ${pref('showStats') ? 'on' : ''}" data-tg="showStats">显示（剧透向）</button><small class="dim stats-now">${statsText(true)}</small></div>${soulPrefsHtml()}${modelPrefsHtml()}${GL_ONLINE.on() ? '<div class="gl-online-slot" id="glOnline"></div>' : ''}</div>`;
   const syncSlider = r => { const min=Number(r.min)||0, max=Number(r.max)||1, value=Number(r.value); const pct=max>min ? Math.max(0,Math.min(100,(value-min)/(max-min)*100)) : 0; r.style.setProperty('--slider-pct', pct+'%'); };
   box.querySelectorAll('input[type=range]').forEach(r => { const output=box.querySelector(`output[data-value="${r.dataset.k}"]`); syncSlider(r); if(output) output.textContent=fmt(r.dataset.k,r.value,r.dataset.inv); r.oninput = () => { setPref(r.dataset.k, r.dataset.inv ? +r.dataset.inv - +r.value : +r.value); syncSlider(r); if(output) output.textContent=fmt(r.dataset.k,r.value,r.dataset.inv); }; });
   box.querySelectorAll('[data-tg]').forEach(b => b.onclick = e => { e.stopPropagation(); const cur = b.dataset.def ? pref(b.dataset.tg) !== false : !!pref(b.dataset.tg), v = !cur; setPref(b.dataset.tg, v); b.classList.toggle('on', v); if (b.dataset.tg === 'showStats') box.querySelector('.stats-now').textContent = statsText(true); });
@@ -2935,7 +2935,7 @@ const modelDotCls = () => !VNModel.ready() ? '' : VNModel.state === 'off' ? '' :
 function modelPrefsHtml() {
   if (HOSTED) return '';   // 在 galLingS 里玩：模型在下面“在线聊天与连接”里设（GL_ONLINE）
   const c = VNModel.get(), p = VNModel.preset(c.preset), k = VNModel.conf().key;
-  return `<div class="row sep"><span>${ic('sparkle')} AI 模型</span><small class="dim">结局后聊天、灵枢悄悄话都用它；密钥只存在这台设备</small></div>
+  return `<div class="row sep"><span>${ic('sparkle')} 在线聊天与连接</span><small class="dim">AI 模型：结局后聊天、灵枢悄悄话都用它；密钥只存在这台设备</small></div>
     <div class="row"><span>服务商</span><select class="fld" id="aiPreset">${MODEL_PRESETS.map(x => `<option value="${x.id}" ${x.id === p.id ? 'selected' : ''}>${esc(x.name)}</option>`).join('')}</select>${p.keyUrl ? `<a class="tg" href="${esc(p.keyUrl)}" target="_blank" rel="noopener">获取密钥</a>` : ''}</div>
     <div class="row ${p.noKey ? 'hid' : ''}"><span>密钥</span><input class="fld" id="aiKey" type="password" autocomplete="off" spellcheck="false" value="${esc(k)}" placeholder="sk-……"></div>
     <div class="row"><span>模型</span><input class="fld" id="aiModel" list="aiModels" spellcheck="false" value="${esc(c.model)}" placeholder="${esc(p.models[0] || '模型名')}"><datalist id="aiModels">${p.models.map(m => `<option value="${esc(m)}">`).join('')}</datalist></div>
@@ -2951,14 +2951,15 @@ function modelPrefsBind(box) {
       box.querySelectorAll('[data-seg=soulBackend]').forEach(x => x.classList.toggle('on', x.dataset.v === sb));
       q('#soulApiRow').classList.toggle('hid', sb !== 'api');
     }
-    const sa = q('#soulApiRow small'); if (sa) sa.textContent = VNModel.ready() ? '用上面「AI 模型」的设置：' + VNModel.conf().name + ' / ' + VNModel.conf().model : '上面「AI 模型」还没填，先用离线回复';
+    const sa = q('#soulApiRow small'); if (sa) sa.textContent = VNModel.ready() ? '用下面「AI 模型」的设置：' + VNModel.conf().name + ' / ' + VNModel.conf().model : '下面「AI 模型」还没填，先用离线回复';
     if (sd && sb === 'api') sd.className = 'dot ' + soulDotCls('api');
   };
   const rerender = () => { const st = box.scrollTop, rows = q('.rows'), rt = rows ? rows.scrollTop : 0; showPrefs(); box.scrollTop = st; const r2 = box.querySelector('.rows'); if (r2) r2.scrollTop = rt; };
   const save = () => { VNModel.set({ key: q('#aiKey')?.value.trim() || '', model: q('#aiModel').value.trim(), base: q('#aiBase').value.trim() }); upd(); };
   ['#aiPreset', '#aiKey', '#aiModel', '#aiBase'].forEach(sel => { const el = q(sel); if (!el) return; el.addEventListener('click', e => e.stopPropagation()); el.addEventListener('keydown', e => { e.stopPropagation(); if (e.key === 'Enter' && el.tagName === 'INPUT') el.blur(); }); });
   q('#aiPreset').onchange = () => { VNModel.set({ preset: q('#aiPreset').value, model: '', base: '' }); rerender(); };
-  ['#aiKey', '#aiModel', '#aiBase'].forEach(sel => { const el = q(sel); if (el) el.onchange = save; });
+  // 边打字边存：灵枢“连接”在模型填好时会自动切到 AI 模型、多出一行说明（在这一节上面）；要是等失焦才存，点“测试”的那一下画面会往下挪、点空
+  ['#aiKey', '#aiModel', '#aiBase'].forEach(sel => { const el = q(sel); if (el) { el.onchange = save; el.oninput = save; } });
   box.querySelectorAll('a.tg').forEach(a => a.addEventListener('click', e => e.stopPropagation()));
   q('[data-ai=test]').onclick = e => {
     e.stopPropagation(); save();
@@ -3335,7 +3336,7 @@ function soulPrefsHtml() {
     <div class="row"><span>她的话量</span>${seg('soulTalk', 'mid', [['short', '简短'], ['mid', '适中'], ['long', '话多']])}</div>
     <div class="row"><span>记忆</span><small class="dim">${playing && RT.soul ? RT.soul.mem.length + ' 条' : '开始游戏后记录'}</small>${playing && RT.soul ? `<button class="tg" data-soul="forget">${ic('eraser')} 全部遗忘</button>` : ''}</div>
     ${HOSTED ? `<div class="row"><span>连接</span><small class="dim">galLingS（模型、记忆在下面设置）</small><i class="dot ${soulSock.state}" id="soulDot"></i></div>` : `<div class="row"><span>连接</span>${seg('soulBackend', soulBackend(), [['local', '离线'], ['api', 'AI 模型'], ['galLingS', 'galLingS']])}<i class="dot ${soulDotCls(soulBackend())}" id="soulDot"></i></div>
-    <div class="row ${soulBackend() === 'api' ? '' : 'hid'}" id="soulApiRow"><span></span><small class="dim">${VNModel.ready() ? '用上面「AI 模型」的设置：' + esc(VNModel.conf().name + ' / ' + VNModel.conf().model) : '上面「AI 模型」还没填，先用离线回复'}</small></div>
+    <div class="row ${soulBackend() === 'api' ? '' : 'hid'}" id="soulApiRow"><span></span><small class="dim">${VNModel.ready() ? '用下面「AI 模型」的设置：' + esc(VNModel.conf().name + ' / ' + VNModel.conf().model) : '下面「AI 模型」还没填，先用离线回复'}</small></div>
     <div class="row ${soulBackend() === 'galLingS' ? '' : 'hid'}" id="soulUrlRow"><span>后端地址</span><input id="soulUrl" value="${esc(pref('soulUrl') || 'ws://127.0.0.1:8765/ws/soul')}" spellcheck="false"><button class="tg" data-soul="test">${ic('plug')} 测试</button></div>
     <div class="row ${soulBackend() === 'galLingS' ? '' : 'hid'}" id="soulInfoRow"><span></span><small class="dim" id="soulInfo">${soulSock.state === 'ok' && soulSock.info ? '已连上：' + esc(soulSock.info.card?.name || '') : ''}</small></div>`}`;
 }

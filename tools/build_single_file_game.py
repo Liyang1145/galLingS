@@ -13,6 +13,9 @@ from urllib.request import url2pathname
 
 ROOT = Path(__file__).resolve().parents[1]
 GAME = ROOT / "content/imports/vnstudio/海风与布丁"
+# 默认输出 = 仓库根目录 游玩.html：一个文件包含全部剧情、美术、配乐和插件（GalAgent），发给别人双击就能玩；
+# 结局后聊天 / 灵枢悄悄话在游戏「设置 → 在线聊天与连接」里填自己的 AI 模型密钥，不用 galLingS 后端。
+DEFAULT_OUT = ROOT / "游玩.html"
 MEDIA_MIME = {".png":"image/png", ".jpg":"image/jpeg", ".jpeg":"image/jpeg", ".webp":"image/webp",
               ".gif":"image/gif", ".avif":"image/avif", ".mp3":"audio/mpeg", ".ogg":"audio/ogg",
               ".wav":"audio/wav", ".m4a":"audio/mp4", ".aac":"audio/aac", ".flac":"audio/flac"}
@@ -82,17 +85,19 @@ def build(output: Path, project_file: Path | None = None) -> dict:
     manifest = {"entry":output.name, "sha256": hashlib.sha256(output.read_bytes()).hexdigest(),
                 "bytes":output.stat().st_size, "assets":len(project["assets"]), "files":len(hashes),
                 "lines":len(project["lines"]), "chapters":sum(bool(l.get("chapter")) for l in project["lines"]),
-                "scope":"Current complete offline story; hosted online chat still requires the backend.", "media":hashes}
+                "scope":"Complete story in one file; online chat uses the in-game AI model settings (no backend needed).", "media":hashes}
     if project_file:
         manifest["saved_project"] = {"name":project_file.name,
                                      "sha256":hashlib.sha256(project_file.read_bytes()).hexdigest()}
+    if output.resolve() == DEFAULT_OUT.resolve():   # 根目录 游玩.html：不在仓库根放清单
+        return manifest
     output.with_suffix(".manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
     return manifest
 
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("--output", type=Path, default=ROOT.parent.parent / "outputs/gal-single-file/海风与布丁_单文件游玩.html")
+    ap.add_argument("--output", type=Path, default=DEFAULT_OUT)
     ap.add_argument("--project", type=Path, help="Saved .vnproj.json with manual artwork adjustments; originals stay unchanged")
     args = ap.parse_args()
     report = build(args.output, args.project)

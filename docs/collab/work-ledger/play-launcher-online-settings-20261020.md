@@ -1,16 +1,16 @@
-# 游玩.html 自动后台启动 + 在线设置挪进游戏设置（2026-10-20，boliyer / Hark）
+# 单文件 游玩.html + 在线聊天与连接设置挪进游戏设置（2026-10-20，boliyer / Hark）
 
 ## 需求
-用户：“把 galLingS 集成到 游玩.html 中，双击后自动在后台创建 galLingS 服务器，再把在线聊天与连接设置挪到（游戏设置里“灵枢 → 连接”下面的）红框位置，只给需要替换的文件。”
+1. 用户：在线聊天与连接设置挪到游戏设置里“灵枢 → 连接”下面。
+2. 用户（同日更正）：去掉游戏画面外那层绿色作品页外框；`游玩.html` 要是一个独立完整的文件，直接发给别人就能打开游玩，不用再双击 `start.bat`。
 
-## 改动
-- `游玩.html`：探测 → 打开 `gallings-launch:` 链接后台启动 → 起来后进作品页；失败时可直接玩离线剧情。说明见 [launcher.md](../../design/launcher.md)。
-- `tools/launcher/gallings-bg.vbs`（新）、`start.bat`（`--bg` 后台模式 + 登记链接）、`server/api/app.py`（`/api/ping.js`）。
-- 作品 `content/imports/vnstudio/海风与布丁/index.html`：游戏设置里新增 `GL_ONLINE`（在线聊天与连接：模型 / 多模型插件面板 / 旧单模型输入 / 记忆底座 / dsh-memory 路径 / 作品文件夹 / 保存 / 接口文档），只在 galLingS 作品页里玩（HOSTED）且不是桌面离线版时出现，紧跟“连接”一行；去掉 HOSTED 时那行“AI 模型由 galLingS 统一管理”。`game-polish.css`：这块和多模型面板的游戏配色。
-- 作品页 `web/vn.html` / `web/vn.js`：外框设置去掉“在线聊天与连接设置”（只剩声音与阅读、手账），去掉保存按钮；`web/vn-polish.css` 删对应样式。`tools/build_desktop_dist.py`：不再需要隐藏 `#onlineSettings`。
-- 多模型面板 `panel.js`：密钥提示文字；`panel.css`：图标自带描边样式（不依赖宿主 `.gi`）。
+当天先做过一版“双击 游玩.html 通过 gallings-launch: 链接在后台启动 galLingS”（9938c38），按第 2 条撤掉了：链接要先运行 start.bat 登记，发给别人也用不了。
+
+## 现在的做法
+- `游玩.html` = `python tools/build_single_file_game.py` 生成的单文件游戏（默认输出到仓库根目录），全部剧情、美术、配乐、GalAgent 插件都嵌在里面，约 240 MB。没有外框，双击直接全窗口玩。**超过 GitHub 100 MB 限制，不进仓库**（`.gitignore` 里的 `/游玩.html`），原来那个跳转用的小 `游玩.html` 已从仓库删除。
+- 不用 galLingS 后端：结局后聊天（GalAgent）、灵枢悄悄话走游戏内置的 AI 模型直连（见 [ai-model.md](../../design/ai-model.md)）。
+- 设置位置：不在 galLingS 里玩时，“在线聊天与连接”（AI 模型：服务商、密钥、模型、接口地址、测试）挪到灵枢“连接”一行下面；灵枢“连接 → AI 模型”的说明改成“用下面「AI 模型」的设置”。在 galLingS 作品页里玩（HOSTED）时，同一位置是 `GL_ONLINE`（galLingS 的模型 / 多模型面板 / 记忆 / 作品文件夹），作品页外框 ⚙ 只剩声音与手账。
 
 ## 验证
-- 端到端（真服务 + 假模型 + Chromium）32/32：作品页外框没有在线设置；游戏设置里在线设置紧跟“连接”；多模型面板全流程；记忆底座切换；保存后重启插件列表还在；关掉再开设置面板还在；无脚本错误。
-- `pytest tests/plugins` 54 passed 1 skipped；全仓库失败名单与改动前相同。
-- Windows 上的注册表登记、vbs 隐藏启动没有实机验证。
+- Chromium 打开生成的单文件 `游玩.html`（file://）：无脚本错误，标题菜单按钮对齐，设置里“在线聊天与连接”紧跟“连接”。
+- 作品页端到端 32/32；`pytest tests/plugins` 通过；断链 0。

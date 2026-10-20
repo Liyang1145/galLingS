@@ -23,3 +23,6 @@ core/python/galcore/*.pyd
 desktop/src-tauri/target/
 desktop/src-tauri/gen/
 logs/
+
+# 根目录 游玩.html 是 tools/build_single_file_game.py 生成的单文件游戏（约 240 MB），不进仓库
+/游玩.html

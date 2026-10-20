@@ -1,13 +1,8 @@
 @echo off
 rem galLingS 一键启动（Windows）。第一次运行会建 .venv、装依赖、装确定性核心 galcore。
-rem 每次运行都会登记 gallings-launch: 链接：以后双击根目录 游玩.html 就会在后台自动启动 galLingS（不弹黑窗口）。
-rem start.bat --bg = 后台模式（游玩.html 调起时用）：不问密钥、不开浏览器、出错不停下等按键。
 chcp 65001 >nul
 setlocal
 cd /d "%~dp0"
-set "BG="
-if /i "%~1"=="--bg" set "BG=1"
-if defined BG (set "HALT=type nul") else (set "HALT=pause")
 
 rem 必须放在 galLingS 仓库根目录（和 requirements.txt、server\ 在一起）运行
 if not exist "requirements.txt" goto :wrongdir
@@ -47,19 +42,12 @@ if not exist "content\scripts\ch01\ch01.md" (
   echo 提示：没有剧本内容包 content\scripts\ch01，后端 AI 剧本会话不能用；作品页 /vn.html 里的作品照常可玩。
 )
 
-rem 登记 gallings-launch: 链接（只写当前用户的注册表，不要管理员权限）
-reg add "HKCU\Software\Classes\gallings-launch" /ve /d "URL:galLingS 启动器" /f >nul 2>nul
-reg add "HKCU\Software\Classes\gallings-launch" /v "URL Protocol" /d "" /f >nul 2>nul
-reg add "HKCU\Software\Classes\gallings-launch\shell\open\command" /ve /d "wscript.exe \"%~dp0tools\launcher\gallings-bg.vbs\" \"%%1\"" /f >nul 2>nul
-
-if defined BG goto :startbg
-
-rem 已经在设置里保存过密钥，就不用每次再问
+rem 已经在作品页 ⚙ 设置里保存过密钥，就不用每次再问
 findstr /c:"GALLINGS_LLM_API_KEY" "%USERPROFILE%\.gallings\secrets.json" >nul 2>nul && goto :start
 if "%GALLINGS_LLM_API_KEY%"=="" (
   echo.
   echo 没有设置 GALLINGS_LLM_API_KEY：不填则后端 AI 功能不可用。key 只在这次运行里有效，不会写进任何文件。
-  echo 也可以以后在 游戏「设置 → 在线聊天与连接」里填，填一次就记住（只存在本机）。
+  echo 也可以以后在 作品页 右上角 ⚙ 设置 里填，填一次就记住（只存在本机）。
   set /p "GALLINGS_LLM_API_KEY=输入 DeepSeek API key（直接回车跳过）："
 )
 
@@ -69,27 +57,22 @@ echo [4/4] 启动后端：content\vn 里有作品时浏览器打开作品页 htt
 "%VPY%" -m server
 goto :eof
 
-:startbg
-echo [4/4] 后台启动后端：http://127.0.0.1:8765/vn.html （游玩.html 会自动打开它）
-"%VPY%" -m server --no-browser
-goto :eof
-
 :wrongdir
 echo 这个 start.bat 不在 galLingS 文件夹里（旁边找不到 requirements.txt 和 server 文件夹）。
 echo 请打开 galLingS 完整版文件夹，双击里面的 start.bat；如果用的是“覆盖文件”，要先把它们复制进你的 galLingS 仓库根目录。
-%HALT% & exit /b 1
+pause & exit /b 1
 :nopython
 echo 没找到 Python 3.11+。请先安装：https://www.python.org/downloads/windows/ （勾选 Add to PATH）
-%HALT% & exit /b 1
+pause & exit /b 1
 :nowheel
 echo 没有 galcore 轮子，也没有 Rust 编译器。二选一：
 echo   1. 从 GitHub Actions 下载 galcore-windows-latest 里的 .whl，放进本目录的 wheels\ 文件夹，再运行本脚本；
 echo   2. 安装 Rust（https://rustup.rs），再运行本脚本自动编译。
-%HALT% & exit /b 1
+pause & exit /b 1
 :oldpython
 echo .venv 里的 Python 低于 3.11。请安装 Python 3.11 或更新版本（https://www.python.org/downloads/windows/ ，勾选 Add to PATH），
 echo 然后删掉本文件夹里的 .venv 文件夹，再双击 start.bat。
-%HALT% & exit /b 1
+pause & exit /b 1
 :fail
 echo 安装失败，看上面的报错。
-%HALT% & exit /b 1
+pause & exit /b 1

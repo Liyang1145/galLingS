@@ -145,12 +145,6 @@ def create_app(runtime: Runtime | None = None) -> FastAPI:
 
     app.mount("/static", StaticFiles(directory=WEB), name="static")
 
-    @app.get("/api/ping.js")
-    async def ping_js() -> PlainTextResponse:
-        """给根目录 游玩.html 探测“galLingS 起来了没有”：它是 file:// 打开的，用 <script> 载入这个就能知道（不受跨源限制）。"""
-        return PlainTextResponse("window.GL_PING && window.GL_PING({app: 'galLingS'});", media_type="text/javascript",
-                                 headers={"Cache-Control": "no-store"})
-
     @app.get("/api/status")
     async def status() -> dict[str, Any]:
         r = rt()

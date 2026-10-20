@@ -145,7 +145,7 @@ python -m server.plugins check --config config.yaml        # 按配置全部启�
 | id | kind | 说明 |
 |---|---|---|
 | gallings.llm.openai-compat | llm | DeepSeek 等 OpenAI 兼容接口，SSE → 五种事件 |
-| gallings.llm.router | llm | 多模型 + 按用途分配（剧情即兴 / 手账悄悄话 / 结局后聊天 / 建卡）+ 失败降级；自带设置面板，见 [llm-router.md](llm-router.md) |
+| gallings.llm.router | llm | 多模型：列表里切换正在用的模型，每个模型可设思考等级（关 / 中 / 高）；自带设置面板，见 [llm-router.md](llm-router.md) |
 | gallings.llm.scripted | llm | 按脚本回放，测试 / CI / 离线彩排 |
 | gallings.memory.lingshu | memory | 灵枢 MCP 子进程；时间线标签 `tl:<lineage>@<turn>` 与可见性过滤 |
 | gallings.tool.proposals | tool | `propose_affection`、`propose_mood`，只出提议 |

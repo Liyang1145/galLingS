@@ -1,12 +1,12 @@
-"""gallings.llm.router：多模型 + 按用途分配的 LLM 插件（设置面板见 web/panel.js）。
+"""gallings.llm.router：多模型 LLM 插件，正在用的模型 + 每个模型的思考等级（设置面板见 web/panel.js）。
 
 数据都在插件自己的数据目录 ``<数据根>/plugins/gallings.llm.router/``：
-- ``models.json``：模型列表、主模型、分配规则。可以随便看，不含密钥。
+- ``models.json``：模型列表、正在用的模型（main）。可以随便看，不含密钥。
 - ``keys.json``：每个模型的 API 密钥，权限 600，只在本机；网页只拿得到“有没有 + 末 4 位”。
 
-用法（引擎侧）：``Runtime.llm_chain(purpose)`` 调 ``chain_for(purpose)`` 拿到这次该用的模型降级链；
+用法（引擎侧）：``Runtime.llm_chain(purpose)`` 调 ``chain_for(purpose)`` 拿到正在用的模型（purpose 不再区分）；
 链里每一项都是一个有 ``stream()`` 和 ``ctx.plugin_id`` 的对象，和普通 llm 插件一样交给 ``stream_events`` / ``complete``。
-改模型、改规则立即生效，不用重启插件；已经开着的剧本会话下次开局才换。
+改模型、切换立即生效，不用重启插件；已经开着的剧本会话下次开局才换。
 """
 from __future__ import annotations
 
@@ -49,16 +49,22 @@ PRESETS: list[dict[str, Any]] = [
     {"id": "custom", "name": "自定义", "base_url": "", "models": []},
 ]
 
-# 用途：引擎各处调 llm_chain(purpose) 时传的名字
-PURPOSES: list[dict[str, str]] = [
-    {"id": "story", "name": "剧情即兴", "desc": "开放节拍的即兴台词、意图判断、改写（剧本会话）"},
-    {"id": "soul", "name": "手账悄悄话", "desc": "灵枢手账里和她说悄悄话"},
-    {"id": "chat", "name": "结局后聊天", "desc": "GalAgent：结局后陪聊、用工具做事"},
-    {"id": "cards", "name": "建卡", "desc": "建卡页根据描述生成角色卡"},
-]
-FALLBACKS = ("main", "list", "none")   # 失败时：换主模型 / 按列表依次换 / 不换
-ADV_KEYS = {"temperature": (0.0, 2.0), "top_p": (0.0, 1.0), "max_tokens": (1, 200000), "timeout_s": (1, 600)}
-THINKING = ("auto", "disabled", "enabled")
+THINK_LEVELS = ("off", "mid", "high")   # 思考等级：关 / 中 / 高
+
+
+def think_params(base_url: str, level: str) -> dict[str, Any]:
+    """思考等级 → 各家接口的请求参数。各家写法不一样，不认识的服务按 OpenAI 的 reasoning_effort 发（关 = 不发）。"""
+    host = (httpx.URL(base_url).host or "").lower() if base_url else ""
+    on = level in ("mid", "high")
+    if "deepseek.com" in host:          # DeepSeek：thinking 只有开 / 关（flash 默认开，关掉免得短回复被思考吃光）
+        return {"thinking": {"type": "enabled" if on else "disabled"}}
+    if "dashscope" in host or "siliconflow" in host:   # 通义千问 / 硅基流动：enable_thinking + 思考预算
+        return {"enable_thinking": on, **({"thinking_budget": 4096 if level == "mid" else 16384} if on else {})}
+    if "openrouter.ai" in host:          # OpenRouter：统一的 reasoning 字段
+        return {"reasoning": {"effort": "medium" if level == "mid" else "high"}} if on else {"reasoning": {"enabled": False}}
+    if "moonshot" in host:               # Kimi：模型自己决定，不发参数
+        return {}
+    return {"reasoning_effort": "medium" if level == "mid" else "high"} if on else {}
 
 
 def _message(m) -> dict[str, Any]:
@@ -104,27 +110,21 @@ class ProfileLLM:
             headers.update({"HTTP-Referer": "https://github.com/Liyang1145/galLingS", "X-Title": "galLingS"})
         self._client = httpx.AsyncClient(
             base_url=profile["base_url"],
-            timeout=httpx.Timeout(float(profile.get("timeout_s") or 60), connect=connect_timeout),
+            timeout=httpx.Timeout(60 if (profile.get("think") or "off") == "off" else 180, connect=connect_timeout),
             headers=headers, trust_env=not _is_local(profile["base_url"]))   # 本机服务（Ollama）不走系统代理
 
     def body(self, request: ChatRequest) -> dict[str, Any]:
         p = self.profile
         body: dict[str, Any] = {"model": p["model"], "stream": True, "stream_options": {"include_usage": True},
                                 "messages": [_message(m) for m in request.messages], **request.extra}
-        temp = request.temperature if request.temperature is not None else p.get("temperature")
-        if temp is not None:
-            body["temperature"] = temp
-        if p.get("top_p") is not None:
-            body.setdefault("top_p", p["top_p"])
-        cap = p.get("max_tokens")
-        mt = request.max_tokens or cap
-        if mt:
-            body["max_tokens"] = min(mt, cap) if cap else mt
-        th = p.get("thinking") or "auto"
-        if th == "auto":  # deepseek-flash 默认开思考，短回复会被思考吃光；其它服务不发这个参数
-            th = "disabled" if "deepseek.com" in p["base_url"].lower() else ""
-        if th and "thinking" not in body:
-            body["thinking"] = {"type": th}
+        if request.temperature is not None:
+            body["temperature"] = request.temperature
+        level = p.get("think") or "off"
+        for k, v in think_params(p["base_url"], level).items():
+            body.setdefault(k, v)
+        if request.max_tokens:
+            # 开着思考时，思考也算在输出里：调用方给的上限按等级放宽，免得只剩思考、正文为空
+            body["max_tokens"] = request.max_tokens if level == "off" else request.max_tokens + (2048 if level == "mid" else 8192)
         if request.tools:
             body["tools"] = request.tools
         if request.stop:
@@ -161,7 +161,7 @@ class ProfileLLM:
 
 
 class LLMRouter(LLMPlugin):
-    """多模型路由。自身也能当普通 llm 插件用：stream() 走主模型（再按规则降级）。"""
+    """多模型。自身也能当普通 llm 插件用：stream() 走正在用的模型。"""
 
     panel_slot = "llm"   # 设置面板挂在作品页设置的“模型”一节，替换旧的单模型输入框
 
@@ -184,8 +184,6 @@ class LLMRouter(LLMPlugin):
             s = {}
         s.setdefault("models", [])
         s.setdefault("main", "")
-        s.setdefault("rules", {})
-        s.setdefault("fallback", "main")
         return s
 
     def _load_keys(self) -> dict[str, str]:
@@ -258,19 +256,9 @@ class LLMRouter(LLMPlugin):
         return first["id"] if first else ""
 
     def chain_for(self, purpose: str | None = None) -> list[ProfileLLM]:
-        """这次调用该用的模型降级链：分配给该用途的模型 → 按“失败时”规则补备选。空列表 = 没有可用模型。"""
+        """这次调用用的模型：就是当前选中的那一个（purpose 只为接口兼容保留，不再按用途分配）。空列表 = 没有可用模型。"""
         main = self.main_id()
-        if not main:
-            return []
-        want = (self._state["rules"].get(purpose or "") or "") if purpose else ""
-        first = want if want and self._usable(self._model(want)) else main
-        ids = [first]
-        fb = self._state.get("fallback", "main")
-        if fb == "main" and main not in ids:
-            ids.append(main)
-        elif fb == "list":
-            ids += [m["id"] for m in self._state["models"] if m["id"] not in ids and self._usable(m)]
-        return [self._client(self._model(i)) for i in ids]
+        return [self._client(self._model(main))] if main else []
 
     async def stream(self, request: ChatRequest) -> AsyncIterator[LLMEvent]:
         chain = self.chain_for(None)
@@ -311,19 +299,8 @@ class LLMRouter(LLMPlugin):
         m["base_url"] = _clean_base(str(raw.get("base_url") or ""))
         m["model"] = str(raw.get("model") or "").strip()
         m["name"] = (str(raw.get("name") or "").strip() or m["model"] or "未命名模型")[:40]
-        for k, (lo, hi) in ADV_KEYS.items():
-            v = raw.get(k)
-            if v in (None, ""):
-                continue
-            try:
-                v = float(v) if k in ("temperature", "top_p", "timeout_s") else int(v)
-            except (TypeError, ValueError):
-                raise ValueError(f"{k} 不是数字") from None
-            if not lo <= v <= hi:
-                raise ValueError(f"{k} 要在 {lo}～{hi} 之间")
-            m[k] = v
-        th = raw.get("thinking") or "auto"
-        m["thinking"] = th if th in THINKING else "auto"
+        lv = raw.get("think") or "off"
+        m["think"] = lv if lv in THINK_LEVELS else "off"
         return m
 
     def public(self) -> dict[str, Any]:
@@ -333,8 +310,7 @@ class LLMRouter(LLMPlugin):
             models.append({**m, "key_set": bool(k), "key_tail": k[-4:] if len(k) >= 8 else "",
                            "no_key": self._no_key(m), "usable": self._usable(m)})
         return {"models": models, "main": self.main_id(), "main_saved": self._state["main"],
-                "rules": {p["id"]: self._state["rules"].get(p["id"], "") for p in PURPOSES},
-                "fallback": self._state.get("fallback", "main"), "presets": PRESETS, "purposes": PURPOSES}
+                "presets": PRESETS, "think_levels": [{"id": "off", "name": "关"}, {"id": "mid", "name": "中"}, {"id": "high", "name": "高"}]}
 
     async def api(self, action: str, body: dict[str, Any]) -> dict[str, Any]:
         async with self._lock:
@@ -373,7 +349,6 @@ class LLMRouter(LLMPlugin):
             st["models"] = [m for m in st["models"] if m["id"] != mid]
             if self._keys.pop(mid, None) is not None:
                 self._save_keys()
-            st["rules"] = {k: v for k, v in st["rules"].items() if v != mid}
             if st["main"] == mid:
                 st["main"] = st["models"][0]["id"] if st["models"] else ""
             cur = self._clients.pop(mid, None)
@@ -407,16 +382,6 @@ class LLMRouter(LLMPlugin):
             st["models"].sort(key=lambda m: pos.get(m["id"], len(ids)))
             self._save()
             return {"ok": True, **self.public()}
-        if action == "rules":
-            rules = body.get("rules") or {}
-            for p in PURPOSES:
-                if p["id"] in rules:
-                    v = str(rules[p["id"]] or "")
-                    st["rules"][p["id"]] = v if (v == "" or self._model(v)) else ""
-            if body.get("fallback") in FALLBACKS:
-                st["fallback"] = body["fallback"]
-            self._save()
-            return {"ok": True, **self.public()}
         if action == "test":
             return await self._test(body)
         if action == "models":
@@ -448,7 +413,7 @@ class LLMRouter(LLMPlugin):
             return {"ok": False, "message": "Base URL 和 Model Name 都要填"}
         if not key and not self._no_key(m):
             return {"ok": False, "message": "还没填 API Key"}
-        cli = ProfileLLM({**m, "timeout_s": min(float(m.get("timeout_s") or 30), 30)}, key, 10)
+        cli = ProfileLLM(m, key, 10)
         from server.plugins import ChatMessage, TextDelta
         req = ChatRequest([ChatMessage("user", "只回复两个字：在呢")], max_tokens=32)
         text, t0 = "", time.perf_counter()
@@ -462,7 +427,7 @@ class LLMRouter(LLMPlugin):
             await cli.close()
         ms = int((time.perf_counter() - t0) * 1000)
         if not text.strip():
-            return {"ok": False, "message": "连上了，但只返回了空内容（思考模式可能把字数用完了，试试高级参数里关掉思考）", "ms": ms}
+            return {"ok": False, "message": "连上了，但只返回了空内容（思考把字数用完了，试试把思考等级调低）", "ms": ms}
         return {"ok": True, "message": f"通了：{text.strip()[:20]}（{ms} ms）", "ms": ms}
 
     async def _list_remote(self, body: dict[str, Any]) -> dict[str, Any]:

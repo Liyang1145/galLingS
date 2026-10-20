@@ -1,287 +1,177 @@
 // gallings.llm.router 设置面板：作品页「设置 → 在线聊天与连接设置 → 模型」。
-// 主模型下拉 · 模型分配规则 · 模型列表（⋯ 菜单）· 添加 / 编辑模型弹窗。所有改动立即保存到插件（POST /api/plugin/<id>/<action>），不用点设置底部的“保存”。
+// 写法跟设置里其它几节一样：一行一个模型，左边单选“当前使用”，右边 测试 / 编辑 / 删除；编辑在列表里就地展开（标签 + 输入框的 set-row），不弹窗。
+// 所有改动立即保存到插件（POST /api/plugin/<id>/<action>），不用点设置底部的“保存”。
 // 宿主约定（plugin-format §10）：window.GLPanels[<插件 id>] = { mount(el, ctx) }；ctx.api(action, body) 调插件 api()，ctx.changed() 让宿主刷新状态。
 "use strict";
 (() => {
   const PID = "gallings.llm.router";
   const esc = (v) => String(v ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
-  // lucide 线条图标（ISC），和 galLingS icons.js 同一套风格
+  // lucide 线条图标（ISC），和 galLingS icons.js 同一套
   const P = {
-    cloud: '<path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/>',
-    server: '<rect width="20" height="8" x="2" y="2" rx="2"/><rect width="20" height="8" x="2" y="14" rx="2"/><path d="M6 6h.01"/><path d="M6 18h.01"/>',
-    more: '<circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/>',
+    test: '<path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/>',
+    edit: '<path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/>',
+    del: '<path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>',
     plus: '<path d="M5 12h14"/><path d="M12 5v14"/>',
-    right: '<path d="m9 18 6-6-6-6"/>',
-    down: '<path d="m6 9 6 6 6-6"/>',
-    caret: '<path d="M7 10l5 5 5-5z" fill="currentColor" stroke="none"/>',
-    back: '<path d="m12 19-7-7 7-7"/><path d="M19 12H5"/>',
-    eye: '<path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/>',
-    eyeoff: '<path d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49"/><path d="M14.084 14.158a3 3 0 0 1-4.242-4.242"/><path d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143"/><path d="m2 2 20 20"/>',
-    sort: '<path d="M3 6h18"/><path d="M7 12h10"/><path d="M10 18h4"/>',
-    rules: '<rect x="3" y="3" width="6" height="6" rx="1"/><rect x="15" y="3" width="6" height="6" rx="1"/><rect x="15" y="15" width="6" height="6" rx="1"/><path d="M9 6h6"/><path d="M6 9v6a3 3 0 0 0 3 3h6"/>',
-    refresh: '<path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/>',
-    check: '<path d="M20 6 9 17l-5-5"/>',
-    x: '<path d="M18 6 6 18"/><path d="m6 6 12 12"/>',
     link: '<path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>',
   };
-  const ic = (n, cls = "") => `<svg class="gi lr-i ${cls}" viewBox="0 0 24 24" aria-hidden="true">${P[n]}</svg>`;
-  const local = (m) => /^https?:\/\/(127\.0\.0\.1|localhost|\[::1\])(:|\/|$)/i.test(m.base_url || "");
+  const ic = (n) => `<svg class="gi" viewBox="0 0 24 24" aria-hidden="true">${P[n]}</svg>`;
+  const THINK = { off: "关", mid: "中", high: "高" };
+  const THINK_HINT = { off: "不思考，回得最快，日常陪聊够用", mid: "先想一想再回，慢一些", high: "想得最久，适合复杂的工具任务，最慢也最费额度" };
 
   function mount(el, ctx) {
-    let S = null;               // 插件状态（public()）
-    let view = "main";
-    const dlgHost = () => el.closest("dialog") || document.body;
+    let S = null;            // 插件状态（public()）
+    let editing = null;      // 正在编辑的模型 id；"new" = 新增
+    const probe = {};        // 模型 id → {busy, ok, msg}：列表里的测试结果
 
-    // ------------------------------------------------------------ 通用：弹出菜单（贴着按钮，挂在当前 dialog 的顶层里，不被滚动区裁掉）
-    let pop = null;
-    function closePop() { if (pop) { pop.remove(); pop = null; document.removeEventListener("pointerdown", outside, true); } }
-    function outside(e) { if (pop && !pop.contains(e.target) && !e.target.closest("[data-lr-popper]")) closePop(); }
-    function openPop(anchor, items, { match = false, align = "left" } = {}) {
-      closePop();
-      pop = document.createElement("div");
-      pop.className = "lr-pop"; pop.setAttribute("role", "menu");
-      pop.innerHTML = items.map((it, i) => it.sep ? `<hr>` :
-        `<button type="button" role="menuitem" data-i="${i}" class="${it.on ? "on" : ""} ${it.danger ? "danger" : ""}" ${it.disabled ? "disabled" : ""}>
-          ${it.icon ? ic(it.icon) : ""}<span>${esc(it.label)}</span>${it.sub ? `<small>${esc(it.sub)}</small>` : ""}</button>`).join("");
-      (anchor.closest("dialog") || document.body).appendChild(pop);
-      const r = anchor.getBoundingClientRect();
-      const w = match ? r.width : Math.max(180, pop.offsetWidth);
-      pop.style.width = w + "px";
-      const left = align === "right" ? r.right - w : r.left;
-      pop.style.left = Math.max(8, Math.min(left, innerWidth - w - 8)) + "px";
-      const below = innerHeight - r.bottom - 8;
-      const h = Math.min(pop.scrollHeight, 360);
-      pop.style.maxHeight = "360px";
-      pop.style.top = (below >= h || below > r.top ? r.bottom + 4 : Math.max(8, r.top - h - 4)) + "px";
-      pop.querySelectorAll("button[data-i]").forEach((b) => b.onclick = () => { const it = items[+b.dataset.i]; closePop(); it.run?.(); });
-      setTimeout(() => document.addEventListener("pointerdown", outside, true));
-      pop.querySelector("button.on, button:not([disabled])")?.focus();
-      pop.addEventListener("keydown", (e) => {
-        const bs = [...pop.querySelectorAll("button:not([disabled])")], i = bs.indexOf(document.activeElement);
-        if (e.key === "ArrowDown") { e.preventDefault(); bs[(i + 1) % bs.length]?.focus(); }
-        else if (e.key === "ArrowUp") { e.preventDefault(); bs[(i - 1 + bs.length) % bs.length]?.focus(); }
-        else if (e.key === "Escape") { e.preventDefault(); e.stopPropagation(); closePop(); anchor.focus(); }
-      });
-    }
-
+    const presetOf = (m) => S.presets.find((p) => p.id === m.preset) || S.presets[S.presets.length - 1];
     async function call(action, body) {
       const r = await ctx.api(action, body || {});
-      if (r && r.models) { S = r; render(); ctx.changed?.(); }
+      if (r && r.models) { S = r; ctx.changed?.(); }
       return r || {};
     }
-    const byId = (id) => S.models.find((m) => m.id === id);
-    const say = (msg, bad) => { const o = el.querySelector(".lr-msg"); if (!o) return; o.textContent = msg || ""; o.classList.toggle("bad", !!bad); };
 
-    // ------------------------------------------------------------ 主视图 / 规则视图
     function render() {
-      closePop();
-      if (!S) { el.innerHTML = `<div class="lr"><p class="muted">读取中……</p></div>`; return; }
-      el.innerHTML = `<div class="lr">${view === "rules" ? rulesView() : mainView()}<p class="lr-msg muted" aria-live="polite"></p></div>`;
+      if (!S) { el.innerHTML = `<div class="lm"><small class="muted">读取中……</small></div>`; return; }
+      const rows = S.models.map((m) => editing === m.id ? `<li class="lm-edit">${form(m)}</li>` : item(m)).join("");
+      el.innerHTML = `<div class="lm">
+        ${S.models.length ? `<small class="muted lm-lead">点一行切换正在用的模型。剧情即兴、手账悄悄话、结局后聊天、建卡都用它。</small>` : ""}
+        <ul class="lm-list" role="radiogroup" aria-label="正在用的模型">${rows}${editing === "new" ? `<li class="lm-edit">${form(null)}</li>` : ""}</ul>
+        ${!S.models.length && editing !== "new" ? `<p class="muted lm-empty">还没有模型。剧情照常能玩，手账悄悄话会用离线回复；想让她用 AI 回你，就加一个。</p>` : ""}
+        ${editing === "new" ? "" : `<button type="button" class="lm-new" id="lmNew">${ic("plus")}<span>添加模型</span></button>`}
+      </div>`;
       bind();
     }
-    function mainView() {
-      const main = byId(S.main);
-      const custom = Object.values(S.rules).filter(Boolean).length;
-      const rows = S.models.map((m) => {
-        const tags = [];
-        if (!m.usable) tags.push(`<em class="warn">${m.key_set || m.no_key ? "未填完整" : "未填密钥"}</em>`);
-        if (m.no_key && m.usable) tags.push(`<em>本机</em>`);
-        const uses = S.purposes.filter((p) => S.rules[p.id] === m.id).map((p) => p.name);
-        if (uses.length) tags.push(`<em class="use">${esc(uses.join("、"))}</em>`);
-        return `<li class="${m.id === S.main ? "main" : ""}" data-id="${esc(m.id)}">
-          <button type="button" class="lr-av" data-act="edit" title="编辑">${ic(local(m) ? "server" : "cloud")}</button>
-          <button type="button" class="lr-txt" data-act="edit" title="编辑"><b>${esc(m.name)}</b><small>${esc(m.model)}</small></button>
-          <span class="lr-tags">${tags.join("")}</span>
-          <button type="button" class="lr-more" data-act="more" data-lr-popper title="更多" aria-label="${esc(m.name)} 的更多操作">${ic("more")}</button></li>`;
-      }).join("");
-      return `<div class="lr-view">
-        <div class="lr-cap">LLM API</div>
-        <div class="lr-field"><span class="lr-legend">主模型</span>
-          <button type="button" class="lr-select" id="lrMain" data-lr-popper ${S.models.length ? "" : "disabled"} aria-haspopup="menu">
-            <span>${main ? esc(main.name) : S.models.length ? "（没有可用的模型）" : "还没有模型"}</span>${ic("caret", "lr-caret")}</button></div>
-        <button type="button" class="lr-row" id="lrRules">${ic("rules", "lr-ri")}<span>模型分配规则</span>
-          <small>${custom ? `${custom} 项单独分配` : "全部跟随主模型"}</small>${ic("right")}</button>
-        <div class="lr-head"><b>模型列表</b><button type="button" class="lr-ib" id="lrSort" data-lr-popper title="排序" ${S.models.length > 1 ? "" : "disabled"}>${ic("sort")}</button></div>
-        ${rows ? `<ul class="lr-list">${rows}</ul>` : `<p class="lr-empty muted">还没有模型。点“添加模型”，选一个服务商、填上密钥就能用；不配也能玩剧情，悄悄话用离线回复。</p>`}
-        <button type="button" class="lr-add" id="lrAdd">${ic("plus")}<span>添加模型</span></button>
-      </div>`;
-    }
-    function rulesView() {
-      const name = (id) => id ? (byId(id)?.name || "（已删除）") : "跟随主模型";
-      const main = byId(S.main);
-      return `<div class="lr-view">
-        <div class="lr-sub"><button type="button" class="lr-ib" id="lrBack" title="返回">${ic("back")}</button><b>模型分配规则</b></div>
-        <p class="muted lr-hint">不同用途可以用不同模型，例如剧情即兴用快的、结局后聊天用聪明的。没单独分配的跟随主模型${main ? `（现在是 ${esc(main.name)}）` : ""}。</p>
-        ${S.purposes.map((p) => `<div class="lr-rule"><div class="lr-rt"><b>${esc(p.name)}</b><small class="muted">${esc(p.desc)}</small></div>
-          <button type="button" class="lr-select sm" data-rule="${p.id}" data-lr-popper aria-haspopup="menu"><span>${esc(name(S.rules[p.id]))}</span>${ic("caret", "lr-caret")}</button></div>`).join("")}
-        <div class="lr-rule"><div class="lr-rt"><b>失败时</b><small class="muted">分到的模型出错、超时或余额不足时</small></div>
-          <div class="seg lr-seg" id="lrFb">${[["main", "换用主模型"], ["list", "按列表依次换"], ["none", "不换"]].map(([v, t]) =>
-            `<button type="button" data-v="${v}" class="${S.fallback === v ? "on" : ""}">${t}</button>`).join("")}</div></div>
-      </div>`;
-    }
-    function bind() {
-      const q = (s) => el.querySelector(s);
-      if (view === "rules") {
-        q("#lrBack").onclick = () => { view = "main"; render(); q("#lrRules")?.focus(); };
-        el.querySelectorAll("[data-rule]").forEach((b) => b.onclick = () => {
-          const cur = S.rules[b.dataset.rule] || "";
-          openPop(b, [{ label: "跟随主模型", on: !cur, run: () => call("rules", { rules: { [b.dataset.rule]: "" } }) }, { sep: true },
-            ...S.models.map((m) => ({ label: m.name, sub: m.usable ? m.model : "未填密钥", on: cur === m.id, disabled: !m.usable,
-              run: () => call("rules", { rules: { [b.dataset.rule]: m.id } }) }))], { match: true });
-        });
-        el.querySelectorAll("#lrFb button").forEach((b) => b.onclick = () => call("rules", { fallback: b.dataset.v }));
-        return;
-      }
-      q("#lrMain").onclick = (e) => openPop(e.currentTarget, S.models.map((m) => ({
-        label: m.name, sub: m.usable ? "" : "未填密钥", on: m.id === S.main, run: async () => {
-          await call("main", { id: m.id });
-          if (!m.usable) say(`${m.name} 还没填密钥，暂时用列表里第一个可用的模型。`, true);
-        } })), { match: true });
-      q("#lrRules").onclick = () => { view = "rules"; render(); };
-      q("#lrAdd").onclick = () => editModel(null);
-      q("#lrSort").onclick = (e) => {
-        const ids = (arr) => call("order", { ids: arr.map((m) => m.id) });
-        const ms = [...S.models];
-        openPop(e.currentTarget, [
-          { label: "主模型置顶", run: () => ids([...ms.filter((m) => m.id === S.main), ...ms.filter((m) => m.id !== S.main)]) },
-          { label: "按名称", run: () => ids(ms.sort((a, b) => a.name.localeCompare(b.name, "zh-CN"))) },
-          { label: "按服务商", run: () => ids(ms.sort((a, b) => (a.base_url + a.name).localeCompare(b.base_url + b.name))) },
-          { sep: true },
-          { label: "可用的排前面", run: () => ids([...ms.filter((m) => m.usable), ...ms.filter((m) => !m.usable)]) },
-        ], { align: "right" });
-      };
-      el.querySelectorAll(".lr-list li").forEach((li) => {
-        const m = byId(li.dataset.id);
-        li.querySelectorAll('[data-act="edit"]').forEach((b) => b.onclick = () => editModel(m));
-        li.querySelector('[data-act="more"]').onclick = (e) => {
-          const i = S.models.indexOf(m);
-          const move = (d) => { const arr = [...S.models]; arr.splice(i, 1); arr.splice(i + d, 0, m); call("order", { ids: arr.map((x) => x.id) }); };
-          openPop(e.currentTarget, [
-            { label: "设为主模型", icon: "check", disabled: m.id === S.main, run: () => call("main", { id: m.id }) },
-            { label: "编辑", run: () => editModel(m) },
-            { label: "测试连接", icon: "refresh", run: async () => { say(`正在测试 ${m.name}……`); const r = await ctx.api("test", { id: m.id }); say(`${m.name}：${r.message || (r.ok ? "通了" : "失败")}`, !r.ok); } },
-            { label: "复制一份", run: () => call("duplicate", { id: m.id }) },
-            { sep: true },
-            { label: "上移", disabled: i === 0, run: () => move(-1) },
-            { label: "下移", disabled: i === S.models.length - 1, run: () => move(1) },
-            { sep: true },
-            { label: "删除", danger: true, run: () => { if (confirm(`删除模型“${m.name}”？它的密钥也会一起删掉。`)) call("delete", { id: m.id }); } },
-          ], { align: "right" });
-        };
-      });
+
+    function item(m) {
+      const cur = m.id === S.main;
+      const pr = probe[m.id];
+      let state;
+      if (pr?.busy) state = `<i class="ldot wait"></i>测试中……`;
+      else if (pr) state = `<i class="ldot ${pr.ok ? "ok" : "bad"}"></i>${esc(pr.msg)}`;
+      else if (!m.usable) state = `<i class="ldot bad"></i>${m.key_set || m.no_key ? "没填完整" : "还没填密钥"}`;
+      else state = `<i class="ldot ${cur ? "ok" : ""}"></i>${m.no_key ? "本机服务" : `密钥 ···${esc(m.key_tail || "已设置")}`}`;
+      return `<li class="lm-item ${cur ? "on" : ""}" data-id="${esc(m.id)}">
+        <button type="button" class="lm-pick" role="radio" aria-checked="${cur}" title="${cur ? "正在用" : "改用这个模型"}">
+          <span class="lm-ring" aria-hidden="true"></span>
+          <span class="lm-main">
+            <span class="lm-l1"><b>${esc(m.name)}</b><span class="lm-prov">${esc(presetOf(m).name)}</span>${cur ? `<span class="lm-cur">正在用</span>` : ""}</span>
+            <span class="lm-l2"><code>${esc(m.model)}</code><span class="lm-sep">·</span>思考 ${THINK[m.think] || "关"}<span class="lm-sep">·</span><span class="lm-state ${pr && !pr.ok ? "bad" : ""}">${state}</span></span>
+          </span>
+        </button>
+        <span class="lm-acts">
+          <button type="button" data-act="test" title="测试连接" aria-label="测试 ${esc(m.name)}" ${pr?.busy ? "disabled" : ""}>${ic("test")}</button>
+          <button type="button" data-act="edit" title="编辑" aria-label="编辑 ${esc(m.name)}">${ic("edit")}</button>
+          <button type="button" data-act="del" title="删除" aria-label="删除 ${esc(m.name)}">${ic("del")}</button>
+        </span></li>`;
     }
 
-    // ------------------------------------------------------------ 添加 / 编辑模型弹窗
-    function editModel(m) {
-      const isNew = !m;
-      const d = document.createElement("dialog");
-      d.className = "lr-dlg";
-      let preset = m ? m.preset : "deepseek";
-      const pre = () => S.presets.find((p) => p.id === preset) || S.presets[S.presets.length - 1];
-      const fld = (id, label, attrs = "", extra = "") => `<label class="lr-in ${extra ? "has-tail" : ""}"><input id="${id}" placeholder=" " spellcheck="false" autocomplete="off" ${attrs}><span>${label}</span>${extra}</label>`;
-      d.innerHTML = `<form method="dialog" class="lr-form">
-        <h3>${isNew ? "添加模型" : "编辑模型"}</h3>
-        <div class="lr-fbody">
-          <div class="lr-field"><span class="lr-legend">预设模型</span>
-            <button type="button" class="lr-select" id="fPreset" data-lr-popper aria-haspopup="menu"><span></span>${ic("caret", "lr-caret")}</button></div>
-          ${fld("fName", "模型显示名", 'maxlength="40"')}
-          ${fld("fBase", "Base URL", 'inputmode="url"')}
-          ${fld("fKey", "API Key", 'type="password"', `<button type="button" class="lr-tail" id="fEye" title="显示 / 隐藏">${ic("eye")}</button>`)}
-          <small class="lr-note muted" id="fKeyNote"></small>
-          ${fld("fModel", "Model Name", 'list="fModels"', `<button type="button" class="lr-tail" id="fFetch" title="从服务商拉取模型列表">${ic("refresh")}</button>`)}
-          <datalist id="fModels"></datalist>
-          <button type="button" class="lr-adv-t" id="fAdvT" aria-expanded="false"><span>高级参数</span>${ic("down")}</button>
-          <div class="lr-adv" id="fAdv" hidden>
-            ${fld("fTemp", "温度（0～2，留空 = 默认）", 'inputmode="decimal"')}
-            ${fld("fTopP", "Top P（0～1，留空 = 默认）", 'inputmode="decimal"')}
-            ${fld("fMax", "最大输出 tokens（留空 = 不限）", 'inputmode="numeric"')}
-            ${fld("fTimeout", "超时秒数（默认 60）", 'inputmode="numeric"')}
-            <div class="lr-think"><span>思考模式</span><div class="seg lr-seg" id="fThink">
-              <button type="button" data-v="auto">自动</button><button type="button" data-v="disabled">关</button><button type="button" data-v="enabled">开</button></div></div>
-            <small class="lr-note muted">自动：DeepSeek 关掉思考（短回复不会被思考吃光），其它服务不发这个参数。</small>
-          </div>
-        </div>
-        <div class="lr-foot"><small class="lr-out muted" aria-live="polite"></small>
-          <button type="button" class="lr-btn" id="fTest">测试</button>
-          <button type="button" class="lr-btn text" id="fCancel">取消</button>
-          <button type="submit" class="lr-btn primary" id="fSave">保存</button></div>
+    function form(m) {
+      const preset = m ? m.preset : "deepseek";
+      const p = S.presets.find((x) => x.id === preset) || S.presets[0];
+      const think = m?.think || "off";
+      return `<form class="lm-form" novalidate>
+        <div class="lm-ftitle">${m ? `编辑 <b>${esc(m.name)}</b>` : "添加模型"}</div>
+        <div class="set-row lm-provrow"><span>服务商</span><div class="lm-chips" role="radiogroup" aria-label="服务商">
+          ${S.presets.map((x) => `<button type="button" role="radio" data-p="${x.id}" aria-checked="${x.id === preset}" class="${x.id === preset ? "on" : ""}">${esc(x.name)}</button>`).join("")}</div></div>
+        <label class="set-row"><span>名称</span><input name="name" maxlength="40" spellcheck="false" autocomplete="off" placeholder="列表里显示的名字" value="${esc(m ? m.name : p.name)}"></label>
+        <label class="set-row"><span>服务地址</span><input name="base_url" spellcheck="false" autocomplete="off" inputmode="url" placeholder="https://…/v1" value="${esc(m ? m.base_url : p.base_url)}"></label>
+        <div class="set-row"><span>密钥</span><input name="api_key" type="password" spellcheck="false" autocomplete="off"><button type="button" class="lm-eye">显示</button></div>
+        <div class="set-row lm-hintrow"><span></span><small class="muted lm-keynote"></small></div>
+        <div class="set-row"><span>模型</span><input name="model" spellcheck="false" autocomplete="off" list="lmModels" placeholder="例如 deepseek-chat" value="${esc(m ? m.model : (p.models[0] || ""))}"><button type="button" class="lm-fetch" title="从服务商拉取可用模型">拉取列表</button></div>
+        <datalist id="lmModels"></datalist>
+        <div class="set-row"><span>思考等级</span><div class="seg lm-think">${Object.entries(THINK).map(([v, t]) => `<button type="button" data-v="${v}" class="${v === think ? "on" : ""}">${t}</button>`).join("")}</div></div>
+        <div class="set-row lm-hintrow"><span></span><small class="muted lm-thinknote">${THINK_HINT[think]}</small></div>
+        <div class="lm-fbar"><small class="muted lm-out" aria-live="polite"></small>
+          <button type="button" class="lm-ftest">测试</button><button type="button" class="lm-cancel">取消</button><button type="submit" class="primary lm-save">保存</button></div>
       </form>`;
-      dlgHost().appendChild(d);
-      const $ = (id) => d.querySelector("#" + id);
-      const out = (msg, bad) => { const o = d.querySelector(".lr-out"); o.textContent = msg || ""; o.classList.toggle("bad", !!bad); o.classList.toggle("ok", bad === false); };
-      let think = m?.thinking || "auto";
-      const syncThink = () => d.querySelectorAll("#fThink button").forEach((b) => b.classList.toggle("on", b.dataset.v === think));
-      d.querySelectorAll("#fThink button").forEach((b) => b.onclick = () => { think = b.dataset.v; syncThink(); });
-      const syncModels = (list) => { $("fModels").innerHTML = (list || pre().models).map((x) => `<option value="${esc(x)}">`).join(""); };
-      function applyPreset(fill) {
-        const p = pre();
-        $("fPreset").querySelector("span").textContent = p.name;
-        syncModels();
-        if (fill) {
-          if (p.id !== "custom") { $("fBase").value = p.base_url; $("fModel").value = p.models[0] || ""; if (!$("fName").dataset.touched) $("fName").value = p.name; }
-          else { $("fBase").value = ""; $("fModel").value = ""; if (!$("fName").dataset.touched) $("fName").value = ""; }
-        }
-        keyNote();
-      }
+    }
+
+    function bind() {
+      const q = (s, r = el) => r.querySelector(s);
+      q("#lmNew") && (q("#lmNew").onclick = () => { editing = "new"; render(); q(".lm-form input[name=api_key]")?.focus(); });
+      el.querySelectorAll(".lm-item").forEach((li) => {
+        const m = S.models.find((x) => x.id === li.dataset.id);
+        q(".lm-pick", li).onclick = () => { if (m.id !== S.main) call("main", { id: m.id }).then(render); };
+        q('[data-act="test"]', li).onclick = async () => {
+          probe[m.id] = { busy: true }; render();
+          const r = await ctx.api("test", { id: m.id }).catch((e) => ({ ok: false, message: e.message }));
+          probe[m.id] = { ok: !!r.ok, msg: (r.message || (r.ok ? "通了" : "失败")).replace(/^通了：/, "通了 · ") }; render();
+        };
+        q('[data-act="edit"]', li).onclick = () => { editing = m.id; render(); q(".lm-form input[name=name]")?.focus(); };
+        q('[data-act="del"]', li).onclick = async () => {
+          if (!confirm(`删除“${m.name}”？它的密钥也会一起删掉。`)) return;
+          delete probe[m.id]; await call("delete", { id: m.id }); render();
+        };
+      });
+      const f = q(".lm-form");
+      if (f) bindForm(f, editing === "new" ? null : S.models.find((x) => x.id === editing));
+    }
+
+    function bindForm(f, m) {
+      const F = (n) => f.elements[n];
+      let preset = m ? m.preset : "deepseek";
+      let think = m?.think || "off";
+      let nameTouched = !!m;
+      const pre = () => S.presets.find((x) => x.id === preset) || S.presets[S.presets.length - 1];
+      const out = (msg, bad) => { const o = f.querySelector(".lm-out"); o.textContent = msg || ""; o.classList.toggle("bad", bad === true); o.classList.toggle("ok", bad === false); };
+      const local = () => /^https?:\/\/(127\.0\.0\.1|localhost|\[::1\])(:|\/|$)/i.test(F("base_url").value.trim());
+      const models = (list) => { f.querySelector("#lmModels").innerHTML = (list || pre().models).map((x) => `<option value="${esc(x)}">`).join(""); };
       function keyNote() {
         const p = pre();
-        const parts = [];
-        if (m?.key_set) parts.push(`已保存密钥（末 4 位 ${m.key_tail || "****"}），留空 = 不改`);
-        else if (p.no_key || local({ base_url: $("fBase").value })) parts.push("本机服务一般不需要密钥");
-        else parts.push("只保存在本机 galLingS 数据文件夹里，网页拿不到原文");
-        $("fKeyNote").innerHTML = esc(parts.join("；")) + (p.key_url ? ` · <a href="${esc(p.key_url)}" target="_blank" rel="noopener">获取密钥 ${ic("link")}</a>` : "");
+        const t = m?.key_set ? `已保存（末 4 位 ${m.key_tail || "****"}），留空 = 不改` : p.no_key || local() ? "本机服务一般不用填" : "只存在本机 galLingS 数据文件夹里，网页读不到原文";
+        f.querySelector(".lm-keynote").innerHTML = esc(t) + (p.key_url ? ` · <a href="${esc(p.key_url)}" target="_blank" rel="noopener">去 ${esc(p.name)} 申请 ${ic("link")}</a>` : "");
+        F("api_key").placeholder = m?.key_set ? "留空 = 不改" : p.no_key ? "可不填" : "sk-…";
       }
-      $("fName").oninput = () => { $("fName").dataset.touched = "1"; };
-      $("fBase").oninput = keyNote;
-      if (m) {
-        $("fName").value = m.name; $("fName").dataset.touched = "1"; $("fBase").value = m.base_url; $("fModel").value = m.model;
-        $("fTemp").value = m.temperature ?? ""; $("fTopP").value = m.top_p ?? ""; $("fMax").value = m.max_tokens ?? ""; $("fTimeout").value = m.timeout_s ?? "";
-        if (m.temperature != null || m.top_p != null || m.max_tokens != null || m.timeout_s != null || (m.thinking && m.thinking !== "auto")) { $("fAdv").hidden = false; $("fAdvT").setAttribute("aria-expanded", "true"); }
-      }
-      applyPreset(isNew); syncThink();
-      $("fPreset").onclick = (e) => openPop(e.currentTarget, S.presets.map((p) => ({ label: p.name, sub: p.base_url ? p.base_url.replace(/^https?:\/\//, "") : "任意 OpenAI 兼容接口", on: p.id === preset,
-        run: () => { preset = p.id; applyPreset(true); $(p.id === "custom" ? "fBase" : "fKey").focus(); } })), { match: true });
-      $("fEye").onclick = () => { const k = $("fKey"); k.type = k.type === "password" ? "text" : "password"; $("fEye").innerHTML = ic(k.type === "password" ? "eye" : "eyeoff"); k.focus(); };
-      $("fAdvT").onclick = () => { const open = $("fAdv").hidden; $("fAdv").hidden = !open; $("fAdvT").setAttribute("aria-expanded", String(open)); };
-      const draft = () => ({ id: m?.id || "", preset, name: $("fName").value.trim(), base_url: $("fBase").value.trim(), model: $("fModel").value.trim(),
-        temperature: $("fTemp").value.trim(), top_p: $("fTopP").value.trim(), max_tokens: $("fMax").value.trim(), timeout_s: $("fTimeout").value.trim(), thinking: think });
-      const keyVal = () => $("fKey").value.trim();
-      $("fFetch").onclick = async () => {
-        out("正在拉取模型列表……");
-        const r = await ctx.api("models", { model: draft(), api_key: keyVal() || undefined });
-        if (r.ok) { syncModels(r.models); out(`拿到 ${r.models.length} 个模型，点 Model Name 输入框选择。`, false); $("fModel").focus(); }
-        else out(r.message || "拉取失败", true);
+      F("name").oninput = () => { nameTouched = true; };
+      F("base_url").oninput = keyNote;
+      f.querySelectorAll(".lm-chips button").forEach((b) => b.onclick = () => {
+        preset = b.dataset.p;
+        f.querySelectorAll(".lm-chips button").forEach((x) => { x.classList.toggle("on", x === b); x.setAttribute("aria-checked", String(x === b)); });
+        const p = pre();
+        F("base_url").value = p.base_url; F("model").value = p.models[0] || "";
+        if (!nameTouched) F("name").value = p.id === "custom" ? "" : p.name;
+        models(); keyNote(); out("");
+        (p.id === "custom" ? F("base_url") : p.no_key ? F("model") : F("api_key")).focus();
+      });
+      f.querySelector(".lm-eye").onclick = (e) => { const k = F("api_key"); k.type = k.type === "password" ? "text" : "password"; e.currentTarget.textContent = k.type === "password" ? "显示" : "隐藏"; };
+      f.querySelectorAll(".lm-think button").forEach((b) => b.onclick = () => {
+        think = b.dataset.v;
+        f.querySelectorAll(".lm-think button").forEach((x) => x.classList.toggle("on", x === b));
+        f.querySelector(".lm-thinknote").textContent = THINK_HINT[think];
+      });
+      const draft = () => ({ id: m?.id || "", preset, name: F("name").value.trim(), base_url: F("base_url").value.trim(), model: F("model").value.trim(), think });
+      const key = () => F("api_key").value.trim() || undefined;
+      f.querySelector(".lm-fetch").onclick = async (e) => {
+        const b = e.currentTarget; b.disabled = true; out("正在拉取……");
+        const r = await ctx.api("models", { model: draft(), api_key: key() }).catch((err) => ({ ok: false, message: err.message }));
+        b.disabled = false;
+        if (r.ok) { models(r.models); out(`拿到 ${r.models.length} 个，点“模型”输入框选`, false); F("model").focus(); } else out(r.message || "拉取失败", true);
       };
-      $("fTest").onclick = async () => {
-        $("fTest").disabled = true; out("测试中……");
-        try { const r = await ctx.api("test", { model: draft(), api_key: keyVal() || undefined }); out(r.message || (r.ok ? "通了" : "失败"), !r.ok); }
-        catch (e) { out("测试失败：" + e.message, true); }
-        $("fTest").disabled = false;
+      f.querySelector(".lm-ftest").onclick = async (e) => {
+        const b = e.currentTarget; b.disabled = true; out("测试中……");
+        const r = await ctx.api("test", { model: draft(), api_key: key() }).catch((err) => ({ ok: false, message: err.message }));
+        b.disabled = false; out(r.message || (r.ok ? "通了" : "失败"), !r.ok);
       };
-      const close = () => { closePop(); d.close(); d.remove(); };
-      $("fCancel").onclick = close;
-      d.addEventListener("cancel", (e) => { if (pop) { e.preventDefault(); closePop(); return; } e.preventDefault(); close(); });
-      d.querySelector("form").onsubmit = async (e) => {
+      const close = () => { editing = null; render(); };
+      f.querySelector(".lm-cancel").onclick = close;
+      f.addEventListener("keydown", (e) => { if (e.key === "Escape") { e.preventDefault(); e.stopPropagation(); close(); } });
+      f.onsubmit = async (e) => {
         e.preventDefault();
         const body = { model: draft() };
-        if (!body.model.base_url || !body.model.model) { out("Base URL 和 Model Name 都要填", true); (body.model.base_url ? $("fModel") : $("fBase")).focus(); return; }
-        if (keyVal()) body.api_key = keyVal();
-        $("fSave").disabled = true;
-        try {
-          const r = await call("save", body);
-          if (!r.ok) { out(r.message || "保存失败", true); $("fSave").disabled = false; return; }
-          close();
-          const saved = byId(r.id);
-          say(saved && !saved.usable ? `已保存 ${saved.name}，还差 API Key 才能用。` : `已保存 ${saved?.name || ""}。`, saved && !saved.usable);
-        } catch (err) { out("保存失败：" + err.message, true); $("fSave").disabled = false; }
+        if (!body.model.base_url || !body.model.model) { out("服务地址和模型都要填", true); (body.model.base_url ? F("model") : F("base_url")).focus(); return; }
+        if (key()) body.api_key = key();
+        const b = f.querySelector(".lm-save"); b.disabled = true;
+        const r = await call("save", body).catch((err) => ({ ok: false, message: err.message }));
+        if (!r.ok) { b.disabled = false; out(r.message || "保存失败", true); return; }
+        delete probe[r.id];
+        editing = null; render();
       };
-      d.showModal();
-      (isNew ? $("fKey") : $("fName")).focus();
+      models(); keyNote();
     }
 
     render();
-    ctx.api("state").then((r) => { S = r; render(); }).catch((e) => { el.innerHTML = `<p class="muted bad">读不到模型设置：${esc(e.message)}</p>`; });
-    return { refresh: () => ctx.api("state").then((r) => { S = r; render(); }), destroy: closePop };
+    ctx.api("state").then((r) => { S = r; render(); }).catch((e) => { el.innerHTML = `<small class="muted bad">读不到模型设置：${esc(e.message)}</small>`; });
+    return { refresh: () => ctx.api("state").then((r) => { S = r; if (!editing) render(); }), destroy: () => {} };
   }
 
   (window.GLPanels = window.GLPanels || {})[PID] = { mount };

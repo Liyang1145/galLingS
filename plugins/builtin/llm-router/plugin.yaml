@@ -1,13 +1,13 @@
 schema_version: 1
 id: gallings.llm.router
-name: LLM API（多模型 + 分配规则）
+name: 多模型（设置 → 模型）
 version: 0.1.0
 kind: llm
 api: 1
 description: >-
   在网页设置里管理多个 OpenAI 兼容模型（DeepSeek、通义千问、硅基流动、Kimi、OpenRouter、OpenAI、Ollama、自定义），
-  选一个主模型，再按用途（剧情即兴、手账悄悄话、结局后聊天、建卡）分配不同模型；失败时按规则换用备选。
-  自带设置面板（web/panel.js），挂进作品页「设置 → 在线聊天与连接设置」的模型一节。
+  点一下切换正在用的模型，每个模型可设思考等级（关 / 中 / 高）。自带设置面板（web/panel.js），
+  挂进作品页「设置 → 在线聊天与连接设置」的模型一节。
 requires:
   gallings: ">=0.1,<0.2"
   python: ">=3.11"

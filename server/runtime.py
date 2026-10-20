@@ -104,9 +104,9 @@ class Runtime:
         await self.plugins.stop()
 
     def llm_chain(self, purpose: str | None = None) -> list[Any]:
-        """这次调用的模型降级链。purpose：story / soul / chat / cards（见 gallings.llm.router 的分配规则）。
+        """这次调用的模型降级链。purpose：story / soul / chat / cards，标明调用方（多模型插件目前不按用途区分）。
 
-        选了多模型路由插件（gallings.llm.router）且它有可用模型时：链 = 路由按用途给的模型 + 其余非 openai-compat 的 llm 插件
+        选了多模型插件（gallings.llm.router）且它有可用模型时：链 = 它正在用的模型 + 其余非 openai-compat 的 llm 插件
         （路由里配的就是实际用的，旧的单模型插件不再悄悄兜底）；路由还没配模型时照旧走其余插件。
         """
         chain = [p for p in self.plugins.chain("llm") if isinstance(p, LLMPlugin)]

@@ -33,7 +33,7 @@ log = logging.getLogger("gallings.post_ending")
 
 
 def _chain(rt: Any) -> list[Any]:
-    """结局后聊天用的模型链（多模型路由里的“结局后聊天”分配）；老的运行时替身不收参数时照旧。"""
+    """结局后聊天用的模型链；老的运行时替身不收参数时照旧。"""
     try:
         return rt.llm_chain("chat")
     except TypeError:

@@ -308,11 +308,23 @@ fn main() {
         })
         .setup(move |app| {
             let start = if full.is_some() { app_url("__boot.html") } else { app_url("vn.html") };
+            let nav_handle = app.handle().clone();
             let win = WebviewWindowBuilder::new(app, "main", WebviewUrl::External(start.parse().unwrap()))
                 .title(&title)
-                .inner_size(1440.0, 860.0)
-                .min_inner_size(960.0, 600.0)
+                .inner_size(1600.0, 900.0)
+                .min_inner_size(960.0, 540.0)
                 .center()
+                .on_navigation(move |url| {
+                    // 纯游戏模式按 F11 / Alt+Enter 会跳到这个地址：拦下来，切换整个窗口的全屏
+                    if url.path() == "/__gl/fullscreen" {
+                        if let Some(w) = nav_handle.get_webview_window("main") {
+                            let on = w.is_fullscreen().unwrap_or(false);
+                            let _ = w.set_fullscreen(!on);
+                        }
+                        return false;
+                    }
+                    true
+                })
                 .on_new_window(|url, _| {
                     open_external(url.as_str());
                     NewWindowResponse::Deny
@@ -329,7 +341,7 @@ fn main() {
                             let t0 = Instant::now();
                             loop {
                                 if backend_ready(port) {
-                                    let url = format!("http://127.0.0.1:{port}/vn.html");
+                                    let url = format!("http://127.0.0.1:{port}/vn.html?play=desktop");
                                     let _ = win.navigate(url.parse().unwrap());
                                     return;
                                 }

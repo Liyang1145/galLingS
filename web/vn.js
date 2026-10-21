@@ -6,6 +6,9 @@
 const $ = (id) => document.getElementById(id);
 const esc = (v) => String(v ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 const game = $("game");
+// 纯游戏模式（?play=1，桌面完整版是 ?play=desktop）：不要外框，窗口里只有游戏本体；galLingS 照常在后台，游戏仍按 host=gallings 连它
+const PLAY = new URLSearchParams(location.search).get("play");
+if (PLAY) document.body.classList.add("pure");
 let H = null;              // 游戏的 VNHost
 let docked = false;
 
@@ -36,7 +39,7 @@ game.addEventListener("load", () => {
   let n = 0;
   const t = setInterval(() => {
     const w = game.contentWindow;
-    if (w && w.VNHost) { clearInterval(t); H = w.VNHost; $("plugBtn").hidden = !H.openPlugins; $("soulCss").textContent = H.css(); applyDock(); tick(); }
+    if (w && w.VNHost) { clearInterval(t); hookPureKeys(w); H = w.VNHost; $("plugBtn").hidden = !H.openPlugins; $("soulCss").textContent = H.css(); applyDock(); tick(); }
     else if (++n > 100) clearInterval(t);
   }, 100);
 });
@@ -53,7 +56,7 @@ function setJournal(open) {
 }
 $("journalBtn").onclick = () => setJournal(!journalOpen());
 $("jClose").onclick = () => setJournal(false);
-setJournal(localStorage.getItem("gl.vn.journal") === "1");
+setJournal(!PLAY && localStorage.getItem("gl.vn.journal") === "1");
 
 // ---------------------------------------------------------------- 窗口 / 全屏
 document.querySelectorAll("#viewSeg button").forEach((b) => b.onclick = async () => {
@@ -233,3 +236,19 @@ new ResizeObserver(layoutScreen).observe($("stage"));
 addEventListener("resize", layoutScreen);
 document.addEventListener("fullscreenchange", () => requestAnimationFrame(layoutScreen));
 layoutScreen();
+
+// ---------------------------------------------------------------- 纯游戏模式的快捷键：F11 / Alt+Enter 全屏，F10 临时显示调试外框
+// 焦点通常在游戏 iframe 里，所以游戏页（同源）和外层都要挂
+function pureKey(e) {
+  if (!PLAY) return;
+  if (e.key === "F11" || (e.key === "Enter" && e.altKey)) {
+    e.preventDefault();
+    if (PLAY === "desktop") location.href = "/__gl/fullscreen";        // 桌面外壳拦下这个地址，切换整个窗口的全屏
+    else if (document.fullscreenElement) document.exitFullscreen();
+    else $("screen").requestFullscreen().catch(() => {});
+  } else if (e.key === "F10") {
+    e.preventDefault(); document.body.classList.toggle("pure-debug"); requestAnimationFrame(layoutScreen);
+  }
+}
+function hookPureKeys(w) { if (!PLAY) return; try { w.addEventListener("keydown", pureKey, true); } catch (e) {} }
+addEventListener("keydown", pureKey, true);

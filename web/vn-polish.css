@@ -104,3 +104,9 @@ body.vnpage { --ink:#edf0e4; --ink2:#bccbc7; --paper:#16282e; --sea:#537d77; --s
 .engine-tl .etl-say em { font-style: normal; color: #9cd3e0; margin-right: 6px; }
 @media (max-width: 1100px) { .vnpage .engine-tl { position: absolute; right: 0; top: 0; bottom: 0; z-index: 11; width: min(92vw, 380px); box-shadow: -10px 0 30px rgba(0,0,0,.4); } }
 .engine-tl .pick { display: block; color: #9fd0ff; font-weight: 600; }
+
+/* 纯游戏模式（vn.html?play=…）：只有游戏画面，外框、手账侧栏、引擎时间轴都不显示；F10 临时打开 */
+body.pure:not(.pure-debug) .topbar,
+body.pure:not(.pure-debug) #journal,
+body.pure:not(.pure-debug) #engineTl { display: none !important; }
+body.pure, body.pure .stage, html:has(body.pure) { background: #000 !important; }

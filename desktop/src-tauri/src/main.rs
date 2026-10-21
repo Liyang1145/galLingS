@@ -278,6 +278,30 @@ fn app_url(path: &str) -> String {
     return format!("app://localhost/{path}");
 }
 
+/// 纯游戏画面：不依赖 vn.js / vn-polish.css 版本（WebView 缓存了旧文件也照样生效），
+/// 在 galLingS 作品页上把顶栏、手账侧栏、引擎时间轴全藏掉，游戏画面铺满窗口。F10 临时显示外框，F11 / Alt+Enter 全屏。
+const PURE_GAME_JS: &str = r#"
+(function () {
+  if (window.top !== window || location.pathname !== '/vn.html') return;
+  var css = 'html:not(.gl-debug) body .topbar,html:not(.gl-debug) #journal,html:not(.gl-debug) #engineTl{display:none!important}'
+    + 'html:not(.gl-debug),html:not(.gl-debug) body,html:not(.gl-debug) .stage{background:#000!important}'
+    + 'html:not(.gl-debug) .layout{padding:0!important;margin:0!important;gap:0!important}';
+  function key(e) {
+    if (e.key === 'F11' || (e.key === 'Enter' && e.altKey)) { e.preventDefault(); e.stopPropagation(); location.href = '/__gl/fullscreen'; }
+    else if (e.key === 'F10') { e.preventDefault(); e.stopPropagation(); document.documentElement.classList.toggle('gl-debug'); window.dispatchEvent(new Event('resize')); }
+  }
+  addEventListener('keydown', key, true);
+  function setup() {
+    var st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);
+    document.body.classList.add('pure');
+    var g = document.getElementById('game');
+    if (g) g.addEventListener('load', function () { try { g.contentWindow.addEventListener('keydown', key, true); } catch (e) {} });
+    window.dispatchEvent(new Event('resize'));
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', setup); else setup();
+})();
+"#;
+
 fn main() {
     let dir = app_dir();
     let full = full_layout(&dir);
@@ -314,6 +338,7 @@ fn main() {
                 .inner_size(1600.0, 900.0)
                 .min_inner_size(960.0, 540.0)
                 .center()
+                .initialization_script(PURE_GAME_JS)
                 .on_navigation(move |url| {
                     // 纯游戏模式按 F11 / Alt+Enter 会跳到这个地址：拦下来，切换整个窗口的全屏
                     if url.path() == "/__gl/fullscreen" {

@@ -128,6 +128,15 @@ def create_app(runtime: Runtime | None = None) -> FastAPI:
     bind = str((bind_cfg.get("server") or {}).get("host", "127.0.0.1"))
     app.add_middleware(LocalOnlyGuard, check_host=_hostname(bind) in LOOPBACK)
 
+    @app.middleware("http")
+    async def no_stale_pages(request, call_next):  # type: ignore[no-untyped-def]
+        # 页面和脚本每次都向本机服务确认（有 ETag，没改就是 304）：升级后桌面版 / 浏览器不会继续用缓存里的旧 vn.js
+        resp = await call_next(request)
+        path = request.url.path
+        if path.endswith((".html", ".js", ".css")) or path.startswith("/static/"):
+            resp.headers.setdefault("Cache-Control", "no-cache")
+        return resp
+
     def rt() -> Runtime:
         return rt_holder["rt"]
 

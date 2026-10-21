@@ -1,7 +1,6 @@
 /* 离线会话：没有 Python 服务时（桌面包 / 双击打开），在页面里跑 galcore（wasm），说和 /ws 一样的话。
  *
- * 对应 server/session.py 的纯选项部分（PLAN §3.2、§9）：开局、推进、选项、引擎快照存读档、调试时间轴回放。
- * AI 模式（模型、守卫、记忆）要服务端，离线版不提供：mode=ai 会退回纯选项。
+ * 对应 server/session.py（PLAN §3.2、§9）：开局、推进、选项、AI 模式“（自己说）”、引擎快照存读档、调试时间轴回放。
  * 事件日志只在内存里（和服务端同格式），时间轴拖动就是从头回放到那一条，逐条比对 state_hash。
  *
  * 用法和 WebSocket 一样：const ws = GalcoreLocal.open('/ws?mode=choice&start=…'); ws.onmessage = …; ws.send(JSON)
@@ -28,6 +27,12 @@
   }
 
   const hex = n => Array.from(crypto.getRandomValues(new Uint8Array(n)), b => b.toString(16).padStart(2, '0')).join('');
+  const norm = s => String(s || '').replace(/[\s，。！？、…「」『』（）()—\-~～：:;；,.!?"']+/g, '');
+
+  function getLlm() {
+    try { return window.GallingsLLM || (window.top && window.top.GallingsLLM) || null; }
+    catch (e) { return window.GallingsLLM || null; }
+  }
 
   function screenFromOps(ops) {
     const sc = { scene: null, bgm: null, sprite: null, say: null, choice: null, state: null, tail: null };
@@ -49,7 +54,9 @@
     constructor(q, send, B) {
       this.q = q; this.send = send; this.B = B;
       this.id = hex(6);
-      this.mode = 'choice';
+      const llm = getLlm();
+      const wantMode = q.get('mode') || (llm && llm.getConfig && llm.getConfig().mode) || 'choice';
+      this.mode = wantMode === 'ai' ? 'ai' : 'choice';
       this.seed = (crypto.getRandomValues(new Uint32Array(1))[0] % 2147483646) + 1;
       const ch = B.chapter;
       this.config = { mode: this.mode, honesty_gap_rule: false };
@@ -80,8 +87,10 @@
 
     hello() {
       const ch = this.B.chapter, { card, ...hdr } = this.header;
+      const llm = getLlm();
       this.send({ type: 'hello', session: this.id, card: { id: this.B.card.id, name: this.B.card.identity?.name || '' },
-        mode: this.mode, llm: false, memory: false, offline: true, chapter: { id: ch.chapter_id, title: ch.title }, seed: this.seed, header: hdr });
+        mode: this.mode, llm: Boolean(llm && llm.isReady()), memory: true, offline: true,
+        chapter: { id: ch.chapter_id, title: ch.title }, seed: this.seed, header: hdr });
     }
 
     step(kind, payload = {}, source = 'engine', render = true) {
@@ -134,8 +143,19 @@
 
     displayState() {
       const st = this.state;
-      return { op: 'STATE', affection: st.affection + st.deferred, tails: st.tails_script + st.tails_ai, mood: st.mood, mode: st.mode,
-        lineage: st.lineage, turn: st.turn, input_open: false, address_stage: st.address_stage, wound: st.wound, wait: st.wait };
+      return {
+        op: 'STATE',
+        affection: st.affection + st.deferred,
+        tails: st.tails_script + st.tails_ai,
+        mood: st.mood,
+        mode: st.mode,
+        lineage: st.lineage,
+        turn: st.turn,
+        input_open: st.wait === 'choice' && st.mode === 'ai' && !st.input_closed && !st.forced_choice_scene,
+        address_stage: st.address_stage,
+        wound: st.wound,
+        wait: st.wait,
+      };
     }
 
     exportSave() {
@@ -172,6 +192,114 @@
       this.send({ type: 'screen', screen: sc, live: false, seq, replay_ok: bad == null, line_id: src.startsWith('vn:') ? src.slice(3) : null });
     }
 
+    async onInput(rawText) {
+      const text = String(rawText || '').trim().slice(0, 200);
+      if (!text) return;
+      const st = this.state;
+      if (st.wait !== 'choice') {
+        this.send({ type: 'error', message: '现在不能输入（输入框只在选项点开放）' });
+        return;
+      }
+      const res = this.step('player_input', { text }, 'player', false);
+      if (res.verdicts && res.verdicts[0] && res.verdicts[0].result === 'rejected') {
+        this.send({ type: 'error', message: res.verdicts[0].reason || '输入被拒绝' });
+        return;
+      }
+      this.recent.push('我：' + text);
+      this.send({ type: 'busy', on: true });
+      try {
+        const options = (this.choiceOp && this.choiceOp.options) || [];
+        const defaultLine = (this.choiceOp && this.choiceOp.default_line) || '……';
+        // 1. 字面匹配原选项
+        const nt = norm(text);
+        let matched = null;
+        for (const o of options) {
+          const nl = norm(o.label || o.text || '');
+          if (nl && (nt === nl || (nl.length >= 3 && nt.includes(nl) && nt.length <= nl.length + 4))) {
+            matched = { intent: o.nature || '顺着聊', matched_option: o.id, confidence_milli: 950, by: 'literal' };
+            break;
+          }
+        }
+        const llm = getLlm();
+        let aiReply = '';
+        let aiShift = 0;
+
+        if (!matched && llm && llm.isReady()) {
+          // 2. 用大模型同时做选项意图归类 + 即兴回应生成
+          const optText = options.map(o => `- id="${o.id}": ${o.label || o.text}`).join('\n');
+          const recentText = this.recent.slice(-8).join('\n');
+          const sys = [
+            `你是视觉小说《海风与布丁》的导演兼女主「${this.B.card.identity?.name || '鲸鱼小姐'}」。`,
+            `人物设定：傲娇、嘴硬心软，自称“本小姐”，称呼玩家“人类”，喜欢双倍焦糖布丁，尾巴会暴露真实心情。`,
+            `当前处于选项分支点，原定选项有：\n${optText}`,
+            `请输出严格的 JSON 对象：`,
+            `{"matched_option": "若玩家的话意思与某个选项明显一致则填该选项id，否则填空字符串", "confidence": 0.0到1.0, "intent": "顺着聊|剧本外|关心|逗她", "reply": "若未命中选项，以鲸鱼小姐的口吻回玩家一两句话（60字内，自然接回当前情境）", "affection_delta": 0}`,
+          ].join('\n');
+          const r = await llm.complete({
+            messages: [
+              { role: 'system', content: sys },
+              { role: 'user', content: `最近对话：\n${recentText}\n\n玩家刚说：${text}` },
+            ],
+            json_mode: true,
+            temperature: 0.4,
+            max_tokens: 240,
+            timeout: 15000,
+          });
+          if (r.ok && r.text) {
+            try {
+              const cleaned = r.text.replace(/^```json\s*|\s*```$/g, '').trim();
+              const d = JSON.parse(cleaned);
+              let mo = String(d.matched_option || '');
+              if (mo && !options.some(o => o.id === mo)) mo = '';
+              const conf = Math.round(Math.max(0, Math.min(1, Number(d.confidence) || 0)) * 1000);
+              matched = { intent: String(d.intent || '剧本外'), matched_option: mo, confidence_milli: conf, by: 'model' };
+              aiReply = String(d.reply || '').trim();
+              aiShift = Math.max(-2, Math.min(2, parseInt(d.affection_delta, 10) || 0));
+            } catch (e) {}
+          }
+        }
+
+        if (!matched) {
+          matched = { intent: '剧本外', matched_option: '', confidence_milli: 0, by: 'offline' };
+        }
+
+        this.step('intent', matched, 'model');
+        if (this.state.wait !== 'choice') {
+          // 引擎已命中原选项并推进剧情
+          return;
+        }
+
+        // 3. 未命中原选项：在 galcore 引擎里开启 AI 回合事务（turn_begin -> say -> turn_commit）
+        if (!aiReply) {
+          if (/喜欢|可爱|好看|想你/.test(text)) {
+            aiReply = '谁、谁准你在这种时候突然说这个的！……咳，本小姐听到了，先说正事。';
+            aiShift = 1;
+          } else if (/布丁|焦糖|甜/.test(text)) {
+            aiReply = '布丁当然要双倍焦糖！……不对，现在不是讨论布丁的时候，你快选一个。';
+            aiShift = 1;
+          } else if (/对不起|抱歉/.test(text)) {
+            aiReply = '知道就好。本小姐大人有大量，这次先不记在记仇本上。';
+          } else {
+            aiReply = defaultLine && defaultLine !== '……'
+              ? defaultLine
+              : '哼，少拿话岔开本小姐的注意力——刚才问你的，你还没正面回答呢。';
+          }
+        }
+
+        this.step('turn_begin', {}, 'director', false);
+        if (aiShift !== 0) {
+          this.step('model_tool_call', { tool: 'shift_affection', args: { delta: aiShift, reason: 'player_input' } }, 'model', false);
+        }
+        this.step('model_tool_call', { tool: 'say', args: { text: aiReply, origin: 'improvised' } }, 'model');
+        const cRes = this.step('turn_commit', {}, 'director');
+        if ((cRes.verdicts || []).some(v => v.rule === 'steer_back')) {
+          this.send({ type: 'notice', message: '她把话题收回来了：请从选项里选一个。' });
+        }
+      } finally {
+        this.send({ type: 'busy', on: false });
+      }
+    }
+
     handle(msg) {
       const t = msg.type;
       try {
@@ -185,10 +313,15 @@
           const label = (this.choiceOp?.options || []).find(o => o.id === msg.option_id)?.label || msg.option_id;
           this.recent.push('我（选择）：' + label);
           this.step('choice', { option_id: msg.option_id }, 'player');
-        } else if (t === 'input') this.send({ type: 'error', message: '离线版没有 AI 模式：请从选项里选一个' });
-        else if (t === 'mode') {
-          if (msg.mode === 'ai') return this.send({ type: 'error', message: '离线版没有 AI 模式（需要启动 galLingS 服务并配置模型）' });
-          this.step('mode_switch', { mode: msg.mode }, 'player');
+        } else if (t === 'input') {
+          this.onInput(msg.text);
+        } else if (t === 'mode') {
+          const mode = msg.mode === 'ai' ? 'ai' : 'choice';
+          this.mode = mode;
+          this.step('mode_switch', { mode }, 'player');
+          if (this.choiceOp && this.state.wait === 'choice') {
+            this.send({ type: 'ops', ops: [this.choiceOp, this.displayState()] });
+          }
         } else if (t === 'snapshot') this.send({ type: 'snapshot', save: this.exportSave() });
         else if (t === 'restore') {
           const save = msg.save || {};

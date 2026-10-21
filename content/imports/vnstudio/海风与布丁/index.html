@@ -3028,7 +3028,7 @@ function soulEventText(ev) {
 function soulTl() { const T = RT.soul.tl; T.turn++; return { lineage: T.lin, turn: T.turn }; }
 function soulVis() { const T = RT.soul.tl; return [...T.anc, { lineage: T.lin, turn: 2 ** 53 }]; }
 const soulNewTl = () => ({ lin: 'L' + Date.now().toString(36) + Math.random().toString(36).slice(2, 5), turn: 0, anc: [] });
-const soulBackend = () => HOSTED ? 'galLingS' : (pref('soulBackend') || 'local');
+const soulBackend = () => (HOSTED && !window.GALLINGS_OFFLINE && !(window.parent && window.parent !== window && window.parent.GALLINGS_OFFLINE)) ? 'galLingS' : (pref('soulBackend') || 'local');
 const soulBrain = () => SOUL_BRAINS[soulBackend()] || SOUL_BRAINS.local;
 function soulAdd(list, item) {
   const S = RT.soul; if (!S) return;
@@ -4362,13 +4362,28 @@ const VNPlugins = (() => {
   async function sources() {
     const out = [];
     for (const rec of P.plugins || []) out.push({ src: 'project', rec, code: rec.code, enabled: rec.enabled !== false });
-    for (const h of hostList) out.push({ src: 'host', rec: h, code: h.code, enabled: true });
+    for (const h of hostList) out.push({ src: 'host', rec: h, code: h.code, def: h.def, enabled: true });
     if (gameMode) for (const rec of (await idbGet(playerKey())) || []) out.push({ src: 'player', rec, code: rec.code, enabled: true });
     return out;
   }
   async function loadHost() {
     hostList = [];
-    if (!HOSTED) return;
+    if (!HOSTED) {
+      if (gameMode && !/^\/_(single\.html|folder\/)/.test(location.pathname)) {
+        try {
+          defined = null;
+          await new Promise((res, rej) => {
+            const s = document.createElement('script');
+            s.src = 'galagent.vnplugin.js';
+            s.onload = () => { s.remove(); res(); };
+            s.onerror = () => { s.remove(); rej(); };
+            document.head.appendChild(s);
+          });
+          if (defined) { const d = check(defined); defined = null; hostList.push({ id: d.id, url: 'galagent.vnplugin.js', def: d }); }
+        } catch (e) {}
+      }
+      return;
+    }
     try {
       const r = await fetch('/api/vn/plugins', { cache: 'no-store' }); if (!r.ok) return;
       const j = await r.json();
@@ -4384,8 +4399,8 @@ const VNPlugins = (() => {
     if (opt.host) await loadHost();
     const st = loadSt(), order = [];
     for (const it of await sources()) {
-      let def = null, error = '';
-      try { def = exec(it.code, it.rec?.id || it.src); } catch (e) { error = String(e.message || e); }
+      let def = it.def || null, error = '';
+      if (!def) { try { def = exec(it.code, it.rec?.id || it.src); } catch (e) { error = String(e.message || e); } }
       const id = def?.id || it.rec?.id || '?';
       const item = { id, def, src: it.src, rec: it.rec, error, enabled: it.enabled && !(st[id]?.off), meta: def ? meta(def) : { id, name: it.rec?.name || id, version: it.rec?.version || '?', author: '', description: '', icon: 'puzzle', permissions: [] } };
       if (known.has(id)) item.overrides = known.get(id).src;

@@ -24,7 +24,9 @@
     setup(vn) {
       const GA = loadLib();
       const S = k => vn.settings.get(k);
-      const defUrl = () => vn.engine.hosted ? (location.protocol === 'https:' ? 'wss:' : 'ws:') + '//' + location.host + '/ws/post_ending' : '';
+      const isOffline = () => !!(window.GALLINGS_OFFLINE || window.__GALLINGS_OFFLINE__ || (window.parent && window.parent !== window && (window.parent.GALLINGS_OFFLINE || window.parent.__GALLINGS_OFFLINE__)) || location.hostname === 'app.localhost');
+      const getLLM = () => window.GallingsLLM || (window.parent && window.parent !== window && window.parent.GallingsLLM) || null;
+      const defUrl = () => (vn.engine.hosted && !isOffline()) ? (location.protocol === 'https:' ? 'wss:' : 'ws:') + '//' + location.host + '/ws/post_ending' : '';
       const url = () => {
         let u = String(S('url') || '').trim() || defUrl(); if (!u) return '';
         const card = vn.project.soul()?.card; if (card && !/[?&]card=/.test(u)) u += (u.includes('?') ? '&' : '?') + 'card=' + encodeURIComponent(card);
@@ -45,7 +47,10 @@
       let dock = null;
       const newClient = o => {
         const opts = Object.assign({ url: url(), token: S('token'), clientTools }, o);
-        return !opts.url || opts.mock ? new GA.MockClient(opts) : new GA.Client(opts);
+        const llm = getLLM();
+        if (opts.mock) return new GA.MockClient(opts);
+        if (opts.direct || (!opts.url && llm && llm.isReady && llm.isReady() && GA.DirectClient)) return new GA.DirectClient(opts);
+        return !opts.url ? new GA.MockClient(opts) : new GA.Client(opts);
       };
       Object.assign(vn.exports, {
         GalAgent: GA, clientTools, newClient, charInfo,
@@ -76,10 +81,19 @@
         if (!C) throw new Error('没有对话');
         if (!C._ga) {
           const ctx = C.post ? C.ctx : { goal: req.scene.goal, story: req.scene.setup, vars: req.vars };
-          const client = newClient({ character: charInfo(who), context: ctx, server_tools: C.serverTools ?? (S('tools') !== false) });
-          C._ga = { client }; ensureDock(who);
-          KEY_EVENTS.forEach(t => client.on(t, m => { if (vn.chat.current === C && dock) dock.feed(m); }));
-          await client.connect();
+          const baseOpts = { character: charInfo(who), context: ctx, server_tools: C.serverTools ?? (S('tools') !== false) };
+          let client = newClient(baseOpts);
+          ensureDock(who);
+          const wireDock = cl => KEY_EVENTS.forEach(t => cl.on(t, m => { if (vn.chat.current === C && dock) dock.feed(m); }));
+          wireDock(client);
+          try {
+            await client.connect();
+          } catch (e) {
+            client = newClient(Object.assign({}, baseOpts, { url: '' }));
+            wireDock(client);
+            await client.connect();
+          }
+          C._ga = { client };
         }
         const client = C._ga.client;
         return new Promise(resolve => {
@@ -91,7 +105,16 @@
           const offs = [
             client.on('say_delta', m => { said += m.text; }),
             client.on('round_start', () => { said = ''; }),
-            client.on('emotion', m => { emo = m.name; vn.chars.setEmotion(who, m.name); }),
+            client.on('emotion', m => {
+              emo = m.name; vn.chars.setEmotion(who, m.name);
+              try {
+                const P = vn.raw?.P;
+                if (P && P.assets) {
+                  const target = Object.values(P.assets).find(a => a.type === 'ch' && (a.name === who + '_' + m.name || a.name === who + '-' + m.name));
+                  if (target) vn.ui.stage.querySelectorAll('#layer .spr').forEach(img => { img.src = target.src; });
+                }
+              } catch (e) {}
+            }),
             client.on('error', m => { if (m.fatal) finish({ type: 'turn_end', error: m.message }); else said = said || '（' + m.message + '）'; }),
             client.on('close', () => finish({ type: 'turn_end', error: '连接已断开，请退出聊天后重试。' })),
             client.on('turn_end', finish),
@@ -131,21 +154,45 @@
       function postCfg() {
         const pc = vn.data.get().postChat || {};
         if (pc.off) return {};
-        const char = S('char') || pc.char || vn.project.soul()?.char || '';
+        const char = S('char') || pc.char || vn.project.soul()?.char || (vn.project.chars()[0]?.name) || '';
         return Object.assign({ tools: true }, pc, { char });
       }
       function openPostChat(ending) {
         const pc = postCfg(); if (!pc.char) return;
+        const titleEl = vn.ui.el('title');
+        const fromTitle = !ending || !!(titleEl && titleEl.classList.contains('show'));
         vn.ui.endingCard.hide();
+        try {
+          const raw = vn.raw;
+          if (fromTitle && raw && raw.P && raw.RT) {
+            if (!raw.RT.vars) raw.RT.vars = Object.fromEntries((raw.P.vars || []).map(v => [v.name, v.init]));
+            if (!raw.RT.back) raw.RT.back = [];
+            if (!raw.RT.soul) raw.RT.soul = { mem: [], sig: [], rules: [], talk: [], used: {}, unread: 0, tl: { lin: 'L0', turn: 0, anc: [] } };
+            const assets = raw.P.assets || {};
+            const sceneLine = (raw.P.lines || []).find(l => l.bg && Array.isArray(l.sprites) && l.sprites.some(s => {
+              const a = assets[s.asset];
+              return a && String(a.name || '').startsWith(pc.char);
+            })) || (raw.P.lines || [])[0];
+            if (sceneLine && typeof window.renderStage === 'function') window.renderStage(sceneLine, false);
+          }
+        } catch (e) {}
+        const defaultGreeting = pc.char === '鲸鱼小姐'
+          ? (ending ? '故事落幕之后，海风好像还停留在我们身边呢。想和我聊点什么吗？' : '欢迎回来～要不要一边吹着海风吃布丁，一边和我聊聊天？')
+          : '……';
         vn.chat.start({
           char: pc.char, goal: pc.goal || '', provider: 'galagent', turns: 9999,
-          greeting: pc.greeting || '……', placeholder: `说点什么，或者请${pc.char}帮你做点事…`,
-          onExit: () => { vn.ui.el('input').placeholder = ''; vn.ui.endingCard.show(); },
-          extra: { post: true, endingName: ending, serverTools: pc.tools !== false && S('tools') !== false,
-            ctx: { ending, goal: pc.goal || '', vars: vn.vars.all(), story: vn.story.backlog(12).map(b => (b.speaker ? b.speaker + '：' : '') + b.text).join('\n') } },
+          greeting: pc.greeting || defaultGreeting, placeholder: `说点什么，或者请${pc.char}帮你做点事…`,
+          onExit: () => {
+            vn.ui.el('input').placeholder = '';
+            if (fromTitle && typeof window.showTitle === 'function') window.showTitle();
+            else vn.ui.endingCard.show();
+          },
+          extra: { post: true, endingName: ending || '', serverTools: pc.tools !== false && S('tools') !== false,
+            ctx: { ending: ending || '', goal: pc.goal || '', vars: vn.vars.all(), story: vn.story.backlog(12).map(b => (b.speaker ? b.speaker + '：' : '') + b.text).join('\n') } },
         });
       }
-      vn.ui.addEndingButton({ primary: true, icon: 'message-square-text', label: () => `和${postCfg().char}聊聊`, show: () => !!postCfg().char, onClick: openPostChat });
+      vn.ui.addEndingButton({ primary: true, icon: 'message-square-text', label: () => `和${postCfg().char || '鲸鱼小姐'}聊聊`, show: () => !!postCfg().char, onClick: openPostChat });
+      vn.ui.addTitleButton({ label: `和${postCfg().char || '鲸鱼小姐'}聊聊`, show: () => !!postCfg().char, onClick: () => openPostChat('') });
       vn.on('ending', ({ name }) => {
         const pc = postCfg();
         if (pc.char && pc.auto) setTimeout(() => { if (vn.ui.el('endcard').classList.contains('show')) openPostChat(name); }, 1200);

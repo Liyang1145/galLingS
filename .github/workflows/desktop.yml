@@ -5,7 +5,7 @@ name: desktop
 on:
   push:
     branches: [main, tanpowasd/dev]
-    paths: ["core/**", "web/**", "desktop/**", "content/imports/**", "content/cards/**", "compiler/**", "tools/build_desktop_dist.py", ".github/workflows/desktop.yml"]
+    paths: ["core/**", "web/**", "desktop/**", "plugins/builtin/galagent/web/**", "content/imports/**", "content/cards/**", "compiler/**", "tools/build_desktop_dist.py", "tools/build_steam_release.py", ".github/workflows/desktop.yml"]
   workflow_dispatch:
 
 permissions:
@@ -44,8 +44,9 @@ jobs:
       - name: Tauri 打包
         working-directory: desktop
         run: npx --yes @tauri-apps/cli@2 build 2>&1 | tee -a "$RUNNER_TEMP/ci.log"; exit ${PIPESTATUS[0]}
-      - name: 免安装版（exe + game 文件夹）
+      - name: 免安装版与 Steam Depot（exe + game 文件夹）
         run: |
+          python tools/build_steam_release.py --skip-rust --out out/steam
           mkdir -p out/portable
           cp desktop/src-tauri/target/release/gallings-desktop.exe "out/portable/海风与布丁.exe"
           cp -r dist/desktop out/portable/game

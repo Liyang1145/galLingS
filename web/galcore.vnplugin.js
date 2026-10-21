@@ -86,7 +86,14 @@
         const s = document.createElement('script'); s.src = src; s.dataset.gl = src; s.onload = ok; s.onerror = () => no(new Error('加载失败：' + src));
         document.head.appendChild(s);
       });
+      loadJs('/static/offline/steam-host.js').catch(() => {});
       const offlineReady = OFFLINE ? loadJs('/static/offline/galcore-wasm.js').then(() => loadJs('/static/offline/local-session.js')).then(() => window.GalcoreLocal.preload()) : null;
+      vn.settings.onChange((k, v) => {
+        if (k === 'mode' && B.on && B.ws) {
+          try { B.ws.send(JSON.stringify({ type: 'mode', mode: v })); } catch (e) {}
+          setTimeout(addSpeakButton, 50);
+        }
+      });
       offlineReady?.catch(e => console.warn('[galcore] 离线引擎不可用：', e));
 
       function connect(startLine, restore) {

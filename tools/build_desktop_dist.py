@@ -35,7 +35,7 @@ from server.runtime import load_config, resolve_games_dir  # noqa: E402
 
 WASM_DEFAULT = ROOT / "core" / "target" / "wasm32-unknown-unknown" / "release" / "galcore.wasm"
 OFFLINE_HEAD = (
-    '<script>window.GALLINGS_OFFLINE = true;</script>\n'
+    '<script>window.GALLINGS_OFFLINE = true; window.GALLINGS_STEAM = true;</script>\n'
     '<style>#onlineSettings{display:none}</style>\n'
 )
 
@@ -79,13 +79,19 @@ def main(argv: list[str] | None = None) -> int:
         shutil.rmtree(out)
     out.mkdir(parents=True)
 
-    # 网页 + 作品原样复制
+    # 网页 + 作品 + GalAgent 插件原样复制
     shutil.copytree(ROOT / "web", out / "static", ignore=shutil.ignore_patterns("*.map"))
     shutil.copytree(src_game, out / "vn" / vn_game, ignore=shutil.ignore_patterns(".gitignore", "*.md"))
+    ga_web = ROOT / "plugins" / "builtin" / "galagent" / "web"
+    if ga_web.is_dir():
+        (out / "galagent").mkdir(parents=True, exist_ok=True)
+        for name in ("galagent.vnplugin.js", "galagent-ui.js", "chat.html"):
+            if (ga_web / name).is_file():
+                shutil.copy2(ga_web / name, out / "galagent" / name)
     html = (ROOT / "web" / "vn.html").read_text(encoding="utf-8")
     html = html.replace("</head>", OFFLINE_HEAD + "</head>", 1)
     (out / "vn.html").write_text(html, encoding="utf-8")
-    (out / "index.html").write_text('<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0;url=vn.html">', encoding="utf-8")
+    (out / "index.html").write_text('<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0;url=vn.html?steam=1">', encoding="utf-8")
 
     # 引擎 + 编好的剧本 + 角色卡
     off = out / "static" / "offline"
@@ -101,11 +107,16 @@ def main(argv: list[str] | None = None) -> int:
     # 原来的 GET 接口
     write_json(out / "api" / "vn" / "games", {"dir": "（离线包）", "games": [{"id": vn_game, "title": vn_game}]})
     write_json(out / "api" / "vn" / "plugins", {"plugins": [
-        {"id": "gallings.galcore", "name": "galcore 引擎", "url": "/static/galcore.vnplugin.js"}]})
+        {"id": "gallings.galcore", "name": "galcore 引擎", "url": "/static/galcore.vnplugin.js"},
+        {"id": "gallings.galagent", "name": "GalAgent", "url": "/galagent/galagent.vnplugin.js"},
+    ]})
     write_json(out / "api" / "status", {"offline": True, "llm": False, "memory": False,
                                         "chapter": {"id": chapter["chapter_id"], "title": chapter["title"],
                                                     "content_hash": chapter["content_hash"]},
                                         "default_card": card["id"], "default_mode": "choice"})
+    write_json(out / "api" / "settings", {"llm": {"configured": False, "base_url": "", "model": "", "key_tail": ""},
+                                          "memory": {"backend": "local", "active": "local"},
+                                          "games_dir": "（离线包）"})
 
     n = sum(1 for p in out.rglob("*") if p.is_file())
     mb = sum(p.stat().st_size for p in out.rglob("*") if p.is_file()) / 1e6

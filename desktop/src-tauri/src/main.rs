@@ -1,21 +1,232 @@
 //! galLingS 桌面程序（Steam 发行版 & Windows 独立客户端）：
-//! - 纯净游戏模式启动（?steam=1，直达《海风与布丁》标题画面，隐藏调试顶栏，支持 F11/设置全屏与退出游戏）
-//! - 本地文件存档（%APPDATA%/com.gallings.haifeng/saves/*.json 或便携模式 saves/，原子写入，支持 Steam Auto-Cloud 云存档）
-//! - 独立本机大模型配置（%APPDATA%/com.gallings.haifeng/config/llm.json，与存档目录隔离，避免云存档同步泄露 API Key）
-//! - 原生 GalAgent 工具桥（/__host/tool：get_time / list_dir / read_file / write_file / powershell，限定在 workspace 目录）
+//! - 双模架构（完整引擎模式 + 离线 WASM 兜底）：
+//!   1. 优先自动拉起/连接本地 Python `galLingS` 完整服务（`python -m server --no-browser`），
+//!      完整启用灵枢认知图 MCP 记忆库（`gallings.memory.lingshu`）、多模型插件（`openai-compat` / `anthropic` / `gemini` / `ollama`）、
+//!      以及 GalAgent 完整工具链与 MCP 扩展（`gallings.tool.galagent` + `gallings.tool.lingshu-mcp`）。
+//!   2. 若运行环境无 Python，自动无缝回退至内置 `app.localhost` + `galcore.wasm` 离线引擎模式。
+//! - 纯净游戏模式启动（`?steam=1`，直达《海风与布丁》标题画面，隐藏调试顶栏，支持 F11/设置全屏与退出游戏）
+//! - 本地文件存档（`%APPDATA%/com.gallings.haifeng/saves/*.json` 或便携模式 `saves/`，原子写入，支持 Steam Auto-Cloud 云存档）
+//! - 独立本机大模型配置（`%APPDATA%/com.gallings.haifeng/config/llm.json`，与存档目录隔离，避免云存档同步泄露 API Key）
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
 use std::fs::{self, File};
 use std::io::{Read, Seek, SeekFrom, Write};
+use std::net::{SocketAddr, TcpListener, TcpStream};
 use std::path::{Component, Path, PathBuf};
-use std::process::Command;
-use std::time::{Instant, SystemTime, UNIX_EPOCH};
+use std::process::{Child, Command, Stdio};
+use std::sync::{Mutex, OnceLock};
+use std::time::{Duration, Instant, SystemTime, UNIX_EPOCH};
 
 use serde_json::{json, Value};
 use tauri::http::{header, Method, Request, Response, StatusCode};
-use tauri::{AppHandle, Manager, WebviewUrl, WebviewWindowBuilder};
+use tauri::{AppHandle, Manager, WebviewUrl, WebviewWindowBuilder, WindowEvent};
 
 const SAVE_KINDS: &[&str] = &["slots", "global", "prefs", "read", "plugins"];
+
+static PYTHON_SERVER: OnceLock<Mutex<Option<Child>>> = OnceLock::new();
+
+fn server_slot() -> &'static Mutex<Option<Child>> {
+    PYTHON_SERVER.get_or_init(|| Mutex::new(None))
+}
+
+fn stop_python_server() {
+    if let Ok(mut guard) = server_slot().lock() {
+        if let Some(mut child) = guard.take() {
+            let _ = child.kill();
+            let _ = child.wait();
+        }
+    }
+}
+
+fn check_server_health(port: u16) -> bool {
+    let addr = SocketAddr::from(([127, 0, 0, 1], port));
+    let Ok(mut stream) = TcpStream::connect_timeout(&addr, Duration::from_millis(180)) else {
+        return false;
+    };
+    let _ = stream.set_read_timeout(Some(Duration::from_millis(250)));
+    let _ = stream.set_write_timeout(Some(Duration::from_millis(250)));
+    let req = format!("GET /health HTTP/1.1\r\nHost: 127.0.0.1:{port}\r\nConnection: close\r\n\r\n");
+    if stream.write_all(req.as_bytes()).is_err() {
+        return false;
+    }
+    let mut buf = [0u8; 512];
+    let Ok(n) = stream.read(&mut buf) else {
+        return false;
+    };
+    let text = String::from_utf8_lossy(&buf[..n]);
+    text.starts_with("HTTP/1.1 200") && text.contains("\"status\"")
+}
+
+fn pick_available_port(preferred: u16) -> u16 {
+    if TcpListener::bind(("127.0.0.1", preferred)).is_ok() {
+        return preferred;
+    }
+    TcpListener::bind(("127.0.0.1", 0))
+        .and_then(|l| l.local_addr())
+        .map(|a| a.port())
+        .unwrap_or(preferred)
+}
+
+fn resolve_backend_root() -> Option<PathBuf> {
+    let mut candidates = Vec::new();
+    if let Ok(custom) = std::env::var("GALLINGS_ROOT") {
+        candidates.push(PathBuf::from(custom));
+    }
+    if let Some(ed) = exe_dir() {
+        candidates.push(ed.clone());
+        if let Some(p1) = ed.parent() {
+            candidates.push(p1.to_path_buf());
+            if let Some(p2) = p1.parent() {
+                candidates.push(p2.to_path_buf());
+                if let Some(p3) = p2.parent() {
+                    candidates.push(p3.to_path_buf());
+                }
+            }
+        }
+    }
+    if let Ok(cwd) = std::env::current_dir() {
+        candidates.push(cwd.clone());
+        if let Some(p1) = cwd.parent() {
+            candidates.push(p1.to_path_buf());
+            if let Some(p2) = p1.parent() {
+                candidates.push(p2.to_path_buf());
+            }
+        }
+    }
+    for c in candidates {
+        if c.join("server").join("__main__.py").is_file() && c.join("plugins").join("builtin").is_dir() {
+            return Some(c);
+        }
+    }
+    None
+}
+
+fn find_python_executable(backend_root: &Path) -> Option<PathBuf> {
+    if let Ok(p) = std::env::var("GALLINGS_PYTHON") {
+        let pb = PathBuf::from(p);
+        if pb.is_file() {
+            return Some(pb);
+        }
+    }
+    let mut search_roots = vec![backend_root.to_path_buf()];
+    if let Some(ed) = exe_dir() {
+        search_roots.push(ed);
+    }
+    let mut cur = Some(backend_root);
+    while let Some(d) = cur {
+        search_roots.push(d.to_path_buf());
+        cur = d.parent();
+    }
+    for r in search_roots {
+        #[cfg(windows)]
+        let rels = [
+            "python/python.exe",
+            ".venv/Scripts/python.exe",
+            "venv/Scripts/python.exe",
+        ];
+        #[cfg(not(windows))]
+        let rels = [
+            "python/bin/python3",
+            ".venv/bin/python",
+            "venv/bin/python",
+        ];
+        for rel in rels {
+            let cand = r.join(rel);
+            if cand.is_file() {
+                return Some(cand);
+            }
+        }
+    }
+    for bin in ["python", "python3"] {
+        let mut cmd = Command::new(bin);
+        cmd.args(["-c", "import fastapi, uvicorn, galcore; print('ok')"])
+            .stdout(Stdio::piped())
+            .stderr(Stdio::null());
+        #[cfg(windows)]
+        {
+            use std::os::windows::process::CommandExt;
+            cmd.creation_flags(0x08000000);
+        }
+        if let Ok(out) = cmd.output() {
+            if out.status.success() {
+                return Some(PathBuf::from(bin));
+            }
+        }
+    }
+    None
+}
+
+fn ensure_python_backend(app: &AppHandle) -> Option<String> {
+    if std::env::var("GALLINGS_FORCE_OFFLINE").as_deref() == Ok("1") {
+        return None;
+    }
+    let preferred_port: u16 = std::env::var("GALLINGS_PORT")
+        .ok()
+        .and_then(|s| s.parse().ok())
+        .unwrap_or(8765);
+
+    if check_server_health(preferred_port) {
+        return Some(format!("http://127.0.0.1:{preferred_port}/vn.html?steam=1"));
+    }
+
+    let backend_root = resolve_backend_root()?;
+    let py = find_python_executable(&backend_root)?;
+    let port = pick_available_port(preferred_port);
+
+    let sdir = save_dir(app);
+    let cdir = config_dir(app);
+    let wdir = workspace_dir(app);
+
+    let mut cmd = Command::new(&py);
+    cmd.args([
+        "-m",
+        "server",
+        "--no-browser",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        &port.to_string(),
+    ])
+    .current_dir(&backend_root)
+    .env("GALLINGS_SAVE_DIR", &sdir)
+    .env("GALLINGS_CONFIG_DIR", &cdir)
+    .env("GALLINGS_WORKSPACE_DIR", &wdir)
+    .stdin(Stdio::null())
+    .stdout(Stdio::null())
+    .stderr(Stdio::null());
+
+    // 若在 Steam 打包目录下运行（游戏本体位于 game/vn），自动关联作品目录与插件目录
+    let bundled_vn = backend_root.join("game").join("vn");
+    if bundled_vn.is_dir() && !backend_root.join("content").join("imports").join("vnstudio").is_dir() {
+        cmd.env("GALLINGS_GAMES_DIR", &bundled_vn);
+    }
+    let bundled_plugs = backend_root.join("game").join("vn_plugins");
+    if bundled_plugs.is_dir() && !backend_root.join("content").join("vn_plugins").is_dir() {
+        cmd.env("GALLINGS_VN_PLUGINS_DIR", &bundled_plugs);
+    }
+
+    #[cfg(windows)]
+    {
+        use std::os::windows::process::CommandExt;
+        cmd.creation_flags(0x08000000);
+    }
+
+    let child = cmd.spawn().ok()?;
+    if let Ok(mut guard) = server_slot().lock() {
+        *guard = Some(child);
+    }
+
+    let deadline = Instant::now() + Duration::from_millis(5500);
+    while Instant::now() < deadline {
+        if check_server_health(port) {
+            return Some(format!("http://127.0.0.1:{port}/vn.html?steam=1"));
+        }
+        std::thread::sleep(Duration::from_millis(80));
+    }
+
+    stop_python_server();
+    None
+}
 
 fn mime(p: &Path) -> &'static str {
     match p.extension().and_then(|e| e.to_str()).map(|e| e.to_ascii_lowercase()).as_deref() {
@@ -347,6 +558,7 @@ fn handle_host(app: &AppHandle, req: &Request<Vec<u8>>) -> Response<Vec<u8>> {
                 let handle = app.clone();
                 std::thread::spawn(move || {
                     std::thread::sleep(std::time::Duration::from_millis(80));
+                    stop_python_server();
                     handle.exit(0);
                 });
                 return json_resp(StatusCode::OK, json!({ "ok": true }));
@@ -394,6 +606,20 @@ fn handle_host(app: &AppHandle, req: &Request<Vec<u8>>) -> Response<Vec<u8>> {
                 }
                 return json_resp(StatusCode::OK, json!({ "ok": true, "save_dir": sdir.to_string_lossy() }));
             }
+            if let Some(obj) = body.as_object() {
+                let mut wrote_any = false;
+                for &k in SAVE_KINDS {
+                    if let Some(v) = obj.get(k) {
+                        if let Err(e) = atomic_write_json(&sdir, k, v) {
+                            return json_resp(StatusCode::INTERNAL_SERVER_ERROR, json!({ "ok": false, "error": e }));
+                        }
+                        wrote_any = true;
+                    }
+                }
+                if wrote_any {
+                    return json_resp(StatusCode::OK, json!({ "ok": true, "save_dir": sdir.to_string_lossy() }));
+                }
+            }
             let kind = body.get("kind").and_then(|v| v.as_str()).unwrap_or("");
             if !SAVE_KINDS.contains(&kind) {
                 return json_resp(StatusCode::BAD_REQUEST, json!({ "ok": false, "error": "不支持的存档类别" }));
@@ -410,6 +636,12 @@ fn handle_host(app: &AppHandle, req: &Request<Vec<u8>>) -> Response<Vec<u8>> {
         let llm_file = cdir.join("llm.json");
         let saved = read_json_file(&llm_file).unwrap_or_else(|| json!({}));
         if req.method() == Method::GET {
+            let provider = saved
+                .get("provider")
+                .and_then(|v| v.as_str())
+                .filter(|s| !s.is_empty())
+                .unwrap_or("openai-compat")
+                .to_string();
             let base_url = saved
                 .get("base_url")
                 .and_then(|v| v.as_str())
@@ -431,21 +663,44 @@ fn handle_host(app: &AppHandle, req: &Request<Vec<u8>>) -> Response<Vec<u8>> {
                 .map(|s| s.to_string())
                 .or_else(|| std::env::var("GALLINGS_LLM_API_KEY").ok())
                 .unwrap_or_default();
+            let mode = saved
+                .get("mode")
+                .and_then(|v| v.as_str())
+                .filter(|s| !s.is_empty())
+                .unwrap_or("choice")
+                .to_string();
+            let memory_use = saved
+                .get("memory_use")
+                .and_then(|v| v.as_str())
+                .filter(|s| !s.is_empty())
+                .unwrap_or("lingshu")
+                .to_string();
             let tail: String = api_key.chars().rev().take(4).collect::<Vec<_>>().into_iter().rev().collect();
             return json_resp(
                 StatusCode::OK,
                 json!({
                     "ok": true,
+                    "provider": provider,
                     "base_url": base_url,
                     "model": model,
                     "api_key": api_key,
+                    "has_key": !api_key.is_empty(),
                     "key_set": !api_key.is_empty(),
-                    "key_tail": tail
+                    "key_tail": tail,
+                    "mode": mode,
+                    "memory_use": memory_use
                 }),
             );
         }
         if req.method() == Method::POST {
             let body: Value = serde_json::from_slice(req.body()).unwrap_or_else(|_| json!({}));
+            let provider = body
+                .get("provider")
+                .and_then(|v| v.as_str())
+                .or_else(|| saved.get("provider").and_then(|v| v.as_str()))
+                .unwrap_or("openai-compat")
+                .trim()
+                .to_string();
             let base_url = body
                 .get("base_url")
                 .and_then(|v| v.as_str())
@@ -460,13 +715,34 @@ fn handle_host(app: &AppHandle, req: &Request<Vec<u8>>) -> Response<Vec<u8>> {
                 .unwrap_or("deepseek-chat")
                 .trim()
                 .to_string();
+            let mode = body
+                .get("mode")
+                .and_then(|v| v.as_str())
+                .or_else(|| saved.get("mode").and_then(|v| v.as_str()))
+                .unwrap_or("choice")
+                .trim()
+                .to_string();
+            let memory_use = body
+                .get("memory_use")
+                .and_then(|v| v.as_str())
+                .or_else(|| saved.get("memory_use").and_then(|v| v.as_str()))
+                .unwrap_or("lingshu")
+                .trim()
+                .to_string();
             let given_key = body.get("api_key").and_then(|v| v.as_str()).map(|s| s.trim());
             let api_key = match given_key {
-                Some("__clear__") => String::new(),
+                Some("__clear__") | Some("") if body.get("clear_key").and_then(|v| v.as_bool()) == Some(true) => String::new(),
                 Some(k) if !k.is_empty() => k.to_string(),
                 _ => saved.get("api_key").and_then(|v| v.as_str()).unwrap_or("").to_string(),
             };
-            let new_cfg = json!({ "base_url": base_url, "model": model, "api_key": api_key });
+            let new_cfg = json!({
+                "provider": provider,
+                "base_url": base_url,
+                "model": model,
+                "api_key": api_key,
+                "mode": mode,
+                "memory_use": memory_use
+            });
             if let Err(e) = atomic_write_json(&cdir, "llm", &new_cfg) {
                 return json_resp(StatusCode::INTERNAL_SERVER_ERROR, json!({ "ok": false, "error": e }));
             }
@@ -475,11 +751,15 @@ fn handle_host(app: &AppHandle, req: &Request<Vec<u8>>) -> Response<Vec<u8>> {
                 StatusCode::OK,
                 json!({
                     "ok": true,
+                    "provider": provider,
                     "base_url": base_url,
                     "model": model,
                     "api_key": api_key,
+                    "has_key": !api_key.is_empty(),
                     "key_set": !api_key.is_empty(),
-                    "key_tail": tail
+                    "key_tail": tail,
+                    "mode": mode,
+                    "memory_use": memory_use
                 }),
             );
         }
@@ -581,11 +861,18 @@ fn main() {
             let root = resolve_game_root(app);
             respond(app, &root, &req)
         })
+        .on_window_event(|_win, ev| {
+            if matches!(ev, WindowEvent::Destroyed) {
+                stop_python_server();
+            }
+        })
         .setup(|app| {
             #[cfg(windows)]
-            let url = "http://app.localhost/vn.html?steam=1";
+            let fallback_url = "http://app.localhost/vn.html?steam=1".to_string();
             #[cfg(not(windows))]
-            let url = "app://localhost/vn.html?steam=1";
+            let fallback_url = "app://localhost/vn.html?steam=1".to_string();
+
+            let url = ensure_python_backend(app.handle()).unwrap_or(fallback_url);
             WebviewWindowBuilder::new(app, "main", WebviewUrl::External(url.parse().unwrap()))
                 .title("海风与布丁")
                 .inner_size(1440.0, 810.0)
@@ -596,4 +883,5 @@ fn main() {
         })
         .run(tauri::generate_context!())
         .expect("galLingS 桌面程序启动失败");
+    stop_python_server();
 }

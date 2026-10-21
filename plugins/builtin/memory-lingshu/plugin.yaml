@@ -17,9 +17,8 @@ capabilities: [timeline_filter, verbatim]
 config_schema:
   type: object
   additionalProperties: false
-  required: [dsh_memory_path]
   properties:
-    dsh_memory_path: {type: string, description: dsh-memory 检出目录（版本锁定见 server/memory/LINGSHU_VERSION）}
+    dsh_memory_path: {type: string, default: "", description: "dsh-memory 检出目录；留空 = 使用内置灵枢 md_cg 认知图引擎"}
     python: {type: string, default: "", description: 跑灵枢的 Python；留空 = 当前解释器（Windows 上没有 python3 命令）}
     graph_dir: {type: string, default: "${data_dir}/graph", description: 认知图目录（MDCG_ROOT）}
     actor: {type: string, default: gallings}

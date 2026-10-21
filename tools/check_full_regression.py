@@ -10,7 +10,10 @@ U=(pathlib.Path(sys.argv[1]) if len(sys.argv)>1 else ROOT/'content/imports/vnstu
 OUT=pathlib.Path(sys.argv[2] if len(sys.argv)>2 else '.')
 async def main():
   async with async_playwright() as p:
-    b=await p.chromium.launch(args=['--autoplay-policy=no-user-gesture-required','--enable-precise-memory-info'])
+    try:
+      b=await p.chromium.launch(args=['--autoplay-policy=no-user-gesture-required','--enable-precise-memory-info'])
+    except Exception:
+      b=await p.chromium.launch(channel='msedge',args=['--autoplay-policy=no-user-gesture-required','--enable-precise-memory-info'])
     pg=await b.new_page(viewport={'width':1600,'height':900})
     errs=[];pg.on('pageerror',lambda e:errs.append(str(e)));pg.on('console',lambda m:errs.append('console:'+m.text) if m.type=='error' else None)
     t0=time.time();await pg.goto(U,timeout=180000);await pg.wait_for_timeout(3000)

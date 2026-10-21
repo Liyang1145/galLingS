@@ -1,0 +1,32 @@
+schema_version: 1
+id: gallings.llm.gemini
+name: Google Gemini 模型网关
+version: 0.1.0
+kind: llm
+api: 1
+description: 走 Google Gemini v1beta streamGenerateContent 原生流式接口，支持函数工具调用与用量统计，归一为五种内部事件（PLAN §12）。
+requires:
+  gallings: ">=0.1,<0.2"
+  python: ">=3.11"
+runtime:
+  type: python
+  entry: plugin.py:GeminiLLM
+capabilities: [stream, tools, usage]
+config_schema:
+  type: object
+  additionalProperties: false
+  required: [base_url, model]
+  properties:
+    base_url: {type: string, default: "https://generativelanguage.googleapis.com"}
+    model: {type: string, default: "gemini-2.5-flash"}
+    temperature: {type: number, minimum: 0, maximum: 2, default: 0.8}
+    timeout_s: {type: number, minimum: 1, default: 60}
+    connect_timeout_s: {type: number, minimum: 1, default: 10}
+secrets:
+  - name: api_key
+    env: GALLINGS_LLM_API_KEY
+    required: true
+    description: Google Gemini API key；只从环境变量读
+permissions:
+  network: [generativelanguage.googleapis.com]
+determinism: recorded

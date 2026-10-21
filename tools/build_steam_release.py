@@ -1,16 +1,23 @@
-"""一键构建《海风与布丁》Steam 发行包（含完整离线 galcore.wasm 引擎 + GalAgent 结局后聊天 + 本地文件存档 + SteamPipe 仓库目录）。
+"""一键构建《海风与布丁》Steam 发行包（双模架构：Python 灵枢完整引擎 + galcore.wasm 离线兜底 + 多模型插件 + 灵枢认知图 MCP + GalAgent 完整工具链）。
 
 用法：
     python tools/build_steam_release.py                  # Release 构建 → dist/steam/
     python tools/build_steam_release.py --appid 480      # 指定 Steam AppID（默认 480 用于本地测试）
     python tools/build_steam_release.py --debug          # Debug 快速构建（开发联调）
-    python tools/build_steam_release.py --skip-rust      # 仅更新前端与剧本资源（复用已有 exe 与 wasm）
+    python tools/build_steam_release.py --skip-rust      # 仅更新前端、后端插件与剧本资源（复用已有 exe 与 wasm）
 
 产物结构（dist/steam/）：
     content/                        ← SteamPipe Depot ContentRoot（直接上传此目录）
       HaifengPudding.exe            ← 游戏主程序（Steam 启动项填写 HaifengPudding.exe）
       steam_appid.txt               ← Steam AppID
-      game/                         ← 完整离线游戏资源（剧本、立绘、音乐、配音、galcore.wasm、GalAgent）
+      game/                         ← 完整游戏资源（剧本、立绘、音乐、配音、galcore.wasm、GalAgent）
+      server/                       ← galLingS 完整服务端（/ws、/ws/soul、/ws/post_ending、/api/settings）
+      plugins/                      ← 内置插件集（灵枢认知图 MCP、多模型 LLM 插件、GalAgent 完整工具链与 MCP 扩展）
+      compiler/                     ← VN Studio 剧本 OP 编译器
+      content/cards/                ← 角色卡定义（whale.yaml 等）
+      schemas/                      ← JSON Schema 校验定义
+      web/                          ← 外框与宿主桥前端资源
+      config.example.yaml           ← 默认插件链配置
     steampipe/
       app_build.vdf                 ← SteamPipe 构建脚本模板
       depot_build.vdf               ← SteamPipe Depot 映射脚本模板
@@ -57,6 +64,7 @@ def write_steampipe_configs(steam_dir: Path, app_id: str, depot_id: str) -> None
 \t\t"Recursive" "1"
 \t}}
 \t"FileExclusion" "*.pdb"
+\t"FileExclusion" "__pycache__/*"
 \t"FileExclusion" "userdata/*"
 }}
 '''
@@ -65,10 +73,16 @@ def write_steampipe_configs(steam_dir: Path, app_id: str, depot_id: str) -> None
 
     guide = f"""# 《海风与布丁》Steam 发行与 Steamworks 配置指南
 
-## 1. 目录结构
-- `content/`：Steam Depot 根目录（直接双击 `content/HaifengPudding.exe` 即可完整离线游玩）
-  - `HaifengPudding.exe`：Windows 64 位原生客户端（内置纯净游戏模式、全屏切换、本地文件存档、GalAgent 直连与工具引擎）
+## 1. 目录结构与双模架构
+- `content/`：Steam Depot 根目录（直接双击 `content/HaifengPudding.exe` 即可游玩）
+  - `HaifengPudding.exe`：Windows 64 位原生客户端，内置 **「完整引擎 + 离线 WASM 兜底」双模架构**：
+    1. **完整引擎模式（默认优先）**：启动时自动探测并后台静默拉起 `galLingS` Python 服务端（`127.0.0.1`），完整挂载：
+       - **灵枢认知图 MCP 记忆库**（`gallings.memory.lingshu`，内置 `md_cg.mcp_server` 认知图扩散激活与时间线隔离，无需外部下载）
+       - **多模型 LLM 插件链**（`gallings.llm.openai-compat` / `gallings.llm.anthropic` / `gallings.llm.gemini` / `gallings.llm.ollama`）
+       - **GalAgent 完整工具链与 MCP 扩展**（`gallings.tool.galagent` + `gallings.tool.lingshu-mcp`，含 `powershell`、`read_file`、`write_file`、`list_dir`、`fetch_url`、`get_time` 及 `mdcg_*` MCP 认知图工具）
+    2. **离线 WASM 兜底模式**：若目标机器无 Python 环境，自动无缝回退至内置 `app.localhost` + `galcore.wasm` 引擎，100% 保证剧演出、CG/音乐/配音、存档与直连大模型对话可用。
   - `game/`：游戏资源包（含《海风与布丁》全量立绘/CG/BGM/语音、`galcore.wasm` Rust 规则引擎、`GalAgent` 结局后聊天插件）
+  - `server/`、`plugins/`、`compiler/`、`content/cards/`、`schemas/`、`web/`：完整灵枢后端与插件目录
   - `steam_appid.txt`：当前设置为 `{app_id}`（正式上传前可改为您的正式 AppID，或由 Steam 客户端自动注入）
 - `steampipe/`：SteamPipe 上传脚本（`app_build.vdf` / `depot_build.vdf`）
 
@@ -93,7 +107,10 @@ def write_steampipe_configs(steam_dir: Path, app_id: str, depot_id: str) -> None
 ## 3. 游戏内功能与快捷键
 - **纯净模式**：启动后直接进入《海风与布丁》标题画面，顶栏已隐藏。
 - **结局后聊天（GalAgent）**：标题画面与结局卡均提供 **「和鲸鱼小姐聊聊」** 入口。
-- **AI / 大模型配置**：打开游戏内 **「设置」→「Steam 桌面版与 AI 接入」**，可切换 **「纯选项 / AI 模式（可自己说）」**，并可填入任意兼容 OpenAI 的 API Key（如 DeepSeek、OpenAI、硅基流动、本地 Ollama 等）解锁真模型实时对话、结局后工具调用与手账悄悄话；未配置密钥时内置离线鲸鱼小姐回应，开箱即玩。
+- **多模型与灵枢记忆配置**：打开游戏内 **「设置」→「灵枢记忆与多模型 AI 导演」**，可切换：
+  - **剧情选项模式**：`纯选项（原著体验）` / `AI 模式（选项点可“自己说”）`
+  - **记忆底座**：`灵枢认知图 (MCP)` / `本地轻量记忆`
+  - **模型厂商协议**：`OpenAI / DeepSeek`、`Claude (Anthropic)`、`Gemini (Google)`、`Ollama 本地（免密钥）`
 - **快捷键**：
   - `F11` 或 `Alt + Enter`：切换全屏 / 窗口
   - `F10` 或 `Ctrl + Shift + D`：展开 / 隐藏开发者调试顶栏与引擎时间轴
@@ -104,6 +121,27 @@ steamcmd +login <您的Steamworks账号> +run_app_build "{(sp_dir / 'app_build.v
 ```
 """
     (steam_dir / "STEAMWORKS_GUIDE.md").write_text(guide, encoding="utf-8")
+
+
+def _copy_clean_tree(src: Path, dst: Path) -> None:
+    if not src.is_dir():
+        return
+    shutil.copytree(
+        src,
+        dst,
+        dirs_exist_ok=True,
+        ignore=shutil.ignore_patterns("__pycache__", "*.pyc", "*.pyo", ".pytest_cache"),
+    )
+
+
+def bundle_backend_runtime(content_dir: Path) -> None:
+    """将 server/、plugins/、compiler/、schemas/、web/、content/cards/ 等完整灵枢后端打包进 Steam content 目录。"""
+    for folder in ("server", "plugins", "compiler", "schemas", "web", "wheels"):
+        _copy_clean_tree(ROOT / folder, content_dir / folder)
+    _copy_clean_tree(ROOT / "content" / "cards", content_dir / "content" / "cards")
+    cfg_example = ROOT / "config.example.yaml"
+    if cfg_example.is_file():
+        shutil.copy2(cfg_example, content_dir / "config.example.yaml")
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -174,6 +212,7 @@ def main(argv: list[str] | None = None) -> int:
     shutil.copy2(exe_src, content_dir / "海风与布丁.exe")
     (content_dir / "steam_appid.txt").write_text(f"{app_id}\n", encoding="utf-8")
     shutil.copytree(dist_desktop, content_dir / "game")
+    bundle_backend_runtime(content_dir)
     write_steampipe_configs(steam_dir, app_id, depot_id)
 
     total_files = sum(1 for p in content_dir.rglob("*") if p.is_file())

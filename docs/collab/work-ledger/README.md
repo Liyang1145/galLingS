@@ -59,6 +59,7 @@
 - [local-scene-audio-assembly.md](local-scene-audio-assembly.md) — 本地场景与音频成果提交
 
 ## 引擎、打包、整合
+- [lingshu-multi-llm-galagent-mcp-20261021.md](lingshu-multi-llm-galagent-mcp-20261021.md) — 10-21 灵枢认知图 MCP 记忆库、多模型插件（OpenAI/Claude/Gemini/Ollama）、GalAgent 完整工具链与 MCP 扩展整合及 Steam 双模桌面包
 - [steam-release-package-20261021.md](steam-release-package-20261021.md) — 10-21 Steam 正式版客户端封装（纯净游戏模式、本地文件存档、内置 GalAgent 直连与工具引擎、SteamPipe 仓库构建、待办 B08 解决）
 - [desktop-package.md](desktop-package.md) — 桌面封装（WASM + Tauri）
 - [tanpowasd-dev-integration.md](tanpowasd-dev-integration.md) — tanpowasd/dev 审核与合并

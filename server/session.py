@@ -45,7 +45,7 @@ def openai_tools(names: set[str] | None = None) -> list[dict[str, Any]]:
 def public_path(path: str, rt: Any = None) -> str:
     """本机绝对路径 → 相对于仓库根 / 游戏目录 / 数据目录的路径；都不在其下就只给文件名。"""
     p = Path(path)
-    if not p.is_absolute():
+    if not p.is_absolute() and not str(path).startswith(("/", "\\")):
         return path or "?"
     bases = [Path(__file__).resolve().parents[1]]
     for attr in ("games_dir", "data_dir"):

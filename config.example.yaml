@@ -15,7 +15,7 @@ game:
   default_mode: choice       # choice | ai
   agm_fill: true             # AGM 补位开关（PLAN §13.1）
   honesty_gap_rule: false    # §8.3 待议：尾鳍须"心里与嘴上落差"支撑；默认关
-  # ---- 只留接口（PLAN §16），Demo 不启用
+  # ---- 跨局记忆与结局后 Agent（PLAN §16）
   cross_run_memory: false            # 跨局记忆
   post_ending:                       # 结局后自由聊天 GalAgent（docs/design/galagent.md）
     mode: chat_window                # off | scene | chat_window | auto；不是 off 就开放 /ws/post_ending，作品页的游戏会自动装上 GalAgent 插件
@@ -31,20 +31,29 @@ plugins:
     - ~/.gallings/plugins          # 玩家 / 第三方插件
   select:                          # 单例 kind：列表 = 主用 + 降级备选（按顺序）
     llm: [gallings.llm.openai-compat]
-    memory: [gallings.memory.local]
-    # memory: [gallings.memory.lingshu, gallings.memory.local]   # 装了灵枢就用灵枢，失败退本地
+    memory: [gallings.memory.lingshu, gallings.memory.local]   # 默认启用内置灵枢 MCP 认知图，失败退回本地
     # image: [...]   # 生图（预留）
     # tts: [...]     # 语音（预留）
   tools:
     - gallings.tool.galagent       # 结局后聊天 + 基础 Agent 工具（powershell 默认先问玩家）
+    - gallings.tool.lingshu-mcp    # 灵枢认知图 MCP 工具集（mdcg_remember / mdcg_search / mdcg_get / mdcg_link / mdcg_status）
   guards: [gallings.guard.injection]
   importers: []
   config:
     gallings.llm.openai-compat:
       base_url: https://api.deepseek.com
       model: deepseek-flash
-    # gallings.memory.lingshu:
-    #   dsh_memory_path: C:/path/to/dsh-memory
+    gallings.llm.anthropic:
+      base_url: https://api.anthropic.com
+      model: claude-3-5-sonnet-latest
+    gallings.llm.gemini:
+      base_url: https://generativelanguage.googleapis.com
+      model: gemini-2.5-flash
+    gallings.llm.ollama:
+      base_url: http://127.0.0.1:11434/v1
+      model: qwen2.5:7b
+    gallings.memory.lingshu:
+      dsh_memory_path: ""            # 留空 = 使用内置灵枢 md_cg 认知图引擎；也可填外部 dsh-memory 路径
     gallings.tool.galagent:
       workspace: ""                  # 角色能读写的文件夹；留空 = ~/.gallings/plugins/gallings.tool.galagent/workspace
       confirm: {powershell: ask, write_file: ask}   # auto 直接执行 / ask 先问玩家 / deny 禁用

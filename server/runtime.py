@@ -19,9 +19,11 @@ log = logging.getLogger("gallings")
 
 def resolve_games_dir(config: dict[str, Any]) -> Path:
     """Keep the old default in saved settings usable after the repository move."""
-    configured = (config.get("vn") or {}).get("games_dir") or "content/imports/vnstudio"
+    configured = (config.get("vn") or {}).get("games_dir") or os.environ.get("GALLINGS_GAMES_DIR") or "content/imports/vnstudio"
     directory = Path(os.path.expanduser(str(configured)))
     directory = directory if directory.is_absolute() else ROOT / directory
+    if not directory.is_dir() and (ROOT / "game" / "vn").is_dir():
+        return ROOT / "game" / "vn"
     legacy = ROOT / "content/vn"
     migrated = ROOT / "content/imports/vnstudio"
     if directory.resolve() == legacy.resolve() and migrated.is_dir():

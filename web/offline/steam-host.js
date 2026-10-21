@@ -6,10 +6,10 @@
  * 2. Steam Auto-Cloud 本地文件存档同步（/__host/saves）：
  *    把 IndexedDB 里的 saves:<id> 与 localStorage 里的 vnglobal / vnprefs / vnread / vnplug
  *    实时镜像到 %APPDATA%/com.gallings.haifeng/saves/*.json（便携模式下为 userdata/saves/*.json）。
- * 3. 游戏内直连大模型客户端（window.GallingsLLM + /__host/llm）：
- *    密钥独立存在 config/llm.json（不进 saves/，避免被 Steam 云同步到公共设备），
- *    驱动：① 结局后聊天（GalAgent DirectClient）、② 剧情选项点“（自己说）”（local-session.js AI 模式）、
- *          ③ 鲸鱼小姐的手账悄悄话（SOUL_BRAINS）。不填密钥时全部优雅退回离线演出。
+ * 3. 多模型插件 + 灵枢记忆库 + GalAgent 桥接（window.GallingsLLM + /api/settings + /__host/llm）：
+ *    支持 OpenAI/DeepSeek 兼容、Anthropic Claude、Google Gemini、Ollama 本地四类模型插件，
+ *    以及灵枢认知图 MCP 记忆底座（gallings.memory.lingshu）与本地轻量记忆切换。
+ *    密钥独立存在本机数据目录（不进 saves/，避免被 Steam 云同步到公共设备）。
  */
 (() => {
   'use strict';
@@ -31,17 +31,27 @@
     try { topWin.GALLINGS_STEAM = true; } catch (e) {}
   }
 
-  // ------------------------------------------------------------------ 1. 宿主探测与同步预热（仅在 app.localhost 下同步读取一次）
+  const PROVIDER_DEFAULTS = {
+    'openai-compat': { base_url: 'https://api.deepseek.com', model: 'deepseek-chat', label: 'OpenAI / DeepSeek' },
+    'anthropic': { base_url: 'https://api.anthropic.com', model: 'claude-sonnet-4-20250514', label: 'Claude' },
+    'gemini': { base_url: 'https://generativelanguage.googleapis.com', model: 'gemini-2.5-flash', label: 'Gemini' },
+    'ollama': { base_url: 'http://127.0.0.1:11434', model: 'qwen2.5:7b', label: 'Ollama 本地' },
+  };
+
+  // ------------------------------------------------------------------ 1. 宿主探测与同步预热
   let hostAvailable = isAppHost;
   let hostSavesCache = null;
   let hostInfoCache = null;
   let llmConfigCache = {
+    provider: 'openai-compat',
     base_url: 'https://api.deepseek.com',
     model: 'deepseek-chat',
     api_key: '',
     has_key: false,
     key_tail: '',
     mode: 'choice',
+    memory_use: 'lingshu',
+    memory_active: 'gallings.memory.lingshu',
   };
 
   function syncGetJson(url) {
@@ -64,8 +74,8 @@
         if (parsed && typeof parsed === 'object') {
           const k = String(parsed.api_key || '');
           llmConfigCache = Object.assign({}, llmConfigCache, parsed, {
-            has_key: Boolean(k),
-            key_tail: k.length >= 4 ? k.slice(-4) : (k ? '****' : ''),
+            has_key: Boolean(k || parsed.has_key),
+            key_tail: k.length >= 4 ? k.slice(-4) : (parsed.key_tail || (k ? '****' : '')),
           });
         }
       }
@@ -74,22 +84,48 @@
 
   loadLocalLlmConfig();
 
-  if (isAppHost) {
-    const info = syncGetJson('/__host/info');
-    if (info && info.ok) {
+  // 顶层窗口探测一次并缓存到 topWin.__GALLINGS_HOST_BOOT，内层 iframe 直接复用，避免重复同步请求
+  if (isAppHost || isSteamMode) {
+    let boot = null;
+    try { boot = topWin.__GALLINGS_HOST_BOOT; } catch (e) {}
+    if (!boot) {
+      const info = syncGetJson('/__host/info');
+      const sv = info && info.ok ? syncGetJson('/__host/saves') : null;
+      const lc = info && info.ok ? syncGetJson('/__host/llm') : null;
+      boot = { info, sv, lc };
+      try { topWin.__GALLINGS_HOST_BOOT = boot; } catch (e) {}
+    }
+    if (boot.info && boot.info.ok) {
       hostAvailable = true;
-      hostInfoCache = info;
+      hostInfoCache = boot.info;
     }
-    const sv = syncGetJson('/__host/saves');
-    if (sv && sv.ok && sv.data) {
-      hostSavesCache = sv.data;
-      hydrateLocalStorageFromHost(sv.data);
+    if (boot.sv && boot.sv.ok && boot.sv.data) {
+      hostSavesCache = boot.sv.data;
+      hydrateLocalStorageFromHost(boot.sv.data);
     }
-    const lc = syncGetJson('/__host/llm');
-    if (lc && lc.ok) {
-      llmConfigCache = Object.assign({}, llmConfigCache, lc);
+    if (boot.lc && boot.lc.ok) {
+      llmConfigCache = Object.assign({}, llmConfigCache, boot.lc);
       try { localStorage.setItem('gallings.llm.config', JSON.stringify(llmConfigCache)); } catch (e) {}
     }
+  }
+
+  // 若运行在完整 Python 后端下，异步拉取一次 /api/settings 同步多模型、灵枢记忆状态与工具链信息
+  if (!window.GALLINGS_OFFLINE && !isAppHost && isTop) {
+    fetch('/api/settings').then(r => r.ok ? r.json() : null).then(s => {
+      if (!s || !s.llm) return;
+      llmConfigCache = Object.assign({}, llmConfigCache, {
+        provider: s.llm.provider || llmConfigCache.provider || 'openai-compat',
+        base_url: s.llm.base_url || llmConfigCache.base_url,
+        model: s.llm.model || llmConfigCache.model,
+        has_key: Boolean(s.llm.key_set || llmConfigCache.api_key),
+        key_tail: s.llm.key_tail || llmConfigCache.key_tail,
+        memory_use: (s.memory && s.memory.use) || 'lingshu',
+        memory_active: s.memory_active || '',
+        tools_active: s.tools || [],
+        backend_full: true,
+      });
+      try { localStorage.setItem('gallings.llm.config', JSON.stringify(llmConfigCache)); } catch (e) {}
+    }).catch(() => {});
   }
 
   function hydrateLocalStorageFromHost(data) {
@@ -179,14 +215,29 @@
 
   // ------------------------------------------------------------------ 3. 原生窗口控制（全屏 / 退出 / 打开存档目录）
   async function hostWindowAction(action, extra = {}) {
+    const payload = JSON.stringify(Object.assign({ action }, extra));
+    // 若在 Tauri 壳里但加载的是 127.0.0.1 Python 完整后端，优先调用 app.localhost 的原生窗口控制
+    if ((action === 'toggle_fullscreen' || action === 'quit') && isSteamMode && !isAppHost) {
+      try {
+        const r = await fetch('http://app.localhost/__host/window', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: payload,
+        });
+        if (r.ok) return await r.json();
+      } catch (e) {}
+    }
     if (hostAvailable) {
       try {
         const r = await fetch('/__host/window', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(Object.assign({ action }, extra)),
+          body: payload,
         });
-        if (r.ok) return await r.json();
+        if (r.ok) {
+          const data = await r.json();
+          if (data && data.ok) return data;
+        }
       } catch (e) {}
     }
     if (action === 'toggle_fullscreen') {
@@ -203,7 +254,7 @@
     return { ok: false };
   }
 
-  // ------------------------------------------------------------------ 4. 游戏内大模型直连客户端（window.GallingsLLM）
+  // ------------------------------------------------------------------ 4. 游戏内多模型客户端（window.GallingsLLM）
   function normalizeEndpoint(baseUrl) {
     let u = String(baseUrl || '').trim().replace(/\/+$/, '');
     if (!u) return '';
@@ -215,6 +266,7 @@
   const GallingsLLM = {
     isHostAvailable: () => hostAvailable,
     getHostInfo: () => hostInfoCache,
+    getProviderDefaults: () => PROVIDER_DEFAULTS,
     getConfig() {
       if (topWin !== window && topWin.GallingsLLM && topWin.GallingsLLM !== this) {
         return topWin.GallingsLLM.getConfig();
@@ -223,7 +275,8 @@
     },
     isReady() {
       const c = this.getConfig();
-      return Boolean(c.base_url && c.model && c.api_key);
+      if (c.provider === 'ollama') return Boolean(c.base_url && c.model);
+      return Boolean(c.base_url && c.model && (c.api_key || c.has_key));
     },
     async saveConfig(patch) {
       if (topWin !== window && topWin.GallingsLLM && topWin.GallingsLLM !== this) {
@@ -254,41 +307,136 @@
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
+              provider: llmConfigCache.provider || 'openai-compat',
               base_url: llmConfigCache.base_url,
               model: llmConfigCache.model,
               api_key: llmConfigCache.api_key,
               mode: llmConfigCache.mode,
+              memory_use: llmConfigCache.memory_use || 'lingshu',
             }),
           });
+        } catch (e) {}
+      }
+      // 若 Python 完整服务在线，同步更新 /api/settings 以热重启多模型插件与灵枢 MCP 记忆库
+      if (!window.GALLINGS_OFFLINE && !isAppHost) {
+        try {
+          const settingsBody = {
+            llm: {
+              provider: llmConfigCache.provider || 'openai-compat',
+              base_url: llmConfigCache.base_url,
+              model: llmConfigCache.model,
+            },
+            memory: {
+              use: llmConfigCache.memory_use || 'lingshu',
+            },
+          };
+          if (patch && typeof patch.api_key === 'string') {
+            if (patch.clear_key) settingsBody.llm.api_key = '';
+            else if (patch.api_key.trim()) settingsBody.llm.api_key = patch.api_key.trim();
+          }
+          const sr = await fetch('/api/settings', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(settingsBody),
+          });
+          if (sr.ok) {
+            const s = await sr.json();
+            llmConfigCache.memory_active = s.memory_active || '';
+            llmConfigCache.tools_active = s.tools || [];
+            llmConfigCache.backend_full = true;
+            if (s.llm) {
+              llmConfigCache.has_key = Boolean(s.llm.key_set || llmConfigCache.api_key);
+              llmConfigCache.key_tail = s.llm.key_tail || llmConfigCache.key_tail;
+            }
+          }
         } catch (e) {}
       }
       return Object.assign({}, llmConfigCache);
     },
     async complete({ messages, tools, json_mode, temperature, max_tokens, timeout = 25000 }) {
       const cfg = this.getConfig();
-      if (!cfg.base_url || !cfg.model || !cfg.api_key) {
+      const provider = cfg.provider || 'openai-compat';
+      if (!cfg.base_url || !cfg.model || (provider !== 'ollama' && !cfg.api_key)) {
         return { ok: false, text: '', tool_calls: [], error: '尚未配置模型 API 密钥' };
       }
-      const url = normalizeEndpoint(cfg.base_url);
-      const body = {
-        model: cfg.model,
-        messages,
-        stream: false,
-      };
-      if (temperature != null) body.temperature = temperature;
-      if (max_tokens != null) body.max_tokens = max_tokens;
-      if (json_mode) body.response_format = { type: 'json_object' };
-      if (tools && tools.length) body.tools = tools;
 
       const ctl = new AbortController();
       const timer = setTimeout(() => ctl.abort(), timeout);
       try {
+        if (provider === 'anthropic') {
+          let base = String(cfg.base_url || 'https://api.anthropic.com').trim().replace(/\/+$/, '');
+          const url = base.endsWith('/v1/messages') ? base : (base.endsWith('/v1') ? base + '/messages' : base + '/v1/messages');
+          const sysParts = messages.filter(m => m.role === 'system').map(m => m.content);
+          const chatMsgs = messages.filter(m => m.role !== 'system').map(m => ({
+            role: m.role === 'assistant' ? 'assistant' : 'user',
+            content: String(m.content || ''),
+          }));
+          const body = { model: cfg.model, max_tokens: max_tokens || 1024, messages: chatMsgs };
+          if (sysParts.length) body.system = sysParts.join('\n\n');
+          if (temperature != null) body.temperature = temperature;
+          const res = await fetch(url, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'x-api-key': cfg.api_key,
+              'anthropic-version': '2023-06-01',
+            },
+            body: JSON.stringify(body),
+            signal: ctl.signal,
+          });
+          if (!res.ok) {
+            const errTxt = (await res.text().catch(() => '')).slice(0, 240);
+            return { ok: false, text: '', tool_calls: [], error: `HTTP ${res.status}: ${errTxt || res.statusText}` };
+          }
+          const data = await res.json();
+          const text = (data.content || []).filter(b => b.type === 'text').map(b => b.text || '').join('');
+          return { ok: true, text, tool_calls: [], error: '' };
+        }
+
+        if (provider === 'gemini') {
+          let base = String(cfg.base_url || 'https://generativelanguage.googleapis.com').trim().replace(/\/+$/, '');
+          if (!base.endsWith('/v1beta')) base += '/v1beta';
+          const modelName = cfg.model.startsWith('models/') ? cfg.model : `models/${cfg.model}`;
+          const url = `${base}/${modelName}:generateContent?key=${encodeURIComponent(cfg.api_key)}`;
+          const sysParts = messages.filter(m => m.role === 'system').map(m => ({ text: String(m.content || '') }));
+          const contents = messages.filter(m => m.role !== 'system').map(m => ({
+            role: m.role === 'assistant' ? 'model' : 'user',
+            parts: [{ text: String(m.content || '') }],
+          }));
+          const body = { contents: contents.length ? contents : [{ role: 'user', parts: [{ text: '...' }] }] };
+          if (sysParts.length) body.systemInstruction = { parts: sysParts };
+          const res = await fetch(url, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(body),
+            signal: ctl.signal,
+          });
+          if (!res.ok) {
+            const errTxt = (await res.text().catch(() => '')).slice(0, 240);
+            return { ok: false, text: '', tool_calls: [], error: `HTTP ${res.status}: ${errTxt || res.statusText}` };
+          }
+          const data = await res.json();
+          const parts = (((data.candidates || [])[0] || {}).content || {}).parts || [];
+          const text = parts.map(p => p.text || '').join('');
+          return { ok: true, text, tool_calls: [], error: '' };
+        }
+
+        const url = normalizeEndpoint(cfg.base_url);
+        const body = {
+          model: cfg.model,
+          messages,
+          stream: false,
+        };
+        if (temperature != null) body.temperature = temperature;
+        if (max_tokens != null) body.max_tokens = max_tokens;
+        if (json_mode) body.response_format = { type: 'json_object' };
+        if (tools && tools.length) body.tools = tools;
+        const headers = { 'Content-Type': 'application/json' };
+        if (cfg.api_key) headers['Authorization'] = 'Bearer ' + cfg.api_key;
+
         const res = await fetch(url, {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer ' + cfg.api_key,
-          },
+          headers,
           body: JSON.stringify(body),
           signal: ctl.signal,
         });
@@ -317,7 +465,19 @@
     },
     async stream({ messages, tools, temperature, signal, onText, onToolCall, timeout = 45000 }) {
       const cfg = this.getConfig();
-      if (!cfg.base_url || !cfg.model || !cfg.api_key) {
+      const provider = cfg.provider || 'openai-compat';
+      if (provider === 'anthropic' || provider === 'gemini') {
+        const r = await this.complete({ messages, tools, temperature, timeout });
+        if (!r.ok) throw new Error(r.error || '模型请求失败');
+        if (r.text && onText) onText(r.text);
+        if (Array.isArray(r.tool_calls)) {
+          for (const tc of r.tool_calls) {
+            if (onToolCall) onToolCall(tc);
+          }
+        }
+        return { ok: true, tool_calls: r.tool_calls || [] };
+      }
+      if (!cfg.base_url || !cfg.model || (provider !== 'ollama' && !cfg.api_key)) {
         throw new Error('尚未配置模型 API 密钥');
       }
       const url = normalizeEndpoint(cfg.base_url);
@@ -334,12 +494,11 @@
       if (signal) signal.addEventListener('abort', () => ctl.abort(), { once: true });
 
       try {
+        const headers = { 'Content-Type': 'application/json' };
+        if (cfg.api_key) headers['Authorization'] = 'Bearer ' + cfg.api_key;
         const res = await fetch(url, {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer ' + cfg.api_key,
-          },
+          headers,
           body: JSON.stringify(body),
           signal: ctl.signal,
         });
@@ -399,6 +558,15 @@
       }
     },
     async test() {
+      if (!window.GALLINGS_OFFLINE && !isAppHost) {
+        try {
+          const sr = await fetch('/api/settings/test', { method: 'POST' });
+          if (sr.ok) {
+            const r = await sr.json();
+            if (r && typeof r.ok === 'boolean') return r;
+          }
+        } catch (e) {}
+      }
       const r = await this.complete({
         messages: [{ role: 'user', content: '只回复两个字：在呢' }],
         max_tokens: 32,
@@ -602,13 +770,16 @@
         const rows = box && box.querySelector('.rows');
         if (!rows || rows.querySelector('[data-steam-sec]')) return r;
         const cfg = GallingsLLM.getConfig();
+        let curProvider = cfg.provider || 'openai-compat';
+        let curMem = cfg.memory_use || 'lingshu';
         const curMode = (window.VNPlugins?.getSetting?.('gallings.galcore', 'mode')) || cfg.mode || 'choice';
         const saveDir = hostInfoCache?.save_dir || '';
+        const isFullBackend = !window.GALLINGS_OFFLINE && !isAppHost;
         const sec = document.createElement('div');
         sec.id = 'steamAiSec';
         sec.dataset.steamSec = '1';
         sec.innerHTML = `
-          <div class="row sep"><span>画面与存档</span><small class="dim">${hostAvailable ? 'Steam 云存档目录已连接' : '浏览器存储'}</small></div>
+          <div class="row sep"><span>画面与存档</span><small class="dim">${hostAvailable ? 'Steam 云存档目录已连接' : '浏览器存储'}${isFullBackend ? ' · 灵枢完整后端已启用' : ''}</small></div>
           <div class="row">
             <span>显示模式</span>
             <div class="seg">
@@ -621,12 +792,28 @@
             <button type="button" class="tg" data-st-win="savedir">打开存档文件夹</button>
             <small class="dim" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:280px" title="${saveDir.replace(/"/g, '&quot;')}">${saveDir}</small>
           </div>` : ''}
-          <div class="row sep"><span>AI 导演与结局后聊天</span><small class="dim">不填密钥也可完整游玩全部剧情与结局；填密钥后解锁自由输入与实时 AI 对话</small></div>
+          <div class="row sep"><span>灵枢记忆与多模型 AI 导演</span><small class="dim">不填密钥也可完整游玩全部剧情；填密钥后解锁自由输入、灵枢 MCP 记忆与 GalAgent 工具链</small></div>
           <div class="row">
             <span>剧情选项模式</span>
             <div class="seg">
               <button type="button" class="tg ${curMode !== 'ai' ? 'on' : ''}" data-st-mode="choice">纯选项（原著体验）</button>
               <button type="button" class="tg ${curMode === 'ai' ? 'on' : ''}" data-st-mode="ai">AI 模式（选项点可“自己说”）</button>
+            </div>
+          </div>
+          <div class="row">
+            <span>记忆底座</span>
+            <div class="seg">
+              <button type="button" class="tg ${curMem === 'lingshu' ? 'on' : ''}" data-st-mem="lingshu">灵枢认知图 (MCP)</button>
+              <button type="button" class="tg ${curMem !== 'lingshu' ? 'on' : ''}" data-st-mem="local">本地轻量记忆</button>
+            </div>
+          </div>
+          <div class="row">
+            <span>模型厂商协议</span>
+            <div class="seg">
+              <button type="button" class="tg ${curProvider === 'openai-compat' ? 'on' : ''}" data-st-prov="openai-compat">OpenAI / DeepSeek</button>
+              <button type="button" class="tg ${curProvider === 'anthropic' ? 'on' : ''}" data-st-prov="anthropic">Claude</button>
+              <button type="button" class="tg ${curProvider === 'gemini' ? 'on' : ''}" data-st-prov="gemini">Gemini</button>
+              <button type="button" class="tg ${curProvider === 'ollama' ? 'on' : ''}" data-st-prov="ollama">Ollama 本地</button>
             </div>
           </div>
           <div class="row">
@@ -639,7 +826,7 @@
           </div>
           <div class="row">
             <span>API 密钥</span>
-            <input class="steam-sec-inp" id="stLlmKey" type="password" autocomplete="off" spellcheck="false" placeholder="${cfg.has_key ? '已保存（末 4 位 ' + (cfg.key_tail || '****') + '），留空不改' : '填入 OpenAI / DeepSeek 兼容 API Key'}">
+            <input class="steam-sec-inp" id="stLlmKey" type="password" autocomplete="off" spellcheck="false" placeholder="${curProvider === 'ollama' ? 'Ollama 本地无需密钥（可选）' : cfg.has_key ? '已保存（末 4 位 ' + (cfg.key_tail || '****') + '），留空不改' : '填入对应厂商的 API Key'}">
           </div>
           <div class="row">
             <span>连接操作</span>
@@ -683,18 +870,58 @@
           };
         });
 
+        sec.querySelectorAll('[data-st-mem]').forEach(btn => {
+          btn.onclick = async ev => {
+            ev.stopPropagation();
+            curMem = btn.dataset.stMem;
+            sec.querySelectorAll('[data-st-mem]').forEach(x => x.classList.toggle('on', x === btn));
+            await GallingsLLM.saveConfig({ memory_use: curMem });
+          };
+        });
+
+        sec.querySelectorAll('[data-st-prov]').forEach(btn => {
+          btn.onclick = ev => {
+            ev.stopPropagation();
+            curProvider = btn.dataset.stProv;
+            sec.querySelectorAll('[data-st-prov]').forEach(x => x.classList.toggle('on', x === btn));
+            const d = PROVIDER_DEFAULTS[curProvider] || PROVIDER_DEFAULTS['openai-compat'];
+            const baseInp = sec.querySelector('#stLlmBase');
+            const modelInp = sec.querySelector('#stLlmModel');
+            const keyInp = sec.querySelector('#stLlmKey');
+            const knownBases = new Set(Object.values(PROVIDER_DEFAULTS).map(x => x.base_url));
+            const knownModels = new Set(Object.values(PROVIDER_DEFAULTS).map(x => x.model));
+            baseInp.placeholder = d.base_url;
+            modelInp.placeholder = d.model;
+            if (!baseInp.value.trim() || knownBases.has(baseInp.value.trim())) baseInp.value = d.base_url;
+            if (!modelInp.value.trim() || knownModels.has(modelInp.value.trim())) modelInp.value = d.model;
+            keyInp.placeholder = curProvider === 'ollama'
+              ? 'Ollama 本地无需密钥（可选）'
+              : (GallingsLLM.getConfig().has_key ? `已保存（末 4 位 ${GallingsLLM.getConfig().key_tail || '****'}），留空不改` : '填入对应厂商的 API Key');
+          };
+        });
+
         const outEl = sec.querySelector('#stLlmOut');
         const saveInputs = async (clearKey = false) => {
-          const base_url = sec.querySelector('#stLlmBase').value.trim() || 'https://api.deepseek.com';
-          const model = sec.querySelector('#stLlmModel').value.trim() || 'deepseek-chat';
+          const d = PROVIDER_DEFAULTS[curProvider] || PROVIDER_DEFAULTS['openai-compat'];
+          const base_url = sec.querySelector('#stLlmBase').value.trim() || d.base_url;
+          const model = sec.querySelector('#stLlmModel').value.trim() || d.model;
           const api_key = clearKey ? '' : sec.querySelector('#stLlmKey').value.trim();
-          const saved = await GallingsLLM.saveConfig({ base_url, model, api_key, clear_key: clearKey });
+          const saved = await GallingsLLM.saveConfig({
+            provider: curProvider,
+            memory_use: curMem,
+            base_url,
+            model,
+            api_key,
+            clear_key: clearKey,
+          });
           sec.querySelector('#stLlmKey').value = '';
-          sec.querySelector('#stLlmKey').placeholder = saved.has_key
-            ? `已保存（末 4 位 ${saved.key_tail || '****'}），留空不改`
-            : '填入 OpenAI / DeepSeek 兼容 API Key';
+          sec.querySelector('#stLlmKey').placeholder = curProvider === 'ollama'
+            ? 'Ollama 本地无需密钥（可选）'
+            : saved.has_key
+              ? `已保存（末 4 位 ${saved.key_tail || '****'}），留空不改`
+              : '填入对应厂商的 API Key';
           outEl.className = 'steam-sec-status ' + (GallingsLLM.isReady() ? 'ok' : '');
-          outEl.textContent = GallingsLLM.isReady() ? '● 已保存（模型已就绪）' : '○ 已保存（当前使用内置离线回复）';
+          outEl.textContent = GallingsLLM.isReady() ? '● 已保存（模型与记忆已就绪）' : '○ 已保存（当前使用内置离线回复）';
         };
 
         sec.querySelector('#stLlmSave').onclick = async ev => {
@@ -773,8 +1000,8 @@
       enhanceTitleMenu();
     }
 
-    // 6.5 灵枢手账（SOUL_BRAINS.galLingS）离线/直连大模型增强
-    // 当没有 Python /ws/soul 服务时：若配了 GallingsLLM 则直接调大模型回复悄悄话，否则立即走本地回复（不苦等 4s 超时）
+    // 6.5 灵枢手账（SOUL_BRAINS.galLingS）离线兜底大模型增强
+    // 当运行在纯离线模式（没有 Python /ws/soul 服务）时：若配了 GallingsLLM 则直接调大模型回复悄悄话，否则立即走本地回复
     const isOfflineMode = Boolean(window.GALLINGS_OFFLINE || topWin.GALLINGS_OFFLINE);
     if (isOfflineMode && window.SOUL_BRAINS && window.SOUL_BRAINS.galLingS) {
       const localBrain = window.SOUL_BRAINS.local;

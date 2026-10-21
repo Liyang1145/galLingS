@@ -22,6 +22,9 @@ import asyncio
 import contextlib
 import json
 import logging
+import os
+import subprocess
+import sys
 from pathlib import Path
 from typing import Any
 
@@ -44,8 +47,12 @@ WEB = ROOT / "web"
 
 def VN_PLUGINS_DIR(r: Runtime) -> Path:  # noqa: N802
     """放给作品用的 VN Studio 插件（.js）的文件夹：vn.plugins_dir，默认 content/vn_plugins。"""
-    d = Path(str((r.config.get("vn") or {}).get("plugins_dir") or "content/vn_plugins")).expanduser()
-    return d if d.is_absolute() else ROOT / d
+    raw = (r.config.get("vn") or {}).get("plugins_dir") or os.environ.get("GALLINGS_VN_PLUGINS_DIR") or "content/vn_plugins"
+    d = Path(str(raw)).expanduser()
+    resolved = d if d.is_absolute() else ROOT / d
+    if not resolved.is_dir() and (ROOT / "game" / "vn_plugins").is_dir():
+        return ROOT / "game" / "vn_plugins"
+    return resolved
 
 
 
@@ -64,7 +71,7 @@ def lingshu_path_problem(path: str) -> str:
         return f"灵枢在下一层：请填 {sub}，记忆设置没改。"
     return "这里没有灵枢（找不到 md_cg\\mcp_server.py），记忆设置没改。先下载 dsh-memory（github.com/FuRongJun-1999/dsh-memory），再填它的文件夹。"
 
-LOOPBACK = {"127.0.0.1", "localhost", "::1"}
+LOOPBACK = {"127.0.0.1", "localhost", "::1", "app.localhost"}
 
 
 def _hostname(v: str) -> str:
@@ -371,9 +378,11 @@ def create_app(runtime: Runtime | None = None) -> FastAPI:
     @app.get("/api/settings")
     async def get_settings() -> dict[str, Any]:
         r = rt()
+        rep = r.plugins.report()
         return {**r.settings.public(r.config, r.base_environ), "llm_ready": bool(r.llm_chain()),
                 "memory_ready": r.plugins.get("memory") is not None,
                 "memory_active": getattr(getattr(r.plugins.get("memory"), "ctx", None), "plugin_id", ""),
+                "tools": rep.get("tools") or {},
                 "failed": {k: v for k, v in r.plugins.failed().items()}}
 
     @app.post("/api/settings")
@@ -382,12 +391,111 @@ def create_app(runtime: Runtime | None = None) -> FastAPI:
         warn = ""
         mem = body.get("memory") if isinstance(body.get("memory"), dict) else None
         if mem and mem.get("use") == "lingshu":
-            warn = lingshu_path_problem(str(mem.get("dsh_memory_path") or ""))
-            if warn:
-                body = {k: v for k, v in body.items() if k != "memory"}  # 其余照存，记忆设置不动
+            raw_dsh = str(mem.get("dsh_memory_path") or "").strip()
+            if raw_dsh:
+                warn = lingshu_path_problem(raw_dsh)
+                if warn:
+                    body = {k: v for k, v in body.items() if k != "memory"}  # 其余照存，记忆设置不动
         r.settings.save(body)
         await r.reload_plugins()
         return {**await get_settings(), "warn": warn}
+
+    # ---------------------------------------------------------------- 桌面 / Steam 宿主桥兼容接口（/__host/*）
+    SAVE_KINDS = ("slots", "global", "prefs", "read", "plugins")
+
+    def _host_save_dir() -> Path:
+        env_dir = os.environ.get("GALLINGS_SAVE_DIR")
+        d = Path(env_dir) if env_dir else (rt().data_dir / "saves")
+        d.mkdir(parents=True, exist_ok=True)
+        return d
+
+    @app.get("/__host/info")
+    async def host_info() -> dict[str, Any]:
+        r = rt()
+        sdir = _host_save_dir()
+        return {
+            "ok": True,
+            "steam": True,
+            "full_backend": True,
+            "platform": sys.platform,
+            "save_dir": str(sdir),
+            "config_dir": str(r.data_dir),
+            "workspace_dir": str(r.data_dir / "plugins" / "gallings.tool.galagent" / "workspace"),
+        }
+
+    @app.get("/__host/saves")
+    async def host_get_saves() -> dict[str, Any]:
+        sdir = _host_save_dir()
+        data: dict[str, Any] = {}
+        for k in SAVE_KINDS:
+            f = sdir / f"{k}.json"
+            if f.is_file():
+                with contextlib.suppress(OSError, ValueError):
+                    data[k] = json.loads(f.read_text(encoding="utf-8"))
+        return {"ok": True, "save_dir": str(sdir), "data": data}
+
+    @app.post("/__host/saves")
+    async def host_post_saves(body: dict[str, Any]) -> dict[str, Any]:
+        sdir = _host_save_dir()
+        batch = body.get("batch") if isinstance(body.get("batch"), dict) else body
+        for k, v in batch.items():
+            if k in SAVE_KINDS:
+                tmp = sdir / f"{k}.json.tmp"
+                target = sdir / f"{k}.json"
+                tmp.write_text(json.dumps(v, ensure_ascii=False, indent=2), encoding="utf-8")
+                tmp.replace(target)
+        return {"ok": True, "save_dir": str(sdir)}
+
+    @app.get("/__host/llm")
+    async def host_get_llm() -> dict[str, Any]:
+        s = await get_settings()
+        llm = s["llm"]
+        return {
+            "ok": True,
+            "full_backend": True,
+            "provider": llm.get("provider", "openai-compat"),
+            "providers": llm.get("providers", []),
+            "base_url": llm["base_url"],
+            "model": llm["model"],
+            "has_key": llm["key_set"],
+            "key_set": llm["key_set"],
+            "key_tail": llm["key_tail"],
+            "llm_ready": s["llm_ready"],
+            "memory": s["memory"],
+            "memory_ready": s["memory_ready"],
+            "memory_active": s["memory_active"],
+            "tools": s["tools"],
+        }
+
+    @app.post("/__host/llm")
+    async def host_post_llm(body: dict[str, Any]) -> dict[str, Any]:
+        patch: dict[str, Any] = {"llm": {}}
+        for k in ("provider", "base_url", "model"):
+            if body.get(k):
+                patch["llm"][k] = str(body[k]).strip()
+        if body.get("clear_key") or body.get("api_key") == "__clear__":
+            patch["llm"]["api_key"] = ""
+        elif body.get("api_key"):
+            patch["llm"]["api_key"] = str(body["api_key"]).strip()
+        if isinstance(body.get("memory"), dict):
+            patch["memory"] = body["memory"]
+        await post_settings(patch)
+        return await host_get_llm()
+
+    @app.post("/__host/window")
+    async def host_window(body: dict[str, Any]) -> dict[str, Any]:
+        action = str(body.get("action") or "")
+        sdir = _host_save_dir()
+        if action == "open_save_dir":
+            with contextlib.suppress(Exception):
+                if sys.platform.startswith("win"):
+                    subprocess.Popen(["explorer.exe", str(sdir)])
+                elif sys.platform == "darwin":
+                    subprocess.Popen(["open", str(sdir)])
+                else:
+                    subprocess.Popen(["xdg-open", str(sdir)])
+            return {"ok": True, "save_dir": str(sdir)}
+        return {"ok": False, "delegate": True}
 
     @app.post("/api/settings/test")
     async def test_llm() -> dict[str, Any]:

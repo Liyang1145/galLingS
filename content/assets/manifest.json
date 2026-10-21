@@ -2337,6 +2337,57 @@
       "provenance": "音乐负责人提供并指定用于M1，正式曲名未定",
       "archived_on": "2026-10-16",
       "license": "未指定开放许可证；不默认适用引擎代码许可证"
+    },
+    {
+      "id": "bgm_e2_deepsea_main",
+      "title": "深海之光·主曲",
+      "category": "bgm",
+      "path": "audio/bgm/bgm_e2_deepsea_main.mp3",
+      "format": "mp3",
+      "bytes": 6583702,
+      "sha256": "f66176c65e6852f6ec89e6f9a30a4a5ae8d09ce3676e9b6d8ccbd99f265a44cd",
+      "duration_seconds": 214.852676,
+      "source_filename": "21.wav",
+      "source_sha256": "f2e33da39002bb06bcb548e2dab444497efe7b3abf8f982e703f6e0f834da9e9",
+      "provenance": "音乐负责人提供并指定用途；生成参数未随音频交付",
+      "archived_on": "2026-10-21",
+      "integration_status": "local-integrated-awaiting-listening",
+      "processing": "WAV converted with libmp3lame -q:a 0; no trimming, no normalization",
+      "license": "未指定；不默认适用引擎代码许可证"
+    },
+    {
+      "id": "bgm_e2_deepsea_piano",
+      "title": "深海之光·钢琴改编",
+      "category": "bgm",
+      "path": "audio/bgm/bgm_e2_deepsea_piano.mp3",
+      "format": "mp3",
+      "bytes": 2113689,
+      "sha256": "5fe431056d077d2af7a71c0a50c73a07e6664fede3d868ae4d995f87e810b7f5",
+      "duration_seconds": 132.101188,
+      "source_filename": "深海-钢琴.mp3",
+      "source_sha256": "5fe431056d077d2af7a71c0a50c73a07e6664fede3d868ae4d995f87e810b7f5",
+      "provenance": "音乐负责人提供并指定用途；生成参数未随音频交付",
+      "archived_on": "2026-10-21",
+      "integration_status": "local-integrated-awaiting-listening",
+      "processing": "Original MP3 copied bit-for-bit",
+      "license": "未指定；不默认适用引擎代码许可证"
+    },
+    {
+      "id": "bgm_emerald_dream_piano",
+      "title": "翡翠之梦·钢琴改编",
+      "category": "bgm",
+      "path": "audio/bgm/bgm_emerald_dream_piano.mp3",
+      "format": "mp3",
+      "bytes": 2139185,
+      "sha256": "d95341d97eaca99ffefda7092538c3bcbffaf52a04c227f9a4c22fe04829faaa",
+      "duration_seconds": 133.694688,
+      "source_filename": "翡翠钢琴.mp3",
+      "source_sha256": "d95341d97eaca99ffefda7092538c3bcbffaf52a04c227f9a4c22fe04829faaa",
+      "provenance": "音乐负责人提供并指定用途；生成参数未随音频交付",
+      "archived_on": "2026-10-21",
+      "integration_status": "local-integrated-awaiting-listening",
+      "processing": "Original MP3 copied bit-for-bit",
+      "license": "未指定；不默认适用引擎代码许可证"
     }
   ]
 }

@@ -1,0 +1,208 @@
+{
+  "publishedOn": "2026-10-22",
+  "remoteBase": "dc1e3660e2c1de5272e6883f55e4a568af8c2351",
+  "proof": {
+    "base": "dc1e3660e2c1de5272e6883f55e4a568af8c2351",
+    "nodes": 3315,
+    "onlyBgmLineFieldsChanged": true,
+    "otherRemoteProjectFieldsAndAssetsPreserved": true,
+    "M2E4E7AndSilencePreserved": true,
+    "unacceptedArtExcluded": true,
+    "files": [
+      "content/imports/vnstudio/海风与布丁/game.js",
+      "content/assets/audio/bgm/bgm_e2_deepsea_main.mp3",
+      "content/imports/vnstudio/海风与布丁/assets/bgm/bgm_e2_deepsea_main.mp3",
+      "content/assets/audio/bgm/bgm_e2_deepsea_piano.mp3",
+      "content/imports/vnstudio/海风与布丁/assets/bgm/bgm_e2_deepsea_piano.mp3",
+      "content/assets/audio/bgm/bgm_emerald_dream_piano.mp3",
+      "content/imports/vnstudio/海风与布丁/assets/bgm/bgm_emerald_dream_piano.mp3",
+      "content/imports/vnstudio/海风与布丁/art-catalog.js",
+      "content/assets/manifest.json",
+      "content/audio/manifest.yaml",
+      "content/audio/deepsea-theme-integration-20261021.json",
+      "content/audio/deepsea-theme-validation-20261021.json",
+      "docs/content/music-progress.md",
+      "docs/content/music-direction.md",
+      "content/assets/audio/bgm/README.md",
+      "docs/collab/待办总表.md",
+      "docs/collab/work-ledger/README.md",
+      "docs/collab/work-ledger/deepsea-emerald-piano-20261021.md"
+    ]
+  },
+  "publicationPlayerAndArt": "remote baseline; six unaccepted local art candidates excluded from test site and publication",
+  "playback": {
+    "cues": [
+      {
+        "start": 276,
+        "endExclusive": 328,
+        "playing": true,
+        "withinCueNoRestart": true,
+        "outgoingTrackStopped": true,
+        "nextTrack": "bgm_atri_t4_night",
+        "idx": 276,
+        "id": "bgm_emerald_dream_piano",
+        "time": 1.345263,
+        "duration": 133.694688,
+        "volume": 0.27929824999999997,
+        "expectedVolume": 0.27929824999999997,
+        "loop": true,
+        "error": null
+      },
+      {
+        "start": 399,
+        "endExclusive": 488,
+        "playing": true,
+        "withinCueNoRestart": true,
+        "outgoingTrackStopped": true,
+        "nextTrack": "bgm_e2_deepsea_piano",
+        "idx": 399,
+        "id": "bgm_e2_deepsea_main",
+        "time": 1.344895,
+        "duration": 214.852676,
+        "volume": 0.276101,
+        "expectedVolume": 0.276101,
+        "loop": true,
+        "error": null
+      },
+      {
+        "start": 488,
+        "endExclusive": 505,
+        "playing": true,
+        "withinCueNoRestart": true,
+        "outgoingTrackStopped": true,
+        "nextTrack": "bgm_atri_e7_reflection",
+        "idx": 488,
+        "id": "bgm_e2_deepsea_piano",
+        "time": 2.669219,
+        "duration": 132.101188,
+        "volume": 0.2645867,
+        "expectedVolume": 0.2645867,
+        "loop": true,
+        "error": null
+      },
+      {
+        "start": 625,
+        "endExclusive": 643,
+        "playing": true,
+        "withinCueNoRestart": true,
+        "outgoingTrackStopped": true,
+        "nextTrack": "bgm_atri_t4_night",
+        "idx": 625,
+        "id": "bgm_e2_deepsea_piano",
+        "time": 1.346016,
+        "duration": 132.101188,
+        "volume": 0.2645867,
+        "expectedVolume": 0.2645867,
+        "loop": true,
+        "error": null
+      },
+      {
+        "start": 2691,
+        "endExclusive": 2727,
+        "playing": true,
+        "withinCueNoRestart": true,
+        "outgoingTrackStopped": true,
+        "nextTrack": "bgm_atri_t3_dusk",
+        "idx": 2691,
+        "id": "bgm_e2_deepsea_piano",
+        "time": 1.347518,
+        "duration": 132.101188,
+        "volume": 0.2645867,
+        "expectedVolume": 0.2645867,
+        "loop": true,
+        "error": null
+      },
+      {
+        "start": 2860,
+        "endExclusive": 2944,
+        "playing": true,
+        "withinCueNoRestart": true,
+        "outgoingTrackStopped": true,
+        "nextTrack": "bgm_atri_t4_night",
+        "idx": 2860,
+        "id": "bgm_e2_deepsea_main",
+        "time": 1.344624,
+        "duration": 214.852676,
+        "volume": 0.276101,
+        "expectedVolume": 0.276101,
+        "loop": true,
+        "error": null
+      }
+    ],
+    "tracks": {
+      "bgm_e2_deepsea_main": {
+        "decodeAndPlayback": true,
+        "audioStateRestore": {
+          "id": "bgm_e2_deepsea_main",
+          "time": 38.104847
+        },
+        "wholeFileLoopWrap": true,
+        "mirrorHashVerified": true
+      },
+      "bgm_e2_deepsea_piano": {
+        "decodeAndPlayback": true,
+        "audioStateRestore": {
+          "id": "bgm_e2_deepsea_piano",
+          "time": 38.104172
+        },
+        "wholeFileLoopWrap": true,
+        "mirrorHashVerified": true
+      },
+      "bgm_emerald_dream_piano": {
+        "decodeAndPlayback": true,
+        "audioStateRestore": {
+          "id": "bgm_emerald_dream_piano",
+          "time": 38.105921
+        },
+        "wholeFileLoopWrap": true,
+        "mirrorHashVerified": true
+      }
+    },
+    "errors": [],
+    "M2E4E7StillPlay": true,
+    "oldE2NoStoryReferences": true,
+    "stopAllWorks": true,
+    "passed": true
+  },
+  "fullRegression": {
+    "load_s": 3.12,
+    "body": "game playing",
+    "chapters": 18,
+    "walk": {
+      "n": 3315,
+      "p50": 0.09999996423721313,
+      "p99": 0.800000011920929,
+      "max": 57.80000001192093,
+      "bad": [],
+      "nbad": 0
+    },
+    "cg": {
+      "n": 33,
+      "p50": 93.5,
+      "max": 208.19999998807907,
+      "heapMB": 13
+    },
+    "save": {
+      "want": {
+        "idx": 1504,
+        "id": "6cdt4nv4",
+        "vars": "{\"好感\":0,\"尾鳍\":7,\"贝壳延后\":0,\"玩笑\":0,\"海星放生\":0,\"周目\":1,\"结局数\":0}"
+      },
+      "got": {
+        "idx": 1504,
+        "id": "6cdt4nv4",
+        "vars": "{\"好感\":0,\"尾鳍\":7,\"贝壳延后\":0,\"玩笑\":0,\"海星放生\":0,\"周目\":1,\"结局数\":0}"
+      }
+    },
+    "prev": [
+      302,
+      301
+    ],
+    "errs": [],
+    "nerrs": 0
+  },
+  "onlyAudioAndMusicDocumentationPublished": true,
+  "mainChanged": false,
+  "autoPlaytestBuildSkipped": true,
+  "manualListeningAccepted": false
+}

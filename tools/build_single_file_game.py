@@ -7,6 +7,7 @@ import hashlib
 import json
 import mimetypes
 import re
+import sys
 from pathlib import Path
 from urllib.parse import unquote, urlparse
 from urllib.request import url2pathname
@@ -22,6 +23,10 @@ MEDIA_MIME = {".png":"image/png", ".jpg":"image/jpeg", ".jpeg":"image/jpeg", ".w
 
 
 def build(output: Path, project_file: Path | None = None) -> dict:
+    # 多模型面板内嵌进作品 index.html（不连 galLingS 时“在线聊天与连接”也用它），先同步成插件里的最新版
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from sync_router_panel import sync as sync_router_panel
+    sync_router_panel()
     if project_file:
         project = json.loads(project_file.read_text(encoding="utf-8-sig"))
         if not isinstance(project.get("assets"), dict) or not isinstance(project.get("lines"), list):

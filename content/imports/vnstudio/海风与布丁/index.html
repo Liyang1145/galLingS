@@ -582,6 +582,263 @@ body.game #pctl .btn{width:auto;min-width:48px;height:30px;padding:0 8px;display
 @media (pointer:coarse){body.game #pctl{gap:8px}body.game #pctl .btn{width:auto;min-width:76px;height:44px}}
 </style>
 <!-- WHALE_UI_REPO_ADAPTER_END -->
+<!--gl-router-panel:start-->
+<!-- 自动生成：tools/sync_router_panel.py 从 plugins/builtin/llm-router/web/ 复制，别手改 -->
+<style id="gl-router-panel-css">
+/* gallings.llm.router 设置面板。表单直接用作品页设置的 set-row / seg / ldot（web/style.css + vn-polish.css），这里只补列表和服务商标签。
+   宿主给 #setDlg 里的按钮加了带 id 的样式，需要压过去的地方用 :is(#setDlg, .lm) 拿到同样的优先级。 */
+.lm { --lm-line: #aec6bb33; --lm-ink: #edf0e4; --lm-ink2: #b4c5bf; --lm-acc: #94bcab; --lm-card: #1d3338; }
+.lm .gi { width: 16px; height: 16px; flex: none; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.lm-lead { display: block; margin: -2px 0 8px; }
+.lm-empty { margin: 4px 0 10px; }
+
+/* 模型列表：一整块带细分隔线，跟时间轴 / 录像列表一路 */
+.lm-list { list-style: none; margin: 0 0 10px; padding: 0; border: 1px solid var(--lm-line); border-radius: 10px; overflow: hidden; }
+.lm-list:empty { display: none; }
+.lm-list > li + li { border-top: 1px solid var(--lm-line); }
+.lm-item { display: flex; align-items: stretch; background: transparent; transition: background .15s; }
+.lm-item:hover { background: #ffffff07; }
+.lm-item.on { background: linear-gradient(90deg, #557a7038, transparent 70%); box-shadow: inset 3px 0 0 var(--lm-acc); }
+:is(#setDlg, .lm) .lm-pick { flex: 1; min-width: 0; display: flex; align-items: center; gap: 12px; height: auto; padding: 10px 12px 10px 14px; border: 0; border-radius: 0; background: transparent; color: var(--lm-ink); text-align: left; cursor: pointer; font: inherit; }
+:is(#setDlg, .lm) .lm-pick:hover { background: transparent; }
+.lm-ring { width: 16px; height: 16px; flex: none; border-radius: 50%; border: 1.5px solid #b4c5bf88; box-sizing: border-box; transition: border-color .15s, box-shadow .15s; }
+.lm-item.on .lm-ring { border: 5px solid var(--lm-acc); }
+.lm-pick:hover .lm-ring { border-color: var(--lm-acc); }
+.lm-main { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px; }
+.lm-l1 { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.lm-l1 b { font-weight: 500; font-size: 14.5px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.lm-prov { flex: none; font-size: 11px; padding: 0 6px; line-height: 18px; border: 1px solid var(--lm-line); border-radius: 4px; color: var(--lm-ink2); }
+.lm-cur { flex: none; font-size: 11px; padding: 0 7px; line-height: 18px; border-radius: 4px; background: #d9e6d4; color: #233e39; font-weight: 600; }
+.lm-l2 { display: flex; align-items: center; flex-wrap: wrap; gap: 0 2px; font-size: 12.5px; color: var(--lm-ink2); min-width: 0; }
+.lm-l2 code { font-family: ui-monospace, "SF Mono", Consolas, monospace; font-size: 12px; color: #d3e2db; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 46%; }
+.lm-sep { margin: 0 6px; opacity: .5; }
+.lm-state { display: inline-flex; align-items: center; gap: 2px; }
+.lm-state.bad { color: #f1b7a6; }
+.lm-acts { display: flex; align-items: center; gap: 2px; padding: 0 8px; opacity: .55; transition: opacity .15s; }
+.lm-item:hover .lm-acts, .lm-item:focus-within .lm-acts { opacity: 1; }
+:is(#setDlg, .lm) .lm-acts button { width: 30px; height: 30px; padding: 0; display: grid; place-items: center; border: 1px solid transparent; border-radius: 7px; background: transparent; color: var(--lm-ink2); cursor: pointer; }
+:is(#setDlg, .lm) .lm-acts button:hover:not(:disabled) { background: #2c464a; border-color: var(--lm-line); color: var(--lm-ink); }
+:is(#setDlg, .lm) .lm-acts button[data-act="del"]:hover { color: #f1b7a6; }
+:is(#setDlg, .lm) .lm-acts button:disabled { opacity: .4; cursor: default; }
+
+/* 添加模型：虚线整行，和设置里的虚线分隔同一种 */
+:is(#setDlg, .lm) .lm-new { width: 100%; height: 40px; display: flex; align-items: center; justify-content: center; gap: 8px; border: 1px dashed #aec6bb55; border-radius: 10px; background: transparent; color: #c5dfcf; font-size: 13.5px; cursor: pointer; }
+:is(#setDlg, .lm) .lm-new:hover { background: #ffffff08; border-color: var(--lm-acc); color: var(--lm-ink); }
+
+/* 就地编辑：列表里展开成一张浅一点的卡片，表单行用宿主的 set-row */
+.lm-edit { background: var(--lm-card); padding: 12px 14px 12px; box-shadow: inset 3px 0 0 #d9e6d4; }
+.lm-list:not(:has(.lm-item)) .lm-edit { box-shadow: none; }
+.lm-ftitle { font-size: 13px; color: var(--lm-ink2); margin: 0 0 4px; }
+.lm-ftitle b { color: var(--lm-ink); font-weight: 500; }
+.lm-form .set-row { margin: 6px 0; }
+.lm-form .lm-hintrow { margin: -4px 0 4px; min-height: 0; }
+.lm-form .lm-hintrow small { line-height: 1.5; }
+.lm-form a { color: #c5dfcf; }
+.lm-form a .gi { width: 11px; height: 11px; vertical-align: -1px; }
+.lm-provrow { align-items: flex-start; }
+.lm-provrow > span { padding-top: 6px; }
+.lm-chips { flex: 1; display: flex; flex-wrap: wrap; gap: 6px; }
+:is(#setDlg, .lm) .lm-chips button { height: 28px; padding: 0 10px; border-radius: 14px; border: 1px solid var(--lm-line); background: transparent; color: var(--lm-ink2); font-size: 12.5px; }
+:is(#setDlg, .lm) .lm-chips button:hover { background: #2c464a; color: var(--lm-ink); }
+:is(#setDlg, .lm) .lm-chips button.on { background: #557a70; border-color: transparent; color: #fff8e8; }
+.lm-fbar { display: flex; align-items: center; gap: 8px; margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--lm-line); }
+.lm-out { flex: 1; min-width: 0; }
+.lm-out.bad { color: #f1b7a6; } .lm-out.ok { color: #a9dcbc; }
+:is(#setDlg, .lm) .lm-fbar .primary { background: #d9e6d4; color: #233e39; border: 0; font-weight: 600; }
+:is(#setDlg, .lm) .lm-fbar button { height: 32px; padding: 0 14px; border-radius: 8px; font-size: 13.5px; cursor: pointer; }
+:is(#setDlg, .lm) .lm-fbar button:not(.primary) { border: 1px solid var(--lm-line); background: #253d41; color: #eef3e5; }
+.lm button:focus-visible { outline: 2px solid #d5e6bc; outline-offset: 2px; }
+
+@media (max-width: 700px) {
+  .lm-acts { opacity: 1; padding: 0 4px; }
+  :is(#setDlg, .lm) .lm-acts button { width: 34px; height: 34px; }
+  .lm-l2 code { max-width: 100%; }
+  .lm-fbar { flex-wrap: wrap; }
+  .lm-out { flex-basis: 100%; }
+}
+</style>
+<script id="gl-router-panel-js">
+// gallings.llm.router 设置面板：游戏「设置 → 在线聊天与连接 → 模型」（作品 index.html 的 GL_ONLINE 挂载；作品页外框也能挂）。
+// 写法跟设置里其它几节一样：一行一个模型，左边单选“当前使用”，右边 测试 / 编辑 / 删除；编辑在列表里就地展开（标签 + 输入框的 set-row），不弹窗。
+// 所有改动立即保存到插件（POST /api/plugin/<id>/<action>），不用点设置底部的“保存”。
+// 宿主约定（plugin-format §10）：window.GLPanels[<插件 id>] = { mount(el, ctx) }；ctx.api(action, body) 调插件 api()，ctx.changed() 让宿主刷新状态。
+// 可选：ctx.lead / ctx.keyNote 换掉列表上方说明和密钥提示（单文件 游玩.html 不连 galLingS 时，作品 index.html 内嵌了本文件的副本，用浏览器本地存储实现同一套 api）。
+"use strict";
+(() => {
+  const PID = "gallings.llm.router";
+  const esc = (v) => String(v ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+  // lucide 线条图标（ISC），和 galLingS icons.js 同一套
+  const P = {
+    test: '<path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/>',
+    edit: '<path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/>',
+    del: '<path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>',
+    plus: '<path d="M5 12h14"/><path d="M12 5v14"/>',
+    link: '<path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>',
+  };
+  const ic = (n) => `<svg class="gi" viewBox="0 0 24 24" aria-hidden="true">${P[n]}</svg>`;
+  const THINK = { off: "关", mid: "中", high: "高" };
+  const THINK_HINT = { off: "不思考，回得最快，日常陪聊够用", mid: "先想一想再回，慢一些", high: "想得最久，适合复杂的工具任务，最慢也最费额度" };
+
+  function mount(el, ctx) {
+    let S = null;            // 插件状态（public()）
+    let editing = null;      // 正在编辑的模型 id；"new" = 新增
+    const probe = {};        // 模型 id → {busy, ok, msg}：列表里的测试结果
+
+    const presetOf = (m) => S.presets.find((p) => p.id === m.preset) || S.presets[S.presets.length - 1];
+    async function call(action, body) {
+      const r = await ctx.api(action, body || {});
+      if (r && r.models) { S = r; ctx.changed?.(); }
+      return r || {};
+    }
+
+    function render() {
+      if (!S) { el.innerHTML = `<div class="lm"><small class="muted">读取中……</small></div>`; return; }
+      const rows = S.models.map((m) => editing === m.id ? `<li class="lm-edit">${form(m)}</li>` : item(m)).join("");
+      el.innerHTML = `<div class="lm">
+        ${S.models.length ? `<small class="muted lm-lead">${esc(ctx.lead || "点一行切换正在用的模型。剧情即兴、手账悄悄话、结局后聊天、建卡都用它。")}</small>` : ""}
+        <ul class="lm-list" role="radiogroup" aria-label="正在用的模型">${rows}${editing === "new" ? `<li class="lm-edit">${form(null)}</li>` : ""}</ul>
+        ${!S.models.length && editing !== "new" ? `<p class="muted lm-empty">还没有模型。剧情照常能玩，手账悄悄话会用离线回复；想让她用 AI 回你，就加一个。</p>` : ""}
+        ${editing === "new" ? "" : `<button type="button" class="lm-new" id="lmNew">${ic("plus")}<span>添加模型</span></button>`}
+      </div>`;
+      bind();
+    }
+
+    function item(m) {
+      const cur = m.id === S.main;
+      const pr = probe[m.id];
+      let state;
+      if (pr?.busy) state = `<i class="ldot wait"></i>测试中……`;
+      else if (pr) state = `<i class="ldot ${pr.ok ? "ok" : "bad"}"></i>${esc(pr.msg)}`;
+      else if (!m.usable) state = `<i class="ldot bad"></i>${m.key_set || m.no_key ? "没填完整" : "还没填密钥"}`;
+      else state = `<i class="ldot ${cur ? "ok" : ""}"></i>${m.no_key ? "本机服务" : (m.key_tail ? `密钥 ···${esc(m.key_tail)}` : "密钥已设置")}`;
+      return `<li class="lm-item ${cur ? "on" : ""}" data-id="${esc(m.id)}">
+        <button type="button" class="lm-pick" role="radio" aria-checked="${cur}" title="${cur ? "正在用" : "改用这个模型"}">
+          <span class="lm-ring" aria-hidden="true"></span>
+          <span class="lm-main">
+            <span class="lm-l1"><b>${esc(m.name)}</b><span class="lm-prov">${esc(presetOf(m).name)}</span>${cur ? `<span class="lm-cur">正在用</span>` : ""}</span>
+            <span class="lm-l2"><code>${esc(m.model)}</code><span class="lm-sep">·</span>思考 ${THINK[m.think] || "关"}<span class="lm-sep">·</span><span class="lm-state ${pr && !pr.ok ? "bad" : ""}">${state}</span></span>
+          </span>
+        </button>
+        <span class="lm-acts">
+          <button type="button" data-act="test" title="测试连接" aria-label="测试 ${esc(m.name)}" ${pr?.busy ? "disabled" : ""}>${ic("test")}</button>
+          <button type="button" data-act="edit" title="编辑" aria-label="编辑 ${esc(m.name)}">${ic("edit")}</button>
+          <button type="button" data-act="del" title="删除" aria-label="删除 ${esc(m.name)}">${ic("del")}</button>
+        </span></li>`;
+    }
+
+    function form(m) {
+      const preset = m ? m.preset : "deepseek";
+      const p = S.presets.find((x) => x.id === preset) || S.presets[0];
+      const think = m?.think || "off";
+      return `<form class="lm-form" novalidate>
+        <div class="lm-ftitle">${m ? `编辑 <b>${esc(m.name)}</b>` : "添加模型"}</div>
+        <div class="set-row lm-provrow"><span>服务商</span><div class="lm-chips" role="radiogroup" aria-label="服务商">
+          ${S.presets.map((x) => `<button type="button" role="radio" data-p="${x.id}" aria-checked="${x.id === preset}" class="${x.id === preset ? "on" : ""}">${esc(x.name)}</button>`).join("")}</div></div>
+        <label class="set-row"><span>名称</span><input name="name" maxlength="40" spellcheck="false" autocomplete="off" placeholder="列表里显示的名字" value="${esc(m ? m.name : p.name)}"></label>
+        <label class="set-row"><span>服务地址</span><input name="base_url" spellcheck="false" autocomplete="off" inputmode="url" placeholder="https://…/v1" value="${esc(m ? m.base_url : p.base_url)}"></label>
+        <div class="set-row"><span>密钥</span><input name="api_key" type="password" spellcheck="false" autocomplete="off"><button type="button" class="lm-eye">显示</button></div>
+        <div class="set-row lm-hintrow"><span></span><small class="muted lm-keynote"></small></div>
+        <div class="set-row"><span>模型</span><input name="model" spellcheck="false" autocomplete="off" list="lmModels" placeholder="例如 deepseek-chat" value="${esc(m ? m.model : (p.models[0] || ""))}"><button type="button" class="lm-fetch" title="从服务商拉取可用模型">拉取列表</button></div>
+        <datalist id="lmModels"></datalist>
+        <div class="set-row"><span>思考等级</span><div class="seg lm-think">${Object.entries(THINK).map(([v, t]) => `<button type="button" data-v="${v}" class="${v === think ? "on" : ""}">${t}</button>`).join("")}</div></div>
+        <div class="set-row lm-hintrow"><span></span><small class="muted lm-thinknote">${THINK_HINT[think]}</small></div>
+        <div class="lm-fbar"><small class="muted lm-out" aria-live="polite"></small>
+          <button type="button" class="lm-ftest">测试</button><button type="button" class="lm-cancel">取消</button><button type="submit" class="primary lm-save">保存</button></div>
+      </form>`;
+    }
+
+    function bind() {
+      const q = (s, r = el) => r.querySelector(s);
+      q("#lmNew") && (q("#lmNew").onclick = () => { editing = "new"; render(); q(".lm-form input[name=api_key]")?.focus(); });
+      el.querySelectorAll(".lm-item").forEach((li) => {
+        const m = S.models.find((x) => x.id === li.dataset.id);
+        q(".lm-pick", li).onclick = () => { if (m.id !== S.main) call("main", { id: m.id }).then(render); };
+        q('[data-act="test"]', li).onclick = async () => {
+          probe[m.id] = { busy: true }; render();
+          const r = await ctx.api("test", { id: m.id }).catch((e) => ({ ok: false, message: e.message }));
+          probe[m.id] = { ok: !!r.ok, msg: (r.message || (r.ok ? "通了" : "失败")).replace(/^通了：/, "通了 · ") }; render();
+        };
+        q('[data-act="edit"]', li).onclick = () => { editing = m.id; render(); q(".lm-form input[name=name]")?.focus(); };
+        q('[data-act="del"]', li).onclick = async () => {
+          if (!confirm(`删除“${m.name}”？它的密钥也会一起删掉。`)) return;
+          delete probe[m.id]; await call("delete", { id: m.id }); render();
+        };
+      });
+      const f = q(".lm-form");
+      if (f) bindForm(f, editing === "new" ? null : S.models.find((x) => x.id === editing));
+    }
+
+    function bindForm(f, m) {
+      const F = (n) => f.elements[n];
+      let preset = m ? m.preset : "deepseek";
+      let think = m?.think || "off";
+      let nameTouched = !!m;
+      const pre = () => S.presets.find((x) => x.id === preset) || S.presets[S.presets.length - 1];
+      const out = (msg, bad) => { const o = f.querySelector(".lm-out"); o.textContent = msg || ""; o.classList.toggle("bad", bad === true); o.classList.toggle("ok", bad === false); };
+      const local = () => /^https?:\/\/(127\.0\.0\.1|localhost|\[::1\])(:|\/|$)/i.test(F("base_url").value.trim());
+      const models = (list) => { f.querySelector("#lmModels").innerHTML = (list || pre().models).map((x) => `<option value="${esc(x)}">`).join(""); };
+      function keyNote() {
+        const p = pre();
+        const t = m?.key_set ? `已保存（末 4 位 ${m.key_tail || "****"}），留空 = 不改` : p.no_key || local() ? "本机服务一般不用填" : (ctx.keyNote || "只存在本机 galLingS 数据文件夹里，网页读不到原文");
+        f.querySelector(".lm-keynote").innerHTML = esc(t) + (p.key_url ? ` · <a href="${esc(p.key_url)}" target="_blank" rel="noopener">去 ${esc(p.name)} 申请 ${ic("link")}</a>` : "");
+        F("api_key").placeholder = m?.key_set ? "留空 = 不改" : p.no_key ? "可不填" : "sk-…";
+      }
+      F("name").oninput = () => { nameTouched = true; };
+      F("base_url").oninput = keyNote;
+      f.querySelectorAll(".lm-chips button").forEach((b) => b.onclick = () => {
+        preset = b.dataset.p;
+        f.querySelectorAll(".lm-chips button").forEach((x) => { x.classList.toggle("on", x === b); x.setAttribute("aria-checked", String(x === b)); });
+        const p = pre();
+        F("base_url").value = p.base_url; F("model").value = p.models[0] || "";
+        if (!nameTouched) F("name").value = p.id === "custom" ? "" : p.name;
+        models(); keyNote(); out("");
+        (p.id === "custom" ? F("base_url") : p.no_key ? F("model") : F("api_key")).focus();
+      });
+      f.querySelector(".lm-eye").onclick = (e) => { const k = F("api_key"); k.type = k.type === "password" ? "text" : "password"; e.currentTarget.textContent = k.type === "password" ? "显示" : "隐藏"; };
+      f.querySelectorAll(".lm-think button").forEach((b) => b.onclick = () => {
+        think = b.dataset.v;
+        f.querySelectorAll(".lm-think button").forEach((x) => x.classList.toggle("on", x === b));
+        f.querySelector(".lm-thinknote").textContent = THINK_HINT[think];
+      });
+      const draft = () => ({ id: m?.id || "", preset, name: F("name").value.trim(), base_url: F("base_url").value.trim(), model: F("model").value.trim(), think });
+      const key = () => F("api_key").value.trim() || undefined;
+      f.querySelector(".lm-fetch").onclick = async (e) => {
+        const b = e.currentTarget; b.disabled = true; out("正在拉取……");
+        const r = await ctx.api("models", { model: draft(), api_key: key() }).catch((err) => ({ ok: false, message: err.message }));
+        b.disabled = false;
+        if (r.ok) { models(r.models); out(`拿到 ${r.models.length} 个，点“模型”输入框选`, false); F("model").focus(); } else out(r.message || "拉取失败", true);
+      };
+      f.querySelector(".lm-ftest").onclick = async (e) => {
+        const b = e.currentTarget; b.disabled = true; out("测试中……");
+        const r = await ctx.api("test", { model: draft(), api_key: key() }).catch((err) => ({ ok: false, message: err.message }));
+        b.disabled = false; out(r.message || (r.ok ? "通了" : "失败"), !r.ok);
+      };
+      const close = () => { editing = null; render(); };
+      f.querySelector(".lm-cancel").onclick = close;
+      f.addEventListener("keydown", (e) => { if (e.key === "Escape") { e.preventDefault(); e.stopPropagation(); close(); } });
+      f.onsubmit = async (e) => {
+        e.preventDefault();
+        const body = { model: draft() };
+        if (!body.model.base_url || !body.model.model) { out("服务地址和模型都要填", true); (body.model.base_url ? F("model") : F("base_url")).focus(); return; }
+        if (key()) body.api_key = key();
+        const b = f.querySelector(".lm-save"); b.disabled = true;
+        const r = await call("save", body).catch((err) => ({ ok: false, message: err.message }));
+        if (!r.ok) { b.disabled = false; out(r.message || "保存失败", true); return; }
+        delete probe[r.id];
+        editing = null; render();
+      };
+      models(); keyNote();
+    }
+
+    render();
+    ctx.api("state").then((r) => { S = r; render(); }).catch((e) => { el.innerHTML = `<small class="muted bad">读不到模型设置：${esc(e.message)}</small>`; });
+    return { refresh: () => ctx.api("state").then((r) => { S = r; if (!editing) render(); }), destroy: () => {} };
+  }
+
+  (window.GLPanels = window.GLPanels || {})[PID] = { mount };
+})();
+</script>
+<!--gl-router-panel:end-->
 </head>
 <body>
 <div id="app">
@@ -2925,49 +3182,51 @@ const GL_ONLINE = {
 // —— 设置 → AI 模型（游戏里；编辑器在“设置”弹窗里）——
 function modelStatusText() {
   const d = VNModel.describe();
-  if (!d.ready) return VNModel.conf().noKey ? '填好模型名就能用' : '未设置：填好密钥就能用';
+  if (!VNModel.store().models.length) return '还没有模型，剧情照常能玩';
+  if (!d.ready) return '还没填完整：编辑一下模型，填好密钥就能用';
   if (VNModel.state === 'wait') return '连接中……';
-  if (VNModel.state === 'ok') return '可用 · ' + (VNModel.info || d.model);
   if (VNModel.state === 'bad') return '出错：' + VNModel.lastError;
-  return '已填好 · ' + d.provider + ' / ' + d.model + '（可以点测试）';
+  return '可用 · ' + d.name + ' / ' + d.model;
 }
-const modelDotCls = () => !VNModel.ready() ? '' : VNModel.state === 'off' ? '' : VNModel.state;
+const modelDotCls = () => !VNModel.ready() ? (VNModel.store().models.length ? 'bad' : '') : VNModel.state === 'bad' ? 'bad' : VNModel.state === 'wait' ? 'wait' : 'ok';
+// 设置 → 在线聊天与连接（不在 galLingS 里玩时）：和 galLingS 作品页同一个多模型面板（内嵌的 panel.js），数据存在这台设备的浏览器里（VNModel.api）。
+// 面板 DOM 只建一次、常驻内存：设置页每次重画只是把它挂回 #aiPanel，填了一半的表单不会丢。
+const modelPanel = { root: null, inst: null, upd: null };
 function modelPrefsHtml() {
   if (HOSTED) return '';   // 在 galLingS 里玩：模型在下面“在线聊天与连接”里设（GL_ONLINE）
-  const c = VNModel.get(), p = VNModel.preset(c.preset), k = VNModel.conf().key;
-  return `<div class="row sep"><span>${ic('sparkle')} 在线聊天与连接</span><small class="dim">AI 模型：结局后聊天、灵枢悄悄话都用它；密钥只存在这台设备</small></div>
-    <div class="row"><span>服务商</span><select class="fld" id="aiPreset">${MODEL_PRESETS.map(x => `<option value="${x.id}" ${x.id === p.id ? 'selected' : ''}>${esc(x.name)}</option>`).join('')}</select>${p.keyUrl ? `<a class="tg" href="${esc(p.keyUrl)}" target="_blank" rel="noopener">获取密钥</a>` : ''}</div>
-    <div class="row ${p.noKey ? 'hid' : ''}"><span>密钥</span><input class="fld" id="aiKey" type="password" autocomplete="off" spellcheck="false" value="${esc(k)}" placeholder="sk-……"></div>
-    <div class="row"><span>模型</span><input class="fld" id="aiModel" list="aiModels" spellcheck="false" value="${esc(c.model)}" placeholder="${esc(p.models[0] || '模型名')}"><datalist id="aiModels">${p.models.map(m => `<option value="${esc(m)}">`).join('')}</datalist></div>
-    <div class="row"><span>接口地址</span><input class="fld" id="aiBase" spellcheck="false" value="${esc(c.base)}" placeholder="${esc(p.base || 'https://……/v1')}"></div>
-    <div class="row"><span>状态</span><button class="tg" data-ai="test">${ic('plug')} 测试</button>${k || c.model || c.base ? `<button class="tg" data-ai="clear">${ic('eraser')} 清除</button>` : ''}<i class="dot ${modelDotCls()}" id="aiDot"></i><small class="dim ai-info" id="aiInfo">${esc(modelStatusText())}</small></div>`;
+  return `<div class="row sep"><span>${ic('plug')} 在线聊天与连接</span><small class="dim">AI 模型：结局后聊天、灵枢悄悄话都用它；密钥只存在这台设备</small></div>
+    <div class="row"><span>模型</span><i class="dot ${modelDotCls()}" id="aiDot"></i><small class="dim ai-info" id="aiInfo">${esc(modelStatusText())}</small></div>
+    <div class="gl-panel" id="aiPanel"></div>`;
 }
 function modelPrefsBind(box) {
-  const q = sel => box.querySelector(sel); if (!q('#aiPreset')) return;
-  const upd = () => {
+  const q = sel => box.querySelector(sel), slot = q('#aiPanel'); if (!slot) return;
+  modelPanel.upd = () => {
+    if (!box.isConnected) return;
     const d = q('#aiDot'), info = q('#aiInfo'); if (d) d.className = 'dot ' + modelDotCls(); if (info) info.textContent = modelStatusText();
     const sb = soulBackend(), sd = q('#soulDot');
-    if (!pref('soulBackend') && q('#soulApiRow')) {   // 玩家没手动选过：填好模型后灵枢自动改用 AI 模型
+    if (!pref('soulBackend') && q('#soulApiRow')) {   // 玩家没手动选过：有了能用的模型，灵枢自动改用 AI 模型
       box.querySelectorAll('[data-seg=soulBackend]').forEach(x => x.classList.toggle('on', x.dataset.v === sb));
       q('#soulApiRow').classList.toggle('hid', sb !== 'api');
     }
-    const sa = q('#soulApiRow small'); if (sa) sa.textContent = VNModel.ready() ? '用下面「AI 模型」的设置：' + VNModel.conf().name + ' / ' + VNModel.conf().model : '下面「AI 模型」还没填，先用离线回复';
+    const sa = q('#soulApiRow small'); if (sa) sa.textContent = VNModel.ready() ? '用下面「在线聊天与连接」正在用的模型：' + VNModel.conf().name + ' / ' + VNModel.conf().model : '下面「在线聊天与连接」还没有能用的模型，先用离线回复';
     if (sd && sb === 'api') sd.className = 'dot ' + soulDotCls('api');
   };
-  const rerender = () => { const st = box.scrollTop, rows = q('.rows'), rt = rows ? rows.scrollTop : 0; showPrefs(); box.scrollTop = st; const r2 = box.querySelector('.rows'); if (r2) r2.scrollTop = rt; };
-  const save = () => { VNModel.set({ key: q('#aiKey')?.value.trim() || '', model: q('#aiModel').value.trim(), base: q('#aiBase').value.trim() }); upd(); };
-  ['#aiPreset', '#aiKey', '#aiModel', '#aiBase'].forEach(sel => { const el = q(sel); if (!el) return; el.addEventListener('click', e => e.stopPropagation()); el.addEventListener('keydown', e => { e.stopPropagation(); if (e.key === 'Enter' && el.tagName === 'INPUT') el.blur(); }); });
-  q('#aiPreset').onchange = () => { VNModel.set({ preset: q('#aiPreset').value, model: '', base: '' }); rerender(); };
-  // 边打字边存：灵枢“连接”在模型填好时会自动切到 AI 模型、多出一行说明（在这一节上面）；要是等失焦才存，点“测试”的那一下画面会往下挪、点空
-  ['#aiKey', '#aiModel', '#aiBase'].forEach(sel => { const el = q(sel); if (el) { el.onchange = save; el.oninput = save; } });
-  box.querySelectorAll('a.tg').forEach(a => a.addEventListener('click', e => e.stopPropagation()));
-  q('[data-ai=test]').onclick = e => {
-    e.stopPropagation(); save();
-    if (!VNModel.ready()) { upd(); return; }
-    VNModel.state = 'wait'; upd();
-    VNModel.test().then(upd, upd);
-  };
-  q('[data-ai=clear]')?.addEventListener('click', e => { e.stopPropagation(); if (!confirm('清除这台设备上保存的 AI 模型设置和密钥？')) return; VNModel.clear(); rerender(); });
+  const def = window.GLPanels && window.GLPanels['gallings.llm.router'];
+  if (!def) { slot.innerHTML = '<small class="dim">模型设置面板没加载上</small>'; return; }
+  if (!modelPanel.root) {
+    const r = modelPanel.root = document.createElement('div');
+    // 输入框里打字不触发游戏快捷键；点面板里不关设置
+    r.addEventListener('keydown', e => e.stopPropagation());
+    r.addEventListener('click', e => e.stopPropagation());
+    modelPanel.inst = def.mount(r, {
+      api: (action, body) => VNModel.api(action, body),
+      changed: () => modelPanel.upd?.(),
+      lead: '点一行切换正在用的模型。结局后聊天、灵枢悄悄话都用它。',
+      keyNote: '只存在这台设备的浏览器里，不进存档，也不会跟着游戏文件发给别人',
+    });
+  } else modelPanel.inst?.refresh?.();
+  slot.appendChild(modelPanel.root);
+  modelPanel.upd();
 }
 function hideOverlays() { document.querySelectorAll('.ovl').forEach(o => o.classList.remove('show')); }
 function showBacklog() {
@@ -3170,6 +3429,30 @@ const SOUL_BRAINS = {
     },
   },
 };
+// 双击打开的游戏（file://）连本机 galLingS：新版 Chrome / Edge 把它当“访问本地网络”，要玩家点一次“允许”。
+// 先发一个普通请求把浏览器的询问框叫出来（WebSocket 自己不弹框），顺便分清“galLingS 没开”和“被浏览器拦了”。
+async function soulLnaState() {
+  // 只问新版的两个名字；旧名 local-network-access 在没开这个功能的 Chrome 里一问整页就崩，别加回来
+  for (const name of ['loopback-network', 'local-network']) {
+    try { return (await navigator.permissions.query({ name })).state; } catch (e) {}
+  }
+  return '';
+}
+async function soulProbe(wsUrl, wait = 15000) {
+  let http; try { const u = new URL(wsUrl); http = (u.protocol === 'wss:' ? 'https://' : 'http://') + u.host + '/'; } catch (e) { return { ok: false, why: '后端地址写得不对，应该像 ws://127.0.0.1:8765/ws/soul' }; }
+  const ctl = new AbortController(), t = setTimeout(() => ctl.abort(), wait);
+  try {
+    await fetch(http, { mode: 'no-cors', cache: 'no-store', signal: ctl.signal });   // 别加 targetAddressSpace：各版本 Chrome 认的取值不一样，填错直接报错
+
+    return { ok: true };
+  } catch (e) {
+    const st = await soulLnaState();
+    if (st === 'denied') return { ok: false, why: '浏览器拦住了本机连接：点地址栏左边的图标，把“本地网络”（或“本机上的应用”）改成允许，再点测试' };
+    if (ctl.signal.aborted) return { ok: false, why: '等太久没回应：浏览器要是在问“允许访问本地网络吗”，点允许，再点测试' };
+    if (st === 'prompt') return { ok: false, why: '连不上本机的 galLingS：先确认已经双击 start.bat 把它开起来；浏览器问“允许访问本地网络/本机上的应用吗”时点允许，再点测试' };
+    return { ok: false, why: 'galLingS 没在运行：在 galLingS 文件夹里双击 start.bat，等它起来再点测试' };
+  } finally { clearTimeout(t); }
+}
 // —— 与 galLingS 的连接：一个 WebSocket，按 id 配对请求和回复；断了下次用时自动重连 ——
 const soulSock = {
   ws: null, url: '', seq: 0, wait: {}, info: null, state: 'off',
@@ -3181,20 +3464,23 @@ const soulSock = {
     this.t0 = Date.now();
     try { this.ws?.close(); } catch (e) {}
     this.url = url; this.info = null; this.state = 'wait';
-    this.ready = new Promise((ok, no) => {
-      let ws; try { ws = new WebSocket(url); } catch (e) { this.state = 'bad'; return no(e); }
+    const connect = () => new Promise((ok, no) => {
+      let ws, said = ''; try { ws = new WebSocket(url); } catch (e) { this.state = 'bad'; return no(e); }
       this.ws = ws;
-      const t = setTimeout(() => { this.state = 'bad'; no(new Error('timeout')); try { ws.close(); } catch (e) {} }, 4000);
+      const t = setTimeout(() => { this.state = 'bad'; no(new Error('等太久没回应')); try { ws.close(); } catch (e) {} }, 6000);
       ws.onopen = () => ws.send(JSON.stringify({ type: 'hello' }));
-      ws.onerror = () => { clearTimeout(t); this.state = 'bad'; no(new Error('连不上')); };
-      ws.onclose = () => { if (this.state === 'wait') { clearTimeout(t); this.state = 'bad'; no(new Error('连不上')); } this.state = this.state === 'ok' ? 'off' : this.state; Object.values(this.wait).forEach(w => w.no(new Error('断开'))); this.wait = {}; };
+      ws.onerror = () => { if (this.state !== 'wait') return; clearTimeout(t); this.state = 'bad'; no(new Error(said || '连不上')); };
+      ws.onclose = ev => { if (this.state === 'wait') { clearTimeout(t); this.state = 'bad'; no(new Error(said || (ev.code === 1008 ? 'galLingS 拒绝了这个页面（它只接受本机网页）' : '连上又断开了'))); } this.state = this.state === 'ok' ? 'off' : this.state; Object.values(this.wait).forEach(w => w.no(new Error('断开'))); this.wait = {}; };
       ws.onmessage = ev => {
         let m; try { m = JSON.parse(ev.data); } catch (e) { return; }
         if (m.type === 'hello') { clearTimeout(t); this.info = m; this.state = 'ok'; ok(m); return; }
+        if (m.type === 'error' && m.id == null && this.state === 'wait') { said = m.message || ''; return; }   // 比如没有这张角色卡：先记下，断开时告诉玩家
         const w = m.id != null && this.wait[m.id]; if (!w) return;
         delete this.wait[m.id]; clearTimeout(w.t); m.type === 'error' ? w.no(new Error(m.message)) : w.ok(m);
       };
     });
+    // 双击打开（file://）时先探一下：把浏览器“允许访问本地网络”的询问叫出来，也分清是没开 galLingS 还是被拦了
+    this.ready = HOSTED ? connect() : soulProbe(url).then(pr => { if (this.url !== url) throw new Error('地址改了'); if (!pr.ok) { this.state = 'bad'; throw new Error(pr.why); } return connect(); });
     this.ready.catch(() => {});
     return this.ready;
   },
@@ -3336,7 +3622,7 @@ function soulPrefsHtml() {
     <div class="row"><span>她的话量</span>${seg('soulTalk', 'mid', [['short', '简短'], ['mid', '适中'], ['long', '话多']])}</div>
     <div class="row"><span>记忆</span><small class="dim">${playing && RT.soul ? RT.soul.mem.length + ' 条' : '开始游戏后记录'}</small>${playing && RT.soul ? `<button class="tg" data-soul="forget">${ic('eraser')} 全部遗忘</button>` : ''}</div>
     ${HOSTED ? `<div class="row"><span>连接</span><small class="dim">galLingS（模型、记忆在下面设置）</small><i class="dot ${soulSock.state}" id="soulDot"></i></div>` : `<div class="row"><span>连接</span>${seg('soulBackend', soulBackend(), [['local', '离线'], ['api', 'AI 模型'], ['galLingS', 'galLingS']])}<i class="dot ${soulDotCls(soulBackend())}" id="soulDot"></i></div>
-    <div class="row ${soulBackend() === 'api' ? '' : 'hid'}" id="soulApiRow"><span></span><small class="dim">${VNModel.ready() ? '用下面「AI 模型」的设置：' + esc(VNModel.conf().name + ' / ' + VNModel.conf().model) : '下面「AI 模型」还没填，先用离线回复'}</small></div>
+    <div class="row ${soulBackend() === 'api' ? '' : 'hid'}" id="soulApiRow"><span></span><small class="dim">${VNModel.ready() ? '用下面「在线聊天与连接」正在用的模型：' + esc(VNModel.conf().name + ' / ' + VNModel.conf().model) : '下面「在线聊天与连接」还没有能用的模型，先用离线回复'}</small></div>
     <div class="row ${soulBackend() === 'galLingS' ? '' : 'hid'}" id="soulUrlRow"><span>后端地址</span><input id="soulUrl" value="${esc(pref('soulUrl') || 'ws://127.0.0.1:8765/ws/soul')}" spellcheck="false"><button class="tg" data-soul="test">${ic('plug')} 测试</button></div>
     <div class="row ${soulBackend() === 'galLingS' ? '' : 'hid'}" id="soulInfoRow"><span></span><small class="dim" id="soulInfo">${soulSock.state === 'ok' && soulSock.info ? '已连上：' + esc(soulSock.info.card?.name || '') : ''}</small></div>`}`;
 }
@@ -3357,7 +3643,7 @@ function soulPrefsBind(box) {
     e.stopPropagation(); const d = box.querySelector('#soulDot'), info = box.querySelector('#soulInfo');
     setPref('soulUrl', url.value.trim()); soulSock.close(); d.className = 'dot wait'; info.textContent = '连接中……';
     soulSock.open().then(h => { d.className = 'dot ok'; info.textContent = `已连上：${h.card?.name || ''}　模型${h.llm ? '可用' : '未配置（用离线回复）'}　记忆${h.memory ? '可用' : '关闭'}`; })
-      .catch(er => { d.className = 'dot bad'; info.textContent = '连不上（' + er.message + '），会自动用离线回复'; });
+      .catch(er => { d.className = 'dot bad'; info.textContent = er.message + '。现在先用离线回复'; });
   });
 }
 /* ========== AI 模型接口（OpenAI 兼容 chat/completions）：游戏自己直连大模型 ========== */
@@ -3374,38 +3660,80 @@ const MODEL_PRESETS = [
   { id: 'ollama', name: 'Ollama（本机）', base: 'http://127.0.0.1:11434/v1', models: ['qwen2.5:7b', 'llama3.1:8b'], noKey: true },
   { id: 'custom', name: '自定义', base: '', models: [] },
 ];
+// 多个模型 + 正在用的那一个 + 每个模型的思考等级，和 galLingS 多模型插件（gallings.llm.router）一个样子；设置界面直接用它的面板（index.html 里内嵌的 panel.js 副本）。
+// 存储：localStorage vnmodel:<作品id> = { v: 2, models: [{ id, name, preset, base_url, model, think, key }], main }。旧版单模型设置第一次读到时自动变成第一条。
+const MODEL_THINK = ['off', 'mid', 'high'];
 const VNModel = {
   state: 'off', info: '', lastError: '',
   key: () => 'vnmodel:' + (gameMode ? P.id : 'studio'),
-  get() { let c = {}; try { c = JSON.parse(localStorage.getItem(this.key()) || '{}') || {}; } catch (e) {} return Object.assign({ preset: 'deepseek', base: '', model: '', keys: {} }, c); },
-  // 密钥按服务商分开记（换服务商再换回来不用重填）
-  set(o) { const c = Object.assign(this.get(), o); if ('key' in o) { c.keys = Object.assign({}, c.keys, { [c.preset]: String(o.key || '') }); delete c.key; } try { localStorage.setItem(this.key(), JSON.stringify(c)); } catch (e) {} this.state = 'off'; this.info = ''; VNPlugins.emit('model:changed', this.describe()); return c; },
-  clear() { try { localStorage.removeItem(this.key()); } catch (e) {} this.state = 'off'; this.info = ''; VNPlugins.emit('model:changed', this.describe()); },
-  preset(id) { return MODEL_PRESETS.find(p => p.id === id) || MODEL_PRESETS[MODEL_PRESETS.length - 1]; },
-  conf() {
-    const c = this.get(), p = this.preset(c.preset);
-    return { preset: p.id, name: p.name, base: String(c.base || p.base || '').trim().replace(/\/+$/, '').replace(/\/chat\/completions$/, ''), key: String((c.keys || {})[p.id] || '').trim(), model: String(c.model || p.models[0] || '').trim(), noKey: !!p.noKey };
+  _isLocal: u => /^https?:\/\/(127\.0\.0\.1|localhost|\[::1\])(:|\/|$)/i.test(String(u || '')),
+  _clean: u => String(u || '').trim().replace(/\/+$/, '').replace(/\/chat\/completions$/, ''),
+  _id: () => Date.now().toString(36).slice(-5) + Math.random().toString(36).slice(2, 7),
+  store() {
+    let c = {}; try { c = JSON.parse(localStorage.getItem(this.key()) || '{}') || {}; } catch (e) {}
+    if (c.v === 2 && Array.isArray(c.models)) return c;
+    const s = { v: 2, models: [], main: '' };   // 旧版 { preset, base, model, keys:{服务商:密钥} } → 第一条模型
+    const p = this.preset(c.preset || 'deepseek'), key = String((c.keys || {})[p.id] || '').trim();
+    if (key || (p.noKey && c.model)) {
+      const m = { id: this._id(), name: p.id === 'custom' ? (c.model || '我的模型') : p.name, preset: p.id, base_url: this._clean(c.base || p.base), model: String(c.model || p.models[0] || '').trim(), think: 'off', key };
+      s.models.push(m); s.main = m.id;
+    }
+    return s;
   },
-  ready() { const c = this.conf(); return !!(c.base && c.model && (c.key || c.noKey)); },
+  _put(s) { try { localStorage.setItem(this.key(), JSON.stringify(s)); } catch (e) {} this.state = 'off'; this.info = ''; VNPlugins.emit('model:changed', this.describe()); return s; },
+  preset(id) { return MODEL_PRESETS.find(p => p.id === id) || MODEL_PRESETS[MODEL_PRESETS.length - 1]; },
+  noKey(m) { return !!this.preset(m.preset).noKey || this._isLocal(m.base_url); },
+  usable(m) { return !!(m && m.base_url && m.model && (m.key || this.noKey(m))); },
+  // 正在用的模型：选中的那条能用就用它，否则第一条能用的
+  active() { const s = this.store(); const m = s.models.find(x => x.id === s.main); return this.usable(m) ? m : (s.models.find(x => this.usable(x)) || m || null); },
+  // 兼容旧接口（编辑器“设置”弹窗、插件）：get / set 读写“正在用的模型”
+  get() { const m = this.active(); return m ? { preset: m.preset, base: m.base_url, model: m.model, think: m.think, keys: { [m.preset]: m.key } } : { preset: 'deepseek', base: '', model: '', think: 'off', keys: {} }; },
+  set(o) {
+    const s = this.store(); let m = s.models.find(x => x.id === (this.active() || {}).id);
+    if (!m) { const p = this.preset(o.preset || 'deepseek'); m = { id: this._id(), name: p.name, preset: p.id, base_url: '', model: '', think: 'off', key: '' }; s.models.push(m); s.main = m.id; }
+    if ('preset' in o && o.preset !== m.preset) { const p = this.preset(o.preset); Object.assign(m, { preset: p.id, name: p.id === 'custom' ? m.name : p.name, base_url: '', model: '' }); }
+    if ('base' in o) m.base_url = this._clean(o.base);
+    if ('model' in o) m.model = String(o.model || '').trim();
+    if ('key' in o) m.key = String(o.key || '').trim();
+    if ('think' in o && MODEL_THINK.includes(o.think)) m.think = o.think;
+    this._put(s); return this.get();
+  },
+  clear() { try { localStorage.removeItem(this.key()); } catch (e) {} this.state = 'off'; this.info = ''; VNPlugins.emit('model:changed', this.describe()); },
+  conf(m) {
+    m = m || this.active() || {}; const p = this.preset(m.preset);
+    return { id: m.id || '', preset: p.id, name: m.name || p.name, base: this._clean(m.base_url || (m.id ? '' : p.base)), key: String(m.key || '').trim(), model: String(m.model || '').trim(), think: MODEL_THINK.includes(m.think) ? m.think : 'off', noKey: m.id ? this.noKey(m) : !!p.noKey };
+  },
+  ready() { return this.usable(this.active()); },
   // 不带密钥的描述（给界面、插件看）
-  describe() { const c = this.conf(); return { ready: this.ready(), preset: c.preset, provider: c.name, base: c.base, model: c.model, state: this.state, info: this.info }; },
+  describe() { const c = this.conf(); return { ready: this.ready(), preset: c.preset, provider: this.preset(c.preset).name, name: c.name, base: c.base, model: c.model, think: c.think, state: this.state, info: this.info }; },
+  // 思考等级 → 各家接口的参数（和 galLingS 插件 think_params 一样）
+  thinkParams(base, level) {
+    let host = ''; try { host = new URL(base).hostname.toLowerCase(); } catch (e) {}
+    const on = level === 'mid' || level === 'high';
+    if (host.includes('deepseek.com')) return { thinking: { type: on ? 'enabled' : 'disabled' } };
+    if (host.includes('dashscope') || host.includes('siliconflow')) return on ? { enable_thinking: true, thinking_budget: level === 'mid' ? 4096 : 16384 } : { enable_thinking: false };
+    if (host.includes('openrouter.ai')) return { reasoning: on ? { effort: level === 'mid' ? 'medium' : 'high' } : { enabled: false } };
+    if (host.includes('moonshot')) return {};
+    return on ? { reasoning_effort: level === 'mid' ? 'medium' : 'high' } : {};
+  },
   _err(status, body) {
     let m = ''; try { const j = JSON.parse(body); m = j.error?.message || j.message || j.error || ''; } catch (e) { m = String(body || '').slice(0, 160); }
     const hint = status === 401 || status === 403 ? '密钥不对或没有权限' : status === 402 ? '账户余额不足' : status === 404 ? '地址或模型名不对' : status === 429 ? '请求太频繁或额度用完' : status >= 500 ? '服务商那边出错了' : '';
     return new Error((hint ? hint + '（' + status + '）' : 'HTTP ' + status) + (m ? '：' + String(m).slice(0, 160) : ''));
   },
-  /** chat({ messages, tools?, temperature?, max_tokens?, onDelta?(text), onThink?(text), signal?, timeout? })
-   *  → { content, reasoning, tool_calls:[{id, name, args, raw}], finish }   流式读取；工具调用按 OpenAI function calling。 */
+  /** chat({ messages, tools?, temperature?, max_tokens?, onDelta?(text), onThink?(text), signal?, timeout?, model? })
+   *  → { content, reasoning, tool_calls:[{id, name, args, raw}], finish }   流式读取；工具调用按 OpenAI function calling。model 不给 = 正在用的模型。 */
   async chat(o = {}) {
-    const c = this.conf();
-    if (!this.ready()) throw new Error('还没设置 AI 模型（设置 → AI 模型）');
-    const ctl = new AbortController(), timeout = o.timeout || 90000;
+    const own = !o.model, m = o.model || this.active(), c = this.conf(m);
+    if (!this.usable(m)) throw new Error('还没设置 AI 模型（设置 → 在线聊天与连接）');
+    const ctl = new AbortController(), timeout = o.timeout || (c.think === 'off' ? 90000 : 180000);
     let timer = setTimeout(() => ctl.abort(), timeout);
     const bump = () => { clearTimeout(timer); timer = setTimeout(() => ctl.abort(), timeout); };
     const onAbort = () => ctl.abort(); o.signal?.addEventListener('abort', onAbort);
-    const body = { model: c.model, messages: o.messages || [], stream: true };
+    const body = { model: c.model, messages: o.messages || [], stream: true, ...this.thinkParams(c.base, c.think) };
     if (o.temperature != null) body.temperature = o.temperature;
-    if (o.max_tokens) body.max_tokens = o.max_tokens;
+    // 开着思考时，思考也算在输出里：上限按等级放宽，免得只剩思考、正文为空
+    if (o.max_tokens) body.max_tokens = o.max_tokens + (c.think === 'mid' ? 2048 : c.think === 'high' ? 8192 : 0);
     if (o.tools && o.tools.length) body.tools = o.tools.map(t => ({ type: 'function', function: { name: t.name, description: t.description || '', parameters: t.parameters || { type: 'object', properties: {} } } }));
     const headers = { 'Content-Type': 'application/json' };
     if (c.key) headers.Authorization = 'Bearer ' + c.key;
@@ -3445,21 +3773,78 @@ const VNModel = {
         }
       }
       out.tool_calls = calls.filter(x => x.name).map((x, k) => { let args = {}; try { args = x.raw ? JSON.parse(x.raw) : {}; } catch (e) { args = { _raw: x.raw }; } return { id: x.id || 'call_' + k + '_' + Date.now().toString(36), name: x.name, args, raw: x.raw || '{}' }; });
-      this.state = 'ok'; this.lastError = '';
+      if (own) { this.state = 'ok'; this.lastError = ''; }
       return out;
     } catch (e) {
       if (ctl.signal.aborted && !o.signal?.aborted) e = new Error('等太久没回应（超时）');
-      if (!o.signal?.aborted) { this.state = 'bad'; this.lastError = e.message; }
+      if (own && !o.signal?.aborted) { this.state = 'bad'; this.lastError = e.message; }
       throw e;
     } finally { clearTimeout(timer); o.signal?.removeEventListener('abort', onAbort); }
   },
-  async test() {
-    const t0 = Date.now(); this.state = 'wait';
+  async test(m) {
+    const own = !m, t0 = Date.now(); if (own) this.state = 'wait';
+    m = m || this.active();
     try {
-      const r = await this.chat({ messages: [{ role: 'user', content: '只回复一个字：好' }], max_tokens: 16, timeout: 20000 });
-      this.info = this.conf().model + ' · ' + ((Date.now() - t0) / 1000).toFixed(1) + ' 秒' + (r.content ? ' · 回复「' + r.content.trim().slice(0, 10) + '」' : r.reasoning ? ' · 推理模型' : '');
-      return this.info;
-    } catch (e) { this.info = ''; throw e; }
+      const r = await this.chat({ model: own ? undefined : m, messages: [{ role: 'user', content: '只回复两个字：在呢' }], max_tokens: 32, timeout: 30000 });
+      const ms = Date.now() - t0;
+      if (!r.content.trim()) throw new Error(r.reasoning ? '连上了，但只返回了思考、没有正文（试试把思考等级调低）' : '连上了，但只返回了空内容');
+      const info = '通了：' + r.content.trim().slice(0, 20) + '（' + ms + ' ms）';
+      if (own) this.info = this.conf(m).model + ' · ' + (ms / 1000).toFixed(1) + ' 秒';
+      return info;
+    } catch (e) { if (own) this.info = ''; throw e; }
+  },
+  // —— 设置面板的接口：和 galLingS 多模型插件 POST /api/plugin/gallings.llm.router/<action> 一样的入参和返回，面板代码两边共用 ——
+  public() {
+    const s = this.store(), act = this.active();
+    return {
+      ok: true, main: act ? act.id : '', main_saved: s.main,
+      models: s.models.map(m => { const k = m.key || ''; return { id: m.id, name: m.name, preset: m.preset, base_url: m.base_url, model: m.model, think: m.think || 'off', key_set: !!k, key_tail: k.length >= 8 ? k.slice(-4) : '', no_key: this.noKey(m), usable: this.usable(m) }; }),
+      presets: MODEL_PRESETS.map(p => ({ id: p.id, name: p.name, base_url: p.base, models: p.models, key_url: p.keyUrl || '', no_key: !!p.noKey })),
+    };
+  },
+  _norm(raw, old) {
+    const preset = MODEL_PRESETS.some(p => p.id === raw.preset) ? raw.preset : 'custom', model = String(raw.model || '').trim();
+    return { id: (old && old.id) || this._id(), preset, base_url: this._clean(raw.base_url), model, name: (String(raw.name || '').trim() || model || '未命名模型').slice(0, 40), think: MODEL_THINK.includes(raw.think) ? raw.think : 'off', key: old ? old.key || '' : '' };
+  },
+  _draft(b) {   // 测试 / 拉列表：已保存的模型（id）或表单里还没保存的草稿（密钥不填就沿用已存的）
+    const s = this.store();
+    if (b.model) { const old = b.model.id ? s.models.find(x => x.id === b.model.id) : null, m = this._norm(b.model, old); if (b.api_key) m.key = String(b.api_key).trim(); return m; }
+    return s.models.find(x => x.id === b.id) || null;
+  },
+  async api(action, b = {}) {
+    try { return await this._api(action, b || {}); } finally { setTimeout(() => modelPanel.upd?.()); }
+  },
+  async _api(action, b) {
+    const s = this.store(), find = id => s.models.find(x => x.id === id);
+    if (action === 'state') return this.public();
+    if (action === 'save') {
+      const raw = b.model || {}, old = raw.id ? find(raw.id) : null, m = this._norm(raw, old);
+      if (!m.base_url || !m.model) return { ...this.public(), ok: false, message: '服务地址和模型都要填' };
+      if (b.api_key != null) m.key = String(b.api_key).trim();
+      if (old) s.models[s.models.indexOf(old)] = m; else s.models.push(m);
+      if (!s.main || !find(s.main)) s.main = m.id;
+      this._put(s); return { ...this.public(), id: m.id };
+    }
+    if (action === 'delete') { s.models = s.models.filter(x => x.id !== b.id); if (s.main === b.id) s.main = s.models[0]?.id || ''; this._put(s); return this.public(); }
+    if (action === 'main') { if (!find(b.id)) return { ...this.public(), ok: false, message: '没有这个模型' }; s.main = b.id; this._put(s); return this.public(); }
+    if (action === 'test') {
+      const m = this._draft(b); if (!m) return { ok: false, message: '没有这个模型' };
+      if (!m.base_url || !m.model) return { ok: false, message: '服务地址和模型都要填' };
+      if (!m.key && !this.noKey(m)) return { ok: false, message: '还没填密钥' };
+      const isMain = !b.model && m.id === (this.active() || {}).id;
+      try { const msg = await this.test(isMain ? undefined : m); return { ok: true, message: msg }; }
+      catch (e) { return { ok: false, message: e.message }; }
+    }
+    if (action === 'models') {
+      const m = this._draft(b); if (!m || !m.base_url) return { ok: false, message: '先填服务地址', models: [] };
+      try {
+        const r = await fetch(m.base_url + '/models', { headers: m.key ? { Authorization: 'Bearer ' + m.key } : {} });
+        if (!r.ok) return { ok: false, message: this._err(r.status, await r.text().catch(() => '')).message, models: [] };
+        const ids = [...new Set(((await r.json()).data || []).map(x => x && x.id).filter(Boolean).map(String))].sort().slice(0, 300);
+        return { ok: !!ids.length, message: ids.length ? '' : '服务没返回模型列表', models: ids };
+      } catch (e) { return { ok: false, message: '连不上（地址不对、没联网，或这个服务不允许网页直连）', models: [] }; }
+    }
+    return { ok: false, message: '未知操作：' + action };
   },
 };
 window.VNModel = VNModel;

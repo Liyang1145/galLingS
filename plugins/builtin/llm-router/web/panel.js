@@ -2,6 +2,7 @@
 // 写法跟设置里其它几节一样：一行一个模型，左边单选“当前使用”，右边 测试 / 编辑 / 删除；编辑在列表里就地展开（标签 + 输入框的 set-row），不弹窗。
 // 所有改动立即保存到插件（POST /api/plugin/<id>/<action>），不用点设置底部的“保存”。
 // 宿主约定（plugin-format §10）：window.GLPanels[<插件 id>] = { mount(el, ctx) }；ctx.api(action, body) 调插件 api()，ctx.changed() 让宿主刷新状态。
+// 可选：ctx.lead / ctx.keyNote 换掉列表上方说明和密钥提示（单文件 游玩.html 不连 galLingS 时，作品 index.html 内嵌了本文件的副本，用浏览器本地存储实现同一套 api）。
 "use strict";
 (() => {
   const PID = "gallings.llm.router";
@@ -34,7 +35,7 @@
       if (!S) { el.innerHTML = `<div class="lm"><small class="muted">读取中……</small></div>`; return; }
       const rows = S.models.map((m) => editing === m.id ? `<li class="lm-edit">${form(m)}</li>` : item(m)).join("");
       el.innerHTML = `<div class="lm">
-        ${S.models.length ? `<small class="muted lm-lead">点一行切换正在用的模型。剧情即兴、手账悄悄话、结局后聊天、建卡都用它。</small>` : ""}
+        ${S.models.length ? `<small class="muted lm-lead">${esc(ctx.lead || "点一行切换正在用的模型。剧情即兴、手账悄悄话、结局后聊天、建卡都用它。")}</small>` : ""}
         <ul class="lm-list" role="radiogroup" aria-label="正在用的模型">${rows}${editing === "new" ? `<li class="lm-edit">${form(null)}</li>` : ""}</ul>
         ${!S.models.length && editing !== "new" ? `<p class="muted lm-empty">还没有模型。剧情照常能玩，手账悄悄话会用离线回复；想让她用 AI 回你，就加一个。</p>` : ""}
         ${editing === "new" ? "" : `<button type="button" class="lm-new" id="lmNew">${ic("plus")}<span>添加模型</span></button>`}
@@ -118,7 +119,7 @@
       const models = (list) => { f.querySelector("#lmModels").innerHTML = (list || pre().models).map((x) => `<option value="${esc(x)}">`).join(""); };
       function keyNote() {
         const p = pre();
-        const t = m?.key_set ? `已保存（末 4 位 ${m.key_tail || "****"}），留空 = 不改` : p.no_key || local() ? "本机服务一般不用填" : "只存在本机 galLingS 数据文件夹里，网页读不到原文";
+        const t = m?.key_set ? `已保存（末 4 位 ${m.key_tail || "****"}），留空 = 不改` : p.no_key || local() ? "本机服务一般不用填" : (ctx.keyNote || "只存在本机 galLingS 数据文件夹里，网页读不到原文");
         f.querySelector(".lm-keynote").innerHTML = esc(t) + (p.key_url ? ` · <a href="${esc(p.key_url)}" target="_blank" rel="noopener">去 ${esc(p.name)} 申请 ${ic("link")}</a>` : "");
         F("api_key").placeholder = m?.key_set ? "留空 = 不改" : p.no_key ? "可不填" : "sk-…";
       }

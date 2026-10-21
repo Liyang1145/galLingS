@@ -297,3 +297,10 @@ body.game #psettings .lm .ldot{display:inline-block;width:9px;height:9px;border-
 body.game #psettings .lm .ldot.ok{background:#5fd18a} body.game #psettings .lm .ldot.bad{background:#e2725b} body.game #psettings .lm .ldot.wait{background:#e6c14d}
 body.game.vport #psettings .lm-form .set-row{flex-wrap:wrap}
 body.game.vport #psettings .lm-form .set-row>span{flex-basis:100%}
+
+/* 灵枢“连接 → galLingS”的提示可能比较长（没开 galLingS、被浏览器拦了怎么办），允许换行 */
+body.game #psettings #soulInfo{white-space:normal;line-height:1.4}
+/* 不在 galLingS 里玩时，“在线聊天与连接”同样挂多模型面板（#aiPanel），状态一行允许换行 */
+body.game #psettings #aiInfo{white-space:normal;line-height:1.4}
+/* 窄屏：分组标题后面的说明换到下一行，不和标题叠在一起 */
+@media (max-width:700px){body.game #psettings .row.sep{flex-wrap:wrap;row-gap:4px;height:auto;align-self:stretch;width:auto;box-sizing:border-box}body.game #psettings .row.sep>span{width:auto;flex:0 0 auto}body.game #psettings .row.sep>.dim{white-space:normal;flex:1 1 100%;width:100%;min-width:0;max-width:none}}

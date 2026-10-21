@@ -76,3 +76,11 @@ vn.on('model:changed', info => {})
 - `tools/check_full_regression.py`：3315 节点 nbad 0、nerrs 0，存读档一致。
 - `pytest tests/plugins`：47 passed, 1 skipped；`tests/demo`、`tests/contract` 在沙箱只有 galcore 桩，结果与改动前完全相同（改动不涉及 Python）。
 - **没有用真实服务商的密钥跑过**（没有团队账户）；真模型的人设听感待负责人验收（待办 B01）。
+
+## 2026-10-21 单文件 游玩.html：多模型面板 + 连 galLingS 的提示
+
+- 不在 galLingS 里玩时，「设置 → 在线聊天与连接」改用和 galLingS 作品页同一个多模型面板（可折叠：点“添加模型”就地展开，点一行切换正在用的模型，行尾测试 / 编辑 / 删除，思考等级关 / 中 / 高）。
+  面板代码是 `plugins/builtin/llm-router/web/panel.js` / `panel.css` 内嵌进作品 index.html 的副本（`tools/sync_router_panel.py` 同步，`build_single_file_game.py` 会自动跑；`tests/test_router_panel_embedded.py` 检查没走样）。
+- 数据存浏览器本地：`localStorage vnmodel:<作品id>` = `{v:2, models:[…], main}`，旧版单模型设置第一次读到时自动变成第一条。`VNModel.api(action, body)` 实现插件同名接口（state / save / delete / main / test / models），`VNModel.get/set/conf/chat` 照旧可用，读写“正在用的模型”。思考等级按服务商换算参数，和插件 `think_params` 一致。
+- 灵枢“连接 → galLingS”：双击打开（file://）时先发一个普通请求探一下本机 galLingS，再连 WebSocket。这样新版 Chrome / Edge（147 起 WebSocket 也要“访问本地网络”权限）会弹出询问框；连不上时直接说清楚是 galLingS 没开（双击 start.bat）、被浏览器拦了，还是 galLingS 拒绝了。
+  注意：单文件里没有 galLingS 后端，发给别人时让对方用“AI 模型”；“galLingS”只在那台电脑开着 galLingS 时能连。

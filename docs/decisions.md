@@ -99,3 +99,8 @@
 50. 图片改动先出候选给用户验收，确认后才推；剧情、音频、界面可自行判断直接推。模型用 `gpt-image-2.5-sunburst`，不可用 gpt-image-2 代替。
 51. 用户 10-20：单文件试玩自动构建 `playtest-html.yml`「不用放仓库，暂停」；workflow 与预发布删不删待用户定（待办 C06）。
 52. 10-19 配乐：E2 恢复 #399–504；家居曲退出「翡翠之梦」店内营业段（修订第 48 条的适用范围），见 [hd-art-music-20261019](collab/work-ledger/hd-art-music-20261019.md)。
+
+## Windows 完整版程序（2026-10-21）
+
+53. 用户 10-21：把游戏本体和 galLingS 包成一个新的游戏程序，保持现有扩展性和 agent 功能。做法：沿用 `desktop/` 的 Tauri 外壳，新增“完整模式”——exe 旁边有 `python\python.exe` 和 `galLingS\server` 时，外壳在后台（无控制台窗口）跑 `python -m server --no-browser`，等 `/api/status` 通了再把窗口导到 `http://127.0.0.1:<端口>/vn.html`，所以和 start.bat + 浏览器完全一样：AI 模式、GalAgent、灵枢、插件都在。后端放进 Job Object（关窗口 / 崩溃时一起结束），输出写 `logs\server.log`，起不来时等待页显示日志末尾；端口优先固定 8765（localStorage 按端口存，换端口模型设置会“丢”），被占用才往后找；`target=_blank` 链接交系统浏览器。打包脚本 `tools/build_windows_app.py`：Windows 嵌入式 Python 3.11 + requirements + galcore 轮子 + 仓库同布局的 `galLingS\`（插件、作品、角色卡照旧放这里），不带 2 GB 的 `content/assets`（`--with-art-library` 可带）。没有 python 文件夹时外壳仍是原来的离线模式。CI 的 desktop.yml 多出一份完整版产物。
+

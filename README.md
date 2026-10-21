@@ -14,6 +14,7 @@
 | 单文件试玩版（含对白账本） | `python tools/build_playtest_html.py 输出.html`；预发布 `html-playtest` 的自动构建（`.github/workflows/playtest-html.yml`）已于 10-20 按用户要求暂停 |
 | 安卓 APK | 推工作分支后由 `.github/workflows/android.yml` 自动构建，见预发布 `android-playtest` |
 | Windows 桌面版 | `.github/workflows/desktop.yml`（main、tanpowasd/dev） |
+| Windows 完整版程序（游戏 + galLingS 后端，免安装） | `python tools/build_windows_app.py --exe <desktop 编出的 exe>`：自带 Python，双击 `海风与布丁.exe` 就玩，AI 模式、GalAgent、插件都在；插件和作品放 `galLingS\` 里，和仓库同样的布局 |
 
 ## 现状（2026-10-20）
 

@@ -32,7 +32,7 @@ def test_music_source_uses_actual_historical_delivery_path(tmp_path):
     old.parent.mkdir(parents=True)
     old.write_bytes(b"old delivery")
     assert music_source(tmp_path, "E1.mp3").relative_to(tmp_path).as_posix() == "music/mp3/E1.mp3"
-    new = tmp_path / "content/assets/music/mp3/E2.mp3"
+    new = tmp_path / "素材库/music/mp3/E2.mp3"
     new.parent.mkdir(parents=True)
     new.write_bytes(b"new delivery")
     assert music_source(tmp_path, "E2.mp3") == new

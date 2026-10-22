@@ -16,7 +16,7 @@ def apply():
     for asset in draft['assets'].values():
         if not asset.get('productionArtId'):continue
         path=Path(url2pathname(unquote(urlparse(asset['src']).path))).resolve()
-        assert path.parent==(ROOT/'content/assets/art-upgrade/runtime').resolve(),path
+        assert path.parent==(ROOT/'素材库/art-upgrade/runtime').resolve(),path
         target=dest/path.name
         shutil.copy2(path,target)
         assert hashlib.sha256(path.read_bytes()).digest()==hashlib.sha256(target.read_bytes()).digest()

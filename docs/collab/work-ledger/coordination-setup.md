@@ -1,5 +1,7 @@
 # 私有仓库迁移与共享台账建立
 
+> 历史：本记录写于仓库私有期间；2026-10-16 起 `Liyang1145/galLingS` 已公开（见 [repository-public-visibility](repository-public-visibility.md)），文中“私有附件”现随仓库公开。
+
 - 负责人：@Liyang1145；执行 agent：本次对话的 Codex。
 - 状态：已验证——迁移已校验；台账文档已检查并作为独立文档提交。
 - 记录时间：2026-10-13。

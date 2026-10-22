@@ -1,6 +1,6 @@
 # Music metadata. File paths are relative to content/audio; the selected MP3 is now archived in the repository.
 schema_version: 1
-updated: "2026-10-16"
+updated: "2026-10-21"
 tracks:
   - id: bgm_emerald_dream_main_v01
     title: 翡翠之梦
@@ -96,3 +96,54 @@ tracks:
       loudness_normalized: false
       seamless_loop_prepared: false
     notes: 按用户提供的约1分40秒文件完整保存，不拉伸或凑时长；M1先用于第三话下潜前准备、第七话沙洲捡贝壳。原角色主题、E1/E2/E4/E7及其停奏保持；播放器暂按主曲参考以下约3dB播放。
+
+  - id: bgm_e2_deepsea_main
+    title: 深海之光·主曲
+    role: "E2 full theme"
+    status: selected_and_locally_integrated
+    selected_on: "2026-10-21"
+    selected_by: Liyang1145
+    original_filename: 21.wav
+    file: ../assets/audio/bgm/bgm_e2_deepsea_main.mp3
+    sha256: f66176c65e6852f6ec89e6f9a30a4a5ae8d09ce3676e9b6d8ccbd99f265a44cd
+    source_sha256: f2e33da39002bb06bcb548e2dab444497efe7b3abf8f982e703f6e0f834da9e9
+    duration_seconds: 214.852676
+    playback_gain: 0.78886
+    loop_start: null
+    loop_end: null
+    seamless_loop_prepared: false
+    integration_record: deepsea-theme-integration-20261021.json
+
+  - id: bgm_e2_deepsea_piano
+    title: 深海之光·钢琴改编
+    role: "E2 piano arrangement"
+    status: selected_and_locally_integrated
+    selected_on: "2026-10-21"
+    selected_by: Liyang1145
+    original_filename: 深海-钢琴.mp3
+    file: ../assets/audio/bgm/bgm_e2_deepsea_piano.mp3
+    sha256: 5fe431056d077d2af7a71c0a50c73a07e6664fede3d868ae4d995f87e810b7f5
+    source_sha256: 5fe431056d077d2af7a71c0a50c73a07e6664fede3d868ae4d995f87e810b7f5
+    duration_seconds: 132.101188
+    playback_gain: 0.755962
+    loop_start: null
+    loop_end: null
+    seamless_loop_prepared: false
+    integration_record: deepsea-theme-integration-20261021.json
+
+  - id: bgm_emerald_dream_piano
+    title: 翡翠之梦·钢琴改编
+    role: "Emerald meeting-theme piano arrangement"
+    status: selected_and_locally_integrated
+    selected_on: "2026-10-21"
+    selected_by: Liyang1145
+    original_filename: 翡翠钢琴.mp3
+    file: ../assets/audio/bgm/bgm_emerald_dream_piano.mp3
+    sha256: d95341d97eaca99ffefda7092538c3bcbffaf52a04c227f9a4c22fe04829faaa
+    source_sha256: d95341d97eaca99ffefda7092538c3bcbffaf52a04c227f9a4c22fe04829faaa
+    duration_seconds: 133.694688
+    playback_gain: 0.797995
+    loop_start: null
+    loop_end: null
+    seamless_loop_prepared: false
+    integration_record: deepsea-theme-integration-20261021.json

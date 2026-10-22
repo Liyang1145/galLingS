@@ -295,7 +295,7 @@
         .map(([name, effect, policy]) => ({ name, effect, policy, source: 'mock' }))
         .concat((this.o.clientTools || []).map(t => ({ name: t.name, effect: t.effect || 'perform', policy: 'auto', source: 'client' })));
       this.info = { type: 'ready', protocol: PROTOCOL, session: 'mock', character: this.o.character || {}, tools, llm: true };
-      this.status = 'online'; setTimeout(() => { this.emit('status', { status: 'online' }); this.emit('ready', this.info); }, 0);
+      this.ready = true; this.status = 'online'; setTimeout(() => { this.emit('status', { status: 'online' }); this.emit('ready', this.info); }, 0);
       return this.info;
     }
     _e(m) { this.emit(m.type, m); }
@@ -358,7 +358,22 @@
           this._e({ type: 'round_end', turn, round: 2, tool_calls: 0 });
         } else {
           await think('只是想聊聊天。温柔一点回应。');
-          reply = `嗯，我在听。结局之后还能这样和你说话，${name}其实挺开心的。`;
+          if (name === '鲸鱼小姐') {
+            const pool = [
+              { emo: '笑', text: '嗯，我在听呢。结局之后还能这样吹着海风和你说话，鲸鱼小姐其实挺开心的。' },
+              { emo: '微笑', text: '布丁要留给最重要的人一起吃才甜呀。今天过得怎么样，累不累？' },
+              { emo: '害羞', text: '哪怕故事翻到了最后一页，只要你还愿意叫我的名字，我就会一直在这片海边等你。' },
+              { emo: '开心', text: '要不要一起听会儿海浪？如果在「设置 → AI / 大模型接入」里填上 API Key，我还能真正陪你天马行空地聊下去、帮你做更多事哦。' },
+            ];
+            let pick = pool[(turn - 1) % pool.length];
+            if (/布丁|甜/.test(text)) pick = { emo: '开心', text: '说到布丁，焦糖稍微有一点点微苦才最好吃呢。下次做双份，分你一大半！' };
+            else if (/海|风|鲸鱼|尾/.test(text)) pick = { emo: '微笑', text: '听见海浪拍岸的声音了吗？只要待在你身边，连咸咸的海风都好像变成甜的了。' };
+            else if (/喜欢|爱|想你/.test(text)) pick = { emo: '害羞', text: '突然说这种话……尾巴都要不知道往哪儿藏啦。不过，我也是哦。' };
+            this._e({ type: 'emotion', turn, name: pick.emo });
+            reply = pick.text;
+          } else {
+            reply = `嗯，我在听。结局之后还能这样和你说话，${name}其实挺开心的。`;
+          }
           await this._stream(turn, 'say', reply, 1);
           this._e({ type: 'round_end', turn, round: 1, tool_calls: 0 });
         }
@@ -372,6 +387,277 @@
       this._e({ type: 'turn_end', turn: this.turn, ms: 0, steps: 0, tool_calls: 0, reply: '', stopped: true, error: null });
     }
     reset() { this._e({ type: 'reset_done' }); }
+    close() { this.stop(); }
+  }
+
+
+  /* ---------------------------------------------------------------- 直连大模型 + 本地工具客户端（Steam / 离线内置） */
+  class StreamSplitter {
+    constructor() { this.buf = ''; this.inThink = false; }
+    feed(piece) {
+      this.buf += piece || '';
+      const out = [];
+      while (this.buf) {
+        if (this.inThink) {
+          const end = this.buf.indexOf('</think>');
+          if (end >= 0) {
+            if (end > 0) out.push(['think', this.buf.slice(0, end)]);
+            this.buf = this.buf.slice(end + 8);
+            this.inThink = false;
+          } else {
+            const safe = this._safeLen('</think>');
+            if (safe > 0) { out.push(['think', this.buf.slice(0, safe)]); this.buf = this.buf.slice(safe); }
+            break;
+          }
+        } else {
+          const ti = this.buf.indexOf('<think>');
+          const em = this.buf.match(/<emotion\s+name=["']([^"']+)["']\s*\/?>/);
+          const ei = em ? em.index : -1;
+          const candidates = [ti, ei].filter(i => i >= 0);
+          const nxt = candidates.length ? Math.min(...candidates) : -1;
+          if (nxt < 0) {
+            const safe = Math.min(this._safeLen('<think>'), this._safeLen('<emotion'));
+            if (safe > 0) { out.push(['say', this.buf.slice(0, safe)]); this.buf = this.buf.slice(safe); }
+            break;
+          }
+          if (nxt > 0) { out.push(['say', this.buf.slice(0, nxt)]); this.buf = this.buf.slice(nxt); continue; }
+          if (ti === 0) { this.buf = this.buf.slice(7); this.inThink = true; }
+          else if (em && em.index === 0) { out.push(['emotion', em[1].trim()]); this.buf = this.buf.slice(em[0].length); }
+        }
+      }
+      return out;
+    }
+    flush() {
+      const rem = this.buf; this.buf = '';
+      if (!rem) return [];
+      const kind = this.inThink ? 'think' : 'say';
+      this.inThink = false;
+      return [[kind, rem]];
+    }
+    _safeLen(tag) {
+      for (let k = Math.min(tag.length - 1, this.buf.length); k > 0; k--) {
+        if (this.buf.endsWith(tag.slice(0, k))) return this.buf.length - k;
+      }
+      return this.buf.length;
+    }
+  }
+
+  class DirectClient extends Emitter {
+    constructor(opts = {}) {
+      super();
+      this.o = opts;
+      this.ready = false;
+      this.status = 'offline';
+      this.turn = 0;
+      this.busy = false;
+      this.abortCtl = null;
+      this.waiting = null;
+      this.always = new Set();
+      this.history = (opts.history || []).map(h => ({
+        role: h.role === 'player' || h.role === 'user' ? 'user' : 'assistant',
+        content: String(h.text || h.content || '')
+      }));
+    }
+    _llm() {
+      return root.GallingsLLM || (root.parent && root.parent !== root && root.parent.GallingsLLM) || null;
+    }
+    _isTauri() {
+      return (typeof location !== 'undefined' && location.hostname === 'app.localhost') ||
+        !!(root.GallingsSteam?.isTauri || (root.parent && root.parent !== root && root.parent.GallingsSteam?.isTauri));
+    }
+    _hostTools() {
+      if (this.o.server_tools === false || !this._isTauri()) return [];
+      const callHost = async (name, args) => {
+        const r = await fetch('/__host/tool', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, args: args || {} })
+        });
+        const j = await r.json();
+        if (!j.ok) throw new Error(j.error || '工具调用失败');
+        return j.result;
+      };
+      return [
+        { name: 'get_time', effect: 'read', policy: 'auto', source: 'desktop', description: '获取玩家电脑当前的本地日期与时间', parameters: { type: 'object', properties: {} }, handler: a => callHost('get_time', a) },
+        { name: 'list_dir', effect: 'read', policy: 'auto', source: 'desktop', description: '列出本地目录中的文件与子文件夹', parameters: { type: 'object', properties: { path: { type: 'string', description: '目录路径，默认当前目录 .' } } }, handler: a => callHost('list_dir', a) },
+        { name: 'read_file', effect: 'read', policy: 'auto', source: 'desktop', description: '读取本地文本文件的内容', parameters: { type: 'object', required: ['path'], properties: { path: { type: 'string', description: '文件路径' } } }, handler: a => callHost('read_file', a) },
+        { name: 'write_file', effect: 'perform', policy: 'ask', source: 'desktop', description: '写入或追加文本到本地文件（会先向玩家确认）', parameters: { type: 'object', required: ['path', 'content'], properties: { path: { type: 'string' }, content: { type: 'string' }, append: { type: 'boolean' } } }, handler: a => callHost('write_file', a) },
+        { name: 'powershell', effect: 'perform', policy: 'ask', source: 'desktop', description: '在玩家电脑上运行 PowerShell 命令（会先向玩家确认）', parameters: { type: 'object', required: ['command'], properties: { command: { type: 'string' } } }, handler: a => callHost('powershell', a) },
+      ];
+    }
+    _allTools() {
+      const ct = (this.o.clientTools || []).map(t => ({
+        name: t.name, effect: t.effect || 'perform', policy: t.policy || 'auto', source: 'client',
+        description: t.description || '', parameters: t.parameters || { type: 'object', properties: {} }, handler: t.handler
+      }));
+      return [...this._hostTools(), ...ct];
+    }
+    _sysPrompt(tools) {
+      const ch = this.o.character || {};
+      const name = ch.name || '鲸鱼小姐';
+      const defaultPersona = name === '鲸鱼小姐'
+        ? '《海风与布丁》的女主角，有着鯨鱼尾巴与尾鳍的少女。温柔、灵动、偶尔有些害羞或小俏皮，喜欢海风、布丁与玩家。说话自然亲切，不端架子，也不说自己是AI。'
+        : '温柔自然的视觉小说角色。';
+      const persona = ch.persona || defaultPersona;
+      const exprs = Array.isArray(ch.expressions) ? ch.expressions : [];
+      const ctx = this.o.context || {};
+      const parts = [
+        `你是《海风与布丁》里的「${name}」。结局之后（或在开始画面休息时），你正隔着屏幕和刚刚陪你走过故事的玩家聊天。`,
+        `【你的人设】\n${persona}`
+      ];
+      if (ctx.ending) parts.push(`【刚刚达成的结局】${ctx.ending}`);
+      if (ctx.story) parts.push(`【最近的故事片段】\n${String(ctx.story).slice(0, 1500)}`);
+      if (ctx.vars && Object.keys(ctx.vars).length) parts.push(`【故事里的变量】` + Object.entries(ctx.vars).map(([k, v]) => `${k}=${v}`).join('，'));
+      if (ctx.goal) parts.push(`【聊天方向】${ctx.goal}`);
+      if (exprs.length) parts.push(`【可用表情】${exprs.join('、')}\n在回复开头可以用 <emotion name="表情名"/> 切换一次立绘表情（表情名必须从上面选）。`);
+      const rules = [
+        '保持角色语气，自然、亲近、简短，不要长篇大论，不要使用自称AI或助手的口吻。',
+        '先在 <think>…</think> 里用第一人称简短写下你的内心想法或打算（1-2句话），然后再写对玩家说的话。'
+      ];
+      if (tools.length) {
+        rules.push('你手边有一组真实工具。玩家只是闲聊时直接温柔回复，不要硬调工具；如果玩家让你帮忙查时间、看目录、读文件、改游戏变量或放音效，就大方调用对应工具。');
+      }
+      parts.push('【说话与做事的方式】\n- ' + rules.join('\n- '));
+      return parts.join('\n\n');
+    }
+    async connect() {
+      const tools = this._allTools().map(t => ({ name: t.name, effect: t.effect, policy: t.policy, source: t.source }));
+      this.ready = true;
+      this.status = 'online';
+      this.info = { type: 'ready', protocol: PROTOCOL, session: 'direct', character: this.o.character || {}, tools, llm: true };
+      setTimeout(() => { this.emit('status', { status: 'online' }); this.emit('ready', this.info); }, 0);
+      return this.info;
+    }
+    _e(m) { this.emit(m.type, m); }
+    async send(text) {
+      if (this.busy) return;
+      const llm = this._llm();
+      if (!llm || !llm.isReady || !llm.isReady()) {
+        const mock = new MockClient(this.o);
+        ['turn_start', 'round_start', 'say_delta', 'round_end', 'step_start', 'think_delta', 'step_end', 'tool_start', 'approval_required', 'approval_resolved', 'tool_end', 'emotion', 'turn_end'].forEach(t => mock.on(t, m => this._e(m)));
+        this._mockActive = mock;
+        return mock.send(text);
+      }
+      this.busy = true;
+      const turn = ++this.turn, t0 = Date.now();
+      let steps = 0, calls = 0, finalReply = '', stopped = false, errText = null;
+      this.abortCtl = new AbortController();
+      const tools = this._allTools();
+      const oaiTools = tools.map(t => ({
+        type: 'function',
+        function: { name: t.name, description: t.description, parameters: t.parameters }
+      }));
+      this.history.push({ role: 'user', content: text });
+      this._e({ type: 'turn_start', turn, input: text });
+      try {
+        for (let rnd = 1; rnd <= 6; rnd++) {
+          this._e({ type: 'round_start', turn, round: rnd });
+          const sp = new StreamSplitter();
+          let thinkId = null, thinkT0 = 0, roundSay = '';
+          const openThink = () => {
+            if (!thinkId) {
+              thinkId = 's' + (++steps);
+              thinkT0 = Date.now();
+              this._e({ type: 'step_start', turn, step: thinkId, kind: 'think' });
+            }
+          };
+          const closeThink = () => {
+            if (thinkId) {
+              this._e({ type: 'step_end', turn, step: thinkId, ok: true, ms: Date.now() - thinkT0 });
+              thinkId = null;
+            }
+          };
+          const handlePieces = list => {
+            for (const [kind, val] of list) {
+              if (!val) continue;
+              if (kind === 'think') { openThink(); this._e({ type: 'think_delta', turn, step: thinkId, text: val }); }
+              else if (kind === 'emotion') { closeThink(); this._e({ type: 'emotion', turn, name: val }); }
+              else if (kind === 'say') { closeThink(); roundSay += val; this._e({ type: 'say_delta', turn, round: rnd, text: val }); }
+            }
+          };
+          const messages = [{ role: 'system', content: this._sysPrompt(tools) }, ...this.history.slice(-24)];
+          const res = await llm.stream({
+            messages,
+            tools: oaiTools.length ? oaiTools : undefined,
+            temperature: 0.75,
+            signal: this.abortCtl.signal,
+            onDelta: d => {
+              if (d.reasoning) { openThink(); this._e({ type: 'think_delta', turn, step: thinkId, text: d.reasoning }); }
+              if (d.content) handlePieces(sp.feed(d.content));
+            }
+          });
+          handlePieces(sp.flush());
+          closeThink();
+          const tcs = res.tool_calls || [];
+          this._e({ type: 'round_end', turn, round: rnd, tool_calls: tcs.length });
+          if (!tcs.length) {
+            finalReply = roundSay.trim();
+            this.history.push({ role: 'assistant', content: finalReply });
+            break;
+          }
+          this.history.push({
+            role: 'assistant',
+            content: roundSay || '',
+            tool_calls: tcs.map(tc => ({ id: tc.id, type: 'function', function: { name: tc.function.name, arguments: tc.function.arguments || '{}' } }))
+          });
+          for (const tc of tcs) {
+            const nm = tc.function.name;
+            let args = {};
+            try { args = JSON.parse(tc.function.arguments || '{}'); } catch (e) {}
+            const tDef = tools.find(x => x.name === nm);
+            const stepId = 's' + (++steps), ts = Date.now(), cid = tc.id || ('call_' + stepId);
+            calls++;
+            const policy = tDef ? tDef.policy : 'auto';
+            this._e({ type: 'tool_start', turn, step: stepId, call_id: cid, name: nm, args, source: tDef?.source || 'client', policy });
+            let allow = true;
+            if (policy === 'ask' && !this.always.has(nm)) {
+              this._e({ type: 'approval_required', turn, step: stepId, call_id: cid, name: nm, args, effect: tDef?.effect || 'perform' });
+              const [okAllow, remember] = await new Promise(r => { this.waiting = { cid, r }; });
+              this._e({ type: 'approval_resolved', turn, step: stepId, call_id: cid, allow: !!okAllow });
+              if (remember && okAllow) this.always.add(nm);
+              allow = !!okAllow;
+            }
+            let ok = true, result = null, error = null;
+            if (!allow) {
+              ok = false; error = '玩家没有同意这次操作';
+            } else if (!tDef || !tDef.handler) {
+              ok = false; error = '未找到工具：' + nm;
+            } else {
+              try { result = await tDef.handler(args); }
+              catch (e) { ok = false; error = String(e?.message || e); }
+            }
+            this._e({ type: 'tool_end', turn, step: stepId, call_id: cid, name: nm, ok, result: ok ? result : null, error, ms: Date.now() - ts });
+            this.history.push({
+              role: 'tool',
+              tool_call_id: tc.id,
+              content: JSON.stringify(ok ? { ok: true, result } : { ok: false, error })
+            });
+          }
+        }
+      } catch (e) {
+        if (e && e.name === 'AbortError') stopped = true;
+        else { errText = String(e?.message || e); this._e({ type: 'error', message: errText, fatal: false }); }
+      } finally {
+        this.busy = false;
+        this.abortCtl = null;
+        this._e({ type: 'turn_end', turn, ms: Date.now() - t0, steps, tool_calls: calls, reply: finalReply, stopped, error: errText });
+      }
+    }
+    approve(cid, allow, remember) {
+      if (this._mockActive) return this._mockActive.approve(cid, allow, remember);
+      if (this.waiting && this.waiting.cid === cid) {
+        const w = this.waiting; this.waiting = null; w.r([allow, remember]);
+      }
+    }
+    stop() {
+      if (this._mockActive) { this._mockActive.stop(); this._mockActive = null; return; }
+      if (this.waiting) { const w = this.waiting; this.waiting = null; w.r([false, false]); }
+      if (this.abortCtl) { try { this.abortCtl.abort(); } catch (e) {} }
+    }
+    reset() {
+      this.history = [];
+      this._e({ type: 'reset_done' });
+    }
     close() { this.stop(); }
   }
 
@@ -765,5 +1051,5 @@
 
   function mount(container, opts) { return new ChatView(container, opts); }
 
-  root.GalAgent = { PROTOCOL, version: '0.3.0', Client, MockClient, WorkflowView, ChatView, WorkDock, GalStage, mount, registerToolRenderer, registerToolTitle, LABELS, fmtMs, _ic: ic };
+  root.GalAgent = { PROTOCOL, version: '0.3.0', Client, MockClient, DirectClient, WorkflowView, ChatView, WorkDock, GalStage, mount, registerToolRenderer, registerToolTitle, LABELS, fmtMs, _ic: ic };
 })(typeof window !== 'undefined' ? window : globalThis);

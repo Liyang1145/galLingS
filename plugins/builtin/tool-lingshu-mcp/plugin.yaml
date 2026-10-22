@@ -1,0 +1,28 @@
+schema_version: 1
+id: gallings.tool.lingshu-mcp
+name: 灵枢认知图 MCP 工具集
+version: 0.1.0
+kind: tool
+api: 1
+description: >
+  通过 MCP stdio 协议（MCPToolPlugin）将灵枢认知图（md_cg.mcp_server）挂载为 GalAgent 可调用工具，
+  支持在结局后聊天与自由对话中主动读写、检索和关联认知图记忆节点。
+requires:
+  gallings: ">=0.1,<0.2"
+runtime:
+  type: mcp
+  command: ["${python}", "-m", "md_cg.mcp_server"]
+  env:
+    PYTHONPATH: "${plugin_dir}/../memory-lingshu"
+    MDCG_ROOT: "${data_dir}/graph"
+    MDCG_ACTOR: "galagent"
+    MDCG_LEGACY_ENV_AUTH: "1"
+  startup_timeout_s: 20
+  call_timeout_s: 30
+capabilities: [galagent]
+provides:
+  tools: [mdcg_remember, mdcg_search, mdcg_get, mdcg_link, mdcg_status]
+permissions:
+  filesystem: ["${data_dir}"]
+  subprocess: true
+determinism: recorded

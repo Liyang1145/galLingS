@@ -317,6 +317,25 @@
       "backendQuality": "high",
       "backendModel": "gpt-image-2.5-sunburst"
     },
+    "B11B": {
+      "path": "content/assets/art-upgrade/runtime/B11B.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/B11B.webp",
+      "sourceSha256": "fe66ff3f485100025604079bf4fc190427060d7fcfae946f52bb44a2d6458b08",
+      "sha256": "de44d0ecaa6d01723c518701d28e5fc708acc8d7089d3593a76fe337b1a52248",
+      "bytes": 156496,
+      "sourceBytes": 1311576,
+      "size": [
+        2752,
+        1536
+      ],
+      "lossless": false,
+      "webpQuality": 90,
+      "resized": false,
+      "backendQuality": null,
+      "backendModel": null,
+      "derivedFrom": "B11A",
+      "derivation": "B11A 程序压暗（非模型生成），光完全消失；用于第三话 #395–396「光没了。」"
+    },
     "B12": {
       "path": "content/assets/art-upgrade/runtime/B12.webp",
       "sourceMasterPath": "content/assets/art-upgrade/originals/B12.webp",
@@ -383,6 +402,25 @@
           "worstBlock": 0.897
         }
       }
+    },
+    "B13D": {
+      "path": "content/assets/art-upgrade/runtime/B13D.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/B13D.webp",
+      "sourceSha256": "afcfa3a4e27c5558f33d388e3767d79921281dd3153f3cdd2d5d086425263624",
+      "sha256": "e7b09c75ecc22af667aa6f394b496897aae67d5845514d4809cbd6561b2366f4",
+      "bytes": 615994,
+      "sourceBytes": 4111356,
+      "size": [
+        3840,
+        2160
+      ],
+      "lossless": false,
+      "webpQuality": 90,
+      "resized": false,
+      "backendQuality": "high",
+      "backendModel": "gpt-image-2.5-sunburst",
+      "derivedFrom": "B13",
+      "derivation": "以 B13 为参考图生成，同构图几乎全暗、只剩荧光点初亮；用于第三话 #397–398「然后，光回来了。」"
     },
     "B14": {
       "path": "content/assets/art-upgrade/runtime/B14.webp",
@@ -1283,20 +1321,21 @@
     },
     "C15": {
       "path": "content/assets/art-upgrade/runtime/C15.webp",
-      "sourceMasterPath": "content/assets/art-upgrade/originals/C15.png",
-      "sourceSha256": "6d4e8679e794b6e67d5f7943161cdbb67254c570e144eeeabf8b9ba26ec5de7f",
-      "sha256": "d3e3d0997c6670a9cc4b14f8dd0a5eb656d054b7560042d465be2e4b15dc4c45",
-      "bytes": 1230984,
-      "sourceBytes": 7803052,
+      "sourceMasterPath": "content/assets/art-upgrade/originals/C15.webp",
+      "sourceSha256": "984da054dda6e892282d674ad5347a3107f0e0d50f9e3f18e39fee7d615eaccd",
+      "sha256": "46d213ac2027ec1ff9e148250f10d7a6b1cd2d8aea7a7cb5e8beb186f3ace5c0",
+      "bytes": 853474,
+      "sourceBytes": 5593766,
       "size": [
         3344,
         1882
       ],
       "lossless": false,
-      "webpQuality": 95,
+      "webpQuality": 90,
       "resized": false,
-      "backendQuality": null,
-      "backendModel": null
+      "backendQuality": "high",
+      "backendModel": "gpt-image-2.5-sunburst",
+      "derivedFrom": "C15 旧母版（content/assets/art-upgrade/originals/C15_superseded_before_tail_l01_20261019.png）+ L01 尾巴参考，Sunburst 局部重画尾巴后只合成尾巴区域（2026-10-19）"
     },
     "C22": {
       "path": "content/assets/art-upgrade/runtime/C22.webp",
@@ -2332,6 +2371,25 @@
         }
       }
     },
+    "B02T": {
+      "path": "content/assets/art-upgrade/runtime/B02T.webp",
+      "sourceMasterPath": "content/assets/art-upgrade/originals/B02T.webp",
+      "sourceSha256": "6d64017f5020e1020a9ea985e7bb2d54c5a6d16f6b9a991d40c0bbd20dae98b7",
+      "sha256": "b16114d0b46a2770ac4b9a1cd1fa4f433d3c5ed5811f13177b696ea8300e5a19",
+      "bytes": 766258,
+      "sourceBytes": 5429204,
+      "size": [
+        3840,
+        2160
+      ],
+      "lossless": false,
+      "webpQuality": 90,
+      "resized": false,
+      "backendQuality": "high",
+      "backendModel": "gpt-image-2.5-sunburst",
+      "derivedFrom": "B02 + L01 尾巴",
+      "derivation": "以 B02（风格/光线）与 L01 尾鳍裁图为参考生成的第一人称水下近景：指尖刚碰到尾鳍尖；用于第一话开场 #9–11"
+    },
     "B19": {
       "path": "content/assets/art-upgrade/runtime/B19.webp",
       "sourceMasterPath": "content/assets/art-upgrade/originals/B19.webp",
@@ -3133,7 +3191,7 @@
       "sourceSha256": "e39b81a9982b3da58b73b6f6ede9a5ea5db56de880cc3e9cad6600e91eac22ba",
       "sourceBytes": 671166,
       "size": [
-        1024,
+        1264,
         1536
       ]
     },

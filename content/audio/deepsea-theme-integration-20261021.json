@@ -1,0 +1,1957 @@
+{
+  "date": "2026-10-21",
+  "status": "integrated-in-working-branch-awaiting-listening",
+  "baselineCommit": "dc1e3660e2c1de5272e6883f55e4a568af8c2351",
+  "sourceGameSha256": "250f5ba5495075678e4dd185135461def0f198dcb0d3eb4aead3dd511a80f12c",
+  "tracks": [
+    {
+      "id": "bgm_e2_deepsea_main",
+      "title": "深海之光·主曲",
+      "role": "E2 full theme",
+      "sourceFilename": "21.wav",
+      "sourceSha256": "f2e33da39002bb06bcb548e2dab444497efe7b3abf8f982e703f6e0f834da9e9",
+      "originalDurationSeconds": 214.852676,
+      "path": "content/assets/audio/bgm/bgm_e2_deepsea_main.mp3",
+      "runtimePath": "content/imports/vnstudio/海风与布丁/assets/bgm/bgm_e2_deepsea_main.mp3",
+      "durationSeconds": 214.852676,
+      "bytes": 6583702,
+      "sha256": "f66176c65e6852f6ec89e6f9a30a4a5ae8d09ce3676e9b6d8ccbd99f265a44cd",
+      "processing": "WAV converted with libmp3lame -q:a 0; no trimming, no normalization",
+      "sourceOriginalPreserved": true,
+      "mirrorsIdentical": true,
+      "playbackGain": 0.78886,
+      "gainDb": -2.06,
+      "measuredLufs": -15.34,
+      "truePeakDbtp": 0.06,
+      "effectiveLufs": -17.4,
+      "effectiveTruePeakDbtp": -2.0,
+      "loopPointsEdited": false,
+      "listeningAcceptance": "pending music owner playtest"
+    },
+    {
+      "id": "bgm_e2_deepsea_piano",
+      "title": "深海之光·钢琴改编",
+      "role": "E2 piano arrangement",
+      "sourceFilename": "深海-钢琴.mp3",
+      "sourceSha256": "5fe431056d077d2af7a71c0a50c73a07e6664fede3d868ae4d995f87e810b7f5",
+      "originalDurationSeconds": 132.101188,
+      "path": "content/assets/audio/bgm/bgm_e2_deepsea_piano.mp3",
+      "runtimePath": "content/imports/vnstudio/海风与布丁/assets/bgm/bgm_e2_deepsea_piano.mp3",
+      "durationSeconds": 132.101188,
+      "bytes": 2113689,
+      "sha256": "5fe431056d077d2af7a71c0a50c73a07e6664fede3d868ae4d995f87e810b7f5",
+      "processing": "Original MP3 copied bit-for-bit",
+      "sourceOriginalPreserved": true,
+      "mirrorsIdentical": true,
+      "playbackGain": 0.755962,
+      "gainDb": -2.43,
+      "measuredLufs": -14.97,
+      "truePeakDbtp": -2.16,
+      "effectiveLufs": -17.4,
+      "effectiveTruePeakDbtp": -4.59,
+      "loopPointsEdited": false,
+      "listeningAcceptance": "pending music owner playtest"
+    },
+    {
+      "id": "bgm_emerald_dream_piano",
+      "title": "翡翠之梦·钢琴改编",
+      "role": "Emerald meeting-theme piano arrangement",
+      "sourceFilename": "翡翠钢琴.mp3",
+      "sourceSha256": "d95341d97eaca99ffefda7092538c3bcbffaf52a04c227f9a4c22fe04829faaa",
+      "originalDurationSeconds": 133.694688,
+      "path": "content/assets/audio/bgm/bgm_emerald_dream_piano.mp3",
+      "runtimePath": "content/imports/vnstudio/海风与布丁/assets/bgm/bgm_emerald_dream_piano.mp3",
+      "durationSeconds": 133.694688,
+      "bytes": 2139185,
+      "sha256": "d95341d97eaca99ffefda7092538c3bcbffaf52a04c227f9a4c22fe04829faaa",
+      "processing": "Original MP3 copied bit-for-bit",
+      "sourceOriginalPreserved": true,
+      "mirrorsIdentical": true,
+      "playbackGain": 0.797995,
+      "gainDb": -1.96,
+      "measuredLufs": -15.44,
+      "truePeakDbtp": -1.0,
+      "effectiveLufs": -17.4,
+      "effectiveTruePeakDbtp": -2.96,
+      "loopPointsEdited": false,
+      "listeningAcceptance": "pending music owner playtest"
+    }
+  ],
+  "cues": [
+    {
+      "startIndex": 276,
+      "endExclusive": 328,
+      "startLineId": "mt31fbu7",
+      "lastLineId": "o1bis57q",
+      "nodeCount": 52,
+      "assetId": "bgm_emerald_dream_piano",
+      "note": "第二话：黄昏，记忆与暗号约定；延续至她归还笔记本。原稿 L696 钢琴 solo。",
+      "previousIds": {
+        "bgm_emerald_dream_main_v01": 37,
+        "bgm_atri_t3_dusk": 15
+      }
+    },
+    {
+      "startIndex": 399,
+      "endExclusive": 488,
+      "startLineId": "smyc1237",
+      "lastLineId": "9o8l1lyl",
+      "nodeCount": 89,
+      "assetId": "bgm_e2_deepsea_main",
+      "note": "第三话：海床蓝光亮起至水下定情完成。保留 #399 主题起点，M2 #391–398 不动。",
+      "previousIds": {
+        "bgm_atri_e2_deepsea": 89
+      }
+    },
+    {
+      "startIndex": 488,
+      "endExclusive": 505,
+      "startLineId": "xt9dxhsx",
+      "lastLineId": "si26npe8",
+      "nodeCount": 17,
+      "assetId": "bgm_e2_deepsea_piano",
+      "note": "第三话：出水黄昏、“今天涨潮”尾奏。原稿 L1193 钢琴尾奏。",
+      "previousIds": {
+        "bgm_atri_e2_deepsea": 17
+      }
+    },
+    {
+      "startIndex": 625,
+      "endExclusive": 643,
+      "startLineId": "tlf961cf",
+      "lastLineId": "o6enb8xa",
+      "nodeCount": 18,
+      "assetId": "bgm_e2_deepsea_piano",
+      "note": "第四话：黄昏蓝贝壳手链托付。原稿 L1511 深海钢琴。",
+      "previousIds": {
+        "bgm_atri_t3_dusk": 18
+      }
+    },
+    {
+      "startIndex": 2691,
+      "endExclusive": 2727,
+      "startLineId": "pctfqhja",
+      "lastLineId": "w4411q0j",
+      "nodeCount": 36,
+      "assetId": "bgm_e2_deepsea_piano",
+      "note": "第十五话：清晨门口兑现早安赌约与尾尖约定。原稿 L5988 深海钢琴。",
+      "previousIds": {
+        "bgm_atri_e3m6m7_v2": 36
+      }
+    },
+    {
+      "startIndex": 2860,
+      "endExclusive": 2944,
+      "startLineId": "pz8195kk",
+      "lastLineId": "gexvjjp4",
+      "nodeCount": 84,
+      "assetId": "bgm_e2_deepsea_main",
+      "note": "第十六话：回到最初浅滩，戒指、手稿与初遇真相。原稿 L6353 深海完整版。",
+      "previousIds": {
+        "bgm_atri_t4_night": 14,
+        "bgm_emerald_dream_main_v01": 70
+      }
+    }
+  ],
+  "nodeChanges": [
+    {
+      "index": 276,
+      "lineId": "mt31fbu7",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_emerald_dream_piano"
+    },
+    {
+      "index": 277,
+      "lineId": "53dpn8dm",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_emerald_dream_piano"
+    },
+    {
+      "index": 278,
+      "lineId": "dwy8u0bl",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_emerald_dream_piano"
+    },
+    {
+      "index": 279,
+      "lineId": "4wcig7s7",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_emerald_dream_piano"
+    },
+    {
+      "index": 280,
+      "lineId": "tz0vk1ss",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_emerald_dream_piano"
+    },
+    {
+      "index": 281,
+      "lineId": "atftsuc7",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_emerald_dream_piano"
+    },
+    {
+      "index": 282,
+      "lineId": "5d1gx8hr",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_emerald_dream_piano"
+    },
+    {
+      "index": 283,
+      "lineId": "xoc3t6th",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_emerald_dream_piano"
+    },
+    {
+      "index": 284,
+      "lineId": "tafoincj",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_emerald_dream_piano"
+    },
+    {
+      "index": 285,
+      "lineId": "4f99m6q7",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_emerald_dream_piano"
+    },
+    {
+      "index": 286,
+      "lineId": "a7c5njix",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_emerald_dream_piano"
+    },
+    {
+      "index": 287,
+      "lineId": "ymbvisqf",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_emerald_dream_piano"
+    },
+    {
+      "index": 288,
+      "lineId": "whyy1s3e",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_emerald_dream_piano"
+    },
+    {
+      "index": 289,
+      "lineId": "dx9q0ctu",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_emerald_dream_piano"
+    },
+    {
+      "index": 290,
+      "lineId": "f5em80mi",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_emerald_dream_piano"
+    },
+    {
+      "index": 291,
+      "lineId": "inmcmx6k",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_emerald_dream_piano"
+    },
+    {
+      "index": 292,
+      "lineId": "d2db3cya",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_emerald_dream_piano"
+    },
+    {
+      "index": 293,
+      "lineId": "ciswga6p",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_emerald_dream_piano"
+    },
+    {
+      "index": 294,
+      "lineId": "nxlik4mf",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_emerald_dream_piano"
+    },
+    {
+      "index": 295,
+      "lineId": "li3y809n",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_emerald_dream_piano"
+    },
+    {
+      "index": 296,
+      "lineId": "slxkh5nb",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_emerald_dream_piano"
+    },
+    {
+      "index": 297,
+      "lineId": "5w5wtlgf",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_emerald_dream_piano"
+    },
+    {
+      "index": 298,
+      "lineId": "b88ptsjs",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_emerald_dream_piano"
+    },
+    {
+      "index": 299,
+      "lineId": "uvtoc02j",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_emerald_dream_piano"
+    },
+    {
+      "index": 300,
+      "lineId": "jnpfwdxs",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_emerald_dream_piano"
+    },
+    {
+      "index": 301,
+      "lineId": "fxl393bw",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_emerald_dream_piano"
+    },
+    {
+      "index": 302,
+      "lineId": "5f7xxj54",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_emerald_dream_piano"
+    },
+    {
+      "index": 303,
+      "lineId": "kq3urcbr",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_emerald_dream_piano"
+    },
+    {
+      "index": 304,
+      "lineId": "12ib88ay",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_emerald_dream_piano"
+    },
+    {
+      "index": 305,
+      "lineId": "6b6yfsh8",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_emerald_dream_piano"
+    },
+    {
+      "index": 306,
+      "lineId": "hnan3hhf",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_emerald_dream_piano"
+    },
+    {
+      "index": 307,
+      "lineId": "3bymlu28",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_emerald_dream_piano"
+    },
+    {
+      "index": 308,
+      "lineId": "ajgkhqy0",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_emerald_dream_piano"
+    },
+    {
+      "index": 309,
+      "lineId": "qnvw9nqf",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_emerald_dream_piano"
+    },
+    {
+      "index": 310,
+      "lineId": "7ev68l3r",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_emerald_dream_piano"
+    },
+    {
+      "index": 311,
+      "lineId": "tyqbvu4h",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_emerald_dream_piano"
+    },
+    {
+      "index": 312,
+      "lineId": "6tr9fpio",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_emerald_dream_piano"
+    },
+    {
+      "index": 313,
+      "lineId": "8d3i7kly",
+      "before": "bgm_atri_t3_dusk",
+      "after": "bgm_emerald_dream_piano"
+    },
+    {
+      "index": 314,
+      "lineId": "t779xb9d",
+      "before": "bgm_atri_t3_dusk",
+      "after": "bgm_emerald_dream_piano"
+    },
+    {
+      "index": 315,
+      "lineId": "cpdfhp17",
+      "before": "bgm_atri_t3_dusk",
+      "after": "bgm_emerald_dream_piano"
+    },
+    {
+      "index": 316,
+      "lineId": "3aua7rck",
+      "before": "bgm_atri_t3_dusk",
+      "after": "bgm_emerald_dream_piano"
+    },
+    {
+      "index": 317,
+      "lineId": "yfn66191",
+      "before": "bgm_atri_t3_dusk",
+      "after": "bgm_emerald_dream_piano"
+    },
+    {
+      "index": 318,
+      "lineId": "qsews8jw",
+      "before": "bgm_atri_t3_dusk",
+      "after": "bgm_emerald_dream_piano"
+    },
+    {
+      "index": 319,
+      "lineId": "6psxxipg",
+      "before": "bgm_atri_t3_dusk",
+      "after": "bgm_emerald_dream_piano"
+    },
+    {
+      "index": 320,
+      "lineId": "afyc4302",
+      "before": "bgm_atri_t3_dusk",
+      "after": "bgm_emerald_dream_piano"
+    },
+    {
+      "index": 321,
+      "lineId": "vzzgzsqz",
+      "before": "bgm_atri_t3_dusk",
+      "after": "bgm_emerald_dream_piano"
+    },
+    {
+      "index": 322,
+      "lineId": "g3dcgcse",
+      "before": "bgm_atri_t3_dusk",
+      "after": "bgm_emerald_dream_piano"
+    },
+    {
+      "index": 323,
+      "lineId": "sfpzh3jx",
+      "before": "bgm_atri_t3_dusk",
+      "after": "bgm_emerald_dream_piano"
+    },
+    {
+      "index": 324,
+      "lineId": "vx9nl7ok",
+      "before": "bgm_atri_t3_dusk",
+      "after": "bgm_emerald_dream_piano"
+    },
+    {
+      "index": 325,
+      "lineId": "lwdt5497",
+      "before": "bgm_atri_t3_dusk",
+      "after": "bgm_emerald_dream_piano"
+    },
+    {
+      "index": 326,
+      "lineId": "nthjz7h6",
+      "before": "bgm_atri_t3_dusk",
+      "after": "bgm_emerald_dream_piano"
+    },
+    {
+      "index": 327,
+      "lineId": "o1bis57q",
+      "before": "bgm_atri_t3_dusk",
+      "after": "bgm_emerald_dream_piano"
+    },
+    {
+      "index": 399,
+      "lineId": "smyc1237",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 400,
+      "lineId": "s1eag3ez",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 401,
+      "lineId": "b7wnus9x",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 402,
+      "lineId": "54twpg60",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 403,
+      "lineId": "wz7popb4",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 404,
+      "lineId": "8j4840ue",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 405,
+      "lineId": "45um76ye",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 406,
+      "lineId": "b8tgtkdx",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 407,
+      "lineId": "p0qw841g",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 408,
+      "lineId": "ew9v7eo0",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 409,
+      "lineId": "krsgixfj",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 410,
+      "lineId": "8qrf8zlp",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 411,
+      "lineId": "8zfioky4",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 412,
+      "lineId": "y932tpsh",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 413,
+      "lineId": "7d3a32aa",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 414,
+      "lineId": "66xs252k",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 415,
+      "lineId": "3u8ph2yd",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 416,
+      "lineId": "56v75w35",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 417,
+      "lineId": "v1lq0dbo",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 418,
+      "lineId": "zd0um85v",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 419,
+      "lineId": "g5hgu8vb",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 420,
+      "lineId": "fh4vk7z0",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 421,
+      "lineId": "fmps114w",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 422,
+      "lineId": "uw61uwl3",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 423,
+      "lineId": "8z0e9h59",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 424,
+      "lineId": "8z9dhnpu",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 425,
+      "lineId": "xrqh9glz",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 426,
+      "lineId": "p6ez8cbq",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 427,
+      "lineId": "nwguycz5",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 428,
+      "lineId": "x3ohaufm",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 429,
+      "lineId": "sqp1yf73",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 430,
+      "lineId": "raw1hwhm",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 431,
+      "lineId": "ubolwxyw",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 432,
+      "lineId": "ttus1a2r",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 433,
+      "lineId": "8x3tm8cy",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 434,
+      "lineId": "mj6g6kev",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 435,
+      "lineId": "4hvg45xv",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 436,
+      "lineId": "arhrstjg",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 437,
+      "lineId": "hdv1o7vc",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 438,
+      "lineId": "n910kr47",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 439,
+      "lineId": "q92mph7f",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 440,
+      "lineId": "m6l8mfz9",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 441,
+      "lineId": "2do52ju2",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 442,
+      "lineId": "1byom25d",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 443,
+      "lineId": "yxpfn556",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 444,
+      "lineId": "u3z4fnv0",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 445,
+      "lineId": "xwilfrxk",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 446,
+      "lineId": "bs3ptc9o",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 447,
+      "lineId": "vfh87n2b",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 448,
+      "lineId": "azrf8xjb",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 449,
+      "lineId": "xbksr66t",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 450,
+      "lineId": "z3y00jde",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 451,
+      "lineId": "f127zgns",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 452,
+      "lineId": "apyxrb5o",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 453,
+      "lineId": "z6l9dto6",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 454,
+      "lineId": "2b4n1i90",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 455,
+      "lineId": "3pazn66p",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 456,
+      "lineId": "7ff2546g",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 457,
+      "lineId": "9wsntk51",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 458,
+      "lineId": "or055omq",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 459,
+      "lineId": "fbjpqepb",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 460,
+      "lineId": "sldr3fn7",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 461,
+      "lineId": "h01deoo3",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 462,
+      "lineId": "17tbshib",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 463,
+      "lineId": "m4h4m6z8",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 464,
+      "lineId": "b50sr8c6",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 465,
+      "lineId": "773n40kc",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 466,
+      "lineId": "5wdlwmaw",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 467,
+      "lineId": "mwege7ss",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 468,
+      "lineId": "o04hxx55",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 469,
+      "lineId": "b504tbak",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 470,
+      "lineId": "480teug0",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 471,
+      "lineId": "2yfftn4q",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 472,
+      "lineId": "fs5crwy2",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 473,
+      "lineId": "hf8lvkzr",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 474,
+      "lineId": "7uc2ce54",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 475,
+      "lineId": "3lwv5wvh",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 476,
+      "lineId": "mtc8hh52",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 477,
+      "lineId": "9onmu9do",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 478,
+      "lineId": "fafdvswq",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 479,
+      "lineId": "tujhhfvq",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 480,
+      "lineId": "750nsrjs",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 481,
+      "lineId": "6ibcv1r8",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 482,
+      "lineId": "suilsk5v",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 483,
+      "lineId": "suzncvm4",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 484,
+      "lineId": "bqbgs32g",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 485,
+      "lineId": "riwpwvaa",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 486,
+      "lineId": "l21nnthv",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 487,
+      "lineId": "9o8l1lyl",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 488,
+      "lineId": "xt9dxhsx",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 489,
+      "lineId": "ed0zg1gr",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 490,
+      "lineId": "kla5ddeu",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 491,
+      "lineId": "si9vs7sx",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 492,
+      "lineId": "u7ez7ugu",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 493,
+      "lineId": "69vtf30p",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 494,
+      "lineId": "mvpxbool",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 495,
+      "lineId": "x07d3zsr",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 496,
+      "lineId": "wcagm1v0",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 497,
+      "lineId": "8v250knv",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 498,
+      "lineId": "nmt5xybc",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 499,
+      "lineId": "zw98t5oc",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 500,
+      "lineId": "l3ljol2p",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 501,
+      "lineId": "y0pu6ld5",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 502,
+      "lineId": "a1nfgl2v",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 503,
+      "lineId": "mz3l7n1e",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 504,
+      "lineId": "si26npe8",
+      "before": "bgm_atri_e2_deepsea",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 625,
+      "lineId": "tlf961cf",
+      "before": "bgm_atri_t3_dusk",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 626,
+      "lineId": "ii0wejed",
+      "before": "bgm_atri_t3_dusk",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 627,
+      "lineId": "grmaytdg",
+      "before": "bgm_atri_t3_dusk",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 628,
+      "lineId": "82u9n7le",
+      "before": "bgm_atri_t3_dusk",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 629,
+      "lineId": "fn8j4ids",
+      "before": "bgm_atri_t3_dusk",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 630,
+      "lineId": "wqr5d8bu",
+      "before": "bgm_atri_t3_dusk",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 631,
+      "lineId": "d0yth26k",
+      "before": "bgm_atri_t3_dusk",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 632,
+      "lineId": "rigd2hkm",
+      "before": "bgm_atri_t3_dusk",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 633,
+      "lineId": "yb7ctour",
+      "before": "bgm_atri_t3_dusk",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 634,
+      "lineId": "3c1q7bk3",
+      "before": "bgm_atri_t3_dusk",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 635,
+      "lineId": "t03jmdji",
+      "before": "bgm_atri_t3_dusk",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 636,
+      "lineId": "i5xrqyuu",
+      "before": "bgm_atri_t3_dusk",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 637,
+      "lineId": "dwui4zr4",
+      "before": "bgm_atri_t3_dusk",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 638,
+      "lineId": "vvuau0sl",
+      "before": "bgm_atri_t3_dusk",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 639,
+      "lineId": "wc7k8kuf",
+      "before": "bgm_atri_t3_dusk",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 640,
+      "lineId": "7ey21jye",
+      "before": "bgm_atri_t3_dusk",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 641,
+      "lineId": "k2mmymsk",
+      "before": "bgm_atri_t3_dusk",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 642,
+      "lineId": "o6enb8xa",
+      "before": "bgm_atri_t3_dusk",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 2691,
+      "lineId": "pctfqhja",
+      "before": "bgm_atri_e3m6m7_v2",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 2692,
+      "lineId": "v0m5cj9i",
+      "before": "bgm_atri_e3m6m7_v2",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 2693,
+      "lineId": "vyvhxfeg",
+      "before": "bgm_atri_e3m6m7_v2",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 2694,
+      "lineId": "xo5lqmqh",
+      "before": "bgm_atri_e3m6m7_v2",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 2695,
+      "lineId": "0ixzpbpn",
+      "before": "bgm_atri_e3m6m7_v2",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 2696,
+      "lineId": "t6qh483c",
+      "before": "bgm_atri_e3m6m7_v2",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 2697,
+      "lineId": "8tb1lt8m",
+      "before": "bgm_atri_e3m6m7_v2",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 2698,
+      "lineId": "tqfjwodm",
+      "before": "bgm_atri_e3m6m7_v2",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 2699,
+      "lineId": "asjhgud1",
+      "before": "bgm_atri_e3m6m7_v2",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 2700,
+      "lineId": "hjiyaq0l",
+      "before": "bgm_atri_e3m6m7_v2",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 2701,
+      "lineId": "y8vi2xae",
+      "before": "bgm_atri_e3m6m7_v2",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 2702,
+      "lineId": "mekeu17c",
+      "before": "bgm_atri_e3m6m7_v2",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 2703,
+      "lineId": "83d4m1z4",
+      "before": "bgm_atri_e3m6m7_v2",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 2704,
+      "lineId": "g5mky371",
+      "before": "bgm_atri_e3m6m7_v2",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 2705,
+      "lineId": "z2cd08ag",
+      "before": "bgm_atri_e3m6m7_v2",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 2706,
+      "lineId": "qgdzhpf9",
+      "before": "bgm_atri_e3m6m7_v2",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 2707,
+      "lineId": "bk5wc4dm",
+      "before": "bgm_atri_e3m6m7_v2",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 2708,
+      "lineId": "q9surrfu",
+      "before": "bgm_atri_e3m6m7_v2",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 2709,
+      "lineId": "g0o3nj8v",
+      "before": "bgm_atri_e3m6m7_v2",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 2710,
+      "lineId": "01f9u9pn",
+      "before": "bgm_atri_e3m6m7_v2",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 2711,
+      "lineId": "ow85l90k",
+      "before": "bgm_atri_e3m6m7_v2",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 2712,
+      "lineId": "13fgkssa",
+      "before": "bgm_atri_e3m6m7_v2",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 2713,
+      "lineId": "1ydfm204",
+      "before": "bgm_atri_e3m6m7_v2",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 2714,
+      "lineId": "1rlqdk1w",
+      "before": "bgm_atri_e3m6m7_v2",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 2715,
+      "lineId": "kq8eaykx",
+      "before": "bgm_atri_e3m6m7_v2",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 2716,
+      "lineId": "w143fp9b",
+      "before": "bgm_atri_e3m6m7_v2",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 2717,
+      "lineId": "zeafdgq6",
+      "before": "bgm_atri_e3m6m7_v2",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 2718,
+      "lineId": "tzy5yacr",
+      "before": "bgm_atri_e3m6m7_v2",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 2719,
+      "lineId": "tlaprtzk",
+      "before": "bgm_atri_e3m6m7_v2",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 2720,
+      "lineId": "2x0c3z1s",
+      "before": "bgm_atri_e3m6m7_v2",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 2721,
+      "lineId": "k3l7jp8q",
+      "before": "bgm_atri_e3m6m7_v2",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 2722,
+      "lineId": "2cyz437m",
+      "before": "bgm_atri_e3m6m7_v2",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 2723,
+      "lineId": "igqjosbz",
+      "before": "bgm_atri_e3m6m7_v2",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 2724,
+      "lineId": "hvxv91vl",
+      "before": "bgm_atri_e3m6m7_v2",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 2725,
+      "lineId": "8aoh56l4",
+      "before": "bgm_atri_e3m6m7_v2",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 2726,
+      "lineId": "w4411q0j",
+      "before": "bgm_atri_e3m6m7_v2",
+      "after": "bgm_e2_deepsea_piano"
+    },
+    {
+      "index": 2860,
+      "lineId": "pz8195kk",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2861,
+      "lineId": "ar4m5eb6",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2862,
+      "lineId": "zayyfd2c",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2863,
+      "lineId": "pvyjs8ij",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2864,
+      "lineId": "x7jyamen",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2865,
+      "lineId": "xjo7fnms",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2866,
+      "lineId": "j6taov0s",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2867,
+      "lineId": "kupuqhew",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2868,
+      "lineId": "meudaeb0",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2869,
+      "lineId": "8nxhllnu",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2870,
+      "lineId": "48psdl1a",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2871,
+      "lineId": "rte1qnt4",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2872,
+      "lineId": "nj1i1iv4",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2873,
+      "lineId": "livwvbn2",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2874,
+      "lineId": "4lbhobyw",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2875,
+      "lineId": "de2y1wgh",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2876,
+      "lineId": "s2w6soc7",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2877,
+      "lineId": "fdp1qtcz",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2878,
+      "lineId": "v0p0spea",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2879,
+      "lineId": "8tph43ss",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2880,
+      "lineId": "fn70qy8g",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2881,
+      "lineId": "u27hspuo",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2882,
+      "lineId": "qimqf0ed",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2883,
+      "lineId": "ox9sc4j7",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2884,
+      "lineId": "ndbu4m8o",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2885,
+      "lineId": "1n0oai41",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2886,
+      "lineId": "wv5cuac9",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2887,
+      "lineId": "5h8dtlwh",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2888,
+      "lineId": "0mwt1rw6",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2889,
+      "lineId": "oe2vmjgt",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2890,
+      "lineId": "6yr6uset",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2891,
+      "lineId": "19js3h5w",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2892,
+      "lineId": "8bukas9s",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2893,
+      "lineId": "fi3v9wc8",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2894,
+      "lineId": "tlygugmd",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2895,
+      "lineId": "bkyovh13",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2896,
+      "lineId": "6pwic004",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2897,
+      "lineId": "kxbbx9ca",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2898,
+      "lineId": "r4zi6oa8",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2899,
+      "lineId": "1pzuaf7p",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2900,
+      "lineId": "kk0gkl53",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2901,
+      "lineId": "utztrk9n",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2902,
+      "lineId": "cflx3g9u",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2903,
+      "lineId": "kfype6dy",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2904,
+      "lineId": "4zgki6xf",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2905,
+      "lineId": "39s7warq",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2906,
+      "lineId": "cu1jv9pd",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2907,
+      "lineId": "x0n4swm1",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2908,
+      "lineId": "43dcjtyw",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2909,
+      "lineId": "sfgxomrb",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2910,
+      "lineId": "69nugc0p",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2911,
+      "lineId": "rwd3qe0r",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2912,
+      "lineId": "pevt6ns0",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2913,
+      "lineId": "3v4znyeh",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2914,
+      "lineId": "6st4rp02",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2915,
+      "lineId": "5sg23cos",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2916,
+      "lineId": "1pzh80i8",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2917,
+      "lineId": "my1hybkh",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2918,
+      "lineId": "fde1uw7m",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2919,
+      "lineId": "wvm4yd31",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2920,
+      "lineId": "x4sh81id",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2921,
+      "lineId": "zuwiy48w",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2922,
+      "lineId": "0kiu7o7s",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2923,
+      "lineId": "4d7rdwgb",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2924,
+      "lineId": "904t9lfc",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2925,
+      "lineId": "wnxemp29",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2926,
+      "lineId": "1g4niwwu",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2927,
+      "lineId": "nkfemir9",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2928,
+      "lineId": "dfgw38nd",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2929,
+      "lineId": "re6akd65",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2930,
+      "lineId": "p8f4p70m",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2931,
+      "lineId": "txd4qs42",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2932,
+      "lineId": "6zy7clrr",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2933,
+      "lineId": "uxdrpmrb",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2934,
+      "lineId": "gjbw4wb1",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2935,
+      "lineId": "dywyopih",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2936,
+      "lineId": "3qroszxg",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2937,
+      "lineId": "578j5uk8",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2938,
+      "lineId": "9xhxnr36",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2939,
+      "lineId": "835o2c4e",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2940,
+      "lineId": "nspynsn1",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2941,
+      "lineId": "4rgwdowo",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2942,
+      "lineId": "woskmm6c",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    },
+    {
+      "index": 2943,
+      "lineId": "gexvjjp4",
+      "before": "bgm_emerald_dream_main_v01",
+      "after": "bgm_e2_deepsea_main"
+    }
+  ],
+  "retiredAsset": "bgm_atri_e2_deepsea",
+  "retiredAssetRemainingReferences": 0,
+  "preservedAssets": [
+    "bgm_atri_m2_deep",
+    "bgm_e4_sunset_wait",
+    "bgm_atri_e7_reflection"
+  ],
+  "verification": {
+    "nodeCount": 3315,
+    "nodeIdOrderUnchanged": true,
+    "nonBgmLineFieldsUnchanged": true,
+    "choicesVarsVoiceSfxArtUnchanged": true,
+    "silencePositionsUnchanged": true,
+    "M2AndE4AndE7AssetAndReferencesUnchanged": true,
+    "L15C20PreviousArtPreserved": {
+      "L15.webp": "f78ee9e7eecf542e28aa0f098328a66bb975793fe94ba1a2c25df55f94dd5b7c",
+      "C20.webp": "46f26b86e60f1606f5f864909450cf6d3a8379f2d2ab2365669f14c20cda6c79"
+    }
+  },
+  "pushed": true,
+  "singleFileRebuilt": false,
+  "localIntegrationBaselineCommit": "fad065eb060525d1b3e1eb72926386d27f926a48",
+  "publicationScope": "audio-only; remote story/art/player retained; unaccepted local art excluded"
+}

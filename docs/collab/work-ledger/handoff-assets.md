@@ -4,7 +4,7 @@
 - 状态：历史快照已迁移；Live2D仍为制作中检查点，不作完成验收声明。
 - 记录时间：2026-10-13。
 - 来源分支：`handoff/galgame-workspace-20261012`，提交 `79b3f57`；既有标签 `workspace-20261012`。
-- 附件：[私有交接附件](https://github.com/Liyang1145/galLingS/releases/tag/workspace-20261012)。
+- 附件：[交接附件（当时为私有；仓库 2026-10-16 起公开）](https://github.com/Liyang1145/galLingS/releases/tag/workspace-20261012)。
 
 ## 已知边界
 

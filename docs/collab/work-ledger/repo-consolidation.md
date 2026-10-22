@@ -5,7 +5,7 @@
 - 更新时间：2026-10-14
 - 任务分支：`tanpowasd/dev`
 - 基线提交：`f45ec51`，期间合入 `main` `22d231f`（PR #5）
-- 交付提交 / PR / 私有附件：本分支
+- 交付提交 / PR / 附件：本分支
 
 ## 本次目标与影响范围
 
@@ -15,7 +15,7 @@
 - `core/src/engine.rs`：`State.vars`（空时不序列化）、`Config.vars_init`、OP `SET` / `JUMP_IF`、选项 `set` / `cond`、事件 `start`。
 - `server/runtime.py`、`server/session.py`、`server/api/app.py`：`game.source: vnstudio` + `game.vn_game`；`/ws?start=<章节入口句ID>&endings=<本机结局数>`；托管时向作品提供 `gallings.galcore` 插件。
 - `web/galcore.vnplugin.js`（新）：作品页里接管“下一句 / 选项 / 结局”，按引擎给的句子 ID 渲染；AI 模式在选项点加“（自己说）”交给导演。
-- `content/cards/whale.yaml`：鲸鱼小姐卡入库（仓库已私有，引擎会话需要）。
+- `content/cards/whale.yaml`：鲸鱼小姐卡入库（当时仓库为私有，引擎会话需要；2026-10-16 起仓库已公开）。
 - `config.example.yaml`：默认游戏改为《海风与布丁》。
 
 ## 兼容变化与交叉点

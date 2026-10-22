@@ -28,15 +28,16 @@ def parse_timeline(tags: list[str] | None) -> Timeline | None:
 class LingshuMemory(MemoryPlugin):
     async def setup(self) -> None:
         c = self.ctx.config
+        dsh_path = str(c.get("dsh_memory_path") or "").strip() or str(self.ctx.plugin_dir)
         graph = c["graph_dir"].replace("${data_dir}", str(self.ctx.data_dir))
-        env = {"MDCG_ROOT": graph, "MDCG_ACTOR": c["actor"], "PYTHONPATH": c["dsh_memory_path"],
+        env = {"MDCG_ROOT": graph, "MDCG_ACTOR": c["actor"], "PYTHONPATH": dsh_path,
                "MDCG_SUSTAIN": "0", "PYTHONUTF8": "1", "MDCG_MCP_SURFACE": "full"}
         token = self.ctx.secrets.get("token")
         if token:
             env["MDCG_TOKEN"] = token
         else:
             env["MDCG_LEGACY_ENV_AUTH"] = "1"
-        self.client = MCPClient([c["python"] or sys.executable, "-m", "md_cg.mcp_server"], env=env, cwd=c["dsh_memory_path"],
+        self.client = MCPClient([c["python"] or sys.executable, "-m", "md_cg.mcp_server"], env=env, cwd=dsh_path,
                                 call_timeout_s=c["call_timeout_s"], name=self.ctx.plugin_id)
         await self.client.start()
         names = {t["name"] for t in await self.client.list_tools()}

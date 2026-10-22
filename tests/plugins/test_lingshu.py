@@ -10,8 +10,7 @@ from server.plugins.manager import PluginManager
 
 from .conftest import BUILTIN
 
-DSH = os.environ.get("GALLINGS_TEST_DSH")
-pytestmark = pytest.mark.skipif(not DSH, reason="未设置 GALLINGS_TEST_DSH")
+DSH = os.environ.get("GALLINGS_TEST_DSH") or str(BUILTIN / "memory-lingshu")
 
 
 async def test_write_recall_with_timeline_filter(tmp_path):

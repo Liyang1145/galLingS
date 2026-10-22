@@ -5,7 +5,7 @@
 - 更新时间：2026-10-16
 - 任务分支：tanpowasd/dev
 - 基线提交：0f6de47（main）
-- 交付提交 / PR / 私有附件：见本分支提交；安装包在 Actions → desktop → Artifacts
+- 交付提交 / PR / 附件：见本分支提交；安装包在 Actions → desktop → Artifacts
 
 ## 本次目标与影响范围
 

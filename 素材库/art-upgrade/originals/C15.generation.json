@@ -1,0 +1,21 @@
+{
+  "id": "C15",
+  "kind": "CG",
+  "endpoint": "https://api.rinko.ai/v1/images/edits",
+  "requested_model": "gpt-image-2.5-sunburst",
+  "requested_quality": "high",
+  "requested_size": "1536x1536",
+  "date": "2026-10-19",
+  "batch": "c15-tail-l01-20261019",
+  "revision": 2,
+  "reference_images": [
+    "C15 原图尾巴区域裁切（1432×1432）",
+    "content/assets/art-upgrade/originals/L01.webp 尾巴（官方尾巴参考）"
+  ],
+  "note": "用户确认后替换：尾巴按 L01 标准重画（Sunburst 双图编辑：图1 为 C15 原图尾巴区裁切，图2 为 L01 尾巴参考；保持原姿势/位置/大小/弧线与店内暖光；斑驳中蓝背面、浅蓝腹面、波浪分界、深蓝描边、一对尾鳍、单个白色新月旋纹）。只把尾巴区域（约 x1840–2572, y644–1858）合成回旧母版，其余像素与旧母版逐一相同。",
+  "output_sha256": "a596ad8620be08289a3ff1e8d16c013d4287d61434b3343be332639fda7550f9",
+  "master_sha256": "984da054dda6e892282d674ad5347a3107f0e0d50f9e3f18e39fee7d615eaccd",
+  "runtime_webp_sha256": "46d213ac2027ec1ff9e148250f10d7a6b1cd2d8aea7a7cb5e8beb186f3ace5c0",
+  "superseded_master": "content/assets/art-upgrade/originals/C15_superseded_before_tail_l01_20261019.png",
+  "previous_workflow": "user-supplied-refinement（旧记录见 content/assets/art-upgrade/originals/C15_superseded_before_tail_l01_20261019.generation.json）"
+}

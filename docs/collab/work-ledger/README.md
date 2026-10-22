@@ -1,8 +1,9 @@
 # 任务记录索引（work-ledger）
 
-每次任务一份记录，新任务按 [_template.md](_template.md) 建。下面按主题排，同主题内新的在前。现行状态以 [接手说明](../接手说明.md) 和 [待办总表](../待办总表.md) 为准，这里是历史依据。
+每次任务一份记录，新任务按 [_template.md](_template.md) 建。下面按主题排，同主题内新的在前。现行状态以 [Hark 会话交接 20261020](../handoff/Hark会话交接_20261020.md)、[接手说明](../接手说明.md) 和 [待办总表](../待办总表.md) 为准，这里是历史依据。
 
 ## 总览与审查
+- [docs-cleanup-20261020.md](docs-cleanup-20261020.md) — 10-20 全仓文档整理（入口、对齐交接、矛盾消除、断链检查、待办 B08 登记、仓库公开说法统一）
 - [atri-ui-sync-android-20261019.md](atri-ui-sync-android-20261019.md) — 10-19 Atri 界面同步到文件夹版 + 安卓试玩包
 - [backend-demo-closeout-20261019.md](backend-demo-closeout-20261019.md) — 10-19 后端与 DEMO 未完成项收尾（Schema、回放、评测、守卫、D04、B02）
 - [2026-10-18-full-audit.md](2026-10-18-full-audit.md) — 10-18 晚全面审查（剧本 / 美术 / 音频与界面）
@@ -10,6 +11,7 @@
 - [repo-tidy-20261019.md](repo-tidy-20261019.md) — 10-19 仓库整理（入口、索引、历史文档归档）
 
 ## 剧情与界面
+- [opening-performance-20261019.md](opening-performance-20261019.md) — 10-19 开场 #9–21「摸尾巴被拍」演出重做（新近景 B02T、横甩/水下/慢动作效果、见面曲提前到 #19）
 - [script-fix-20261018.md](script-fix-20261018.md) — 剧情矛盾修正（fix9）
 - [ui-fix-20261018.md](ui-fix-20261018.md) — 界面修复（竖横屏、好感开关、按钮音效）
 - [settings-rollback-ui.md](settings-rollback-ui.md) — 设置与回退界面
@@ -21,13 +23,14 @@
 ## 美术
 - [local-production-workflows-20261020.md](local-production-workflows-20261020.md) — 10-20 Hark 生图/配音生产工具下载校验后转本地，清理仓库副本
 - [hd-art-music-20261019.md](hd-art-music-20261019.md) — 10-19 背景/CG 48 张高清化（3840）、深海下潜过渡 B11A、P04 尾巴、E2 起点与家居曲退出翡翠之梦营业段
+- [chapter1-cg-animations-20261019.md](chapter1-cg-animations-20261019.md) — 10-19 第一话关键剧情 CG 动画集（55447aa；CG01 未接入，等用户定）
 - [art-layout-20261019.md](art-layout-20261019.md) — 10-19 剧本美术编排：烤鱿鱼改场景、8 张 CG 接入鉴赏全解锁、C14 合并、未出场立绘加入与立绘重排
 - [art-selfaudit-20261019.md](art-selfaudit-20261019.md) — 美术全量自查（鉴赏解锁、尾巴两套画法、比例、分辨率、薄雾）
 - [art-acceptance-20261018.md](art-acceptance-20261018.md) — 10-18 晚图片验收修改
 - [tails-20261018-evening.md](tails-20261018-evening.md) — 10-18 傍晚尾巴与换图
 - [l37-tail-l01-20261018.md](l37-tail-l01-20261018.md) — L37 尾巴对齐 L01
 - [c02-afternoon-sky-20261018.md](c02-afternoon-sky-20261018.md) — C02 天空改午后
-- [tail-unify-c05.md](tail-unify-c05.md) — 鲸尾统一（C05 标准，10-17）
+- [tail-unify-c05.md](tail-unify-c05.md) — 鲸尾统一（C05 标准，10-17；历史，现行基准为 L01）
 - [image25-pass2.md](image25-pass2.md) — Image2.5 第二轮修图（10-17）
 - [agent-handoff-cg-pause.md](agent-handoff-cg-pause.md) — agent 接手与 CG 暂停（已撤销）
 - [tail-skin-corrections.md](tail-skin-corrections.md) — 鲸尾结构与误画擦伤修正
@@ -40,10 +43,11 @@
 - [current-art-gallery.md](current-art-gallery.md) — 仅当前使用图片的图库
 
 ## 音乐、音效、配音
+- [deepsea-emerald-piano-20261021.md](deepsea-emerald-piano-20261021.md) — 新深海主曲及深海/翡翠钢琴改编接入；Atri E2 暂时弃用，M2 保留
 - [vo-ch1-7-new-voice-20261019.md](vo-ch1-7-new-voice-20261019.md) — 鲸鱼小姐第一～七话新音色
 - [atri-feedback-vo-20261018.md](atri-feedback-vo-20261018.md) — Atri 试玩反馈与配音清单
 - [atri-home-cue-20261018.md](atri-home-cue-20261018.md) — Atri 家居曲接入
-- [atri-music-v11.md](atri-music-v11.md) — Atri 配乐 v1.1 + 前 200 句配音
+- [atri-music-v11.md](atri-music-v11.md) — Atri 配乐 v1.1 + 前 200 句配音（逐段明细 [atri-music-v11-cues.csv](atri-music-v11-cues.csv)）
 - [sfx-20261018.md](sfx-20261018.md) — 缺失音效接入
 - [voice-over.md](voice-over.md) — 角色配音（Qwen TTS）
 - [music-progress-sync.md](music-progress-sync.md) — 音乐进度同步
@@ -56,6 +60,8 @@
 - [local-scene-audio-assembly.md](local-scene-audio-assembly.md) — 本地场景与音频成果提交
 
 ## 引擎、打包、整合
+- [lingshu-multi-llm-galagent-mcp-20261021.md](lingshu-multi-llm-galagent-mcp-20261021.md) — 10-21 灵枢认知图 MCP 记忆库、多模型插件（OpenAI/Claude/Gemini/Ollama）、GalAgent 完整工具链与 MCP 扩展整合及 Steam 双模桌面包
+- [steam-release-package-20261021.md](steam-release-package-20261021.md) — 10-21 Steam 正式版客户端封装（纯净游戏模式、本地文件存档、内置 GalAgent 直连与工具引擎、SteamPipe 仓库构建、待办 B08 解决）
 - [desktop-package.md](desktop-package.md) — 桌面封装（WASM + Tauri）
 - [tanpowasd-dev-integration.md](tanpowasd-dev-integration.md) — tanpowasd/dev 审核与合并
 - [repo-consolidation.md](repo-consolidation.md) — 仓库收敛：只留一个 galgame
@@ -69,3 +75,6 @@
 - [collaborator-invitations-20261016.md](collaborator-invitations-20261016.md) — 新协作者邀请
 - [coordination-setup.md](coordination-setup.md) — 迁移与共享台账建立
 - [todo-document-sync.md](todo-document-sync.md) — 待办文档同步
+
+## 模板
+- [_template.md](_template.md) — 新任务记录模板

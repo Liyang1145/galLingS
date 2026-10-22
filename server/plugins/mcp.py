@@ -8,6 +8,8 @@ from __future__ import annotations
 import asyncio
 import json
 import os
+import shutil
+import sys
 from typing import Any
 
 from .errors import MCPError
@@ -197,7 +199,12 @@ class MCPToolPlugin(ToolPlugin):
         super().__init__(ctx)
         env = {k: v.replace("${data_dir}", str(ctx.data_dir)).replace("${plugin_dir}", str(ctx.plugin_dir))
                for k, v in (runtime.get("env") or {}).items()}
-        cmd = [c.replace("${plugin_dir}", str(ctx.plugin_dir)) for c in runtime["command"]]
+        cmd = []
+        for i, c in enumerate(runtime["command"]):
+            c = c.replace("${plugin_dir}", str(ctx.plugin_dir)).replace("${data_dir}", str(ctx.data_dir)).replace("${python}", sys.executable)
+            if i == 0 and c in ("python3", "python") and not shutil.which(c):
+                c = sys.executable
+            cmd.append(c)
         self.client = MCPClient(cmd, env=env, cwd=runtime.get("cwd") or str(ctx.plugin_dir),
                                 startup_timeout_s=runtime.get("startup_timeout_s", 20),
                                 call_timeout_s=runtime.get("call_timeout_s", 30), name=ctx.plugin_id)

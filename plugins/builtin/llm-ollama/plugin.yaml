@@ -1,0 +1,28 @@
+schema_version: 1
+id: gallings.llm.ollama
+name: Ollama 本地模型网关
+version: 0.1.0
+kind: llm
+api: 1
+description: 连接本机或局域网 Ollama 服务（免 API 密钥），支持流式输出与工具调用，归一为五种内部事件（PLAN §12）。
+requires:
+  gallings: ">=0.1,<0.2"
+  python: ">=3.11"
+runtime:
+  type: python
+  entry: plugin.py:OllamaLLM
+capabilities: [stream, tools, usage]
+config_schema:
+  type: object
+  additionalProperties: false
+  required: [base_url, model]
+  properties:
+    base_url: {type: string, default: "http://127.0.0.1:11434/v1"}
+    model: {type: string, default: "qwen2.5:7b"}
+    temperature: {type: number, minimum: 0, maximum: 2, default: 0.8}
+    timeout_s: {type: number, minimum: 1, default: 120}
+    connect_timeout_s: {type: number, minimum: 1, default: 5}
+secrets: []
+permissions:
+  network: ["127.0.0.1:11434", "localhost:11434"]
+determinism: recorded

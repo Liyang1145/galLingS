@@ -18,13 +18,13 @@ IMAGE_EXTENSIONS = {".png", ".jpg", ".jpeg", ".webp"}
 def build() -> dict:
     text = (GAME / "game.js").read_text(encoding="utf-8-sig")
     project = json.loads(text[text.index("=") + 1:].strip().removesuffix(";"))
-    scenes = json.loads((ROOT / "content/assets/scene-backgrounds/场景素材台账.json").read_text(encoding="utf-8-sig"))["items"]
+    scenes = json.loads((ROOT / "素材库/scene-backgrounds/场景素材台账.json").read_text(encoding="utf-8-sig"))["items"]
     scene_paths = {str(v["path"]).replace("\\", "/"): (k, v["name"]) for k, v in scenes.items()}
-    roots = [GAME / "assets/bg", GAME / "assets/ch", ROOT / "content/assets/backgrounds",
-             ROOT / "content/assets/scene-backgrounds/originals", ROOT / "content/assets/scene-backgrounds/records",
-             ROOT / "content/assets/image-trials", GAME / "assets/art-upgrade",
-             ROOT / "content/assets/art-upgrade/originals", ROOT / "content/assets/art-upgrade/runtime"]
-    upgrade_dir=ROOT / 'content/assets/art-upgrade'
+    roots = [GAME / "assets/bg", GAME / "assets/ch", ROOT / "素材库/backgrounds",
+             ROOT / "素材库/scene-backgrounds/originals", ROOT / "素材库/scene-backgrounds/records",
+             ROOT / "素材库/image-trials", GAME / "assets/art-upgrade",
+             ROOT / "素材库/art-upgrade/originals", ROOT / "素材库/art-upgrade/runtime"]
+    upgrade_dir=ROOT / '素材库/art-upgrade'
     upgrade=json.loads((upgrade_dir/'production.json').read_text(encoding='utf-8'))['items'] if (upgrade_dir/'production.json').exists() else {}
     reviews=json.loads((upgrade_dir/'reviews.json').read_text(encoding='utf-8')) if (upgrade_dir/'reviews.json').exists() else {}
     paths = sorted({f for d in roots for f in d.rglob("*") if f.suffix.lower() in IMAGE_EXTENSIONS})
@@ -61,7 +61,7 @@ def build() -> dict:
             scene = (file.stem, scenes.get(file.stem, {}).get("name", file.stem))
         generation = None
         if scene and not upgraded:
-            record = ROOT / "content/assets/scene-backgrounds/originals" / (scene[0] + ".generation.json")
+            record = ROOT / "素材库/scene-backgrounds/originals" / (scene[0] + ".generation.json")
             if record.is_file():
                 generation = json.loads(record.read_text(encoding="utf-8-sig"))
         if not generation:
@@ -89,7 +89,7 @@ def build() -> dict:
         elif scene or any("/backgrounds/" in p for p in paths_rel):
             provenance = {"creator":"用户提供", "tool":"网页端生成", "requestedModel":"用户称 Image2.5",
                 "reportedModel":"", "routeVerified":False, "label":"用户网页端原件；路线未核实",
-                "evidence":"content/assets/scene-backgrounds/场景素材台账.json", "action":"保留用户已采用图；来源待补登记"}
+                "evidence":"素材库/scene-backgrounds/场景素材台账.json", "action":"保留用户已采用图；来源待补登记"}
         else:
             provenance = {"creator":"LarryE135 完整作品", "tool":"未登记", "requestedModel":"",
                 "reportedModel":"", "routeVerified":False, "label":"队友原件；生成模型未登记",

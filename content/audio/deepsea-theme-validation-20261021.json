@@ -1,0 +1,135 @@
+{
+  "cues": [
+    {
+      "start": 276,
+      "endExclusive": 328,
+      "playing": true,
+      "withinCueNoRestart": true,
+      "outgoingTrackStopped": true,
+      "nextTrack": "bgm_atri_t4_night",
+      "idx": 276,
+      "id": "bgm_emerald_dream_piano",
+      "time": 1.345263,
+      "duration": 133.694688,
+      "volume": 0.27929824999999997,
+      "expectedVolume": 0.27929824999999997,
+      "loop": true,
+      "error": null
+    },
+    {
+      "start": 399,
+      "endExclusive": 488,
+      "playing": true,
+      "withinCueNoRestart": true,
+      "outgoingTrackStopped": true,
+      "nextTrack": "bgm_e2_deepsea_piano",
+      "idx": 399,
+      "id": "bgm_e2_deepsea_main",
+      "time": 1.344895,
+      "duration": 214.852676,
+      "volume": 0.276101,
+      "expectedVolume": 0.276101,
+      "loop": true,
+      "error": null
+    },
+    {
+      "start": 488,
+      "endExclusive": 505,
+      "playing": true,
+      "withinCueNoRestart": true,
+      "outgoingTrackStopped": true,
+      "nextTrack": "bgm_atri_e7_reflection",
+      "idx": 488,
+      "id": "bgm_e2_deepsea_piano",
+      "time": 2.669219,
+      "duration": 132.101188,
+      "volume": 0.2645867,
+      "expectedVolume": 0.2645867,
+      "loop": true,
+      "error": null
+    },
+    {
+      "start": 625,
+      "endExclusive": 643,
+      "playing": true,
+      "withinCueNoRestart": true,
+      "outgoingTrackStopped": true,
+      "nextTrack": "bgm_atri_t4_night",
+      "idx": 625,
+      "id": "bgm_e2_deepsea_piano",
+      "time": 1.346016,
+      "duration": 132.101188,
+      "volume": 0.2645867,
+      "expectedVolume": 0.2645867,
+      "loop": true,
+      "error": null
+    },
+    {
+      "start": 2691,
+      "endExclusive": 2727,
+      "playing": true,
+      "withinCueNoRestart": true,
+      "outgoingTrackStopped": true,
+      "nextTrack": "bgm_atri_t3_dusk",
+      "idx": 2691,
+      "id": "bgm_e2_deepsea_piano",
+      "time": 1.347518,
+      "duration": 132.101188,
+      "volume": 0.2645867,
+      "expectedVolume": 0.2645867,
+      "loop": true,
+      "error": null
+    },
+    {
+      "start": 2860,
+      "endExclusive": 2944,
+      "playing": true,
+      "withinCueNoRestart": true,
+      "outgoingTrackStopped": true,
+      "nextTrack": "bgm_atri_t4_night",
+      "idx": 2860,
+      "id": "bgm_e2_deepsea_main",
+      "time": 1.344624,
+      "duration": 214.852676,
+      "volume": 0.276101,
+      "expectedVolume": 0.276101,
+      "loop": true,
+      "error": null
+    }
+  ],
+  "tracks": {
+    "bgm_e2_deepsea_main": {
+      "decodeAndPlayback": true,
+      "audioStateRestore": {
+        "id": "bgm_e2_deepsea_main",
+        "time": 38.104847
+      },
+      "wholeFileLoopWrap": true,
+      "mirrorHashVerified": true
+    },
+    "bgm_e2_deepsea_piano": {
+      "decodeAndPlayback": true,
+      "audioStateRestore": {
+        "id": "bgm_e2_deepsea_piano",
+        "time": 38.104172
+      },
+      "wholeFileLoopWrap": true,
+      "mirrorHashVerified": true
+    },
+    "bgm_emerald_dream_piano": {
+      "decodeAndPlayback": true,
+      "audioStateRestore": {
+        "id": "bgm_emerald_dream_piano",
+        "time": 38.105921
+      },
+      "wholeFileLoopWrap": true,
+      "mirrorHashVerified": true
+    }
+  },
+  "errors": [],
+  "M2E4E7StillPlay": true,
+  "oldE2NoStoryReferences": true,
+  "stopAllWorks": true,
+  "passed": true,
+  "scope": "Validated against remote-baseline player and art plus this publication music overlay."
+}

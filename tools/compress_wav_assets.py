@@ -8,7 +8,7 @@ from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-AUDIO = ROOT / "content/assets/audio"
+AUDIO = ROOT / "素材库/audio"
 DEST = AUDIO / "mp3"
 
 
@@ -41,8 +41,8 @@ def convert(source: Path) -> dict:
     assert compressed_info["codec"] == "mp3"
     assert compressed_info["channels"] == original_info["channels"]
     assert abs(compressed_info["duration"] - original_info["duration"]) < .15
-    return {"source":source.relative_to(ROOT / "content/assets").as_posix(),
-            "path":target.relative_to(ROOT / "content/assets").as_posix(),
+    return {"source":source.relative_to(ROOT / "素材库").as_posix(),
+            "path":target.relative_to(ROOT / "素材库").as_posix(),
             "source_sha256":original_hash, "sha256":sha(target),
             "source_bytes":source.stat().st_size, "bytes":target.stat().st_size,
             "source_audio":original_info, "audio":compressed_info,
@@ -53,14 +53,14 @@ def main() -> dict:
     sources = sorted(f for f in AUDIO.rglob("*") if f.suffix.lower() == ".wav")
     with ThreadPoolExecutor(max_workers=4) as pool:
         variants = list(pool.map(convert, sources))
-    report = {"scope":"All WAV masters in content/assets/audio; original bytes preserved. Current game already uses MP3/OGG.",
+    report = {"scope":"All WAV masters in 素材库/audio; original bytes preserved. Current game already uses MP3/OGG.",
               "encoding":{"codec":"libmp3lame", "quality_vbr":2, "max_sample_rate":48000,
                           "channels":"preserved", "trimmed":False, "gain_changed":False},
               "wav_count":len(sources), "source_bytes":sum(v["source_bytes"] for v in variants),
               "mp3_bytes":sum(v["bytes"] for v in variants), "variants":variants}
     DEST.mkdir(exist_ok=True)
     (DEST / "manifest.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    manifest_path = ROOT / "content/assets/manifest.json"
+    manifest_path = ROOT / "素材库/manifest.json"
     manifest = json.loads(manifest_path.read_text(encoding="utf-8-sig"))
     indexed = {v["source"]:v for v in variants}
     indexed_count = 0

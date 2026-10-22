@@ -129,6 +129,9 @@ body.playing #props{display:none}
 @keyframes quake{0%{transform:translate(0,0) scale(1.06)}8%{transform:translate(-34px,18px) scale(1.06)}16%{transform:translate(30px,-22px) scale(1.05)}26%{transform:translate(-24px,14px) scale(1.04)}38%{transform:translate(18px,-10px) scale(1.03)}52%{transform:translate(-10px,6px) scale(1.02)}70%{transform:translate(5px,-3px) scale(1.01)}100%{transform:translate(0,0) scale(1)}}
 #stage.zoom #bgEl,#stage.zoom #layer{animation:zoomHit .5s ease-out,var(--moodAnim,none)}
 @keyframes zoomHit{0%{transform:scale(1)}25%{transform:scale(1.12)}100%{transform:scale(1)}}
+/* 横甩（2026-10-19 开场演出）：白闪 + 镜头横向猛甩带动态模糊，不是原地震 */
+#stage.whip #bgEl,#stage.whip #layer{animation:whipPan .62s cubic-bezier(.15,.85,.3,1),var(--moodAnim,none)}
+@keyframes whipPan{0%{transform:translateX(0) scale(1.08);filter:blur(0)}14%{transform:translateX(-11%) scale(1.08);filter:blur(18px)}34%{transform:translateX(6%) scale(1.07);filter:blur(9px)}58%{transform:translateX(-2%) scale(1.04);filter:blur(3px)}100%{transform:translateX(0) scale(1);filter:blur(0)}}
 #veil.blink{animation:blinkEye 1.6s ease-in-out}
 @keyframes blinkEye{0%{opacity:1}25%{opacity:.15}40%{opacity:1}65%{opacity:0}78%{opacity:.6}100%{opacity:0}}
 /* —— 持续氛围（跨多节，在时间轴“🌫 氛围轨”上拖长） —— */
@@ -149,6 +152,18 @@ body.playing #props{display:none}
 #stage[data-mood=gray] #bgEl,#stage[data-mood=gray] #layer{filter:grayscale(1) contrast(.9)}
 #stage[data-mood=dark] #moodFx{background:radial-gradient(ellipse at center,#0004 20%,#000e 95%)}
 #stage[data-mood=danger] #moodFx{background:radial-gradient(ellipse at center,#0000 35%,#b0000088 100%);animation:heart 1.2s ease-in-out infinite}
+/* 水下（2026-10-19）：蓝色滤镜 + 上浮气泡 + 画面轻漂；声音变闷由播放器按氛围压低配乐/环境音 */
+#stage[data-mood=underwater]{--moodAnim:uwDrift 5.5s ease-in-out infinite}
+#stage[data-mood=underwater] #bgEl,#stage[data-mood=underwater] #layer{filter:saturate(.8) brightness(.82) hue-rotate(-10deg) blur(1.4px)}
+#stage[data-mood=underwater] #moodFx{background:linear-gradient(180deg,#2a8fd066 0%,#0b4f8f99 55%,#06305fcc 100%)}
+#stage[data-mood=underwater] #moodFx::after{opacity:.9;background-image:radial-gradient(circle at 50% 50%,#ffffffcc 0 2px,#ffffff33 3px,#0000 5px),radial-gradient(circle at 50% 50%,#ffffffaa 0 4px,#ffffff22 6px,#0000 8px),radial-gradient(circle at 50% 50%,#ffffff99 0 1.5px,#0000 3px),radial-gradient(circle at 50% 50%,#ffffffbb 0 6px,#ffffff22 8px,#0000 11px);background-size:170px 230px,310px 410px,90px 150px,520px 640px;background-position:20px 0,140px 60px,60px 30px,300px 200px;animation:uwBubbles 4.5s linear infinite}
+@keyframes uwBubbles{from{background-position:20px 0,140px 60px,60px 30px,300px 200px}to{background-position:34px -230px,128px -350px,66px -120px,310px -440px}}
+@keyframes uwDrift{0%,100%{translate:0 0;scale:1.05}50%{translate:-14px 8px;scale:1.07}}
+/* 慢动作（2026-10-19）：画面缓慢推近、褪色、暗角，环境声压低（定格感） */
+#stage[data-mood=slowmo]{--moodAnim:slowPush 9s cubic-bezier(.2,.6,.3,1) forwards}
+#stage[data-mood=slowmo] #bgEl,#stage[data-mood=slowmo] #layer{filter:saturate(.55) contrast(1.08) brightness(.95)}
+#stage[data-mood=slowmo] #moodFx{background:radial-gradient(ellipse at center,#0000 40%,#0b1a2acc 100%)}
+@keyframes slowPush{from{scale:1}to{scale:1.08}}
 @keyframes dimPulse{0%,100%{opacity:0}18%{opacity:.667}30%{opacity:.2}46%{opacity:.867}55%{opacity:.133}72%{opacity:.533}}
 @keyframes blurPulse{0%,100%{filter:blur(0)}40%{filter:blur(3px)}70%{filter:blur(1px)}}
 @keyframes flickerDim{0%,100%{opacity:0}10%{opacity:.55}14%{opacity:.1}30%{opacity:.7}36%{opacity:.25}55%{opacity:.6}60%{opacity:.05}80%{opacity:.45}}
@@ -801,8 +816,8 @@ hydrateIcons();
 // 说明文字里的符号 → 对应 SVG 图标（提示框用）
 const EMO_IC = {'💾':'save','📂':'folder-open','📁':'folder-tree','🎮':'gamepad-2','🧮':'variable','👤':'users','⚙':'settings','▶':'play','〰':'vibrate','💥':'bomb','⚪':'sun','🔴':'siren','👁':'eye','🔍':'zoom-in','🌀':'tornado','🕯':'flame','⚡':'zap','🌫':'cloud-fog','〽':'waves','🎞':'film','🌑':'moon','❤':'heart-pulse','⤴':'chevrons-up','⤵':'chevrons-down'};
 const emoIc = h => h.replace(/💾|📂|📁|🎮|🧮|👤|⚙|▶|〰|💥|⚪|🔴|👁|🔍|🌀|🕯|⚡|🌫|〽|🎞|🌑|❤|⤴|⤵/gu, m => ic(EMO_IC[m]));
-const FX = [['shake', 'vibrate', '震动'], ['quake', 'bomb', '爆炸'], ['flash', 'sun', '白闪'], ['redflash', 'siren', '受击红闪'], ['blink', 'eye', '眨眼/醒来'], ['zoom', 'zoom-in', '冲击推近']];
-const MOODS = [['dizzy', 'tornado', '神志不清'], ['flicker', 'flame', '忽明忽暗'], ['strobe', 'zap', '闪烁(灯光故障)'], ['blur', 'cloud-fog', '模糊'], ['sway', 'waves', '摇晃'], ['gray', 'film', '回忆(黑白)'], ['dark', 'moon', '昏暗'], ['danger', 'heart-pulse', '危险心跳']];
+const FX = [['shake', 'vibrate', '震动'], ['quake', 'bomb', '爆炸'], ['flash', 'sun', '白闪'], ['redflash', 'siren', '受击红闪'], ['blink', 'eye', '眨眼/醒来'], ['zoom', 'zoom-in', '冲击推近'], ['whip', 'move-horizontal', '横甩(白闪+甩镜)']];
+const MOODS = [['dizzy', 'tornado', '神志不清'], ['flicker', 'flame', '忽明忽暗'], ['strobe', 'zap', '闪烁(灯光故障)'], ['blur', 'cloud-fog', '模糊'], ['sway', 'waves', '摇晃'], ['gray', 'film', '回忆(黑白)'], ['dark', 'moon', '昏暗'], ['danger', 'heart-pulse', '危险心跳'], ['underwater', 'waves', '水下(蓝+气泡+声音发闷)'], ['slowmo', 'hourglass', '慢动作(推近+褪色+静音)']];
 const fxName = v => FX.find(x => x[0] === v); const moodName = v => MOODS.find(x => x[0] === v);
 /* 立绘动画表 */
 const SPR_IN = [['', 'blend', '淡入'], ['left', 'arrow-right', '从左滑入'], ['right', 'arrow-left', '从右滑入'], ['up', 'arrow-up', '从下升起'], ['pop', 'sparkle', '弹出'], ['none', 'square', '直接出现']];
@@ -2045,8 +2060,12 @@ let audioLibraryOpen = false, auditionEl = null, auditionAsset = null, auditionS
 let audioFocusPaused = false;
 const volume01 = v => Math.max(0, Math.min(1, Number.isFinite(+v) ? +v : 0));
 const trackGain = a => volume01(a?.playbackGain ?? 1);
-const musicVolume = () => volume01(pref('vbgm')) * trackGain(A(bgmId));
-const ambienceVolume = () => volume01(pref('vamb') ?? .3) * (bgmId ? .75 : 1);
+// 氛围压低：水下 = 声音发闷（配乐/环境音降低），慢动作 = 环境声几乎静音
+const MOOD_DUCK = { underwater: { mus: .35, amb: .45 }, slowmo: { mus: .5, amb: .15 } };
+const moodDuck = () => (playing && MOOD_DUCK[stage?.dataset?.mood]) || { mus: 1, amb: 1 };
+let duckKey = '';
+const musicVolume = () => volume01(pref('vbgm')) * trackGain(A(bgmId)) * moodDuck().mus;
+const ambienceVolume = () => volume01(pref('vamb') ?? .3) * (bgmId ? .75 : 1) * moodDuck().amb;
 const effectVolume = () => volume01(pref('vse'));
 
 function fadeVol(el, to, ms, done) {
@@ -2164,6 +2183,7 @@ function captureAudioState() {
 function applyLineAudio(line, restore, suppressSe = false) {
   cancelScheduledEffects();
   playBgm(line.bgm, line._musicFadeOutMs ?? 600, restore?.bgm?.id === line.bgm ? restore.bgm.time : undefined);
+  { const k = playing ? (stage.dataset.mood || '') : ''; if (k !== duckKey) { duckKey = k; if (bgmEl) fadeVol(bgmEl, musicVolume(), 300); } }
   playAmbience(line.ambience || [], restore?.ambience || [], restore ? 250 : 900);
   if (RT.skip) stopEffects();
   else if (!suppressSe) {
@@ -2465,6 +2485,7 @@ function playFx(fx) {
   else if (fx === 'quake') { retrigger(stage, 'quake'); veil('#fff'); }
   else if (fx === 'flash') veil('#fff');
   else if (fx === 'redflash') veil('#c00');
+  else if (fx === 'whip') { retrigger(stage, 'whip'); veil('#fff'); }
   else if (fx === 'blink') veil('#000', 'blink');
 }
 function retrigger(el, cls) { el.classList.remove(cls); void el.offsetWidth; el.classList.add(cls); }
@@ -2472,7 +2493,7 @@ function setName(el, name) { el.textContent = name || ''; el.style.color = charO
 function showPlay(first) {
   clearTimers();
   // Finished hit effects must not keep overriding later scene transitions.
-  stage.classList.remove('fade', 'shake', 'zoom', 'quake');
+  stage.classList.remove('fade', 'shake', 'zoom', 'quake', 'whip');
   $('#veil').classList.remove('go', 'blink');
   const l = P.lines[RT.idx], prev = lastShown;
   renderStage(l, false);
@@ -2508,7 +2529,7 @@ function showPlay(first) {
   if (l.text) { RT.back.push({ s: l.speaker, t: shown, v: l.voice || undefined, h: RT.hist.length - 1 }); if (RT.back.length > 300) RT.back.shift(); }
   VNPlugins.emit('line', { index: RT.idx, line: l, text: shown });
   const stats = pref('showStats') && SAVE_POINT_RE.test(l.text || '') ? statsText() : '';
-  typeText(stats ? shown + '　' + stats : shown, () => afterText(l));
+  typeText(stats ? shown + '　' + stats : shown, () => afterText(l), l.typeMul, l.holdMs);
   warmUpcomingSprites(RT.idx);
 }
 // fix9：好感数值默认不显示；设置里打开后，章末“存档点”句子后面追加当前值
@@ -2525,12 +2546,14 @@ function statsText(forPanel) {
 const fillVars = (t, vars = RT.vars) => String(t || '').replace(/\{([^{}\s]{1,16})\}/g, (m, k) => vars && Object.prototype.hasOwnProperty.call(vars, k) ? String(vars[k]) : m);
 // 某句在“进入前变量 = vars”时实际显示的文字（先执行本句的变量修改）
 const shownText = (l, vars) => { const v = clone(vars); safeSet(l.set, v); return fillVars(l.text, v); };
-function typeText(text, done) {
+// mul：本句打字速度倍率（>1 更慢）；hold：文字出现前先停多少毫秒（点一下照常直接显示全文）
+function typeText(text, done, mul = 1, hold = 0) {
   clearInterval(typer); typer = null;
   full = text || ''; RT.onTyped = done; let n = 0;
   $('#ptx').textContent = '';
   if (!full || RT.skip) return finishTyping();
-  typer = setInterval(() => { n++; $('#ptx').textContent = full.slice(0, n); if (n >= full.length) finishTyping(); }, pref('speed'));
+  const t0 = performance.now() + Math.max(0, Math.min(3000, +hold || 0));
+  typer = setInterval(() => { if (performance.now() < t0) return; n++; $('#ptx').textContent = full.slice(0, n); if (n >= full.length) finishTyping(); }, pref('speed') * (+mul > 0 ? Math.min(4, +mul) : 1));
 }
 function finishTyping() {
   clearInterval(typer); typer = null; $('#ptx').textContent = full;
@@ -3005,7 +3028,7 @@ function soulEventText(ev) {
 function soulTl() { const T = RT.soul.tl; T.turn++; return { lineage: T.lin, turn: T.turn }; }
 function soulVis() { const T = RT.soul.tl; return [...T.anc, { lineage: T.lin, turn: 2 ** 53 }]; }
 const soulNewTl = () => ({ lin: 'L' + Date.now().toString(36) + Math.random().toString(36).slice(2, 5), turn: 0, anc: [] });
-const soulBackend = () => HOSTED ? 'galLingS' : (pref('soulBackend') || 'local');
+const soulBackend = () => (HOSTED && !window.GALLINGS_OFFLINE && !(window.parent && window.parent !== window && window.parent.GALLINGS_OFFLINE)) ? 'galLingS' : (pref('soulBackend') || 'local');
 const soulBrain = () => SOUL_BRAINS[soulBackend()] || SOUL_BRAINS.local;
 function soulAdd(list, item) {
   const S = RT.soul; if (!S) return;
@@ -4339,13 +4362,28 @@ const VNPlugins = (() => {
   async function sources() {
     const out = [];
     for (const rec of P.plugins || []) out.push({ src: 'project', rec, code: rec.code, enabled: rec.enabled !== false });
-    for (const h of hostList) out.push({ src: 'host', rec: h, code: h.code, enabled: true });
+    for (const h of hostList) out.push({ src: 'host', rec: h, code: h.code, def: h.def, enabled: true });
     if (gameMode) for (const rec of (await idbGet(playerKey())) || []) out.push({ src: 'player', rec, code: rec.code, enabled: true });
     return out;
   }
   async function loadHost() {
     hostList = [];
-    if (!HOSTED) return;
+    if (!HOSTED) {
+      if (gameMode && !/^\/_(single\.html|folder\/)/.test(location.pathname)) {
+        try {
+          defined = null;
+          await new Promise((res, rej) => {
+            const s = document.createElement('script');
+            s.src = 'galagent.vnplugin.js';
+            s.onload = () => { s.remove(); res(); };
+            s.onerror = () => { s.remove(); rej(); };
+            document.head.appendChild(s);
+          });
+          if (defined) { const d = check(defined); defined = null; hostList.push({ id: d.id, url: 'galagent.vnplugin.js', def: d }); }
+        } catch (e) {}
+      }
+      return;
+    }
     try {
       const r = await fetch('/api/vn/plugins', { cache: 'no-store' }); if (!r.ok) return;
       const j = await r.json();
@@ -4361,8 +4399,8 @@ const VNPlugins = (() => {
     if (opt.host) await loadHost();
     const st = loadSt(), order = [];
     for (const it of await sources()) {
-      let def = null, error = '';
-      try { def = exec(it.code, it.rec?.id || it.src); } catch (e) { error = String(e.message || e); }
+      let def = it.def || null, error = '';
+      if (!def) { try { def = exec(it.code, it.rec?.id || it.src); } catch (e) { error = String(e.message || e); } }
       const id = def?.id || it.rec?.id || '?';
       const item = { id, def, src: it.src, rec: it.rec, error, enabled: it.enabled && !(st[id]?.off), meta: def ? meta(def) : { id, name: it.rec?.name || id, version: it.rec?.version || '?', author: '', description: '', icon: 'puzzle', permissions: [] } };
       if (known.has(id)) item.overrides = known.get(id).src;
@@ -4682,7 +4720,7 @@ showSoul = function (page) {
 };
 showPlay = VN_FADE.wrap(showPlay, () => {
   const l = P.lines[RT.idx];
-  return !!lastShown && (visKey(lastShown) !== visKey(l) || lastShown.mood !== l.mood || isPause(lastShown) !== isPause(l) || $('#choices').classList.contains('show'));
+  return !!lastShown && l.trans !== 'cut' && (visKey(lastShown) !== visKey(l) || lastShown.mood !== l.mood || isPause(lastShown) !== isPause(l) || $('#choices').classList.contains('show'));
 }, false);
 // 覆盖内联关闭回调及 CG 打开/关闭；不为音量滑条、输入、自动/快进状态制造整屏动画。
 stage.addEventListener('click', e => {

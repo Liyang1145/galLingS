@@ -11,7 +11,7 @@ from pathlib import Path
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
-GAME = ROOT / "content/imports/vnstudio/海风与布丁"
+GAME = ROOT / "海风与布丁"
 IMAGE_EXTENSIONS = {".png", ".jpg", ".jpeg", ".webp"}
 
 

@@ -12,7 +12,7 @@ import subprocess
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-GAME = ROOT / "content/imports/vnstudio/海风与布丁"
+GAME = ROOT / "海风与布丁"
 DELIVERY = ROOT / "A素材库/归档/deliveries/atri-music"
 TRACKS = [
     ("E1.mp3", "bgm_atri_e1_comedy", "Atri · 傲娇互动（E1）", False, 0),

@@ -14,22 +14,25 @@ from .plugins import LLMPlugin, PluginManager, PluginSettings
 from .settings_store import SettingsStore
 
 ROOT = Path(__file__).resolve().parents[1]
+GAME_DIR = "海风与布丁"  # 作品本体目录（仓库根下一层，内含 index.html）
 log = logging.getLogger("gallings")
 
 
 def resolve_games_dir(config: dict[str, Any]) -> Path:
-    """Keep the old default in saved settings usable after the repository move."""
-    configured = (config.get("vn") or {}).get("games_dir") or os.environ.get("GALLINGS_GAMES_DIR") or "content/imports/vnstudio"
+    """作品目录。
+
+    两种形态都支持：
+    - 目录本身就是一个作品（里面直接有 index.html），默认即此：仓库根的 `海风与布丁/`
+    - 目录下每个子文件夹各是一个作品（旧的多作品布局，仍兼容）
+    """
+    configured = (config.get("vn") or {}).get("games_dir") or os.environ.get("GALLINGS_GAMES_DIR") or GAME_DIR
     directory = Path(os.path.expanduser(str(configured)))
     directory = directory if directory.is_absolute() else ROOT / directory
-    if not directory.is_dir() and (ROOT / "game" / "vn").is_dir():
-        return ROOT / "game" / "vn"
-    legacy = ROOT / "content/vn"
-    migrated = ROOT / "content/imports/vnstudio"
-    if directory.resolve() == legacy.resolve() and migrated.is_dir():
-        has_legacy_game = directory.is_dir() and any((p / "index.html").is_file() for p in directory.iterdir())
-        if not has_legacy_game:
-            return migrated
+    if not directory.is_dir():
+        # 设置里存的老路径已失效（仓库结构调整过），回退到默认作品目录
+        fallback = ROOT / GAME_DIR
+        if fallback.is_dir():
+            return fallback
     return directory
 
 
@@ -94,6 +97,9 @@ class Runtime:
         d = self.games_dir
         if not d.is_dir():
             return []
+        if (d / "index.html").is_file():
+            # 单作品：目录本身就是一个作品
+            return [{"id": d.name, "title": d.name}]
         return [{"id": p.name, "title": p.name} for p in sorted(d.iterdir()) if (p / "index.html").is_file()]
 
     async def start(self) -> dict[str, Any]:

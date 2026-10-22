@@ -17,11 +17,18 @@ from .settings_store import SettingsStore
 
 
 def _has_games(cfg: dict) -> bool:
-    """作品文件夹（content/imports/vnstudio 或网页设置里改过的）里有没有 VN Studio 导出的游戏。"""
+    """作品目录里有没有可玩的游戏。
+
+    两种布局都认：目录自身就是作品（含 index.html），或其子文件夹各是一个作品。
+    """
     srv = cfg.get("server") or {}
     data_dir = Path(os.path.expanduser(str(srv.get("data_dir", "~/.gallings"))))
     d = resolve_games_dir(SettingsStore(data_dir).overlay(cfg))
-    return d.is_dir() and any((p / "index.html").is_file() for p in d.iterdir())
+    if not d.is_dir():
+        return False
+    if (d / "index.html").is_file():
+        return True
+    return any((p / "index.html").is_file() for p in d.iterdir())
 
 
 def main(argv: list[str] | None = None) -> int:

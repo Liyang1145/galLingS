@@ -5,13 +5,13 @@
   python tools/check_md_links.py               # 检查工作区（git ls-files 列出的 .md）
   python tools/check_md_links.py --rev <提交>   # 不 checkout，直接检查某个提交（适合 blobless 浅克隆）
 
-跳过：外链（http:、mailto: 等）、页内锚点（#...）、代码块里的内容、作品文件夹 content/imports/vnstudio/。
+跳过：外链（http:、mailto: 等）、页内锚点（#...）、代码块里的内容、作品文件夹 海风与布丁/。
 有断链时列出「文件 -> 链接」并以退出码 1 结束。
 """
 import os, posixpath, re, subprocess, sys, urllib.parse
 
 LINK = re.compile(r'\]\((?:<([^>]+)>|([^)\s]+))(?:\s+"[^"]*")?\)')
-SKIP = ('content/imports/vnstudio/',)
+SKIP = ('海风与布丁/',)
 
 
 def git(*a):

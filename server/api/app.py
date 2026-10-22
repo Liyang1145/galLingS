@@ -11,7 +11,7 @@
 - ``/api/agent/*``                  外部 Agent 端口（预留，默认关闭）
 - ``WS  /ws/post_ending``、``/galagent`` 结局后聊天 GalAgent（gallings.tool.galagent，见 docs/design/galagent.md）
 - ``GET /vn.html``                    作品页：玩 VN Studio 导出的游戏（窗口 / 全屏），手账停靠右侧栏
-- ``/vn/{作品}/…``、``/api/vn/games``  作品文件（vn.games_dir，默认 content/imports/vnstudio）
+- ``/vn/{作品}/…``、``/api/vn/games``  作品文件（vn.games_dir，默认仓库根的 海风与布丁/）
 - ``/api/vn/plugins``、``/vn_plugins/…`` 给作品用的 VN Studio 插件（vn-plugin/1）：GalAgent + content/vn_plugins/*.js
 - ``/api/settings``                 网页设置（模型 / 密钥 / 记忆底座），存 data_dir，改完重启插件
 - ``WS  /ws/soul?card=whale``         灵枢外部端口 vn-soul/1：外部前端（VN Studio）的手账记忆 / 悄悄话
@@ -355,23 +355,28 @@ def create_app(runtime: Runtime | None = None) -> FastAPI:
     @app.get("/vn/{game}/{path:path}")
     async def vn_file(game: str, path: str) -> FileResponse:
         root = rt().games_dir.resolve()
-        base = (root / game).resolve()
+        if (root / "index.html").is_file() and game == root.name:
+            base = root  # 单作品：games_dir 自己就是作品目录
+        else:
+            base = (root / game).resolve()
         f = (base / (path or "index.html")).resolve()
-        # 作品名本身也可能是 ".." 或 Windows 盘符 "C:"：作品文件夹必须正好在 games_dir 下一层，文件必须在作品文件夹里
-        if base.parent != root or base not in f.parents or not f.is_file():
+        # 作品名本身也可能是 ".." 或 Windows 盘符 "C:"：
+        # 作品目录只能是 games_dir 本身（单作品）或它下一层，且文件必须在作品目录里
+        allowed = base == root or base.parent == root
+        if not allowed or base not in f.parents or not f.is_file():
             raise HTTPException(404)
         return FileResponse(f)
 
     @app.get("/art-assets/{path:path}")
     async def art_asset_file(path: str) -> FileResponse:
-        """Read-only art access for authoring; neither arbitrary content nor archives."""
-        root = (ROOT / "content").resolve()
+        """只读美术访问（作者用）：作品资源与 A素材库，其余一概拒绝。"""
+        root = ROOT.resolve()
+        allowed = [(root / "海风与布丁").resolve(), (root / "A素材库").resolve()]
         f = (root / path).resolve()
         images = {".png", ".jpg", ".jpeg", ".webp"}
-        source_root = (root / "assets").resolve()
-        game_root = rt().games_dir.resolve()
-        in_game_assets = any((game / "assets").resolve() in f.parents for game in game_root.iterdir() if game.is_dir()) if game_root.is_dir() else False
-        if (source_root not in f.parents and not in_game_assets) or f.suffix.lower() not in images or not f.is_file():
+        if not any(a in f.parents for a in allowed):
+            raise HTTPException(404)
+        if f.suffix.lower() not in images or not f.is_file():
             raise HTTPException(404)
         return FileResponse(f)
 

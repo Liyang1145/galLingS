@@ -12,7 +12,7 @@ from urllib.parse import unquote, urlparse
 from urllib.request import url2pathname
 
 ROOT = Path(__file__).resolve().parents[1]
-GAME = ROOT / "content/imports/vnstudio/海风与布丁"
+GAME = ROOT / "海风与布丁"
 MEDIA_MIME = {".png":"image/png", ".jpg":"image/jpeg", ".jpeg":"image/jpeg", ".webp":"image/webp",
               ".gif":"image/gif", ".avif":"image/avif", ".mp3":"audio/mpeg", ".ogg":"audio/ogg",
               ".wav":"audio/wav", ".m4a":"audio/mp4", ".aac":"audio/aac", ".flac":"audio/flac"}

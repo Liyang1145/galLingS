@@ -6,7 +6,7 @@ import asyncio,json,time
 from playwright.async_api import async_playwright
 import pathlib, sys
 ROOT=pathlib.Path(__file__).resolve().parent.parent
-U=(pathlib.Path(sys.argv[1]) if len(sys.argv)>1 else ROOT/'content/imports/vnstudio/海风与布丁').resolve().joinpath('index.html').as_uri()
+U=(pathlib.Path(sys.argv[1]) if len(sys.argv)>1 else ROOT/'海风与布丁').resolve().joinpath('index.html').as_uri()
 OUT=pathlib.Path(sys.argv[2] if len(sys.argv)>2 else '.')
 async def main():
   async with async_playwright() as p:

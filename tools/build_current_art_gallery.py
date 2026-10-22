@@ -15,7 +15,7 @@ from pathlib import Path
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
-GAME = ROOT / 'content/imports/vnstudio/海风与布丁'
+GAME = ROOT / '海风与布丁'
 ART = ROOT / 'A素材库/art-upgrade'
 KIND_NAMES = {'cover': '封面', 'bg': '场景背景', 'sprite': '角色立绘', 'cg': '剧情CG'}
 

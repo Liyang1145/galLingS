@@ -19,7 +19,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 ROOT=Path(__file__).resolve().parents[1]
 ART=ROOT/'A素材库/art-upgrade'
-GAME=ROOT/'content/imports/vnstudio/海风与布丁'
+GAME=ROOT/'海风与布丁'
 CLI=Path.home()/'.codex/skills/codex-gpt-image/scripts/codex_gpt_image.py'
 MANIFEST=ART/'production.json'
 LOCK=threading.Lock()

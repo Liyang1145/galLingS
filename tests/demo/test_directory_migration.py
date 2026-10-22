@@ -1,30 +1,43 @@
-"""Existing local settings and historical deliveries survive the directory move."""
+"""Saved settings still resolve to a usable game directory after the layout move."""
 from pathlib import Path
 
 from server import runtime
 from server.__main__ import _has_games
-from tools.integrate_atri_music import music_source
+from tools.oneoff.integrate_atri_music import music_source
 
 
-def test_saved_legacy_directory_opens_migrated_game(tmp_path, monkeypatch):
+def test_missing_saved_directory_falls_back_to_default(tmp_path, monkeypatch):
+    """设置里存的老路径（旧仓库结构）已失效时，回退到默认作品目录。"""
     monkeypatch.setattr(runtime, "ROOT", tmp_path)
-    migrated = tmp_path / "content/imports/vnstudio"
-    (migrated / "game").mkdir(parents=True)
-    (migrated / "game/index.html").write_text("game")
-    legacy = tmp_path / "content/vn"
-    legacy.mkdir(parents=True)
-    (legacy / "README.md").write_text("old empty directory")
-    for saved in ("content/vn", str(legacy), "content\\vn"):
-        if saved == "content\\vn" and Path(saved).parts == (saved,):
-            continue  # Windows spelling is an ordinary filename on POSIX.
-        config = {"vn": {"games_dir": saved}, "server": {"data_dir": str(tmp_path / "data")}}
-        assert runtime.resolve_games_dir(config) == migrated
-        assert _has_games(config)
+    default = tmp_path / runtime.GAME_DIR
+    default.mkdir(parents=True)
+    (default / "index.html").write_text("game")
+    config = {"vn": {"games_dir": "content/imports/vnstudio"},
+              "server": {"data_dir": str(tmp_path / "data")}}
+    assert runtime.resolve_games_dir(config) == default
+    assert _has_games(config)
+
+
+def test_single_game_directory_is_detected(tmp_path, monkeypatch):
+    """作品目录本身就是一个作品（含 index.html）时，也要认。"""
+    monkeypatch.setattr(runtime, "ROOT", tmp_path)
+    game = tmp_path / "作品"
+    game.mkdir()
+    (game / "index.html").write_text("game")
+    config = {"vn": {"games_dir": "作品"}}
+    assert runtime.resolve_games_dir(config) == game
+    assert _has_games(config)
+
+
+def test_custom_parent_directory_with_sub_games(tmp_path, monkeypatch):
+    """旧的多作品布局（父目录下每个子文件夹一个作品）继续兼容。"""
+    monkeypatch.setattr(runtime, "ROOT", tmp_path)
     custom = tmp_path / "custom"
-    assert runtime.resolve_games_dir({"vn": {"games_dir": str(custom)}}) == custom
-    (legacy / "other").mkdir()
-    (legacy / "other/index.html").write_text("user's retained game")
-    assert runtime.resolve_games_dir({"vn": {"games_dir": "content/vn"}}) == legacy
+    (custom / "g").mkdir(parents=True)
+    (custom / "g" / "index.html").write_text("game")
+    config = {"vn": {"games_dir": str(custom)}}
+    assert runtime.resolve_games_dir(config) == custom
+    assert _has_games(config)
 
 
 def test_music_source_uses_actual_historical_delivery_path(tmp_path):

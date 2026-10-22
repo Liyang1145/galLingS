@@ -5,8 +5,8 @@ window.VNArtLibrary = (() => {
   let catalog, overlay, selected, page = 0, query = '', category = '', status = '';
   const PAGE_SIZE = 36;
   const url = path => location.protocol === 'file:'
-    ? new URL('../../../../' + path, location.href).href
-    : '/art-assets/' + path.replace(/^content\//, '').split('/').map(encodeURIComponent).join('/');
+    ? new URL('../' + path, location.href).href
+    : '/art-assets/' + path.split('/').map(encodeURIComponent).join('/');
   const media = (item, preview = false) => item.previewSrc || url(preview ? item.thumb : item.path);
   const matches = () => catalog.items.filter(a => (!category || a.category === category) && (!status || a.status === status)
     && (!query || [a.name, a.id, a.scene, ...a.files, ...a.runtimeIds].join(' ').toLowerCase().includes(query.toLowerCase())));

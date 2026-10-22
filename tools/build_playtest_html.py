@@ -7,7 +7,7 @@ import re, base64, io, os, json, sys
 from PIL import Image
 import pathlib
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-G = sys.argv[2] if len(sys.argv) > 2 else str(ROOT / 'content/imports/vnstudio/海风与布丁')
+G = sys.argv[2] if len(sys.argv) > 2 else str(ROOT / '海风与布丁')
 MAXW = {'bg': 1920}
 mime = {'.webp': 'image/webp', '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.mp3': 'audio/mpeg', '.ogg': 'audio/ogg', '.wav': 'audio/wav', '.m4a': 'audio/mp4'}
 cache = {}; stats = {'n': 0, 'raw': 0, 'out': 0, 'missing': []}

@@ -9,7 +9,7 @@ server:
 game:
   # 唯一的游戏：VN Studio 作品《海风与布丁》经导入器（compiler/vnstudio.py）变成 OP 程序，由 galcore 跑
   source: vnstudio                 # vnstudio | script（script = 按 chapter_dir 编译 Markdown 剧本，测试与新章节用）
-  vn_game: 海风与布丁                # content/imports/vnstudio/ 下的作品文件夹
+  vn_game: 海风与布丁                # 默认作品目录（仓库根的海风与布丁/）
   chapter_dir: content/scripts/ch01
   default_card: whale
   default_mode: choice       # choice | ai

@@ -9,7 +9,7 @@ from tools import build_single_file_game as pack
 
 def test_saved_project_export_keeps_adjustments_and_prunes_unused_library(tmp_path, monkeypatch):
     root = tmp_path / "repo"
-    game = root / "content/imports/vnstudio/game"
+    game = root / "games/game"
     game.mkdir(parents=True)
     source = root / "A素材库/new.png"
     source.parent.mkdir(parents=True)

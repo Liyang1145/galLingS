@@ -1,5 +1,7 @@
 # 任务记录索引（work-ledger）
 
+- [background-classification-20261023.md](background-classification-20261023.md) — B02A 晒笔记本画面明确归背景，排除 CG
+
 - [underwater-filter-20261023.md](underwater-filter-20261023.md) — 水下去白色粒子/漂移/模糊，只保留静态淡蓝滤镜
 
 每次任务一份记录，新任务按 [_template.md](_template.md) 建。下面按主题排，同主题内新的在前。现行状态以 [Hark 会话交接 20261020](../handoff/Hark会话交接_20261020.md)、[接手说明](../接手说明.md) 和 [待办总表](../待办总表.md) 为准，这里是历史依据。

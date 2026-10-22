@@ -20,7 +20,7 @@
     {"name": "propose_mood", "effect": "propose", "description": "提议心情变化（-2..2）。",
      "parameters": {"type": "object", "additionalProperties": false, "required": ["delta"],
        "properties": {"delta": {"type": "integer", "minimum": -2, "maximum": 2}, "reason": {"type": "string"}}}},
-    {"name": "write_memory", "effect": "memory", "description": "把一件值得记住的事写进她的记忆（原文、一句话）。",
+    {"name": "write_memory", "effect": "memory", "description": "把一件值得记住的事写进她的笔记（原文、一句话）。这只是她的笔记，不会变成事实；玩家的说法照实记成“玩家说……”。",
      "parameters": {"type": "object", "additionalProperties": false, "required": ["content"],
        "properties": {"content": {"type": "string", "maxLength": 120}}}},
     {"name": "propose_branch", "effect": "propose", "description": "提议开新分支（Demo 只记录，不演出）。",

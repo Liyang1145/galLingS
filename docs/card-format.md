@@ -33,7 +33,8 @@
 | `red_lines`* | 字符串数组 | 本卡追加的红线（只能收紧全局红线） |
 | `hidden_layer` | 对象 | 隐藏设定（自由结构） |
 | `slots`* | `{槽位名: 字符串}` | 剧本槽位的本卡取值（如 `treasured_object: 糍粑`）。章节 `slots[]` 要求的槽位必须填（§4） |
-| `assets` | `{sprites?[], live2d?, voice?}` | 立绘差分清单：引擎只接受清单里的差分（否则驳回 `unknown_sprite`），剧本差分不在清单里时演绎层就近替换；`live2d` / `voice` 预留，写 null |
+| `assets` | `{sprites?[], emotions?{}, emotion_valence?{}, live2d?, voice?}` | 立绘差分清单：引擎只接受清单里的差分（否则驳回 `unknown_sprite`），剧本差分不在清单里时演绎层就近替换；`emotions` 是 AI 回合 `say.emotion` 的枚举 → 差分（如 `{开心: 得意, 戒备: 警惕}`，值必须在 `sprites` 里；不写 = 每个差分名就是一个情绪），非法情绪被驳回（`emotion.invalid`）并回退默认差分；`emotion_valence` 给情绪标 -1/0/1，与 `mood` 方向冲突的回合在时间轴打标（不写按词表推断）；`live2d` / `voice` 预留，写 null |
+| `stance_rules` | `[{id*, when?, match?, note?, hide?}]` | 确定性态度过滤（`server/memory/stance.py`）：召回之后、进提示词之前，按引擎状态给记忆条目加“她现在怎么看”的注记，`hide: true` 则不进提示词（理由进时间轴）。`when` 可写 `wound[]`（none / angry / dead / reconciled）、`provenance[]`（记忆来源）、`mood_min/max`、`stage_min/max`；`match` 为 `warm`（温暖类条目）、`any` 或关键词列表。卡里的规则先于通用规则表；不调模型、不改召回列表本身 |
 | `style_examples`* | 字符串数组，至少 3 句（建议 ≥10） | 代表台词（提示词，前 16 句） |
 | `build_record` | 对象 | 建卡页记录：原始描述、适配度提示 |
 
@@ -81,6 +82,8 @@ Schema 通过后才跑：
 | error | `speech.forbidden.checkable` 的正则写不对 |
 | warn | `style_examples` 少于 10 句 |
 | error | 当前章节 `slots[]` 要求的槽位在卡里没填 |
+| error | `assets.emotions` 映射到不在 `sprites` 里的差分；`stance_rules` 的 id 重复、`mood_min > mood_max` 或 `stage_min > stage_max` |
+| warn | `stance_rules` 某条既没有 `note` 也不 `hide` |
 | warn | 人设-剧本适配度：章节 `scene_tags` 与人设冲突（如浅滩场景 vs 怕水），永不阻断 |
 
 ## 5. 建卡页（`/cards.html`）

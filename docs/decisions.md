@@ -99,3 +99,7 @@
 50. 图片改动先出候选给用户验收，确认后才推；剧情、音频、界面可自行判断直接推。模型用 `gpt-image-2.5-sunburst`，不可用 gpt-image-2 代替。
 51. 用户 10-20：单文件试玩自动构建 `playtest-html.yml`「不用放仓库，暂停」；workflow 与预发布删不删待用户定（待办 C06）。
 52. 10-19 配乐：E2 恢复 #399–504；家居曲退出「翡翠之梦」店内营业段（修订第 48 条的适用范围），见 [hd-art-music-20261019](collab/work-ledger/hd-art-music-20261019.md)。
+
+## 记忆来源标签与态度过滤（2026-10-23）
+
+53. 用户 10-23 同意按《借鉴到galLingS_整合方案》落 P0（“可以试试”），在任务分支 `tanpowasd/memory-provenance` 实现：记忆条目带来源（script / engine / player_claim / heroine_line / model_note），只有剧本与引擎裁决落账能写成事实，玩家说法永不升格；模型的 `write_memory` 只是笔记；修订 = 追加新条 + 旧条打 superseded（原文不删、先读后写、来源权级不低于旧条）；数量 / 归属 / 关系阶段只认 galcore 状态，记忆里的数字标“第 N 回合时”；召回后按伤口 / 心情 / 称呼阶段做确定性态度注记（不调模型）；`say` 带情绪枚举映射立绘差分，尾鳍诚实信号不受影响；人设回归、洗记忆与台词绑定四类审计进 `tests/evals`，用 scripted 假模型跑。未合 tanpowasd/dev / main，未开 PR。见 [执行记录](collab/work-ledger/memory-provenance.md)。

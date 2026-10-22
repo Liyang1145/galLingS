@@ -1,14 +1,14 @@
 """Ollama 本地模型网关插件（免密钥，兼容 /v1/chat/completions SSE）。"""
 from __future__ import annotations
 
-import json
 import time
 from dataclasses import asdict
 from typing import Any, AsyncIterator
 
 import httpx
 
-from server.plugins import ChatRequest, Error, LLMEvent, LLMPlugin, TextDelta, ToolCallDelta, ToolCallDone, Usage
+from server.plugins import ChatRequest, Error, LLMEvent, LLMPlugin, Usage
+from server.plugins.sse import StreamNormalizer, http_status_error
 
 
 def _message(m) -> dict[str, Any]:
@@ -43,44 +43,23 @@ class OllamaLLM(LLMPlugin):
             body["stop"] = request.stop
 
         t0 = time.perf_counter()
-        calls: dict[int, dict[str, Any]] = {}
+        norm = StreamNormalizer()
+        seen_usage = False
         try:
             async with self._client.stream("POST", "/chat/completions", json=body) as resp:
                 if resp.status_code != 200:
-                    text = (await resp.aread()).decode("utf-8", "replace")[:200]
-                    yield Error("unknown", f"HTTP {resp.status_code}: {text}", retryable=resp.status_code >= 500)
+                    yield await http_status_error(resp)
                     return
-                async for raw in resp.aiter_lines():
-                    line = raw.strip()
-                    if not line.startswith("data:"):
-                        continue
-                    data = line[5:].strip()
-                    if data == "[DONE]":
-                        break
-                    try:
-                        chunk = json.loads(data)
-                    except json.JSONDecodeError:
-                        continue
-                    for choice in chunk.get("choices") or []:
-                        delta = choice.get("delta") or {}
-                        if delta.get("content"):
-                            yield TextDelta(delta["content"])
-                        for tc in delta.get("tool_calls") or []:
-                            idx = int(tc.get("index", 0))
-                            slot = calls.setdefault(idx, {"id": None, "name": None, "args": ""})
-                            fn = tc.get("function") or {}
-                            slot["id"] = tc.get("id") or slot["id"]
-                            slot["name"] = fn.get("name") or slot["name"]
-                            slot["args"] += fn.get("arguments") or ""
-                            yield ToolCallDelta(idx, tc.get("id"), fn.get("name"), fn.get("arguments") or "")
-                for idx in sorted(calls):
-                    slot = calls[idx]
-                    try:
-                        args = json.loads(slot["args"] or "{}")
-                    except json.JSONDecodeError:
-                        args = {}
-                    yield ToolCallDone(idx, slot["id"] or f"call_{idx}", slot["name"] or "", args if isinstance(args, dict) else {})
-                yield Usage(0, 0, (time.perf_counter() - t0) * 1000)
+                async for line in resp.aiter_lines():
+                    for ev in norm.feed_line(line):
+                        if isinstance(ev, Usage):
+                            seen_usage = True
+                            ev = Usage(ev.prompt_tokens, ev.completion_tokens, (time.perf_counter() - t0) * 1000)
+                        yield ev
+                for ev in norm.finish():
+                    yield ev
+                if not seen_usage:
+                    yield Usage(0, 0, (time.perf_counter() - t0) * 1000)
         except httpx.TimeoutException as e:
             yield Error("timeout", str(e) or "请求超时", retryable=True)
         except httpx.HTTPError as e:

@@ -20,7 +20,7 @@
 
 已有 17 张用户网页端背景进入“参考或验收复用候选”清单，合格者可抵扣对应制作项。表情、饰物和光照可以从同一底图派生，104 不代表需要从头独立生成 104 次。
 
-依据：[第一季全卷剧本](<../../../content/scripts/haifeng-pudding_s1_v5.0_draft.md>)；[当前本地融合剧情与素材引用](<../../../content/imports/vnstudio/海风与布丁/game.js>)；[上一轮逐图与连续性复核](<../../../archive/deliveries/local-assembly/视觉全量复核/图片全量复核与补图清单.md>)。后续新交付发生变化时，先按素材 ID 与剧情节点核对差异，再更新这份清单。
+依据：[第一季全卷剧本](<../../../content/scripts/haifeng-pudding_s1_v5.0_draft.md>)；[当前本地融合剧情与素材引用](../../../海风与布丁)；[上一轮逐图与连续性复核](<../../../A素材库/归档/deliveries/local-assembly/视觉全量复核/图片全量复核与补图清单.md>)。后续新交付发生变化时，先按素材 ID 与剧情节点核对差异，再更新这份清单。
 
 ## 2. 已明确的角色设定与道具进度
 
@@ -262,23 +262,23 @@ P0 表示先做的高频场景、结构依据或已发现错配的补齐项；P1
 
 | 现有图 | 目标项 | 处理判断 | 原图 |
 |---|---|---|---|
-| 浅滩与礁石 · 白天 | B02 | 主海岸日景母图候选；接 C01/C02 时检查地形与人物受光 | [原图](<../../../content/assets/backgrounds/bg_shallows_day_v01.png>) |
-| 大房子的书房 · 白天 | B28 | 书房结构母图候选；电话 CG 接右侧写稿区与真实手机 | [原图](<../../../content/assets/backgrounds/bg_house_study_day_v01.png>) |
-| 翡翠之梦店内 · 白天 | B38 | 店铺内景结构母图候选；固定柜台、楼梯、海景窗 | [原图](<../../../content/assets/backgrounds/bg_emerald_dream_interior_day_v01.png>) |
-| 浅滩与礁石 · 黄昏 | B03 | 从日景做时段差分的候选；地形、远山、反光方向一并对齐 | [原图](<../../../content/assets/backgrounds/bg_shallows_sunset_v01.png>) |
-| 浅滩与礁石 · 月夜 | B04 | 月夜候选；礁石夜近景仍需 B07，并控制同夜月相 | [原图](<../../../content/assets/backgrounds/bg_shallows_night_v01.png>) |
-| 大房子的书房 · 夜 | B30 | 夜间书房候选；搬家后的日记与季终仍使用此住宅 | [原图](<../../../content/assets/backgrounds/bg_house_study_night_v01.png>) |
-| 浅滩帐篷外 · 夜 | B16 | 营地夜候选；先统一帐篷外、内、黄昏结构 | [原图](<../../../content/assets/backgrounds/bg_beach_campsite_night_v01.png>) |
-| 小镇集市 · 上午 | B21 | 夏日集市候选；初秋另做 B22，饰品巷/珍珠摊保持同街区 | [原图](<../../../content/assets/backgrounds/bg_town_market_day_v01.png>) |
-| 大房子与院子 · 清晨 | B26 | 白墙蓝顶院子候选；新家 CG 接同一树、秋千和烟囱 | [原图](<../../../content/assets/backgrounds/bg_house_courtyard_morning_v01.png>) |
-| 翡翠之梦二楼窗边 · 夜 | B42 | 打烊后窗边双人桌候选；只属于店铺二楼 | [原图](<../../../content/assets/backgrounds/bg_emerald_dream_upstairs_night_v01.png>) |
-| 深海发光珊瑚礁 | B13 | 发光珊瑚候选；与暗黑危机水下 B12 分开 | [原图](<../../../content/assets/backgrounds/bg_deepsea_coral_glow_v01.png>) |
-| 大房子的书房 · 黄昏 | B29 | 用户已选网页端；与日景/夜景再核门窗、书架和后门位置 | [原图](<../../../content/assets/backgrounds/bg_house_study_sunset.png>) |
-| 翡翠之梦 · 一楼夜间 | B39 | 用户提供夜店内候选；C15 需要人物 CG，不能复用空景充数 | [原图](<../../../content/assets/backgrounds/bg_emerald_dream_interior_night.png>) |
-| 翡翠之梦 · 后厨日间 | B41 | 商业后厨候选；金属设备与浅木店内连接要明确 | [原图](<../../../content/assets/backgrounds/bg_emerald_dream_kitchen_day.png>) |
-| 大房子 · 客厅午后 | B27 | 居家客厅候选；检查与书房窗光方向及过道关系 | [原图](<../../../content/assets/backgrounds/bg_house_living_day.png>) |
-| 大房子 · 厨房清晨 | B31 | 家用厨房候选；与店后厨设备尺度区分 | [原图](<../../../content/assets/backgrounds/bg_house_kitchen_morning.png>) |
-| 大房子 · 餐厅夜间 | B34 | 用户提供夜间餐厅候选；早餐桌 B33 接同一空间 | [原图](<../../../content/assets/backgrounds/bg_house_dining_night.png>) |
+| 浅滩与礁石 · 白天 | B02 | 主海岸日景母图候选；接 C01/C02 时检查地形与人物受光 | [原图](<../../../A素材库/backgrounds/bg_shallows_day_v01.png>) |
+| 大房子的书房 · 白天 | B28 | 书房结构母图候选；电话 CG 接右侧写稿区与真实手机 | [原图](<../../../A素材库/backgrounds/bg_house_study_day_v01.png>) |
+| 翡翠之梦店内 · 白天 | B38 | 店铺内景结构母图候选；固定柜台、楼梯、海景窗 | [原图](<../../../A素材库/backgrounds/bg_emerald_dream_interior_day_v01.png>) |
+| 浅滩与礁石 · 黄昏 | B03 | 从日景做时段差分的候选；地形、远山、反光方向一并对齐 | [原图](<../../../A素材库/backgrounds/bg_shallows_sunset_v01.png>) |
+| 浅滩与礁石 · 月夜 | B04 | 月夜候选；礁石夜近景仍需 B07，并控制同夜月相 | [原图](<../../../A素材库/backgrounds/bg_shallows_night_v01.png>) |
+| 大房子的书房 · 夜 | B30 | 夜间书房候选；搬家后的日记与季终仍使用此住宅 | [原图](<../../../A素材库/backgrounds/bg_house_study_night_v01.png>) |
+| 浅滩帐篷外 · 夜 | B16 | 营地夜候选；先统一帐篷外、内、黄昏结构 | [原图](<../../../A素材库/backgrounds/bg_beach_campsite_night_v01.png>) |
+| 小镇集市 · 上午 | B21 | 夏日集市候选；初秋另做 B22，饰品巷/珍珠摊保持同街区 | [原图](<../../../A素材库/backgrounds/bg_town_market_day_v01.png>) |
+| 大房子与院子 · 清晨 | B26 | 白墙蓝顶院子候选；新家 CG 接同一树、秋千和烟囱 | [原图](<../../../A素材库/backgrounds/bg_house_courtyard_morning_v01.png>) |
+| 翡翠之梦二楼窗边 · 夜 | B42 | 打烊后窗边双人桌候选；只属于店铺二楼 | [原图](<../../../A素材库/backgrounds/bg_emerald_dream_upstairs_night_v01.png>) |
+| 深海发光珊瑚礁 | B13 | 发光珊瑚候选；与暗黑危机水下 B12 分开 | [原图](<../../../A素材库/backgrounds/bg_deepsea_coral_glow_v01.png>) |
+| 大房子的书房 · 黄昏 | B29 | 用户已选网页端；与日景/夜景再核门窗、书架和后门位置 | [原图](<../../../A素材库/backgrounds/bg_house_study_sunset.png>) |
+| 翡翠之梦 · 一楼夜间 | B39 | 用户提供夜店内候选；C15 需要人物 CG，不能复用空景充数 | [原图](<../../../A素材库/backgrounds/bg_emerald_dream_interior_night.png>) |
+| 翡翠之梦 · 后厨日间 | B41 | 商业后厨候选；金属设备与浅木店内连接要明确 | [原图](<../../../A素材库/backgrounds/bg_emerald_dream_kitchen_day.png>) |
+| 大房子 · 客厅午后 | B27 | 居家客厅候选；检查与书房窗光方向及过道关系 | [原图](<../../../A素材库/backgrounds/bg_house_living_day.png>) |
+| 大房子 · 厨房清晨 | B31 | 家用厨房候选；与店后厨设备尺度区分 | [原图](<../../../A素材库/backgrounds/bg_house_kitchen_morning.png>) |
+| 大房子 · 餐厅夜间 | B34 | 用户提供夜间餐厅候选；早餐桌 B33 接同一空间 | [原图](<../../../A素材库/backgrounds/bg_house_dining_night.png>) |
 
 ## 10. 逐章覆盖与服装/时段重点
 

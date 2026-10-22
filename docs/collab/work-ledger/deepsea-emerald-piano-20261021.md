@@ -35,7 +35,7 @@
 - M2/E4/E7 实机保留并正常播放；停奏、退出停止通过。
 - 全作回归 3315 节点，nbad 0、nerrs 0；存读档句 ID 与变量一致。
 - 音乐资产已进入同一开发页的项目资产表；美术目录指纹同步，L15/C20 仍用用户要求恢复的旧图。
-- [逐句映射与原件校验](../../../content/audio/deepsea-theme-integration-20261021.json)、[播放验证](../../../content/audio/deepsea-theme-validation-20261021.json)。
+- [逐句映射与原件校验](../../../content/audio-records/deepsea-theme-integration-20261021.json)、[播放验证](../../../content/audio-records/deepsea-theme-validation-20261021.json)。
 
 原文件实际时长：深海主曲 3:34.85，深海钢琴 2:12.10，翡翠钢琴 2:13.69；没有因为此前提示词写“两分钟”就截断已交付作品。未改旧单文件 HTML，本轮请打开文件夹版游玩。
 
@@ -47,4 +47,4 @@
 
 ## 仓库同步
 
-按用户“记得同步仓库”要求，以远端 dc1e3660e2c1de5272e6883f55e4a568af8c2351 为父提交按句 ID 合入音乐，保留队友新桌面/GalAgent 改动。不发布未验收的 6 张修图、本地界面/CSS 或与本任务无关的源音频删除。提交消息带 `[skip ci]`，遵守用户暂停自动单文件构建的决定；不改 workflow、不合 main。仓库发布层验证见 [发布验证](../../../content/audio/deepsea-theme-publication-validation-20261021.json)。
+按用户“记得同步仓库”要求，以远端 dc1e3660e2c1de5272e6883f55e4a568af8c2351 为父提交按句 ID 合入音乐，保留队友新桌面/GalAgent 改动。不发布未验收的 6 张修图、本地界面/CSS 或与本任务无关的源音频删除。提交消息带 `[skip ci]`，遵守用户暂停自动单文件构建的决定；不改 workflow、不合 main。仓库发布层验证见 [发布验证](../../../content/audio-records/deepsea-theme-publication-validation-20261021.json)。

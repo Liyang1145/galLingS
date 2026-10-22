@@ -2,7 +2,7 @@
 
 更新：2026-10-21。音乐负责人：@Liyang1145。
 
-> **2026-10-21 更新（现行）**：音乐负责人提供 `21.wav` 作为新的《深海之光》主曲（约 3:35），`深海-钢琴.mp3` 为钢琴改编（约 2:12），并补交 `翡翠钢琴.mp3`（约 2:14）。三首已接入工作分支的文件夹游戏。Atri 的 **E2 暂时弃用、剧情引用清零**，原文件和 ID 留存；**M2 深海空间曲明确保留**。新深海主曲用于第三话 #399–487、季终 #2860–2943；深海钢琴用于 #488–504、#625–642、#2691–2726；翡翠钢琴用于第二话 #276–327。原 M2、E4、E7 与停奏保持。见 [接入记录](../collab/work-ledger/deepsea-emerald-piano-20261021.md)、[逐句映射](../../content/audio/deepsea-theme-integration-20261021.json)。下方旧快照的 E2 采用状态以本条为准。
+> **2026-10-21 更新（现行）**：音乐负责人提供 `21.wav` 作为新的《深海之光》主曲（约 3:35），`深海-钢琴.mp3` 为钢琴改编（约 2:12），并补交 `翡翠钢琴.mp3`（约 2:14）。三首已接入工作分支的文件夹游戏。Atri 的 **E2 暂时弃用、剧情引用清零**，原文件和 ID 留存；**M2 深海空间曲明确保留**。新深海主曲用于第三话 #399–487、季终 #2860–2943；深海钢琴用于 #488–504、#625–642、#2691–2726；翡翠钢琴用于第二话 #276–327。原 M2、E4、E7 与停奏保持。见 [接入记录](../collab/work-ledger/deepsea-emerald-piano-20261021.md)、[逐句映射](../../content/audio-records/deepsea-theme-integration-20261021.json)。下方旧快照的 E2 采用状态以本条为准。
 
 > **2026-10-19 更新（现行）**：E2《深海之光》起点恢复到 #399（#399–504）；家居曲 E3/M6/M7 退出「翡翠之梦」店内营业段，5 段 202 句改用 Atri·集市 M3，居家段与非营业时的店里厨房保留（家居曲剩 316 句）。见 [hd-art-music-20261019](../collab/work-ledger/hd-art-music-20261019.md)。下面 10-18 的说法里与此冲突的以本条为准。
 
@@ -18,16 +18,16 @@
 
 | 用途 | 曲目/文件 | 提供方 | 实际时长 | 采用状态 |
 |---|---|---|---|---|
-| 见面曲（最早《翡翠之梦》） | [翡翠之梦](../../content/assets/audio/bgm/bgm_emerald_dream_main_v01.mp3) | 音乐负责人 | 2:13.21 | 当前暂保留重要出场、契约及温柔日常等1025句引用。Atri的M6？同SHA复用是历史接入事实；新主曲未定，后续各用途是否重映射另行决定。 |
-| E1 傲娇/喜剧互动 | [E1](../../content/assets/music/mp3/E1.mp3) | Atri-Lobato | 1:26.41 | 71句；不套用真实伤痛。 |
-| E2 深海/定情主曲 | [深海之光·新主曲](../../content/assets/audio/bgm/bgm_e2_deepsea_main.mp3) | 音乐负责人 | 3:34.85 | 接入第三话水下定情与季终回收，共 173 节点。 |
-| E2 钢琴改编 | [深海之光·钢琴](../../content/assets/audio/bgm/bgm_e2_deepsea_piano.mp3) | 音乐负责人 | 2:12.10 | 出水余韵、手链托付与清晨早安，3 段 71 节点。 |
-| 翡翠之梦钢琴改编 | [翡翠之梦·钢琴](../../content/assets/audio/bgm/bgm_emerald_dream_piano.mp3) | 音乐负责人 | 2:13.69 | 第二话黄昏谈记忆、约定暗号，52 节点；普通见面曲继续保留。 |
-| Atri 旧 E2（暂时弃用） | [旧深海之光](../../content/assets/music/mp3/E2.mp3) | Atri-Lobato | 1:36.41 | 剧情 0 引用，保留原件和旧素材 ID，不影响 M2。 |
-| E7 独白/思考 | [E7](../../content/assets/music/mp3/E7.mp3) | Atri-Lobato | 3:06.12 | 73句；明确的验证/回溯思考。 |
-| E4 退潮/等待/关系受伤 | [日落空守（暂定名）](../../content/assets/audio/bgm/bgm_e4_sunset_wait.mp3) | 音乐负责人 | 2:24.81 | 第九话黄昏、第十话数日等待、第十一话救援后尚未解冻，3段77句。 |
-| M1 普通浅滩/沙洲地图 | [浅滩日常（功能名，曲名未定）](../../content/assets/audio/bgm/bgm_m1_shallows_day.mp3) | 音乐负责人 | 1:39.69 | 第三话下潜准备、第七话捡贝壳，2段61句；角色重点段落保留。 |
-| E5/E6候选 | [E6](../../content/assets/music/mp3/E6.mp3) · [E5](../../content/assets/music/mp3/E5.mp3) | Atri-Lobato | 2:58.41 | 0句，仅试听；用途未定，不算两首已完成曲。 |
+| 见面曲（最早《翡翠之梦》） | [翡翠之梦](../../A素材库/audio/bgm/bgm_emerald_dream_main_v01.mp3) | 音乐负责人 | 2:13.21 | 当前暂保留重要出场、契约及温柔日常等1025句引用。Atri的M6？同SHA复用是历史接入事实；新主曲未定，后续各用途是否重映射另行决定。 |
+| E1 傲娇/喜剧互动 | [E1](../../A素材库/music/mp3/E1.mp3) | Atri-Lobato | 1:26.41 | 71句；不套用真实伤痛。 |
+| E2 深海/定情主曲 | [深海之光·新主曲](../../A素材库/audio/bgm/bgm_e2_deepsea_main.mp3) | 音乐负责人 | 3:34.85 | 接入第三话水下定情与季终回收，共 173 节点。 |
+| E2 钢琴改编 | [深海之光·钢琴](../../A素材库/audio/bgm/bgm_e2_deepsea_piano.mp3) | 音乐负责人 | 2:12.10 | 出水余韵、手链托付与清晨早安，3 段 71 节点。 |
+| 翡翠之梦钢琴改编 | [翡翠之梦·钢琴](../../A素材库/audio/bgm/bgm_emerald_dream_piano.mp3) | 音乐负责人 | 2:13.69 | 第二话黄昏谈记忆、约定暗号，52 节点；普通见面曲继续保留。 |
+| Atri 旧 E2（暂时弃用） | [旧深海之光](../../A素材库/music/mp3/E2.mp3) | Atri-Lobato | 1:36.41 | 剧情 0 引用，保留原件和旧素材 ID，不影响 M2。 |
+| E7 独白/思考 | [E7](../../A素材库/music/mp3/E7.mp3) | Atri-Lobato | 3:06.12 | 73句；明确的验证/回溯思考。 |
+| E4 退潮/等待/关系受伤 | [日落空守（暂定名）](../../A素材库/audio/bgm/bgm_e4_sunset_wait.mp3) | 音乐负责人 | 2:24.81 | 第九话黄昏、第十话数日等待、第十一话救援后尚未解冻，3段77句。 |
+| M1 普通浅滩/沙洲地图 | [浅滩日常（功能名，曲名未定）](../../A素材库/audio/bgm/bgm_m1_shallows_day.mp3) | 音乐负责人 | 1:39.69 | 第三话下潜准备、第七话捡贝壳，2段61句；角色重点段落保留。 |
+| E5/E6候选 | [E6](../../A素材库/music/mp3/E6.mp3) · [E5](../../A素材库/music/mp3/E5.mp3) | Atri-Lobato | 2:58.41 | 0句，仅试听；用途未定，不算两首已完成曲。 |
 
 句数是节点引用数，同曲跨句连续播放，不随切句重播。时长来自实际MP3，不把生成提示词的目标时长当成交付事实。
 
@@ -45,12 +45,12 @@ M1当前创作偏好：减少钢琴篇幅、轻鼓、较多bell旋律填句、�
 
 ## 原件、接入与验证
 
-- **M1**：原交付名`录音机-20261011-1642(1).mp3`，稳定ID`bgm_m1_shallows_day`，SHA-256 `08dae55fe051327cad76c7f3938dc297ef234f314a50ffa2f2ef911e2646e325`。[接入记录](../collab/work-ledger/m1-shallows-day.md)、[逐句映射](../../content/audio/m1-integration.json)、[播放验证](../../content/audio/m1-validation.json)。
-- **E4**：原交付名`日落空守.mp3`，稳定ID`bgm_e4_sunset_wait`，SHA-256 `4fa6f18e5f96795912cee922b7fa46c58fdb6557b18fc874a06c3240645f6684`。[接入记录](../collab/work-ledger/e4-sunset-wait.md)、[逐句映射](../../content/audio/e4-integration.json)、[播放验证](../../content/audio/e4-validation.json)。
+- **M1**：原交付名`录音机-20261011-1642(1).mp3`，稳定ID`bgm_m1_shallows_day`，SHA-256 `08dae55fe051327cad76c7f3938dc297ef234f314a50ffa2f2ef911e2646e325`。[接入记录](../collab/work-ledger/m1-shallows-day.md)、[逐句映射](../../content/audio-records/m1-integration.json)、[播放验证](../../content/audio-records/m1-validation.json)。
+- **E4**：原交付名`日落空守.mp3`，稳定ID`bgm_e4_sunset_wait`，SHA-256 `4fa6f18e5f96795912cee922b7fa46c58fdb6557b18fc874a06c3240645f6684`。[接入记录](../collab/work-ledger/e4-sunset-wait.md)、[逐句映射](../../content/audio-records/e4-integration.json)、[播放验证](../../content/audio-records/e4-validation.json)。
 - 原MP3、游戏副本、单文件内嵌字节均匹配。M1/E4共138句仅改BGM；3315句的其他字段、图像、动作、环境音和音效保留。M1接入前104项音频元数据与文件Git blob逐项不变。
 - 已验证段内连续播放、切曲/停奏、存储音轨位置恢复、退出停止及断网单文件播放；M1文件末端循环通过，E4回归播放通过。播放验证不代替人工听审。
 - 检出本分支后，根目录[游玩.html](../../游玩.html)、[引擎开发.html](../../引擎开发.html)读取同一完整作品。运行`python tools/build_single_file_game.py`可重建单文件；约165MB的HTML留在本地outputs，不进Git。没有新发行版本号。
 
-详细参考见[曲目规划](music-tracklist.md)，元数据见[音乐清单](../../content/audio/manifest.yaml)。早期文档的“缺M1/E4”“未推送”等是当时快照，当前进度以本表和接续分支实际文件为准。
+详细参考见[曲目规划](music-tracklist.md)，元数据见[音乐清单](../../content/audio-records/manifest.yaml)。早期文档的“缺M1/E4”“未推送”等是当时快照，当前进度以本表和接续分支实际文件为准。
 
 本次定位调整见[见面曲决定](../collab/work-ledger/emerald-meeting-cue.md)。稳定ID含`main`是兼容历史命名，不表示仍是主曲；不改ID、不批量重映射、不改音频字节。

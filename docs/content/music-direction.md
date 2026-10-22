@@ -39,9 +39,9 @@
 | 浏览器读取的时长 | 133.2135 秒，约 2 分 13 秒 |
 | SHA-256 | `02162232f3aa9e5465ea06d1b4968776375f04d6fbeae1c9e39e5623eede44fa` |
 
-当前探索选曲已单独归档，原 MP3 位于 [content/assets/audio/bgm](../../content/assets/audio/bgm/README.md)，文件未修改。音频入库用于保存素材，不表示已冻结音乐版本或已接入 LarryE 的最新 DEMO。
+当前探索选曲已单独归档，原 MP3 位于 [content/assets/audio/bgm](../../A素材库/audio/bgm/README.md)，文件未修改。音频入库用于保存素材，不表示已冻结音乐版本或已接入 LarryE 的最新 DEMO。
 
-素材元数据见 [content/audio/manifest.yaml](../../content/audio/manifest.yaml)。原始生成页、实际生成提示词、具体会员档位和参考音频设置尚未记录，不能把讨论中最后一版提示词当作这首现有音频的生成记录。
+素材元数据见 [content/audio/manifest.yaml](../../content/audio-records/manifest.yaml)。原始生成页、实际生成提示词、具体会员档位和参考音频设置尚未记录，不能把讨论中最后一版提示词当作这首现有音频的生成记录。
 
 ## 4. 两个主题的剧本分工
 

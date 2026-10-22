@@ -1,6 +1,6 @@
 # 《海风与布丁》素材库
 
-集中保存项目素材。原有背景库已补齐为17张，另有 [44张新场景背景库](scene-backgrounds/README.md)，当前游戏接入范围见 [装配记录](../../docs/collab/work-ledger/local-scene-audio-assembly.md)。保留配乐主曲、15个环境音、18个剧情音效和队友新增的尾巴音效原件；采用与备用以台账为准。
+集中保存项目素材。原有背景库已补齐为17张，另有 [44张新场景背景库](scene-backgrounds/README.md)，当前游戏接入范围见 [装配记录](../docs/collab/work-ledger/local-scene-audio-assembly.md)。保留配乐主曲、15个环境音、18个剧情音效和队友新增的尾巴音效原件；采用与备用以台账为准。
 
 环境音包括潮声、海鸥、水下声、集市、风铃、海风、点火、篝火和店内底噪，见 [音效索引](audio/sfx/README.md)。
 

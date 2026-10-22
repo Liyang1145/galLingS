@@ -5,7 +5,7 @@ name: desktop
 on:
   push:
     branches: [main, tanpowasd/dev]
-    paths: ["core/**", "web/**", "desktop/**", "plugins/builtin/galagent/web/**", "content/imports/**", "content/cards/**", "compiler/**", "tools/build_desktop_dist.py", "tools/build_steam_release.py", ".github/workflows/desktop.yml"]
+    paths: ["core/**", "web/**", "desktop/**", "plugins/builtin/galagent/web/**", "海风与布丁/**", "content/cards/**", "compiler/**", "tools/build_desktop_dist.py", "tools/build_steam_release.py", ".github/workflows/desktop.yml"]
   workflow_dispatch:
 
 permissions:

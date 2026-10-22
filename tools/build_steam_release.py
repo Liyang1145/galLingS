@@ -164,10 +164,12 @@ def main(argv: list[str] | None = None) -> int:
     ga_build = ROOT / "plugins" / "builtin" / "galagent" / "web" / "build_vnplugin.py"
     if ga_build.is_file():
         subprocess.run([sys.executable, str(ga_build)], check=True)
-        shutil.copy2(
-            ga_build.parent / "galagent.vnplugin.js",
-            ROOT / "content" / "imports" / "vnstudio" / "海风与布丁" / "galagent.vnplugin.js",
-        )
+        game_dir = ROOT / "海风与布丁"
+        if game_dir.is_dir():
+            shutil.copy2(
+                ga_build.parent / "galagent.vnplugin.js",
+                game_dir / "galagent.vnplugin.js",
+            )
 
     # 2. 编译 galcore.wasm
     wasm_path = ROOT / "core" / "target" / "wasm32-unknown-unknown" / "release" / "galcore.wasm"
@@ -209,7 +211,6 @@ def main(argv: list[str] | None = None) -> int:
     content_dir.mkdir(parents=True, exist_ok=True)
 
     shutil.copy2(exe_src, content_dir / "HaifengPudding.exe")
-    shutil.copy2(exe_src, content_dir / "海风与布丁.exe")
     (content_dir / "steam_appid.txt").write_text(f"{app_id}\n", encoding="utf-8")
     shutil.copytree(dist_desktop, content_dir / "game")
     bundle_backend_runtime(content_dir)

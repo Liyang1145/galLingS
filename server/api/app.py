@@ -13,7 +13,8 @@
 - ``GET /vn.html``                    作品页：玩 VN Studio 导出的游戏（窗口 / 全屏），手账停靠右侧栏
 - ``/vn/{作品}/…``、``/api/vn/games``  作品文件（vn.games_dir，默认仓库根的 海风与布丁/）
 - ``/api/vn/plugins``、``/vn_plugins/…`` 给作品用的 VN Studio 插件（vn-plugin/1）：GalAgent + content/vn_plugins/*.js
-- ``/api/settings``                 网页设置（模型 / 密钥 / 记忆底座），存 data_dir，改完重启插件
+- ``/api/settings``                 网页设置（模型 / 密钥 / 记忆底座），存 data_dir，改完重启插件（见 server/api/settings.py）
+- ``/__host/*``                     桌面与 Steam 宿主桥接口（见 server/api/host.py）
 - ``WS  /ws/soul?card=whale``         灵枢外部端口 vn-soul/1：外部前端（VN Studio）的手账记忆 / 悄悄话
 """
 from __future__ import annotations
@@ -23,16 +24,15 @@ import contextlib
 import json
 import logging
 import os
-import subprocess
-import sys
 from pathlib import Path
 from typing import Any
 
 from fastapi import FastAPI, HTTPException, WebSocket, WebSocketDisconnect
 from fastapi.responses import FileResponse, JSONResponse, PlainTextResponse, RedirectResponse
-from fastapi.staticfiles import StaticFiles
 
-from server.api import post_ending
+from server.api import host, post_ending, settings
+from server.api.guard import LOOPBACK, LocalOnlyGuard, NoCacheStaticFiles, _hostname
+from server.api.settings import lingshu_path_problem
 from server.cards import builder
 from server.cards.validate import has_errors, validate_card
 from server.recorder import read_log_full
@@ -41,8 +41,11 @@ from server.runtime import ROOT, Runtime, load_config
 from server.session import TOOLS, Session, SessionOptions
 from server.soul import SoulSession
 
+__all__ = ["LOOPBACK", "LocalOnlyGuard", "VN_PLUGINS_DIR", "create_app", "lingshu_path_problem"]
+
 log = logging.getLogger("gallings.api")
 WEB = ROOT / "web"
+NO_CACHE = {"Cache-Control": "no-cache"}
 
 
 def VN_PLUGINS_DIR(r: Runtime) -> Path:  # noqa: N802
@@ -53,70 +56,6 @@ def VN_PLUGINS_DIR(r: Runtime) -> Path:  # noqa: N802
     if not resolved.is_dir() and (ROOT / "game" / "vn_plugins").is_dir():
         return ROOT / "game" / "vn_plugins"
     return resolved
-
-
-
-def lingshu_path_problem(path: str) -> str:
-    """灵枢路径要指向 dsh-memory 检出目录（里面有 md_cg/mcp_server.py）。不对就返回给人看的原因。"""
-    from pathlib import Path
-    if not path.strip():
-        return "没填 dsh-memory 路径，记忆设置没改。"
-    p = Path(path.strip().strip('"'))
-    if not p.is_dir():
-        return f"找不到文件夹 {p}，记忆设置没改。"
-    if (p / "md_cg" / "mcp_server.py").is_file():
-        return ""
-    if any(p.glob("*/md_cg/mcp_server.py")):
-        sub = next(p.glob("*/md_cg/mcp_server.py")).parent.parent
-        return f"灵枢在下一层：请填 {sub}，记忆设置没改。"
-    return "这里没有灵枢（找不到 md_cg\\mcp_server.py），记忆设置没改。先下载 dsh-memory（github.com/FuRongJun-1999/dsh-memory），再填它的文件夹。"
-
-LOOPBACK = {"127.0.0.1", "localhost", "::1", "app.localhost"}
-
-
-def _hostname(v: str) -> str:
-    """'127.0.0.1:8765' / '[::1]:8765' / 'http://localhost:8765' → 主机名（小写，不带端口）。"""
-    v = v.strip().lower()
-    if "://" in v:
-        v = v.split("://", 1)[1]
-    v = v.split("/", 1)[0]
-    if v.startswith("["):
-        return v[1:].split("]", 1)[0]
-    return v.rsplit(":", 1)[0] if v.count(":") == 1 else v
-
-
-class LocalOnlyGuard:
-    """本机服务的门卫（PLAN §17.4）：/api/settings 没有登录，靠它挡住别的网站。
-
-    - Host 必须是本机名：挡 DNS 重绑定（坏网站把自己的域名解析到 127.0.0.1，就成了“同源”）。
-      config.yaml 里 server.host 改成非本机地址（自己要开局域网）时不查 Host。
-    - 有 Origin 时必须是本机网页：挡别的网站在后台 POST /api/settings（改服务地址偷密钥）或连 WebSocket 花你的模型额度。
-      /ws/soul 额外放行 Origin: null —— 双击打开的 VN Studio 游戏（file://）要连灵枢端口。
-    """
-
-    def __init__(self, app: Any, check_host: bool = True) -> None:
-        self.app, self.check_host = app, check_host
-
-    async def __call__(self, scope: dict, receive: Any, send: Any) -> None:
-        if scope["type"] in ("http", "websocket"):
-            h = {k.decode("latin-1"): v.decode("latin-1") for k, v in scope.get("headers") or []}
-            bad = ""
-            if self.check_host and _hostname(h.get("host", "")) not in LOOPBACK:
-                bad = "host"
-            origin = h.get("origin")
-            if origin is not None and not bad:
-                null_ok = scope["type"] == "websocket" and scope.get("path") == "/ws/soul"
-                same = origin.lower().split("://", 1)[-1].rstrip("/") == h.get("host", "").lower()  # 同源（开了局域网时手机访问）
-                if not ((origin == "null" and null_ok) or same or _hostname(origin) in LOOPBACK):
-                    bad = "origin"
-            if bad:
-                log.warning("拒绝非本机请求（%s）：%s %s", bad, h.get("host", ""), origin or "")
-                if scope["type"] == "websocket":
-                    await send({"type": "websocket.close", "code": 1008})
-                    return
-                await PlainTextResponse("forbidden: galLingS 只接受本机网页的请求", status_code=403)(scope, receive, send)
-                return
-        await self.app(scope, receive, send)
 
 
 def create_app(runtime: Runtime | None = None) -> FastAPI:
@@ -131,7 +70,7 @@ def create_app(runtime: Runtime | None = None) -> FastAPI:
         await rt.stop()
 
     app = FastAPI(title="galLingS", lifespan=lifespan)
-    bind_cfg = (getattr(runtime, "base_config", None) or {}) if runtime else load_config()  # 测试替身可能没有配置：按默认 127.0.0.1
+    bind_cfg = (getattr(runtime, "base_config", None) or {}) if runtime else load_config()
     bind = str((bind_cfg.get("server") or {}).get("host", "127.0.0.1"))
     app.add_middleware(LocalOnlyGuard, check_host=_hostname(bind) in LOOPBACK)
 
@@ -142,26 +81,37 @@ def create_app(runtime: Runtime | None = None) -> FastAPI:
     async def index() -> RedirectResponse:
         return RedirectResponse(url="/docs")
 
+    @app.get("/health")
+    async def health() -> dict[str, Any]:
+        return {"ok": True, "status": "ok", "service": "gallings"}
+
     @app.get("/vn.html")
     async def vn_page() -> FileResponse:
-        return FileResponse(WEB / "vn.html")
+        return FileResponse(WEB / "vn.html", headers=NO_CACHE)
 
     @app.get("/cards.html")
     async def cards_page() -> FileResponse:
-        return FileResponse(WEB / "cards.html")
+        return FileResponse(WEB / "cards.html", headers=NO_CACHE)
 
-    app.mount("/static", StaticFiles(directory=WEB), name="static")
+    app.mount("/static", NoCacheStaticFiles(directory=WEB), name="static")
 
     @app.get("/api/status")
     async def status() -> dict[str, Any]:
         r = rt()
-        return {"llm": bool(r.llm_chain()), "memory": r.plugins.get("memory") is not None,
-                "chapter": {"id": r.chapter["chapter_id"], "title": r.chapter["title"], "content_hash": r.chapter["content_hash"]},
-                "default_card": r.game.get("default_card", "whale"), "default_mode": r.game.get("default_mode", "choice"),
-                "reserved": {"cross_run_memory": bool(r.game.get("cross_run_memory")),
-                             "post_ending": (r.game.get("post_ending") or {}).get("mode", "off"),
-                             "agent_port": bool((r.game.get("agent_port") or {}).get("enabled")),
-                             "image": r.plugins.get("image") is not None, "tts": r.plugins.get("tts") is not None}}
+        return {
+            "llm": bool(r.llm_chain()),
+            "memory": r.plugins.get("memory") is not None,
+            "chapter": {"id": r.chapter["chapter_id"], "title": r.chapter["title"], "content_hash": r.chapter["content_hash"]},
+            "default_card": r.game.get("default_card", "whale"),
+            "default_mode": r.game.get("default_mode", "choice"),
+            "reserved": {
+                "cross_run_memory": bool(r.game.get("cross_run_memory")),
+                "post_ending": (r.game.get("post_ending") or {}).get("mode", "off"),
+                "agent_port": bool((r.game.get("agent_port") or {}).get("enabled")),
+                "image": r.plugins.get("image") is not None,
+                "tts": r.plugins.get("tts") is not None,
+            },
+        }
 
     @app.get("/api/plugins")
     async def plugins() -> dict[str, Any]:
@@ -211,7 +161,6 @@ def create_app(runtime: Runtime | None = None) -> FastAPI:
     # ---------------------------------------------------------------- 预留接口
     @app.get("/api/agent/tools")
     async def agent_tools() -> JSONResponse:
-        """外部 Agent 端口（PLAN §16）：工具注册表已就绪；调用端口默认关闭。"""
         enabled = bool((rt().game.get("agent_port") or {}).get("enabled"))
         return JSONResponse({"enabled": enabled, "tools": TOOLS})
 
@@ -219,8 +168,10 @@ def create_app(runtime: Runtime | None = None) -> FastAPI:
     async def agent_call(body: dict[str, Any]) -> JSONResponse:
         return JSONResponse({"ok": False, "error": "外部 Agent 端口是预留接口，Demo 未开放"}, 501)
 
-    # 结局后自由聊天（PLAN §16）：/ws/post_ending、/api/post_ending/*、/galagent，由 gallings.tool.galagent 插件提供实现
+    # 挂载子模块路由：结局后聊天、设置面板、桌面/Steam 宿主桥
     post_ending.mount(app, rt)
+    settings.mount(app, rt)
+    host.mount(app, rt)
 
     # ---------------------------------------------------------------- 录制回放演示模式（PLAN §2.1、§20）
     @app.get("/api/replays")
@@ -248,9 +199,11 @@ def create_app(runtime: Runtime | None = None) -> FastAPI:
             return
         try:
             h, events, sent = read_log_full(path)
-            player = ReplayPlayer(h, events, sent, send, log_id=log_id, speed=q.get("speed") or 1,
-                                  max_gap=float(q.get("max_gap") or 8), paused=q.get("paused") in ("1", "true"),
-                                  chapters=[r.chapter_path])
+            player = ReplayPlayer(
+                h, events, sent, send, log_id=log_id, speed=q.get("speed") or 1,
+                max_gap=float(q.get("max_gap") or 8), paused=q.get("paused") in ("1", "true"),
+                chapters=[r.chapter_path],
+            )
         except (ValueError, OSError, KeyError) as e:
             await send({"type": "error", "message": f"不能重播：{e}"})
             await sock.close()
@@ -288,7 +241,7 @@ def create_app(runtime: Runtime | None = None) -> FastAPI:
     @app.websocket("/ws")
     async def ws(sock: WebSocket) -> None:
         await sock.accept()
-        if sock.query_params.get("replay"):  # 同一个入口：/ws?replay=<日志id>&speed=1
+        if sock.query_params.get("replay"):
             await serve_replay(sock, sock.query_params["replay"])
             return
         r = rt()
@@ -306,15 +259,21 @@ def create_app(runtime: Runtime | None = None) -> FastAPI:
             await sock.send_text(json.dumps(m, ensure_ascii=False))
 
         try:
-            sess = Session(r, SessionOptions(card_id=card_id, mode=mode, agm_fill=bool(r.game.get("agm_fill", True)),
-                                             honesty_gap_rule=bool(r.game.get("honesty_gap_rule", False)),
-                                             endings_seen=int(q.get("endings") or 0) if (q.get("endings") or "0").isdigit() else 0), send)
+            sess = Session(
+                r,
+                SessionOptions(
+                    card_id=card_id, mode=mode, agm_fill=bool(r.game.get("agm_fill", True)),
+                    honesty_gap_rule=bool(r.game.get("honesty_gap_rule", False)),
+                    endings_seen=int(q.get("endings") or 0) if (q.get("endings") or "0").isdigit() else 0,
+                ),
+                send,
+            )
         except KeyError:
             await send({"type": "error", "message": f"没有这张卡：{card_id}"})
             await sock.close()
             return
         await sess.hello()
-        if not q.get("restore"):  # 读档局：等播放器发 restore，不自己开局
+        if not q.get("restore"):
             await sess.handle({"type": "start", "line_id": q["start"]} if q.get("start") else {"type": "advance"})
         try:
             while True:
@@ -325,7 +284,7 @@ def create_app(runtime: Runtime | None = None) -> FastAPI:
         finally:
             await sess.close()
 
-    # ---------------------------------------------------------------- 作品（VN Studio 导出的游戏）+ 网页设置
+    # ---------------------------------------------------------------- 作品（VN Studio 导出的游戏）
     @app.get("/api/vn/games")
     async def vn_games() -> dict[str, Any]:
         r = rt()
@@ -333,11 +292,9 @@ def create_app(runtime: Runtime | None = None) -> FastAPI:
 
     @app.get("/api/vn/plugins")
     async def vn_plugins() -> dict[str, Any]:
-        """作品页里的游戏（托管模式）启动时来取：galLingS 提供给它的 VN Studio 插件。玩家可以在游戏的“插件”面板里停用。"""
         r = rt()
         out = post_ending.vn_plugins(r)
         if r.game.get("source") == "vnstudio" and getattr(r, "has_chapter", False):
-            # 一个游戏：作品的剧情交给 galcore 引擎（web/galcore.vnplugin.js 只接管服务器当前加载的那部作品）
             out.insert(0, {"id": "gallings.galcore", "name": "galcore 引擎", "url": "/static/galcore.vnplugin.js"})
         d = VN_PLUGINS_DIR(r)
         if d.is_dir():
@@ -350,22 +307,21 @@ def create_app(runtime: Runtime | None = None) -> FastAPI:
         f = (d / name).resolve()
         if f.parent != d or f.suffix != ".js" or not f.is_file():
             raise HTTPException(404)
-        return FileResponse(f, media_type="text/javascript")
+        return FileResponse(f, media_type="text/javascript", headers=NO_CACHE)
 
     @app.get("/vn/{game}/{path:path}")
     async def vn_file(game: str, path: str) -> FileResponse:
         root = rt().games_dir.resolve()
         if (root / "index.html").is_file() and game == root.name:
-            base = root  # 单作品：games_dir 自己就是作品目录
+            base = root
         else:
             base = (root / game).resolve()
         f = (base / (path or "index.html")).resolve()
-        # 作品名本身也可能是 ".." 或 Windows 盘符 "C:"：
-        # 作品目录只能是 games_dir 本身（单作品）或它下一层，且文件必须在作品目录里
         allowed = base == root or base.parent == root
         if not allowed or base not in f.parents or not f.is_file():
             raise HTTPException(404)
-        return FileResponse(f)
+        headers = NO_CACHE if f.suffix.lower() in {".html", ".js", ".css"} else None
+        return FileResponse(f, headers=headers)
 
     @app.get("/art-assets/{path:path}")
     async def art_asset_file(path: str) -> FileResponse:
@@ -379,141 +335,6 @@ def create_app(runtime: Runtime | None = None) -> FastAPI:
         if f.suffix.lower() not in images or not f.is_file():
             raise HTTPException(404)
         return FileResponse(f)
-
-    @app.get("/api/settings")
-    async def get_settings() -> dict[str, Any]:
-        r = rt()
-        rep = r.plugins.report()
-        return {**r.settings.public(r.config, r.base_environ), "llm_ready": bool(r.llm_chain()),
-                "memory_ready": r.plugins.get("memory") is not None,
-                "memory_active": getattr(getattr(r.plugins.get("memory"), "ctx", None), "plugin_id", ""),
-                "tools": rep.get("tools") or {},
-                "failed": {k: v for k, v in r.plugins.failed().items()}}
-
-    @app.post("/api/settings")
-    async def post_settings(body: dict[str, Any]) -> dict[str, Any]:
-        r = rt()
-        warn = ""
-        mem = body.get("memory") if isinstance(body.get("memory"), dict) else None
-        if mem and mem.get("use") == "lingshu":
-            raw_dsh = str(mem.get("dsh_memory_path") or "").strip()
-            if raw_dsh:
-                warn = lingshu_path_problem(raw_dsh)
-                if warn:
-                    body = {k: v for k, v in body.items() if k != "memory"}  # 其余照存，记忆设置不动
-        r.settings.save(body)
-        await r.reload_plugins()
-        return {**await get_settings(), "warn": warn}
-
-    # ---------------------------------------------------------------- 桌面 / Steam 宿主桥兼容接口（/__host/*）
-    SAVE_KINDS = ("slots", "global", "prefs", "read", "plugins")
-
-    def _host_save_dir() -> Path:
-        env_dir = os.environ.get("GALLINGS_SAVE_DIR")
-        d = Path(env_dir) if env_dir else (rt().data_dir / "saves")
-        d.mkdir(parents=True, exist_ok=True)
-        return d
-
-    @app.get("/__host/info")
-    async def host_info() -> dict[str, Any]:
-        r = rt()
-        sdir = _host_save_dir()
-        return {
-            "ok": True,
-            "steam": True,
-            "full_backend": True,
-            "platform": sys.platform,
-            "save_dir": str(sdir),
-            "config_dir": str(r.data_dir),
-            "workspace_dir": str(r.data_dir / "plugins" / "gallings.tool.galagent" / "workspace"),
-        }
-
-    @app.get("/__host/saves")
-    async def host_get_saves() -> dict[str, Any]:
-        sdir = _host_save_dir()
-        data: dict[str, Any] = {}
-        for k in SAVE_KINDS:
-            f = sdir / f"{k}.json"
-            if f.is_file():
-                with contextlib.suppress(OSError, ValueError):
-                    data[k] = json.loads(f.read_text(encoding="utf-8"))
-        return {"ok": True, "save_dir": str(sdir), "data": data}
-
-    @app.post("/__host/saves")
-    async def host_post_saves(body: dict[str, Any]) -> dict[str, Any]:
-        sdir = _host_save_dir()
-        batch = body.get("batch") if isinstance(body.get("batch"), dict) else body
-        for k, v in batch.items():
-            if k in SAVE_KINDS:
-                tmp = sdir / f"{k}.json.tmp"
-                target = sdir / f"{k}.json"
-                tmp.write_text(json.dumps(v, ensure_ascii=False, indent=2), encoding="utf-8")
-                tmp.replace(target)
-        return {"ok": True, "save_dir": str(sdir)}
-
-    @app.get("/__host/llm")
-    async def host_get_llm() -> dict[str, Any]:
-        s = await get_settings()
-        llm = s["llm"]
-        return {
-            "ok": True,
-            "full_backend": True,
-            "provider": llm.get("provider", "openai-compat"),
-            "providers": llm.get("providers", []),
-            "base_url": llm["base_url"],
-            "model": llm["model"],
-            "has_key": llm["key_set"],
-            "key_set": llm["key_set"],
-            "key_tail": llm["key_tail"],
-            "llm_ready": s["llm_ready"],
-            "memory": s["memory"],
-            "memory_ready": s["memory_ready"],
-            "memory_active": s["memory_active"],
-            "tools": s["tools"],
-        }
-
-    @app.post("/__host/llm")
-    async def host_post_llm(body: dict[str, Any]) -> dict[str, Any]:
-        patch: dict[str, Any] = {"llm": {}}
-        for k in ("provider", "base_url", "model"):
-            if body.get(k):
-                patch["llm"][k] = str(body[k]).strip()
-        if body.get("clear_key") or body.get("api_key") == "__clear__":
-            patch["llm"]["api_key"] = ""
-        elif body.get("api_key"):
-            patch["llm"]["api_key"] = str(body["api_key"]).strip()
-        if isinstance(body.get("memory"), dict):
-            patch["memory"] = body["memory"]
-        await post_settings(patch)
-        return await host_get_llm()
-
-    @app.post("/__host/window")
-    async def host_window(body: dict[str, Any]) -> dict[str, Any]:
-        action = str(body.get("action") or "")
-        sdir = _host_save_dir()
-        if action == "open_save_dir":
-            with contextlib.suppress(Exception):
-                if sys.platform.startswith("win"):
-                    subprocess.Popen(["explorer.exe", str(sdir)])
-                elif sys.platform == "darwin":
-                    subprocess.Popen(["open", str(sdir)])
-                else:
-                    subprocess.Popen(["xdg-open", str(sdir)])
-            return {"ok": True, "save_dir": str(sdir)}
-        return {"ok": False, "delegate": True}
-
-    @app.post("/api/settings/test")
-    async def test_llm() -> dict[str, Any]:
-        """用当前设置真调一次模型：回一句话就算通。"""
-        from server.director.llm import complete
-        r = rt()
-        if not r.llm_chain():
-            return {"ok": False, "message": "没有可用的模型（没填密钥，或插件没启动）"}
-        try:
-            res = await complete(r.llm_chain(), [{"role": "user", "content": "只回复两个字：在呢"}], timeout=30, max_tokens=32)
-        except Exception as e:  # noqa: BLE001
-            return {"ok": False, "message": str(e)[:200]}
-        return {"ok": bool(res.text.strip()), "message": res.text.strip()[:40] or "模型连上了，但只返回了空内容（可能是思考模式把字数用完了）"}
 
     # ---------------------------------------------------------------- 灵枢外部端口（VN Studio 手账）
     @app.websocket("/ws/soul")

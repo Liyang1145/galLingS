@@ -1,4 +1,4 @@
-# 单文件试玩版（含对白账本）：把作品文件夹（content/imports/vnstudio/海风与布丁）的素材全部内嵌成一个 HTML。
+# 单文件试玩版（含对白账本）：把作品文件夹（海风与布丁）的素材全部内嵌成一个 HTML。
 # 文件约 160MB，超过 GitHub 普通文件 100MB 上限，所以不进仓库，由本 workflow 构建后放到预发布 html-playtest 的附件。
 # 设置与本地一致：tools/build_playtest_html.py 默认参数（不透明图 ≤1600、透明图 ≤1280 转 webp，音频原样），Python 3.12 + Pillow 13.0.0。
 name: playtest-html
@@ -27,7 +27,7 @@ jobs:
         with:
           sparse-checkout: |
             tools
-            content/imports/vnstudio
+            海风与布丁
           sparse-checkout-cone-mode: true
       - uses: actions/setup-python@v6
         with:
@@ -36,7 +36,7 @@ jobs:
         run: |
           pip install "pillow==13.0.0"
           mkdir -p out
-          python tools/build_playtest_html.py out/haifeng-pudding-playtest.html "content/imports/vnstudio/海风与布丁"
+          python tools/build_playtest_html.py out/haifeng-pudding-playtest.html "海风与布丁"
           ls -l out
           sha256sum out/haifeng-pudding-playtest.html | tee out/sha256.txt
       - name: 预发布附件

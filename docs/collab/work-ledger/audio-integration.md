@@ -3,7 +3,7 @@
 - 音乐负责人：@Liyang1145。音效制作方的 GitHub 联系人待补。
 - 状态：待依赖 / 本地探索；作者最新完整包现已交付，等待按新包核对正式音乐接入。
 - 记录时间：2026-10-13。
-- 仓库证据：[音乐方向](../../content/music-direction.md)、[音乐元数据](../../../content/audio/manifest.yaml)。
+- 仓库证据：[音乐方向](../../content/music-direction.md)、[音乐元数据](../../../content/audio-records/manifest.yaml)。
 - 当前新任务执行 agent、工作分支：接手时补充，不把本记录当成已认领任务。
 
 ## 已有成果

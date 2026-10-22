@@ -36,6 +36,16 @@ def resolve_games_dir(config: dict[str, Any]) -> Path:
     return directory
 
 
+def resolve_vn_game_dir(games_dir: Path, vn_game: str) -> Path:
+    """解析单个 VN Studio 作品目录，兼容单作品直铺（games_dir 下直接有 index.html）与多作品子目录。"""
+    candidate = games_dir / vn_game if vn_game else games_dir
+    if (candidate / "index.html").is_file():
+        return candidate
+    if (games_dir / "index.html").is_file():
+        return games_dir
+    return candidate
+
+
 def load_config(path: Path | None = None) -> dict[str, Any]:
     env = os.environ.get("GALLINGS_CONFIG")
     for p in [path, Path(env) if env else None, ROOT / "config.yaml", ROOT / "config.example.yaml"]:
@@ -61,7 +71,7 @@ class Runtime:
             if vn_game:
                 # 一个游戏：VN Studio 作品经导入器变成 OP 程序，由 galcore 跑（PLAN §16.1 importer）
                 from compiler.vnstudio import ensure_imported
-                self.chapter_path = ensure_imported(self.games_dir / vn_game, self.data_dir / "imports")
+                self.chapter_path = ensure_imported(resolve_vn_game_dir(self.games_dir, str(vn_game)), self.data_dir / "imports")
             else:
                 self.chapter_path = ensure_chapter(cdir)
             self.chapter = load_chapter_file(self.chapter_path)

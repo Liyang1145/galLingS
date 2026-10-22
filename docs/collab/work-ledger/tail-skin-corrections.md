@@ -33,14 +33,14 @@ L10本轮复查为已去伤痕版本；原件中退选旧擦伤稿不能恢复�
 
 每张旧PNG、提示词和原生成/生产记录保存为`*_rejected_*`；开发库标记“退选留档”，引用0句，不自动恢复。新图审核绑定新SHA；PNG母版、runtime及游戏WebP同步；P09眼位不变，只更新acting-frames源SHA。原制作清单JSON/CSV/Markdown和当前overrides已明确“情绪受伤、皮肤无外伤”，避免后续再把文意画成伤疤。
 
-图像对照：[审核目录](../../../content/assets/art-upgrade/review/tail-skin-corrections/)。[源图、运行副本与逐句引用清单](../../../content/assets/art-upgrade/tail-skin-corrections.json)。接口/素材ID、角色动作、站位与场景光色均不改；无需改动game.js。队友接续不要调用整体剧情重装脚本覆盖写诗C08和柜台C26。
+图像对照：[审核目录](../../../A素材库/art-upgrade/review/tail-skin-corrections/)。[源图、运行副本与逐句引用清单](../../../A素材库/art-upgrade/tail-skin-corrections.json)。接口/素材ID、角色动作、站位与场景光色均不改；无需改动game.js。队友接续不要调用整体剧情重装脚本覆盖写诗C08和柜台C26。
 
 ## 验证结果
 
 - 原始3308个ID与新增7句保留；本轮3315句所有字段相对`7c50dd2`逐项相等，103项音频元数据相等，音频文件不动；此前写诗13句统一C08、柜台5句统一C26继续通过。
 - 133项当前审核通过；118个播放视觉ID中116个为新图，另2个原文泳装ID继续人工处理；无WAV运行资产。
 - 开发库476项/648个生产图像文件。三项正在播放的新图和O11备用的库内文件SHA均匹配新WebP；四项实际调用、撤销成功；四份错误原件均为退选、0引用。
-- Edge实机复核C12/C18/P09并截图；单文件断网启动、全部118张播放图片解码、新三图内嵌字节SHA核对通过。场景融合58项检查通过，浏览器错误0。[针对性验证](../../../content/assets/art-upgrade/review/tail-skin-corrections/focused-validation.json)、[场景兼容验证](../../../content/assets/art-upgrade/review/tail-skin-corrections/scene-integration-validation.json)。
+- Edge实机复核C12/C18/P09并截图；单文件断网启动、全部118张播放图片解码、新三图内嵌字节SHA核对通过。场景融合58项检查通过，浏览器错误0。[针对性验证](../../../A素材库/art-upgrade/review/tail-skin-corrections/focused-validation.json)、[场景兼容验证](../../../A素材库/art-upgrade/review/tail-skin-corrections/scene-integration-validation.json)。
 - 本地单文件已重新生成并同步常用入口，157,639,481字节，SHA-256 `d072af8a942b46d9139799eb5f9473dda195050b34f80f0ac3c18747b110674d`。大HTML只保存在本地outputs，不加入Git；仓库保留源素材和重建工具。
 
 本轮四项没有生成失败。P16戒指与L17/L18/C23原文泳装仍按既定人工缺口处理；涉水遮挡、其他服饰动作及定向光等此前缺口仍见[场景融合审核](../../content/art-production/角色与场景融合审核.md)。本轮完成不等于整部作品美术已最终验收。

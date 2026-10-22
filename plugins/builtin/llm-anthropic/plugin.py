@@ -8,6 +8,7 @@ from typing import Any, AsyncIterator
 import httpx
 
 from server.plugins import ChatMessage, ChatRequest, Error, LLMEvent, LLMPlugin, TextDelta, ToolCallDelta, ToolCallDone, Usage
+from server.plugins.sse import http_status_error, iter_sse_json
 
 
 def _convert_messages(messages: list[ChatMessage]) -> tuple[str, list[dict[str, Any]]]:
@@ -106,21 +107,9 @@ class AnthropicLLM(LLMPlugin):
         try:
             async with self._client.stream("POST", "/v1/messages", json=body) as resp:
                 if resp.status_code != 200:
-                    text = (await resp.aread()).decode("utf-8", "replace")[:200]
-                    code = {401: "auth", 403: "auth", 429: "rate_limit"}.get(resp.status_code, "unknown")
-                    yield Error(code, f"HTTP {resp.status_code}: {text}", retryable=resp.status_code in (429, 500, 502, 503))
+                    yield await http_status_error(resp)
                     return
-                async for raw in resp.aiter_lines():
-                    line = raw.strip()
-                    if not line.startswith("data:"):
-                        continue
-                    payload = line[5:].strip()
-                    if not payload or payload == "[DONE]":
-                        continue
-                    try:
-                        ev = json.loads(payload)
-                    except json.JSONDecodeError:
-                        continue
+                async for ev in iter_sse_json(resp):
                     etype = ev.get("type")
                     if etype == "error":
                         err = ev.get("error") or {}

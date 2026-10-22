@@ -39,7 +39,7 @@
 
 ## 仓库其他说明
 - [tools/README.md](../tools/README.md) — 脚本索引 · [生图与配音工作流已转本地](collab/work-ledger/local-production-workflows-20261020.md)
-- [content/README.md](../content/README.md) · [content/assets/README.md](../content/assets/README.md) — 剧本、角色卡、素材库
+- [content/README.md](../content/README.md) · [content/assets/README.md](../A素材库/README.md) — 剧本、角色卡、素材库
 - [plugins/builtin/galagent/README.md](../plugins/builtin/galagent/README.md) · [content/vn_plugins/README.md](../content/vn_plugins/README.md) — GalAgent 与作品插件
 - [tests/evals/README.md](../tests/evals/README.md) — 评测集
 - `archive/deliveries/*/README.md` — 各次交付原件清单（历史）

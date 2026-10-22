@@ -9,4 +9,4 @@
 
 自动测试76通过、2跳过。只读素材API与保存项目打包有边界测试；真实云端聊天、音乐听感、画风统一和OS文件夹授权写入仍待人工验收。
 
-使用与交接见 [开发说明](../../../docs/design/art-editor.md)，兼容范围见 [任务记录](../../../docs/collab/work-ledger/art-editor-library.md)。
+使用与交接见 [开发说明](../../../../docs/design/art-editor.md)，兼容范围见 [任务记录](../../../../docs/collab/work-ledger/art-editor-library.md)。

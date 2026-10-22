@@ -4,6 +4,6 @@
 
 下载仓库后打开 [场景素材浏览.html](场景素材浏览.html) 查看缩略图、原图和对话框遮挡；[审核说明](场景素材说明与审核.md)、[清单](场景素材清单.csv)、[来源台账](场景素材台账.json) 和 `prompts/` 可供制作核对。
 
-`originals/` 保存PNG原件；游戏在 `content/imports/vnstudio/海风与布丁/assets/bg/scenes/` 使用1280×720 WebP。40张已分配给剧情，B18、B32、O01、O02暂为备用。接入映射见 [背景接入映射.json](背景接入映射.json)，具体验证见 [装配记录](../../../docs/collab/work-ledger/local-scene-audio-assembly.md)。
+`originals/` 保存PNG原件；游戏在 `content/imports/vnstudio/海风与布丁/assets/bg/scenes/` 使用1280×720 WebP。40张已分配给剧情，B18、B32、O01、O02暂为备用。接入映射见 [背景接入映射.json](背景接入映射.json)，具体验证见 [装配记录](../../docs/collab/work-ledger/local-scene-audio-assembly.md)。
 
 生成请求指定gpt-image-2.5-flare，后端未返回实际模型ID。保留回执但不声称模型路由已验证。探索稿，不是发行版本。

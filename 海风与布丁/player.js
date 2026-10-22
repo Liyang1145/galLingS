@@ -479,6 +479,10 @@ async function exportGameFolder() {
 function gameFolderFiles(assets, source, project) {
   const src = source || window.VN_SOURCE_HTML || ORIGINAL_HTML;
   const data = JSON.stringify(Object.assign({}, project || P, { recent: undefined, cur: 0, assets })).replace(/</g, '\\u003c');
+  const extTag = '<script src="game.js"><\/script>';
+  if (src.includes(extTag)) return { 'index.html': src, 'game.js': '// 由 VN Studio 导出\nwindow.VN_GAME = ' + data + ';\n' };
+  const pTag = '<script src="player.js"><\/script>', pIdx = src.indexOf(pTag);
+  if (pIdx >= 0) return { 'index.html': src.slice(0, pIdx) + extTag + '\n' + src.slice(pIdx), 'game.js': '// 由 VN Studio 导出\nwindow.VN_GAME = ' + data + ';\n' };
   const marker = '<script>\n\'use strict\';', i = src.indexOf(marker);
   if (i < 0) throw new Error('找不到播放器代码');
   const html = src.slice(0, i) + '<script src="game.js"><\/script>\n' + src.slice(i);
@@ -2797,6 +2801,10 @@ async function exportGame() {
 function buildGameHtml(proj) {
   const src = window.VN_SOURCE_HTML || ORIGINAL_HTML;
   const data = JSON.stringify(Object.assign({}, proj || P, { recent: undefined, cur: 0 }), (k, v) => k === '_inline' || k === 'file' ? undefined : v).replace(/</g, '\\u003c');
+  const extTag = '<script src="game.js"><\/script>', extIdx = src.indexOf(extTag);
+  if (extIdx >= 0) return src.slice(0, extIdx) + '<script>window.VN_GAME=' + data + ';<\/script>' + src.slice(extIdx + extTag.length);
+  const pTag = '<script src="player.js"><\/script>', pIdx = src.indexOf(pTag);
+  if (pIdx >= 0) return src.slice(0, pIdx) + '<script>window.VN_GAME=' + data + ';<\/script>\n' + src.slice(pIdx);
   const marker = '<script>\n\'use strict\';';
   const i = src.indexOf(marker);
   if (i < 0) return null;

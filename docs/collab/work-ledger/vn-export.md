@@ -4,7 +4,7 @@
 - 状态：已交付、已验证独立作品；正式音乐/后端集成待核对。
 - 更新时间：2026-10-13。
 - 本次提交分支：`delivery/larry-latest-game`，基线 `661bfb9`。
-- 交付入口：[原件清单](../../../archive/deliveries/larry-vn/README.md)、[验证结果](../../../archive/deliveries/larry-vn/validation.json)。
+- 交付入口：[原件清单](../../../A素材库/归档/deliveries/larry-vn/README.md)、[验证结果](../../../A素材库/归档/deliveries/larry-vn/validation.json)。
 
 ## 已有证据
 

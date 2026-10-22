@@ -31,7 +31,7 @@ sys.path.insert(0, str(ROOT))
 
 from compiler.vnstudio import ensure_imported  # noqa: E402
 from server.content import CardStore, load_chapter_file  # noqa: E402
-from server.runtime import load_config, resolve_games_dir  # noqa: E402
+from server.runtime import load_config, resolve_games_dir, resolve_vn_game_dir  # noqa: E402
 
 WASM_DEFAULT = ROOT / "core" / "target" / "wasm32-unknown-unknown" / "release" / "galcore.wasm"
 OFFLINE_HEAD = (
@@ -63,8 +63,8 @@ def main(argv: list[str] | None = None) -> int:
     cfg = load_config()
     game = cfg.get("game") or {}
     games_dir = resolve_games_dir(cfg)
-    vn_game = str(game.get("vn_game") or "")
-    src_game = games_dir / vn_game
+    vn_game = str(game.get("vn_game") or games_dir.name)
+    src_game = resolve_vn_game_dir(games_dir, vn_game)
     if not vn_game or not (src_game / "index.html").is_file():
         print(f"找不到作品：{src_game}（config.yaml 的 game.vn_game）", file=sys.stderr)
         return 1

@@ -22,7 +22,7 @@
    - 游戏内「设置」（`#psettings`）新增「Steam 桌面版与 AI 接入」分区：支持全屏切换、打开本地存档文件夹、切换「纯选项 / AI 模式（可自己说）」、配置并测试任意 OpenAI 兼容 API（DeepSeek / OpenAI / 本地 Ollama 等）。
    - `web/offline/local-session.js` 补齐离线 `galcore.wasm` 下的 `mode = 'ai'` 与 `type: 'input'`（支持字面选项匹配、大模型意图分类与即兴回复、`turn_begin` / `say` / `shift_affection` / `turn_commit` 完整引擎结算）。
    - 灵枢手账悄悄话在未连 Python 后端但已填 API Key 时自动走 `GallingsLLM` 生成角色回复，未填 Key 时无缝回退离线手账。
-3. **修复待办 B08：结局卡与标题画面的 GalAgent 结局后聊天入口（[plugins/builtin/galagent/web/galagent-ui.js](../../../plugins/builtin/galagent/web/galagent-ui.js)、[plugins/builtin/galagent/web/vnplugin.src.js](../../../plugins/builtin/galagent/web/vnplugin.src.js)、[content/imports/vnstudio/海风与布丁/index.html](../../../content/imports/vnstudio/海风与布丁/index.html)）**
+3. **修复待办 B08：结局卡与标题画面的 GalAgent 结局后聊天入口（[plugins/builtin/galagent/web/galagent-ui.js](../../../plugins/builtin/galagent/web/galagent-ui.js)、[plugins/builtin/galagent/web/vnplugin.src.js](../../../plugins/builtin/galagent/web/vnplugin.src.js)、[content/imports/vnstudio/海风与布丁/index.html](../../../海风与布丁/index.html)）**
    - `galagent-ui.js` 新增 `DirectClient`（内置 JS 版 `StreamSplitter` 解析 `<think>` 与 `<emotion>`，支持流式对话、前端工具 `get_vars`/`set_var`/`play_se` 以及 Tauri 桌面工具 `get_time`/`list_dir`/`read_file`/`write_file`/`powershell` 审批流），并丰富未配 Key 时 `MockClient` 的鲸鱼小姐角色化回复。
    - `vnplugin.src.js` 除结局卡按钮外，新增标题画面入口 `vn.ui.addTitleButton({ label: '和鲸鱼小姐聊聊', ... })`；从标题画面进入时自动布置舞台背景与鲸鱼小姐立绘，退出时返回标题画面（从结局卡进入时退出仍回结局卡）。
    - 打包同步 `content/imports/vnstudio/海风与布丁/galagent.vnplugin.js`，并在作品 `index.html` 的 `loadHost()` 中支持非托管游戏模式（直接打开作品 `index.html`）自动挂载同目录 `galagent.vnplugin.js`，彻底解决 B08。

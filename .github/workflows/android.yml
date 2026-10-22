@@ -1,10 +1,10 @@
-# 安卓试玩包：把作品文件夹（content/imports/vnstudio/海风与布丁）装进 WebView 外壳 → APK。
+# 安卓试玩包：把作品文件夹（海风与布丁）装进 WebView 外壳 → APK。
 # 产物：Actions → 本次运行 → Artifacts → haifeng-pudding-android；同时更新预发布 android-playtest 的附件。
 name: android
 on:
   push:
     branches: [fix/character-performance]
-    paths: ["mobile/**", "content/imports/vnstudio/**", ".github/workflows/android.yml"]
+    paths: ["mobile/**", "海风与布丁/**", ".github/workflows/android.yml"]
   workflow_dispatch:
 
 permissions:
@@ -18,7 +18,7 @@ jobs:
         with:
           sparse-checkout: |
             mobile
-            content/imports/vnstudio
+            海风与布丁
           sparse-checkout-cone-mode: true
       - uses: actions/setup-python@v6
         with:
@@ -33,7 +33,7 @@ jobs:
       - name: 素材
         run: |
           pip install pillow
-          python mobile/prepare_assets.py "content/imports/vnstudio/海风与布丁" mobile/android
+          python mobile/prepare_assets.py "海风与布丁" mobile/android
       - name: 打包
         working-directory: mobile/android
         env:

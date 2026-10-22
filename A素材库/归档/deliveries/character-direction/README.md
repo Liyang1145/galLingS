@@ -1,6 +1,6 @@
 # 本地角色演出精修与坐姿返工核对
 
-执行基线`c9f0be4`。`before-game.js`与`before-index.html`为该提交原始字节，后续文案、节点ID、分支与103音频保持不变。完整过程、接口、人工缺口和验证边界见[本轮台账](../../../docs/collab/work-ledger/character-direction.md)。
+执行基线`c9f0be4`。`before-game.js`与`before-index.html`为该提交原始字节，后续文案、节点ID、分支与103音频保持不变。完整过程、接口、人工缺口和验证边界见[本轮台账](../../../../docs/collab/work-ledger/character-direction.md)。
 
 - `退选_交腿坐姿.jpg`：用户指出大腿结构异常、P16裙摆破口的旧候选。**已退选，不是当前采用图。**对应PNG与回传在美术原件目录的`*_rejected_anatomy`文件中保留。
 - `坐姿修正_全身与裙摆.jpg`：当前并膝母图派生的P13/P15/P16/P17，全身与裙摆局部对照。第二张旧裙摆破口已去掉；P16的戒指缺失仍明确标注，局部补画被接口拒绝，未绕过重试。

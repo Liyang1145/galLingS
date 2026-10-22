@@ -8,7 +8,7 @@ import httpx
 
 from server.plugins import ChatRequest, Error, LLMEvent, LLMPlugin, Usage
 
-from .sse import StreamNormalizer
+from .sse import StreamNormalizer, http_status_error
 
 
 def _message(m) -> dict[str, Any]:
@@ -49,9 +49,7 @@ class OpenAICompatLLM(LLMPlugin):
         try:
             async with self._client.stream("POST", "/chat/completions", json=body) as resp:
                 if resp.status_code != 200:
-                    text = (await resp.aread()).decode("utf-8", "replace")[:200]
-                    code = {401: "auth", 403: "auth", 429: "rate_limit"}.get(resp.status_code, "unknown")
-                    yield Error(code, f"HTTP {resp.status_code}: {text}", retryable=resp.status_code in (429, 500, 502, 503))
+                    yield await http_status_error(resp)
                     return
                 async for line in resp.aiter_lines():
                     for ev in norm.feed_line(line):

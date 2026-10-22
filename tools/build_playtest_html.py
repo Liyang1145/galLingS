@@ -59,6 +59,9 @@ html = html.replace('<link rel="stylesheet" href="game-polish.css">', '<style>\n
 html = html.replace('<title>VN Studio</title>', '<title>海风与布丁 · 试玩版（含对白账本）</title>', 1)
 assert '<script src="game.js"></script>' in html
 pre, post = html.split('<script src="game.js"></script>', 1)
+if os.path.exists(f'{G}/player.js') and '<script src="player.js"></script>' in post:
+    player_code = open(f'{G}/player.js', encoding='utf-8').read().replace('</script', '<\\/script')
+    post = post.replace('<script src="player.js"></script>', '<script>\n' + player_code + '\n</script>', 1)
 i = post.rfind('</body>')
 out = sys.argv[1] if len(sys.argv) > 1 else 'out.html'
 with open(out, 'w', encoding='utf-8') as f:

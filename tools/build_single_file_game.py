@@ -57,7 +57,8 @@ def build(output: Path, project_file: Path | None = None) -> dict:
             if urlparse(src).scheme or src.startswith("/"):
                 raise ValueError(f"Unsupported media URL; use the repository libraryPath: {src}")
             path = (GAME / src).resolve()
-        if (ROOT / "content").resolve() not in path.parents or not path.is_file():
+        allowed_roots = (GAME.resolve(), (ROOT / "content").resolve(), (ROOT / "A素材库").resolve())
+        if not any(r in path.parents for r in allowed_roots) or not path.is_file():
             raise ValueError(f"Missing or unsafe media path: {library_path or src}")
         # Windows registry MIME entries may omit WebP or override its media type.
         mime = MEDIA_MIME.get(path.suffix.lower()) or mimetypes.guess_type(path.name)[0] or "application/octet-stream"
@@ -77,6 +78,10 @@ def build(output: Path, project_file: Path | None = None) -> dict:
     css = re.sub(r'url\("([^\"]+)"\)', lambda m: 'url("' + embed(m[1]) + '")', css)
     html = html.replace('<link rel="stylesheet" href="game-polish.css">', "<style>" + css + "</style>")
     html = html.replace('<script src="game.js"></script>', '<script>window.VN_GAME=' + json.dumps(project, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c") + ';</script>')
+    player_js = GAME / "player.js"
+    if player_js.is_file() and '<script src="player.js"></script>' in html:
+        pcode = player_js.read_text(encoding="utf-8").replace("</script", "<\\/script")
+        html = html.replace('<script src="player.js"></script>', f"<script>\n{pcode}\n</script>", 1)
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(html, encoding="utf-8")
     manifest = {"entry":output.name, "sha256": hashlib.sha256(output.read_bytes()).hexdigest(),

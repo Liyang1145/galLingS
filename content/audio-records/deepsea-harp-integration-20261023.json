@@ -1,0 +1,847 @@
+{
+  "date": "2026-10-23",
+  "baselineCommit": "4f30823d68125a46488591bf67da22871172c3f9",
+  "title": "弦间的流光",
+  "asset": {
+    "id": "bgm_e2_deepsea_harp",
+    "type": "bgm",
+    "name": "弦间的流光",
+    "src": "assets/bgm/bgm_e2_deepsea_harp.mp3",
+    "dur": 207.200884,
+    "audioCategory": "music",
+    "auditionOnly": false,
+    "playbackGain": 1.0,
+    "sourceAuthor": "Liyang1145",
+    "sourceCurrentPath": "A素材库/audio/bgm/bgm_e2_deepsea_harp.mp3",
+    "sourceOriginalFilename": "竖琴深海.wav",
+    "sourceOriginalSha256": "7436b1b818266687757f0219258e8fb3dd8eb749c76ccb81ec92fb75f9196c4e",
+    "sourceSha256": "3f200bbe69863b75966d1f3461f8ada9d06e56d5a5ee78bea6cb8c584e6b9f7d",
+    "purposeStatus": "scene-mapped",
+    "musicFamily": "deepsea-light",
+    "variant": "harp",
+    "integrationRecord": "content/audio-records/deepsea-harp-integration-20261023.json"
+  },
+  "sourceFilename": "竖琴深海.wav",
+  "sourceSha256": "7436b1b818266687757f0219258e8fb3dd8eb749c76ccb81ec92fb75f9196c4e",
+  "sourceOriginalPreserved": true,
+  "runtimePath": "海风与布丁/assets/bgm/bgm_e2_deepsea_harp.mp3",
+  "archivePath": "A素材库/audio/bgm/bgm_e2_deepsea_harp.mp3",
+  "encodedSha256": "3f200bbe69863b75966d1f3461f8ada9d06e56d5a5ee78bea6cb8c584e6b9f7d",
+  "encodedBytes": 6251599,
+  "durationSeconds": 207.200884,
+  "playbackGain": 1.0,
+  "effectiveLufs": -18.03,
+  "effectiveTruePeakDbtp": -3.03,
+  "processing": "libmp3lame -q:a 0; original sample rate/channels retained; no trim, time stretch or waveform loudness normalization; playback attenuation only",
+  "loopPointsEdited": false,
+  "status": "integrated-awaiting-music-owner-listening",
+  "cues": [
+    {
+      "startIndex": 662,
+      "endExclusive": 793,
+      "startLineId": "h356tshs",
+      "lastLineId": "gslauykp",
+      "endBoundaryLineId": "kd5wxs1m",
+      "nodeCount": 131,
+      "reason": "第五话原稿明确指定深海主题竖琴版；从夜间写诗、藏头诗与后天还来，连续经过尾奏、帐篷记录、章末和第六话讲述前引子，至E7独白既有切点结束，避免只插15句T4再切E7。"
+    }
+  ],
+  "nodeChanges": [
+    {
+      "index": 662,
+      "lineId": "h356tshs",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 663,
+      "lineId": "b9l98qf4",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 664,
+      "lineId": "r69b4om4",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 665,
+      "lineId": "xg5du52u",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 666,
+      "lineId": "kn774t2s",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 667,
+      "lineId": "02ovcg4n",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 668,
+      "lineId": "atzjfh2r",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 669,
+      "lineId": "u0q2g08i",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 670,
+      "lineId": "7zz02992",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 671,
+      "lineId": "el7s8bw4",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 672,
+      "lineId": "js6oscye",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 673,
+      "lineId": "fy8wiiit",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 674,
+      "lineId": "m9cu1k5u",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 675,
+      "lineId": "vyt7l05e",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 676,
+      "lineId": "qcg3brjp",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 677,
+      "lineId": "7xv7j9ll",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 678,
+      "lineId": "328r2a4x",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 679,
+      "lineId": "umvmp756",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 680,
+      "lineId": "lyq8ajvo",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 681,
+      "lineId": "97qtxass",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 682,
+      "lineId": "v1wnoebx",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 683,
+      "lineId": "c3viafv4",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 684,
+      "lineId": "gwlgzqbs",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 685,
+      "lineId": "rc6edv7a",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 686,
+      "lineId": "ky2bo9j3",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 687,
+      "lineId": "zv7uxy3y",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 688,
+      "lineId": "pznzusjq",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 689,
+      "lineId": "i0nn5u0t",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 690,
+      "lineId": "8ubbrr2y",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 691,
+      "lineId": "jfz8mbk1",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 692,
+      "lineId": "hp63bq6o",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 693,
+      "lineId": "alirttem",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 694,
+      "lineId": "s977dbzv",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 695,
+      "lineId": "frwsvm8y",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 696,
+      "lineId": "3ua9v325",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 697,
+      "lineId": "2ecib8lq",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 698,
+      "lineId": "smzkkqnd",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 699,
+      "lineId": "nq4gdwe3",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 700,
+      "lineId": "q6yhbg3w",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 701,
+      "lineId": "sx0w2ilt",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 702,
+      "lineId": "xxjgnyxp",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 703,
+      "lineId": "gr09w4yo",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 704,
+      "lineId": "9jdcvaw3",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 705,
+      "lineId": "jifyqa4p",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 706,
+      "lineId": "ks5nh1es",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 707,
+      "lineId": "a7qkea9z",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 708,
+      "lineId": "gt5easnp",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 709,
+      "lineId": "9mamop11",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 710,
+      "lineId": "rg4rkhr4",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 711,
+      "lineId": "cp31i7u2",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 712,
+      "lineId": "p8jn2vcp",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 713,
+      "lineId": "v0zc5ynb",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 714,
+      "lineId": "pm8x8v2h",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 715,
+      "lineId": "w5tu54ij",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 716,
+      "lineId": "jo5jwd6u",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 717,
+      "lineId": "8a3f78h1",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 718,
+      "lineId": "yojg9kqy",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 719,
+      "lineId": "ysnw9505",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 720,
+      "lineId": "yk9zdwh2",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 721,
+      "lineId": "bnjbwtuf",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 722,
+      "lineId": "55r4f9cz",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 723,
+      "lineId": "m0hp6vmo",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 724,
+      "lineId": "poq7igb9",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 725,
+      "lineId": "yne4x64m",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 726,
+      "lineId": "w42mske9",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 727,
+      "lineId": "n9y1zqwt",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 728,
+      "lineId": "yczevjck",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 729,
+      "lineId": "2jhyzzxp",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 730,
+      "lineId": "yee8euhu",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 731,
+      "lineId": "k469ttqs",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 732,
+      "lineId": "en5kz0xa",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 733,
+      "lineId": "5ggqqa56",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 734,
+      "lineId": "n5sdjzbv",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 735,
+      "lineId": "emrkrsj9",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 736,
+      "lineId": "o0g82lj3",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 737,
+      "lineId": "81i5dfoy",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 738,
+      "lineId": "zj7zrfob",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 739,
+      "lineId": "3bu4bzeb",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 740,
+      "lineId": "8w0cxlr5",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 741,
+      "lineId": "ikzt81rv",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 742,
+      "lineId": "m6a5wh9r",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 743,
+      "lineId": "a1ba7s6w",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 744,
+      "lineId": "t3j0f0sc",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 745,
+      "lineId": "ki9zs3du",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 746,
+      "lineId": "ejcl1ehu",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 747,
+      "lineId": "u2behb5i",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 748,
+      "lineId": "cnl74prg",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 749,
+      "lineId": "lmq0apzi",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 750,
+      "lineId": "v1vc1n1l",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 751,
+      "lineId": "8xhndchn",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 752,
+      "lineId": "qsv3qy4i",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 753,
+      "lineId": "6ui1nn3h",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 754,
+      "lineId": "znxhnbic",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 755,
+      "lineId": "xhi458wd",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 756,
+      "lineId": "kpg5y070",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 757,
+      "lineId": "u03rcmtx",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 758,
+      "lineId": "j94wjdla",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 759,
+      "lineId": "m5dwwuss",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 760,
+      "lineId": "p325yj2w",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 761,
+      "lineId": "ajel2du7",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 762,
+      "lineId": "a1ua2a35",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 763,
+      "lineId": "os0jmr77",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 764,
+      "lineId": "iml2pc3h",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 765,
+      "lineId": "3oc2vhul",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 766,
+      "lineId": "7vx8cjgu",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 767,
+      "lineId": "ci0jp1y5",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 768,
+      "lineId": "9ej0v2wb",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 769,
+      "lineId": "7rrqs8e7",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 770,
+      "lineId": "7c3ba5p2",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 771,
+      "lineId": "5yj17qck",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 772,
+      "lineId": "rg28nggk",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 773,
+      "lineId": "ky4vn0u8",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 774,
+      "lineId": "451ibf00",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 775,
+      "lineId": "je7oecg7",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 776,
+      "lineId": "2gyvr32f",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 777,
+      "lineId": "fu1f83go",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 778,
+      "lineId": "qoupvn8d",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 779,
+      "lineId": "trlpezz9",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 780,
+      "lineId": "s29d23xy",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 781,
+      "lineId": "uvp6gcsp",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 782,
+      "lineId": "w7a9fozz",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 783,
+      "lineId": "dfnh1kkk",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 784,
+      "lineId": "buae3saj",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 785,
+      "lineId": "2w6niigg",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 786,
+      "lineId": "wgfz9zt0",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 787,
+      "lineId": "5gzyiwe1",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 788,
+      "lineId": "z27hum8d",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 789,
+      "lineId": "yp82nq1v",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 790,
+      "lineId": "dczebvib",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 791,
+      "lineId": "ndb4z7uv",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    },
+    {
+      "index": 792,
+      "lineId": "gslauykp",
+      "before": "bgm_atri_t4_night",
+      "after": "bgm_e2_deepsea_harp"
+    }
+  ],
+  "verification": {
+    "nodes": 3315,
+    "nodeIdOrderPreserved": true,
+    "nonBgmLineFieldsPreserved": true,
+    "allExistingAssetsPreserved": true,
+    "allOriginalSilencePreserved": true,
+    "mainPianoE4E7M2MappingsPreserved": true,
+    "unacceptedArtExcluded": true
+  },
+  "singleFileRebuilt": false
+}

@@ -1,6 +1,6 @@
 # 正式音乐曲名
 
-2026-10-22（Asia/Shanghai），音乐负责人 @Liyang1145 确认。以下 15 首仅使用正式标题，不加副标题；用途放在独立说明栏，不拼入曲名。
+2026-10-22（Asia/Shanghai），音乐负责人 @Liyang1145 确认首批曲名；2026-10-23 委托补入竖琴改编曲名。以下 16 首仅使用正式标题，不加副标题；用途放在独立说明栏，不拼入曲名。
 
 | 正式曲名 | 用途说明 | 稳定素材 ID |
 | --- | --- | --- |
@@ -8,6 +8,7 @@
 | [低语落在纸间](../../海风与布丁/assets/bgm/bgm_emerald_dream_piano.mp3) | 见面主题钢琴改编 | `bgm_emerald_dream_piano` |
 | [群星在此沉眠](../../海风与布丁/assets/bgm/bgm_e2_deepsea_main.mp3) | 深海定情主题（E2） | `bgm_e2_deepsea_main` |
 | [掌心的微光](../../海风与布丁/assets/bgm/bgm_e2_deepsea_piano.mp3) | 深海主题钢琴改编 | `bgm_e2_deepsea_piano` |
+| [弦间的流光](../../海风与布丁/assets/bgm/bgm_e2_deepsea_harp.mp3) | 深海主题纯竖琴改编；第五话海浪与诗句 | `bgm_e2_deepsea_harp` |
 | [潮声未曾作答](../../海风与布丁/assets/bgm/bgm_e4_sunset_wait.mp3) | 伤痛、退潮与等待（E4） | `bgm_e4_sunset_wait` |
 | [逐浪的晴日](../../海风与布丁/assets/bgm/bgm_m1_shallows_day.mp3) | 浅滩日常（M1，兼清晨/白天） | `bgm_m1_shallows_day` |
 | [澄蓝之下](../../海风与布丁/assets/bgm/atri/bgm_atri_m2_deep.mp3) | 普通深海空间（M2） | `bgm_atri_m2_deep` |

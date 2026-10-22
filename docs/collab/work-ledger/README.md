@@ -43,6 +43,7 @@
 - [current-art-gallery.md](current-art-gallery.md) — 仅当前使用图片的图库
 
 ## 音乐、音效、配音
+- [deepsea-harp-20261023.md](deepsea-harp-20261023.md) — 《弦间的流光》纯竖琴改编；第五话写诗至第六话讲述前连续接入
 - [music-titles-20261022.md](music-titles-20261022.md) — 15 首正式曲名确认，不加副标题；同步游戏资源、开发页与素材清单
 - [music-inventory-20261022.md](music-inventory-20261022.md) — 现用15个BGM文件、备用/停用与真实缺口；纠正旧音乐进度中的过时快照
 - [deepsea-emerald-piano-20261021.md](deepsea-emerald-piano-20261021.md) — 新深海主曲及深海/翡翠钢琴改编接入；Atri E2 暂时弃用，M2 保留

@@ -1,8 +1,9 @@
 {
-  "base": "51b0c75d26ca70ff6dff176072326164b03931da",
+  "base": "4f30823d68125a46488591bf67da22871172c3f9",
+  "updatedOn": "2026-10-23",
   "nodeCount": 3315,
-  "registered": 17,
-  "active": 15,
+  "registered": 18,
+  "active": 16,
   "silentNodes": 401,
   "tracks": [
     {
@@ -462,7 +463,7 @@
       "sourceSha256": "c9cb6b4816c9845f487431097e29a853dbc2683cd50127de7ab2dbd09c4cebe0",
       "purposeStatus": "scene-mapped",
       "directionDoc": "配乐定向文档 v1.1",
-      "usedNodes": 675,
+      "usedNodes": 544,
       "ranges": [
         [
           328,
@@ -470,7 +471,7 @@
         ],
         [
           643,
-          793
+          662
         ],
         [
           832,
@@ -516,7 +517,6 @@
       "chapters": [
         "第二话 · 暗号契约",
         "第四话 · 集市上的「我妻子」",
-        "第五话 · 海浪与诗句",
         "第六话 · 原来不是别人啊",
         "第七话 · 冒险家和海豚",
         "第八话 · 搬家",
@@ -719,7 +719,38 @@
       ],
       "runtimeRepoPath": "海风与布丁/assets/bgm/bgm_emerald_dream_piano.mp3",
       "runtimeGitBlob": "15f5059f0ac3f4174955005f8a831c978ae53ab7"
+    },
+    {
+      "id": "bgm_e2_deepsea_harp",
+      "type": "bgm",
+      "name": "弦间的流光",
+      "src": "assets/bgm/bgm_e2_deepsea_harp.mp3",
+      "dur": 207.200884,
+      "audioCategory": "music",
+      "auditionOnly": false,
+      "playbackGain": 1.0,
+      "sourceAuthor": "Liyang1145",
+      "sourceCurrentPath": "A素材库/audio/bgm/bgm_e2_deepsea_harp.mp3",
+      "sourceOriginalFilename": "竖琴深海.wav",
+      "sourceOriginalSha256": "7436b1b818266687757f0219258e8fb3dd8eb749c76ccb81ec92fb75f9196c4e",
+      "sourceSha256": "3f200bbe69863b75966d1f3461f8ada9d06e56d5a5ee78bea6cb8c584e6b9f7d",
+      "purposeStatus": "scene-mapped",
+      "musicFamily": "deepsea-light",
+      "variant": "harp",
+      "integrationRecord": "content/audio-records/deepsea-harp-integration-20261023.json",
+      "usedNodes": 131,
+      "ranges": [
+        [
+          662,
+          793
+        ]
+      ],
+      "chapters": [
+        "第五话 · 海浪与诗句",
+        "第六话 · 原来不是别人啊"
+      ],
+      "runtimeRepoPath": "海风与布丁/assets/bgm/bgm_e2_deepsea_harp.mp3",
+      "runtimeGitBlob": "722d0da2898c56c44417372bb63a20c6115c012a"
     }
-  ],
-  "titlesConfirmedOn": "2026-10-22"
+  ]
 }

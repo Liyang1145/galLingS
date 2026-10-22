@@ -1,0 +1,21 @@
+{
+  "id": "bgm_e2_deepsea_harp",
+  "title": "弦间的流光",
+  "titleStatus": "named-by-authorized-agent",
+  "selectedBy": "Liyang1145",
+  "selectedOn": "2026-10-23",
+  "role": "深海主题纯竖琴改编，第五话海浪与诗句",
+  "archivePath": "A素材库/audio/bgm/bgm_e2_deepsea_harp.mp3",
+  "runtimePath": "海风与布丁/assets/bgm/bgm_e2_deepsea_harp.mp3",
+  "originalFilename": "竖琴深海.wav",
+  "sourceSha256": "7436b1b818266687757f0219258e8fb3dd8eb749c76ccb81ec92fb75f9196c4e",
+  "sha256": "3f200bbe69863b75966d1f3461f8ada9d06e56d5a5ee78bea6cb8c584e6b9f7d",
+  "bytes": 6251599,
+  "durationSeconds": 207.200884,
+  "playbackGain": 1.0,
+  "measuredLUFS": -18.03,
+  "measuredTruePeakDbtp": -3.03,
+  "processing": "libmp3lame -q:a 0; original sample rate/channels retained; no trim, time stretch or waveform loudness normalization; playback attenuation only",
+  "seamlessLoopPrepared": false,
+  "integrationRecord": "content/audio-records/deepsea-harp-integration-20261023.json"
+}

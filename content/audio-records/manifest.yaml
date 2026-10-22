@@ -1,6 +1,6 @@
 # Music metadata. Stable asset IDs and file paths are retained; titles confirmed on 2026-10-22.
 schema_version: 1
-updated: "2026-10-22"
+updated: "2026-10-23"
 tracks:
   - id: bgm_emerald_dream_main_v01
     title: 潮汐捎来的相逢
@@ -247,3 +247,21 @@ tracks:
     duration_seconds: 198.0
     sha256: c9cb6b4816c9845f487431097e29a853dbc2683cd50127de7ab2dbd09c4cebe0
     playback_gain: 0.78524
+
+  - id: bgm_e2_deepsea_harp
+    title: 弦间的流光
+    role: deepsea_theme_harp_arrangement
+    status: selected_scene_track
+    selected_on: "2026-10-23"
+    selected_by: Liyang1145
+    source_author: Liyang1145
+    original_filename: 竖琴深海.wav
+    file: ../../A素材库/audio/bgm/bgm_e2_deepsea_harp.mp3
+    sha256: 3f200bbe69863b75966d1f3461f8ada9d06e56d5a5ee78bea6cb8c584e6b9f7d
+    source_sha256: 7436b1b818266687757f0219258e8fb3dd8eb749c76ccb81ec92fb75f9196c4e
+    duration_seconds: 207.200884
+    playback_gain: 1.0
+    loop_start: null
+    loop_end: null
+    seamless_loop_prepared: false
+    integration_record: deepsea-harp-integration-20261023.json

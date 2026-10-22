@@ -1,0 +1,68 @@
+{
+  "base": "4f30823d68125a46488591bf67da22871172c3f9",
+  "title": "弦间的流光",
+  "assetId": "bgm_e2_deepsea_harp",
+  "playback": {
+    "errors": [],
+    "branches": [
+      {
+        "choiceAt": 678,
+        "target": 679,
+        "sameMusicElement": true
+      },
+      {
+        "choiceAt": 678,
+        "target": 687,
+        "sameMusicElement": true
+      },
+      {
+        "choiceAt": 678,
+        "target": 690,
+        "sameMusicElement": true
+      },
+      {
+        "choiceAt": 714,
+        "target": 715,
+        "sameMusicElement": true
+      },
+      {
+        "choiceAt": 714,
+        "target": 733,
+        "sameMusicElement": true
+      },
+      {
+        "choiceAt": 714,
+        "target": 739,
+        "sameMusicElement": true
+      }
+    ],
+    "decodedPlayback": {
+      "id": "bgm_e2_deepsea_harp",
+      "duration": 207.200884,
+      "volume": 0.35,
+      "expectedVolume": 0.35,
+      "loop": true,
+      "error": null
+    },
+    "crossLineAndChapterNoRestart": true,
+    "savedAudioRestore": {
+      "id": "bgm_e2_deepsea_harp",
+      "time": 37.847058
+    },
+    "wholeFileLoopWrap": true,
+    "E7BoundaryAndOutgoingStopped": true,
+    "existingMainPianoM2E4StillPlay": true,
+    "stopAllWorks": true
+  },
+  "fullBrowserRegression": {
+    "nodes": 3315,
+    "nbad": 0,
+    "nerrs": 0
+  },
+  "markdownLinkScope": "changed documents checked against exact publication tree",
+  "markdownLinkCheck": "检查链接 134 条，断链 0 条",
+  "sourceWavPreserved": true,
+  "archiveAndRuntimeIdentical": true,
+  "seamlessLoopPrepared": false,
+  "passed": true
+}

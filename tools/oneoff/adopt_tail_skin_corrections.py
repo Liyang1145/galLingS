@@ -12,6 +12,7 @@ import subprocess
 import sys as _sys, pathlib as _pl
 _sys.path.insert(0, str(_pl.Path(__file__).resolve().parents[1]))  # tools/
 
+import game_data
 from compress_art_upgrade import build as compress
 from produce_art_upgrade import ART, GAME, ROOT, output, record, save
 
@@ -126,8 +127,7 @@ def adopt():
             assert asset == original['assets'][key]
     # Avoid even reformatting game.js if the source dimensions did not change.
     if project != before:
-        game_file.write_text('window.VN_GAME = ' + json.dumps(project, ensure_ascii=False, indent=2) + ';\n',
-                             encoding='utf-8', newline='\n')
+        game_data.save(game_file, project)
     report.update(storyAllFieldsUnchanged=True, storyNodeCount=len(project['lines']),
                   audioUnchanged=True, audioAssetCount=len(audio),
                   noNewScenePlacements=True, actualAffectedNodes=20,

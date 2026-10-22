@@ -4,6 +4,8 @@ import json
 import shutil
 from pathlib import Path
 from urllib.parse import unquote, urlparse
+
+import game_data
 from urllib.request import url2pathname
 from stage_art_upgrade import build, project
 from produce_art_upgrade import GAME, ROOT
@@ -35,7 +37,7 @@ def apply():
         'unmadeCg':'C23 泳装礁石CG：保留原文服饰待人工，不用外搭候选顶替；当前不恢复旧错误CG。',
         'requestedModel':'gpt-image-2.5-flare','modelRouteVerified':False,
         'nativeResolution':'立绘1024×1536；横图1672×941。未上采样；请求max不等于实际档位。'}
-    (GAME/'game.js').write_text('window.VN_GAME = '+json.dumps(draft,ensure_ascii=False,indent=2)+';\n',encoding='utf-8',newline='\n')
+    game_data.save(GAME/'game.js', draft)
     print(json.dumps({'adoptedOrCallableArt':len(copies),'activeOriginalImages':len(remaining),'lines':len(draft['lines'])}))
 
 if __name__=='__main__':apply()

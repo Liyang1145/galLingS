@@ -4,6 +4,7 @@ from pathlib import Path
 import sys as _sys, pathlib as _pl
 _sys.path.insert(0, str(_pl.Path(__file__).resolve().parents[1]))  # tools/
 
+import game_data
 from produce_art_upgrade import ART,GAME,ROOT
 from stage_art_upgrade import project
 
@@ -160,7 +161,7 @@ def apply():
   'artNotes':'专用姿态、重做的坐姿结构与写诗CG；静态差分、一次性动作及CG缓推，不声称Live2D或逐帧尾巴已完成。'}
  p.pop('seatedReworkPending',None)
  p['characterDirection']={k:v for k,v in report.items() if k!='curatedBeats'}
- (GAME/'game.js').write_text('window.VN_GAME = '+json.dumps(p,ensure_ascii=False,indent=2)+';\n',encoding='utf-8',newline='\n')
+ game_data.save(GAME/'game.js', p)
  (ART/'direction-cues.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
  print(json.dumps({k:v for k,v in report.items() if k!='curatedBeats'},ensure_ascii=True))
 if __name__=='__main__':apply()

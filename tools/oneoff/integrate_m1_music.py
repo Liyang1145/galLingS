@@ -7,6 +7,10 @@ import shutil
 import subprocess
 from pathlib import Path
 
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parents[1]))  # tools/
+import game_data
+
 from integrate_atri_music import GAME, ROOT, loudness, probe
 from integrate_e4_music import write_json
 
@@ -89,8 +93,7 @@ def integrate(source):
         'originalAudioAssetsPreserved': sum(a['type'] not in ('bg', 'ch') for a in before['assets'].values()),
         'firstAppearanceAndCharacterThemePreserved': True, 'eventTracksAndSilencePreserved': True,
         'loopPoint': '播放器完整MP3循环，未制作无缝循环点'})
-    game_file.write_text('window.VN_GAME = ' + json.dumps(project, ensure_ascii=False, indent=2) + ';\n',
-        encoding='utf-8', newline='\n')
+    game_data.save(game_file, project)
     print(json.dumps({'assetId': ASSET_ID, 'duration': info['duration'], 'sha256': digest,
         'playbackGain': gain, 'cues': len(cues), 'changedNodes': len(changes)}))
 

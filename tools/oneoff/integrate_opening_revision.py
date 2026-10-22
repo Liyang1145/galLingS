@@ -6,6 +6,7 @@ from pathlib import Path
 import sys as _sys, pathlib as _pl
 _sys.path.insert(0, str(_pl.Path(__file__).resolve().parents[1]))  # tools/
 
+import game_data
 from stage_art_upgrade import project
 from produce_art_upgrade import ROOT, GAME
 
@@ -93,7 +94,7 @@ def apply():
         'sourceBeforeSha256':hashlib.sha256((archive/'before-game.js').read_bytes()).hexdigest(),
         'editorialNormalizations':['衣负 → 衣角；统一引号和省略号；删除孤立（）占位符；在那补停顿破折号'],
         'continuityGap':'第一话敲字50天与第六话旧回忆15天有差异，其他章节原文保留待人工统一。'}
-    path.write_text('window.VN_GAME = '+json.dumps(p,ensure_ascii=False,indent=2)+';\n',encoding='utf-8',newline='\n')
+    game_data.save(path, p)
     source=ROOT/'docs/content/opening-revision-20261015.md'
     paragraphs=['# 第一话：音乐负责人新文案接入稿','',
         '用户于2026-10-15提供。下面为实际接入稿，保留原选项/汇合ID，仅作上述轻微标点与错字整理。原运行稿完整留档，后续十五话及两篇番外不改写。',

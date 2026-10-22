@@ -3,6 +3,7 @@ import copy,hashlib,json,shutil,subprocess
 import sys as _sys, pathlib as _pl
 _sys.path.insert(0, str(_pl.Path(__file__).resolve().parents[1]))  # tools/
 
+import game_data
 from produce_art_upgrade import ART,GAME,ROOT,output,record,save,approved
 from compress_art_upgrade import build as compress
 
@@ -116,7 +117,7 @@ def adopt():
   assert {k:v for k,v in old.items() if k not in allowed}=={k:v for k,v in new.items() if k not in allowed},new['id']
  old_audio={k:a for k,a in baseline['assets'].items() if a['type'] not in {'bg','ch'}}
  assert {k:a for k,a in project['assets'].items() if a['type'] not in {'bg','ch'}}==old_audio
- (GAME/'game.js').write_text('window.VN_GAME = '+json.dumps(project,ensure_ascii=False,indent=2)+';\n',encoding='utf-8',newline='\n')
+ game_data.save(GAME/'game.js', project)
  report.update(storyNodes=len(project['lines']),allTextChoicesVariablesAndMusicUnchanged=True,
                all105AudioAssetsUnchanged=len(old_audio)==105,adoptedArtCount=len(report['art']),
                gameSha256=hashlib.sha256((GAME/'game.js').read_bytes()).hexdigest())

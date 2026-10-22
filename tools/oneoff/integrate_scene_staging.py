@@ -8,6 +8,7 @@ import json
 import sys as _sys, pathlib as _pl
 _sys.path.insert(0, str(_pl.Path(__file__).resolve().parents[1]))  # tools/
 
+import game_data
 from stage_art_upgrade import project
 from produce_art_upgrade import ROOT, GAME, ART
 
@@ -82,7 +83,7 @@ def apply():
         assert {k:v for k,v in a.items() if k not in allowed}=={k:v for k,v in b.items() if k not in allowed},a['id']
     for id,a in before['assets'].items():
         if a['type'] not in {'bg','ch'}:assert p['assets'][id]==a,id
-    (GAME/'game.js').write_text('window.VN_GAME = '+json.dumps(p,ensure_ascii=False,indent=2)+';\n',encoding='utf-8',newline='\n')
+    game_data.save(GAME/'game.js', p)
     report={'baseline':'0f44363','backgroundProfiles':PROFILES,'profileGroups':GROUPS,
             'seatAsset':seat_id,'seatImage':'B07 (existing reviewed master), original framing keeps the moon',
             'seatLineIds':changes,'profiledBackdropIds':[a['id'] for a in p['assets'].values() if a.get('sceneFit')],

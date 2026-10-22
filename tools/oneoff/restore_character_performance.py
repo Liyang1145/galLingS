@@ -5,6 +5,7 @@ from pathlib import Path
 import sys as _sys, pathlib as _pl
 _sys.path.insert(0, str(_pl.Path(__file__).resolve().parents[1]))  # tools/
 
+import game_data
 from produce_art_upgrade import ROOT,GAME,ART
 from stage_art_upgrade import project
 
@@ -92,7 +93,7 @@ def apply():
     assert len(lines)==len(before['lines']) and [x['id'] for x in lines]==[x['id'] for x in before['lines']]
     for a,b in zip(before['lines'],lines):assert {k:v for k,v in a.items() if k not in PRESENTATION}=={k:v for k,v in b.items() if k not in PRESENTATION},a['id']
     p['characterPerformance']={'date':'2026-10-15','baseline':'0f6de470e5ef1b96c0dfe91605c913f15251c0b9','poseChanges':len(changes),'reframedSprites':reframed,'notes':'实体姿态、明确台词分镜与稳定角色归属；不加循环晃动或程序化音效。'}
-    (GAME/'game.js').write_text('window.VN_GAME = '+json.dumps(p,ensure_ascii=False,indent=2)+';\n',encoding='utf-8',newline='\n')
+    game_data.save(GAME/'game.js', p)
     report={'summary':p['characterPerformance'],'poseChanges':changes,'uses':dict(Counter(x['pose'] for x in changes)),'storyAndAudioUnchanged':True}
     (ART/'performance-cues.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(json.dumps({k:v for k,v in report.items() if k!='poseChanges'},ensure_ascii=True))

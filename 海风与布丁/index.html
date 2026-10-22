@@ -577,6 +577,17 @@ body.game #title .menu button:nth-child(7){left:-108px}
 body.game #pctl{right:22px;bottom:8px;gap:6px}
 body.game #pctl .btn{width:auto;min-width:48px;height:30px;padding:0 8px;display:inline-flex;align-items:center;gap:5px}
 @media (pointer:coarse){body.game #pctl{gap:8px}body.game #pctl .btn{width:auto;min-width:76px;height:44px}}
+/* 台词底板加深（2026-10-22，用户反馈「文本看不清」）：
+   原稿底板 opacity 直接取 --ghost，默认 0.35 时几乎全透明；底板图自己的渐变也偏浅
+   （#1C3B59 .78 → #638FAC .22），白字压在海面高光上读不出来。
+   做法：给 #pdlg 垫一层深海蓝托底（鲸鱼皮肤图仍叠在上面，::before 是负 z-index），
+   再给皮肤层加一条不透明度下限，最淡也比原稿实；「对话框不透明度」滑块依然有效。
+   无台词演出 #stage.nodlg 会把 #pdlg 背景置透明（index.html 176 行），不会留空底板。 */
+body.game #pdlg{background:linear-gradient(180deg,#0d2338f2,#081727fa)}
+body.game #pdlg::before{opacity:clamp(.72,calc(var(--ghost) + .37),1)}
+/* 竖屏模式（game-polish.css 174 行自带一套浅渐变，这里同步加深并给同一档下限） */
+body.game.vport #pdlg::before{background:linear-gradient(180deg,#0f2a44f5,#0a1c2ffa 55%,#0d2338fa);opacity:clamp(.72,calc(var(--ghost) + .37),1)}
+body.game #ptx{text-shadow:0 1px 3px #04121fe6,0 0 12px #04121f99}
 </style>
 <!-- WHALE_UI_REPO_ADAPTER_END -->
 </head>

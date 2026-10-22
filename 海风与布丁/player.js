@@ -136,7 +136,7 @@ hydrateIcons();
 const EMO_IC = {'💾':'save','📂':'folder-open','📁':'folder-tree','🎮':'gamepad-2','🧮':'variable','👤':'users','⚙':'settings','▶':'play','〰':'vibrate','💥':'bomb','⚪':'sun','🔴':'siren','👁':'eye','🔍':'zoom-in','🌀':'tornado','🕯':'flame','⚡':'zap','🌫':'cloud-fog','〽':'waves','🎞':'film','🌑':'moon','❤':'heart-pulse','⤴':'chevrons-up','⤵':'chevrons-down'};
 const emoIc = h => h.replace(/💾|📂|📁|🎮|🧮|👤|⚙|▶|〰|💥|⚪|🔴|👁|🔍|🌀|🕯|⚡|🌫|〽|🎞|🌑|❤|⤴|⤵/gu, m => ic(EMO_IC[m]));
 const FX = [['shake', 'vibrate', '震动'], ['quake', 'bomb', '爆炸'], ['flash', 'sun', '白闪'], ['redflash', 'siren', '受击红闪'], ['blink', 'eye', '眨眼/醒来'], ['zoom', 'zoom-in', '冲击推近'], ['whip', 'move-horizontal', '横甩(白闪+甩镜)']];
-const MOODS = [['dizzy', 'tornado', '神志不清'], ['flicker', 'flame', '忽明忽暗'], ['strobe', 'zap', '闪烁(灯光故障)'], ['blur', 'cloud-fog', '模糊'], ['sway', 'waves', '摇晃'], ['gray', 'film', '回忆(黑白)'], ['dark', 'moon', '昏暗'], ['danger', 'heart-pulse', '危险心跳'], ['underwater', 'waves', '水下(蓝+气泡+声音发闷)'], ['slowmo', 'hourglass', '慢动作(推近+褪色+静音)']];
+const MOODS = [['dizzy', 'tornado', '神志不清'], ['flicker', 'flame', '忽明忽暗'], ['strobe', 'zap', '闪烁(灯光故障)'], ['blur', 'cloud-fog', '模糊'], ['sway', 'waves', '摇晃'], ['gray', 'film', '回忆(黑白)'], ['dark', 'moon', '昏暗'], ['danger', 'heart-pulse', '危险心跳'], ['underwater', 'waves', '水下(静态淡蓝滤镜+声音发闷)'], ['slowmo', 'hourglass', '慢动作(推近+褪色+静音)']];
 const fxName = v => FX.find(x => x[0] === v); const moodName = v => MOODS.find(x => x[0] === v);
 /* 立绘动画表 */
 const SPR_IN = [['', 'blend', '淡入'], ['left', 'arrow-right', '从左滑入'], ['right', 'arrow-left', '从右滑入'], ['up', 'arrow-up', '从下升起'], ['pop', 'sparkle', '弹出'], ['none', 'square', '直接出现']];

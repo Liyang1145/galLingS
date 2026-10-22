@@ -152,13 +152,11 @@ body.playing #props{display:none}
 #stage[data-mood=gray] #bgEl,#stage[data-mood=gray] #layer{filter:grayscale(1) contrast(.9)}
 #stage[data-mood=dark] #moodFx{background:radial-gradient(ellipse at center,#0004 20%,#000e 95%)}
 #stage[data-mood=danger] #moodFx{background:radial-gradient(ellipse at center,#0000 35%,#b0000088 100%);animation:heart 1.2s ease-in-out infinite}
-/* 水下（2026-10-19）：蓝色滤镜 + 上浮气泡 + 画面轻漂；声音变闷由播放器按氛围压低配乐/环境音 */
-#stage[data-mood=underwater]{--moodAnim:uwDrift 5.5s ease-in-out infinite}
-#stage[data-mood=underwater] #bgEl,#stage[data-mood=underwater] #layer{filter:saturate(.8) brightness(.82) hue-rotate(-10deg) blur(1.4px)}
-#stage[data-mood=underwater] #moodFx{background:linear-gradient(180deg,#2a8fd066 0%,#0b4f8f99 55%,#06305fcc 100%)}
-#stage[data-mood=underwater] #moodFx::after{opacity:.9;background-image:radial-gradient(circle at 50% 50%,#ffffffcc 0 2px,#ffffff33 3px,#0000 5px),radial-gradient(circle at 50% 50%,#ffffffaa 0 4px,#ffffff22 6px,#0000 8px),radial-gradient(circle at 50% 50%,#ffffff99 0 1.5px,#0000 3px),radial-gradient(circle at 50% 50%,#ffffffbb 0 6px,#ffffff22 8px,#0000 11px);background-size:170px 230px,310px 410px,90px 150px,520px 640px;background-position:20px 0,140px 60px,60px 30px,300px 200px;animation:uwBubbles 4.5s linear infinite}
-@keyframes uwBubbles{from{background-position:20px 0,140px 60px,60px 30px,300px 200px}to{background-position:34px -230px,128px -350px,66px -120px,310px -440px}}
-@keyframes uwDrift{0%,100%{translate:0 0;scale:1.05}50%{translate:-14px 8px;scale:1.07}}
+/* 水下：仅保留静态淡蓝滤镜；声音氛围由播放器处理。 */
+#stage[data-mood=underwater]{--moodAnim:none}
+#stage[data-mood=underwater] #bgEl,#stage[data-mood=underwater] #layer{filter:none}
+#stage[data-mood=underwater] #moodFx{background:linear-gradient(180deg,#2a8fd014 0%,#0b4f8f1c 55%,#06305f2b 100%)}
+#stage[data-mood=underwater] #moodFx::after{content:none;display:none;background:none;animation:none}
 /* 慢动作（2026-10-19）：画面缓慢推近、褪色、暗角，环境声压低（定格感） */
 #stage[data-mood=slowmo]{--moodAnim:slowPush 9s cubic-bezier(.2,.6,.3,1) forwards}
 #stage[data-mood=slowmo] #bgEl,#stage[data-mood=slowmo] #layer{filter:saturate(.55) contrast(1.08) brightness(.95)}

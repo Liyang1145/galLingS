@@ -23,7 +23,7 @@ def build() -> dict:
     roots = [GAME / "assets/bg", GAME / "assets/ch", ROOT / "A素材库/backgrounds",
              ROOT / "A素材库/scene-backgrounds/originals", ROOT / "A素材库/scene-backgrounds/records",
              ROOT / "A素材库/image-trials", GAME / "assets/art-upgrade",
-             ROOT / "A素材库/art-upgrade/originals", ROOT / "A素材库/art-upgrade/runtime"]
+             ROOT / "A素材库/art-upgrade/originals"]
     upgrade_dir=ROOT / 'A素材库/art-upgrade'
     upgrade=json.loads((upgrade_dir/'production.json').read_text(encoding='utf-8'))['items'] if (upgrade_dir/'production.json').exists() else {}
     reviews=json.loads((upgrade_dir/'reviews.json').read_text(encoding='utf-8')) if (upgrade_dir/'reviews.json').exists() else {}

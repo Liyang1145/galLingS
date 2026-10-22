@@ -16,6 +16,8 @@ def apply():
     for asset in draft['assets'].values():
         if not asset.get('productionArtId'):continue
         path=Path(url2pathname(unquote(urlparse(asset['src']).path))).resolve()
+        # runtime 是压缩中转站，不常驻仓库（与 GAME/assets/art-upgrade 内容完全重复）。
+        # 接入新图前先跑 tools/compress_art_upgrade.py 重新生成，这里只做搬运与校验。
         assert path.parent==(ROOT/'A素材库/art-upgrade/runtime').resolve(),path
         target=dest/path.name
         shutil.copy2(path,target)

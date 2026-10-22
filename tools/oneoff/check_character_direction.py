@@ -6,7 +6,7 @@ import argparse,asyncio,json,time
 from pathlib import Path
 from PIL import Image,ImageDraw,ImageFont
 from playwright.async_api import async_playwright
-ROOT=Path(__file__).resolve().parents[1];GAME=ROOT/'content/imports/vnstudio/海风与布丁'
+ROOT=Path(__file__).resolve().parents[2];GAME=ROOT/'content/imports/vnstudio/海风与布丁'
 CASES=[('冷怒','ps0r6nbx'),('翻本','8divye5i'),('举本','ewno9xr4'),('糍粑','78arkzfg'),('好奇','ljqevszk'),('回望','dg7yx2u8'),('写诗','jifyqa4p'),('抱膝','5dlec0jm'),('分毯','vqiksage'),('电话','48jqdyhx'),('边界','lqvlnz8o'),('退缩','39a7xd8b'),('救援','kkgzbp5s'),('和解坐姿','caqa6eg2'),('结局坐姿','pvyjs8ij'),('坐姿害羞','8tph43ss'),('坐姿得意','19js3h5w'),('坐姿嗔怪','tlygugmd')]
 
 async def settled(page,id):

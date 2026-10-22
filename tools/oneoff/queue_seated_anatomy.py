@@ -1,5 +1,8 @@
 """Rebuild the seated mother from the standing costume reference, never the rejected leg geometry."""
 import copy,json
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parents[1]))  # tools/
+
 from produce_art_upgrade import ART,MANIFEST,save
 
 PROMPT='''Create a new full-body transparent-alpha production sprite of the SAME ADULT woman aged24 in the reference. Use the reference ONLY for her recognizable face, blue hair, fin ears, loop ahoge, cyan bows, exact navy sailor-collar dress with continuous double-white hem stripes, white socks and closed white shoes, two human legs and a separate whale tail. Do NOT copy its standing body pose.

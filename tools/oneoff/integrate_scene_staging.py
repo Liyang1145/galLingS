@@ -5,6 +5,9 @@ It never resets manual sceneFit overrides.
 """
 import copy
 import json
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parents[1]))  # tools/
+
 from stage_art_upgrade import project
 from produce_art_upgrade import ROOT, GAME, ART
 

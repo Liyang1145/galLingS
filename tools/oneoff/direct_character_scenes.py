@@ -1,6 +1,9 @@
 """Curated acting beats and SHA-bound eye anchors. Rebuilds from the local repair baseline."""
 import copy,hashlib,json,subprocess
 from pathlib import Path
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parents[1]))  # tools/
+
 from produce_art_upgrade import ART,GAME,ROOT
 from stage_art_upgrade import project
 

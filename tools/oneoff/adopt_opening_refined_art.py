@@ -1,5 +1,8 @@
 """Integrate reviewed user delivery and precise opening repairs, preserving story/audio."""
 import copy,hashlib,json,shutil,subprocess
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parents[1]))  # tools/
+
 from produce_art_upgrade import ART,GAME,ROOT,output,record,save,approved
 from compress_art_upgrade import build as compress
 

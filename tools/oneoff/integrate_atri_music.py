@@ -11,7 +11,7 @@ import shutil
 import subprocess
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 GAME = ROOT / "content/imports/vnstudio/海风与布丁"
 DELIVERY = ROOT / "archive/deliveries/atri-music"
 TRACKS = [

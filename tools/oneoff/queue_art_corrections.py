@@ -1,6 +1,9 @@
 """Prepare explicit, auditable corrections; never silently overwrite the rejected original."""
 import json, shutil
 from pathlib import Path
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parents[1]))  # tools/
+
 from produce_art_upgrade import ART, output
 
 def configure():

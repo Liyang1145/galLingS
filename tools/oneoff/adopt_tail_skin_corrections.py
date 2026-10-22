@@ -9,6 +9,9 @@ import json
 import shutil
 import subprocess
 
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parents[1]))  # tools/
+
 from compress_art_upgrade import build as compress
 from produce_art_upgrade import ART, GAME, ROOT, output, record, save
 

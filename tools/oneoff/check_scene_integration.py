@@ -22,7 +22,7 @@ from urllib.parse import urlsplit
 from playwright.async_api import async_playwright
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 GAME = ROOT / "content/imports/vnstudio/海风与布丁"
 GAME_URL = "/content/imports/vnstudio/海风与布丁/index.html"
 DEFAULT_EDGE = "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe"

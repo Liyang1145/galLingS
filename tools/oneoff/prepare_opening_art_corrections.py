@@ -1,5 +1,8 @@
 """Queue story-specific repairs; preserve reviewed masters and fixed asset IDs."""
 import json, shutil
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parents[1]))  # tools/
+
 from produce_art_upgrade import ART, output, save
 
 TAIL = ('Exactly ONE independent blue-and-white mammalian whale tail attaches behind her lower back, '

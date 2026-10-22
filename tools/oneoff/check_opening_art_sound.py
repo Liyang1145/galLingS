@@ -2,6 +2,9 @@
 import argparse,asyncio,hashlib,json,subprocess
 from pathlib import Path
 from playwright.async_api import async_playwright
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parents[1]))  # tools/
+
 from produce_art_upgrade import ROOT,GAME,ART
 
 SCENES=[('空中接本','1ab8nnfn'),('首次对话','986487og'),('翻本','wxlmihwk'),

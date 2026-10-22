@@ -1,5 +1,8 @@
 """Supply the script's notebook tease and make the seated reading pose awake."""
 import copy,json,shutil
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parents[1]))  # tools/
+
 from produce_art_upgrade import ART,MANIFEST,output,save
 s=json.loads(MANIFEST.read_text(encoding='utf-8'))
 overrides=json.loads((ART/'overrides.json').read_text(encoding='utf-8'))

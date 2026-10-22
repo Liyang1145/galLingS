@@ -1,5 +1,8 @@
 """Correct the two remaining visible details without changing the approved skirt anatomy."""
 import json,shutil
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parents[1]))  # tools/
+
 from produce_art_upgrade import ART,MANIFEST,output,save
 state=json.loads(MANIFEST.read_text(encoding='utf-8'))
 fixes={

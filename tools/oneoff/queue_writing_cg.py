@@ -1,5 +1,8 @@
 """Recompose the night writing CG from the approved seiza mother and the empty night coast."""
 import json
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parents[1]))  # tools/
+
 from produce_art_upgrade import ART,MANIFEST,save
 state=json.loads(MANIFEST.read_text(encoding='utf-8'));item=state['items']['C08']
 assert state['items']['S02']['review']=='approved','Inspect the complete kneeling anatomy and tail first'

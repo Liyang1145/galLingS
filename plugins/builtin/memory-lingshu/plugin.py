@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import re
 import sys
 from typing import Any
@@ -15,6 +16,37 @@ def visible(t: Timeline | None, views: list[Timeline]) -> bool:
     if t is None:
         return True
     return any(v.lineage == t.lineage and t.turn <= v.turn for v in views)
+
+
+#: 来源标签进灵枢的 tags（外部 dsh-memory 不认识自定义字段，tags 两边都认）：src:<来源> ek:<去重键> asof:<回合> kind:<kind>
+_META_TAGS = {"src": "source", "ek": "evidence_key", "asof": "as_of_turn", "kind": "kind", "tev": "turn_event"}
+
+
+def meta_tags(record: MemoryRecord) -> list[str]:
+    m = record.meta or {}
+    out = []
+    for prefix, key in (("src", "source"), ("ek", "evidence_key"), ("asof", "as_of_turn"), ("tev", "turn_event")):
+        if m.get(key) not in (None, ""):
+            out.append(f"{prefix}:{m[key]}")
+    if m.get("supersedes"):
+        out += [f"supersedes:{x}" for x in m["supersedes"]]
+    return out
+
+
+def parse_meta(tags: list[str] | None) -> dict[str, Any]:
+    meta: dict[str, Any] = {}
+    sup = []
+    for tag in tags or []:
+        k, sep, v = str(tag).partition(":")
+        if not sep:
+            continue
+        if k == "supersedes":
+            sup.append(v)
+        elif k in _META_TAGS:
+            meta[_META_TAGS[k]] = int(v) if k in ("asof", "tev") and v.lstrip("-").isdigit() else v
+    if sup:
+        meta["supersedes"] = sup
+    return meta
 
 
 def parse_timeline(tags: list[str] | None) -> Timeline | None:
@@ -44,6 +76,15 @@ class LingshuMemory(MemoryPlugin):
         need = {"mdcg_remember", "mdcg_search"}
         if not need <= names:
             raise MCPError(f"灵枢缺少工具 {sorted(need - names)}", self.ctx.plugin_id)
+        # 修订作废（W2）：内置 md_cg 有 mdcg_mark；外部 dsh-memory 没有就退到插件自己的状态文件（只影响本插件的召回过滤）
+        self._has_mark = "mdcg_mark" in names
+        self._status_path = self.ctx.data_dir / "lingshu-status.json"
+        self._status: dict[str, str] = {}
+        if self._status_path.is_file():
+            try:
+                self._status = dict(json.loads(self._status_path.read_text(encoding="utf-8")))
+            except (ValueError, OSError):
+                self._status = {}
 
     async def _call(self, name: str, args: dict[str, Any]) -> Any:
         res = await self.client.call_tool(name, args)
@@ -54,7 +95,7 @@ class LingshuMemory(MemoryPlugin):
 
     async def write(self, record: MemoryRecord) -> str:
         t = record.timeline
-        tags = [f"tl:{t.lineage}@{t.turn}", f"kind:{record.kind}", *record.tags]
+        tags = [f"tl:{t.lineage}@{t.turn}", f"kind:{record.kind}", *meta_tags(record), *record.tags]
         val = await self._call("mdcg_remember", {
             "content": record.content, "layer": self.ctx.config["layer"], "role": "knowledge",
             "tags": tags, "importance": record.importance, "consistency": False})
@@ -73,12 +114,31 @@ class LingshuMemory(MemoryPlugin):
             tl = parse_timeline(fm.get("tags"))
             if not visible(tl, visible_tl):
                 continue
-            hits.append(MemoryHit(id=node.get("id", ""), content=node.get("content", ""),
+            nid = node.get("id", "")
+            state = str(r.get("state") or node.get("state") or "active")
+            status = "superseded" if state == "superseded" or self._status.get(nid) == "superseded" else "live"
+            if status != "live":
+                continue
+            hits.append(MemoryHit(id=nid, content=node.get("content", ""),
                                   score=float(r.get("score") or 0.0), source="lingshu", timeline=tl,
-                                  meta={"state": r.get("state")}))
+                                  meta={"state": r.get("state"), "status": status, **parse_meta(fm.get("tags"))}))
             if len(hits) >= k:
                 break
         return hits
+
+    async def mark(self, ids: list[str], status: str, by: str | None = None) -> int:
+        ids = [str(x) for x in ids if str(x)]
+        if not ids:
+            return 0
+        n = len(ids)
+        if self._has_mark:
+            val = await self._call("mdcg_mark", {"ids": ids, "state": status, **({"by": by} if by else {})})
+            n = len((val or {}).get("marked") or []) if isinstance(val, dict) else n
+        for x in ids:  # 本地状态文件两种情况都写：外部灵枢不支持 mark 时靠它过滤
+            self._status[x] = status
+        self._status_path.write_text(json.dumps(self._status, ensure_ascii=False), encoding="utf-8")
+        self.ctx.emit("memory.mark", {"ids": ids, "status": status, "by": by})
+        return n
 
     async def health(self) -> dict[str, Any]:
         return {"ok": self.client.alive, "restarts": self.client.restarts,

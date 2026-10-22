@@ -5,10 +5,12 @@
     python tools/build_steam_release.py --appid 480      # 指定 Steam AppID（默认 480 用于本地测试）
     python tools/build_steam_release.py --debug          # Debug 快速构建（开发联调）
     python tools/build_steam_release.py --skip-rust      # 仅更新前端、后端插件与剧本资源（复用已有 exe 与 wasm）
+    python tools/build_steam_release.py --platform linux # 指定目标平台（默认跟随当前系统：windows / linux）
 
 产物结构（dist/steam/）：
     content/                        ← SteamPipe Depot ContentRoot（直接上传此目录）
-      HaifengPudding.exe            ← 游戏主程序（Steam 启动项填写 HaifengPudding.exe）
+      HaifengPudding.exe            ← 游戏主程序（Windows；Steam 启动项填写 HaifengPudding.exe）
+      HaifengPudding                ← 游戏主程序（Linux；Steam 启动项填写 HaifengPudding）
       steam_appid.txt               ← Steam AppID
       game/                         ← 完整游戏资源（剧本、立绘、音乐、配音、galcore.wasm、GalAgent）
       server/                       ← galLingS 完整服务端（/ws、/ws/soul、/ws/post_ending、/api/settings）
@@ -36,8 +38,22 @@ sys.path.insert(0, str(ROOT))
 
 from tools.build_desktop_dist import main as build_desktop_dist  # noqa: E402
 
+# 各平台的外壳产物名、Depot 内主程序名、Steamworks 填写的系统、Steam Auto-Cloud 根路径
+PLATFORMS = {
+    "windows": {"cargo_bin": "gallings-desktop.exe", "exe": "HaifengPudding.exe", "os": "Windows（64 位）",
+                "cloud_root": "WinAppDataRoaming", "depot_offset": 1},
+    "linux": {"cargo_bin": "gallings-desktop", "exe": "HaifengPudding", "os": "Linux + SteamOS（64 位）",
+              "cloud_root": "LinuxXdgDataHome", "depot_offset": 2},
+}
 
-def write_steampipe_configs(steam_dir: Path, app_id: str, depot_id: str) -> None:
+
+def host_platform() -> str:
+    return "windows" if sys.platform.startswith("win") else "linux"
+
+
+def write_steampipe_configs(steam_dir: Path, app_id: str, depot_id: str, platform: str = "windows") -> None:
+    plat = PLATFORMS[platform]
+    exe = plat["exe"]
     sp_dir = steam_dir / "steampipe"
     sp_dir.mkdir(parents=True, exist_ok=True)
     (sp_dir / "output").mkdir(parents=True, exist_ok=True)
@@ -45,7 +61,7 @@ def write_steampipe_configs(steam_dir: Path, app_id: str, depot_id: str) -> None
     app_vdf = f'''"AppBuild"
 {{
 \t"AppID" "{app_id}"
-\t"Desc" "Haifeng and Pudding (海风与布丁) Steam Release"
+\t"Desc" "Haifeng and Pudding (海风与布丁) Steam Release ({platform})"
 \t"ContentRoot" "..\\\\content\\\\"
 \t"BuildOutput" ".\\\\output\\\\"
 \t"Depots"
@@ -71,16 +87,24 @@ def write_steampipe_configs(steam_dir: Path, app_id: str, depot_id: str) -> None
     (sp_dir / "app_build.vdf").write_text(app_vdf, encoding="utf-8")
     (sp_dir / "depot_build.vdf").write_text(depot_vdf, encoding="utf-8")
 
+    linux_note = ""
+    if platform == "linux":
+        linux_note = (
+            "\n- **Linux 运行依赖**：外壳用系统 WebKitGTK 4.1（`libwebkit2gtk-4.1-0`）。Steam Linux Runtime 不自带它，"
+            "SteamOS 3 与主流发行版（Ubuntu 22.04+ / Fedora 38+ / Arch）已预装或可直接安装；"
+            "缺少时可改发 AppImage（CI 产物 gallings-desktop-linux 里有），它把 WebKitGTK 一起打包。"
+            "\n- **Windows 与 Linux 分别建 Depot**：Windows Depot = AppID+1，Linux Depot = AppID+2，各自在 Steamworks 里设置“操作系统”。"
+        )
     guide = f"""# 《海风与布丁》Steam 发行与 Steamworks 配置指南
 
 ## 1. 目录结构与双模架构
-- `content/`：Steam Depot 根目录（直接双击 `content/HaifengPudding.exe` 即可游玩）
-  - `HaifengPudding.exe`：Windows 64 位原生客户端，内置 **「完整引擎 + 离线 WASM 兜底」双模架构**：
+- `content/`：Steam Depot 根目录（直接运行 `content/{exe}` 即可游玩）
+  - `{exe}`：{plat['os']}原生客户端，内置 **「完整引擎 + 离线 WASM 兜底」双模架构**：
     1. **完整引擎模式（默认优先）**：启动时自动探测并后台静默拉起 `galLingS` Python 服务端（`127.0.0.1`），完整挂载：
        - **灵枢认知图 MCP 记忆库**（`gallings.memory.lingshu`，内置 `md_cg.mcp_server` 认知图扩散激活与时间线隔离，无需外部下载）
        - **多模型 LLM 插件链**（`gallings.llm.openai-compat` / `gallings.llm.anthropic` / `gallings.llm.gemini` / `gallings.llm.ollama`）
        - **GalAgent 完整工具链与 MCP 扩展**（`gallings.tool.galagent` + `gallings.tool.lingshu-mcp`，含 `powershell`、`read_file`、`write_file`、`list_dir`、`fetch_url`、`get_time` 及 `mdcg_*` MCP 认知图工具）
-    2. **离线 WASM 兜底模式**：若目标机器无 Python 环境，自动无缝回退至内置 `app.localhost` + `galcore.wasm` 引擎，100% 保证剧演出、CG/音乐/配音、存档与直连大模型对话可用。
+    2. **离线 WASM 兜底模式**：若目标机器无 Python 环境，自动无缝回退至内置 `app://`（Windows 为 `app.localhost`）+ `galcore.wasm` 引擎，100% 保证剧演出、CG/音乐/配音、存档与直连大模型对话可用。
   - `game/`：游戏资源包（含《海风与布丁》全量立绘/CG/BGM/语音、`galcore.wasm` Rust 规则引擎、`GalAgent` 结局后聊天插件）
   - `server/`、`plugins/`、`compiler/`、`content/cards/`、`schemas/`、`web/`：完整灵枢后端与插件目录
   - `steam_appid.txt`：当前设置为 `{app_id}`（正式上传前可改为您的正式 AppID，或由 Steam 客户端自动注入）
@@ -89,12 +113,12 @@ def write_steampipe_configs(steam_dir: Path, app_id: str, depot_id: str) -> None
 ## 2. Steamworks 后台配置
 
 ### 2.1 启动项配置（Installation → General Installation）
-- **可执行文件（Executable）**：`HaifengPudding.exe`
-- **操作系统**：Windows（64 位）
+- **可执行文件（Executable）**：`{exe}`
+- **操作系统**：{plat['os']}{linux_note}
 
 ### 2.2 Steam Auto-Cloud 云存档配置（Application → Steam Cloud）
-游戏已将所有存档、CG/结局解锁、阅读进度与偏好设置实时原子写入到系统的 AppData 目录，并将用户的私人大模型 API Key 物理隔离在 `config/llm.json`（不进云存档）：
-- **根路径（Root）**：`WinAppDataRoaming`
+游戏已将所有存档、CG/结局解锁、阅读进度与偏好设置实时原子写入到系统的应用数据目录（Windows 为 AppData，Linux 为 `~/.local/share`），并将用户的私人大模型 API Key 物理隔离在 `config/llm.json`（不进云存档）：
+- **根路径（Root）**：`{plat['cloud_root']}`
 - **子目录（Subdirectory）**：`com.gallings.haifeng/saves`
 - **文件掩码（Pattern）**：`*.json`
   - `slots.json`：6 个手动存档位 + 快速存档 + 自动存档（含 `galcore` 引擎快照）
@@ -102,7 +126,7 @@ def write_steampipe_configs(steam_dir: Path, app_id: str, depot_id: str) -> None
   - `prefs.json`：音量、文字速度、灵枢模式等偏好
   - `read.json`：已读台词记录（用于“仅快进已读”）
   - `plugins.json`：插件开关与模式设置
-- **便携模式（Portable Mode）**：如果在 `HaifengPudding.exe` 同级目录新建 `portable.txt` 或 `userdata/` 文件夹，存档将改为保存在 `<游戏目录>/userdata/saves/`。
+- **便携模式（Portable Mode）**：如果在 `{exe}` 同级目录新建 `portable.txt` 或 `userdata/` 文件夹，存档将改为保存在 `<游戏目录>/userdata/saves/`。
 
 ## 3. 游戏内功能与快捷键
 - **纯净模式**：启动后直接进入《海风与布丁》标题画面，顶栏已隐藏。
@@ -116,7 +140,7 @@ def write_steampipe_configs(steam_dir: Path, app_id: str, depot_id: str) -> None
   - `F10` 或 `Ctrl + Shift + D`：展开 / 隐藏开发者调试顶栏与引擎时间轴
 
 ## 4. 使用 SteamPipe 上传
-```powershell
+```
 steamcmd +login <您的Steamworks账号> +run_app_build "{(sp_dir / 'app_build.vdf').resolve()}" +quit
 ```
 """
@@ -155,10 +179,14 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--depotid", default="", help="Steam DepotID（默认 AppID + 1）")
     ap.add_argument("--debug", action="store_true", help="使用 cargo debug 模式构建客户端")
     ap.add_argument("--skip-rust", action="store_true", help="跳过 Rust 编译，直接复用已编译好的 wasm 和 exe")
+    ap.add_argument("--platform", choices=sorted(PLATFORMS), default=host_platform(),
+                    help="目标平台（默认跟随当前系统；外壳只能在对应系统上编译）")
     args = ap.parse_args(argv)
 
     app_id = str(args.appid).strip() or "480"
-    depot_id = str(args.depotid).strip() or (str(int(app_id) + 1) if app_id.isdigit() else "481")
+    plat = PLATFORMS[args.platform]
+    depot_id = str(args.depotid).strip() or (
+        str(int(app_id) + plat["depot_offset"]) if app_id.isdigit() else str(480 + plat["depot_offset"]))
 
     # 1. 重新打包 GalAgent 插件并同步到作品目录
     ga_build = ROOT / "plugins" / "builtin" / "galagent" / "web" / "build_vnplugin.py"
@@ -190,7 +218,7 @@ def main(argv: list[str] | None = None) -> int:
 
     # 4. 编译 Tauri 桌面外壳
     profile = "debug" if args.debug else "release"
-    exe_src = ROOT / "desktop" / "src-tauri" / "target" / profile / "gallings-desktop.exe"
+    exe_src = ROOT / "desktop" / "src-tauri" / "target" / profile / plat["cargo_bin"]
     if not args.skip_rust or not exe_src.is_file():
         print(f"==> [3/4] 编译 Tauri 桌面客户端 ({profile}) ...")
         cmd = ["cargo", "build"]
@@ -210,17 +238,20 @@ def main(argv: list[str] | None = None) -> int:
         shutil.rmtree(content_dir)
     content_dir.mkdir(parents=True, exist_ok=True)
 
-    shutil.copy2(exe_src, content_dir / "HaifengPudding.exe")
+    exe_dst = content_dir / plat["exe"]
+    shutil.copy2(exe_src, exe_dst)
+    if args.platform != "windows":
+        exe_dst.chmod(0o755)
     (content_dir / "steam_appid.txt").write_text(f"{app_id}\n", encoding="utf-8")
     shutil.copytree(dist_desktop, content_dir / "game")
     bundle_backend_runtime(content_dir)
-    write_steampipe_configs(steam_dir, app_id, depot_id)
+    write_steampipe_configs(steam_dir, app_id, depot_id, args.platform)
 
     total_files = sum(1 for p in content_dir.rglob("*") if p.is_file())
     total_mb = sum(p.stat().st_size for p in content_dir.rglob("*") if p.is_file()) / 1e6
     print(
         f"Steam 发行包已就绪：{content_dir}（共 {total_files} 个文件，{total_mb:.1f} MB；"
-        f"启动程序：HaifengPudding.exe；SteamPipe 配置：{steam_dir / 'steampipe'}）"
+        f"启动程序：{plat['exe']}；SteamPipe 配置：{steam_dir / 'steampipe'}）"
     )
     return 0
 

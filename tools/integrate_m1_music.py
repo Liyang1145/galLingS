@@ -13,7 +13,7 @@ from integrate_e4_music import write_json
 ASSET_ID = 'bgm_m1_shallows_day'
 PREVIOUS = 'bgm_emerald_dream_main_v01'
 ARCHIVE = ROOT / 'A素材库/audio/bgm' / (ASSET_ID + '.mp3')
-REPORT = ROOT / 'content/audio/m1-integration.json'
+REPORT = ROOT / 'content/audio-records/m1-integration.json'
 CUES = [
     ('qfuowzma', 'hnqx7w6w', '第三话：浅滩游泳准备与下水规矩；下潜时交给既有E2'),
     ('cpvlwvrk', 'ceip84bi', '第七话：沙洲捡贝壳、轻松闲谈到午后阴凉；随后保留原停奏'),

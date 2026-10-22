@@ -36,7 +36,7 @@ def verify():
         ('e4-integration.json','bgm_e4_sunset_wait',None),
         ('m1-integration.json','bgm_m1_shallows_day','bgm_emerald_dream_main_v01'),
     ]:
-        music_overlay=ROOT/'content/audio'/filename
+        music_overlay=ROOT/'content/audio-records'/filename
         if not music_overlay.exists():continue
         # The music lead explicitly added tracks after the art checkpoint. Only the
         # documented music assignments may differ; keep all story checks strict.

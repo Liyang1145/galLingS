@@ -11,7 +11,7 @@ from integrate_atri_music import GAME, ROOT, loudness, probe
 
 ASSET_ID = 'bgm_e4_sunset_wait'
 ARCHIVE = ROOT / 'A素材库/audio/bgm' / (ASSET_ID + '.mp3')
-REPORT = ROOT / 'content/audio/e4-integration.json'
+REPORT = ROOT / 'content/audio-records/e4-integration.json'
 CUES = [
     ('x68g8tf7', 'eclt59o4', '第九话：黄昏退潮、离开后的笔记至章末；原稿L3594单音提示'),
     ('17nl2n08', '4rlyhkwh', '第十话：其后数日等待；第五日主动出发前结束，原稿L3813极慢提示'),

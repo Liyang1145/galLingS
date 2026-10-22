@@ -11,6 +11,7 @@
 - [repo-tidy-20261019.md](repo-tidy-20261019.md) — 10-19 仓库整理（入口、索引、历史文档归档）
 
 ## 剧情与界面
+- [default-bgm-volume-20261023.md](default-bgm-volume-20261023.md) — 首次默认音乐降至 25%，保留玩家音量与其他声道
 - [opening-performance-20261019.md](opening-performance-20261019.md) — 10-19 开场 #9–21「摸尾巴被拍」演出重做（新近景 B02T、横甩/水下/慢动作效果、见面曲提前到 #19）
 - [script-fix-20261018.md](script-fix-20261018.md) — 剧情矛盾修正（fix9）
 - [ui-fix-20261018.md](ui-fix-20261018.md) — 界面修复（竖横屏、好感开关、按钮音效）

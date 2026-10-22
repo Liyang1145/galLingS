@@ -191,7 +191,7 @@ const labelIndex = name => P.lines.findIndex(l => l.label === name);
 function blank() {
   return { v: 3, id: uid(), title: '', assets: {}, recent: { bg: [], ch: [], au: [] }, lines: [mkLine()], cur: 0,
            vars: [], chars: [], plugins: [],
-           settings: { tip: 'brief', ghost: 0.35, speed: 30, link: true, dlg: 'ghost', vbgm: 0.6, vse: 0.8, vamb: 0.8, vvo: 1, autoMul: 1, skipRead: true, focus: true, agentProvider: 'mock', agentUrl: '', pluginData: {}, bw: 110, tlh: 260, trk: { hide: {}, lock: {} } } };
+           settings: { tip: 'brief', ghost: 0.35, speed: 30, link: true, dlg: 'ghost', vbgm: 0.25, vse: 0.8, vamb: 0.8, vvo: 1, autoMul: 1, skipRead: true, focus: true, agentProvider: 'mock', agentUrl: '', pluginData: {}, bw: 110, tlh: 260, trk: { hide: {}, lock: {} } } };
 }
 const VN_VERSION = '0.20.0';
 const studioEditor = !!window.VN_EDITOR || new URLSearchParams(location.search).get('editor') === '1';

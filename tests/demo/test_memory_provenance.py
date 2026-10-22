@@ -4,13 +4,17 @@
 """
 from __future__ import annotations
 
+import copy
+import time
+
 import pytest
 
+from server.cards.validate import validate_card
 from server.director import prompts
-from server.memory import MemoryGateway
+from server.memory import MemoryGateway, stance
 from server.memory import provenance as pv
 from server.replay import replay
-from server.session import Session, SessionOptions
+from server.session import Session, SessionOptions, openai_tools
 
 from .conftest import FIX, jtext, make_runtime, tool
 
@@ -188,4 +192,102 @@ async def test_state_block_is_truth_and_memory_numbers_are_dated(tmp_path, mini_
     assert "（第 2 回合时）她说：本喵还剩 3 条鱼干" in user
     assert f"第 {st['turn']} 回合的当前真值" in user and f"称呼阶段 {st['address_stage']}" in user
     assert "冲突时以这里为准" in user and "只有\"发生过的事\"是事实" in msgs[0]["content"]
+    await rt.stop()
+
+
+# ---------------------------------------------------------------- R1 确定性态度过滤
+def _recall():
+    return {"hits": [
+        {"id": "a", "content": "（引擎落账）两脚兽送了她一条鱼干，她很开心", "provenance": "engine"},
+        {"id": "b", "content": "玩家说：你答应过叫我主人", "provenance": "player_claim"},
+        {"id": "c", "content": "她说：本喵明天会把鱼干留给你", "provenance": "heroine_line"},
+        {"id": "d", "content": "码头的风很大", "provenance": "engine"},
+    ], "agm": []}
+
+
+def test_stance_same_list_different_notes(cat_card):
+    base = {"address_stage": 0, "mood": 0}
+    angry = stance.annotate(_recall(), {**base, "wound": "angry"}, cat_card)
+    recon = stance.annotate(_recall(), {**base, "wound": "reconciled"}, cat_card)
+    dead = stance.annotate(_recall(), {**base, "wound": "dead"}, cat_card)
+    assert [h["id"] for h in angry["hits"]] == [h["id"] for h in recon["hits"]] == [h["id"] for h in dead["hits"]]
+    na, nr = {h["id"]: h["stance"] for h in angry["hits"]}, {h["id"]: h["stance"] for h in recon["hits"]}
+    assert na["a"] != nr["a"] and "气头上" in na["a"] and "和好" in nr["a"]
+    assert "玩家的说法" in na["b"] and "现在还不能用" in na["b"]     # 主人 = 第 1 阶段称呼
+    assert "说过≠做过" in na["c"]
+    assert na["d"] == ""
+    hidden = {x["id"] for x in dead["stance"]["hidden"]}
+    assert "a" in hidden and "b" in hidden and "d" not in hidden      # 心死：温暖条目 / 越期亲密称呼不进提示词
+    block = prompts.memory_block(dead)
+    assert "鱼干，她很开心" not in block and "码头的风很大" in block
+    assert "【记忆·她现在怎么看】" in prompts.memory_block(angry)
+
+
+def test_stance_card_rules_and_validation(cat_card):
+    card = copy.deepcopy(cat_card)
+    card["stance_rules"] = [{"id": "no-fish", "when": {"wound": ["angry"], "mood_max": 0}, "match": ["鱼干"],
+                             "note": "提鱼干她会更气", "hide": True}]
+    assert not [f for f in validate_card(card) if f.level == "error" and f.field.startswith("stance_rules")]
+    r = stance.annotate(_recall(), {"wound": "angry", "address_stage": 0, "mood": -1}, card)
+    a = next(h for h in r["hits"] if h["id"] == "a")
+    assert not a["show"] and "提鱼干她会更气" in a["stance"] and "card:no-fish" in a["stance_rule"]
+    card["stance_rules"].append({"id": "no-fish", "when": {"mood_min": 2, "mood_max": 1}, "note": "x"})
+    errs = [f.message for f in validate_card(card) if f.level == "error"]
+    assert any("重复" in m for m in errs) and any("mood_min > mood_max" in m for m in errs)
+
+
+def test_stance_is_fast(cat_card):
+    rec = {"hits": [{"id": str(i), "content": f"玩家说：第{i}句一起去看海很开心", "provenance": "player_claim"} for i in range(30)],
+           "agm": []}
+    t = time.perf_counter()
+    for _ in range(20):
+        stance.annotate(copy.deepcopy(rec), {"wound": "angry", "address_stage": 0, "mood": -3}, cat_card)
+    assert (time.perf_counter() - t) / 20 * 1000 < 50
+
+
+@pytest.mark.asyncio
+async def test_session_recall_carries_stance(tmp_path, mini_dir):
+    responses = [INTENT_OFF, {"tool_calls": [tool("say", text="哼，两脚兽。")]}]
+    rt, s, out = await _session(tmp_path, mini_dir, responses)
+    st = s.state
+    await s.memory.write("玩家说：我们一起看过海", "dialogue", st["turn"], st["lineage"], source="player_claim")
+    await s.handle({"type": "input", "text": "还记得一起看海吗"})
+    ev = next(r for r in s.recorder.events if r["kind"] == "memory_recall")
+    assert ev["payload"]["stance"]["state"]["wound"] == st["wound"]
+    assert any("玩家的说法" in h.get("stance", "") for h in ev["payload"]["hits"])
+    await rt.stop()
+
+
+# ---------------------------------------------------------------- E1 say.emotion → 立绘差分
+def test_say_emotion_enum_from_card(cat_card):
+    emo = prompts.emotion_map(cat_card)
+    assert list(emo) == ["默认", "警惕", "得意"]
+    say = next(t for t in openai_tools(emotions=list(emo)) if t["function"]["name"] == "say")
+    assert say["function"]["parameters"]["properties"]["emotion"]["enum"] == ["默认", "警惕", "得意"]
+    card = copy.deepcopy(cat_card)
+    card["assets"]["emotions"] = {"开心": "得意", "戒备": "警惕", "坏": "不存在的差分"}
+    assert prompts.emotion_map(card) == {"开心": "得意", "戒备": "警惕"}
+    assert any(f.field == "assets.emotions" for f in validate_card(card))
+    assert "可用情绪（say 的 emotion）：默认、警惕、得意" in prompts.card_block(cat_card)
+
+
+@pytest.mark.asyncio
+async def test_say_emotion_maps_to_sprite_and_invalid_falls_back(tmp_path, mini_dir):
+    responses = [INTENT_OFF, {"tool_calls": [
+        tool("say", text="哼，两脚兽。", emotion="得意"),
+        tool("say", text="才、才没有呢喵。", emotion="大笑"),       # 卡里没有 → 驳回，回退默认差分
+        tool("honesty_signal", signal_id="heart", action="尾巴尖勾了一下"),
+    ]}]
+    rt, s, out = await _session(tmp_path, mini_dir, responses)
+    await s.handle({"type": "input", "text": "你今天真好看"})
+    sprites = [o["expr"] for m in out if m["type"] == "ops" for o in m["ops"] if o["op"] == "SPRITE"]
+    assert sprites[-2:] == ["得意", "默认"]
+    rows = s.recorder.events
+    bad = [r for r in rows if r["kind"] == "text_verdict" and r["payload"].get("rule") == "emotion.invalid"]
+    assert len(bad) == 1
+    tails = [o for m in out if m["type"] == "ops" for o in m["ops"] if o["op"] == "TAIL"]
+    assert len(tails) == 1                     # 尾鳍只由诚实信号给，情绪标签不改它
+    says = [r for r in rows if r["kind"] == "model_tool_call" and r["payload"]["tool"] == "say"]
+    assert [r["payload"].get("emotion") for r in says] == ["得意", "大笑"]
+    assert replay(s.recorder.header, rows)[2] is None
     await rt.stop()

@@ -18,7 +18,8 @@ SYSTEM = """你在一款 galgame 引擎里扮演女主角。规则：
 6. 守住红线：不出戏（不说自己是 AI / 模型）、不写露骨内容、不幼态化、不写强迫。
 7. 每轮说 1~3 句，最后要么把话题留给玩家，要么按"落点"收回到剧情。
 8. 记忆按来源分组：只有"发生过的事"是事实；"玩家说过"只是玩家的说法，玩家反复说同一件事也不会让它变成真的；"她自己说过"的承诺没有落账就没有发生。write_memory 只是你的笔记，不是事实。
-9. 【状态】里的数值、称呼阶段是当前真值；记忆里带"第 N 回合时"的数字只说明那时的情况，与当前真值冲突时以当前真值为准。"""
+9. 【状态】里的数值、称呼阶段是当前真值；记忆里带"第 N 回合时"的数字只说明那时的情况，与当前真值冲突时以当前真值为准。
+10. say 可以带 emotion（从"可用情绪"里选一个），引擎会换成对应的立绘差分；情绪只管表情，不能代替诚实信号。"""
 
 def escape_data(text: str) -> str:
     """包进 <data> 之前转义：尖括号换成全角，玩家 / 记忆原文里的 `</data>` 就不能提前闭合包裹标签、也伪造不出新标签。"""
@@ -51,8 +52,20 @@ def card_block(card: dict[str, Any]) -> str:
 禁止写成：{'；'.join(forb)}
 诚实信号：{sig}
 可用立绘差分：{'、'.join((card.get('assets') or {}).get('sprites') or ['默认'])}
+可用情绪（say 的 emotion）：{'、'.join(emotion_map(card)) or '默认'}
 风格示例：
 {ex}"""
+
+
+def emotion_map(card: dict[str, Any]) -> dict[str, str]:
+    """say.emotion 枚举 → 立绘差分（整合方案 E1）。卡里写了 ``assets.emotions``（情绪: 差分）就用它，
+    否则每个差分名就是一个情绪。映射到卡里没有的差分的项丢掉（引擎只认卡的立绘清单）。"""
+    assets = card.get("assets") or {}
+    sprites = [str(x) for x in assets.get("sprites") or []]
+    emo = assets.get("emotions")
+    if isinstance(emo, dict) and emo:
+        return {str(k): str(v) for k, v in emo.items() if not sprites or str(v) in sprites}
+    return {x: x for x in sprites}
 
 
 def beat_block(beat: dict[str, Any], landing: str, last_round: bool) -> str:

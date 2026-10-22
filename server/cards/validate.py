@@ -88,6 +88,20 @@ def validate_card(card: dict[str, Any], chapter: dict[str, Any] | None = None) -
             re.compile(p["pattern"])
         except re.error as e:
             out.append(Finding("error", "speech.forbidden.checkable", f"正则写错了：{p['pattern']}（{e}）"))
+    sprites = set((card.get("assets") or {}).get("sprites") or [])
+    for emo, expr in ((card.get("assets") or {}).get("emotions") or {}).items():
+        if sprites and expr not in sprites:
+            out.append(Finding("error", "assets.emotions", f"情绪「{emo}」映射到的差分「{expr}」不在立绘清单里"))
+    rule_ids = [r["id"] for r in card.get("stance_rules") or []]
+    if len(set(rule_ids)) != len(rule_ids):
+        out.append(Finding("error", "stance_rules", "态度规则 id 重复"))
+    for r in card.get("stance_rules") or []:
+        if not r.get("note") and not r.get("hide"):
+            out.append(Finding("warn", "stance_rules", f"规则 {r['id']} 既没有注记也不隐藏，不起作用"))
+        w = r.get("when") or {}
+        for lo, hi in (("mood_min", "mood_max"), ("stage_min", "stage_max")):
+            if w.get(lo) is not None and w.get(hi) is not None and w[lo] > w[hi]:
+                out.append(Finding("error", "stance_rules", f"规则 {r['id']} 的 {lo} > {hi}"))
     if len(card["style_examples"]) < 10:
         out.append(Finding("warn", "style_examples", f"风格示例只有 {len(card['style_examples'])} 句，建议 ≥10 句"))
     if chapter is not None:

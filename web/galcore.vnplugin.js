@@ -267,8 +267,22 @@
         const j = lineFrom(ops);
         if (j >= 0) B.forced = j;          // 说中了某个选项：引擎已照那条走
         const st = B.state || {};
-        return { text: improvised.join('\n') || '……', end: j >= 0 || !st.input_open };
+        return { text: improvised.join('\n') || '……', end: j >= 0 || !st.input_open, emotion: spriteEmotion(ops) };
       });
+
+      // say.emotion → 引擎 SPRITE（整合方案 E1）→ 作品立绘差分（作品的“角色_表情”素材）；作品里没有这张差分就回落默认立绘
+      function spriteEmotion(ops) {
+        const sp = [...ops].reverse().find(o => o.op === 'SPRITE' && o.expr);
+        if (!sp) return '';
+        let have = [];
+        try {
+          have = Object.values(P.assets || {}).filter(a => a.type === 'ch' && charKey(a) === B.heroine).map(a => splitName(a.name)[1] || '默认');
+        } catch (e) { return ''; }
+        const want = String(sp.expr), short = want.split('·')[0];
+        if (have.includes(want)) return want;
+        if (have.includes(short)) return short;      // 卡里的“生气·叉腰”对作品里的“生气”
+        return have.includes('默认') ? '默认' : '';
+      }
 
       function addSpeakButton() {
         if (!B.on || !B.inputOpen || (vn.settings.get('mode') !== 'ai')) return;

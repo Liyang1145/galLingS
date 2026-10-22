@@ -26,6 +26,7 @@ from .guard.lexicon import SERIOUS_BLOCKED_TOOLS
 from .guard.text import GUARD_VERSION
 from .memory import MemoryGateway
 from .memory import provenance as pv
+from .memory import stance
 from .plugins import ChatRequest, GuardPlugin, ToolCallDone
 from .recorder import Recorder
 from .replay import display_state, replay, screen_from_ops, timeline_view
@@ -37,10 +38,34 @@ TOOLS = json.loads((Path(__file__).resolve().parents[1] / "schemas" / "tools.jso
 MODEL_TOOLS = [t for t in TOOLS if t["effect"] != "reserved"]
 
 
-def openai_tools(names: set[str] | None = None) -> list[dict[str, Any]]:
-    return [{"type": "function", "function": {"name": t["name"], "description": t["description"],
-                                              "parameters": t["parameters"]}}
-            for t in MODEL_TOOLS if names is None or t["name"] in names]
+def openai_tools(names: set[str] | None = None, emotions: list[str] | None = None) -> list[dict[str, Any]]:
+    """模型的 function calling 列表。``emotions`` 非空时把 say.emotion 收成当前卡的情绪枚举（整合方案 E1）。"""
+    out = []
+    for t in MODEL_TOOLS:
+        if names is not None and t["name"] not in names:
+            continue
+        params = t["parameters"]
+        if t["name"] == "say" and emotions and "emotion" in (params.get("properties") or {}):
+            params = json.loads(json.dumps(params, ensure_ascii=False))
+            params["properties"]["emotion"]["enum"] = list(emotions)
+        out.append({"type": "function", "function": {"name": t["name"], "description": t["description"], "parameters": params}})
+    return out
+
+
+#: 情绪 → 方向（与 mood 对照，冲突的回合在时间轴标红）；卡可在 assets.emotion_valence 里覆盖
+_POS = re.compile(r"得意|开心|高兴|笑|害羞|耳根红|心动|温柔|雀跃")
+_NEG = re.compile(r"生气|叉腰|慌乱|哭|难过|委屈|监视|嫌弃|冷|怒")
+
+
+def emotion_valence(card: dict[str, Any], emotion: str) -> int:
+    v = ((card.get("assets") or {}).get("emotion_valence") or {}).get(emotion)
+    if v is not None:
+        return max(-1, min(1, int(v)))
+    if _POS.search(emotion):
+        return 1
+    if _NEG.search(emotion):
+        return -1
+    return 0
 
 
 def public_path(path: str, rt: Any = None) -> str:
@@ -120,6 +145,10 @@ class Session:
         self.diary: list[dict[str, Any]] = []
         #: 本轮 AI 回合命中的禁语区话题（严肃模板生效时非空）：会话层据此禁 play_sfx 与喜剧差分（PLAN §10）
         self.serious: str | None = None
+        #: say.emotion 枚举 → 立绘差分（整合方案 E1）；缺图 / 非法时回落默认差分
+        self.emotions = prompts.emotion_map(self.card)
+        sprites = [str(x) for x in (self.card.get("assets") or {}).get("sprites") or []]
+        self.default_sprite = "默认" if "默认" in sprites else (sprites[0] if sprites else None)
         #: 本回合被引擎 applied / clamped 的提议：turn_commit 之后才由会话代写成 source=engine 的事实（abort 就作废）
         self._pending_facts: list[str] = []
 
@@ -301,6 +330,7 @@ class Session:
         st = self.state
         recall_task = asyncio.create_task(self.memory.recall(self.engine, f"{text} {st['beat_id']}"))
         intent, recall = await asyncio.gather(intent_task, recall_task)
+        stance.annotate(recall, self.state, self.card)  # R1：确定性态度过滤，注记进 memory_recall 事件（时间轴可见）
         await self.step("memory_recall", recall, source="memory", render=False)
         await self.step("intent", intent, source="model")
         if self.state["wait"] != "choice":  # 命中原选项：引擎已按原选项走了
@@ -398,7 +428,7 @@ class Session:
         self._pending_facts = []
         self.serious = self.guard.serious_topic(text)
         msgs = self.build_messages(text, intent, options, landing, recall)
-        req = ChatRequest(to_messages(msgs), tools=openai_tools(), temperature=None)
+        req = ChatRequest(to_messages(msgs), tools=openai_tools(emotions=list(self.emotions)), temperature=None)
         said: list[str] = []
         calls = 0
         bad_calls = 0
@@ -462,8 +492,18 @@ class Session:
             return True
         if name == "say":
             text = await self.gate_sentence(str(args.get("text", "")), msgs)
-            await self.step("model_tool_call", {"tool": "say", "args": {"text": text["text"], "origin": text["origin"]}}, source="model")
+            payload: dict[str, Any] = {"tool": "say", "args": {"text": text["text"], "origin": text["origin"]}}
+            emo = args.get("emotion")
+            if emo is not None:
+                payload["emotion"] = str(emo)
+                v = emotion_valence(self.card, str(emo))
+                mood = int(self.state.get("mood") or 0)
+                if (mood >= 2 and v < 0) or (mood <= -2 and v > 0):
+                    payload["emotion_mood_conflict"] = True  # 时间轴标红、评测计数；不驳回
+            await self.step("model_tool_call", payload, source="model")
             said.append(text["text"])  # 进 recent 由 render() 处理 SAY 时统一加，这里不再重复
+            if emo is not None:
+                await self.apply_emotion(str(emo))
             return True
         if name == "write_memory":
             # W1：模型的笔记永远只是笔记（kind=note, source=model_note）；被玩家说服写下的“事实”进不了事实区
@@ -498,6 +538,26 @@ class Session:
                 return None
             return f"（引擎落账·第 {turn} 回合）她的{sig.get('body_part', '')}出卖了真心（{sig.get('meaning', '')}）"
         return None
+
+    async def apply_emotion(self, emo: str) -> None:
+        """say.emotion → 立绘差分（E1）。非法标签驳回并回退默认差分；严肃模板下喜剧差分驳回；与当前差分相同就不换。
+        尾鳍诚实信号不受情绪标签影响（嘴上 vs 真实双通道）。"""
+        expr = self.emotions.get(emo)
+        if expr is None:
+            await self.step("text_verdict", {"stage": "tool", "tool": "say.emotion", "args": {"emotion": emo}, "allow": False,
+                                             "rule": "emotion.invalid", "reason": f"情绪「{emo}」不在这张卡的情绪清单里，回退默认差分",
+                                             "hint": "", "text": "", "guard_version": GUARD_VERSION}, source="guard", render=False)
+            expr = self.default_sprite
+        elif self.serious and self.guard.comedy_sprite(expr):
+            await self.step("text_verdict", {"stage": "tool", "tool": "say.emotion", "args": {"emotion": emo, "expr": expr},
+                                             "allow": False, "rule": "serious.no_comedy_sprite",
+                                             "reason": f"禁语区「{self.serious}」严肃模板下禁止喜剧差分", "hint": "", "text": "",
+                                             "guard_version": GUARD_VERSION}, source="guard", render=False)
+            return
+        if not expr or expr == self.state.get("sprite"):
+            return
+        await self.step("model_tool_call", {"tool": "set_sprite", "args": {"expr": expr}, "via": "say.emotion", "emotion": emo},
+                        source="model")
 
     async def revise_memory(self, old_ids: list[str], content: str, read_token: str, source: str = "engine",
                             kind: str = "fact") -> dict[str, Any]:

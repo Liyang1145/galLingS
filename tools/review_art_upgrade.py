@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
-ART=ROOT/'素材库/art-upgrade'
+ART=ROOT/'A素材库/art-upgrade'
 if __name__=='__main__':
     ap=argparse.ArgumentParser();ap.add_argument('status',choices=['approved','rework','rejected']);ap.add_argument('keys',nargs='+');ap.add_argument('--note',required=True);args=ap.parse_args()
     state=json.loads((ART/'production.json').read_text(encoding='utf-8'));path=ART/'reviews.json'

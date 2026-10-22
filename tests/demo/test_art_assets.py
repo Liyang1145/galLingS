@@ -8,13 +8,13 @@ from .conftest import FIX, make_runtime
 def test_art_file_access_and_boundaries(tmp_path, mini_dir, monkeypatch):
     from server.api import app as api
     root = tmp_path / "repo"
-    art = root / "素材库/backgrounds/a.png"
+    art = root / "A素材库/backgrounds/a.png"
     art.parent.mkdir(parents=True)
     art.write_bytes(b"source-art")
     sprite = root / "content/imports/vnstudio/game/assets/ch/b.webp"
     sprite.parent.mkdir(parents=True)
     sprite.write_bytes(b"sprite")
-    secret = root / "素材库/credentials.json"
+    secret = root / "A素材库/credentials.json"
     secret.write_text('"secret"')
     outside = root / "content/not-art.png"
     outside.write_bytes(b"nope")

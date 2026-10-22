@@ -7,7 +7,7 @@
 - ``GET  /api/post_ending/info``         是否可用、提供者、工具清单
 - ``POST /api/post_ending/chat``         兼容 VN Studio 的 vn-agent/1（一问一答，不流式；需要确认的工具一律拒绝）
 - ``GET  /galagent``                     独立聊天页（galgame 画面，插件 web/ 目录）
-- ``GET  /galagent/assets/<路径>``        素材库 素材库 里的图片（背景、立绘）
+- ``GET  /galagent/assets/<路径>``        A素材库 里的图片（背景、立绘）
 
 安全：只监听 127.0.0.1 还不够——任何网页都能连本机 WebSocket。所以除了本服务自己的页面（Host 与 Origin
 都是 127.0.0.1/localhost:端口），其它来源（含 file:// 打开的 VN Studio，Origin 为 "null"）必须带令牌。
@@ -188,7 +188,7 @@ def mount(app: FastAPI, get_rt: Callable[[], Any]) -> None:
     async def pe_assets(rel: str) -> Response:
         """galLingS 素材库：独立聊天页的背景、立绘。"""
         from server.runtime import ROOT
-        base = (ROOT / "素材库").resolve()
+        base = (ROOT / "A素材库").resolve()
         f = (base / rel).resolve()
         if base not in f.parents or not f.is_file() or f.suffix.lower() not in (".png", ".jpg", ".jpeg", ".webp", ".gif"):
             return Response(status_code=404)

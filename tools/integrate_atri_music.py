@@ -51,7 +51,7 @@ def loudness(path: Path) -> float:
 
 def music_source(source_root: Path, filename: str) -> Path:
     """Historical deliveries retain the paths that existed at their source commit."""
-    for relative in ("music/mp3", "素材库/music/mp3"):
+    for relative in ("music/mp3", "A素材库/music/mp3"):
         source = source_root / relative / filename
         if source.is_file():
             return source
@@ -84,7 +84,7 @@ def run(source_root: Path) -> dict:
             asset_id = "bgm_emerald_dream_main_v01"
             candidate = False
             project["assets"][asset_id]["sourceAliases"] = [{"sourceAuthor":"Atri-Lobato",
-                "sourcePath":source_path,"sourceCurrentPath":"素材库/music/mp3/"+filename,
+                "sourcePath":source_path,"sourceCurrentPath":"A素材库/music/mp3/"+filename,
                 "sourceCommit":source_manifest["commit"],
                 "sourceSha256":digest,"roles":["M6","E3","M7"],"identity":"SHA-256 identical"}]
         else:
@@ -93,7 +93,7 @@ def run(source_root: Path) -> dict:
             project["assets"][asset_id] = {"id":asset_id, "type":"bgm", "name":name,
                 "src":target.relative_to(GAME).as_posix(), "dur":info["duration"], "audioCategory":"music",
                 "auditionOnly":candidate, "playbackGain":gain, "sourceAuthor":"Atri-Lobato",
-                "sourcePath":source_path,"sourceCurrentPath":"素材库/music/mp3/"+filename,
+                "sourcePath":source_path,"sourceCurrentPath":"A素材库/music/mp3/"+filename,
                 "sourceCommit":source_manifest["commit"],
                 "sourceSha256":digest, "purposeStatus":"candidate" if candidate else "scene-mapped"}
         rows.append({"assetId":asset_id,"filename":filename,"name":name,"candidate":candidate,"deduplicated":duplicate,

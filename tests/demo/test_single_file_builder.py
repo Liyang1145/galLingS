@@ -11,7 +11,7 @@ def test_saved_project_export_keeps_adjustments_and_prunes_unused_library(tmp_pa
     root = tmp_path / "repo"
     game = root / "content/imports/vnstudio/game"
     game.mkdir(parents=True)
-    source = root / "素材库/new.png"
+    source = root / "A素材库/new.png"
     source.parent.mkdir(parents=True)
     source.write_bytes(b"source-image")
     (game / "cover.webp").write_bytes(b"cover-image")
@@ -22,8 +22,8 @@ def test_saved_project_export_keeps_adjustments_and_prunes_unused_library(tmp_pa
     monkeypatch.setattr(pack.mimetypes, "guess_type", lambda name: ("application/octet-stream", None))
     imported = "data:image/png;base64," + base64.b64encode(b"imported-image").decode()
     project = {"id":"stable-project", "assets":{
-        "bg": {"type":"bg", "src":"http://old-host/art-assets/assets/new.png", "libraryPath":"素材库/new.png"},
-        "unused": {"type":"bg", "src":"missing.png", "libraryPath":"素材库/missing.png"},
+        "bg": {"type":"bg", "src":"http://old-host/art-assets/assets/new.png", "libraryPath":"A素材库/new.png"},
+        "unused": {"type":"bg", "src":"missing.png", "libraryPath":"A素材库/missing.png"},
         "import": {"type":"ch", "src":imported},
     }, "lines":[{"id":"stable-node", "bg":"bg", "chapter":"First", "sprites":[{"asset":"import", "x":701, "h":620}]}]}
     saved = tmp_path / "adjusted.vnproj.json"

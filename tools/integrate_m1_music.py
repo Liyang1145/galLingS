@@ -12,7 +12,7 @@ from integrate_e4_music import write_json
 
 ASSET_ID = 'bgm_m1_shallows_day'
 PREVIOUS = 'bgm_emerald_dream_main_v01'
-ARCHIVE = ROOT / '素材库/audio/bgm' / (ASSET_ID + '.mp3')
+ARCHIVE = ROOT / 'A素材库/audio/bgm' / (ASSET_ID + '.mp3')
 REPORT = ROOT / 'content/audio/m1-integration.json'
 CUES = [
     ('qfuowzma', 'hnqx7w6w', '第三话：浅滩游泳准备与下水规矩；下潜时交给既有E2'),
@@ -71,12 +71,12 @@ def integrate(source):
         'loopStart': None, 'loopEnd': None, 'loopPointStatus': '待音乐负责人试听与人工微调',
         'source': {'tool': 'Suno（源文件标签）', 'model': None, 'generationPrompt': None},
         'role': '普通浅滩/沙洲地图日常，显式事件曲和剧情停奏优先'}
-    write_json(ROOT / '素材库/audio' / (ASSET_ID + '.metadata.json'), metadata)
-    manifest_file = ROOT / '素材库/manifest.json'
+    write_json(ROOT / 'A素材库/audio' / (ASSET_ID + '.metadata.json'), metadata)
+    manifest_file = ROOT / 'A素材库/manifest.json'
     manifest = json.loads(manifest_file.read_text('utf-8-sig'))
     assert not any(item['id'] == ASSET_ID for item in manifest['assets'])
     manifest['assets'].append({'id': ASSET_ID, 'title': '浅滩日常（功能名）', 'title_status': 'untitled',
-        'track_code': 'M1', 'category': 'bgm', 'path': ARCHIVE.relative_to(ROOT / '素材库').as_posix(),
+        'track_code': 'M1', 'category': 'bgm', 'path': ARCHIVE.relative_to(ROOT / 'A素材库').as_posix(),
         'format': 'mp3', 'bytes': metadata['bytes'], 'sha256': digest, 'duration_seconds': info['duration'],
         'source_filename': source.name, 'provenance': '音乐负责人提供并指定用于M1，正式曲名未定',
         'archived_on': '2026-10-16', 'license': '未指定开放许可证；不默认适用引擎代码许可证'})

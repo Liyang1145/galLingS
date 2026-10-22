@@ -10,7 +10,7 @@ from pathlib import Path
 from integrate_atri_music import GAME, ROOT, loudness, probe
 
 ASSET_ID = 'bgm_e4_sunset_wait'
-ARCHIVE = ROOT / '素材库/audio/bgm' / (ASSET_ID + '.mp3')
+ARCHIVE = ROOT / 'A素材库/audio/bgm' / (ASSET_ID + '.mp3')
 REPORT = ROOT / 'content/audio/e4-integration.json'
 CUES = [
     ('x68g8tf7', 'eclt59o4', '第九话：黄昏退潮、离开后的笔记至章末；原稿L3594单音提示'),
@@ -80,12 +80,12 @@ def integrate(source):
                 'loopStart': None, 'loopEnd': None, 'loopPointStatus': '待音乐负责人试听与人工微调',
                 'source': {'tool': 'Suno（源文件标签）', 'model': None, 'generationPrompt': None},
                 'role': '争吵后的黄昏退潮、等待、和解前尚未解冻的情绪；不是争执动作配乐'}
-    write_json(ROOT / '素材库/audio' / (ASSET_ID + '.metadata.json'), metadata)
-    manifest_file = ROOT / '素材库/manifest.json'
+    write_json(ROOT / 'A素材库/audio' / (ASSET_ID + '.metadata.json'), metadata)
+    manifest_file = ROOT / 'A素材库/manifest.json'
     manifest = json.loads(manifest_file.read_text('utf-8-sig'))
     assert not any(a['id'] == ASSET_ID for a in manifest['assets'])
     manifest['assets'].append({'id': ASSET_ID, 'title': '日落空守', 'title_status': 'provisional',
-        'track_code': 'E4', 'category': 'bgm', 'path': ARCHIVE.relative_to(ROOT / '素材库').as_posix(),
+        'track_code': 'E4', 'category': 'bgm', 'path': ARCHIVE.relative_to(ROOT / 'A素材库').as_posix(),
         'format': 'mp3', 'bytes': metadata['bytes'], 'sha256': digest,
         'duration_seconds': info['duration'], 'source_filename': source.name,
         'provenance': '音乐负责人提供并指定用于E4，名称暂定', 'archived_on': '2026-10-16',

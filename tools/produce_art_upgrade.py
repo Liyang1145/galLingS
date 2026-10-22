@@ -18,7 +18,7 @@ import time
 from PIL import Image, ImageDraw, ImageFont
 
 ROOT=Path(__file__).resolve().parents[1]
-ART=ROOT/'素材库/art-upgrade'
+ART=ROOT/'A素材库/art-upgrade'
 GAME=ROOT/'content/imports/vnstudio/海风与布丁'
 CLI=Path.home()/'.codex/skills/codex-gpt-image/scripts/codex_gpt_image.py'
 MANIFEST=ART/'production.json'
@@ -118,7 +118,7 @@ def prepare():
 def reference(raw):
     if raw=='user:face':return ART/'references/user_face_style.jpg'
     if raw=='user:body':return ART/'references/user_fullbody_tail.jpg'
-    if raw.startswith('legacy:'):return ROOT/'素材库/scene-backgrounds/originals'/f'{raw.split(":")[1]}.png'
+    if raw.startswith('legacy:'):return ROOT/'A素材库/scene-backgrounds/originals'/f'{raw.split(":")[1]}.png'
     return output(raw)
 def approved(state,key):
     item=state['items'].get(key,{})

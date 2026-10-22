@@ -6,7 +6,7 @@ from stage_art_upgrade import project
 from produce_art_upgrade import ART, GAME, ROOT
 
 def verify():
-    before=project(ROOT/'archive/deliveries/opening-revision/before-game.js')
+    before=project(ROOT/'A素材库/归档/deliveries/opening-revision/before-game.js')
     current=project(GAME/'game.js')
     old_ids=[l['id'] for l in before['lines']]
     new_ids=[l['id'] for l in current['lines']]
@@ -60,7 +60,7 @@ def verify():
         a={k:v for k,v in old.items() if k not in {'bg','sprites','acts','fx'}}
         b={k:v for k,v in by_id[old['id']].items() if k not in {'bg','sprites','acts','fx'}}
         assert a==b,old['id']
-    performance_baseline=ROOT/'archive/deliveries/character-performance/before-game.js'
+    performance_baseline=ROOT/'A素材库/归档/deliveries/character-performance/before-game.js'
     if current.get('characterPerformance'):
         performance_before=project(performance_baseline)
         assert [l['id'] for l in performance_before['lines']]==new_ids

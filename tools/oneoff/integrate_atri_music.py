@@ -13,7 +13,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 GAME = ROOT / "content/imports/vnstudio/海风与布丁"
-DELIVERY = ROOT / "archive/deliveries/atri-music"
+DELIVERY = ROOT / "A素材库/归档/deliveries/atri-music"
 TRACKS = [
     ("E1.mp3", "bgm_atri_e1_comedy", "Atri · 傲娇互动（E1）", False, 0),
     ("E2.mp3", "bgm_atri_e2_deepsea", "Atri · 深海之光（E2）", False, -3),
@@ -121,7 +121,7 @@ def run(source_root: Path) -> dict:
               "tracks":rows,"cues":cues,"changedNodes":len(changes),"nodeChanges":changes,
               "emeraldDreamPreserved":True,"conflictSilencePreserved":True,
               "pending":["E6或E5需要作者/音乐负责人确定用途", "M1/M2/M3/E4与明确E5/E6仍缺；循环点待人工编辑"]}
-    project["atriMusicIntegration"] = {"sourceCommit":source_manifest["commit"],"tracks":[r["assetId"] for r in rows],"cueReport":"archive/deliveries/atri-music/接入清单.json"}
+    project["atriMusicIntegration"] = {"sourceCommit":source_manifest["commit"],"tracks":[r["assetId"] for r in rows],"cueReport":"A素材库/归档/deliveries/atri-music/接入清单.json"}
     DELIVERY.mkdir(parents=True,exist_ok=True)
     (DELIVERY / "接入清单.json").write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     (GAME / "game.js").write_text("window.VN_GAME =" + json.dumps(project,ensure_ascii=False,indent=2)+";\n",encoding="utf-8")

@@ -44,7 +44,7 @@ def build():
             draft['assets'][new_id]['name']='鲸鱼小姐_'+item['name']
         target_assets[key]=new_id
     # Restore replaced bad CG only at the author's original matching line IDs.
-    author=project(ROOT/'archive/deliveries/larry-vn/original-overridden-files/game.js')
+    author=project(ROOT/'A素材库/归档/deliveries/larry-vn/original-overridden-files/game.js')
     original_by_id={line['id']:line for line in author['lines']};restored=[]
     for line in draft['lines']:
         old=original_by_id.get(line['id'],{});bg=old.get('bg')

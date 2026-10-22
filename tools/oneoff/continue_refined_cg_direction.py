@@ -9,7 +9,7 @@ def queue():
  state=json.loads((ART/'production.json').read_text('utf-8'))
  reviews=json.loads((ART/'reviews.json').read_text('utf-8'))
  overrides=json.loads((ART/'overrides.json').read_text('utf-8'))
- delivery=ROOT/'archive/deliveries/refined-cg-20261016/originals'
+ delivery=ROOT/'A素材库/归档/deliveries/refined-cg-20261016/originals'
  for key in ['P02','C04','C20']:
   stem=key+'_teammate_refined';assert not output(stem).exists()
   shutil.copy2(delivery/(key+'.png'),output(stem))

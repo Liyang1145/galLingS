@@ -25,7 +25,7 @@ EYES={
 PUPIL_SPANS={'P05':110,'L34':95,'P13':95,'P15':95,'P16':95,'P17':95,'P18':95}
 
 def apply():
- archive=ROOT/'archive/deliveries/character-direction';archive.mkdir(parents=True,exist_ok=True)
+ archive=ROOT/'A素材库/归档/deliveries/character-direction';archive.mkdir(parents=True,exist_ok=True)
  for file in ['game.js','index.html']:
   target=archive/('before-'+file)
   if not target.exists():target.write_bytes(subprocess.check_output(['git','show',f'{BASE}:content/imports/vnstudio/海风与布丁/{file}'],cwd=ROOT))

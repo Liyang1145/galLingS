@@ -7,7 +7,7 @@ from produce_art_upgrade import ART,GAME,ROOT,output,record,save,approved
 from compress_art_upgrade import build as compress
 
 BASELINE='33fba8eb176b992013483108215a36197be7e042'
-DELIVERY=ROOT/'archive/deliveries/refined-cg-20261016'
+DELIVERY=ROOT/'A素材库/归档/deliveries/refined-cg-20261016'
 REPORT=ART/'opening-art-sound-corrections.json'
 
 def write(path,obj):

@@ -14,7 +14,7 @@ def apply():
     p=project(GAME/'game.js')
     if p.get('characterPerformance'):raise ValueError('Already applied; review new cues explicitly')
     before=copy.deepcopy(p);lines=p['lines'];index={l['id']:i for i,l in enumerate(lines)}
-    archive=ROOT/'archive/deliveries/character-performance';archive.mkdir(parents=True,exist_ok=True)
+    archive=ROOT/'A素材库/归档/deliveries/character-performance';archive.mkdir(parents=True,exist_ok=True)
     baseline=archive/'before-game.js'
     if not baseline.exists():baseline.write_bytes(subprocess.check_output(['git','show','0f6de470e5ef1b96c0dfe91605c913f15251c0b9:content/imports/vnstudio/海风与布丁/game.js'],cwd=ROOT))
     art={a.get('productionArtId'):a['id'] for a in p['assets'].values() if a.get('productionArtId')}

@@ -75,7 +75,7 @@ def build() -> dict:
             provenance = {"creator":"用户转交的队友精修图", "tool":"精修工具未登记",
                 "requestedModel":"", "reportedModel":"", "requestedQuality":"", "reportedQuality":"",
                 "routeVerified":False, "label":"队友精修成品；模型与提示词未随包提供",
-                "evidence":"archive/deliveries/refined-cg-20261016/manifest.json",
+                "evidence":"A素材库/归档/deliveries/refined-cg-20261016/manifest.json",
                 "action":"保留精修原件；按剧情和结构逐项审核，不继承旧图生成参数"}
         elif generation:
             provenance = {"creator":"Codex 图像请求", "tool":"Codex OAuth 图像桥",
@@ -93,7 +93,7 @@ def build() -> dict:
         else:
             provenance = {"creator":"LarryE135 完整作品", "tool":"未登记", "requestedModel":"",
                 "reportedModel":"", "routeVerified":False, "label":"队友原件；生成模型未登记",
-                "evidence":"archive/deliveries/larry-vn/manifest.json", "action":"使用中的人物/CG/封面待统一重制；旧背景留档"}
+                "evidence":"A素材库/归档/deliveries/larry-vn/manifest.json", "action":"使用中的人物/CG/封面待统一重制；旧背景留档"}
         category = "ch" if (asset and asset["type"] == "ch") or "/ch/" in paths_rel[0] or file.name.startswith("R01_") else "cg" if file.stem.upper().startswith("CG_") else "bg"
         if upgraded:
             kind=art_item.get('kind')

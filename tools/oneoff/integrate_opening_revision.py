@@ -13,7 +13,7 @@ def apply():
     path=GAME/'game.js';p=project(path)
     if p.get('openingRevision'):raise ValueError('Already applied; review further changes explicitly')
     before=copy.deepcopy(p);lines=p['lines'];first={i:l for i,l in enumerate(lines[:160])}
-    archive=ROOT/'archive/deliveries/opening-revision'
+    archive=ROOT/'A素材库/归档/deliveries/opening-revision'
     archive.mkdir(parents=True,exist_ok=True)
     assert not (archive/'before-game.js').exists()
     (archive/'before-game.js').write_bytes(path.read_bytes())

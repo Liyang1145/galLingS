@@ -1,0 +1,67 @@
+{
+  "confirmedOn": "2026-10-22",
+  "confirmedBy": "Liyang1145",
+  "subtitlePolicy": "none",
+  "tracks": [
+    {
+      "id": "bgm_emerald_dream_main_v01",
+      "title": "潮汐捎来的相逢"
+    },
+    {
+      "id": "bgm_emerald_dream_piano",
+      "title": "低语落在纸间"
+    },
+    {
+      "id": "bgm_e2_deepsea_main",
+      "title": "群星在此沉眠"
+    },
+    {
+      "id": "bgm_e2_deepsea_piano",
+      "title": "掌心的微光"
+    },
+    {
+      "id": "bgm_e4_sunset_wait",
+      "title": "潮声未曾作答"
+    },
+    {
+      "id": "bgm_m1_shallows_day",
+      "title": "逐浪的晴日"
+    },
+    {
+      "id": "bgm_atri_m2_deep",
+      "title": "澄蓝之下"
+    },
+    {
+      "id": "bgm_atri_m3_market",
+      "title": "街巷间的欢歌"
+    },
+    {
+      "id": "bgm_atri_e1_comedy",
+      "title": "佯怒的涟漪"
+    },
+    {
+      "id": "bgm_atri_e3m6m7_v2",
+      "title": "灯火可亲"
+    },
+    {
+      "id": "bgm_atri_e5_reconcile",
+      "title": "重归温柔之处"
+    },
+    {
+      "id": "bgm_atri_e5_e6_candidate",
+      "title": "为你留白的世界"
+    },
+    {
+      "id": "bgm_atri_e7_reflection",
+      "title": "未竟之问"
+    },
+    {
+      "id": "bgm_atri_t3_dusk",
+      "title": "余晖的眷恋"
+    },
+    {
+      "id": "bgm_atri_t4_night",
+      "title": "晚灯与絮语"
+    }
+  ]
+}

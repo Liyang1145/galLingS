@@ -1,14 +1,13 @@
 {
   "id": "bgm_m1_shallows_day",
   "trackCode": "M1",
-  "title": null,
-  "workingLabel": "浅滩日常",
-  "titleStatus": "untitled",
+  "title": "逐浪的晴日",
+  "titleStatus": "confirmed",
   "selectedBy": "Liyang1145",
   "selectedOn": "2026-10-16",
   "originalFilename": "录音机-20261011-1642(1).mp3",
-  "archivePath": "content/assets/audio/bgm/bgm_m1_shallows_day.mp3",
-  "runtimePath": "content/imports/vnstudio/海风与布丁/assets/bgm/bgm_m1_shallows_day.mp3",
+  "archivePath": "A素材库/audio/bgm/bgm_m1_shallows_day.mp3",
+  "runtimePath": "海风与布丁/assets/bgm/bgm_m1_shallows_day.mp3",
   "sha256": "08dae55fe051327cad76c7f3938dc297ef234f314a50ffa2f2ef911e2646e325",
   "bytes": 2380041,
   "audio": {

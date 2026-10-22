@@ -43,6 +43,7 @@
 - [current-art-gallery.md](current-art-gallery.md) — 仅当前使用图片的图库
 
 ## 音乐、音效、配音
+- [music-titles-20261022.md](music-titles-20261022.md) — 15 首正式曲名确认，不加副标题；同步游戏资源、开发页与素材清单
 - [music-inventory-20261022.md](music-inventory-20261022.md) — 现用15个BGM文件、备用/停用与真实缺口；纠正旧音乐进度中的过时快照
 - [deepsea-emerald-piano-20261021.md](deepsea-emerald-piano-20261021.md) — 新深海主曲及深海/翡翠钢琴改编接入；Atri E2 暂时弃用，M2 保留
 - [vo-ch1-7-new-voice-20261019.md](vo-ch1-7-new-voice-20261019.md) — 鲸鱼小姐第一～七话新音色

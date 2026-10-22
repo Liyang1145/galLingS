@@ -1,0 +1,18 @@
+{
+  "base": "51b0c75d26ca70ff6dff176072326164b03931da",
+  "nodes": 3315,
+  "onlyNameFieldsAndExistingTitleStatusChanged": true,
+  "allLinesAndNonMusicAssetsUnchanged": true,
+  "audioIdsPathsMixingAndContentUnchanged": true,
+  "artCatalogItemsUnchanged": true,
+  "titlesHaveNoSubtitles": true,
+  "archiveTitlesUpdated": 6,
+  "fullBrowserRegression": {
+    "nodes": 3315,
+    "nbad": 0,
+    "nerrs": 0
+  },
+  "markdownLinkScope": "changed Markdown documents, exact publication tree as targets",
+  "markdownLinkCheck": "检查链接 143 条，断链 0 条",
+  "passed": true
+}

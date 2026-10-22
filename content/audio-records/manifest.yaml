@@ -1,15 +1,15 @@
-# Music metadata. File paths are relative to content/audio; the selected MP3 is now archived in the repository.
+# Music metadata. Stable asset IDs and file paths are retained; titles confirmed on 2026-10-22.
 schema_version: 1
-updated: "2026-10-21"
+updated: "2026-10-22"
 tracks:
   - id: bgm_emerald_dream_main_v01
-    title: 翡翠之梦
-    role: character_theme
+    title: 潮汐捎来的相逢
+    role: meeting_theme
     character: 鲸鱼小姐
-    status: selected_main_theme
+    status: selected_scene_track
     original_filename: 翡翠1.1.mp3
     archived_filename: bgm_emerald_dream_main_v01.mp3
-    file: ../assets/audio/bgm/bgm_emerald_dream_main_v01.mp3
+    file: ../../A素材库/audio/bgm/bgm_emerald_dream_main_v01.mp3
     availability: repository
     selected_on: "2026-10-11"
     bytes: 3066777
@@ -41,17 +41,18 @@ tracks:
       membership_tier: null
       uploaded_reference: null
     authorization_status: not_recorded
-    notes: 音乐负责人指定的当前角色主曲；后续变奏以此为基准。原 MP3 单独归档用于保存探索素材；主曲未剪辑，场景接入待 LarryE 最新 DEMO 核对，当前音乐版本未冻结。
+    notes: 初遇见面曲，另有已交付钢琴改编；新的角色主曲仍待选定。原文件与历史制作资料保留，正式展示仅用已确认曲名。
+
   - id: bgm_e4_sunset_wait
-    title: 日落空守
-    title_status: provisional
+    title: 潮声未曾作答
+    title_status: confirmed
     track_code: E4
     role: emotional_aftermath
     character: 鲸鱼小姐
     status: selected_scene_track
     original_filename: 日落空守.mp3
     archived_filename: bgm_e4_sunset_wait.mp3
-    file: ../assets/audio/bgm/bgm_e4_sunset_wait.mp3
+    file: ../../A素材库/audio/bgm/bgm_e4_sunset_wait.mp3
     availability: repository
     selected_on: "2026-10-16"
     selected_by: Liyang1145
@@ -68,17 +69,17 @@ tracks:
       edited: false
       loudness_normalized: false
       seamless_loop_prepared: false
-    notes: 曲名暂定。完整原MP3不转码不裁剪；只用播放器音量衰减至主曲参考以下约4dB。第九话黄昏、第十话数日等待、第十一话救援后尚未解冻的回答；通话争执和水下救援保留停奏。
+    notes: 2026-10-22 正式曲名已确认。完整原MP3不转码不裁剪；只用播放器音量衰减至主曲参考以下约4dB。第九话黄昏、第十话数日等待、第十一话救援后尚未解冻的回答；通话争执和水下救援保留停奏。
+
   - id: bgm_m1_shallows_day
-    title: null
-    working_label: 浅滩日常
-    title_status: untitled
+    title: 逐浪的晴日
+    title_status: confirmed
     track_code: M1
     role: coastal_daily_map
     status: selected_scene_track
     original_filename: 录音机-20261011-1642(1).mp3
     archived_filename: bgm_m1_shallows_day.mp3
-    file: ../assets/audio/bgm/bgm_m1_shallows_day.mp3
+    file: ../../A素材库/audio/bgm/bgm_m1_shallows_day.mp3
     availability: repository
     selected_on: "2026-10-16"
     selected_by: Liyang1145
@@ -98,13 +99,13 @@ tracks:
     notes: 按用户提供的约1分40秒文件完整保存，不拉伸或凑时长；M1先用于第三话下潜前准备、第七话沙洲捡贝壳。原角色主题、E1/E2/E4/E7及其停奏保持；播放器暂按主曲参考以下约3dB播放。
 
   - id: bgm_e2_deepsea_main
-    title: 深海之光·主曲
+    title: 群星在此沉眠
     role: "E2 full theme"
     status: selected_and_locally_integrated
     selected_on: "2026-10-21"
     selected_by: Liyang1145
     original_filename: 21.wav
-    file: ../assets/audio/bgm/bgm_e2_deepsea_main.mp3
+    file: ../../A素材库/audio/bgm/bgm_e2_deepsea_main.mp3
     sha256: f66176c65e6852f6ec89e6f9a30a4a5ae8d09ce3676e9b6d8ccbd99f265a44cd
     source_sha256: f2e33da39002bb06bcb548e2dab444497efe7b3abf8f982e703f6e0f834da9e9
     duration_seconds: 214.852676
@@ -115,13 +116,13 @@ tracks:
     integration_record: deepsea-theme-integration-20261021.json
 
   - id: bgm_e2_deepsea_piano
-    title: 深海之光·钢琴改编
+    title: 掌心的微光
     role: "E2 piano arrangement"
     status: selected_and_locally_integrated
     selected_on: "2026-10-21"
     selected_by: Liyang1145
     original_filename: 深海-钢琴.mp3
-    file: ../assets/audio/bgm/bgm_e2_deepsea_piano.mp3
+    file: ../../A素材库/audio/bgm/bgm_e2_deepsea_piano.mp3
     sha256: 5fe431056d077d2af7a71c0a50c73a07e6664fede3d868ae4d995f87e810b7f5
     source_sha256: 5fe431056d077d2af7a71c0a50c73a07e6664fede3d868ae4d995f87e810b7f5
     duration_seconds: 132.101188
@@ -132,13 +133,13 @@ tracks:
     integration_record: deepsea-theme-integration-20261021.json
 
   - id: bgm_emerald_dream_piano
-    title: 翡翠之梦·钢琴改编
+    title: 低语落在纸间
     role: "Emerald meeting-theme piano arrangement"
     status: selected_and_locally_integrated
     selected_on: "2026-10-21"
     selected_by: Liyang1145
     original_filename: 翡翠钢琴.mp3
-    file: ../assets/audio/bgm/bgm_emerald_dream_piano.mp3
+    file: ../../A素材库/audio/bgm/bgm_emerald_dream_piano.mp3
     sha256: d95341d97eaca99ffefda7092538c3bcbffaf52a04c227f9a4c22fe04829faaa
     source_sha256: d95341d97eaca99ffefda7092538c3bcbffaf52a04c227f9a4c22fe04829faaa
     duration_seconds: 133.694688
@@ -147,3 +148,102 @@ tracks:
     loop_end: null
     seamless_loop_prepared: false
     integration_record: deepsea-theme-integration-20261021.json
+
+  - id: bgm_atri_m2_deep
+    title: 澄蓝之下
+    title_status: confirmed
+    track_code: "M2"
+    status: selected_scene_track
+    source_author: Atri-Lobato
+    file: ../../A素材库/music/mp3/M2.mp3
+    duration_seconds: 219.936
+    sha256: 5d5da02b05c988a8bd15e880a5f9a76b60062c40e4e7907928b4675b2ef72398
+    playback_gain: 0.72444
+
+  - id: bgm_atri_m3_market
+    title: 街巷间的欢歌
+    title_status: confirmed
+    track_code: "M3"
+    status: selected_scene_track
+    source_author: Atri-Lobato
+    file: ../../A素材库/music/mp3/M3.mp3
+    duration_seconds: 122.256
+    sha256: 6300f6f9e220c5b8ae454f68c5a879bcf0987a2e4ec89064c734219ae8783b9a
+    playback_gain: 0.62373
+
+  - id: bgm_atri_e1_comedy
+    title: 佯怒的涟漪
+    title_status: confirmed
+    track_code: ""
+    status: selected_scene_track
+    source_author: Atri-Lobato
+    file: ../../A素材库/music/mp3/E1.mp3
+    duration_seconds: 86.4135
+    sha256: 3342a33f9c41c9bdaed932d287d955a1fcf21e8e64757857114e0e400fcd03c5
+    playback_gain: 0.7079
+
+  - id: bgm_atri_e3m6m7_v2
+    title: 灯火可亲
+    title_status: confirmed
+    track_code: "E3 M6 M7"
+    status: selected_scene_track
+    source_author: Atri-Lobato
+    file: ../../A素材库/music/mp3/E3 M6 M7.mp3
+    duration_seconds: 157.248
+    sha256: bd1cf71b49934d4f859e2b3487c3255fd044ab39c1b37955a456e9ba8f86edc5
+    playback_gain: 0.71614
+
+  - id: bgm_atri_e5_reconcile
+    title: 重归温柔之处
+    title_status: confirmed
+    track_code: "E5"
+    status: selected_scene_track
+    source_author: Atri-Lobato
+    file: ../../A素材库/music/mp3/E5.mp3
+    duration_seconds: 168.84
+    sha256: 420361a1613ec2b93be2359eff68d9c13c086dc6f1cecbba4a56eb151797b342
+    playback_gain: 0.76736
+
+  - id: bgm_atri_e5_e6_candidate
+    title: 为你留白的世界
+    title_status: confirmed
+    track_code: "E6"
+    status: selected_scene_track
+    source_author: Atri-Lobato
+    file: ../../A素材库/music/mp3/E6或E5.mp3
+    duration_seconds: 178.4135
+    sha256: 372e8b3cd2b991e4188d15df1b586ae3f250f7a63a9844a95ee81e73606d288e
+    playback_gain: 0.86
+
+  - id: bgm_atri_e7_reflection
+    title: 未竟之问
+    title_status: confirmed
+    track_code: ""
+    status: selected_scene_track
+    source_author: Atri-Lobato
+    file: ../../A素材库/music/mp3/E7.mp3
+    duration_seconds: 186.122417
+    sha256: 1e1f2f226d15142dbf05134aa61c48a5f6ae850dd46e4d985a3754588dfc3fe5
+    playback_gain: 0.5821
+
+  - id: bgm_atri_t3_dusk
+    title: 余晖的眷恋
+    title_status: confirmed
+    track_code: "T3"
+    status: selected_scene_track
+    source_author: Atri-Lobato
+    file: ../../A素材库/music/mp3/T3.mp3
+    duration_seconds: 184.848
+    sha256: e34c1eb525934184948f42f9d9f6e6fc20391735103ed652547dad89a9e5321a
+    playback_gain: 0.69183
+
+  - id: bgm_atri_t4_night
+    title: 晚灯与絮语
+    title_status: confirmed
+    track_code: "T4"
+    status: selected_scene_track
+    source_author: Atri-Lobato
+    file: ../../A素材库/music/mp3/T4.mp3
+    duration_seconds: 198.0
+    sha256: c9cb6b4816c9845f487431097e29a853dbc2683cd50127de7ab2dbd09c4cebe0
+    playback_gain: 0.78524

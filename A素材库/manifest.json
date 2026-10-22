@@ -1587,7 +1587,7 @@
     },
     {
       "id": "bgm_emerald_dream_main_v01",
-      "title": "翡翠之梦",
+      "title": "潮汐捎来的相逢",
       "category": "music",
       "path": "audio/bgm/bgm_emerald_dream_main_v01.mp3",
       "version": 1,
@@ -2308,8 +2308,8 @@
     },
     {
       "id": "bgm_e4_sunset_wait",
-      "title": "日落空守",
-      "title_status": "provisional",
+      "title": "潮声未曾作答",
+      "title_status": "confirmed",
       "track_code": "E4",
       "category": "bgm",
       "path": "audio/bgm/bgm_e4_sunset_wait.mp3",
@@ -2324,8 +2324,8 @@
     },
     {
       "id": "bgm_m1_shallows_day",
-      "title": "浅滩日常（功能名）",
-      "title_status": "untitled",
+      "title": "逐浪的晴日",
+      "title_status": "confirmed",
       "track_code": "M1",
       "category": "bgm",
       "path": "audio/bgm/bgm_m1_shallows_day.mp3",
@@ -2340,7 +2340,7 @@
     },
     {
       "id": "bgm_e2_deepsea_main",
-      "title": "深海之光·主曲",
+      "title": "群星在此沉眠",
       "category": "bgm",
       "path": "audio/bgm/bgm_e2_deepsea_main.mp3",
       "format": "mp3",
@@ -2357,7 +2357,7 @@
     },
     {
       "id": "bgm_e2_deepsea_piano",
-      "title": "深海之光·钢琴改编",
+      "title": "掌心的微光",
       "category": "bgm",
       "path": "audio/bgm/bgm_e2_deepsea_piano.mp3",
       "format": "mp3",
@@ -2374,7 +2374,7 @@
     },
     {
       "id": "bgm_emerald_dream_piano",
-      "title": "翡翠之梦·钢琴改编",
+      "title": "低语落在纸间",
       "category": "bgm",
       "path": "audio/bgm/bgm_emerald_dream_piano.mp3",
       "format": "mp3",

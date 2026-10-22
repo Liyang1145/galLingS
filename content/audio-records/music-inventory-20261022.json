@@ -1,5 +1,5 @@
 {
-  "base": "89b820d1cfaae02f0e0dc8d499b5be9d7dfe9129",
+  "base": "51b0c75d26ca70ff6dff176072326164b03931da",
   "nodeCount": 3315,
   "registered": 17,
   "active": 15,
@@ -8,7 +8,7 @@
     {
       "id": "bgm_emerald_dream_main_v01",
       "type": "bgm",
-      "name": "翡翠之梦·见面曲",
+      "name": "潮汐捎来的相逢",
       "src": "assets/bgm/bgm_emerald_dream_main_v01.mp3",
       "dur": 133.2135,
       "audioCategory": "music",
@@ -24,7 +24,7 @@
             "M7"
           ],
           "identity": "SHA-256 identical",
-          "sourceCurrentPath": "content/assets/music/mp3/M6？.mp3"
+          "sourceCurrentPath": "A素材库/music/mp3/M6？.mp3"
         }
       ],
       "playbackGain": 0.7079,
@@ -48,13 +48,13 @@
         "第二话 · 暗号契约",
         "番外篇二 · 贝壳项链"
       ],
-      "runtimeRepoPath": "content/imports/vnstudio/海风与布丁/assets/bgm/bgm_emerald_dream_main_v01.mp3",
+      "runtimeRepoPath": "海风与布丁/assets/bgm/bgm_emerald_dream_main_v01.mp3",
       "runtimeGitBlob": "06f5ac88b72b2ce36cd822df2322fc5c71e33c21"
     },
     {
       "id": "bgm_atri_e1_comedy",
       "type": "bgm",
-      "name": "Atri·傲娇互动（E1）",
+      "name": "佯怒的涟漪",
       "src": "assets/bgm/atri/bgm_atri_e1_comedy.mp3",
       "dur": 86.4135,
       "audioCategory": "music",
@@ -65,7 +65,7 @@
       "sourceCommit": "f45ec5172adde3d05a409af6506fb763ca8d7b55",
       "sourceSha256": "3342a33f9c41c9bdaed932d287d955a1fcf21e8e64757857114e0e400fcd03c5",
       "purposeStatus": "scene-mapped",
-      "sourceCurrentPath": "content/assets/music/mp3/E1.mp3",
+      "sourceCurrentPath": "A素材库/music/mp3/E1.mp3",
       "usedNodes": 77,
       "ranges": [
         [
@@ -81,7 +81,7 @@
         "第二话 · 暗号契约",
         "第四话 · 集市上的「我妻子」"
       ],
-      "runtimeRepoPath": "content/imports/vnstudio/海风与布丁/assets/bgm/atri/bgm_atri_e1_comedy.mp3",
+      "runtimeRepoPath": "海风与布丁/assets/bgm/atri/bgm_atri_e1_comedy.mp3",
       "runtimeGitBlob": "f118c90f3c17073625e07980857bb20298efb509"
     },
     {
@@ -98,7 +98,7 @@
       "sourceCommit": "f45ec5172adde3d05a409af6506fb763ca8d7b55",
       "sourceSha256": "70f119348fa351452a0573454ec482dba76a20fe015c2be572a10882a3ea3021",
       "purposeStatus": "temporarily-retired-by-music-owner",
-      "sourceCurrentPath": "content/assets/music/mp3/E2.mp3",
+      "sourceCurrentPath": "A素材库/music/mp3/E2.mp3",
       "retired": true,
       "retiredOn": "2026-10-21",
       "replacedBy": [
@@ -109,13 +109,13 @@
       "usedNodes": 0,
       "ranges": [],
       "chapters": [],
-      "runtimeRepoPath": "content/imports/vnstudio/海风与布丁/assets/bgm/atri/bgm_atri_e2_deepsea.mp3",
+      "runtimeRepoPath": "海风与布丁/assets/bgm/atri/bgm_atri_e2_deepsea.mp3",
       "runtimeGitBlob": "e8199e48e140f96ea1777a938be238622ea92a30"
     },
     {
       "id": "bgm_atri_e7_reflection",
       "type": "bgm",
-      "name": "Atri·独白与思考（E7）",
+      "name": "未竟之问",
       "src": "assets/bgm/atri/bgm_atri_e7_reflection.mp3",
       "dur": 186.122417,
       "audioCategory": "music",
@@ -126,7 +126,7 @@
       "sourceCommit": "f45ec5172adde3d05a409af6506fb763ca8d7b55",
       "sourceSha256": "1e1f2f226d15142dbf05134aa61c48a5f6ae850dd46e4d985a3754588dfc3fe5",
       "purposeStatus": "scene-mapped",
-      "sourceCurrentPath": "content/assets/music/mp3/E7.mp3",
+      "sourceCurrentPath": "A素材库/music/mp3/E7.mp3",
       "usedNodes": 59,
       "ranges": [
         [
@@ -147,13 +147,13 @@
         "第三话 · 深海之光",
         "第六话 · 原来不是别人啊"
       ],
-      "runtimeRepoPath": "content/imports/vnstudio/海风与布丁/assets/bgm/atri/bgm_atri_e7_reflection.mp3",
+      "runtimeRepoPath": "海风与布丁/assets/bgm/atri/bgm_atri_e7_reflection.mp3",
       "runtimeGitBlob": "f720b73c5ebc9a1ce6bc0642f393b6142d833c71"
     },
     {
       "id": "bgm_atri_e5_e6_candidate",
       "type": "bgm",
-      "name": "Atri·元层/世界让路（E6）",
+      "name": "为你留白的世界",
       "src": "assets/bgm/atri/bgm_atri_e5_e6_candidate.mp3",
       "dur": 178.4135,
       "audioCategory": "music",
@@ -164,7 +164,7 @@
       "sourceCommit": "f45ec5172adde3d05a409af6506fb763ca8d7b55",
       "sourceSha256": "372e8b3cd2b991e4188d15df1b586ae3f250f7a63a9844a95ee81e73606d288e",
       "purposeStatus": "scene-mapped",
-      "sourceCurrentPath": "content/assets/music/mp3/E6或E5.mp3",
+      "sourceCurrentPath": "A素材库/music/mp3/E6或E5.mp3",
       "trackCode": "E6",
       "note": "Atri 10-18 定为 E6（原“E6或E5”，同一文件）",
       "usedNodes": 85,
@@ -182,25 +182,25 @@
         "第八话 · 搬家",
         "第十四话 · 那些布丁和糍粑"
       ],
-      "runtimeRepoPath": "content/imports/vnstudio/海风与布丁/assets/bgm/atri/bgm_atri_e5_e6_candidate.mp3",
+      "runtimeRepoPath": "海风与布丁/assets/bgm/atri/bgm_atri_e5_e6_candidate.mp3",
       "runtimeGitBlob": "1869a65d5623a115c2bd1e72e4901bc7d41fc1b3"
     },
     {
       "id": "bgm_e4_sunset_wait",
       "type": "bgm",
-      "name": "日落空守·E4（暂定名）",
+      "name": "潮声未曾作答",
       "src": "assets/bgm/bgm_e4_sunset_wait.mp3",
       "dur": 144.8135,
       "audioCategory": "music",
       "auditionOnly": false,
       "playbackGain": 0.7328,
       "trackCode": "E4",
-      "provisionalTitle": true,
+      "provisionalTitle": false,
       "sourceAuthor": "Liyang1145",
-      "sourceCurrentPath": "content/assets/audio/bgm/bgm_e4_sunset_wait.mp3",
+      "sourceCurrentPath": "A素材库/audio/bgm/bgm_e4_sunset_wait.mp3",
       "sourceSha256": "4fa6f18e5f96795912cee922b7fa46c58fdb6557b18fc874a06c3240645f6684",
       "purposeStatus": "scene-mapped",
-      "cueReport": "content/audio/e4-integration.json",
+      "cueReport": "content/audio-records/e4-integration.json",
       "usedNodes": 77,
       "ranges": [
         [
@@ -221,25 +221,25 @@
         "第十话 · 深水区",
         "第十一话 · 礁石与和解"
       ],
-      "runtimeRepoPath": "content/imports/vnstudio/海风与布丁/assets/bgm/bgm_e4_sunset_wait.mp3",
+      "runtimeRepoPath": "海风与布丁/assets/bgm/bgm_e4_sunset_wait.mp3",
       "runtimeGitBlob": "7d8ae29e3f494188465724b93c2652752511c46c"
     },
     {
       "id": "bgm_m1_shallows_day",
       "type": "bgm",
-      "name": "浅滩日常·M1（曲名待定）",
+      "name": "逐浪的晴日",
       "src": "assets/bgm/bgm_m1_shallows_day.mp3",
       "dur": 99.6935,
       "audioCategory": "music",
       "auditionOnly": false,
       "playbackGain": 0.6569,
       "trackCode": "M1",
-      "titleStatus": "untitled",
+      "titleStatus": "confirmed",
       "sourceAuthor": "Liyang1145",
-      "sourceCurrentPath": "content/assets/audio/bgm/bgm_m1_shallows_day.mp3",
+      "sourceCurrentPath": "A素材库/audio/bgm/bgm_m1_shallows_day.mp3",
       "sourceSha256": "08dae55fe051327cad76c7f3938dc297ef234f314a50ffa2f2ef911e2646e325",
       "purposeStatus": "scene-mapped",
-      "cueReport": "content/audio/m1-integration.json",
+      "cueReport": "content/audio-records/m1-integration.json",
       "usedNodes": 404,
       "ranges": [
         [
@@ -275,13 +275,13 @@
         "番外篇一 · 盒子越来越满了",
         "番外篇二 · 贝壳项链"
       ],
-      "runtimeRepoPath": "content/imports/vnstudio/海风与布丁/assets/bgm/bgm_m1_shallows_day.mp3",
+      "runtimeRepoPath": "海风与布丁/assets/bgm/bgm_m1_shallows_day.mp3",
       "runtimeGitBlob": "e17e8d15121771c5c3d51ed198cd4677ad6acbe8"
     },
     {
       "id": "bgm_atri_m2_deep",
       "type": "bgm",
-      "name": "Atri·深海空间（M2）",
+      "name": "澄蓝之下",
       "src": "assets/bgm/atri/bgm_atri_m2_deep.mp3",
       "dur": 219.936,
       "audioCategory": "music",
@@ -289,7 +289,7 @@
       "playbackGain": 0.72444,
       "trackCode": "M2",
       "sourceAuthor": "Atri-Lobato",
-      "sourcePath": "content/assets/music/mp3/M2.mp3",
+      "sourcePath": "A素材库/music/mp3/M2.mp3",
       "sourceCommit": "608093d",
       "sourceSha256": "5d5da02b05c988a8bd15e880a5f9a76b60062c40e4e7907928b4675b2ef72398",
       "purposeStatus": "scene-mapped",
@@ -304,13 +304,13 @@
       "chapters": [
         "第三话 · 深海之光"
       ],
-      "runtimeRepoPath": "content/imports/vnstudio/海风与布丁/assets/bgm/atri/bgm_atri_m2_deep.mp3",
+      "runtimeRepoPath": "海风与布丁/assets/bgm/atri/bgm_atri_m2_deep.mp3",
       "runtimeGitBlob": "9f3b1899b07ff17ca7602bc87f30b85b4937685e"
     },
     {
       "id": "bgm_atri_m3_market",
       "type": "bgm",
-      "name": "Atri·集市（M3）",
+      "name": "街巷间的欢歌",
       "src": "assets/bgm/atri/bgm_atri_m3_market.mp3",
       "dur": 122.256,
       "audioCategory": "music",
@@ -318,7 +318,7 @@
       "playbackGain": 0.62373,
       "trackCode": "M3",
       "sourceAuthor": "Atri-Lobato",
-      "sourcePath": "content/assets/music/mp3/M3.mp3",
+      "sourcePath": "A素材库/music/mp3/M3.mp3",
       "sourceCommit": "608093d",
       "sourceSha256": "6300f6f9e220c5b8ae454f68c5a879bcf0987a2e4ec89064c734219ae8783b9a",
       "purposeStatus": "scene-mapped",
@@ -365,13 +365,13 @@
         "第十六话 · 海风与布丁",
         "番外篇一 · 盒子越来越满了"
       ],
-      "runtimeRepoPath": "content/imports/vnstudio/海风与布丁/assets/bgm/atri/bgm_atri_m3_market.mp3",
+      "runtimeRepoPath": "海风与布丁/assets/bgm/atri/bgm_atri_m3_market.mp3",
       "runtimeGitBlob": "67a968bb05a7cc2732a8799c61afa8b37737652e"
     },
     {
       "id": "bgm_atri_e5_reconcile",
       "type": "bgm",
-      "name": "Atri·和解回暖（E5）",
+      "name": "重归温柔之处",
       "src": "assets/bgm/atri/bgm_atri_e5_reconcile.mp3",
       "dur": 168.84,
       "audioCategory": "music",
@@ -379,7 +379,7 @@
       "playbackGain": 0.76736,
       "trackCode": "E5",
       "sourceAuthor": "Atri-Lobato",
-      "sourcePath": "content/assets/music/mp3/E5.mp3",
+      "sourcePath": "A素材库/music/mp3/E5.mp3",
       "sourceCommit": "608093d",
       "sourceSha256": "420361a1613ec2b93be2359eff68d9c13c086dc6f1cecbba4a56eb151797b342",
       "purposeStatus": "scene-mapped",
@@ -399,13 +399,13 @@
         "第十一话 · 礁石与和解",
         "第十四话 · 那些布丁和糍粑"
       ],
-      "runtimeRepoPath": "content/imports/vnstudio/海风与布丁/assets/bgm/atri/bgm_atri_e5_reconcile.mp3",
+      "runtimeRepoPath": "海风与布丁/assets/bgm/atri/bgm_atri_e5_reconcile.mp3",
       "runtimeGitBlob": "000eb975063335a12a8a3205cb8a1a1fe6aa5505"
     },
     {
       "id": "bgm_atri_t3_dusk",
       "type": "bgm",
-      "name": "Atri·黄昏（T3）",
+      "name": "余晖的眷恋",
       "src": "assets/bgm/atri/bgm_atri_t3_dusk.mp3",
       "dur": 184.848,
       "audioCategory": "music",
@@ -413,7 +413,7 @@
       "playbackGain": 0.69183,
       "trackCode": "T3",
       "sourceAuthor": "Atri-Lobato",
-      "sourcePath": "content/assets/music/mp3/T3.mp3",
+      "sourcePath": "A素材库/music/mp3/T3.mp3",
       "sourceCommit": "608093d",
       "sourceSha256": "e34c1eb525934184948f42f9d9f6e6fc20391735103ed652547dad89a9e5321a",
       "purposeStatus": "scene-mapped",
@@ -443,13 +443,13 @@
         "第十五话 · 日记与早安",
         "番外篇二 · 贝壳项链"
       ],
-      "runtimeRepoPath": "content/imports/vnstudio/海风与布丁/assets/bgm/atri/bgm_atri_t3_dusk.mp3",
+      "runtimeRepoPath": "海风与布丁/assets/bgm/atri/bgm_atri_t3_dusk.mp3",
       "runtimeGitBlob": "deda89dec75fec9909676096f3cedf51abf5b057"
     },
     {
       "id": "bgm_atri_t4_night",
       "type": "bgm",
-      "name": "Atri·夜间（T4）",
+      "name": "晚灯与絮语",
       "src": "assets/bgm/atri/bgm_atri_t4_night.mp3",
       "dur": 198.0,
       "audioCategory": "music",
@@ -457,7 +457,7 @@
       "playbackGain": 0.78524,
       "trackCode": "T4",
       "sourceAuthor": "Atri-Lobato",
-      "sourcePath": "content/assets/music/mp3/T4.mp3",
+      "sourcePath": "A素材库/music/mp3/T4.mp3",
       "sourceCommit": "608093d",
       "sourceSha256": "c9cb6b4816c9845f487431097e29a853dbc2683cd50127de7ab2dbd09c4cebe0",
       "purposeStatus": "scene-mapped",
@@ -528,7 +528,7 @@
         "番外篇一 · 盒子越来越满了",
         "番外篇二 · 贝壳项链"
       ],
-      "runtimeRepoPath": "content/imports/vnstudio/海风与布丁/assets/bgm/atri/bgm_atri_t4_night.mp3",
+      "runtimeRepoPath": "海风与布丁/assets/bgm/atri/bgm_atri_t4_night.mp3",
       "runtimeGitBlob": "544e32f23f8390b1a7608bfbc7207ec3f16dde12"
     },
     {
@@ -542,7 +542,7 @@
       "playbackGain": 0.69984,
       "trackCode": "M1",
       "sourceAuthor": "Atri-Lobato",
-      "sourcePath": "content/assets/music/mp3/M1.mp3",
+      "sourcePath": "A素材库/music/mp3/M1.mp3",
       "sourceCommit": "608093d",
       "sourceSha256": "93c12e47a4179bb8d4e58bc1850de0e3ef51084b9ae256212ab8c39d3584ca7f",
       "purposeStatus": "audition",
@@ -550,13 +550,13 @@
       "usedNodes": 0,
       "ranges": [],
       "chapters": [],
-      "runtimeRepoPath": "content/imports/vnstudio/海风与布丁/assets/bgm/atri/bgm_atri_m1_alt.mp3",
+      "runtimeRepoPath": "海风与布丁/assets/bgm/atri/bgm_atri_m1_alt.mp3",
       "runtimeGitBlob": "b833c713a9629be95693ea681ac33254614e37cd"
     },
     {
       "id": "bgm_atri_e3m6m7_v2",
       "type": "bgm",
-      "name": "Atri·家居（E3=M6=M7）",
+      "name": "灯火可亲",
       "src": "assets/bgm/atri/bgm_atri_e3m6m7_v2.mp3",
       "dur": 157.248,
       "audioCategory": "music",
@@ -564,7 +564,7 @@
       "playbackGain": 0.71614,
       "trackCode": "E3 M6 M7",
       "sourceAuthor": "Atri-Lobato",
-      "sourcePath": "content/assets/music/mp3/E3 M6 M7.mp3",
+      "sourcePath": "A素材库/music/mp3/E3 M6 M7.mp3",
       "sourceCommit": "608093d",
       "sourceSha256": "bd1cf71b49934d4f859e2b3487c3255fd044ab39c1b37955a456e9ba8f86edc5",
       "purposeStatus": "audition",
@@ -609,27 +609,27 @@
         "第十五话 · 日记与早安",
         "番外篇一 · 盒子越来越满了"
       ],
-      "runtimeRepoPath": "content/imports/vnstudio/海风与布丁/assets/bgm/atri/bgm_atri_e3m6m7_v2.mp3",
+      "runtimeRepoPath": "海风与布丁/assets/bgm/atri/bgm_atri_e3m6m7_v2.mp3",
       "runtimeGitBlob": "153acab1c8dc14ec0a9dc295d49f21893d27c685"
     },
     {
       "id": "bgm_e2_deepsea_main",
       "type": "bgm",
-      "name": "深海之光·主曲",
+      "name": "群星在此沉眠",
       "src": "assets/bgm/bgm_e2_deepsea_main.mp3",
       "dur": 214.852676,
       "audioCategory": "music",
       "auditionOnly": false,
       "playbackGain": 0.78886,
       "sourceAuthor": "Liyang1145",
-      "sourceCurrentPath": "content/assets/audio/bgm/bgm_e2_deepsea_main.mp3",
+      "sourceCurrentPath": "A素材库/audio/bgm/bgm_e2_deepsea_main.mp3",
       "sourceOriginalFilename": "21.wav",
       "sourceOriginalSha256": "f2e33da39002bb06bcb548e2dab444497efe7b3abf8f982e703f6e0f834da9e9",
       "sourceSha256": "f66176c65e6852f6ec89e6f9a30a4a5ae8d09ce3676e9b6d8ccbd99f265a44cd",
       "purposeStatus": "scene-mapped",
       "musicFamily": "deepsea-light",
       "variant": "main",
-      "integrationRecord": "content/audio/deepsea-theme-integration-20261021.json",
+      "integrationRecord": "content/audio-records/deepsea-theme-integration-20261021.json",
       "usedNodes": 173,
       "ranges": [
         [
@@ -645,27 +645,27 @@
         "第三话 · 深海之光",
         "第十六话 · 海风与布丁"
       ],
-      "runtimeRepoPath": "content/imports/vnstudio/海风与布丁/assets/bgm/bgm_e2_deepsea_main.mp3",
+      "runtimeRepoPath": "海风与布丁/assets/bgm/bgm_e2_deepsea_main.mp3",
       "runtimeGitBlob": "64d60e522503da34943ac13771ac89807d0edc79"
     },
     {
       "id": "bgm_e2_deepsea_piano",
       "type": "bgm",
-      "name": "深海之光·钢琴改编",
+      "name": "掌心的微光",
       "src": "assets/bgm/bgm_e2_deepsea_piano.mp3",
       "dur": 132.101188,
       "audioCategory": "music",
       "auditionOnly": false,
       "playbackGain": 0.755962,
       "sourceAuthor": "Liyang1145",
-      "sourceCurrentPath": "content/assets/audio/bgm/bgm_e2_deepsea_piano.mp3",
+      "sourceCurrentPath": "A素材库/audio/bgm/bgm_e2_deepsea_piano.mp3",
       "sourceOriginalFilename": "深海-钢琴.mp3",
       "sourceOriginalSha256": "5fe431056d077d2af7a71c0a50c73a07e6664fede3d868ae4d995f87e810b7f5",
       "sourceSha256": "5fe431056d077d2af7a71c0a50c73a07e6664fede3d868ae4d995f87e810b7f5",
       "purposeStatus": "scene-mapped",
       "musicFamily": "deepsea-light",
       "variant": "piano",
-      "integrationRecord": "content/audio/deepsea-theme-integration-20261021.json",
+      "integrationRecord": "content/audio-records/deepsea-theme-integration-20261021.json",
       "usedNodes": 71,
       "ranges": [
         [
@@ -686,27 +686,27 @@
         "第四话 · 集市上的「我妻子」",
         "第十五话 · 日记与早安"
       ],
-      "runtimeRepoPath": "content/imports/vnstudio/海风与布丁/assets/bgm/bgm_e2_deepsea_piano.mp3",
+      "runtimeRepoPath": "海风与布丁/assets/bgm/bgm_e2_deepsea_piano.mp3",
       "runtimeGitBlob": "fd14496b88d32323bfccfb28cff95d4decd5538c"
     },
     {
       "id": "bgm_emerald_dream_piano",
       "type": "bgm",
-      "name": "翡翠之梦·钢琴改编",
+      "name": "低语落在纸间",
       "src": "assets/bgm/bgm_emerald_dream_piano.mp3",
       "dur": 133.694688,
       "audioCategory": "music",
       "auditionOnly": false,
       "playbackGain": 0.797995,
       "sourceAuthor": "Liyang1145",
-      "sourceCurrentPath": "content/assets/audio/bgm/bgm_emerald_dream_piano.mp3",
+      "sourceCurrentPath": "A素材库/audio/bgm/bgm_emerald_dream_piano.mp3",
       "sourceOriginalFilename": "翡翠钢琴.mp3",
       "sourceOriginalSha256": "d95341d97eaca99ffefda7092538c3bcbffaf52a04c227f9a4c22fe04829faaa",
       "sourceSha256": "d95341d97eaca99ffefda7092538c3bcbffaf52a04c227f9a4c22fe04829faaa",
       "purposeStatus": "scene-mapped",
       "musicFamily": "emerald-dream",
       "variant": "piano",
-      "integrationRecord": "content/audio/deepsea-theme-integration-20261021.json",
+      "integrationRecord": "content/audio-records/deepsea-theme-integration-20261021.json",
       "usedNodes": 52,
       "ranges": [
         [
@@ -717,8 +717,9 @@
       "chapters": [
         "第二话 · 暗号契约"
       ],
-      "runtimeRepoPath": "content/imports/vnstudio/海风与布丁/assets/bgm/bgm_emerald_dream_piano.mp3",
+      "runtimeRepoPath": "海风与布丁/assets/bgm/bgm_emerald_dream_piano.mp3",
       "runtimeGitBlob": "15f5059f0ac3f4174955005f8a831c978ae53ab7"
     }
-  ]
+  ],
+  "titlesConfirmedOn": "2026-10-22"
 }

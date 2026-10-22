@@ -1,13 +1,13 @@
 {
   "id": "bgm_e4_sunset_wait",
   "trackCode": "E4",
-  "title": "日落空守",
-  "titleStatus": "provisional",
+  "title": "潮声未曾作答",
+  "titleStatus": "confirmed",
   "selectedBy": "Liyang1145",
   "selectedOn": "2026-10-16",
   "originalFilename": "日落空守.mp3",
-  "archivePath": "content/assets/audio/bgm/bgm_e4_sunset_wait.mp3",
-  "runtimePath": "content/imports/vnstudio/海风与布丁/assets/bgm/bgm_e4_sunset_wait.mp3",
+  "archivePath": "A素材库/audio/bgm/bgm_e4_sunset_wait.mp3",
+  "runtimePath": "海风与布丁/assets/bgm/bgm_e4_sunset_wait.mp3",
   "sha256": "4fa6f18e5f96795912cee922b7fa46c58fdb6557b18fc874a06c3240645f6684",
   "bytes": 3280953,
   "audio": {

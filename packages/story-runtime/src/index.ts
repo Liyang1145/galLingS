@@ -46,9 +46,21 @@ export interface RuntimeResult {
   accepted: boolean;
   view: RuntimeView;
   facts: StoryFact[];
+  /** Committed action-group deltas; not persistent facts or actions to replay. */
+  variableChanges: VariableChangeGroup[];
   presentation: { mode: "enter" | "restore"; value: Presentation } | null;
   error: Diagnostic | null;
 }
+
+export interface VariableDelta {
+  name: string;
+  before: Value;
+  after: Value;
+}
+
+export type VariableChangeGroup =
+  | { origin: "enter"; nodeId: string; changes: VariableDelta[] }
+  | { origin: "choice"; nodeId: string; choiceId: string; changes: VariableDelta[] };
 
 export interface StoryRuntime {
   view(): RuntimeView;
@@ -121,7 +133,8 @@ class Runtime implements StoryRuntime {
     return { ...state.variables, ...state.player };
   }
 
-  private apply(actions: readonly Assignment[], state: State): void {
+  private apply(actions: readonly Assignment[], state: State): VariableDelta[] {
+    const before = state.variables;
     const values = this.values(state);
     for (const action of actions) {
       if (!Object.hasOwn(state.variables, action.name)) {
@@ -130,6 +143,10 @@ class Runtime implements StoryRuntime {
     }
     applyAssignments(actions, values);
     state.variables = Object.fromEntries(this.#content.variables.map(variable => [variable.name, values[variable.name]!]));
+    return this.#content.variables.flatMap(variable => {
+      const name = variable.name;
+      return before[name] === state.variables[name] ? [] : [{ name, before: before[name]!, after: state.variables[name]! }];
+    });
   }
 
   private visible(state: State): Choice[] {
@@ -161,22 +178,23 @@ class Runtime implements StoryRuntime {
   }
 
   private failure(code: string, message: string, source = this.node(this.#state).source): RuntimeResult {
-    return { accepted: false, view: this.view(), facts: [], presentation: null, error: { code, message, source } };
+    return { accepted: false, view: this.view(), facts: [], variableChanges: [], presentation: null, error: { code, message, source } };
   }
 
-  private commit(candidate: State, facts: StoryFact[], mode: "enter" | "restore" | null): RuntimeResult {
+  private commit(candidate: State, facts: StoryFact[], mode: "enter" | "restore" | null,
+    variableChanges: VariableChangeGroup[] = []): RuntimeResult {
     if (!Number.isSafeInteger(this.#step + 1)) throw new Error("步骤编号已耗尽");
     const view = this.describe(candidate, this.#step + 1);
     // No live mutation before all candidate calculations/description succeed.
     this.#state = candidate;
     this.#step++;
     return {
-      accepted: true, view, facts,
+      accepted: true, view, facts, variableChanges,
       presentation: mode ? { mode, value: structuredClone(view.presentation) } : null, error: null,
     };
   }
 
-  private enter(target: string | null, candidate: State, facts: StoryFact[]): "enter" | null {
+  private enter(target: string | null, candidate: State, facts: StoryFact[], variableChanges: VariableChangeGroup[]): "enter" | null {
     if (target === null) {
       candidate.phase = "ended";
       candidate.terminal = { kind: "script-end" };
@@ -186,7 +204,8 @@ class Runtime implements StoryRuntime {
     candidate.phase = "presenting";
     candidate.terminal = null;
     const node = this.node(candidate);
-    this.apply(node.enter, candidate);
+    const changes = this.apply(node.enter, candidate);
+    if (changes.length) variableChanges.push({ origin: "enter", nodeId: target, changes });
     facts.push({ type: "entered", nodeId: target });
     return "enter";
   }
@@ -198,6 +217,7 @@ class Runtime implements StoryRuntime {
     if (this.#state.phase === "ended") return this.failure("ENDED", "剧情已结束");
     const candidate = structuredClone(this.#state);
     const facts: StoryFact[] = [];
+    const variableChanges: VariableChangeGroup[] = [];
     const node = this.node(candidate);
     let mode: "enter" | null = null;
     try {
@@ -214,12 +234,12 @@ class Runtime implements StoryRuntime {
             candidate.terminal = { kind: "ending", endingId: flow.endingId };
             facts.push({ type: "ending", nodeId: node.id, endingId: flow.endingId });
           } else if (flow.kind === "branch") {
-            mode = this.enter(truthy(evaluate(flow.condition, this.values(candidate))) ? flow.then : flow.otherwise, candidate, facts);
+            mode = this.enter(truthy(evaluate(flow.condition, this.values(candidate))) ? flow.then : flow.otherwise, candidate, facts, variableChanges);
           } else if (flow.kind === "next") {
-            mode = this.enter(flow.target, candidate, facts);
+            mode = this.enter(flow.target, candidate, facts, variableChanges);
           } else {
             if (this.visible(candidate).length) return this.failure("CHOICE_REQUIRED", "必须选择有效选项");
-            mode = this.enter(flow.emptyTarget, candidate, facts);
+            mode = this.enter(flow.emptyTarget, candidate, facts, variableChanges);
           }
           break;
         }
@@ -231,18 +251,19 @@ class Runtime implements StoryRuntime {
           const choiceId = command.type === "choose" ? command.choiceId : node.flow.timeout!.choiceId;
           const choice = this.visible(candidate).find(item => item.id === choiceId);
           if (!choice) return this.failure("CHOICE_UNAVAILABLE", timedOut ? "超时默认选项不可用" : "选项不存在或被条件隐藏");
-          this.apply(choice.actions, candidate);
+          const changes = this.apply(choice.actions, candidate);
+          if (changes.length) variableChanges.push({ origin: "choice", nodeId: node.id, choiceId: choice.id, changes });
           facts.push({ type: "chosen", nodeId: node.id, choiceId: choice.id, timedOut });
-          mode = this.enter(choice.target, candidate, facts);
+          mode = this.enter(choice.target, candidate, facts, variableChanges);
           break;
         }
         default:
           return this.failure("COMMAND", "未知剧情操作");
       }
-      return this.commit(candidate, facts, mode);
+      return this.commit(candidate, facts, mode, variableChanges);
     } catch (error: unknown) {
       if (error instanceof ContentError) {
-        return { accepted: false, view: this.view(), facts: [], presentation: null, error: error.diagnostic };
+        return { accepted: false, view: this.view(), facts: [], variableChanges: [], presentation: null, error: error.diagnostic };
       }
       return this.failure("STORY_STATE", error instanceof Error ? error.message : "剧情计算失败", node.source);
     }
@@ -328,7 +349,7 @@ class Runtime implements StoryRuntime {
       return this.commit(candidate, [], "restore");
     } catch (error: unknown) {
       if (error instanceof ContentError) {
-        return { accepted: false, view: this.view(), facts: [], presentation: null, error: error.diagnostic };
+        return { accepted: false, view: this.view(), facts: [], variableChanges: [], presentation: null, error: error.diagnostic };
       }
       return this.failure("SNAPSHOT_STATE", error instanceof Error ? error.message : "快照恢复失败", SNAPSHOT_SOURCE);
     }
@@ -344,7 +365,7 @@ export function createStoryRuntime(
   return {
     runtime,
     initial: {
-      accepted: true, view, facts: [{ type: "entered", nodeId: view.nodeId }],
+      accepted: true, view, facts: [{ type: "entered", nodeId: view.nodeId }], variableChanges: [],
       presentation: { mode: "enter", value: structuredClone(view.presentation) }, error: null,
     },
   };
@@ -365,6 +386,6 @@ export function restoreStoryRuntime(
   const runtime: StoryRuntime = new Runtime(content, { snapshot: input, currentPlayer });
   const view = runtime.view();
   return { runtime, initial: {
-    accepted: true, view, facts: [], presentation: { mode: "restore", value: structuredClone(view.presentation) }, error: null,
+    accepted: true, view, facts: [], variableChanges: [], presentation: { mode: "restore", value: structuredClone(view.presentation) }, error: null,
   } };
 }

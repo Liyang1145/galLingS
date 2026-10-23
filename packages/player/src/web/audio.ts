@@ -179,12 +179,12 @@ export class AudioMixer {
       if (!feedback.active) this.#choiceTickFailed = false;
       if (feedback.active && feedback.announce) this.feedbackCue(this.#uiSounds.choiceShow);
       this.syncChoiceTick();
-    } else this.feedbackCue(this.#uiSounds[feedback.cue]);
+    } else this.feedbackCue(this.#uiSounds[feedback.cue], feedback.cue === "favorDown" ? 0.75 : 1);
   }
 
-  private feedbackCue(id: string | undefined): void {
+  private feedbackCue(id: string | undefined, gain = 1): void {
     if (!id || this.#paused || !this.#audioAllowed || this.#volumes.effects === 0) return;
-    try { this.effect(id, 1, true); }
+    try { this.effect(id, gain, true); }
     catch (error: unknown) { this.feedbackProblem(id, error); }
   }
 
@@ -382,6 +382,7 @@ export class AudioMixer {
       skip: () => {
         skipped = true;
         stopEntry();
+        for (const track of [...this.#tracks]) if (track.kind === "feedback") this.stop(track);
         voiceEnded();
       },
     };

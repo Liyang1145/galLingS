@@ -27,7 +27,10 @@ async function main(): Promise<void> {
 
   function report(result: RuntimeResult): void {
     if (!result.accepted) console.log("操作被拒绝：", JSON.stringify(result.error));
-    else if (result.facts.length) console.log("本次事实：", JSON.stringify(result.facts));
+    else {
+      if (result.facts.length) console.log("本次事实：", JSON.stringify(result.facts));
+      if (result.variableChanges.length) console.log("已生效的分组变量变化：", JSON.stringify(result.variableChanges));
+    }
   }
 
   function send(command: RuntimeCommand, quiet = false): RuntimeResult {

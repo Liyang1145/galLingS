@@ -8,7 +8,8 @@ import { prepareGameRestore } from "./checkpoint.ts";
 import { RollbackHistory } from "./rollback.ts";
 import type { RollbackTarget } from "./rollback.ts";
 import { readReadingValue } from "./reading-preferences.ts";
-import type { InteractionFeedback } from "./ui-sounds.ts";
+import { StoryFeedback } from "./ui-sounds.ts";
+import type { InteractionFeedback, ScheduledFeedback } from "./ui-sounds.ts";
 
 export type RestoreVoice = "silent" | "replay" | "resume";
 
@@ -144,6 +145,9 @@ class Session implements GameSession {
   readonly #pauses = new Set<string>();
   readonly #dialogue: { order: number; value: DialogueEntry }[] = [];
   readonly #rollback: RollbackHistory | null;
+  readonly #storyFeedback: StoryFeedback;
+  readonly #feedbackTimers = new Set<ActiveTimer>();
+  #pendingFeedback: readonly ScheduledFeedback[] = [];
   #dialogueOrder = 0;
   #dialogueStart = 0;
   #visitSequence = 0;
@@ -175,6 +179,7 @@ class Session implements GameSession {
   constructor(options: Options) {
     if (!Number.isSafeInteger(options.generation) || options.generation < 1) throw new Error("会话代次必须是正整数");
     this.#options = options;
+    this.#storyFeedback = new StoryFeedback(options.content);
     const autoWait = options.autoWaitMultiplier === undefined
       ? options.content.source.settings.autoMul : options.autoWaitMultiplier;
     this.#autoWaitMultiplier = readReadingValue("autoWaitMultiplier", autoWait === undefined ? 1 : autoWait);
@@ -343,6 +348,7 @@ class Session implements GameSession {
   }
 
   private fail(error: unknown): void {
+    this.cancelEntryFeedback();
     this.#problem = { code: "SESSION", message: error instanceof Error ? error.message : "会话操作失败", blocking: true };
     this.#pauses.add("error");
     this.pauseWork();
@@ -399,12 +405,14 @@ class Session implements GameSession {
     if (event.type === "scene") {
       this.#pauses.delete("loading");
       this.pauseWork();
+      this.startEntryFeedback();
       this.rememberCurrent();
       this.publish();
     } else if (event.type === "media") {
       if (this.#problem?.blocking && !event.problem.blocking) return;
       this.#problem = event.problem;
       if (event.problem.blocking) {
+        this.cancelEntryFeedback();
         this.#pauses.add("error");
         this.pauseWork();
       }
@@ -450,6 +458,7 @@ class Session implements GameSession {
         // A fresh node was marked read on entry; don't permit the current unread
         // presentation to be skipped just because it is now in the seen set.
         this.#skipping = intent.enabled && this.#entryWasRead && view.phase !== "choosing";
+        if (this.#skipping) this.cancelEntryFeedback();
         this.#playback?.setSkipping(this.#skipping);
         if (this.#skipping) this.#playback?.finishText();
       }
@@ -473,6 +482,7 @@ class Session implements GameSession {
     const result = this.#runtime.dispatch(command);
     if (!result.accepted) {
       if (result.error) {
+        this.cancelEntryFeedback();
         this.#options.onDiagnostic?.(result.error);
         this.#problem = { code: result.error.code, message: result.error.message, blocking: true };
         this.#pauses.add("error");
@@ -493,10 +503,11 @@ class Session implements GameSession {
         text: choice.text, timedOut: fact.timedOut,
       });
     }
-    this.adopt(result);
+    const feedback = this.#storyFeedback.transition(before, result);
+    this.adopt(result, undefined, feedback);
   }
 
-  private adopt(result: RuntimeResult, restoredVisit?: number): void {
+  private adopt(result: RuntimeResult, restoredVisit?: number, feedback: readonly ScheduledFeedback[] = []): void {
     if (result.presentation) {
       this.#choiceAnnounced = false;
       this.#announceChoices = result.presentation.mode === "enter";
@@ -515,7 +526,7 @@ class Session implements GameSession {
       this.#options.seen.add(result.view.nodeId);
       if (!this.#entryWasRead) this.#skipping = false;
       this.#problem = null;
-      this.render("enter");
+      this.render("enter", this.#skipping ? [] : feedback);
     } else if (result.presentation?.mode === "restore") {
       this.#entryWasRead = this.#options.seen.has(result.view.nodeId);
       this.#problem = null;
@@ -538,7 +549,7 @@ class Session implements GameSession {
     this.publish();
   }
 
-  private render(mode: "enter" | "retry" | "restore"): void {
+  private render(mode: "enter" | "retry" | "restore", feedback: readonly ScheduledFeedback[] = []): void {
     this.stopChoiceFeedback();
     this.#retryChoiceRemaining = mode === "restore" ? this.#restoring!.timing.choiceRemainingMs
       : mode === "retry" ? this.#choice?.remaining() ?? null : null;
@@ -553,6 +564,7 @@ class Session implements GameSession {
     this.#playback?.cancel();
     this.#controller = new AbortController();
     this.#epoch++;
+    this.#pendingFeedback = feedback;
     this.#pauses.add("loading");
     this.#voiceDone = !this.#runtime.view().presentation.performance.voiceId || this.#skipping
       || this.#restoreAudio?.voice === "silent"
@@ -613,6 +625,7 @@ class Session implements GameSession {
     const paused = this.#pauses.size > 0;
     this.#choice?.setPaused(paused);
     this.#advance?.setPaused(paused);
+    for (const timer of this.#feedbackTimers) timer.setPaused(paused);
     this.#playback?.setPaused(paused);
     const view = this.#runtime.view();
     if (view.phase === "choosing" && !this.#pauses.has("loading") && !this.#pauses.has("error")) {
@@ -641,7 +654,34 @@ class Session implements GameSession {
     this.feedback({ type: "choices", active: false, timed: false, announce: false });
   }
 
+  private startEntryFeedback(): void {
+    const cues = this.#pendingFeedback;
+    this.#pendingFeedback = [];
+    if (this.#disposed || this.#skipping || this.#pauses.size) return;
+    const epoch = this.#epoch;
+    for (const plan of cues) {
+      if (plan.delayMs === 0) this.feedback({ type: "cue", cue: plan.cue });
+      else {
+        const timer = new ActiveTimer(this.#options.clock, plan.delayMs, () => {
+          this.#feedbackTimers.delete(timer);
+          if (!this.#disposed && epoch === this.#epoch && !this.#skipping && !this.#pauses.size) {
+            this.feedback({ type: "cue", cue: plan.cue });
+          }
+        });
+        this.#feedbackTimers.add(timer);
+        timer.setPaused(false);
+      }
+    }
+  }
+
+  private cancelEntryFeedback(): void {
+    this.#pendingFeedback = [];
+    for (const timer of this.#feedbackTimers) timer.cancel();
+    this.#feedbackTimers.clear();
+  }
+
   private stopTimers(): void {
+    this.cancelEntryFeedback();
     this.#choice?.cancel();
     this.#advance?.cancel();
     this.#choice = this.#advance = null;

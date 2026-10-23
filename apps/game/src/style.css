@@ -51,6 +51,11 @@ h1 { margin: 0; font-size: clamp(1.1rem, 2.6vw, 1.8rem); font-weight: 500; }
 .checkpoint-panel p { font-size: .85rem; line-height: 1.65; }
 .checkpoint-panel pre { font-size: .8rem; max-height: 360px; overflow: auto; padding: 12px; background: #061119; }
 .checkpoint-panel .controls { align-items: center; }
+.audio-preferences-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 24px; margin-top: 18px; }
+.audio-preferences-grid label { display: grid; grid-template-columns: 4em minmax(0, 1fr) 3em; gap: 10px; align-items: center; font-size: .9rem; }
+.audio-preferences-grid input { width: 100%; accent-color: #aed9e7; }
+.audio-preferences-grid output { text-align: right; }
+@media (max-width: 650px) { .audio-preferences-grid { grid-template-columns: 1fr; } }
 select { font: inherit; color: inherit; background: #183443; border: 1px solid #557682; border-radius: 8px; padding: .6rem; }
 #rollback-target { max-width: 100%; min-width: min(400px, 100%); }
 #rollback-warning { color: #ffe2c7; }

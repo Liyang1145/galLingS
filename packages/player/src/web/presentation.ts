@@ -6,6 +6,7 @@ import { AudioMixer } from "./audio.ts";
 import type { EntryAudio } from "./audio.ts";
 import type { ResourceAccess } from "./resources.ts";
 import { setting } from "./resources.ts";
+import type { AudioVolumes } from "../preferences.ts";
 
 const LOOKS: Record<string, string> = {
   "": "", none: "", shadow: "brightness(0)",
@@ -74,7 +75,7 @@ export class WebPresentation implements PresentationAdapter {
   #disposed = false;
   #active: Playback | null = null;
 
-  constructor(root: HTMLElement, content: StoryContent, resources: ResourceAccess, audioAllowed = true) {
+  constructor(root: HTMLElement, content: StoryContent, resources: ResourceAccess, audioAllowed = true, volumes?: AudioVolumes) {
     this.#root = root;
     this.#content = content;
     this.#resources = resources;
@@ -96,11 +97,12 @@ export class WebPresentation implements PresentationAdapter {
     this.#dialogue.append(this.#name, this.#text);
     this.#world.append(this.#background, this.#actorsLayer, this.#veil);
     root.replaceChildren(this.#world, this.#dialogue);
-    this.#audio = new AudioMixer(resources, content.source.settings, audioAllowed);
+    this.#audio = new AudioMixer(resources, content.source.settings, audioAllowed, volumes);
   }
 
   unlockAudio(): void { this.#audio.unlock(); }
   setAudioAllowed(allowed: boolean): void { this.#audio.setAudioAllowed(allowed); }
+  setAudioVolumes(volumes: AudioVolumes): void { this.#audio.setVolumes(volumes); }
 
   present(view: RuntimeView, context: PresentationContext): Playback {
     if (this.#disposed) throw new Error("表现实例已经离开");

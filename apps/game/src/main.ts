@@ -15,6 +15,8 @@ import { renderDialogue } from "./dialogue.ts";
 import { connectHost } from "./platform/host.ts";
 import { PendingWrites } from "../../../packages/player/src/writes.ts";
 import type { AftergamePanel } from "./aftergame.ts";
+import { AudioPreferenceRepository, authorAudioVolumes } from "../../../packages/player/src/preferences.ts";
+import { AudioPreferencesPanel } from "./preferences.ts";
 import "./style.css";
 
 const startup = new AbortController();
@@ -122,6 +124,15 @@ async function main(): Promise<void> {
   let rollingBack = false;
   let exiting = false;
   let aftergamePanel: AftergamePanel | null = null;
+  const audioPreferences = new AudioPreferencesPanel({
+    root: element("audio-preferences", HTMLElement),
+    defaults: authorAudioVolumes(content.source.settings),
+    repository: new AudioPreferenceRepository(content.workId, { kind: "development", id: "normal-entry" },
+      authorAudioVolumes(content.source.settings), store),
+    blocked: () => closed || exiting,
+    trackWrite: operation => writes.run("audio-preferences", operation),
+    volumesChanged: volumes => presentation?.setAudioVolumes(volumes),
+  });
   const hostStatus = document.createElement("p");
   note.insertAdjacentElement("afterend", hostStatus);
   const host = connectHost(state => {
@@ -144,6 +155,7 @@ async function main(): Promise<void> {
     if (closed || signal.aborted) throw new Error("页面已离开或退出已取消");
     if (exiting) throw new Error("已有退出请求");
     exiting = true;
+    audioPreferences.refresh();
     entryRequest++;
     const owner = session;
     owner?.send({ type: "pause", reason: "exit", paused: true });
@@ -160,6 +172,7 @@ async function main(): Promise<void> {
       if (released) return;
       released = true;
       exiting = false;
+      audioPreferences.refresh();
       page.inert = wasInert;
       exitDialog.close();
       exitRetry.onclick = exitCancel.onclick = null;
@@ -304,6 +317,7 @@ async function main(): Promise<void> {
       session = null;
       adopted = true;
       mode = selected;
+      audioPreferences.setMode(selected);
       choiceKey = "";
       rollbackKey = "";
       menu.hidden = title.hidden = problem.hidden = true;
@@ -320,7 +334,7 @@ async function main(): Promise<void> {
         ? "限时选择样例：声明初值 0、周目 1、结局数 0；不是第五话真实路线，不写全局成果。"
         : "第一话试播：进度与全局成果分别保存，重新开始和读档保留已解锁的结局与 CG。";
       let sequence = 0;
-      presentation = new WebPresentation(scene, source, resources, host.state().audioAllowed);
+      presentation = new WebPresentation(scene, source, resources, host.state().audioAllowed, audioPreferences.values(selected));
       session = createGameSession({
         content: source, player, generation: ++generation,
         clock, presentation, seen: reads[selected], onChange: show,
@@ -346,6 +360,7 @@ async function main(): Promise<void> {
         session = null;
         presentation = null;
         host.releaseAudio();
+        audioPreferences.setMode("main");
         title.hidden = false;
         next.disabled = auto.disabled = skip.disabled = pause.disabled = audio.disabled = save.disabled = dialogueOpen.disabled = rollbackButton.disabled = true;
         resetRollback();
@@ -383,6 +398,7 @@ async function main(): Promise<void> {
     session?.dispose();
     session = null;
     presentation = null;
+    audioPreferences.setMode("main");
     host.releaseAudio();
     scene.replaceChildren();
     scene.classList.remove("paused");
@@ -655,6 +671,7 @@ async function main(): Promise<void> {
     closeDialogue();
     closeAftergame();
     aftergamePanel?.dispose();
+    audioPreferences.dispose();
     session?.dispose();
     host.releaseAudio();
     host.dispose();
@@ -664,6 +681,8 @@ async function main(): Promise<void> {
   };
   window.addEventListener("pagehide", dispose, { once: true });
   import.meta.hot?.dispose(dispose);
+  await audioPreferences.load();
+  if (closed || startup.signal.aborted) return;
   note.textContent = "本地内容已载入。可以从第一话开始，或选择明确标注的限时样例。";
   for (const id of ["start", "timed", "gallery-open", "aftergame-open"]) element(id, HTMLButtonElement).disabled = false;
 }

@@ -1,12 +1,13 @@
 import { SaveStorageError } from "../saves.ts";
 import type { AtomicSaveStore, SaveRecord, StoredSlot } from "../saves.ts";
 import type { AtomicPlayerStore, PlayerRecords } from "../records.ts";
+import type { AtomicAudioPreferenceStore, AudioPreferenceRecord } from "../preferences.ts";
 
 const DATABASE = "haifeng.rebuild.saves";
 const STORE = "slots";
 
 /** New TypeScript records only. No localStorage or legacy database access. */
-export class IndexedDbSaveStore implements AtomicSaveStore, AtomicPlayerStore {
+export class IndexedDbSaveStore implements AtomicSaveStore, AtomicPlayerStore, AtomicAudioPreferenceStore {
   private open(): Promise<IDBDatabase> {
     return new Promise((resolve, reject) => {
       if (typeof indexedDB === "undefined") {
@@ -83,22 +84,32 @@ export class IndexedDbSaveStore implements AtomicSaveStore, AtomicPlayerStore {
   }
 
   async update(key: string, change: (stored: StoredSlot) => PlayerRecords): Promise<PlayerRecords> {
+    return this.updateRecord(key, change, "PLAYER", "全局记录");
+  }
+
+  async updateAudio(key: string, change: (stored: StoredSlot) => AudioPreferenceRecord): Promise<AudioPreferenceRecord> {
+    return this.updateRecord(key, change, "AUDIO_PREFERENCES", "声音偏好");
+  }
+
+  private async updateRecord<T>(
+    key: string, change: (stored: StoredSlot) => T, code: string, label: string,
+  ): Promise<T> {
     const database = await this.open();
     try {
-      return await new Promise<PlayerRecords>((resolve, reject) => {
+      return await new Promise<T>((resolve, reject) => {
         let transaction: IDBTransaction;
         try { transaction = database.transaction(STORE, "readwrite"); }
         catch {
-          reject(new SaveStorageError("PLAYER_TRANSACTION", "无法更新全局记录，原记录保持原值"));
+          reject(new SaveStorageError(`${code}_TRANSACTION`, `无法更新${label}，原记录保持原值`));
           return;
         }
-        let result: PlayerRecords | null = null;
+        let result: T | null = null;
         let failure: unknown = null;
         transaction.oncomplete = () => {
-          if (result) resolve(result);
-          else reject(new SaveStorageError("PLAYER_TRANSACTION", "全局记录未形成提交结果"));
+          if (result !== null) resolve(result);
+          else reject(new SaveStorageError(`${code}_TRANSACTION`, `${label}未形成提交结果`));
         };
-        transaction.onabort = () => reject(failure ?? new SaveStorageError("PLAYER_ABORT", "全局记录事务未提交，可重试；原记录保持原值"));
+        transaction.onabort = () => reject(failure ?? new SaveStorageError(`${code}_ABORT`, `${label}事务未提交，可重试；原记录保持原值`));
         transaction.onerror = () => {};
         try {
           const store = transaction.objectStore(STORE);

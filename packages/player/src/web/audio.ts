@@ -5,10 +5,15 @@ import type { MediaProblem, PresentationContext } from "../session.ts";
 import type { ResourceAccess } from "./resources.ts";
 import type { PlaybackCheckpoint, TrackCheckpoint, VoiceCheckpoint } from "../checkpoint.ts";
 import { setting, volume } from "./resources.ts";
+import { authorAudioVolumes, readAudioVolumes } from "../preferences.ts";
+import type { AudioChannel, AudioVolumes } from "../preferences.ts";
 
 interface Track {
   id: string;
   kind: "persistent" | "voice" | "effect";
+  channel: AudioChannel;
+  /** Author/scene/fade envelope before the player's channel level. */
+  gain: number;
   element: HTMLAudioElement;
   fade: ActiveTimer | null;
   alive: boolean;
@@ -27,7 +32,7 @@ export interface EntryAudio {
 /** Persistent tracks belong to the mixer; voice/effects belong to an entry. */
 export class AudioMixer {
   readonly #resources: ResourceAccess;
-  readonly #settings: JsonObject;
+  #volumes: AudioVolumes;
   readonly #tracks = new Set<Track>();
   readonly #ambience = new Map<string, Track>();
   #music: Track | null = null;
@@ -37,19 +42,31 @@ export class AudioMixer {
   #clock: Clock | null = null;
   #report: (problem: MediaProblem) => void = () => {};
 
-  constructor(resources: ResourceAccess, settings: JsonObject, audioAllowed = true) {
+  constructor(resources: ResourceAccess, settings: JsonObject, audioAllowed = true, volumes?: AudioVolumes) {
     this.#resources = resources;
-    this.#settings = settings;
+    this.#volumes = volumes === undefined ? authorAudioVolumes(settings) : readAudioVolumes(volumes);
     this.#audioAllowed = audioAllowed;
   }
 
-  private track(id: string, loop: boolean, gain: number, ended: (() => void) | null = null, seekMs: number | null = null): Track {
+  private applyVolume(track: Track): void {
+    track.element.volume = volume(track.gain * this.#volumes[track.channel]);
+  }
+
+  setVolumes(input: AudioVolumes): void {
+    const values = readAudioVolumes(input);
+    if (this.#disposed) return;
+    this.#volumes = values;
+    for (const track of this.#tracks) this.applyVolume(track);
+  }
+
+  private track(id: string, channel: AudioChannel, gain: number, ended: (() => void) | null = null, seekMs: number | null = null): Track {
+    const loop = channel === "music" || channel === "ambience";
     const element = new Audio(this.#resources.url(id));
     element.loop = loop;
     element.preload = "auto";
-    element.volume = volume(gain);
-    const track: Track = { id, kind: loop ? "persistent" : ended ? "voice" : "effect",
+    const track: Track = { id, channel, gain: volume(gain), kind: loop ? "persistent" : ended ? "voice" : "effect",
       element, fade: null, alive: true, failed: false, playRejected: false, seekMs, ended };
+    this.applyVolume(track);
     this.#tracks.add(track);
     element.addEventListener("ended", () => {
       if (!track.alive) return;
@@ -139,18 +156,23 @@ export class AudioMixer {
   private fade(track: Track, target: number, duration: number, retire = false): void {
     track.fade?.cancel();
     if (!this.#clock || duration <= 0) {
-      track.element.volume = volume(target);
+      track.gain = volume(target);
+      this.applyVolume(track);
       if (retire) this.stop(track);
       return;
     }
-    const from = track.element.volume;
+    const from = track.gain;
     const timer = new ActiveTimer(this.#clock, duration, () => {
       if (!track.alive) return;
-      track.element.volume = volume(target);
+      track.gain = volume(target);
+      this.applyVolume(track);
       track.fade = null;
       if (retire) this.stop(track);
     }, () => {
-      if (track.alive) track.element.volume = volume(from + (target - from) * (1 - timer.remaining() / duration));
+      if (track.alive) {
+        track.gain = volume(from + (target - from) * (1 - timer.remaining() / duration));
+        this.applyVolume(track);
+      }
     });
     track.fade = timer;
     timer.setPaused(this.#paused || !this.#audioAllowed);
@@ -164,14 +186,14 @@ export class AudioMixer {
     const ambienceDuck = mood === "underwater" ? 0.45 : mood === "slowmo" ? 0.15 : 1;
     if (this.#music?.id !== music || (this.#music && !this.#music.alive)) {
       if (this.#music) this.fade(this.#music, 0, scene.music.fadeMs, true);
-      this.#music = music ? this.track(music, true, 0, null, restored?.music?.positionMs ?? null) : null;
+      this.#music = music ? this.track(music, "music", 0, null, restored?.music?.positionMs ?? null) : null;
       if (this.#music) {
         const gain = setting(this.#resources.get(music!).metadata, "playbackGain", 1);
-        this.fade(this.#music, volume(setting(this.#settings, "vbgm", 0.6)) * volume(gain) * musicDuck, 800);
+        this.fade(this.#music, volume(gain) * musicDuck, 800);
       }
     } else if (this.#music) {
       const gain = setting(this.#resources.get(this.#music.id).metadata, "playbackGain", 1);
-      this.fade(this.#music, volume(setting(this.#settings, "vbgm", 0.6)) * volume(gain) * musicDuck, 300);
+      this.fade(this.#music, volume(gain) * musicDuck, 300);
     }
     const next = new Map(scene.ambience.map(track => [track.assetId, track]));
     for (const [id, track] of this.#ambience) {
@@ -183,10 +205,10 @@ export class AudioMixer {
     for (const [id, specification] of next) {
       let track = this.#ambience.get(id);
       if (!track || !track.alive) {
-        track = this.track(id, true, 0, null, restored?.ambience.find(item => item.assetId === id)?.positionMs ?? null);
+        track = this.track(id, "ambience", 0, null, restored?.ambience.find(item => item.assetId === id)?.positionMs ?? null);
         this.#ambience.set(id, track);
       }
-      const gain = volume(setting(this.#settings, "vamb", 0.3)) * volume(specification.gain)
+      const gain = volume(specification.gain)
         * (music ? 0.75 : 1) * ambienceDuck;
       this.fade(track, gain, 350);
     }
@@ -221,18 +243,18 @@ export class AudioMixer {
       context.problem({ code: "VOICE_POSITION", message: "这份进度没有可用的语音续播位置，本次读档保持语音停止。", blocking: false });
     }
     if (presentation.performance.voiceId && !skipped && playVoice) {
-      voice = this.track(presentation.performance.voiceId, false, volume(setting(this.#settings, "vvo", 1)), voiceEnded,
+      voice = this.track(presentation.performance.voiceId, "voice", 1, voiceEnded,
         resumeVoice ? restoredVoice?.positionMs ?? null : null);
     } else voiceEnded();
     const effect = (id: string, gain: number): void => {
-      if (closed || skipped || context.signal.aborted) return;
+      if (closed || skipped || context.signal.aborted || this.#volumes.effects === 0) return;
       for (const old of effects) if (!old.alive) effects.delete(old);
       if ([...effects].some(old => old.id === id && old.element.currentTime < 0.4)) return;
       if (effects.size >= 4) {
         const oldest = effects.values().next().value;
         if (oldest) { effects.delete(oldest); this.stop(oldest); }
       }
-      const track = this.track(id, false, volume(setting(this.#settings, "vse", 0.8)) * volume(gain));
+      const track = this.track(id, "effects", volume(gain));
       effects.add(track);
     };
     // Retry reconstructs this scene but never repeats entry sound effects.

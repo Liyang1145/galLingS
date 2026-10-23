@@ -54,7 +54,7 @@ export interface StoryRuntime {
   view(): RuntimeView;
   dispatch(command: RuntimeCommand): RuntimeResult;
   snapshot(): StorySnapshot;
-  restore(snapshot: unknown): RuntimeResult;
+  restore(snapshot: unknown, currentPlayer: PlayerProjection): RuntimeResult;
 }
 
 interface State {
@@ -84,7 +84,7 @@ class Runtime implements StoryRuntime {
   #state: State;
   #step = 1;
 
-  constructor(content: StoryContent, initial: { player: PlayerProjection } | { snapshot: unknown }) {
+  constructor(content: StoryContent, initial: { player: PlayerProjection } | { snapshot: unknown; currentPlayer: PlayerProjection | null }) {
     // Content is typed output of the checked compiler, not unchecked JSON.
     this.#content = structuredClone(content);
     this.#nodes = new Map(this.#content.nodes.map(node => [node.id, node]));
@@ -95,6 +95,7 @@ class Runtime implements StoryRuntime {
       // Inspection starts from already effective state, without entering even
       // the story's opening node or producing any facts.
       this.#state = this.parseSnapshot(initial.snapshot);
+      if (initial.currentPlayer) this.refreshProjection(this.#state, initial.currentPlayer);
     } else {
       this.#state = {
         nodeId: content.entryNodeId,
@@ -311,9 +312,17 @@ class Runtime implements StoryRuntime {
     return candidate;
   }
 
-  restore(snapshot: unknown): RuntimeResult {
+  private refreshProjection(candidate: State, player: PlayerProjection): void {
+    candidate.player = projection(player, at(SNAPSHOT_SOURCE, "currentPlayer"));
+    if (candidate.phase === "ready" || candidate.phase === "choosing") {
+      candidate.phase = this.visible(candidate).length ? "choosing" : "ready";
+    }
+  }
+
+  restore(snapshot: unknown, currentPlayer: PlayerProjection): RuntimeResult {
     try {
       const candidate = this.parseSnapshot(snapshot);
+      this.refreshProjection(candidate, currentPlayer);
       // No enter/apply and no entered/chosen/ending facts on restoration.
       // Commit allocates a fresh step, invalidating all old callbacks.
       return this.commit(candidate, [], "restore");
@@ -345,6 +354,17 @@ export function createStoryRuntime(
 export function inspectStorySnapshot(
   content: StoryContent, input: unknown,
 ): { snapshot: StorySnapshot; view: RuntimeView } {
-  const runtime = new Runtime(content, { snapshot: input });
+  const runtime = new Runtime(content, { snapshot: input, currentPlayer: null });
   return { snapshot: runtime.snapshot(), view: runtime.view() };
+}
+
+/** Resume already effective progress with the latest independent global projection. */
+export function restoreStoryRuntime(
+  content: StoryContent, input: unknown, currentPlayer: PlayerProjection,
+): { runtime: StoryRuntime; initial: RuntimeResult } {
+  const runtime: StoryRuntime = new Runtime(content, { snapshot: input, currentPlayer });
+  const view = runtime.view();
+  return { runtime, initial: {
+    accepted: true, view, facts: [], presentation: { mode: "restore", value: structuredClone(view.presentation) }, error: null,
+  } };
 }

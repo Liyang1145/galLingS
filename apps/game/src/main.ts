@@ -1,12 +1,16 @@
 import content, { locations } from "virtual:haifeng-content";
 import { createGameSession } from "../../../packages/player/src/session.ts";
-import type { GameSession, SessionView } from "../../../packages/player/src/session.ts";
+import type { GameSession, RestoreVoice, SessionView } from "../../../packages/player/src/session.ts";
 import { WebPresentation } from "../../../packages/player/src/web/presentation.ts";
 import { createResourceAccess } from "../../../packages/player/src/web/resources.ts";
 import type { Clock } from "../../../packages/player/src/clock.ts";
 import { SaveRepository } from "../../../packages/player/src/saves.ts";
 import type { InspectedSave } from "../../../packages/player/src/saves.ts";
 import { IndexedDbSaveStore } from "../../../packages/player/src/web/saves.ts";
+import { PlayerRepository, PlayerRecordWriter, playerProjection } from "../../../packages/player/src/records.ts";
+import { prepareGameRestore } from "../../../packages/player/src/checkpoint.ts";
+import type { GameCheckpoint } from "../../../packages/player/src/checkpoint.ts";
+import { renderGallery } from "./gallery.ts";
 import "./style.css";
 
 function element<T extends HTMLElement>(id: string, kind: { new(...args: never[]): T }): T {
@@ -33,6 +37,11 @@ const audio = element("audio", HTMLButtonElement);
 const save = element("save-checkpoint", HTMLButtonElement);
 const saveMessage = element("save-message", HTMLElement);
 const saveDetails = element("save-details", HTMLElement);
+const recordMessage = element("record-message", HTMLElement);
+const retryRecords = element("retry-records", HTMLButtonElement);
+const gallery = element("gallery", HTMLDialogElement);
+const galleryBody = element("gallery-body", HTMLElement);
+const voiceChoice = element("restore-voice", HTMLSelectElement);
 const resources = createResourceAccess(content, locations);
 const clock: Clock = {
   now: () => performance.now(),
@@ -52,6 +61,18 @@ const saves = {
   main: new SaveRepository(sources.main, { kind: "development", id: "normal-entry" }, store),
   timed: new SaveRepository(sources.timed, { kind: "preview", id: "timed-choice:pm8x8v2h" }, store),
 };
+const playerRecords = new PlayerRepository(content, { kind: "development", id: "normal-entry" }, store);
+const recordWriter = new PlayerRecordWriter(playerRecords, records => {
+  for (const nodeId of records.readNodeIds) reads.main.add(nodeId);
+  if (closed) return;
+  const player = playerProjection(records);
+  recordMessage.textContent = `全局记录已保存：周目 ${player["周目"]} · 已解锁结局 ${player["结局数"]} · CG ${records.cgIds.length}`;
+  retryRecords.hidden = true;
+}, error => {
+  if (closed) return;
+  recordMessage.textContent = `全局记录尚未保存：${error instanceof Error ? error.message : "存储失败"}。请重试；待保存记录暂留本页内存。`;
+  retryRecords.hidden = false;
+});
 const entryName = (entry: Entry): string => entry === "main" ? "第一话试播" : "限时选择样例";
 let saving = false;
 let storageMessageEpoch = 0;
@@ -62,6 +83,7 @@ let generation = 0;
 let mode: Entry = "main";
 let choiceKey = "";
 let progress: HTMLProgressElement | null = null;
+let entryRequest = 0;
 
 const resize = new ResizeObserver(() => scene.style.setProperty("--stage-scale", String(stage.clientWidth / 1280)));
 resize.observe(stage);
@@ -111,37 +133,68 @@ function show(view: SessionView): void {
   if (progress) progress.value = view.choiceRemainingMs ?? 0;
 }
 
-function start(selected: Entry): void {
-  session?.dispose();
-  session = null;
-  mode = selected;
-  choiceKey = "";
-  menu.hidden = true;
-  title.hidden = true;
-  problem.hidden = true;
-  choices.replaceChildren();
-  resetSaveMessage();
-  const preview = selected === "timed";
-  const source = sources[selected];
-  note.textContent = preview
-    ? "限时选择样例：从 pm8x8v2h 和五个声明初值开始（好感/尾鳍等均为 0），周目 1、结局数 0；不是第五话真实路线状态。"
-    : "正常开局使用作者指定的首个章节节点；此入口只有内存已读，不读写正式玩家记录。";
-  presentation = new WebPresentation(scene, source, resources);
+async function start(selected: Entry, restoreVoice?: RestoreVoice): Promise<void> {
+  const request = ++entryRequest;
+  const owner = session;
+  owner?.send({ type: "pause", reason: "host", paused: true });
+  let adopted = false;
   try {
+    if (selected === "main") await recordWriter.flush();
+    const records = selected === "main" ? await playerRecords.read() : null;
+    const player = records ? playerProjection(records) : { "周目": 1, "结局数": 0 };
+    const source = sources[selected];
+    let checkpoint: GameCheckpoint | null = null;
+    if (restoreVoice) {
+      const saved = await saves[selected].read("manual");
+      if (!saved) throw new Error("这个入口尚未保存进度");
+      checkpoint = prepareGameRestore(source, saved.checkpoint, player).checkpoint;
+    }
+    const delivery = crypto.randomUUID();
+    if (closed || request !== entryRequest) return;
+    // All content, slot and global data are prepared before leaving live play.
+    owner?.dispose();
+    session = null;
+    adopted = true;
+    mode = selected;
+    choiceKey = "";
+    menu.hidden = title.hidden = problem.hidden = true;
+    choices.replaceChildren();
+    gallery.close();
+    resetSaveMessage();
+    if (records) {
+      reads.main.clear();
+      for (const nodeId of records.readNodeIds) reads.main.add(nodeId);
+    }
+    note.textContent = selected === "timed"
+      ? "限时选择样例：声明初值 0、周目 1、结局数 0；不是第五话真实路线，不写全局成果。"
+      : "第一话试播：进度与全局成果分别保存，重新开始和读档保留已解锁的结局与 CG。";
+    let sequence = 0;
+    presentation = new WebPresentation(scene, source, resources);
     session = createGameSession({
-      content: source, player: { "周目": 1, "结局数": 0 }, generation: ++generation,
+      content: source, player, generation: ++generation,
       clock, presentation, seen: reads[selected], onChange: show,
+      ...(checkpoint && restoreVoice ? { resume: { checkpoint, voice: restoreVoice } } : {}),
+      onFacts: facts => {
+        if (selected === "main" && facts.length) recordWriter.enqueue({
+          id: `${delivery}:${++sequence}`, occurredAt: Date.now(), facts,
+        });
+      },
     });
     if (document.hidden) session.send({ type: "pause", reason: "background", paused: true });
     presentation.unlockAudio();
+    if (checkpoint) saveMessage.textContent = "已恢复保存的剧情位置和剩余有效时间；全局记录沿用当前已保存成果。";
   } catch (error: unknown) {
-    presentation.dispose();
-    session = null;
-    presentation = null;
-    title.hidden = false;
-    next.disabled = auto.disabled = skip.disabled = pause.disabled = audio.disabled = save.disabled = true;
-    problem.hidden = false;
-    problemMessage.textContent = `新会话未能启动：${error instanceof Error ? error.message : "未知错误"}。没有切换到旧播放器。`;
+    if (closed || request !== entryRequest) return;
+    if (adopted) {
+      presentation?.dispose();
+      session = null;
+      presentation = null;
+      title.hidden = false;
+      next.disabled = auto.disabled = skip.disabled = pause.disabled = audio.disabled = save.disabled = true;
+    }
+    saveMessage.textContent = `未能${restoreVoice ? "读档" : "开局"}：${error instanceof Error ? error.message : "未知错误"}。全局成果与原槽位保持原值。`;
+  } finally {
+    if (!closed && request === entryRequest && session === owner) owner?.send({ type: "pause", reason: "host", paused: false });
   }
 }
 
@@ -157,6 +210,7 @@ function toggleMenu(): void {
 }
 
 function home(): void {
+  entryRequest++;
   session?.dispose();
   session = null;
   presentation = null;
@@ -201,10 +255,11 @@ async function saveCheckpoint(): Promise<void> {
   try {
     const result = await owner.captureCheckpoint(owner.view().token);
     if (!result.accepted) throw new Error(`${result.code}：${result.message}`);
+    if (entry === "main") await recordWriter.flush();
     const inspected = await saves[entry].save("manual", result.checkpoint, Date.now());
     if (!closed && request === storageMessageEpoch) {
       describeSave(entry, inspected);
-      saveMessage.textContent = `${entryName(entry)}检查点已提交到本机浏览器存储；可刷新页面后查看。实际恢复游玩尚未开放。`;
+      saveMessage.textContent = `${entryName(entry)}进度已保存；可刷新页面后查看或读取。周目与鉴赏成果单独保留。`;
     }
   } catch (error: unknown) {
     if (!closed && request === storageMessageEpoch) {
@@ -232,9 +287,31 @@ async function inspectSaved(entry: Entry): Promise<void> {
   }
 }
 
-element("start", HTMLButtonElement).onclick = () => start("main");
-element("timed", HTMLButtonElement).onclick = () => start("timed");
-element("restart", HTMLButtonElement).onclick = () => start(mode);
+function load(entry: Entry): void {
+  const voice = voiceChoice.value;
+  if (voice !== "silent" && voice !== "replay" && voice !== "resume") {
+    saveMessage.textContent = "先选择本次读档的语音方式；这个试播选择不会改写正式默认体验。";
+    return;
+  }
+  void start(entry, voice);
+}
+
+async function openGallery(): Promise<void> {
+  const request = ++entryRequest;
+  try {
+    await recordWriter.flush();
+    const records = await playerRecords.read();
+    if (closed || request !== entryRequest || session) return;
+    renderGallery(galleryBody, content, resources, records);
+    gallery.showModal();
+  } catch (error: unknown) {
+    if (!closed && request === entryRequest) recordMessage.textContent = `鉴赏记录无法读取：${error instanceof Error ? error.message : "存储失败"}`;
+  }
+}
+
+element("start", HTMLButtonElement).onclick = () => { void start("main"); };
+element("timed", HTMLButtonElement).onclick = () => { void start("timed"); };
+element("restart", HTMLButtonElement).onclick = () => { void start(mode); };
 element("home", HTMLButtonElement).onclick = home;
 element("close-menu", HTMLButtonElement).onclick = toggleMenu;
 element("retry", HTMLButtonElement).onclick = () => session?.send({ type: "retry" });
@@ -246,6 +323,15 @@ audio.onclick = () => presentation?.unlockAudio();
 save.onclick = () => { void saveCheckpoint(); };
 element("inspect-main", HTMLButtonElement).onclick = () => { void inspectSaved("main"); };
 element("inspect-timed", HTMLButtonElement).onclick = () => { void inspectSaved("timed"); };
+element("load-main", HTMLButtonElement).onclick = () => load("main");
+element("load-timed", HTMLButtonElement).onclick = () => load("timed");
+element("gallery-open", HTMLButtonElement).onclick = () => { void openGallery(); };
+element("gallery-close", HTMLButtonElement).onclick = () => gallery.close();
+voiceChoice.onchange = () => {
+  const enabled = ["silent", "replay", "resume"].includes(voiceChoice.value);
+  element("load-main", HTMLButtonElement).disabled = element("load-timed", HTMLButtonElement).disabled = !enabled;
+};
+retryRecords.onclick = () => { void recordWriter.flush().catch(() => {}); };
 stage.addEventListener("click", event => {
   if (!(event.target instanceof Element) || event.target.closest("button, .choices, .menu-overlay, .title-screen")) return;
   advance();
@@ -262,6 +348,7 @@ document.addEventListener("visibilitychange", visibility);
 document.addEventListener("keydown", keyboard);
 const dispose = (): void => {
   closed = true;
+  entryRequest++;
   storageMessageEpoch++;
   session?.dispose();
   resize.disconnect();

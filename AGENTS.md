@@ -25,10 +25,10 @@
 | `packages/story-model/src/` | 新内容模型、受限表达式及外部数据读取约束 |
 | `packages/story-runtime/src/` | 新版唯一纯剧情核心；通过公开接口推进和恢复逻辑状态 |
 | `packages/player/src/` | 共享会话、取消及有效计时；表现适配器不得自行计算剧情分支 |
-| [检查点与存储](docs/rebuild/saves.md) | M4 检查点封装、独立校验及浏览器隔离槽位；实际恢复和玩家记录尚未接入 |
-| [全局玩家记录](docs/rebuild/records.md) | 周目、结局与 CG 解锁的独立记录、幂等事实及存储；进度槽位不得回滚全局成果 |
+| [检查点与存储](docs/rebuild/saves.md) | M4 检查点封装、独立校验、浏览器隔离槽位及进度恢复；回退尚未接入 |
+| [全局玩家记录](docs/rebuild/records.md) | 周目、结局与 CG 解锁的独立记录、幂等事实及主页鉴赏；进度槽位不得回滚全局成果 |
 | `packages/player/src/web/` | 浏览器画面和音频实现；不得反向依赖游戏页面或编辑器 |
-| `apps/game/` | 当前为 M3 独立试播页，不是已切换的正式发行入口 |
+| `apps/game/` | 独立试播、M4 存读档及主页鉴赏装配，不是已切换的正式发行入口 |
 | `tools/content/` | 旧导出转换与内容产物生成；命令见实施入口，不是游戏解释器 |
 | `tools/dev/story.ts` | 独立终端逻辑试播，不是正式游戏或编辑器 |
 | `tools/dev/vite.config.ts` | 本地可视试播装配；开发资源 URL 不得当作正式发行清单 |

@@ -1,6 +1,6 @@
-import type { StoryContent } from "../../story-model/src/model.ts";
+import type { PlayerProjection, StoryContent } from "../../story-model/src/model.ts";
 import { at, knownFields, numeric, object, reject, string } from "../../story-model/src/read.ts";
-import { inspectStorySnapshot } from "../../story-runtime/src/index.ts";
+import { inspectStorySnapshot, restoreStoryRuntime } from "../../story-runtime/src/index.ts";
 import type { RuntimeView, StorySnapshot } from "../../story-runtime/src/index.ts";
 
 export interface TrackCheckpoint {
@@ -136,4 +136,23 @@ export function inspectGameCheckpoint(content: StoryContent, input: unknown): In
     },
     view,
   };
+}
+
+/** Pure preparation: a progress slot supplies no writable global records. */
+export function prepareGameRestore(content: StoryContent, input: unknown, currentPlayer: PlayerProjection): InspectedCheckpoint {
+  const inspected = inspectGameCheckpoint(content, input);
+  const { runtime, initial } = restoreStoryRuntime(content, inspected.checkpoint.story, currentPlayer);
+  const checkpoint = structuredClone(inspected.checkpoint);
+  checkpoint.story = runtime.snapshot();
+  const view = initial.view;
+  checkpoint.timing.choiceRemainingMs = view.timeout
+    ? inspected.view.timeout ? checkpoint.timing.choiceRemainingMs : view.timeout.durationMs : null;
+  // Old load/start also turned off automatic reading and skipping. Mandatory
+  // performance waits remain progress; playback controls are not achievements.
+  checkpoint.controls = { auto: false, skipping: false };
+  checkpoint.timing.waitingForVoice = false;
+  const mandatory = !view.presentation.text || view.presentation.performance.waitMs > 0;
+  if (view.phase !== "ready" || !mandatory) checkpoint.timing.advance = null;
+  else if (checkpoint.timing.advance) checkpoint.timing.advance.waitVoice = false;
+  return { checkpoint, view };
 }

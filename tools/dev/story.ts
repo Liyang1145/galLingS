@@ -63,7 +63,7 @@ async function main(): Promise<void> {
         saved = runtime.snapshot();
         console.log("逻辑快照已存内存；退出终端即丢失，不是完整游戏存档。");
       } else if (command === "load") {
-        if (saved) report(runtime.restore(saved));
+        if (saved) report(runtime.restore(saved, runtime.view().player));
         else console.log("请先 save。");
       } else if (command === "walk") {
         let count = 0;

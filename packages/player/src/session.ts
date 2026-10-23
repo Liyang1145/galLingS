@@ -1,9 +1,12 @@
-import { createStoryRuntime } from "../../story-runtime/src/index.ts";
+import { createStoryRuntime, restoreStoryRuntime } from "../../story-runtime/src/index.ts";
 import type { RuntimeCommand, RuntimeResult, RuntimeView, StoryFact, StoryRuntime } from "../../story-runtime/src/index.ts";
 import type { Diagnostic, PlayerProjection, StoryContent } from "../../story-model/src/model.ts";
 import { ActiveTimer } from "./clock.ts";
 import type { Clock } from "./clock.ts";
 import type { GameCheckpoint, PlaybackCheckpoint } from "./checkpoint.ts";
+import { prepareGameRestore } from "./checkpoint.ts";
+
+export type RestoreVoice = "silent" | "replay" | "resume";
 
 export interface SessionToken {
   session: number;
@@ -20,7 +23,8 @@ export interface MediaProblem {
 export interface PresentationContext {
   signal: AbortSignal;
   clock: Clock;
-  mode: "enter" | "retry";
+  mode: "enter" | "retry" | "restore";
+  restore: { playback: PlaybackCheckpoint; voice: RestoreVoice } | null;
   paused: boolean;
   skipping: boolean;
   sceneReady(): void;
@@ -68,8 +72,10 @@ interface Options {
   generation: number;
   clock: Clock;
   presentation: PresentationAdapter;
-  /** Isolated, in-memory read history for this development application. */
+  /** Scope-isolated read history; the application owns its persistence. */
   seen: Set<string>;
+  /** The caller must explicitly select voice behaviour for this development slice. */
+  resume?: { checkpoint: unknown; voice: RestoreVoice };
   onChange(view: SessionView): void;
   onFacts?(facts: readonly StoryFact[]): void;
   onDiagnostic?(diagnostic: Diagnostic): void;
@@ -114,11 +120,21 @@ class Session implements GameSession {
   #advanceWaitVoice = false;
   #problem: MediaProblem | null = null;
   #retryChoiceRemaining: number | null = null;
+  #pendingAdvance: { remainingMs: number; waitVoice: boolean } | null = null;
+  #restoreAudio: PresentationContext["restore"] = null;
+  #restoring: GameCheckpoint | null = null;
 
   constructor(options: Options) {
     if (!Number.isSafeInteger(options.generation) || options.generation < 1) throw new Error("会话代次必须是正整数");
     this.#options = options;
-    const { runtime, initial } = createStoryRuntime(options.content, options.player);
+    const restored = options.resume ? prepareGameRestore(options.content, options.resume.checkpoint, options.player) : null;
+    if (options.resume && !["silent", "replay", "resume"].includes(options.resume.voice)) throw new Error("需要明确的本次读档语音方式");
+    const { runtime, initial } = restored
+      ? restoreStoryRuntime(options.content, restored.checkpoint.story, options.player)
+      : createStoryRuntime(options.content, options.player);
+    this.#restoring = restored?.checkpoint ?? null;
+    this.#restoreAudio = restored && options.resume
+      ? { playback: restored.checkpoint.presentation.playback, voice: options.resume.voice } : null;
     this.#runtime = runtime;
     // Keep synchronous adapter callbacks queued until the playback handle exists.
     this.#draining = true;
@@ -316,11 +332,16 @@ class Session implements GameSession {
 
   private adopt(result: RuntimeResult): void {
     if (result.presentation?.mode === "enter") {
+      this.#restoreAudio = null;
       this.#entryWasRead = this.#options.seen.has(result.view.nodeId);
       this.#options.seen.add(result.view.nodeId);
       if (!this.#entryWasRead) this.#skipping = false;
       this.#problem = null;
       this.render("enter");
+    } else if (result.presentation?.mode === "restore") {
+      this.#entryWasRead = this.#options.seen.has(result.view.nodeId);
+      this.#problem = null;
+      this.render("restore");
     }
     if (result.view.phase === "choosing") {
       this.#skipping = false;
@@ -337,25 +358,37 @@ class Session implements GameSession {
     this.publish();
   }
 
-  private render(mode: "enter" | "retry"): void {
-    this.#retryChoiceRemaining = mode === "retry" ? this.#choice?.remaining() ?? null : null;
+  private render(mode: "enter" | "retry" | "restore"): void {
+    this.#retryChoiceRemaining = mode === "restore" ? this.#restoring!.timing.choiceRemainingMs
+      : mode === "retry" ? this.#choice?.remaining() ?? null : null;
+    this.#pendingAdvance = mode === "restore" ? this.#restoring!.timing.advance
+      : mode === "retry" && this.#advance ? { remainingMs: this.#advance.remaining(), waitVoice: this.#advanceWaitVoice } : null;
+    if (mode === "retry" && this.#restoreAudio) {
+      try { this.#restoreAudio = { ...this.#restoreAudio, playback: this.#playback!.capture() }; }
+      catch { /* A scene which never became ready still uses the prepared data. */ }
+    }
     this.stopTimers();
     this.#controller.abort();
     this.#playback?.cancel();
     this.#controller = new AbortController();
     this.#epoch++;
     this.#pauses.add("loading");
-    this.#voiceDone = !this.#runtime.view().presentation.performance.voiceId || this.#skipping;
+    this.#voiceDone = !this.#runtime.view().presentation.performance.voiceId || this.#skipping
+      || this.#restoreAudio?.voice === "silent"
+      || (this.#restoreAudio?.voice === "resume" && (this.#restoreAudio.playback.voice?.state !== "active"
+        || this.#restoreAudio.playback.voice.positionMs === null));
     this.#autoDue = false;
     const epoch = this.#epoch;
     this.#playback = this.#options.presentation.present(this.#runtime.view(), {
       signal: this.#controller.signal, clock: this.#options.clock, mode,
+      restore: this.#restoreAudio ? structuredClone(this.#restoreAudio) : null,
       paused: this.#pauses.size > 0, skipping: this.#skipping,
       sceneReady: () => this.enqueue({ type: "scene", epoch }),
       textReady: () => this.enqueue({ type: "text", epoch }),
       voiceEnded: () => this.enqueue({ type: "voice", epoch }),
       problem: problem => this.enqueue({ type: "media", epoch, problem }),
     });
+    this.#restoring = null;
   }
 
   private configureProgress(): void {
@@ -377,10 +410,12 @@ class Session implements GameSession {
         const performance = view.presentation.performance;
         const pause = !view.presentation.text;
         if (this.#skipping) this.scheduleAdvance(60);
-        else if (pause || performance.waitMs > 0) this.scheduleAdvance(performance.waitMs || 2000);
-        else if (this.#auto) this.scheduleAdvance((1200 + view.presentation.text.length * 60) * this.autoMultiplier(), true);
+        else if (pause || performance.waitMs > 0) this.scheduleAdvance(this.#pendingAdvance?.remainingMs ?? (performance.waitMs || 2000));
+        else if (this.#auto) this.scheduleAdvance(this.#pendingAdvance?.remainingMs
+          ?? (1200 + view.presentation.text.length * 60) * this.autoMultiplier(), this.#pendingAdvance?.waitVoice ?? true);
       }
     }
+    this.#pendingAdvance = null;
     this.pauseWork();
   }
 

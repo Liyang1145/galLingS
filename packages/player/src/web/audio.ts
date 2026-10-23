@@ -13,6 +13,7 @@ interface Track {
   alive: boolean;
   failed: boolean;
   playRejected: boolean;
+  seekMs: number | null;
   ended: (() => void) | null;
 }
 
@@ -39,12 +40,12 @@ export class AudioMixer {
     this.#settings = settings;
   }
 
-  private track(id: string, loop: boolean, gain: number, ended: (() => void) | null = null): Track {
+  private track(id: string, loop: boolean, gain: number, ended: (() => void) | null = null, seekMs: number | null = null): Track {
     const element = new Audio(this.#resources.url(id));
     element.loop = loop;
     element.preload = "auto";
     element.volume = volume(gain);
-    const track: Track = { id, element, fade: null, alive: true, failed: false, playRejected: false, ended };
+    const track: Track = { id, element, fade: null, alive: true, failed: false, playRejected: false, seekMs, ended };
     this.#tracks.add(track);
     element.addEventListener("ended", () => {
       if (!track.alive) return;
@@ -60,12 +61,33 @@ export class AudioMixer {
       this.stop(track);
       callback?.();
     }, { once: true });
+    if (seekMs !== null) {
+      element.addEventListener("loadedmetadata", () => {
+        if (!track.alive || this.#disposed || track.seekMs === null) return;
+        const seconds = track.seekMs / 1000;
+        track.seekMs = null;
+        try {
+          const duration = element.duration;
+          if (!loop && Number.isFinite(duration) && duration > 0 && seconds >= duration) {
+            const callback = track.ended;
+            this.stop(track);
+            callback?.();
+            return;
+          }
+          element.currentTime = Number.isFinite(duration) && duration > 0
+            ? loop ? seconds % duration : Math.min(seconds, duration) : seconds;
+        } catch {
+          this.#report({ code: "AUDIO_SEEK", message: `声音位置无法恢复：${id}，当前音轨从可用位置播放。`, blocking: false });
+        }
+        this.play(track);
+      }, { once: true });
+    }
     this.play(track);
     return track;
   }
 
   private play(track: Track): void {
-    if (!track.alive || track.failed || this.#paused || this.#disposed) return;
+    if (!track.alive || track.failed || track.seekMs !== null || this.#paused || this.#disposed) return;
     void track.element.play().then(() => {
       track.playRejected = false;
       // play() may resolve after entry cancellation or a background pause.
@@ -120,7 +142,7 @@ export class AudioMixer {
     timer.setPaused(this.#paused);
   }
 
-  private scene(presentation: Presentation): void {
+  private scene(presentation: Presentation, restored: PlaybackCheckpoint | null): void {
     const scene = presentation.scene;
     const music = scene.music.kind === "play" ? scene.music.assetId : null;
     const mood = scene.mood;
@@ -128,7 +150,7 @@ export class AudioMixer {
     const ambienceDuck = mood === "underwater" ? 0.45 : mood === "slowmo" ? 0.15 : 1;
     if (this.#music?.id !== music || (this.#music && !this.#music.alive)) {
       if (this.#music) this.fade(this.#music, 0, scene.music.fadeMs, true);
-      this.#music = music ? this.track(music, true, 0) : null;
+      this.#music = music ? this.track(music, true, 0, null, restored?.music?.positionMs ?? null) : null;
       if (this.#music) {
         const gain = setting(this.#resources.get(music!).metadata, "playbackGain", 1);
         this.fade(this.#music, volume(setting(this.#settings, "vbgm", 0.6)) * volume(gain) * musicDuck, 800);
@@ -147,7 +169,7 @@ export class AudioMixer {
     for (const [id, specification] of next) {
       let track = this.#ambience.get(id);
       if (!track || !track.alive) {
-        track = this.track(id, true, 0);
+        track = this.track(id, true, 0, null, restored?.ambience.find(item => item.assetId === id)?.positionMs ?? null);
         this.#ambience.set(id, track);
       }
       const gain = volume(setting(this.#settings, "vamb", 0.3)) * volume(specification.gain)
@@ -160,7 +182,12 @@ export class AudioMixer {
     this.#clock = context.clock;
     this.#report = problem => { if (!context.signal.aborted) context.problem(problem); };
     this.setPaused(context.paused);
-    this.scene(presentation);
+    if (context.restore) {
+      for (const track of [...this.#tracks]) this.stop(track);
+      this.#music = null;
+      this.#ambience.clear();
+    }
+    this.scene(presentation, context.restore?.playback ?? null);
     const effects = new Set<Track>();
     const delays = new Set<ActiveTimer>();
     let voice: Track | null = null;
@@ -172,8 +199,16 @@ export class AudioMixer {
       voiceReported = true;
       context.voiceEnded();
     };
-    if (presentation.performance.voiceId && !skipped) {
-      voice = this.track(presentation.performance.voiceId, false, volume(setting(this.#settings, "vvo", 1)), voiceEnded);
+    const restoredVoice = context.restore?.playback.voice;
+    const resumeVoice = context.restore?.voice === "resume";
+    const playVoice = !context.restore || context.restore.voice === "replay"
+      || (resumeVoice && restoredVoice?.state === "active" && restoredVoice.positionMs !== null);
+    if (resumeVoice && restoredVoice?.state === "active" && restoredVoice.positionMs === null) {
+      context.problem({ code: "VOICE_POSITION", message: "这份进度没有可用的语音续播位置，本次读档保持语音停止。", blocking: false });
+    }
+    if (presentation.performance.voiceId && !skipped && playVoice) {
+      voice = this.track(presentation.performance.voiceId, false, volume(setting(this.#settings, "vvo", 1)), voiceEnded,
+        resumeVoice ? restoredVoice?.positionMs ?? null : null);
     } else voiceEnded();
     const effect = (id: string, gain: number): void => {
       if (closed || skipped || context.signal.aborted) return;
@@ -219,14 +254,14 @@ export class AudioMixer {
           return {
             assetId,
             positionMs: track?.id === assetId && track.alive && !track.failed && !track.playRejected
-              && typeof seconds === "number" && Number.isFinite(seconds) && seconds >= 0 ? seconds * 1000 : null,
+              && typeof seconds === "number" && Number.isFinite(seconds) && seconds >= 0 ? track.seekMs ?? seconds * 1000 : null,
           };
         };
         const scene = presentation.scene;
         const voiceId = presentation.performance.voiceId;
         let capturedVoice: VoiceCheckpoint | null = null;
         if (voiceId) {
-          const state: VoiceCheckpoint["state"] = skipped ? "skipped"
+          const state: VoiceCheckpoint["state"] = skipped || !playVoice ? "skipped"
             : voice?.failed || voice?.playRejected ? "unavailable"
             : voice?.alive ? "active" : "finished";
           capturedVoice = { ...position(voiceId, voice), state };

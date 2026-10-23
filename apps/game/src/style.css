@@ -50,6 +50,19 @@ h1 { margin: 0; font-size: clamp(1.1rem, 2.6vw, 1.8rem); font-weight: 500; }
 .checkpoint-panel h2 { font-size: 1rem; font-weight: 500; margin: 0; }
 .checkpoint-panel p { font-size: .85rem; line-height: 1.65; }
 .checkpoint-panel pre { font-size: .8rem; max-height: 360px; overflow: auto; padding: 12px; background: #061119; }
+.checkpoint-panel .controls { align-items: center; }
+select { font: inherit; color: inherit; background: #183443; border: 1px solid #557682; border-radius: 8px; padding: .6rem; }
+.record-status { font-size: .85rem; color: #bdd8df; line-height: 1.6; }
+.gallery-dialog { color: #e9f2f5; background: #0c1820; border: 1px solid #557682; border-radius: 10px; width: min(1000px, 92vw); max-height: 90vh; }
+.gallery-dialog::backdrop { background: #041018d9; }
+.gallery-dialog header { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.gallery-dialog h2 { margin: 0; }
+.gallery-dialog li { padding: 6px 0; }
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; }
+.gallery-cg { padding: 0; min-height: 90px; aspect-ratio: 16 / 9; overflow: hidden; }
+.gallery-cg img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.gallery-full-image { display: block; width: 100%; max-height: 65vh; object-fit: contain; }
+.gallery-dialog figure { margin: 12px 0; }
 .scene.paused *, .scene.paused .world { animation-play-state: paused !important; transition-duration: 0ms; }
 .world[data-mood="gray"] { filter: grayscale(1) contrast(.9); }
 .world[data-mood="dark"] { filter: brightness(.6); }

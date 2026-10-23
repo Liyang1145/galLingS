@@ -12,13 +12,14 @@
         <div><p class="eyebrow">海风与布丁 · 重构试播</p><h1>一套剧情核心，一段新的试航。</h1></div>
         <span class="badge">重构开发入口 · 非正式发行版</span>
       </header>
-      <p class="scope-note">本页使用独立试播记录。支持保存并查看检查点，实际读档、回退和联网聊天尚未接入。</p>
+      <p class="scope-note">本页使用独立试播记录。存读档恢复当局进度；周目、结局和 CG 解锁单独保留。回退与联网聊天尚未接入。</p>
       <section class="stage" id="stage" aria-label="剧情画面">
         <div class="scene" id="scene"></div>
         <div class="title-screen" id="title">
           <div class="title-copy"><p>海风与布丁</p><span>主线运行切片</span></div>
           <div class="title-menu">
             <button id="start" type="button">从第一话开始</button>
+            <button id="gallery-open" type="button">鉴赏</button>
             <button id="timed" type="button">限时选择样例</button>
             <small>样例使用声明初值<br />不代表真实路线进度</small>
           </div>
@@ -45,16 +46,37 @@
         <p id="problem-message"></p><button id="retry" type="button">重建当前场面</button>
       </section>
       <section class="checkpoint-panel" aria-labelledby="checkpoint-heading">
-        <h2 id="checkpoint-heading">试播检查点</h2>
-        <p>本切片保存已生效的剧情、有效计时和声音状态；“查看”只显示详情。实际恢复游玩待恢复规则确认后开放。</p>
+        <h2 id="checkpoint-heading">试播存读档</h2>
+        <p>保存当前剧情位置、当局变量和剩余有效时间。读档保留全局的周目与鉴赏成果；“查看”只显示详情。</p>
         <div class="controls">
           <button type="button" id="save-checkpoint" disabled>保存当前检查点</button>
           <button type="button" id="inspect-main">查看第一话检查点</button>
           <button type="button" id="inspect-timed">查看限时样例检查点</button>
         </div>
+        <div class="controls">
+          <label for="restore-voice">本次读档语音</label>
+          <select id="restore-voice">
+            <option value="">请选择试听方式</option>
+            <option value="silent">不播放当前句</option>
+            <option value="replay">从头播放当前句</option>
+            <option value="resume">按保存的位置续播当前句</option>
+          </select>
+          <button type="button" id="load-main" disabled>读取第一话进度</button>
+          <button type="button" id="load-timed" disabled>读取限时样例进度</button>
+        </div>
+        <p>语音方式仅用于本次读档试用，尚未设定正式默认体验。文字恢复为完整显示，音乐和环境声按可用的保存位置恢复。</p>
         <p id="save-message" role="status" aria-live="polite">场面就绪并完整显示文字后，可保存当前入口的检查点。两个入口的槽位分别保留。</p>
         <pre id="save-details" hidden></pre>
       </section>
+      <section class="record-status" aria-label="全局玩家记录">
+        <p id="record-message" role="status" aria-live="polite">第一话的全局记录与进度分开保存，限时样例不写入全局成果。</p>
+        <button type="button" id="retry-records" hidden>重试保存全局记录</button>
+      </section>
+      <dialog id="gallery" class="gallery-dialog" aria-labelledby="gallery-heading">
+        <header><h2 id="gallery-heading">鉴赏</h2><button type="button" id="gallery-close">返回主页</button></header>
+        <p>已解锁的结局和 CG 跨存档保留。鉴赏只查看收藏，不改变剧情进度。</p>
+        <div id="gallery-body"></div>
+      </dialog>
       <details class="debug"><summary>当前剧情状态（仅试播）</summary><pre id="debug">尚未开始</pre></details>
       <p class="help">点击画面 / 空格 / → 继续，Esc 打开菜单。自动不会代答；快进遇到未读或选择会停下。</p>
     </main>

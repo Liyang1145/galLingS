@@ -65,3 +65,39 @@ export const ACTOR_ACTIONS: Record<string, VisualMotion> = {
       { offset: 1, translate: "0 0" },
     ], 550, "ease-out"),
 };
+
+// Source: shake/quake/zoomHit/whipPan, veil and blinkEye in the same legacy stylesheet.
+export const SCREEN_MOTIONS: Record<string, VisualMotion> = {
+  shake: cssMotion([
+    { offset: 0, transform: "translate(0,0)" }, { offset: 0.2, transform: "translate(-14px,6px)" },
+    { offset: 0.4, transform: "translate(12px,-8px)" }, { offset: 0.6, transform: "translate(-8px,4px)" },
+    { offset: 0.8, transform: "translate(6px,-2px)" }, { offset: 1, transform: "translate(0,0)" },
+  ], 500, "ease"),
+  quake: cssMotion([
+    { offset: 0, transform: "translate(0,0) scale(1.06)" },
+    { offset: 0.08, transform: "translate(-34px,18px) scale(1.06)" },
+    { offset: 0.16, transform: "translate(30px,-22px) scale(1.05)" },
+    { offset: 0.26, transform: "translate(-24px,14px) scale(1.04)" },
+    { offset: 0.38, transform: "translate(18px,-10px) scale(1.03)" },
+    { offset: 0.52, transform: "translate(-10px,6px) scale(1.02)" },
+    { offset: 0.7, transform: "translate(5px,-3px) scale(1.01)" },
+    { offset: 1, transform: "translate(0,0) scale(1)" },
+  ], 900, "cubic-bezier(.3,.7,.4,1)"),
+  zoom: cssMotion([
+    { offset: 0, transform: "scale(1)" }, { offset: 0.25, transform: "scale(1.12)" },
+    { offset: 1, transform: "scale(1)" },
+  ], 500, "ease-out"),
+  whip: cssMotion([
+    { offset: 0, transform: "translateX(0) scale(1.08)", filter: "blur(0)" },
+    { offset: 0.14, transform: "translateX(-11%) scale(1.08)", filter: "blur(18px)" },
+    { offset: 0.34, transform: "translateX(6%) scale(1.07)", filter: "blur(9px)" },
+    { offset: 0.58, transform: "translateX(-2%) scale(1.04)", filter: "blur(3px)" },
+    { offset: 1, transform: "translateX(0) scale(1)", filter: "blur(0)" },
+  ], 620, "cubic-bezier(.15,.85,.3,1)"),
+};
+
+export const SCREEN_FLASH = cssMotion([{ opacity: 1 }, { opacity: 0 }], 800, "ease-out");
+export const SCREEN_BLINK = cssMotion([
+  { offset: 0, opacity: 1 }, { offset: 0.25, opacity: 0.15 }, { offset: 0.4, opacity: 1 },
+  { offset: 0.65, opacity: 0 }, { offset: 0.78, opacity: 0.6 }, { offset: 1, opacity: 0 },
+], 1600, "ease-in-out");

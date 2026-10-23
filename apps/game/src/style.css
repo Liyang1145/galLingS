@@ -15,8 +15,11 @@ h1 { margin: 0; font-size: clamp(1.1rem, 2.6vw, 1.8rem); font-weight: 500; }
 .scope-note, .preview-note, .help { color: #acc1c9; line-height: 1.65; font-size: .85rem; }
 .stage { --stage-scale: 1; --stage-unit: 1px; width: 100%; aspect-ratio: 16 / 9; position: relative; overflow: hidden; background: #07141c; border: 1px solid #39515c; border-radius: 10px; }
 .scene { left: var(--stage-left, 0px); top: var(--stage-top, 0px); width: 1280px; height: var(--stage-canvas-height, 720px); transform: scale(var(--stage-scale)); transform-origin: top left; position: absolute; overflow: hidden; background: #050d14; }
-.world, .backdrop, .actors, .veil { position: absolute; inset: 0; width: 100%; height: 100%; }
+.world, .scene-layers, .backdrop, .actors, .mood-layer, .mood-detail, .veil { position: absolute; inset: 0; width: 100%; height: 100%; }
 .world { overflow: hidden; touch-action: pan-x; user-select: none; }
+.scene-layers { z-index: 0; }
+.mood-layer { opacity: 0; pointer-events: none; z-index: 3; }
+.mood-detail { opacity: 0; pointer-events: none; }
 .dialogue-text, .choice-list { touch-action: pan-y; }
 .stage[data-ui-hidden="true"] .dialogue, .stage[data-ui-hidden="true"] .choices { visibility: hidden; }
 .play-controls[data-ui-hidden="true"] > button:not([data-reveal-ui]) { visibility: hidden; }
@@ -204,18 +207,62 @@ select { font: inherit; color: inherit; background: #183443; border: 1px solid #
 .aftergame-context:empty { border: 0; }
 .aftergame-context pre { max-height: 320px; padding: 12px; overflow: auto; background: #061119; font-size: .8rem; }
 .scene.paused *, .scene.paused .world { animation-play-state: paused !important; transition-duration: 0ms; }
-.world[data-mood="gray"] { filter: grayscale(1) contrast(.9); }
-.world[data-mood="dark"] { filter: brightness(.6); }
-.world[data-mood="blur"] { filter: blur(3px); }
-.world[data-mood="underwater"] { filter: hue-rotate(8deg) saturate(.8); animation: sway 6s ease-in-out infinite; }
-.world[data-mood="slowmo"] { filter: saturate(.4); }
-.world[data-mood="sway"] { animation: sway 5s ease-in-out infinite; }
-.world[data-mood="dizzy"] { animation: dizzy 3s ease-in-out infinite; }
-.world[data-mood="flicker"], .world[data-mood="strobe"] { animation: flicker 1s steps(2) infinite; }
-.world[data-mood="danger"] { animation: danger 1.3s ease-in-out infinite; }
-@keyframes sway { 0%, 100% { translate: 0 0; } 50% { translate: 5px 2px; } }
-@keyframes dizzy { 0%, 100% { rotate: -.3deg; filter: blur(0); } 50% { rotate: .3deg; filter: blur(2px); } }
-@keyframes flicker { 0%, 100% { filter: brightness(1); } 50% { filter: brightness(.6); } }
-@keyframes danger { 0%, 100% { filter: brightness(1); } 50% { filter: brightness(.65) sepia(.2); } }
+.world[data-mood]:not([data-mood=""]) .mood-layer { opacity: 1; }
+.world[data-mood="dizzy"] .scene-layers { animation: scene-sway 7s ease-in-out infinite, scene-blur-pulse 5.3s ease-in-out infinite; }
+.world[data-mood="dizzy"] .mood-layer { background: radial-gradient(ellipse at center, #0000 25%, #000c 100%); }
+.world[data-mood="dizzy"] .mood-detail { background: #000; animation: scene-dim-pulse 4.2s ease-in-out infinite; }
+.world[data-mood="flicker"] .mood-layer { background: #000; opacity: 0; animation: scene-flicker 3.6s linear infinite; }
+.world[data-mood="strobe"] .mood-layer { background: #000; opacity: 0; animation: scene-strobe 1.1s steps(1) infinite; }
+.world[data-mood="blur"] .mood-layer { backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
+.world[data-mood="sway"] .scene-layers { animation: scene-sway 6s ease-in-out infinite; }
+.world[data-mood="gray"] .scene-layers { filter: grayscale(1) contrast(.9); }
+.world[data-mood="gray"] .mood-layer { background: radial-gradient(ellipse at center, #0000 45%, #000a 100%); }
+.world[data-mood="dark"] .mood-layer { background: radial-gradient(ellipse at center, #0004 20%, #000e 95%); }
+.world[data-mood="danger"] .mood-layer { background: radial-gradient(ellipse at center, #0000 35%, #b0000088 100%); opacity: .55; animation: scene-heart 1.2s ease-in-out infinite; }
+.world[data-mood="underwater"] .scene-layers { filter: saturate(.8) brightness(.82) hue-rotate(-10deg) blur(1.4px); animation: scene-underwater-drift 5.5s ease-in-out infinite; }
+.world[data-mood="underwater"] .mood-layer { background: linear-gradient(180deg, #2a8fd066 0%, #0b4f8f99 55%, #06305fcc 100%); }
+.world[data-mood="underwater"] .mood-detail {
+  opacity: .9;
+  background-image: radial-gradient(circle at 50% 50%, #ffffffcc 0 2px, #ffffff33 3px, #0000 5px),
+    radial-gradient(circle at 50% 50%, #ffffffaa 0 4px, #ffffff22 6px, #0000 8px),
+    radial-gradient(circle at 50% 50%, #ffffff99 0 1.5px, #0000 3px),
+    radial-gradient(circle at 50% 50%, #ffffffbb 0 6px, #ffffff22 8px, #0000 11px);
+  background-size: 170px 230px, 310px 410px, 90px 150px, 520px 640px;
+  background-position: 20px 0, 140px 60px, 60px 30px, 300px 200px;
+  animation: scene-underwater-bubbles 4.5s linear infinite;
+}
+.world[data-mood="slowmo"] .scene-layers { filter: saturate(.55) contrast(1.08) brightness(.95); animation: scene-slow-push 9s cubic-bezier(.2,.6,.3,1) forwards; }
+.world[data-mood="slowmo"][data-still-slowmo="true"] .scene-layers { animation: none; scale: 1.08; }
+.world[data-mood="slowmo"] .mood-layer { background: radial-gradient(ellipse at center, #0000 40%, #0b1a2acc 100%); }
+@keyframes scene-sway {
+  0%, 100% { rotate: 0deg; scale: 1.04; translate: 0 0; }
+  25% { rotate: .7deg; translate: 10px 4px; }
+  50% { rotate: -.5deg; scale: 1.06; translate: -8px -3px; }
+  75% { rotate: .4deg; translate: 6px 6px; }
+}
+@keyframes scene-blur-pulse { 0%, 100% { filter: blur(0); } 40% { filter: blur(3px); } 70% { filter: blur(1px); } }
+@keyframes scene-dim-pulse {
+  0%, 100% { opacity: 0; } 18% { opacity: .667; } 30% { opacity: .2; }
+  46% { opacity: .867; } 55% { opacity: .133; } 72% { opacity: .533; }
+}
+@keyframes scene-flicker {
+  0%, 100% { opacity: 0; } 10% { opacity: .55; } 14% { opacity: .1; } 30% { opacity: .7; }
+  36% { opacity: .25; } 55% { opacity: .6; } 60% { opacity: .05; } 80% { opacity: .45; }
+}
+@keyframes scene-strobe {
+  0% { opacity: 0; } 12% { opacity: .85; } 20% { opacity: 0; } 48% { opacity: .85; }
+  52% { opacity: 0; } 64% { opacity: .6; } 70% { opacity: 0; }
+}
+@keyframes scene-heart { 0%, 100% { opacity: .55; } 15% { opacity: 1; } 30% { opacity: .6; } 45% { opacity: .95; } }
+@keyframes scene-underwater-drift { 0%, 100% { translate: 0 0; scale: 1.05; } 50% { translate: -14px 8px; scale: 1.07; } }
+@keyframes scene-underwater-bubbles {
+  from { background-position: 20px 0, 140px 60px, 60px 30px, 300px 200px; }
+  to { background-position: 34px -230px, 128px -350px, 66px -120px, 310px -440px; }
+}
+@keyframes scene-slow-push { from { scale: 1; } to { scale: 1.08; } }
 @media (max-width: 650px) { #app { width: calc(100% - 16px); margin: 12px auto; } .badge { display: none; } .controls { gap: 6px; } .controls button { font-size: .75rem; padding: 8px; } }
-@media (prefers-reduced-motion: reduce) { .world { animation: none !important; } .actor, [data-whale="true"] .dialogue::before, [data-whale="true"] .title-menu button, [data-whale="true"] .choices button { transition: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .world .scene-layers, .world .mood-layer, .world .mood-detail { animation: none !important; }
+  .world[data-mood="slowmo"] .scene-layers { scale: 1.08; }
+  .actor, [data-whale="true"] .dialogue::before, [data-whale="true"] .title-menu button, [data-whale="true"] .choices button { transition: none; }
+}

@@ -3,7 +3,7 @@ export interface SceneFadeSurface {
   choices: HTMLElement;
 }
 
-const FROZEN = ["opacity", "transform", "filter", "translate", "rotate", "scale"] as const;
+const FROZEN = ["opacity", "transform", "filter", "translate", "rotate", "scale", "background-position"] as const;
 
 /** Copies only the known player scene and choices, with no listeners or live capabilities. */
 export function captureSceneFade(scene: HTMLElement, surface: SceneFadeSurface): HTMLDivElement {

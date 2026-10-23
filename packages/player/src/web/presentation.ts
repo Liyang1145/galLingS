@@ -15,7 +15,7 @@ import type { AuthorAppearance, WhaleArtwork } from "../appearance.ts";
 import type { InteractionFeedback } from "../ui-sounds.ts";
 import { captureSceneFade } from "./scene-fade.ts";
 import type { SceneFadeSurface } from "./scene-fade.ts";
-import { ACTOR_ACTIONS, ACTOR_ENTRIES, ACTOR_EXITS } from "./motion.ts";
+import { ACTOR_ACTIONS, ACTOR_ENTRIES, ACTOR_EXITS, SCREEN_MOTIONS, SCREEN_FLASH, SCREEN_BLINK } from "./motion.ts";
 
 const LOOKS: Record<string, string> = {
   "": "", none: "", shadow: "brightness(0)",
@@ -86,6 +86,8 @@ interface Actor {
 export class WebPresentation implements PresentationAdapter {
   readonly #root: HTMLElement;
   readonly #world: HTMLDivElement;
+  readonly #sceneLayers: HTMLDivElement;
+  readonly #mood: HTMLDivElement;
   readonly #background: HTMLImageElement;
   readonly #actorsLayer: HTMLDivElement;
   readonly #transitionVeil: HTMLDivElement;
@@ -116,12 +118,19 @@ export class WebPresentation implements PresentationAdapter {
     this.#appearance = applyAuthorAppearance(root, content, resources, artwork);
     this.#world = document.createElement("div");
     this.#world.className = "world";
+    this.#sceneLayers = document.createElement("div");
+    this.#sceneLayers.className = "scene-layers";
     this.#background = document.createElement("img");
     this.#background.className = "backdrop";
     this.#background.alt = "";
     this.#background.draggable = false;
     this.#actorsLayer = document.createElement("div");
     this.#actorsLayer.className = "actors";
+    this.#mood = document.createElement("div");
+    this.#mood.className = "mood-layer";
+    const moodDetail = document.createElement("div");
+    moodDetail.className = "mood-detail";
+    this.#mood.append(moodDetail);
     this.#transitionVeil = document.createElement("div");
     this.#transitionVeil.className = "veil transition-veil";
     this.#veil = document.createElement("div");
@@ -133,7 +142,8 @@ export class WebPresentation implements PresentationAdapter {
     this.#text = document.createElement("p");
     this.#text.className = "dialogue-text";
     this.#dialogue.append(this.#name, this.#text);
-    this.#world.append(this.#background, this.#actorsLayer, this.#transitionVeil, this.#veil);
+    this.#sceneLayers.append(this.#background, this.#actorsLayer);
+    this.#world.append(this.#sceneLayers, this.#mood, this.#transitionVeil, this.#veil);
     root.replaceChildren(this.#world, this.#dialogue);
     this.#audio = new AudioMixer(resources, content.source.settings, audioAllowed, volumes, readUiSounds(content));
     this.#reading = reading === undefined ? authorReadingPreferences(content.source.settings) : readReadingPreferences(reading);
@@ -298,7 +308,22 @@ export class WebPresentation implements PresentationAdapter {
       this.#background.style.objectFit = viewMetadata.size === "contain" ? "contain" : "cover";
       this.#background.style.transformOrigin = camera?.origin ?? "";
       this.#background.style.scale = camera && camera.scale > 1 ? String(camera.scale) : "";
+      const previousMood = this.#world.dataset.mood ?? "";
+      const previousMoodFilter = getComputedStyle(this.#sceneLayers).filter;
+      const previousMoodOpacity = getComputedStyle(this.#mood).opacity;
+      if (previousMood !== scene.mood) delete this.#world.dataset.stillSlowmo;
+      if (scene.mood === "slowmo" && context.mode !== "enter") this.#world.dataset.stillSlowmo = "true";
       this.#world.dataset.mood = scene.mood;
+      if (context.mode === "enter" && previousMood !== scene.mood) {
+        const filter = getComputedStyle(this.#sceneLayers).filter;
+        const opacity = getComputedStyle(this.#mood).opacity;
+        if (scene.mood !== "dizzy" && previousMoodFilter !== filter) {
+          animate(this.#sceneLayers, [{ filter: previousMoodFilter }, { filter }], { duration: 600, easing: "ease" });
+        }
+        if (!["flicker", "strobe", "danger"].includes(scene.mood) && previousMoodOpacity !== opacity) {
+          animate(this.#mood, [{ opacity: previousMoodOpacity }, { opacity }], { duration: 600, easing: "ease" });
+        }
+      }
       const keep = new Set<string>();
       const actorActions = view.presentation.performance.actorActions;
       const actorMotion = context.mode === "enter" && !skipping
@@ -493,15 +518,19 @@ export class WebPresentation implements PresentationAdapter {
     return playback;
   }
 
-  private screenEffect(fx: string, animate: (element: Element, frames: Keyframe[], duration: number) => void): void {
-    if (fx === "shake" || fx === "quake") {
-      animate(this.#world, [{ translate: "-8px 3px" }, { translate: "8px -3px" }, { translate: "-4px 0" }, { translate: "0 0" }], 450);
+  private screenEffect(fx: string,
+    animate: (element: Element, frames: Keyframe[], timing: number | KeyframeAnimationOptions) => void): void {
+    const motion = SCREEN_MOTIONS[fx];
+    if (motion) {
+      // Legacy dizzy blur is the later animation in the CSS list and owns filter during a whip.
+      const frames = fx === "whip" && this.#world.dataset.mood === "dizzy"
+        ? motion.frames.map(frame => { const copy = { ...frame }; delete copy.filter; return copy; }) : motion.frames;
+      animate(this.#sceneLayers, frames, motion.timing);
     }
-    if (fx === "zoom") animate(this.#world, [{ scale: "1" }, { scale: "1.07" }, { scale: "1" }], 400);
-    if (fx === "whip") animate(this.#world, [{ translate: "-36px 0" }, { translate: "18px 0" }, { translate: "0 0" }], 450);
     if (["flash", "quake", "whip", "redflash", "blink"].includes(fx)) {
       this.#veil.style.background = fx === "redflash" ? "#c00" : fx === "blink" ? "#000" : "#fff";
-      animate(this.#veil, [{ opacity: 0 }, { opacity: 1 }, { opacity: 0 }], fx === "blink" ? 800 : 450);
+      const flash = fx === "blink" ? SCREEN_BLINK : SCREEN_FLASH;
+      animate(this.#veil, flash.frames, flash.timing);
     }
   }
 

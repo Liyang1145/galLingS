@@ -39,6 +39,7 @@
 | `se/seEvents/_seGain` | 一次性音效、增益与延迟保留；读档/回退默认不重放；延迟回调需步骤取消 |
 | `voice` | 对白语音保留 ID；恢复是否重播或续播尚未确认，不在 M0 固化体验 |
 | `pref(vbgm/vamb/vvo/vse)`、`refreshAudioVolumes` | [独立声音偏好](preferences.md)保留四轨作者默认与玩家覆盖，实时更新当前音轨并保留渐变进度；0 音量触发的一次性音效不补播；不读旧偏好、不随存读档或回退覆盖 |
+| `showAudioLibrary/closeAudioLibrary`、`RT.aud` | [主页声音收藏](audio-library.md)只读作者分类、候选标记及原顺序，独立混音器单段试听；配乐/环境循环、音效单次、配乐沿原素材增益，后台/许可暂停后原位置接续，关闭取消。打开不预载全部声音、不写进度或解锁，初始许可未就绪不排队补播；剧情/旧插件入口未迁移，未运行或听感验收 |
 | `pref(speed/autoMul/readerScale/ghost)`、`typeText/kick/applyTheme` | [独立阅读偏好](preferences.md#阅读偏好的字段与时机)保留逐字间隔、自动倍率、字号与底板透明度；前两项用于后续呈现/等待，后两项即时应用；当前选择/自动/恢复计时不重置，试播视觉基准仍非完整旧主题迁移 |
 | 资源自带 `shot/sceneFit/cg/previewExcluded/audioCategory/gain` 等 | 保留元数据及来源；诊断不能把资源登记视为已安装、可播放或已授权 |
 | `settings` 的 cover/theme/UI 音效 | [作者外观](appearance.md)读取原主题/封面，复用旧入口原鲸鱼 SVG；最终右侧菜单覆盖作者 `menu=left`，对白字号采用作者基准乘玩家倍率，不改图形或素材；完整正式布局仍待迁移，编辑/插件/聊天设置不成为离线依赖 |

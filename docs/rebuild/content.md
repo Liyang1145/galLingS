@@ -44,7 +44,7 @@ npm run content:build
 
 作者 `settings.uiSe` 仍在来源设置中保留；共享表现及会话创建时通过纯[提示音映射读取器](feedback.md)校验已配置资源身份及字段，显式 `favorVar/tailVar` 须指向声明的数值变量。当前接选择、限时循环、手动存档、变量/CG/话末、事务首次解锁结局及操作按钮反馈；不更改规范化剧情或内容修订格式。
 
-资源的 `audioCategory/auditionOnly/name/dur/playbackGain` 仍保留在原元数据中，由共享[声音收藏读取器](audio-library.md)消费实际标记和字段，目录/混音共用同一规则，不猜分类或改变内容格式。当前共享目录及独立试听已编写，页面接入状态见专门说明，未运行验收。
+资源的 `audioCategory/auditionOnly/name/dur/playbackGain` 仍保留在原元数据中，由共享[声音收藏读取器](audio-library.md)消费实际标记和字段，目录/混音共用同一规则，不猜分类或改变内容格式。共享目录及独立试听已接开发主页，未运行验收。
 
 作者 `settings.theme/cover` 仍在来源设置中原样保留，由纯[外观读取器](appearance.md)消费，检查字段、枚举、颜色、有限数值及图像资源种类。旧入口中的已采用鲸鱼 SVG 则由独立装配只读提取，保留原字节并计入前端/来源摘要，不新增剧情资源 ID 或第二作者源；运行端不执行旧页面。
 

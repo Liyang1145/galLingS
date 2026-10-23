@@ -12,6 +12,7 @@ import { PlayerRepository, PlayerRecordWriter, galleryCatalog, playerProjection 
 import { prepareGameRestore } from "../../../packages/player/src/checkpoint.ts";
 import type { GameCheckpoint } from "../../../packages/player/src/checkpoint.ts";
 import { GalleryPanel } from "./gallery.ts";
+import { SoundLibraryPanel } from "./sounds.ts";
 import { DialoguePanel } from "./dialogue.ts";
 import { connectHost } from "./platform/host.ts";
 import { PendingWrites } from "../../../packages/player/src/writes.ts";
@@ -81,6 +82,8 @@ async function main(): Promise<void> {
   const retryRecords = element("retry-records", HTMLButtonElement);
   const gallery = element("gallery", HTMLDialogElement);
   const galleryBody = element("gallery-body", HTMLElement);
+  const sounds = element("sounds", HTMLDialogElement);
+  const soundsBody = element("sounds-body", HTMLElement);
   const dialogue = element("dialogue-history", HTMLDialogElement);
   const dialogueBody = element("dialogue-history-body", HTMLElement);
   const aftergame = element("aftergame", HTMLDialogElement);
@@ -189,6 +192,7 @@ async function main(): Promise<void> {
   let aftergamePanel: AftergamePanel | null = null;
   let galleryPanel: GalleryPanel | null = null;
   let galleryRequest = 0;
+  let soundPanel: SoundLibraryPanel | null = null;
   let dialoguePanel: DialoguePanel | null = null;
   const endingPanel = new EndingPanel(stage, {
     leaveLabel: "返回试播标题",
@@ -222,6 +226,7 @@ async function main(): Promise<void> {
     valuesChanged: volumes => {
       presentation?.setAudioVolumes(volumes);
       dialoguePanel?.setVolumes(volumes);
+      soundPanel?.setVolumes(volumes);
     },
   });
   const readingLabels = {
@@ -282,9 +287,11 @@ async function main(): Promise<void> {
     if (state.paused) stageFade?.cancel();
     session?.send({ type: "pause", reason: "host", paused: state.paused });
     dialoguePanel?.refresh(state.audioAllowed);
+    soundPanel?.refresh(state.audioAllowed);
   }, () => {
     if (exiting) { host.cancelExit(); return true; }
     if (dialogue.open) { closeDialogue(); return true; }
+    if (sounds.open) { closeSounds(); return true; }
     if (gallery.open) { closeGallery(); return true; }
     if (aftergame.open) { closeAftergame(); return true; }
     if (input?.reveal()) return true;
@@ -343,6 +350,7 @@ async function main(): Promise<void> {
     owner?.send({ type: "pause", reason: "exit", paused: true });
     owner?.send({ type: "pause", reason: "operation", paused: false });
     closeDialogue();
+    closeSounds();
     closeGallery();
     closeAftergame();
     const wasInert = page.inert;
@@ -416,7 +424,7 @@ async function main(): Promise<void> {
   input = new PlayerInput({
     stage, scene, choices, controls: playControls, hide, keyboardScopes: [document],
     session: () => session,
-    enabled: () => !closed && !exiting && !dialogue.open && !gallery.open && !aftergame.open && !host.state().paused,
+    enabled: () => !closed && !exiting && !dialogue.open && !gallery.open && !sounds.open && !aftergame.open && !host.state().paused,
     unlockAudio, menu: toggleMenu, history: openDialogue,
   });
   const displayDriver = nativeFullscreenDriver();
@@ -553,6 +561,7 @@ async function main(): Promise<void> {
       // All content, slot and global data are prepared before leaving live play.
       stageFade?.begin();
       closeDialogue();
+      closeSounds();
       input?.reset();
       owner?.dispose();
       session = null;
@@ -659,6 +668,7 @@ async function main(): Promise<void> {
     entryRequest++;
     input?.reset();
     closeDialogue();
+    closeSounds();
     closeAftergame();
     session?.dispose();
     session = null;
@@ -881,6 +891,40 @@ async function main(): Promise<void> {
     gallery.close();
   }
 
+  function openSounds(): void {
+    if (closed || exiting || session || sounds.open) return;
+    entryRequest++;
+    stageFade?.cancel();
+    closeGallery();
+    closeAftergame();
+    try {
+      soundPanel ??= new SoundLibraryPanel({
+        root: soundsBody, content, resources, volumes: audioPreferences.values("main"),
+        audioAllowed: host.state().audioAllowed,
+        available: () => !closed && !exiting && !session && sounds.open && !document.hidden,
+        paused: () => closed || exiting || !!session || !sounds.open || document.hidden || host.state().paused,
+        requestAudio: () => {
+          host.requestAudio();
+          soundPanel?.refresh(host.state().audioAllowed);
+        },
+      });
+      soundPanel.setVolumes(audioPreferences.values("main"));
+      soundPanel.open();
+      sounds.showModal();
+      soundPanel.refresh(host.state().audioAllowed);
+    } catch (error: unknown) {
+      closeSounds();
+      status.textContent = `声音收藏未能打开：${error instanceof Error ? error.message : "本地目录读取失败"}。主线仍可开始，已有成果保留。`;
+    }
+  }
+
+  function closeSounds(): void {
+    const wasOpen = sounds.open || soundPanel?.isOpen;
+    soundPanel?.close();
+    sounds.close();
+    if (wasOpen && !session) host.releaseAudio();
+  }
+
   function closeAftergame(): void {
     aftergamePanel?.close();
     aftergame.close();
@@ -964,6 +1008,12 @@ async function main(): Promise<void> {
   element("gallery-close", HTMLButtonElement).onclick = closeGallery;
   gallery.addEventListener("cancel", event => { event.preventDefault(); closeGallery(); });
   gallery.addEventListener("close", () => { if (!gallery.open) galleryPanel?.close(); });
+  element("sounds-open", HTMLButtonElement).onclick = openSounds;
+  element("sounds-close", HTMLButtonElement).onclick = closeSounds;
+  sounds.addEventListener("cancel", event => { event.preventDefault(); closeSounds(); });
+  sounds.addEventListener("close", () => {
+    if (!sounds.open && soundPanel?.isOpen) closeSounds();
+  });
   element("aftergame-open", HTMLButtonElement).onclick = () => { void openAftergame(); };
   element("aftergame-close", HTMLButtonElement).onclick = closeAftergame;
   aftergame.addEventListener("cancel", event => { event.preventDefault(); closeAftergame(); });
@@ -984,6 +1034,7 @@ async function main(): Promise<void> {
     if (document.hidden) stageFade?.cancel();
     session?.send({ type: "pause", reason: "background", paused: document.hidden });
     dialoguePanel?.refresh(host.state().audioAllowed);
+    soundPanel?.refresh(host.state().audioAllowed);
   };
   document.addEventListener("visibilitychange", visibility);
   const dispose = (): void => {
@@ -995,10 +1046,12 @@ async function main(): Promise<void> {
     terminalRecord = null;
     endingPanel.dispose();
     closeDialogue();
+    closeSounds();
     closeGallery();
     closeAftergame();
     aftergamePanel?.dispose();
     galleryPanel?.dispose();
+    soundPanel?.dispose();
     dialoguePanel?.dispose();
     audioPreferences.dispose();
     readingPreferences.dispose();
@@ -1020,7 +1073,7 @@ async function main(): Promise<void> {
   await Promise.all([audioPreferences.load(), readingPreferences.load(), buttonPreferences.load()]);
   if (closed || startup.signal.aborted) return;
   note.textContent = "本地内容已载入。可以从第一话开始，或选择明确标注的限时样例。";
-  for (const id of ["start", "timed", "gallery-open", "aftergame-open"]) element(id, HTMLButtonElement).disabled = false;
+  for (const id of ["start", "timed", "gallery-open", "sounds-open", "aftergame-open"]) element(id, HTMLButtonElement).disabled = false;
   refreshSaveControls();
   slots.refresh();
 }

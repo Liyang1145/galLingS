@@ -23,6 +23,7 @@
             <button id="start" type="button" disabled>从第一话开始</button>
             <button id="gallery-open" type="button" disabled>鉴赏</button>
             <button id="aftergame-open" type="button" disabled>通关后玩法</button>
+            <button id="sounds-open" type="button" disabled>声音收藏</button>
             <button id="timed" type="button" disabled>限时选择样例</button>
             <small>样例使用声明初值<br />不代表真实路线进度</small>
           </div>
@@ -115,6 +116,11 @@
         <header><h2 id="dialogue-history-heading">对白回看</h2><button type="button" id="dialogue-history-close" autofocus>返回剧情</button></header>
         <p>仅保留本次游玩最近 300 条对白和选择。查看期间暂停主线声音和倒计时，有配音的对白可单独重播。要回退进度，请先在下方明确选择范围和语音方式，再点击条目上的回退按钮；已解锁成果保留。关闭会停止试听，并取消尚未采用的回退准备。重新开始或读档后从当前位置重新记录。</p>
         <div id="dialogue-history-body"></div>
+      </dialog>
+      <dialog id="sounds" class="gallery-dialog sound-dialog" aria-labelledby="sounds-heading">
+        <header><h2 id="sounds-heading">声音收藏</h2><button type="button" id="sounds-close" autofocus>返回主页</button></header>
+        <p>重听一段旋律，或留在熟悉的海风里。试听只读取本地声音，不改变剧情进度与收藏成果。</p>
+        <div id="sounds-body"></div>
       </dialog>
       <dialog id="aftergame" class="gallery-dialog aftergame-dialog" aria-labelledby="aftergame-heading">
         <header><h2 id="aftergame-heading">通关后玩法 · 入口准备</h2><button type="button" id="aftergame-close" autofocus>返回主页</button></header>

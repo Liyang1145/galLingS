@@ -41,7 +41,7 @@
 | [通关后入口准备](docs/rebuild/chat.md) | 已提交通关事实的只读上下文与显式选择；正式聊天解锁、供应和发送尚未接入 |
 | `packages/story-model/src/host.ts` | 原生/页面桥协议标识；随包 `/2` 明确登记，不与剧情修订或存档版本混用 |
 | `packages/player/src/web/` | 浏览器画面和音频实现；不得反向依赖游戏页面或编辑器 |
-| `packages/player/src/web/choices.ts`、`stage-layout.ts` | 游戏/预览共用的可见选项、首立绘避让、倒计时显示及舞台比例；只管显示，不计算剧情或有效时间 |
+| `packages/player/src/web/choices.ts`、`stage-layout.ts` | 游戏/预览共用的可见选项、首立绘避让、倒计时显示、舞台比例及横竖分区；只管显示，不计算剧情或有效时间 |
 | `apps/game/` | 独立试播、存读档/鉴赏及随包启动装配，不是已切换的正式发行入口 |
 | `apps/editor/` | 独立对白编辑试用，预览复用共享播放器、只用内存记录；局部约束见目录入口 |
 | `tools/content/` | 旧导出转换与内容产物生成；命令见实施入口，不是游戏解释器 |

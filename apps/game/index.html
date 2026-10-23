@@ -48,6 +48,7 @@
         <p id="problem-message"></p><button id="retry" type="button">重建当前场面</button>
       </section>
       <section id="audio-preferences" class="checkpoint-panel" aria-label="声音设置"></section>
+      <section id="reading-preferences" class="checkpoint-panel" aria-label="阅读设置"></section>
       <section class="checkpoint-panel" aria-labelledby="checkpoint-heading">
         <h2 id="checkpoint-heading">试播存读档</h2>
         <p>保存当前剧情位置、当局变量和剩余有效时间。读档保留全局的周目与鉴赏成果；“查看”只显示详情。</p>
@@ -113,7 +114,7 @@
     </main>
     <dialog id="exit-dialog" class="gallery-dialog" aria-labelledby="exit-heading">
       <h2 id="exit-heading">退出前完成保存</h2>
-      <p>将等待已经发起的手动存档和音量保存，并提交待保存的周目、解锁和已读记录。当前未手动保存的剧情位置不会因此新建存档；未点击保存的音量也不会自动写入。</p>
+      <p>将等待已经发起的手动存档和偏好保存，并提交待保存的周目、解锁和已读记录。当前未手动保存的剧情位置不会因此新建存档；未点击保存的设置也不会自动写入。</p>
       <p id="exit-message" role="status" aria-live="polite"></p>
       <div class="controls">
         <button type="button" id="exit-retry" hidden>重试尚未完成的写入</button>

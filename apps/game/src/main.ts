@@ -15,8 +15,11 @@ import { renderDialogue } from "./dialogue.ts";
 import { connectHost } from "./platform/host.ts";
 import { PendingWrites } from "../../../packages/player/src/writes.ts";
 import type { AftergamePanel } from "./aftergame.ts";
-import { AudioPreferenceRepository, authorAudioVolumes } from "../../../packages/player/src/preferences.ts";
-import { AudioPreferencesPanel } from "./preferences.ts";
+import { AUDIO_CHANNELS, AudioPreferenceRepository, authorAudioVolumes, readAudioVolumes } from "../../../packages/player/src/preferences.ts";
+import {
+  READING_KEYS, READING_LIMITS, ReadingPreferenceRepository, authorReadingPreferences, readReadingPreferences,
+} from "../../../packages/player/src/reading-preferences.ts";
+import { NumericPreferencesPanel } from "./preferences.ts";
 import "./style.css";
 
 const startup = new AbortController();
@@ -124,14 +127,49 @@ async function main(): Promise<void> {
   let rollingBack = false;
   let exiting = false;
   let aftergamePanel: AftergamePanel | null = null;
-  const audioPreferences = new AudioPreferencesPanel({
+  const audioRepository = new AudioPreferenceRepository(content.workId, { kind: "development", id: "normal-entry" },
+    authorAudioVolumes(content.source.settings), store);
+  const audioLabels = { music: "配乐", ambience: "环境声", voice: "语音", effects: "音效" };
+  const audioPreferences = new NumericPreferencesPanel({
     root: element("audio-preferences", HTMLElement),
+    noun: "音量",
+    note: "调整立即用于本次播放；保存音量可在下次游玩时沿用。音量与剧情进度分开，读档和回退不会恢复旧音量。",
+    fields: AUDIO_CHANNELS.map(key => ({
+      key, label: audioLabels[key], min: 0, max: 1, step: 0.05,
+      format: (value: number) => `${Math.round(value * 100)}%`,
+    })),
     defaults: authorAudioVolumes(content.source.settings),
-    repository: new AudioPreferenceRepository(content.workId, { kind: "development", id: "normal-entry" },
-      authorAudioVolumes(content.source.settings), store),
+    readValues: readAudioVolumes,
+    repository: {
+      read: async () => ({ values: (await audioRepository.read()).volumes }),
+      update: async changes => ({ values: (await audioRepository.update(changes)).volumes }),
+    },
     blocked: () => closed || exiting,
     trackWrite: operation => writes.run("audio-preferences", operation),
-    volumesChanged: volumes => presentation?.setAudioVolumes(volumes),
+    valuesChanged: volumes => presentation?.setAudioVolumes(volumes),
+  });
+  const readingLabels = {
+    textSpeedMs: "逐字间隔", autoWaitMultiplier: "自动等待", textScale: "文字大小", dialogueOpacity: "对话框不透明度",
+  };
+  const readingPreferences = new NumericPreferencesPanel({
+    root: element("reading-preferences", HTMLElement),
+    noun: "阅读",
+    note: "文字大小与对话框透明度立即生效。逐字间隔越小越快，从下一句采用；自动等待倍率用于下一轮等待。调整不会重置当前选择或停留时间，保存后下次沿用。",
+    fields: READING_KEYS.map(key => ({
+      key, label: readingLabels[key], ...READING_LIMITS[key],
+      format: (value: number) => key === "textSpeedMs" ? `${Math.round(value)} ms`
+        : key === "autoWaitMultiplier" ? `${value.toFixed(1)}×` : `${Math.round(value * 100)}%`,
+    })),
+    defaults: authorReadingPreferences(content.source.settings),
+    readValues: readReadingPreferences,
+    repository: new ReadingPreferenceRepository(content.workId, { kind: "development", id: "normal-entry" },
+      authorReadingPreferences(content.source.settings), store),
+    blocked: () => closed || exiting,
+    trackWrite: operation => writes.run("reading-preferences", operation),
+    valuesChanged: values => {
+      presentation?.setReadingPreferences(values);
+      session?.send({ type: "auto-wait", multiplier: values.autoWaitMultiplier });
+    },
   });
   const hostStatus = document.createElement("p");
   note.insertAdjacentElement("afterend", hostStatus);
@@ -156,6 +194,7 @@ async function main(): Promise<void> {
     if (exiting) throw new Error("已有退出请求");
     exiting = true;
     audioPreferences.refresh();
+    readingPreferences.refresh();
     entryRequest++;
     const owner = session;
     owner?.send({ type: "pause", reason: "exit", paused: true });
@@ -173,6 +212,7 @@ async function main(): Promise<void> {
       released = true;
       exiting = false;
       audioPreferences.refresh();
+      readingPreferences.refresh();
       page.inert = wasInert;
       exitDialog.close();
       exitRetry.onclick = exitCancel.onclick = null;
@@ -318,6 +358,7 @@ async function main(): Promise<void> {
       adopted = true;
       mode = selected;
       audioPreferences.setMode(selected);
+      readingPreferences.setMode(selected);
       choiceKey = "";
       rollbackKey = "";
       menu.hidden = title.hidden = problem.hidden = true;
@@ -334,11 +375,14 @@ async function main(): Promise<void> {
         ? "限时选择样例：声明初值 0、周目 1、结局数 0；不是第五话真实路线，不写全局成果。"
         : "第一话试播：进度与全局成果分别保存，重新开始和读档保留已解锁的结局与 CG。";
       let sequence = 0;
-      presentation = new WebPresentation(scene, source, resources, host.state().audioAllowed, audioPreferences.values(selected));
+      const reading = readingPreferences.values(selected);
+      presentation = new WebPresentation(scene, source, resources, host.state().audioAllowed,
+        audioPreferences.values(selected), reading);
       session = createGameSession({
         content: source, player, generation: ++generation,
         clock, presentation, seen: reads[selected], onChange: show,
         rollback: { capacity: 500 },
+        autoWaitMultiplier: reading.autoWaitMultiplier,
         initialPauses: [
           ...(document.hidden ? ["background" as const] : []),
           ...(host.state().paused ? ["host" as const] : []),
@@ -361,6 +405,7 @@ async function main(): Promise<void> {
         presentation = null;
         host.releaseAudio();
         audioPreferences.setMode("main");
+        readingPreferences.setMode("main");
         title.hidden = false;
         next.disabled = auto.disabled = skip.disabled = pause.disabled = audio.disabled = save.disabled = dialogueOpen.disabled = rollbackButton.disabled = true;
         resetRollback();
@@ -399,6 +444,7 @@ async function main(): Promise<void> {
     session = null;
     presentation = null;
     audioPreferences.setMode("main");
+    readingPreferences.setMode("main");
     host.releaseAudio();
     scene.replaceChildren();
     scene.classList.remove("paused");
@@ -672,6 +718,7 @@ async function main(): Promise<void> {
     closeAftergame();
     aftergamePanel?.dispose();
     audioPreferences.dispose();
+    readingPreferences.dispose();
     session?.dispose();
     host.releaseAudio();
     host.dispose();
@@ -681,7 +728,7 @@ async function main(): Promise<void> {
   };
   window.addEventListener("pagehide", dispose, { once: true });
   import.meta.hot?.dispose(dispose);
-  await audioPreferences.load();
+  await Promise.all([audioPreferences.load(), readingPreferences.load()]);
   if (closed || startup.signal.aborted) return;
   note.textContent = "本地内容已载入。可以从第一话开始，或选择明确标注的限时样例。";
   for (const id of ["start", "timed", "gallery-open", "aftergame-open"]) element(id, HTMLButtonElement).disabled = false;

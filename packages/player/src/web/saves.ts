@@ -2,12 +2,13 @@ import { SaveStorageError } from "../saves.ts";
 import type { AtomicSaveStore, SaveRecord, StoredSlot } from "../saves.ts";
 import type { AtomicPlayerStore, PlayerRecords } from "../records.ts";
 import type { AtomicAudioPreferenceStore, AudioPreferenceRecord } from "../preferences.ts";
+import type { AtomicReadingPreferenceStore, ReadingPreferenceRecord } from "../reading-preferences.ts";
 
 const DATABASE = "haifeng.rebuild.saves";
 const STORE = "slots";
 
 /** New TypeScript records only. No localStorage or legacy database access. */
-export class IndexedDbSaveStore implements AtomicSaveStore, AtomicPlayerStore, AtomicAudioPreferenceStore {
+export class IndexedDbSaveStore implements AtomicSaveStore, AtomicPlayerStore, AtomicAudioPreferenceStore, AtomicReadingPreferenceStore {
   private open(): Promise<IDBDatabase> {
     return new Promise((resolve, reject) => {
       if (typeof indexedDB === "undefined") {
@@ -89,6 +90,10 @@ export class IndexedDbSaveStore implements AtomicSaveStore, AtomicPlayerStore, A
 
   async updateAudio(key: string, change: (stored: StoredSlot) => AudioPreferenceRecord): Promise<AudioPreferenceRecord> {
     return this.updateRecord(key, change, "AUDIO_PREFERENCES", "声音偏好");
+  }
+
+  async updateReading(key: string, change: (stored: StoredSlot) => ReadingPreferenceRecord): Promise<ReadingPreferenceRecord> {
+    return this.updateRecord(key, change, "READING_PREFERENCES", "阅读偏好");
   }
 
   private async updateRecord<T>(

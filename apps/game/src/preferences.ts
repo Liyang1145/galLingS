@@ -1,74 +1,90 @@
-import { AUDIO_CHANNELS, readAudioVolumes } from "../../../packages/player/src/preferences.ts";
-import type {
-  AudioChannel, AudioPreferenceChange, AudioPreferenceRepository, AudioVolumes,
-} from "../../../packages/player/src/preferences.ts";
-
 type Entry = "main" | "timed";
-const LABELS: Record<AudioChannel, string> = { music: "配乐", ambience: "环境声", voice: "语音", effects: "音效" };
+type Values<Key extends string> = Record<Key, number>;
+type Changes<Key extends string> = Partial<Record<Key, number | null>>;
 
-interface Options {
+interface Field<Key extends string> {
+  key: Key;
+  label: string;
+  min: number;
+  max: number;
+  step: number;
+  format(value: number): string;
+}
+
+interface Options<Key extends string> {
   root: HTMLElement;
-  repository: AudioPreferenceRepository;
-  defaults: AudioVolumes;
+  noun: string;
+  note: string;
+  fields: readonly Field<Key>[];
+  repository: {
+    read(): Promise<{ values: Values<Key> }>;
+    update(changes: Changes<Key>): Promise<{ values: Values<Key> }>;
+  };
+  defaults: Values<Key>;
+  readValues(input: unknown): Values<Key>;
   blocked(): boolean;
   trackWrite(operation: () => Promise<void>): Promise<void>;
-  volumesChanged(volumes: AudioVolumes): void;
+  valuesChanged(values: Values<Key>): void;
 }
 
 /** Explicit preference writes; live adjustment never captures or mutates progress. */
-export class AudioPreferencesPanel {
-  readonly #options: Options;
-  readonly #defaults: AudioVolumes;
+export class NumericPreferencesPanel<Key extends string> {
+  readonly #options: Options<Key>;
+  readonly #defaults: Values<Key>;
+  readonly #keys: readonly Key[];
   readonly #events = new AbortController();
-  readonly #inputs = new Map<AudioChannel, { input: HTMLInputElement; output: HTMLOutputElement }>();
+  readonly #inputs = new Map<Key, { input: HTMLInputElement; output: HTMLOutputElement; format(value: number): string }>();
   readonly #status: HTMLParagraphElement;
   readonly #save: HTMLButtonElement;
   readonly #reset: HTMLButtonElement;
   readonly #retry: HTMLButtonElement;
-  #main: AudioVolumes;
-  #timed: AudioVolumes;
-  #dirty: AudioPreferenceChange = {};
+  #main: Values<Key>;
+  #timed: Values<Key>;
+  #dirty: Changes<Key> = {};
   #mode: Entry = "main";
   #saving = false;
   #reading = false;
   #disposed = false;
   #loadEpoch = 0;
-  #message = "音量偏好尚未读取，当前使用作者默认。";
+  #message: string;
   #retryOperation: (() => Promise<void>) | null = null;
 
-  constructor(options: Options) {
+  constructor(options: Options<Key>) {
     this.#options = options;
-    this.#defaults = readAudioVolumes(options.defaults);
+    this.#keys = options.fields.map(field => field.key);
+    this.#defaults = options.readValues(options.defaults);
     this.#main = { ...this.#defaults };
     this.#timed = { ...this.#defaults };
+    this.#message = `${options.noun}偏好尚未读取，当前使用作者默认。`;
     const heading = document.createElement("h2");
-    heading.textContent = "声音设置";
+    heading.textContent = `${options.noun}设置`;
     const note = document.createElement("p");
-    note.textContent = "调整立即用于本次播放；保存音量可在下次游玩时沿用。音量与剧情进度分开，读档和回退不会恢复旧音量。";
+    note.textContent = options.note;
     const controls = document.createElement("div");
-    controls.className = "audio-preferences-grid";
+    controls.className = "preferences-grid";
     const { signal } = this.#events;
-    for (const channel of AUDIO_CHANNELS) {
+    for (const field of options.fields) {
+      const { key } = field;
       const label = document.createElement("label");
       const text = document.createElement("span");
-      text.textContent = LABELS[channel];
+      text.textContent = field.label;
       const input = document.createElement("input");
       input.type = "range";
-      input.min = "0";
-      input.max = "1";
-      input.step = "0.05";
-      input.setAttribute("aria-label", `${LABELS[channel]}音量`);
+      input.min = String(field.min);
+      input.max = String(field.max);
+      input.step = String(field.step);
+      input.setAttribute("aria-label", field.label);
       const output = document.createElement("output");
-      this.#inputs.set(channel, { input, output });
+      this.#inputs.set(key, { input, output, format: field.format });
       input.addEventListener("input", () => {
         if (this.#saving || this.#reading || this.#disposed || options.blocked()) return;
-        const values = readAudioVolumes({ ...this.values(this.#mode), [channel]: input.valueAsNumber });
+        const values = options.readValues({ ...this.values(this.#mode), [key]: input.valueAsNumber });
         if (this.#mode === "main") {
           this.#main = values;
-          this.#dirty[channel] = values[channel];
-          this.#message = "音量已用于本次播放，尚未保存。";
+          this.#dirty[key] = values[key];
+          this.#message = `${options.noun}已用于本次游玩，尚未保存。`;
         } else this.#timed = values;
-        options.volumesChanged(values);
+        options.valuesChanged(values);
         this.render();
       }, { signal });
       label.append(text, input, output);
@@ -76,24 +92,25 @@ export class AudioPreferencesPanel {
     }
     this.#save = document.createElement("button");
     this.#save.type = "button";
-    this.#save.textContent = "保存音量偏好";
+    this.#save.textContent = `保存${options.noun}偏好`;
     this.#save.addEventListener("click", () => this.save(), { signal });
     this.#reset = document.createElement("button");
     this.#reset.type = "button";
-    this.#reset.textContent = "使用作者默认音量";
+    this.#reset.textContent = "使用作者默认设置";
     this.#reset.addEventListener("click", () => {
       if (this.#saving || this.#reading || this.#disposed || options.blocked()) return;
       if (this.#mode === "main") {
         this.#main = { ...this.#defaults };
-        this.#dirty = { music: null, ambience: null, voice: null, effects: null };
-        this.#message = "本次播放已使用作者默认音量；点击保存后，下次也会跟随作者默认。";
+        this.#dirty = {};
+        for (const key of this.#keys) this.#dirty[key] = null;
+        this.#message = `本次游玩已使用作者默认${options.noun}设置；点击保存后，下次也会跟随作者默认。`;
       } else this.#timed = { ...this.#defaults };
-      options.volumesChanged(this.values(this.#mode));
+      options.valuesChanged(this.values(this.#mode));
       this.render();
     }, { signal });
     this.#retry = document.createElement("button");
     this.#retry.type = "button";
-    this.#retry.textContent = "重试上次音量保存";
+    this.#retry.textContent = `重试上次${options.noun}保存`;
     this.#retry.addEventListener("click", () => {
       if (this.#retryOperation) void this.run(this.#retryOperation);
     }, { signal });
@@ -107,11 +124,11 @@ export class AudioPreferencesPanel {
     this.render();
   }
 
-  values(entry: Entry): AudioVolumes { return { ...(entry === "main" ? this.#main : this.#timed) }; }
+  values(entry: Entry): Values<Key> { return { ...(entry === "main" ? this.#main : this.#timed) }; }
 
   setMode(entry: Entry): void {
     this.#mode = entry;
-    this.#options.volumesChanged(this.values(entry));
+    this.#options.valuesChanged(this.values(entry));
     this.render();
   }
 
@@ -120,24 +137,24 @@ export class AudioPreferencesPanel {
   async load(): Promise<void> {
     const epoch = ++this.#loadEpoch;
     this.#reading = true;
-    this.#message = "正在读取已保存的音量偏好……";
+    this.#message = `正在读取已保存的${this.#options.noun}偏好……`;
     this.render();
     let timer = 0;
     let aborted: () => void = () => {};
     const deadline = new Promise<never>((_resolve, reject) => {
-      timer = window.setTimeout(() => reject(new Error("音量偏好读取超过 5 秒，本次先使用作者默认；原记录未重置")), 5000);
-      aborted = () => reject(new Error("页面已离开，取消采用音量偏好"));
+      timer = window.setTimeout(() => reject(new Error(`${this.#options.noun}偏好读取超过 5 秒，本次先使用作者默认；原记录未重置`)), 5000);
+      aborted = () => reject(new Error(`页面已离开，取消采用${this.#options.noun}偏好`));
       this.#events.signal.addEventListener("abort", aborted, { once: true });
     });
     try {
       const state = await Promise.race([this.#options.repository.read(), deadline]);
       if (this.#disposed || epoch !== this.#loadEpoch) return;
-      this.#main = { ...state.volumes };
-      this.#message = "已读取声音偏好；调整后需点击保存，才会用于下次游玩。";
-      this.#options.volumesChanged(this.values(this.#mode));
+      this.#main = this.#options.readValues(state.values);
+      this.#message = `已读取${this.#options.noun}偏好；调整后需点击保存，才会用于下次游玩。`;
+      this.#options.valuesChanged(this.values(this.#mode));
     } catch (error: unknown) {
       if (!this.#disposed && epoch === this.#loadEpoch) {
-        this.#message = `音量偏好未采用：${error instanceof Error ? error.message : "存储不可用"}。本次可继续调音，已有记录未被替换。`;
+        this.#message = `${this.#options.noun}偏好未采用：${error instanceof Error ? error.message : "存储不可用"}。本次可继续调整，已有记录未被替换。`;
       }
     } finally {
       window.clearTimeout(timer);
@@ -152,32 +169,32 @@ export class AudioPreferencesPanel {
     const changes = { ...this.#dirty };
     const operation = async (): Promise<void> => {
       this.#saving = true;
-      this.#message = "正在保存本次选定的音量……";
+      this.#message = `正在保存本次选定的${this.#options.noun}……`;
       this.render();
       try {
         const saved = await this.#options.repository.update(changes);
         if (!this.#disposed) {
-          for (const channel of AUDIO_CHANNELS) {
-            if (Object.hasOwn(changes, channel) && this.#dirty[channel] === changes[channel]) {
-              delete this.#dirty[channel];
+          for (const key of this.#keys) {
+            if (Object.hasOwn(changes, key) && this.#dirty[key] === changes[key]) {
+              delete this.#dirty[key];
             }
           }
-          const values = { ...saved.volumes };
-          for (const channel of AUDIO_CHANNELS) {
-            const remaining = this.#dirty[channel];
-            if (remaining !== undefined) values[channel] = remaining === null ? this.#defaults[channel] : remaining;
+          const values = this.#options.readValues(saved.values);
+          for (const key of this.#keys) {
+            const remaining = this.#dirty[key];
+            if (remaining !== undefined) values[key] = remaining === null ? this.#defaults[key] : remaining;
           }
           this.#main = values;
           this.#retryOperation = null;
           this.#message = Object.keys(this.#dirty).length
-            ? "上次选定的音量已保存；后续调整仍用于本次播放，尚未保存。"
-            : "音量偏好已保存；剧情进度与全局成果未改变。";
-          this.#options.volumesChanged(this.values(this.#mode));
+            ? `上次选定的${this.#options.noun}已保存；后续调整仍用于本次游玩，尚未保存。`
+            : `${this.#options.noun}偏好已保存；剧情进度与全局成果未改变。`;
+          this.#options.valuesChanged(this.values(this.#mode));
         }
       } catch (error: unknown) {
         if (!this.#disposed) {
           this.#retryOperation = operation;
-          this.#message = `音量尚未保存：${error instanceof Error ? error.message : "存储失败"}。可重试原调整；当前音量仅用于本次播放。`;
+          this.#message = `${this.#options.noun}尚未保存：${error instanceof Error ? error.message : "存储失败"}。可重试原调整；当前设置仅用于本次游玩。`;
         }
         throw error;
       } finally { this.#saving = false; this.render(); }
@@ -197,18 +214,18 @@ export class AudioPreferencesPanel {
   private render(): void {
     if (this.#disposed) return;
     const disabled = this.#saving || this.#reading || this.#options.blocked();
-    const volumes = this.values(this.#mode);
-    for (const [channel, item] of this.#inputs) {
-      item.input.value = String(volumes[channel]);
+    const values = this.values(this.#mode);
+    for (const [key, item] of this.#inputs) {
+      item.input.value = String(values[key]);
       item.input.disabled = disabled;
-      item.output.value = `${Math.round(volumes[channel] * 100)}%`;
+      item.output.value = item.format(values[key]);
     }
     this.#save.disabled = disabled || this.#mode !== "main" || !Object.keys(this.#dirty).length;
     this.#reset.disabled = disabled;
     this.#retry.hidden = !this.#retryOperation || this.#mode !== "main";
     this.#retry.disabled = disabled;
     this.#status.textContent = this.#mode === "timed"
-      ? "限时样例的音量只留在本页内存，不读取或改写正常游玩的音量偏好。" : this.#message;
+      ? `限时样例的${this.#options.noun}只留在本页内存，不读取或改写正常游玩的对应偏好。` : this.#message;
   }
 
   dispose(): void {

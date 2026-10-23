@@ -7,6 +7,7 @@ import type { GameCheckpoint, PlaybackCheckpoint } from "./checkpoint.ts";
 import { prepareGameRestore } from "./checkpoint.ts";
 import { RollbackHistory } from "./rollback.ts";
 import type { RollbackTarget } from "./rollback.ts";
+import { readReadingValue } from "./reading-preferences.ts";
 
 export type RestoreVoice = "silent" | "replay" | "resume";
 
@@ -72,6 +73,7 @@ export type SessionIntent =
   | { type: "choose"; token: SessionToken; choiceId: string }
   | { type: "pause"; reason: "menu" | "background" | "host" | "history" | "operation" | "exit"; paused: boolean }
   | { type: "auto"; enabled: boolean }
+  | { type: "auto-wait"; multiplier: number }
   | { type: "skip"; enabled: boolean }
   | { type: "retry" };
 
@@ -89,6 +91,8 @@ interface Options {
   resume?: { checkpoint: unknown; voice: RestoreVoice };
   /** No hidden product default. The trial application supplies its bounded capacity. */
   rollback?: { capacity: number };
+  /** Used for newly scheduled reading waits, never to retime an existing checkpoint. */
+  autoWaitMultiplier?: number;
   onChange(view: SessionView): void;
   onFacts?(facts: readonly StoryFact[]): void;
   onDiagnostic?(diagnostic: Diagnostic): void;
@@ -151,6 +155,7 @@ class Session implements GameSession {
   #choice: ActiveTimer | null = null;
   #advance: ActiveTimer | null = null;
   #auto = false;
+  #autoWaitMultiplier: number;
   #skipping = false;
   #voiceDone = true;
   #autoDue = false;
@@ -164,6 +169,9 @@ class Session implements GameSession {
   constructor(options: Options) {
     if (!Number.isSafeInteger(options.generation) || options.generation < 1) throw new Error("会话代次必须是正整数");
     this.#options = options;
+    const autoWait = options.autoWaitMultiplier === undefined
+      ? options.content.source.settings.autoMul : options.autoWaitMultiplier;
+    this.#autoWaitMultiplier = readReadingValue("autoWaitMultiplier", autoWait === undefined ? 1 : autoWait);
     for (const reason of options.initialPauses ?? []) {
       if (reason !== "background" && reason !== "host") throw new Error("初始暂停原因无效");
       this.#pauses.add(reason);
@@ -408,6 +416,11 @@ class Session implements GameSession {
   }
 
   private intent(intent: SessionIntent): void {
+    if (intent.type === "auto-wait") {
+      this.#autoWaitMultiplier = readReadingValue("autoWaitMultiplier", intent.multiplier);
+      this.publish();
+      return;
+    }
     if (intent.type === "pause") {
       if (intent.paused) this.#pauses.add(intent.reason);
       else this.#pauses.delete(intent.reason);
@@ -568,16 +581,11 @@ class Session implements GameSession {
         if (this.#skipping) this.scheduleAdvance(60);
         else if (pause || performance.waitMs > 0) this.scheduleAdvance(this.#pendingAdvance?.remainingMs ?? (performance.waitMs || 2000));
         else if (this.#auto) this.scheduleAdvance(this.#pendingAdvance?.remainingMs
-          ?? (1200 + view.presentation.text.length * 60) * this.autoMultiplier(), this.#pendingAdvance?.waitVoice ?? true);
+          ?? (1200 + view.presentation.text.length * 60) * this.#autoWaitMultiplier, this.#pendingAdvance?.waitVoice ?? true);
       }
     }
     this.#pendingAdvance = null;
     this.pauseWork();
-  }
-
-  private autoMultiplier(): number {
-    const value = this.#options.content.source.settings.autoMul;
-    return typeof value === "number" && Number.isFinite(value) && value > 0 ? value : 1;
   }
 
   private scheduleAdvance(milliseconds: number, waitVoice = false): void {

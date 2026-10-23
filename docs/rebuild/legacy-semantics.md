@@ -34,6 +34,7 @@
 | `se/seEvents/_seGain` | 一次性音效、增益与延迟保留；读档/回退默认不重放；延迟回调需步骤取消 |
 | `voice` | 对白语音保留 ID；恢复是否重播或续播尚未确认，不在 M0 固化体验 |
 | `pref(vbgm/vamb/vvo/vse)`、`refreshAudioVolumes` | [独立声音偏好](preferences.md)保留四轨作者默认与玩家覆盖，实时更新当前音轨并保留渐变进度；0 音量触发的一次性音效不补播；不读旧偏好、不随存读档或回退覆盖 |
+| `pref(speed/autoMul/readerScale/ghost)`、`typeText/kick/applyTheme` | [独立阅读偏好](preferences.md#阅读偏好的字段与时机)保留逐字间隔、自动倍率、字号与底板透明度；前两项用于后续呈现/等待，后两项即时应用；当前选择/自动/恢复计时不重置，试播视觉基准仍非完整旧主题迁移 |
 | 资源自带 `shot/sceneFit/cg/previewExcluded/audioCategory/gain` 等 | 保留元数据及来源；诊断不能把资源登记视为已安装、可播放或已授权 |
 | `settings` 的 cover/theme/UI 音效 | 保留旧作品外观基准；新切片不夹带改版；编辑/插件/聊天设置不成为离线依赖 |
 | `agent` | 当前节点非空数为 0；遇到未来非空输入明确拒绝，不能静默略过主线节点 |

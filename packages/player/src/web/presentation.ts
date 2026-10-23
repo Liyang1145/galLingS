@@ -7,6 +7,8 @@ import type { EntryAudio } from "./audio.ts";
 import type { ResourceAccess } from "./resources.ts";
 import { setting } from "./resources.ts";
 import type { AudioVolumes } from "../preferences.ts";
+import { authorReadingPreferences, readReadingPreferences } from "../reading-preferences.ts";
+import type { ReadingPreferences } from "../reading-preferences.ts";
 
 const LOOKS: Record<string, string> = {
   "": "", none: "", shadow: "brightness(0)",
@@ -70,12 +72,14 @@ export class WebPresentation implements PresentationAdapter {
   readonly #resources: ResourceAccess;
   readonly #content: StoryContent;
   readonly #audio: AudioMixer;
+  #reading: ReadingPreferences;
   readonly #actors = new Map<string, Actor>();
   #backgroundId: string | null = null;
   #disposed = false;
   #active: Playback | null = null;
 
-  constructor(root: HTMLElement, content: StoryContent, resources: ResourceAccess, audioAllowed = true, volumes?: AudioVolumes) {
+  constructor(root: HTMLElement, content: StoryContent, resources: ResourceAccess, audioAllowed = true, volumes?: AudioVolumes,
+    reading?: ReadingPreferences) {
     this.#root = root;
     this.#content = content;
     this.#resources = resources;
@@ -98,14 +102,24 @@ export class WebPresentation implements PresentationAdapter {
     this.#world.append(this.#background, this.#actorsLayer, this.#veil);
     root.replaceChildren(this.#world, this.#dialogue);
     this.#audio = new AudioMixer(resources, content.source.settings, audioAllowed, volumes);
+    this.#reading = reading === undefined ? authorReadingPreferences(content.source.settings) : readReadingPreferences(reading);
+    this.setReadingPreferences(this.#reading);
   }
 
   unlockAudio(): void { this.#audio.unlock(); }
   setAudioAllowed(allowed: boolean): void { this.#audio.setAudioAllowed(allowed); }
   setAudioVolumes(volumes: AudioVolumes): void { this.#audio.setVolumes(volumes); }
+  setReadingPreferences(input: ReadingPreferences): void {
+    const values = readReadingPreferences(input);
+    if (this.#disposed) return;
+    this.#reading = values;
+    this.#dialogue.style.setProperty("--reader-scale", String(values.textScale));
+    this.#dialogue.style.setProperty("--reader-opacity", String(values.dialogueOpacity));
+  }
 
   present(view: RuntimeView, context: PresentationContext): Playback {
     if (this.#disposed) throw new Error("表现实例已经离开");
+    const textSpeedMs = this.#reading.textSpeedMs;
     this.#active?.cancel();
     let paused = context.paused;
     let skipping = context.skipping;
@@ -153,7 +167,7 @@ export class WebPresentation implements PresentationAdapter {
       if (finishRequested || !view.presentation.text) return fullText();
       const letters = Array.from(view.presentation.text);
       let index = 0;
-      const milliseconds = Math.max(1, setting(this.#content.source.settings, "speed", 30))
+      const milliseconds = textSpeedMs
         * Math.min(4, view.presentation.performance.typeMultiplier);
       const letter = (): void => {
         if (finishRequested) return fullText();

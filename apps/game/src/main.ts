@@ -11,6 +11,7 @@ import { PlayerRepository, PlayerRecordWriter, playerProjection } from "../../..
 import { prepareGameRestore } from "../../../packages/player/src/checkpoint.ts";
 import type { GameCheckpoint } from "../../../packages/player/src/checkpoint.ts";
 import { renderGallery } from "./gallery.ts";
+import { renderDialogue } from "./dialogue.ts";
 import "./style.css";
 
 function element<T extends HTMLElement>(id: string, kind: { new(...args: never[]): T }): T {
@@ -41,6 +42,9 @@ const recordMessage = element("record-message", HTMLElement);
 const retryRecords = element("retry-records", HTMLButtonElement);
 const gallery = element("gallery", HTMLDialogElement);
 const galleryBody = element("gallery-body", HTMLElement);
+const dialogue = element("dialogue-history", HTMLDialogElement);
+const dialogueBody = element("dialogue-history-body", HTMLElement);
+const dialogueOpen = element("dialogue-history-open", HTMLButtonElement);
 const voiceChoice = element("restore-voice", HTMLSelectElement);
 const resources = createResourceAccess(content, locations);
 const clock: Clock = {
@@ -78,6 +82,7 @@ let saving = false;
 let storageMessageEpoch = 0;
 let closed = false;
 let session: GameSession | null = null;
+let dialogueOwner: GameSession | null = null;
 let presentation: WebPresentation | null = null;
 let generation = 0;
 let mode: Entry = "main";
@@ -95,6 +100,7 @@ function show(view: SessionView): void {
   auto.disabled = skip.disabled = story.phase === "ended";
   pause.disabled = audio.disabled = false;
   save.disabled = saving || !view.canCheckpoint;
+  dialogueOpen.disabled = view.disposed || view.dialogueCount === 0;
   auto.setAttribute("aria-pressed", String(view.auto));
   skip.setAttribute("aria-pressed", String(view.skipping));
   pause.textContent = view.paused.includes("menu") ? "关闭菜单" : "菜单 / 暂停";
@@ -152,6 +158,7 @@ async function start(selected: Entry, restoreVoice?: RestoreVoice): Promise<void
     const delivery = crypto.randomUUID();
     if (closed || request !== entryRequest) return;
     // All content, slot and global data are prepared before leaving live play.
+    closeDialogue();
     owner?.dispose();
     session = null;
     adopted = true;
@@ -190,7 +197,7 @@ async function start(selected: Entry, restoreVoice?: RestoreVoice): Promise<void
       session = null;
       presentation = null;
       title.hidden = false;
-      next.disabled = auto.disabled = skip.disabled = pause.disabled = audio.disabled = save.disabled = true;
+      next.disabled = auto.disabled = skip.disabled = pause.disabled = audio.disabled = save.disabled = dialogueOpen.disabled = true;
     }
     saveMessage.textContent = `未能${restoreVoice ? "读档" : "开局"}：${error instanceof Error ? error.message : "未知错误"}。全局成果与原槽位保持原值。`;
   } finally {
@@ -211,6 +218,7 @@ function toggleMenu(): void {
 
 function home(): void {
   entryRequest++;
+  closeDialogue();
   session?.dispose();
   session = null;
   presentation = null;
@@ -219,7 +227,7 @@ function home(): void {
   choices.replaceChildren();
   title.hidden = false;
   menu.hidden = problem.hidden = true;
-  next.disabled = auto.disabled = skip.disabled = pause.disabled = audio.disabled = save.disabled = true;
+  next.disabled = auto.disabled = skip.disabled = pause.disabled = audio.disabled = save.disabled = dialogueOpen.disabled = true;
   resetSaveMessage();
   status.textContent = "已返回试播标题；旧会话的任务已取消";
 }
@@ -309,6 +317,29 @@ async function openGallery(): Promise<void> {
   }
 }
 
+function openDialogue(): void {
+  const owner = session;
+  if (!owner || owner.view().disposed || dialogue.open) return;
+  dialogueOwner = owner;
+  owner.send({ type: "pause", reason: "history", paused: true });
+  try {
+    renderDialogue(dialogueBody, owner.dialogueHistory());
+    dialogue.showModal();
+    dialogueBody.lastElementChild?.lastElementChild?.scrollIntoView({ block: "nearest" });
+  } catch (error: unknown) {
+    closeDialogue();
+    throw error;
+  }
+}
+
+function closeDialogue(): void {
+  const owner = dialogueOwner;
+  dialogueOwner = null;
+  dialogue.close();
+  dialogueBody.replaceChildren();
+  owner?.send({ type: "pause", reason: "history", paused: false });
+}
+
 element("start", HTMLButtonElement).onclick = () => { void start("main"); };
 element("timed", HTMLButtonElement).onclick = () => { void start("timed"); };
 element("restart", HTMLButtonElement).onclick = () => { void start(mode); };
@@ -327,6 +358,10 @@ element("load-main", HTMLButtonElement).onclick = () => load("main");
 element("load-timed", HTMLButtonElement).onclick = () => load("timed");
 element("gallery-open", HTMLButtonElement).onclick = () => { void openGallery(); };
 element("gallery-close", HTMLButtonElement).onclick = () => gallery.close();
+dialogueOpen.onclick = openDialogue;
+element("dialogue-history-close", HTMLButtonElement).onclick = closeDialogue;
+dialogue.addEventListener("cancel", event => { event.preventDefault(); closeDialogue(); });
+dialogue.addEventListener("close", () => { if (!dialogue.open) closeDialogue(); });
 voiceChoice.onchange = () => {
   const enabled = ["silent", "replay", "resume"].includes(voiceChoice.value);
   element("load-main", HTMLButtonElement).disabled = element("load-timed", HTMLButtonElement).disabled = !enabled;
@@ -338,6 +373,7 @@ stage.addEventListener("click", event => {
 });
 const visibility = (): void => session?.send({ type: "pause", reason: "background", paused: document.hidden });
 const keyboard = (event: KeyboardEvent): void => {
+  if (dialogue.open || gallery.open) return;
   if (!session || event.repeat || event.altKey || event.metaKey || event.ctrlKey) return;
   if (event.target instanceof Element && event.target.closest("button, input, textarea, select, summary")) return;
   if ([" ", "Enter", "ArrowRight"].includes(event.key)) { event.preventDefault(); advance(); }
@@ -350,6 +386,7 @@ const dispose = (): void => {
   closed = true;
   entryRequest++;
   storageMessageEpoch++;
+  closeDialogue();
   session?.dispose();
   resize.disconnect();
   document.removeEventListener("visibilitychange", visibility);

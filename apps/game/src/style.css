@@ -63,6 +63,11 @@ select { font: inherit; color: inherit; background: #183443; border: 1px solid #
 .gallery-cg img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .gallery-full-image { display: block; width: 100%; max-height: 65vh; object-fit: contain; }
 .gallery-dialog figure { margin: 12px 0; }
+.dialogue-history-dialog { width: min(800px, 92vw); }
+.dialogue-history { list-style: none; margin: 18px 0 0; padding: 0; }
+.dialogue-history li { padding: 16px 0; border-top: 1px solid #39515c; }
+.dialogue-history b { color: #b7e2f0; }
+.dialogue-history p { white-space: pre-wrap; line-height: 1.8; margin: 8px 0 0; overflow-wrap: anywhere; }
 .scene.paused *, .scene.paused .world { animation-play-state: paused !important; transition-duration: 0ms; }
 .world[data-mood="gray"] { filter: grayscale(1) contrast(.9); }
 .world[data-mood="dark"] { filter: brightness(.6); }

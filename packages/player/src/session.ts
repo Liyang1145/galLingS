@@ -8,6 +8,10 @@ import { prepareGameRestore } from "./checkpoint.ts";
 
 export type RestoreVoice = "silent" | "replay" | "resume";
 
+export type DialogueEntry =
+  | { kind: "line"; nodeId: string; chapter: string; speaker: string; text: string }
+  | { kind: "choice"; nodeId: string; chapter: string; text: string; timedOut: boolean };
+
 export interface SessionToken {
   session: number;
   epoch: number;
@@ -56,12 +60,13 @@ export interface SessionView {
   problem: MediaProblem | null;
   disposed: boolean;
   canCheckpoint: boolean;
+  dialogueCount: number;
 }
 
 export type SessionIntent =
   | { type: "next"; token: SessionToken }
   | { type: "choose"; token: SessionToken; choiceId: string }
-  | { type: "pause"; reason: "menu" | "background" | "host"; paused: boolean }
+  | { type: "pause"; reason: "menu" | "background" | "host" | "history"; paused: boolean }
   | { type: "auto"; enabled: boolean }
   | { type: "skip"; enabled: boolean }
   | { type: "retry" };
@@ -83,6 +88,7 @@ interface Options {
 
 export interface GameSession {
   view(): SessionView;
+  dialogueHistory(): DialogueEntry[];
   send(intent: SessionIntent): void;
   captureCheckpoint(token: SessionToken): Promise<CheckpointResult>;
   dispose(): void;
@@ -106,6 +112,7 @@ class Session implements GameSession {
   readonly #runtime: StoryRuntime;
   readonly #queue: Event[] = [];
   readonly #pauses = new Set<string>();
+  readonly #dialogue: DialogueEntry[] = [];
   #draining = false;
   #disposed = false;
   #epoch = 0;
@@ -157,8 +164,18 @@ class Session implements GameSession {
       story: this.#runtime.view(), token: this.token(), paused: [...this.#pauses],
       auto: this.#auto, skipping: this.#skipping, choiceRemainingMs: this.#choice?.remaining() ?? null,
       problem: this.#problem ? { ...this.#problem } : null, disposed: this.#disposed,
-      canCheckpoint: this.canCheckpoint(),
+      canCheckpoint: this.canCheckpoint(), dialogueCount: this.#dialogue.length,
     };
+  }
+
+  dialogueHistory(): DialogueEntry[] {
+    return structuredClone(this.#dialogue);
+  }
+
+  private appendDialogue(entry: DialogueEntry): void {
+    this.#dialogue.push(entry);
+    // Preserve the old dialogue backlog bound, separate from rollback policy.
+    if (this.#dialogue.length > 300) this.#dialogue.shift();
   }
 
   private publish(): void {
@@ -316,6 +333,7 @@ class Session implements GameSession {
   #entryWasRead = false;
 
   private command(command: RuntimeCommand): void {
+    const before = this.#runtime.view();
     const result = this.#runtime.dispatch(command);
     if (!result.accepted) {
       if (result.error) {
@@ -327,10 +345,25 @@ class Session implements GameSession {
       }
       return;
     }
+    for (const fact of result.facts) {
+      if (fact.type !== "chosen") continue;
+      // Accepted choices come from this exact pre-dispatch core view.
+      const choice = before.choices.find(candidate => candidate.id === fact.choiceId)!;
+      this.appendDialogue({
+        kind: "choice", nodeId: fact.nodeId, chapter: before.chapter,
+        text: choice.text, timedOut: fact.timedOut,
+      });
+    }
     this.adopt(result);
   }
 
   private adopt(result: RuntimeResult): void {
+    if (result.presentation && result.view.presentation.text) {
+      const { speaker, text } = result.view.presentation;
+      this.appendDialogue({
+        kind: "line", nodeId: result.view.nodeId, chapter: result.view.chapter, speaker, text,
+      });
+    }
     if (result.presentation?.mode === "enter") {
       this.#restoreAudio = null;
       this.#entryWasRead = this.#options.seen.has(result.view.nodeId);
@@ -454,6 +487,7 @@ class Session implements GameSession {
       if (event.type === "checkpoint") event.resolve({ accepted: false, code: "DISPOSED", message: "保存前会话已离开" });
     }
     this.#queue.length = 0;
+    this.#dialogue.length = 0;
     this.stopTimers();
     this.#controller.abort();
     this.#playback?.cancel();

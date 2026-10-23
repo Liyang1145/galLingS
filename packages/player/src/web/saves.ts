@@ -1,11 +1,12 @@
 import { SaveStorageError } from "../saves.ts";
 import type { AtomicSaveStore, SaveRecord, StoredSlot } from "../saves.ts";
+import type { AtomicPlayerStore, PlayerRecords } from "../records.ts";
 
 const DATABASE = "haifeng.rebuild.saves";
 const STORE = "slots";
 
 /** New TypeScript records only. No localStorage or legacy database access. */
-export class IndexedDbSaveStore implements AtomicSaveStore {
+export class IndexedDbSaveStore implements AtomicSaveStore, AtomicPlayerStore {
   private open(): Promise<IDBDatabase> {
     return new Promise((resolve, reject) => {
       if (typeof indexedDB === "undefined") {
@@ -79,5 +80,46 @@ export class IndexedDbSaveStore implements AtomicSaveStore {
   async replace(key: string, value: SaveRecord): Promise<void> {
     // One put in one transaction; never delete the old slot before writing.
     await this.transact("readwrite", key, value);
+  }
+
+  async update(key: string, change: (stored: StoredSlot) => PlayerRecords): Promise<PlayerRecords> {
+    const database = await this.open();
+    try {
+      return await new Promise<PlayerRecords>((resolve, reject) => {
+        let transaction: IDBTransaction;
+        try { transaction = database.transaction(STORE, "readwrite"); }
+        catch {
+          reject(new SaveStorageError("PLAYER_TRANSACTION", "无法更新全局记录，原记录保持原值"));
+          return;
+        }
+        let result: PlayerRecords | null = null;
+        let failure: unknown = null;
+        transaction.oncomplete = () => {
+          if (result) resolve(result);
+          else reject(new SaveStorageError("PLAYER_TRANSACTION", "全局记录未形成提交结果"));
+        };
+        transaction.onabort = () => reject(failure ?? new SaveStorageError("PLAYER_ABORT", "全局记录事务未提交，可重试；原记录保持原值"));
+        transaction.onerror = () => {};
+        try {
+          const store = transaction.objectStore(STORE);
+          const request = store.get(key);
+          request.onsuccess = () => {
+            try {
+              const value: unknown = request.result;
+              result = change(value === undefined ? { found: false } : { found: true, value });
+              store.put(result, key);
+            } catch (error: unknown) {
+              failure = error;
+              transaction.abort();
+            }
+          };
+        } catch (error: unknown) {
+          failure = error;
+          transaction.abort();
+        }
+      });
+    } finally {
+      database.close();
+    }
   }
 }

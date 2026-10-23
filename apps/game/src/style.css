@@ -43,6 +43,10 @@ h1 { margin: 0; font-size: clamp(1.1rem, 2.6vw, 1.8rem); font-weight: 500; }
 .pose-ghost { position: absolute; inset: 0; pointer-events: none; }
 .veil { opacity: 0; pointer-events: none; z-index: 10; }
 .transition-veil { z-index: 9; }
+.scene-fade { position: absolute; inset: 0; z-index: 12; overflow: hidden; isolation: isolate; }
+.scene-fade, .scene-fade *, .scene-fade *::before, .scene-fade *::after {
+  pointer-events: none !important; animation: none !important; transition: none !important; caret-color: transparent !important;
+}
 .dialogue { position: absolute; left: var(--author-side, 60px); right: var(--author-side, 60px); bottom: var(--author-bottom, 28px); height: var(--author-height, 190px); padding: 46px 36px 20px; border: var(--author-border, 1px solid #ffffff22); border-radius: var(--author-radius, 14px); box-shadow: var(--author-shadow, none); font-family: var(--author-font, inherit); isolation: isolate; z-index: 4; }
 .dialogue::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: var(--author-panel, #0c0f1a); border-radius: inherit; opacity: clamp(.72, calc(var(--reader-opacity, .35) + .37), 1); }
 .speaker { position: absolute; top: -20px; left: 28px; min-width: 140px; height: 40px; padding: 0 18px; border-radius: var(--author-name-radius, 10px); background: var(--author-name-bg, #2b3655); border: var(--author-name-border, 1px solid #ffffff30); color: var(--author-name-fg, #fff); font-size: 22px; line-height: 40px; font-weight: 600; }

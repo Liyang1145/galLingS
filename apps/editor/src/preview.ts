@@ -138,7 +138,8 @@ export class EditorPreview {
     };
     const generation = ++this.#generation;
     applyAuthorAppearance(this.#elements.stage, source, resources, whaleSkin.artwork);
-    const presentation = new WebPresentation(this.#elements.scene, source, resources, true, undefined, undefined, whaleSkin.artwork);
+    const presentation = new WebPresentation(this.#elements.scene, source, resources, true, undefined, undefined,
+      whaleSkin.artwork, { stage: this.#elements.stage, choices: this.#elements.choices });
     this.#presentation = presentation;
     this.#context = { document: draft, selectedEntry: selectedNode };
     try {

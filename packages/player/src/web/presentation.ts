@@ -13,6 +13,8 @@ import { readUiSounds } from "../ui-sounds.ts";
 import { applyAuthorAppearance } from "./appearance.ts";
 import type { AuthorAppearance, WhaleArtwork } from "../appearance.ts";
 import type { InteractionFeedback } from "../ui-sounds.ts";
+import { captureSceneFade } from "./scene-fade.ts";
+import type { SceneFadeSurface } from "./scene-fade.ts";
 
 const LOOKS: Record<string, string> = {
   "": "", none: "", shadow: "brightness(0)",
@@ -94,19 +96,22 @@ export class WebPresentation implements PresentationAdapter {
   readonly #content: StoryContent;
   readonly #audio: AudioMixer;
   readonly #appearance: AuthorAppearance;
+  readonly #fadeSurface: SceneFadeSurface | undefined;
   #reading: ReadingPreferences;
   readonly #actors = new Map<string, Actor>();
   #backgroundId: string | null = null;
   #hasScene = false;
+  #visualKey: string | null = null;
   #disposed = false;
   #ended = false;
   #active: Playback | null = null;
 
   constructor(root: HTMLElement, content: StoryContent, resources: ResourceAccess, audioAllowed = true, volumes?: AudioVolumes,
-    reading?: ReadingPreferences, artwork?: WhaleArtwork) {
+    reading?: ReadingPreferences, artwork?: WhaleArtwork, fadeSurface?: SceneFadeSurface) {
     this.#root = root;
     this.#content = content;
     this.#resources = resources;
+    this.#fadeSurface = fadeSurface;
     this.#appearance = applyAuthorAppearance(root, content, resources, artwork);
     this.#world = document.createElement("div");
     this.#world.className = "world";
@@ -180,6 +185,20 @@ export class WebPresentation implements PresentationAdapter {
     const timers = new Set<ActiveTimer>();
     const animations = new Set<Animation>();
     const transients = new Set<HTMLElement>();
+    const scene = view.presentation.scene;
+    const visualKey = JSON.stringify([
+      scene.background,
+      scene.sprites.map(sprite => [sprite.assetId, Math.round(sprite.x), Math.round(sprite.y),
+        Math.round(sprite.height), sprite.flipped]),
+      scene.mood, !view.presentation.text && !view.choices.length,
+    ]);
+    let sceneFade: HTMLElement | null = null;
+    const clearSceneFade = (): void => {
+      if (!sceneFade) return;
+      sceneFade.remove();
+      transients.delete(sceneFade);
+      sceneFade = null;
+    };
     const alive = (): boolean => !cancelled && !this.#disposed && !context.signal.aborted;
     const defer = (milliseconds: number, callback: () => void): ActiveTimer => {
       const timer = new ActiveTimer(context.clock, milliseconds, () => {
@@ -227,6 +246,7 @@ export class WebPresentation implements PresentationAdapter {
       typing = defer(Math.min(3000, view.presentation.performance.holdMs) + milliseconds, letter);
     };
     const problem = (error: unknown): void => {
+      clearSceneFade();
       if (alive()) context.problem({
         code: "SCENE_RESOURCE", blocking: true,
         message: `节点 ${view.nodeId} 场面未就绪：${error instanceof Error ? error.message : "未知媒体错误"}。可重试当前场面。`,
@@ -343,7 +363,7 @@ export class WebPresentation implements PresentationAdapter {
       }
       if (context.mode === "enter" && !skipping) {
         const transition = view.presentation.performance.transition;
-        if (changedBackground && !first) {
+        if (changedBackground && !first && !sceneFade) {
           if (transition === "fade") animate(this.#background, [{ opacity: 0 }, { opacity: 1 }], 600);
           else if (transition === "black" || transition === "flash") {
             this.#transitionVeil.style.background = transition === "black" ? "#000" : "#fff";
@@ -364,6 +384,8 @@ export class WebPresentation implements PresentationAdapter {
       this.#text.textContent = "";
       audio = this.#audio.begin(view.presentation, context);
       this.#hasScene = true;
+      this.#visualKey = visualKey;
+      if (sceneFade) animate(sceneFade, [{ opacity: 1 }, { opacity: 0 }], 360, clearSceneFade, "ease-in-out");
       ready = true;
       context.sceneReady();
       typeText();
@@ -372,6 +394,7 @@ export class WebPresentation implements PresentationAdapter {
       if (cancelled) return;
       cancelled = true;
       context.signal.removeEventListener("abort", cancel);
+      clearSceneFade();
       for (const timer of timers) timer.cancel();
       for (const animation of animations) animation.cancel();
       for (const element of transients) element.remove();
@@ -403,6 +426,7 @@ export class WebPresentation implements PresentationAdapter {
         if (value) {
           finishRequested = true;
           audio?.skip();
+          clearSceneFade();
           this.#background.style.scale = "";
           this.#background.style.transformOrigin = "";
           for (const animation of [...animations]) {
@@ -416,6 +440,21 @@ export class WebPresentation implements PresentationAdapter {
     this.#active = playback;
     playback.setPaused(paused);
     context.signal.addEventListener("abort", cancel, { once: true });
+    const surface = this.#fadeSurface;
+    if (alive() && surface && context.mode === "enter" && !skipping && this.#hasScene
+      && view.presentation.performance.transition !== "cut"
+      && (visualKey !== this.#visualKey || !surface.choices.hidden)
+      && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      try {
+        sceneFade = captureSceneFade(this.#root, surface);
+        transients.add(sceneFade);
+      } catch (error: unknown) {
+        context.problem({
+          code: "SCENE_TRANSITION", blocking: false,
+          message: `节点 ${view.nodeId} 的旧画面过渡未能准备：${error instanceof Error ? error.message : "未知显示错误"}`,
+        });
+      }
+    }
     void (async () => {
       try {
         validate();

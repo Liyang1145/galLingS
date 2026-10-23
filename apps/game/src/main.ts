@@ -557,7 +557,7 @@ async function main(): Promise<void> {
       let sequence = 0;
       const reading = readingPreferences.values(selected);
       const newPresentation = new WebPresentation(scene, source, resources, host.state().audioAllowed,
-        audioPreferences.values(selected), reading, whaleSkin.artwork);
+        audioPreferences.values(selected), reading, whaleSkin.artwork, { stage, choices });
       presentation = newPresentation;
       const sessionGeneration = ++generation;
       session = createGameSession({

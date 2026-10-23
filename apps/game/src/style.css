@@ -52,6 +52,8 @@ h1 { margin: 0; font-size: clamp(1.1rem, 2.6vw, 1.8rem); font-weight: 500; }
 .checkpoint-panel pre { font-size: .8rem; max-height: 360px; overflow: auto; padding: 12px; background: #061119; }
 .checkpoint-panel .controls { align-items: center; }
 select { font: inherit; color: inherit; background: #183443; border: 1px solid #557682; border-radius: 8px; padding: .6rem; }
+#rollback-target { max-width: 100%; min-width: min(400px, 100%); }
+#rollback-warning { color: #ffe2c7; }
 .record-status { font-size: .85rem; color: #bdd8df; line-height: 1.6; }
 .gallery-dialog { color: #e9f2f5; background: #0c1820; border: 1px solid #557682; border-radius: 10px; width: min(1000px, 92vw); max-height: 90vh; }
 .gallery-dialog::backdrop { background: #041018d9; }

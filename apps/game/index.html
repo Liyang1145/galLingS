@@ -12,7 +12,7 @@
         <div><p class="eyebrow">海风与布丁 · 重构试播</p><h1>一套剧情核心，一段新的试航。</h1></div>
         <span class="badge">重构开发入口 · 非正式发行版</span>
       </header>
-      <p class="scope-note">本页使用独立试播记录。存读档恢复当局进度；周目、结局和 CG 解锁单独保留。回退与联网聊天尚未接入。</p>
+      <p class="scope-note">本页使用独立试播记录。存读档及回退恢复当局进度；周目、结局和 CG 解锁单独保留。联网聊天尚未接入。</p>
       <section class="stage" id="stage" aria-label="剧情画面">
         <div class="scene" id="scene"></div>
         <div class="title-screen" id="title">
@@ -55,7 +55,7 @@
           <button type="button" id="inspect-timed">查看限时样例检查点</button>
         </div>
         <div class="controls">
-          <label for="restore-voice">本次读档语音</label>
+          <label for="restore-voice">本次恢复语音（读档 / 回退）</label>
           <select id="restore-voice">
             <option value="">请选择试听方式</option>
             <option value="silent">不播放当前句</option>
@@ -65,9 +65,28 @@
           <button type="button" id="load-main" disabled>读取第一话进度</button>
           <button type="button" id="load-timed" disabled>读取限时样例进度</button>
         </div>
-        <p>语音方式仅用于本次读档试用，尚未设定正式默认体验。文字恢复为完整显示，音乐和环境声按可用的保存位置恢复。</p>
+        <p>语音方式仅用于本次恢复试用，尚未设定正式默认体验。文字恢复为完整显示，音乐和环境声按可用的保存位置恢复。</p>
         <p id="save-message" role="status" aria-live="polite">场面就绪并完整显示文字后，可保存当前入口的检查点。两个入口的槽位分别保留。</p>
         <pre id="save-details" hidden></pre>
+      </section>
+      <section class="checkpoint-panel" aria-labelledby="rollback-heading">
+        <h2 id="rollback-heading">试播进度回退</h2>
+        <p>本次游玩最多保留 500 个稳定检查点。请选择回退位置、范围及上方的恢复语音方式。结局后回退暂未接入；新开、读档或离开页面后重新记录。以上设置仅供试播，正式回退规则仍待确定。</p>
+        <div class="controls">
+          <label for="rollback-target">回退位置</label>
+          <select id="rollback-target" disabled><option value="">请选择本次回退位置</option></select>
+        </div>
+        <div class="controls">
+          <label for="rollback-boundary">本次回退范围</label>
+          <select id="rollback-boundary">
+            <option value="">请选择本次范围</option>
+            <option value="within">仅当前选择之后的片段</option>
+            <option value="across">允许跨选择回退</option>
+          </select>
+          <button type="button" id="rollback" disabled>回退到选定位置</button>
+        </div>
+        <p id="rollback-message" role="status" aria-live="polite">本次游玩达到稳定检查点后会记录回退位置；回退保留全局成果。</p>
+        <p id="rollback-warning" role="status" hidden></p>
       </section>
       <section class="record-status" aria-label="全局玩家记录">
         <p id="record-message" role="status" aria-live="polite">第一话的全局记录与进度分开保存，限时样例不写入全局成果。</p>

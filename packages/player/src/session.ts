@@ -5,6 +5,8 @@ import { ActiveTimer } from "./clock.ts";
 import type { Clock } from "./clock.ts";
 import type { GameCheckpoint, PlaybackCheckpoint } from "./checkpoint.ts";
 import { prepareGameRestore } from "./checkpoint.ts";
+import { RollbackHistory } from "./rollback.ts";
+import type { RollbackTarget } from "./rollback.ts";
 
 export type RestoreVoice = "silent" | "replay" | "resume";
 
@@ -61,6 +63,8 @@ export interface SessionView {
   disposed: boolean;
   canCheckpoint: boolean;
   dialogueCount: number;
+  rollbackCount: number;
+  rollbackIssue: string | null;
 }
 
 export type SessionIntent =
@@ -81,6 +85,8 @@ interface Options {
   seen: Set<string>;
   /** The caller must explicitly select voice behaviour for this development slice. */
   resume?: { checkpoint: unknown; voice: RestoreVoice };
+  /** No hidden product default. The trial application supplies its bounded capacity. */
+  rollback?: { capacity: number };
   onChange(view: SessionView): void;
   onFacts?(facts: readonly StoryFact[]): void;
   onDiagnostic?(diagnostic: Diagnostic): void;
@@ -89,6 +95,8 @@ interface Options {
 export interface GameSession {
   view(): SessionView;
   dialogueHistory(): DialogueEntry[];
+  rollbackTargets(): RollbackTarget[];
+  rollback(request: RollbackRequest): Promise<RollbackResult>;
   send(intent: SessionIntent): void;
   captureCheckpoint(token: SessionToken): Promise<CheckpointResult>;
   dispose(): void;
@@ -98,9 +106,22 @@ export type CheckpointResult =
   | { accepted: true; checkpoint: GameCheckpoint }
   | { accepted: false; code: string; message: string };
 
+export interface RollbackRequest {
+  token: SessionToken;
+  targetId: number;
+  currentPlayer: PlayerProjection;
+  voice: RestoreVoice;
+  crossChoices: boolean;
+}
+
+export type RollbackResult =
+  | { accepted: true; nodeId: string }
+  | { accepted: false; code: string; message: string };
+
 type Event =
   | { type: "intent"; intent: SessionIntent }
   | { type: "checkpoint"; token: SessionToken; resolve(result: CheckpointResult): void }
+  | { type: "rollback"; request: RollbackRequest; resolve(result: RollbackResult): void }
   | { type: "scene"; epoch: number }
   | { type: "text"; epoch: number }
   | { type: "voice"; epoch: number }
@@ -112,7 +133,14 @@ class Session implements GameSession {
   readonly #runtime: StoryRuntime;
   readonly #queue: Event[] = [];
   readonly #pauses = new Set<string>();
-  readonly #dialogue: DialogueEntry[] = [];
+  readonly #dialogue: { order: number; value: DialogueEntry }[] = [];
+  readonly #rollback: RollbackHistory | null;
+  #dialogueOrder = 0;
+  #dialogueStart = 0;
+  #visitSequence = 0;
+  #visit = 0;
+  #choiceVersion = 0;
+  #rollbackIssue: string | null = null;
   #draining = false;
   #disposed = false;
   #epoch = 0;
@@ -134,6 +162,7 @@ class Session implements GameSession {
   constructor(options: Options) {
     if (!Number.isSafeInteger(options.generation) || options.generation < 1) throw new Error("会话代次必须是正整数");
     this.#options = options;
+    this.#rollback = options.rollback ? new RollbackHistory(options.rollback.capacity) : null;
     const restored = options.resume ? prepareGameRestore(options.content, options.resume.checkpoint, options.player) : null;
     if (options.resume && !["silent", "replay", "resume"].includes(options.resume.voice)) throw new Error("需要明确的本次读档语音方式");
     const { runtime, initial } = restored
@@ -165,15 +194,25 @@ class Session implements GameSession {
       auto: this.#auto, skipping: this.#skipping, choiceRemainingMs: this.#choice?.remaining() ?? null,
       problem: this.#problem ? { ...this.#problem } : null, disposed: this.#disposed,
       canCheckpoint: this.canCheckpoint(), dialogueCount: this.#dialogue.length,
+      rollbackCount: this.#rollback?.count(this.#visit) ?? 0, rollbackIssue: this.#rollbackIssue,
     };
   }
 
   dialogueHistory(): DialogueEntry[] {
-    return structuredClone(this.#dialogue);
+    return structuredClone(this.#dialogue.map(item => item.value));
+  }
+
+  rollbackTargets(): RollbackTarget[] {
+    return this.#rollback?.targets(this.#visit, this.#choiceVersion) ?? [];
+  }
+
+  rollback(request: RollbackRequest): Promise<RollbackResult> {
+    if (this.#disposed) return Promise.resolve({ accepted: false, code: "DISPOSED", message: "会话已离开，不能回退" });
+    return new Promise(resolve => this.enqueue({ type: "rollback", request: structuredClone(request), resolve }));
   }
 
   private appendDialogue(entry: DialogueEntry): void {
-    this.#dialogue.push(entry);
+    this.#dialogue.push({ order: ++this.#dialogueOrder, value: entry });
     // Preserve the old dialogue backlog bound, separate from rollback policy.
     if (this.#dialogue.length > 300) this.#dialogue.shift();
   }
@@ -206,8 +245,11 @@ class Session implements GameSession {
       event.resolve({ accepted: false, code: "CHECKPOINT_NOT_READY", message: "请在场面就绪、文字完整显示后保存；本切片暂不保存结局或媒体错误状态" });
       return;
     }
-    // Everything is sampled synchronously within this one queued operation.
-    // Storage receives only detached values; it never reads a later live state.
+    event.resolve({ accepted: true, checkpoint: this.sampleCheckpoint() });
+  }
+
+  /** Everything is sampled synchronously inside one queued operation. */
+  private sampleCheckpoint(): GameCheckpoint {
     const story = this.#runtime.snapshot();
     const playback = this.#playback!.capture();
     const checkpoint: GameCheckpoint = {
@@ -220,7 +262,71 @@ class Session implements GameSession {
       },
       controls: { auto: this.#auto, skipping: this.#skipping },
     };
-    event.resolve({ accepted: true, checkpoint: structuredClone(checkpoint) });
+    return structuredClone(checkpoint);
+  }
+
+  private rememberCurrent(refresh = false): void {
+    if (!this.#rollback || !this.canCheckpoint() || (!refresh && this.#rollback.has(this.#visit))) return;
+    try {
+      const view = this.#runtime.view();
+      this.#rollback.record({
+        id: this.#visit, choiceVersion: this.#choiceVersion, dialogueStart: this.#dialogueStart,
+        checkpoint: this.sampleCheckpoint(),
+        label: { chapter: view.chapter, speaker: view.presentation.speaker, text: view.presentation.text },
+      });
+      this.#rollbackIssue = null;
+    } catch (error: unknown) {
+      // A failed memory capture must not invent media/time or block mainline play.
+      this.#rollbackIssue = `未能更新回退检查点：${error instanceof Error ? error.message : "捕获失败"}。已有历史保持原值。`;
+    }
+  }
+
+  private restoreHistory(event: Extract<Event, { type: "rollback" }>): void {
+    const { request } = event;
+    const refuse = (code: string, message: string): void => event.resolve({ accepted: false, code, message });
+    if (!this.current(request.token)) return refuse("STALE_ROLLBACK", "回退请求对应的步骤已改变，请重新选择");
+    if (!this.canCheckpoint()) return refuse("ROLLBACK_NOT_READY", "请在场面就绪、文字完整显示后回退；本切片不支持结局后回退");
+    if (typeof request.crossChoices !== "boolean" || !["silent", "replay", "resume"].includes(request.voice)) {
+      return refuse("ROLLBACK_POLICY", "需要明确本次跨选择策略和语音方式");
+    }
+    const frame = this.#rollback?.read(request.targetId, this.#visit);
+    if (!frame) return refuse("ROLLBACK_TARGET", "目标不在当前会话保留的历史中");
+    if (!request.crossChoices && frame.choiceVersion !== this.#choiceVersion) {
+      return refuse("ROLLBACK_CHOICE_BOUNDARY", "本次设置不跨选择，请选当前选择之后的位置");
+    }
+    let prepared: GameCheckpoint;
+    try {
+      prepared = prepareGameRestore(this.#options.content, frame.checkpoint, request.currentPlayer).checkpoint;
+    } catch (error: unknown) {
+      return refuse("ROLLBACK_CHECKPOINT", error instanceof Error ? error.message : "回退检查点校验失败");
+    }
+    // Only the core adopts progress. Nothing is inversely calculated or re-entered.
+    const result = this.#runtime.restore(prepared.story, request.currentPlayer);
+    if (!result.accepted) return refuse(result.error?.code ?? "ROLLBACK_STATE", result.error?.message ?? "回退准备失败");
+    this.#rollback!.truncate(frame.id);
+    this.#choiceVersion = frame.choiceVersion;
+    const retained = this.#dialogue.filter(item => item.order <= frame.dialogueStart);
+    this.#dialogue.length = 0;
+    this.#dialogue.push(...retained);
+    this.#auto = this.#skipping = false;
+    this.#restoring = prepared;
+    this.#restoreAudio = { playback: prepared.presentation.playback, voice: request.voice };
+    this.#rollbackIssue = null;
+    try {
+      // Fresh core step and render epoch invalidate pre-rollback callbacks.
+      this.adopt(result, frame.id);
+    } catch (error: unknown) {
+      // Progress was already adopted; media failure is retried at this same point.
+      this.fail(error);
+    }
+    event.resolve({ accepted: true, nodeId: result.view.nodeId });
+  }
+
+  private fail(error: unknown): void {
+    this.#problem = { code: "SESSION", message: error instanceof Error ? error.message : "会话操作失败", blocking: true };
+    this.#pauses.add("error");
+    this.pauseWork();
+    this.publish();
   }
 
   private enqueue(event: Event): void {
@@ -241,10 +347,10 @@ class Session implements GameSession {
             event.resolve({ accepted: false, code: "CHECKPOINT_CAPTURE", message: error instanceof Error ? error.message : "检查点捕获失败" });
             continue;
           }
-          this.#problem = { code: "SESSION", message: error instanceof Error ? error.message : "会话操作失败", blocking: true };
-          this.#pauses.add("error");
-          this.pauseWork();
-          this.publish();
+          if (event.type === "rollback") {
+            event.resolve({ accepted: false, code: "ROLLBACK_STATE", message: error instanceof Error ? error.message : "回退操作失败" });
+          }
+          this.fail(error);
         }
       }
     } finally {
@@ -255,14 +361,16 @@ class Session implements GameSession {
   private handle(event: Event): void {
     if (event.type === "intent") return this.intent(event.intent);
     if (event.type === "checkpoint") return this.capture(event);
+    if (event.type === "rollback") return this.restoreHistory(event);
     if (event.type === "timer") {
       if (!this.current(event.token) || this.#pauses.size) return;
       if (event.purpose === "choice") {
-        this.#choice = null;
         this.command({ type: "timeout", step: event.token.step });
       } else {
-        this.#advance = null;
-        if (event.waitVoice && this.#auto && !this.#skipping && !this.#voiceDone) this.#autoDue = true;
+        if (event.waitVoice && this.#auto && !this.#skipping && !this.#voiceDone) {
+          this.#advance = null;
+          this.#autoDue = true;
+        }
         else this.command({ type: "advance", step: event.token.step });
       }
       return;
@@ -271,6 +379,7 @@ class Session implements GameSession {
     if (event.type === "scene") {
       this.#pauses.delete("loading");
       this.pauseWork();
+      this.rememberCurrent();
       this.publish();
     } else if (event.type === "media") {
       if (this.#problem?.blocking && !event.problem.blocking) return;
@@ -304,7 +413,7 @@ class Session implements GameSession {
       if (this.#runtime.view().phase === "ended") return;
       this.#pauses.delete("error");
       this.#problem = null;
-      this.render("retry");
+      this.render(this.#restoring ? "restore" : "retry");
       this.configureProgress();
       this.publish();
       return;
@@ -334,6 +443,8 @@ class Session implements GameSession {
 
   private command(command: RuntimeCommand): void {
     const before = this.#runtime.view();
+    // Refresh the departure point before choice actions/next-node entry mutate progress.
+    if (command.type !== "presented") this.rememberCurrent(true);
     const result = this.#runtime.dispatch(command);
     if (!result.accepted) {
       if (result.error) {
@@ -347,6 +458,7 @@ class Session implements GameSession {
     }
     for (const fact of result.facts) {
       if (fact.type !== "chosen") continue;
+      this.#choiceVersion++;
       // Accepted choices come from this exact pre-dispatch core view.
       const choice = before.choices.find(candidate => candidate.id === fact.choiceId)!;
       this.appendDialogue({
@@ -357,7 +469,11 @@ class Session implements GameSession {
     this.adopt(result);
   }
 
-  private adopt(result: RuntimeResult): void {
+  private adopt(result: RuntimeResult, restoredVisit?: number): void {
+    if (result.presentation) {
+      this.#visit = restoredVisit ?? ++this.#visitSequence;
+      this.#dialogueStart = this.#dialogueOrder;
+    }
     if (result.presentation && result.view.presentation.text) {
       const { speaker, text } = result.view.presentation;
       this.appendDialogue({
@@ -387,6 +503,7 @@ class Session implements GameSession {
       this.#options.presentation.dispose();
       this.#auto = this.#skipping = false;
     } else this.configureProgress();
+    this.rememberCurrent();
     if (result.facts.length) this.#options.onFacts?.(structuredClone(result.facts));
     this.publish();
   }
@@ -485,9 +602,11 @@ class Session implements GameSession {
     this.#epoch++;
     for (const event of this.#queue) {
       if (event.type === "checkpoint") event.resolve({ accepted: false, code: "DISPOSED", message: "保存前会话已离开" });
+      else if (event.type === "rollback") event.resolve({ accepted: false, code: "DISPOSED", message: "回退前会话已离开" });
     }
     this.#queue.length = 0;
     this.#dialogue.length = 0;
+    this.#rollback?.clear();
     this.stopTimers();
     this.#controller.abort();
     this.#playback?.cancel();

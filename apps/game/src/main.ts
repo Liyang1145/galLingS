@@ -46,6 +46,11 @@ const dialogue = element("dialogue-history", HTMLDialogElement);
 const dialogueBody = element("dialogue-history-body", HTMLElement);
 const dialogueOpen = element("dialogue-history-open", HTMLButtonElement);
 const voiceChoice = element("restore-voice", HTMLSelectElement);
+const rollbackTarget = element("rollback-target", HTMLSelectElement);
+const rollbackBoundary = element("rollback-boundary", HTMLSelectElement);
+const rollbackButton = element("rollback", HTMLButtonElement);
+const rollbackMessage = element("rollback-message", HTMLElement);
+const rollbackWarning = element("rollback-warning", HTMLElement);
 const resources = createResourceAccess(content, locations);
 const clock: Clock = {
   now: () => performance.now(),
@@ -89,6 +94,8 @@ let mode: Entry = "main";
 let choiceKey = "";
 let progress: HTMLProgressElement | null = null;
 let entryRequest = 0;
+let rollbackKey = "";
+let rollingBack = false;
 
 const resize = new ResizeObserver(() => scene.style.setProperty("--stage-scale", String(stage.clientWidth / 1280)));
 resize.observe(stage);
@@ -137,6 +144,29 @@ function show(view: SessionView): void {
   }
   for (const button of choices.querySelectorAll("button")) button.disabled = blocked;
   if (progress) progress.value = view.choiceRemainingMs ?? 0;
+  showRollback(view);
+}
+
+function showRollback(view: SessionView): void {
+  const key = `${view.token.session}:${view.token.epoch}:${view.token.step}:${view.rollbackCount}`;
+  if (key !== rollbackKey) {
+    rollbackKey = key;
+    const selected = rollbackTarget.value;
+    rollbackTarget.replaceChildren(new Option("请选择本次回退位置", ""));
+    for (const target of session?.rollbackTargets() ?? []) {
+      const text = target.text.replace(/\s+/gu, " ").slice(0, 65) || "演出节点";
+      const label = `${target.crossesChoice ? "跨选择 · " : ""}${target.speaker ? `${target.speaker}：` : ""}${text} [${target.nodeId}]`;
+      rollbackTarget.add(new Option(label, String(target.id)));
+    }
+    rollbackTarget.value = selected;
+    if (rollbackTarget.selectedIndex < 0) rollbackTarget.selectedIndex = 0;
+  }
+  rollbackTarget.disabled = rollingBack || view.rollbackCount === 0;
+  rollbackButton.disabled = rollingBack || !view.canCheckpoint || !rollbackTarget.value
+    || !["silent", "replay", "resume"].includes(voiceChoice.value)
+    || !["within", "across"].includes(rollbackBoundary.value);
+  rollbackWarning.hidden = !view.rollbackIssue;
+  rollbackWarning.textContent = view.rollbackIssue ?? "";
 }
 
 async function start(selected: Entry, restoreVoice?: RestoreVoice): Promise<void> {
@@ -164,10 +194,12 @@ async function start(selected: Entry, restoreVoice?: RestoreVoice): Promise<void
     adopted = true;
     mode = selected;
     choiceKey = "";
+    rollbackKey = "";
     menu.hidden = title.hidden = problem.hidden = true;
     choices.replaceChildren();
     gallery.close();
     resetSaveMessage();
+    resetRollback();
     if (records) {
       reads.main.clear();
       for (const nodeId of records.readNodeIds) reads.main.add(nodeId);
@@ -180,6 +212,7 @@ async function start(selected: Entry, restoreVoice?: RestoreVoice): Promise<void
     session = createGameSession({
       content: source, player, generation: ++generation,
       clock, presentation, seen: reads[selected], onChange: show,
+      rollback: { capacity: 500 },
       ...(checkpoint && restoreVoice ? { resume: { checkpoint, voice: restoreVoice } } : {}),
       onFacts: facts => {
         if (selected === "main" && facts.length) recordWriter.enqueue({
@@ -188,6 +221,7 @@ async function start(selected: Entry, restoreVoice?: RestoreVoice): Promise<void
       },
     });
     if (document.hidden) session.send({ type: "pause", reason: "background", paused: true });
+    show(session.view());
     presentation.unlockAudio();
     if (checkpoint) saveMessage.textContent = "已恢复保存的剧情位置和剩余有效时间；全局记录沿用当前已保存成果。";
   } catch (error: unknown) {
@@ -197,7 +231,8 @@ async function start(selected: Entry, restoreVoice?: RestoreVoice): Promise<void
       session = null;
       presentation = null;
       title.hidden = false;
-      next.disabled = auto.disabled = skip.disabled = pause.disabled = audio.disabled = save.disabled = dialogueOpen.disabled = true;
+      next.disabled = auto.disabled = skip.disabled = pause.disabled = audio.disabled = save.disabled = dialogueOpen.disabled = rollbackButton.disabled = true;
+      resetRollback();
     }
     saveMessage.textContent = `未能${restoreVoice ? "读档" : "开局"}：${error instanceof Error ? error.message : "未知错误"}。全局成果与原槽位保持原值。`;
   } finally {
@@ -228,8 +263,18 @@ function home(): void {
   title.hidden = false;
   menu.hidden = problem.hidden = true;
   next.disabled = auto.disabled = skip.disabled = pause.disabled = audio.disabled = save.disabled = dialogueOpen.disabled = true;
+  resetRollback();
   resetSaveMessage();
   status.textContent = "已返回试播标题；旧会话的任务已取消";
+}
+
+function resetRollback(): void {
+  rollbackKey = "";
+  rollbackTarget.replaceChildren(new Option("请选择本次回退位置", ""));
+  rollbackTarget.disabled = rollbackButton.disabled = true;
+  rollbackMessage.textContent = "本次游玩达到稳定检查点后会记录回退位置；回退保留全局成果。";
+  rollbackWarning.hidden = true;
+  rollbackWarning.textContent = "";
 }
 
 function resetSaveMessage(): void {
@@ -304,6 +349,45 @@ function load(entry: Entry): void {
   void start(entry, voice);
 }
 
+async function rollback(): Promise<void> {
+  const owner = session;
+  const voice = voiceChoice.value;
+  const boundary = rollbackBoundary.value;
+  const targetId = Number(rollbackTarget.value);
+  if (!owner || rollingBack || !Number.isSafeInteger(targetId) || targetId < 1
+    || !["within", "across"].includes(boundary) || (voice !== "silent" && voice !== "replay" && voice !== "resume")) return;
+  const token = owner.view().token;
+  const selected = mode;
+  const request = ++entryRequest;
+  rollingBack = true;
+  owner.send({ type: "pause", reason: "host", paused: true });
+  rollbackMessage.textContent = "正在准备回退位置和当前全局记录……";
+  try {
+    if (selected === "main") await recordWriter.flush();
+    const records = selected === "main" ? await playerRecords.read() : null;
+    if (closed || request !== entryRequest || owner !== session) return;
+    const result = await owner.rollback({
+      token, targetId, voice, crossChoices: boundary === "across",
+      currentPlayer: records ? playerProjection(records) : { "周目": 1, "结局数": 0 },
+    });
+    if (closed || request !== entryRequest || owner !== session) return;
+    if (!result.accepted) throw new Error(`${result.code}：${result.message}`);
+    resetSaveMessage();
+    rollbackMessage.textContent = `已恢复到 ${result.nodeId} 的检查点，后续路线历史已截断；全局成果保留。媒体问题请在同一位置重试。`;
+    presentation?.unlockAudio();
+  } catch (error: unknown) {
+    if (!closed && request === entryRequest && owner === session) {
+      rollbackMessage.textContent = `回退未采用：${error instanceof Error ? error.message : "准备失败"}。当前进度和历史保持原值。`;
+    }
+  } finally {
+    rollingBack = false;
+    if (!closed && request === entryRequest && owner === session) {
+      owner.send({ type: "pause", reason: "host", paused: false });
+    }
+    if (!closed && session) showRollback(session.view());
+  }
+}
+
 async function openGallery(): Promise<void> {
   const request = ++entryRequest;
   try {
@@ -365,7 +449,10 @@ dialogue.addEventListener("close", () => { if (!dialogue.open) closeDialogue(); 
 voiceChoice.onchange = () => {
   const enabled = ["silent", "replay", "resume"].includes(voiceChoice.value);
   element("load-main", HTMLButtonElement).disabled = element("load-timed", HTMLButtonElement).disabled = !enabled;
+  if (session) showRollback(session.view());
 };
+rollbackTarget.onchange = rollbackBoundary.onchange = () => { if (session) showRollback(session.view()); };
+rollbackButton.onclick = () => { void rollback(); };
 retryRecords.onclick = () => { void recordWriter.flush().catch(() => {}); };
 stage.addEventListener("click", event => {
   if (!(event.target instanceof Element) || event.target.closest("button, .choices, .menu-overlay, .title-screen")) return;

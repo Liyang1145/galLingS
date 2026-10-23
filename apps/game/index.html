@@ -13,6 +13,7 @@
         <span class="badge">重构开发入口 · 非正式发行版</span>
       </header>
       <p class="scope-note">本页使用独立试播记录。存读档及回退恢复当局进度；周目、结局和 CG 解锁单独保留。通关后入口仅准备只读上下文，联网发送尚未接入。</p>
+      <div class="player-surface" id="player-surface">
       <section class="stage" id="stage" aria-label="剧情画面" tabindex="0">
         <div class="scene" id="scene"></div>
         <div class="title-screen" id="title">
@@ -46,12 +47,15 @@
         <button type="button" id="dialogue-history-open" disabled>对白回看</button>
         <button type="button" id="audio" disabled>启用声音</button>
         <button type="button" id="hide-ui" disabled aria-pressed="false" data-reveal-ui>隐藏界面</button>
+        <button type="button" id="fullscreen" disabled aria-pressed="false">全屏显示</button>
       </nav>
+      <p id="fullscreen-status" class="fullscreen-status" role="status" aria-live="polite"></p>
       <p class="preview-note" id="preview-note">正在载入本地作品；所有资源就绪后可开始。首次启动可能需要等待资源校验。</p>
       <p id="status" role="status" aria-live="polite">准备试播</p>
       <section class="problem" id="problem" role="alert" hidden>
         <p id="problem-message"></p><button id="retry" type="button">重建当前场面</button>
       </section>
+      </div>
       <section id="audio-preferences" class="checkpoint-panel" aria-label="声音设置"></section>
       <section id="reading-preferences" class="checkpoint-panel" aria-label="阅读设置"></section>
       <section id="button-preferences" class="checkpoint-panel" aria-label="按钮声音设置"></section>
@@ -116,7 +120,7 @@
         <div id="aftergame-body"></div>
       </dialog>
       <details class="debug"><summary>当前剧情状态（仅试播）</summary><pre id="debug">尚未开始</pre></details>
-      <p class="help">点击画面 / 空格 / → 继续，Esc 打开菜单，A 切换自动，按住 Ctrl 快进已读。H / 画面右键 / 触屏长按可隐藏界面，下一次点击只恢复；隐藏不会暂停。场面向下滑或上滚打开回看，长对白和选项区保留滚动。快进遇到未读或选择会停下。</p>
+      <p class="help">点击画面 / 空格 / → 继续，Esc 打开菜单，A 切换自动，按住 Ctrl 快进已读。H / 画面右键 / 触屏长按可隐藏界面，下一次点击只恢复；隐藏不会暂停。场面向下滑或上滚打开回看，长对白和选项区保留滚动。全屏按钮 / F11 / Alt+Enter 切换显示，浏览器全屏时 Esc 先退出全屏。快进遇到未读或选择会停下。</p>
     </main>
     <dialog id="exit-dialog" class="gallery-dialog" aria-labelledby="exit-heading">
       <h2 id="exit-heading">退出前完成保存</h2>

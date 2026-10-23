@@ -29,6 +29,8 @@ import { applyAuthorAppearance, connectTitleCover } from "../../../packages/play
 import { ChoicePanel } from "../../../packages/player/src/web/choices.ts";
 import { connectStageLayout } from "../../../packages/player/src/web/stage-layout.ts";
 import { PlayerInput } from "../../../packages/player/src/web/input.ts";
+import { PlayerFullscreen } from "../../../packages/player/src/web/fullscreen.ts";
+import { nativeFullscreenDriver } from "./platform/fullscreen.ts";
 import "./style.css";
 
 const startup = new AbortController();
@@ -66,6 +68,7 @@ async function main(): Promise<void> {
   const audio = element("audio", HTMLButtonElement);
   const hide = element("hide-ui", HTMLButtonElement);
   const playControls = element("play-controls", HTMLElement);
+  const fullscreenButton = element("fullscreen", HTMLButtonElement);
   const save = element("save-checkpoint", HTMLButtonElement);
   const saveMessage = element("save-message", HTMLElement);
   const saveDetails = element("save-details", HTMLElement);
@@ -156,6 +159,7 @@ async function main(): Promise<void> {
   let dialogueOwner: GameSession | null = null;
   let presentation: WebPresentation | null = null;
   let input: PlayerInput | null = null;
+  let fullscreen: PlayerFullscreen | null = null;
   let generation = 0;
   let mode: Entry = "main";
   let entryRequest = 0;
@@ -226,7 +230,7 @@ async function main(): Promise<void> {
   });
   const buttonEvents = new AbortController();
   connectButtonSounds({
-    buttons: [next, auto, skip, pause, dialogueOpen, audio, hide],
+    buttons: [next, auto, skip, pause, dialogueOpen, audio, hide, fullscreenButton],
     signal: buttonEvents.signal,
     enabled: () => {
       if (closed || exiting || document.hidden || !session || !buttonPreferences.values(mode).enabled) return false;
@@ -275,6 +279,7 @@ async function main(): Promise<void> {
     if (closed || signal.aborted) throw new Error("页面已离开或退出已取消");
     if (exiting) throw new Error("已有退出请求");
     exiting = true;
+    fullscreen?.refresh();
     audioPreferences.refresh();
     readingPreferences.refresh();
     buttonPreferences.refresh();
@@ -294,6 +299,7 @@ async function main(): Promise<void> {
       if (released) return;
       released = true;
       exiting = false;
+      fullscreen?.refresh();
       audioPreferences.refresh();
       readingPreferences.refresh();
       buttonPreferences.refresh();
@@ -356,9 +362,18 @@ async function main(): Promise<void> {
     enabled: () => !closed && !exiting && !dialogue.open && !gallery.open && !aftergame.open && !host.state().paused,
     unlockAudio, menu: toggleMenu, history: openDialogue,
   });
+  const displayDriver = nativeFullscreenDriver();
+  fullscreen = new PlayerFullscreen({
+    root: document.documentElement, surface: element("player-surface", HTMLElement),
+    button: fullscreenButton, status: element("fullscreen-status", HTMLElement),
+    keyboardScopes: [document], enabled: () => !closed && !exiting,
+    changed: () => input?.reset(),
+    ...(displayDriver ? { driver: displayDriver } : {}),
+  });
 
   function show(view: SessionView): void {
     input?.refresh();
+    fullscreen?.refresh();
     dialoguePanel?.refresh(host.state().audioAllowed);
     const { story, token } = view;
     const blocked = view.paused.length > 0 || view.disposed;
@@ -800,6 +815,7 @@ async function main(): Promise<void> {
     buttonPreferences.dispose();
     buttonEvents.abort();
     input?.dispose();
+    fullscreen?.dispose();
     cover.dispose();
     session?.dispose();
     host.releaseAudio();

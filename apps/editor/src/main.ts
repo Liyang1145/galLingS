@@ -34,6 +34,8 @@ const preview = new EditorPreview({
   next: button("next"), pause: button("pause"), auto: button("auto"), audio: button("audio"),
   retry: button("retry"), stop: button("stop"),
   controls: element("preview-controls", HTMLElement), hide: button("hide-ui"),
+  surface: element("preview-surface", HTMLElement), fullscreen: button("fullscreen"),
+  fullscreenStatus: element("fullscreen-status", HTMLElement),
 });
 const events = new AbortController();
 const drafts = new Map<string, AuthorTextEdit>();

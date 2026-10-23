@@ -13,6 +13,10 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
 import android.view.ViewGroup;
+import android.view.View;
+import android.view.WindowInsets;
+import android.view.WindowInsetsController;
+import android.view.WindowManager;
 import android.webkit.RenderProcessGoneDetail;
 import android.webkit.WebChromeClient;
 import android.webkit.WebResourceError;
@@ -66,6 +70,16 @@ public final class RebuildActivity extends Activity {
     private Runnable deliveryTimeout;
     private int deliveryAttempt;
     private boolean deliveryWarning;
+    private boolean fullscreen;
+    private long displaySequence;
+    private long displayRequest;
+    private String displayIssue;
+    private String displayOwner;
+    private boolean displayReady;
+    private int previousUi;
+    private boolean previousFullscreenFlag;
+    private int previousHiddenBars;
+    private int previousBarsBehavior;
     private final Runnable heartbeat = new Runnable() {
         @Override public void run() {
             if (destroyed || !resumed || web == null) return;
@@ -112,6 +126,39 @@ public final class RebuildActivity extends Activity {
                             publish();
                         }
                     });
+            WebViewCompat.addWebMessageListener(web, "__HAIFENG_NATIVE_DISPLAY__", Collections.singleton(ORIGIN),
+                    (view, message, origin, mainFrame, reply) -> {
+                        if (destroyed || view != web || !mainFrame || !ORIGIN.equals(origin.toString())
+                                || message.getType() != WebMessageCompat.TYPE_STRING) return;
+                        try {
+                            String text = message.getData();
+                            if (text == null || text.length() > 256) throw new IllegalArgumentException("全屏请求过长");
+                            JSONObject request = new JSONObject(text);
+                            Object id = request.get("id");
+                            if (request.length() != 4 || !"haifeng.fullscreen-request/1".equals(request.getString("format"))
+                                    || !(request.get("active") instanceof Boolean)
+                                    || !(request.get("owner") instanceof String)
+                                    || !request.getString("owner").matches("[a-f0-9-]{36}")
+                                    || (!(id instanceof Integer) && !(id instanceof Long))
+                                    || request.getLong("id") < 1 || request.getLong("id") > 9007199254740991L) {
+                                throw new IllegalArgumentException("全屏请求字段无效");
+                            }
+                            if (!displayReady || displayOwner == null || !displayOwner.equals(request.getString("owner"))) return;
+                            long next = request.getLong("id");
+                            if (next <= displayRequest) return;
+                            displayRequest = next;
+                            displayIssue = null;
+                            try {
+                                if (!resumed || !focused || activeExit != 0) throw new IllegalStateException("请在前台且未退出时切换全屏");
+                                setFullscreen(request.getBoolean("active"));
+                            } catch (RuntimeException error) {
+                                displayIssue = "系统栏切换未完成，请重试。";
+                            }
+                            publishFullscreen();
+                        } catch (Exception error) {
+                            Toast.makeText(this, "全屏请求格式无效，窗口保持原模式", Toast.LENGTH_SHORT).show();
+                        }
+                    });
             WebViewCompat.addDocumentStartJavaScript(web, assetText("host-bootstrap.js"), Collections.singleton(ORIGIN));
         } catch (Exception error) {
             fail("宿主桥未载入：" + error.getMessage());
@@ -137,6 +184,10 @@ public final class RebuildActivity extends Activity {
             }
             @Override public void onPageStarted(WebView view, String url, android.graphics.Bitmap icon) {
                 page++;
+                resetFullscreen();
+                displayRequest = 0;
+                displayOwner = null;
+                displayReady = false;
                 cancelExit();
                 cancelDelivery();
                 abandonAudio(true);
@@ -145,7 +196,7 @@ public final class RebuildActivity extends Activity {
                 if (!START.equals(url)) fail("已阻止离开本地游戏入口。");
             }
             @Override public void onPageFinished(WebView view, String url) {
-                if (START.equals(url)) publish();
+                if (START.equals(url)) { displayReady = true; publish(); }
             }
             @Override public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
                 if (request.isForMainFrame()) fail("本地游戏页无法读取：" + error.getDescription());
@@ -188,6 +239,7 @@ public final class RebuildActivity extends Activity {
 
     private void publish() {
         if (web == null || destroyed) return;
+        publishFullscreen();
         boolean paused = !resumed || !focused || audioInterrupted;
         long id = ++sequence;
         String script = "(() => {const b=window.__HAIFENG_HOST__; if(b?.protocol!=='haifeng.host-bridge/3') return null;"
@@ -195,6 +247,82 @@ public final class RebuildActivity extends Activity {
                 + "b.receive({format:'haifeng.host-state/1',platform:'android-trial',sequence:"
                 + id + ",paused:" + paused + "});return b.read().sequence;})()";
         deliver(web, page, id, script, 0);
+    }
+
+    /** Native immersive mode, independent of HTML video/custom views and story state. */
+    @SuppressWarnings("deprecation")
+    private void setFullscreen(boolean active) {
+        if (active == fullscreen) return;
+        View decor = getWindow().getDecorView();
+        if (Build.VERSION.SDK_INT >= 30) {
+            WindowInsetsController controller = getWindow().getInsetsController();
+            WindowInsets insets = decor.getRootWindowInsets();
+            if (controller == null || insets == null) throw new IllegalStateException("窗口尚未就绪");
+            int bars = WindowInsets.Type.systemBars();
+            if (active) {
+                previousHiddenBars = 0;
+                if (!insets.isVisible(WindowInsets.Type.statusBars())) previousHiddenBars |= WindowInsets.Type.statusBars();
+                if (!insets.isVisible(WindowInsets.Type.navigationBars())) previousHiddenBars |= WindowInsets.Type.navigationBars();
+                if (!insets.isVisible(WindowInsets.Type.captionBar())) previousHiddenBars |= WindowInsets.Type.captionBar();
+                previousBarsBehavior = controller.getSystemBarsBehavior();
+                controller.setSystemBarsBehavior(WindowInsetsController.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE);
+                controller.hide(bars);
+            } else {
+                controller.setSystemBarsBehavior(previousBarsBehavior);
+                if (previousHiddenBars != 0) controller.hide(previousHiddenBars);
+                if ((bars & ~previousHiddenBars) != 0) controller.show(bars & ~previousHiddenBars);
+            }
+        } else {
+            int mask = View.SYSTEM_UI_FLAG_FULLSCREEN | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
+            if (active) {
+                previousUi = decor.getSystemUiVisibility() & mask;
+                previousFullscreenFlag = (getWindow().getAttributes().flags & WindowManager.LayoutParams.FLAG_FULLSCREEN) != 0;
+                getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+                decor.setSystemUiVisibility(decor.getSystemUiVisibility() | mask);
+            } else {
+                if (!previousFullscreenFlag) getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+                decor.setSystemUiVisibility((decor.getSystemUiVisibility() & ~mask) | previousUi);
+            }
+        }
+        fullscreen = active;
+    }
+
+    private void resetFullscreen() {
+        try { setFullscreen(false); displayIssue = null; }
+        catch (RuntimeException error) { displayIssue = "系统栏尚未恢复，请返回应用后重试。"; }
+    }
+
+    private void publishFullscreen() {
+        if (web == null || destroyed || !displayReady) return;
+        final WebView owner = web;
+        final long ownerPage = page;
+        try {
+            owner.evaluateJavascript("(() => {const f=window.__HAIFENG_HOST__?.fullscreen;"
+                    + "return f?.protocol==='haifeng.fullscreen/1'?f.identity:null;})()", answer -> {
+                if (destroyed || owner != web || ownerPage != page) return;
+                try {
+                    Object token = new org.json.JSONTokener(answer).nextValue();
+                    if (!(token instanceof String) || !((String) token).matches("[a-f0-9-]{36}")) return;
+                    if (displayOwner != null && !displayOwner.equals(token)) return;
+                    displayOwner = (String) token;
+                    JSONObject state = new JSONObject();
+                    state.put("format", "haifeng.fullscreen-state/1");
+                    state.put("sequence", ++displaySequence);
+                    // Reports the accepted immersive mode; temporary bars do not leave that mode.
+                    state.put("active", fullscreen);
+                    state.put("requestId", displayRequest == 0 ? JSONObject.NULL : displayRequest);
+                    state.put("requestOwner", displayRequest == 0 ? JSONObject.NULL : displayOwner);
+                    state.put("issue", displayIssue == null ? JSONObject.NULL : displayIssue);
+                    owner.evaluateJavascript("(() => {const f=window.__HAIFENG_HOST__?.fullscreen;"
+                            + "if(f?.protocol==='haifeng.fullscreen/1')f.receive(" + state + ");})()", null);
+                } catch (Exception error) {
+                    // A stale/unavailable page is retried by the existing display heartbeat.
+                }
+            });
+        } catch (Exception error) {
+            // The existing heartbeat retries display status; failure never alters story lifecycle.
+        }
     }
 
     private void cancelDelivery() {
@@ -415,6 +543,7 @@ public final class RebuildActivity extends Activity {
 
     private void fail(String message) {
         WebView failed = web;
+        resetFullscreen();
         cancelExit();
         web = null;
         handler.removeCallbacks(heartbeat);

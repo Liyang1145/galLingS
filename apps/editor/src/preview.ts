@@ -12,6 +12,7 @@ import { applyAuthorAppearance } from "../../../packages/player/src/web/appearan
 import { ChoicePanel } from "../../../packages/player/src/web/choices.ts";
 import { connectStageLayout } from "../../../packages/player/src/web/stage-layout.ts";
 import { PlayerInput } from "../../../packages/player/src/web/input.ts";
+import { PlayerFullscreen } from "../../../packages/player/src/web/fullscreen.ts";
 
 export interface PreviewElements {
   stage: HTMLElement; scene: HTMLElement; choices: HTMLElement;
@@ -19,6 +20,7 @@ export interface PreviewElements {
   next: HTMLButtonElement; pause: HTMLButtonElement; auto: HTMLButtonElement;
   audio: HTMLButtonElement; retry: HTMLButtonElement; stop: HTMLButtonElement;
   controls: HTMLElement; hide: HTMLButtonElement;
+  surface: HTMLElement; fullscreen: HTMLButtonElement; fullscreenStatus: HTMLElement;
 }
 
 /** Owns only preview lifecycle. Story transitions remain in the shared session. */
@@ -27,6 +29,7 @@ export class EditorPreview {
   readonly #layout: { dispose(): void };
   readonly #choices: ChoicePanel;
   readonly #input: PlayerInput;
+  readonly #fullscreen: PlayerFullscreen;
   readonly #events = new AbortController();
   #session: GameSession | null = null;
   #presentation: WebPresentation | null = null;
@@ -51,9 +54,14 @@ export class EditorPreview {
         if (current) current.send({ type: "pause", reason: "menu", paused: !current.view().paused.includes("menu") });
       },
     });
+    this.#fullscreen = new PlayerFullscreen({
+      root: elements.surface, surface: elements.surface, button: elements.fullscreen, status: elements.fullscreenStatus,
+      keyboardScopes: [elements.surface], enabled: () => this.#session !== null,
+      changed: () => this.#input.reset(),
+    });
     const { signal } = this.#events;
     connectButtonSounds({
-      buttons: [elements.next, elements.pause, elements.auto, elements.audio, elements.retry, elements.stop, elements.hide],
+      buttons: [elements.next, elements.pause, elements.auto, elements.audio, elements.retry, elements.stop, elements.hide, elements.fullscreen],
       signal,
       enabled: () => {
         if (document.hidden || !this.#buttonSoundsEnabled || !this.#session) return false;
@@ -109,6 +117,7 @@ export class EditorPreview {
         },
       });
       this.#input.refresh();
+      this.#fullscreen.refresh();
       presentation.unlockAudio();
     } catch (error: unknown) {
       this.stop();
@@ -118,6 +127,7 @@ export class EditorPreview {
 
   private render(view: SessionView, initial: unknown): void {
     this.#input.refresh();
+    this.#fullscreen.refresh();
     const e = this.#elements;
     const active = !view.disposed && view.story.phase !== "ended";
     e.next.disabled = !active || view.paused.length > 0 || view.story.phase === "choosing";
@@ -146,6 +156,7 @@ export class EditorPreview {
   stop(): void {
     ++this.#generation;
     this.#input.reset();
+    this.#fullscreen.reset();
     this.#session?.dispose();
     this.#presentation?.dispose();
     this.#session = null;
@@ -159,11 +170,13 @@ export class EditorPreview {
     e.note.textContent = "预览不读取或写入玩家存档、全局解锁和聊天记录。";
     e.status.textContent = "预览已停止。";
     this.#input.refresh();
+    this.#fullscreen.refresh();
   }
 
   dispose(): void {
     this.stop();
     this.#input.dispose();
+    this.#fullscreen.dispose();
     this.#choices.dispose();
     this.#layout.dispose();
     this.#events.abort();

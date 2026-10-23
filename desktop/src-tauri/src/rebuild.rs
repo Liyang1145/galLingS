@@ -1,6 +1,6 @@
 //! Explicit Windows integration trial. No Python, legacy protocol or interpreter fallback.
 use std::sync::atomic::{AtomicBool, AtomicU64, Ordering};
-use std::sync::mpsc;
+use std::sync::{mpsc, Mutex};
 use std::time::{Duration, Instant};
 use tauri::webview::{NewWindowResponse, PageLoadEvent};
 use tauri::{Manager, WebviewUrl, WebviewWindow, WebviewWindowBuilder, WindowEvent};
@@ -12,6 +12,82 @@ static STOP_HEARTBEAT: AtomicBool = AtomicBool::new(false);
 static EXIT_RUNNING: AtomicBool = AtomicBool::new(false);
 static EXIT_SEQUENCE: AtomicU64 = AtomicU64::new(0);
 static PAGE_SEQUENCE: AtomicU64 = AtomicU64::new(0);
+static PAGE_READY: AtomicBool = AtomicBool::new(false);
+static FULLSCREEN_SEQUENCE: AtomicU64 = AtomicU64::new(0);
+static FULLSCREEN: Mutex<FullscreenControl> = Mutex::new(FullscreenControl {
+    page: 0, request: 0, owner: None, target: false, issue: None,
+});
+
+struct FullscreenControl {
+    page: u64,
+    request: u64,
+    owner: Option<String>,
+    target: bool,
+    issue: Option<String>,
+}
+
+#[derive(serde::Deserialize)]
+#[serde(deny_unknown_fields)]
+struct FullscreenRequest {
+    id: u64,
+    active: bool,
+    owner: String,
+}
+
+/// Optional display extension. The page cannot request files, navigation or story commands.
+fn publish_fullscreen(window: &WebviewWindow) {
+    if STOP_HEARTBEAT.load(Ordering::SeqCst) || !PAGE_READY.load(Ordering::SeqCst) { return; }
+    let page = PAGE_SEQUENCE.load(Ordering::SeqCst);
+    let active = match window.is_fullscreen() { Ok(value) => value, Err(_) => return };
+    let (ack, request_owner, issue) = {
+        let Ok(mut control) = FULLSCREEN.lock() else { return };
+        if control.page != page {
+            *control = FullscreenControl { page, request: 0, owner: None, target: active, issue: None };
+        }
+        let ack = if control.request > 0 && (control.target == active || control.issue.is_some()) {
+            Some(control.request)
+        } else { None };
+        let request_owner = ack.and(control.owner.clone());
+        (ack, request_owner, control.issue.clone())
+    };
+    let sequence = FULLSCREEN_SEQUENCE.fetch_add(1, Ordering::SeqCst) + 1;
+    let state = serde_json::json!({
+        "format": "haifeng.fullscreen-state/1", "sequence": sequence,
+        "active": active, "requestId": ack, "requestOwner": request_owner, "issue": issue,
+    });
+    let script = format!(
+        "(() => {{const f=window.__HAIFENG_HOST__?.fullscreen; if(f?.protocol!=='haifeng.fullscreen/1') return null; f.receive({state});return f.readRequest();}})()"
+    );
+    let owner = window.clone();
+    let started = Instant::now();
+    let _ = window.eval_with_callback(script, move |answer| {
+        if PAGE_SEQUENCE.load(Ordering::SeqCst) != page || STOP_HEARTBEAT.load(Ordering::SeqCst)
+            || !PAGE_READY.load(Ordering::SeqCst) { return; }
+        let Ok(Some(request)) = serde_json::from_str::<Option<FullscreenRequest>>(&answer) else { return };
+        if request.id == 0 || request.id > 9_007_199_254_740_991
+            || request.owner.len() != 36 || !request.owner.bytes().all(|c| c.is_ascii_hexdigit() || c == b'-') { return; }
+        let on_ui = owner.clone();
+        let _ = owner.run_on_main_thread(move || {
+            if PAGE_SEQUENCE.load(Ordering::SeqCst) != page || STOP_HEARTBEAT.load(Ordering::SeqCst)
+                || !PAGE_READY.load(Ordering::SeqCst) || started.elapsed() > Duration::from_secs(2) { return; }
+            {
+                let Ok(mut control) = FULLSCREEN.lock() else { return };
+                if control.page != page || request.id <= control.request { return; }
+                control.request = request.id;
+                control.owner = Some(request.owner);
+                control.target = request.active;
+                control.issue = None;
+            }
+            let error = on_ui.set_fullscreen(request.active).err()
+                .map(|error| format!("窗口全屏请求失败：{error}").chars().take(512).collect::<String>());
+            if let Ok(mut control) = FULLSCREEN.lock() {
+                if control.page == page && control.request == request.id { control.issue = error; }
+            }
+            // A successful request is acknowledged only after the sampled window matches its target.
+            publish_fullscreen(&on_ui);
+        });
+    });
+}
 
 #[derive(serde::Deserialize)]
 #[serde(deny_unknown_fields)]
@@ -97,6 +173,7 @@ fn warn_delivery() {
 }
 
 fn publish(window: &WebviewWindow) {
+    publish_fullscreen(window);
     let paused = !window.is_focused().unwrap_or(false)
         || window.is_minimized().unwrap_or(true);
     let sequence = SEQUENCE.fetch_add(1, Ordering::SeqCst) + 1;
@@ -183,9 +260,11 @@ pub fn run() {
                 .on_new_window(|_, _| NewWindowResponse::Deny)
                 .on_page_load(|window, payload| {
                     if matches!(payload.event(), PageLoadEvent::Started) {
+                        PAGE_READY.store(false, Ordering::SeqCst);
                         PAGE_SEQUENCE.fetch_add(1, Ordering::SeqCst);
                     }
                     if matches!(payload.event(), PageLoadEvent::Finished) {
+                        PAGE_READY.store(true, Ordering::SeqCst);
                         publish(&window);
                     }
                 })

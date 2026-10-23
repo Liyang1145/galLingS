@@ -10,6 +10,8 @@ import type { RollbackTarget } from "./rollback.ts";
 import { readReadingValue } from "./reading-preferences.ts";
 import { StoryFeedback } from "./ui-sounds.ts";
 import type { InteractionFeedback, ScheduledFeedback } from "./ui-sounds.ts";
+import { StoryReadout } from "./readout.ts";
+import { authorReadoutPreferences, readReadoutPreferences } from "./readout-preferences.ts";
 
 export type RestoreVoice = "silent" | "replay" | "resume";
 
@@ -94,6 +96,7 @@ export type SessionIntent =
   | { type: "pause"; reason: "menu" | "background" | "host" | "history" | "operation" | "exit"; paused: boolean }
   | { type: "auto"; enabled: boolean }
   | { type: "auto-wait"; multiplier: number }
+  | { type: "readout"; enabled: boolean }
   | { type: "ending-unlocked"; token: SessionToken; endingId: string }
   | { type: "skip"; enabled: boolean }
   | { type: "retry" };
@@ -114,6 +117,8 @@ interface Options {
   rollback?: { capacity: number };
   /** Used for newly scheduled reading waits, never to retime an existing checkpoint. */
   autoWaitMultiplier?: number;
+  /** Optional spoiler display only; captured anew for the next presentation. */
+  readoutEnabled?: boolean;
   onChange(view: SessionView): void;
   onFacts?(facts: readonly StoryFact[]): void;
   onDiagnostic?(diagnostic: Diagnostic): void;
@@ -163,6 +168,9 @@ class Session implements GameSession {
   readonly #dialogue: { order: number; value: DialogueEntry }[] = [];
   readonly #rollback: RollbackHistory | null;
   readonly #storyFeedback: StoryFeedback;
+  readonly #readout: StoryReadout;
+  #readoutEnabled: boolean;
+  #displayText = "";
   readonly #feedbackTimers = new Set<ActiveTimer>();
   #pendingFeedback: readonly ScheduledFeedback[] = [];
   #dialogueOrder = 0;
@@ -198,6 +206,10 @@ class Session implements GameSession {
     if (!Number.isSafeInteger(options.generation) || options.generation < 1) throw new Error("会话代次必须是正整数");
     this.#options = options;
     this.#storyFeedback = new StoryFeedback(options.content);
+    this.#readout = new StoryReadout(options.content);
+    this.#readoutEnabled = options.readoutEnabled === undefined
+      ? authorReadoutPreferences(options.content.source.settings).enabled
+      : readReadoutPreferences({ enabled: options.readoutEnabled }).enabled;
     const autoWait = options.autoWaitMultiplier === undefined
       ? options.content.source.settings.autoMul : options.autoWaitMultiplier;
     this.#autoWaitMultiplier = readReadingValue("autoWaitMultiplier", autoWait === undefined ? 1 : autoWait);
@@ -463,6 +475,12 @@ class Session implements GameSession {
       this.publish();
       return;
     }
+    if (intent.type === "readout") {
+      this.#readoutEnabled = readReadoutPreferences({ enabled: intent.enabled }).enabled;
+      // The current text and effective wait belong to the current presentation.
+      this.publish();
+      return;
+    }
     if (intent.type === "pause") {
       if (intent.paused) this.#pauses.add(intent.reason);
       else this.#pauses.delete(intent.reason);
@@ -613,7 +631,11 @@ class Session implements GameSession {
         || this.#restoreAudio.playback.voice.positionMs === null));
     this.#autoDue = false;
     const epoch = this.#epoch;
-    this.#playback = this.#options.presentation.present(this.#runtime.view(), {
+    const view = this.#runtime.view();
+    this.#displayText = this.#readout.text(view, this.#readoutEnabled);
+    const displayView = this.#displayText === view.presentation.text ? view
+      : { ...view, presentation: { ...view.presentation, text: this.#displayText } };
+    this.#playback = this.#options.presentation.present(displayView, {
       signal: this.#controller.signal, clock: this.#options.clock, mode,
       restore: this.#restoreAudio ? structuredClone(this.#restoreAudio) : null,
       paused: this.#pauses.size > 0, skipping: this.#skipping,
@@ -646,7 +668,7 @@ class Session implements GameSession {
         if (this.#skipping) this.scheduleAdvance(60);
         else if (pause || performance.waitMs > 0) this.scheduleAdvance(this.#pendingAdvance?.remainingMs ?? (performance.waitMs || 2000));
         else if (this.#auto) this.scheduleAdvance(this.#pendingAdvance?.remainingMs
-          ?? (1200 + view.presentation.text.length * 60) * this.#autoWaitMultiplier, this.#pendingAdvance?.waitVoice ?? true);
+          ?? (1200 + this.#displayText.length * 60) * this.#autoWaitMultiplier, this.#pendingAdvance?.waitVoice ?? true);
       }
     }
     this.#pendingAdvance = null;

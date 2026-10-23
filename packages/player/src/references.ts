@@ -3,6 +3,7 @@ import type { ReferenceInput } from "../../story-model/src/references.ts";
 import { object } from "../../story-model/src/read.ts";
 import { readAuthorAppearance } from "./appearance.ts";
 import { readFeedbackVariables, readUiSounds, UI_SOUND_KEYS } from "./ui-sounds.ts";
+import { readReadoutVariables } from "./readout.ts";
 
 /** Only settings consumed by this shared player. No arbitrary metadata/string ID guessing. */
 export function playerReferences(content: StoryContent): readonly ReferenceInput[] {
@@ -37,6 +38,10 @@ export function playerReferences(content: StoryContent): readonly ReferenceInput
   const settings = input === undefined || input === null ? {} : object(input, { file: content.source.file, field: "settings.uiSe" });
   if (variables.favor) settingsReference("variable", variables.favor, "feedback-variable", "settings.uiSe.favorVar", settings.favorVar === undefined);
   if (variables.tail) settingsReference("variable", variables.tail, "feedback-variable", "settings.uiSe.tailVar", settings.tailVar === undefined);
+  const readout = readReadoutVariables(content);
+  for (const binding of [readout.favor, readout.tail]) {
+    if (binding) settingsReference("variable", binding.name, "readout-variable", binding.source.field, binding.derived);
+  }
   return Object.freeze(references.map(reference => Object.freeze({
     ...reference, target: Object.freeze({ ...reference.target }), source: Object.freeze({ ...reference.source }),
   })));

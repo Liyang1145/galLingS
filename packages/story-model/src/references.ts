@@ -8,7 +8,7 @@ export type ReferenceTarget =
 export type ReferenceRole =
   | "entry" | "next" | "branch-then" | "branch-otherwise" | "choice-target" | "empty-target"
   | "timeout-default" | "ending" | "background" | "sprite" | "music" | "ambience" | "voice" | "sound"
-  | "actor-action" | "read" | "write" | "text" | "theme" | "cover" | "ui-sound" | "feedback-variable";
+  | "actor-action" | "read" | "write" | "text" | "theme" | "cover" | "ui-sound" | "feedback-variable" | "readout-variable";
 
 export interface ReferenceInput {
   readonly target: ReferenceTarget;

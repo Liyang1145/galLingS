@@ -29,7 +29,7 @@ const ROLES: Readonly<Record<ReferenceRole, string>> = {
   "choice-target": "选项目标", "empty-target": "无可见选项目标", "timeout-default": "超时默认选项", ending: "结局声明",
   background: "背景", sprite: "立绘资源", music: "配乐", ambience: "环境声", voice: "对白语音", sound: "一次性音效",
   "actor-action": "角色动作目标", read: "变量读取", write: "变量写入", text: "对白占位符",
-  theme: "对白主题图片", cover: "标题封面", "ui-sound": "交互提示音", "feedback-variable": "反馈变量",
+  theme: "对白主题图片", cover: "标题封面", "ui-sound": "交互提示音", "feedback-variable": "反馈变量", "readout-variable": "话末数值变量",
 };
 function element<K extends keyof HTMLElementTagNameMap>(tag: K, text = "", className = ""): HTMLElementTagNameMap[K] {
   const result = document.createElement(tag);

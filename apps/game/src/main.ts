@@ -27,6 +27,10 @@ import {
 import {
   ButtonPreferenceRepository, authorButtonPreferences, readButtonPreferences,
 } from "../../../packages/player/src/button-preferences.ts";
+import {
+  ReadoutPreferenceRepository, authorReadoutPreferences, readReadoutPreferences,
+} from "../../../packages/player/src/readout-preferences.ts";
+import { StoryReadout } from "../../../packages/player/src/readout.ts";
 import { connectButtonSounds } from "../../../packages/player/src/web/button-sounds.ts";
 import { PreferencesPanel } from "./preferences.ts";
 import { applyAuthorAppearance, connectTitleCover } from "../../../packages/player/src/web/appearance.ts";
@@ -274,6 +278,28 @@ async function main(): Promise<void> {
     trackWrite: operation => writes.run("button-preferences", operation),
     valuesChanged: () => {},
   });
+  const readout = new StoryReadout(content);
+  const readoutRoot = element("readout-preferences", HTMLElement);
+  const readoutSummary = document.createElement("p");
+  readoutSummary.setAttribute("role", "status");
+  readoutSummary.setAttribute("aria-live", "polite");
+  const readoutPreferences = new PreferencesPanel<"enabled", boolean>({
+    root: readoutRoot,
+    noun: "话末数值",
+    note: "开启后，在后续话末“存档点”对白后显示当前好感与尾鳍数值（剧透向）。不会改动当前已开始的文字或倒计时，读档和回退沿用当前开关。",
+    fields: [{ kind: "checkbox", key: "enabled", label: "显示好感数值（剧透向）" }],
+    defaults: authorReadoutPreferences(content.source.settings),
+    readValues: readReadoutPreferences,
+    repository: new ReadoutPreferenceRepository(content.workId, { kind: "development", id: "normal-entry" },
+      authorReadoutPreferences(content.source.settings), store),
+    blocked: () => closed || exiting,
+    trackWrite: operation => writes.run("readout-preferences", operation),
+    valuesChanged: values => {
+      session?.send({ type: "readout", enabled: values.enabled });
+      refreshReadout();
+    },
+  });
+  readoutRoot.append(readoutSummary);
   const buttonEvents = new AbortController();
   connectButtonSounds({
     buttons: [next, auto, skip, pause, dialogueOpen, audio, hide, fullscreenButton],
@@ -353,6 +379,7 @@ async function main(): Promise<void> {
     audioPreferences.refresh();
     readingPreferences.refresh();
     buttonPreferences.refresh();
+    readoutPreferences.refresh();
     slots.refreshControls();
     entryRequest++;
     refreshEnding();
@@ -377,6 +404,7 @@ async function main(): Promise<void> {
       audioPreferences.refresh();
       readingPreferences.refresh();
       buttonPreferences.refresh();
+      readoutPreferences.refresh();
       refreshSaveControls();
       refreshEnding();
       page.inert = wasInert;
@@ -472,6 +500,7 @@ async function main(): Promise<void> {
     problemMessage.textContent = view.problem ? `${view.problem.blocking ? "已暂停" : "媒体提示"}：${view.problem.message}` : "";
     debug.textContent = JSON.stringify({ nodeId: story.nodeId, token, variables: story.variables,
       player: story.player, phase: story.phase, choiceRemainingMs: view.choiceRemainingMs }, null, 2);
+    refreshReadout(view);
     choicePanel.render(view);
     refreshEnding(view);
     if (view.disposed || view.skipping || view.problem?.blocking
@@ -484,6 +513,15 @@ async function main(): Promise<void> {
     const view = session.view();
     return !view.disposed && view.story.phase === "ended"
       && view.token.session === token.session && view.token.epoch === token.epoch && view.token.step === token.step;
+  }
+
+  function refreshReadout(view = session?.view()): void {
+    const enabled = readoutPreferences.values(mode).enabled;
+    readoutSummary.hidden = !enabled;
+    const text = !enabled ? "" : view && !view.disposed
+      ? `当前：${readout.summary(view.story.variables) || "本作品没有可显示的好感或尾鳍变量。"}`
+      : "开始游戏后，数值会显示在每话结尾的存档点。";
+    if (readoutSummary.textContent !== text) readoutSummary.textContent = text;
   }
 
   function refreshEnding(view = session?.view()): void {
@@ -592,6 +630,7 @@ async function main(): Promise<void> {
       audioPreferences.setMode(entry);
       readingPreferences.setMode(entry);
       buttonPreferences.setMode(entry);
+      readoutPreferences.setMode(entry);
       rollbackKey = "";
       menu.hidden = title.hidden = problem.hidden = true;
       choicePanel.clear();
@@ -619,6 +658,7 @@ async function main(): Promise<void> {
         clock, presentation, seen: entry === "chapter" ? new Set<string>() : reads[entry], onChange: show,
         rollback: { capacity: 500 },
         autoWaitMultiplier: reading.autoWaitMultiplier,
+        readoutEnabled: readoutPreferences.values(entry).enabled,
         initialPauses: [
           ...(document.hidden ? ["background" as const] : []),
           ...(host.state().paused ? ["host" as const] : []),
@@ -660,6 +700,7 @@ async function main(): Promise<void> {
         audioPreferences.setMode("main");
         readingPreferences.setMode("main");
         buttonPreferences.setMode("main");
+        readoutPreferences.setMode("main");
         title.hidden = false;
         next.disabled = auto.disabled = skip.disabled = pause.disabled = audio.disabled = save.disabled = dialogueOpen.disabled = rollbackButton.disabled = true;
         input?.refresh();
@@ -706,6 +747,7 @@ async function main(): Promise<void> {
     audioPreferences.setMode("main");
     readingPreferences.setMode("main");
     buttonPreferences.setMode("main");
+    readoutPreferences.setMode("main");
     host.releaseAudio();
     scene.replaceChildren();
     scene.classList.remove("paused");
@@ -1118,6 +1160,7 @@ async function main(): Promise<void> {
     audioPreferences.dispose();
     readingPreferences.dispose();
     buttonPreferences.dispose();
+    readoutPreferences.dispose();
     slots.dispose();
     buttonEvents.abort();
     input?.dispose();
@@ -1132,7 +1175,7 @@ async function main(): Promise<void> {
   };
   window.addEventListener("pagehide", dispose, { once: true });
   import.meta.hot?.dispose(dispose);
-  await Promise.all([audioPreferences.load(), readingPreferences.load(), buttonPreferences.load()]);
+  await Promise.all([audioPreferences.load(), readingPreferences.load(), buttonPreferences.load(), readoutPreferences.load()]);
   if (closed || startup.signal.aborted) return;
   note.textContent = "本地内容已载入。可以从第一话开始，或选择明确标注初始条件的章节试阅与限时样例。";
   for (const id of ["start", "timed", "gallery-open", "sounds-open", "chapters-open", "aftergame-open"]) element(id, HTMLButtonElement).disabled = false;

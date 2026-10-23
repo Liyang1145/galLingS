@@ -42,6 +42,7 @@
 | `pref(vbgm/vamb/vvo/vse)`、`refreshAudioVolumes` | [独立声音偏好](preferences.md)保留四轨作者默认与玩家覆盖，实时更新当前音轨并保留渐变进度；0 音量触发的一次性音效不补播；不读旧偏好、不随存读档或回退覆盖 |
 | `showAudioLibrary/closeAudioLibrary`、`RT.aud` | [主页声音收藏](audio-library.md)只读作者分类、候选标记及原顺序，独立混音器单段试听；配乐/环境循环、音效单次、配乐沿原素材增益，后台/许可暂停后原位置接续，关闭取消。打开不预载全部声音、不写进度或解锁，初始许可未就绪不排队补播；剧情/旧插件入口未迁移，未运行或听感验收 |
 | `pref(speed/autoMul/readerScale/ghost)`、`typeText/kick/applyTheme` | [独立阅读偏好](preferences.md#阅读偏好的字段与时机)保留逐字间隔、自动倍率、字号与底板透明度；前两项用于后续呈现/等待，后两项即时应用；当前选择/自动/恢复计时不重置，试播视觉基准仍非完整旧主题迁移 |
+| `pref(showStats)`、`SAVE_POINT_RE`、`statsText()` | [话末数值显示](readout.md)缺省关闭、主动开启后仅在原匹配存档点追加已生效变量，沿原 uiSe/soul/默认名字绑定，不执行聊天或动作。共享会话固定本次显示副本及自动等待长度，当前开关变化不重打或重计时；核心正文/回看/存档摘要保持原文，独立偏好不随读档回退覆盖，未运行验收 |
 | 资源自带 `shot/sceneFit/cg/previewExcluded/audioCategory/gain` 等 | 保留元数据及来源；诊断不能把资源登记视为已安装、可播放或已授权 |
 | `settings` 的 cover/theme/UI 音效 | [作者外观](appearance.md)读取原主题/封面，复用旧入口原鲸鱼 SVG；最终右侧菜单覆盖作者 `menu=left`，对白字号采用作者基准乘玩家倍率，不改图形或素材；完整正式布局仍待迁移，编辑/插件/聊天设置不成为离线依赖 |
 | `renderChoices()`、`fit()`、`game-polish.css` | [共享选择布局](appearance.md#共享选择布局与小舞台)保留首立绘左右、四项阈值、两列及对白/选择小舞台规则；受限区域滚动防止内容只留在舞台裁剪外。游戏/预览同一比例、按钮与倒计时显示，暂停/时间更新不重建；[横竖分区](appearance.md#竖屏分区与小屏标题)沿原判断、场面/对白/选择及标题规则，试播操作在外部不重复留旧操作栏空间。全部弹层、旋转提示和正式操作栏未迁移，缩放不改变计时 |

@@ -1,4 +1,4 @@
-type Entry = "main" | "timed";
+type Entry = "main" | "timed" | "chapter";
 type Values<Key extends string, Value> = Record<Key, Value>;
 type Changes<Key extends string, Value> = Partial<Record<Key, Value | null>>;
 
@@ -41,6 +41,7 @@ export class PreferencesPanel<Key extends string, Value extends number | boolean
   readonly #retry: HTMLButtonElement;
   #main: Values<Key, Value>;
   #timed: Values<Key, Value>;
+  #chapter: Values<Key, Value>;
   #dirty: Changes<Key, Value> = {};
   #mode: Entry = "main";
   #saving = false;
@@ -56,6 +57,7 @@ export class PreferencesPanel<Key extends string, Value extends number | boolean
     this.#defaults = options.readValues(options.defaults);
     this.#main = { ...this.#defaults };
     this.#timed = { ...this.#defaults };
+    this.#chapter = { ...this.#defaults };
     this.#message = `${options.noun}偏好尚未读取，当前使用作者默认。`;
     const heading = document.createElement("h2");
     heading.textContent = `${options.noun}设置`;
@@ -88,7 +90,8 @@ export class PreferencesPanel<Key extends string, Value extends number | boolean
           this.#main = values;
           this.#dirty[key] = values[key];
           this.#message = `${options.noun}已用于本次游玩，尚未保存。`;
-        } else this.#timed = values;
+        } else if (this.#mode === "timed") this.#timed = values;
+        else this.#chapter = values;
         options.valuesChanged(values);
         this.render();
       }, { signal });
@@ -109,7 +112,8 @@ export class PreferencesPanel<Key extends string, Value extends number | boolean
         this.#dirty = {};
         for (const key of this.#keys) this.#dirty[key] = null;
         this.#message = `本次游玩已使用作者默认${options.noun}设置；点击保存后，下次也会跟随作者默认。`;
-      } else this.#timed = { ...this.#defaults };
+      } else if (this.#mode === "timed") this.#timed = { ...this.#defaults };
+      else this.#chapter = { ...this.#defaults };
       options.valuesChanged(this.values(this.#mode));
       this.render();
     }, { signal });
@@ -129,7 +133,9 @@ export class PreferencesPanel<Key extends string, Value extends number | boolean
     this.render();
   }
 
-  values(entry: Entry): Values<Key, Value> { return { ...(entry === "main" ? this.#main : this.#timed) }; }
+  values(entry: Entry): Values<Key, Value> {
+    return { ...(entry === "main" ? this.#main : entry === "timed" ? this.#timed : this.#chapter) };
+  }
 
   setMode(entry: Entry): void {
     this.#mode = entry;
@@ -237,8 +243,9 @@ export class PreferencesPanel<Key extends string, Value extends number | boolean
     this.#reset.disabled = disabled;
     this.#retry.hidden = !this.#retryOperation || this.#mode !== "main";
     this.#retry.disabled = disabled;
-    this.#status.textContent = this.#mode === "timed"
-      ? `限时样例的${this.#options.noun}只留在本页内存，不读取或改写正常游玩的对应偏好。` : this.#message;
+    this.#status.textContent = this.#mode !== "main"
+      ? `${this.#mode === "timed" ? "限时样例" : "章节试阅"}的${this.#options.noun}只留在本页独立内存，不读取或改写正常游玩的对应偏好。`
+      : this.#message;
   }
 
   dispose(): void {

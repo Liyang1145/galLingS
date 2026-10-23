@@ -85,6 +85,7 @@ h1 { margin: 0; font-size: clamp(1.1rem, 2.6vw, 1.8rem); font-weight: 500; }
 [data-whale="true"] .title-menu button:nth-child(3) { left: -36px; }
 [data-whale="true"] .title-menu button:nth-child(4) { left: -54px; }
 [data-whale="true"] .title-menu button:nth-child(5) { left: -72px; }
+[data-whale="true"] .title-menu button:nth-child(6) { left: -90px; }
 [data-whale="true"] .title-menu button:hover:not(:disabled) { background: var(--whale-menu) center/100% 100% no-repeat; color: #f0f8ff; filter: brightness(1.16); }
 [data-whale="true"] .title-menu button:active { filter: brightness(.95); translate: 0 1px; }
 [data-whale="true"] .choice-list { gap: 26px; }
@@ -204,6 +205,12 @@ select { font: inherit; color: inherit; background: #183443; border: 1px solid #
 .sound-grid b, .sound-grid small { display: block; line-height: 1.6; }
 .sound-grid small { font-size: .75rem; margin-top: 8px; color: #bdd8df; }
 .sound-archive { margin: 24px 0 10px; border-top: 1px solid #39515c; padding-top: 16px; }
+.chapter-dialog p { line-height: 1.7; }
+.chapter-initial { overflow: auto; padding: 12px; background: #061119; font-size: .85rem; }
+.chapter-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 12px; }
+.chapter-grid button { min-width: 0; text-align: left; overflow-wrap: anywhere; }
+.chapter-grid b, .chapter-grid small { display: block; line-height: 1.7; }
+.chapter-grid small { color: #bdd8df; font-size: .75rem; margin-top: 8px; }
 .dialogue-history-dialog { width: min(800px, 92vw); }
 .dialogue-audio-controls { position: sticky; top: 0; z-index: 1; background: #0c1820; padding: 8px 0; border-bottom: 1px solid #39515c; }
 .dialogue-audio-controls p { margin: 0 0 8px; font-size: .85rem; line-height: 1.6; }

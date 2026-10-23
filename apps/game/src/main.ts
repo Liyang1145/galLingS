@@ -13,6 +13,9 @@ import { prepareGameRestore } from "../../../packages/player/src/checkpoint.ts";
 import type { GameCheckpoint } from "../../../packages/player/src/checkpoint.ts";
 import { GalleryPanel } from "./gallery.ts";
 import { SoundLibraryPanel } from "./sounds.ts";
+import { ChapterPanel } from "./chapters.ts";
+import { prepareChapterTrial } from "../../../packages/player/src/chapters.ts";
+import type { ChapterEntry, ChapterTrial } from "../../../packages/player/src/chapters.ts";
 import { DialoguePanel } from "./dialogue.ts";
 import { connectHost } from "./platform/host.ts";
 import { PendingWrites } from "../../../packages/player/src/writes.ts";
@@ -38,6 +41,8 @@ import { EndingPanel } from "../../../packages/player/src/web/ending.ts";
 import type { EndingRecordState } from "../../../packages/player/src/web/ending.ts";
 import { StageFade } from "../../../packages/player/src/web/stage-fade.ts";
 import "./style.css";
+
+type PlayEntry = Entry | "chapter";
 
 const startup = new AbortController();
 const cancelStartup = (): void => startup.abort();
@@ -84,6 +89,8 @@ async function main(): Promise<void> {
   const galleryBody = element("gallery-body", HTMLElement);
   const sounds = element("sounds", HTMLDialogElement);
   const soundsBody = element("sounds-body", HTMLElement);
+  const chapters = element("chapters", HTMLDialogElement);
+  const chaptersBody = element("chapters-body", HTMLElement);
   const dialogue = element("dialogue-history", HTMLDialogElement);
   const dialogueBody = element("dialogue-history-body", HTMLElement);
   const aftergame = element("aftergame", HTMLDialogElement);
@@ -183,7 +190,8 @@ async function main(): Promise<void> {
   let stageFade: StageFade | null = null;
   let endingVisualKey = "";
   let generation = 0;
-  let mode: Entry = "main";
+  let mode: PlayEntry = "main";
+  let activeChapter: ChapterTrial | null = null;
   let entryRequest = 0;
   let entryPreparation: number | null = null;
   let rollbackKey = "";
@@ -193,6 +201,7 @@ async function main(): Promise<void> {
   let galleryPanel: GalleryPanel | null = null;
   let galleryRequest = 0;
   let soundPanel: SoundLibraryPanel | null = null;
+  let chapterPanel: ChapterPanel | null = null;
   let dialoguePanel: DialoguePanel | null = null;
   const endingPanel = new EndingPanel(stage, {
     leaveLabel: "返回试播标题",
@@ -291,6 +300,7 @@ async function main(): Promise<void> {
   }, () => {
     if (exiting) { host.cancelExit(); return true; }
     if (dialogue.open) { closeDialogue(); return true; }
+    if (chapters.open) { closeChapters(); return true; }
     if (sounds.open) { closeSounds(); return true; }
     if (gallery.open) { closeGallery(); return true; }
     if (aftergame.open) { closeAftergame(); return true; }
@@ -350,6 +360,7 @@ async function main(): Promise<void> {
     owner?.send({ type: "pause", reason: "exit", paused: true });
     owner?.send({ type: "pause", reason: "operation", paused: false });
     closeDialogue();
+    closeChapters();
     closeSounds();
     closeGallery();
     closeAftergame();
@@ -424,7 +435,7 @@ async function main(): Promise<void> {
   input = new PlayerInput({
     stage, scene, choices, controls: playControls, hide, keyboardScopes: [document],
     session: () => session,
-    enabled: () => !closed && !exiting && !dialogue.open && !gallery.open && !sounds.open && !aftergame.open && !host.state().paused,
+    enabled: () => !closed && !exiting && !dialogue.open && !gallery.open && !chapters.open && !sounds.open && !aftergame.open && !host.state().paused,
     unlockAudio, menu: toggleMenu, history: openDialogue,
   });
   const displayDriver = nativeFullscreenDriver();
@@ -482,8 +493,8 @@ async function main(): Promise<void> {
       ? JSON.stringify([view.token.session, terminal]) : "";
     if (visualKey && visualKey !== endingVisualKey) stageFade?.begin();
     endingVisualKey = visualKey;
-    const record: EndingRecordState = mode === "timed"
-      ? { kind: "preview", message: "限时样例已到达此结局；本次游玩不写全局解锁或通关次数，不代表真实路线验收。" }
+    const record: EndingRecordState = mode !== "main"
+      ? { kind: "preview", message: `${mode === "chapter" ? "章节试阅" : "限时样例"}已到达此结局；本次游玩不写全局解锁或通关次数，不代表真实路线验收。` }
       : terminalRecord?.generation === generation && terminalRecord.presentation === presentation
         && terminal?.kind === "ending" && terminalRecord.endingId === terminal.endingId
       ? terminalRecord.state : { kind: "unknown" };
@@ -499,8 +510,9 @@ async function main(): Promise<void> {
 
   function refreshSaveControls(view?: SessionView): void {
     const blocked = closed || exiting || entryPreparation === entryRequest;
-    save.disabled = blocked || saving || !(view ?? session?.view())?.canCheckpoint;
-    save.textContent = `保存${entryName(mode)}到 ${JSON.stringify(slots.slot(mode))}`;
+    save.disabled = blocked || saving || mode === "chapter" || !(view ?? session?.view())?.canCheckpoint;
+    save.textContent = mode === "chapter" ? "章节试阅不写入存档槽位"
+      : `保存${entryName(mode)}到 ${JSON.stringify(slots.slot(mode))}`;
     for (const entry of ["main", "timed"] as const) {
       const suffix = entry === "main" ? "main" : "timed";
       const inspect = element(`inspect-${suffix}`, HTMLButtonElement);
@@ -535,8 +547,9 @@ async function main(): Promise<void> {
     rollbackWarning.textContent = view.rollbackIssue ?? "";
   }
 
-  async function start(selected: Entry, restore?: { voice: RestoreVoice; slotId: string }): Promise<void> {
+  async function start(selected: Entry | ChapterEntry, restore?: { voice: RestoreVoice; slotId: string }): Promise<void> {
     if (exiting || closed) return;
+    const entry: PlayEntry = typeof selected === "string" ? selected : "chapter";
     const request = ++entryRequest;
     entryPreparation = request;
     const restoreVoice = restore?.voice;
@@ -546,12 +559,16 @@ async function main(): Promise<void> {
     refreshEnding();
     let adopted = false;
     try {
-      if (selected === "main") await flushRecords();
-      const records = selected === "main" ? await playerRecords.read() : null;
-      const player = records ? playerProjection(records) : { "周目": 1, "结局数": 0 };
-      const source = sources[selected];
+      let source: typeof content;
+      let trial: ChapterTrial | null = null;
+      if (typeof selected === "string") source = sources[selected];
+      else { trial = prepareChapterTrial(content, selected.nodeId); source = trial.content; }
+      if (entry === "main") await flushRecords();
+      const records = entry === "main" ? await playerRecords.read() : null;
+      const player = records ? playerProjection(records) : trial?.player ?? { "周目": 1, "结局数": 0 };
       let checkpoint: GameCheckpoint | null = null;
       if (restore) {
+        if (typeof selected !== "string") throw new Error("章节试阅只从声明初值开始，不读取游戏槽位");
         const saved = await saves[selected].read(restore.slotId);
         if (!saved) throw new Error(`这个入口的 ${JSON.stringify(restore.slotId)} 槽位尚未保存进度`);
         checkpoint = prepareGameRestore(source, saved.checkpoint, player).checkpoint;
@@ -561,6 +578,7 @@ async function main(): Promise<void> {
       // All content, slot and global data are prepared before leaving live play.
       stageFade?.begin();
       closeDialogue();
+      closeChapters();
       closeSounds();
       input?.reset();
       owner?.dispose();
@@ -569,10 +587,11 @@ async function main(): Promise<void> {
       endingVisualKey = "";
       endingPanel.clear();
       adopted = true;
-      mode = selected;
-      audioPreferences.setMode(selected);
-      readingPreferences.setMode(selected);
-      buttonPreferences.setMode(selected);
+      mode = entry;
+      activeChapter = trial;
+      audioPreferences.setMode(entry);
+      readingPreferences.setMode(entry);
+      buttonPreferences.setMode(entry);
       rollbackKey = "";
       menu.hidden = title.hidden = problem.hidden = true;
       choicePanel.clear();
@@ -584,18 +603,20 @@ async function main(): Promise<void> {
         reads.main.clear();
         for (const nodeId of records.readNodeIds) reads.main.add(nodeId);
       }
-      note.textContent = selected === "timed"
+      note.textContent = trial
+        ? `章节试阅：${trial.entry.title}（${trial.entry.nodeId}）。声明初值 ${JSON.stringify(trial.initialVariables)}，周目 1、结局数 0；不是此前真实路线进度，不写玩家存档、全局成果或正常偏好。`
+        : entry === "timed"
         ? "限时选择样例：声明初值 0、周目 1、结局数 0；不是第五话真实路线，不写全局成果。"
         : "第一话试播：进度与全局成果分别保存，重新开始和读档保留已解锁的结局与 CG。";
       let sequence = 0;
-      const reading = readingPreferences.values(selected);
+      const reading = readingPreferences.values(entry);
       const newPresentation = new WebPresentation(scene, source, resources, host.state().audioAllowed,
-        audioPreferences.values(selected), reading, whaleSkin.artwork, { stage, choices });
+        audioPreferences.values(entry), reading, whaleSkin.artwork, { stage, choices });
       presentation = newPresentation;
       const sessionGeneration = ++generation;
       session = createGameSession({
         content: source, player, generation: sessionGeneration,
-        clock, presentation, seen: reads[selected], onChange: show,
+        clock, presentation, seen: entry === "chapter" ? new Set<string>() : reads[entry], onChange: show,
         rollback: { capacity: 500 },
         autoWaitMultiplier: reading.autoWaitMultiplier,
         initialPauses: [
@@ -604,7 +625,7 @@ async function main(): Promise<void> {
         ],
         ...(checkpoint && restoreVoice ? { resume: { checkpoint, voice: restoreVoice } } : {}),
         onFacts: facts => {
-          if (selected === "main" && facts.length) {
+          if (entry === "main" && facts.length) {
             const id = `${delivery}:${++sequence}`;
             const ending = facts.find(fact => fact.type === "ending");
             if (ending?.type === "ending") {
@@ -620,14 +641,17 @@ async function main(): Promise<void> {
       });
       show(session.view());
       unlockAudio();
-      if (checkpoint && restore) saveMessage.textContent = `已从${entryName(selected)} ${JSON.stringify(restore.slotId)} 恢复剧情位置和剩余有效时间；全局记录沿用当前已保存成果。`;
+      if (checkpoint && restore && entry !== "chapter") saveMessage.textContent = `已从${entryName(entry)} ${JSON.stringify(restore.slotId)} 恢复剧情位置和剩余有效时间；全局记录沿用当前已保存成果。`;
     } catch (error: unknown) {
       if (closed || request !== entryRequest) return;
       if (adopted) {
         stageFade?.cancel();
+        session?.dispose();
         presentation?.dispose();
         choicePanel.clear();
         session = null;
+        activeChapter = null;
+        mode = "main";
         terminalRecord = null;
         endingVisualKey = "";
         endingPanel.clear();
@@ -668,10 +692,13 @@ async function main(): Promise<void> {
     entryRequest++;
     input?.reset();
     closeDialogue();
+    closeChapters();
     closeSounds();
     closeAftergame();
     session?.dispose();
     session = null;
+    activeChapter = null;
+    mode = "main";
     terminalRecord = null;
     endingVisualKey = "";
     endingPanel.clear();
@@ -704,7 +731,9 @@ async function main(): Promise<void> {
 
   function resetSaveMessage(): void {
     storageMessageEpoch++;
-    saveMessage.textContent = "场面就绪并完整显示文字后，可保存到当前入口选中的命名槽位。两个入口分别保留，选择名称本身不写入。";
+    saveMessage.textContent = mode === "chapter"
+      ? "章节试阅仅在本次会话中运行，不保存到玩家槽位；如需继续已有路线，请明确读取第一话进度。"
+      : "场面就绪并完整显示文字后，可保存到当前入口选中的命名槽位。两个入口分别保留，选择名称本身不写入。";
     saveDetails.hidden = true;
     saveDetails.textContent = "";
   }
@@ -723,8 +752,8 @@ async function main(): Promise<void> {
 
   async function saveCheckpoint(): Promise<void> {
     const owner = session;
-    if (exiting || closed || entryPreparation === entryRequest || !owner || saving || !owner.view().canCheckpoint) return;
     const entry = mode;
+    if (entry === "chapter" || exiting || closed || entryPreparation === entryRequest || !owner || saving || !owner.view().canCheckpoint) return;
     const slotId = slots.slot(entry);
     const savedPresentation = presentation;
     const request = ++storageMessageEpoch;
@@ -895,6 +924,7 @@ async function main(): Promise<void> {
     if (closed || exiting || session || sounds.open) return;
     entryRequest++;
     stageFade?.cancel();
+    closeChapters();
     closeGallery();
     closeAftergame();
     try {
@@ -923,6 +953,30 @@ async function main(): Promise<void> {
     soundPanel?.close();
     sounds.close();
     if (wasOpen && !session) host.releaseAudio();
+  }
+
+  function openChapters(): void {
+    if (closed || exiting || session || chapters.open) return;
+    entryRequest++;
+    stageFade?.cancel();
+    closeSounds();
+    closeGallery();
+    closeAftergame();
+    try {
+      chapterPanel ??= new ChapterPanel(chaptersBody, content, entry => {
+        if (!closed && !exiting && !session && chapters.open) void start(entry);
+      });
+      chapterPanel.open();
+      chapters.showModal();
+    } catch (error: unknown) {
+      closeChapters();
+      status.textContent = `章节目录未能打开：${error instanceof Error ? error.message : "本地章节读取失败"}。仍可从第一话开始。`;
+    }
+  }
+
+  function closeChapters(): void {
+    chapterPanel?.close();
+    chapters.close();
   }
 
   function closeAftergame(): void {
@@ -990,7 +1044,10 @@ async function main(): Promise<void> {
 
   element("start", HTMLButtonElement).onclick = () => { void start("main"); };
   element("timed", HTMLButtonElement).onclick = () => { void start("timed"); };
-  element("restart", HTMLButtonElement).onclick = () => { void start(mode); };
+  element("restart", HTMLButtonElement).onclick = () => {
+    if (mode === "chapter") { if (activeChapter) void start(activeChapter.entry); }
+    else void start(mode);
+  };
   element("home", HTMLButtonElement).onclick = home;
   element("close-menu", HTMLButtonElement).onclick = toggleMenu;
   element("retry", HTMLButtonElement).onclick = () => session?.send({ type: "retry" });
@@ -1014,6 +1071,10 @@ async function main(): Promise<void> {
   sounds.addEventListener("close", () => {
     if (!sounds.open && soundPanel?.isOpen) closeSounds();
   });
+  element("chapters-open", HTMLButtonElement).onclick = openChapters;
+  element("chapters-close", HTMLButtonElement).onclick = closeChapters;
+  chapters.addEventListener("cancel", event => { event.preventDefault(); closeChapters(); });
+  chapters.addEventListener("close", () => { if (!chapters.open) chapterPanel?.close(); });
   element("aftergame-open", HTMLButtonElement).onclick = () => { void openAftergame(); };
   element("aftergame-close", HTMLButtonElement).onclick = closeAftergame;
   aftergame.addEventListener("cancel", event => { event.preventDefault(); closeAftergame(); });
@@ -1046,6 +1107,7 @@ async function main(): Promise<void> {
     terminalRecord = null;
     endingPanel.dispose();
     closeDialogue();
+    closeChapters();
     closeSounds();
     closeGallery();
     closeAftergame();
@@ -1072,8 +1134,8 @@ async function main(): Promise<void> {
   import.meta.hot?.dispose(dispose);
   await Promise.all([audioPreferences.load(), readingPreferences.load(), buttonPreferences.load()]);
   if (closed || startup.signal.aborted) return;
-  note.textContent = "本地内容已载入。可以从第一话开始，或选择明确标注的限时样例。";
-  for (const id of ["start", "timed", "gallery-open", "sounds-open", "aftergame-open"]) element(id, HTMLButtonElement).disabled = false;
+  note.textContent = "本地内容已载入。可以从第一话开始，或选择明确标注初始条件的章节试阅与限时样例。";
+  for (const id of ["start", "timed", "gallery-open", "sounds-open", "chapters-open", "aftergame-open"]) element(id, HTMLButtonElement).disabled = false;
   refreshSaveControls();
   slots.refresh();
 }

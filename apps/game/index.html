@@ -12,7 +12,7 @@
         <div><p class="eyebrow">海风与布丁 · 重构试播</p><h1>一套剧情核心，一段新的试航。</h1></div>
         <span class="badge">重构开发入口 · 非正式发行版</span>
       </header>
-      <p class="scope-note">本页使用独立试播记录。存读档及回退恢复当局进度；周目、结局和 CG 解锁单独保留。通关后入口仅准备只读上下文，联网发送尚未接入。</p>
+      <p class="scope-note">本页使用独立试播记录。存读档及回退恢复当局进度；周目、结局和 CG 解锁单独保留。章节试阅使用明确初值，不写入玩家存档或成果。通关后入口仅准备只读上下文，联网发送尚未接入。</p>
       <div class="player-surface" id="player-surface">
       <section class="stage" id="stage" aria-label="剧情画面" tabindex="0">
         <div class="scene" id="scene"></div>
@@ -24,8 +24,9 @@
             <button id="gallery-open" type="button" disabled>鉴赏</button>
             <button id="aftergame-open" type="button" disabled>通关后玩法</button>
             <button id="sounds-open" type="button" disabled>声音收藏</button>
+            <button id="chapters-open" type="button" disabled>章节试阅</button>
             <button id="timed" type="button" disabled>限时选择样例</button>
-            <small>样例使用声明初值<br />不代表真实路线进度</small>
+            <small>试阅与样例使用声明初值<br />不代表真实路线进度</small>
           </div>
           </div>
         </div>
@@ -104,7 +105,7 @@
         <p id="rollback-warning" role="status" hidden></p>
       </section>
       <section class="record-status" aria-label="全局玩家记录">
-        <p id="record-message" role="status" aria-live="polite">第一话的全局记录与进度分开保存，限时样例不写入全局成果。</p>
+        <p id="record-message" role="status" aria-live="polite">第一话的全局记录与进度分开保存，章节试阅与限时样例不写入全局成果。</p>
         <button type="button" id="retry-records" hidden>重试保存全局记录</button>
       </section>
       <dialog id="gallery" class="gallery-dialog" aria-labelledby="gallery-heading">
@@ -121,6 +122,10 @@
         <header><h2 id="sounds-heading">声音收藏</h2><button type="button" id="sounds-close" autofocus>返回主页</button></header>
         <p>重听一段旋律，或留在熟悉的海风里。试听只读取本地声音，不改变剧情进度与收藏成果。</p>
         <div id="sounds-body"></div>
+      </dialog>
+      <dialog id="chapters" class="gallery-dialog chapter-dialog" aria-labelledby="chapters-heading">
+        <header><h2 id="chapters-heading">章节试阅</h2><button type="button" id="chapters-close" autofocus>返回主页</button></header>
+        <div id="chapters-body"></div>
       </dialog>
       <dialog id="aftergame" class="gallery-dialog aftergame-dialog" aria-labelledby="aftergame-heading">
         <header><h2 id="aftergame-heading">通关后玩法 · 入口准备</h2><button type="button" id="aftergame-close" autofocus>返回主页</button></header>

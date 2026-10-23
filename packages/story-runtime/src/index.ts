@@ -84,20 +84,26 @@ class Runtime implements StoryRuntime {
   #state: State;
   #step = 1;
 
-  constructor(content: StoryContent, player: PlayerProjection) {
+  constructor(content: StoryContent, initial: { player: PlayerProjection } | { snapshot: unknown }) {
     // Content is typed output of the checked compiler, not unchecked JSON.
     this.#content = structuredClone(content);
     this.#nodes = new Map(this.#content.nodes.map(node => [node.id, node]));
     if (this.#nodes.size !== this.#content.nodes.length) {
       reject("NODE_ID", "重复节点 ID", { file: content.source.file, field: "nodes" });
     }
-    const initial = Object.fromEntries(content.variables.map(variable => [variable.name, variable.initial]));
-    this.#state = {
-      nodeId: content.entryNodeId, variables: initial, player: projection(player, at(SNAPSHOT_SOURCE, "player")),
-      phase: "presenting", terminal: null,
-    };
-    const node = this.node(this.#state);
-    this.apply(node.enter, this.#state);
+    if ("snapshot" in initial) {
+      // Inspection starts from already effective state, without entering even
+      // the story's opening node or producing any facts.
+      this.#state = this.parseSnapshot(initial.snapshot);
+    } else {
+      this.#state = {
+        nodeId: content.entryNodeId,
+        variables: Object.fromEntries(content.variables.map(variable => [variable.name, variable.initial])),
+        player: projection(initial.player, at(SNAPSHOT_SOURCE, "player")), phase: "presenting", terminal: null,
+      };
+      const node = this.node(this.#state);
+      this.apply(node.enter, this.#state);
+    }
     // Eagerly evaluate the view before exposing a partially usable instance.
     this.view();
   }
@@ -324,7 +330,7 @@ export function createStoryRuntime(
   content: StoryContent,
   player: PlayerProjection,
 ): { runtime: StoryRuntime; initial: RuntimeResult } {
-  const runtime: StoryRuntime = new Runtime(content, player);
+  const runtime: StoryRuntime = new Runtime(content, { player });
   const view = runtime.view();
   return {
     runtime,
@@ -333,4 +339,12 @@ export function createStoryRuntime(
       presentation: { mode: "enter", value: structuredClone(view.presentation) }, error: null,
     },
   };
+}
+
+/** Validate and describe an external snapshot without touching a live runtime. */
+export function inspectStorySnapshot(
+  content: StoryContent, input: unknown,
+): { snapshot: StorySnapshot; view: RuntimeView } {
+  const runtime = new Runtime(content, { snapshot: input });
+  return { snapshot: runtime.snapshot(), view: runtime.view() };
 }

@@ -3,6 +3,7 @@ import type { Clock } from "../clock.ts";
 import { ActiveTimer } from "../clock.ts";
 import type { MediaProblem, PresentationContext } from "../session.ts";
 import type { ResourceAccess } from "./resources.ts";
+import type { PlaybackCheckpoint, TrackCheckpoint, VoiceCheckpoint } from "../checkpoint.ts";
 import { setting, volume } from "./resources.ts";
 
 interface Track {
@@ -11,12 +12,14 @@ interface Track {
   fade: ActiveTimer | null;
   alive: boolean;
   failed: boolean;
+  playRejected: boolean;
   ended: (() => void) | null;
 }
 
 export interface EntryAudio {
   cancel(): void;
   skip(): void;
+  capture(): PlaybackCheckpoint;
 }
 
 /** Persistent tracks belong to the mixer; voice/effects belong to an entry. */
@@ -41,7 +44,7 @@ export class AudioMixer {
     element.loop = loop;
     element.preload = "auto";
     element.volume = volume(gain);
-    const track: Track = { id, element, fade: null, alive: true, failed: false, ended };
+    const track: Track = { id, element, fade: null, alive: true, failed: false, playRejected: false, ended };
     this.#tracks.add(track);
     element.addEventListener("ended", () => {
       if (!track.alive) return;
@@ -64,10 +67,12 @@ export class AudioMixer {
   private play(track: Track): void {
     if (!track.alive || track.failed || this.#paused || this.#disposed) return;
     void track.element.play().then(() => {
+      track.playRejected = false;
       // play() may resolve after entry cancellation or a background pause.
       if (!track.alive || this.#paused || this.#disposed) track.element.pause();
     }).catch((error: unknown) => {
       if (!track.alive || this.#paused || this.#disposed) return;
+      track.playRejected = true;
       this.#report({
         code: "AUDIO_PLAY",
         message: `声音暂未播放：${track.id}。可点击“启用声音”重试。${error instanceof Error ? ` ${error.name}` : ""}`,
@@ -207,6 +212,31 @@ export class AudioMixer {
     // Delay timers are entry-owned, but they must also respond to global pause.
     this.#entryDelays = delays;
     return {
+      capture: () => {
+        if (closed || context.signal.aborted || this.#disposed) throw new Error("旧声音呈现不能生成检查点");
+        const position = (assetId: string, track: Track | null | undefined): TrackCheckpoint => {
+          const seconds = track?.element.currentTime;
+          return {
+            assetId,
+            positionMs: track?.id === assetId && track.alive && !track.failed && !track.playRejected
+              && typeof seconds === "number" && Number.isFinite(seconds) && seconds >= 0 ? seconds * 1000 : null,
+          };
+        };
+        const scene = presentation.scene;
+        const voiceId = presentation.performance.voiceId;
+        let capturedVoice: VoiceCheckpoint | null = null;
+        if (voiceId) {
+          const state: VoiceCheckpoint["state"] = skipped ? "skipped"
+            : voice?.failed || voice?.playRejected ? "unavailable"
+            : voice?.alive ? "active" : "finished";
+          capturedVoice = { ...position(voiceId, voice), state };
+        }
+        return {
+          music: scene.music.kind === "play" ? position(scene.music.assetId, this.#music) : null,
+          ambience: scene.ambience.map(track => position(track.assetId, this.#ambience.get(track.assetId))),
+          voice: capturedVoice,
+        };
+      },
       cancel: () => {
         if (closed) return;
         closed = true;

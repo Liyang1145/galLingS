@@ -3,6 +3,7 @@ import type { RuntimeCommand, RuntimeResult, RuntimeView, StoryFact, StoryRuntim
 import type { Diagnostic, PlayerProjection, StoryContent } from "../../story-model/src/model.ts";
 import { ActiveTimer } from "./clock.ts";
 import type { Clock } from "./clock.ts";
+import type { GameCheckpoint, PlaybackCheckpoint } from "./checkpoint.ts";
 
 export interface SessionToken {
   session: number;
@@ -32,6 +33,7 @@ export interface Playback {
   finishText(): void;
   setPaused(paused: boolean): void;
   setSkipping(skipping: boolean): void;
+  capture(): PlaybackCheckpoint;
   cancel(): void;
 }
 
@@ -49,6 +51,7 @@ export interface SessionView {
   choiceRemainingMs: number | null;
   problem: MediaProblem | null;
   disposed: boolean;
+  canCheckpoint: boolean;
 }
 
 export type SessionIntent =
@@ -75,11 +78,17 @@ interface Options {
 export interface GameSession {
   view(): SessionView;
   send(intent: SessionIntent): void;
+  captureCheckpoint(token: SessionToken): Promise<CheckpointResult>;
   dispose(): void;
 }
 
+export type CheckpointResult =
+  | { accepted: true; checkpoint: GameCheckpoint }
+  | { accepted: false; code: string; message: string };
+
 type Event =
   | { type: "intent"; intent: SessionIntent }
+  | { type: "checkpoint"; token: SessionToken; resolve(result: CheckpointResult): void }
   | { type: "scene"; epoch: number }
   | { type: "text"; epoch: number }
   | { type: "voice"; epoch: number }
@@ -102,6 +111,7 @@ class Session implements GameSession {
   #skipping = false;
   #voiceDone = true;
   #autoDue = false;
+  #advanceWaitVoice = false;
   #problem: MediaProblem | null = null;
   #retryChoiceRemaining: number | null = null;
 
@@ -131,6 +141,7 @@ class Session implements GameSession {
       story: this.#runtime.view(), token: this.token(), paused: [...this.#pauses],
       auto: this.#auto, skipping: this.#skipping, choiceRemainingMs: this.#choice?.remaining() ?? null,
       problem: this.#problem ? { ...this.#problem } : null, disposed: this.#disposed,
+      canCheckpoint: this.canCheckpoint(),
     };
   }
 
@@ -140,6 +151,43 @@ class Session implements GameSession {
 
   send(intent: SessionIntent): void {
     this.enqueue({ type: "intent", intent });
+  }
+
+  captureCheckpoint(token: SessionToken): Promise<CheckpointResult> {
+    if (this.#disposed) return Promise.resolve({ accepted: false, code: "DISPOSED", message: "会话已离开，不能保存" });
+    return new Promise(resolve => this.enqueue({ type: "checkpoint", token: { ...token }, resolve }));
+  }
+
+  private canCheckpoint(): boolean {
+    const view = this.#runtime.view();
+    return !this.#disposed && !!this.#playback && !this.#pauses.has("loading") && !this.#pauses.has("error")
+      && (view.phase === "ready" || view.phase === "choosing");
+  }
+
+  private capture(event: Extract<Event, { type: "checkpoint" }>): void {
+    if (!this.current(event.token)) {
+      event.resolve({ accepted: false, code: "STALE_CHECKPOINT", message: "保存请求对应的步骤已改变，请重新保存" });
+      return;
+    }
+    if (!this.canCheckpoint()) {
+      event.resolve({ accepted: false, code: "CHECKPOINT_NOT_READY", message: "请在场面就绪、文字完整显示后保存；本切片暂不保存结局或媒体错误状态" });
+      return;
+    }
+    // Everything is sampled synchronously within this one queued operation.
+    // Storage receives only detached values; it never reads a later live state.
+    const story = this.#runtime.snapshot();
+    const playback = this.#playback!.capture();
+    const checkpoint: GameCheckpoint = {
+      format: "haifeng.game-checkpoint/1", story,
+      presentation: { kind: "target-scene", playback },
+      timing: {
+        choiceRemainingMs: this.#choice?.remaining() ?? null,
+        advance: this.#advance ? { remainingMs: this.#advance.remaining(), waitVoice: this.#advanceWaitVoice } : null,
+        waitingForVoice: this.#autoDue, voiceDone: this.#voiceDone,
+      },
+      controls: { auto: this.#auto, skipping: this.#skipping },
+    };
+    event.resolve({ accepted: true, checkpoint: structuredClone(checkpoint) });
   }
 
   private enqueue(event: Event): void {
@@ -156,6 +204,10 @@ class Session implements GameSession {
         const event = this.#queue.shift()!;
         try { this.handle(event); }
         catch (error: unknown) {
+          if (event.type === "checkpoint") {
+            event.resolve({ accepted: false, code: "CHECKPOINT_CAPTURE", message: error instanceof Error ? error.message : "检查点捕获失败" });
+            continue;
+          }
           this.#problem = { code: "SESSION", message: error instanceof Error ? error.message : "会话操作失败", blocking: true };
           this.#pauses.add("error");
           this.pauseWork();
@@ -169,14 +221,17 @@ class Session implements GameSession {
 
   private handle(event: Event): void {
     if (event.type === "intent") return this.intent(event.intent);
+    if (event.type === "checkpoint") return this.capture(event);
     if (event.type === "timer") {
       if (!this.current(event.token) || this.#pauses.size) return;
       if (event.purpose === "choice") {
         this.#choice = null;
         this.command({ type: "timeout", step: event.token.step });
-      } else if (event.waitVoice && this.#auto && !this.#skipping && !this.#voiceDone) {
-        this.#autoDue = true;
-      } else this.command({ type: "advance", step: event.token.step });
+      } else {
+        this.#advance = null;
+        if (event.waitVoice && this.#auto && !this.#skipping && !this.#voiceDone) this.#autoDue = true;
+        else this.command({ type: "advance", step: event.token.step });
+      }
       return;
     }
     if (event.epoch !== this.#epoch) return;
@@ -336,6 +391,7 @@ class Session implements GameSession {
 
   private scheduleAdvance(milliseconds: number, waitVoice = false): void {
     this.#advance?.cancel();
+    this.#advanceWaitVoice = waitVoice;
     const token = this.token();
     this.#advance = new ActiveTimer(this.#options.clock, milliseconds,
       () => this.enqueue({ type: "timer", token, purpose: "advance", waitVoice }));
@@ -359,6 +415,9 @@ class Session implements GameSession {
     if (this.#disposed) return;
     this.#disposed = true;
     this.#epoch++;
+    for (const event of this.#queue) {
+      if (event.type === "checkpoint") event.resolve({ accepted: false, code: "DISPOSED", message: "保存前会话已离开" });
+    }
     this.#queue.length = 0;
     this.stopTimers();
     this.#controller.abort();

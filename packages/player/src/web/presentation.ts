@@ -318,6 +318,10 @@ export class WebPresentation implements PresentationAdapter {
       this.#veil.style.opacity = "0";
     };
     const playback: Playback = {
+      capture: () => {
+        if (!alive() || !ready || !textDone || !audio) throw new Error("场面或完整文字尚未就绪，不能捕获检查点");
+        return audio.capture();
+      },
       finishText: () => { finishRequested = true; fullText(); },
       setPaused: value => {
         paused = value;

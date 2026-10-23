@@ -22,7 +22,9 @@
 | `海风与布丁/player.js`、`index.html` | 保留的完整旧播放器与入口；不是新核心依赖 |
 | `docs/rebuild/baseline/` | 固定基线与身份映射；不是另一份作者源 |
 | `packages/story-model/src/` | 新内容模型、受限表达式及外部数据读取约束 |
+| `packages/story-runtime/src/` | 新版唯一纯剧情核心；通过公开接口推进和恢复逻辑状态 |
 | `tools/content/` | 旧导出转换与内容产物生成；命令见实施入口，不是游戏解释器 |
+| `tools/dev/story.ts` | 独立终端逻辑试播，不是正式游戏或编辑器 |
 | `desktop/`、`mobile/android/` | 既有宿主；尚未切换新前端 |
 | `A素材库/`、旧工具和归档 | 制作输入或历史资产；有真实消费者，不按目录名清理 |
 

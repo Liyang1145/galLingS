@@ -5,6 +5,7 @@
   "engines": { "node": ">=24.15.0 <25" },
   "scripts": {
     "content:build": "node tools/content/build.ts",
+    "story:dev": "node tools/dev/story.ts",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {

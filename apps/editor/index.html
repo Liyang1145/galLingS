@@ -16,7 +16,10 @@
           <label id="discard-label" hidden><input id="discard" type="checkbox" /> 本次允许丢弃当前草稿并重新读取</label>
           <button id="export" disabled>导出修改草稿</button>
           <button id="save" disabled>保存到作者源</button>
+          <button id="undo-draft" disabled>撤销草稿操作</button>
+          <button id="redo-draft" disabled>重做草稿操作</button>
         </div>
+        <p id="draft-history" class="help"></p>
         <p id="message" role="status" aria-live="polite">尚未读取作者源。</p>
         <p id="source-info" class="help"></p>
         <label class="draft-file">导入修改草稿

@@ -1,11 +1,13 @@
 import { token } from "virtual:haifeng-editor";
-import type { AuthorTextEdit, AuthorTextPatch } from "../../../packages/story-model/src/author.ts";
+import type { AuthorTextPatch } from "../../../packages/story-model/src/author.ts";
+import { AuthorDraftHistory } from "../../../packages/story-model/src/author-history.ts";
 import { readAuthorDocument } from "./document.ts";
 import type { AuthorDocument } from "./document.ts";
 import { EditorPreview } from "./preview.ts";
 import { AuthorDraftImporter } from "./imports.ts";
 import type { DraftImportSnapshot } from "./imports.ts";
 import { authorTextKey } from "../../../packages/story-model/src/author-draft.ts";
+import type { AuthorDraftBase } from "../../../packages/story-model/src/author-draft.ts";
 import { downloadDraft } from "./download.ts";
 import { AuthorReferences } from "./references.ts";
 import "../../game/src/style.css";
@@ -19,6 +21,7 @@ function element<T extends HTMLElement>(id: string, kind: { new(...args: never[]
 const button = (id: string): HTMLButtonElement => element(id, HTMLButtonElement);
 const el = {
   reload: button("reload"), save: button("save"), export: button("export"),
+  undo: button("undo-draft"), redo: button("redo-draft"), history: element("draft-history", HTMLElement),
   importFile: element("import-file", HTMLInputElement), importPanel: element("import-panel", HTMLElement),
   discard: element("discard", HTMLInputElement), discardLabel: element("discard-label", HTMLElement),
   message: element("message", HTMLElement), source: element("source-info", HTMLElement),
@@ -39,7 +42,7 @@ const preview = new EditorPreview({
   fullscreenStatus: element("fullscreen-status", HTMLElement),
 });
 const events = new AbortController();
-const drafts = new Map<string, AuthorTextEdit>();
+const drafts = new AuthorDraftHistory({ maxEntries: 100, maxUnits: 2_000_000 });
 let baseline: AuthorDocument | null = null;
 let selected = "";
 let revision = 0;
@@ -62,7 +65,17 @@ function textFor(nodeId: string, field: "speaker" | "text", original: string): s
 }
 function patch(): AuthorTextPatch {
   if (!baseline) throw new Error("尚未读取作者源");
-  return { format: "haifeng.author-text-patch/1", sourceSha256: baseline.sourceSha256, edits: [...drafts.values()] };
+  return drafts.patch();
+}
+function draftBase(source: AuthorDocument): AuthorDraftBase {
+  return {
+    sourceSha256: source.sourceSha256,
+    nodes: source.content.nodes.map(node => ({
+      id: node.id,
+      speaker: source.editable[node.id]?.includes("speaker") ? node.presentation.speaker : null,
+      text: source.editable[node.id]?.includes("text") ? node.presentation.text : null,
+    })),
+  };
 }
 
 function controls(): void {
@@ -75,9 +88,16 @@ function controls(): void {
   el.discardLabel.hidden = drafts.size === 0;
   el.save.disabled = !baseline || !drafts.size || operation !== null || reviewing;
   el.export.disabled = !baseline || !drafts.size;
+  const history = drafts.status;
+  el.undo.disabled = !baseline || locked || history.undo === null;
+  el.redo.disabled = !baseline || locked || history.redo === null;
+  el.undo.title = history.undo ? `撤销：${history.undo}` : "没有可撤销的草稿操作";
+  el.redo.title = history.redo ? `重做：${history.redo}` : "没有可重做的草稿操作";
+  el.history.textContent = `草稿历史：可撤销 ${history.undoSteps} 步，可重做 ${history.redoSteps} 步。`
+    + (history.limited ? "较早历史或超过容量的操作已不再保留；当前草稿仍可导出或保存。" : "连续编辑同一字段合为一步；仅在本页保留，保存或重读成功后清空。");
   el.previewStart.disabled = !baseline || operation !== null || reviewing;
   el.previewSelected.disabled = !node || operation !== null || reviewing;
-  el.reset.disabled = !node || locked;
+  el.reset.disabled = !node || locked || (!drafts.has(key(selected, "speaker")) && !drafts.has(key(selected, "text")));
   el.speaker.disabled = !node || locked || !fields.includes("speaker");
   el.text.disabled = !node || locked || !fields.includes("text");
   el.nodes.disabled = locked;
@@ -87,6 +107,7 @@ function controls(): void {
 }
 
 function nodeForm(): void {
+  drafts.closeGroup();
   const node = selectedNode();
   if (!node) {
     el.nodeTitle.textContent = "请选择节点";
@@ -136,22 +157,40 @@ function change(field: "speaker" | "text"): void {
   const node = selectedNode();
   if (!node || operation === "load" || operation === "save") return;
   if (!baseline?.editable[node.id]?.includes(field)) return;
-  const editKey = key(node.id, field);
-  const before = node.presentation[field];
   const after = el[field].value;
-  if (before === after) drafts.delete(editKey);
-  else if (!drafts.has(editKey) && drafts.size >= 1000) {
-    el[field].value = before;
-    message("本片单次最多修改 1000 个字段；请先保存或导出已有草稿。", true);
-    return;
-  } else drafts.set(editKey, { nodeId: node.id, field, before, after });
+  try {
+    const result = drafts.update(node.id, field, after, key(node.id, field));
+    if (!result.changed) return;
+    draftChanged();
+    if (result.overflow) message("草稿已更新；本次操作超过历史容量，未保留撤销记录，可导出当前草稿。");
+  } catch (error: unknown) {
+    el[field].value = textFor(node.id, field, node.presentation[field]);
+    message(error instanceof Error ? error.message : "草稿修改未采用", true);
+  }
+}
+
+function draftChanged(cancelImport = true, refreshForm = false): void {
   revision++;
-  importer?.invalidate();
+  if (cancelImport) importer?.invalidate();
   references?.invalidate();
   el.discard.checked = false;
   preview.draftChanged();
   list();
-  controls();
+  if (refreshForm) nodeForm();
+  else controls();
+}
+
+function historyStep(direction: "undo" | "redo"): void {
+  if (disposed || !baseline || operation === "load" || operation === "save") return;
+  try {
+    const step = direction === "undo" ? drafts.undo() : drafts.redo();
+    if (!step) return;
+    if (step.nodeId !== null) selected = step.nodeId;
+    draftChanged(true, true);
+    message(`已${direction === "undo" ? "撤销" : "重做"}：${step.label}。仅更新本页草稿，请重新预览当前修改。`);
+  } catch (error: unknown) {
+    message(error instanceof Error ? error.message : "草稿历史未采用", true);
+  }
 }
 
 async function request(route: string, input: unknown, signal: AbortSignal): Promise<AuthorDocument> {
@@ -181,6 +220,7 @@ async function perform(kind: "load" | "preview" | "save", selectedEntry: string 
   }
   if (kind !== "load" && !baseline) return;
   if (kind === "save" && !drafts.size) return;
+  drafts.closeGroup();
   operation = kind;
   const epoch = ++requestEpoch;
   const draftRevision = revision;
@@ -202,8 +242,8 @@ async function perform(kind: "load" | "preview" | "save", selectedEntry: string 
       message("已采用本次草稿修订进行预览，未写入作者源。");
     } else {
       preview.stop();
+      drafts.reset(draftBase(result));
       baseline = result;
-      drafts.clear();
       revision++;
       references?.invalidate();
       el.discard.checked = false;
@@ -234,6 +274,8 @@ async function perform(kind: "load" | "preview" | "save", selectedEntry: string 
 const { signal } = events;
 el.reload.addEventListener("click", () => { void perform("load"); }, { signal });
 el.save.addEventListener("click", () => { void perform("save"); }, { signal });
+el.undo.addEventListener("click", () => historyStep("undo"), { signal });
+el.redo.addEventListener("click", () => historyStep("redo"), { signal });
 el.previewStart.addEventListener("click", () => { void perform("preview"); }, { signal });
 el.previewSelected.addEventListener("click", () => { if (selected) void perform("preview", selected); }, { signal });
 button("stop").addEventListener("click", () => {
@@ -247,22 +289,29 @@ button("stop").addEventListener("click", () => {
 }, { signal });
 el.search.addEventListener("input", list, { signal });
 el.nodes.addEventListener("change", () => { selected = el.nodes.value; list(); nodeForm(); }, { signal });
-el.speaker.addEventListener("input", () => change("speaker"), { signal });
-el.text.addEventListener("input", () => change("text"), { signal });
+for (const field of ["speaker", "text"] as const) {
+  const input = el[field];
+  input.addEventListener("focus", () => drafts.closeGroup(), { signal });
+  input.addEventListener("blur", () => drafts.closeGroup(), { signal });
+  input.addEventListener("input", event => {
+    const separate = event instanceof InputEvent
+      && ["historyUndo", "historyRedo", "insertFromPaste", "insertFromDrop", "deleteByCut"].includes(event.inputType);
+    if (separate) drafts.closeGroup();
+    change(field);
+    if (separate) drafts.closeGroup();
+  }, { signal });
+}
 el.reset.addEventListener("click", () => {
   if (!selected || operation === "load" || operation === "save") return;
-  drafts.delete(key(selected, "speaker"));
-  drafts.delete(key(selected, "text"));
-  revision++;
-  importer?.invalidate();
-  references?.invalidate();
-  el.discard.checked = false;
-  preview.draftChanged();
-  list();
-  nodeForm();
+  const result = drafts.removeNode(selected);
+  if (!result.changed) return;
+  draftChanged(true, true);
+  message(result.overflow ? "已还原本节点草稿；本次操作超过历史容量，未保留撤销记录。"
+    : "已还原本节点草稿，可用“撤销草稿操作”找回；作者文件未改动。");
 }, { signal });
 el.export.addEventListener("click", () => {
   if (!baseline || !drafts.size) return;
+  drafts.closeGroup();
   downloadDraft(patch());
   message("已请求下载修改草稿；可在本入口重新导入并逐项比较。这是带原摘要的修改记录，不是另一份作者源。");
 }, { signal });
@@ -277,6 +326,7 @@ function dispose(): void {
   preview.dispose();
   importer?.dispose();
   references?.dispose();
+  drafts.clear();
   events.abort();
 }
 window.addEventListener("pagehide", dispose, { once: true, signal });
@@ -289,31 +339,16 @@ importer = new AuthorDraftImporter({
   capture() {
     const source = baseline;
     if (!source || operation) return null;
-    return {
-      revision, patch: patch(),
-      base: {
-        sourceSha256: source.sourceSha256,
-        nodes: source.content.nodes.map(node => ({
-          id: node.id,
-          speaker: source.editable[node.id]?.includes("speaker") ? node.presentation.speaker : null,
-          text: source.editable[node.id]?.includes("text") ? node.presentation.text : null,
-        })),
-      },
-    };
+    drafts.closeGroup();
+    return { revision, patch: patch(), base: draftBase(source) };
   },
   apply(snapshot, result) {
     if (!importCurrent(snapshot) || result.sourceSha256 !== baseline?.sourceSha256) {
       throw new Error("当前源或草稿已改变，请重新导入比较。");
     }
-    drafts.clear();
-    for (const edit of result.edits) drafts.set(key(edit.nodeId, edit.field), { ...edit });
-    revision++;
-    references?.invalidate();
-    el.discard.checked = false;
-    preview.draftChanged();
-    list();
-    nodeForm();
-    message("导入结果已采用到当前作者源上的草稿；请预览，确认后再点击“保存到作者源”。");
+    const change = drafts.replace(result);
+    if (change.changed) draftChanged(false, true);
+    message(`导入结果已采用到当前作者源上的草稿${change.overflow ? "，本次操作超过历史容量，未保留撤销记录" : ""}；请预览，确认后再点击“保存到作者源”。`);
   },
 });
 references = new AuthorReferences({

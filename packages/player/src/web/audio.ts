@@ -8,6 +8,7 @@ import { setting, volume } from "./resources.ts";
 import { authorAudioVolumes, readAudioVolumes } from "../preferences.ts";
 import type { AudioChannel, AudioVolumes } from "../preferences.ts";
 import type { InteractionFeedback, UiSounds } from "../ui-sounds.ts";
+import { readLibraryEntry } from "../audio-library.ts";
 
 interface Track {
   id: string;
@@ -30,11 +31,12 @@ export interface EntryAudio {
   capture(): PlaybackCheckpoint;
 }
 
-export interface VoicePreviewObserver {
+export interface AudioPreviewObserver {
   started(): void;
   ended(): void;
   problem(problem: MediaProblem): void;
 }
+export type VoicePreviewObserver = AudioPreviewObserver;
 
 /** Persistent tracks belong to the mixer; voice/effects belong to an entry. */
 export class AudioMixer {
@@ -167,10 +169,24 @@ export class AudioMixer {
 
   /** Use on a separate mixer owned by a read-only viewer, never on story entry audio. */
   previewVoice(id: string, observer: VoicePreviewObserver): () => void {
-    if (this.#disposed) throw new Error("试听声音实例已离开");
     if (this.#resources.get(id).kind !== "vo") throw new Error(`历史语音需要登记的配音资源：${id}`);
+    return this.preview(id, "voice", 1, observer);
+  }
+
+  /** Author-tagged collection, on its own mixer. Category/gain are re-read, never trusted from UI data. */
+  previewLibrary(id: string, observer: AudioPreviewObserver): () => void {
+    const entry = readLibraryEntry(this.#resources.get(id), { file: "audio-library", field: `assets.${id}` });
+    if (!entry) throw new Error(`资源没有作者声音收藏分类：${id}`);
+    return this.preview(id, entry.channel, entry.gain, observer);
+  }
+
+  private preview(id: string, channel: AudioChannel, gain: number, observer: AudioPreviewObserver): () => void {
+    if (this.#disposed) throw new Error("试听声音实例已离开");
+    if (this.#tracks.size || this.#music || this.#ambience.size || this.#entryDelays) {
+      throw new Error("试听需要已清空的独立声音实例；请先停止上一段");
+    }
     if (this.#paused || !this.#audioAllowed) throw new Error("当前声音未获准或正在暂停；恢复后请再次点击试听");
-    if (this.#volumes.voice === 0) throw new Error("当前语音音量为 0；调高后请再次点击试听");
+    if (this.#volumes[channel] === 0) throw new Error("当前试听轨道音量为 0；调高后请再次点击试听");
     let track: Track | null = null;
     let closed = false;
     const report = (problem: MediaProblem): void => { if (!closed) observer.problem(problem); };
@@ -187,12 +203,12 @@ export class AudioMixer {
     // The owner cancels an old preview before starting another, so stale failures cannot
     // acquire the new reporter. No scene, timer, checkpoint or story callback is involved.
     this.#report = report;
-    try { track = this.track(id, "voice", 1, finish); }
+    try { track = this.track(id, channel, gain, finish); }
     catch (error: unknown) { closed = true; releaseReporter(); throw error; }
     const current = track;
     current.element.addEventListener("playing", () => {
       if (!closed && current.alive && !this.#disposed) observer.started();
-    }, { once: true });
+    });
     return () => {
       if (closed) return;
       closed = true;

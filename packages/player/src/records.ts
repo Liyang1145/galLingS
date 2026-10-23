@@ -1,4 +1,5 @@
 import type { PlayerProjection, Resource, StoryContent } from "../../story-model/src/model.ts";
+import type { CommittedClears } from "../../story-model/src/completion.ts";
 import { array, at, knownFields, numeric, object, reject, string } from "../../story-model/src/read.ts";
 import type { StoryFact } from "../../story-runtime/src/index.ts";
 import type { RecordScope, StoredSlot } from "./saves.ts";
@@ -117,6 +118,16 @@ export class PlayerRepository {
 
   async read(): Promise<PlayerRecords> {
     return this.readStored(await this.#store.read(this.#key));
+  }
+
+  /** A minimal, freshly read view; pending writer batches and progress never enter it. */
+  async readCompletions(): Promise<CommittedClears> {
+    const records = await this.read();
+    return {
+      format: "haifeng.committed-clears/1", workId: records.workId, scope: { ...records.scope },
+      unlockedEndingIds: records.endings.map(ending => ending.id),
+      clears: records.clears.map(clear => ({ ...clear })),
+    };
   }
 
   async record(batch: PlayerFactBatch): Promise<PlayerRecords> {

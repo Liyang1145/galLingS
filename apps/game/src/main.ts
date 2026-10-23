@@ -14,6 +14,7 @@ import { renderGallery } from "./gallery.ts";
 import { renderDialogue } from "./dialogue.ts";
 import { connectHost } from "./platform/host.ts";
 import { PendingWrites } from "../../../packages/player/src/writes.ts";
+import type { AftergamePanel } from "./aftergame.ts";
 import "./style.css";
 
 const startup = new AbortController();
@@ -58,6 +59,8 @@ async function main(): Promise<void> {
   const galleryBody = element("gallery-body", HTMLElement);
   const dialogue = element("dialogue-history", HTMLDialogElement);
   const dialogueBody = element("dialogue-history-body", HTMLElement);
+  const aftergame = element("aftergame", HTMLDialogElement);
+  const aftergameBody = element("aftergame-body", HTMLElement);
   const dialogueOpen = element("dialogue-history-open", HTMLButtonElement);
   const voiceChoice = element("restore-voice", HTMLSelectElement);
   const rollbackTarget = element("rollback-target", HTMLSelectElement);
@@ -118,6 +121,7 @@ async function main(): Promise<void> {
   let rollbackKey = "";
   let rollingBack = false;
   let exiting = false;
+  let aftergamePanel: AftergamePanel | null = null;
   const hostStatus = document.createElement("p");
   note.insertAdjacentElement("afterend", hostStatus);
   const host = connectHost(state => {
@@ -131,6 +135,7 @@ async function main(): Promise<void> {
     if (exiting) { host.cancelExit(); return true; }
     if (dialogue.open) { closeDialogue(); return true; }
     if (gallery.open) { gallery.close(); return true; }
+    if (aftergame.open) { closeAftergame(); return true; }
     if (session) { toggleMenu(); return true; }
     return false;
   }, prepareExit);
@@ -145,6 +150,7 @@ async function main(): Promise<void> {
     owner?.send({ type: "pause", reason: "operation", paused: false });
     closeDialogue();
     gallery.close();
+    closeAftergame();
     const wasInert = page.inert;
     page.inert = true;
     exitRetry.hidden = true;
@@ -303,6 +309,7 @@ async function main(): Promise<void> {
       menu.hidden = title.hidden = problem.hidden = true;
       choices.replaceChildren();
       gallery.close();
+      closeAftergame();
       resetSaveMessage();
       resetRollback();
       if (records) {
@@ -372,6 +379,7 @@ async function main(): Promise<void> {
     if (exiting || closed) return;
     entryRequest++;
     closeDialogue();
+    closeAftergame();
     session?.dispose();
     session = null;
     presentation = null;
@@ -530,6 +538,42 @@ async function main(): Promise<void> {
     }
   }
 
+  function closeAftergame(): void {
+    aftergamePanel?.close();
+    aftergame.close();
+    aftergameBody.replaceChildren();
+  }
+
+  async function openAftergame(): Promise<void> {
+    if (exiting || closed || session || aftergame.open) return;
+    const request = ++entryRequest;
+    const active = (): boolean => !closed && !exiting && !session && aftergame.open && request === entryRequest;
+    try {
+      aftergameBody.textContent = "正在提交已有全局事实并准备通关记录……";
+      aftergame.showModal();
+      await recordWriter.flush();
+      if (!active()) return;
+      // No chat module, backend or provider is required for mainline startup.
+      const { createAftergamePanel } = await import("./aftergame.ts");
+      if (!active()) return;
+      aftergamePanel ??= createAftergamePanel(aftergameBody, content, {
+        kind: "development", id: "normal-entry",
+      }, { read: () => playerRecords.readCompletions() });
+      await aftergamePanel.open();
+    } catch (error: unknown) {
+      if (active()) {
+        aftergameBody.replaceChildren();
+        const text = document.createElement("p");
+        text.textContent = `通关后入口未能准备：${error instanceof Error ? error.message : "本地模块或记录读取失败"}。主线可继续，已有成果未被修改。`;
+        const retry = document.createElement("button");
+        retry.type = "button";
+        retry.textContent = "重新准备入口";
+        retry.onclick = () => { closeAftergame(); void openAftergame(); };
+        aftergameBody.append(text, retry);
+      }
+    }
+  }
+
   function openDialogue(): void {
     if (exiting || closed) return;
     const owner = session;
@@ -572,6 +616,10 @@ async function main(): Promise<void> {
   element("load-timed", HTMLButtonElement).onclick = () => load("timed");
   element("gallery-open", HTMLButtonElement).onclick = () => { void openGallery(); };
   element("gallery-close", HTMLButtonElement).onclick = () => gallery.close();
+  element("aftergame-open", HTMLButtonElement).onclick = () => { void openAftergame(); };
+  element("aftergame-close", HTMLButtonElement).onclick = closeAftergame;
+  aftergame.addEventListener("cancel", event => { event.preventDefault(); closeAftergame(); });
+  aftergame.addEventListener("close", () => { if (!aftergame.open) aftergamePanel?.close(); });
   dialogueOpen.onclick = openDialogue;
   element("dialogue-history-close", HTMLButtonElement).onclick = closeDialogue;
   dialogue.addEventListener("cancel", event => { event.preventDefault(); closeDialogue(); });
@@ -591,7 +639,7 @@ async function main(): Promise<void> {
   });
   const visibility = (): void => session?.send({ type: "pause", reason: "background", paused: document.hidden });
   const keyboard = (event: KeyboardEvent): void => {
-    if (exiting || dialogue.open || gallery.open) return;
+    if (exiting || dialogue.open || gallery.open || aftergame.open) return;
     if (!session || event.repeat || event.altKey || event.metaKey || event.ctrlKey) return;
     if (event.target instanceof Element && event.target.closest("button, input, textarea, select, summary")) return;
     if ([" ", "Enter", "ArrowRight"].includes(event.key)) { event.preventDefault(); advance(); }
@@ -605,6 +653,8 @@ async function main(): Promise<void> {
     entryRequest++;
     storageMessageEpoch++;
     closeDialogue();
+    closeAftergame();
+    aftergamePanel?.dispose();
     session?.dispose();
     host.releaseAudio();
     host.dispose();
@@ -615,7 +665,7 @@ async function main(): Promise<void> {
   window.addEventListener("pagehide", dispose, { once: true });
   import.meta.hot?.dispose(dispose);
   note.textContent = "本地内容已载入。可以从第一话开始，或选择明确标注的限时样例。";
-  for (const id of ["start", "timed", "gallery-open"]) element(id, HTMLButtonElement).disabled = false;
+  for (const id of ["start", "timed", "gallery-open", "aftergame-open"]) element(id, HTMLButtonElement).disabled = false;
 }
 
 void main().catch((error: unknown) => {

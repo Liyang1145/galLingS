@@ -25,6 +25,7 @@
 | `packages/story-model/src/` | 内容模型、受限表达式、规范化数据/随包清单读取及共享修订算法 |
 | `packages/story-runtime/src/` | 新版唯一纯剧情核心；通过公开接口推进和恢复逻辑状态 |
 | `packages/player/src/` | 共享会话、取消及有效计时；表现适配器不得自行计算剧情分支 |
+| `packages/chat/src/` | 通关后玩法的只读上下文；只接已提交事实读取，不接主线可写对象或预览记录 |
 | [检查点与存储](docs/rebuild/saves.md) | M4 检查点封装、独立校验、浏览器隔离槽位及进度恢复 |
 | [全局玩家记录](docs/rebuild/records.md) | 周目、结局与 CG 解锁的独立记录、幂等事实及主页鉴赏；进度槽位不得回滚全局成果 |
 | [对白回看](docs/rebuild/history.md) | 当前会话内的有界文字记录与只读查看；不是进度回退或全局已读集合 |
@@ -34,6 +35,7 @@
 | [Android 集成宿主](docs/rebuild/android.md) | 独立 Gradle 模块、输入准备、前后台与返回键；未构建或真机验收 |
 | [正常退出协调](docs/rebuild/exits.md) | 等待已有手动写入和全局事实、失败重试/取消、原生关闭票据；不是自动存档或强杀恢复 |
 | [独立对白编辑](docs/rebuild/editor.md) | 单一作者源的有限字符串写回、摘要冲突保护和共享隔离预览；未运行，未决定最终编辑器或切换源 |
+| [通关后入口准备](docs/rebuild/chat.md) | 已提交通关事实的只读上下文与显式选择；正式聊天解锁、供应和发送尚未接入 |
 | `packages/story-model/src/host.ts` | 原生/页面桥协议标识；随包 `/2` 明确登记，不与剧情修订或存档版本混用 |
 | `packages/player/src/web/` | 浏览器画面和音频实现；不得反向依赖游戏页面或编辑器 |
 | `apps/game/` | 独立试播、存读档/鉴赏及随包启动装配，不是已切换的正式发行入口 |

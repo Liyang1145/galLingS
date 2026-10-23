@@ -12,7 +12,7 @@
         <div><p class="eyebrow">海风与布丁 · 重构试播</p><h1>一套剧情核心，一段新的试航。</h1></div>
         <span class="badge">重构开发入口 · 非正式发行版</span>
       </header>
-      <p class="scope-note">本页使用独立试播记录。存读档及回退恢复当局进度；周目、结局和 CG 解锁单独保留。联网聊天尚未接入。</p>
+      <p class="scope-note">本页使用独立试播记录。存读档及回退恢复当局进度；周目、结局和 CG 解锁单独保留。通关后入口仅准备只读上下文，联网发送尚未接入。</p>
       <section class="stage" id="stage" aria-label="剧情画面">
         <div class="scene" id="scene"></div>
         <div class="title-screen" id="title">
@@ -20,6 +20,7 @@
           <div class="title-menu">
             <button id="start" type="button" disabled>从第一话开始</button>
             <button id="gallery-open" type="button" disabled>鉴赏</button>
+            <button id="aftergame-open" type="button" disabled>通关后玩法</button>
             <button id="timed" type="button" disabled>限时选择样例</button>
             <small>样例使用声明初值<br />不代表真实路线进度</small>
           </div>
@@ -101,6 +102,10 @@
         <header><h2 id="dialogue-history-heading">对白回看</h2><button type="button" id="dialogue-history-close" autofocus>返回剧情</button></header>
         <p>仅保留本次游玩最近 300 条对白和选择。查看期间暂停播放和倒计时，关闭后继续原来的进度。重新开始或读档后从当前位置重新记录。</p>
         <div id="dialogue-history-body"></div>
+      </dialog>
+      <dialog id="aftergame" class="gallery-dialog aftergame-dialog" aria-labelledby="aftergame-heading">
+        <header><h2 id="aftergame-heading">通关后玩法 · 入口准备</h2><button type="button" id="aftergame-close" autofocus>返回主页</button></header>
+        <div id="aftergame-body"></div>
       </dialog>
       <details class="debug"><summary>当前剧情状态（仅试播）</summary><pre id="debug">尚未开始</pre></details>
       <p class="help">点击画面 / 空格 / → 继续，Esc 打开菜单。自动不会代答；快进遇到未读或选择会停下。</p>

@@ -70,6 +70,12 @@ select { font: inherit; color: inherit; background: #183443; border: 1px solid #
 .dialogue-history li { padding: 16px 0; border-top: 1px solid #39515c; }
 .dialogue-history b { color: #b7e2f0; }
 .dialogue-history p { white-space: pre-wrap; line-height: 1.8; margin: 8px 0 0; overflow-wrap: anywhere; }
+.aftergame-dialog label { display: grid; gap: 10px; margin: 18px 0; }
+.aftergame-dialog select { width: 100%; }
+.aftergame-dialog p { line-height: 1.7; overflow-wrap: anywhere; }
+.aftergame-context { border-top: 1px solid #39515c; margin-top: 18px; }
+.aftergame-context:empty { border: 0; }
+.aftergame-context pre { max-height: 320px; padding: 12px; overflow: auto; background: #061119; font-size: .8rem; }
 .scene.paused *, .scene.paused .world { animation-play-state: paused !important; transition-duration: 0ms; }
 .world[data-mood="gray"] { filter: grayscale(1) contrast(.9); }
 .world[data-mood="dark"] { filter: brightness(.6); }

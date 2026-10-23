@@ -6,10 +6,12 @@
   "scripts": {
     "content:build": "node tools/content/build.ts",
     "story:dev": "node tools/dev/story.ts",
-    "typecheck": "tsc --noEmit"
+    "game:dev": "vite --config tools/dev/vite.config.ts",
+    "typecheck": "tsc --noEmit && tsc --noEmit -p tsconfig.web.json"
   },
   "devDependencies": {
     "@types/node": "24.10.0",
-    "typescript": "5.9.3"
+    "typescript": "5.9.3",
+    "vite": "7.3.1"
   }
 }

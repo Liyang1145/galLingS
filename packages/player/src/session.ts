@@ -22,6 +22,7 @@ export interface PresentationContext {
   mode: "enter" | "retry";
   paused: boolean;
   skipping: boolean;
+  sceneReady(): void;
   textReady(): void;
   voiceEnded(): void;
   problem(problem: MediaProblem): void;
@@ -79,6 +80,7 @@ export interface GameSession {
 
 type Event =
   | { type: "intent"; intent: SessionIntent }
+  | { type: "scene"; epoch: number }
   | { type: "text"; epoch: number }
   | { type: "voice"; epoch: number }
   | { type: "media"; epoch: number; problem: MediaProblem }
@@ -178,7 +180,12 @@ class Session implements GameSession {
       return;
     }
     if (event.epoch !== this.#epoch) return;
-    if (event.type === "media") {
+    if (event.type === "scene") {
+      this.#pauses.delete("loading");
+      this.pauseWork();
+      this.publish();
+    } else if (event.type === "media") {
+      if (this.#problem?.blocking && !event.problem.blocking) return;
       this.#problem = event.problem;
       if (event.problem.blocking) {
         this.#pauses.add("error");
@@ -206,6 +213,7 @@ class Session implements GameSession {
       return;
     }
     if (intent.type === "retry") {
+      if (this.#runtime.view().phase === "ended") return;
       this.#pauses.delete("error");
       this.#problem = null;
       this.render("retry");
@@ -281,12 +289,14 @@ class Session implements GameSession {
     this.#playback?.cancel();
     this.#controller = new AbortController();
     this.#epoch++;
+    this.#pauses.add("loading");
     this.#voiceDone = !this.#runtime.view().presentation.performance.voiceId || this.#skipping;
     this.#autoDue = false;
     const epoch = this.#epoch;
     this.#playback = this.#options.presentation.present(this.#runtime.view(), {
       signal: this.#controller.signal, clock: this.#options.clock, mode,
       paused: this.#pauses.size > 0, skipping: this.#skipping,
+      sceneReady: () => this.enqueue({ type: "scene", epoch }),
       textReady: () => this.enqueue({ type: "text", epoch }),
       voiceEnded: () => this.enqueue({ type: "voice", epoch }),
       problem: problem => this.enqueue({ type: "media", epoch, problem }),

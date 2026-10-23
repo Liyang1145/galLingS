@@ -25,8 +25,11 @@
 | `packages/story-model/src/` | 新内容模型、受限表达式及外部数据读取约束 |
 | `packages/story-runtime/src/` | 新版唯一纯剧情核心；通过公开接口推进和恢复逻辑状态 |
 | `packages/player/src/` | 共享会话、取消及有效计时；表现适配器不得自行计算剧情分支 |
+| `packages/player/src/web/` | 浏览器画面和音频实现；不得反向依赖游戏页面或编辑器 |
+| `apps/game/` | 当前为 M3 独立试播页，不是已切换的正式发行入口 |
 | `tools/content/` | 旧导出转换与内容产物生成；命令见实施入口，不是游戏解释器 |
 | `tools/dev/story.ts` | 独立终端逻辑试播，不是正式游戏或编辑器 |
+| `tools/dev/vite.config.ts` | 本地可视试播装配；开发资源 URL 不得当作正式发行清单 |
 | `desktop/`、`mobile/android/` | 既有宿主；尚未切换新前端 |
 | `A素材库/`、旧工具和归档 | 制作输入或历史资产；有真实消费者，不按目录名清理 |
 

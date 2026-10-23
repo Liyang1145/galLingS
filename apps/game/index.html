@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <title>海风与布丁 · M3 独立试播</title>
+  </head>
+  <body>
+    <main id="app">
+      <header class="page-heading">
+        <div><p class="eyebrow">海风与布丁 · 重构试播</p><h1>一套剧情核心，一段新的试航。</h1></div>
+        <span class="badge">M3 开发入口 · 非正式发行版</span>
+      </header>
+      <p class="scope-note">旧游戏入口未改。本页不写正式记录，没有持久存档、回退或联网聊天。</p>
+      <section class="stage" id="stage" aria-label="剧情画面">
+        <div class="scene" id="scene"></div>
+        <div class="title-screen" id="title">
+          <div class="title-copy"><p>海风与布丁</p><span>主线运行切片</span></div>
+          <div class="title-menu">
+            <button id="start" type="button">从第一话开始</button>
+            <button id="timed" type="button">限时选择样例</button>
+            <small>样例使用声明初值<br />不代表真实路线进度</small>
+          </div>
+        </div>
+        <div class="choices" id="choices"></div>
+        <section class="menu-overlay" id="menu" aria-label="暂停菜单" hidden>
+          <div><h2>先在海风里歇一会。</h2><p>菜单和后台会暂停文字、声音及有效计时。</p>
+            <button type="button" id="close-menu">继续</button>
+            <button type="button" id="restart">重新开始此入口</button>
+            <button type="button" id="home">返回试播标题</button>
+          </div>
+        </section>
+      </section>
+      <nav class="controls" aria-label="试播控制">
+        <button type="button" id="next" disabled>继续 / 补全文字</button>
+        <button type="button" id="auto" disabled aria-pressed="false">自动</button>
+        <button type="button" id="skip" disabled aria-pressed="false">快进已读</button>
+        <button type="button" id="pause" disabled>菜单 / 暂停</button>
+        <button type="button" id="audio" disabled>启用声音</button>
+      </nav>
+      <p class="preview-note" id="preview-note">正在载入本地作品；所有资源就绪后可开始。首次启动可能需要等待资源校验。</p>
+      <p id="status" role="status" aria-live="polite">准备试播</p>
+      <section class="problem" id="problem" role="alert" hidden>
+        <p id="problem-message"></p><button id="retry" type="button">重建当前场面</button>
+      </section>
+      <details class="debug"><summary>当前剧情状态（仅试播）</summary><pre id="debug">尚未开始</pre></details>
+      <p class="help">点击画面 / 空格 / → 继续，Esc 打开菜单。自动不会代答；快进遇到未读或选择会停下。</p>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

@@ -41,6 +41,22 @@ function grade(metadata: JsonObject): string {
   return `brightness(${brightness}) saturate(${saturation}) ${warmth > 0 ? `sepia(${warmth * 0.16})` : `hue-rotate(${warmth * 6}deg)`}`;
 }
 
+function backgroundShot(metadata: JsonObject, resourceId: string): { origin: string; scale: number; duration: number } | null {
+  const shot = record(metadata.shot);
+  const focus = shot.focus;
+  if (focus === undefined || focus === null) return null;
+  if (!Array.isArray(focus) || focus.length !== 2
+    || typeof focus[0] !== "number" || !Number.isFinite(focus[0])
+    || typeof focus[1] !== "number" || !Number.isFinite(focus[1])) {
+    throw new Error(`背景 ${resourceId} 的 shot.focus 必须是两个有限数值`);
+  }
+  return {
+    origin: `${focus[0] * 100}% ${focus[1] * 100}%`,
+    scale: Math.max(1, Math.min(1.04, setting(shot, "scale", 1))),
+    duration: Math.max(600, Math.min(3000, setting(shot, "ms", 2200))),
+  };
+}
+
 function loadImage(url: string, signal: AbortSignal): Promise<void> {
   return new Promise((resolve, reject) => {
     const image = new Image();
@@ -69,6 +85,7 @@ export class WebPresentation implements PresentationAdapter {
   readonly #world: HTMLDivElement;
   readonly #background: HTMLImageElement;
   readonly #actorsLayer: HTMLDivElement;
+  readonly #transitionVeil: HTMLDivElement;
   readonly #veil: HTMLDivElement;
   readonly #dialogue: HTMLDivElement;
   readonly #name: HTMLElement;
@@ -80,6 +97,7 @@ export class WebPresentation implements PresentationAdapter {
   #reading: ReadingPreferences;
   readonly #actors = new Map<string, Actor>();
   #backgroundId: string | null = null;
+  #hasScene = false;
   #disposed = false;
   #ended = false;
   #active: Playback | null = null;
@@ -98,6 +116,8 @@ export class WebPresentation implements PresentationAdapter {
     this.#background.draggable = false;
     this.#actorsLayer = document.createElement("div");
     this.#actorsLayer.className = "actors";
+    this.#transitionVeil = document.createElement("div");
+    this.#transitionVeil.className = "veil transition-veil";
     this.#veil = document.createElement("div");
     this.#veil.className = "veil";
     this.#dialogue = document.createElement("div");
@@ -107,7 +127,7 @@ export class WebPresentation implements PresentationAdapter {
     this.#text = document.createElement("p");
     this.#text.className = "dialogue-text";
     this.#dialogue.append(this.#name, this.#text);
-    this.#world.append(this.#background, this.#actorsLayer, this.#veil);
+    this.#world.append(this.#background, this.#actorsLayer, this.#transitionVeil, this.#veil);
     root.replaceChildren(this.#world, this.#dialogue);
     this.#audio = new AudioMixer(resources, content.source.settings, audioAllowed, volumes, readUiSounds(content));
     this.#reading = reading === undefined ? authorReadingPreferences(content.source.settings) : readReadingPreferences(reading);
@@ -170,9 +190,10 @@ export class WebPresentation implements PresentationAdapter {
       timer.setPaused(paused);
       return timer;
     };
-    const animate = (element: Element, frames: Keyframe[], duration: number, finish?: () => void): void => {
+    const animate = (element: Element, frames: Keyframe[], duration: number, finish?: () => void,
+      easing = "ease-out"): void => {
       if (skipping || window.matchMedia("(prefers-reduced-motion: reduce)").matches) { finish?.(); return; }
-      const animation = element.animate(frames, { duration, easing: "ease-out", fill: "none" });
+      const animation = element.animate(frames, { duration, easing, fill: "none" });
       animations.add(animation);
       if (paused) animation.pause();
       void animation.finished.then(() => {
@@ -237,8 +258,10 @@ export class WebPresentation implements PresentationAdapter {
       if (!alive()) return;
       const scene = view.presentation.scene;
       const changedBackground = this.#backgroundId !== scene.background;
-      const first = this.#backgroundId === null;
+      const first = !this.#hasScene;
       const metadata = scene.background ? this.#resources.get(scene.background).metadata : {};
+      const shot = scene.background ? backgroundShot(metadata, scene.background) : null;
+      const camera = !skipping && !window.matchMedia("(prefers-reduced-motion: reduce)").matches ? shot : null;
       if (scene.background) {
         this.#background.src = this.#resources.url(scene.background);
         this.#background.hidden = false;
@@ -247,16 +270,11 @@ export class WebPresentation implements PresentationAdapter {
         this.#background.hidden = true;
       }
       this.#backgroundId = scene.background;
-      const shot = record(metadata.shot);
-      const focus = shot.focus;
       const viewMetadata = record(metadata.view);
-      const focusPosition = Array.isArray(focus) && typeof focus[0] === "number" && typeof focus[1] === "number"
-        ? `${focus[0] * 100}% ${focus[1] * 100}%` : "50% 50%";
-      this.#background.style.objectPosition = typeof viewMetadata.position === "string" ? viewMetadata.position : focusPosition;
+      this.#background.style.objectPosition = typeof viewMetadata.position === "string" ? viewMetadata.position : "50% 50%";
       this.#background.style.objectFit = viewMetadata.size === "contain" ? "contain" : "cover";
-      this.#background.style.transformOrigin = focusPosition;
-      const zoom = Math.max(1, Math.min(1.15, setting(shot, "scale", 1)));
-      this.#background.style.transform = zoom > 1 ? `scale(${zoom})` : "";
+      this.#background.style.transformOrigin = camera?.origin ?? "";
+      this.#background.style.scale = camera && camera.scale > 1 ? String(camera.scale) : "";
       this.#world.dataset.mood = scene.mood;
       const keep = new Set<string>();
       const actorActions = view.presentation.performance.actorActions;
@@ -328,14 +346,14 @@ export class WebPresentation implements PresentationAdapter {
         if (changedBackground && !first) {
           if (transition === "fade") animate(this.#background, [{ opacity: 0 }, { opacity: 1 }], 600);
           else if (transition === "black" || transition === "flash") {
-            this.#veil.style.background = transition === "black" ? "#000" : "#fff";
-            animate(this.#veil, [{ opacity: 1 }, { opacity: 0 }], 600);
+            this.#transitionVeil.style.background = transition === "black" ? "#000" : "#fff";
+            animate(this.#transitionVeil, [{ opacity: 1 }, { opacity: 0 }], 800);
           }
         }
         this.screenEffect(view.presentation.performance.screenEffect, animate);
-        if (zoom > 1 && changedBackground) {
-          animate(this.#background, [{ transform: "scale(1)" }, { transform: `scale(${zoom})` }],
-            Math.max(100, Math.min(10000, setting(shot, "ms", 2200))));
+        if (camera && camera.scale > 1 && (changedBackground || first)) {
+          animate(this.#background, [{ scale: "1" }, { scale: String(camera.scale) }],
+            camera.duration, undefined, "cubic-bezier(.2,.65,.3,1)");
         }
       }
       this.#name.textContent = view.presentation.speaker;
@@ -345,6 +363,7 @@ export class WebPresentation implements PresentationAdapter {
       this.#dialogue.hidden = !view.presentation.text && !view.choices.length;
       this.#text.textContent = "";
       audio = this.#audio.begin(view.presentation, context);
+      this.#hasScene = true;
       ready = true;
       context.sceneReady();
       typeText();
@@ -360,6 +379,7 @@ export class WebPresentation implements PresentationAdapter {
       animations.clear();
       transients.clear();
       audio?.cancel();
+      this.#transitionVeil.style.opacity = "0";
       this.#veil.style.opacity = "0";
     };
     const playback: Playback = {
@@ -383,6 +403,8 @@ export class WebPresentation implements PresentationAdapter {
         if (value) {
           finishRequested = true;
           audio?.skip();
+          this.#background.style.scale = "";
+          this.#background.style.transformOrigin = "";
           for (const animation of [...animations]) {
             try { animation.finish(); } catch { animation.cancel(); }
           }

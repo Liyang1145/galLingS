@@ -28,6 +28,7 @@
 | `bg`、`sprites`、`mood` | 当前作品每节点提供场面；以节点目标场景为基础，不按数组前项继承分支场景 |
 | 立绘 `uid/asset/x/y/h/flip/in/out/look/poseSwitch` | 保留实例身份、位置、外观和切姿态提示；不混入变量 |
 | `trans/fx/acts`、`motionCount` | 演出过程独立于稳定场景；尚未实现的演出显式列出，不丢字段假装成功 |
+| `stageShot()`、`view.position` 与 `#veil.go` | [共享镜头与转场](performance.md)沿用 1～1.04、600～3000ms 及原缓动，取景与缩放中心独立；转场与瞬时特效各用遮罩，黑场/白场转场为 800ms。无背景也算已有场面，恢复不重播；旧整屏快照淡出及跨对白连续镜头帧未迁移，未运行或验收 |
 | `wait/typeMul/holdMs` | 演出节等待、打字倍率和文字前停留由表现/会话处理，不由纯核心读时钟 |
 | `applyLineAudio` 的 `bgm` | 空值停止，不代表继承；同资源通常继续；`_musicFadeOutMs` 保留渐变意图 |
 | `ambience` | 完整环境声列表，空列表停止；`amb/amb2/ambv/amb2v` 旧字段保留来源，当前真实播放使用 `ambience` |

@@ -413,6 +413,19 @@ export class AudioMixer {
     this.syncChoiceTick();
   }
 
+  /** End story audio; retain only the capability to play a new terminal event. */
+  end(paused: boolean, report: (problem: MediaProblem) => void): void {
+    if (this.#disposed) return;
+    this.#choiceTickWanted = false;
+    for (const track of [...this.#tracks]) this.stop(track);
+    for (const timer of this.#entryDelays ?? []) timer.cancel();
+    this.#entryDelays = null;
+    this.#ambience.clear();
+    this.#music = null;
+    this.#paused = paused;
+    this.#report = report;
+  }
+
   dispose(): void {
     this.#disposed = true;
     this.#choiceTickWanted = false;

@@ -21,9 +21,20 @@ export interface PlayerFactBatch {
   facts: readonly StoryFact[];
 }
 
+/** Ephemeral outcome of this transaction, never persisted in achievements or saves. */
+export interface PlayerCommitReceipt {
+  batchId: string;
+  newEndingIds: string[];
+}
+
+export interface PlayerCommit {
+  records: PlayerRecords;
+  receipt: PlayerCommitReceipt;
+}
+
 export interface AtomicPlayerStore {
   read(key: string): Promise<StoredSlot>;
-  /** Read, validate, merge and write inside one transaction, including across tabs. */
+  /** Read, validate, merge and write inside one transaction; resolve only after commit, including across tabs. */
   update(key: string, change: (stored: StoredSlot) => PlayerRecords): Promise<PlayerRecords>;
 }
 
@@ -131,6 +142,10 @@ export class PlayerRepository {
   }
 
   async record(batch: PlayerFactBatch): Promise<PlayerRecords> {
+    return (await this.recordWithReceipt(batch)).records;
+  }
+
+  async recordWithReceipt(batch: PlayerFactBatch): Promise<PlayerCommit> {
     const batchId = id(batch.id, "batch.id");
     if (batchId.length > 480) reject("PLAYER_ID", "事实交付标识过长", SOURCE);
     if (!Number.isSafeInteger(batch.occurredAt) || batch.occurredAt < 0 || batch.occurredAt > 8_640_000_000_000_000) {
@@ -148,7 +163,9 @@ export class PlayerRepository {
       }
       if (fact.type !== "entered" && fact.type !== "ending" && fact.type !== "chosen") reject("PLAYER_FACT", "未知剧情事实", node.source);
     }
-    return this.#store.update(this.#key, stored => {
+    let newEndingIds: string[] = [];
+    const records = await this.#store.update(this.#key, stored => {
+      newEndingIds = [];
       const record = this.readStored(stored);
       const reads = new Set(record.readNodeIds);
       const unlockedCgs = new Set(record.cgIds);
@@ -163,7 +180,10 @@ export class PlayerRepository {
           const factId = `${batchId}:${index}`;
           const existing = clears.get(factId);
           if (existing && existing.endingId !== fact.endingId) reject("PLAYER_FACT", "同一交付标识对应了不同结局", SOURCE);
-          if (!endings.has(fact.endingId)) endings.set(fact.endingId, { id: fact.endingId, unlockedAt: batch.occurredAt });
+          if (!endings.has(fact.endingId)) {
+            endings.set(fact.endingId, { id: fact.endingId, unlockedAt: batch.occurredAt });
+            newEndingIds.push(fact.endingId);
+          }
           clears.set(factId, { factId, endingId: fact.endingId });
         }
       });
@@ -171,19 +191,22 @@ export class PlayerRepository {
         ...record, readNodeIds: [...reads], cgIds: [...unlockedCgs], endings: [...endings.values()], clears: [...clears.values()],
       };
     });
+    // The store resolves only after commit. Aborted transactions produce no receipt.
+    return { records, receipt: { batchId, newEndingIds: [...newEndingIds] } };
   }
 }
 
 /** Failed deliveries stay queued with their original IDs for explicit retry. */
 export class PlayerRecordWriter {
   readonly #repository: PlayerRepository;
-  readonly #committed: (records: PlayerRecords) => void;
+  readonly #committed: (records: PlayerRecords, receipt: PlayerCommitReceipt) => void;
   readonly #failed: (error: unknown) => void;
   readonly #pending: PlayerFactBatch[] = [];
   #running: Promise<void> | null = null;
   #failure: unknown = null;
 
-  constructor(repository: PlayerRepository, committed: (records: PlayerRecords) => void, failed: (error: unknown) => void) {
+  constructor(repository: PlayerRepository, committed: (records: PlayerRecords, receipt: PlayerCommitReceipt) => void,
+    failed: (error: unknown) => void) {
     this.#repository = repository;
     this.#committed = committed;
     this.#failed = failed;
@@ -212,9 +235,9 @@ export class PlayerRecordWriter {
 
   private async drain(): Promise<void> {
     while (this.#pending.length) {
-      const records = await this.#repository.record(this.#pending[0]!);
+      const { records, receipt } = await this.#repository.recordWithReceipt(this.#pending[0]!);
       this.#pending.shift();
-      this.#committed(records);
+      this.#committed(records, receipt);
     }
   }
 }

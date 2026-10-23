@@ -1,7 +1,7 @@
 import type { JsonObject, JsonValue, Sprite, StoryContent } from "../../../story-model/src/model.ts";
 import type { RuntimeView } from "../../../story-runtime/src/index.ts";
 import { ActiveTimer } from "../clock.ts";
-import type { Playback, PresentationAdapter, PresentationContext } from "../session.ts";
+import type { Playback, PresentationAdapter, PresentationContext, PresentationEndContext } from "../session.ts";
 import { AudioMixer } from "./audio.ts";
 import type { EntryAudio } from "./audio.ts";
 import type { ResourceAccess } from "./resources.ts";
@@ -78,6 +78,7 @@ export class WebPresentation implements PresentationAdapter {
   readonly #actors = new Map<string, Actor>();
   #backgroundId: string | null = null;
   #disposed = false;
+  #ended = false;
   #active: Playback | null = null;
 
   constructor(root: HTMLElement, content: StoryContent, resources: ResourceAccess, audioAllowed = true, volumes?: AudioVolumes,
@@ -112,7 +113,23 @@ export class WebPresentation implements PresentationAdapter {
   setAudioAllowed(allowed: boolean): void { this.#audio.setAudioAllowed(allowed); }
   setAudioVolumes(volumes: AudioVolumes): void { this.#audio.setVolumes(volumes); }
   interaction(feedback: InteractionFeedback): void {
-    if (!this.#disposed) this.#audio.interaction(feedback);
+    if (this.#disposed) return;
+    const ending = feedback.type === "cue" && feedback.cue === "endingNew";
+    if (this.#ended !== ending) return;
+    this.#audio.interaction(feedback);
+  }
+  end(context: PresentationEndContext): void {
+    if (this.#disposed || this.#ended) return;
+    this.#ended = true;
+    this.#active?.cancel();
+    this.#active = null;
+    this.#audio.end(context.paused, context.problem);
+    this.#root.classList.toggle("paused", context.paused);
+  }
+  setPaused(paused: boolean): void {
+    if (this.#disposed) return;
+    this.#audio.setPaused(paused);
+    this.#root.classList.toggle("paused", paused);
   }
   setReadingPreferences(input: ReadingPreferences): void {
     const values = readReadingPreferences(input);
@@ -124,6 +141,7 @@ export class WebPresentation implements PresentationAdapter {
 
   present(view: RuntimeView, context: PresentationContext): Playback {
     if (this.#disposed) throw new Error("表现实例已经离开");
+    if (this.#ended) throw new Error("已结束的表现不能重新呈现剧情");
     const textSpeedMs = this.#reading.textSpeedMs;
     this.#active?.cancel();
     let paused = context.paused;

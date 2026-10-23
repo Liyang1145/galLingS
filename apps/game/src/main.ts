@@ -100,12 +100,28 @@ async function main(): Promise<void> {
     timed: new SaveRepository(sources.timed, { kind: "preview", id: "timed-choice:pm8x8v2h" }, store),
   };
   const playerRecords = new PlayerRepository(content, { kind: "development", id: "normal-entry" }, store);
-  const recordWriter = new PlayerRecordWriter(playerRecords, records => {
+  const endingFeedbackOwners = new Map<string, { generation: number; presentation: WebPresentation }>();
+  const recordWriter = new PlayerRecordWriter(playerRecords, (records, receipt) => {
+    const owner = endingFeedbackOwners.get(receipt.batchId);
+    endingFeedbackOwners.delete(receipt.batchId);
     for (const nodeId of records.readNodeIds) reads.main.add(nodeId);
     if (closed) return;
     const player = playerProjection(records);
     recordMessage.textContent = `全局记录已保存：周目 ${player["周目"]} · 已解锁结局 ${player["结局数"]} · CG ${records.cgIds.length}`;
     retryRecords.hidden = true;
+    if (owner && !exiting && owner.generation === generation && owner.presentation === presentation
+      && mode === "main" && session) {
+      try {
+        const view = session.view();
+        if (view.story.phase === "ended" && view.story.terminal?.kind === "ending"
+          && receipt.newEndingIds.includes(view.story.terminal.endingId)) {
+          session.send({ type: "ending-unlocked", token: view.token, endingId: view.story.terminal.endingId });
+        }
+      } catch (error: unknown) {
+        // A feedback observer cannot turn a committed unlock into a failed write.
+        recordMessage.textContent += `；结局声音反馈未完成：${error instanceof Error ? error.message : "声音不可用"}`;
+      }
+    }
   }, error => {
     if (closed) return;
     recordMessage.textContent = `全局记录尚未保存：${error instanceof Error ? error.message : "存储失败"}。请重试；待保存记录暂留本页内存。`;
@@ -277,7 +293,8 @@ async function main(): Promise<void> {
     menu.hidden = !view.paused.includes("menu");
     const phases = { presenting: "呈现中", ready: "可继续", choosing: "等待选择", ended: "本段结束" };
     status.textContent = `${story.nodeId} · ${phases[story.phase]}${view.paused.length ? ` · 已暂停：${view.paused.join(" / ")}` : ""}`
-      + (story.terminal?.kind === "ending" ? ` · ${story.terminal.endingId}` : "");
+      + (story.terminal?.kind === "ending" ? ` · ${story.terminal.endingId}` : "")
+      + (view.newEnding ? " · 新结局已保存，可从主页鉴赏" : "");
     problem.hidden = !view.problem;
     problemMessage.textContent = view.problem ? `${view.problem.blocking ? "已暂停" : "媒体提示"}：${view.problem.message}` : "";
     debug.textContent = JSON.stringify({ nodeId: story.nodeId, token, variables: story.variables,
@@ -376,10 +393,12 @@ async function main(): Promise<void> {
         : "第一话试播：进度与全局成果分别保存，重新开始和读档保留已解锁的结局与 CG。";
       let sequence = 0;
       const reading = readingPreferences.values(selected);
-      presentation = new WebPresentation(scene, source, resources, host.state().audioAllowed,
+      const newPresentation = new WebPresentation(scene, source, resources, host.state().audioAllowed,
         audioPreferences.values(selected), reading);
+      presentation = newPresentation;
+      const sessionGeneration = ++generation;
       session = createGameSession({
-        content: source, player, generation: ++generation,
+        content: source, player, generation: sessionGeneration,
         clock, presentation, seen: reads[selected], onChange: show,
         rollback: { capacity: 500 },
         autoWaitMultiplier: reading.autoWaitMultiplier,
@@ -389,9 +408,13 @@ async function main(): Promise<void> {
         ],
         ...(checkpoint && restoreVoice ? { resume: { checkpoint, voice: restoreVoice } } : {}),
         onFacts: facts => {
-          if (selected === "main" && facts.length) recordWriter.enqueue({
-            id: `${delivery}:${++sequence}`, occurredAt: Date.now(), facts,
-          });
+          if (selected === "main" && facts.length) {
+            const id = `${delivery}:${++sequence}`;
+            if (facts.some(fact => fact.type === "ending")) {
+              endingFeedbackOwners.set(id, { generation: sessionGeneration, presentation: newPresentation });
+            }
+            recordWriter.enqueue({ id, occurredAt: Date.now(), facts });
+          }
         },
       });
       show(session.view());
@@ -720,6 +743,7 @@ async function main(): Promise<void> {
     closed = true;
     entryRequest++;
     storageMessageEpoch++;
+    endingFeedbackOwners.clear();
     closeDialogue();
     closeAftergame();
     aftergamePanel?.dispose();

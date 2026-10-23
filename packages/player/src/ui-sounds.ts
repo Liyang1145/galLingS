@@ -16,7 +16,7 @@ export interface ScheduledFeedback {
 }
 export type InteractionFeedback =
   | { type: "choices"; active: boolean; timed: boolean; announce: boolean }
-  | { type: "cue"; cue: "choiceConfirm" | "timeoutSilence" | "save" | StoryCue };
+  | { type: "cue"; cue: "choiceConfirm" | "timeoutSilence" | "save" | "endingNew" | StoryCue };
 
 /** Read author resource identities; never manufacture a replacement sound. */
 export function readUiSounds(content: StoryContent): UiSounds {

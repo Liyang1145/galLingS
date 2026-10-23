@@ -50,10 +50,19 @@ export interface Playback {
   cancel(): void;
 }
 
+export interface PresentationEndContext {
+  paused: boolean;
+  problem(problem: MediaProblem): void;
+}
+
 export interface PresentationAdapter {
   present(view: RuntimeView, context: PresentationContext): Playback;
   /** Optional audible feedback, never a second story decision path. */
   interaction?(feedback: InteractionFeedback): void;
+  /** Finish entry playback while retaining terminal feedback until explicit disposal. */
+  end?(context: PresentationEndContext): void;
+  /** Lifecycle updates for terminal feedback after entry playback has ended. */
+  setPaused?(paused: boolean): void;
   dispose(): void;
 }
 
@@ -70,6 +79,8 @@ export interface SessionView {
   dialogueCount: number;
   rollbackCount: number;
   rollbackIssue: string | null;
+  /** This session's ending was first unlocked by a confirmed global transaction. */
+  newEnding: boolean;
 }
 
 export type SessionIntent =
@@ -78,6 +89,7 @@ export type SessionIntent =
   | { type: "pause"; reason: "menu" | "background" | "host" | "history" | "operation" | "exit"; paused: boolean }
   | { type: "auto"; enabled: boolean }
   | { type: "auto-wait"; multiplier: number }
+  | { type: "ending-unlocked"; token: SessionToken; endingId: string }
   | { type: "skip"; enabled: boolean }
   | { type: "retry" };
 
@@ -165,6 +177,7 @@ class Session implements GameSession {
   #choice: ActiveTimer | null = null;
   #advance: ActiveTimer | null = null;
   #auto = false;
+  #endingConfirmed = false;
   #autoWaitMultiplier: number;
   #skipping = false;
   #voiceDone = true;
@@ -220,6 +233,7 @@ class Session implements GameSession {
       problem: this.#problem ? { ...this.#problem } : null, disposed: this.#disposed,
       canCheckpoint: this.canCheckpoint(), dialogueCount: this.#dialogue.length,
       rollbackCount: this.#rollback?.count(this.#visit) ?? 0, rollbackIssue: this.#rollbackIssue,
+      newEnding: this.#endingConfirmed,
     };
   }
 
@@ -430,6 +444,15 @@ class Session implements GameSession {
   }
 
   private intent(intent: SessionIntent): void {
+    if (intent.type === "ending-unlocked") {
+      const view = this.#runtime.view();
+      if (!this.current(intent.token) || this.#endingConfirmed || view.phase !== "ended"
+        || view.terminal?.kind !== "ending" || view.terminal.endingId !== intent.endingId) return;
+      this.#endingConfirmed = true;
+      this.feedback({ type: "cue", cue: "endingNew" });
+      this.publish();
+      return;
+    }
     if (intent.type === "auto-wait") {
       this.#autoWaitMultiplier = readReadingValue("autoWaitMultiplier", intent.multiplier);
       this.publish();
@@ -541,7 +564,13 @@ class Session implements GameSession {
       this.stopTimers();
       this.#controller.abort();
       this.#playback?.cancel();
-      this.#options.presentation.dispose();
+      if (this.#options.presentation.end) {
+        const epoch = this.#epoch;
+        this.#options.presentation.end({
+          paused: this.#pauses.size > 0,
+          problem: problem => this.enqueue({ type: "media", epoch, problem }),
+        });
+      } else this.#options.presentation.dispose();
       this.#auto = this.#skipping = false;
     } else this.configureProgress();
     this.rememberCurrent();
@@ -626,8 +655,9 @@ class Session implements GameSession {
     this.#choice?.setPaused(paused);
     this.#advance?.setPaused(paused);
     for (const timer of this.#feedbackTimers) timer.setPaused(paused);
-    this.#playback?.setPaused(paused);
     const view = this.#runtime.view();
+    if (view.phase === "ended") this.#options.presentation.setPaused?.(paused);
+    else this.#playback?.setPaused(paused);
     if (view.phase === "choosing" && !this.#pauses.has("loading") && !this.#pauses.has("error")) {
       if (!this.#choiceFeedbackActive) {
         this.#choiceFeedbackActive = true;

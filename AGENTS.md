@@ -46,7 +46,7 @@
 | [通关后入口准备](docs/rebuild/chat.md) | 已提交通关事实的只读上下文与显式选择；正式聊天解锁、供应和发送尚未接入 |
 | `packages/story-model/src/host.ts` | 原生/页面桥协议标识；随包 `/2` 明确登记，不与剧情修订或存档版本混用 |
 | `packages/player/src/web/` | 浏览器画面和音频实现；不得反向依赖游戏页面或编辑器 |
-| [共享场面与角色演出](docs/rebuild/performance.md) | 原镜头/角色/氛围曲线、独立遮罩、主线静态淡出及层级；暂停和取消归当前呈现，标题/菜单等全部界面过渡仍未迁移 |
+| [共享场面与角色演出](docs/rebuild/performance.md) | 原镜头/角色/氛围曲线、同背景镜头连续、独立遮罩及主线静态淡出；单句取消与场面归属分开，标题/菜单等全部界面过渡仍未迁移 |
 | `packages/player/src/web/choices.ts`、`stage-layout.ts` | 游戏/预览共用的可见选项、首立绘避让、倒计时显示、舞台比例及横竖分区；只管显示，不计算剧情或有效时间 |
 | `packages/player/src/web/input.ts` | 输入只向当前共享会话发意图；编辑预览限于自身焦点范围，隐藏/按键/手势不进入存储 |
 | `packages/player/src/web/fullscreen.ts` | 游戏/预览共用显示控件与浏览器全屏，原生适配器只提供受限显示能力 |

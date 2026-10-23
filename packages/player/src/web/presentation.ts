@@ -16,6 +16,8 @@ import type { InteractionFeedback } from "../ui-sounds.ts";
 import { captureSceneFade } from "./scene-fade.ts";
 import type { SceneFadeSurface } from "./scene-fade.ts";
 import { ACTOR_ACTIONS, ACTOR_ENTRIES, ACTOR_EXITS, SCREEN_MOTIONS, SCREEN_FLASH, SCREEN_BLINK } from "./motion.ts";
+import { BackgroundCamera } from "./camera.ts";
+import type { BackgroundShot } from "./camera.ts";
 
 const LOOKS: Record<string, string> = {
   "": "", none: "", shadow: "brightness(0)",
@@ -44,7 +46,7 @@ function grade(metadata: JsonObject): string {
   return `brightness(${brightness}) saturate(${saturation}) ${warmth > 0 ? `sepia(${warmth * 0.16})` : `hue-rotate(${warmth * 6}deg)`}`;
 }
 
-function backgroundShot(metadata: JsonObject, resourceId: string): { origin: string; scale: number; duration: number } | null {
+function backgroundShot(metadata: JsonObject, resourceId: string): BackgroundShot | null {
   const shot = record(metadata.shot);
   const focus = shot.focus;
   if (focus === undefined || focus === null) return null;
@@ -89,6 +91,7 @@ export class WebPresentation implements PresentationAdapter {
   readonly #sceneLayers: HTMLDivElement;
   readonly #mood: HTMLDivElement;
   readonly #background: HTMLImageElement;
+  readonly #camera: BackgroundCamera;
   readonly #actorsLayer: HTMLDivElement;
   readonly #transitionVeil: HTMLDivElement;
   readonly #veil: HTMLDivElement;
@@ -124,6 +127,7 @@ export class WebPresentation implements PresentationAdapter {
     this.#background.className = "backdrop";
     this.#background.alt = "";
     this.#background.draggable = false;
+    this.#camera = new BackgroundCamera(this.#background);
     this.#actorsLayer = document.createElement("div");
     this.#actorsLayer.className = "actors";
     this.#mood = document.createElement("div");
@@ -164,12 +168,14 @@ export class WebPresentation implements PresentationAdapter {
     this.#ended = true;
     this.#active?.cancel();
     this.#active = null;
+    this.#camera.settle();
     this.#audio.end(context.paused, context.problem);
     this.#root.classList.toggle("paused", context.paused);
   }
   setPaused(paused: boolean): void {
     if (this.#disposed) return;
     this.#audio.setPaused(paused);
+    this.#camera.setPaused(paused);
     this.#root.classList.toggle("paused", paused);
   }
   setReadingPreferences(input: ReadingPreferences): void {
@@ -260,6 +266,7 @@ export class WebPresentation implements PresentationAdapter {
     };
     const problem = (error: unknown): void => {
       clearSceneFade();
+      if (alive()) this.#camera.setPaused(true);
       if (alive()) context.problem({
         code: "SCENE_RESOURCE", blocking: true,
         message: `节点 ${view.nodeId} 场面未就绪：${error instanceof Error ? error.message : "未知媒体错误"}。可重试当前场面。`,
@@ -294,7 +301,6 @@ export class WebPresentation implements PresentationAdapter {
       const first = !this.#hasScene;
       const metadata = scene.background ? this.#resources.get(scene.background).metadata : {};
       const shot = scene.background ? backgroundShot(metadata, scene.background) : null;
-      const camera = !skipping && !window.matchMedia("(prefers-reduced-motion: reduce)").matches ? shot : null;
       if (scene.background) {
         this.#background.src = this.#resources.url(scene.background);
         this.#background.hidden = false;
@@ -306,8 +312,11 @@ export class WebPresentation implements PresentationAdapter {
       const viewMetadata = record(metadata.view);
       this.#background.style.objectPosition = typeof viewMetadata.position === "string" ? viewMetadata.position : "50% 50%";
       this.#background.style.objectFit = viewMetadata.size === "contain" ? "contain" : "cover";
-      this.#background.style.transformOrigin = camera?.origin ?? "";
-      this.#background.style.scale = camera && camera.scale > 1 ? String(camera.scale) : "";
+      this.#camera.update(scene.background, shot, {
+        mode: context.mode === "enter" ? "enter" : "stable",
+        enabled: !skipping && !window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+        paused,
+      });
       const previousMood = this.#world.dataset.mood ?? "";
       const previousMoodFilter = getComputedStyle(this.#sceneLayers).filter;
       const previousMoodOpacity = getComputedStyle(this.#mood).opacity;
@@ -413,10 +422,6 @@ export class WebPresentation implements PresentationAdapter {
           }
         }
         this.screenEffect(view.presentation.performance.screenEffect, animate);
-        if (camera && camera.scale > 1 && (changedBackground || first)) {
-          animate(this.#background, [{ scale: "1" }, { scale: String(camera.scale) }],
-            camera.duration, undefined, "cubic-bezier(.2,.65,.3,1)");
-        }
       }
       this.#name.textContent = view.presentation.speaker;
       const character = this.#content.source.metadata.chars;
@@ -436,6 +441,8 @@ export class WebPresentation implements PresentationAdapter {
       if (cancelled) return;
       cancelled = true;
       context.signal.removeEventListener("abort", cancel);
+      // Hold a scene camera across the gap; the next accepted scene reuses, settles or replaces it.
+      this.#camera.setPaused(true);
       clearSceneFade();
       for (const timer of timers) timer.cancel();
       for (const animation of animations) animation.cancel();
@@ -454,6 +461,7 @@ export class WebPresentation implements PresentationAdapter {
       },
       finishText: () => { finishRequested = true; fullText(); },
       setPaused: value => {
+        if (!alive()) return;
         paused = value;
         this.#root.classList.toggle("paused", value);
         for (const timer of timers) timer.setPaused(value);
@@ -462,15 +470,16 @@ export class WebPresentation implements PresentationAdapter {
           else animation.play();
         }
         this.#audio.setPaused(value);
+        this.#camera.setPaused(value);
       },
       setSkipping: value => {
+        if (!alive()) return;
         skipping = value;
         if (value) {
           finishRequested = true;
           audio?.skip();
           clearSceneFade();
-          this.#background.style.scale = "";
-          this.#background.style.transformOrigin = "";
+          this.#camera.clear();
           for (const animation of [...animations]) {
             try { animation.finish(); } catch { animation.cancel(); }
           }
@@ -538,6 +547,7 @@ export class WebPresentation implements PresentationAdapter {
     if (this.#disposed) return;
     this.#disposed = true;
     this.#active?.cancel();
+    this.#camera.dispose();
     this.#audio.dispose();
     this.#root.classList.add("paused");
   }

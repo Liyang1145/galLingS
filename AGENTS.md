@@ -37,7 +37,7 @@
 | [会话内回退](docs/rebuild/rollback.md) | 有界检查点、显式跨选择策略及恢复，不反算变量、不覆盖全局成果；正式边界仍待决定 |
 | [随包加载与集成产物](docs/rebuild/delivery.md) | M5 前置的严格随包读取、资源映射和构建入口；未执行构建，未接正式宿主 |
 | [Windows 集成宿主](docs/rebuild/windows.md) | 显式特性与隔离配置、输入准备、窗口暂停；未执行准备或编译，未切换正式发行 |
-| [Android 集成宿主](docs/rebuild/android.md) | 独立 Gradle 模块、输入准备、前后台与返回键；未构建或真机验收 |
+| [Android 集成宿主](docs/rebuild/android.md) | 独立 Gradle 模块、输入准备、前后台/返回键及独立焦点/输出中断控制；未构建或真机验收 |
 | [正常退出协调](docs/rebuild/exits.md) | 等待已有手动写入和全局事实、失败重试/取消、原生关闭票据；不是自动存档或强杀恢复 |
 | [独立对白编辑](docs/rebuild/editor.md) | 有限字符串写回、摘要冲突保护、草稿导入比较及共享隔离预览；未运行，未决定最终编辑器或切换源 |
 | [通关后入口准备](docs/rebuild/chat.md) | 已提交通关事实的只读上下文与显式选择；正式聊天解锁、供应和发送尚未接入 |

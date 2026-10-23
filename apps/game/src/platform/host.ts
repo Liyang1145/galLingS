@@ -98,7 +98,7 @@ export function connectHost(
         platform: next.platform, paused: next.paused || stale, issue: stale ? "宿主状态已超时，等待重新同步" : null,
         audioAllowed: audio.status === "granted" && !stale,
         audioIssue: audio.status === "denied" ? "尚未获准播放声音，可点击“启用声音”重试；主线可静音继续。"
-          : audio.status === "interrupted" ? "声音被其他应用打断，当前游玩已暂停；恢复焦点或点击“启用声音”重试。"
+          : audio.status === "interrupted" ? "声音焦点或播放设备发生变化，当前游玩已暂停；可等待临时焦点恢复，或确认设备后点击“启用声音”重试。"
           : null,
       };
     } catch (error: unknown) {

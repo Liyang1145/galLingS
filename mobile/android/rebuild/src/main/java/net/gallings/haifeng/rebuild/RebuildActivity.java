@@ -3,9 +3,6 @@ package net.gallings.haifeng.rebuild;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.graphics.Color;
-import android.media.AudioAttributes;
-import android.media.AudioFocusRequest;
-import android.media.AudioManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -59,14 +56,7 @@ public final class RebuildActivity extends Activity {
     private Runnable exitPoll;
     private long exitStarted;
     private final Handler handler = new Handler(Looper.getMainLooper());
-    private AudioManager audioManager;
-    private AudioFocusRequest audioRequest;
-    private AudioManager.OnAudioFocusChangeListener audioListener;
-    private boolean audioWanted;
-    private boolean audioHeld;
-    private boolean audioInterrupted;
-    private long audioGeneration;
-    private String audioStatus = "not-requested";
+    private GameAudioFocus audioFocus;
     private Runnable deliveryTimeout;
     private int deliveryAttempt;
     private boolean deliveryWarning;
@@ -91,7 +81,8 @@ public final class RebuildActivity extends Activity {
     @SuppressLint("SetJavaScriptEnabled")
     @Override protected void onCreate(Bundle saved) {
         super.onCreate(saved);
-        audioManager = (AudioManager) getSystemService(AUDIO_SERVICE);
+        audioFocus = new GameAudioFocus(this, handler, this::publish,
+                message -> Toast.makeText(this, message, Toast.LENGTH_LONG).show());
         web = new WebView(this);
         web.setBackgroundColor(Color.BLACK);
         WebSettings settings = web.getSettings();
@@ -120,10 +111,9 @@ public final class RebuildActivity extends Activity {
                     (view, message, origin, mainFrame, reply) -> {
                         if (destroyed || view != web || !mainFrame || !ORIGIN.equals(origin.toString())
                                 || message.getType() != WebMessageCompat.TYPE_STRING) return;
-                        if ("haifeng.audio.request/1".equals(message.getData())) requestAudio();
+                        if ("haifeng.audio.request/1".equals(message.getData())) audioFocus.request();
                         else if ("haifeng.audio.release/1".equals(message.getData())) {
-                            abandonAudio(true);
-                            publish();
+                            audioFocus.release();
                         }
                     });
             WebViewCompat.addWebMessageListener(web, "__HAIFENG_NATIVE_DISPLAY__", Collections.singleton(ORIGIN),
@@ -190,7 +180,7 @@ public final class RebuildActivity extends Activity {
                 displayReady = false;
                 cancelExit();
                 cancelDelivery();
-                abandonAudio(true);
+                audioFocus.reset();
                 backPending = false;
                 lastBack = -1;
                 if (!START.equals(url)) fail("已阻止离开本地游戏入口。");
@@ -240,10 +230,11 @@ public final class RebuildActivity extends Activity {
     private void publish() {
         if (web == null || destroyed) return;
         publishFullscreen();
-        boolean paused = !resumed || !focused || audioInterrupted;
+        GameAudioFocus.State audio = audioFocus.snapshot();
+        boolean paused = !resumed || !focused || audio.interrupted;
         long id = ++sequence;
         String script = "(() => {const b=window.__HAIFENG_HOST__; if(b?.protocol!=='haifeng.host-bridge/3') return null;"
-                + "b.receiveAudio({format:'haifeng.audio-focus/1',sequence:" + id + ",status:'" + audioStatus + "'});"
+                + "b.receiveAudio({format:'haifeng.audio-focus/1',sequence:" + id + ",status:'" + audio.status + "'});"
                 + "b.receive({format:'haifeng.host-state/1',platform:'android-trial',sequence:"
                 + id + ",paused:" + paused + "});return b.read().sequence;})()";
         deliver(web, page, id, script, 0);
@@ -363,81 +354,11 @@ public final class RebuildActivity extends Activity {
         }
     }
 
-    @SuppressWarnings("deprecation")
-    private void abandonAudio(boolean clearWanted) {
-        audioGeneration++;
-        if (clearWanted) audioWanted = false;
-        AudioFocusRequest request = audioRequest;
-        AudioManager.OnAudioFocusChangeListener listener = audioListener;
-        audioRequest = null;
-        audioListener = null;
-        audioHeld = false;
-        audioInterrupted = false;
-        audioStatus = "not-requested";
-        if (audioManager == null) return;
-        if (Build.VERSION.SDK_INT >= 26 && request != null) audioManager.abandonAudioFocusRequest(request);
-        else if (listener != null) audioManager.abandonAudioFocus(listener);
-    }
-
-    @SuppressWarnings("deprecation")
-    private void requestAudio() {
-        if (destroyed || web == null) return;
-        audioWanted = true;
-        if (audioHeld) { publish(); return; }
-        abandonAudio(false);
-        if (!resumed || !focused || audioManager == null) {
-            audioStatus = "denied";
-            publish();
-            return;
-        }
-        final long owner = ++audioGeneration;
-        audioListener = change -> runOnUiThread(() -> {
-            if (destroyed || owner != audioGeneration || !resumed || !audioWanted) return;
-            if (change == AudioManager.AUDIOFOCUS_GAIN) {
-                audioHeld = true;
-                audioInterrupted = false;
-                audioStatus = "granted";
-            } else if (change == AudioManager.AUDIOFOCUS_LOSS
-                    || change == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT
-                    || change == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK) {
-                audioHeld = false;
-                audioInterrupted = true;
-                audioStatus = "interrupted";
-            } else return;
-            publish();
-        });
-        try {
-            int result;
-            if (Build.VERSION.SDK_INT >= 26) {
-                audioRequest = new AudioFocusRequest.Builder(AudioManager.AUDIOFOCUS_GAIN)
-                        .setAudioAttributes(new AudioAttributes.Builder().setUsage(AudioAttributes.USAGE_GAME)
-                                .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC).build())
-                        .setAcceptsDelayedFocusGain(false)
-                        .setWillPauseWhenDucked(true)
-                        .setOnAudioFocusChangeListener(audioListener, handler).build();
-                result = audioManager.requestAudioFocus(audioRequest);
-            } else {
-                result = audioManager.requestAudioFocus(audioListener, AudioManager.STREAM_MUSIC, AudioManager.AUDIOFOCUS_GAIN);
-            }
-            if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
-                audioHeld = true;
-                audioStatus = "granted";
-            } else {
-                abandonAudio(false);
-                audioStatus = "denied";
-            }
-        } catch (RuntimeException error) {
-            abandonAudio(false);
-            audioStatus = "denied";
-        }
-        publish();
-    }
-
     @Override protected void onResume() {
         super.onResume();
         resumed = true;
         if (web != null) web.onResume();
-        if (audioWanted) requestAudio();
+        audioFocus.setForeground(resumed, focused);
         publish();
         handler.removeCallbacks(heartbeat);
         handler.postDelayed(heartbeat, 1000);
@@ -446,7 +367,7 @@ public final class RebuildActivity extends Activity {
     @Override protected void onPause() {
         resumed = false;
         handler.removeCallbacks(heartbeat);
-        abandonAudio(false);
+        audioFocus.setForeground(resumed, focused);
         publish();
         if (web != null) web.onPause();
         super.onPause();
@@ -455,8 +376,7 @@ public final class RebuildActivity extends Activity {
     @Override public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
         focused = hasFocus;
-        if (hasFocus && resumed && audioWanted && !audioHeld
-                && !"interrupted".equals(audioStatus)) requestAudio();
+        if (audioFocus != null) audioFocus.setForeground(resumed, focused);
         publish();
     }
 
@@ -548,7 +468,7 @@ public final class RebuildActivity extends Activity {
         web = null;
         handler.removeCallbacks(heartbeat);
         cancelDelivery();
-        abandonAudio(true);
+        audioFocus.close();
         page++;
         backPending = false;
         if (failed != null) {
@@ -568,7 +488,7 @@ public final class RebuildActivity extends Activity {
         destroyed = true;
         activeExit = 0;
         handler.removeCallbacksAndMessages(null);
-        abandonAudio(true);
+        if (audioFocus != null) audioFocus.close();
         page++;
         if (web != null) {
             WebView old = web;

@@ -31,6 +31,8 @@ import { connectStageLayout } from "../../../packages/player/src/web/stage-layou
 import { PlayerInput } from "../../../packages/player/src/web/input.ts";
 import { PlayerFullscreen } from "../../../packages/player/src/web/fullscreen.ts";
 import { nativeFullscreenDriver } from "./platform/fullscreen.ts";
+import { SaveSlots } from "./slots.ts";
+import type { SaveEntry as Entry } from "./slots.ts";
 import "./style.css";
 
 const startup = new AbortController();
@@ -113,7 +115,6 @@ async function main(): Promise<void> {
     },
   };
   const reads = { main: new Set<string>(), timed: new Set<string>() };
-  type Entry = "main" | "timed";
   const sources = {
     main: content,
     timed: { ...content, entryNodeId: "pm8x8v2h", revision: `m3-preview:pm8x8v2h:${content.revision}` },
@@ -163,11 +164,17 @@ async function main(): Promise<void> {
   let generation = 0;
   let mode: Entry = "main";
   let entryRequest = 0;
+  let entryPreparation: number | null = null;
   let rollbackKey = "";
   let rollingBack = false;
   let exiting = false;
   let aftergamePanel: AftergamePanel | null = null;
   let dialoguePanel: DialoguePanel | null = null;
+  const slots = new SaveSlots({
+    root: element("save-slots", HTMLElement), repositories: saves, label: entryName,
+    blocked: () => closed || exiting || entryPreparation === entryRequest,
+    changed: () => { resetSaveMessage(); refreshSaveControls(); },
+  });
   const audioRepository = new AudioPreferenceRepository(content.workId, { kind: "development", id: "normal-entry" },
     authorAudioVolumes(content.source.settings), store);
   const audioLabels = { music: "配乐", ambience: "环境声", voice: "语音", effects: "音效" };
@@ -283,6 +290,7 @@ async function main(): Promise<void> {
     audioPreferences.refresh();
     readingPreferences.refresh();
     buttonPreferences.refresh();
+    slots.refreshControls();
     entryRequest++;
     const owner = session;
     owner?.send({ type: "pause", reason: "exit", paused: true });
@@ -303,6 +311,7 @@ async function main(): Promise<void> {
       audioPreferences.refresh();
       readingPreferences.refresh();
       buttonPreferences.refresh();
+      refreshSaveControls();
       page.inert = wasInert;
       exitDialog.close();
       exitRetry.onclick = exitCancel.onclick = null;
@@ -380,7 +389,7 @@ async function main(): Promise<void> {
     next.disabled = blocked || story.phase === "choosing" || story.phase === "ended";
     auto.disabled = skip.disabled = story.phase === "ended";
     pause.disabled = audio.disabled = false;
-    save.disabled = saving || !view.canCheckpoint;
+    refreshSaveControls(view);
     dialogueOpen.disabled = view.disposed || view.dialogueCount === 0;
     auto.setAttribute("aria-pressed", String(view.auto));
     skip.setAttribute("aria-pressed", String(view.skipping));
@@ -396,6 +405,22 @@ async function main(): Promise<void> {
       player: story.player, phase: story.phase, choiceRemainingMs: view.choiceRemainingMs }, null, 2);
     choicePanel.render(view);
     showRollback(view);
+  }
+
+  function refreshSaveControls(view?: SessionView): void {
+    const blocked = closed || exiting || entryPreparation === entryRequest;
+    save.disabled = blocked || saving || !(view ?? session?.view())?.canCheckpoint;
+    save.textContent = `保存${entryName(mode)}到 ${JSON.stringify(slots.slot(mode))}`;
+    for (const entry of ["main", "timed"] as const) {
+      const suffix = entry === "main" ? "main" : "timed";
+      const inspect = element(`inspect-${suffix}`, HTMLButtonElement);
+      const load = element(`load-${suffix}`, HTMLButtonElement);
+      inspect.disabled = blocked;
+      load.disabled = blocked || !["silent", "replay", "resume"].includes(voiceChoice.value);
+      inspect.textContent = `查看${entryName(entry)} ${JSON.stringify(slots.slot(entry))}`;
+      load.textContent = `读取${entryName(entry)} ${JSON.stringify(slots.slot(entry))}`;
+    }
+    slots.refreshControls();
   }
 
   function showRollback(view: SessionView): void {
@@ -420,11 +445,14 @@ async function main(): Promise<void> {
     rollbackWarning.textContent = view.rollbackIssue ?? "";
   }
 
-  async function start(selected: Entry, restoreVoice?: RestoreVoice): Promise<void> {
+  async function start(selected: Entry, restore?: { voice: RestoreVoice; slotId: string }): Promise<void> {
     if (exiting || closed) return;
     const request = ++entryRequest;
+    entryPreparation = request;
+    const restoreVoice = restore?.voice;
     const owner = session;
     owner?.send({ type: "pause", reason: "operation", paused: true });
+    refreshSaveControls();
     let adopted = false;
     try {
       if (selected === "main") await recordWriter.flush();
@@ -432,9 +460,9 @@ async function main(): Promise<void> {
       const player = records ? playerProjection(records) : { "周目": 1, "结局数": 0 };
       const source = sources[selected];
       let checkpoint: GameCheckpoint | null = null;
-      if (restoreVoice) {
-        const saved = await saves[selected].read("manual");
-        if (!saved) throw new Error("这个入口尚未保存进度");
+      if (restore) {
+        const saved = await saves[selected].read(restore.slotId);
+        if (!saved) throw new Error(`这个入口的 ${JSON.stringify(restore.slotId)} 槽位尚未保存进度`);
         checkpoint = prepareGameRestore(source, saved.checkpoint, player).checkpoint;
       }
       const delivery = crypto.randomUUID();
@@ -491,7 +519,7 @@ async function main(): Promise<void> {
       });
       show(session.view());
       unlockAudio();
-      if (checkpoint) saveMessage.textContent = "已恢复保存的剧情位置和剩余有效时间；全局记录沿用当前已保存成果。";
+      if (checkpoint && restore) saveMessage.textContent = `已从${entryName(selected)} ${JSON.stringify(restore.slotId)} 恢复剧情位置和剩余有效时间；全局记录沿用当前已保存成果。`;
     } catch (error: unknown) {
       if (closed || request !== entryRequest) return;
       if (adopted) {
@@ -510,7 +538,9 @@ async function main(): Promise<void> {
       }
       saveMessage.textContent = `未能${restoreVoice ? "读档" : "开局"}：${error instanceof Error ? error.message : "未知错误"}。全局成果与原槽位保持原值。`;
     } finally {
+      if (entryPreparation === request) entryPreparation = null;
       if (!closed && request === entryRequest && session === owner) owner?.send({ type: "pause", reason: "operation", paused: false });
+      if (!closed) refreshSaveControls();
     }
   }
 
@@ -549,6 +579,7 @@ async function main(): Promise<void> {
     resetSaveMessage();
     status.textContent = "已返回试播标题；旧会话的任务已取消";
     input?.refresh();
+    refreshSaveControls();
   }
 
   function resetRollback(): void {
@@ -562,16 +593,16 @@ async function main(): Promise<void> {
 
   function resetSaveMessage(): void {
     storageMessageEpoch++;
-    saveMessage.textContent = "场面就绪并完整显示文字后，可保存当前入口的检查点。两个入口的槽位分别保留。";
+    saveMessage.textContent = "场面就绪并完整显示文字后，可保存到当前入口选中的命名槽位。两个入口分别保留，选择名称本身不写入。";
     saveDetails.hidden = true;
     saveDetails.textContent = "";
   }
 
   function describeSave(entry: Entry, inspected: InspectedSave): void {
     const { record, checkpoint, view } = inspected;
-    saveMessage.textContent = `${entryName(entry)} · ${new Date(record.savedAt).toLocaleString()} · ${view.nodeId}。已读取并校验检查点；当前游玩位置未改变。`;
+    saveMessage.textContent = `${entryName(entry)} · 槽位 ${JSON.stringify(record.slotId)} · ${new Date(record.savedAt).toLocaleString()} · ${view.nodeId}。已读取并校验检查点；当前游玩位置未改变。`;
     saveDetails.textContent = JSON.stringify({
-      entry: entryName(entry), scope: record.scope, contentRevision: record.checkpoint.story.contentRevision,
+      entry: entryName(entry), scope: record.scope, slotId: record.slotId, contentRevision: record.checkpoint.story.contentRevision,
       nodeId: view.nodeId, chapter: view.chapter, text: view.presentation.text,
       variables: view.variables, player: view.player, phase: view.phase, choices: view.choices,
       timing: checkpoint.timing, playback: checkpoint.presentation.playback, controls: checkpoint.controls,
@@ -581,28 +612,30 @@ async function main(): Promise<void> {
 
   async function saveCheckpoint(): Promise<void> {
     const owner = session;
-    if (exiting || closed || !owner || saving || !owner.view().canCheckpoint) return;
+    if (exiting || closed || entryPreparation === entryRequest || !owner || saving || !owner.view().canCheckpoint) return;
     const entry = mode;
+    const slotId = slots.slot(entry);
     const savedPresentation = presentation;
     const request = ++storageMessageEpoch;
     saving = true;
     save.disabled = true;
     saveDetails.hidden = true;
-    saveMessage.textContent = `正在保存${entryName(entry)}检查点……`;
+    saveMessage.textContent = `正在保存${entryName(entry)}到 ${JSON.stringify(slotId)}……`;
     try {
       const capture = owner.captureCheckpoint(owner.view().token);
       let payload: { checkpoint: GameCheckpoint; savedAt: number } | null = null;
-      await writes.run(`${entry}:manual`, async () => {
+      await writes.run(JSON.stringify(["progress", entry, slotId]), async () => {
         if (!payload) {
           const result = await capture;
           if (!result.accepted) throw new Error(`${result.code}：${result.message}`);
           payload = { checkpoint: result.checkpoint, savedAt: Date.now() };
         }
         if (entry === "main") await recordWriter.flush();
-        const inspected = await saves[entry].save("manual", payload.checkpoint, payload.savedAt);
+        const inspected = await saves[entry].save(slotId, payload.checkpoint, payload.savedAt);
+        if (!closed) slots.saved(entry);
         if (!closed && request === storageMessageEpoch) {
           describeSave(entry, inspected);
-          saveMessage.textContent = `${entryName(entry)}进度已保存；可刷新页面后查看或读取。周目与鉴赏成果单独保留。`;
+          saveMessage.textContent = `${entryName(entry)}进度已保存到 ${JSON.stringify(slotId)}；可刷新页面后查看或读取。周目与鉴赏成果单独保留。`;
           if (!exiting && owner === session && savedPresentation === presentation && !owner.view().skipping) {
             // The storage transaction is already committed. Audio cannot turn it into a failed save.
             try { savedPresentation?.interaction({ type: "cue", cue: "save" }); }
@@ -616,20 +649,21 @@ async function main(): Promise<void> {
       }
     } finally {
       saving = false;
-      if (!closed) save.disabled = exiting || !session?.view().canCheckpoint;
+      if (!closed) refreshSaveControls();
     }
   }
 
   async function inspectSaved(entry: Entry): Promise<void> {
-    if (exiting || closed) return;
+    if (exiting || closed || entryPreparation === entryRequest) return;
+    const slotId = slots.slot(entry);
     const request = ++storageMessageEpoch;
     saveDetails.hidden = true;
-    saveMessage.textContent = `正在读取${entryName(entry)}检查点……`;
+    saveMessage.textContent = `正在查看${entryName(entry)} ${JSON.stringify(slotId)} 检查点……`;
     try {
-      const inspected = await saves[entry].read("manual");
+      const inspected = await saves[entry].read(slotId);
       if (closed || request !== storageMessageEpoch) return;
       if (inspected) describeSave(entry, inspected);
-      else saveMessage.textContent = `${entryName(entry)}尚未保存检查点。`;
+      else saveMessage.textContent = `${entryName(entry)}的 ${JSON.stringify(slotId)} 槽位尚未保存检查点。`;
     } catch (error: unknown) {
       if (!closed && request === storageMessageEpoch) {
         saveMessage.textContent = `读取失败：${error instanceof Error ? error.message : "未知存储错误"}。当前会话保持原状，已有数据未被删除。`;
@@ -638,12 +672,13 @@ async function main(): Promise<void> {
   }
 
   function load(entry: Entry): void {
+    if (exiting || closed || entryPreparation === entryRequest) return;
     const voice = voiceChoice.value;
     if (voice !== "silent" && voice !== "replay" && voice !== "resume") {
       saveMessage.textContent = "先选择本次读档的语音方式；这个试播选择不会改写正式默认体验。";
       return;
     }
-    void start(entry, voice);
+    void start(entry, { voice, slotId: slots.slot(entry) });
   }
 
   async function rollback(): Promise<void> {
@@ -789,8 +824,7 @@ async function main(): Promise<void> {
   dialogue.addEventListener("close", () => { if (!dialogue.open) closeDialogue(); });
   exitDialog.addEventListener("cancel", event => { event.preventDefault(); host.cancelExit(); });
   voiceChoice.onchange = () => {
-    const enabled = ["silent", "replay", "resume"].includes(voiceChoice.value);
-    element("load-main", HTMLButtonElement).disabled = element("load-timed", HTMLButtonElement).disabled = !enabled;
+    refreshSaveControls();
     if (session) showRollback(session.view());
   };
   rollbackTarget.onchange = rollbackBoundary.onchange = () => { if (session) showRollback(session.view()); };
@@ -813,6 +847,7 @@ async function main(): Promise<void> {
     audioPreferences.dispose();
     readingPreferences.dispose();
     buttonPreferences.dispose();
+    slots.dispose();
     buttonEvents.abort();
     input?.dispose();
     fullscreen?.dispose();
@@ -830,6 +865,8 @@ async function main(): Promise<void> {
   if (closed || startup.signal.aborted) return;
   note.textContent = "本地内容已载入。可以从第一话开始，或选择明确标注的限时样例。";
   for (const id of ["start", "timed", "gallery-open", "aftergame-open"]) element(id, HTMLButtonElement).disabled = false;
+  refreshSaveControls();
+  slots.refresh();
 }
 
 void main().catch((error: unknown) => {

@@ -1,5 +1,5 @@
 import { SaveStorageError } from "../saves.ts";
-import type { AtomicSaveStore, SaveRecord, StoredSlot } from "../saves.ts";
+import type { AtomicSaveStore, SaveRecord, StoredSavePage, StoredSlot } from "../saves.ts";
 import type { AtomicPlayerStore, PlayerRecords } from "../records.ts";
 import type { AtomicAudioPreferenceStore, AudioPreferenceRecord } from "../preferences.ts";
 import type { AtomicReadingPreferenceStore, ReadingPreferenceRecord } from "../reading-preferences.ts";
@@ -61,12 +61,18 @@ export class IndexedDbSaveStore implements AtomicSaveStore, AtomicPlayerStore, A
         transaction.onerror = () => {};
         try {
           const store = transaction.objectStore(STORE);
-          const request = mode === "readonly" ? store.get(key) : store.put(value, key);
-          request.onerror = () => { requestError = request.error?.name ?? "存储请求失败"; };
-          request.onsuccess = () => {
-            const stored: unknown = request.result;
-            if (mode === "readonly") result = stored === undefined ? { found: false } : { found: true, value: stored };
-          };
+          if (mode === "readonly") {
+            const request = store.openCursor(key);
+            request.onerror = () => { requestError = request.error?.name ?? "存储请求失败"; };
+            request.onsuccess = () => {
+              const cursor = request.result;
+              const stored: unknown = cursor?.value;
+              result = cursor ? { found: true, value: stored } : { found: false };
+            };
+          } else {
+            const request = store.put(value, key);
+            request.onerror = () => { requestError = request.error?.name ?? "存储请求失败"; };
+          }
         } catch {
           requestError = "存储请求无法提交";
           transaction.abort();
@@ -84,6 +90,56 @@ export class IndexedDbSaveStore implements AtomicSaveStore, AtomicPlayerStore, A
   async replace(key: string, value: SaveRecord): Promise<void> {
     // One put in one transaction; never delete the old slot before writing.
     await this.transact("readwrite", key, value);
+  }
+
+  async scan(prefix: string, after: string | null, limit: number): Promise<StoredSavePage> {
+    if (!prefix || (after !== null && !after.startsWith(prefix))
+      || !Number.isSafeInteger(limit) || limit < 1 || limit > 100) {
+      throw new SaveStorageError("STORAGE_PAGE", "槽位读取范围或容量无效");
+    }
+    const database = await this.open();
+    try {
+      return await new Promise<StoredSavePage>((resolve, reject) => {
+        let transaction: IDBTransaction;
+        try { transaction = database.transaction(STORE, "readonly"); }
+        catch {
+          reject(new SaveStorageError("STORAGE_TRANSACTION", "无法读取槽位目录，已有记录未被修改"));
+          return;
+        }
+        const result: StoredSavePage = { entries: [], next: null };
+        let failure: unknown = null;
+        transaction.oncomplete = () => resolve(result);
+        transaction.onabort = () => reject(failure ?? new SaveStorageError("STORAGE_ABORT", "槽位目录读取未完成，可刷新重试"));
+        transaction.onerror = () => {};
+        try {
+          const range = IDBKeyRange.bound(after ?? prefix, `${prefix}\uffff`, after !== null, false);
+          const request = transaction.objectStore(STORE).openCursor(range);
+          request.onerror = () => { failure = new SaveStorageError("STORAGE_READ", "槽位目录读取失败，已有记录未被修改"); };
+          request.onsuccess = () => {
+            const cursor = request.result;
+            if (!cursor) return;
+            try {
+              if (typeof cursor.key !== "string" || !cursor.key.startsWith(prefix)) {
+                throw new SaveStorageError("STORAGE_PAGE", "存储游标返回了范围外地址");
+              }
+              if (result.entries.length === limit) {
+                result.next = result.entries.at(-1)!.key;
+                return;
+              }
+              const value: unknown = cursor.value;
+              result.entries.push({ key: cursor.key, value });
+              cursor.continue();
+            } catch (error: unknown) {
+              failure = error;
+              transaction.abort();
+            }
+          };
+        } catch (error: unknown) {
+          failure = error;
+          transaction.abort();
+        }
+      });
+    } finally { database.close(); }
   }
 
   async update(key: string, change: (stored: StoredSlot) => PlayerRecords): Promise<PlayerRecords> {
@@ -124,11 +180,12 @@ export class IndexedDbSaveStore implements AtomicSaveStore, AtomicPlayerStore, A
         transaction.onerror = () => {};
         try {
           const store = transaction.objectStore(STORE);
-          const request = store.get(key);
+          const request = store.openCursor(key);
           request.onsuccess = () => {
             try {
-              const value: unknown = request.result;
-              result = change(value === undefined ? { found: false } : { found: true, value });
+              const cursor = request.result;
+              const value: unknown = cursor?.value;
+              result = change(cursor ? { found: true, value } : { found: false });
               store.put(result, key);
             } catch (error: unknown) {
               failure = error;

@@ -1,6 +1,6 @@
 # 任务记录索引（work-ledger）
 
-- [background-classification-20261023.md](background-classification-20261023.md) — B02A 晒笔记本画面明确归背景，排除 CG
+- [background-classification-20261023.md](background-classification-20261023.md) — B02A与抱臂监视整图CG_DRY均归背景，排除CG
 
 - [underwater-filter-20261023.md](underwater-filter-20261023.md) — 水下去白色粒子/漂移/模糊，只保留静态淡蓝滤镜
 

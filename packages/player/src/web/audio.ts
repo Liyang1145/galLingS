@@ -179,7 +179,11 @@ export class AudioMixer {
       if (!feedback.active) this.#choiceTickFailed = false;
       if (feedback.active && feedback.announce) this.feedbackCue(this.#uiSounds.choiceShow);
       this.syncChoiceTick();
-    } else this.feedbackCue(this.#uiSounds[feedback.cue], feedback.cue === "favorDown" ? 0.75 : 1);
+    } else {
+      const gain = feedback.cue === "btnClick" ? 0.35 : feedback.cue === "btnHover" ? 0.22
+        : feedback.cue === "favorDown" ? 0.75 : 1;
+      this.feedbackCue(this.#uiSounds[feedback.cue], gain);
+    }
   }
 
   private feedbackCue(id: string | undefined, gain = 1): void {

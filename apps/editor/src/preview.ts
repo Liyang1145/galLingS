@@ -4,6 +4,8 @@ import { createGameSession } from "../../../packages/player/src/session.ts";
 import type { GameSession, SessionView } from "../../../packages/player/src/session.ts";
 import { WebPresentation } from "../../../packages/player/src/web/presentation.ts";
 import { createResourceAccess } from "../../../packages/player/src/web/resources.ts";
+import { authorButtonPreferences } from "../../../packages/player/src/button-preferences.ts";
+import { connectButtonSounds } from "../../../packages/player/src/web/button-sounds.ts";
 import type { AuthorDocument } from "./document.ts";
 
 export interface PreviewElements {
@@ -23,10 +25,21 @@ export class EditorPreview {
   #generation = 0;
   #choiceKey = "";
   #activeNote = "";
+  #buttonSoundsEnabled = true;
 
   constructor(elements: PreviewElements) {
     this.#elements = elements;
     const { signal } = this.#events;
+    connectButtonSounds({
+      buttons: [elements.next, elements.pause, elements.auto, elements.audio, elements.retry, elements.stop],
+      signal,
+      enabled: () => {
+        if (document.hidden || !this.#buttonSoundsEnabled || !this.#session) return false;
+        const view = this.#session.view();
+        return !view.disposed && !view.skipping && view.story.phase !== "ended" && view.paused.length === 0;
+      },
+      play: cue => this.#presentation?.interaction({ type: "cue", cue }),
+    });
     const sendNext = (): void => {
       const current = this.#session;
       if (current) current.send({ type: "next", token: current.view().token });
@@ -58,6 +71,7 @@ export class EditorPreview {
   start(draft: AuthorDocument, selectedNode: string | null): void {
     this.stop();
     const { content, locations } = draft;
+    this.#buttonSoundsEnabled = authorButtonPreferences(content.source.settings).enabled;
     if (selectedNode && !content.nodes.some(node => node.id === selectedNode)) throw new Error("预览节点不存在");
     const source: StoryContent = selectedNode
       ? { ...content, entryNodeId: selectedNode, revision: `editor-preview:${selectedNode}:${content.revision}` }

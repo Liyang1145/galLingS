@@ -10,13 +10,14 @@ export const UI_SOUND_KEYS = [
 export type UiSoundKey = (typeof UI_SOUND_KEYS)[number];
 export type UiSounds = Partial<Record<UiSoundKey, string>>;
 export type StoryCue = "favorUp" | "favorDown" | "tailfin" | "cg" | "chapterEnd";
+export type ButtonCue = "btnClick" | "btnHover";
 export interface ScheduledFeedback {
   cue: StoryCue;
   delayMs: number;
 }
 export type InteractionFeedback =
   | { type: "choices"; active: boolean; timed: boolean; announce: boolean }
-  | { type: "cue"; cue: "choiceConfirm" | "timeoutSilence" | "save" | "endingNew" | StoryCue };
+  | { type: "cue"; cue: "choiceConfirm" | "timeoutSilence" | "save" | "endingNew" | StoryCue | ButtonCue };
 
 /** Read author resource identities; never manufacture a replacement sound. */
 export function readUiSounds(content: StoryContent): UiSounds {

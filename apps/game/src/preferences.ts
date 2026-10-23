@@ -1,46 +1,47 @@
 type Entry = "main" | "timed";
-type Values<Key extends string> = Record<Key, number>;
-type Changes<Key extends string> = Partial<Record<Key, number | null>>;
+type Values<Key extends string, Value> = Record<Key, Value>;
+type Changes<Key extends string, Value> = Partial<Record<Key, Value | null>>;
 
-interface Field<Key extends string> {
+type Field<Key extends string> = {
+  kind?: "range";
   key: Key;
   label: string;
   min: number;
   max: number;
   step: number;
   format(value: number): string;
-}
+} | { kind: "checkbox"; key: Key; label: string };
 
-interface Options<Key extends string> {
+interface Options<Key extends string, Value extends number | boolean> {
   root: HTMLElement;
   noun: string;
   note: string;
   fields: readonly Field<Key>[];
   repository: {
-    read(): Promise<{ values: Values<Key> }>;
-    update(changes: Changes<Key>): Promise<{ values: Values<Key> }>;
+    read(): Promise<{ values: Values<Key, Value> }>;
+    update(changes: Changes<Key, Value>): Promise<{ values: Values<Key, Value> }>;
   };
-  defaults: Values<Key>;
-  readValues(input: unknown): Values<Key>;
+  defaults: Values<Key, Value>;
+  readValues(input: unknown): Values<Key, Value>;
   blocked(): boolean;
   trackWrite(operation: () => Promise<void>): Promise<void>;
-  valuesChanged(values: Values<Key>): void;
+  valuesChanged(values: Values<Key, Value>): void;
 }
 
 /** Explicit preference writes; live adjustment never captures or mutates progress. */
-export class NumericPreferencesPanel<Key extends string> {
-  readonly #options: Options<Key>;
-  readonly #defaults: Values<Key>;
+export class PreferencesPanel<Key extends string, Value extends number | boolean = number> {
+  readonly #options: Options<Key, Value>;
+  readonly #defaults: Values<Key, Value>;
   readonly #keys: readonly Key[];
   readonly #events = new AbortController();
-  readonly #inputs = new Map<Key, { input: HTMLInputElement; output: HTMLOutputElement; format(value: number): string }>();
+  readonly #inputs = new Map<Key, { input: HTMLInputElement; output: HTMLOutputElement; field: Field<Key> }>();
   readonly #status: HTMLParagraphElement;
   readonly #save: HTMLButtonElement;
   readonly #reset: HTMLButtonElement;
   readonly #retry: HTMLButtonElement;
-  #main: Values<Key>;
-  #timed: Values<Key>;
-  #dirty: Changes<Key> = {};
+  #main: Values<Key, Value>;
+  #timed: Values<Key, Value>;
+  #dirty: Changes<Key, Value> = {};
   #mode: Entry = "main";
   #saving = false;
   #reading = false;
@@ -49,7 +50,7 @@ export class NumericPreferencesPanel<Key extends string> {
   #message: string;
   #retryOperation: (() => Promise<void>) | null = null;
 
-  constructor(options: Options<Key>) {
+  constructor(options: Options<Key, Value>) {
     this.#options = options;
     this.#keys = options.fields.map(field => field.key);
     this.#defaults = options.readValues(options.defaults);
@@ -69,16 +70,20 @@ export class NumericPreferencesPanel<Key extends string> {
       const text = document.createElement("span");
       text.textContent = field.label;
       const input = document.createElement("input");
-      input.type = "range";
-      input.min = String(field.min);
-      input.max = String(field.max);
-      input.step = String(field.step);
+      input.type = field.kind === "checkbox" ? "checkbox" : "range";
+      if (field.kind !== "checkbox") {
+        input.min = String(field.min);
+        input.max = String(field.max);
+        input.step = String(field.step);
+      }
       input.setAttribute("aria-label", field.label);
       const output = document.createElement("output");
-      this.#inputs.set(key, { input, output, format: field.format });
+      this.#inputs.set(key, { input, output, field });
       input.addEventListener("input", () => {
         if (this.#saving || this.#reading || this.#disposed || options.blocked()) return;
-        const values = options.readValues({ ...this.values(this.#mode), [key]: input.valueAsNumber });
+        const values = options.readValues({
+          ...this.values(this.#mode), [key]: field.kind === "checkbox" ? input.checked : input.valueAsNumber,
+        });
         if (this.#mode === "main") {
           this.#main = values;
           this.#dirty[key] = values[key];
@@ -124,7 +129,7 @@ export class NumericPreferencesPanel<Key extends string> {
     this.render();
   }
 
-  values(entry: Entry): Values<Key> { return { ...(entry === "main" ? this.#main : this.#timed) }; }
+  values(entry: Entry): Values<Key, Value> { return { ...(entry === "main" ? this.#main : this.#timed) }; }
 
   setMode(entry: Entry): void {
     this.#mode = entry;
@@ -216,9 +221,17 @@ export class NumericPreferencesPanel<Key extends string> {
     const disabled = this.#saving || this.#reading || this.#options.blocked();
     const values = this.values(this.#mode);
     for (const [key, item] of this.#inputs) {
-      item.input.value = String(values[key]);
+      const value = values[key];
+      if (item.field.kind === "checkbox") {
+        if (typeof value !== "boolean") throw new Error(`布尔偏好控件需要布尔值：${key}`);
+        item.input.checked = value;
+        item.output.value = value ? "开启" : "关闭";
+      } else {
+        if (typeof value !== "number") throw new Error(`数值偏好控件需要数值：${key}`);
+        item.input.value = String(value);
+        item.output.value = item.field.format(value);
+      }
       item.input.disabled = disabled;
-      item.output.value = item.format(values[key]);
     }
     this.#save.disabled = disabled || this.#mode !== "main" || !Object.keys(this.#dirty).length;
     this.#reset.disabled = disabled;

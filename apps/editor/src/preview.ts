@@ -13,6 +13,7 @@ import { connectStageLayout } from "../../../packages/player/src/web/stage-layou
 import { PlayerInput } from "../../../packages/player/src/web/input.ts";
 import { PlayerFullscreen } from "../../../packages/player/src/web/fullscreen.ts";
 import { EndingPanel } from "../../../packages/player/src/web/ending.ts";
+import { StageFade } from "../../../packages/player/src/web/stage-fade.ts";
 import { capturePreviewCheckpoint, inspectPreviewCheckpoint, previewContent } from "./checkpoint.ts";
 import type { PreviewCheckpointInput, PreviewCheckpointRecord } from "./checkpoint.ts";
 
@@ -40,7 +41,9 @@ export class EditorPreview {
   readonly #input: PlayerInput;
   readonly #fullscreen: PlayerFullscreen;
   readonly #ending: EndingPanel;
+  readonly #fade: StageFade;
   readonly #events = new AbortController();
+  #endingVisualKey = "";
   #session: GameSession | null = null;
   #presentation: WebPresentation | null = null;
   #generation = 0;
@@ -57,6 +60,12 @@ export class EditorPreview {
         if (view?.story.phase === "ended" && view.token.session === token.session
           && view.token.epoch === token.epoch && view.token.step === token.step) this.stop();
       },
+    });
+    this.#fade = new StageFade({
+      stage: elements.stage,
+      layers: () => [elements.scene, elements.choices, ...elements.stage.querySelectorAll<HTMLElement>(":scope > .ending-panel")],
+      enabled: () => !document.hidden && this.#session !== null && !this.#session.view().skipping,
+      issue: message => { elements.status.textContent += ` · 界面过渡未能完成：${message}`; },
     });
     this.#choices = new ChoicePanel(elements.choices, (token, choiceId) => {
       this.#presentation?.unlockAudio();
@@ -76,7 +85,7 @@ export class EditorPreview {
     this.#fullscreen = new PlayerFullscreen({
       root: elements.surface, surface: elements.surface, button: elements.fullscreen, status: elements.fullscreenStatus,
       keyboardScopes: [elements.surface], enabled: () => this.#session !== null,
-      changed: () => this.#input.reset(),
+      changed: () => { this.#input.reset(); this.#fade.cancel(); },
     });
     const { signal } = this.#events;
     connectButtonSounds({
@@ -95,9 +104,10 @@ export class EditorPreview {
     elements.audio.addEventListener("click", () => this.#presentation?.unlockAudio(), { signal });
     elements.retry.addEventListener("click", () => this.#session?.send({ type: "retry" }), { signal });
     elements.stop.addEventListener("click", () => this.stop(), { signal });
-    document.addEventListener("visibilitychange", () => this.#session?.send({
-      type: "pause", reason: "background", paused: document.hidden,
-    }), { signal });
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) this.#fade.cancel();
+      this.#session?.send({ type: "pause", reason: "background", paused: document.hidden });
+    }, { signal });
   }
 
   get running(): boolean { return this.#session !== null; }
@@ -195,8 +205,14 @@ export class EditorPreview {
     ].filter(Boolean).join("；");
     e.debug.textContent = JSON.stringify({ initial, current: view.story.variables, player: view.story.player,
       token: view.token }, null, 2);
+    const terminal = view.story.terminal;
+    const visualKey = !view.disposed && view.story.phase === "ended" && terminal
+      ? JSON.stringify([view.token.session, terminal]) : "";
+    if (visualKey && visualKey !== this.#endingVisualKey) this.#fade.begin();
+    this.#endingVisualKey = visualKey;
     this.#choices.render(view);
     this.#ending.render(view, { kind: "preview", message: "草稿预览已到达此结局；不写玩家解锁、通关次数或正式记录。" });
+    if (view.disposed || view.skipping || view.problem?.blocking || view.paused.includes("background")) this.#fade.cancel();
     this.#elements.changed();
   }
 
@@ -205,6 +221,8 @@ export class EditorPreview {
   }
 
   stop(): void {
+    this.#fade.cancel();
+    this.#endingVisualKey = "";
     ++this.#generation;
     this.#input.reset();
     this.#fullscreen.reset();
@@ -234,6 +252,7 @@ export class EditorPreview {
     this.#fullscreen.dispose();
     this.#choices.dispose();
     this.#ending.dispose();
+    this.#fade.dispose();
     this.#layout.dispose();
     this.#events.abort();
   }

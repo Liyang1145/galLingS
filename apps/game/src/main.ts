@@ -35,6 +35,7 @@ import { SaveSlots } from "./slots.ts";
 import type { SaveEntry as Entry } from "./slots.ts";
 import { EndingPanel } from "../../../packages/player/src/web/ending.ts";
 import type { EndingRecordState } from "../../../packages/player/src/web/ending.ts";
+import { StageFade } from "../../../packages/player/src/web/stage-fade.ts";
 import "./style.css";
 
 const startup = new AbortController();
@@ -176,6 +177,8 @@ async function main(): Promise<void> {
   let presentation: WebPresentation | null = null;
   let input: PlayerInput | null = null;
   let fullscreen: PlayerFullscreen | null = null;
+  let stageFade: StageFade | null = null;
+  let endingVisualKey = "";
   let generation = 0;
   let mode: Entry = "main";
   let entryRequest = 0;
@@ -274,6 +277,7 @@ async function main(): Promise<void> {
       : state.platform === "android-trial" ? "Android 集成试用 · 记录与旧版隔离" : "浏览器试播";
     hostStatus.textContent = `${platform}${state.audioIssue ? ` · ${state.audioIssue}` : ""}`;
     presentation?.setAudioAllowed(state.audioAllowed);
+    if (state.paused) stageFade?.cancel();
     session?.send({ type: "pause", reason: "host", paused: state.paused });
     dialoguePanel?.refresh(state.audioAllowed);
   }, () => {
@@ -285,6 +289,13 @@ async function main(): Promise<void> {
     if (session) { toggleMenu(); return true; }
     return false;
   }, prepareExit);
+
+  stageFade = new StageFade({
+    stage,
+    layers: () => [scene, title, choices, menu, ...stage.querySelectorAll<HTMLElement>(":scope > .ending-panel")],
+    enabled: () => !closed && !exiting && !document.hidden && !host.state().paused && !session?.view().skipping,
+    issue: message => { if (!closed) status.textContent += ` · 界面过渡未能完成：${message}`; },
+  });
 
   dialoguePanel = new DialoguePanel({
     root: dialogueBody, resources, settings: content.source.settings,
@@ -318,6 +329,7 @@ async function main(): Promise<void> {
     if (closed || signal.aborted) throw new Error("页面已离开或退出已取消");
     if (exiting) throw new Error("已有退出请求");
     exiting = true;
+    stageFade?.cancel();
     fullscreen?.refresh();
     audioPreferences.refresh();
     readingPreferences.refresh();
@@ -410,7 +422,7 @@ async function main(): Promise<void> {
     root: document.documentElement, surface: element("player-surface", HTMLElement),
     button: fullscreenButton, status: element("fullscreen-status", HTMLElement),
     keyboardScopes: [document], enabled: () => !closed && !exiting,
-    changed: () => input?.reset(),
+    changed: () => { input?.reset(); stageFade?.cancel(); },
     ...(displayDriver ? { driver: displayDriver } : {}),
   });
 
@@ -428,7 +440,9 @@ async function main(): Promise<void> {
     auto.setAttribute("aria-pressed", String(view.auto));
     skip.setAttribute("aria-pressed", String(view.skipping));
     pause.textContent = view.paused.includes("menu") ? "关闭菜单" : "菜单 / 暂停";
-    menu.hidden = !view.paused.includes("menu");
+    const menuHidden = !view.paused.includes("menu");
+    if (menu.hidden !== menuHidden) stageFade?.begin();
+    menu.hidden = menuHidden;
     const phases = { presenting: "呈现中", ready: "可继续", choosing: "等待选择", ended: "本段结束" };
     status.textContent = `${story.nodeId} · ${phases[story.phase]}${view.paused.length ? ` · 已暂停：${view.paused.join(" / ")}` : ""}`
       + (story.terminal?.kind === "ending" ? ` · ${story.terminal.endingId}` : "")
@@ -439,6 +453,8 @@ async function main(): Promise<void> {
       player: story.player, phase: story.phase, choiceRemainingMs: view.choiceRemainingMs }, null, 2);
     choicePanel.render(view);
     refreshEnding(view);
+    if (view.disposed || view.skipping || view.problem?.blocking
+      || view.paused.some(reason => reason === "background" || reason === "host" || reason === "exit")) stageFade?.cancel();
     showRollback(view);
   }
 
@@ -450,8 +466,12 @@ async function main(): Promise<void> {
   }
 
   function refreshEnding(view = session?.view()): void {
-    if (!view) { endingPanel.clear(); return; }
+    if (!view) { endingVisualKey = ""; endingPanel.clear(); return; }
     const terminal = view.story.terminal;
+    const visualKey = !view.disposed && view.story.phase === "ended" && terminal
+      ? JSON.stringify([view.token.session, terminal]) : "";
+    if (visualKey && visualKey !== endingVisualKey) stageFade?.begin();
+    endingVisualKey = visualKey;
     const record: EndingRecordState = mode === "timed"
       ? { kind: "preview", message: "限时样例已到达此结局；本次游玩不写全局解锁或通关次数，不代表真实路线验收。" }
       : terminalRecord?.generation === generation && terminalRecord.presentation === presentation
@@ -529,11 +549,13 @@ async function main(): Promise<void> {
       const delivery = crypto.randomUUID();
       if (closed || request !== entryRequest) return;
       // All content, slot and global data are prepared before leaving live play.
+      stageFade?.begin();
       closeDialogue();
       input?.reset();
       owner?.dispose();
       session = null;
       terminalRecord = null;
+      endingVisualKey = "";
       endingPanel.clear();
       adopted = true;
       mode = selected;
@@ -591,10 +613,12 @@ async function main(): Promise<void> {
     } catch (error: unknown) {
       if (closed || request !== entryRequest) return;
       if (adopted) {
+        stageFade?.cancel();
         presentation?.dispose();
         choicePanel.clear();
         session = null;
         terminalRecord = null;
+        endingVisualKey = "";
         endingPanel.clear();
         presentation = null;
         host.releaseAudio();
@@ -629,6 +653,7 @@ async function main(): Promise<void> {
 
   function home(): void {
     if (exiting || closed) return;
+    stageFade?.begin();
     entryRequest++;
     input?.reset();
     closeDialogue();
@@ -636,6 +661,7 @@ async function main(): Promise<void> {
     session?.dispose();
     session = null;
     terminalRecord = null;
+    endingVisualKey = "";
     endingPanel.clear();
     presentation = null;
     audioPreferences.setMode("main");
@@ -834,6 +860,7 @@ async function main(): Promise<void> {
       await flushRecords();
       const records = await playerRecords.read();
       if (closed || request !== entryRequest || session) return;
+      stageFade?.cancel();
       renderGallery(galleryBody, content, resources, records);
       gallery.showModal();
     } catch (error: unknown) {
@@ -852,6 +879,7 @@ async function main(): Promise<void> {
     const request = ++entryRequest;
     const active = (): boolean => !closed && !exiting && !session && aftergame.open && request === entryRequest;
     try {
+      stageFade?.cancel();
       aftergameBody.textContent = "正在提交已有全局事实并准备通关记录……";
       aftergame.showModal();
       await flushRecords();
@@ -881,6 +909,7 @@ async function main(): Promise<void> {
     if (exiting || closed) return;
     const owner = session;
     if (!owner || owner.view().disposed || dialogue.open) return;
+    stageFade?.cancel();
     dialogueOwner = owner;
     owner.send({ type: "pause", reason: "history", paused: true });
     try {
@@ -937,12 +966,14 @@ async function main(): Promise<void> {
   rollbackButton.onclick = () => { void rollback(); };
   retryRecords.onclick = () => { void flushRecords().catch(() => {}); };
   const visibility = (): void => {
+    if (document.hidden) stageFade?.cancel();
     session?.send({ type: "pause", reason: "background", paused: document.hidden });
     dialoguePanel?.refresh(host.state().audioAllowed);
   };
   document.addEventListener("visibilitychange", visibility);
   const dispose = (): void => {
     closed = true;
+    stageFade?.dispose();
     entryRequest++;
     storageMessageEpoch++;
     endingFeedbackOwners.clear();

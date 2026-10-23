@@ -175,11 +175,17 @@ select { font: inherit; color: inherit; background: #183443; border: 1px solid #
 .dialogue-history-dialog { width: min(800px, 92vw); }
 .dialogue-audio-controls { position: sticky; top: 0; z-index: 1; background: #0c1820; padding: 8px 0; border-bottom: 1px solid #39515c; }
 .dialogue-audio-controls p { margin: 0 0 8px; font-size: .85rem; line-height: 1.6; }
+.dialogue-rollback-controls { margin: 16px 0; border: 1px solid #39515c; min-width: 0; }
+.dialogue-rollback-controls label { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin: 8px 0; }
+.dialogue-rollback-controls select { min-width: 0; max-width: 100%; }
+.dialogue-rollback-controls p { font-size: .85rem; line-height: 1.65; }
 .dialogue-history { list-style: none; margin: 18px 0 0; padding: 0; }
 .dialogue-history li { padding: 16px 0; border-top: 1px solid #39515c; }
 .dialogue-history b { color: #b7e2f0; }
 .dialogue-history p { white-space: pre-wrap; line-height: 1.8; margin: 8px 0 0; overflow-wrap: anywhere; }
 .dialogue-history button { margin-top: 8px; }
+.dialogue-history button + button { margin-left: 8px; }
+.dialogue-history small { display: block; color: #bdd8df; margin-top: 8px; }
 .aftergame-dialog label { display: grid; gap: 10px; margin: 18px 0; }
 .aftergame-dialog select { width: 100%; }
 .aftergame-dialog p { line-height: 1.7; overflow-wrap: anywhere; }

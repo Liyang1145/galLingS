@@ -1,7 +1,7 @@
 import { loadContent } from "virtual:haifeng-content";
 import { whaleSkin } from "virtual:haifeng-appearance";
 import { createGameSession } from "../../../packages/player/src/session.ts";
-import type { GameSession, RestoreVoice, SessionView } from "../../../packages/player/src/session.ts";
+import type { GameSession, RestoreVoice, RollbackRequest, RollbackResult, SessionView } from "../../../packages/player/src/session.ts";
 import { WebPresentation } from "../../../packages/player/src/web/presentation.ts";
 import { createResourceAccess } from "../../../packages/player/src/web/resources.ts";
 import type { Clock } from "../../../packages/player/src/clock.ts";
@@ -279,6 +279,18 @@ async function main(): Promise<void> {
     requestAudio: () => {
       host.requestAudio();
       dialoguePanel?.refresh(host.state().audioAllowed);
+    },
+    canRollback: () => !closed && !exiting && !rollingBack && entryPreparation !== entryRequest
+      && !document.hidden && !host.state().paused && dialogue.open && dialogueOwner === session
+      && !!dialogueOwner?.view().canCheckpoint,
+    rollback: async (request, signal) => {
+      const owner = dialogueOwner;
+      if (!owner || owner !== session || !dialogue.open || signal.aborted) {
+        return { accepted: false, code: "ROLLBACK_CANCELLED", message: "原回看已关闭或所属会话已改变" };
+      }
+      const result = await rollbackTo(owner, request, signal);
+      if (result.accepted && !signal.aborted && owner === session && dialogueOwner === owner) closeDialogue();
+      return result;
     },
   });
 
@@ -682,42 +694,75 @@ async function main(): Promise<void> {
   }
 
   async function rollback(): Promise<void> {
-    if (exiting || closed) return;
     const owner = session;
     const voice = voiceChoice.value;
     const boundary = rollbackBoundary.value;
     const targetId = Number(rollbackTarget.value);
-    if (!owner || rollingBack || !Number.isSafeInteger(targetId) || targetId < 1
-      || !["within", "across"].includes(boundary) || (voice !== "silent" && voice !== "replay" && voice !== "resume")) return;
+    if (!owner || (boundary !== "within" && boundary !== "across")
+      || (voice !== "silent" && voice !== "replay" && voice !== "resume")) return;
+    await rollbackTo(owner, { targetId, voice, crossChoices: boundary === "across" });
+  }
+
+  async function rollbackTo(
+    owner: GameSession,
+    selection: Pick<RollbackRequest, "targetId" | "voice" | "crossChoices">,
+    signal?: AbortSignal,
+  ): Promise<RollbackResult> {
+    const cancelled = (): RollbackResult => ({ accepted: false, code: "ROLLBACK_CANCELLED", message: "回退准备已取消或所属会话已改变" });
+    if (closed || exiting || owner !== session || signal?.aborted || entryPreparation === entryRequest) return cancelled();
+    if (rollingBack) return { accepted: false, code: "ROLLBACK_PENDING", message: "已有回退正在准备，请等待本次结果" };
+    if (!Number.isSafeInteger(selection.targetId) || selection.targetId < 1) {
+      return { accepted: false, code: "ROLLBACK_TARGET", message: "请选择本次回退位置" };
+    }
     const token = owner.view().token;
     const selected = mode;
     const request = ++entryRequest;
+    const active = (): boolean => !closed && !exiting && request === entryRequest && owner === session && !signal?.aborted;
+    let adopted = false;
     rollingBack = true;
     owner.send({ type: "pause", reason: "operation", paused: true });
     rollbackMessage.textContent = "正在准备回退位置和当前全局记录……";
+    const cancelPreparation = (): void => {
+      if (!closed && request === entryRequest && owner === session && !adopted) {
+        rollbackMessage.textContent = "回看已关闭，本次尚未采用的回退已取消。已发起的全局记录提交仍可完成。";
+        owner.send({ type: "pause", reason: "operation", paused: false });
+      }
+    };
+    signal?.addEventListener("abort", cancelPreparation, { once: true });
     try {
       if (selected === "main") await recordWriter.flush();
+      if (!active()) return cancelled();
       const records = selected === "main" ? await playerRecords.read() : null;
-      if (closed || request !== entryRequest || owner !== session) return;
+      if (!active()) return cancelled();
       const result = await owner.rollback({
-        token, targetId, voice, crossChoices: boundary === "across",
+        token, ...selection,
         currentPlayer: records ? playerProjection(records) : { "周目": 1, "结局数": 0 },
       });
-      if (closed || request !== entryRequest || owner !== session) return;
-      if (!result.accepted) throw new Error(`${result.code}：${result.message}`);
+      adopted = result.accepted;
+      // Once accepted, cancellation can hide feedback but cannot undo the adoption.
+      if (!active()) return result;
+      if (!result.accepted) {
+        rollbackMessage.textContent = `回退未采用：${result.code}：${result.message}。当前进度和历史保持原值。`;
+        return result;
+      }
       resetSaveMessage();
       rollbackMessage.textContent = `已恢复到 ${result.nodeId} 的检查点，后续路线历史已截断；全局成果保留。媒体问题请在同一位置重试。`;
-      unlockAudio();
+      try { unlockAudio(); }
+      catch (error: unknown) { rollbackMessage.textContent += ` 声音启用未完成：${error instanceof Error ? error.message : "声音不可用"}`; }
+      return result;
     } catch (error: unknown) {
-      if (!closed && request === entryRequest && owner === session) {
-        rollbackMessage.textContent = `回退未采用：${error instanceof Error ? error.message : "准备失败"}。当前进度和历史保持原值。`;
-      }
+      const result: RollbackResult = { accepted: false, code: "ROLLBACK_PREPARE", message: error instanceof Error ? error.message : "回退准备失败" };
+      if (active()) rollbackMessage.textContent = `回退未采用：${result.message}。当前进度和历史保持原值。`;
+      return result;
     } finally {
+      signal?.removeEventListener("abort", cancelPreparation);
       rollingBack = false;
       if (!closed && request === entryRequest && owner === session) {
+        if (signal?.aborted && adopted) rollbackMessage.textContent = "回退已采用；关闭回看不会撤销已经恢复的进度。";
         owner.send({ type: "pause", reason: "operation", paused: false });
       }
       if (!closed && session) showRollback(session.view());
+      dialoguePanel?.refresh(host.state().audioAllowed);
     }
   }
 
@@ -778,7 +823,7 @@ async function main(): Promise<void> {
     dialogueOwner = owner;
     owner.send({ type: "pause", reason: "history", paused: true });
     try {
-      dialoguePanel?.open(owner.dialogueHistory());
+      dialoguePanel?.open(owner.dialogueHistory(), owner.rollbackTargets());
       dialogue.showModal();
       dialoguePanel?.refresh(host.state().audioAllowed);
       dialogueBody.lastElementChild?.lastElementChild?.scrollIntoView({ block: "nearest" });

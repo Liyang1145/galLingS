@@ -13,9 +13,14 @@ import type { InteractionFeedback, ScheduledFeedback } from "./ui-sounds.ts";
 
 export type RestoreVoice = "silent" | "replay" | "resume";
 
-export type DialogueEntry =
+type DialogueValue =
   | { kind: "line"; nodeId: string; chapter: string; speaker: string; text: string; voiceId: string | null }
   | { kind: "choice"; nodeId: string; chapter: string; text: string; timedOut: boolean };
+
+export type DialogueEntry = DialogueValue & {
+  /** Session-local visit, shared by its line and accepted choice; never a node lookup. */
+  visitId: number;
+};
 
 export interface SessionToken {
   session: number;
@@ -250,8 +255,8 @@ class Session implements GameSession {
     return new Promise(resolve => this.enqueue({ type: "rollback", request: structuredClone(request), resolve }));
   }
 
-  private appendDialogue(entry: DialogueEntry): void {
-    this.#dialogue.push({ order: ++this.#dialogueOrder, value: entry });
+  private appendDialogue(entry: DialogueValue): void {
+    this.#dialogue.push({ order: ++this.#dialogueOrder, value: { ...entry, visitId: this.#visit } });
     // Preserve the old dialogue backlog bound, separate from rollback policy.
     if (this.#dialogue.length > 300) this.#dialogue.shift();
   }

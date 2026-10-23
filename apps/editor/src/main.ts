@@ -12,6 +12,7 @@ import { authorTextKey } from "../../../packages/story-model/src/author-draft.ts
 import type { AuthorDraftBase } from "../../../packages/story-model/src/author-draft.ts";
 import { downloadDraft } from "./download.ts";
 import { AuthorReferences } from "./references.ts";
+import { AuthorFlow } from "./flow.ts";
 import "../../game/src/style.css";
 import "./style.css";
 
@@ -56,6 +57,7 @@ let operation: "load" | "preview" | "save" | null = null;
 let disposed = false;
 let importer: AuthorDraftImporter | null = null;
 let references: AuthorReferences | null = null;
+let flow: AuthorFlow | null = null;
 let checkpoints: PreviewCheckpoints | null = null;
 
 function message(value: string, error = false): void {
@@ -109,6 +111,7 @@ function controls(): void {
   el.search.disabled = locked;
   importer?.setEnabled(!!baseline && operation === null);
   references?.setAvailable(!!baseline && !locked);
+  flow?.setAvailable(!!baseline && !locked);
   checkpoints?.setEnabled(!disposed && !!baseline && operation === null && !reviewing);
 }
 
@@ -128,6 +131,7 @@ function nodeForm(): void {
     ? "仅改已有说话人和对白字符串；选项、变量、流转、素材及演出保留。预览与保存都会调用同一内容转换器。"
     : "缺失或非字符串字段在本片只读，不会自动添加字段。节点 ID、顺序、选项、变量、流转、素材及演出保留。";
   references?.select(selected);
+  flow?.select(selected);
   controls();
 }
 
@@ -179,6 +183,7 @@ function draftChanged(cancelImport = true, refreshForm = false): void {
   revision++;
   if (cancelImport) importer?.invalidate();
   references?.invalidate();
+  flow?.invalidate();
   checkpoints?.invalidatePending("草稿已变化，未采用旧检查点读取；已有待用数据保留，恢复时仍须匹配当前修订。");
   el.discard.checked = false;
   preview.draftChanged();
@@ -256,12 +261,14 @@ async function perform(kind: "load" | "preview" | "save", start: PreviewStart = 
       baseline = result;
       revision++;
       references?.invalidate();
+      flow?.invalidate();
       el.discard.checked = false;
       if (!result.content.nodes.some(node => node.id === selected)) selected = result.content.entryNodeId;
       el.source.textContent = `作者源 SHA-256：${result.sourceSha256}；节点 ${result.content.nodes.length} 个；内容修订：${result.content.revision}`;
       list();
       nodeForm();
       references?.refresh();
+      flow?.refresh();
       message(kind === "save"
         ? `作者源已保存。原文件备份：${result.backup ?? "未返回备份位置，请检查作品目录"}。预览已停止，请重新预览本次修订。`
         : "已读取当前作者源；编辑保留为本页草稿，保存需点击“保存到作者源”。");
@@ -338,6 +345,7 @@ function dispose(): void {
   preview.dispose();
   importer?.dispose();
   references?.dispose();
+  flow?.dispose();
   checkpoints?.dispose();
   drafts.clear();
   events.abort();
@@ -377,14 +385,29 @@ references = new AuthorReferences({
   current: snapshot => !disposed && baseline !== null && baseline.content === snapshot.content
     && baseline.sourceSha256 === snapshot.sourceSha256 && revision === snapshot.revision,
   selected: () => selected,
-  navigate(nodeId) {
-    if (disposed || operation === "load" || operation === "save"
-      || !baseline?.content.nodes.some(node => node.id === nodeId)) return;
-    selected = nodeId;
-    list();
-    nodeForm();
-    el.nodeTitle.focus();
+  navigate: navigateNode,
+});
+function navigateNode(nodeId: string): void {
+  if (disposed || operation === "load" || operation === "save"
+    || !baseline?.content.nodes.some(node => node.id === nodeId)) return;
+  selected = nodeId;
+  list();
+  nodeForm();
+  el.nodeTitle.focus();
+}
+flow = new AuthorFlow({
+  root: element("author-flow", HTMLElement),
+  capture() {
+    if (!baseline || disposed) return null;
+    return {
+      content: baseline.content, sourceSha256: baseline.sourceSha256, revision,
+      overrides: new Map([...drafts.values()].map(edit => [authorTextKey(edit.nodeId, edit.field), edit.after])),
+    };
   },
+  current: snapshot => !disposed && baseline !== null && baseline.content === snapshot.content
+    && baseline.sourceSha256 === snapshot.sourceSha256 && revision === snapshot.revision,
+  selected: () => selected,
+  navigate: navigateNode,
 });
 checkpoints = new PreviewCheckpoints({
   root: element("preview-checkpoints", HTMLElement),

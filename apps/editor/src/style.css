@@ -46,6 +46,25 @@
 .reference-note, .reference-panel small { color: #bdd8df; }
 .reference-unresolved { color: #ffb895; }
 .reference-pager { margin-top: 10px; font-size: .75rem; }
+.flow-panel { margin: 24px 0; border: 1px solid #557682; border-radius: 8px; padding: 16px; }
+.flow-panel h3, .flow-panel h4 { font-size: 1rem; font-weight: 500; margin: 0; }
+.flow-panel h4 { margin-top: 16px; }
+.flow-panel p { line-height: 1.7; overflow-wrap: anywhere; }
+.flow-panel fieldset { min-width: 0; border: 1px solid #39515c; margin: 12px 0 0; padding: 12px; }
+.flow-panel fieldset:disabled { opacity: .6; }
+.flow-panel legend, .flow-pager { font-size: .75rem; }
+.flow-viewport { overflow: auto; max-height: 560px; margin-top: 14px; border: 1px solid #39515c; border-radius: 6px; }
+.flow-canvas { position: relative; width: 960px; display: grid; grid-template-columns: repeat(3, 280px); gap: 40px; padding: 20px; }
+.flow-canvas > svg { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.flow-canvas path { stroke: #adcbd1; stroke-width: 2; fill: none; }
+.flow-column { display: flex; flex-direction: column; gap: 16px; position: relative; }
+.flow-center { display: flex; align-items: center; position: relative; }
+.flow-card { height: 168px; width: 280px; padding: 10px; border: 1px solid #557682; border-radius: 8px; background: #102632; overflow: auto; }
+.flow-current { border-color: #aed9e7; background: #183443; }
+.flow-card button { display: block; max-width: 100%; padding: 5px 8px; font-size: .75rem; overflow-wrap: anywhere; text-align: left; }
+.flow-card p { font-size: .75rem; line-height: 1.5; margin: 6px 0; }
+.flow-card small { display: block; font-size: .7rem; overflow-wrap: anywhere; color: #bdd8df; margin-top: 5px; }
+.flow-panel pre { max-height: 320px; white-space: pre-wrap; overflow: auto; overflow-wrap: anywhere; font-size: .75rem; background: #061119; padding: 12px; }
 .preview-checkpoints { margin: 24px 0; border: 1px solid #557682; border-radius: 8px; padding: 16px; }
 .preview-checkpoints h3 { margin: 0; font-size: 1rem; font-weight: 500; }
 .preview-checkpoints p { line-height: 1.7; overflow-wrap: anywhere; }

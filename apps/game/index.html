@@ -16,13 +16,15 @@
       <section class="stage" id="stage" aria-label="剧情画面">
         <div class="scene" id="scene"></div>
         <div class="title-screen" id="title">
-          <div class="title-copy"><p>海风与布丁</p><span>主线运行切片</span></div>
+          <div class="title-content">
+          <div class="title-copy" id="title-copy"><p id="work-title">海风与布丁</p></div>
           <div class="title-menu">
             <button id="start" type="button" disabled>从第一话开始</button>
             <button id="gallery-open" type="button" disabled>鉴赏</button>
             <button id="aftergame-open" type="button" disabled>通关后玩法</button>
             <button id="timed" type="button" disabled>限时选择样例</button>
             <small>样例使用声明初值<br />不代表真实路线进度</small>
+          </div>
           </div>
         </div>
         <div class="choices" id="choices"></div>
@@ -34,6 +36,8 @@
           </div>
         </section>
       </section>
+      <p id="cover-status" class="preview-note" role="status" aria-live="polite"></p>
+      <button type="button" id="retry-cover" hidden>重试本地标题背景</button>
       <nav class="controls" aria-label="试播控制">
         <button type="button" id="next" disabled>继续 / 补全文字</button>
         <button type="button" id="auto" disabled aria-pressed="false">自动</button>

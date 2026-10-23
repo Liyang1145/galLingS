@@ -7,6 +7,8 @@ import { createResourceAccess } from "../../../packages/player/src/web/resources
 import { authorButtonPreferences } from "../../../packages/player/src/button-preferences.ts";
 import { connectButtonSounds } from "../../../packages/player/src/web/button-sounds.ts";
 import type { AuthorDocument } from "./document.ts";
+import { whaleSkin } from "virtual:haifeng-appearance";
+import { applyAuthorAppearance } from "../../../packages/player/src/web/appearance.ts";
 
 export interface PreviewElements {
   stage: HTMLElement; scene: HTMLElement; choices: HTMLElement;
@@ -61,7 +63,9 @@ export class EditorPreview {
       type: "pause", reason: "background", paused: document.hidden,
     }), { signal });
     this.#resize = new ResizeObserver(() => {
-      elements.scene.style.setProperty("--stage-scale", String(elements.stage.clientWidth / 1280));
+      const scale = String(elements.stage.clientWidth / 1280);
+      elements.stage.style.setProperty("--stage-scale", scale);
+      elements.scene.style.setProperty("--stage-scale", scale);
     });
     this.#resize.observe(elements.stage);
   }
@@ -88,7 +92,9 @@ export class EditorPreview {
       schedule(delay, callback) { const id = window.setTimeout(callback, delay); return () => window.clearTimeout(id); },
     };
     const generation = ++this.#generation;
-    const presentation = new WebPresentation(this.#elements.scene, source, createResourceAccess(source, locations));
+    const resources = createResourceAccess(source, locations);
+    applyAuthorAppearance(this.#elements.stage, source, resources, whaleSkin.artwork);
+    const presentation = new WebPresentation(this.#elements.scene, source, resources, true, undefined, undefined, whaleSkin.artwork);
     this.#presentation = presentation;
     try {
       this.#session = createGameSession({

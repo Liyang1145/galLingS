@@ -29,7 +29,6 @@
 .draft-comparison section { min-width: 0; }
 .draft-comparison h3 { font-size: .85rem; font-weight: 500; }
 .draft-comparison pre { max-height: 240px; overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere; background: #061119; padding: 10px; font-size: .8rem; }
-.editor-layout .choices button { font-size: clamp(.7rem, 1.1vw, 1rem); padding: 10px; }
 input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 3px solid #aed9e7; outline-offset: 2px; }
 @media (max-width: 900px) {
   .editor-layout { grid-template-columns: 1fr; }

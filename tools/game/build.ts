@@ -14,6 +14,8 @@ import type { GamePackage, PackageFile, PackagedResource } from "../../packages/
 import { loadSourceContent, REPOSITORY_ROOT } from "../content/build.ts";
 import type { ResourceFile } from "../content/build.ts";
 import { HOST_BRIDGE_PROTOCOL } from "../../packages/story-model/src/host.ts";
+import { readWhaleSkin } from "../content/appearance.ts";
+import { whaleAppearance } from "../dev/appearance.ts";
 
 const exec = promisify(execFile);
 const sha256 = (value: string | Uint8Array): string => createHash("sha256").update(value).digest("hex");
@@ -124,6 +126,7 @@ async function build(): Promise<void> {
   }
   const loaded = await loadSourceContent();
   const content = readStoryContent(loaded.content);
+  const skin = await readWhaleSkin();
   const [commit, state, lockBytes] = await Promise.all([
     exec("git", ["rev-parse", "HEAD"], { cwd: root }),
     exec("git", ["status", "--porcelain", "--untracked-files=normal"], { cwd: root }),
@@ -151,7 +154,7 @@ async function build(): Promise<void> {
     await buildFrontend({
       configFile: false, envFile: false, publicDir: false,
       root: resolve(root, "apps/game"), base: "./",
-      plugins: [packagedContent(root)],
+      plugins: [packagedContent(root), whaleAppearance(skin)],
       build: {
         outDir: temporary, emptyOutDir: false, copyPublicDir: false, sourcemap: false,
         assetsInlineLimit: 0,
@@ -163,6 +166,7 @@ async function build(): Promise<void> {
       format: "haifeng.package-sources/1",
       author: content.source,
       choiceIdentities: { file: "docs/rebuild/baseline/choices.json", sha256: loaded.identitySha256 },
+      uiSkin: skin.source,
       resources: content.resources.map(resource => ({
         assetId: resource.id, sourcePath: resource.path, metadata: resource.metadata,
       })),

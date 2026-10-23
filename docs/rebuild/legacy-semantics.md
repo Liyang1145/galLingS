@@ -36,7 +36,7 @@
 | `pref(vbgm/vamb/vvo/vse)`、`refreshAudioVolumes` | [独立声音偏好](preferences.md)保留四轨作者默认与玩家覆盖，实时更新当前音轨并保留渐变进度；0 音量触发的一次性音效不补播；不读旧偏好、不随存读档或回退覆盖 |
 | `pref(speed/autoMul/readerScale/ghost)`、`typeText/kick/applyTheme` | [独立阅读偏好](preferences.md#阅读偏好的字段与时机)保留逐字间隔、自动倍率、字号与底板透明度；前两项用于后续呈现/等待，后两项即时应用；当前选择/自动/恢复计时不重置，试播视觉基准仍非完整旧主题迁移 |
 | 资源自带 `shot/sceneFit/cg/previewExcluded/audioCategory/gain` 等 | 保留元数据及来源；诊断不能把资源登记视为已安装、可播放或已授权 |
-| `settings` 的 cover/theme/UI 音效 | 保留旧作品外观基准；新切片不夹带改版；编辑/插件/聊天设置不成为离线依赖 |
+| `settings` 的 cover/theme/UI 音效 | [作者外观](appearance.md)读取原主题/封面，复用旧入口原鲸鱼 SVG；最终右侧菜单覆盖作者 `menu=left`，对白字号采用作者基准乘玩家倍率，不改图形或素材；完整正式布局仍待迁移，编辑/插件/聊天设置不成为离线依赖 |
 | `playUi(choiceShow/choiceConfirm/timeoutSilence/save)`、`startTick/stopTick` | [共享选择与存档反馈](feedback.md)已接实际首次就绪、接受的选择及存档提交；恢复不补播一次性提示，当前循环随有效计时暂停；其余 UI 音触发待接，不新增素材 |
 | `uiVarSe`、`playUi(cg/chapterEnd)` | [剧情反馈](feedback.md#分组变量变化与本次呈现)读取唯一核心分开的选项/进入变量变化，按当前场面安排；CG 共用鉴赏规则，话末按结局/下一顺序章节标记判断；初始化/恢复不发，旧延迟归属本次呈现并可取消，即时 `seEvents` 也参与变量提示避让 |
 | `showEnding` 的 `endingNew` | [首次解锁事务回执](feedback.md#首次结局解锁与终态反馈)取代页面缓存判断，提交成功且仍是原会话结局才反馈；已有结局和同批重试不重复响声或计次；终态接续音量/暂停，离开销毁 |

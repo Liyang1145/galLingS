@@ -6,6 +6,7 @@ import type { Plugin } from "vite";
 import { ContentError } from "../../packages/story-model/src/model.ts";
 import { REPOSITORY_ROOT } from "../content/build.ts";
 import { authorFields, previewAuthorText, readAuthorSource, saveAuthorText } from "./source.ts";
+import { whaleAppearance } from "../dev/appearance.ts";
 
 const ORIGIN = "http://127.0.0.1:5174";
 const HOST = "127.0.0.1:5174";
@@ -104,7 +105,7 @@ function authorEditor(): Plugin {
 
 export default defineConfig({
   root: resolve(REPOSITORY_ROOT, "apps/editor"),
-  plugins: [authorEditor()],
+  plugins: [authorEditor(), whaleAppearance()],
   server: {
     host: "127.0.0.1", port: 5174, strictPort: true, cors: false,
     fs: {

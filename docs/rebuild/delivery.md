@@ -8,6 +8,8 @@
 
 构建入口是 `tools/game/build.ts`，只在显式执行 `npm run game:build` 时工作。它复用同一个旧作者源转换器和唯一 TypeScript 核心；运行端不再访问作者 `game.js`、旧播放器、本机 `/@fs/` 资源或 Node 内容工具。
 
+[外观装配](appearance.md)另在构建时只读提取旧 `index.html` 标记区的三个原鲸鱼 SVG，游戏/编辑开发入口共用同一插件；不执行旧页面或复制旧脚本。图形字节进入前端，原文件及标记区摘要进入 `content/sources.json.uiSkin`，由既有前端和来源文件摘要覆盖。无需新清单/宿主版本，运行端不读取旧文件；旧 HTML 仍有这个明确的构建消费者，不能提前删除。
+
 ## 两条内容接入
 
 `virtual:haifeng-content` 现在提供异步 `loadContent(signal?)`：

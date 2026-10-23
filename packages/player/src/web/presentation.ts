@@ -10,6 +10,8 @@ import type { AudioVolumes } from "../preferences.ts";
 import { authorReadingPreferences, readReadingPreferences } from "../reading-preferences.ts";
 import type { ReadingPreferences } from "../reading-preferences.ts";
 import { readUiSounds } from "../ui-sounds.ts";
+import { applyAuthorAppearance } from "./appearance.ts";
+import type { AuthorAppearance, WhaleArtwork } from "../appearance.ts";
 import type { InteractionFeedback } from "../ui-sounds.ts";
 
 const LOOKS: Record<string, string> = {
@@ -74,6 +76,7 @@ export class WebPresentation implements PresentationAdapter {
   readonly #resources: ResourceAccess;
   readonly #content: StoryContent;
   readonly #audio: AudioMixer;
+  readonly #appearance: AuthorAppearance;
   #reading: ReadingPreferences;
   readonly #actors = new Map<string, Actor>();
   #backgroundId: string | null = null;
@@ -82,10 +85,11 @@ export class WebPresentation implements PresentationAdapter {
   #active: Playback | null = null;
 
   constructor(root: HTMLElement, content: StoryContent, resources: ResourceAccess, audioAllowed = true, volumes?: AudioVolumes,
-    reading?: ReadingPreferences) {
+    reading?: ReadingPreferences, artwork?: WhaleArtwork) {
     this.#root = root;
     this.#content = content;
     this.#resources = resources;
+    this.#appearance = applyAuthorAppearance(root, content, resources, artwork);
     this.#world = document.createElement("div");
     this.#world.className = "world";
     this.#background = document.createElement("img");
@@ -395,6 +399,7 @@ export class WebPresentation implements PresentationAdapter {
         const ids = [...new Set([
           ...(view.presentation.scene.background ? [view.presentation.scene.background] : []),
           ...view.presentation.scene.sprites.map(sprite => sprite.assetId),
+          ...(this.#appearance.theme.imageId ? [this.#appearance.theme.imageId] : []),
         ])];
         await Promise.all(ids.map(async id => {
           try { await loadImage(this.#resources.url(id), context.signal); }

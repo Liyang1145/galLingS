@@ -1,4 +1,5 @@
 import { loadContent } from "virtual:haifeng-content";
+import { whaleSkin } from "virtual:haifeng-appearance";
 import { createGameSession } from "../../../packages/player/src/session.ts";
 import type { GameSession, RestoreVoice, SessionView } from "../../../packages/player/src/session.ts";
 import { WebPresentation } from "../../../packages/player/src/web/presentation.ts";
@@ -24,6 +25,7 @@ import {
 } from "../../../packages/player/src/button-preferences.ts";
 import { connectButtonSounds } from "../../../packages/player/src/web/button-sounds.ts";
 import { PreferencesPanel } from "./preferences.ts";
+import { applyAuthorAppearance, connectTitleCover } from "../../../packages/player/src/web/appearance.ts";
 import "./style.css";
 
 const startup = new AbortController();
@@ -85,6 +87,16 @@ async function main(): Promise<void> {
   const exitCancel = element("exit-cancel", HTMLButtonElement);
   const writes = new PendingWrites();
   const resources = createResourceAccess(content, locations);
+  const appearance = applyAuthorAppearance(stage, content, resources, whaleSkin.artwork);
+  element("work-title", HTMLElement).textContent = content.title;
+  const titleMenu = title.querySelector(".title-menu");
+  if (!(titleMenu instanceof HTMLElement)) throw new Error("页面缺少标题菜单");
+  const cover = connectTitleCover({
+    root: title, title: element("title-copy", HTMLElement), menu: titleMenu,
+    status: element("cover-status", HTMLElement), retry: element("retry-cover", HTMLButtonElement),
+    cover: appearance.cover, resources,
+  });
+  startup.signal.addEventListener("abort", cover.dispose, { once: true });
   const clock: Clock = {
     now: () => performance.now(),
     schedule: (delay, callback) => {
@@ -327,7 +339,11 @@ async function main(): Promise<void> {
     }
   }
 
-  const resize = new ResizeObserver(() => scene.style.setProperty("--stage-scale", String(stage.clientWidth / 1280)));
+  const resize = new ResizeObserver(() => {
+    const scale = String(stage.clientWidth / 1280);
+    stage.style.setProperty("--stage-scale", scale);
+    scene.style.setProperty("--stage-scale", scale);
+  });
   resize.observe(stage);
 
   function show(view: SessionView): void {
@@ -447,7 +463,7 @@ async function main(): Promise<void> {
       let sequence = 0;
       const reading = readingPreferences.values(selected);
       const newPresentation = new WebPresentation(scene, source, resources, host.state().audioAllowed,
-        audioPreferences.values(selected), reading);
+        audioPreferences.values(selected), reading, whaleSkin.artwork);
       presentation = newPresentation;
       const sessionGeneration = ++generation;
       session = createGameSession({
@@ -811,6 +827,7 @@ async function main(): Promise<void> {
     readingPreferences.dispose();
     buttonPreferences.dispose();
     buttonEvents.abort();
+    cover.dispose();
     session?.dispose();
     host.releaseAudio();
     host.dispose();

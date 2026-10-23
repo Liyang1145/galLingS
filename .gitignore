@@ -26,3 +26,8 @@ desktop/src-tauri/gen/
 # TypeScript 重构：依赖和生成物不作为作者输入
 node_modules/
 *.tsbuildinfo
+
+# Android 重构集成：本机 SDK 设置、Gradle 缓存及编译输出
+mobile/android/local.properties
+mobile/android/.gradle/
+mobile/android/**/build/

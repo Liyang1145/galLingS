@@ -113,8 +113,14 @@ async function main(): Promise<void> {
   note.insertAdjacentElement("afterend", hostStatus);
   const host = connectHost(state => {
     hostStatus.textContent = state.issue ? `宿主状态异常，已暂停：${state.issue}`
-      : state.platform === "windows-trial" ? "Windows 集成试用 · 记录与旧版隔离" : "浏览器试播";
+      : state.platform === "windows-trial" ? "Windows 集成试用 · 记录与旧版隔离"
+      : state.platform === "android-trial" ? "Android 集成试用 · 记录与旧版隔离" : "浏览器试播";
     session?.send({ type: "pause", reason: "host", paused: state.paused });
+  }, () => {
+    if (dialogue.open) { closeDialogue(); return true; }
+    if (gallery.open) { gallery.close(); return true; }
+    if (session) { toggleMenu(); return true; }
+    return false;
   });
 
   const resize = new ResizeObserver(() => scene.style.setProperty("--stage-scale", String(stage.clientWidth / 1280)));

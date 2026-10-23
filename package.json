@@ -9,6 +9,7 @@
     "game:dev": "vite --config tools/dev/vite.config.ts",
     "game:build": "node tools/game/build.ts",
     "windows:prepare": "node tools/game/windows.ts",
+    "android:prepare": "node tools/game/android.ts",
     "typecheck": "tsc --noEmit && tsc --noEmit -p tsconfig.web.json"
   },
   "devDependencies": {

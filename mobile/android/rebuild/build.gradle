@@ -1,0 +1,46 @@
+plugins { id 'com.android.application' }
+
+def packageId = providers.gradleProperty('rebuildPackage').orNull
+if (packageId != null && !(packageId ==~ /[a-f0-9]{64}/)) {
+    throw new GradleException('rebuildPackage 必须是 android:prepare 输出的完整产物摘要')
+}
+def prepared = packageId == null ? null : new File(rootProject.projectDir, "../../dist/android/${packageId}").canonicalFile
+
+android {
+    namespace 'net.gallings.haifeng.rebuild'
+    compileSdk 34
+    defaultConfig {
+        applicationId 'net.gallings.haifeng.rebuild'
+        minSdk 24
+        targetSdk 34
+        // Keep the existing trial build inputs; these are not a new product release version.
+        versionCode((System.getenv('APK_VERSION_CODE') ?: '1') as int)
+        versionName(System.getenv('APK_VERSION_NAME') ?: 'playtest')
+    }
+    sourceSets.main.assets.srcDirs = prepared == null ? [] : [new File(prepared, 'assets')]
+    androidResources { noCompress += ['mp3', 'ogg', 'wav', 'm4a', 'webp', 'png', 'jpg'] }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies { implementation 'androidx.webkit:webkit:1.11.0' }
+
+tasks.named('preBuild').configure {
+    doFirst {
+        if (prepared == null) throw new GradleException('先执行 android:prepare，再以 -PrebuildPackage=<产物摘要> 构建 :rebuild 模块')
+        def expected = new File(rootProject.projectDir, '../../dist/android').canonicalFile
+        if (prepared.parentFile != expected || prepared.name != packageId) throw new GradleException('Android 集成输入目录越界')
+        def receiptFile = new File(prepared, 'preparation.json')
+        if (!receiptFile.isFile()) throw new GradleException('Android 集成输入没有完成准备')
+        def receipt = new groovy.json.JsonSlurper().parse(receiptFile, 'UTF-8')
+        if (receipt.format != 'haifeng.android-preparation/1' || receipt.packageId != packageId
+                || receipt.purpose != 'integration-trial') throw new GradleException('Android 准备记录无效')
+        def digest = { File file -> java.security.MessageDigest.getInstance('SHA-256').digest(file.bytes).encodeHex().toString() }
+        if (digest(new File(prepared, 'assets/game/game-package.json')) != receipt.manifestSha256
+                || digest(new File(prepared, 'assets/host-bootstrap.js')) != receipt.bridgeSha256) {
+            throw new GradleException('Android 清单或宿主桥在准备后发生变化，请重新准备')
+        }
+    }
+}

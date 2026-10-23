@@ -46,7 +46,10 @@ pub fn run() {
                 .center()
                 .use_https_scheme(true)
                 .data_directory(data)
-                .initialization_script(include_str!("rebuild-bridge.js"))
+                .initialization_script(
+                    include_str!("../../../packages/player/src/web/host-bootstrap.js")
+                        .replace("__HAIFENG_PLATFORM__", "windows-trial"),
+                )
                 .on_navigation(|url| {
                     url.scheme() == "https"
                         && url.host_str() == Some("tauri.localhost")

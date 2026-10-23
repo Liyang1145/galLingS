@@ -31,6 +31,7 @@
 | [会话内回退](docs/rebuild/rollback.md) | 有界检查点、显式跨选择策略及恢复，不反算变量、不覆盖全局成果；正式边界仍待决定 |
 | [随包加载与集成产物](docs/rebuild/delivery.md) | M5 前置的严格随包读取、资源映射和构建入口；未执行构建，未接正式宿主 |
 | [Windows 集成宿主](docs/rebuild/windows.md) | 显式特性与隔离配置、输入准备、窗口暂停；未执行准备或编译，未切换正式发行 |
+| [Android 集成宿主](docs/rebuild/android.md) | 独立 Gradle 模块、输入准备、前后台与返回键；未构建或真机验收 |
 | `packages/player/src/web/` | 浏览器画面和音频实现；不得反向依赖游戏页面或编辑器 |
 | `apps/game/` | 独立试播、存读档/鉴赏及随包启动装配，不是已切换的正式发行入口 |
 | `tools/content/` | 旧导出转换与内容产物生成；命令见实施入口，不是游戏解释器 |
@@ -38,10 +39,11 @@
 | `tools/dev/vite.config.ts` | 本地可视试播装配；开发资源 URL 不得当作正式发行清单 |
 | `tools/game/build.ts` | 显式游戏集成构建；生成前端、剧情与素材清单，不自动运行或发布 |
 | `tools/game/windows.ts` | 已有游戏包的 Windows 集成输入准备；核对与复制清单文件，不自动编译 |
+| `tools/game/android.ts` | 已有游戏包的 Android 输入准备，复制共享桥并登记摘要，不执行 Gradle |
 | `tools/game/prepare.ts` | 平台共享的包摘要、内容修订及登记文件核对与复制，只由显式命令调用 |
 | `apps/game/src/platform/` | 宿主消息校验及会话生命周期接线，不另写剧情逻辑 |
 | `desktop/` | 既有宿主及显式重构集成入口；默认仍是旧路径，局部规则见目录入口 |
-| `mobile/android/` | 既有 Android 宿主；尚未切换新前端 |
+| `mobile/android/` | 旧 `:app` 与新 `:rebuild` 集成模块并存；局部规则见目录入口，未切正式入口 |
 | `A素材库/`、旧工具和归档 | 制作输入或历史资产；有真实消费者，不按目录名清理 |
 
 未来目录只有随实际实现才加入实施入口。旧 README、交接、work-ledger、旧分支审批和旧验证命令不是当前工作流依据；历史内容供追溯，不恢复已废止规则。旧根入口可从本次重建之前的 Git 历史查阅，不另设第二个有效入口。

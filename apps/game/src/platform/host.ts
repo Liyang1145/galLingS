@@ -1,12 +1,14 @@
+type NativePlatform = "windows-trial" | "android-trial";
+
 export interface HostState {
-  platform: "browser" | "windows-trial";
+  platform: "browser" | NativePlatform;
   paused: boolean;
   issue: string | null;
 }
 
 interface NativeState {
   format: "haifeng.host-state/1";
-  platform: "windows-trial";
+  platform: NativePlatform;
   sequence: number;
   paused: boolean;
 }
@@ -19,14 +21,14 @@ function record(value: unknown): Record<string, unknown> {
 function readState(value: unknown): NativeState {
   const data = record(value);
   if (Object.keys(data).sort().join(",") !== "format,paused,platform,sequence"
-    || data.format !== "haifeng.host-state/1" || data.platform !== "windows-trial"
+    || data.format !== "haifeng.host-state/1" || (data.platform !== "windows-trial" && data.platform !== "android-trial")
     || typeof data.sequence !== "number" || !Number.isSafeInteger(data.sequence) || data.sequence < 0
     || typeof data.paused !== "boolean") throw new Error("宿主状态格式或字段无效");
   return { format: data.format, platform: data.platform, sequence: data.sequence, paused: data.paused };
 }
 
 /** Platform messages only pause/resume the existing session; they cannot advance story state. */
-export function connectHost(changed: (state: HostState) => void): {
+export function connectHost(changed: (state: HostState) => void, backRequested: () => boolean): {
   state(): HostState;
   dispose(): void;
 } {
@@ -34,25 +36,46 @@ export function connectHost(changed: (state: HostState) => void): {
   let state: HostState = { platform: "browser", paused: false, issue: null };
   let sequence = -1;
   let disposed = false;
+  let installed = false;
+  const expected: NativePlatform | null = window.location.origin === "https://tauri.localhost" ? "windows-trial"
+    : window.location.origin === "https://appassets.androidplatform.net" ? "android-trial" : null;
+  const handleBack = (): boolean => {
+    if (disposed) return false;
+    try { return backRequested(); }
+    catch (error: unknown) {
+      state = {
+        platform: expected ?? "windows-trial", paused: true,
+        issue: error instanceof Error ? error.message : "返回键处理失败",
+      };
+      changed({ ...state });
+      return true;
+    }
+  };
   const update = (): void => {
     if (disposed) return;
     try {
       const bridge = record(injected);
-      if (typeof bridge.read !== "function") throw new Error("缺少宿主状态读取接口");
+      if (!expected) throw new Error("当前页面来源不接受宿主桥");
+      if (typeof bridge.read !== "function" || typeof bridge.setBackHandler !== "function") throw new Error("缺少宿主状态或返回键接口");
       const next = readState(Reflect.apply(bridge.read, injected, []));
+      if (next.platform !== expected) throw new Error("宿主消息平台与页面来源不一致");
       if (next.sequence < sequence) throw new Error("宿主状态序号倒退");
+      if (!installed) {
+        Reflect.apply(bridge.setBackHandler, injected, [handleBack]);
+        installed = true;
+      }
       sequence = next.sequence;
       state = { platform: next.platform, paused: next.paused, issue: null };
     } catch (error: unknown) {
       state = {
-        platform: "windows-trial", paused: true,
+        platform: expected ?? "windows-trial", paused: true,
         issue: error instanceof Error ? error.message : "宿主状态读取失败",
       };
     }
     changed({ ...state });
   };
   // A missing bridge in this native origin is an integration error, not browser mode.
-  const native = injected !== undefined || window.location.origin === "https://tauri.localhost";
+  const native = injected !== undefined || expected !== null;
   if (native) {
     window.addEventListener("haifeng:host-state", update);
     update();
@@ -62,6 +85,10 @@ export function connectHost(changed: (state: HostState) => void): {
     dispose: () => {
       disposed = true;
       window.removeEventListener("haifeng:host-state", update);
+      if (installed) {
+        const bridge = record(injected);
+        if (typeof bridge.setBackHandler === "function") Reflect.apply(bridge.setBackHandler, injected, [null]);
+      }
     },
   };
 }

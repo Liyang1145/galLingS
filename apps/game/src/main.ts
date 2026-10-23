@@ -8,7 +8,7 @@ import type { Clock } from "../../../packages/player/src/clock.ts";
 import { SaveRepository } from "../../../packages/player/src/saves.ts";
 import type { InspectedSave } from "../../../packages/player/src/saves.ts";
 import { IndexedDbSaveStore } from "../../../packages/player/src/web/saves.ts";
-import { PlayerRepository, PlayerRecordWriter, playerProjection } from "../../../packages/player/src/records.ts";
+import { PlayerRepository, PlayerRecordWriter, galleryCatalog, playerProjection } from "../../../packages/player/src/records.ts";
 import { prepareGameRestore } from "../../../packages/player/src/checkpoint.ts";
 import type { GameCheckpoint } from "../../../packages/player/src/checkpoint.ts";
 import { renderGallery } from "./gallery.ts";
@@ -33,6 +33,8 @@ import { PlayerFullscreen } from "../../../packages/player/src/web/fullscreen.ts
 import { nativeFullscreenDriver } from "./platform/fullscreen.ts";
 import { SaveSlots } from "./slots.ts";
 import type { SaveEntry as Entry } from "./slots.ts";
+import { EndingPanel } from "../../../packages/player/src/web/ending.ts";
+import type { EndingRecordState } from "../../../packages/player/src/web/ending.ts";
 import "./style.css";
 
 const startup = new AbortController();
@@ -125,12 +127,21 @@ async function main(): Promise<void> {
     timed: new SaveRepository(sources.timed, { kind: "preview", id: "timed-choice:pm8x8v2h" }, store),
   };
   const playerRecords = new PlayerRepository(content, { kind: "development", id: "normal-entry" }, store);
-  const endingFeedbackOwners = new Map<string, { generation: number; presentation: WebPresentation }>();
+  type EndingOwner = { generation: number; presentation: WebPresentation; endingId: string; state: EndingRecordState };
+  const endingFeedbackOwners = new Map<string, EndingOwner>();
+  const endingIds = galleryCatalog(content).endings;
+  let terminalRecord: EndingOwner | null = null;
+  let recordFailure: string | null = null;
   const recordWriter = new PlayerRecordWriter(playerRecords, (records, receipt) => {
     const owner = endingFeedbackOwners.get(receipt.batchId);
     endingFeedbackOwners.delete(receipt.batchId);
     for (const nodeId of records.readNodeIds) reads.main.add(nodeId);
     if (closed) return;
+    recordFailure = null;
+    if (owner) owner.state = {
+      kind: "committed", unlocked: endingIds.filter(id => records.endings.some(ending => ending.id === id)).length,
+      total: endingIds.length,
+    };
     const player = playerProjection(records);
     recordMessage.textContent = `全局记录已保存：周目 ${player["周目"]} · 已解锁结局 ${player["结局数"]} · CG ${records.cgIds.length}`;
     retryRecords.hidden = true;
@@ -147,10 +158,14 @@ async function main(): Promise<void> {
         recordMessage.textContent += `；结局声音反馈未完成：${error instanceof Error ? error.message : "声音不可用"}`;
       }
     }
+    refreshEnding();
   }, error => {
     if (closed) return;
-    recordMessage.textContent = `全局记录尚未保存：${error instanceof Error ? error.message : "存储失败"}。请重试；待保存记录暂留本页内存。`;
+    recordFailure = error instanceof Error ? error.message : "存储失败";
+    recordMessage.textContent = `全局记录尚未保存：${recordFailure}。请重试；待保存记录暂留本页内存。`;
     retryRecords.hidden = false;
+    if (terminalRecord && terminalRecord.state.kind !== "committed") terminalRecord.state = { kind: "failed", message: recordFailure };
+    refreshEnding();
   });
   const entryName = (entry: Entry): string => entry === "main" ? "第一话试播" : "限时选择样例";
   let saving = false;
@@ -170,6 +185,11 @@ async function main(): Promise<void> {
   let exiting = false;
   let aftergamePanel: AftergamePanel | null = null;
   let dialoguePanel: DialoguePanel | null = null;
+  const endingPanel = new EndingPanel(stage, {
+    leaveLabel: "返回试播标题",
+    leave: token => { if (currentTerminal(token)) home(); },
+    retry: token => { if (currentTerminal(token) && !exiting) void flushRecords().catch(() => {}); },
+  });
   const slots = new SaveSlots({
     root: element("save-slots", HTMLElement), repositories: saves, label: entryName,
     blocked: () => closed || exiting || entryPreparation === entryRequest,
@@ -304,6 +324,7 @@ async function main(): Promise<void> {
     buttonPreferences.refresh();
     slots.refreshControls();
     entryRequest++;
+    refreshEnding();
     const owner = session;
     owner?.send({ type: "pause", reason: "exit", paused: true });
     owner?.send({ type: "pause", reason: "operation", paused: false });
@@ -324,6 +345,7 @@ async function main(): Promise<void> {
       readingPreferences.refresh();
       buttonPreferences.refresh();
       refreshSaveControls();
+      refreshEnding();
       page.inert = wasInert;
       exitDialog.close();
       exitRetry.onclick = exitCancel.onclick = null;
@@ -346,7 +368,7 @@ async function main(): Promise<void> {
             if (retry) await writes.retryFailed();
             else await writes.settle();
             if (signal.aborted || closed) return;
-            await recordWriter.flush();
+            await flushRecords();
             if (signal.aborted || closed) return;
             if (recordWriter.pending()) throw new Error("仍有未提交的全局记录");
             signal.removeEventListener("abort", aborted);
@@ -416,7 +438,33 @@ async function main(): Promise<void> {
     debug.textContent = JSON.stringify({ nodeId: story.nodeId, token, variables: story.variables,
       player: story.player, phase: story.phase, choiceRemainingMs: view.choiceRemainingMs }, null, 2);
     choicePanel.render(view);
+    refreshEnding(view);
     showRollback(view);
+  }
+
+  function currentTerminal(token: SessionView["token"]): boolean {
+    if (closed || !session) return false;
+    const view = session.view();
+    return !view.disposed && view.story.phase === "ended"
+      && view.token.session === token.session && view.token.epoch === token.epoch && view.token.step === token.step;
+  }
+
+  function refreshEnding(view = session?.view()): void {
+    if (!view) { endingPanel.clear(); return; }
+    const terminal = view.story.terminal;
+    const record: EndingRecordState = mode === "timed"
+      ? { kind: "preview", message: "限时样例已到达此结局；本次游玩不写全局解锁或通关次数，不代表真实路线验收。" }
+      : terminalRecord?.generation === generation && terminalRecord.presentation === presentation
+        && terminal?.kind === "ending" && terminalRecord.endingId === terminal.endingId
+      ? terminalRecord.state : { kind: "unknown" };
+    endingPanel.render(view, record, closed || exiting || entryPreparation === entryRequest);
+  }
+
+  async function flushRecords(): Promise<void> {
+    recordFailure = null;
+    if (terminalRecord?.state.kind === "failed") terminalRecord.state = { kind: "pending" };
+    refreshEnding();
+    await recordWriter.flush();
   }
 
   function refreshSaveControls(view?: SessionView): void {
@@ -465,9 +513,10 @@ async function main(): Promise<void> {
     const owner = session;
     owner?.send({ type: "pause", reason: "operation", paused: true });
     refreshSaveControls();
+    refreshEnding();
     let adopted = false;
     try {
-      if (selected === "main") await recordWriter.flush();
+      if (selected === "main") await flushRecords();
       const records = selected === "main" ? await playerRecords.read() : null;
       const player = records ? playerProjection(records) : { "周目": 1, "结局数": 0 };
       const source = sources[selected];
@@ -484,6 +533,8 @@ async function main(): Promise<void> {
       input?.reset();
       owner?.dispose();
       session = null;
+      terminalRecord = null;
+      endingPanel.clear();
       adopted = true;
       mode = selected;
       audioPreferences.setMode(selected);
@@ -522,8 +573,13 @@ async function main(): Promise<void> {
         onFacts: facts => {
           if (selected === "main" && facts.length) {
             const id = `${delivery}:${++sequence}`;
-            if (facts.some(fact => fact.type === "ending")) {
-              endingFeedbackOwners.set(id, { generation: sessionGeneration, presentation: newPresentation });
+            const ending = facts.find(fact => fact.type === "ending");
+            if (ending?.type === "ending") {
+              terminalRecord = {
+                generation: sessionGeneration, presentation: newPresentation, endingId: ending.endingId,
+                state: recordFailure === null ? { kind: "pending" } : { kind: "failed", message: recordFailure },
+              };
+              endingFeedbackOwners.set(id, terminalRecord);
             }
             recordWriter.enqueue({ id, occurredAt: Date.now(), facts });
           }
@@ -538,6 +594,8 @@ async function main(): Promise<void> {
         presentation?.dispose();
         choicePanel.clear();
         session = null;
+        terminalRecord = null;
+        endingPanel.clear();
         presentation = null;
         host.releaseAudio();
         audioPreferences.setMode("main");
@@ -553,6 +611,7 @@ async function main(): Promise<void> {
       if (entryPreparation === request) entryPreparation = null;
       if (!closed && request === entryRequest && session === owner) owner?.send({ type: "pause", reason: "operation", paused: false });
       if (!closed) refreshSaveControls();
+      if (!closed) refreshEnding();
     }
   }
 
@@ -576,6 +635,8 @@ async function main(): Promise<void> {
     closeAftergame();
     session?.dispose();
     session = null;
+    terminalRecord = null;
+    endingPanel.clear();
     presentation = null;
     audioPreferences.setMode("main");
     readingPreferences.setMode("main");
@@ -642,7 +703,7 @@ async function main(): Promise<void> {
           if (!result.accepted) throw new Error(`${result.code}：${result.message}`);
           payload = { checkpoint: result.checkpoint, savedAt: Date.now() };
         }
-        if (entry === "main") await recordWriter.flush();
+        if (entry === "main") await flushRecords();
         const inspected = await saves[entry].save(slotId, payload.checkpoint, payload.savedAt);
         if (!closed) slots.saved(entry);
         if (!closed && request === storageMessageEpoch) {
@@ -730,7 +791,7 @@ async function main(): Promise<void> {
     };
     signal?.addEventListener("abort", cancelPreparation, { once: true });
     try {
-      if (selected === "main") await recordWriter.flush();
+      if (selected === "main") await flushRecords();
       if (!active()) return cancelled();
       const records = selected === "main" ? await playerRecords.read() : null;
       if (!active()) return cancelled();
@@ -770,7 +831,7 @@ async function main(): Promise<void> {
     if (exiting || closed) return;
     const request = ++entryRequest;
     try {
-      await recordWriter.flush();
+      await flushRecords();
       const records = await playerRecords.read();
       if (closed || request !== entryRequest || session) return;
       renderGallery(galleryBody, content, resources, records);
@@ -793,7 +854,7 @@ async function main(): Promise<void> {
     try {
       aftergameBody.textContent = "正在提交已有全局事实并准备通关记录……";
       aftergame.showModal();
-      await recordWriter.flush();
+      await flushRecords();
       if (!active()) return;
       // No chat module, backend or provider is required for mainline startup.
       const { createAftergamePanel } = await import("./aftergame.ts");
@@ -874,7 +935,7 @@ async function main(): Promise<void> {
   };
   rollbackTarget.onchange = rollbackBoundary.onchange = () => { if (session) showRollback(session.view()); };
   rollbackButton.onclick = () => { void rollback(); };
-  retryRecords.onclick = () => { void recordWriter.flush().catch(() => {}); };
+  retryRecords.onclick = () => { void flushRecords().catch(() => {}); };
   const visibility = (): void => {
     session?.send({ type: "pause", reason: "background", paused: document.hidden });
     dialoguePanel?.refresh(host.state().audioAllowed);
@@ -885,6 +946,8 @@ async function main(): Promise<void> {
     entryRequest++;
     storageMessageEpoch++;
     endingFeedbackOwners.clear();
+    terminalRecord = null;
+    endingPanel.dispose();
     closeDialogue();
     closeAftergame();
     aftergamePanel?.dispose();

@@ -131,6 +131,12 @@ h1 { margin: 0; font-size: clamp(1.1rem, 2.6vw, 1.8rem); font-weight: 500; }
 .menu-overlay h2 { font-weight: 500; font-size: clamp(1rem, 2.7vw, 1.6rem); }
 .menu-overlay p { color: #b8cdd2; }
 .menu-overlay button { margin: 5px; }
+.ending-panel { position: absolute; inset: 0; z-index: 15; display: flex; padding: 24px; overflow: auto; overscroll-behavior: contain; background: #000e; color: #fff; font-family: var(--author-font, inherit); }
+.ending-content { margin: auto; max-width: 900px; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center; overflow-wrap: anywhere; }
+.stage .ending-panel h2 { margin: 0; font-size: clamp(20px, calc(46px * var(--stage-scale)), 46px); font-weight: 400; letter-spacing: clamp(2px, calc(8px * var(--stage-scale)), 8px); line-height: 1.6; }
+.ending-panel p { margin: 0; font-size: 16px; line-height: 1.7; color: var(--author-accent, #aed9e7); white-space: pre-wrap; }
+.ending-controls { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+.ending-controls button { min-height: 44px; padding: 6px 22px; border: 1px solid #ffffff40; border-radius: 8px; background: #ffffff10; color: #fff; font-size: 18px; }
 .controls { display: flex; flex-wrap: wrap; gap: 10px; padding: 14px 0 0; }
 @media (pointer: coarse) { .play-controls button { min-height: 44px; } }
 #status { color: #bdd8df; font-size: .8rem; }

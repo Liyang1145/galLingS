@@ -12,6 +12,7 @@ import { ChoicePanel } from "../../../packages/player/src/web/choices.ts";
 import { connectStageLayout } from "../../../packages/player/src/web/stage-layout.ts";
 import { PlayerInput } from "../../../packages/player/src/web/input.ts";
 import { PlayerFullscreen } from "../../../packages/player/src/web/fullscreen.ts";
+import { EndingPanel } from "../../../packages/player/src/web/ending.ts";
 import { capturePreviewCheckpoint, inspectPreviewCheckpoint, previewContent } from "./checkpoint.ts";
 import type { PreviewCheckpointInput, PreviewCheckpointRecord } from "./checkpoint.ts";
 
@@ -38,6 +39,7 @@ export class EditorPreview {
   readonly #choices: ChoicePanel;
   readonly #input: PlayerInput;
   readonly #fullscreen: PlayerFullscreen;
+  readonly #ending: EndingPanel;
   readonly #events = new AbortController();
   #session: GameSession | null = null;
   #presentation: WebPresentation | null = null;
@@ -48,6 +50,14 @@ export class EditorPreview {
 
   constructor(elements: PreviewElements) {
     this.#elements = elements;
+    this.#ending = new EndingPanel(elements.stage, {
+      leaveLabel: "停止预览",
+      leave: token => {
+        const view = this.#session?.view();
+        if (view?.story.phase === "ended" && view.token.session === token.session
+          && view.token.epoch === token.epoch && view.token.step === token.step) this.stop();
+      },
+    });
     this.#choices = new ChoicePanel(elements.choices, (token, choiceId) => {
       this.#presentation?.unlockAudio();
       this.#session?.send({ type: "choose", token, choiceId });
@@ -185,6 +195,7 @@ export class EditorPreview {
     e.debug.textContent = JSON.stringify({ initial, current: view.story.variables, player: view.story.player,
       token: view.token }, null, 2);
     this.#choices.render(view);
+    this.#ending.render(view, { kind: "preview", message: "草稿预览已到达此结局；不写玩家解锁、通关次数或正式记录。" });
     this.#elements.changed();
   }
 
@@ -205,6 +216,7 @@ export class EditorPreview {
     const e = this.#elements;
     e.scene.replaceChildren();
     this.#choices.clear();
+    this.#ending.clear();
     e.scene.classList.remove("paused");
     for (const button of [e.next, e.pause, e.auto, e.audio, e.retry, e.stop]) button.disabled = true;
     e.auto.setAttribute("aria-pressed", "false");
@@ -220,6 +232,7 @@ export class EditorPreview {
     this.#input.dispose();
     this.#fullscreen.dispose();
     this.#choices.dispose();
+    this.#ending.dispose();
     this.#layout.dispose();
     this.#events.abort();
   }

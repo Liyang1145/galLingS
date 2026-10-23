@@ -70,7 +70,7 @@ export interface SessionView {
 export type SessionIntent =
   | { type: "next"; token: SessionToken }
   | { type: "choose"; token: SessionToken; choiceId: string }
-  | { type: "pause"; reason: "menu" | "background" | "host" | "history"; paused: boolean }
+  | { type: "pause"; reason: "menu" | "background" | "host" | "history" | "operation"; paused: boolean }
   | { type: "auto"; enabled: boolean }
   | { type: "skip"; enabled: boolean }
   | { type: "retry" };
@@ -83,6 +83,8 @@ interface Options {
   presentation: PresentationAdapter;
   /** Scope-isolated read history; the application owns its persistence. */
   seen: Set<string>;
+  /** Apply lifecycle state before the first presentation or effective timer starts. */
+  initialPauses?: readonly ("background" | "host")[];
   /** The caller must explicitly select voice behaviour for this development slice. */
   resume?: { checkpoint: unknown; voice: RestoreVoice };
   /** No hidden product default. The trial application supplies its bounded capacity. */
@@ -162,6 +164,10 @@ class Session implements GameSession {
   constructor(options: Options) {
     if (!Number.isSafeInteger(options.generation) || options.generation < 1) throw new Error("会话代次必须是正整数");
     this.#options = options;
+    for (const reason of options.initialPauses ?? []) {
+      if (reason !== "background" && reason !== "host") throw new Error("初始暂停原因无效");
+      this.#pauses.add(reason);
+    }
     this.#rollback = options.rollback ? new RollbackHistory(options.rollback.capacity) : null;
     const restored = options.resume ? prepareGameRestore(options.content, options.resume.checkpoint, options.player) : null;
     if (options.resume && !["silent", "replay", "resume"].includes(options.resume.voice)) throw new Error("需要明确的本次读档语音方式");

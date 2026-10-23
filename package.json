@@ -8,6 +8,7 @@
     "story:dev": "node tools/dev/story.ts",
     "game:dev": "vite --config tools/dev/vite.config.ts",
     "game:build": "node tools/game/build.ts",
+    "windows:prepare": "node tools/game/windows.ts",
     "typecheck": "tsc --noEmit && tsc --noEmit -p tsconfig.web.json"
   },
   "devDependencies": {

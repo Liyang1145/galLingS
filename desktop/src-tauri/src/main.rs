@@ -9,6 +9,9 @@
 //! - 独立本机大模型配置（`%APPDATA%/com.gallings.haifeng/config/llm.json`，与存档目录隔离，避免云存档同步泄露 API Key）
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
+#[cfg(feature = "rebuild-host")]
+mod rebuild;
+
 use std::fs::{self, File};
 use std::io::{Read, Seek, SeekFrom, Write};
 use std::net::{SocketAddr, TcpListener, TcpStream};
@@ -854,6 +857,7 @@ fn respond(app: &AppHandle, root: &Path, req: &Request<Vec<u8>>) -> Response<Vec
     b.body(buf).unwrap()
 }
 
+#[cfg(not(feature = "rebuild-host"))]
 fn main() {
     tauri::Builder::default()
         .register_uri_scheme_protocol("app", |ctx, req| {
@@ -884,4 +888,9 @@ fn main() {
         .run(tauri::generate_context!())
         .expect("galLingS 桌面程序启动失败");
     stop_python_server();
+}
+
+#[cfg(feature = "rebuild-host")]
+fn main() {
+    rebuild::run();
 }

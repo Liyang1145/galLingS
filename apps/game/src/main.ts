@@ -12,6 +12,7 @@ import { prepareGameRestore } from "../../../packages/player/src/checkpoint.ts";
 import type { GameCheckpoint } from "../../../packages/player/src/checkpoint.ts";
 import { renderGallery } from "./gallery.ts";
 import { renderDialogue } from "./dialogue.ts";
+import { connectHost } from "./platform/host.ts";
 import "./style.css";
 
 const startup = new AbortController();
@@ -108,6 +109,13 @@ async function main(): Promise<void> {
   let entryRequest = 0;
   let rollbackKey = "";
   let rollingBack = false;
+  const hostStatus = document.createElement("p");
+  note.insertAdjacentElement("afterend", hostStatus);
+  const host = connectHost(state => {
+    hostStatus.textContent = state.issue ? `宿主状态异常，已暂停：${state.issue}`
+      : state.platform === "windows-trial" ? "Windows 集成试用 · 记录与旧版隔离" : "浏览器试播";
+    session?.send({ type: "pause", reason: "host", paused: state.paused });
+  });
 
   const resize = new ResizeObserver(() => scene.style.setProperty("--stage-scale", String(stage.clientWidth / 1280)));
   resize.observe(stage);
@@ -184,7 +192,7 @@ async function main(): Promise<void> {
   async function start(selected: Entry, restoreVoice?: RestoreVoice): Promise<void> {
     const request = ++entryRequest;
     const owner = session;
-    owner?.send({ type: "pause", reason: "host", paused: true });
+    owner?.send({ type: "pause", reason: "operation", paused: true });
     let adopted = false;
     try {
       if (selected === "main") await recordWriter.flush();
@@ -225,6 +233,10 @@ async function main(): Promise<void> {
         content: source, player, generation: ++generation,
         clock, presentation, seen: reads[selected], onChange: show,
         rollback: { capacity: 500 },
+        initialPauses: [
+          ...(document.hidden ? ["background" as const] : []),
+          ...(host.state().paused ? ["host" as const] : []),
+        ],
         ...(checkpoint && restoreVoice ? { resume: { checkpoint, voice: restoreVoice } } : {}),
         onFacts: facts => {
           if (selected === "main" && facts.length) recordWriter.enqueue({
@@ -232,7 +244,6 @@ async function main(): Promise<void> {
           });
         },
       });
-      if (document.hidden) session.send({ type: "pause", reason: "background", paused: true });
       show(session.view());
       presentation.unlockAudio();
       if (checkpoint) saveMessage.textContent = "已恢复保存的剧情位置和剩余有效时间；全局记录沿用当前已保存成果。";
@@ -248,7 +259,7 @@ async function main(): Promise<void> {
       }
       saveMessage.textContent = `未能${restoreVoice ? "读档" : "开局"}：${error instanceof Error ? error.message : "未知错误"}。全局成果与原槽位保持原值。`;
     } finally {
-      if (!closed && request === entryRequest && session === owner) owner?.send({ type: "pause", reason: "host", paused: false });
+      if (!closed && request === entryRequest && session === owner) owner?.send({ type: "pause", reason: "operation", paused: false });
     }
   }
 
@@ -372,7 +383,7 @@ async function main(): Promise<void> {
     const selected = mode;
     const request = ++entryRequest;
     rollingBack = true;
-    owner.send({ type: "pause", reason: "host", paused: true });
+    owner.send({ type: "pause", reason: "operation", paused: true });
     rollbackMessage.textContent = "正在准备回退位置和当前全局记录……";
     try {
       if (selected === "main") await recordWriter.flush();
@@ -394,7 +405,7 @@ async function main(): Promise<void> {
     } finally {
       rollingBack = false;
       if (!closed && request === entryRequest && owner === session) {
-        owner.send({ type: "pause", reason: "host", paused: false });
+        owner.send({ type: "pause", reason: "operation", paused: false });
       }
       if (!closed && session) showRollback(session.view());
     }
@@ -487,6 +498,7 @@ async function main(): Promise<void> {
     storageMessageEpoch++;
     closeDialogue();
     session?.dispose();
+    host.dispose();
     resize.disconnect();
     document.removeEventListener("visibilitychange", visibility);
     document.removeEventListener("keydown", keyboard);

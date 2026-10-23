@@ -4,25 +4,21 @@ import { dirname, isAbsolute, relative, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import { ContentError } from "../../packages/story-model/src/model.ts";
 import type { StoryContent } from "../../packages/story-model/src/model.ts";
-import { canonical, convertLegacyGame, parseChoiceIdentities, readLegacyExport } from "./legacy.ts";
+import { contentRevisionText } from "../../packages/story-model/src/integrity.ts";
+import type { ResourceDigest } from "../../packages/story-model/src/integrity.ts";
+import { convertLegacyGame, parseChoiceIdentities, readLegacyExport } from "./legacy.ts";
 
 export const REPOSITORY_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "../..");
 const sha256 = (value: string | Uint8Array): string => createHash("sha256").update(value).digest("hex");
 
-export interface ResourceFile {
-  assetId: string;
-  path: string;
-  sha256: string;
-  bytes: number;
-}
+export type ResourceFile = ResourceDigest;
 
 /** Reads actual local files only when explicitly invoked by a content consumer. */
-export async function loadSourceContent(): Promise<{ content: StoryContent; files: ResourceFile[] }> {
+export async function loadSourceContent(): Promise<{ content: StoryContent; files: ResourceFile[]; identitySha256: string }> {
   const gameRoot = await realpath(resolve(REPOSITORY_ROOT, "海风与布丁"));
   const bytes = await readFile(resolve(gameRoot, "game.js"));
-  const identities = parseChoiceIdentities(JSON.parse(
-    await readFile(resolve(REPOSITORY_ROOT, "docs/rebuild/baseline/choices.json"), "utf8"),
-  ) as unknown);
+  const identityBytes = await readFile(resolve(REPOSITORY_ROOT, "docs/rebuild/baseline/choices.json"));
+  const identities = parseChoiceIdentities(JSON.parse(identityBytes.toString("utf8")) as unknown);
   const content = convertLegacyGame(readLegacyExport(bytes.toString("utf8")), identities, sha256(bytes), "pending");
   const files: ResourceFile[] = [];
   const cache = new Map<string, { sha256: string; bytes: number }>();
@@ -46,15 +42,9 @@ export async function loadSourceContent(): Promise<{ content: StoryContent; file
     }
     files.push({ assetId: resource.id, path: resource.path, ...info });
   }
-  const { revision: _revision, source, resources, ...story } = content;
-  const { sha256: _rawSourceHash, ...sourceSemantics } = source;
   // Raw JSON whitespace/key order does not change the semantic content revision.
-  content.revision = sha256(canonical({
-    ...story, source: sourceSemantics,
-    resources: [...resources].sort((a, b) => a.id < b.id ? -1 : a.id > b.id ? 1 : 0),
-    files: [...files].sort((a, b) => a.assetId < b.assetId ? -1 : a.assetId > b.assetId ? 1 : 0),
-  }));
-  return { content, files };
+  content.revision = sha256(contentRevisionText(content, files));
+  return { content, files, identitySha256: sha256(identityBytes) };
 }
 
 async function build(): Promise<void> {

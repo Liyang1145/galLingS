@@ -67,17 +67,7 @@ function choiceKey(nodeId: string, choice: ChoiceIdentity["legacy"]): string {
   return JSON.stringify([nodeId, choice.text, choice.target, choice.cond, choice.set]);
 }
 
-/** Canonical object ordering; array order is intentional story order. */
-export function canonical(value: unknown): string {
-  if (Array.isArray(value)) return `[${value.map(canonical).join(",")}]`;
-  if (typeof value === "object" && value !== null) {
-    const record = value as Record<string, unknown>;
-    return `{${Object.keys(record).sort().map(key => `${JSON.stringify(key)}:${canonical(record[key])}`).join(",")}}`;
-  }
-  const result = JSON.stringify(value);
-  if (result === undefined) throw new Error("规范化内容不能包含 undefined");
-  return result;
-}
+export { canonical } from "../../packages/story-model/src/integrity.ts";
 
 /** No filesystem, globals, DOM or execution of the legacy interpreter. */
 export function convertLegacyGame(

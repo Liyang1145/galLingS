@@ -7,6 +7,7 @@
     "content:build": "node tools/content/build.ts",
     "story:dev": "node tools/dev/story.ts",
     "game:dev": "vite --config tools/dev/vite.config.ts",
+    "editor:dev": "vite --config tools/editor/vite.config.ts",
     "game:build": "node tools/game/build.ts",
     "windows:prepare": "node tools/game/windows.ts",
     "android:prepare": "node tools/game/android.ts",

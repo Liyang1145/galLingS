@@ -33,10 +33,13 @@
 | [Windows 集成宿主](docs/rebuild/windows.md) | 显式特性与隔离配置、输入准备、窗口暂停；未执行准备或编译，未切换正式发行 |
 | [Android 集成宿主](docs/rebuild/android.md) | 独立 Gradle 模块、输入准备、前后台与返回键；未构建或真机验收 |
 | [正常退出协调](docs/rebuild/exits.md) | 等待已有手动写入和全局事实、失败重试/取消、原生关闭票据；不是自动存档或强杀恢复 |
+| [独立对白编辑](docs/rebuild/editor.md) | 单一作者源的有限字符串写回、摘要冲突保护和共享隔离预览；未运行，未决定最终编辑器或切换源 |
 | `packages/story-model/src/host.ts` | 原生/页面桥协议标识；随包 `/2` 明确登记，不与剧情修订或存档版本混用 |
 | `packages/player/src/web/` | 浏览器画面和音频实现；不得反向依赖游戏页面或编辑器 |
 | `apps/game/` | 独立试播、存读档/鉴赏及随包启动装配，不是已切换的正式发行入口 |
+| `apps/editor/` | 独立对白编辑试用，预览复用共享播放器、只用内存记录；局部约束见目录入口 |
 | `tools/content/` | 旧导出转换与内容产物生成；命令见实施入口，不是游戏解释器 |
+| `tools/editor/` | 独立本机编辑 API 和固定作者文件写回；不进入游戏构建，保存仅由显式动作触发 |
 | `tools/dev/story.ts` | 独立终端逻辑试播，不是正式游戏或编辑器 |
 | `tools/dev/vite.config.ts` | 本地可视试播装配；开发资源 URL 不得当作正式发行清单 |
 | `tools/game/build.ts` | 显式游戏集成构建；生成前端、剧情与素材清单，不自动运行或发布 |

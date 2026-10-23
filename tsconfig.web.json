@@ -6,6 +6,6 @@
     "moduleResolution": "Bundler",
     "types": ["vite/client"]
   },
-  "include": ["apps/game/src/**/*.ts", "packages/**/*.ts"],
+  "include": ["apps/game/src/**/*.ts", "apps/editor/src/**/*.ts", "packages/**/*.ts"],
   "exclude": ["node_modules", "dist"]
 }

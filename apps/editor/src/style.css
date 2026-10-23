@@ -1,0 +1,23 @@
+#editor { width: min(1600px, calc(100% - 32px)); margin: 26px auto; }
+.editor-layout { display: grid; grid-template-columns: minmax(220px, 28%) minmax(0, 1fr); gap: 24px; margin-top: 24px; }
+.editor-layout aside { min-width: 0; }
+.editor-layout section { min-width: 0; }
+.editor-layout h2 { font-size: 1rem; margin: 0 0 18px; font-weight: 500; }
+.editor-layout label { display: block; margin: 12px 0 6px; }
+.editor-layout input, .editor-layout textarea, #nodes {
+  width: 100%; font: inherit; color: inherit; background: #102632; border: 1px solid #557682;
+  border-radius: 6px; padding: 9px; min-width: 0;
+}
+.editor-layout textarea { resize: vertical; line-height: 1.7; }
+#nodes { font-size: .8rem; height: min(70vh, 760px); padding: 4px; }
+#nodes option { padding: 7px; }
+#source-info { overflow-wrap: anywhere; }
+#message { white-space: pre-wrap; overflow-wrap: anywhere; line-height: 1.7; }
+#preview-status { min-height: 3em; color: #bdd8df; font-size: .85rem; line-height: 1.7; overflow-wrap: anywhere; }
+#debug { max-height: 320px; overflow: auto; padding: 12px; background: #061119; font-size: .8rem; }
+.editor-layout .choices button { font-size: clamp(.7rem, 1.1vw, 1rem); padding: 10px; }
+input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 3px solid #aed9e7; outline-offset: 2px; }
+@media (max-width: 900px) {
+  .editor-layout { grid-template-columns: 1fr; }
+  #nodes { height: 180px; }
+}

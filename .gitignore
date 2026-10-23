@@ -31,3 +31,8 @@ node_modules/
 mobile/android/local.properties
 mobile/android/.gradle/
 mobile/android/**/build/
+
+# 独立对白编辑入口的本机备份、候选与合作锁，不是第二份作者源
+/海风与布丁/.rebuild-editor-backup-*.js
+/海风与布丁/.rebuild-editor-*.tmp
+/海风与布丁/.rebuild-editor-lock/

@@ -17,9 +17,16 @@ export type ResourceFile = ResourceDigest;
 export async function loadSourceContent(): Promise<{ content: StoryContent; files: ResourceFile[]; identitySha256: string }> {
   const gameRoot = await realpath(resolve(REPOSITORY_ROOT, "海风与布丁"));
   const bytes = await readFile(resolve(gameRoot, "game.js"));
+  return compileSourceContent(bytes);
+}
+
+/** Same converter and resource checks for explicit author editing; never executes source JS. */
+export async function compileSourceContent(bytes: Uint8Array): Promise<{ content: StoryContent; files: ResourceFile[]; identitySha256: string }> {
+  const gameRoot = await realpath(resolve(REPOSITORY_ROOT, "海风与布丁"));
   const identityBytes = await readFile(resolve(REPOSITORY_ROOT, "docs/rebuild/baseline/choices.json"));
   const identities = parseChoiceIdentities(JSON.parse(identityBytes.toString("utf8")) as unknown);
-  const content = convertLegacyGame(readLegacyExport(bytes.toString("utf8")), identities, sha256(bytes), "pending");
+  const text = new TextDecoder("utf-8", { fatal: true }).decode(bytes);
+  const content = convertLegacyGame(readLegacyExport(text), identities, sha256(bytes), "pending");
   const files: ResourceFile[] = [];
   const cache = new Map<string, { sha256: string; bytes: number }>();
   for (const resource of content.resources) {

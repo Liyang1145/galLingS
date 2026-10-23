@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>海风与布丁 · 对白编辑试用</title>
+  </head>
+  <body>
+    <main id="editor">
+      <header>
+        <p class="eyebrow">独立制作入口 · M6 试用切片</p>
+        <h1>海风与布丁 · 对白编辑</h1>
+        <p class="help">编辑已有节点的说话人和对白。草稿仅在本页内存中；“保存到作者源”才会修改作品文件。</p>
+        <div class="controls">
+          <button id="reload">读取作者源</button>
+          <label id="discard-label" hidden><input id="discard" type="checkbox" /> 本次允许丢弃当前草稿并重新读取</label>
+          <button id="export" disabled>导出修改草稿</button>
+          <button id="save" disabled>保存到作者源</button>
+        </div>
+        <p id="message" role="status" aria-live="polite">尚未读取作者源。</p>
+        <p id="source-info" class="help"></p>
+      </header>
+      <div class="editor-layout">
+        <aside aria-label="节点列表">
+          <label for="search">查找 ID、章节、说话人或对白</label>
+          <input id="search" type="search" placeholder="输入关键词" />
+          <p id="count" class="help"></p>
+          <select id="nodes" size="18" aria-label="选择已有节点"></select>
+        </aside>
+        <section aria-label="编辑与预览">
+          <h2 id="node-title">请选择节点</h2>
+          <label for="speaker">说话人</label>
+          <input id="speaker" maxlength="100000" disabled />
+          <label for="text">对白</label>
+          <textarea id="text" rows="6" maxlength="100000" disabled></textarea>
+          <p id="field-note" class="help">本片不修改节点 ID、顺序、选项、流转、变量、演出或素材。</p>
+          <div class="controls">
+            <button id="reset-node" disabled>还原本节点草稿</button>
+            <button id="preview-start" disabled>从正常开局预览草稿</button>
+            <button id="preview-selected" disabled>从所选节点按声明初值预览</button>
+          </div>
+          <p id="preview-note" class="preview-note">预览不读取或写入玩家存档、全局解锁和聊天记录。</p>
+          <div id="stage" class="stage">
+            <div id="scene" class="scene"></div>
+            <div id="choices" class="choices"></div>
+          </div>
+          <div class="controls">
+            <button id="next" disabled>补全文字 / 继续</button>
+            <button id="pause" disabled>暂停预览</button>
+            <button id="auto" disabled aria-pressed="false">自动</button>
+            <button id="audio" disabled>启用声音</button>
+            <button id="retry" disabled>重试当前媒体</button>
+            <button id="stop" disabled>停止预览</button>
+          </div>
+          <p id="preview-status" role="status">尚未预览。</p>
+          <details><summary>预览状态与初始条件</summary><pre id="debug"></pre></details>
+        </section>
+      </div>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

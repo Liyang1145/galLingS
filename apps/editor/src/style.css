@@ -15,9 +15,24 @@
 #message { white-space: pre-wrap; overflow-wrap: anywhere; line-height: 1.7; }
 #preview-status { min-height: 3em; color: #bdd8df; font-size: .85rem; line-height: 1.7; overflow-wrap: anywhere; }
 #debug { max-height: 320px; overflow: auto; padding: 12px; background: #061119; font-size: .8rem; }
+.draft-file { display: flex; align-items: center; gap: 12px; margin-top: 16px; }
+.draft-file input { font: inherit; max-width: 100%; }
+.draft-import-panel { border: 1px solid #557682; border-radius: 8px; padding: 16px; }
+.draft-import-panel h2 { font-size: 1.1rem; margin-top: 0; }
+.draft-import-panel p { overflow-wrap: anywhere; line-height: 1.7; }
+.draft-import-panel > button { margin: 6px 10px 0 0; }
+.draft-import-list { padding-left: 24px; max-height: 65vh; overflow: auto; }
+.draft-import-list > li { padding: 16px 4px; border-bottom: 1px solid #39515c; }
+.draft-import-list strong { overflow-wrap: anywhere; }
+.draft-import-list select { max-width: 100%; margin-top: 10px; }
+.draft-comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 10px; }
+.draft-comparison section { min-width: 0; }
+.draft-comparison h3 { font-size: .85rem; font-weight: 500; }
+.draft-comparison pre { max-height: 240px; overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere; background: #061119; padding: 10px; font-size: .8rem; }
 .editor-layout .choices button { font-size: clamp(.7rem, 1.1vw, 1rem); padding: 10px; }
 input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 3px solid #aed9e7; outline-offset: 2px; }
 @media (max-width: 900px) {
   .editor-layout { grid-template-columns: 1fr; }
   #nodes { height: 180px; }
+  .draft-comparison { grid-template-columns: 1fr; }
 }

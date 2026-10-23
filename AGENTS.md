@@ -34,7 +34,7 @@
 | [Windows 集成宿主](docs/rebuild/windows.md) | 显式特性与隔离配置、输入准备、窗口暂停；未执行准备或编译，未切换正式发行 |
 | [Android 集成宿主](docs/rebuild/android.md) | 独立 Gradle 模块、输入准备、前后台与返回键；未构建或真机验收 |
 | [正常退出协调](docs/rebuild/exits.md) | 等待已有手动写入和全局事实、失败重试/取消、原生关闭票据；不是自动存档或强杀恢复 |
-| [独立对白编辑](docs/rebuild/editor.md) | 单一作者源的有限字符串写回、摘要冲突保护和共享隔离预览；未运行，未决定最终编辑器或切换源 |
+| [独立对白编辑](docs/rebuild/editor.md) | 有限字符串写回、摘要冲突保护、草稿导入比较及共享隔离预览；未运行，未决定最终编辑器或切换源 |
 | [通关后入口准备](docs/rebuild/chat.md) | 已提交通关事实的只读上下文与显式选择；正式聊天解锁、供应和发送尚未接入 |
 | `packages/story-model/src/host.ts` | 原生/页面桥协议标识；随包 `/2` 明确登记，不与剧情修订或存档版本混用 |
 | `packages/player/src/web/` | 浏览器画面和音频实现；不得反向依赖游戏页面或编辑器 |

@@ -19,6 +19,11 @@
         </div>
         <p id="message" role="status" aria-live="polite">尚未读取作者源。</p>
         <p id="source-info" class="help"></p>
+        <label class="draft-file">导入修改草稿
+          <input id="import-file" type="file" accept=".json,application/json" disabled />
+        </label>
+        <p class="help">仅在本页读取所选 JSON，先比较并处理字段冲突，采用到草稿后仍须显式保存。不会执行文件内容。</p>
+        <section id="import-panel" class="draft-import-panel" aria-label="草稿导入比较" hidden></section>
       </header>
       <div class="editor-layout">
         <aside aria-label="节点列表">

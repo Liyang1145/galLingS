@@ -3,6 +3,10 @@ import type { AuthorTextEdit, AuthorTextPatch } from "../../../packages/story-mo
 import { readAuthorDocument } from "./document.ts";
 import type { AuthorDocument } from "./document.ts";
 import { EditorPreview } from "./preview.ts";
+import { AuthorDraftImporter } from "./imports.ts";
+import type { DraftImportSnapshot } from "./imports.ts";
+import { authorTextKey } from "../../../packages/story-model/src/author-draft.ts";
+import { downloadDraft } from "./download.ts";
 import "../../game/src/style.css";
 import "./style.css";
 
@@ -14,6 +18,7 @@ function element<T extends HTMLElement>(id: string, kind: { new(...args: never[]
 const button = (id: string): HTMLButtonElement => element(id, HTMLButtonElement);
 const el = {
   reload: button("reload"), save: button("save"), export: button("export"),
+  importFile: element("import-file", HTMLInputElement), importPanel: element("import-panel", HTMLElement),
   discard: element("discard", HTMLInputElement), discardLabel: element("discard-label", HTMLElement),
   message: element("message", HTMLElement), source: element("source-info", HTMLElement),
   search: element("search", HTMLInputElement), count: element("count", HTMLElement),
@@ -38,6 +43,7 @@ let requestEpoch = 0;
 let requestController: AbortController | null = null;
 let operation: "load" | "preview" | "save" | null = null;
 let disposed = false;
+let importer: AuthorDraftImporter | null = null;
 
 function message(value: string, error = false): void {
   el.message.textContent = value;
@@ -45,7 +51,7 @@ function message(value: string, error = false): void {
 }
 
 function selectedNode() { return baseline?.content.nodes.find(node => node.id === selected); }
-function key(nodeId: string, field: "speaker" | "text"): string { return JSON.stringify([nodeId, field]); }
+const key = authorTextKey;
 function textFor(nodeId: string, field: "speaker" | "text", original: string): string {
   return drafts.get(key(nodeId, field))?.after ?? original;
 }
@@ -56,20 +62,22 @@ function patch(): AuthorTextPatch {
 
 function controls(): void {
   const locked = operation === "save" || operation === "load";
+  const reviewing = !!importer?.active;
   const node = selectedNode();
   const fields = baseline?.editable[selected] ?? [];
-  el.reload.disabled = operation !== null;
+  el.reload.disabled = operation !== null || reviewing;
   el.discard.disabled = locked;
   el.discardLabel.hidden = drafts.size === 0;
-  el.save.disabled = !baseline || !drafts.size || operation !== null;
+  el.save.disabled = !baseline || !drafts.size || operation !== null || reviewing;
   el.export.disabled = !baseline || !drafts.size;
-  el.previewStart.disabled = !baseline || operation !== null;
-  el.previewSelected.disabled = !node || operation !== null;
+  el.previewStart.disabled = !baseline || operation !== null || reviewing;
+  el.previewSelected.disabled = !node || operation !== null || reviewing;
   el.reset.disabled = !node || locked;
   el.speaker.disabled = !node || locked || !fields.includes("speaker");
   el.text.disabled = !node || locked || !fields.includes("text");
   el.nodes.disabled = locked;
   el.search.disabled = locked;
+  importer?.setEnabled(!!baseline && operation === null);
 }
 
 function nodeForm(): void {
@@ -121,6 +129,7 @@ function change(field: "speaker" | "text"): void {
     return;
   } else drafts.set(editKey, { nodeId: node.id, field, before, after });
   revision++;
+  importer?.invalidate();
   el.discard.checked = false;
   preview.draftChanged();
   list();
@@ -144,6 +153,10 @@ async function request(route: string, input: unknown, signal: AbortSignal): Prom
 
 async function perform(kind: "load" | "preview" | "save", selectedEntry: string | null = null): Promise<void> {
   if (operation || disposed) return;
+  if (importer?.active) {
+    message("先采用或取消本次导入比较，再读取、预览或保存。");
+    return;
+  }
   if (kind === "load" && drafts.size && !el.discard.checked) {
     message("先导出需要保留的草稿；要重新读取，请勾选本次丢弃草稿。", true);
     return;
@@ -221,6 +234,7 @@ el.reset.addEventListener("click", () => {
   drafts.delete(key(selected, "speaker"));
   drafts.delete(key(selected, "text"));
   revision++;
+  importer?.invalidate();
   el.discard.checked = false;
   preview.draftChanged();
   list();
@@ -228,16 +242,11 @@ el.reset.addEventListener("click", () => {
 }, { signal });
 el.export.addEventListener("click", () => {
   if (!baseline || !drafts.size) return;
-  const url = URL.createObjectURL(new Blob([JSON.stringify(patch(), null, 2)], { type: "application/json" }));
-  const link = document.createElement("a");
-  link.href = url;
-  link.download = `对白草稿-${baseline.sourceSha256.slice(0, 12)}.json`;
-  link.click();
-  window.setTimeout(() => URL.revokeObjectURL(url), 1000);
-  message("已请求下载修改草稿；这是带原摘要的修改记录，不是另一份作者源。本片尚无自动合并或草稿导入。");
+  downloadDraft(patch());
+  message("已请求下载修改草稿；可在本入口重新导入并逐项比较。这是带原摘要的修改记录，不是另一份作者源。");
 }, { signal });
 window.addEventListener("beforeunload", event => {
-  if (drafts.size || operation === "save") { event.preventDefault(); event.returnValue = ""; }
+  if (drafts.size || importer?.active || operation === "save") { event.preventDefault(); event.returnValue = ""; }
 }, { signal });
 function dispose(): void {
   if (disposed) return;
@@ -245,9 +254,44 @@ function dispose(): void {
   ++requestEpoch;
   requestController?.abort();
   preview.dispose();
+  importer?.dispose();
   events.abort();
 }
 window.addEventListener("pagehide", dispose, { once: true, signal });
 import.meta.hot?.dispose(dispose);
+const importCurrent = (snapshot: DraftImportSnapshot): boolean =>
+  !disposed && operation === null && revision === snapshot.revision && baseline?.sourceSha256 === snapshot.base.sourceSha256;
+importer = new AuthorDraftImporter({
+  input: el.importFile, panel: el.importPanel, changed: controls, notice: value => message(value),
+  current: importCurrent,
+  capture() {
+    const source = baseline;
+    if (!source || operation) return null;
+    return {
+      revision, patch: patch(),
+      base: {
+        sourceSha256: source.sourceSha256,
+        nodes: source.content.nodes.map(node => ({
+          id: node.id,
+          speaker: source.editable[node.id]?.includes("speaker") ? node.presentation.speaker : null,
+          text: source.editable[node.id]?.includes("text") ? node.presentation.text : null,
+        })),
+      },
+    };
+  },
+  apply(snapshot, result) {
+    if (!importCurrent(snapshot) || result.sourceSha256 !== baseline?.sourceSha256) {
+      throw new Error("当前源或草稿已改变，请重新导入比较。");
+    }
+    drafts.clear();
+    for (const edit of result.edits) drafts.set(key(edit.nodeId, edit.field), { ...edit });
+    revision++;
+    el.discard.checked = false;
+    preview.draftChanged();
+    list();
+    nodeForm();
+    message("导入结果已采用到当前作者源上的草稿；请预览，确认后再点击“保存到作者源”。");
+  },
+});
 controls();
 void perform("load");

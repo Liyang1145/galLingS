@@ -23,7 +23,9 @@ function localContent(): Plugin {
       ]));
       // A checked compiler emits this JS module; the browser does not cast
       // unchecked JSON or load a second interpreter. No remote content endpoint.
-      return `export const locations = ${JSON.stringify(locations)};\nexport default ${JSON.stringify(story)};`;
+      return `export async function loadContent() {
+        return { locations: ${JSON.stringify(locations)}, content: ${JSON.stringify(story)} };
+      }`;
     },
   };
 }

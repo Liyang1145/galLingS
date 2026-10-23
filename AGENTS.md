@@ -22,18 +22,20 @@
 | `海风与布丁/game.js` | 迁移期间唯一权威剧情输入；作者源尚未切换 |
 | `海风与布丁/player.js`、`index.html` | 保留的完整旧播放器与入口；不是新核心依赖 |
 | `docs/rebuild/baseline/` | 固定基线与身份映射；不是另一份作者源 |
-| `packages/story-model/src/` | 新内容模型、受限表达式及外部数据读取约束 |
+| `packages/story-model/src/` | 内容模型、受限表达式、规范化数据/随包清单读取及共享修订算法 |
 | `packages/story-runtime/src/` | 新版唯一纯剧情核心；通过公开接口推进和恢复逻辑状态 |
 | `packages/player/src/` | 共享会话、取消及有效计时；表现适配器不得自行计算剧情分支 |
 | [检查点与存储](docs/rebuild/saves.md) | M4 检查点封装、独立校验、浏览器隔离槽位及进度恢复 |
 | [全局玩家记录](docs/rebuild/records.md) | 周目、结局与 CG 解锁的独立记录、幂等事实及主页鉴赏；进度槽位不得回滚全局成果 |
 | [对白回看](docs/rebuild/history.md) | 当前会话内的有界文字记录与只读查看；不是进度回退或全局已读集合 |
 | [会话内回退](docs/rebuild/rollback.md) | 有界检查点、显式跨选择策略及恢复，不反算变量、不覆盖全局成果；正式边界仍待决定 |
+| [随包加载与集成产物](docs/rebuild/delivery.md) | M5 前置的严格随包读取、资源映射和构建入口；未执行构建，未接正式宿主 |
 | `packages/player/src/web/` | 浏览器画面和音频实现；不得反向依赖游戏页面或编辑器 |
-| `apps/game/` | 独立试播、M4 存读档及主页鉴赏装配，不是已切换的正式发行入口 |
+| `apps/game/` | 独立试播、存读档/鉴赏及随包启动装配，不是已切换的正式发行入口 |
 | `tools/content/` | 旧导出转换与内容产物生成；命令见实施入口，不是游戏解释器 |
 | `tools/dev/story.ts` | 独立终端逻辑试播，不是正式游戏或编辑器 |
 | `tools/dev/vite.config.ts` | 本地可视试播装配；开发资源 URL 不得当作正式发行清单 |
+| `tools/game/build.ts` | 显式游戏集成构建；生成前端、剧情与素材清单，不自动运行或发布 |
 | `desktop/`、`mobile/android/` | 既有宿主；尚未切换新前端 |
 | `A素材库/`、旧工具和归档 | 制作输入或历史资产；有真实消费者，不按目录名清理 |
 

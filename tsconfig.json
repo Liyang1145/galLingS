@@ -15,6 +15,6 @@
     "noEmit": true,
     "types": ["node"]
   },
-  "include": ["packages/**/*.ts", "tools/content/**/*.ts", "tools/dev/**/*.ts"],
+  "include": ["packages/**/*.ts", "tools/content/**/*.ts", "tools/dev/**/*.ts", "tools/game/**/*.ts"],
   "exclude": ["node_modules", "dist", "packages/player/src/web"]
 }

@@ -4,6 +4,8 @@ import { AuthorDraftHistory } from "../../../packages/story-model/src/author-his
 import { readAuthorDocument } from "./document.ts";
 import type { AuthorDocument } from "./document.ts";
 import { EditorPreview } from "./preview.ts";
+import type { PreviewStart } from "./preview.ts";
+import { PreviewCheckpoints } from "./checkpoint-panel.ts";
 import { AuthorDraftImporter } from "./imports.ts";
 import type { DraftImportSnapshot } from "./imports.ts";
 import { authorTextKey } from "../../../packages/story-model/src/author-draft.ts";
@@ -40,6 +42,8 @@ const preview = new EditorPreview({
   controls: element("preview-controls", HTMLElement), hide: button("hide-ui"),
   surface: element("preview-surface", HTMLElement), fullscreen: button("fullscreen"),
   fullscreenStatus: element("fullscreen-status", HTMLElement),
+  changed: controls,
+  stopped: () => checkpoints?.invalidatePending("预览已停止，未采用旧检查点读取；此前待用数据保留。"),
 });
 const events = new AbortController();
 const drafts = new AuthorDraftHistory({ maxEntries: 100, maxUnits: 2_000_000 });
@@ -52,6 +56,7 @@ let operation: "load" | "preview" | "save" | null = null;
 let disposed = false;
 let importer: AuthorDraftImporter | null = null;
 let references: AuthorReferences | null = null;
+let checkpoints: PreviewCheckpoints | null = null;
 
 function message(value: string, error = false): void {
   el.message.textContent = value;
@@ -104,6 +109,7 @@ function controls(): void {
   el.search.disabled = locked;
   importer?.setEnabled(!!baseline && operation === null);
   references?.setAvailable(!!baseline && !locked);
+  checkpoints?.setEnabled(!disposed && !!baseline && operation === null && !reviewing);
 }
 
 function nodeForm(): void {
@@ -173,6 +179,7 @@ function draftChanged(cancelImport = true, refreshForm = false): void {
   revision++;
   if (cancelImport) importer?.invalidate();
   references?.invalidate();
+  checkpoints?.invalidatePending("草稿已变化，未采用旧检查点读取；已有待用数据保留，恢复时仍须匹配当前修订。");
   el.discard.checked = false;
   preview.draftChanged();
   list();
@@ -208,7 +215,7 @@ async function request(route: string, input: unknown, signal: AbortSignal): Prom
   return readAuthorDocument(value);
 }
 
-async function perform(kind: "load" | "preview" | "save", selectedEntry: string | null = null): Promise<void> {
+async function perform(kind: "load" | "preview" | "save", start: PreviewStart = { kind: "entry" }): Promise<void> {
   if (operation || disposed) return;
   if (importer?.active) {
     message("先采用或取消本次导入比较，再读取、预览或保存。");
@@ -238,8 +245,11 @@ async function perform(kind: "load" | "preview" | "save", selectedEntry: string 
       return;
     }
     if (kind === "preview") {
-      preview.start(result, selectedEntry);
-      message("已采用本次草稿修订进行预览，未写入作者源。");
+      const checkpoint = preview.start(result, start);
+      if (start.kind === "checkpoint" && checkpoint) checkpoints?.confirmed(start.input, checkpoint);
+      message(start.kind === "checkpoint"
+        ? "已通过共享核心从检查点继续预览，未重执行进入动作或写入作者源/玩家记录。"
+        : "已采用本次草稿修订进行预览，未写入作者源。");
     } else {
       preview.stop();
       drafts.reset(draftBase(result));
@@ -277,7 +287,9 @@ el.save.addEventListener("click", () => { void perform("save"); }, { signal });
 el.undo.addEventListener("click", () => historyStep("undo"), { signal });
 el.redo.addEventListener("click", () => historyStep("redo"), { signal });
 el.previewStart.addEventListener("click", () => { void perform("preview"); }, { signal });
-el.previewSelected.addEventListener("click", () => { if (selected) void perform("preview", selected); }, { signal });
+el.previewSelected.addEventListener("click", () => {
+  if (selected) void perform("preview", { kind: "selected", nodeId: selected });
+}, { signal });
 button("stop").addEventListener("click", () => {
   if (operation !== "preview") return;
   ++requestEpoch;
@@ -326,6 +338,7 @@ function dispose(): void {
   preview.dispose();
   importer?.dispose();
   references?.dispose();
+  checkpoints?.dispose();
   drafts.clear();
   events.abort();
 }
@@ -372,6 +385,12 @@ references = new AuthorReferences({
     nodeForm();
     el.nodeTitle.focus();
   },
+});
+checkpoints = new PreviewCheckpoints({
+  root: element("preview-checkpoints", HTMLElement),
+  canCapture: () => preview.canCheckpoint,
+  capture: () => preview.captureCheckpoint(),
+  resume(input, voice) { void perform("preview", { kind: "checkpoint", input, voice }); },
 });
 controls();
 void perform("load");

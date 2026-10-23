@@ -46,6 +46,12 @@
 .reference-note, .reference-panel small { color: #bdd8df; }
 .reference-unresolved { color: #ffb895; }
 .reference-pager { margin-top: 10px; font-size: .75rem; }
+.preview-checkpoints { margin: 24px 0; border: 1px solid #557682; border-radius: 8px; padding: 16px; }
+.preview-checkpoints h3 { margin: 0; font-size: 1rem; font-weight: 500; }
+.preview-checkpoints p { line-height: 1.7; overflow-wrap: anywhere; }
+.preview-checkpoints select { width: 100%; font: inherit; color: inherit; background: #102632; padding: 8px; border: 1px solid #557682; border-radius: 6px; }
+.preview-checkpoints pre { max-height: 320px; overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere; font-size: .75rem; background: #061119; padding: 12px; }
+.preview-checkpoints details { margin-top: 14px; }
 input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 3px solid #aed9e7; outline-offset: 2px; }
 @media (max-width: 900px) {
   .editor-layout { grid-template-columns: 1fr; }

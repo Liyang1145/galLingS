@@ -26,6 +26,8 @@ import {
 import { connectButtonSounds } from "../../../packages/player/src/web/button-sounds.ts";
 import { PreferencesPanel } from "./preferences.ts";
 import { applyAuthorAppearance, connectTitleCover } from "../../../packages/player/src/web/appearance.ts";
+import { ChoicePanel } from "../../../packages/player/src/web/choices.ts";
+import { connectStageLayout } from "../../../packages/player/src/web/stage-layout.ts";
 import "./style.css";
 
 const startup = new AbortController();
@@ -152,8 +154,6 @@ async function main(): Promise<void> {
   let presentation: WebPresentation | null = null;
   let generation = 0;
   let mode: Entry = "main";
-  let choiceKey = "";
-  let progress: HTMLProgressElement | null = null;
   let entryRequest = 0;
   let rollbackKey = "";
   let rollingBack = false;
@@ -339,12 +339,12 @@ async function main(): Promise<void> {
     }
   }
 
-  const resize = new ResizeObserver(() => {
-    const scale = String(stage.clientWidth / 1280);
-    stage.style.setProperty("--stage-scale", scale);
-    scene.style.setProperty("--stage-scale", scale);
+  const choicePanel = new ChoicePanel(choices, (token, choiceId) => {
+    if (closed || exiting) return;
+    unlockAudio();
+    session?.send({ type: "choose", token, choiceId });
   });
-  resize.observe(stage);
+  const layout = connectStageLayout(stage);
 
   function show(view: SessionView): void {
     dialoguePanel?.refresh(host.state().audioAllowed);
@@ -367,31 +367,7 @@ async function main(): Promise<void> {
     problemMessage.textContent = view.problem ? `${view.problem.blocking ? "已暂停" : "媒体提示"}：${view.problem.message}` : "";
     debug.textContent = JSON.stringify({ nodeId: story.nodeId, token, variables: story.variables,
       player: story.player, phase: story.phase, choiceRemainingMs: view.choiceRemainingMs }, null, 2);
-    const key = `${token.session}:${token.epoch}:${token.step}`;
-    if (key !== choiceKey) {
-      choiceKey = key;
-      choices.replaceChildren();
-      progress = null;
-      for (const choice of story.choices) {
-        const button = document.createElement("button");
-        button.type = "button";
-        button.textContent = choice.text;
-        button.addEventListener("click", event => {
-          event.stopPropagation();
-          unlockAudio();
-          session?.send({ type: "choose", token, choiceId: choice.id });
-        });
-        choices.append(button);
-      }
-      if (story.timeout) {
-        progress = document.createElement("progress");
-        progress.max = story.timeout.durationMs;
-        progress.setAttribute("aria-label", "选择剩余有效时间");
-        choices.append(progress);
-      }
-    }
-    for (const button of choices.querySelectorAll("button")) button.disabled = blocked;
-    if (progress) progress.value = view.choiceRemainingMs ?? 0;
+    choicePanel.render(view);
     showRollback(view);
   }
 
@@ -445,10 +421,9 @@ async function main(): Promise<void> {
       audioPreferences.setMode(selected);
       readingPreferences.setMode(selected);
       buttonPreferences.setMode(selected);
-      choiceKey = "";
       rollbackKey = "";
       menu.hidden = title.hidden = problem.hidden = true;
-      choices.replaceChildren();
+      choicePanel.clear();
       gallery.close();
       closeAftergame();
       resetSaveMessage();
@@ -493,6 +468,7 @@ async function main(): Promise<void> {
       if (closed || request !== entryRequest) return;
       if (adopted) {
         presentation?.dispose();
+        choicePanel.clear();
         session = null;
         presentation = null;
         host.releaseAudio();
@@ -542,7 +518,7 @@ async function main(): Promise<void> {
     host.releaseAudio();
     scene.replaceChildren();
     scene.classList.remove("paused");
-    choices.replaceChildren();
+    choicePanel.clear();
     title.hidden = false;
     menu.hidden = problem.hidden = true;
     next.disabled = auto.disabled = skip.disabled = pause.disabled = audio.disabled = save.disabled = dialogueOpen.disabled = true;
@@ -831,7 +807,8 @@ async function main(): Promise<void> {
     session?.dispose();
     host.releaseAudio();
     host.dispose();
-    resize.disconnect();
+    choicePanel.dispose();
+    layout.dispose();
     document.removeEventListener("visibilitychange", visibility);
     document.removeEventListener("keydown", keyboard);
   };

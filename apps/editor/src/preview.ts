@@ -9,6 +9,8 @@ import { connectButtonSounds } from "../../../packages/player/src/web/button-sou
 import type { AuthorDocument } from "./document.ts";
 import { whaleSkin } from "virtual:haifeng-appearance";
 import { applyAuthorAppearance } from "../../../packages/player/src/web/appearance.ts";
+import { ChoicePanel } from "../../../packages/player/src/web/choices.ts";
+import { connectStageLayout } from "../../../packages/player/src/web/stage-layout.ts";
 
 export interface PreviewElements {
   stage: HTMLElement; scene: HTMLElement; choices: HTMLElement;
@@ -20,17 +22,22 @@ export interface PreviewElements {
 /** Owns only preview lifecycle. Story transitions remain in the shared session. */
 export class EditorPreview {
   readonly #elements: PreviewElements;
-  readonly #resize: ResizeObserver;
+  readonly #layout: { dispose(): void };
+  readonly #choices: ChoicePanel;
   readonly #events = new AbortController();
   #session: GameSession | null = null;
   #presentation: WebPresentation | null = null;
   #generation = 0;
-  #choiceKey = "";
   #activeNote = "";
   #buttonSoundsEnabled = true;
 
   constructor(elements: PreviewElements) {
     this.#elements = elements;
+    this.#choices = new ChoicePanel(elements.choices, (token, choiceId) => {
+      this.#presentation?.unlockAudio();
+      this.#session?.send({ type: "choose", token, choiceId });
+    });
+    this.#layout = connectStageLayout(elements.stage);
     const { signal } = this.#events;
     connectButtonSounds({
       buttons: [elements.next, elements.pause, elements.auto, elements.audio, elements.retry, elements.stop],
@@ -62,12 +69,6 @@ export class EditorPreview {
     document.addEventListener("visibilitychange", () => this.#session?.send({
       type: "pause", reason: "background", paused: document.hidden,
     }), { signal });
-    this.#resize = new ResizeObserver(() => {
-      const scale = String(elements.stage.clientWidth / 1280);
-      elements.stage.style.setProperty("--stage-scale", scale);
-      elements.scene.style.setProperty("--stage-scale", scale);
-    });
-    this.#resize.observe(elements.stage);
   }
 
   get running(): boolean { return this.#session !== null; }
@@ -131,20 +132,7 @@ export class EditorPreview {
     ].filter(Boolean).join("；");
     e.debug.textContent = JSON.stringify({ initial, current: view.story.variables, player: view.story.player,
       token: view.token }, null, 2);
-    const key = JSON.stringify([view.token, view.paused.length > 0, view.story.choices, view.story.phase]);
-    if (key === this.#choiceKey) return;
-    this.#choiceKey = key;
-    e.choices.replaceChildren();
-    if (view.story.phase !== "choosing") return;
-    for (const choice of view.story.choices) {
-      const button = document.createElement("button");
-      button.textContent = choice.text;
-      button.disabled = view.paused.length > 0;
-      button.addEventListener("click", () => this.#session?.send({
-        type: "choose", token: view.token, choiceId: choice.id,
-      }));
-      e.choices.append(button);
-    }
+    this.#choices.render(view);
   }
 
   draftChanged(): void {
@@ -157,10 +145,9 @@ export class EditorPreview {
     this.#presentation?.dispose();
     this.#session = null;
     this.#presentation = null;
-    this.#choiceKey = "";
     const e = this.#elements;
     e.scene.replaceChildren();
-    e.choices.replaceChildren();
+    this.#choices.clear();
     e.scene.classList.remove("paused");
     for (const button of [e.next, e.pause, e.auto, e.audio, e.retry, e.stop]) button.disabled = true;
     e.auto.setAttribute("aria-pressed", "false");
@@ -170,7 +157,8 @@ export class EditorPreview {
 
   dispose(): void {
     this.stop();
-    this.#resize.disconnect();
+    this.#choices.dispose();
+    this.#layout.dispose();
     this.#events.abort();
   }
 }

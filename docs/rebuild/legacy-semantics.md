@@ -37,6 +37,7 @@
 | `pref(speed/autoMul/readerScale/ghost)`、`typeText/kick/applyTheme` | [独立阅读偏好](preferences.md#阅读偏好的字段与时机)保留逐字间隔、自动倍率、字号与底板透明度；前两项用于后续呈现/等待，后两项即时应用；当前选择/自动/恢复计时不重置，试播视觉基准仍非完整旧主题迁移 |
 | 资源自带 `shot/sceneFit/cg/previewExcluded/audioCategory/gain` 等 | 保留元数据及来源；诊断不能把资源登记视为已安装、可播放或已授权 |
 | `settings` 的 cover/theme/UI 音效 | [作者外观](appearance.md)读取原主题/封面，复用旧入口原鲸鱼 SVG；最终右侧菜单覆盖作者 `menu=left`，对白字号采用作者基准乘玩家倍率，不改图形或素材；完整正式布局仍待迁移，编辑/插件/聊天设置不成为离线依赖 |
+| `renderChoices()`、`fit()`、`game-polish.css` | [共享选择布局](appearance.md#共享选择布局与小舞台)保留首立绘左右、四项阈值、两列及对白/选择小舞台规则；受限区域滚动防止内容只留在舞台裁剪外。游戏/预览同一比例、按钮与倒计时显示，暂停/时间更新不重建，缩放不改变计时；完整竖屏、小屏标题和全部弹层尚未迁移 |
 | `playUi(choiceShow/choiceConfirm/timeoutSilence/save)`、`startTick/stopTick` | [共享选择与存档反馈](feedback.md)已接实际首次就绪、接受的选择及存档提交；恢复不补播一次性提示，当前循环随有效计时暂停；其余 UI 音触发待接，不新增素材 |
 | `uiVarSe`、`playUi(cg/chapterEnd)` | [剧情反馈](feedback.md#分组变量变化与本次呈现)读取唯一核心分开的选项/进入变量变化，按当前场面安排；CG 共用鉴赏规则，话末按结局/下一顺序章节标记判断；初始化/恢复不发，旧延迟归属本次呈现并可取消，即时 `seEvents` 也参与变量提示避让 |
 | `showEnding` 的 `endingNew` | [首次解锁事务回执](feedback.md#首次结局解锁与终态反馈)取代页面缓存判断，提交成功且仍是原会话结局才反馈；已有结局和同批重试不重复响声或计次；终态接续音量/暂停，离开销毁 |

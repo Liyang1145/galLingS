@@ -13,8 +13,8 @@ h1 { margin: 0; font-size: clamp(1.1rem, 2.6vw, 1.8rem); font-weight: 500; }
 .eyebrow { color: #a7c7d0; margin: 0 0 6px; font-size: .85rem; }
 .badge { color: #adcbd1; border: 1px solid #3f5b66; border-radius: 20px; padding: 7px 13px; white-space: nowrap; font-size: .75rem; }
 .scope-note, .preview-note, .help { color: #acc1c9; line-height: 1.65; font-size: .85rem; }
-.stage { --stage-scale: 1; width: 100%; aspect-ratio: 16 / 9; position: relative; overflow: hidden; background: #07141c; border: 1px solid #39515c; border-radius: 10px; }
-.scene { --stage-scale: 1; width: 1280px; height: 720px; transform: scale(var(--stage-scale)); transform-origin: top left; position: absolute; overflow: hidden; background: #050d14; }
+.stage { --stage-scale: 1; --stage-unit: 1px; width: 100%; aspect-ratio: 16 / 9; position: relative; overflow: hidden; background: #07141c; border: 1px solid #39515c; border-radius: 10px; }
+.scene { width: 1280px; height: 720px; transform: scale(var(--stage-scale)); transform-origin: top left; position: absolute; overflow: hidden; background: #050d14; }
 .world, .backdrop, .actors, .veil { position: absolute; inset: 0; width: 100%; height: 100%; }
 .world { overflow: hidden; }
 .backdrop { object-fit: cover; }
@@ -44,10 +44,11 @@ h1 { margin: 0; font-size: clamp(1.1rem, 2.6vw, 1.8rem); font-weight: 500; }
 :where(.title-screen[data-cover-style="glass"]) .title-menu button { width: 220px; padding: 10px 22px; border-radius: 5px; border: 1px solid #edf0da73; background: #183a3cbb; color: #fbf6e9; font-size: 21px; letter-spacing: .18em; }
 :where(.title-screen[data-cover-style="glass"]) .title-menu button:hover:not(:disabled) { background: #2e5658ee; color: #fff; }
 .title-menu small { color: #d4e6ee; line-height: 1.6; font-size: 14px; text-shadow: 0 1px 3px #04121f; }
-.choices { position: absolute; left: 0; top: 0; width: 1280px; height: 720px; transform: scale(var(--stage-scale)); transform-origin: top left; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; pointer-events: none; font-family: var(--author-font, inherit); }
+.choices { position: absolute; left: 0; top: 0; width: 1280px; height: 720px; transform: scale(var(--stage-scale)); transform-origin: top left; pointer-events: none; font-family: var(--author-font, inherit); z-index: 6; }
+.choice-list { position: absolute; display: flex; flex-direction: column; align-items: stretch; gap: 18px; pointer-events: auto; overflow: auto; overscroll-behavior: contain; scrollbar-width: thin; scroll-padding: 8px; }
 .choices button { flex: 0 0 auto; pointer-events: auto; width: 520px; max-width: 1040px; padding: 17px 40px; background: var(--author-choice-bg, #0c0f1ad8); color: var(--author-text, #fff); border: var(--author-choice-border, 1px solid #ffffff40); border-radius: var(--author-choice-radius, 12px); font-size: 25px; line-height: 1.6; overflow-wrap: anywhere; }
 .choices button:hover:not(:disabled) { background: var(--author-choice-hover, #2b3655); color: var(--author-name-fg, #fff); }
-.choices progress { width: 520px; height: 6px; border: 0; accent-color: var(--author-accent, #c5e6e9); }
+.choices progress { flex: 0 0 auto; width: 100%; height: 6px; border: 0; accent-color: var(--author-accent, #c5e6e9); grid-column: 1 / -1; }
 /* Existing approved whale artwork and final repository overrides retain precedence. */
 [data-whale="true"] .title-menu { left: auto; right: 66px; bottom: 85px; width: 362px; align-items: stretch; gap: 26px; }
 [data-whale="true"] .title-menu button { position: relative; left: 0; width: 362px; min-height: 53px; padding: 0 54px 0 80px; border: 0; border-radius: 0; background: var(--whale-menu) center/100% 100% no-repeat; color: #f0f8ff; font-family: "Microsoft YaHei","PingFang SC",sans-serif; font-size: 23px; font-weight: 400; letter-spacing: 4.2px; text-align: center; line-height: 1.3; text-shadow: 0 1px 3px #092c4dcc, 0 0 7px #15324940; transition: filter .2s ease, translate .2s ease; }
@@ -56,7 +57,7 @@ h1 { margin: 0; font-size: clamp(1.1rem, 2.6vw, 1.8rem); font-weight: 500; }
 [data-whale="true"] .title-menu button:nth-child(4) { left: -54px; }
 [data-whale="true"] .title-menu button:hover:not(:disabled) { background: var(--whale-menu) center/100% 100% no-repeat; color: #f0f8ff; filter: brightness(1.16); }
 [data-whale="true"] .title-menu button:active { filter: brightness(.95); translate: 0 1px; }
-[data-whale="true"] .choices { gap: 26px; }
+[data-whale="true"] .choice-list { gap: 26px; }
 [data-whale="true"] .choices button { min-height: 76px; padding: 17px 74px; border: 0; border-radius: 0; background: var(--whale-choice) center/100% 100% no-repeat; color: #f0f8ff; font-weight: 400; text-shadow: 0 1px 3px #15354e88; transition: filter .2s ease, translate .2s ease; }
 [data-whale="true"] .choices button:hover:not(:disabled) { background: var(--whale-choice) center/100% 100% no-repeat; color: #fff; filter: brightness(1.16); }
 [data-whale="true"] .choices button:active { filter: brightness(.95); translate: 0 1px; }
@@ -64,6 +65,21 @@ h1 { margin: 0; font-size: clamp(1.1rem, 2.6vw, 1.8rem); font-weight: 500; }
 [data-whale="true"] .dialogue::before { background: var(--whale-dialogue) center/100% 100% no-repeat; transition: opacity .4s ease; }
 [data-whale="true"] .speaker { top: -22px; min-width: 170px; padding: 0 24px; border-radius: 10px; border: 1px solid #c0e1fa55; background: linear-gradient(#315679d9,#234565b8); color: #fff; font-weight: 400; letter-spacing: 3px; text-shadow: 0 1px 3px #153049; }
 [data-whale="true"] .dialogue-text { color: #f0f8ff; line-height: 1.8; letter-spacing: 1px; text-shadow: 0 1px 3px #04121fe6, 0 0 12px #04121f99; }
+/* Original actor-side and many-choice rules, within the common author-coordinate canvas. */
+.choices[data-many="false"] .choice-list { top: 174px; width: 390px; max-width: calc(100% - 84px); max-height: calc(100% - 384px); gap: 12px; }
+.choices[data-side="left"] .choice-list { left: 42px; right: auto; }
+.choices[data-side="right"] .choice-list { right: 42px; left: auto; }
+.choices[data-many="false"] button { width: 100%; min-width: 0; padding: 13px 18px; font-size: 21px; line-height: 1.45; text-align: left; }
+.choices[data-many="true"] .choice-list { top: 48px; bottom: 210px; left: 48px; right: 48px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-content: start; align-items: start; }
+.choices[data-many="true"] button { min-width: 0; width: 100%; font-size: 20px; }
+/* A stage unit is one visible CSS pixel after the author-coordinate scale. */
+.stage[data-small-stage="true"] .dialogue { left: calc(10 * var(--stage-unit)); right: calc(10 * var(--stage-unit)); bottom: calc(5 * var(--stage-unit)); height: calc(140 * var(--stage-unit)); padding: calc(22 * var(--stage-unit)) calc(18 * var(--stage-unit)) calc(46 * var(--stage-unit)); }
+.stage[data-small-stage="true"] .dialogue-text { font-size: max(calc(var(--author-size, 26px) * var(--reader-scale, 1)), calc(15 * var(--stage-unit))); line-height: 1.55; letter-spacing: 0; }
+.stage[data-small-stage="true"] .speaker { top: calc(-13 * var(--stage-unit)); left: calc(14 * var(--stage-unit)); height: calc(26 * var(--stage-unit)); line-height: calc(26 * var(--stage-unit)); min-width: calc(80 * var(--stage-unit)); padding: 0 calc(12 * var(--stage-unit)); font-size: calc(14 * var(--stage-unit)); }
+.stage[data-small-stage="true"] .choices .choice-list { top: calc(18 * var(--stage-unit)); gap: calc(8 * var(--stage-unit)); }
+.stage[data-small-stage="true"] .choices[data-many="false"] .choice-list { width: calc(300 * var(--stage-unit)); max-height: max(calc(40 * var(--stage-unit)), calc(100% - 163 * var(--stage-unit))); }
+.stage[data-small-stage="true"] .choices[data-many="true"] .choice-list { bottom: calc(150 * var(--stage-unit)); min-height: calc(40 * var(--stage-unit)); }
+.stage[data-small-stage="true"] .choices button { font-size: max(25px, calc(15 * var(--stage-unit))); min-height: calc(40 * var(--stage-unit)); padding: calc(6 * var(--stage-unit)) calc(30 * var(--stage-unit)); line-height: 1.45; }
 .menu-overlay { position: absolute; inset: 0; z-index: 20; background: #051017e8; display: grid; place-items: center; padding: 24px; }
 .menu-overlay > div { max-width: 580px; text-align: center; }
 .menu-overlay h2 { font-weight: 500; font-size: clamp(1rem, 2.7vw, 1.6rem); }

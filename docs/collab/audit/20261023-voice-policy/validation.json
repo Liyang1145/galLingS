@@ -12,6 +12,8 @@
       "enabled": false,
       "beforeThirdAudible": true,
       "laterChaptersDefaultSilent": true,
+      "genericVoiceSwitch": true,
+      "earlyManualOnDoesNotOptInLater": true,
       "manualOnAndReload": true,
       "manualOffStopsCurrentVoice": true,
       "explicitBacklogListen": true,
@@ -33,6 +35,8 @@
       "enabled": false,
       "beforeThirdAudible": true,
       "laterChaptersDefaultSilent": true,
+      "genericVoiceSwitch": true,
+      "earlyManualOnDoesNotOptInLater": true,
       "manualOnAndReload": true,
       "manualOffStopsCurrentVoice": true,
       "explicitBacklogListen": true,
@@ -44,22 +48,22 @@
     }
   },
   "fullRegression": {
-    "load_s": 3.29,
+    "load_s": 3.3,
     "body": "game playing",
     "chapters": 18,
     "walk": {
       "n": 3315,
       "p50": 0.09999999403953552,
       "p99": 1,
-      "max": 85.5,
+      "max": 58.30000001192093,
       "bad": [],
       "nbad": 0
     },
     "cg": {
       "n": 32,
-      "p50": 96.5,
-      "max": 215.80000001192093,
-      "heapMB": 12
+      "p50": 91.90000000596046,
+      "max": 234.2000000178814,
+      "heapMB": 11
     },
     "save": {
       "want": {
@@ -90,5 +94,14 @@
   },
   "nodesAndVoiceBindingsUnchanged": true,
   "noAudioFilesRemoved": true,
-  "noPaidSynthesis": true
+  "noPaidSynthesis": true,
+  "hostedVoiceSwitch": {
+    "label": "语音开关",
+    "default": false,
+    "manualOn": true,
+    "manualOff": true
+  },
+  "visibleLabel": "语音开关",
+  "chapterExplanationShown": false,
+  "chapterNotice": false
 }

@@ -90,7 +90,7 @@ export function parseExpression(text: string, types: VariableTypes, source: Sour
     let left = unary();
     while (true) {
       const token = tokens[cursor];
-      const priority = token === undefined ? undefined : PRECEDENCE[token];
+      const priority = token !== undefined && Object.hasOwn(PRECEDENCE, token) ? PRECEDENCE[token] : undefined;
       if (priority === undefined || priority < minimum) break;
       cursor++;
       const right = binary(priority + 1);

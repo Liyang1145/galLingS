@@ -15,6 +15,7 @@ import type { AuthorAppearance, WhaleArtwork } from "../appearance.ts";
 import type { InteractionFeedback } from "../ui-sounds.ts";
 import { captureSceneFade } from "./scene-fade.ts";
 import type { SceneFadeSurface } from "./scene-fade.ts";
+import { ACTOR_ACTIONS, ACTOR_ENTRIES, ACTOR_EXITS } from "./motion.ts";
 
 const LOOKS: Record<string, string> = {
   "": "", none: "", shadow: "brightness(0)",
@@ -27,9 +28,9 @@ const LOOKS: Record<string, string> = {
 };
 const MOODS = ["", "dizzy", "flicker", "strobe", "blur", "sway", "gray", "dark", "danger", "underwater", "slowmo"];
 const FX = ["", "shake", "quake", "flash", "redflash", "blink", "zoom", "whip"];
-const ACTIONS = ["jump", "shake", "nod", "lean", "flinch", "settle"];
-const ENTRIES = ["", "fade", "left", "right", "up", "pop", "none"];
-const EXITS = ["", "fade", "left", "right", "down", "none"];
+const ACTIONS = Object.keys(ACTOR_ACTIONS);
+const ENTRIES = ["", "none", ...Object.keys(ACTOR_ENTRIES)];
+const EXITS = ["", "none", ...Object.keys(ACTOR_EXITS)];
 
 function record(value: JsonValue | undefined): JsonObject {
   return value && typeof value === "object" && !Array.isArray(value) ? value : {};
@@ -209,10 +210,12 @@ export class WebPresentation implements PresentationAdapter {
       timer.setPaused(paused);
       return timer;
     };
-    const animate = (element: Element, frames: Keyframe[], duration: number, finish?: () => void,
+    const animate = (element: Element, frames: Keyframe[], timing: number | KeyframeAnimationOptions, finish?: () => void,
       easing = "ease-out"): void => {
       if (skipping || window.matchMedia("(prefers-reduced-motion: reduce)").matches) { finish?.(); return; }
-      const animation = element.animate(frames, { duration, easing, fill: "none" });
+      const options: KeyframeAnimationOptions = typeof timing === "number" ? { duration: timing, easing, fill: "none" }
+        : { easing, fill: "none", ...timing };
+      const animation = element.animate(frames, options);
       animations.add(animation);
       if (paused) animation.pause();
       void animation.finished.then(() => {
@@ -298,9 +301,11 @@ export class WebPresentation implements PresentationAdapter {
       this.#world.dataset.mood = scene.mood;
       const keep = new Set<string>();
       const actorActions = view.presentation.performance.actorActions;
+      const actorMotion = context.mode === "enter" && !skipping
+        && !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       const focusActor = this.#content.source.settings.focus !== false && !!view.presentation.text
         && scene.sprites.some(sprite => actorKey(sprite.assetId) === view.presentation.speaker);
-      for (const sprite of scene.sprites) {
+      for (const [z, sprite] of scene.sprites.entries()) {
         const key = actorKey(sprite.assetId);
         keep.add(key);
         let actor = this.#actors.get(key);
@@ -318,46 +323,58 @@ export class WebPresentation implements PresentationAdapter {
         }
         const previous = actor.sprite;
         const { element, image } = actor;
+        const previousFilter = image.style.filter;
         if (!isNew && previous.assetId !== sprite.assetId && sprite.poseSwitch === "soft"
-          && !changedBackground && !actorActions[key] && !skipping && context.mode === "enter") {
-          const ghost = image.cloneNode(false) as HTMLImageElement;
-          ghost.className = "pose-ghost";
-          ghost.alt = "";
-          element.append(ghost);
+          && !changedBackground && !actorActions[key] && actorMotion) {
+          const ghost = element.cloneNode(true) as HTMLDivElement;
+          ghost.classList.add("actor-ghost");
+          ghost.setAttribute("aria-hidden", "true");
+          ghost.inert = true;
+          this.#actorsLayer.insertBefore(ghost, element);
           transients.add(ghost);
           animate(ghost, [{ opacity: 1 }, { opacity: 0 }], 140, () => { ghost.remove(); transients.delete(ghost); });
         }
         image.src = this.#resources.url(sprite.assetId);
         image.style.transform = `scaleX(${sprite.flipped ? -1 : 1})`;
-        image.style.filter = `${grade(metadata)} ${LOOKS[sprite.look]}`;
+        const dim = focusActor && key !== view.presentation.speaker ? "brightness(.62) saturate(.85)" : "";
+        const filter = [grade(metadata), LOOKS[sprite.look], dim].filter(Boolean).join(" ");
+        image.style.filter = filter;
         element.dataset.instance = sprite.id;
+        element.style.zIndex = String(z);
         element.style.left = `${sprite.x}px`;
         element.style.top = `${sprite.y}px`;
         element.style.height = `${sprite.height}px`;
-        element.style.opacity = focusActor && key !== view.presentation.speaker ? "0.65" : "1";
+        element.style.opacity = "";
         actor.sprite = sprite;
-        if (context.mode === "enter" && !skipping) {
-          if (actorActions[key]) this.actorAction(image, actorActions[key]!, animate);
-          else if (isNew && sprite.enter !== "none") {
-            const offset = sprite.enter === "left" ? "-120px" : sprite.enter === "right" ? "120px" : "0px";
-            const down = sprite.enter === "up" ? "100px" : "0px";
+        if (actorMotion) {
+          if (!isNew && (previous.x !== sprite.x || previous.y !== sprite.y || previous.height !== sprite.height)) {
             animate(element, [
-              { opacity: 0, translate: `${offset} ${down}`, scale: sprite.enter === "pop" ? ".85" : "1" },
-              { opacity: 1, translate: "0px 0px", scale: "1" },
-            ], 400);
+              { left: `${previous.x}px`, top: `${previous.y}px`, height: `${previous.height}px` },
+              { left: `${sprite.x}px`, top: `${sprite.y}px`, height: `${sprite.height}px` },
+            ], { duration: 500, easing: "ease" });
+          }
+          if (!isNew && previousFilter !== filter) {
+            animate(image, [{ filter: previousFilter || "none" }, { filter }], { duration: 900, easing: "ease" });
+          }
+          if (actorActions[key]) {
+            const motion = ACTOR_ACTIONS[actorActions[key]!]!;
+            animate(element, motion.frames, motion.timing);
+          }
+          else if (isNew && sprite.enter !== "none") {
+            const motion = ACTOR_ENTRIES[sprite.enter || "fade"]!;
+            animate(element, motion.frames, motion.timing);
           }
         }
       }
       for (const [key, actor] of this.#actors) {
         if (keep.has(key)) continue;
         this.#actors.delete(key);
-        if (skipping || context.mode !== "enter" || actor.sprite.exit === "none") actor.element.remove();
+        if (!actorMotion || actor.sprite.exit === "none") actor.element.remove();
         else {
           const element = actor.element;
           transients.add(element);
-          const x = actor.sprite.exit === "left" ? "-120px" : actor.sprite.exit === "right" ? "120px" : "0px";
-          const y = actor.sprite.exit === "down" ? "100px" : "0px";
-          animate(element, [{ opacity: 1 }, { opacity: 0, translate: `${x} ${y}` }], 400,
+          const motion = ACTOR_EXITS[actor.sprite.exit || "fade"]!;
+          animate(element, motion.frames, motion.timing,
             () => { element.remove(); transients.delete(element); });
         }
       }
@@ -474,19 +491,6 @@ export class WebPresentation implements PresentationAdapter {
       } catch (error: unknown) { problem(error); }
     })();
     return playback;
-  }
-
-  private actorAction(image: HTMLImageElement, action: string,
-    animate: (element: Element, frames: Keyframe[], duration: number) => void): void {
-    const positions: Record<string, Keyframe[]> = {
-      jump: [{ translate: "0 0" }, { translate: "0 -30px" }, { translate: "0 0" }],
-      shake: [{ translate: "-6px 0" }, { translate: "6px 0" }, { translate: "-4px 0" }, { translate: "0 0" }],
-      nod: [{ translate: "0 0" }, { translate: "0 12px" }, { translate: "0 0" }],
-      lean: [{ translate: "0 0" }, { translate: "18px 0" }, { translate: "0 0" }],
-      flinch: [{ translate: "0 0" }, { translate: "-22px 0" }, { translate: "0 0" }],
-      settle: [{ translate: "0 -6px" }, { translate: "0 3px" }, { translate: "0 0" }],
-    };
-    animate(image, positions[action]!, 420);
   }
 
   private screenEffect(fx: string, animate: (element: Element, frames: Keyframe[], duration: number) => void): void {

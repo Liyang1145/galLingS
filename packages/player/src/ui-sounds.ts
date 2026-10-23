@@ -44,6 +44,21 @@ export function readUiSounds(content: StoryContent): UiSounds {
   return sounds;
 }
 
+/** Shared author/default variable selection for playback and read-only reference queries. */
+export function readFeedbackVariables(content: StoryContent): { favor: string | null; tail: string | null } {
+  const source = { file: content.source.file, field: "settings.uiSe" };
+  const input = content.source.settings.uiSe;
+  const settings = input === undefined || input === null ? {} : object(input, source);
+  const variable = (key: string, fallback: string): string | null => {
+    const name = settings[key] === undefined ? fallback : string(settings[key], at(source, key));
+    const declared = content.variables.find(item => item.name === name);
+    if (declared && declared.type === "number") return name;
+    if (settings[key] !== undefined) reject("UI_SOUND_VARIABLE", `提示音需要已声明的数值变量：${name}`, at(source, key));
+    return null;
+  };
+  return { favor: variable("favorVar", "好感"), tail: variable("tailVar", "尾鳍") };
+}
+
 /** Map already-committed core output to sound cues; never evaluate author actions. */
 export class StoryFeedback {
   readonly #sounds: UiSounds;
@@ -55,18 +70,9 @@ export class StoryFeedback {
 
   constructor(content: StoryContent) {
     this.#sounds = readUiSounds(content);
-    const source = { file: content.source.file, field: "settings.uiSe" };
-    const input = content.source.settings.uiSe;
-    const settings = input === undefined || input === null ? {} : object(input, source);
-    const variable = (key: string, fallback: string): string | null => {
-      const name = settings[key] === undefined ? fallback : string(settings[key], at(source, key));
-      const declared = content.variables.find(item => item.name === name);
-      if (declared && declared.type === "number") return name;
-      if (settings[key] !== undefined) reject("UI_SOUND_VARIABLE", `提示音需要已声明的数值变量：${name}`, at(source, key));
-      return null;
-    };
-    this.#favor = variable("favorVar", "好感");
-    this.#tail = variable("tailVar", "尾鳍");
+    const variables = readFeedbackVariables(content);
+    this.#favor = variables.favor;
+    this.#tail = variables.tail;
     this.#cgs = new Set(galleryCatalog(content).cgs.map(resource => resource.id));
     const nodes = new Map(content.nodes.map(node => [node.id, node]));
     this.#chapterEnds = new Set(content.nodes.filter(node => node.flow.kind === "ending"

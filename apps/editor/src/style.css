@@ -29,9 +29,27 @@
 .draft-comparison section { min-width: 0; }
 .draft-comparison h3 { font-size: .85rem; font-weight: 500; }
 .draft-comparison pre { max-height: 240px; overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere; background: #061119; padding: 10px; font-size: .8rem; }
+.reference-panel { margin: 24px 0; border: 1px solid #557682; border-radius: 8px; padding: 16px; }
+.reference-panel h3 { margin: 0; font-size: 1rem; font-weight: 500; }
+.reference-panel h4 { font-size: .85rem; font-weight: 500; overflow-wrap: anywhere; }
+.reference-panel p { overflow-wrap: anywhere; line-height: 1.7; }
+.reference-panel fieldset { min-width: 0; margin: 12px 0 0; padding: 12px; border: 1px solid #39515c; }
+.reference-panel legend { font-size: .85rem; padding: 0 6px; }
+.reference-panel fieldset:disabled { opacity: .6; }
+.reference-columns { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; }
+.reference-panel select { width: 100%; font: inherit; color: inherit; background: #102632; padding: 8px; border: 1px solid #557682; border-radius: 6px; }
+.reference-panel option { padding: 6px; }
+.reference-panel ol { max-height: 430px; overflow: auto; padding-left: 24px; }
+.reference-panel li { padding: 10px 0; border-bottom: 1px solid #39515c; overflow-wrap: anywhere; }
+.reference-panel li button { max-width: 100%; margin: 0 6px 6px 0; text-align: left; white-space: normal; overflow-wrap: anywhere; }
+.reference-panel code, .reference-panel small, .reference-note, .reference-unresolved { display: block; margin-top: 5px; font-size: .75rem; overflow-wrap: anywhere; }
+.reference-note, .reference-panel small { color: #bdd8df; }
+.reference-unresolved { color: #ffb895; }
+.reference-pager { margin-top: 10px; font-size: .75rem; }
 input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 3px solid #aed9e7; outline-offset: 2px; }
 @media (max-width: 900px) {
   .editor-layout { grid-template-columns: 1fr; }
   #nodes { height: 180px; }
   .draft-comparison { grid-template-columns: 1fr; }
+  .reference-columns { grid-template-columns: 1fr; }
 }

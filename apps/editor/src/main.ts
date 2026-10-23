@@ -7,6 +7,7 @@ import { AuthorDraftImporter } from "./imports.ts";
 import type { DraftImportSnapshot } from "./imports.ts";
 import { authorTextKey } from "../../../packages/story-model/src/author-draft.ts";
 import { downloadDraft } from "./download.ts";
+import { AuthorReferences } from "./references.ts";
 import "../../game/src/style.css";
 import "./style.css";
 
@@ -47,6 +48,7 @@ let requestController: AbortController | null = null;
 let operation: "load" | "preview" | "save" | null = null;
 let disposed = false;
 let importer: AuthorDraftImporter | null = null;
+let references: AuthorReferences | null = null;
 
 function message(value: string, error = false): void {
   el.message.textContent = value;
@@ -81,6 +83,7 @@ function controls(): void {
   el.nodes.disabled = locked;
   el.search.disabled = locked;
   importer?.setEnabled(!!baseline && operation === null);
+  references?.setAvailable(!!baseline && !locked);
 }
 
 function nodeForm(): void {
@@ -97,6 +100,7 @@ function nodeForm(): void {
   el.fieldNote.textContent = fields.length === 2
     ? "仅改已有说话人和对白字符串；选项、变量、流转、素材及演出保留。预览与保存都会调用同一内容转换器。"
     : "缺失或非字符串字段在本片只读，不会自动添加字段。节点 ID、顺序、选项、变量、流转、素材及演出保留。";
+  references?.select(selected);
   controls();
 }
 
@@ -106,16 +110,26 @@ function list(): void {
     node.id, node.chapter, textFor(node.id, "speaker", node.presentation.speaker),
     textFor(node.id, "text", node.presentation.text),
   ].some(value => value.toLocaleLowerCase().includes(query))) ?? [];
-  const options = matches.slice(0, 200).map(node => {
+  const visible = matches.slice(0, 200);
+  const optionFor = (node: AuthorDocument["content"]["nodes"][number]): HTMLOptionElement => {
     const option = document.createElement("option");
     const edited = drafts.has(key(node.id, "speaker")) || drafts.has(key(node.id, "text"));
     option.value = node.id;
     option.textContent = `${edited ? "＊" : ""}${node.id} · ${node.chapter} · ${textFor(node.id, "text", node.presentation.text).slice(0, 55)}`;
     return option;
-  });
+  };
+  const options: (HTMLOptionElement | HTMLOptGroupElement)[] = visible.map(optionFor);
+  const current = selectedNode();
+  const pinned = !!current && !visible.some(node => node.id === current.id);
+  if (current && pinned) {
+    const group = document.createElement("optgroup");
+    group.label = "当前定位节点（筛选外或超过显示上限）";
+    group.append(optionFor(current));
+    options.unshift(group);
+  }
   el.nodes.replaceChildren(...options);
   el.nodes.value = selected;
-  el.count.textContent = `匹配 ${matches.length} 个节点，显示前 ${Math.min(matches.length, 200)} 个；草稿修改 ${drafts.size} 个字段。`;
+  el.count.textContent = `匹配 ${matches.length} 个节点，显示前 ${visible.length} 个${pinned ? "，另保留当前定位节点" : ""}；草稿修改 ${drafts.size} 个字段。`;
 }
 
 function change(field: "speaker" | "text"): void {
@@ -133,6 +147,7 @@ function change(field: "speaker" | "text"): void {
   } else drafts.set(editKey, { nodeId: node.id, field, before, after });
   revision++;
   importer?.invalidate();
+  references?.invalidate();
   el.discard.checked = false;
   preview.draftChanged();
   list();
@@ -190,11 +205,13 @@ async function perform(kind: "load" | "preview" | "save", selectedEntry: string 
       baseline = result;
       drafts.clear();
       revision++;
+      references?.invalidate();
       el.discard.checked = false;
       if (!result.content.nodes.some(node => node.id === selected)) selected = result.content.entryNodeId;
       el.source.textContent = `作者源 SHA-256：${result.sourceSha256}；节点 ${result.content.nodes.length} 个；内容修订：${result.content.revision}`;
       list();
       nodeForm();
+      references?.refresh();
       message(kind === "save"
         ? `作者源已保存。原文件备份：${result.backup ?? "未返回备份位置，请检查作品目录"}。预览已停止，请重新预览本次修订。`
         : "已读取当前作者源；编辑保留为本页草稿，保存需点击“保存到作者源”。");
@@ -229,7 +246,7 @@ button("stop").addEventListener("click", () => {
   message("已取消采用预览结果；草稿保留。后台转换若尚未结束，下次请求可能需要稍后重试。");
 }, { signal });
 el.search.addEventListener("input", list, { signal });
-el.nodes.addEventListener("change", () => { selected = el.nodes.value; nodeForm(); }, { signal });
+el.nodes.addEventListener("change", () => { selected = el.nodes.value; list(); nodeForm(); }, { signal });
 el.speaker.addEventListener("input", () => change("speaker"), { signal });
 el.text.addEventListener("input", () => change("text"), { signal });
 el.reset.addEventListener("click", () => {
@@ -238,6 +255,7 @@ el.reset.addEventListener("click", () => {
   drafts.delete(key(selected, "text"));
   revision++;
   importer?.invalidate();
+  references?.invalidate();
   el.discard.checked = false;
   preview.draftChanged();
   list();
@@ -258,6 +276,7 @@ function dispose(): void {
   requestController?.abort();
   preview.dispose();
   importer?.dispose();
+  references?.dispose();
   events.abort();
 }
 window.addEventListener("pagehide", dispose, { once: true, signal });
@@ -289,11 +308,34 @@ importer = new AuthorDraftImporter({
     drafts.clear();
     for (const edit of result.edits) drafts.set(key(edit.nodeId, edit.field), { ...edit });
     revision++;
+    references?.invalidate();
     el.discard.checked = false;
     preview.draftChanged();
     list();
     nodeForm();
     message("导入结果已采用到当前作者源上的草稿；请预览，确认后再点击“保存到作者源”。");
+  },
+});
+references = new AuthorReferences({
+  root: element("author-references", HTMLElement),
+  capture() {
+    if (!baseline || disposed) return null;
+    return {
+      content: baseline.content, sourceSha256: baseline.sourceSha256, revision,
+      textOverrides: new Map([...drafts.values()].filter(edit => edit.field === "text")
+        .map(edit => [edit.nodeId, edit.after])),
+    };
+  },
+  current: snapshot => !disposed && baseline !== null && baseline.content === snapshot.content
+    && baseline.sourceSha256 === snapshot.sourceSha256 && revision === snapshot.revision,
+  selected: () => selected,
+  navigate(nodeId) {
+    if (disposed || operation === "load" || operation === "save"
+      || !baseline?.content.nodes.some(node => node.id === nodeId)) return;
+    selected = nodeId;
+    list();
+    nodeForm();
+    el.nodeTitle.focus();
   },
 });
 controls();

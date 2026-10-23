@@ -33,7 +33,7 @@
           <select id="nodes" size="18" aria-label="选择已有节点"></select>
         </aside>
         <section aria-label="编辑与预览">
-          <h2 id="node-title">请选择节点</h2>
+          <h2 id="node-title" tabindex="-1">请选择节点</h2>
           <label for="speaker">说话人</label>
           <input id="speaker" maxlength="100000" disabled />
           <label for="text">对白</label>
@@ -44,6 +44,7 @@
             <button id="preview-start" disabled>从正常开局预览草稿</button>
             <button id="preview-selected" disabled>从所选节点按声明初值预览</button>
           </div>
+          <section id="author-references" aria-label="只读引用与影响查询"></section>
           <p id="preview-note" class="preview-note">预览不读取或写入玩家存档、全局解锁和聊天记录。</p>
           <div id="preview-surface" class="player-surface">
           <div id="stage" class="stage" tabindex="0" aria-label="剧情预览画面">

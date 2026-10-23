@@ -4,6 +4,7 @@ import type {
   Assignment, Choice, Diagnostic, PlayerProjection, Presentation, SourceLocation, StoryContent, StoryNode, Value,
 } from "../../story-model/src/model.ts";
 import { at, jsonObject, knownFields, numeric, object, reject, string } from "../../story-model/src/read.ts";
+import { fillDialogue } from "../../story-model/src/text.ts";
 
 export type Phase = "presenting" | "ready" | "choosing" | "ended";
 export type Terminal = { kind: "ending"; endingId: string } | { kind: "script-end" } | null;
@@ -160,8 +161,7 @@ class Runtime implements StoryRuntime {
     const node = this.node(state);
     const presentation = structuredClone(node.presentation);
     const values = this.values(state);
-    presentation.text = presentation.text.replace(/\{([^{}\s]{1,16})\}/gu, (match, name: string) =>
-      Object.hasOwn(values, name) ? String(values[name]) : match);
+    presentation.text = fillDialogue(presentation.text, values);
     const choices = this.visible(state);
     const timeout = node.flow.kind === "choice" && state.phase === "choosing" ? node.flow.timeout : null;
     return {

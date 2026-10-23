@@ -1,6 +1,7 @@
 import type { SourceLocation, StoryContent } from "./model.ts";
 import { array, at, knownFields, object, reject, string } from "./read.ts";
 import { hash, localPath, nonempty, nonnegative, oneOf } from "./content.ts";
+import { HOST_BRIDGE_PROTOCOL } from "./host.ts";
 
 export interface PackageFile {
   path: string;
@@ -15,7 +16,8 @@ export interface PackagedResource extends PackageFile {
 
 /** Internal delivery protocol, not a game release/version or a native installer. */
 export interface GamePackage {
-  format: "haifeng.game-package/1";
+  format: "haifeng.game-package/2";
+  hostBridge: typeof HOST_BRIDGE_PROTOCOL;
   target: "shared-web";
   purpose: "integration-trial";
   workId: string;
@@ -39,8 +41,8 @@ export function packagePath(input: unknown, source: SourceLocation): string {
 
 export function readGamePackage(input: unknown): GamePackage {
   const data = object(input, ROOT);
-  knownFields(data, ["format", "target", "purpose", "workId", "contentRevision", "entry", "build", "story", "provenance", "frontend", "resources"], ROOT);
-  if (data.format !== "haifeng.game-package/1") reject("PACKAGE_FORMAT", "不支持的游戏包清单格式", ROOT);
+  knownFields(data, ["format", "hostBridge", "target", "purpose", "workId", "contentRevision", "entry", "build", "story", "provenance", "frontend", "resources"], ROOT);
+  if (data.format !== "haifeng.game-package/2") reject("PACKAGE_FORMAT", "游戏包格式不受当前宿主支持，请重新构建并准备", ROOT);
   const buildSource = at(ROOT, "build");
   const build = object(data.build, buildSource);
   knownFields(build, ["commit", "dirty", "lockSha256", "vite"], buildSource);
@@ -90,7 +92,8 @@ export function readGamePackage(input: unknown): GamePackage {
     return { ...result, assetId, sourcePath: localPath(item.sourcePath, at(source, "sourcePath")) };
   });
   return {
-    format: "haifeng.game-package/1",
+    format: "haifeng.game-package/2",
+    hostBridge: oneOf(data.hostBridge, [HOST_BRIDGE_PROTOCOL] as const, at(ROOT, "hostBridge")),
     target: oneOf(data.target, ["shared-web"] as const, at(ROOT, "target")),
     purpose: oneOf(data.purpose, ["integration-trial"] as const, at(ROOT, "purpose")),
     entry: oneOf(data.entry, ["index.html"] as const, at(ROOT, "entry")),

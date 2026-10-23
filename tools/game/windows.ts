@@ -36,7 +36,8 @@ async function prepare(): Promise<void> {
     const configPath = resolve(output, "tauri.rebuild.conf.json");
     await writeFile(configPath, `${JSON.stringify(config, null, 2)}\n`, { flag: "wx" });
     const receipt = {
-      format: "haifeng.windows-preparation/1",
+      format: "haifeng.windows-preparation/2",
+      hostBridge: manifest.hostBridge,
       purpose: "integration-trial",
       packageId, workId: manifest.workId, contentRevision: manifest.contentRevision,
       manifestSha256: sha256(manifestBytes),

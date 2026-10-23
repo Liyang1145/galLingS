@@ -13,6 +13,7 @@ import { assertPackageContent, readGamePackage } from "../../packages/story-mode
 import type { GamePackage, PackageFile, PackagedResource } from "../../packages/story-model/src/package.ts";
 import { loadSourceContent, REPOSITORY_ROOT } from "../content/build.ts";
 import type { ResourceFile } from "../content/build.ts";
+import { HOST_BRIDGE_PROTOCOL } from "../../packages/story-model/src/host.ts";
 
 const exec = promisify(execFile);
 const sha256 = (value: string | Uint8Array): string => createHash("sha256").update(value).digest("hex");
@@ -169,7 +170,8 @@ async function build(): Promise<void> {
     });
     const resources = await copyMedia(root, loaded.files, temporary);
     const manifest = readGamePackage({
-      format: "haifeng.game-package/1", target: "shared-web", purpose: "integration-trial",
+      format: "haifeng.game-package/2", hostBridge: HOST_BRIDGE_PROTOCOL,
+      target: "shared-web", purpose: "integration-trial",
       workId: content.workId, contentRevision: content.revision, entry: "index.html",
       build: stamp, story, provenance, frontend, resources,
     });

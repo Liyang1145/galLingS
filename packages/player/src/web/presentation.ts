@@ -74,7 +74,7 @@ export class WebPresentation implements PresentationAdapter {
   #disposed = false;
   #active: Playback | null = null;
 
-  constructor(root: HTMLElement, content: StoryContent, resources: ResourceAccess) {
+  constructor(root: HTMLElement, content: StoryContent, resources: ResourceAccess, audioAllowed = true) {
     this.#root = root;
     this.#content = content;
     this.#resources = resources;
@@ -96,10 +96,11 @@ export class WebPresentation implements PresentationAdapter {
     this.#dialogue.append(this.#name, this.#text);
     this.#world.append(this.#background, this.#actorsLayer, this.#veil);
     root.replaceChildren(this.#world, this.#dialogue);
-    this.#audio = new AudioMixer(resources, content.source.settings);
+    this.#audio = new AudioMixer(resources, content.source.settings, audioAllowed);
   }
 
   unlockAudio(): void { this.#audio.unlock(); }
+  setAudioAllowed(allowed: boolean): void { this.#audio.setAudioAllowed(allowed); }
 
   present(view: RuntimeView, context: PresentationContext): Playback {
     if (this.#disposed) throw new Error("表现实例已经离开");

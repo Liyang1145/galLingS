@@ -8,6 +8,7 @@ import { setting, volume } from "./resources.ts";
 
 interface Track {
   id: string;
+  kind: "persistent" | "voice" | "effect";
   element: HTMLAudioElement;
   fade: ActiveTimer | null;
   alive: boolean;
@@ -31,13 +32,15 @@ export class AudioMixer {
   readonly #ambience = new Map<string, Track>();
   #music: Track | null = null;
   #paused = false;
+  #audioAllowed: boolean;
   #disposed = false;
   #clock: Clock | null = null;
   #report: (problem: MediaProblem) => void = () => {};
 
-  constructor(resources: ResourceAccess, settings: JsonObject) {
+  constructor(resources: ResourceAccess, settings: JsonObject, audioAllowed = true) {
     this.#resources = resources;
     this.#settings = settings;
+    this.#audioAllowed = audioAllowed;
   }
 
   private track(id: string, loop: boolean, gain: number, ended: (() => void) | null = null, seekMs: number | null = null): Track {
@@ -45,7 +48,8 @@ export class AudioMixer {
     element.loop = loop;
     element.preload = "auto";
     element.volume = volume(gain);
-    const track: Track = { id, element, fade: null, alive: true, failed: false, playRejected: false, seekMs, ended };
+    const track: Track = { id, kind: loop ? "persistent" : ended ? "voice" : "effect",
+      element, fade: null, alive: true, failed: false, playRejected: false, seekMs, ended };
     this.#tracks.add(track);
     element.addEventListener("ended", () => {
       if (!track.alive) return;
@@ -88,12 +92,22 @@ export class AudioMixer {
 
   private play(track: Track): void {
     if (!track.alive || track.failed || track.seekMs !== null || this.#paused || this.#disposed) return;
+    if (!this.#audioAllowed) {
+      if (track.kind === "effect") this.stop(track);
+      else if (track.kind === "voice") {
+        track.playRejected = true;
+        const ended = track.ended;
+        track.ended = null;
+        ended?.();
+      }
+      return;
+    }
     void track.element.play().then(() => {
       track.playRejected = false;
       // play() may resolve after entry cancellation or a background pause.
-      if (!track.alive || this.#paused || this.#disposed) track.element.pause();
+      if (!track.alive || this.#paused || !this.#audioAllowed || this.#disposed) track.element.pause();
     }).catch((error: unknown) => {
-      if (!track.alive || this.#paused || this.#disposed) return;
+      if (!track.alive || this.#paused || !this.#audioAllowed || this.#disposed) return;
       track.playRejected = true;
       this.#report({
         code: "AUDIO_PLAY",
@@ -139,7 +153,7 @@ export class AudioMixer {
       if (track.alive) track.element.volume = volume(from + (target - from) * (1 - timer.remaining() / duration));
     });
     track.fade = timer;
-    timer.setPaused(this.#paused);
+    timer.setPaused(this.#paused || !this.#audioAllowed);
   }
 
   private scene(presentation: Presentation, restored: PlaybackCheckpoint | null): void {
@@ -292,11 +306,21 @@ export class AudioMixer {
   setPaused(paused: boolean): void {
     this.#paused = paused;
     for (const track of this.#tracks) {
-      track.fade?.setPaused(paused);
+      track.fade?.setPaused(paused || !this.#audioAllowed);
       if (paused) track.element.pause();
       else if (track.element.paused) this.play(track);
     }
     for (const timer of this.#entryDelays ?? []) timer.setPaused(paused);
+  }
+
+  setAudioAllowed(allowed: boolean): void {
+    if (this.#disposed || this.#audioAllowed === allowed) return;
+    this.#audioAllowed = allowed;
+    for (const track of this.#tracks) {
+      track.fade?.setPaused(this.#paused || !allowed);
+      if (!allowed) track.element.pause();
+      else if (!this.#paused && track.element.paused) this.play(track);
+    }
   }
 
   dispose(): void {

@@ -112,9 +112,11 @@ async function main(): Promise<void> {
   const hostStatus = document.createElement("p");
   note.insertAdjacentElement("afterend", hostStatus);
   const host = connectHost(state => {
-    hostStatus.textContent = state.issue ? `宿主状态异常，已暂停：${state.issue}`
+    const platform = state.issue ? `宿主状态异常，已暂停：${state.issue}`
       : state.platform === "windows-trial" ? "Windows 集成试用 · 记录与旧版隔离"
       : state.platform === "android-trial" ? "Android 集成试用 · 记录与旧版隔离" : "浏览器试播";
+    hostStatus.textContent = `${platform}${state.audioIssue ? ` · ${state.audioIssue}` : ""}`;
+    presentation?.setAudioAllowed(state.audioAllowed);
     session?.send({ type: "pause", reason: "host", paused: state.paused });
   }, () => {
     if (dialogue.open) { closeDialogue(); return true; }
@@ -156,7 +158,7 @@ async function main(): Promise<void> {
         button.textContent = choice.text;
         button.addEventListener("click", event => {
           event.stopPropagation();
-          presentation?.unlockAudio();
+          unlockAudio();
           session?.send({ type: "choose", token, choiceId: choice.id });
         });
         choices.append(button);
@@ -234,7 +236,7 @@ async function main(): Promise<void> {
         ? "限时选择样例：声明初值 0、周目 1、结局数 0；不是第五话真实路线，不写全局成果。"
         : "第一话试播：进度与全局成果分别保存，重新开始和读档保留已解锁的结局与 CG。";
       let sequence = 0;
-      presentation = new WebPresentation(scene, source, resources);
+      presentation = new WebPresentation(scene, source, resources, host.state().audioAllowed);
       session = createGameSession({
         content: source, player, generation: ++generation,
         clock, presentation, seen: reads[selected], onChange: show,
@@ -251,7 +253,7 @@ async function main(): Promise<void> {
         },
       });
       show(session.view());
-      presentation.unlockAudio();
+      unlockAudio();
       if (checkpoint) saveMessage.textContent = "已恢复保存的剧情位置和剩余有效时间；全局记录沿用当前已保存成果。";
     } catch (error: unknown) {
       if (closed || request !== entryRequest) return;
@@ -259,6 +261,7 @@ async function main(): Promise<void> {
         presentation?.dispose();
         session = null;
         presentation = null;
+        host.releaseAudio();
         title.hidden = false;
         next.disabled = auto.disabled = skip.disabled = pause.disabled = audio.disabled = save.disabled = dialogueOpen.disabled = rollbackButton.disabled = true;
         resetRollback();
@@ -270,9 +273,15 @@ async function main(): Promise<void> {
   }
 
   function advance(): void {
-    presentation?.unlockAudio();
+    unlockAudio();
     const view = session?.view();
     if (view) session?.send({ type: "next", token: view.token });
+  }
+
+  function unlockAudio(): void {
+    if (!presentation) return;
+    host.requestAudio();
+    presentation.unlockAudio();
   }
 
   function toggleMenu(): void {
@@ -286,6 +295,7 @@ async function main(): Promise<void> {
     session?.dispose();
     session = null;
     presentation = null;
+    host.releaseAudio();
     scene.replaceChildren();
     scene.classList.remove("paused");
     choices.replaceChildren();
@@ -403,7 +413,7 @@ async function main(): Promise<void> {
       if (!result.accepted) throw new Error(`${result.code}：${result.message}`);
       resetSaveMessage();
       rollbackMessage.textContent = `已恢复到 ${result.nodeId} 的检查点，后续路线历史已截断；全局成果保留。媒体问题请在同一位置重试。`;
-      presentation?.unlockAudio();
+      unlockAudio();
     } catch (error: unknown) {
       if (!closed && request === entryRequest && owner === session) {
         rollbackMessage.textContent = `回退未采用：${error instanceof Error ? error.message : "准备失败"}。当前进度和历史保持原值。`;
@@ -463,7 +473,7 @@ async function main(): Promise<void> {
   pause.onclick = toggleMenu;
   auto.onclick = () => { if (session) session.send({ type: "auto", enabled: !session.view().auto }); };
   skip.onclick = () => { if (session) session.send({ type: "skip", enabled: !session.view().skipping }); };
-  audio.onclick = () => presentation?.unlockAudio();
+  audio.onclick = unlockAudio;
   save.onclick = () => { void saveCheckpoint(); };
   element("inspect-main", HTMLButtonElement).onclick = () => { void inspectSaved("main"); };
   element("inspect-timed", HTMLButtonElement).onclick = () => { void inspectSaved("timed"); };
@@ -504,6 +514,7 @@ async function main(): Promise<void> {
     storageMessageEpoch++;
     closeDialogue();
     session?.dispose();
+    host.releaseAudio();
     host.dispose();
     resize.disconnect();
     document.removeEventListener("visibilitychange", visibility);

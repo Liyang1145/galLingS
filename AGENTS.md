@@ -32,6 +32,7 @@
 | [随包加载与集成产物](docs/rebuild/delivery.md) | M5 前置的严格随包读取、资源映射和构建入口；未执行构建，未接正式宿主 |
 | [Windows 集成宿主](docs/rebuild/windows.md) | 显式特性与隔离配置、输入准备、窗口暂停；未执行准备或编译，未切换正式发行 |
 | [Android 集成宿主](docs/rebuild/android.md) | 独立 Gradle 模块、输入准备、前后台与返回键；未构建或真机验收 |
+| `packages/story-model/src/host.ts` | 原生/页面桥协议标识；随包 `/2` 明确登记，不与剧情修订或存档版本混用 |
 | `packages/player/src/web/` | 浏览器画面和音频实现；不得反向依赖游戏页面或编辑器 |
 | `apps/game/` | 独立试播、存读档/鉴赏及随包启动装配，不是已切换的正式发行入口 |
 | `tools/content/` | 旧导出转换与内容产物生成；命令见实施入口，不是游戏解释器 |

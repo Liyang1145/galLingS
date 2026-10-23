@@ -17,7 +17,7 @@ async function prepare(): Promise<void> {
   try {
     await writeFile(resolve(output, "assets/host-bootstrap.js"), bridge, { flag: "wx" });
     const receipt = {
-      format: "haifeng.android-preparation/1", purpose: "integration-trial",
+      format: "haifeng.android-preparation/2", purpose: "integration-trial", hostBridge: manifest.hostBridge,
       packageId, workId: manifest.workId, contentRevision: manifest.contentRevision,
       manifestSha256: sha256(manifestBytes), bridgeSha256: sha256(bridge),
       storage: "separate-application/development-records",

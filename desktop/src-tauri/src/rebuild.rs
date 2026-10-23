@@ -1,19 +1,41 @@
 //! Explicit Windows integration trial. No Python, legacy protocol or interpreter fallback.
-use std::sync::atomic::{AtomicU64, Ordering};
+use std::sync::atomic::{AtomicBool, AtomicU64, Ordering};
+use std::time::Duration;
 use tauri::webview::{NewWindowResponse, PageLoadEvent};
 use tauri::{Manager, WebviewUrl, WebviewWindow, WebviewWindowBuilder, WindowEvent};
 
 static SEQUENCE: AtomicU64 = AtomicU64::new(0);
+static ACKNOWLEDGED: AtomicU64 = AtomicU64::new(0);
+static DELIVERY_WARNED: AtomicBool = AtomicBool::new(false);
+static STOP_HEARTBEAT: AtomicBool = AtomicBool::new(false);
+
+fn warn_delivery() {
+    if !DELIVERY_WARNED.swap(true, Ordering::SeqCst) {
+        eprintln!("游戏页尚未确认窗口状态，宿主将周期重试；页面超时后保持暂停");
+    }
+}
 
 fn publish(window: &WebviewWindow) {
     let paused = !window.is_focused().unwrap_or(false)
         || window.is_minimized().unwrap_or(true);
     let sequence = SEQUENCE.fetch_add(1, Ordering::SeqCst) + 1;
     let script = format!(
-        "window.__HAIFENG_HOST__?.receive({{format:'haifeng.host-state/1',platform:'windows-trial',sequence:{sequence},paused:{paused}});"
+        "(() => {{const b=window.__HAIFENG_HOST__; if(b?.protocol!=='haifeng.host-bridge/2') return null; b.receive({{format:'haifeng.host-state/1',platform:'windows-trial',sequence:{sequence},paused:{paused}}); return b.read().sequence;}})()"
     );
-    if let Err(error) = window.eval(script) {
-        eprintln!("窗口状态未能送达游戏页面：{error}");
+    if sequence.saturating_sub(ACKNOWLEDGED.load(Ordering::SeqCst)) > 4 {
+        warn_delivery();
+    }
+    if window.eval_with_callback(script, move |answer| {
+        if let Ok(ack) = serde_json::from_str::<u64>(&answer) {
+            if ack >= sequence && ack <= SEQUENCE.load(Ordering::SeqCst) {
+                ACKNOWLEDGED.fetch_max(ack, Ordering::SeqCst);
+                DELIVERY_WARNED.store(false, Ordering::SeqCst);
+                return;
+            }
+        }
+        warn_delivery();
+    }).is_err() {
+        warn_delivery();
     }
 }
 
@@ -30,6 +52,9 @@ pub fn run() {
     );
     tauri::Builder::default()
         .on_window_event(|window, event| {
+            if window.label() == "rebuild" && matches!(event, WindowEvent::Destroyed) {
+                STOP_HEARTBEAT.store(true, Ordering::SeqCst);
+            }
             if matches!(event, WindowEvent::Focused(_) | WindowEvent::Resized(_)) {
                 if let Some(webview) = window.app_handle().get_webview_window(window.label()) {
                     publish(&webview);
@@ -37,6 +62,12 @@ pub fn run() {
             }
         })
         .setup(|app| {
+            let asset = app.asset_resolver().get("game-package.json".into())
+                .ok_or_else(|| std::io::Error::new(std::io::ErrorKind::InvalidData, "缺少游戏包清单，请重新准备"))?;
+            let manifest: serde_json::Value = serde_json::from_slice(&asset.bytes)?;
+            if manifest["format"] != "haifeng.game-package/2" || manifest["hostBridge"] != "haifeng.host-bridge/2" {
+                return Err(std::io::Error::new(std::io::ErrorKind::InvalidData, "游戏包与宿主协议不匹配，请重新构建并准备").into());
+            }
             let data = app.path().app_local_data_dir()?.join("webview");
             std::fs::create_dir_all(&data)?;
             WebviewWindowBuilder::new(app, "rebuild", WebviewUrl::App("index.html".into()))
@@ -67,6 +98,17 @@ pub fn run() {
                     }
                 })
                 .build()?;
+            let handle = app.handle().clone();
+            std::thread::Builder::new().name("haifeng-host-state".into()).spawn(move || {
+                while !STOP_HEARTBEAT.load(Ordering::SeqCst) {
+                    if let Some(window) = handle.get_webview_window("rebuild") {
+                        publish(&window);
+                    } else {
+                        break;
+                    }
+                    std::thread::sleep(Duration::from_secs(1));
+                }
+            })?;
             Ok(())
         })
         .run(context)

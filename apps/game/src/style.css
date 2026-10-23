@@ -46,6 +46,10 @@ h1 { margin: 0; font-size: clamp(1.1rem, 2.6vw, 1.8rem); font-weight: 500; }
 .problem p { margin-top: 0; line-height: 1.6; }
 .debug { color: #a5bdc6; font-size: .8rem; margin-top: 18px; }
 .debug pre { padding: 12px; background: #061119; overflow: auto; }
+.checkpoint-panel { border: 1px solid #39515c; border-radius: 8px; padding: 16px; margin-top: 18px; color: #bdd8df; }
+.checkpoint-panel h2 { font-size: 1rem; font-weight: 500; margin: 0; }
+.checkpoint-panel p { font-size: .85rem; line-height: 1.65; }
+.checkpoint-panel pre { font-size: .8rem; max-height: 360px; overflow: auto; padding: 12px; background: #061119; }
 .scene.paused *, .scene.paused .world { animation-play-state: paused !important; transition-duration: 0ms; }
 .world[data-mood="gray"] { filter: grayscale(1) contrast(.9); }
 .world[data-mood="dark"] { filter: brightness(.6); }

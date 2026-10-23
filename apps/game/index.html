@@ -4,15 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="dark" />
-    <title>海风与布丁 · M3 独立试播</title>
+    <title>海风与布丁 · 重构独立试播</title>
   </head>
   <body>
     <main id="app">
       <header class="page-heading">
         <div><p class="eyebrow">海风与布丁 · 重构试播</p><h1>一套剧情核心，一段新的试航。</h1></div>
-        <span class="badge">M3 开发入口 · 非正式发行版</span>
+        <span class="badge">重构开发入口 · 非正式发行版</span>
       </header>
-      <p class="scope-note">旧游戏入口未改。本页不写正式记录，没有持久存档、回退或联网聊天。</p>
+      <p class="scope-note">本页使用独立试播记录。支持保存并查看检查点，实际读档、回退和联网聊天尚未接入。</p>
       <section class="stage" id="stage" aria-label="剧情画面">
         <div class="scene" id="scene"></div>
         <div class="title-screen" id="title">
@@ -43,6 +43,17 @@
       <p id="status" role="status" aria-live="polite">准备试播</p>
       <section class="problem" id="problem" role="alert" hidden>
         <p id="problem-message"></p><button id="retry" type="button">重建当前场面</button>
+      </section>
+      <section class="checkpoint-panel" aria-labelledby="checkpoint-heading">
+        <h2 id="checkpoint-heading">试播检查点</h2>
+        <p>本切片保存已生效的剧情、有效计时和声音状态；“查看”只显示详情。实际恢复游玩待恢复规则确认后开放。</p>
+        <div class="controls">
+          <button type="button" id="save-checkpoint" disabled>保存当前检查点</button>
+          <button type="button" id="inspect-main">查看第一话检查点</button>
+          <button type="button" id="inspect-timed">查看限时样例检查点</button>
+        </div>
+        <p id="save-message" role="status" aria-live="polite">场面就绪并完整显示文字后，可保存当前入口的检查点。两个入口的槽位分别保留。</p>
+        <pre id="save-details" hidden></pre>
       </section>
       <details class="debug"><summary>当前剧情状态（仅试播）</summary><pre id="debug">尚未开始</pre></details>
       <p class="help">点击画面 / 空格 / → 继续，Esc 打开菜单。自动不会代答；快进遇到未读或选择会停下。</p>

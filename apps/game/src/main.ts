@@ -11,7 +11,7 @@ import { IndexedDbSaveStore } from "../../../packages/player/src/web/saves.ts";
 import { PlayerRepository, PlayerRecordWriter, galleryCatalog, playerProjection } from "../../../packages/player/src/records.ts";
 import { prepareGameRestore } from "../../../packages/player/src/checkpoint.ts";
 import type { GameCheckpoint } from "../../../packages/player/src/checkpoint.ts";
-import { renderGallery } from "./gallery.ts";
+import { GalleryPanel } from "./gallery.ts";
 import { DialoguePanel } from "./dialogue.ts";
 import { connectHost } from "./platform/host.ts";
 import { PendingWrites } from "../../../packages/player/src/writes.ts";
@@ -187,6 +187,8 @@ async function main(): Promise<void> {
   let rollingBack = false;
   let exiting = false;
   let aftergamePanel: AftergamePanel | null = null;
+  let galleryPanel: GalleryPanel | null = null;
+  let galleryRequest = 0;
   let dialoguePanel: DialoguePanel | null = null;
   const endingPanel = new EndingPanel(stage, {
     leaveLabel: "返回试播标题",
@@ -283,7 +285,7 @@ async function main(): Promise<void> {
   }, () => {
     if (exiting) { host.cancelExit(); return true; }
     if (dialogue.open) { closeDialogue(); return true; }
-    if (gallery.open) { gallery.close(); return true; }
+    if (gallery.open) { closeGallery(); return true; }
     if (aftergame.open) { closeAftergame(); return true; }
     if (input?.reveal()) return true;
     if (session) { toggleMenu(); return true; }
@@ -341,7 +343,7 @@ async function main(): Promise<void> {
     owner?.send({ type: "pause", reason: "exit", paused: true });
     owner?.send({ type: "pause", reason: "operation", paused: false });
     closeDialogue();
-    gallery.close();
+    closeGallery();
     closeAftergame();
     const wasInert = page.inert;
     page.inert = true;
@@ -565,7 +567,7 @@ async function main(): Promise<void> {
       rollbackKey = "";
       menu.hidden = title.hidden = problem.hidden = true;
       choicePanel.clear();
-      gallery.close();
+      closeGallery();
       closeAftergame();
       resetSaveMessage();
       resetRollback();
@@ -854,18 +856,29 @@ async function main(): Promise<void> {
   }
 
   async function openGallery(): Promise<void> {
-    if (exiting || closed) return;
+    if (exiting || closed || session || gallery.open) return;
     const request = ++entryRequest;
+    const mediaRequest = ++galleryRequest;
     try {
       await flushRecords();
       const records = await playerRecords.read();
-      if (closed || request !== entryRequest || session) return;
+      if (closed || exiting || request !== entryRequest || mediaRequest !== galleryRequest || session) return;
       stageFade?.cancel();
-      renderGallery(galleryBody, content, resources, records);
+      galleryPanel ??= new GalleryPanel(galleryBody, content, resources);
+      galleryPanel.open(records);
       gallery.showModal();
     } catch (error: unknown) {
-      if (!closed && request === entryRequest) recordMessage.textContent = `鉴赏记录无法读取：${error instanceof Error ? error.message : "存储失败"}`;
+      if (!closed && request === entryRequest && mediaRequest === galleryRequest) {
+        closeGallery();
+        recordMessage.textContent = `鉴赏未能打开：${error instanceof Error ? error.message : "记录或本地图片读取失败"}。已有全局成果保留。`;
+      }
     }
+  }
+
+  function closeGallery(): void {
+    galleryRequest++;
+    galleryPanel?.close();
+    gallery.close();
   }
 
   function closeAftergame(): void {
@@ -948,7 +961,9 @@ async function main(): Promise<void> {
   element("load-main", HTMLButtonElement).onclick = () => load("main");
   element("load-timed", HTMLButtonElement).onclick = () => load("timed");
   element("gallery-open", HTMLButtonElement).onclick = () => { void openGallery(); };
-  element("gallery-close", HTMLButtonElement).onclick = () => gallery.close();
+  element("gallery-close", HTMLButtonElement).onclick = closeGallery;
+  gallery.addEventListener("cancel", event => { event.preventDefault(); closeGallery(); });
+  gallery.addEventListener("close", () => { if (!gallery.open) galleryPanel?.close(); });
   element("aftergame-open", HTMLButtonElement).onclick = () => { void openAftergame(); };
   element("aftergame-close", HTMLButtonElement).onclick = closeAftergame;
   aftergame.addEventListener("cancel", event => { event.preventDefault(); closeAftergame(); });
@@ -980,8 +995,10 @@ async function main(): Promise<void> {
     terminalRecord = null;
     endingPanel.dispose();
     closeDialogue();
+    closeGallery();
     closeAftergame();
     aftergamePanel?.dispose();
+    galleryPanel?.dispose();
     dialoguePanel?.dispose();
     audioPreferences.dispose();
     readingPreferences.dispose();

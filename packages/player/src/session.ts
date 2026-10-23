@@ -8,6 +8,7 @@ import { prepareGameRestore } from "./checkpoint.ts";
 import { RollbackHistory } from "./rollback.ts";
 import type { RollbackTarget } from "./rollback.ts";
 import { readReadingValue } from "./reading-preferences.ts";
+import type { InteractionFeedback } from "./ui-sounds.ts";
 
 export type RestoreVoice = "silent" | "replay" | "resume";
 
@@ -50,6 +51,8 @@ export interface Playback {
 
 export interface PresentationAdapter {
   present(view: RuntimeView, context: PresentationContext): Playback;
+  /** Optional audible feedback, never a second story decision path. */
+  interaction?(feedback: InteractionFeedback): void;
   dispose(): void;
 }
 
@@ -146,6 +149,9 @@ class Session implements GameSession {
   #visitSequence = 0;
   #visit = 0;
   #choiceVersion = 0;
+  #choiceFeedbackActive = false;
+  #choiceAnnounced = false;
+  #announceChoices = false;
   #rollbackIssue: string | null = null;
   #draining = false;
   #disposed = false;
@@ -477,6 +483,8 @@ class Session implements GameSession {
     }
     for (const fact of result.facts) {
       if (fact.type !== "chosen") continue;
+      this.stopChoiceFeedback();
+      this.feedback({ type: "cue", cue: fact.timedOut ? "timeoutSilence" : "choiceConfirm" });
       this.#choiceVersion++;
       // Accepted choices come from this exact pre-dispatch core view.
       const choice = before.choices.find(candidate => candidate.id === fact.choiceId)!;
@@ -490,6 +498,8 @@ class Session implements GameSession {
 
   private adopt(result: RuntimeResult, restoredVisit?: number): void {
     if (result.presentation) {
+      this.#choiceAnnounced = false;
+      this.#announceChoices = result.presentation.mode === "enter";
       this.#visit = restoredVisit ?? ++this.#visitSequence;
       this.#dialogueStart = this.#dialogueOrder;
     }
@@ -516,6 +526,7 @@ class Session implements GameSession {
       this.#playback?.setSkipping(false);
     }
     if (result.view.phase === "ended") {
+      this.stopChoiceFeedback();
       this.stopTimers();
       this.#controller.abort();
       this.#playback?.cancel();
@@ -528,6 +539,7 @@ class Session implements GameSession {
   }
 
   private render(mode: "enter" | "retry" | "restore"): void {
+    this.stopChoiceFeedback();
     this.#retryChoiceRemaining = mode === "restore" ? this.#restoring!.timing.choiceRemainingMs
       : mode === "retry" ? this.#choice?.remaining() ?? null : null;
     this.#pendingAdvance = mode === "restore" ? this.#restoring!.timing.advance
@@ -602,6 +614,31 @@ class Session implements GameSession {
     this.#choice?.setPaused(paused);
     this.#advance?.setPaused(paused);
     this.#playback?.setPaused(paused);
+    const view = this.#runtime.view();
+    if (view.phase === "choosing" && !this.#pauses.has("loading") && !this.#pauses.has("error")) {
+      if (!this.#choiceFeedbackActive) {
+        this.#choiceFeedbackActive = true;
+        const announce = this.#announceChoices && !this.#choiceAnnounced && !this.#skipping;
+        this.#choiceAnnounced = true;
+        this.feedback({ type: "choices", active: true, timed: view.timeout !== null, announce });
+      }
+    } else this.stopChoiceFeedback();
+  }
+
+  private feedback(feedback: InteractionFeedback): void {
+    try { this.#options.presentation.interaction?.(feedback); }
+    catch (error: unknown) {
+      if (!this.#problem?.blocking) this.#problem = {
+        code: "UI_AUDIO", blocking: false,
+        message: `交互提示音未播放：${error instanceof Error ? error.message : "声音不可用"}`,
+      };
+    }
+  }
+
+  private stopChoiceFeedback(): void {
+    if (!this.#choiceFeedbackActive) return;
+    this.#choiceFeedbackActive = false;
+    this.feedback({ type: "choices", active: false, timed: false, announce: false });
   }
 
   private stopTimers(): void {
@@ -612,6 +649,7 @@ class Session implements GameSession {
 
   dispose(): void {
     if (this.#disposed) return;
+    this.stopChoiceFeedback();
     this.#disposed = true;
     this.#epoch++;
     for (const event of this.#queue) {

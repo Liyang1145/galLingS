@@ -9,6 +9,8 @@ import { setting } from "./resources.ts";
 import type { AudioVolumes } from "../preferences.ts";
 import { authorReadingPreferences, readReadingPreferences } from "../reading-preferences.ts";
 import type { ReadingPreferences } from "../reading-preferences.ts";
+import { readUiSounds } from "../ui-sounds.ts";
+import type { InteractionFeedback } from "../ui-sounds.ts";
 
 const LOOKS: Record<string, string> = {
   "": "", none: "", shadow: "brightness(0)",
@@ -101,7 +103,7 @@ export class WebPresentation implements PresentationAdapter {
     this.#dialogue.append(this.#name, this.#text);
     this.#world.append(this.#background, this.#actorsLayer, this.#veil);
     root.replaceChildren(this.#world, this.#dialogue);
-    this.#audio = new AudioMixer(resources, content.source.settings, audioAllowed, volumes);
+    this.#audio = new AudioMixer(resources, content.source.settings, audioAllowed, volumes, readUiSounds(content));
     this.#reading = reading === undefined ? authorReadingPreferences(content.source.settings) : readReadingPreferences(reading);
     this.setReadingPreferences(this.#reading);
   }
@@ -109,6 +111,9 @@ export class WebPresentation implements PresentationAdapter {
   unlockAudio(): void { this.#audio.unlock(); }
   setAudioAllowed(allowed: boolean): void { this.#audio.setAudioAllowed(allowed); }
   setAudioVolumes(volumes: AudioVolumes): void { this.#audio.setVolumes(volumes); }
+  interaction(feedback: InteractionFeedback): void {
+    if (!this.#disposed) this.#audio.interaction(feedback);
+  }
   setReadingPreferences(input: ReadingPreferences): void {
     const values = readReadingPreferences(input);
     if (this.#disposed) return;

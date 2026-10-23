@@ -37,6 +37,7 @@
 | `pref(speed/autoMul/readerScale/ghost)`、`typeText/kick/applyTheme` | [独立阅读偏好](preferences.md#阅读偏好的字段与时机)保留逐字间隔、自动倍率、字号与底板透明度；前两项用于后续呈现/等待，后两项即时应用；当前选择/自动/恢复计时不重置，试播视觉基准仍非完整旧主题迁移 |
 | 资源自带 `shot/sceneFit/cg/previewExcluded/audioCategory/gain` 等 | 保留元数据及来源；诊断不能把资源登记视为已安装、可播放或已授权 |
 | `settings` 的 cover/theme/UI 音效 | 保留旧作品外观基准；新切片不夹带改版；编辑/插件/聊天设置不成为离线依赖 |
+| `playUi(choiceShow/choiceConfirm/timeoutSilence/save)`、`startTick/stopTick` | [共享选择与存档反馈](feedback.md)已接实际首次就绪、接受的选择及存档提交；恢复不补播一次性提示，当前循环随有效计时暂停；其余 UI 音触发待接，不新增素材 |
 | `agent` | 当前节点非空数为 0；遇到未来非空输入明确拒绝，不能静默略过主线节点 |
 | 旧插件、Rust 核心及 Python 后端 | 保留原消费者；不被新核心导入，不进入新会话失败回落 |
 | 根作品元数据（开篇修订、美术、音乐、配音等） | 保留来源原样记录，不把作者/审核信息当可执行剧情 |

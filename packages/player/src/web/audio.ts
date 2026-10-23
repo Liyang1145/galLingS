@@ -7,10 +7,11 @@ import type { PlaybackCheckpoint, TrackCheckpoint, VoiceCheckpoint } from "../ch
 import { setting, volume } from "./resources.ts";
 import { authorAudioVolumes, readAudioVolumes } from "../preferences.ts";
 import type { AudioChannel, AudioVolumes } from "../preferences.ts";
+import type { InteractionFeedback, UiSounds } from "../ui-sounds.ts";
 
 interface Track {
   id: string;
-  kind: "persistent" | "voice" | "effect";
+  kind: "persistent" | "voice" | "effect" | "feedback" | "tick";
   channel: AudioChannel;
   /** Author/scene/fade envelope before the player's channel level. */
   gain: number;
@@ -35,17 +36,22 @@ export class AudioMixer {
   #volumes: AudioVolumes;
   readonly #tracks = new Set<Track>();
   readonly #ambience = new Map<string, Track>();
+  readonly #uiSounds: UiSounds;
   #music: Track | null = null;
+  #choiceTick: Track | null = null;
+  #choiceTickWanted = false;
+  #choiceTickFailed = false;
   #paused = false;
   #audioAllowed: boolean;
   #disposed = false;
   #clock: Clock | null = null;
   #report: (problem: MediaProblem) => void = () => {};
 
-  constructor(resources: ResourceAccess, settings: JsonObject, audioAllowed = true, volumes?: AudioVolumes) {
+  constructor(resources: ResourceAccess, settings: JsonObject, audioAllowed = true, volumes?: AudioVolumes, uiSounds: UiSounds = {}) {
     this.#resources = resources;
     this.#volumes = volumes === undefined ? authorAudioVolumes(settings) : readAudioVolumes(volumes);
     this.#audioAllowed = audioAllowed;
+    this.#uiSounds = { ...uiSounds };
   }
 
   private applyVolume(track: Track): void {
@@ -57,14 +63,16 @@ export class AudioMixer {
     if (this.#disposed) return;
     this.#volumes = values;
     for (const track of this.#tracks) this.applyVolume(track);
+    this.syncChoiceTick();
   }
 
-  private track(id: string, channel: AudioChannel, gain: number, ended: (() => void) | null = null, seekMs: number | null = null): Track {
-    const loop = channel === "music" || channel === "ambience";
+  private track(id: string, channel: AudioChannel, gain: number, ended: (() => void) | null = null, seekMs: number | null = null,
+    feedback?: "feedback" | "tick"): Track {
+    const loop = feedback === "tick" || channel === "music" || channel === "ambience";
     const element = new Audio(this.#resources.url(id));
     element.loop = loop;
     element.preload = "auto";
-    const track: Track = { id, channel, gain: volume(gain), kind: loop ? "persistent" : ended ? "voice" : "effect",
+    const track: Track = { id, channel, gain: volume(gain), kind: feedback ?? (loop ? "persistent" : ended ? "voice" : "effect"),
       element, fade: null, alive: true, failed: false, playRejected: false, seekMs, ended };
     this.applyVolume(track);
     this.#tracks.add(track);
@@ -77,6 +85,7 @@ export class AudioMixer {
     element.addEventListener("error", () => {
       if (!track.alive || this.#disposed) return;
       track.failed = true;
+      if (track.kind === "tick") this.#choiceTickFailed = true;
       this.#report({ code: "AUDIO_RESOURCE", message: `声音无法读取或解码：${id}`, blocking: false });
       const callback = track.ended;
       this.stop(track);
@@ -110,7 +119,7 @@ export class AudioMixer {
   private play(track: Track): void {
     if (!track.alive || track.failed || track.seekMs !== null || this.#paused || this.#disposed) return;
     if (!this.#audioAllowed) {
-      if (track.kind === "effect") this.stop(track);
+      if (track.kind === "effect" || track.kind === "feedback") this.stop(track);
       else if (track.kind === "voice") {
         track.playRejected = true;
         const ended = track.ended;
@@ -124,22 +133,30 @@ export class AudioMixer {
       // play() may resolve after entry cancellation or a background pause.
       if (!track.alive || this.#paused || !this.#audioAllowed || this.#disposed) track.element.pause();
     }).catch((error: unknown) => {
-      if (!track.alive || this.#paused || !this.#audioAllowed || this.#disposed) return;
+      if (!track.alive || this.#disposed) return;
+      // A failed event cue is never retained for unlock or foreground catch-up.
+      if (track.kind === "feedback") this.stop(track);
+      if (this.#paused || !this.#audioAllowed) return;
       track.playRejected = true;
+      if (track.kind === "tick") this.#choiceTickFailed = true;
       this.#report({
         code: "AUDIO_PLAY",
-        message: `声音暂未播放：${track.id}。可点击“启用声音”重试。${error instanceof Error ? ` ${error.name}` : ""}`,
+        message: `${track.kind === "feedback" ? "本次交互声音未播放，已跳过" : "声音暂未播放"}：${track.id}。`
+          + `${track.kind === "feedback" ? "" : "可点击“启用声音”重试。"}${error instanceof Error ? ` ${error.name}` : ""}`,
         blocking: false,
       });
       // A rejected voice must not leave automatic reading waiting forever.
       const ended = track.ended;
       track.ended = null;
       ended?.();
+      if (track.kind === "feedback" || track.kind === "tick") this.stop(track);
     });
   }
 
   unlock(): void {
     for (const track of this.#tracks) if (track.element.paused) this.play(track);
+    this.#choiceTickFailed = false;
+    this.syncChoiceTick();
   }
 
   private stop(track: Track): void {
@@ -151,6 +168,55 @@ export class AudioMixer {
     track.element.removeAttribute("src");
     track.element.load();
     this.#tracks.delete(track);
+    if (this.#choiceTick === track) this.#choiceTick = null;
+  }
+
+  /** One-shot UI feedback is an actual event, never a queued or restored sound. */
+  interaction(feedback: InteractionFeedback): void {
+    if (this.#disposed) return;
+    if (feedback.type === "choices") {
+      this.#choiceTickWanted = feedback.active && feedback.timed;
+      if (!feedback.active) this.#choiceTickFailed = false;
+      if (feedback.active && feedback.announce) this.feedbackCue(this.#uiSounds.choiceShow);
+      this.syncChoiceTick();
+    } else this.feedbackCue(this.#uiSounds[feedback.cue]);
+  }
+
+  private feedbackCue(id: string | undefined): void {
+    if (!id || this.#paused || !this.#audioAllowed || this.#volumes.effects === 0) return;
+    try { this.effect(id, 1, true); }
+    catch (error: unknown) { this.feedbackProblem(id, error); }
+  }
+
+  private syncChoiceTick(): void {
+    if (!this.#choiceTickWanted || this.#volumes.effects === 0 || this.#disposed) {
+      if (this.#choiceTick) this.stop(this.#choiceTick);
+      return;
+    }
+    if (this.#choiceTick?.alive || this.#paused || !this.#audioAllowed || this.#choiceTickFailed) return;
+    const id = this.#uiSounds.timeoutTick;
+    if (id) {
+      try { this.#choiceTick = this.track(id, "effects", 1, null, null, "tick"); }
+      catch (error: unknown) {
+        this.#choiceTickFailed = true;
+        this.feedbackProblem(id, error);
+      }
+    }
+  }
+
+  private feedbackProblem(id: string, error: unknown): void {
+    this.#report({
+      code: "UI_AUDIO", blocking: false,
+      message: `交互提示音未播放：${id}。${error instanceof Error ? error.message : "声音不可用"}；剧情可继续。`,
+    });
+  }
+
+  /** Scene and UI one-shots share the same cap and duplicate suppression. */
+  private effect(id: string, gain: number, feedback = false): Track | null {
+    const effects = [...this.#tracks].filter(track => track.kind === "effect" || track.kind === "feedback");
+    if (effects.some(track => track.id === id && track.element.currentTime < 0.4)) return null;
+    if (effects.length >= 4) this.stop(effects[0]!);
+    return this.track(id, "effects", volume(gain), null, null, feedback ? "feedback" : undefined);
   }
 
   private fade(track: Track, target: number, duration: number, retire = false): void {
@@ -218,6 +284,9 @@ export class AudioMixer {
     this.#clock = context.clock;
     this.#report = problem => { if (!context.signal.aborted) context.problem(problem); };
     this.setPaused(context.paused);
+    if (context.mode !== "enter") {
+      for (const track of [...this.#tracks]) if (track.kind === "feedback") this.stop(track);
+    }
     if (context.restore) {
       for (const track of [...this.#tracks]) this.stop(track);
       this.#music = null;
@@ -249,13 +318,8 @@ export class AudioMixer {
     const effect = (id: string, gain: number): void => {
       if (closed || skipped || context.signal.aborted || this.#volumes.effects === 0) return;
       for (const old of effects) if (!old.alive) effects.delete(old);
-      if ([...effects].some(old => old.id === id && old.element.currentTime < 0.4)) return;
-      if (effects.size >= 4) {
-        const oldest = effects.values().next().value;
-        if (oldest) { effects.delete(oldest); this.stop(oldest); }
-      }
-      const track = this.track(id, "effects", volume(gain));
-      effects.add(track);
+      const track = this.effect(id, gain);
+      if (track) effects.add(track);
     };
     // Retry reconstructs this scene but never repeats entry sound effects.
     if (context.mode === "enter" && !skipped) {
@@ -333,6 +397,7 @@ export class AudioMixer {
       else if (track.element.paused) this.play(track);
     }
     for (const timer of this.#entryDelays ?? []) timer.setPaused(paused);
+    this.syncChoiceTick();
   }
 
   setAudioAllowed(allowed: boolean): void {
@@ -340,13 +405,16 @@ export class AudioMixer {
     this.#audioAllowed = allowed;
     for (const track of this.#tracks) {
       track.fade?.setPaused(this.#paused || !allowed);
-      if (!allowed) track.element.pause();
+      if (!allowed && track.kind === "feedback") this.stop(track);
+      else if (!allowed) track.element.pause();
       else if (!this.#paused && track.element.paused) this.play(track);
     }
+    this.syncChoiceTick();
   }
 
   dispose(): void {
     this.#disposed = true;
+    this.#choiceTickWanted = false;
     for (const track of [...this.#tracks]) this.stop(track);
     for (const timer of this.#entryDelays ?? []) timer.cancel();
     this.#ambience.clear();

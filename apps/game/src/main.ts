@@ -489,6 +489,7 @@ async function main(): Promise<void> {
     const owner = session;
     if (exiting || closed || !owner || saving || !owner.view().canCheckpoint) return;
     const entry = mode;
+    const savedPresentation = presentation;
     const request = ++storageMessageEpoch;
     saving = true;
     save.disabled = true;
@@ -508,6 +509,11 @@ async function main(): Promise<void> {
         if (!closed && request === storageMessageEpoch) {
           describeSave(entry, inspected);
           saveMessage.textContent = `${entryName(entry)}进度已保存；可刷新页面后查看或读取。周目与鉴赏成果单独保留。`;
+          if (!exiting && owner === session && savedPresentation === presentation && !owner.view().skipping) {
+            // The storage transaction is already committed. Audio cannot turn it into a failed save.
+            try { savedPresentation?.interaction({ type: "cue", cue: "save" }); }
+            catch { /* Optional feedback has no effect on the committed checkpoint. */ }
+          }
         }
       });
     } catch (error: unknown) {

@@ -1614,8 +1614,20 @@ function showChapterReview() {
 
 // 配音：新的一节开始就停掉上一句
 let voEl = null;
-function playVoice(id) {
+// The optional range follows a stable chapter-start ID, including chapter jumps and loads.
+function voiceOptionalAt(index) {
+  const startId = P.settings.voiceOptionalFromChapterId;
+  if (!startId || !Number.isInteger(index)) return false;
+  const start = P.lines.findIndex(line => line.id === startId);
+  return start >= 0 && index >= start;
+}
+function voiceEnabledAt(index) {
+  return !voiceOptionalAt(index) || pref('voiceLaterChapters') === true;
+}
+function playVoice(id, lineIndex) {
   if (voEl) { voEl.pause(); voEl = null; }
+  // An explicit backlog listen remains available; automatic line playback passes its index.
+  if (Number.isInteger(lineIndex) && !voiceEnabledAt(lineIndex)) return;
   if (!id || !A(id)) return;
   voEl = new Audio(A(id).src); voEl.volume = pref('vvo'); voEl.play()?.catch?.(() => {});
 }
@@ -1665,6 +1677,7 @@ function setPref(k, v) {
   if (k === 'readerScale') applyTheme();
   if (k === 'ghost') { v = Math.max(.35, Math.min(.95, +v || .35)); if (gameMode) PREF[k] = v; else P.settings[k] = v; document.documentElement.style.setProperty('--ghost', v); }
   if (k === 'vvo' && voEl) voEl.volume = v;
+  if (k === 'voiceLaterChapters' && playing && voiceOptionalAt(RT.idx)) playVoice(RT.skip ? null : P.lines[RT.idx]?.voice, RT.idx);
 }
 /* —— 已读记录：所有存档共用，用来“只快进已读” —— */
 let READ = new Set(), readT = null;
@@ -1836,7 +1849,7 @@ function showPlay(first) {
   const wasRead = READ.has(l.id); READ.add(l.id); saveRead();
   if (RT.skip && !wasRead && pref('skipRead')) { RT.skip = false; updPctl(); }   // 只快进看过的
   $('#ptx').classList.toggle('read', wasRead && !!l.text);
-  playVoice(RT.skip ? null : l.voice);
+  playVoice(RT.skip ? null : l.voice, RT.idx);
   stage.classList.toggle('nodlg', isPause(l));
   lastShown = l;
   RT.varsBefore = clone(RT.vars);           // 存档存“进入这句之前”的变量，读档时不会重复加
@@ -2111,13 +2124,14 @@ function showPrefs() {
   const sl = (k, label, min, max, step, inv) => { const raw=inv ? inv - pref(k) : (pref(k) ?? 1); return `<div class="row"><span>${label}</span><div class="control"><input type="range" min="${min}" max="${max}" step="${step}" data-k="${k}" ${inv ? 'data-inv="' + inv + '"' : ''} value="${raw}"><output data-value="${k}">${fmt(k,raw,inv)}</output></div></div>`; };
   box.innerHTML = `<header class="panel-heading"><small>按自己的节奏</small><h2>声音与阅读</h2></header><div class="rows">
     ${sl('vbgm', ic('music') + ' 音乐', 0, 1, 0.05)}${sl('vse', ic('bell') + ' 音效', 0, 1, 0.05)}${sl('vamb', ic('waves') + ' 环境音', 0, 1, 0.05)}${P.lines.some(l => l.voice) ? sl('vvo', ic('mic') + ' 语音', 0, 1, 0.05) : ''}
+    ${P.settings.voiceOptionalFromChapterId ? `<div class="row"><span>第三话及以后语音</span><button class="tg ${pref('voiceLaterChapters') ? 'on' : ''}" data-tg="voiceLaterChapters" aria-pressed="${pref('voiceLaterChapters') === true}">${pref('voiceLaterChapters') === true ? '已开启' : '已关闭'}</button></div>` : ''}
     ${sl('readerScale', '文字大小', 1, 1.25, 0.05)}${sl('speed', '文字速度', 5, 80, 5, 85)}${sl('autoMul', '自动播放等待', 0.4, 2.5, 0.1)}${sl('ghost', '对话框不透明度', 0.35, 0.95, 0.05)}
     <div class="row"><span>快进</span><button class="tg ${pref('skipRead') ? 'on' : ''}" data-tg="skipRead">只快进已读</button></div>
     ${uiSe('btnClick') || uiSe('btnHover') ? `<div class="row"><span>按钮音效</span><button class="tg ${pref('btnSe') !== false ? 'on' : ''}" data-tg="btnSe" data-def="1">点按 / 悬停时轻响</button></div>` : ''}
     <div class="row stats-row"><span>好感数值</span><button class="tg ${pref('showStats') ? 'on' : ''}" data-tg="showStats">显示（剧透向）</button><small class="dim stats-now">${statsText(true)}</small></div>${soulPrefsHtml()}</div>`;
   const syncSlider = r => { const min=Number(r.min)||0, max=Number(r.max)||1, value=Number(r.value); const pct=max>min ? Math.max(0,Math.min(100,(value-min)/(max-min)*100)) : 0; r.style.setProperty('--slider-pct', pct+'%'); };
   box.querySelectorAll('input[type=range]').forEach(r => { const output=box.querySelector(`output[data-value="${r.dataset.k}"]`); syncSlider(r); if(output) output.textContent=fmt(r.dataset.k,r.value,r.dataset.inv); r.oninput = () => { setPref(r.dataset.k, r.dataset.inv ? +r.dataset.inv - +r.value : +r.value); syncSlider(r); if(output) output.textContent=fmt(r.dataset.k,r.value,r.dataset.inv); }; });
-  box.querySelectorAll('[data-tg]').forEach(b => b.onclick = e => { e.stopPropagation(); const cur = b.dataset.def ? pref(b.dataset.tg) !== false : !!pref(b.dataset.tg), v = !cur; setPref(b.dataset.tg, v); b.classList.toggle('on', v); if (b.dataset.tg === 'showStats') box.querySelector('.stats-now').textContent = statsText(true); });
+  box.querySelectorAll('[data-tg]').forEach(b => b.onclick = e => { e.stopPropagation(); const cur = b.dataset.def ? pref(b.dataset.tg) !== false : !!pref(b.dataset.tg), v = !cur; setPref(b.dataset.tg, v); b.classList.toggle('on', v); if (b.dataset.tg === 'voiceLaterChapters') { b.setAttribute('aria-pressed', String(v)); b.textContent = v ? '已开启' : '已关闭'; } if (b.dataset.tg === 'showStats') box.querySelector('.stats-now').textContent = statsText(true); });
   soulPrefsBind(box);
   addClose(box, kick); box.classList.add('show');
   box.onclick = e => { e.stopPropagation(); if (e.target === box) { box.classList.remove('show'); kick(); } };
@@ -3405,6 +3419,7 @@ if (HOSTED) {
     { k: 'vse', label: '音效', type: 'range', min: 0, max: 1, step: 0.05 },
     { k: 'vamb', label: '环境音', type: 'range', min: 0, max: 1, step: 0.05 },
     { k: 'vvo', label: '语音', type: 'range', min: 0, max: 1, step: 0.05 },
+    ...(P.settings.voiceOptionalFromChapterId ? [{ k: 'voiceLaterChapters', label: '第三话及以后语音', type: 'bool', def: false }] : []),
     { k: 'readerScale', label: '文字大小', type: 'range', def: 1, min: 1, max: 1.25, step: 0.05 },
     { k: 'speed', label: '文字速度', type: 'range', min: 5, max: 80, step: 5, inv: 85 },
     { k: 'autoMul', label: '自动播放等待', type: 'range', min: 0.4, max: 2.5, step: 0.1 },

@@ -1,0 +1,94 @@
+{
+  "voicePolicy": {
+    "source": {
+      "third": 344,
+      "first": 21,
+      "second": 174,
+      "later": 348,
+      "fourth": 521,
+      "extra": 3137,
+      "nodes": 3315,
+      "oldVolume": 0.73,
+      "enabled": false,
+      "beforeThirdAudible": true,
+      "laterChaptersDefaultSilent": true,
+      "manualOnAndReload": true,
+      "manualOffStopsCurrentVoice": true,
+      "explicitBacklogListen": true,
+      "jumpBackToChapterTwoAudible": true,
+      "loadIntoChapterThreeSilent": true,
+      "narrowSettingVisible": true,
+      "pageErrors": [],
+      "passed": true
+    },
+    "singleFile": {
+      "third": 344,
+      "first": 21,
+      "second": 174,
+      "later": 348,
+      "fourth": 521,
+      "extra": 3137,
+      "nodes": 3315,
+      "oldVolume": 0.73,
+      "enabled": false,
+      "beforeThirdAudible": true,
+      "laterChaptersDefaultSilent": true,
+      "manualOnAndReload": true,
+      "manualOffStopsCurrentVoice": true,
+      "explicitBacklogListen": true,
+      "jumpBackToChapterTwoAudible": true,
+      "loadIntoChapterThreeSilent": true,
+      "narrowSettingVisible": true,
+      "pageErrors": [],
+      "passed": true
+    }
+  },
+  "fullRegression": {
+    "load_s": 3.29,
+    "body": "game playing",
+    "chapters": 18,
+    "walk": {
+      "n": 3315,
+      "p50": 0.09999999403953552,
+      "p99": 1,
+      "max": 85.5,
+      "bad": [],
+      "nbad": 0
+    },
+    "cg": {
+      "n": 32,
+      "p50": 96.5,
+      "max": 215.80000001192093,
+      "heapMB": 12
+    },
+    "save": {
+      "want": {
+        "idx": 1504,
+        "id": "6cdt4nv4",
+        "vars": "{\"好感\":0,\"尾鳍\":7,\"贝壳延后\":0,\"玩笑\":0,\"海星放生\":0,\"周目\":1,\"结局数\":0}"
+      },
+      "got": {
+        "idx": 1504,
+        "id": "6cdt4nv4",
+        "vars": "{\"好感\":0,\"尾鳍\":7,\"贝壳延后\":0,\"玩笑\":0,\"海星放生\":0,\"周目\":1,\"结局数\":0}"
+      }
+    },
+    "prev": [
+      302,
+      301
+    ],
+    "errs": [],
+    "nerrs": 0
+  },
+  "ledger": {
+    "file": "海风与布丁_账本_202610231254.json",
+    "notes": 34,
+    "chapterOne": 10,
+    "chapterTwo": 24,
+    "stableIdsAllMatched": true,
+    "sha256": "764e0fa76b2db6d566a1462af40c5a4adf676ed1d8c79cc00dca3bb18a6875ff"
+  },
+  "nodesAndVoiceBindingsUnchanged": true,
+  "noAudioFilesRemoved": true,
+  "noPaidSynthesis": true
+}

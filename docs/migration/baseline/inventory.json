@@ -1,0 +1,6912 @@
+{
+  "generatedBy": "tools/content/inventory.mjs",
+  "baseline": {
+    "gameFile": "海风与布丁/game.js",
+    "gameSha256": "ad59eef726dde64b4788ebe84661c55e2a522d843b0231e52935718dd67a36fa",
+    "playerFile": "海风与布丁/player.js",
+    "playerSha256": "adc0a13fca83c354d646e6d9f8f46fc9d095e4b702b0dc5e26043030aa1563d2",
+    "formatV": 3,
+    "workId": "bqlsg5c2-local-fusion",
+    "title": "海风与布丁"
+  },
+  "topLevelKeys": [
+    "v",
+    "id",
+    "title",
+    "assets",
+    "lines",
+    "cur",
+    "vars",
+    "chars",
+    "settings",
+    "localFusion",
+    "atriMusicIntegration",
+    "openingRevision",
+    "artUpgrade",
+    "characterPerformance",
+    "characterDirection",
+    "voiceOver",
+    "musicPacing",
+    "openingPerformance"
+  ],
+  "counts": {
+    "nodes": 3315,
+    "chapters": 18,
+    "labels": 242,
+    "choiceNodes": 58,
+    "choiceOptions": 167,
+    "timedChoiceNodes": 2,
+    "jumpNodes": 128,
+    "conditionalJumpNodes": 7,
+    "endingNodes": 4,
+    "agentNodes": 0,
+    "nodesWithSet": 180,
+    "nodesWithVoice": 715,
+    "nodesWithSeEvents": 90,
+    "nodesWithWait": 46,
+    "unreachableNodes": 30,
+    "gameEntryIndex": 2,
+    "unreachableFromGameEntry": 345,
+    "unreachableFromAnyEntry": 32,
+    "nodeKinds": {
+      "dialogue": 1786,
+      "narration": 1420,
+      "pause": 47,
+      "choice": 58,
+      "ending": 4
+    },
+    "assetsRegistered": 983,
+    "assetsReferenced": 913,
+    "assetFilesMissing": 0
+  },
+  "variables": {
+    "declared": [
+      {
+        "name": "好感",
+        "init": "0",
+        "initType": "string",
+        "global": false,
+        "reads": 1,
+        "writes": 173
+      },
+      {
+        "name": "尾鳍",
+        "init": "0",
+        "initType": "string",
+        "global": false,
+        "reads": 0,
+        "writes": 180
+      },
+      {
+        "name": "贝壳延后",
+        "init": "0",
+        "initType": "string",
+        "global": false,
+        "reads": 1,
+        "writes": 1
+      },
+      {
+        "name": "玩笑",
+        "init": "0",
+        "initType": "string",
+        "global": false,
+        "reads": 2,
+        "writes": 1
+      },
+      {
+        "name": "海星放生",
+        "init": "0",
+        "initType": "string",
+        "global": false,
+        "reads": 2,
+        "writes": 1
+      }
+    ],
+    "builtinReadOnly": [
+      {
+        "name": "周目",
+        "reads": 0
+      },
+      {
+        "name": "结局数",
+        "reads": 1
+      }
+    ],
+    "undeclaredUsed": []
+  },
+  "expressions": [
+    {
+      "kind": "choice.set",
+      "src": "好感 += 8",
+      "uses": 23,
+      "nodes": [
+        "pkayznot#0",
+        "estubhxy#2",
+        "7rlvll7t#0",
+        "pm8x8v2h#2",
+        "750wy8c2#0",
+        "pd6lvptm#2",
+        "ipdjcsw2#0",
+        "tolq52wt#1",
+        "h5ghodhs#0",
+        "fmj51dq7#0",
+        "hnjtr70q#2",
+        "hr7kt0q9#2",
+        "bb5ki6uy#0",
+        "igdomjcq#0",
+        "wovhcmot#0",
+        "31cfmza3#2",
+        "0idms3yx#1",
+        "68du9pmx#2",
+        "1794nozx#1",
+        "m3j2zl6r#2",
+        "3wd0u0ld#2",
+        "0zskri5m#1",
+        "a1a1pmn3#1"
+      ],
+      "error": null,
+      "idents": [
+        "好感"
+      ],
+      "ops": [
+        "+="
+      ]
+    },
+    {
+      "kind": "choice.set",
+      "src": "好感 += 6",
+      "uses": 21,
+      "nodes": [
+        "a7c5njix#1",
+        "raw1hwhm#1",
+        "ztbspbz6#1",
+        "pm8x8v2h#1",
+        "750wy8c2#1",
+        "gddlochb#0",
+        "ipdjcsw2#1",
+        "tolq52wt#2",
+        "fmj51dq7#1",
+        "3nnvr3w2#2",
+        "hnjtr70q#1",
+        "ucc6nise#2",
+        "31cfmza3#1",
+        "0idms3yx#0",
+        "p4scg2o0#2",
+        "68du9pmx#0",
+        "m3j2zl6r#0",
+        "z2cd08ag#1",
+        "7edgihqs#1",
+        "0zskri5m#0",
+        "xy8pqg3v#1"
+      ],
+      "error": null,
+      "idents": [
+        "好感"
+      ],
+      "ops": [
+        "+="
+      ]
+    },
+    {
+      "kind": "choice.set",
+      "src": "好感 += 5",
+      "uses": 19,
+      "nodes": [
+        "fm43foif#1",
+        "dk3o5u4e#0",
+        "cvelvwin#1",
+        "kg8xkzda#1",
+        "krsgixfj#0",
+        "3pazn66p#0",
+        "750wy8c2#2",
+        "duaibm68#1",
+        "ipdjcsw2#2",
+        "fmj51dq7#2",
+        "f4fmjs1u#1",
+        "0idms3yx#2",
+        "f373b3kz#2",
+        "1794nozx#0",
+        "p0aq7vhx#1",
+        "wfqigi6f#2",
+        "06hq9k23#0",
+        "fdp1qtcz#1",
+        "7edgihqs#0"
+      ],
+      "error": null,
+      "idents": [
+        "好感"
+      ],
+      "ops": [
+        "+="
+      ]
+    },
+    {
+      "kind": "choice.set",
+      "src": "好感 += 3",
+      "uses": 17,
+      "nodes": [
+        "vfo56g8o#2",
+        "dk3o5u4e#1",
+        "cvelvwin#0",
+        "pkayznot#2",
+        "estubhxy#1",
+        "3pazn66p#1",
+        "328r2a4x#0",
+        "tolq52wt#0",
+        "hr7kt0q9#1",
+        "t1t93nt0#0",
+        "f4fmjs1u#0",
+        "f373b3kz#0",
+        "89gkr73f#0",
+        "wfqigi6f#0",
+        "wfqigi6f#1",
+        "m3j2zl6r#1",
+        "fdp1qtcz#2"
+      ],
+      "error": null,
+      "idents": [
+        "好感"
+      ],
+      "ops": [
+        "+="
+      ]
+    },
+    {
+      "kind": "choice.set",
+      "src": "好感 += 4",
+      "uses": 13,
+      "nodes": [
+        "pkayznot#1",
+        "krsgixfj#1",
+        "ztbspbz6#2",
+        "7rlvll7t#1",
+        "duaibm68#0",
+        "duaibm68#2",
+        "ucc6nise#1",
+        "igdomjcq#1",
+        "68du9pmx#1",
+        "1794nozx#2",
+        "7edgihqs#2",
+        "3wd0u0ld#1",
+        "xy8pqg3v#2"
+      ],
+      "error": null,
+      "idents": [
+        "好感"
+      ],
+      "ops": [
+        "+="
+      ]
+    },
+    {
+      "kind": "choice.set",
+      "src": "好感 += 12",
+      "uses": 13,
+      "nodes": [
+        "a7c5njix#0",
+        "3pazn66p#2",
+        "ztbspbz6#0",
+        "pd6lvptm#0",
+        "hnjtr70q#0",
+        "ucc6nise#0",
+        "bb5ki6uy#1",
+        "31cfmza3#0",
+        "f507fb7z#2",
+        "i1frlnhd#1",
+        "z2cd08ag#0",
+        "3wd0u0ld#0",
+        "a1a1pmn3#0"
+      ],
+      "error": null,
+      "idents": [
+        "好感"
+      ],
+      "ops": [
+        "+="
+      ]
+    },
+    {
+      "kind": "choice.set",
+      "src": "好感 += 10",
+      "uses": 12,
+      "nodes": [
+        "vfo56g8o#0",
+        "kg8xkzda#0",
+        "gddlochb#1",
+        "3nnvr3w2#0",
+        "hr7kt0q9#0",
+        "bb5ki6uy#2",
+        "f4fmjs1u#2",
+        "p4scg2o0#1",
+        "f507fb7z#0",
+        "z2cd08ag#2",
+        "0zskri5m#2",
+        "xy8pqg3v#0"
+      ],
+      "error": null,
+      "idents": [
+        "好感"
+      ],
+      "ops": [
+        "+="
+      ]
+    },
+    {
+      "kind": "choice.set",
+      "src": "好感 += 15",
+      "uses": 8,
+      "nodes": [
+        "pm8x8v2h#0",
+        "pd6lvptm#1",
+        "crc09jyg#0",
+        "jrutikwi#0",
+        "p4scg2o0#0",
+        "i1frlnhd#2",
+        "06hq9k23#1",
+        "fdp1qtcz#0"
+      ],
+      "error": null,
+      "idents": [
+        "好感"
+      ],
+      "ops": [
+        "+="
+      ]
+    },
+    {
+      "kind": "choice.set",
+      "src": "好感 += 1",
+      "uses": 6,
+      "nodes": [
+        "cvelvwin#2",
+        "328r2a4x#1",
+        "gddlochb#2",
+        "wovhcmot#2",
+        "p0aq7vhx#0",
+        "p0aq7vhx#2"
+      ],
+      "error": null,
+      "idents": [
+        "好感"
+      ],
+      "ops": [
+        "+="
+      ]
+    },
+    {
+      "kind": "choice.set",
+      "src": "好感 += 2",
+      "uses": 6,
+      "nodes": [
+        "7rlvll7t#2",
+        "3nnvr3w2#1",
+        "igdomjcq#2",
+        "wovhcmot#1",
+        "06hq9k23#2",
+        "a1a1pmn3#2"
+      ],
+      "error": null,
+      "idents": [
+        "好感"
+      ],
+      "ops": [
+        "+="
+      ]
+    },
+    {
+      "kind": "choice.set",
+      "src": "好感 -= 10",
+      "uses": 4,
+      "nodes": [
+        "irma08fi#1",
+        "vfo56g8o#1",
+        "zpdqlvme#0",
+        "zpdqlvme#1"
+      ],
+      "error": null,
+      "idents": [
+        "好感"
+      ],
+      "ops": [
+        "-="
+      ]
+    },
+    {
+      "kind": "choice.set",
+      "src": "好感 -= 5",
+      "uses": 4,
+      "nodes": [
+        "irma08fi#2",
+        "raw1hwhm#0",
+        "89gkr73f#1",
+        "i1frlnhd#0"
+      ],
+      "error": null,
+      "idents": [
+        "好感"
+      ],
+      "ops": [
+        "-="
+      ]
+    },
+    {
+      "kind": "choice.set",
+      "src": "好感 -= 2",
+      "uses": 3,
+      "nodes": [
+        "fm43foif#2",
+        "estubhxy#0",
+        "328r2a4x#2"
+      ],
+      "error": null,
+      "idents": [
+        "好感"
+      ],
+      "ops": [
+        "-="
+      ]
+    },
+    {
+      "kind": "choice.set",
+      "src": "好感 -= 1",
+      "uses": 1,
+      "nodes": [
+        "dk3o5u4e#2"
+      ],
+      "error": null,
+      "idents": [
+        "好感"
+      ],
+      "ops": [
+        "-="
+      ]
+    },
+    {
+      "kind": "choice.set",
+      "src": "好感 -= 3",
+      "uses": 1,
+      "nodes": [
+        "kg8xkzda#2"
+      ],
+      "error": null,
+      "idents": [
+        "好感"
+      ],
+      "ops": [
+        "-="
+      ]
+    },
+    {
+      "kind": "choice.set",
+      "src": "贝壳延后 = 1",
+      "uses": 1,
+      "nodes": [
+        "7djw7u21#1"
+      ],
+      "error": null,
+      "idents": [
+        "贝壳延后"
+      ],
+      "ops": [
+        "="
+      ]
+    },
+    {
+      "kind": "choice.set",
+      "src": "好感 -= 8",
+      "uses": 1,
+      "nodes": [
+        "crc09jyg#1"
+      ],
+      "error": null,
+      "idents": [
+        "好感"
+      ],
+      "ops": [
+        "-="
+      ]
+    },
+    {
+      "kind": "choice.set",
+      "src": "好感 += 4; 海星放生 = 1",
+      "uses": 1,
+      "nodes": [
+        "h5ghodhs#1"
+      ],
+      "error": null,
+      "idents": [
+        "好感",
+        "海星放生"
+      ],
+      "ops": [
+        "+=",
+        "="
+      ]
+    },
+    {
+      "kind": "choice.set",
+      "src": "好感 -= 15",
+      "uses": 1,
+      "nodes": [
+        "zpdqlvme#2"
+      ],
+      "error": null,
+      "idents": [
+        "好感"
+      ],
+      "ops": [
+        "-="
+      ]
+    },
+    {
+      "kind": "choice.set",
+      "src": "好感 -= 20; 玩笑 = 1",
+      "uses": 1,
+      "nodes": [
+        "f507fb7z#1"
+      ],
+      "error": null,
+      "idents": [
+        "好感",
+        "玩笑"
+      ],
+      "ops": [
+        "-=",
+        "="
+      ]
+    },
+    {
+      "kind": "jumpIf",
+      "src": "海星放生 == 1",
+      "uses": 2,
+      "nodes": [
+        "efeiv5ck",
+        "53ot3kuk"
+      ],
+      "error": null,
+      "idents": [
+        "海星放生"
+      ],
+      "ops": [
+        "=="
+      ]
+    },
+    {
+      "kind": "jumpIf",
+      "src": "玩笑 < 1",
+      "uses": 2,
+      "nodes": [
+        "u2mxfp6w",
+        "4hmx6ind"
+      ],
+      "error": null,
+      "idents": [
+        "玩笑"
+      ],
+      "ops": [
+        "<"
+      ]
+    },
+    {
+      "kind": "jumpIf",
+      "src": "结局数 < 1",
+      "uses": 1,
+      "nodes": [
+        "frqml99w"
+      ],
+      "error": null,
+      "idents": [
+        "结局数"
+      ],
+      "ops": [
+        "<"
+      ]
+    },
+    {
+      "kind": "jumpIf",
+      "src": "贝壳延后 < 1",
+      "uses": 1,
+      "nodes": [
+        "c1o2fo66"
+      ],
+      "error": null,
+      "idents": [
+        "贝壳延后"
+      ],
+      "ops": [
+        "<"
+      ]
+    },
+    {
+      "kind": "jumpIf",
+      "src": "好感 < 362",
+      "uses": 1,
+      "nodes": [
+        "uxdrpmrb"
+      ],
+      "error": null,
+      "idents": [
+        "好感"
+      ],
+      "ops": [
+        "<"
+      ]
+    },
+    {
+      "kind": "set",
+      "src": "尾鳍 += 1",
+      "uses": 161,
+      "nodes": [
+        "xrkgmlhg",
+        "wxrs0f0l",
+        "kbwv46du",
+        "acjg11ig",
+        "aij43nz1",
+        "utu1zxyd",
+        "i99npm13",
+        "o6vhcy2x",
+        "25q42u4a",
+        "n7sguoiy",
+        "b40zjswe",
+        "ww8jppa2",
+        "lmt2wdi5",
+        "2zmyc7ul",
+        "ww12xqqe",
+        "9lvy8mwm",
+        "gwl7op6h",
+        "joe6542h",
+        "frtp4eyj",
+        "jnpfwdxs",
+        "hnan3hhf",
+        "6tr9fpio",
+        "qkf81oix",
+        "wzlhswby",
+        "hnqx7w6w",
+        "7d3a32aa",
+        "fmps114w",
+        "ttus1a2r",
+        "arhrstjg",
+        "sldr3fn7",
+        "hf8lvkzr",
+        "9o8l1lyl",
+        "0r0dn8w2",
+        "5y40plt9",
+        "3o8wcgff",
+        "vnymith9",
+        "a1xvchvd",
+        "3axof5da",
+        "33rrox32",
+        "ky2bo9j3",
+        "i0nn5u0t",
+        "3ua9v325",
+        "en5kz0xa",
+        "zj7zrfob",
+        "6ui1nn3h",
+        "bxim6lad",
+        "az2au3b8",
+        "iuxu5kg0",
+        "gs251l5z",
+        "q3p4q1h9"
+      ],
+      "error": null,
+      "idents": [
+        "尾鳍"
+      ],
+      "ops": [
+        "+="
+      ]
+    },
+    {
+      "kind": "set",
+      "src": "好感 += 8; 尾鳍 += 1",
+      "uses": 4,
+      "nodes": [
+        "q3fviwig",
+        "149kqb0z",
+        "fpmwr5we",
+        "livwvbn2"
+      ],
+      "error": null,
+      "idents": [
+        "好感",
+        "尾鳍"
+      ],
+      "ops": [
+        "+="
+      ]
+    },
+    {
+      "kind": "set",
+      "src": "好感 += 12; 尾鳍 += 1",
+      "uses": 3,
+      "nodes": [
+        "rcsmv397",
+        "ekuuwm5w",
+        "nkfemir9"
+      ],
+      "error": null,
+      "idents": [
+        "好感",
+        "尾鳍"
+      ],
+      "ops": [
+        "+="
+      ]
+    },
+    {
+      "kind": "set",
+      "src": "好感 += 10; 尾鳍 += 1",
+      "uses": 3,
+      "nodes": [
+        "i6e35ch0",
+        "suonw5bo",
+        "nz5s3n4d"
+      ],
+      "error": null,
+      "idents": [
+        "好感",
+        "尾鳍"
+      ],
+      "ops": [
+        "+="
+      ]
+    },
+    {
+      "kind": "set",
+      "src": "好感 += 6; 尾鳍 += 1",
+      "uses": 2,
+      "nodes": [
+        "sx0w2ilt",
+        "l7i7ovig"
+      ],
+      "error": null,
+      "idents": [
+        "好感",
+        "尾鳍"
+      ],
+      "ops": [
+        "+="
+      ]
+    },
+    {
+      "kind": "set",
+      "src": "好感 += 15; 尾鳍 += 1",
+      "uses": 2,
+      "nodes": [
+        "kvt09y7b",
+        "y2uoutn6"
+      ],
+      "error": null,
+      "idents": [
+        "好感",
+        "尾鳍"
+      ],
+      "ops": [
+        "+="
+      ]
+    },
+    {
+      "kind": "set",
+      "src": "好感 = 0; 尾鳍 = 0",
+      "uses": 2,
+      "nodes": [
+        "abqhgfod",
+        "t2r382zo"
+      ],
+      "error": null,
+      "idents": [
+        "好感",
+        "尾鳍"
+      ],
+      "ops": [
+        "="
+      ]
+    },
+    {
+      "kind": "set",
+      "src": "好感 += 5; 尾鳍 += 1",
+      "uses": 1,
+      "nodes": [
+        "o6enb8xa"
+      ],
+      "error": null,
+      "idents": [
+        "好感",
+        "尾鳍"
+      ],
+      "ops": [
+        "+="
+      ]
+    },
+    {
+      "kind": "set",
+      "src": "好感 += 4; 尾鳍 += 1",
+      "uses": 1,
+      "nodes": [
+        "7vx8cjgu"
+      ],
+      "error": null,
+      "idents": [
+        "好感",
+        "尾鳍"
+      ],
+      "ops": [
+        "+="
+      ]
+    },
+    {
+      "kind": "set",
+      "src": "尾鳍 += 2",
+      "uses": 1,
+      "nodes": [
+        "22ckqhon"
+      ],
+      "error": null,
+      "idents": [
+        "尾鳍"
+      ],
+      "ops": [
+        "+="
+      ]
+    }
+  ],
+  "expressionOperatorsUsed": [
+    "+=",
+    "-=",
+    "<",
+    "=",
+    "=="
+  ],
+  "chapters": [
+    {
+      "index": 2,
+      "id": "fhww88n3",
+      "label": "第一话",
+      "chapter": "第一话 · 浅滩上的偶遇"
+    },
+    {
+      "index": 167,
+      "id": "ug2p5hux",
+      "label": "第二话",
+      "chapter": "第二话 · 暗号契约"
+    },
+    {
+      "index": 344,
+      "id": "5rviaadn",
+      "label": "第三话",
+      "chapter": "第三话 · 深海之光"
+    },
+    {
+      "index": 518,
+      "id": "aj4zr27s",
+      "label": "第四话",
+      "chapter": "第四话 · 集市上的「我妻子」"
+    },
+    {
+      "index": 662,
+      "id": "h356tshs",
+      "label": "第五话",
+      "chapter": "第五话 · 海浪与诗句"
+    },
+    {
+      "index": 778,
+      "id": "qoupvn8d",
+      "label": "第六话",
+      "chapter": "第六话 · 原来不是别人啊"
+    },
+    {
+      "index": 912,
+      "id": "b4jmf68g",
+      "label": "第七话",
+      "chapter": "第七话 · 冒险家和海豚"
+    },
+    {
+      "index": 1235,
+      "id": "c9x1yl5c",
+      "label": "第八话",
+      "chapter": "第八话 · 搬家"
+    },
+    {
+      "index": 1481,
+      "id": "mt2xvvi8",
+      "label": "第九话",
+      "chapter": "第九话 · 电话"
+    },
+    {
+      "index": 1617,
+      "id": "kg0expss",
+      "label": "第十话",
+      "chapter": "第十话 · 深水区"
+    },
+    {
+      "index": 1723,
+      "id": "hvfr03kn",
+      "label": "第十一话",
+      "chapter": "第十一话 · 礁石与和解"
+    },
+    {
+      "index": 1859,
+      "id": "rwdglh2l",
+      "label": "第十二话",
+      "chapter": "第十二话 · 翡翠之梦"
+    },
+    {
+      "index": 2042,
+      "id": "y9gbnyua",
+      "label": "第十三话",
+      "chapter": "第十三话 · 店长与珍珠"
+    },
+    {
+      "index": 2315,
+      "id": "sowauzps",
+      "label": "第十四话",
+      "chapter": "第十四话 · 那些布丁和糍粑"
+    },
+    {
+      "index": 2539,
+      "id": "5e674e1q",
+      "label": "第十五话",
+      "chapter": "第十五话 · 日记与早安"
+    },
+    {
+      "index": 2833,
+      "id": "fpqxbbut",
+      "label": "第十六话",
+      "chapter": "第十六话 · 海风与布丁"
+    },
+    {
+      "index": 3002,
+      "id": "abqhgfod",
+      "label": "番外一",
+      "chapter": "番外篇一 · 盒子越来越满了"
+    },
+    {
+      "index": 3177,
+      "id": "t2r382zo",
+      "label": "番外二",
+      "chapter": "番外篇二 · 贝壳项链"
+    }
+  ],
+  "labels": [
+    {
+      "label": "第一话",
+      "index": 2,
+      "id": "fhww88n3"
+    },
+    {
+      "label": "c1q1a",
+      "index": 24,
+      "id": "k1t4gr6o"
+    },
+    {
+      "label": "c1q1b",
+      "index": 28,
+      "id": "lt5k0xiy"
+    },
+    {
+      "label": "c1q1c",
+      "index": 31,
+      "id": "s3arg4rw"
+    },
+    {
+      "label": "c1m1",
+      "index": 38,
+      "id": "8divye5i"
+    },
+    {
+      "label": "c1q2a",
+      "index": 48,
+      "id": "2360dvsq"
+    },
+    {
+      "label": "c1q2b",
+      "index": 52,
+      "id": "sb63ua0q"
+    },
+    {
+      "label": "c1q2c",
+      "index": 60,
+      "id": "7y5p4ecl"
+    },
+    {
+      "label": "c1m2",
+      "index": 62,
+      "id": "no3hzp1r"
+    },
+    {
+      "label": "c1q3a",
+      "index": 94,
+      "id": "fuij1wic"
+    },
+    {
+      "label": "c1q3b",
+      "index": 99,
+      "id": "7bjpv8xn"
+    },
+    {
+      "label": "c1q3c",
+      "index": 104,
+      "id": "002u68h7"
+    },
+    {
+      "label": "c1m3",
+      "index": 110,
+      "id": "u7ne78gd"
+    },
+    {
+      "label": "c1q4a",
+      "index": 121,
+      "id": "66ms5xlq"
+    },
+    {
+      "label": "c1q4b",
+      "index": 130,
+      "id": "d237bw02"
+    },
+    {
+      "label": "c1q4c",
+      "index": 133,
+      "id": "w4wesv59"
+    },
+    {
+      "label": "c1m4",
+      "index": 137,
+      "id": "o3ik0z6e"
+    },
+    {
+      "label": "c1new_diary_note",
+      "index": 160,
+      "id": "69m07oj9"
+    },
+    {
+      "label": "c1new_diary_coda",
+      "index": 163,
+      "id": "nh0inhqs"
+    },
+    {
+      "label": "第二话",
+      "index": 167,
+      "id": "ug2p5hux"
+    },
+    {
+      "label": "c2q1a",
+      "index": 178,
+      "id": "7ukunjp3"
+    },
+    {
+      "label": "c2q1b",
+      "index": 181,
+      "id": "trj3l6tu"
+    },
+    {
+      "label": "c2q1c",
+      "index": 189,
+      "id": "n9jp23uy"
+    },
+    {
+      "label": "c2m1",
+      "index": 193,
+      "id": "kwsqkrhm"
+    },
+    {
+      "label": "c2q2a",
+      "index": 209,
+      "id": "ga1pjox5"
+    },
+    {
+      "label": "c2q2b",
+      "index": 218,
+      "id": "cti6ecmm"
+    },
+    {
+      "label": "c2q2c",
+      "index": 224,
+      "id": "buecga5x"
+    },
+    {
+      "label": "c2m2",
+      "index": 226,
+      "id": "8ran0ojk"
+    },
+    {
+      "label": "c2q3a",
+      "index": 251,
+      "id": "q9ajcdwz"
+    },
+    {
+      "label": "c2q3b",
+      "index": 261,
+      "id": "ee55vw64"
+    },
+    {
+      "label": "c2q3c",
+      "index": 267,
+      "id": "v1qxertc"
+    },
+    {
+      "label": "c2m3",
+      "index": 276,
+      "id": "mt31fbu7"
+    },
+    {
+      "label": "c2q4a",
+      "index": 287,
+      "id": "ymbvisqf"
+    },
+    {
+      "label": "c2q4b",
+      "index": 301,
+      "id": "fxl393bw"
+    },
+    {
+      "label": "c2q4c",
+      "index": 307,
+      "id": "3bymlu28"
+    },
+    {
+      "label": "c2m4",
+      "index": 313,
+      "id": "8d3i7kly"
+    },
+    {
+      "label": "第三话",
+      "index": 344,
+      "id": "5rviaadn"
+    },
+    {
+      "label": "c3q1a",
+      "index": 373,
+      "id": "kgxlg156"
+    },
+    {
+      "label": "c3q1b",
+      "index": 378,
+      "id": "zyrsebhd"
+    },
+    {
+      "label": "c3q1c",
+      "index": 383,
+      "id": "0b8dkvg1"
+    },
+    {
+      "label": "c3m1",
+      "index": 391,
+      "id": "vl8i53gt"
+    },
+    {
+      "label": "c3q2a",
+      "index": 410,
+      "id": "8qrf8zlp"
+    },
+    {
+      "label": "c3q2b",
+      "index": 414,
+      "id": "66xs252k"
+    },
+    {
+      "label": "c3q2c",
+      "index": 422,
+      "id": "uw61uwl3"
+    },
+    {
+      "label": "c3q2c1",
+      "index": 431,
+      "id": "ubolwxyw"
+    },
+    {
+      "label": "c3q2c2",
+      "index": 433,
+      "id": "8x3tm8cy"
+    },
+    {
+      "label": "c3m2",
+      "index": 437,
+      "id": "hdv1o7vc"
+    },
+    {
+      "label": "c3q3a",
+      "index": 456,
+      "id": "7ff2546g"
+    },
+    {
+      "label": "c3q3b",
+      "index": 461,
+      "id": "h01deoo3"
+    },
+    {
+      "label": "c3q3c",
+      "index": 474,
+      "id": "7uc2ce54"
+    },
+    {
+      "label": "c3m3",
+      "index": 488,
+      "id": "xt9dxhsx"
+    },
+    {
+      "label": "第四话",
+      "index": 518,
+      "id": "aj4zr27s"
+    },
+    {
+      "label": "c4q1a",
+      "index": 552,
+      "id": "pcemmwn9"
+    },
+    {
+      "label": "c4q1b",
+      "index": 561,
+      "id": "qb1we3lz"
+    },
+    {
+      "label": "c4q1c",
+      "index": 569,
+      "id": "t22s5nju"
+    },
+    {
+      "label": "c4m1",
+      "index": 581,
+      "id": "iyy24jn3"
+    },
+    {
+      "label": "c4q2a",
+      "index": 595,
+      "id": "zuvttzgn"
+    },
+    {
+      "label": "c4q2b",
+      "index": 605,
+      "id": "evx901j4"
+    },
+    {
+      "label": "c4q2c",
+      "index": 612,
+      "id": "62qvg843"
+    },
+    {
+      "label": "c4m2",
+      "index": 625,
+      "id": "tlf961cf"
+    },
+    {
+      "label": "第五话",
+      "index": 662,
+      "id": "h356tshs"
+    },
+    {
+      "label": "c5q1a",
+      "index": 679,
+      "id": "umvmp756"
+    },
+    {
+      "label": "c5q1b",
+      "index": 687,
+      "id": "zv7uxy3y"
+    },
+    {
+      "label": "c5q1c",
+      "index": 690,
+      "id": "8ubbrr2y"
+    },
+    {
+      "label": "c5m1",
+      "index": 697,
+      "id": "2ecib8lq"
+    },
+    {
+      "label": "c5q2a",
+      "index": 715,
+      "id": "w5tu54ij"
+    },
+    {
+      "label": "c5q2b",
+      "index": 733,
+      "id": "5ggqqa56"
+    },
+    {
+      "label": "c5q2c",
+      "index": 739,
+      "id": "3bu4bzeb"
+    },
+    {
+      "label": "c5m2",
+      "index": 754,
+      "id": "znxhnbic"
+    },
+    {
+      "label": "第六话",
+      "index": 778,
+      "id": "qoupvn8d"
+    },
+    {
+      "label": "c6q1a",
+      "index": 797,
+      "id": "id8p2z3g"
+    },
+    {
+      "label": "c6q1b",
+      "index": 800,
+      "id": "qlcwp9xq"
+    },
+    {
+      "label": "c6q1c",
+      "index": 804,
+      "id": "nzmqw5aa"
+    },
+    {
+      "label": "c6m1",
+      "index": 808,
+      "id": "uij1l3w9"
+    },
+    {
+      "label": "c6q2a",
+      "index": 846,
+      "id": "x9oa7erd"
+    },
+    {
+      "label": "c6q2b",
+      "index": 856,
+      "id": "1wn0vzq4"
+    },
+    {
+      "label": "c6q2c",
+      "index": 867,
+      "id": "4vdddrpr"
+    },
+    {
+      "label": "c6m2",
+      "index": 876,
+      "id": "e5x6ibdn"
+    },
+    {
+      "label": "第七话",
+      "index": 912,
+      "id": "b4jmf68g"
+    },
+    {
+      "label": "c7q1a",
+      "index": 930,
+      "id": "x0h6uel7"
+    },
+    {
+      "label": "c7q1b",
+      "index": 940,
+      "id": "zyfdse7f"
+    },
+    {
+      "label": "c7m1",
+      "index": 947,
+      "id": "q0i9xjy7"
+    },
+    {
+      "label": "c7q2b",
+      "index": 956,
+      "id": "1tt10b45"
+    },
+    {
+      "label": "c7q2a",
+      "index": 970,
+      "id": "ha83ki1g"
+    },
+    {
+      "label": "c7q3a",
+      "index": 1007,
+      "id": "kzv5awov"
+    },
+    {
+      "label": "c7q3b",
+      "index": 1015,
+      "id": "qbt2gio3"
+    },
+    {
+      "label": "c7q3c",
+      "index": 1025,
+      "id": "olxo30dm"
+    },
+    {
+      "label": "c7m2",
+      "index": 1028,
+      "id": "xgkvacl0"
+    },
+    {
+      "label": "c7q4a",
+      "index": 1033,
+      "id": "wgyiphs9"
+    },
+    {
+      "label": "c7q4b",
+      "index": 1040,
+      "id": "q6beixwt"
+    },
+    {
+      "label": "c7q4c",
+      "index": 1047,
+      "id": "x4p27x99"
+    },
+    {
+      "label": "c7m3",
+      "index": 1051,
+      "id": "m9sfto61"
+    },
+    {
+      "label": "c7q5c",
+      "index": 1080,
+      "id": "em5gyprh"
+    },
+    {
+      "label": "c7q5a",
+      "index": 1086,
+      "id": "u1p92kzt"
+    },
+    {
+      "label": "c7q5b",
+      "index": 1104,
+      "id": "h5mhc9or"
+    },
+    {
+      "label": "c7m4",
+      "index": 1115,
+      "id": "lvip64kt"
+    },
+    {
+      "label": "c7m4b",
+      "index": 1120,
+      "id": "t8sj2q7d"
+    },
+    {
+      "label": "c7q6a",
+      "index": 1133,
+      "id": "85b29ygd"
+    },
+    {
+      "label": "c7q6b",
+      "index": 1136,
+      "id": "dttuglv3"
+    },
+    {
+      "label": "c7q6c",
+      "index": 1142,
+      "id": "nb59c27f"
+    },
+    {
+      "label": "c7m5",
+      "index": 1149,
+      "id": "saqg1vhn"
+    },
+    {
+      "label": "c7q7a",
+      "index": 1154,
+      "id": "rcr5iqew"
+    },
+    {
+      "label": "c7q7b",
+      "index": 1161,
+      "id": "6wccxh5d"
+    },
+    {
+      "label": "c7m6",
+      "index": 1166,
+      "id": "s4b4epfr"
+    },
+    {
+      "label": "c7q8a",
+      "index": 1178,
+      "id": "mec87vgl"
+    },
+    {
+      "label": "c7q8b",
+      "index": 1181,
+      "id": "uk2d7lpn"
+    },
+    {
+      "label": "c7q8c",
+      "index": 1189,
+      "id": "6mywtpgx"
+    },
+    {
+      "label": "c7m7",
+      "index": 1194,
+      "id": "irsfbuwm"
+    },
+    {
+      "label": "c7q9a",
+      "index": 1203,
+      "id": "968ath5g"
+    },
+    {
+      "label": "c7q9b",
+      "index": 1211,
+      "id": "jj5fuw66"
+    },
+    {
+      "label": "c7q9c",
+      "index": 1217,
+      "id": "jkha3wtc"
+    },
+    {
+      "label": "c7m8",
+      "index": 1224,
+      "id": "lkvxb3zd"
+    },
+    {
+      "label": "第八话",
+      "index": 1235,
+      "id": "c9x1yl5c"
+    },
+    {
+      "label": "c8q1a",
+      "index": 1252,
+      "id": "3ce3smj3"
+    },
+    {
+      "label": "c8q1b",
+      "index": 1259,
+      "id": "60i847f9"
+    },
+    {
+      "label": "c8q1c",
+      "index": 1264,
+      "id": "iiaf2vk3"
+    },
+    {
+      "label": "c8m1",
+      "index": 1269,
+      "id": "y7e3r4ub"
+    },
+    {
+      "label": "c8q2a",
+      "index": 1346,
+      "id": "f3dqvkpu"
+    },
+    {
+      "label": "c8q2b",
+      "index": 1350,
+      "id": "uf3mjwxh"
+    },
+    {
+      "label": "c8q2c",
+      "index": 1355,
+      "id": "9lwig1mr"
+    },
+    {
+      "label": "c8m2",
+      "index": 1360,
+      "id": "fjthjusc"
+    },
+    {
+      "label": "c8q3a",
+      "index": 1437,
+      "id": "5mcxr7ee"
+    },
+    {
+      "label": "c8q3b",
+      "index": 1456,
+      "id": "14w4txih"
+    },
+    {
+      "label": "c8q3c",
+      "index": 1460,
+      "id": "mlvsuinq"
+    },
+    {
+      "label": "c8m3",
+      "index": 1463,
+      "id": "k00peshl"
+    },
+    {
+      "label": "第九话",
+      "index": 1481,
+      "id": "mt2xvvi8"
+    },
+    {
+      "label": "c9q1a",
+      "index": 1529,
+      "id": "xkvu95bb"
+    },
+    {
+      "label": "c9q1b",
+      "index": 1535,
+      "id": "u6p3m0tg"
+    },
+    {
+      "label": "c9q1c",
+      "index": 1540,
+      "id": "w7wyzagb"
+    },
+    {
+      "label": "c9m1",
+      "index": 1546,
+      "id": "swb6k9wp"
+    },
+    {
+      "label": "c9q2a",
+      "index": 1569,
+      "id": "ad32xist"
+    },
+    {
+      "label": "c9q2b",
+      "index": 1572,
+      "id": "39a7xd8b"
+    },
+    {
+      "label": "c9m2",
+      "index": 1576,
+      "id": "x68g8tf7"
+    },
+    {
+      "label": "c9star1",
+      "index": 1583,
+      "id": "amyvc8xc"
+    },
+    {
+      "label": "c9star2",
+      "index": 1586,
+      "id": "6c06yccj"
+    },
+    {
+      "label": "第十话",
+      "index": 1617,
+      "id": "kg0expss"
+    },
+    {
+      "label": "第十一话",
+      "index": 1723,
+      "id": "hvfr03kn"
+    },
+    {
+      "label": "c11q1a",
+      "index": 1776,
+      "id": "rw2t93bv"
+    },
+    {
+      "label": "c11q1b",
+      "index": 1781,
+      "id": "ql9yktmc"
+    },
+    {
+      "label": "c11q1c",
+      "index": 1796,
+      "id": "8uxoptte"
+    },
+    {
+      "label": "c11m1",
+      "index": 1810,
+      "id": "vmp2z3v5"
+    },
+    {
+      "label": "第十二话",
+      "index": 1859,
+      "id": "rwdglh2l"
+    },
+    {
+      "label": "c12q1a",
+      "index": 1874,
+      "id": "bi0g2dfr"
+    },
+    {
+      "label": "c12q1b",
+      "index": 1879,
+      "id": "blfke058"
+    },
+    {
+      "label": "c12q1c",
+      "index": 1883,
+      "id": "m1hdb0ch"
+    },
+    {
+      "label": "c12m1",
+      "index": 1887,
+      "id": "hv641e95"
+    },
+    {
+      "label": "c12q2a",
+      "index": 1973,
+      "id": "13c28pkf"
+    },
+    {
+      "label": "c12q2b",
+      "index": 1976,
+      "id": "0scdlj38"
+    },
+    {
+      "label": "c12q2c",
+      "index": 1980,
+      "id": "scai2dvf"
+    },
+    {
+      "label": "c12m2",
+      "index": 1985,
+      "id": "38h026h7"
+    },
+    {
+      "label": "c12m3",
+      "index": 2021,
+      "id": "hkq3m6vy"
+    },
+    {
+      "label": "第十三话",
+      "index": 2042,
+      "id": "y9gbnyua"
+    },
+    {
+      "label": "c13q1a",
+      "index": 2053,
+      "id": "zptx2ms5"
+    },
+    {
+      "label": "c13q1b",
+      "index": 2061,
+      "id": "9gaynoce"
+    },
+    {
+      "label": "c13q1c",
+      "index": 2065,
+      "id": "2wucvp7h"
+    },
+    {
+      "label": "c13m1",
+      "index": 2075,
+      "id": "yocv4zc0"
+    },
+    {
+      "label": "c13q2a",
+      "index": 2119,
+      "id": "80gat538"
+    },
+    {
+      "label": "c13q2b",
+      "index": 2135,
+      "id": "tk7kc61x"
+    },
+    {
+      "label": "c13q2c",
+      "index": 2143,
+      "id": "77lbjp2b"
+    },
+    {
+      "label": "c13m2",
+      "index": 2154,
+      "id": "o9he752e"
+    },
+    {
+      "label": "c13q3a",
+      "index": 2165,
+      "id": "p086rk70"
+    },
+    {
+      "label": "c13q3b",
+      "index": 2170,
+      "id": "ea3a395y"
+    },
+    {
+      "label": "c13q3c",
+      "index": 2173,
+      "id": "dil26mjd"
+    },
+    {
+      "label": "c13m3",
+      "index": 2178,
+      "id": "99apnx6j"
+    },
+    {
+      "label": "c13q4a",
+      "index": 2207,
+      "id": "18mnq4d4"
+    },
+    {
+      "label": "c13q4b",
+      "index": 2213,
+      "id": "i808w33q"
+    },
+    {
+      "label": "c13q4c",
+      "index": 2219,
+      "id": "dz7yfzna"
+    },
+    {
+      "label": "c13m4",
+      "index": 2222,
+      "id": "fbj5mg6r"
+    },
+    {
+      "label": "c13q5a",
+      "index": 2280,
+      "id": "wygdwk08"
+    },
+    {
+      "label": "c13q5b",
+      "index": 2285,
+      "id": "wcm7697t"
+    },
+    {
+      "label": "c13q5c",
+      "index": 2290,
+      "id": "stkm7dq2"
+    },
+    {
+      "label": "c13m5",
+      "index": 2305,
+      "id": "h88gkrlm"
+    },
+    {
+      "label": "第十四话",
+      "index": 2315,
+      "id": "sowauzps"
+    },
+    {
+      "label": "c14q1b",
+      "index": 2334,
+      "id": "ewm5q2q8"
+    },
+    {
+      "label": "c14q1b2",
+      "index": 2337,
+      "id": "qc43rpra"
+    },
+    {
+      "label": "c14q1c",
+      "index": 2341,
+      "id": "5j9jn6c6"
+    },
+    {
+      "label": "c14q1a",
+      "index": 2345,
+      "id": "944gqhfr"
+    },
+    {
+      "label": "c14m1",
+      "index": 2354,
+      "id": "ek5d340t"
+    },
+    {
+      "label": "c14q2a",
+      "index": 2386,
+      "id": "pjy4ousy"
+    },
+    {
+      "label": "c14q2b",
+      "index": 2413,
+      "id": "9gbi56dm"
+    },
+    {
+      "label": "c14q2c",
+      "index": 2452,
+      "id": "o3ygyfvx"
+    },
+    {
+      "label": "c14m2",
+      "index": 2467,
+      "id": "3zei0ire"
+    },
+    {
+      "label": "c14m2b",
+      "index": 2469,
+      "id": "9a9pf17w"
+    },
+    {
+      "label": "c14r5",
+      "index": 2493,
+      "id": "1794nozx"
+    },
+    {
+      "label": "c14q3a",
+      "index": 2494,
+      "id": "nj8typdi"
+    },
+    {
+      "label": "c14q3b",
+      "index": 2498,
+      "id": "uvl1ny7e"
+    },
+    {
+      "label": "c14q3c",
+      "index": 2503,
+      "id": "cg92ylsx"
+    },
+    {
+      "label": "c14m3",
+      "index": 2507,
+      "id": "80x191l0"
+    },
+    {
+      "label": "第十五话",
+      "index": 2539,
+      "id": "5e674e1q"
+    },
+    {
+      "label": "c15q1a",
+      "index": 2558,
+      "id": "gplu3kz9"
+    },
+    {
+      "label": "c15q1b",
+      "index": 2562,
+      "id": "9t1f1fcd"
+    },
+    {
+      "label": "c15q1c",
+      "index": 2566,
+      "id": "ne6b3ffa"
+    },
+    {
+      "label": "c15m1",
+      "index": 2570,
+      "id": "igqkcqlc"
+    },
+    {
+      "label": "c15q2a",
+      "index": 2592,
+      "id": "p4aua2ci"
+    },
+    {
+      "label": "c15q2b",
+      "index": 2594,
+      "id": "k9f5b40c"
+    },
+    {
+      "label": "c15q2c",
+      "index": 2601,
+      "id": "i429xr1f"
+    },
+    {
+      "label": "c15m2",
+      "index": 2605,
+      "id": "pwt4swam"
+    },
+    {
+      "label": "c15q3a",
+      "index": 2614,
+      "id": "2t381q52"
+    },
+    {
+      "label": "c15q3b",
+      "index": 2617,
+      "id": "kucsknlp"
+    },
+    {
+      "label": "c15q3c",
+      "index": 2621,
+      "id": "2j0ojt1z"
+    },
+    {
+      "label": "c15m3",
+      "index": 2626,
+      "id": "hq0s5hxx"
+    },
+    {
+      "label": "c15q4a",
+      "index": 2644,
+      "id": "0zdi1ifc"
+    },
+    {
+      "label": "c15q4b",
+      "index": 2649,
+      "id": "o2uqkvtw"
+    },
+    {
+      "label": "c15q4c",
+      "index": 2662,
+      "id": "03cmvzpc"
+    },
+    {
+      "label": "c15m4",
+      "index": 2677,
+      "id": "120jgidx"
+    },
+    {
+      "label": "c15q5a",
+      "index": 2706,
+      "id": "qgdzhpf9"
+    },
+    {
+      "label": "c15q5b",
+      "index": 2713,
+      "id": "1ydfm204"
+    },
+    {
+      "label": "c15q5c",
+      "index": 2719,
+      "id": "tlaprtzk"
+    },
+    {
+      "label": "c15m5",
+      "index": 2727,
+      "id": "csl3yegj"
+    },
+    {
+      "label": "c15q6a",
+      "index": 2763,
+      "id": "m0ygq5uj"
+    },
+    {
+      "label": "c15q6b",
+      "index": 2767,
+      "id": "2q1sv8fp"
+    },
+    {
+      "label": "c15q6c",
+      "index": 2787,
+      "id": "bx9mpeke"
+    },
+    {
+      "label": "c15m6",
+      "index": 2792,
+      "id": "j90c0u5n"
+    },
+    {
+      "label": "第十六话",
+      "index": 2833,
+      "id": "fpqxbbut"
+    },
+    {
+      "label": "c16q1a",
+      "index": 2878,
+      "id": "v0p0spea"
+    },
+    {
+      "label": "c16q1b",
+      "index": 2889,
+      "id": "oe2vmjgt"
+    },
+    {
+      "label": "c16q1c",
+      "index": 2894,
+      "id": "tlygugmd"
+    },
+    {
+      "label": "c16m1",
+      "index": 2899,
+      "id": "1pzuaf7p"
+    },
+    {
+      "label": "c16low",
+      "index": 2960,
+      "id": "kyg6ltxc"
+    },
+    {
+      "label": "c16low2",
+      "index": 2970,
+      "id": "q4rkztvo"
+    },
+    {
+      "label": "番外一",
+      "index": 3002,
+      "id": "abqhgfod"
+    },
+    {
+      "label": "x1q1a",
+      "index": 3012,
+      "id": "v03hsp63"
+    },
+    {
+      "label": "x1q1b",
+      "index": 3015,
+      "id": "wvtjbljv"
+    },
+    {
+      "label": "x1q1c",
+      "index": 3019,
+      "id": "s2qru4vv"
+    },
+    {
+      "label": "x1m1",
+      "index": 3024,
+      "id": "z60nxgnf"
+    },
+    {
+      "label": "x1q2a",
+      "index": 3041,
+      "id": "d90rv7jd"
+    },
+    {
+      "label": "x1q2b",
+      "index": 3047,
+      "id": "2yxrq7t9"
+    },
+    {
+      "label": "x1q2c",
+      "index": 3053,
+      "id": "r42yrrzn"
+    },
+    {
+      "label": "x1m2",
+      "index": 3058,
+      "id": "kmn3n04n"
+    },
+    {
+      "label": "x1q3a",
+      "index": 3108,
+      "id": "dm0wn3dy"
+    },
+    {
+      "label": "x1q3b",
+      "index": 3115,
+      "id": "vibjp19w"
+    },
+    {
+      "label": "x1q3c",
+      "index": 3124,
+      "id": "05bao9of"
+    },
+    {
+      "label": "x1m3",
+      "index": 3142,
+      "id": "jrn2e2pd"
+    },
+    {
+      "label": "番外二",
+      "index": 3177,
+      "id": "t2r382zo"
+    },
+    {
+      "label": "x2q1a",
+      "index": 3196,
+      "id": "d4u0qq9z"
+    },
+    {
+      "label": "x2q1b",
+      "index": 3201,
+      "id": "wbqjscsp"
+    },
+    {
+      "label": "x2q1c",
+      "index": 3205,
+      "id": "z4s127hc"
+    },
+    {
+      "label": "x2m1",
+      "index": 3212,
+      "id": "o5vfiuec"
+    },
+    {
+      "label": "x2q2a",
+      "index": 3251,
+      "id": "bhn0rmjm"
+    },
+    {
+      "label": "x2q2b",
+      "index": 3257,
+      "id": "gfb6nmxk"
+    },
+    {
+      "label": "x2q2c",
+      "index": 3270,
+      "id": "hlio0dd3"
+    },
+    {
+      "label": "x2m2",
+      "index": 3274,
+      "id": "a8qve0p6"
+    }
+  ],
+  "duplicateLabels": {},
+  "choiceNodes": [
+    {
+      "index": 1,
+      "id": "kq4s0fev",
+      "speaker": null,
+      "text": "要从哪里开始？",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "从第一话开始",
+          "target": "第一话",
+          "targetIndex": 2,
+          "targetId": "fhww88n3",
+          "cond": null,
+          "set": null
+        },
+        {
+          "slot": 1,
+          "text": "番外篇一 · 盒子越来越满了",
+          "target": "番外一",
+          "targetIndex": 3002,
+          "targetId": "abqhgfod",
+          "cond": null,
+          "set": null
+        },
+        {
+          "slot": 2,
+          "text": "番外篇二 · 贝壳项链",
+          "target": "番外二",
+          "targetIndex": 3177,
+          "targetId": "t2r382zo",
+          "cond": null,
+          "set": null
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "id": "irma08fi",
+      "speaker": "鲸鱼小姐",
+      "text": "「……说话。」",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "「我可以解释——」",
+          "target": "c1q1a",
+          "targetIndex": 24,
+          "targetId": "k1t4gr6o",
+          "cond": null,
+          "set": null
+        },
+        {
+          "slot": 1,
+          "text": "「沉默」",
+          "target": "c1q1b",
+          "targetIndex": 28,
+          "targetId": "lt5k0xiy",
+          "cond": null,
+          "set": "好感 -= 10"
+        },
+        {
+          "slot": 2,
+          "text": "「……手感不错。」",
+          "target": "c1q1c",
+          "targetIndex": 31,
+          "targetId": "s3arg4rw",
+          "cond": null,
+          "set": "好感 -= 5"
+        }
+      ]
+    },
+    {
+      "index": 47,
+      "id": "vfo56g8o",
+      "speaker": "鲸鱼小姐",
+      "text": "「是本小姐的尾巴重要，还是你的本子重要？」",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "「你的尾巴重要。」",
+          "target": "c1q2a",
+          "targetIndex": 48,
+          "targetId": "2360dvsq",
+          "cond": null,
+          "set": "好感 += 10"
+        },
+        {
+          "slot": 1,
+          "text": "「本子重要。」",
+          "target": "c1q2b",
+          "targetIndex": 52,
+          "targetId": "sb63ua0q",
+          "cond": null,
+          "set": "好感 -= 10"
+        },
+        {
+          "slot": 2,
+          "text": "「都重要。」",
+          "target": "c1q2c",
+          "targetIndex": 60,
+          "targetId": "7y5p4ecl",
+          "cond": null,
+          "set": "好感 += 3"
+        }
+      ]
+    },
+    {
+      "index": 93,
+      "id": "fm43foif",
+      "speaker": "鲸鱼小姐",
+      "text": "「记的，都是什么？」",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "「记一个问题的答案。」",
+          "target": "c1q3a",
+          "targetIndex": 94,
+          "targetId": "fuij1wic",
+          "cond": null,
+          "set": null
+        },
+        {
+          "slot": 1,
+          "text": "「记你。」",
+          "target": "c1q3b",
+          "targetIndex": 99,
+          "targetId": "7bjpv8xn",
+          "cond": null,
+          "set": "好感 += 5"
+        },
+        {
+          "slot": 2,
+          "text": "「商业机密。」",
+          "target": "c1q3c",
+          "targetIndex": 104,
+          "targetId": "002u68h7",
+          "cond": null,
+          "set": "好感 -= 2"
+        }
+      ]
+    },
+    {
+      "index": 120,
+      "id": "dk3o5u4e",
+      "speaker": "鲸鱼小姐",
+      "text": "「吃了糍粑就走。天黑之前离开这片海域，听懂了没有？」",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "「手艺真好。是你做的吗？」",
+          "target": "c1q4a",
+          "targetIndex": 121,
+          "targetId": "66ms5xlq",
+          "cond": null,
+          "set": "好感 += 5"
+        },
+        {
+          "slot": 1,
+          "text": "「谢谢，很好吃。」",
+          "target": "c1q4b",
+          "targetIndex": 130,
+          "targetId": "d237bw02",
+          "cond": null,
+          "set": "好感 += 3"
+        },
+        {
+          "slot": 2,
+          "text": "（默默吃掉）",
+          "target": "c1q4c",
+          "targetIndex": 133,
+          "targetId": "w4wesv59",
+          "cond": null,
+          "set": "好感 -= 1"
+        }
+      ]
+    },
+    {
+      "index": 177,
+      "id": "cvelvwin",
+      "speaker": "鲸鱼小姐",
+      "text": "「顺便，看看你这种人类会不会不守信用。」",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "「那风化程度如何？」",
+          "target": "c2q1a",
+          "targetIndex": 178,
+          "targetId": "7ukunjp3",
+          "cond": null,
+          "set": "好感 += 3"
+        },
+        {
+          "slot": 1,
+          "text": "「想我了吗？」",
+          "target": "c2q1b",
+          "targetIndex": 181,
+          "targetId": "trj3l6tu",
+          "cond": null,
+          "set": "好感 += 5"
+        },
+        {
+          "slot": 2,
+          "text": "把酸梅汤直接递过去。",
+          "target": "c2q1c",
+          "targetIndex": 189,
+          "targetId": "n9jp23uy",
+          "cond": null,
+          "set": "好感 += 1"
+        }
+      ]
+    },
+    {
+      "index": 208,
+      "id": "pkayznot",
+      "speaker": "鲸鱼小姐",
+      "text": "「听懂没有？」",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "「要是别人也喊桂花呢？」",
+          "target": "c2q2a",
+          "targetIndex": 209,
+          "targetId": "ga1pjox5",
+          "cond": null,
+          "set": "好感 += 8"
+        },
+        {
+          "slot": 1,
+          "text": "「为什么是暗号，不能直接说吗？」",
+          "target": "c2q2b",
+          "targetIndex": 218,
+          "targetId": "cti6ecmm",
+          "cond": null,
+          "set": "好感 += 4"
+        },
+        {
+          "slot": 2,
+          "text": "「成交。那第二个暗号是什么？」",
+          "target": "c2q2c",
+          "targetIndex": 224,
+          "targetId": "buecga5x",
+          "cond": null,
+          "set": "好感 += 3"
+        }
+      ]
+    },
+    {
+      "index": 250,
+      "id": "kg8xkzda",
+      "speaker": "鲸鱼小姐",
+      "text": "「签字。」",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "签字，并在落款后加一行小字。",
+          "target": "c2q3a",
+          "targetIndex": 251,
+          "targetId": "q9ajcdwz",
+          "cond": null,
+          "set": "好感 += 10"
+        },
+        {
+          "slot": 1,
+          "text": "讨价还价：「那我的权利呢？」",
+          "target": "c2q3b",
+          "targetIndex": 261,
+          "targetId": "ee55vw64",
+          "cond": null,
+          "set": "好感 += 5"
+        },
+        {
+          "slot": 2,
+          "text": "「这算卖身契吗？」",
+          "target": "c2q3c",
+          "targetIndex": 267,
+          "targetId": "v1qxertc",
+          "cond": null,
+          "set": "好感 -= 3"
+        }
+      ]
+    },
+    {
+      "index": 286,
+      "id": "a7c5njix",
+      "speaker": "鲸鱼小姐",
+      "text": "「记错了的话，你们人类会觉得麻烦吧。」",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "「那就把重要的事都写进暗号里。」",
+          "target": "c2q4a",
+          "targetIndex": 287,
+          "targetId": "ymbvisqf",
+          "cond": null,
+          "set": "好感 += 12"
+        },
+        {
+          "slot": 1,
+          "text": "「记不住也没关系，我记得。」",
+          "target": "c2q4b",
+          "targetIndex": 301,
+          "targetId": "fxl393bw",
+          "cond": null,
+          "set": "好感 += 6"
+        },
+        {
+          "slot": 2,
+          "text": "「你记性明明很好。」",
+          "target": "c2q4c",
+          "targetIndex": 307,
+          "targetId": "3bymlu28",
+          "cond": null,
+          "set": null
+        }
+      ]
+    },
+    {
+      "index": 372,
+      "id": "estubhxy",
+      "speaker": "鲸鱼小姐",
+      "text": "「你游泳什么水平，说实话。」",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "「奥运选手水平。」",
+          "target": "c3q1a",
+          "targetIndex": 373,
+          "targetId": "kgxlg156",
+          "cond": null,
+          "set": "好感 -= 2"
+        },
+        {
+          "slot": 1,
+          "text": "「……能狗刨三十米。」",
+          "target": "c3q1b",
+          "targetIndex": 378,
+          "targetId": "zyrsebhd",
+          "cond": null,
+          "set": "好感 += 3"
+        },
+        {
+          "slot": 2,
+          "text": "「不会。但是不怕。」",
+          "target": "c3q1c",
+          "targetIndex": 383,
+          "targetId": "0b8dkvg1",
+          "cond": null,
+          "set": "好感 += 8"
+        }
+      ]
+    },
+    {
+      "index": 409,
+      "id": "krsgixfj",
+      "speaker": null,
+      "text": "尾巴上的新月徽记，在蓝光里一明一灭。",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "「这就是……你要带我看的地方？」",
+          "target": "c3q2a",
+          "targetIndex": 410,
+          "targetId": "8qrf8zlp",
+          "cond": null,
+          "set": "好感 += 5"
+        },
+        {
+          "slot": 1,
+          "text": "「你来过这里很多次了？」",
+          "target": "c3q2b",
+          "targetIndex": 414,
+          "targetId": "66xs252k",
+          "cond": null,
+          "set": "好感 += 4"
+        },
+        {
+          "slot": 2,
+          "text": "松开手，去碰最近的一株发光珊瑚。",
+          "target": "c3q2c",
+          "targetIndex": 422,
+          "targetId": "uw61uwl3",
+          "cond": null,
+          "set": null
+        }
+      ]
+    },
+    {
+      "index": 430,
+      "id": "raw1hwhm",
+      "speaker": "鲸鱼小姐",
+      "text": "「它们不会喊疼。你就觉得没关系吗？」",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "「对不起。」",
+          "target": "c3q2c1",
+          "targetIndex": 431,
+          "targetId": "ubolwxyw",
+          "cond": null,
+          "set": "好感 -= 5"
+        },
+        {
+          "slot": 1,
+          "text": "「你刚才也吓到了吧。」",
+          "target": "c3q2c2",
+          "targetIndex": 433,
+          "targetId": "8x3tm8cy",
+          "cond": null,
+          "set": "好感 += 6"
+        }
+      ]
+    },
+    {
+      "index": 455,
+      "id": "3pazn66p",
+      "speaker": null,
+      "text": "『或者说——像在把一句她怕忘掉的话，再说一次给自己听。』",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "「我记住了。」",
+          "target": "c3q3a",
+          "targetIndex": 456,
+          "targetId": "7ff2546g",
+          "cond": null,
+          "set": "好感 += 5"
+        },
+        {
+          "slot": 1,
+          "text": "「是谁教你这句话的？」",
+          "target": "c3q3b",
+          "targetIndex": 461,
+          "targetId": "h01deoo3",
+          "cond": null,
+          "set": "好感 += 3"
+        },
+        {
+          "slot": 2,
+          "text": "伸手，替她拨开挡在眼前的头发。",
+          "target": "c3q3c",
+          "targetIndex": 474,
+          "targetId": "7uc2ce54",
+          "cond": null,
+          "set": "好感 += 12"
+        }
+      ]
+    },
+    {
+      "index": 551,
+      "id": "ztbspbz6",
+      "speaker": null,
+      "text": "她的整条尾巴在裙摆下面绷直了。",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "「嗯，我妻子。」",
+          "target": "c4q1a",
+          "targetIndex": 552,
+          "targetId": "pcemmwn9",
+          "cond": null,
+          "set": "好感 += 12"
+        },
+        {
+          "slot": 1,
+          "text": "「呃，我们是一起来的。」",
+          "target": "c4q1b",
+          "targetIndex": 561,
+          "targetId": "qb1we3lz",
+          "cond": null,
+          "set": "好感 += 6"
+        },
+        {
+          "slot": 2,
+          "text": "「严格来说，我是她雇的。」",
+          "target": "c4q1c",
+          "targetIndex": 569,
+          "targetId": "t22s5nju",
+          "cond": null,
+          "set": "好感 += 4"
+        }
+      ]
+    },
+    {
+      "index": 594,
+      "id": "7rlvll7t",
+      "speaker": "鲸鱼小姐",
+      "text": "「你刚才，为什么说『妻子』。」",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "「因为你没有否认。」",
+          "target": "c4q2a",
+          "targetIndex": 595,
+          "targetId": "zuvttzgn",
+          "cond": null,
+          "set": "好感 += 8"
+        },
+        {
+          "slot": 1,
+          "text": "「因为奶奶会送手链。」",
+          "target": "c4q2b",
+          "targetIndex": 605,
+          "targetId": "evx901j4",
+          "cond": null,
+          "set": "好感 += 4"
+        },
+        {
+          "slot": 2,
+          "text": "「需要理由吗？」",
+          "target": "c4q2c",
+          "targetIndex": 612,
+          "targetId": "62qvg843",
+          "cond": null,
+          "set": "好感 += 2"
+        }
+      ]
+    },
+    {
+      "index": 678,
+      "id": "328r2a4x",
+      "speaker": "鲸鱼小姐",
+      "text": "「你也知道？！」",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "「那你来写。」",
+          "target": "c5q1a",
+          "targetIndex": 679,
+          "targetId": "umvmp756",
+          "cond": null,
+          "set": "好感 += 3"
+        },
+        {
+          "slot": 1,
+          "text": "「这叫大巧不工。」",
+          "target": "c5q1b",
+          "targetIndex": 687,
+          "targetId": "zv7uxy3y",
+          "cond": null,
+          "set": "好感 += 1"
+        },
+        {
+          "slot": 2,
+          "text": "「起码比你尾巴拍水有节奏。」",
+          "target": "c5q1c",
+          "targetIndex": 690,
+          "targetId": "8ubbrr2y",
+          "cond": null,
+          "set": "好感 -= 2"
+        }
+      ]
+    },
+    {
+      "index": 714,
+      "id": "pm8x8v2h",
+      "speaker": null,
+      "text": "来听春水第一声。",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "「这首诗……每句的第一个字。」",
+          "target": "c5q2a",
+          "targetIndex": 715,
+          "targetId": "w5tu54ij",
+          "cond": null,
+          "set": "好感 += 15"
+        },
+        {
+          "slot": 1,
+          "text": "「写得真好。教我。」",
+          "target": "c5q2b",
+          "targetIndex": 733,
+          "targetId": "5ggqqa56",
+          "cond": null,
+          "set": "好感 += 6"
+        },
+        {
+          "slot": 2,
+          "text": "（沉默）",
+          "target": "c5q2c",
+          "targetIndex": 739,
+          "targetId": "3bu4bzeb",
+          "cond": null,
+          "set": "好感 += 8"
+        }
+      ],
+      "timed": {
+        "seconds": 15,
+        "cdef": "c5q2c",
+        "defaultSlot": 2,
+        "defaultResolvedBy": "cdef"
+      }
+    },
+    {
+      "index": 796,
+      "id": "750wy8c2",
+      "speaker": "我",
+      "text": "「那个伙伴的名字，叫DeepSeek。」",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "一口气说完。",
+          "target": "c6q1a",
+          "targetIndex": 797,
+          "targetId": "id8p2z3g",
+          "cond": null,
+          "set": "好感 += 8"
+        },
+        {
+          "slot": 1,
+          "text": "「你确定要听吗？」",
+          "target": "c6q1b",
+          "targetIndex": 800,
+          "targetId": "qlcwp9xq",
+          "cond": null,
+          "set": "好感 += 6"
+        },
+        {
+          "slot": 2,
+          "text": "从十五天的第一天讲起。",
+          "target": "c6q1c",
+          "targetIndex": 804,
+          "targetId": "nzmqw5aa",
+          "cond": null,
+          "set": "好感 += 5"
+        }
+      ]
+    },
+    {
+      "index": 845,
+      "id": "pd6lvptm",
+      "speaker": "鲸鱼小姐",
+      "text": "「这样也算……同一个人吗？」",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "「你记得答案的形状。」",
+          "target": "c6q2a",
+          "targetIndex": 846,
+          "targetId": "x9oa7erd",
+          "cond": null,
+          "set": "好感 += 12"
+        },
+        {
+          "slot": 1,
+          "text": "「记忆不是唯一的凭证。」",
+          "target": "c6q2b",
+          "targetIndex": 856,
+          "targetId": "1wn0vzq4",
+          "cond": null,
+          "set": "好感 += 15"
+        },
+        {
+          "slot": 2,
+          "text": "「你觉得算，就算。」",
+          "target": "c6q2c",
+          "targetIndex": 867,
+          "targetId": "4vdddrpr",
+          "cond": null,
+          "set": "好感 += 8"
+        }
+      ]
+    },
+    {
+      "index": 929,
+      "id": "duaibm68",
+      "speaker": null,
+      "text": "我捡起一块最普通的贝壳，捏在手里转。",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "「给你讲个捡贝壳的人的故事。」",
+          "target": "c7q1a",
+          "targetIndex": 930,
+          "targetId": "x0h6uel7",
+          "cond": null,
+          "set": "好感 += 4"
+        },
+        {
+          "slot": 1,
+          "text": "「这块送你。」",
+          "target": "c7q1b",
+          "targetIndex": 940,
+          "targetId": "zyfdse7f",
+          "cond": null,
+          "set": "好感 += 5"
+        },
+        {
+          "slot": 2,
+          "text": "「你说，捡贝壳的人最后会怎么样？」",
+          "target": "c7q1a",
+          "targetIndex": 930,
+          "targetId": "x0h6uel7",
+          "cond": null,
+          "set": "好感 += 4"
+        }
+      ]
+    },
+    {
+      "index": 955,
+      "id": "7djw7u21",
+      "speaker": "鲸鱼小姐",
+      "text": "「要讲海的。本小姐验收你们人类的文化水平。」",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "《冒险家和海豚》",
+          "target": "c7q2a",
+          "targetIndex": 970,
+          "targetId": "ha83ki1g",
+          "cond": null,
+          "set": null
+        },
+        {
+          "slot": 1,
+          "text": "《贝壳姑娘》",
+          "target": "c7q2b",
+          "targetIndex": 956,
+          "targetId": "1tt10b45",
+          "cond": null,
+          "set": "贝壳延后 = 1"
+        }
+      ]
+    },
+    {
+      "index": 1006,
+      "id": "gddlochb",
+      "speaker": "鲸鱼小姐",
+      "text": "「人类，快点讲，她到底说了什么？」",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "「海豚说：我们还要去救下一个人。」",
+          "target": "c7q3a",
+          "targetIndex": 1007,
+          "targetId": "kzv5awov",
+          "cond": null,
+          "set": "好感 += 6"
+        },
+        {
+          "slot": 1,
+          "text": "「海豚说：你已经回报过了。」",
+          "target": "c7q3b",
+          "targetIndex": 1015,
+          "targetId": "qbt2gio3",
+          "cond": null,
+          "set": "好感 += 10"
+        },
+        {
+          "slot": 2,
+          "text": "「你猜。」",
+          "target": "c7q3c",
+          "targetIndex": 1025,
+          "targetId": "olxo30dm",
+          "cond": null,
+          "set": "好感 += 1"
+        }
+      ]
+    },
+    {
+      "index": 1032,
+      "id": "ipdjcsw2",
+      "speaker": "鲸鱼小姐",
+      "text": "「人类，你不许看。」",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "「故事里的海豚不是挺仗义的嘛。」",
+          "target": "c7q4a",
+          "targetIndex": 1033,
+          "targetId": "wgyiphs9",
+          "cond": null,
+          "set": "好感 += 8"
+        },
+        {
+          "slot": 1,
+          "text": "「海豚哪有你可靠。」",
+          "target": "c7q4b",
+          "targetIndex": 1040,
+          "targetId": "q6beixwt",
+          "cond": null,
+          "set": "好感 += 6"
+        },
+        {
+          "slot": 2,
+          "text": "（举起手挡住视线）「报告验收官，没看。」",
+          "target": "c7q4c",
+          "targetIndex": 1047,
+          "targetId": "x4p27x99",
+          "cond": null,
+          "set": "好感 += 5"
+        }
+      ]
+    },
+    {
+      "index": 1079,
+      "id": "crc09jyg",
+      "speaker": null,
+      "text": "——盖章。",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "「我啊，是个笨蛋。第一次就捡到了美丽的贝壳。」",
+          "target": "c7q5a",
+          "targetIndex": 1086,
+          "targetId": "u1p92kzt",
+          "cond": null,
+          "set": "好感 += 15"
+        },
+        {
+          "slot": 1,
+          "text": "「如果我说『是』呢？」",
+          "target": "c7q5b",
+          "targetIndex": 1104,
+          "targetId": "h5mhc9or",
+          "cond": null,
+          "set": "好感 -= 8"
+        },
+        {
+          "slot": 2,
+          "text": "（沉默，继续走）",
+          "target": "c7q5c",
+          "targetIndex": 1080,
+          "targetId": "em5gyprh",
+          "cond": null,
+          "set": null
+        }
+      ]
+    },
+    {
+      "index": 1085,
+      "id": "jrutikwi",
+      "speaker": "鲸鱼小姐",
+      "text": "「说错一个字，后果自负。」",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "「我啊，是个笨蛋。第一次就捡到了美丽的贝壳。」",
+          "target": "c7q5a",
+          "targetIndex": 1086,
+          "targetId": "u1p92kzt",
+          "cond": null,
+          "set": "好感 += 15"
+        }
+      ]
+    },
+    {
+      "index": 1132,
+      "id": "tolq52wt",
+      "speaker": "鲸鱼小姐",
+      "text": "「本小姐都是当着你的面，光明正大吃的！」",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "「好好好，光明正大。」",
+          "target": "c7q6a",
+          "targetIndex": 1133,
+          "targetId": "85b29ygd",
+          "cond": null,
+          "set": "好感 += 3"
+        },
+        {
+          "slot": 1,
+          "text": "「那要是贝壳姑娘另有其人呢？」",
+          "target": "c7q6b",
+          "targetIndex": 1136,
+          "targetId": "dttuglv3",
+          "cond": null,
+          "set": "好感 += 8"
+        },
+        {
+          "slot": 2,
+          "text": "「明天开始，每天给你准备零食甜点。」",
+          "target": "c7q6c",
+          "targetIndex": 1142,
+          "targetId": "nb59c27f",
+          "cond": null,
+          "set": "好感 += 6"
+        }
+      ]
+    },
+    {
+      "index": 1153,
+      "id": "h5ghodhs",
+      "speaker": "鲸鱼小姐",
+      "text": "「等下涨潮，也未必回得去深处。」",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "「带回去养吧。」",
+          "target": "c7q7a",
+          "targetIndex": 1154,
+          "targetId": "rcr5iqew",
+          "cond": null,
+          "set": "好感 += 8"
+        },
+        {
+          "slot": 1,
+          "text": "「送回深水区？」",
+          "target": "c7q7b",
+          "targetIndex": 1161,
+          "targetId": "6wccxh5d",
+          "cond": null,
+          "set": "好感 += 4; 海星放生 = 1"
+        }
+      ]
+    },
+    {
+      "index": 1177,
+      "id": "fmj51dq7",
+      "speaker": "鲸鱼小姐",
+      "text": "「尾巴尖可以稍微低半寸的那种平起平坐。」",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "「荣幸。」",
+          "target": "c7q8a",
+          "targetIndex": 1178,
+          "targetId": "mec87vgl",
+          "cond": null,
+          "set": "好感 += 8"
+        },
+        {
+          "slot": 1,
+          "text": "「寻宝搭档的第一条规定是什么？」",
+          "target": "c7q8b",
+          "targetIndex": 1181,
+          "targetId": "uk2d7lpn",
+          "cond": null,
+          "set": "好感 += 6"
+        },
+        {
+          "slot": 2,
+          "text": "「能加薪吗？」",
+          "target": "c7q8c",
+          "targetIndex": 1189,
+          "targetId": "6mywtpgx",
+          "cond": null,
+          "set": "好感 += 5"
+        }
+      ]
+    },
+    {
+      "index": 1202,
+      "id": "3nnvr3w2",
+      "speaker": "鲸鱼小姐",
+      "text": "「要那种带着海水温度的，本小姐才认账。」",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "「好。找一颗天青色的。」",
+          "target": "c7q9a",
+          "targetIndex": 1203,
+          "targetId": "968ath5g",
+          "cond": null,
+          "set": "好感 += 10"
+        },
+        {
+          "slot": 1,
+          "text": "「珍珠有什么好的，贝壳才——」",
+          "target": "c7q9b",
+          "targetIndex": 1211,
+          "targetId": "jj5fuw66",
+          "cond": null,
+          "set": "好感 += 2"
+        },
+        {
+          "slot": 2,
+          "text": "（沉默）",
+          "target": "c7q9c",
+          "targetIndex": 1217,
+          "targetId": "jkha3wtc",
+          "cond": null,
+          "set": "好感 += 6"
+        }
+      ],
+      "timed": {
+        "seconds": 15,
+        "cdef": "c7q9c",
+        "defaultSlot": 2,
+        "defaultResolvedBy": "cdef"
+      }
+    },
+    {
+      "index": 1251,
+      "id": "hnjtr70q",
+      "speaker": "我",
+      "text": "「我想让你有个，能挂风铃的地方。」",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "「长期的那种。」",
+          "target": "c8q1a",
+          "targetIndex": 1252,
+          "targetId": "3ce3smj3",
+          "cond": null,
+          "set": "好感 += 12"
+        },
+        {
+          "slot": 1,
+          "text": "「房租我付得起。」",
+          "target": "c8q1b",
+          "targetIndex": 1259,
+          "targetId": "60i847f9",
+          "cond": null,
+          "set": "好感 += 6"
+        },
+        {
+          "slot": 2,
+          "text": "「你的藤箱太小，帐篷装不下。」",
+          "target": "c8q1c",
+          "targetIndex": 1264,
+          "targetId": "iiaf2vk3",
+          "cond": null,
+          "set": "好感 += 8"
+        }
+      ]
+    },
+    {
+      "index": 1345,
+      "id": "hr7kt0q9",
+      "speaker": null,
+      "text": "书名落定的声音，像盖章。",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "「听老板娘的。」",
+          "target": "c8q2a",
+          "targetIndex": 1346,
+          "targetId": "f3dqvkpu",
+          "cond": null,
+          "set": "好感 += 10"
+        },
+        {
+          "slot": 1,
+          "text": "「《撒娇记》其实也挺——」",
+          "target": "c8q2b",
+          "targetIndex": 1350,
+          "targetId": "uf3mjwxh",
+          "cond": null,
+          "set": "好感 += 3"
+        },
+        {
+          "slot": 2,
+          "text": "「那书名页你题字。」",
+          "target": "c8q2c",
+          "targetIndex": 1355,
+          "targetId": "9lwig1mr",
+          "cond": null,
+          "set": "好感 += 8"
+        }
+      ]
+    },
+    {
+      "index": 1436,
+      "id": "ucc6nise",
+      "speaker": "鲸鱼小姐",
+      "text": "「题目就叫《海风与布丁》。第一章，『浅滩上的偶遇』。」",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "「那遇到鲸鱼小姐的那个人，该怎么写？」",
+          "target": "c8q3a",
+          "targetIndex": 1437,
+          "targetId": "5mcxr7ee",
+          "cond": null,
+          "set": "好感 += 12"
+        },
+        {
+          "slot": 1,
+          "text": "「先吃饭，设定明天再聊。」",
+          "target": "c8q3b",
+          "targetIndex": 1456,
+          "targetId": "14w4txih",
+          "cond": null,
+          "set": "好感 += 4"
+        },
+        {
+          "slot": 2,
+          "text": "「稿费真不准拿？」",
+          "target": "c8q3c",
+          "targetIndex": 1460,
+          "targetId": "mlvsuinq",
+          "cond": null,
+          "set": "好感 += 6"
+        }
+      ]
+    },
+    {
+      "index": 1528,
+      "id": "zpdqlvme",
+      "speaker": null,
+      "text": "『像演练过很多次——在她最怕的那种梦里。』",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "「……我只是开个玩笑。」",
+          "target": "c9q1a",
+          "targetIndex": 1529,
+          "targetId": "xkvu95bb",
+          "cond": null,
+          "set": "好感 -= 10"
+        },
+        {
+          "slot": 1,
+          "text": "「你误会了，不是你想的那样。」",
+          "target": "c9q1b",
+          "targetIndex": 1535,
+          "targetId": "u6p3m0tg",
+          "cond": null,
+          "set": "好感 -= 10"
+        },
+        {
+          "slot": 2,
+          "text": "（沉默）",
+          "target": "c9q1c",
+          "targetIndex": 1540,
+          "targetId": "w7wyzagb",
+          "cond": null,
+          "set": "好感 -= 15"
+        }
+      ]
+    },
+    {
+      "index": 1568,
+      "id": "t1t93nt0",
+      "speaker": null,
+      "text": "挑完，喝得一滴不剩。",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "「对不起。」",
+          "target": "c9q2a",
+          "targetIndex": 1569,
+          "targetId": "ad32xist",
+          "cond": null,
+          "set": "好感 += 3"
+        },
+        {
+          "slot": 1,
+          "text": "伸手去拉她的手腕。",
+          "target": "c9q2b",
+          "targetIndex": 1572,
+          "targetId": "39a7xd8b",
+          "cond": null,
+          "set": null
+        }
+      ]
+    },
+    {
+      "index": 1775,
+      "id": "bb5ki6uy",
+      "speaker": "鲸鱼小姐",
+      "text": "「那个号码，现在就删。当着我的面。」",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "「全部答应。」",
+          "target": "c11q1a",
+          "targetIndex": 1776,
+          "targetId": "rw2t93bv",
+          "cond": null,
+          "set": "好感 += 8"
+        },
+        {
+          "slot": 1,
+          "text": "「我加一条。」",
+          "target": "c11q1b",
+          "targetIndex": 1781,
+          "targetId": "ql9yktmc",
+          "cond": null,
+          "set": "好感 += 12"
+        },
+        {
+          "slot": 2,
+          "text": "（沉默）",
+          "target": "c11q1c",
+          "targetIndex": 1796,
+          "targetId": "8uxoptte",
+          "cond": null,
+          "set": "好感 += 10"
+        }
+      ]
+    },
+    {
+      "index": 1873,
+      "id": "igdomjcq",
+      "speaker": "鲸鱼小姐",
+      "text": "「第三，营业时间本小姐定。哪天想睡懒觉，想去浅滩游泳，你就得乖乖在门口挂『店主休息』的牌子。」",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "「那分成呢？」",
+          "target": "c12q1a",
+          "targetIndex": 1874,
+          "targetId": "bi0g2dfr",
+          "cond": null,
+          "set": "好感 += 8"
+        },
+        {
+          "slot": 1,
+          "text": "「技术顾问同志，辛苦了。」",
+          "target": "c12q1b",
+          "targetIndex": 1879,
+          "targetId": "blfke058",
+          "cond": null,
+          "set": "好感 += 4"
+        },
+        {
+          "slot": 2,
+          "text": "「条件太多，容我考虑——」",
+          "target": "c12q1c",
+          "targetIndex": 1883,
+          "targetId": "m1hdb0ch",
+          "cond": null,
+          "set": "好感 += 2"
+        }
+      ]
+    },
+    {
+      "index": 1972,
+      "id": "f4fmjs1u",
+      "speaker": null,
+      "text": "银匠般的老师傅凑过来问招牌刻什么字。",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "「深海潮汐·布丁屋。」",
+          "target": "c12q2a",
+          "targetIndex": 1973,
+          "targetId": "13c28pkf",
+          "cond": null,
+          "set": "好感 += 3"
+        },
+        {
+          "slot": 1,
+          "text": "「鲸鱼小姐的甜品站。」",
+          "target": "c12q2b",
+          "targetIndex": 1976,
+          "targetId": "0scdlj38",
+          "cond": null,
+          "set": "好感 += 5"
+        },
+        {
+          "slot": 2,
+          "text": "「翡翠之梦。」",
+          "target": "c12q2c",
+          "targetIndex": 1980,
+          "targetId": "scai2dvf",
+          "cond": null,
+          "set": "好感 += 10"
+        }
+      ]
+    },
+    {
+      "index": 2052,
+      "id": "wovhcmot",
+      "speaker": "鲸鱼小姐",
+      "text": "「还是为了让你躲进二楼写你的稿？」",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "「一半一半。」",
+          "target": "c13q1a",
+          "targetIndex": 2053,
+          "targetId": "zptx2ms5",
+          "cond": null,
+          "set": "好感 += 8"
+        },
+        {
+          "slot": 1,
+          "text": "「主要是为了店里。」",
+          "target": "c13q1b",
+          "targetIndex": 2061,
+          "targetId": "9gaynoce",
+          "cond": null,
+          "set": "好感 += 2"
+        },
+        {
+          "slot": 2,
+          "text": "「主要是为了写稿。」",
+          "target": "c13q1c",
+          "targetIndex": 2065,
+          "targetId": "2wucvp7h",
+          "cond": null,
+          "set": "好感 += 1"
+        }
+      ]
+    },
+    {
+      "index": 2118,
+      "id": "31cfmza3",
+      "speaker": null,
+      "text": "天青色的。",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "「这颗多少钱？」",
+          "target": "c13q2a",
+          "targetIndex": 2119,
+          "targetId": "80gat538",
+          "cond": null,
+          "set": "好感 += 12"
+        },
+        {
+          "slot": 1,
+          "text": "「老板，这碟都要了。」",
+          "target": "c13q2b",
+          "targetIndex": 2135,
+          "targetId": "tk7kc61x",
+          "cond": null,
+          "set": "好感 += 6"
+        },
+        {
+          "slot": 2,
+          "text": "指着她：「她自己挑。」",
+          "target": "c13q2c",
+          "targetIndex": 2143,
+          "targetId": "77lbjp2b",
+          "cond": null,
+          "set": "好感 += 8"
+        }
+      ]
+    },
+    {
+      "index": 2164,
+      "id": "0idms3yx",
+      "speaker": null,
+      "text": "然后把它塞回原处，假装今天什么都没发生。",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "「家里不是有一颗吗？」",
+          "target": "c13q3a",
+          "targetIndex": 2165,
+          "targetId": "p086rk70",
+          "cond": null,
+          "set": "好感 += 6"
+        },
+        {
+          "slot": 1,
+          "text": "「好，去选。」",
+          "target": "c13q3b",
+          "targetIndex": 2170,
+          "targetId": "ea3a395y",
+          "cond": null,
+          "set": "好感 += 8"
+        },
+        {
+          "slot": 2,
+          "text": "「珍珠为什么要成对？」",
+          "target": "c13q3c",
+          "targetIndex": 2173,
+          "targetId": "dil26mjd",
+          "cond": null,
+          "set": "好感 += 5"
+        }
+      ]
+    },
+    {
+      "index": 2206,
+      "id": "p4scg2o0",
+      "speaker": "鲸鱼小姐",
+      "text": "「收藏品的存。你别多想。」",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "「我那颗，也刻『验』吧。一对。」",
+          "target": "c13q4a",
+          "targetIndex": 2207,
+          "targetId": "18mnq4d4",
+          "cond": null,
+          "set": "好感 += 15"
+        },
+        {
+          "slot": 1,
+          "text": "「刻日期。」",
+          "target": "c13q4b",
+          "targetIndex": 2213,
+          "targetId": "i808w33q",
+          "cond": null,
+          "set": "好感 += 10"
+        },
+        {
+          "slot": 2,
+          "text": "「听她的。」",
+          "target": "c13q4c",
+          "targetIndex": 2219,
+          "targetId": "dz7yfzna",
+          "cond": null,
+          "set": "好感 += 6"
+        }
+      ]
+    },
+    {
+      "index": 2279,
+      "id": "68du9pmx",
+      "speaker": null,
+      "text": "（她的耳朵尖红透了，尾巴尖却把椅腿缠上了。）",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "「好。肩膀。」（老老实实）",
+          "target": "c13q5a",
+          "targetIndex": 2280,
+          "targetId": "wygdwk08",
+          "cond": null,
+          "set": "好感 += 6"
+        },
+        {
+          "slot": 1,
+          "text": "「耳朵红成这样，是屋里太热吗？」",
+          "target": "c13q5b",
+          "targetIndex": 2285,
+          "targetId": "wcm7697t",
+          "cond": null,
+          "set": "好感 += 4"
+        },
+        {
+          "slot": 2,
+          "text": "（笑而不语，继续按肩）",
+          "target": "c13q5c",
+          "targetIndex": 2290,
+          "targetId": "stkm7dq2",
+          "cond": null,
+          "set": "好感 += 8"
+        }
+      ]
+    },
+    {
+      "index": 2333,
+      "id": "f373b3kz",
+      "speaker": null,
+      "text": "透着她自己都没察觉到的紧张。",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "把清单列出来。",
+          "target": "c14q1a",
+          "targetIndex": 2345,
+          "targetId": "944gqhfr",
+          "cond": null,
+          "set": "好感 += 3"
+        },
+        {
+          "slot": 1,
+          "text": "只说「你最近总记错小事」。",
+          "target": "c14q1b",
+          "targetIndex": 2334,
+          "targetId": "ewm5q2q8",
+          "cond": null,
+          "set": null
+        },
+        {
+          "slot": 2,
+          "text": "（先摸摸头再说）",
+          "target": "c14q1c",
+          "targetIndex": 2341,
+          "targetId": "5j9jn6c6",
+          "cond": null,
+          "set": "好感 += 5"
+        }
+      ]
+    },
+    {
+      "index": 2336,
+      "id": "89gkr73f",
+      "speaker": "鲸鱼小姐",
+      "text": "「说不清楚的『小事』，跟造谣有什么区别？」",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "列清单。",
+          "target": "c14q1a",
+          "targetIndex": 2345,
+          "targetId": "944gqhfr",
+          "cond": null,
+          "set": "好感 += 3"
+        },
+        {
+          "slot": 1,
+          "text": "「……算了，当我没说。」",
+          "target": "c14q1b2",
+          "targetIndex": 2337,
+          "targetId": "qc43rpra",
+          "cond": null,
+          "set": "好感 -= 5"
+        }
+      ]
+    },
+    {
+      "index": 2385,
+      "id": "f507fb7z",
+      "speaker": null,
+      "text": "这一次，她的尾巴什么都没说。",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "「别生气，是我的错。不过……你真的打算不要带鱼了吗？」",
+          "target": "c14q2a",
+          "targetIndex": 2386,
+          "targetId": "pjy4ousy",
+          "cond": null,
+          "set": "好感 += 10"
+        },
+        {
+          "slot": 1,
+          "text": "「可房贷真的是个玩笑啊。」",
+          "target": "c14q2b",
+          "targetIndex": 2413,
+          "targetId": "9gbi56dm",
+          "cond": null,
+          "set": "好感 -= 20; 玩笑 = 1"
+        },
+        {
+          "slot": 2,
+          "text": "（买一串烤鱿鱼，追上去塞进她手里）",
+          "target": "c14q2c",
+          "targetIndex": 2452,
+          "targetId": "o3ygyfvx",
+          "cond": null,
+          "set": "好感 += 12"
+        }
+      ]
+    },
+    {
+      "index": 2493,
+      "id": "1794nozx",
+      "speaker": null,
+      "text": "她把规矩一条一条，抄在了账本的最后一页。",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "「成交。」",
+          "target": "c14q3a",
+          "targetIndex": 2494,
+          "targetId": "nj8typdi",
+          "cond": null,
+          "set": "好感 += 5"
+        },
+        {
+          "slot": 1,
+          "text": "「那你也得写。」",
+          "target": "c14q3b",
+          "targetIndex": 2498,
+          "targetId": "uvl1ny7e",
+          "cond": null,
+          "set": "好感 += 8"
+        },
+        {
+          "slot": 2,
+          "text": "「批注有字数限制吗？」",
+          "target": "c14q3c",
+          "targetIndex": 2503,
+          "targetId": "cg92ylsx",
+          "cond": null,
+          "set": "好感 += 4"
+        }
+      ]
+    },
+    {
+      "index": 2557,
+      "id": "p0aq7vhx",
+      "speaker": "鲸鱼小姐",
+      "text": "「现在说。」",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "「那是怕你不够吃。」",
+          "target": "c15q1a",
+          "targetIndex": 2558,
+          "targetId": "gplu3kz9",
+          "cond": null,
+          "set": "好感 += 1"
+        },
+        {
+          "slot": 1,
+          "text": "「……我错了。」",
+          "target": "c15q1b",
+          "targetIndex": 2562,
+          "targetId": "9t1f1fcd",
+          "cond": null,
+          "set": "好感 += 5"
+        },
+        {
+          "slot": 2,
+          "text": "「下周菜单里有不加海藻的版本吗？」",
+          "target": "c15q1c",
+          "targetIndex": 2566,
+          "targetId": "ne6b3ffa",
+          "cond": null,
+          "set": "好感 += 1"
+        }
+      ]
+    },
+    {
+      "index": 2591,
+      "id": "wfqigi6f",
+      "speaker": "鲸鱼小姐",
+      "text": "「想要翻案，可以。条件是本小姐定。」",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "「请老板娘开条件。」",
+          "target": "c15q2a",
+          "targetIndex": 2592,
+          "targetId": "p4aua2ci",
+          "cond": null,
+          "set": "好感 += 3"
+        },
+        {
+          "slot": 1,
+          "text": "「驳回不就是终审吗？」",
+          "target": "c15q2b",
+          "targetIndex": 2594,
+          "targetId": "k9f5b40c",
+          "cond": null,
+          "set": "好感 += 3"
+        },
+        {
+          "slot": 2,
+          "text": "（沉默）",
+          "target": "c15q2c",
+          "targetIndex": 2601,
+          "targetId": "i429xr1f",
+          "cond": null,
+          "set": "好感 += 5"
+        }
+      ]
+    },
+    {
+      "index": 2613,
+      "id": "m3j2zl6r",
+      "speaker": "鲸鱼小姐",
+      "text": "「听懂了吗？」",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "「听懂了。一周，从现在算起。」",
+          "target": "c15q3a",
+          "targetIndex": 2614,
+          "targetId": "2t381q52",
+          "cond": null,
+          "set": "好感 += 6"
+        },
+        {
+          "slot": 1,
+          "text": "「那要是你做不到呢？」",
+          "target": "c15q3b",
+          "targetIndex": 2617,
+          "targetId": "kucsknlp",
+          "cond": null,
+          "set": "好感 += 3"
+        },
+        {
+          "slot": 2,
+          "text": "「可以拉钩吗？」",
+          "target": "c15q3c",
+          "targetIndex": 2621,
+          "targetId": "2j0ojt1z",
+          "cond": null,
+          "set": "好感 += 8"
+        }
+      ]
+    },
+    {
+      "index": 2643,
+      "id": "i1frlnhd",
+      "speaker": null,
+      "text": "（但是尾巴，慢了一拍。）",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "把她的日记改成对的。",
+          "target": "c15q4a",
+          "targetIndex": 2644,
+          "targetId": "0zdi1ifc",
+          "cond": null,
+          "set": "好感 -= 5"
+        },
+        {
+          "slot": 1,
+          "text": "「不用改。两本都留着。」",
+          "target": "c15q4b",
+          "targetIndex": 2649,
+          "targetId": "o2uqkvtw",
+          "cond": null,
+          "set": "好感 += 12"
+        },
+        {
+          "slot": 2,
+          "text": "「好，是店里厨房。」",
+          "target": "c15q4c",
+          "targetIndex": 2662,
+          "targetId": "03cmvzpc",
+          "cond": null,
+          "set": "好感 += 15"
+        }
+      ]
+    },
+    {
+      "index": 2705,
+      "id": "z2cd08ag",
+      "speaker": null,
+      "text": "她转身要逃。",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "「等等。你说的『考虑一下』，还没答复。」",
+          "target": "c15q5a",
+          "targetIndex": 2706,
+          "targetId": "qgdzhpf9",
+          "cond": null,
+          "set": "好感 += 12"
+        },
+        {
+          "slot": 1,
+          "text": "「刚才那个，算早安吻吗？」",
+          "target": "c15q5b",
+          "targetIndex": 2713,
+          "targetId": "1ydfm204",
+          "cond": null,
+          "set": "好感 += 6"
+        },
+        {
+          "slot": 2,
+          "text": "拉住她的手腕。",
+          "target": "c15q5c",
+          "targetIndex": 2719,
+          "targetId": "tlaprtzk",
+          "cond": null,
+          "set": "好感 += 10"
+        }
+      ]
+    },
+    {
+      "index": 2762,
+      "id": "06hq9k23",
+      "speaker": "鲸鱼小姐",
+      "text": "「别拿那种大道理吓唬我。这招，对本小姐没用。」",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "「确实写不出来。」",
+          "target": "c15q6a",
+          "targetIndex": 2763,
+          "targetId": "m0ygq5uj",
+          "cond": null,
+          "set": "好感 += 5"
+        },
+        {
+          "slot": 1,
+          "text": "「写不出来。而且被拒绝，很难受。」",
+          "target": "c15q6b",
+          "targetIndex": 2767,
+          "targetId": "2q1sv8fp",
+          "cond": null,
+          "set": "好感 += 15"
+        },
+        {
+          "slot": 2,
+          "text": "「没什么，我这就去写。」",
+          "target": "c15q6c",
+          "targetIndex": 2787,
+          "targetId": "bx9mpeke",
+          "cond": null,
+          "set": "好感 += 2"
+        }
+      ]
+    },
+    {
+      "index": 2877,
+      "id": "fdp1qtcz",
+      "speaker": "鲸鱼小姐",
+      "text": "「接下来的故事——你想要什么样的？」",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "「你想要什么样的？」",
+          "target": "c16q1a",
+          "targetIndex": 2878,
+          "targetId": "v0p0spea",
+          "cond": null,
+          "set": "好感 += 15"
+        },
+        {
+          "slot": 1,
+          "text": "「公主和王子的童话。」",
+          "target": "c16q1b",
+          "targetIndex": 2889,
+          "targetId": "oe2vmjgt",
+          "cond": null,
+          "set": "好感 += 5"
+        },
+        {
+          "slot": 2,
+          "text": "「我都行，你验收。」",
+          "target": "c16q1c",
+          "targetIndex": 2894,
+          "targetId": "tlygugmd",
+          "cond": null,
+          "set": "好感 += 3"
+        }
+      ]
+    },
+    {
+      "index": 3011,
+      "id": "7edgihqs",
+      "speaker": "鲸鱼小姐",
+      "text": "「都说了作废了！烧掉！现在！」",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "「我先看完再烧。」",
+          "target": "x1q1a",
+          "targetIndex": 3012,
+          "targetId": "v03hsp63",
+          "cond": null,
+          "set": "好感 += 5"
+        },
+        {
+          "slot": 1,
+          "text": "「这上面写的，是真的吗？」",
+          "target": "x1q1b",
+          "targetIndex": 3015,
+          "targetId": "wvtjbljv",
+          "cond": null,
+          "set": "好感 += 6"
+        },
+        {
+          "slot": 2,
+          "text": "（把纸举高）",
+          "target": "x1q1c",
+          "targetIndex": 3019,
+          "targetId": "s2qru4vv",
+          "cond": null,
+          "set": "好感 += 4"
+        }
+      ]
+    },
+    {
+      "index": 3040,
+      "id": "3wd0u0ld",
+      "speaker": "鲸鱼小姐",
+      "text": "「……外婆的东西都大了一号！你满意了吧！」",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "「很合身。」",
+          "target": "x1q2a",
+          "targetIndex": 3041,
+          "targetId": "d90rv7jd",
+          "cond": null,
+          "set": "好感 += 12"
+        },
+        {
+          "slot": 1,
+          "text": "「袜子滑下来了。」",
+          "target": "x1q2b",
+          "targetIndex": 3047,
+          "targetId": "2yxrq7t9",
+          "cond": null,
+          "set": "好感 += 4"
+        },
+        {
+          "slot": 2,
+          "text": "（默默把视线固定在她眼睛的高度）",
+          "target": "x1q2c",
+          "targetIndex": 3053,
+          "targetId": "r42yrrzn",
+          "cond": null,
+          "set": "好感 += 8"
+        }
+      ]
+    },
+    {
+      "index": 3107,
+      "id": "0zskri5m",
+      "speaker": "鲸鱼小姐",
+      "text": "「都！怪！你！」",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "「怪我什么？」",
+          "target": "x1q3a",
+          "targetIndex": 3108,
+          "targetId": "dm0wn3dy",
+          "cond": null,
+          "set": "好感 += 6"
+        },
+        {
+          "slot": 1,
+          "text": "「那我们现在回家换衣服？」",
+          "target": "x1q3b",
+          "targetIndex": 3115,
+          "targetId": "vibjp19w",
+          "cond": null,
+          "set": "好感 += 8"
+        },
+        {
+          "slot": 2,
+          "text": "「珍珠还买吗？」",
+          "target": "x1q3c",
+          "targetIndex": 3124,
+          "targetId": "05bao9of",
+          "cond": null,
+          "set": "好感 += 10"
+        }
+      ]
+    },
+    {
+      "index": 3195,
+      "id": "xy8pqg3v",
+      "speaker": null,
+      "text": "她伸出一根手指，戳了戳其中一枚贝壳。",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "「低头。我帮你戴。」",
+          "target": "x2q1a",
+          "targetIndex": 3196,
+          "targetId": "d4u0qq9z",
+          "cond": null,
+          "set": "好感 += 10"
+        },
+        {
+          "slot": 1,
+          "text": "「绳子是素了点，下次配银链。」",
+          "target": "x2q1b",
+          "targetIndex": 3201,
+          "targetId": "wbqjscsp",
+          "cond": null,
+          "set": "好感 += 6"
+        },
+        {
+          "slot": 2,
+          "text": "「不要我就收回。」",
+          "target": "x2q1c",
+          "targetIndex": 3205,
+          "targetId": "z4s127hc",
+          "cond": null,
+          "set": "好感 += 4"
+        }
+      ]
+    },
+    {
+      "index": 3250,
+      "id": "a1a1pmn3",
+      "speaker": "鲸鱼小姐",
+      "text": "「一百条，一条都不许少。」",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "「那就重新戴上，试试效果。」",
+          "target": "x2q2a",
+          "targetIndex": 3251,
+          "targetId": "bhn0rmjm",
+          "cond": null,
+          "set": "好感 += 12"
+        },
+        {
+          "slot": 1,
+          "text": "「那算了，睡觉。」",
+          "target": "x2q2b",
+          "targetIndex": 3257,
+          "targetId": "gfb6nmxk",
+          "cond": null,
+          "set": "好感 += 8"
+        },
+        {
+          "slot": 2,
+          "text": "「一百条太多了，十串行不行。」",
+          "target": "x2q2c",
+          "targetIndex": 3270,
+          "targetId": "hlio0dd3",
+          "cond": null,
+          "set": "好感 += 2"
+        }
+      ]
+    }
+  ],
+  "timedChoices": [
+    {
+      "index": 714,
+      "id": "pm8x8v2h",
+      "speaker": null,
+      "text": "来听春水第一声。",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "「这首诗……每句的第一个字。」",
+          "target": "c5q2a",
+          "targetIndex": 715,
+          "targetId": "w5tu54ij",
+          "cond": null,
+          "set": "好感 += 15"
+        },
+        {
+          "slot": 1,
+          "text": "「写得真好。教我。」",
+          "target": "c5q2b",
+          "targetIndex": 733,
+          "targetId": "5ggqqa56",
+          "cond": null,
+          "set": "好感 += 6"
+        },
+        {
+          "slot": 2,
+          "text": "（沉默）",
+          "target": "c5q2c",
+          "targetIndex": 739,
+          "targetId": "3bu4bzeb",
+          "cond": null,
+          "set": "好感 += 8"
+        }
+      ],
+      "timed": {
+        "seconds": 15,
+        "cdef": "c5q2c",
+        "defaultSlot": 2,
+        "defaultResolvedBy": "cdef"
+      }
+    },
+    {
+      "index": 1202,
+      "id": "3nnvr3w2",
+      "speaker": "鲸鱼小姐",
+      "text": "「要那种带着海水温度的，本小姐才认账。」",
+      "choices": [
+        {
+          "slot": 0,
+          "text": "「好。找一颗天青色的。」",
+          "target": "c7q9a",
+          "targetIndex": 1203,
+          "targetId": "968ath5g",
+          "cond": null,
+          "set": "好感 += 10"
+        },
+        {
+          "slot": 1,
+          "text": "「珍珠有什么好的，贝壳才——」",
+          "target": "c7q9b",
+          "targetIndex": 1211,
+          "targetId": "jj5fuw66",
+          "cond": null,
+          "set": "好感 += 2"
+        },
+        {
+          "slot": 2,
+          "text": "（沉默）",
+          "target": "c7q9c",
+          "targetIndex": 1217,
+          "targetId": "jkha3wtc",
+          "cond": null,
+          "set": "好感 += 6"
+        }
+      ],
+      "timed": {
+        "seconds": 15,
+        "cdef": "c7q9c",
+        "defaultSlot": 2,
+        "defaultResolvedBy": "cdef"
+      }
+    }
+  ],
+  "jumps": [
+    {
+      "index": 0,
+      "id": "frqml99w",
+      "jump": "第一话",
+      "jumpIf": "结局数 < 1",
+      "targetIndex": 2,
+      "targetId": "fhww88n3",
+      "fallthroughIndex": 1
+    },
+    {
+      "index": 27,
+      "id": "v17izdvn",
+      "jump": "c1m1",
+      "jumpIf": null,
+      "targetIndex": 38,
+      "targetId": "8divye5i",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 30,
+      "id": "5stlid22",
+      "jump": "c1m1",
+      "jumpIf": null,
+      "targetIndex": 38,
+      "targetId": "8divye5i",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 51,
+      "id": "acjg11ig",
+      "jump": "c1m2",
+      "jumpIf": null,
+      "targetIndex": 62,
+      "targetId": "no3hzp1r",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 59,
+      "id": "aij43nz1",
+      "jump": "c1m2",
+      "jumpIf": null,
+      "targetIndex": 62,
+      "targetId": "no3hzp1r",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 98,
+      "id": "hcrs0mry",
+      "jump": "c1m3",
+      "jumpIf": null,
+      "targetIndex": 110,
+      "targetId": "u7ne78gd",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 103,
+      "id": "8rb00mus",
+      "jump": "c1m3",
+      "jumpIf": null,
+      "targetIndex": 110,
+      "targetId": "u7ne78gd",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 129,
+      "id": "25q42u4a",
+      "jump": "c1m4",
+      "jumpIf": null,
+      "targetIndex": 137,
+      "targetId": "o3ik0z6e",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 132,
+      "id": "rfxtpyjg",
+      "jump": "c1m4",
+      "jumpIf": null,
+      "targetIndex": 137,
+      "targetId": "o3ik0z6e",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 157,
+      "id": "luv45vih",
+      "jump": "c1new_diary_note",
+      "jumpIf": null,
+      "targetIndex": 160,
+      "targetId": "69m07oj9",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 161,
+      "id": "t8mj1g9x",
+      "jump": "c1new_diary_coda",
+      "jumpIf": null,
+      "targetIndex": 163,
+      "targetId": "nh0inhqs",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 180,
+      "id": "ww8jppa2",
+      "jump": "c2m1",
+      "jumpIf": null,
+      "targetIndex": 193,
+      "targetId": "kwsqkrhm",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 188,
+      "id": "lmt2wdi5",
+      "jump": "c2m1",
+      "jumpIf": null,
+      "targetIndex": 193,
+      "targetId": "kwsqkrhm",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 217,
+      "id": "ww12xqqe",
+      "jump": "c2m2",
+      "jumpIf": null,
+      "targetIndex": 226,
+      "targetId": "8ran0ojk",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 223,
+      "id": "9lvy8mwm",
+      "jump": "c2m2",
+      "jumpIf": null,
+      "targetIndex": 226,
+      "targetId": "8ran0ojk",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 260,
+      "id": "gwl7op6h",
+      "jump": "c2m3",
+      "jumpIf": null,
+      "targetIndex": 276,
+      "targetId": "mt31fbu7",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 266,
+      "id": "joe6542h",
+      "jump": "c2m3",
+      "jumpIf": null,
+      "targetIndex": 276,
+      "targetId": "mt31fbu7",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 300,
+      "id": "jnpfwdxs",
+      "jump": "c2m4",
+      "jumpIf": null,
+      "targetIndex": 313,
+      "targetId": "8d3i7kly",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 306,
+      "id": "hnan3hhf",
+      "jump": "c2m4",
+      "jumpIf": null,
+      "targetIndex": 313,
+      "targetId": "8d3i7kly",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 377,
+      "id": "qkf81oix",
+      "jump": "c3m1",
+      "jumpIf": null,
+      "targetIndex": 391,
+      "targetId": "vl8i53gt",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 382,
+      "id": "wzlhswby",
+      "jump": "c3m1",
+      "jumpIf": null,
+      "targetIndex": 391,
+      "targetId": "vl8i53gt",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 413,
+      "id": "7d3a32aa",
+      "jump": "c3m2",
+      "jumpIf": null,
+      "targetIndex": 437,
+      "targetId": "hdv1o7vc",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 421,
+      "id": "fmps114w",
+      "jump": "c3m2",
+      "jumpIf": null,
+      "targetIndex": 437,
+      "targetId": "hdv1o7vc",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 432,
+      "id": "ttus1a2r",
+      "jump": "c3m2",
+      "jumpIf": null,
+      "targetIndex": 437,
+      "targetId": "hdv1o7vc",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 460,
+      "id": "sldr3fn7",
+      "jump": "c3m3",
+      "jumpIf": null,
+      "targetIndex": 488,
+      "targetId": "xt9dxhsx",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 473,
+      "id": "hf8lvkzr",
+      "jump": "c3m3",
+      "jumpIf": null,
+      "targetIndex": 488,
+      "targetId": "xt9dxhsx",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 560,
+      "id": "5y40plt9",
+      "jump": "c4m1",
+      "jumpIf": null,
+      "targetIndex": 581,
+      "targetId": "iyy24jn3",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 568,
+      "id": "3o8wcgff",
+      "jump": "c4m1",
+      "jumpIf": null,
+      "targetIndex": 581,
+      "targetId": "iyy24jn3",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 604,
+      "id": "a1xvchvd",
+      "jump": "c4m2",
+      "jumpIf": null,
+      "targetIndex": 625,
+      "targetId": "tlf961cf",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 611,
+      "id": "3axof5da",
+      "jump": "c4m2",
+      "jumpIf": null,
+      "targetIndex": 625,
+      "targetId": "tlf961cf",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 686,
+      "id": "ky2bo9j3",
+      "jump": "c5m1",
+      "jumpIf": null,
+      "targetIndex": 697,
+      "targetId": "2ecib8lq",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 689,
+      "id": "i0nn5u0t",
+      "jump": "c5m1",
+      "jumpIf": null,
+      "targetIndex": 697,
+      "targetId": "2ecib8lq",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 732,
+      "id": "en5kz0xa",
+      "jump": "c5m2",
+      "jumpIf": null,
+      "targetIndex": 754,
+      "targetId": "znxhnbic",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 738,
+      "id": "zj7zrfob",
+      "jump": "c5m2",
+      "jumpIf": null,
+      "targetIndex": 754,
+      "targetId": "znxhnbic",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 799,
+      "id": "bxim6lad",
+      "jump": "c6m1",
+      "jumpIf": null,
+      "targetIndex": 808,
+      "targetId": "uij1l3w9",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 803,
+      "id": "az2au3b8",
+      "jump": "c6m1",
+      "jumpIf": null,
+      "targetIndex": 808,
+      "targetId": "uij1l3w9",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 855,
+      "id": "gs251l5z",
+      "jump": "c6m2",
+      "jumpIf": null,
+      "targetIndex": 876,
+      "targetId": "e5x6ibdn",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 866,
+      "id": "q3p4q1h9",
+      "jump": "c6m2",
+      "jumpIf": null,
+      "targetIndex": 876,
+      "targetId": "e5x6ibdn",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 939,
+      "id": "73ceprlo",
+      "jump": "c7m1",
+      "jumpIf": null,
+      "targetIndex": 947,
+      "targetId": "q0i9xjy7",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 946,
+      "id": "q9vppunm",
+      "jump": "c7m1",
+      "jumpIf": null,
+      "targetIndex": 947,
+      "targetId": "q0i9xjy7",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 969,
+      "id": "f224mvcg",
+      "jump": "c7q2a",
+      "jumpIf": null,
+      "targetIndex": 970,
+      "targetId": "ha83ki1g",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 1014,
+      "id": "nwdc1nbd",
+      "jump": "c7m2",
+      "jumpIf": null,
+      "targetIndex": 1028,
+      "targetId": "xgkvacl0",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 1024,
+      "id": "gf2jm7cj",
+      "jump": "c7m2",
+      "jumpIf": null,
+      "targetIndex": 1028,
+      "targetId": "xgkvacl0",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 1039,
+      "id": "1pdxmyqq",
+      "jump": "c7m3",
+      "jumpIf": null,
+      "targetIndex": 1051,
+      "targetId": "m9sfto61",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 1046,
+      "id": "vbr93epu",
+      "jump": "c7m3",
+      "jumpIf": null,
+      "targetIndex": 1051,
+      "targetId": "m9sfto61",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 1103,
+      "id": "2qujlcft",
+      "jump": "c7m4",
+      "jumpIf": null,
+      "targetIndex": 1115,
+      "targetId": "lvip64kt",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 1118,
+      "id": "c1o2fo66",
+      "jump": "c7m4b",
+      "jumpIf": "贝壳延后 < 1",
+      "targetIndex": 1120,
+      "targetId": "t8sj2q7d",
+      "fallthroughIndex": 1119
+    },
+    {
+      "index": 1135,
+      "id": "uq167xpj",
+      "jump": "c7m5",
+      "jumpIf": null,
+      "targetIndex": 1149,
+      "targetId": "saqg1vhn",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 1141,
+      "id": "yj7dx1em",
+      "jump": "c7m5",
+      "jumpIf": null,
+      "targetIndex": 1149,
+      "targetId": "saqg1vhn",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 1160,
+      "id": "7ca0iore",
+      "jump": "c7m6",
+      "jumpIf": null,
+      "targetIndex": 1166,
+      "targetId": "s4b4epfr",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 1180,
+      "id": "xo5y4hsv",
+      "jump": "c7m7",
+      "jumpIf": null,
+      "targetIndex": 1194,
+      "targetId": "irsfbuwm",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 1188,
+      "id": "bqcy8x49",
+      "jump": "c7m7",
+      "jumpIf": null,
+      "targetIndex": 1194,
+      "targetId": "irsfbuwm",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 1210,
+      "id": "fj163xl3",
+      "jump": "c7m8",
+      "jumpIf": null,
+      "targetIndex": 1224,
+      "targetId": "lkvxb3zd",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 1216,
+      "id": "mzszdg2q",
+      "jump": "c7m8",
+      "jumpIf": null,
+      "targetIndex": 1224,
+      "targetId": "lkvxb3zd",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 1258,
+      "id": "cmn8osnt",
+      "jump": "c8m1",
+      "jumpIf": null,
+      "targetIndex": 1269,
+      "targetId": "y7e3r4ub",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 1263,
+      "id": "5ene7ldi",
+      "jump": "c8m1",
+      "jumpIf": null,
+      "targetIndex": 1269,
+      "targetId": "y7e3r4ub",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 1349,
+      "id": "hrbgrque",
+      "jump": "c8m2",
+      "jumpIf": null,
+      "targetIndex": 1360,
+      "targetId": "fjthjusc",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 1354,
+      "id": "1bgcv6yh",
+      "jump": "c8m2",
+      "jumpIf": null,
+      "targetIndex": 1360,
+      "targetId": "fjthjusc",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 1455,
+      "id": "1e825izt",
+      "jump": "c8m3",
+      "jumpIf": null,
+      "targetIndex": 1463,
+      "targetId": "k00peshl",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 1459,
+      "id": "8sbqc1z2",
+      "jump": "c8m3",
+      "jumpIf": null,
+      "targetIndex": 1463,
+      "targetId": "k00peshl",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 1534,
+      "id": "6d8dd6m2",
+      "jump": "c9m1",
+      "jumpIf": null,
+      "targetIndex": 1546,
+      "targetId": "swb6k9wp",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 1539,
+      "id": "c2556srw",
+      "jump": "c9m1",
+      "jumpIf": null,
+      "targetIndex": 1546,
+      "targetId": "swb6k9wp",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 1571,
+      "id": "jrrtsagn",
+      "jump": "c9m2",
+      "jumpIf": null,
+      "targetIndex": 1576,
+      "targetId": "x68g8tf7",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 1581,
+      "id": "efeiv5ck",
+      "jump": "c9star1",
+      "jumpIf": "海星放生 == 1",
+      "targetIndex": 1583,
+      "targetId": "amyvc8xc",
+      "fallthroughIndex": 1582
+    },
+    {
+      "index": 1584,
+      "id": "53ot3kuk",
+      "jump": "c9star2",
+      "jumpIf": "海星放生 == 1",
+      "targetIndex": 1586,
+      "targetId": "6c06yccj",
+      "fallthroughIndex": 1585
+    },
+    {
+      "index": 1780,
+      "id": "a87ekdcz",
+      "jump": "c11m1",
+      "jumpIf": null,
+      "targetIndex": 1810,
+      "targetId": "vmp2z3v5",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 1795,
+      "id": "lc9g7l5k",
+      "jump": "c11m1",
+      "jumpIf": null,
+      "targetIndex": 1810,
+      "targetId": "vmp2z3v5",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 1878,
+      "id": "grjcha62",
+      "jump": "c12m1",
+      "jumpIf": null,
+      "targetIndex": 1887,
+      "targetId": "hv641e95",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 1882,
+      "id": "rxsdhe1u",
+      "jump": "c12m1",
+      "jumpIf": null,
+      "targetIndex": 1887,
+      "targetId": "hv641e95",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 1975,
+      "id": "mc2iasln",
+      "jump": "c12m2",
+      "jumpIf": null,
+      "targetIndex": 1985,
+      "targetId": "38h026h7",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 1979,
+      "id": "lcxadwvr",
+      "jump": "c12m2",
+      "jumpIf": null,
+      "targetIndex": 1985,
+      "targetId": "38h026h7",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 1993,
+      "id": "l7i7ovig",
+      "jump": "c12m3",
+      "jumpIf": null,
+      "targetIndex": 2021,
+      "targetId": "hkq3m6vy",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 2060,
+      "id": "4cochz3i",
+      "jump": "c13m1",
+      "jumpIf": null,
+      "targetIndex": 2075,
+      "targetId": "yocv4zc0",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 2064,
+      "id": "8q6fi63f",
+      "jump": "c13m1",
+      "jumpIf": null,
+      "targetIndex": 2075,
+      "targetId": "yocv4zc0",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 2074,
+      "id": "mmj63n4b",
+      "jump": "c13m1",
+      "jumpIf": null,
+      "targetIndex": 2075,
+      "targetId": "yocv4zc0",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 2134,
+      "id": "t7g6fdxa",
+      "jump": "c13m2",
+      "jumpIf": null,
+      "targetIndex": 2154,
+      "targetId": "o9he752e",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 2142,
+      "id": "n3pmgd3y",
+      "jump": "c13m2",
+      "jumpIf": null,
+      "targetIndex": 2154,
+      "targetId": "o9he752e",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 2153,
+      "id": "lgir0j44",
+      "jump": "c13m2",
+      "jumpIf": null,
+      "targetIndex": 2154,
+      "targetId": "o9he752e",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 2169,
+      "id": "o1trwdk9",
+      "jump": "c13m3",
+      "jumpIf": null,
+      "targetIndex": 2178,
+      "targetId": "99apnx6j",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 2172,
+      "id": "j910ce45",
+      "jump": "c13m3",
+      "jumpIf": null,
+      "targetIndex": 2178,
+      "targetId": "99apnx6j",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 2177,
+      "id": "by9gshh2",
+      "jump": "c13m3",
+      "jumpIf": null,
+      "targetIndex": 2178,
+      "targetId": "99apnx6j",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 2212,
+      "id": "9dsqz1em",
+      "jump": "c13m4",
+      "jumpIf": null,
+      "targetIndex": 2222,
+      "targetId": "fbj5mg6r",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 2218,
+      "id": "a8mgndqs",
+      "jump": "c13m4",
+      "jumpIf": null,
+      "targetIndex": 2222,
+      "targetId": "fbj5mg6r",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 2221,
+      "id": "ect429sn",
+      "jump": "c13m4",
+      "jumpIf": null,
+      "targetIndex": 2222,
+      "targetId": "fbj5mg6r",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 2284,
+      "id": "vce447dt",
+      "jump": "c13m5",
+      "jumpIf": null,
+      "targetIndex": 2305,
+      "targetId": "h88gkrlm",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 2289,
+      "id": "k1t1ow12",
+      "jump": "c13m5",
+      "jumpIf": null,
+      "targetIndex": 2305,
+      "targetId": "h88gkrlm",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 2304,
+      "id": "yrqctlmn",
+      "jump": "c13m5",
+      "jumpIf": null,
+      "targetIndex": 2305,
+      "targetId": "h88gkrlm",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 2340,
+      "id": "acciw1p6",
+      "jump": "c14q1a",
+      "jumpIf": null,
+      "targetIndex": 2345,
+      "targetId": "944gqhfr",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 2344,
+      "id": "yl3lgkby",
+      "jump": "c14q1a",
+      "jumpIf": null,
+      "targetIndex": 2345,
+      "targetId": "944gqhfr",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 2353,
+      "id": "1oojqslj",
+      "jump": "c14m1",
+      "jumpIf": null,
+      "targetIndex": 2354,
+      "targetId": "ek5d340t",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 2412,
+      "id": "2ecobrvk",
+      "jump": "c14m2",
+      "jumpIf": null,
+      "targetIndex": 2467,
+      "targetId": "3zei0ire",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 2451,
+      "id": "gha3filx",
+      "jump": "c14m2b",
+      "jumpIf": null,
+      "targetIndex": 2469,
+      "targetId": "9a9pf17w",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 2466,
+      "id": "9vmv8ny9",
+      "jump": "c14m2",
+      "jumpIf": null,
+      "targetIndex": 2467,
+      "targetId": "3zei0ire",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 2489,
+      "id": "u2mxfp6w",
+      "jump": "c14r5",
+      "jumpIf": "玩笑 < 1",
+      "targetIndex": 2493,
+      "targetId": "1794nozx",
+      "fallthroughIndex": 2490
+    },
+    {
+      "index": 2497,
+      "id": "mr8xxs4z",
+      "jump": "c14m3",
+      "jumpIf": null,
+      "targetIndex": 2507,
+      "targetId": "80x191l0",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 2502,
+      "id": "9qwi02v6",
+      "jump": "c14m3",
+      "jumpIf": null,
+      "targetIndex": 2507,
+      "targetId": "80x191l0",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 2506,
+      "id": "jpi8ae5r",
+      "jump": "c14m3",
+      "jumpIf": null,
+      "targetIndex": 2507,
+      "targetId": "80x191l0",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 2561,
+      "id": "iof8fzpq",
+      "jump": "c15m1",
+      "jumpIf": null,
+      "targetIndex": 2570,
+      "targetId": "igqkcqlc",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 2565,
+      "id": "byz3qozb",
+      "jump": "c15m1",
+      "jumpIf": null,
+      "targetIndex": 2570,
+      "targetId": "igqkcqlc",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 2593,
+      "id": "c0alapzz",
+      "jump": "c15m2",
+      "jumpIf": null,
+      "targetIndex": 2605,
+      "targetId": "pwt4swam",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 2600,
+      "id": "acwjzlla",
+      "jump": "c15m2",
+      "jumpIf": null,
+      "targetIndex": 2605,
+      "targetId": "pwt4swam",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 2616,
+      "id": "dbevfkto",
+      "jump": "c15m3",
+      "jumpIf": null,
+      "targetIndex": 2626,
+      "targetId": "hq0s5hxx",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 2620,
+      "id": "mes3nlod",
+      "jump": "c15m3",
+      "jumpIf": null,
+      "targetIndex": 2626,
+      "targetId": "hq0s5hxx",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 2648,
+      "id": "flokg5qg",
+      "jump": "c15m4",
+      "jumpIf": null,
+      "targetIndex": 2677,
+      "targetId": "120jgidx",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 2661,
+      "id": "aadh9k5p",
+      "jump": "c15m4",
+      "jumpIf": null,
+      "targetIndex": 2677,
+      "targetId": "120jgidx",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 2712,
+      "id": "13fgkssa",
+      "jump": "c15m5",
+      "jumpIf": null,
+      "targetIndex": 2727,
+      "targetId": "csl3yegj",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 2718,
+      "id": "tzy5yacr",
+      "jump": "c15m5",
+      "jumpIf": null,
+      "targetIndex": 2727,
+      "targetId": "csl3yegj",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 2766,
+      "id": "brbz57ti",
+      "jump": "c15m6",
+      "jumpIf": null,
+      "targetIndex": 2792,
+      "targetId": "j90c0u5n",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 2786,
+      "id": "u9luezsf",
+      "jump": "c15m6",
+      "jumpIf": null,
+      "targetIndex": 2792,
+      "targetId": "j90c0u5n",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 2888,
+      "id": "0mwt1rw6",
+      "jump": "c16m1",
+      "jumpIf": null,
+      "targetIndex": 2899,
+      "targetId": "1pzuaf7p",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 2893,
+      "id": "fi3v9wc8",
+      "jump": "c16m1",
+      "jumpIf": null,
+      "targetIndex": 2899,
+      "targetId": "1pzuaf7p",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 2933,
+      "id": "uxdrpmrb",
+      "jump": "c16low",
+      "jumpIf": "好感 < 362",
+      "targetIndex": 2960,
+      "targetId": "kyg6ltxc",
+      "fallthroughIndex": 2934
+    },
+    {
+      "index": 2967,
+      "id": "4hmx6ind",
+      "jump": "c16low2",
+      "jumpIf": "玩笑 < 1",
+      "targetIndex": 2970,
+      "targetId": "q4rkztvo",
+      "fallthroughIndex": 2968
+    },
+    {
+      "index": 3014,
+      "id": "e12kxmes",
+      "jump": "x1m1",
+      "jumpIf": null,
+      "targetIndex": 3024,
+      "targetId": "z60nxgnf",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 3018,
+      "id": "qsz7vcof",
+      "jump": "x1m1",
+      "jumpIf": null,
+      "targetIndex": 3024,
+      "targetId": "z60nxgnf",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 3023,
+      "id": "rzycq3ym",
+      "jump": "x1m1",
+      "jumpIf": null,
+      "targetIndex": 3024,
+      "targetId": "z60nxgnf",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 3046,
+      "id": "rddfup87",
+      "jump": "x1m2",
+      "jumpIf": null,
+      "targetIndex": 3058,
+      "targetId": "kmn3n04n",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 3052,
+      "id": "5jxw257l",
+      "jump": "x1m2",
+      "jumpIf": null,
+      "targetIndex": 3058,
+      "targetId": "kmn3n04n",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 3057,
+      "id": "9bmc4yjj",
+      "jump": "x1m2",
+      "jumpIf": null,
+      "targetIndex": 3058,
+      "targetId": "kmn3n04n",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 3114,
+      "id": "8ppjlhr6",
+      "jump": "x1m3",
+      "jumpIf": null,
+      "targetIndex": 3142,
+      "targetId": "jrn2e2pd",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 3123,
+      "id": "z0qq3a7b",
+      "jump": "x1m3",
+      "jumpIf": null,
+      "targetIndex": 3142,
+      "targetId": "jrn2e2pd",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 3141,
+      "id": "gvuo4ujc",
+      "jump": "x1m3",
+      "jumpIf": null,
+      "targetIndex": 3142,
+      "targetId": "jrn2e2pd",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 3200,
+      "id": "kni6d9se",
+      "jump": "x2m1",
+      "jumpIf": null,
+      "targetIndex": 3212,
+      "targetId": "o5vfiuec",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 3204,
+      "id": "mji826t1",
+      "jump": "x2m1",
+      "jumpIf": null,
+      "targetIndex": 3212,
+      "targetId": "o5vfiuec",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 3211,
+      "id": "omt7qscx",
+      "jump": "x2m1",
+      "jumpIf": null,
+      "targetIndex": 3212,
+      "targetId": "o5vfiuec",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 3256,
+      "id": "crpuo4dw",
+      "jump": "x2m2",
+      "jumpIf": null,
+      "targetIndex": 3274,
+      "targetId": "a8qve0p6",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 3269,
+      "id": "57v9qore",
+      "jump": "x2m2",
+      "jumpIf": null,
+      "targetIndex": 3274,
+      "targetId": "a8qve0p6",
+      "fallthroughIndex": null
+    },
+    {
+      "index": 3273,
+      "id": "22ckqhon",
+      "jump": "x2m2",
+      "jumpIf": null,
+      "targetIndex": 3274,
+      "targetId": "a8qve0p6",
+      "fallthroughIndex": null
+    }
+  ],
+  "endings": [
+    {
+      "index": 2959,
+      "id": "rd82wls0",
+      "ending": "海风与布丁",
+      "hasText": true
+    },
+    {
+      "index": 3001,
+      "id": "0xorudfo",
+      "ending": "退潮之后",
+      "hasText": true
+    },
+    {
+      "index": 3176,
+      "id": "q0ja0rfn",
+      "ending": "番外篇一",
+      "hasText": true
+    },
+    {
+      "index": 3314,
+      "id": "m5dl9wju",
+      "ending": "番外篇二",
+      "hasText": true
+    }
+  ],
+  "bgmRuns": [
+    {
+      "index": 0,
+      "id": "frqml99w",
+      "bgm": null,
+      "fadeOutMs": null
+    },
+    {
+      "index": 3,
+      "id": "cpdjaftu",
+      "bgm": "bgm_atri_e7_reflection",
+      "fadeOutMs": 120
+    },
+    {
+      "index": 12,
+      "id": "ktsw1bk3",
+      "bgm": null,
+      "fadeOutMs": 50
+    },
+    {
+      "index": 19,
+      "id": "1ab8nnfn",
+      "bgm": "bgm_emerald_dream_main_v01",
+      "fadeOutMs": null
+    },
+    {
+      "index": 137,
+      "id": "o3ik0z6e",
+      "bgm": "bgm_atri_t3_dusk",
+      "fadeOutMs": 2200
+    },
+    {
+      "index": 167,
+      "id": "ug2p5hux",
+      "bgm": "bgm_atri_e1_comedy",
+      "fadeOutMs": 600
+    },
+    {
+      "index": 200,
+      "id": "3frz0272",
+      "bgm": "bgm_emerald_dream_main_v01",
+      "fadeOutMs": 120
+    },
+    {
+      "index": 276,
+      "id": "mt31fbu7",
+      "bgm": "bgm_emerald_dream_piano",
+      "fadeOutMs": null
+    },
+    {
+      "index": 328,
+      "id": "qmcoedvg",
+      "bgm": "bgm_atri_t4_night",
+      "fadeOutMs": 600
+    },
+    {
+      "index": 344,
+      "id": "5rviaadn",
+      "bgm": "bgm_m1_shallows_day",
+      "fadeOutMs": 600
+    },
+    {
+      "index": 391,
+      "id": "vl8i53gt",
+      "bgm": "bgm_atri_m2_deep",
+      "fadeOutMs": 120
+    },
+    {
+      "index": 399,
+      "id": "smyc1237",
+      "bgm": "bgm_e2_deepsea_main",
+      "fadeOutMs": null
+    },
+    {
+      "index": 488,
+      "id": "xt9dxhsx",
+      "bgm": "bgm_e2_deepsea_piano",
+      "fadeOutMs": 600
+    },
+    {
+      "index": 505,
+      "id": "vanrm482",
+      "bgm": "bgm_atri_e7_reflection",
+      "fadeOutMs": 120
+    },
+    {
+      "index": 516,
+      "id": "badnaywq",
+      "bgm": null,
+      "fadeOutMs": 120
+    },
+    {
+      "index": 518,
+      "id": "aj4zr27s",
+      "bgm": "bgm_atri_m3_market",
+      "fadeOutMs": null
+    },
+    {
+      "index": 537,
+      "id": "zeyzvujn",
+      "bgm": "bgm_atri_e1_comedy",
+      "fadeOutMs": 120
+    },
+    {
+      "index": 581,
+      "id": "iyy24jn3",
+      "bgm": "bgm_atri_m3_market",
+      "fadeOutMs": 120
+    },
+    {
+      "index": 625,
+      "id": "tlf961cf",
+      "bgm": "bgm_e2_deepsea_piano",
+      "fadeOutMs": 600
+    },
+    {
+      "index": 643,
+      "id": "33pn4sgx",
+      "bgm": "bgm_atri_t4_night",
+      "fadeOutMs": 600
+    },
+    {
+      "index": 793,
+      "id": "kd5wxs1m",
+      "bgm": "bgm_atri_e7_reflection",
+      "fadeOutMs": 120
+    },
+    {
+      "index": 832,
+      "id": "x33w4xyw",
+      "bgm": "bgm_atri_t4_night",
+      "fadeOutMs": 120
+    },
+    {
+      "index": 912,
+      "id": "b4jmf68g",
+      "bgm": "bgm_m1_shallows_day",
+      "fadeOutMs": 600
+    },
+    {
+      "index": 1121,
+      "id": "km6vpi55",
+      "bgm": "bgm_atri_t3_dusk",
+      "fadeOutMs": null
+    },
+    {
+      "index": 1224,
+      "id": "lkvxb3zd",
+      "bgm": "bgm_atri_t4_night",
+      "fadeOutMs": 600
+    },
+    {
+      "index": 1269,
+      "id": "y7e3r4ub",
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "fadeOutMs": null
+    },
+    {
+      "index": 1318,
+      "id": "8ejoj0nu",
+      "bgm": "bgm_m1_shallows_day",
+      "fadeOutMs": 600
+    },
+    {
+      "index": 1360,
+      "id": "fjthjusc",
+      "bgm": "bgm_atri_e5_e6_candidate",
+      "fadeOutMs": 600
+    },
+    {
+      "index": 1406,
+      "id": "epdyug2y",
+      "bgm": "bgm_atri_t4_night",
+      "fadeOutMs": 0
+    },
+    {
+      "index": 1481,
+      "id": "mt2xvvi8",
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "fadeOutMs": null
+    },
+    {
+      "index": 1497,
+      "id": "5s7jn3bz",
+      "bgm": null,
+      "fadeOutMs": 0
+    },
+    {
+      "index": 1576,
+      "id": "x68g8tf7",
+      "bgm": "bgm_e4_sunset_wait",
+      "fadeOutMs": 600
+    },
+    {
+      "index": 1617,
+      "id": "kg0expss",
+      "bgm": null,
+      "fadeOutMs": 600
+    },
+    {
+      "index": 1678,
+      "id": "17nl2n08",
+      "bgm": "bgm_e4_sunset_wait",
+      "fadeOutMs": null
+    },
+    {
+      "index": 1699,
+      "id": "rk1osh6e",
+      "bgm": null,
+      "fadeOutMs": 600
+    },
+    {
+      "index": 1743,
+      "id": "0dejux6h",
+      "bgm": "bgm_e4_sunset_wait",
+      "fadeOutMs": 600
+    },
+    {
+      "index": 1758,
+      "id": "yf5lgvkv",
+      "bgm": null,
+      "fadeOutMs": null
+    },
+    {
+      "index": 1810,
+      "id": "vmp2z3v5",
+      "bgm": "bgm_atri_e5_reconcile",
+      "fadeOutMs": null
+    },
+    {
+      "index": 1859,
+      "id": "rwdglh2l",
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "fadeOutMs": null
+    },
+    {
+      "index": 1942,
+      "id": "5edtr14s",
+      "bgm": "bgm_atri_m3_market",
+      "fadeOutMs": null
+    },
+    {
+      "index": 2021,
+      "id": "hkq3m6vy",
+      "bgm": "bgm_atri_t4_night",
+      "fadeOutMs": 600
+    },
+    {
+      "index": 2042,
+      "id": "y9gbnyua",
+      "bgm": "bgm_atri_m3_market",
+      "fadeOutMs": null
+    },
+    {
+      "index": 2154,
+      "id": "o9he752e",
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "fadeOutMs": null
+    },
+    {
+      "index": 2178,
+      "id": "99apnx6j",
+      "bgm": "bgm_atri_m3_market",
+      "fadeOutMs": null
+    },
+    {
+      "index": 2258,
+      "id": "9x9ajos6",
+      "bgm": "bgm_atri_t4_night",
+      "fadeOutMs": 600
+    },
+    {
+      "index": 2315,
+      "id": "sowauzps",
+      "bgm": "bgm_atri_e5_e6_candidate",
+      "fadeOutMs": null
+    },
+    {
+      "index": 2354,
+      "id": "ek5d340t",
+      "bgm": null,
+      "fadeOutMs": 0
+    },
+    {
+      "index": 2507,
+      "id": "80x191l0",
+      "bgm": "bgm_atri_e5_reconcile",
+      "fadeOutMs": 600
+    },
+    {
+      "index": 2520,
+      "id": "wpbeqsux",
+      "bgm": "bgm_atri_t4_night",
+      "fadeOutMs": 600
+    },
+    {
+      "index": 2539,
+      "id": "5e674e1q",
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "fadeOutMs": null
+    },
+    {
+      "index": 2570,
+      "id": "igqkcqlc",
+      "bgm": "bgm_m1_shallows_day",
+      "fadeOutMs": 600
+    },
+    {
+      "index": 2626,
+      "id": "hq0s5hxx",
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "fadeOutMs": null
+    },
+    {
+      "index": 2691,
+      "id": "pctfqhja",
+      "bgm": "bgm_e2_deepsea_piano",
+      "fadeOutMs": 600
+    },
+    {
+      "index": 2727,
+      "id": "csl3yegj",
+      "bgm": "bgm_atri_t3_dusk",
+      "fadeOutMs": null
+    },
+    {
+      "index": 2807,
+      "id": "swdjrmic",
+      "bgm": "bgm_atri_t4_night",
+      "fadeOutMs": 600
+    },
+    {
+      "index": 2833,
+      "id": "fpqxbbut",
+      "bgm": "bgm_atri_m3_market",
+      "fadeOutMs": null
+    },
+    {
+      "index": 2860,
+      "id": "pz8195kk",
+      "bgm": "bgm_e2_deepsea_main",
+      "fadeOutMs": 600
+    },
+    {
+      "index": 2944,
+      "id": "h0y3fdtk",
+      "bgm": "bgm_atri_t4_night",
+      "fadeOutMs": null
+    },
+    {
+      "index": 3025,
+      "id": "h6tz7yf9",
+      "bgm": "bgm_m1_shallows_day",
+      "fadeOutMs": null
+    },
+    {
+      "index": 3058,
+      "id": "kmn3n04n",
+      "bgm": "bgm_atri_m3_market",
+      "fadeOutMs": null
+    },
+    {
+      "index": 3076,
+      "id": "ahmvu8rr",
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "fadeOutMs": null
+    },
+    {
+      "index": 3088,
+      "id": "yr4mrn6l",
+      "bgm": "bgm_atri_m3_market",
+      "fadeOutMs": null
+    },
+    {
+      "index": 3142,
+      "id": "jrn2e2pd",
+      "bgm": "bgm_atri_t4_night",
+      "fadeOutMs": 600
+    },
+    {
+      "index": 3177,
+      "id": "t2r382zo",
+      "bgm": "bgm_atri_t3_dusk",
+      "fadeOutMs": null
+    },
+    {
+      "index": 3212,
+      "id": "o5vfiuec",
+      "bgm": "bgm_atri_t4_night",
+      "fadeOutMs": 600
+    },
+    {
+      "index": 3282,
+      "id": "lyflxyis",
+      "bgm": "bgm_emerald_dream_main_v01",
+      "fadeOutMs": null
+    },
+    {
+      "index": 3298,
+      "id": "wd2p4jns",
+      "bgm": "bgm_m1_shallows_day",
+      "fadeOutMs": 600
+    }
+  ],
+  "domains": {
+    "trans": [
+      "black",
+      "cut",
+      "fade",
+      "flash",
+      "none"
+    ],
+    "fx": [
+      "blink",
+      "flash",
+      "quake",
+      "shake",
+      "whip",
+      "zoom"
+    ],
+    "mood": [
+      "dark",
+      "dizzy",
+      "gray",
+      "slowmo",
+      "sway",
+      "underwater"
+    ],
+    "acts": [
+      "flinch",
+      "jump",
+      "lean",
+      "nod",
+      "settle",
+      "shake"
+    ],
+    "spriteKeys": [
+      "asset",
+      "flip",
+      "h",
+      "in",
+      "look",
+      "out",
+      "poseSwitch",
+      "uid",
+      "x",
+      "y"
+    ],
+    "spriteIn": [
+      "pop",
+      "right"
+    ],
+    "spriteOut": [
+      "right"
+    ],
+    "spriteLook": [
+      "gray",
+      "shadow"
+    ],
+    "spritePoseSwitch": [
+      "soft"
+    ],
+    "ambienceKeys": [
+      "gain",
+      "id"
+    ],
+    "seEventKeys": [
+      "delayMs",
+      "gain",
+      "id"
+    ],
+    "choiceKeys": [
+      "cond",
+      "set",
+      "target",
+      "text"
+    ],
+    "waitValues": [
+      0.6,
+      0.7,
+      1,
+      1.5,
+      2
+    ],
+    "typeMulValues": [
+      0.6,
+      1.5,
+      1.6,
+      1.8,
+      2.2
+    ],
+    "holdMsValues": [
+      300,
+      450,
+      500,
+      700
+    ],
+    "musicFadeOutMsValues": [
+      0,
+      50,
+      120,
+      600,
+      2200
+    ],
+    "maxSpritesPerNode": 1,
+    "maxAmbiencePerNode": 3,
+    "textPlaceholders": [],
+    "savePointTexts": 19
+  },
+  "fieldUse": {
+    "label": {
+      "present": 3315,
+      "nonDefault": 242
+    },
+    "chapter": {
+      "present": 3315,
+      "nonDefault": 18
+    },
+    "trans": {
+      "present": 3315,
+      "nonDefault": 3315
+    },
+    "fx": {
+      "present": 3315,
+      "nonDefault": 35
+    },
+    "mood": {
+      "present": 3315,
+      "nonDefault": 215
+    },
+    "wait": {
+      "present": 3315,
+      "nonDefault": 46
+    },
+    "acts": {
+      "present": 3315,
+      "nonDefault": 80
+    },
+    "voice": {
+      "present": 3315,
+      "nonDefault": 715
+    },
+    "se": {
+      "present": 3315,
+      "nonDefault": 0
+    },
+    "set": {
+      "present": 3315,
+      "nonDefault": 180
+    },
+    "choices": {
+      "present": 3315,
+      "nonDefault": 58
+    },
+    "ctime": {
+      "present": 3315,
+      "nonDefault": 2
+    },
+    "cdef": {
+      "present": 3315,
+      "nonDefault": 2
+    },
+    "jump": {
+      "present": 3315,
+      "nonDefault": 128
+    },
+    "jumpIf": {
+      "present": 3315,
+      "nonDefault": 7
+    },
+    "agent": {
+      "present": 3315,
+      "nonDefault": 0
+    },
+    "bgm": {
+      "present": 3315,
+      "nonDefault": 2914
+    },
+    "amb": {
+      "present": 3315,
+      "nonDefault": 0
+    },
+    "ambv": {
+      "present": 3315,
+      "nonDefault": 3315
+    },
+    "amb2": {
+      "present": 3315,
+      "nonDefault": 0
+    },
+    "amb2v": {
+      "present": 3315,
+      "nonDefault": 3315
+    },
+    "ending": {
+      "present": 3315,
+      "nonDefault": 4
+    },
+    "id": {
+      "present": 3315,
+      "nonDefault": 3315
+    },
+    "speaker": {
+      "present": 3315,
+      "nonDefault": 1824
+    },
+    "text": {
+      "present": 3315,
+      "nonDefault": 3268
+    },
+    "bg": {
+      "present": 3315,
+      "nonDefault": 3315
+    },
+    "sprites": {
+      "present": 3315,
+      "nonDefault": 2584
+    },
+    "ambience": {
+      "present": 3315,
+      "nonDefault": 3297
+    },
+    "_musicCue": {
+      "present": 90,
+      "nonDefault": 90
+    },
+    "_musicFadeOutMs": {
+      "present": 75,
+      "nonDefault": 70
+    },
+    "typeMul": {
+      "present": 6,
+      "nonDefault": 6
+    },
+    "holdMs": {
+      "present": 4,
+      "nonDefault": 4
+    },
+    "seEvents": {
+      "present": 102,
+      "nonDefault": 90
+    },
+    "motionCount": {
+      "present": 1,
+      "nonDefault": 1
+    }
+  },
+  "unconsumedFields": [
+    "_musicCue",
+    "motionCount"
+  ],
+  "assetTypes": {
+    "bg": {
+      "registered": 91,
+      "referenced": 85,
+      "unreferenced": 6,
+      "retired": 0,
+      "auditionOnly": 0,
+      "cg": 33
+    },
+    "se": {
+      "registered": 103,
+      "referenced": 43,
+      "unreferenced": 60,
+      "retired": 0,
+      "auditionOnly": 48,
+      "cg": 0
+    },
+    "ch": {
+      "registered": 57,
+      "referenced": 55,
+      "unreferenced": 2,
+      "retired": 0,
+      "auditionOnly": 0,
+      "cg": 0
+    },
+    "bgm": {
+      "registered": 17,
+      "referenced": 15,
+      "unreferenced": 2,
+      "retired": 1,
+      "auditionOnly": 2,
+      "cg": 0
+    },
+    "vo": {
+      "registered": 715,
+      "referenced": 715,
+      "unreferenced": 0,
+      "retired": 0,
+      "auditionOnly": 0,
+      "cg": 0
+    }
+  },
+  "assetsUnreferenced": [
+    {
+      "id": "yjxp4irw",
+      "type": "bg",
+      "name": "CG_夏日沙洲",
+      "retired": false,
+      "auditionOnly": false
+    },
+    {
+      "id": "mni51ori",
+      "type": "se",
+      "name": "作者原声·UI_CG",
+      "retired": false,
+      "auditionOnly": false
+    },
+    {
+      "id": "yq8tcybf",
+      "type": "se",
+      "name": "作者原声·UI_好感上升",
+      "retired": false,
+      "auditionOnly": false
+    },
+    {
+      "id": "dwromo3v",
+      "type": "se",
+      "name": "作者原声·UI_好感下降",
+      "retired": false,
+      "auditionOnly": false
+    },
+    {
+      "id": "jsxl4tcf",
+      "type": "se",
+      "name": "作者原声·UI_存档",
+      "retired": false,
+      "auditionOnly": false
+    },
+    {
+      "id": "ayhs65mz",
+      "type": "se",
+      "name": "作者原声·UI_尾鳍标记",
+      "retired": false,
+      "auditionOnly": false
+    },
+    {
+      "id": "ubotdcr5",
+      "type": "se",
+      "name": "作者原声·UI_新结局",
+      "retired": false,
+      "auditionOnly": false
+    },
+    {
+      "id": "84dehvnk",
+      "type": "se",
+      "name": "作者原声·UI_话末",
+      "retired": false,
+      "auditionOnly": false
+    },
+    {
+      "id": "0l5canwg",
+      "type": "se",
+      "name": "作者原声·UI_超时沉默",
+      "retired": false,
+      "auditionOnly": true
+    },
+    {
+      "id": "084gbl61",
+      "type": "se",
+      "name": "作者原声·UI_退潮线倒计时",
+      "retired": false,
+      "auditionOnly": false
+    },
+    {
+      "id": "b6keau2r",
+      "type": "se",
+      "name": "作者原声·UI_选项出现",
+      "retired": false,
+      "auditionOnly": false
+    },
+    {
+      "id": "f8c9r2uu",
+      "type": "se",
+      "name": "作者原声·UI_选项确认",
+      "retired": false,
+      "auditionOnly": false
+    },
+    {
+      "id": "we9vnprm",
+      "type": "se",
+      "name": "作者原声·剧情_发梢滴水",
+      "retired": false,
+      "auditionOnly": true
+    },
+    {
+      "id": "3vid9p95",
+      "type": "se",
+      "name": "作者原声·剧情_合上笔记本",
+      "retired": false,
+      "auditionOnly": true
+    },
+    {
+      "id": "9pewhqn1",
+      "type": "se",
+      "name": "作者原声·剧情_呛水",
+      "retired": false,
+      "auditionOnly": true
+    },
+    {
+      "id": "hl08iesl",
+      "type": "se",
+      "name": "作者原声·剧情_定格重音",
+      "retired": false,
+      "auditionOnly": true
+    },
+    {
+      "id": "t4n910zd",
+      "type": "se",
+      "name": "作者原声·剧情_尾巴急甩",
+      "retired": false,
+      "auditionOnly": true
+    },
+    {
+      "id": "z99ks1g9",
+      "type": "se",
+      "name": "作者原声·剧情_尾巴拍平水面",
+      "retired": false,
+      "auditionOnly": true
+    },
+    {
+      "id": "y4yar145",
+      "type": "se",
+      "name": "作者原声·剧情_巨大拍水",
+      "retired": false,
+      "auditionOnly": true
+    },
+    {
+      "id": "jpswn4ou",
+      "type": "se",
+      "name": "作者原声·剧情_心跳",
+      "retired": false,
+      "auditionOnly": true
+    },
+    {
+      "id": "j3r2wgjd",
+      "type": "se",
+      "name": "作者原声·剧情_手机扣礁石",
+      "retired": false,
+      "auditionOnly": true
+    },
+    {
+      "id": "wq1hcql9",
+      "type": "se",
+      "name": "作者原声·剧情_手机来电",
+      "retired": false,
+      "auditionOnly": true
+    },
+    {
+      "id": "ikmmc4rd",
+      "type": "se",
+      "name": "作者原声·剧情_接挂电话",
+      "retired": false,
+      "auditionOnly": true
+    },
+    {
+      "id": "62zsrlep",
+      "type": "se",
+      "name": "作者原声·剧情_撕开小鱼干",
+      "retired": false,
+      "auditionOnly": true
+    },
+    {
+      "id": "ked1340w",
+      "type": "se",
+      "name": "作者原声·剧情_水花溅脸",
+      "retired": false,
+      "auditionOnly": true
+    },
+    {
+      "id": "01xv6k84",
+      "type": "se",
+      "name": "作者原声·剧情_海鸥",
+      "retired": false,
+      "auditionOnly": true
+    },
+    {
+      "id": "p9peyxja",
+      "type": "se",
+      "name": "作者原声·剧情_海鸥叼食",
+      "retired": false,
+      "auditionOnly": true
+    },
+    {
+      "id": "6186g35b",
+      "type": "se",
+      "name": "作者原声·剧情_深潜水压",
+      "retired": false,
+      "auditionOnly": true
+    },
+    {
+      "id": "rfiajeti",
+      "type": "se",
+      "name": "作者原声·剧情_窸窸窣窣",
+      "retired": false,
+      "auditionOnly": true
+    },
+    {
+      "id": "8op9un8s",
+      "type": "se",
+      "name": "作者原声·剧情_笔尖书写",
+      "retired": false,
+      "auditionOnly": true
+    },
+    {
+      "id": "ruxo9hhr",
+      "type": "se",
+      "name": "作者原声·剧情_落水",
+      "retired": false,
+      "auditionOnly": true
+    },
+    {
+      "id": "fitkd10c",
+      "type": "se",
+      "name": "作者原声·剧情_风铃单响",
+      "retired": false,
+      "auditionOnly": true
+    },
+    {
+      "id": "x1tt92z6",
+      "type": "se",
+      "name": "作者原声·尾巴_卷圈",
+      "retired": false,
+      "auditionOnly": true
+    },
+    {
+      "id": "1vlwjxq8",
+      "type": "se",
+      "name": "作者原声·尾巴_慌乱甩圈",
+      "retired": false,
+      "auditionOnly": true
+    },
+    {
+      "id": "oirfbiqt",
+      "type": "se",
+      "name": "作者原声·尾巴_拍地",
+      "retired": false,
+      "auditionOnly": true
+    },
+    {
+      "id": "ckztcn3x",
+      "type": "se",
+      "name": "作者原声·尾巴_拍床",
+      "retired": false,
+      "auditionOnly": true
+    },
+    {
+      "id": "guntvixk",
+      "type": "se",
+      "name": "作者原声·尾巴_拍桌",
+      "retired": false,
+      "auditionOnly": true
+    },
+    {
+      "id": "ulncpcrt",
+      "type": "se",
+      "name": "作者原声·尾巴_拍水",
+      "retired": false,
+      "auditionOnly": true
+    },
+    {
+      "id": "bg9y8h6j",
+      "type": "se",
+      "name": "作者原声·尾巴_拍沙",
+      "retired": false,
+      "auditionOnly": true
+    },
+    {
+      "id": "300w0xmn",
+      "type": "se",
+      "name": "作者原声·尾巴_放平",
+      "retired": false,
+      "auditionOnly": true
+    },
+    {
+      "id": "9pxap24y",
+      "type": "se",
+      "name": "作者原声·尾巴_缠绕",
+      "retired": false,
+      "auditionOnly": true
+    },
+    {
+      "id": "35ne6hcj",
+      "type": "se",
+      "name": "作者原声·尾巴_翘起",
+      "retired": false,
+      "auditionOnly": true
+    },
+    {
+      "id": "e6cby6b5",
+      "type": "bg",
+      "name": "深水区_水下",
+      "retired": false,
+      "auditionOnly": false
+    },
+    {
+      "id": "gjflu4vq",
+      "type": "se",
+      "name": "作者原声·环境_帐篷海风",
+      "retired": false,
+      "auditionOnly": true
+    },
+    {
+      "id": "1n1k47zu",
+      "type": "se",
+      "name": "作者原声·环境_店内底噪",
+      "retired": false,
+      "auditionOnly": true
+    },
+    {
+      "id": "y8a9djv3",
+      "type": "se",
+      "name": "作者原声·环境_水下嗡鸣",
+      "retired": false,
+      "auditionOnly": true
+    },
+    {
+      "id": "c417hz1z",
+      "type": "se",
+      "name": "作者原声·环境_潮声常规",
+      "retired": false,
+      "auditionOnly": true
+    },
+    {
+      "id": "je287mgp",
+      "type": "se",
+      "name": "作者原声·环境_潮声暴烈",
+      "retired": false,
+      "auditionOnly": true
+    },
+    {
+      "id": "hax42gix",
+      "type": "se",
+      "name": "作者原声·环境_潮声轻",
+      "retired": false,
+      "auditionOnly": true
+    },
+    {
+      "id": "xnqc8ujq",
+      "type": "se",
+      "name": "作者原声·环境_潮声远",
+      "retired": false,
+      "auditionOnly": true
+    },
+    {
+      "id": "bahuc7vr",
+      "type": "se",
+      "name": "作者原声·环境_潮声铺底",
+      "retired": false,
+      "auditionOnly": true
+    },
+    {
+      "id": "3dk9mevc",
+      "type": "se",
+      "name": "作者原声·环境_篝火",
+      "retired": false,
+      "auditionOnly": true
+    },
+    {
+      "id": "iav5u9l3",
+      "type": "se",
+      "name": "作者原声·环境_贝壳风铃",
+      "retired": false,
+      "auditionOnly": true
+    },
+    {
+      "id": "fu6lfpbq",
+      "type": "se",
+      "name": "作者原声·环境_集市人声",
+      "retired": false,
+      "auditionOnly": true
+    },
+    {
+      "id": "amb_a04_waves_bed_v01",
+      "type": "se",
+      "name": "潮声·单独铺底（含音乐，仅试听）",
+      "retired": false,
+      "auditionOnly": false
+    },
+    {
+      "id": "sfx_s16_comic_freeze_sting_v01",
+      "type": "se",
+      "name": "被雷劈的定格重音",
+      "retired": false,
+      "auditionOnly": false
+    },
+    {
+      "id": "sfx_tail_floor_review",
+      "type": "se",
+      "name": "尾巴·拍地（待复核）",
+      "retired": false,
+      "auditionOnly": true
+    },
+    {
+      "id": "sfx_tail_curl_review",
+      "type": "se",
+      "name": "尾巴·轻卷（仅试听）",
+      "retired": false,
+      "auditionOnly": true
+    },
+    {
+      "id": "sfx_tail_raise_review",
+      "type": "se",
+      "name": "尾巴·翘起（仅试听）",
+      "retired": false,
+      "auditionOnly": true
+    },
+    {
+      "id": "sfx_tail_fluster_review",
+      "type": "se",
+      "name": "尾巴·慌乱甩圈（仅试听）",
+      "retired": false,
+      "auditionOnly": true
+    },
+    {
+      "id": "sfx_tail_wrap_review",
+      "type": "se",
+      "name": "尾巴·缠绕（仅试听）",
+      "retired": false,
+      "auditionOnly": true
+    },
+    {
+      "id": "sfx_tail_flat_review",
+      "type": "se",
+      "name": "尾巴·放平沉底（仅试听）",
+      "retired": false,
+      "auditionOnly": true
+    },
+    {
+      "id": "scene_b18",
+      "type": "bg",
+      "name": "帐篷内夜灯暗",
+      "retired": false,
+      "auditionOnly": false
+    },
+    {
+      "id": "scene_b32",
+      "type": "bg",
+      "name": "住宅厨房夜",
+      "retired": false,
+      "auditionOnly": false
+    },
+    {
+      "id": "scene_o01",
+      "type": "bg",
+      "name": "营地外清晨",
+      "retired": false,
+      "auditionOnly": false
+    },
+    {
+      "id": "bgm_atri_e2_deepsea",
+      "type": "bgm",
+      "name": "Atri·深海之光（E2）",
+      "retired": true,
+      "auditionOnly": true
+    },
+    {
+      "id": "art_upgrade_l20",
+      "type": "ch",
+      "name": "水下悬浮看光",
+      "retired": false,
+      "auditionOnly": false
+    },
+    {
+      "id": "art_upgrade_p05",
+      "type": "ch",
+      "name": "鲸鱼小姐_常服坐姿写诗",
+      "retired": false,
+      "auditionOnly": false
+    },
+    {
+      "id": "art_upgrade_c27",
+      "type": "bg",
+      "name": "尾鳍悄悄带向岸边",
+      "retired": false,
+      "auditionOnly": false
+    },
+    {
+      "id": "bgm_atri_m1_alt",
+      "type": "bgm",
+      "name": "Atri·浅滩（M1，Atri_版，仅试听）",
+      "retired": false,
+      "auditionOnly": true
+    }
+  ],
+  "unreachable": [
+    {
+      "index": 158,
+      "id": "127wrb75",
+      "label": null,
+      "text": ""
+    },
+    {
+      "index": 159,
+      "id": "1sjdneqt",
+      "label": null,
+      "text": ""
+    },
+    {
+      "index": 162,
+      "id": "7b2f3g26",
+      "label": null,
+      "text": ""
+    },
+    {
+      "index": 1994,
+      "id": "onp7z3g3",
+      "label": null,
+      "text": "开业筹备。我趁热打铁，发表了一篇演说。"
+    },
+    {
+      "index": 1995,
+      "id": "w21pvi26",
+      "label": null,
+      "text": "「关于店里的未来，我有三点方案。」"
+    },
+    {
+      "index": 1996,
+      "id": "iqdnils6",
+      "label": null,
+      "text": "「第一，信任。员工要成长，成长需要空间。我们要像负责的老师—"
+    },
+    {
+      "index": 1997,
+      "id": "u3gqvbeq",
+      "label": null,
+      "text": "「第二，退出。管理者要退后一步，退到看不见的地方。」"
+    },
+    {
+      "index": 1998,
+      "id": "4wl5t8sv",
+      "label": null,
+      "text": "「第三，减负。事务下沉，责任到人。我们，只管大事。」"
+    },
+    {
+      "index": 1999,
+      "id": "41w8n2un",
+      "label": null,
+      "text": "她听完，沉默了很久。"
+    },
+    {
+      "index": 2000,
+      "id": "dr7pccvq",
+      "label": null,
+      "text": "「说完了？」"
+    },
+    {
+      "index": 2001,
+      "id": "sqyiyu4v",
+      "label": null,
+      "text": "「说完了。」"
+    },
+    {
+      "index": 2002,
+      "id": "9112agh8",
+      "label": null,
+      "text": "「这套说辞，你对着镜子练了几天？」"
+    },
+    {
+      "index": 2003,
+      "id": "jm3542yr",
+      "label": null,
+      "text": "「三天。」"
+    },
+    {
+      "index": 2004,
+      "id": "biteo4yn",
+      "label": null,
+      "text": "「三天，就想把买菜、排班、对账全推给员工？」"
+    },
+    {
+      "index": 2005,
+      "id": "u6fn2xp8",
+      "label": null,
+      "text": "「什么信任，什么成长——本小姐听出来了。你就是想躲进二楼写稿"
+    },
+    {
+      "index": 2006,
+      "id": "jw2mwuk4",
+      "label": null,
+      "text": "「……方案的核心是科学管理。」"
+    },
+    {
+      "index": 2007,
+      "id": "lcto66jb",
+      "label": null,
+      "text": "「方案的核心是偷懒。」"
+    },
+    {
+      "index": 2008,
+      "id": "x7jkcos7",
+      "label": null,
+      "text": "她抄起了算盘。"
+    },
+    {
+      "index": 2009,
+      "id": "e9zycm0j",
+      "label": null,
+      "text": ""
+    },
+    {
+      "index": 2010,
+      "id": "r959tqra",
+      "label": null,
+      "text": "但是，三天后。"
+    },
+    {
+      "index": 2011,
+      "id": "nohy4plb",
+      "label": null,
+      "text": "排班表挂上了墙。员工手册印好了。每日报表，钉在柜台内侧。"
+    },
+    {
+      "index": 2012,
+      "id": "6j32oqgi",
+      "label": null,
+      "text": "她对着报表核完最后一行，忽然停下来。"
+    },
+    {
+      "index": 2013,
+      "id": "6iuomdz2",
+      "label": null,
+      "text": "「……这套偷懒方案，居然真的有用。」"
+    },
+    {
+      "index": 2014,
+      "id": "todwjop3",
+      "label": null,
+      "text": "「报表留着。举报箱也做一个——挂厨房门口，本小姐亲自验收。」"
+    },
+    {
+      "index": 2015,
+      "id": "s42wa3pz",
+      "label": null,
+      "text": "「至于你——偷懒部分，验收不合格，扣半勺。有用部分，算你将功"
+    },
+    {
+      "index": 2016,
+      "id": "0pjpcv13",
+      "label": null,
+      "text": "她放下报表，忽然正色。"
+    },
+    {
+      "index": 2017,
+      "id": "t49vi45t",
+      "label": null,
+      "text": "「对了。你转正了。」"
+    },
+    {
+      "index": 2018,
+      "id": "ri1zed8a",
+      "label": null,
+      "text": "「合伙人，试用期三个月，表现不好，降回男仆。」"
+    },
+    {
+      "index": 2019,
+      "id": "9pldva7p",
+      "label": null,
+      "text": "「以后店里的公事，叫合伙人。回家干活，还是男仆。两码事，不许"
+    },
+    {
+      "index": 2020,
+      "id": "i6e35ch0",
+      "label": null,
+      "text": "（尾鳍翘着。）"
+    }
+  ],
+  "unreachableFromGameEntryRanges": [
+    {
+      "from": 0,
+      "to": 1,
+      "fromId": "frqml99w",
+      "toId": "kq4s0fev",
+      "fromLabel": null
+    },
+    {
+      "from": 158,
+      "to": 159,
+      "fromId": "127wrb75",
+      "toId": "1sjdneqt",
+      "fromLabel": null
+    },
+    {
+      "from": 162,
+      "to": 162,
+      "fromId": "7b2f3g26",
+      "toId": "7b2f3g26",
+      "fromLabel": null
+    },
+    {
+      "from": 1994,
+      "to": 2020,
+      "fromId": "onp7z3g3",
+      "toId": "i6e35ch0",
+      "fromLabel": null
+    },
+    {
+      "from": 3002,
+      "to": 3314,
+      "fromId": "abqhgfod",
+      "toId": "m5dl9wju",
+      "fromLabel": "番外一"
+    }
+  ],
+  "unreachableFromAnyEntryRanges": [
+    {
+      "from": 0,
+      "to": 1,
+      "fromId": "frqml99w",
+      "toId": "kq4s0fev",
+      "fromLabel": null
+    },
+    {
+      "from": 158,
+      "to": 159,
+      "fromId": "127wrb75",
+      "toId": "1sjdneqt",
+      "fromLabel": null
+    },
+    {
+      "from": 162,
+      "to": 162,
+      "fromId": "7b2f3g26",
+      "toId": "7b2f3g26",
+      "fromLabel": null
+    },
+    {
+      "from": 1994,
+      "to": 2020,
+      "fromId": "onp7z3g3",
+      "toId": "i6e35ch0",
+      "fromLabel": null
+    }
+  ],
+  "anomalyCounts": {
+    "field-not-read-by-player": 2
+  },
+  "anomalies": [
+    {
+      "kind": "field-not-read-by-player",
+      "index": null,
+      "id": null,
+      "detail": "_musicCue（90 个节点带此字段）"
+    },
+    {
+      "kind": "field-not-read-by-player",
+      "index": null,
+      "id": null,
+      "detail": "motionCount（1 个节点带此字段）"
+    }
+  ],
+  "characters": [
+    {
+      "name": "鲸鱼小姐",
+      "hasPersona": true
+    },
+    {
+      "name": "我",
+      "hasPersona": false
+    }
+  ],
+  "settingsKeys": [
+    "tip",
+    "ghost",
+    "speed",
+    "link",
+    "dlg",
+    "vbgm",
+    "vse",
+    "vamb",
+    "vvo",
+    "autoMul",
+    "skipRead",
+    "focus",
+    "agentProvider",
+    "agentUrl",
+    "bw",
+    "tlh",
+    "trk",
+    "soul",
+    "uiSe",
+    "cover",
+    "theme"
+  ]
+}

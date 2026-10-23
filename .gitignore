@@ -22,3 +22,7 @@ core/python/galcore/*.so
 core/python/galcore/*.pyd
 desktop/src-tauri/target/
 desktop/src-tauri/gen/
+
+# TypeScript 重构：依赖和生成物不作为作者输入
+node_modules/
+*.tsbuildinfo

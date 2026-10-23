@@ -28,6 +28,7 @@ import { PreferencesPanel } from "./preferences.ts";
 import { applyAuthorAppearance, connectTitleCover } from "../../../packages/player/src/web/appearance.ts";
 import { ChoicePanel } from "../../../packages/player/src/web/choices.ts";
 import { connectStageLayout } from "../../../packages/player/src/web/stage-layout.ts";
+import { PlayerInput } from "../../../packages/player/src/web/input.ts";
 import "./style.css";
 
 const startup = new AbortController();
@@ -63,6 +64,8 @@ async function main(): Promise<void> {
   const skip = element("skip", HTMLButtonElement);
   const pause = element("pause", HTMLButtonElement);
   const audio = element("audio", HTMLButtonElement);
+  const hide = element("hide-ui", HTMLButtonElement);
+  const playControls = element("play-controls", HTMLElement);
   const save = element("save-checkpoint", HTMLButtonElement);
   const saveMessage = element("save-message", HTMLElement);
   const saveDetails = element("save-details", HTMLElement);
@@ -152,6 +155,7 @@ async function main(): Promise<void> {
   let session: GameSession | null = null;
   let dialogueOwner: GameSession | null = null;
   let presentation: WebPresentation | null = null;
+  let input: PlayerInput | null = null;
   let generation = 0;
   let mode: Entry = "main";
   let entryRequest = 0;
@@ -222,7 +226,7 @@ async function main(): Promise<void> {
   });
   const buttonEvents = new AbortController();
   connectButtonSounds({
-    buttons: [next, auto, skip, pause, dialogueOpen, audio],
+    buttons: [next, auto, skip, pause, dialogueOpen, audio, hide],
     signal: buttonEvents.signal,
     enabled: () => {
       if (closed || exiting || document.hidden || !session || !buttonPreferences.values(mode).enabled) return false;
@@ -246,6 +250,7 @@ async function main(): Promise<void> {
     if (dialogue.open) { closeDialogue(); return true; }
     if (gallery.open) { gallery.close(); return true; }
     if (aftergame.open) { closeAftergame(); return true; }
+    if (input?.reveal()) return true;
     if (session) { toggleMenu(); return true; }
     return false;
   }, prepareExit);
@@ -345,8 +350,15 @@ async function main(): Promise<void> {
     session?.send({ type: "choose", token, choiceId });
   });
   const layout = connectStageLayout(stage);
+  input = new PlayerInput({
+    stage, scene, choices, controls: playControls, hide, keyboardScopes: [document],
+    session: () => session,
+    enabled: () => !closed && !exiting && !dialogue.open && !gallery.open && !aftergame.open && !host.state().paused,
+    unlockAudio, menu: toggleMenu, history: openDialogue,
+  });
 
   function show(view: SessionView): void {
+    input?.refresh();
     dialoguePanel?.refresh(host.state().audioAllowed);
     const { story, token } = view;
     const blocked = view.paused.length > 0 || view.disposed;
@@ -414,6 +426,7 @@ async function main(): Promise<void> {
       if (closed || request !== entryRequest) return;
       // All content, slot and global data are prepared before leaving live play.
       closeDialogue();
+      input?.reset();
       owner?.dispose();
       session = null;
       adopted = true;
@@ -477,19 +490,13 @@ async function main(): Promise<void> {
         buttonPreferences.setMode("main");
         title.hidden = false;
         next.disabled = auto.disabled = skip.disabled = pause.disabled = audio.disabled = save.disabled = dialogueOpen.disabled = rollbackButton.disabled = true;
+        input?.refresh();
         resetRollback();
       }
       saveMessage.textContent = `未能${restoreVoice ? "读档" : "开局"}：${error instanceof Error ? error.message : "未知错误"}。全局成果与原槽位保持原值。`;
     } finally {
       if (!closed && request === entryRequest && session === owner) owner?.send({ type: "pause", reason: "operation", paused: false });
     }
-  }
-
-  function advance(): void {
-    if (exiting || closed) return;
-    unlockAudio();
-    const view = session?.view();
-    if (view) session?.send({ type: "next", token: view.token });
   }
 
   function unlockAudio(): void {
@@ -507,6 +514,7 @@ async function main(): Promise<void> {
   function home(): void {
     if (exiting || closed) return;
     entryRequest++;
+    input?.reset();
     closeDialogue();
     closeAftergame();
     session?.dispose();
@@ -525,6 +533,7 @@ async function main(): Promise<void> {
     resetRollback();
     resetSaveMessage();
     status.textContent = "已返回试播标题；旧会话的任务已取消";
+    input?.refresh();
   }
 
   function resetRollback(): void {
@@ -743,10 +752,10 @@ async function main(): Promise<void> {
   element("home", HTMLButtonElement).onclick = home;
   element("close-menu", HTMLButtonElement).onclick = toggleMenu;
   element("retry", HTMLButtonElement).onclick = () => session?.send({ type: "retry" });
-  next.onclick = advance;
-  pause.onclick = toggleMenu;
-  auto.onclick = () => { if (session) session.send({ type: "auto", enabled: !session.view().auto }); };
-  skip.onclick = () => { if (session) session.send({ type: "skip", enabled: !session.view().skipping }); };
+  next.onclick = () => input?.next();
+  pause.onclick = () => input?.menu();
+  auto.onclick = () => input?.toggleAuto();
+  skip.onclick = () => input?.toggleSkip();
   audio.onclick = unlockAudio;
   save.onclick = () => { void saveCheckpoint(); };
   element("inspect-main", HTMLButtonElement).onclick = () => { void inspectSaved("main"); };
@@ -772,24 +781,11 @@ async function main(): Promise<void> {
   rollbackTarget.onchange = rollbackBoundary.onchange = () => { if (session) showRollback(session.view()); };
   rollbackButton.onclick = () => { void rollback(); };
   retryRecords.onclick = () => { void recordWriter.flush().catch(() => {}); };
-  stage.addEventListener("click", event => {
-    if (!(event.target instanceof Element) || event.target.closest("button, .choices, .menu-overlay, .title-screen")) return;
-    advance();
-  });
   const visibility = (): void => {
     session?.send({ type: "pause", reason: "background", paused: document.hidden });
     dialoguePanel?.refresh(host.state().audioAllowed);
   };
-  const keyboard = (event: KeyboardEvent): void => {
-    if (exiting || dialogue.open || gallery.open || aftergame.open) return;
-    if (!session || event.repeat || event.altKey || event.metaKey || event.ctrlKey) return;
-    if (event.target instanceof Element && event.target.closest("button, input, textarea, select, summary")) return;
-    if ([" ", "Enter", "ArrowRight"].includes(event.key)) { event.preventDefault(); advance(); }
-    else if (event.key === "Escape") { event.preventDefault(); toggleMenu(); }
-    else if (event.key.toLowerCase() === "a") session.send({ type: "auto", enabled: !session.view().auto });
-  };
   document.addEventListener("visibilitychange", visibility);
-  document.addEventListener("keydown", keyboard);
   const dispose = (): void => {
     closed = true;
     entryRequest++;
@@ -803,6 +799,7 @@ async function main(): Promise<void> {
     readingPreferences.dispose();
     buttonPreferences.dispose();
     buttonEvents.abort();
+    input?.dispose();
     cover.dispose();
     session?.dispose();
     host.releaseAudio();
@@ -810,7 +807,6 @@ async function main(): Promise<void> {
     choicePanel.dispose();
     layout.dispose();
     document.removeEventListener("visibilitychange", visibility);
-    document.removeEventListener("keydown", keyboard);
   };
   window.addEventListener("pagehide", dispose, { once: true });
   import.meta.hot?.dispose(dispose);

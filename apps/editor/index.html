@@ -45,19 +45,21 @@
             <button id="preview-selected" disabled>从所选节点按声明初值预览</button>
           </div>
           <p id="preview-note" class="preview-note">预览不读取或写入玩家存档、全局解锁和聊天记录。</p>
-          <div id="stage" class="stage">
+          <div id="stage" class="stage" tabindex="0" aria-label="剧情预览画面">
             <div id="scene" class="scene"></div>
             <div id="choices" class="choices" hidden></div>
           </div>
-          <div class="controls play-controls" aria-label="预览控制">
+          <div class="controls play-controls" id="preview-controls" aria-label="预览控制">
             <button id="next" disabled>补全文字 / 继续</button>
             <button id="pause" disabled>暂停预览</button>
             <button id="auto" disabled aria-pressed="false">自动</button>
             <button id="audio" disabled>启用声音</button>
             <button id="retry" disabled>重试当前媒体</button>
             <button id="stop" disabled>停止预览</button>
+            <button id="hide-ui" disabled aria-pressed="false" data-reveal-ui>隐藏界面</button>
           </div>
           <p id="preview-status" role="status">尚未预览。</p>
+          <p class="help">聚焦预览画面后可用空格 / → 继续、A 自动、按住 Ctrl 快进已读，Esc 切换暂停。H / 右键 / 长按可隐藏界面，点击只恢复；隐藏不会暂停。编辑输入框不响应游玩快捷键。</p>
           <details><summary>预览状态与初始条件</summary><pre id="debug"></pre></details>
         </section>
       </div>

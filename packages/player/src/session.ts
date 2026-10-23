@@ -475,9 +475,15 @@ class Session implements GameSession {
       return;
     }
     if (intent.type === "auto" || intent.type === "skip") {
-      if (intent.type === "auto") this.#auto = intent.enabled;
-      else {
+      if (intent.type === "auto") {
+        this.#auto = intent.enabled;
+        if (intent.enabled) {
+          this.#skipping = false;
+          this.#playback?.setSkipping(false);
+        }
+      } else {
         const view = this.#runtime.view();
+        if (intent.enabled) this.#auto = false;
         // A fresh node was marked read on entry; don't permit the current unread
         // presentation to be skipped just because it is now in the seen set.
         this.#skipping = intent.enabled && this.#entryWasRead && view.phase !== "choosing";

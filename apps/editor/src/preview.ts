@@ -11,12 +11,14 @@ import { whaleSkin } from "virtual:haifeng-appearance";
 import { applyAuthorAppearance } from "../../../packages/player/src/web/appearance.ts";
 import { ChoicePanel } from "../../../packages/player/src/web/choices.ts";
 import { connectStageLayout } from "../../../packages/player/src/web/stage-layout.ts";
+import { PlayerInput } from "../../../packages/player/src/web/input.ts";
 
 export interface PreviewElements {
   stage: HTMLElement; scene: HTMLElement; choices: HTMLElement;
   note: HTMLElement; status: HTMLElement; debug: HTMLElement;
   next: HTMLButtonElement; pause: HTMLButtonElement; auto: HTMLButtonElement;
   audio: HTMLButtonElement; retry: HTMLButtonElement; stop: HTMLButtonElement;
+  controls: HTMLElement; hide: HTMLButtonElement;
 }
 
 /** Owns only preview lifecycle. Story transitions remain in the shared session. */
@@ -24,6 +26,7 @@ export class EditorPreview {
   readonly #elements: PreviewElements;
   readonly #layout: { dispose(): void };
   readonly #choices: ChoicePanel;
+  readonly #input: PlayerInput;
   readonly #events = new AbortController();
   #session: GameSession | null = null;
   #presentation: WebPresentation | null = null;
@@ -38,9 +41,19 @@ export class EditorPreview {
       this.#session?.send({ type: "choose", token, choiceId });
     });
     this.#layout = connectStageLayout(elements.stage);
+    this.#input = new PlayerInput({
+      stage: elements.stage, scene: elements.scene, choices: elements.choices,
+      controls: elements.controls, hide: elements.hide, keyboardScopes: [elements.stage, elements.controls],
+      session: () => this.#session, enabled: () => !document.hidden,
+      unlockAudio: () => this.#presentation?.unlockAudio(),
+      menu: () => {
+        const current = this.#session;
+        if (current) current.send({ type: "pause", reason: "menu", paused: !current.view().paused.includes("menu") });
+      },
+    });
     const { signal } = this.#events;
     connectButtonSounds({
-      buttons: [elements.next, elements.pause, elements.auto, elements.audio, elements.retry, elements.stop],
+      buttons: [elements.next, elements.pause, elements.auto, elements.audio, elements.retry, elements.stop, elements.hide],
       signal,
       enabled: () => {
         if (document.hidden || !this.#buttonSoundsEnabled || !this.#session) return false;
@@ -49,20 +62,9 @@ export class EditorPreview {
       },
       play: cue => this.#presentation?.interaction({ type: "cue", cue }),
     });
-    const sendNext = (): void => {
-      const current = this.#session;
-      if (current) current.send({ type: "next", token: current.view().token });
-    };
-    elements.next.addEventListener("click", sendNext, { signal });
-    elements.scene.addEventListener("click", sendNext, { signal });
-    elements.pause.addEventListener("click", () => {
-      const current = this.#session;
-      if (current) current.send({ type: "pause", reason: "menu", paused: !current.view().paused.includes("menu") });
-    }, { signal });
-    elements.auto.addEventListener("click", () => {
-      const current = this.#session;
-      if (current) current.send({ type: "auto", enabled: !current.view().auto });
-    }, { signal });
+    elements.next.addEventListener("click", () => this.#input.next(), { signal });
+    elements.pause.addEventListener("click", () => this.#input.menu(), { signal });
+    elements.auto.addEventListener("click", () => this.#input.toggleAuto(), { signal });
     elements.audio.addEventListener("click", () => this.#presentation?.unlockAudio(), { signal });
     elements.retry.addEventListener("click", () => this.#session?.send({ type: "retry" }), { signal });
     elements.stop.addEventListener("click", () => this.stop(), { signal });
@@ -106,6 +108,7 @@ export class EditorPreview {
           this.render(view, initial);
         },
       });
+      this.#input.refresh();
       presentation.unlockAudio();
     } catch (error: unknown) {
       this.stop();
@@ -114,6 +117,7 @@ export class EditorPreview {
   }
 
   private render(view: SessionView, initial: unknown): void {
+    this.#input.refresh();
     const e = this.#elements;
     const active = !view.disposed && view.story.phase !== "ended";
     e.next.disabled = !active || view.paused.length > 0 || view.story.phase === "choosing";
@@ -141,6 +145,7 @@ export class EditorPreview {
 
   stop(): void {
     ++this.#generation;
+    this.#input.reset();
     this.#session?.dispose();
     this.#presentation?.dispose();
     this.#session = null;
@@ -153,10 +158,12 @@ export class EditorPreview {
     e.auto.setAttribute("aria-pressed", "false");
     e.note.textContent = "预览不读取或写入玩家存档、全局解锁和聊天记录。";
     e.status.textContent = "预览已停止。";
+    this.#input.refresh();
   }
 
   dispose(): void {
     this.stop();
+    this.#input.dispose();
     this.#choices.dispose();
     this.#layout.dispose();
     this.#events.abort();

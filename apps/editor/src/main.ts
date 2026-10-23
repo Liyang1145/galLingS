@@ -33,6 +33,7 @@ const preview = new EditorPreview({
   status: element("preview-status", HTMLElement), debug: element("debug", HTMLElement),
   next: button("next"), pause: button("pause"), auto: button("auto"), audio: button("audio"),
   retry: button("retry"), stop: button("stop"),
+  controls: element("preview-controls", HTMLElement), hide: button("hide-ui"),
 });
 const events = new AbortController();
 const drafts = new Map<string, AuthorTextEdit>();

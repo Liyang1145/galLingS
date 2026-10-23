@@ -95,6 +95,7 @@ export class WebPresentation implements PresentationAdapter {
     this.#background = document.createElement("img");
     this.#background.className = "backdrop";
     this.#background.alt = "";
+    this.#background.draggable = false;
     this.#actorsLayer = document.createElement("div");
     this.#actorsLayer.className = "actors";
     this.#veil = document.createElement("div");

@@ -4,13 +4,14 @@ import type { AtomicPlayerStore, PlayerRecords } from "../records.ts";
 import type { AtomicAudioPreferenceStore, AudioPreferenceRecord } from "../preferences.ts";
 import type { AtomicReadingPreferenceStore, ReadingPreferenceRecord } from "../reading-preferences.ts";
 import type { AtomicButtonPreferenceStore, ButtonPreferenceRecord } from "../button-preferences.ts";
+import type { AtomicReadoutPreferenceStore, ReadoutPreferenceRecord } from "../readout-preferences.ts";
 
 const DATABASE = "haifeng.rebuild.saves";
 const STORE = "slots";
 
 /** New TypeScript records only. No localStorage or legacy database access. */
 export class IndexedDbSaveStore implements AtomicSaveStore, AtomicPlayerStore, AtomicAudioPreferenceStore, AtomicReadingPreferenceStore,
-  AtomicButtonPreferenceStore {
+  AtomicButtonPreferenceStore, AtomicReadoutPreferenceStore {
   private open(): Promise<IDBDatabase> {
     return new Promise((resolve, reject) => {
       if (typeof indexedDB === "undefined") {
@@ -156,6 +157,10 @@ export class IndexedDbSaveStore implements AtomicSaveStore, AtomicPlayerStore, A
 
   async updateButtons(key: string, change: (stored: StoredSlot) => ButtonPreferenceRecord): Promise<ButtonPreferenceRecord> {
     return this.updateRecord(key, change, "BUTTON_PREFERENCES", "按钮声音偏好");
+  }
+
+  async updateReadout(key: string, change: (stored: StoredSlot) => ReadoutPreferenceRecord): Promise<ReadoutPreferenceRecord> {
+    return this.updateRecord(key, change, "READOUT_PREFERENCES", "数值显示偏好");
   }
 
   private async updateRecord<T>(

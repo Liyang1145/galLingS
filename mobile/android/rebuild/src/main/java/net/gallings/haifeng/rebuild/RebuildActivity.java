@@ -50,6 +50,10 @@ public final class RebuildActivity extends Activity {
     private long sequence;
     private long page;
     private long lastBack = -1;
+    private long exitSequence;
+    private long activeExit;
+    private Runnable exitPoll;
+    private long exitStarted;
     private final Handler handler = new Handler(Looper.getMainLooper());
     private AudioManager audioManager;
     private AudioFocusRequest audioRequest;
@@ -94,7 +98,7 @@ public final class RebuildActivity extends Activity {
         try {
             JSONObject manifest = new JSONObject(assetText("game/game-package.json"));
             if (!"haifeng.game-package/2".equals(manifest.getString("format"))
-                    || !"haifeng.host-bridge/2".equals(manifest.getString("hostBridge"))) {
+                    || !"haifeng.host-bridge/3".equals(manifest.getString("hostBridge"))) {
                 fail("游戏包与原生宿主协议不匹配，请重新构建并准备。");
                 return;
             }
@@ -133,6 +137,7 @@ public final class RebuildActivity extends Activity {
             }
             @Override public void onPageStarted(WebView view, String url, android.graphics.Bitmap icon) {
                 page++;
+                cancelExit();
                 cancelDelivery();
                 abandonAudio(true);
                 backPending = false;
@@ -185,7 +190,7 @@ public final class RebuildActivity extends Activity {
         if (web == null || destroyed) return;
         boolean paused = !resumed || !focused || audioInterrupted;
         long id = ++sequence;
-        String script = "(() => {const b=window.__HAIFENG_HOST__; if(b?.protocol!=='haifeng.host-bridge/2') return null;"
+        String script = "(() => {const b=window.__HAIFENG_HOST__; if(b?.protocol!=='haifeng.host-bridge/3') return null;"
                 + "b.receiveAudio({format:'haifeng.audio-focus/1',sequence:" + id + ",status:'" + audioStatus + "'});"
                 + "b.receive({format:'haifeng.host-state/1',platform:'android-trial',sequence:"
                 + id + ",paused:" + paused + "});return b.read().sequence;})()";
@@ -330,6 +335,7 @@ public final class RebuildActivity extends Activity {
     @SuppressWarnings("deprecation")
     @Override public void onBackPressed() {
         if (web == null) { finish(); return; }
+        if (activeExit != 0) { cancelExit(); return; }
         if (backPending) return;
         backPending = true;
         final long ownerPage = page;
@@ -342,7 +348,7 @@ public final class RebuildActivity extends Activity {
                 return;
             }
             long now = SystemClock.elapsedRealtime();
-            if (lastBack >= 0 && now - lastBack < 1800) finish();
+            if (lastBack >= 0 && now - lastBack < 1800) requestExit();
             else {
                 lastBack = now;
                 Toast.makeText(this, "再按一次返回键退出；进度请先手动保存", Toast.LENGTH_SHORT).show();
@@ -350,8 +356,66 @@ public final class RebuildActivity extends Activity {
         });
     }
 
+    private void requestExit() {
+        if (destroyed || web == null || activeExit != 0) return;
+        activeExit = ++exitSequence;
+        exitStarted = SystemClock.elapsedRealtime();
+        pollExit(web, page, activeExit);
+    }
+
+    private void pollExit(WebView owner, long ownerPage, long id) {
+        if (destroyed || owner != web || ownerPage != page || activeExit != id) return;
+        if (SystemClock.elapsedRealtime() - exitStarted >= 30000) {
+            cancelExit();
+            Toast.makeText(this, "退出等待超时，保留应用；已发起的写入可能仍在进行", Toast.LENGTH_LONG).show();
+            return;
+        }
+        final Runnable next = () -> pollExit(owner, ownerPage, id);
+        exitPoll = next;
+        // Schedule before evaluateJavascript so an absent callback also has a bounded retry.
+        handler.postDelayed(next, 250);
+        try {
+            owner.evaluateJavascript("(() => {const b=window.__HAIFENG_HOST__;return b?.protocol==='haifeng.host-bridge/3'"
+                    + "?b.beginExit(" + id + "):null;})()", result -> {
+                if (destroyed || owner != web || ownerPage != page || activeExit != id || exitPoll != next) return;
+                try {
+                    JSONObject reply = new JSONObject(result);
+                    if (reply.length() != 2 || reply.getLong("id") != id) throw new IllegalArgumentException("退出标识无效");
+                    String status = reply.getString("status");
+                    if ("pending".equals(status)) return;
+                    handler.removeCallbacks(next);
+                    exitPoll = null;
+                    if ("ready".equals(status)) {
+                        activeExit = 0;
+                        finish();
+                    } else {
+                        cancelExit();
+                        if (!"cancelled".equals(status)) Toast.makeText(this, "页面未同意退出，应用已保留", Toast.LENGTH_SHORT).show();
+                    }
+                } catch (Exception error) {
+                    cancelExit();
+                    Toast.makeText(this, "退出返回无效，应用已保留", Toast.LENGTH_SHORT).show();
+                }
+            });
+        } catch (RuntimeException error) {
+            cancelExit();
+            Toast.makeText(this, "退出请求未送达，应用已保留", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void cancelExit() {
+        if (exitPoll != null) handler.removeCallbacks(exitPoll);
+        exitPoll = null;
+        long id = activeExit;
+        activeExit = 0;
+        if (id != 0 && web != null && !destroyed) {
+            web.evaluateJavascript("window.__HAIFENG_HOST__?.cancelExit(" + id + ")", null);
+        }
+    }
+
     private void fail(String message) {
         WebView failed = web;
+        cancelExit();
         web = null;
         handler.removeCallbacks(heartbeat);
         cancelDelivery();
@@ -373,6 +437,7 @@ public final class RebuildActivity extends Activity {
 
     @Override protected void onDestroy() {
         destroyed = true;
+        activeExit = 0;
         handler.removeCallbacksAndMessages(null);
         abandonAudio(true);
         page++;

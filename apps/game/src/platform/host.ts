@@ -1,3 +1,5 @@
+import { HOST_BRIDGE_PROTOCOL } from "../../../../packages/story-model/src/host.ts";
+
 type NativePlatform = "windows-trial" | "android-trial";
 
 export interface HostState {
@@ -30,10 +32,15 @@ function readState(value: unknown): NativeState {
 }
 
 /** Platform messages only pause/resume the existing session; they cannot advance story state. */
-export function connectHost(changed: (state: HostState) => void, backRequested: () => boolean): {
+export function connectHost(
+  changed: (state: HostState) => void,
+  backRequested: () => boolean,
+  exitRequested: (signal: AbortSignal) => Promise<void>,
+): {
   state(): HostState;
   requestAudio(): void;
   releaseAudio(): void;
+  cancelExit(): void;
   dispose(): void;
 } {
   const injected: unknown = Reflect.get(window, "__HAIFENG_HOST__");
@@ -65,7 +72,8 @@ export function connectHost(changed: (state: HostState) => void, backRequested: 
       if (!expected) throw new Error("当前页面来源不接受宿主桥");
       if (bridge.protocol !== HOST_BRIDGE_PROTOCOL) throw new Error("宿主桥与前端协议不匹配，请重新构建并准备完整游戏包");
       if (typeof bridge.read !== "function" || typeof bridge.setBackHandler !== "function"
-        || typeof bridge.readAudio !== "function") throw new Error("缺少宿主状态、音频或返回键接口");
+        || typeof bridge.readAudio !== "function" || typeof bridge.setExitHandler !== "function"
+        || typeof bridge.cancelCurrentExit !== "function") throw new Error("缺少宿主状态、音频、返回键或退出接口");
       const next = readState(Reflect.apply(bridge.read, injected, []));
       const audio = record(Reflect.apply(bridge.readAudio, injected, []));
       if (Object.keys(audio).sort().join(",") !== "format,sequence,status" || audio.format !== "haifeng.audio-focus/1"
@@ -76,6 +84,10 @@ export function connectHost(changed: (state: HostState) => void, backRequested: 
       if (next.sequence < sequence || audio.sequence < audioSequence) throw new Error("宿主状态序号倒退");
       if (!installed) {
         Reflect.apply(bridge.setBackHandler, injected, [handleBack]);
+        Reflect.apply(bridge.setExitHandler, injected, [(signal: AbortSignal) => {
+          if (disposed) return Promise.reject(new Error("页面已离开"));
+          return exitRequested(signal);
+        }]);
         installed = true;
       }
       if (next.sequence > sequence && next.sequence > 0) receivedAt = performance.now();
@@ -110,6 +122,12 @@ export function connectHost(changed: (state: HostState) => void, backRequested: 
   } else changed({ ...state });
   return {
     state: () => ({ ...state }),
+    cancelExit: () => {
+      if (disposed || !native) return;
+      const bridge = record(injected);
+      if (typeof bridge.cancelCurrentExit !== "function") throw new Error("缺少退出取消接口");
+      Reflect.apply(bridge.cancelCurrentExit, injected, []);
+    },
     requestAudio: () => {
       if (disposed || state.platform !== "android-trial" || state.audioAllowed || performance.now() - requestedAt < 500) return;
       requestedAt = performance.now();
@@ -140,9 +158,9 @@ export function connectHost(changed: (state: HostState) => void, backRequested: 
       if (installed) {
         const bridge = record(injected);
         if (typeof bridge.setBackHandler === "function") Reflect.apply(bridge.setBackHandler, injected, [null]);
+        if (typeof bridge.setExitHandler === "function") Reflect.apply(bridge.setExitHandler, injected, [null]);
       }
     },
   };
 }
-import { HOST_BRIDGE_PROTOCOL } from "../../../../packages/story-model/src/host.ts";
 

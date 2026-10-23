@@ -70,7 +70,7 @@ export interface SessionView {
 export type SessionIntent =
   | { type: "next"; token: SessionToken }
   | { type: "choose"; token: SessionToken; choiceId: string }
-  | { type: "pause"; reason: "menu" | "background" | "host" | "history" | "operation"; paused: boolean }
+  | { type: "pause"; reason: "menu" | "background" | "host" | "history" | "operation" | "exit"; paused: boolean }
   | { type: "auto"; enabled: boolean }
   | { type: "skip"; enabled: boolean }
   | { type: "retry" };

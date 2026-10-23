@@ -105,6 +105,15 @@
       <details class="debug"><summary>当前剧情状态（仅试播）</summary><pre id="debug">尚未开始</pre></details>
       <p class="help">点击画面 / 空格 / → 继续，Esc 打开菜单。自动不会代答；快进遇到未读或选择会停下。</p>
     </main>
+    <dialog id="exit-dialog" class="gallery-dialog" aria-labelledby="exit-heading">
+      <h2 id="exit-heading">退出前完成保存</h2>
+      <p>将等待已经发起的手动保存，并提交待保存的周目、解锁和已读记录。当前未手动保存的剧情位置不会因此新建存档。</p>
+      <p id="exit-message" role="status" aria-live="polite"></p>
+      <div class="controls">
+        <button type="button" id="exit-retry" hidden>重试尚未完成的写入</button>
+        <button type="button" id="exit-cancel" autofocus>取消退出</button>
+      </div>
+    </dialog>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

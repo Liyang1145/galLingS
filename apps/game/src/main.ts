@@ -13,6 +13,7 @@ import type { GameCheckpoint } from "../../../packages/player/src/checkpoint.ts"
 import { renderGallery } from "./gallery.ts";
 import { renderDialogue } from "./dialogue.ts";
 import { connectHost } from "./platform/host.ts";
+import { PendingWrites } from "../../../packages/player/src/writes.ts";
 import "./style.css";
 
 const startup = new AbortController();
@@ -64,6 +65,13 @@ async function main(): Promise<void> {
   const rollbackButton = element("rollback", HTMLButtonElement);
   const rollbackMessage = element("rollback-message", HTMLElement);
   const rollbackWarning = element("rollback-warning", HTMLElement);
+  const page = document.querySelector("main");
+  if (!(page instanceof HTMLElement)) throw new Error("页面缺少主区域");
+  const exitDialog = element("exit-dialog", HTMLDialogElement);
+  const exitMessage = element("exit-message", HTMLElement);
+  const exitRetry = element("exit-retry", HTMLButtonElement);
+  const exitCancel = element("exit-cancel", HTMLButtonElement);
+  const writes = new PendingWrites();
   const resources = createResourceAccess(content, locations);
   const clock: Clock = {
     now: () => performance.now(),
@@ -109,6 +117,7 @@ async function main(): Promise<void> {
   let entryRequest = 0;
   let rollbackKey = "";
   let rollingBack = false;
+  let exiting = false;
   const hostStatus = document.createElement("p");
   note.insertAdjacentElement("afterend", hostStatus);
   const host = connectHost(state => {
@@ -119,11 +128,78 @@ async function main(): Promise<void> {
     presentation?.setAudioAllowed(state.audioAllowed);
     session?.send({ type: "pause", reason: "host", paused: state.paused });
   }, () => {
+    if (exiting) { host.cancelExit(); return true; }
     if (dialogue.open) { closeDialogue(); return true; }
     if (gallery.open) { gallery.close(); return true; }
     if (session) { toggleMenu(); return true; }
     return false;
-  });
+  }, prepareExit);
+
+  async function prepareExit(signal: AbortSignal): Promise<void> {
+    if (closed || signal.aborted) throw new Error("页面已离开或退出已取消");
+    if (exiting) throw new Error("已有退出请求");
+    exiting = true;
+    entryRequest++;
+    const owner = session;
+    owner?.send({ type: "pause", reason: "exit", paused: true });
+    owner?.send({ type: "pause", reason: "operation", paused: false });
+    closeDialogue();
+    gallery.close();
+    const wasInert = page.inert;
+    page.inert = true;
+    exitRetry.hidden = true;
+    exitCancel.disabled = false;
+    let released = false;
+    const cleanup = (): void => {
+      if (released) return;
+      released = true;
+      exiting = false;
+      page.inert = wasInert;
+      exitDialog.close();
+      exitRetry.onclick = exitCancel.onclick = null;
+      owner?.send({ type: "pause", reason: "exit", paused: false });
+      if (!closed) saveMessage.textContent = "退出已取消。已发起的写入如仍在进行会继续完成；当前未保存进度没有自动新建存档。";
+    };
+    signal.addEventListener("abort", cleanup, { once: true });
+    try {
+      exitDialog.showModal();
+      await new Promise<void>((resolve, reject) => {
+        let running = false;
+        const aborted = (): void => reject(new Error("退出已取消，原写入如已发起仍会继续"));
+        signal.addEventListener("abort", aborted, { once: true });
+        const attempt = async (retry: boolean): Promise<void> => {
+          if (running || signal.aborted || closed) return;
+          running = true;
+          exitRetry.hidden = true;
+          exitMessage.textContent = "正在等待已发起的保存，并提交全局成果……";
+          try {
+            if (retry) await writes.retryFailed();
+            else await writes.settle();
+            if (signal.aborted || closed) return;
+            await recordWriter.flush();
+            if (signal.aborted || closed) return;
+            if (recordWriter.pending()) throw new Error("仍有未提交的全局记录");
+            signal.removeEventListener("abort", aborted);
+            exitMessage.textContent = "写入已完成，正在退出。未手动保存的剧情位置不会自动保存。";
+            exitCancel.disabled = true;
+            resolve();
+          } catch (error: unknown) {
+            if (!signal.aborted && !closed) {
+              exitMessage.textContent = `退出尚未获准：${error instanceof Error ? error.message : "写入失败"}。可以重试原写入，或取消退出后继续处理。`;
+              exitRetry.hidden = false;
+            }
+          } finally { running = false; }
+        };
+        exitRetry.onclick = () => { void attempt(true); };
+        exitCancel.onclick = () => host.cancelExit();
+        void attempt(false);
+      });
+      // Remain paused and inert until the native window closes or cancels its ticket.
+    } catch (error: unknown) {
+      cleanup();
+      throw error;
+    }
+  }
 
   const resize = new ResizeObserver(() => scene.style.setProperty("--stage-scale", String(stage.clientWidth / 1280)));
   resize.observe(stage);
@@ -198,6 +274,7 @@ async function main(): Promise<void> {
   }
 
   async function start(selected: Entry, restoreVoice?: RestoreVoice): Promise<void> {
+    if (exiting || closed) return;
     const request = ++entryRequest;
     const owner = session;
     owner?.send({ type: "pause", reason: "operation", paused: true });
@@ -273,6 +350,7 @@ async function main(): Promise<void> {
   }
 
   function advance(): void {
+    if (exiting || closed) return;
     unlockAudio();
     const view = session?.view();
     if (view) session?.send({ type: "next", token: view.token });
@@ -285,11 +363,13 @@ async function main(): Promise<void> {
   }
 
   function toggleMenu(): void {
+    if (exiting || closed) return;
     const view = session?.view();
     if (view) session?.send({ type: "pause", reason: "menu", paused: !view.paused.includes("menu") });
   }
 
   function home(): void {
+    if (exiting || closed) return;
     entryRequest++;
     closeDialogue();
     session?.dispose();
@@ -337,7 +417,7 @@ async function main(): Promise<void> {
 
   async function saveCheckpoint(): Promise<void> {
     const owner = session;
-    if (!owner || saving || !owner.view().canCheckpoint) return;
+    if (exiting || closed || !owner || saving || !owner.view().canCheckpoint) return;
     const entry = mode;
     const request = ++storageMessageEpoch;
     saving = true;
@@ -345,25 +425,33 @@ async function main(): Promise<void> {
     saveDetails.hidden = true;
     saveMessage.textContent = `正在保存${entryName(entry)}检查点……`;
     try {
-      const result = await owner.captureCheckpoint(owner.view().token);
-      if (!result.accepted) throw new Error(`${result.code}：${result.message}`);
-      if (entry === "main") await recordWriter.flush();
-      const inspected = await saves[entry].save("manual", result.checkpoint, Date.now());
-      if (!closed && request === storageMessageEpoch) {
-        describeSave(entry, inspected);
-        saveMessage.textContent = `${entryName(entry)}进度已保存；可刷新页面后查看或读取。周目与鉴赏成果单独保留。`;
-      }
+      const capture = owner.captureCheckpoint(owner.view().token);
+      let payload: { checkpoint: GameCheckpoint; savedAt: number } | null = null;
+      await writes.run(`${entry}:manual`, async () => {
+        if (!payload) {
+          const result = await capture;
+          if (!result.accepted) throw new Error(`${result.code}：${result.message}`);
+          payload = { checkpoint: result.checkpoint, savedAt: Date.now() };
+        }
+        if (entry === "main") await recordWriter.flush();
+        const inspected = await saves[entry].save("manual", payload.checkpoint, payload.savedAt);
+        if (!closed && request === storageMessageEpoch) {
+          describeSave(entry, inspected);
+          saveMessage.textContent = `${entryName(entry)}进度已保存；可刷新页面后查看或读取。周目与鉴赏成果单独保留。`;
+        }
+      });
     } catch (error: unknown) {
       if (!closed && request === storageMessageEpoch) {
         saveMessage.textContent = `保存失败：${error instanceof Error ? error.message : "未知存储错误"}。可重新保存，未先删除原槽位。`;
       }
     } finally {
       saving = false;
-      if (!closed) save.disabled = !session?.view().canCheckpoint;
+      if (!closed) save.disabled = exiting || !session?.view().canCheckpoint;
     }
   }
 
   async function inspectSaved(entry: Entry): Promise<void> {
+    if (exiting || closed) return;
     const request = ++storageMessageEpoch;
     saveDetails.hidden = true;
     saveMessage.textContent = `正在读取${entryName(entry)}检查点……`;
@@ -389,6 +477,7 @@ async function main(): Promise<void> {
   }
 
   async function rollback(): Promise<void> {
+    if (exiting || closed) return;
     const owner = session;
     const voice = voiceChoice.value;
     const boundary = rollbackBoundary.value;
@@ -428,6 +517,7 @@ async function main(): Promise<void> {
   }
 
   async function openGallery(): Promise<void> {
+    if (exiting || closed) return;
     const request = ++entryRequest;
     try {
       await recordWriter.flush();
@@ -441,6 +531,7 @@ async function main(): Promise<void> {
   }
 
   function openDialogue(): void {
+    if (exiting || closed) return;
     const owner = session;
     if (!owner || owner.view().disposed || dialogue.open) return;
     dialogueOwner = owner;
@@ -485,6 +576,7 @@ async function main(): Promise<void> {
   element("dialogue-history-close", HTMLButtonElement).onclick = closeDialogue;
   dialogue.addEventListener("cancel", event => { event.preventDefault(); closeDialogue(); });
   dialogue.addEventListener("close", () => { if (!dialogue.open) closeDialogue(); });
+  exitDialog.addEventListener("cancel", event => { event.preventDefault(); host.cancelExit(); });
   voiceChoice.onchange = () => {
     const enabled = ["silent", "replay", "resume"].includes(voiceChoice.value);
     element("load-main", HTMLButtonElement).disabled = element("load-timed", HTMLButtonElement).disabled = !enabled;
@@ -499,7 +591,7 @@ async function main(): Promise<void> {
   });
   const visibility = (): void => session?.send({ type: "pause", reason: "background", paused: document.hidden });
   const keyboard = (event: KeyboardEvent): void => {
-    if (dialogue.open || gallery.open) return;
+    if (exiting || dialogue.open || gallery.open) return;
     if (!session || event.repeat || event.altKey || event.metaKey || event.ctrlKey) return;
     if (event.target instanceof Element && event.target.closest("button, input, textarea, select, summary")) return;
     if ([" ", "Enter", "ArrowRight"].includes(event.key)) { event.preventDefault(); advance(); }

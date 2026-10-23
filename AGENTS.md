@@ -38,6 +38,7 @@
 | `tools/dev/vite.config.ts` | 本地可视试播装配；开发资源 URL 不得当作正式发行清单 |
 | `tools/game/build.ts` | 显式游戏集成构建；生成前端、剧情与素材清单，不自动运行或发布 |
 | `tools/game/windows.ts` | 已有游戏包的 Windows 集成输入准备；核对与复制清单文件，不自动编译 |
+| `tools/game/prepare.ts` | 平台共享的包摘要、内容修订及登记文件核对与复制，只由显式命令调用 |
 | `apps/game/src/platform/` | 宿主消息校验及会话生命周期接线，不另写剧情逻辑 |
 | `desktop/` | 既有宿主及显式重构集成入口；默认仍是旧路径，局部规则见目录入口 |
 | `mobile/android/` | 既有 Android 宿主；尚未切换新前端 |

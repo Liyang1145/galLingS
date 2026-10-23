@@ -11,7 +11,7 @@ import { PlayerRepository, PlayerRecordWriter, playerProjection } from "../../..
 import { prepareGameRestore } from "../../../packages/player/src/checkpoint.ts";
 import type { GameCheckpoint } from "../../../packages/player/src/checkpoint.ts";
 import { renderGallery } from "./gallery.ts";
-import { renderDialogue } from "./dialogue.ts";
+import { DialoguePanel } from "./dialogue.ts";
 import { connectHost } from "./platform/host.ts";
 import { PendingWrites } from "../../../packages/player/src/writes.ts";
 import type { AftergamePanel } from "./aftergame.ts";
@@ -147,6 +147,7 @@ async function main(): Promise<void> {
   let rollingBack = false;
   let exiting = false;
   let aftergamePanel: AftergamePanel | null = null;
+  let dialoguePanel: DialoguePanel | null = null;
   const audioRepository = new AudioPreferenceRepository(content.workId, { kind: "development", id: "normal-entry" },
     authorAudioVolumes(content.source.settings), store);
   const audioLabels = { music: "配乐", ambience: "环境声", voice: "语音", effects: "音效" };
@@ -166,7 +167,10 @@ async function main(): Promise<void> {
     },
     blocked: () => closed || exiting,
     trackWrite: operation => writes.run("audio-preferences", operation),
-    valuesChanged: volumes => presentation?.setAudioVolumes(volumes),
+    valuesChanged: volumes => {
+      presentation?.setAudioVolumes(volumes);
+      dialoguePanel?.setVolumes(volumes);
+    },
   });
   const readingLabels = {
     textSpeedMs: "逐字间隔", autoWaitMultiplier: "自动等待", textScale: "文字大小", dialogueOpacity: "对话框不透明度",
@@ -224,6 +228,7 @@ async function main(): Promise<void> {
     hostStatus.textContent = `${platform}${state.audioIssue ? ` · ${state.audioIssue}` : ""}`;
     presentation?.setAudioAllowed(state.audioAllowed);
     session?.send({ type: "pause", reason: "host", paused: state.paused });
+    dialoguePanel?.refresh(state.audioAllowed);
   }, () => {
     if (exiting) { host.cancelExit(); return true; }
     if (dialogue.open) { closeDialogue(); return true; }
@@ -232,6 +237,22 @@ async function main(): Promise<void> {
     if (session) { toggleMenu(); return true; }
     return false;
   }, prepareExit);
+
+  dialoguePanel = new DialoguePanel({
+    root: dialogueBody, resources, settings: content.source.settings,
+    volumes: audioPreferences.values(mode), audioAllowed: host.state().audioAllowed,
+    available: () => {
+      if (closed || exiting || document.hidden || !dialogue.open || !dialogueOwner || dialogueOwner !== session) return false;
+      const view = dialogueOwner.view();
+      const state = host.state();
+      return !view.disposed && !state.paused && state.audioAllowed
+        && view.paused.includes("history") && view.paused.every(reason => reason === "history");
+    },
+    requestAudio: () => {
+      host.requestAudio();
+      dialoguePanel?.refresh(host.state().audioAllowed);
+    },
+  });
 
   async function prepareExit(signal: AbortSignal): Promise<void> {
     if (closed || signal.aborted) throw new Error("页面已离开或退出已取消");
@@ -310,6 +331,7 @@ async function main(): Promise<void> {
   resize.observe(stage);
 
   function show(view: SessionView): void {
+    dialoguePanel?.refresh(host.state().audioAllowed);
     const { story, token } = view;
     const blocked = view.paused.length > 0 || view.disposed;
     next.disabled = blocked || story.phase === "choosing" || story.phase === "ended";
@@ -705,8 +727,9 @@ async function main(): Promise<void> {
     dialogueOwner = owner;
     owner.send({ type: "pause", reason: "history", paused: true });
     try {
-      renderDialogue(dialogueBody, owner.dialogueHistory());
+      dialoguePanel?.open(owner.dialogueHistory());
       dialogue.showModal();
+      dialoguePanel?.refresh(host.state().audioAllowed);
       dialogueBody.lastElementChild?.lastElementChild?.scrollIntoView({ block: "nearest" });
     } catch (error: unknown) {
       closeDialogue();
@@ -717,8 +740,8 @@ async function main(): Promise<void> {
   function closeDialogue(): void {
     const owner = dialogueOwner;
     dialogueOwner = null;
+    dialoguePanel?.close();
     dialogue.close();
-    dialogueBody.replaceChildren();
     owner?.send({ type: "pause", reason: "history", paused: false });
   }
 
@@ -761,7 +784,10 @@ async function main(): Promise<void> {
     if (!(event.target instanceof Element) || event.target.closest("button, .choices, .menu-overlay, .title-screen")) return;
     advance();
   });
-  const visibility = (): void => session?.send({ type: "pause", reason: "background", paused: document.hidden });
+  const visibility = (): void => {
+    session?.send({ type: "pause", reason: "background", paused: document.hidden });
+    dialoguePanel?.refresh(host.state().audioAllowed);
+  };
   const keyboard = (event: KeyboardEvent): void => {
     if (exiting || dialogue.open || gallery.open || aftergame.open) return;
     if (!session || event.repeat || event.altKey || event.metaKey || event.ctrlKey) return;
@@ -780,6 +806,7 @@ async function main(): Promise<void> {
     closeDialogue();
     closeAftergame();
     aftergamePanel?.dispose();
+    dialoguePanel?.dispose();
     audioPreferences.dispose();
     readingPreferences.dispose();
     buttonPreferences.dispose();

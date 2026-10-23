@@ -30,6 +30,12 @@ export interface EntryAudio {
   capture(): PlaybackCheckpoint;
 }
 
+export interface VoicePreviewObserver {
+  started(): void;
+  ended(): void;
+  problem(problem: MediaProblem): void;
+}
+
 /** Persistent tracks belong to the mixer; voice/effects belong to an entry. */
 export class AudioMixer {
   readonly #resources: ResourceAccess;
@@ -157,6 +163,42 @@ export class AudioMixer {
     for (const track of this.#tracks) if (track.element.paused) this.play(track);
     this.#choiceTickFailed = false;
     this.syncChoiceTick();
+  }
+
+  /** Use on a separate mixer owned by a read-only viewer, never on story entry audio. */
+  previewVoice(id: string, observer: VoicePreviewObserver): () => void {
+    if (this.#disposed) throw new Error("试听声音实例已离开");
+    if (this.#resources.get(id).kind !== "vo") throw new Error(`历史语音需要登记的配音资源：${id}`);
+    if (this.#paused || !this.#audioAllowed) throw new Error("当前声音未获准或正在暂停；恢复后请再次点击试听");
+    if (this.#volumes.voice === 0) throw new Error("当前语音音量为 0；调高后请再次点击试听");
+    let track: Track | null = null;
+    let closed = false;
+    const report = (problem: MediaProblem): void => { if (!closed) observer.problem(problem); };
+    const releaseReporter = (): void => {
+      if (this.#report === report) this.#report = () => {};
+    };
+    const finish = (): void => {
+      if (closed) return;
+      closed = true;
+      if (track) this.stop(track);
+      releaseReporter();
+      observer.ended();
+    };
+    // The owner cancels an old preview before starting another, so stale failures cannot
+    // acquire the new reporter. No scene, timer, checkpoint or story callback is involved.
+    this.#report = report;
+    try { track = this.track(id, "voice", 1, finish); }
+    catch (error: unknown) { closed = true; releaseReporter(); throw error; }
+    const current = track;
+    current.element.addEventListener("playing", () => {
+      if (!closed && current.alive && !this.#disposed) observer.started();
+    }, { once: true });
+    return () => {
+      if (closed) return;
+      closed = true;
+      this.stop(current);
+      releaseReporter();
+    };
   }
 
   private stop(track: Track): void {

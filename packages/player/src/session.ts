@@ -14,7 +14,7 @@ import type { InteractionFeedback, ScheduledFeedback } from "./ui-sounds.ts";
 export type RestoreVoice = "silent" | "replay" | "resume";
 
 export type DialogueEntry =
-  | { kind: "line"; nodeId: string; chapter: string; speaker: string; text: string }
+  | { kind: "line"; nodeId: string; chapter: string; speaker: string; text: string; voiceId: string | null }
   | { kind: "choice"; nodeId: string; chapter: string; text: string; timedOut: boolean };
 
 export interface SessionToken {
@@ -541,6 +541,7 @@ class Session implements GameSession {
       const { speaker, text } = result.view.presentation;
       this.appendDialogue({
         kind: "line", nodeId: result.view.nodeId, chapter: result.view.chapter, speaker, text,
+        voiceId: result.view.presentation.performance.voiceId,
       });
     }
     if (result.presentation?.mode === "enter") {

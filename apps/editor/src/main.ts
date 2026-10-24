@@ -14,6 +14,7 @@ import { downloadDraft } from "./download.ts";
 import { AuthorReferences } from "./references.ts";
 import { AuthorFlow } from "./flow.ts";
 import { AuthorChanges } from "./changes.ts";
+import { AuthorScene } from "./scene.ts";
 import "../../game/src/style.css";
 import "./style.css";
 
@@ -65,6 +66,7 @@ let references: AuthorReferences | null = null;
 let flow: AuthorFlow | null = null;
 let checkpoints: PreviewCheckpoints | null = null;
 let changes: AuthorChanges | null = null;
+let sceneInspector: AuthorScene | null = null;
 const NODE_PAGE_SIZE = 200;
 let nodePage = 0;
 let nodeList: {
@@ -126,6 +128,7 @@ function controls(): void {
   references?.setAvailable(!!baseline && !locked);
   flow?.setAvailable(!!baseline && !locked);
   changes?.setAvailable(!!baseline && !locked);
+  sceneInspector?.setAvailable(!!baseline && !locked);
   checkpoints?.setEnabled(!disposed && !!baseline && operation === null && !reviewing);
 }
 
@@ -147,6 +150,7 @@ function nodeForm(): void {
   references?.select(selected);
   flow?.select(selected);
   controls();
+  sceneInspector?.refresh();
 }
 
 function nodePaging(): void {
@@ -231,6 +235,7 @@ function draftChanged(options: { cancelImport?: boolean; refreshForm?: boolean; 
   references?.invalidate();
   flow?.invalidate();
   changes?.invalidate();
+  sceneInspector?.invalidate();
   checkpoints?.invalidatePending("草稿已变化，未采用旧检查点读取；已有待用数据保留，恢复时仍须匹配当前修订。");
   el.discard.checked = false;
   preview.draftChanged();
@@ -311,6 +316,7 @@ async function perform(kind: "load" | "preview" | "save", start: PreviewStart = 
       references?.invalidate();
       flow?.invalidate();
       changes?.invalidate();
+      sceneInspector?.invalidate();
       el.discard.checked = false;
       if (!result.content.nodes.some(node => node.id === selected)) selected = result.content.entryNodeId;
       el.source.textContent = `作者源 SHA-256：${result.sourceSha256}；节点 ${result.content.nodes.length} 个；内容修订：${result.content.revision}`;
@@ -334,7 +340,10 @@ async function perform(kind: "load" | "preview" | "save", start: PreviewStart = 
       requestController = null;
       button("stop").disabled = !preview.running;
       controls();
-      if (sourceAdopted) changes?.refresh();
+      if (sourceAdopted) {
+        changes?.refresh();
+        sceneInspector?.refresh();
+      }
     }
   }
 }
@@ -414,6 +423,7 @@ function dispose(): void {
   flow?.dispose();
   checkpoints?.dispose();
   changes?.dispose();
+  sceneInspector?.dispose();
   nodeList = null;
   el.nodes.replaceChildren();
   drafts.clear();
@@ -497,6 +507,14 @@ changes = new AuthorChanges({
   current: snapshot => !disposed && baseline !== null && baseline.content === snapshot.content
     && baseline.sourceSha256 === snapshot.sourceSha256 && revision === snapshot.revision,
   navigate: navigateNode,
+});
+sceneInspector = new AuthorScene({
+  root: element("author-scene", HTMLElement),
+  capture: () => baseline && !disposed && selected ? {
+    content: baseline.content, sourceSha256: baseline.sourceSha256, revision, nodeId: selected,
+  } : null,
+  current: snapshot => !disposed && baseline !== null && baseline.content === snapshot.content
+    && baseline.sourceSha256 === snapshot.sourceSha256 && revision === snapshot.revision && selected === snapshot.nodeId,
 });
 controls();
 void perform("load");

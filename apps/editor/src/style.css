@@ -47,6 +47,23 @@
 .changes-panel summary:focus-visible, .changes-panel button:focus-visible { outline: 3px solid #aed9e7; outline-offset: 2px; }
 .changes-panel fieldset:disabled summary { pointer-events: none; }
 .changes-pager { margin-top: 12px; font-size: .8rem; }
+.author-scene { margin: 24px 0; border: 1px solid #557682; border-radius: 8px; padding: 16px; }
+.author-scene h3, .author-scene h4 { margin: 0; font-size: 1rem; font-weight: 500; overflow-wrap: anywhere; }
+.author-scene h5 { margin: 8px 0; font-size: .85rem; font-weight: 500; overflow-wrap: anywhere; }
+.author-scene p { line-height: 1.7; overflow-wrap: anywhere; font-size: .85rem; }
+.author-scene fieldset { min-width: 0; border: 1px solid #39515c; padding: 12px; }
+.author-scene fieldset:disabled { opacity: .6; }
+.author-scene fieldset > section { padding: 16px 0; border-bottom: 1px solid #39515c; }
+.author-scene dl { display: grid; grid-template-columns: minmax(120px, 34%) minmax(0, 1fr); gap: 8px 14px; font-size: .8rem; }
+.author-scene dt, .author-scene dd { margin: 0; overflow-wrap: anywhere; white-space: pre-wrap; }
+.author-scene dt { color: #bdd8df; }
+.author-scene ol { padding-left: 24px; max-height: 460px; overflow: auto; }
+.author-scene li { padding: 12px 0; border-bottom: 1px solid #39515c; }
+.author-scene pre { white-space: pre-wrap; overflow-wrap: anywhere; max-height: 300px; overflow: auto; padding: 12px; background: #061119; font-size: .8rem; }
+.author-scene summary { cursor: pointer; padding: 10px 0; overflow-wrap: anywhere; min-height: 40px; }
+.author-scene summary:focus-visible, .author-scene button:focus-visible { outline: 3px solid #aed9e7; outline-offset: 2px; }
+.scene-resource { margin-top: 14px; }
+.scene-pager { margin-top: 12px; font-size: .8rem; }
 .reference-panel { margin: 24px 0; border: 1px solid #557682; border-radius: 8px; padding: 16px; }
 .reference-panel h3 { margin: 0; font-size: 1rem; font-weight: 500; }
 .reference-panel h4 { font-size: .85rem; font-weight: 500; overflow-wrap: anywhere; }
@@ -95,4 +112,6 @@ input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 3px
   #nodes { height: 180px; }
   .draft-comparison { grid-template-columns: 1fr; }
   .reference-columns { grid-template-columns: 1fr; }
+  .author-scene dl { grid-template-columns: minmax(0, 1fr); }
+  .author-scene dd { margin-bottom: 8px; }
 }

@@ -5,15 +5,15 @@
     "老奶奶": "content/audio/voice-refs/granny.mp3",
     "银匠": "content/audio/voice-refs/smith.mp3"
   },
-  "count": 825,
+  "count": 824,
   "by_speaker": {
-    "鲸鱼小姐": 808,
+    "鲸鱼小姐": 807,
     "摊主": 1,
     "老奶奶": 14,
     "摊主甲": 1,
     "摊主乙": 1
   },
-  "needs_review": 46,
+  "needs_review": 54,
   "items": [
     {
       "line": "58oo02cv",
@@ -28,7 +28,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "a1942e0070d09ac6a202c320db24ecd78038fdfbe2a30aff37734690eff0ae07",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:08:18.805Z"
+      }
     },
     {
       "line": "986487og",
@@ -43,7 +52,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "2d9ec00812831a5b48a81101806d719f862f0fe50cac79445a3e133788ccba9b",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:08:24.051Z"
+      }
     },
     {
       "line": "irma08fi",
@@ -58,7 +76,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "bce79b2794187c7b2961a331071ee640c684877eafed2a0122deff268743af93",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:08:26.803Z"
+      }
     },
     {
       "line": "k1t4gr6o",
@@ -73,7 +100,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "bf8246354de144624395d5c0fa54bdc438f244c7a87acb66ca945c091c8e7976",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:08:31.094Z"
+      }
     },
     {
       "line": "opening_tail_warning",
@@ -88,7 +124,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "c38cf8f695d553096e6defabf19c431b8e35a54114f678b04eb587392af3aec7",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:08:32.118Z"
+      }
     },
     {
       "line": "v17izdvn",
@@ -108,22 +153,36 @@
       "manualListeningPerformed": false,
       "distanceEffects": false,
       "instruction": "嗓音再圆润成熟一点，像二十岁左右的甜萌动漫女声，日系动画女主的配音腔，甜美清透不尖锐，先点明尾巴尖，后半句轻轻咬字，坚定又带点嗔意，清晰，音量适中，语速自然不拖腔，音色保持一致",
-      "instructionAuthor": "Codex主代理按本轮用户截图批注与剧情逐句编写；未使用额外提示生成模型"
+      "instructionAuthor": "Codex主代理按本轮用户截图批注与剧情逐句编写；未使用额外提示生成模型",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "c66858cbf0ef796010514f6a972a976b26255c9c178568cc0a3756a9755ecefb",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:08:36.785Z"
+      }
     },
     {
       "line": "lt5k0xiy",
       "speaker": "鲸鱼小姐",
       "asset": "vo_lt5k0xiy",
       "src": "assets/vo/lt5k0xiy.mp3",
-      "dur": 3.527,
-      "sha256": "20df46daf1431d8e83f8b15e36c6cb056e30fc271bae5fbea161514acbb70fd7",
-      "speak": "喂！你这家伙，碰到了别人不知道道歉么！",
-      "direction": "突然拔高音量，语速加快，带真实的恼火，尾字微微上冲",
-      "asr": "喂，你这家伙，碰到了别人不知道道歉吗？",
-      "asr_similarity": 0.938,
-      "status": "ok",
-      "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "dur": 4.083129,
+      "sha256": "a083171bcffc6a5ad8326fc4d8196b39c20e03ad2ba3b532365360ce1a5e562d",
+      "speak": "喂，你这家伙，碰到了别人不知道道歉么！",
+      "direction": "接着礼貌话题抱怨，甜声带刺，声线收敛不训人",
+      "asr": "问 你 这 假货 碰到 了 别人 不知道 道歉 吗",
+      "asr_similarity": 0.875,
+      "status": "needs_listening",
+      "batch": "20261024-ch12-r2",
+      "generator": "qwen-audio-3.0-tts-plus qwen-audio-3.0-tts-plus-longcanruishuang",
+      "origin": "new_qwen_generation",
+      "manualListeningPerformed": false,
+      "distanceEffects": false,
+      "instruction": "嗓音再圆润成熟一点，像二十岁左右的甜萌动漫女声，日系动画女主的配音腔，甜美清透不尖锐，接着礼貌话题抱怨，甜声带刺，声线收敛不训人，自然，音量适中，语速自然不拖腔，音色保持一致",
+      "instructionAuthor": "Codex主代理根据2026-10-24本轮JSON批注和真实前后文直接编写，无外部提示生成模型"
     },
     {
       "line": "5stlid22",
@@ -138,7 +197,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "4a602cb3e4605f4d02e349b656eae698a45391d2c80b3e55fccd945cd50c8a0f",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:09:11.468Z"
+      }
     },
     {
       "line": "gjwqntp5",
@@ -153,7 +221,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "c671d135ee2ea7c08fba0351f5e3aba4eda78b128704830599dcbac620b245de",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:09:54.719Z"
+      }
     },
     {
       "line": "opening_second_hit_rebuke",
@@ -168,7 +245,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "bedc7614ad8b0788abd081e0c00a6c0691b2975d45ec3db5ff01a666a9c072e2",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:10:41.165Z"
+      }
     },
     {
       "line": "wxlmihwk",
@@ -183,7 +269,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "0138b081c0492416d7184800de872eb55ddcfaa5792fd8262281ec4a49352506",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:10:44.420Z"
+      }
     },
     {
       "line": "9nwggcga",
@@ -198,27 +293,88 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "037fa46a8d3c9e3afe26523f8fa3e3e5f069332c2a93e9891b7e7cdff8170aaa",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:10:47.053Z"
+      }
     },
     {
       "line": "m4wlasdc",
       "speaker": "鲸鱼小姐",
       "asset": "vo_m4wlasdc",
       "src": "assets/vo/m4wlasdc.mp3",
-      "dur": 2.8945625,
-      "sha256": "fc83e73609914333916b1712c6e4e564affbd972f40054b38d22a7e734c52862",
+      "dur": 2.957029,
+      "sha256": "25ef8c2f671a63d5293c6a5d90029ed07004a83eeba9e18ff3b1e0f30e90cc6c",
       "speak": "你们人类掉海里，都不忘带奇怪的本子吗？",
       "direction": "海字略着重，带点打趣，后半句一气说完不数落",
       "asr": "你们 人类 掉 海里 都 不 往 大 奇怪 的 本子 吗",
       "asr_similarity": 0.9411764705882353,
       "status": "needs_listening",
-      "batch": "20261024-ch12-followup",
+      "batch": "20261024-ch12-r2",
       "generator": "qwen-audio-3.0-tts-plus qwen-audio-3.0-tts-plus-longcanruishuang",
-      "origin": "new_qwen_generation",
+      "origin": "local_whole_word_timing_gain",
       "manualListeningPerformed": false,
       "distanceEffects": false,
       "instruction": "嗓音再圆润成熟一点，像二十岁左右的甜萌动漫女声，日系动画女主的配音腔，甜美清透不尖锐，海字略着重，带点打趣，后半句一气说完不数落，清晰，音量适中，语速自然不拖腔，音色保持一致",
-      "instructionAuthor": "Codex主代理按本轮用户截图批注与剧情逐句编写；未使用额外提示生成模型"
+      "instructionAuthor": "Codex主代理按本轮用户截图批注与剧情逐句编写；未使用额外提示生成模型",
+      "edit": {
+        "type": "whole_word_pitch_preserving_timing_gain",
+        "word": "海里",
+        "wordTimestampSeconds": [
+          0.689946,
+          1.2
+        ],
+        "editedSourceIntervalSeconds": [
+          0.7019501133786848,
+          1.2329931972789117
+        ],
+        "boundaries": [
+          {
+            "edge": "start",
+            "sample": 30956,
+            "seconds": 0.7019501133786848,
+            "rms5msDbfs": -32.57240252259476
+          },
+          {
+            "edge": "end",
+            "sample": 54375,
+            "seconds": 1.2329931972789117,
+            "rms5msDbfs": -240.0
+          }
+        ],
+        "tempo": 0.88,
+        "pitch": 1,
+        "maximumGainDb": 0.4,
+        "gainEdgeSmoothingSeconds": 0.02,
+        "crossfadeSeconds": 0.004988662131519274,
+        "command": [
+          "ffmpeg",
+          "-nostdin",
+          "-hide_banner",
+          "-loglevel",
+          "error",
+          "-y",
+          "-i",
+          "C:\\Users\\UserX\\Documents\\Codex\\2026-10-10\\new-chat\\outputs\\tts-ch12-feedback-r2-20261024\\local-edits\\m4wlasdc\\gentle088\\haili-source.wav",
+          "-af",
+          "rubberband=tempo=0.88:pitch=1",
+          "-ar",
+          "44100",
+          "-ac",
+          "1",
+          "-c:a",
+          "pcm_s16le",
+          "C:\\Users\\UserX\\Documents\\Codex\\2026-10-10\\new-chat\\outputs\\tts-ch12-feedback-r2-20261024\\local-edits\\m4wlasdc\\gentle088\\haili-tempo088.wav"
+        ],
+        "sourceSHA256": "fc83e73609914333916b1712c6e4e564affbd972f40054b38d22a7e734c52862",
+        "independentHaiCharacterClaim": false
+      }
     },
     {
       "line": "p4p4l5nc",
@@ -233,7 +389,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "e9ca83eb73c7f0d1e7c5b3781ee133f3b6e6736f9ccb21092c346da07cbbfe07",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:11:35.034Z"
+      }
     },
     {
       "line": "d8fiin5a",
@@ -248,7 +413,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "b072bfa1bd9541cebc71b603dbc751e2887d28d1be1d373901058f4794ca35b5",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:11:36.812Z"
+      }
     },
     {
       "line": "vfo56g8o",
@@ -263,7 +437,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "cff98d14234b06b02eb3b1e79f1cfed1f2a34f46eee35706b246d74c010333d0",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:11:40.832Z"
+      }
     },
     {
       "line": "2360dvsq",
@@ -278,7 +461,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "2775f159099e5155bf95ce8e2f8162e41f97294858419f935df81fd08e69bd3d",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:11:43.580Z"
+      }
     },
     {
       "line": "v3dynf75",
@@ -293,7 +485,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "6d0493a4e86b4507fa22e3fad9baa28f462f4536cee5c6abfdb80d8d81fb65bc",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:11:47.034Z"
+      }
     },
     {
       "line": "sb63ua0q",
@@ -308,7 +509,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "d0adf10ed118aa8dc53fcccaf44117e0f1574db14f6483f9bfc326ac30952ddc",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:11:49.694Z"
+      }
     },
     {
       "line": "mb2zb98l",
@@ -323,7 +533,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "97c9bf0612eb38cd30de189b478216dc53d4fab0bef65fb7669e7c346ead9720",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:11:52.038Z"
+      }
     },
     {
       "line": "n4owcxly",
@@ -338,22 +557,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
-    },
-    {
-      "line": "f8iqmtlj",
-      "speaker": "鲸鱼小姐",
-      "asset": "vo_f8iqmtlj",
-      "src": "assets/vo/f8iqmtlj.mp3",
-      "dur": 1.019,
-      "sha256": "7e2486a8ba070bffe2ef8bb70440f8efe0708ebf739c553237433a5e80f007ee",
-      "speak": "……啧。",
-      "direction": "停顿后发出轻微嫌弃音，控制着音量，像不想被听见的叹气",
-      "asr": "这。",
-      "asr_similarity": 0.0,
-      "status": "ok",
-      "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "3c4260268ba74ad06bc31f84efff06d617f185a3474206a6b57455e3ec1bc220",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:11:56.484Z"
+      }
     },
     {
       "line": "7y5p4ecl",
@@ -368,7 +581,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "52edf98d58b1c6e61ceaca0b034c45e6cc42f3beab81134b4a20c37ef4d40ed9",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:12:15.537Z"
+      }
     },
     {
       "line": "udtz7wdn",
@@ -383,22 +605,50 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "dc4a9281da8518ed1ae1d23802a0b4ec7d4c39546fb0928f32b1a1a918837807",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:12:19.071Z"
+      }
     },
     {
       "line": "8bl6cnrg",
       "speaker": "鲸鱼小姐",
       "asset": "vo_8bl6cnrg",
       "src": "assets/vo/8bl6cnrg.mp3",
-      "dur": 4.728,
-      "sha256": "eb9c3f88a39f0a5b589c74f0c98449a2adc2469bc0a674a94a4a0e54c9cff1bd",
-      "speak": "浅滩，人类。往东三里是小镇。",
+      "dur": 3.775034,
+      "sha256": "3f79002196d6818bfddd5dbea7211885dd9920201699a8c46c24326ff650971b",
+      "speak": "浅滩。人类，往东三里是小镇。",
       "direction": "语调收敛、干脆，像随口指路又不想多说，声音偏低",
-      "asr": "浅滩，人类，往东三里是小镇。",
-      "asr_similarity": 1.0,
-      "status": "ok",
-      "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "asr": "浅滩 人类 往东 三 是 小镇",
+      "asr_similarity": 0.9523809523809523,
+      "status": "needs_listening",
+      "batch": "20261024-ch12-r2",
+      "generator": "qwen-audio-3.0-tts-plus qwen-audio-3.0-tts-plus-longcanruishuang",
+      "origin": "local_pause_retiming",
+      "manualListeningPerformed": false,
+      "distanceEffects": false,
+      "edit": {
+        "type": "silence_only_pause_retiming",
+        "shallowPauseBeforeSeconds": 0.5310199999999999,
+        "shallowPauseAfterSeconds": 0.5310199999999999,
+        "shallowPauseUnchanged": true,
+        "humanPauseBeforeSeconds": 1.028708,
+        "humanPauseAfterApproxSeconds": 0.11700680272108843,
+        "removedPureSilenceSeconds": [
+          1.5826530612244898,
+          2.491360544217687
+        ],
+        "crossfadeSeconds": 0.002993197278911565,
+        "allSamplesAboveMinus38dBFSUnchangedAndOrdered": true,
+        "targetReadPunctuation": "浅滩。人类，往东三里是小镇。",
+        "sourceSHA256": "eb9c3f88a39f0a5b589c74f0c98449a2adc2469bc0a674a94a4a0e54c9cff1bd"
+      }
     },
     {
       "line": "du33qrza",
@@ -413,22 +663,46 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "1f5725576d45efc8b92f55e8574dcca446abc6b67f1fc46cdb8d970cdfce802d",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:12:40.511Z"
+      }
     },
     {
       "line": "ofo60hm7",
       "speaker": "鲸鱼小姐",
       "asset": "vo_ofo60hm7",
       "src": "assets/vo/ofo60hm7.mp3",
-      "dur": 4.389,
-      "sha256": "39b0281978345d2208a833478b621b16f253cfbd2224192ca6b17a5ae23f0169",
+      "dur": 4.647574,
+      "sha256": "3da50631a84d84ed94f1898d9e1d7ee27fe7be9430c89f3980e1501753cb847c",
       "speak": "是本小姐家。你这种连游泳都费劲的家伙，最好别去。",
       "direction": "前半句带自豪，后半句语速加快带嫌弃，尾音轻而凉",
-      "asr": "是本小姐家。你这种连游泳都费劲的家伙，最好别去。",
-      "asr_similarity": 1.0,
-      "status": "ok",
-      "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "asr": "本 小姐 家 你 这种 连 游泳 都 费劲 的 家伙 最好 别去",
+      "asr_similarity": 0.975609756097561,
+      "status": "needs_listening",
+      "batch": "20261024-ch12-r2",
+      "generator": "qwen-audio-3.0-tts-plus qwen-audio-3.0-tts-plus-longcanruishuang",
+      "origin": "local_clause_pause",
+      "manualListeningPerformed": false,
+      "distanceEffects": false,
+      "edit": {
+        "type": "single_node_clause_pause",
+        "sourceCutSeconds": 3.5174603174603174,
+        "beforePhrase": "最好别去",
+        "originalQuietSeconds": 0.11380999999999997,
+        "targetQuietSeconds": 0.4,
+        "insertedSilenceSeconds": 0.2861904761904762,
+        "crossfadeSeconds": 0.002993197278911565,
+        "nodeCountChanged": false,
+        "allSamplesAboveMinus38dBFSUnchangedAndOrdered": true,
+        "sourceSHA256": "39b0281978345d2208a833478b621b16f253cfbd2224192ca6b17a5ae23f0169"
+      }
     },
     {
       "line": "oxt0ch9a",
@@ -443,7 +717,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "d50c2a73cc3b48ba5c127e6a3df7d5655164c04838d944442aed58e4ecf91283",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:15:41.510Z"
+      }
     },
     {
       "line": "0npzmlbh",
@@ -458,7 +741,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "5b0a208710b0efeb56eacddd95bae115d2810532cbd41a242cba3896edd13e5f",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:15:43.862Z"
+      }
     },
     {
       "line": "9nq3isso",
@@ -480,42 +772,40 @@
       "speaker": "鲸鱼小姐",
       "asset": "vo_3iq8cnx2",
       "src": "assets/vo/3iq8cnx2.mp3",
-      "dur": 0.702721,
-      "sha256": "2861d2813fbd6845e63dadb5e4d4b002d4e66471c1a9f41d08f3539ca21f358c",
-      "speak": "看什么看！",
-      "direction": "偷帮对方被发现，装凶反问，音色甜而带刺",
-      "asr": "看 什么 看",
+      "dur": 1.711678,
+      "sha256": "30fd42736016f6f0d32426738b1bc5621e97705ac1bf80a1a80f91f5ed37e845",
+      "speak": "看，看什么！",
+      "direction": "被看到偷偷帮忙，先卡住一个看字，再嘴硬反问",
+      "asr": "看 看 什么",
       "asr_similarity": 1.0,
       "status": "needs_listening",
-      "batch": "20261024-feedback-repair",
+      "batch": "20261024-ch12-r2",
       "generator": "qwen-audio-3.0-tts-plus qwen-audio-3.0-tts-plus-longcanruishuang",
       "origin": "new_qwen_generation",
       "manualListeningPerformed": false,
       "distanceEffects": false,
-      "instruction": "嗓音再圆润成熟一点，像二十岁左右的甜萌动漫女声，日系动画女主的配音腔，甜美清透不尖锐，偷帮对方被发现，装凶反问，音色甜而带刺，音量适中，语速自然不拖腔，音色保持一致",
-      "instructionAuthor": "Codex主代理逐句阅读上下文后撰写，无外部提示生成模型",
-      "userReview": {
-        "decision": "accept",
-        "audioSha256": "2861d2813fbd6845e63dadb5e4d4b002d4e66471c1a9f41d08f3539ca21f358c",
-        "date": "2026-10-24",
-        "source": "user_supplied_screenshot_review",
-        "note": ""
-      }
+      "instruction": "嗓音再圆润成熟一点，像二十岁左右的甜萌动漫女声，日系动画女主的配音腔，甜美清透不尖锐，被看到偷偷帮忙，先卡住一个看字，再嘴硬反问，音量适中，语速自然不拖腔，音色保持一致",
+      "instructionAuthor": "Codex主代理根据2026-10-24本轮JSON批注和真实前后文直接编写，无外部提示生成模型"
     },
     {
       "line": "i99npm13",
       "speaker": "鲸鱼小姐",
       "asset": "vo_i99npm13",
       "src": "assets/vo/i99npm13.mp3",
-      "dur": 2.978,
-      "sha256": "91f7a5d1575889e6cd047fe3ed3eb35e5d5dfdea67dc2ede94c1fc49b6a7c5de",
-      "speak": "那是水流！海流懂不懂！",
-      "direction": "强词夺理，越说越快，语气强但底气不足，像在自欺欺人",
-      "asr": "那是水流，海流懂不懂？",
+      "dur": 1.963084,
+      "sha256": "e777ec8c1b250f877ebfa8ca266832092c56520841db405759b3a7a33d42443d",
+      "speak": "那是水流，海流懂不懂！",
+      "direction": "偷偷帮忙被发现，解释接连出口，心虚又竭力装凶",
+      "asr": "那 是 水流 海流 懂不懂",
       "asr_similarity": 1.0,
-      "status": "ok",
-      "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "status": "needs_listening",
+      "batch": "20261024-ch12-r2",
+      "generator": "qwen-audio-3.0-tts-plus qwen-audio-3.0-tts-plus-longcanruishuang",
+      "origin": "new_qwen_generation",
+      "manualListeningPerformed": false,
+      "distanceEffects": false,
+      "instruction": "嗓音再圆润成熟一点，像二十岁左右的甜萌动漫女声，日系动画女主的配音腔，甜美清透不尖锐，偷偷帮忙被发现，解释接连出口，心虚又竭力装凶，音量适中，语速自然不拖腔，音色保持一致",
+      "instructionAuthor": "Codex主代理根据2026-10-24本轮JSON批注和真实前后文直接编写，无外部提示生成模型"
     },
     {
       "line": "dmbm0jfv",
@@ -530,7 +820,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "3d75671b8c98481ab7de7ef4b5f74c50722310e40e121d300d013c3a4a25b7f1",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:15:59.318Z"
+      }
     },
     {
       "line": "jqmeeaid",
@@ -545,7 +844,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "5b5c27b3448e48917bf39593d0531e70f5eb8f0d75b8cd57406463b8003ca7ce",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:16:03.132Z"
+      }
     },
     {
       "line": "huyyx0s8",
@@ -560,7 +868,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "c00bec194b948b2105552a1efac55a37064cd555834c347b05901ac99a1a0f35",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:19:37.218Z"
+      }
     },
     {
       "line": "jpgy8sfu",
@@ -575,7 +892,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "643b297e59e825e15dfa39a5fcf50d1610f9e46776ddeb03a9c62d7bc22f83e8",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:19:50.474Z"
+      }
     },
     {
       "line": "fm43foif",
@@ -590,7 +916,16 @@
       "asr_similarity": 0.833,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "35414f3fc6da49fba8eb92ec7db24638d0ae4a311c153fb5d7b3777b16a27f0d",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:19:52.846Z"
+      }
     },
     {
       "line": "o1frkrlk",
@@ -605,7 +940,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "feae8319aa9aa074441b881e98edb6975a6d7a647e9989c75e62aeeb4029b5a4",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:20:01.160Z"
+      }
     },
     {
       "line": "x5l5e2zq",
@@ -620,7 +964,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "6bf9abce6efc5d2fb02c9d49a23f0a6ff9ccf92d4516a86237137685505e9ffd",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:20:03.280Z"
+      }
     },
     {
       "line": "gdn4c513",
@@ -635,7 +988,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "11f0a7db87fba702d5ec9bfde96548f732e2508a6dec029d1fa57f2b931bd3de",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:20:05.686Z"
+      }
     },
     {
       "line": "l96c0f8q",
@@ -650,7 +1012,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "a40e9b4e7a23623e9c37a6bacad14427c5575095bcc21ae2704faadcee8f33a8",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:20:10.974Z"
+      }
     },
     {
       "line": "clfnykuw",
@@ -665,7 +1036,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "ba1a3575709430f6debfcb576d47be8a03ffaac21c8d21d7727ceead0104987c",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:20:15.893Z"
+      }
     },
     {
       "line": "7oxowej6",
@@ -680,7 +1060,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "26fe9c09c6fe424c5f59081162bcbc4f79cfb829b5bc7c42f5fe86ac049b0cf2",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:20:27.735Z"
+      }
     },
     {
       "line": "macs2evb",
@@ -695,7 +1084,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "7ded76ce8aa601b02cad71b986500451da69278ea5171aa02c0feacec9127450",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:20:35.741Z"
+      }
     },
     {
       "line": "twdgdg8k",
@@ -710,7 +1108,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "37d817d3fa33c29dd7393031ce4110945279467e7a0799a87527db517b838ef2",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:20:37.619Z"
+      }
     },
     {
       "line": "unfmnv5c",
@@ -725,7 +1132,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "c138d90970015cb345a408737e8d3728904fec8de7e12cbe1be25167910e740c",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:20:40.331Z"
+      }
     },
     {
       "line": "ysfx3a0y",
@@ -740,7 +1156,16 @@
       "asr_similarity": 0.974,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "3d5de5b934bf60f14826f19d7edc0d2cf9bc25b01a335752bf60bae9af2819cd",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:20:43.171Z"
+      }
     },
     {
       "line": "wb0jt6bd",
@@ -755,7 +1180,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "004fa7c722129577d4c7fa0801df2591235c1b99878b30b768eadb16972818f4",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:20:48.129Z"
+      }
     },
     {
       "line": "dk3o5u4e",
@@ -770,7 +1204,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "b515ab15130295cf2b76785c71f49b7341f4b324deb45459aea846f3e85c816a",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:20:50.113Z"
+      }
     },
     {
       "line": "19j7cn4u",
@@ -796,8 +1239,10 @@
         "decision": "accept",
         "audioSha256": "c9f7ca4993908449c079a7da82a602d43fcdce3149ea17cd16b2376858bc6f94",
         "date": "2026-10-24",
-        "source": "user_supplied_screenshot_review",
-        "note": ""
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": null
       }
     },
     {
@@ -824,8 +1269,10 @@
         "decision": "accept",
         "audioSha256": "a1bed6228adb73370ce654bf0b1936a8a210acfdb2e46eec8488336e461267b7",
         "date": "2026-10-24",
-        "source": "user_supplied_screenshot_review",
-        "note": ""
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": null
       }
     },
     {
@@ -852,8 +1299,10 @@
         "decision": "accept",
         "audioSha256": "7bc249090cbdba4cbcef30ed3957be52e5d3680678b0d481455ac9002f6ea6a4",
         "date": "2026-10-24",
-        "source": "user_supplied_screenshot_review",
-        "note": ""
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": null
       }
     },
     {
@@ -879,8 +1328,10 @@
         "decision": "accept",
         "audioSha256": "5c870e83756462131d5be4764514ecbb27e8b11019c0adbdac950fae0b2932e8",
         "date": "2026-10-24",
-        "source": "user_supplied_screenshot_review",
-        "note": ""
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": null
       }
     },
     {
@@ -896,7 +1347,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "72429f47037507ea8fa2c32cafc1080989932ad82a1d8b7b0ac59b09a466bbf6",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:21:22.886Z"
+      }
     },
     {
       "line": "il5kovq6",
@@ -911,7 +1371,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "97e53080134d63f9329d27fdc5abb69709d63b8b547138b5d516d52277123453",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:21:25.952Z"
+      }
     },
     {
       "line": "rfxtpyjg",
@@ -926,22 +1395,36 @@
       "asr_similarity": 0.8,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "960bc59130d3a2915c1428d91a0e40eacbd73540cb72c42b720b4b302aa40e20",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:21:29.448Z"
+      }
     },
     {
       "line": "s8tmtnhe",
       "speaker": "鲸鱼小姐",
       "asset": "vo_s8tmtnhe",
       "src": "assets/vo/s8tmtnhe.mp3",
-      "dur": 4.833,
-      "sha256": "ec3e851deb0d39c40266952562c031122c410bf267e68b9111ad0adbbd0eac3a",
-      "speak": "……吃完就走啊。还愣着干嘛。",
-      "direction": "沉默后小声催促，语气比预期温，像是不习惯被这样看着",
-      "asr": "吃完就走啊，还愣着干嘛？",
+      "dur": 2.563719,
+      "sha256": "1598f2c7e11d368f9c9472f6b4737d26759b266a7b302d0dc2aa00803008e98a",
+      "speak": "吃完就走啊，还愣着干嘛。",
+      "direction": "见他闷头吃有点失落，随口催走，像自然聊天",
+      "asr": "吃 完 就 走 啊 还 愣 着 干嘛",
       "asr_similarity": 1.0,
-      "status": "ok",
-      "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "status": "needs_listening",
+      "batch": "20261024-ch12-r2",
+      "generator": "qwen-audio-3.0-tts-plus qwen-audio-3.0-tts-plus-longcanruishuang",
+      "origin": "new_qwen_generation",
+      "manualListeningPerformed": false,
+      "distanceEffects": false,
+      "instruction": "嗓音再圆润成熟一点，像二十岁左右的甜萌动漫女声，日系动画女主的配音腔，甜美清透不尖锐，见他闷头吃有点失落，随口催走，像自然聊天，自然，音量适中，语速自然不拖腔，音色保持一致",
+      "instructionAuthor": "Codex主代理根据2026-10-24本轮JSON批注和真实前后文直接编写，无外部提示生成模型"
     },
     {
       "line": "q975yrh8",
@@ -956,7 +1439,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "e519cfcf1fa49a9be07785c4a03c6e72631d34cdd27b2e6ffd67fe7433f29577",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:21:45.988Z"
+      }
     },
     {
       "line": "dg7yx2u8",
@@ -971,7 +1463,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "39756d197ac347129835099f2b7b179148f17d1dd137268284130c8a0050852c",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:21:50.299Z"
+      }
     },
     {
       "line": "iuosg2a2",
@@ -986,7 +1487,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "26475cf1ee411a815ffe2a3aff0e7b7e7daee8c5d3816765603df6e316ab7d5f",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:23:13.601Z"
+      }
     },
     {
       "line": "gleiylad",
@@ -1001,22 +1511,36 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "729852f754a26362f18ed13ad0a847e9da4a9171848df6b24d61791fa7cc0647",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:23:36.347Z"
+      }
     },
     {
       "line": "f3o1uyy0",
       "speaker": "鲸鱼小姐",
       "asset": "vo_f3o1uyy0",
       "src": "assets/vo/f3o1uyy0.mp3",
-      "dur": 2.56,
-      "sha256": "f8adceaee98ce7967aa4feb75dd19b2e14675966eeb1aac0174d1e6f05da7954",
-      "speak": "……谁说在等你的。",
-      "direction": "别过脸小声否认，语气生硬又藏不住一点慌张",
-      "asr": "谁说在等你的？",
+      "dur": 1.523696,
+      "sha256": "715a521c5e89027728590dd1af25e95e6bb1ef015d97c682e2b54d4bcf9d1df4",
+      "speak": "谁说在等你的。",
+      "direction": "躲在礁石后被发现，装作没等人，一口气轻轻顶回",
+      "asr": "谁 说 在 等 你 的",
       "asr_similarity": 1.0,
-      "status": "ok",
-      "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "status": "needs_listening",
+      "batch": "20261024-ch12-r2",
+      "generator": "qwen-audio-3.0-tts-plus qwen-audio-3.0-tts-plus-longcanruishuang",
+      "origin": "new_qwen_generation",
+      "manualListeningPerformed": false,
+      "distanceEffects": false,
+      "instruction": "嗓音再圆润成熟一点，像二十岁左右的甜萌动漫女声，日系动画女主的配音腔，甜美清透不尖锐，躲在礁石后被发现，装作没等人，一口气轻轻顶回，清晰，音量适中，语速自然不拖腔，音色保持一致",
+      "instructionAuthor": "Codex主代理根据2026-10-24本轮JSON批注和真实前后文直接编写，无外部提示生成模型"
     },
     {
       "line": "f8e6wh8c",
@@ -1031,7 +1555,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "b28f390aacd32f38e17a47f27a578b67875ecb064e97bffe770b4050ebe86dbc",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:23:42.807Z"
+      }
     },
     {
       "line": "cvelvwin",
@@ -1056,8 +1589,10 @@
         "decision": "accept",
         "audioSha256": "4e4b317a568cd867ee35435ceded87c752ac5cf62d368a316194992182b37769",
         "date": "2026-10-24",
-        "source": "user_supplied_screenshot_review",
-        "note": ""
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": null
       }
     },
     {
@@ -1073,7 +1608,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "3d1c64f6284a159a5c3f732a183cb713f5a2a630aefaaf7ed120c1a0bc323a98",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:24:07.848Z"
+      }
     },
     {
       "line": "pzcqedbf",
@@ -1088,7 +1632,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "1da9f0739d1a824ad6d657f122301f4d83668e815732229c33c9c94924a382bf",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:24:09.976Z"
+      }
     },
     {
       "line": "c6aajftq",
@@ -1103,7 +1656,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "0390a96f7793d32b9e09ce6f1a553c71353f1f92128dba18104694bce115c761",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:24:12.916Z"
+      }
     },
     {
       "line": "vkft1lib",
@@ -1118,7 +1680,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "382cc83f27525467651c7e57b4e7e7eac09b345b752dfa2c5422add299656d21",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:24:16.050Z"
+      }
     },
     {
       "line": "d2nuypd0",
@@ -1133,7 +1704,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "0158bc89644d9be4b680855457b581af44f9ec408dfeda2428fa623ede36f926",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:24:18.582Z"
+      }
     },
     {
       "line": "5p228zu3",
@@ -1148,7 +1728,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "1329f42519ddf4d0fe43c6b74718530c4fdac34a38366aeb9864f1ad0948a6cd",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:24:20.366Z"
+      }
     },
     {
       "line": "sb0dfj4m",
@@ -1178,7 +1767,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "a1c5f9ecd304d74ee9fc84fea5585551ba81ae5901a758fe7a794cb1c5012ff6",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:24:24.484Z"
+      }
     },
     {
       "line": "g3zkq3se",
@@ -1193,7 +1791,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "9d60c92ed1278a1a2592f0dddd1dac894137683daf77e1d0651979e8cb9e204f",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:24:29.041Z"
+      }
     },
     {
       "line": "kwsqkrhm",
@@ -1208,7 +1815,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "f0e7225e1c8a1e14357c190995be61f73920be19242fb87aa823babcd5375305",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:24:31.607Z"
+      }
     },
     {
       "line": "qptgrijt",
@@ -1223,7 +1839,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "a7e16ba2b1a447bca6345fb9d265c3cf20dbab891e76e6b65ce27d9c6240b1b8",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:24:34.227Z"
+      }
     },
     {
       "line": "4x70thl5",
@@ -1238,7 +1863,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "b6003d8fe1b5d553f4b3ef470e1933d93212a9b1417986f20eda0a4383f40e10",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:24:35.655Z"
+      }
     },
     {
       "line": "7esq5eqm",
@@ -1253,7 +1887,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "5458fda82637b7c8d2bb7b85cbfa0c7efa4cca5a9bd52170eb762b9a5c5700b2",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:24:37.843Z"
+      }
     },
     {
       "line": "6s4ciafk",
@@ -1268,7 +1911,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "19f7c55003ffd55bb7299cfa44736a00b040a145dd39c0cee3a17ae778e969ee",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:24:39.567Z"
+      }
     },
     {
       "line": "dfkb4sfb",
@@ -1283,7 +1935,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "dc702aa41d05c70a8aa0766ea058e24dd979e2ce8123fd6bb1fb037108e9c9ff",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:24:41.545Z"
+      }
     },
     {
       "line": "rkd43n5l",
@@ -1298,7 +1959,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "ad939c62087d4e1bd20872b07ce06b068328c539729cb7fc032945740e6208f1",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:24:44.105Z"
+      }
     },
     {
       "line": "w34adbpj",
@@ -1313,7 +1983,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "1177de875c88d5af2d0b6fb70a1c9c16fce0f5c7e5ed4e12c7cf1dccbc0478ec",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:24:46.681Z"
+      }
     },
     {
       "line": "7atacaud",
@@ -1338,8 +2017,10 @@
         "decision": "accept",
         "audioSha256": "0a331e3cb274d4272ab0e4f963392e7bcb6f3ea0b46acdfa4edd2682b01c2b47",
         "date": "2026-10-24",
-        "source": "user_supplied_screenshot_review",
-        "note": ""
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": null
       }
     },
     {
@@ -1360,7 +2041,16 @@
       "manualListeningPerformed": false,
       "distanceEffects": false,
       "instruction": "嗓音再圆润成熟一点，像二十岁左右的甜萌动漫女声，日系动画女主的配音腔，甜美清透不尖锐，接上暗号的解释，明天处略着重，尾音藏期待，音量适中，语速自然不拖腔，音色保持一致",
-      "instructionAuthor": "Codex主代理逐句阅读上下文后撰写，无外部提示生成模型"
+      "instructionAuthor": "Codex主代理逐句阅读上下文后撰写，无外部提示生成模型",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "8550ed97f439f1647e47c3476e4aeae1d9f627f8bfddb7821c1cbdd34ad0c3f2",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:24:50.835Z"
+      }
     },
     {
       "line": "pkayznot",
@@ -1380,7 +2070,16 @@
       "manualListeningPerformed": false,
       "distanceEffects": false,
       "instruction": "嗓音再圆润成熟一点，像二十岁左右的甜萌动漫女声，日系动画女主的配音腔，甜美清透不尖锐，看着对方确认约定，小小得意，问句轻巧上挑，音量适中，语速自然不拖腔，音色保持一致",
-      "instructionAuthor": "Codex主代理逐句阅读上下文后撰写，无外部提示生成模型"
+      "instructionAuthor": "Codex主代理逐句阅读上下文后撰写，无外部提示生成模型",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "2c9c6e33023c6e094a5d97a09b4203480234ef70a9f99e235be018342c917b80",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:24:52.591Z"
+      }
     },
     {
       "line": "ga1pjox5",
@@ -1395,7 +2094,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "70b5ff880fcfb25f2ed40306de626f6062223fd0d731fa72b83cb385a6aab024",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:24:55.938Z"
+      }
     },
     {
       "line": "ta9pcdes",
@@ -1403,17 +2111,35 @@
       "asset": "vo_ta9pcdes",
       "src": "assets/vo/ta9pcdes.mp3",
       "dur": 4.26322,
-      "sha256": "31ddab22f2ec45e505dc9915f50c4d89d6d50954dbb119dd2666c2d262e5b781",
+      "sha256": "7e1d8ddeb0296dfa2faaa0151bc29812fdb901145795d2984cc280f50ebfe776",
       "speak": "这片海域，除了你，谁敢跟本小姐对暗号？",
       "direction": "带点傲气宣示主权，语气自信又藏着亲近",
       "asr": "那 片 海域 除了 你 谁 敢 跟 本 小姐 对 暗号",
       "asr_similarity": 0.9375,
-      "status": "local_phrase_gain_candidate_needs_listening",
-      "batch": "tts-repair-20261023_local_phrase_gain",
+      "status": "needs_listening",
+      "batch": "20261024-ch12-r2",
       "generator": "qwen-audio-3.0-tts-plus qwen-audio-3.0-tts-plus-longcanruishuang",
-      "origin": "local_phrase_gain",
+      "origin": "local_single_word_gain",
       "manualListeningPerformed": false,
-      "distanceEffects": false
+      "distanceEffects": false,
+      "edit": {
+        "type": "single_word_gain",
+        "word": "谁",
+        "sourceRegionSeconds": [
+          2.16,
+          2.49
+        ],
+        "gainDb": -1.0,
+        "smoothingSecondsInsideEachEdge": 0.02,
+        "dareRegionSeconds": [
+          2.49,
+          2.64
+        ],
+        "darePCMUnchanged": true,
+        "outsideWhoPCMUnchanged": true,
+        "sourceIsAlreadyAcceptedPriorGainVersion": true,
+        "sourceSHA256": "31ddab22f2ec45e505dc9915f50c4d89d6d50954dbb119dd2666c2d262e5b781"
+      }
     },
     {
       "line": "o48jgiqf",
@@ -1428,7 +2154,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "68d3d19e38b379a5fdda548bb4b523b66b480fa85538e9cf4f2a51d81722c52f",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:25:57.105Z"
+      }
     },
     {
       "line": "akyb83h7",
@@ -1443,7 +2178,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "e9196b2ac066e1f1764e815135bb1525f56906534fa83606d2aaf537aabdf2af",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:25:55.660Z"
+      }
     },
     {
       "line": "c8sbjdev",
@@ -1458,7 +2202,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "ca9fd9f33ffb3d73b9cbeef6a5a528dcd0afc9278fd30c930dd61b1367af8345",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:25:54.069Z"
+      }
     },
     {
       "line": "pluotwwi",
@@ -1473,7 +2226,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "c4f8d3a4a02383c6de5845a0d986268e9c272206acf72bceac3287475cfa23a7",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:25:51.843Z"
+      }
     },
     {
       "line": "cti6ecmm",
@@ -1488,7 +2250,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "7a61b433018181a180b9319a1356d40b656d2379269dae4ebd0e6a496be6de33",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:25:49.786Z"
+      }
     },
     {
       "line": "oihue35n",
@@ -1503,7 +2274,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "582c4e1e7935302c137dea9b48be2d73e8e05cc08ac06ab07ed09c65b738a651",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:25:48.866Z"
+      }
     },
     {
       "line": "owfvy7rh",
@@ -1518,7 +2298,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "3ba383d378fe0abcdab0f6f3c71a60201ba5f199a49cfbc943bbd927be2f46e0",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:25:42.788Z"
+      }
     },
     {
       "line": "t1bp3pex",
@@ -1533,7 +2322,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "fcf57a9b03c20216c7a20922b3a31d10046311c1bbd9bc5d9952db263bd1f371",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:25:46.198Z"
+      }
     },
     {
       "line": "buecga5x",
@@ -1548,7 +2346,16 @@
       "asr_similarity": 0.286,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "f985019cbb493b98cab5f11637002a63ac84eda796c640998ba6e67877c239d8",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:26:01.303Z"
+      }
     },
     {
       "line": "uy92oyxq",
@@ -1563,7 +2370,16 @@
       "asr_similarity": 0.909,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "c5020810cf287c6c1654a302a3db564f4875a9327bad310bb786c7580c846368",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:26:03.227Z"
+      }
     },
     {
       "line": "al61w9p3",
@@ -1578,7 +2394,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "8a36975baa7f71f1c856863ae744a0435e5e5d0453c4daed228823930936db91",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:26:05.391Z"
+      }
     },
     {
       "line": "bd1u0b5w",
@@ -1593,7 +2418,16 @@
       "asr_similarity": 0.909,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "1825c2763320a6746e28bfbb8e6bc29b100dbd15e5e7311d66464dd9b3d45d42",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:26:07.891Z"
+      }
     },
     {
       "line": "vck6fztl",
@@ -1608,7 +2442,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "92d0e5e6f6187d1de65b5081ca4df1bbe2fae504f203bc2652ea71199b050b33",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:26:10.669Z"
+      }
     },
     {
       "line": "3awuittl",
@@ -1623,7 +2466,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "e2d7f43109ad3eed2b21a2b5d4b4279bd13d9942ba35c5fc2bd0025bdbaebec1",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:26:13.113Z"
+      }
     },
     {
       "line": "u7fab4y8",
@@ -1638,7 +2490,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "7df256af56ac5832e8bcb61ed19f1fac8349a3df9dcfb2c5ae37e6cddf47b040",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:26:16.317Z"
+      }
     },
     {
       "line": "urwxpwpj",
@@ -1653,7 +2514,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "752dcaa7072bc61f7437ae321919ce415a77d6cec85e4dd6c5d5bc56c9f7cb13",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:26:18.407Z"
+      }
     },
     {
       "line": "1ysm319j",
@@ -1668,7 +2538,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "de245029254e843b2ee3e9eb0122d2e069484050d27c149b1f3a747ddbdeea20",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:26:22.444Z"
+      }
     },
     {
       "line": "toipot06",
@@ -1683,7 +2562,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "b4568646968440e9f8ab58a25adf7db1d9d210f2515db7011ca47988e8c2e9b5",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:26:25.969Z"
+      }
     },
     {
       "line": "vqks6qld",
@@ -1698,7 +2586,16 @@
       "asr_similarity": 0.938,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "326356603b454e21ce886a578e92be3a0192b1d4772752729dc01da0cee35e7e",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:26:29.201Z"
+      }
     },
     {
       "line": "toiw2hsb",
@@ -1713,7 +2610,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "e61dff0b16dfd407224870ea096ca4ef02e82b460e5137c6105a4929844358b1",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:26:32.154Z"
+      }
     },
     {
       "line": "k8xf3if4",
@@ -1728,7 +2634,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "c90f677c0830f9f8a1f40e7dd50dc449ae76bf6e4ec932fa79f276219452e51c",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:26:35.052Z"
+      }
     },
     {
       "line": "v7m6mpzz",
@@ -1743,7 +2658,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "f2c626344c50cd3d53c538858502410060414a860d73fefa7136048ab76a1f4c",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:26:37.548Z"
+      }
     },
     {
       "line": "z8w99xv9",
@@ -1768,8 +2692,10 @@
         "decision": "accept",
         "audioSha256": "36857ee130e892f37ea0847d6a55f7de68e776609067ab9d20b4688eac2127ee",
         "date": "2026-10-24",
-        "source": "user_supplied_screenshot_review",
-        "note": ""
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": null
       }
     },
     {
@@ -1795,8 +2721,10 @@
         "decision": "accept",
         "audioSha256": "c480d2dc6172e6d4f6e802816255474b40bc43f2d60bbe06ae0556ad340b68c3",
         "date": "2026-10-24",
-        "source": "user_supplied_screenshot_review",
-        "note": ""
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": null
       }
     },
     {
@@ -1812,7 +2740,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "3ff42b4283d3fb2f70de5ab2e85010da92f70fddbd2016a254fbb3783fac6c86",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:26:45.290Z"
+      }
     },
     {
       "line": "v1te4c45",
@@ -1827,7 +2764,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "dd5ec61a6dd10305d708ea9e0a779cb91215903d1fe96fffb2954ab91ba1da93",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:26:48.290Z"
+      }
     },
     {
       "line": "medydevq",
@@ -1842,7 +2788,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "bd37b44884a106b248561fe53e47bf511ca38d6abfbde3d65113c4d6a87d6d0b",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:26:51.260Z"
+      }
     },
     {
       "line": "mel30c1l",
@@ -1857,7 +2812,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "4b54055c3f9bb3d52a32c772a849a0d2173162e242d3e3daca1573db4aaa644b",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:26:53.684Z"
+      }
     },
     {
       "line": "ee55vw64",
@@ -1872,7 +2836,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "2bc0c3b4a0ca27b5f7fc992982c8f087188756e8a39ec5376f7388ef526aeb0e",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:26:55.448Z"
+      }
     },
     {
       "line": "6sp5iou0",
@@ -1887,7 +2860,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "4a9530454b92c1c612bd1757c6ff50a7282cf436645030bef1aa9c8c53766785",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:26:58.138Z"
+      }
     },
     {
       "line": "v1qxertc",
@@ -1902,7 +2884,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "a321697bd6dfa8e569c74682a0df2f08f4c14a90fc9bdb9faf6c48806e982a56",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:27:00.590Z"
+      }
     },
     {
       "line": "hwgm8mxk",
@@ -1917,7 +2908,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "36de6961ad263b6a615d75b945adf13a167bb5dc33e2f3a3d213abf23cd91997",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:27:07.068Z"
+      }
     },
     {
       "line": "szo91re8",
@@ -1932,7 +2932,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "e904300981cd422cb588d10dbed376a9427515745647408cee89296d30431d96",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:27:08.944Z"
+      }
     },
     {
       "line": "9jxix8yv",
@@ -1947,7 +2956,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "d0b889d7d00b0df3e24a680851a7e8a29eb2fc7cde0fd21d0fb0bd261dc24308",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:27:12.889Z"
+      }
     },
     {
       "line": "t8r1ystg",
@@ -1962,7 +2980,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "2f5bd7da526e3dbbe5255605f45ddcd28a16a9bbc9ad01b8f659773afdb1f6d2",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:27:14.759Z"
+      }
     },
     {
       "line": "dwy8u0bl",
@@ -1977,7 +3004,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "94402c79bdd92617e707fa526548bcb2e52103ffd633b099558417bc0c52f48d",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:27:16.455Z"
+      }
     },
     {
       "line": "4wcig7s7",
@@ -1992,7 +3028,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "31eae4c9fbc66b6346dde57cdd40842dab4dde3a017a309da1ed4bea167e92ea",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:27:21.597Z"
+      }
     },
     {
       "line": "5d1gx8hr",
@@ -2007,7 +3052,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "8358a45725271d24eddae02b832da3f1e2ae3c1ba821422a27aad4a2aa8a9824",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:27:24.773Z"
+      }
     },
     {
       "line": "tafoincj",
@@ -2022,7 +3076,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "318ef77479e131920940cca5af86198071fb60a1ac9711b06205e3fd37b5b585",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:27:26.613Z"
+      }
     },
     {
       "line": "4f99m6q7",
@@ -2037,7 +3100,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "ace09761e623574093ef4741bffeba39d05b9bffbb27e525c96ecd8e4b553d22",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:27:28.461Z"
+      }
     },
     {
       "line": "a7c5njix",
@@ -2062,8 +3134,10 @@
         "decision": "accept",
         "audioSha256": "52091f92695536c2ab9bdd0775385a5849e086a878b4d973fbe24dda81682d9f",
         "date": "2026-10-24",
-        "source": "user_supplied_screenshot_review",
-        "note": ""
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": null
       }
     },
     {
@@ -2079,7 +3153,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "14a45acfe3607267c23570e6111f1449537194d1424044781c963c6c9f21151c",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:27:33.703Z"
+      }
     },
     {
       "line": "li3y809n",
@@ -2094,7 +3177,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "a00c5c47b7cc9f8cb4a00ac9546a54f98b7d261889ab1747bda75379f7127054",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:27:36.567Z"
+      }
     },
     {
       "line": "slxkh5nb",
@@ -2109,7 +3201,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "c53876c8f72c80ca125ee21ea7324be07ef0ea29488297c7a6ba9cfca59eaccb",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:27:40.237Z"
+      }
     },
     {
       "line": "b88ptsjs",
@@ -2124,7 +3225,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "6523378d9b6f42742851e35d7d03f101f86866ebd4dbf2ad604c1cc97713291b",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:27:42.325Z"
+      }
     },
     {
       "line": "uvtoc02j",
@@ -2139,7 +3249,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "97d6d42fb19508bddf9c07d7bfa2ab3e73013d98e37bc2d3eb3b8f483eb5e441",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:27:46.791Z"
+      }
     },
     {
       "line": "fxl393bw",
@@ -2154,52 +3273,91 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "dcd8f05940e8781b4076281501568af4a2b504ab8ae6a01699dd1b8a80c11ed9",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:27:48.808Z"
+      }
     },
     {
       "line": "5f7xxj54",
       "speaker": "鲸鱼小姐",
       "asset": "vo_5f7xxj54",
       "src": "assets/vo/5f7xxj54.mp3",
-      "dur": 4.807,
-      "sha256": "39fadbf1763a90373bab5893e5c42a58099983adec238e72f1eef322415395ca",
+      "dur": 3.708435,
+      "sha256": "c460e8c419791d9722e2557c40f2e5da44d45fa9dfe3c6f87134f82a1aa803e9",
       "speak": "你记得有什么用，那是你的脑子，又不是本小姐的。",
-      "direction": "故意别扭地反驳，语气嘴硬却带点感动藏在底下",
-      "asr": "你记得有什么用？那是你的脑子，又不是本小姐的。",
-      "asr_similarity": 1.0,
-      "status": "ok",
-      "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "direction": "明知被照顾仍装挑剔，转口接受，末句藏着依赖",
+      "asr": "你 家 的 有 什么 用 那 是 你 的 脑子 又 不是 本 小姐 的",
+      "asr_similarity": 0.95,
+      "status": "needs_listening",
+      "batch": "20261024-ch12-r2",
+      "generator": "qwen-audio-3.0-tts-plus qwen-audio-3.0-tts-plus-longcanruishuang",
+      "origin": "local_context_split_provisional",
+      "manualListeningPerformed": false,
+      "distanceEffects": false,
+      "instruction": "嗓音再圆润成熟一点，像二十岁左右的甜萌动漫女声，日系动画女主的配音腔，甜美清透不尖锐，明知被照顾仍装挑剔，转口接受，末句藏着依赖，自然，音量适中，语速自然不拖腔，音色保持一致",
+      "instructionAuthor": "Codex主代理根据2026-10-24本轮JSON批注和真实前后文直接编写，无外部提示生成模型",
+      "contextSourceKey": "ctx_borrow_brain_t1_5f7319242658",
+      "contextRegionSeconds": [
+        0.0,
+        3.7084349999999997
+      ],
+      "provisional": true
     },
     {
       "line": "12ib88ay",
       "speaker": "鲸鱼小姐",
       "asset": "vo_12ib88ay",
       "src": "assets/vo/12ib88ay.mp3",
-      "dur": 1.802,
-      "sha256": "f13d63044945fc48abe0e00a1fd7d2606f1e98702c78e252f0d71628677c92fd",
-      "speak": "……话虽这么说。",
-      "direction": "小声妥协，语气低落中带点认命的叹息感",
-      "asr": "话虽这么说。",
+      "dur": 1.516168,
+      "sha256": "83de3a622033f184b86e48292793f00adc25ab250750c45e91142cde9fd0e2c0",
+      "speak": "话虽这么说。",
+      "direction": "明知被照顾仍装挑剔，转口接受，末句藏着依赖",
+      "asr": "话 虽 这么说",
       "asr_similarity": 1.0,
-      "status": "ok",
-      "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "status": "needs_listening",
+      "batch": "20261024-ch12-r2",
+      "generator": "qwen-audio-3.0-tts-plus qwen-audio-3.0-tts-plus-longcanruishuang",
+      "origin": "local_context_split",
+      "manualListeningPerformed": false,
+      "distanceEffects": false,
+      "instruction": "嗓音再圆润成熟一点，像二十岁左右的甜萌动漫女声，日系动画女主的配音腔，甜美清透不尖锐，明知被照顾仍装挑剔，转口接受，末句藏着依赖，自然，音量适中，语速自然不拖腔，音色保持一致",
+      "instructionAuthor": "Codex主代理根据2026-10-24本轮JSON批注和真实前后文直接编写，无外部提示生成模型",
+      "contextSourceKey": "ctx_borrow_brain_t1_5f7319242658",
+      "contextRegionSeconds": null,
+      "provisional": false
     },
     {
       "line": "6b6yfsh8",
       "speaker": "鲸鱼小姐",
       "asset": "vo_6b6yfsh8",
       "src": "assets/vo/6b6yfsh8.mp3",
-      "dur": 4.807,
-      "sha256": "e2fe9d67cfe55c5a626ec4a86bd4bd79d5510bf5cdc3bac88b7555a42465825b",
+      "dur": 4.601701,
+      "sha256": "fcaf7c098849d07d27f95c35f295dc882f3c1d9c9942cc021cef9516f984b4fe",
       "speak": "条款四照定。你的脑子，勉强借本小姐存东西。",
-      "direction": "故作施恩般宣布，语气傲娇又藏着信任",
-      "asr": "条款四照定。你的脑子，勉强借本小姐存东西。",
-      "asr_similarity": 1.0,
-      "status": "ok",
-      "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "direction": "明知被照顾仍装挑剔，转口接受，末句藏着依赖",
+      "asr": "条款 私照 定 你 的 脑子 勉强 家 本 小姐 存 东西",
+      "asr_similarity": 0.9444444444444444,
+      "status": "needs_listening",
+      "batch": "20261024-ch12-r2",
+      "generator": "qwen-audio-3.0-tts-plus qwen-audio-3.0-tts-plus-longcanruishuang",
+      "origin": "local_context_split_provisional",
+      "manualListeningPerformed": false,
+      "distanceEffects": false,
+      "instruction": "嗓音再圆润成熟一点，像二十岁左右的甜萌动漫女声，日系动画女主的配音腔，甜美清透不尖锐，明知被照顾仍装挑剔，转口接受，末句藏着依赖，自然，音量适中，语速自然不拖腔，音色保持一致",
+      "instructionAuthor": "Codex主代理根据2026-10-24本轮JSON批注和真实前后文直接编写，无外部提示生成模型",
+      "contextSourceKey": "ctx_borrow_brain_t1_5f7319242658",
+      "contextRegionSeconds": [
+        5.2236965,
+        9.8254375
+      ],
+      "provisional": true
     },
     {
       "line": "3bymlu28",
@@ -2214,7 +3372,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "f94c557b986defd1ac644b2e721ce893a796e892f185e220e9cfcaf92597ea43",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:29:10.749Z"
+      }
     },
     {
       "line": "ajgkhqy0",
@@ -2229,7 +3396,16 @@
       "asr_similarity": 0.92,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "fb707a40a4fde602a77f38f348aaa1e907b76de7b80d49b0f0b0fb178282e741",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:29:12.877Z"
+      }
     },
     {
       "line": "7ev68l3r",
@@ -2254,8 +3430,10 @@
         "decision": "accept",
         "audioSha256": "4f4efa58ebe4269b9dc3976e296bb48399587b41647fba1e1014b8578d2c7a30",
         "date": "2026-10-24",
-        "source": "user_supplied_screenshot_review",
-        "note": ""
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": null
       }
     },
     {
@@ -2281,8 +3459,10 @@
         "decision": "accept",
         "audioSha256": "e17038d3ba46cc63e854cc9eaf452a35ed672ba2edc8255d780556b139db2614",
         "date": "2026-10-24",
-        "source": "user_supplied_screenshot_review",
-        "note": ""
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": null
       }
     },
     {
@@ -2298,7 +3478,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "64443fd23925718bf83359736c08c90acbad18be009fca3b6c9e532c964240e8",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:29:19.700Z"
+      }
     },
     {
       "line": "cpdfhp17",
@@ -2313,7 +3502,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "51b6e1453c5d44d95b3c291d06861e4658fd9d16fe020928fdbf1ce89bc8ca2d",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:29:22.500Z"
+      }
     },
     {
       "line": "3aua7rck",
@@ -2328,7 +3526,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "9787f46a8b45fb478f7f53b3ed0f6e1fcea32015a93e3898c10bdbcb71d1f940",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:29:25.990Z"
+      }
     },
     {
       "line": "qsews8jw",
@@ -2343,7 +3550,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "fb6dea96601ed7a6306d316b58e83327db6542b0e69ae95023620ad9e028b781",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:29:27.998Z"
+      }
     },
     {
       "line": "6psxxipg",
@@ -2358,7 +3574,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "4175a105040801d598f640524ded3fd2e41decce46e234e4f156ceae75eef0ee",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:29:31.324Z"
+      }
     },
     {
       "line": "afyc4302",
@@ -2383,8 +3608,10 @@
         "decision": "accept",
         "audioSha256": "b167394afc82fd72502d24324416f23e8f3cfaf355b66d42acd6588f2ab9ff9f",
         "date": "2026-10-24",
-        "source": "user_supplied_screenshot_review",
-        "note": ""
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": null
       }
     },
     {
@@ -2400,7 +3627,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "b4d4890a7aef7dfabb9b88b62538b4ebbea10e09af0b965c1a4ff0d7a6130d76",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:29:38.808Z"
+      }
     },
     {
       "line": "sfpzh3jx",
@@ -2415,7 +3651,16 @@
       "asr_similarity": 1.0,
       "status": "ok",
       "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "878898b735a85652629a665a6f120be4c2690214a3f495f5a932c5dfba48c211",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:29:41.238Z"
+      }
     },
     {
       "line": "nthjz7h6",
@@ -2463,6 +3708,15 @@
         },
         "phonemeAlignmentConfirmed": false,
         "manualListeningPerformed": false
+      },
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "e49641670be864edbeca1c97bb2bea19087d13a4dab207b824f076588dac4490",
+        "date": "2026-10-24",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": "2026-10-24T09:29:43.690Z"
       }
     },
     {
@@ -2470,27 +3724,20 @@
       "speaker": "鲸鱼小姐",
       "asset": "vo_o1bis57q",
       "src": "assets/vo/o1bis57q.mp3",
-      "dur": 3.018095,
-      "sha256": "a646d272699468767ba197006615310a49d8841a37bdbff2e8718ff1d6400887",
-      "speak": "忘了的话连人带壶扔进深海！！",
-      "direction": "隔海补一句嘴硬叮嘱，惩罚话一气连贯说完",
+      "dur": 2.969841,
+      "sha256": "bd8df295c04cbb08917cf4972c07c995cfeea183eb49d053483bbf0bfb28a768",
+      "speak": "忘了的话连人带壶扔进深海！",
+      "direction": "游远还惦记约定，笑着补上威胁，后半连贯说完",
       "asr": "忘 了 的 话 连 人 带 和 扔进 深海",
       "asr_similarity": 0.9166666666666666,
-      "status": "automatic_screen_pass",
-      "batch": "20261024-feedback-repair",
+      "status": "needs_listening",
+      "batch": "20261024-ch12-r2",
       "generator": "qwen-audio-3.0-tts-plus qwen-audio-3.0-tts-plus-longcanruishuang",
       "origin": "new_qwen_generation",
       "manualListeningPerformed": false,
       "distanceEffects": false,
-      "instruction": "嗓音再圆润成熟一点，像二十岁左右的甜萌动漫女声，日系动画女主的配音腔，甜美清透不尖锐，隔海补一句嘴硬叮嘱，惩罚话一气连贯说完，自然，音量适中，语速自然不拖腔，音色保持一致",
-      "instructionAuthor": "Codex主代理逐句阅读上下文后撰写，无外部提示生成模型",
-      "userReview": {
-        "decision": "accept",
-        "audioSha256": "a646d272699468767ba197006615310a49d8841a37bdbff2e8718ff1d6400887",
-        "date": "2026-10-24",
-        "source": "user_supplied_screenshot_review",
-        "note": ""
-      }
+      "instruction": "嗓音再圆润成熟一点，像二十岁左右的甜萌动漫女声，日系动画女主的配音腔，甜美清透不尖锐，游远还惦记约定，笑着补上威胁，后半连贯说完，音量适中，语速自然不拖腔，音色保持一致",
+      "instructionAuthor": "Codex主代理根据2026-10-24本轮JSON批注和真实前后文直接编写，无外部提示生成模型"
     },
     {
       "line": "ngfxexp1",
@@ -2515,8 +3762,10 @@
         "decision": "accept",
         "audioSha256": "07798f86f06ab8106fc08d1806e0529f904e7317886f09f4f3dc2915caccf75d",
         "date": "2026-10-24",
-        "source": "user_supplied_screenshot_review",
-        "note": ""
+        "source": "user_json_feedback",
+        "sourceFileSha256": "b36d2cdbdb6523a005b4aede42ebd57e825b550f3a49d9ffa4ba664acba529ac",
+        "note": "",
+        "updatedAt": null
       }
     },
     {
@@ -13207,14 +14456,18 @@
     }
   ],
   "latestBatch": {
+    "id": "20261024-ch12-r2",
     "date": "2026-10-24",
-    "id": "20261024-ch12-followup",
-    "rerecorded": 3,
-    "voiceBindingRemoved": "ktsw1bk3",
-    "acceptedByUser": 35,
-    "firstTwoVoiceCount": 151,
-    "distanceEffects": false,
-    "manualListeningByCodex": false
+    "feedbackReviews": 149,
+    "acceptedAudioPreserved": 135,
+    "changedAudioClips": 13,
+    "voiceRemoved": "f8iqmtlj",
+    "unreviewedIds": [
+      "9nq3isso",
+      "sb0dfj4m"
+    ],
+    "firstTwoVoices": 150,
+    "distanceEffects": false
   },
   "removedBindings": [
     {
@@ -13222,6 +14475,12 @@
       "reason": "用户要求纯文本表现，不需要啊的配音",
       "date": "2026-10-24",
       "previousAudioSha256": "ca57de8a22b2efc2c37e4203a1637762627f131ff642deb140f45561c5b1377b"
+    },
+    {
+      "line": "f8iqmtlj",
+      "date": "2026-10-24",
+      "reason": "用户要求啧只用文字表现",
+      "previousAudioSha256": "7e2486a8ba070bffe2ef8bb70440f8efe0708ebf739c553237433a5e80f007ee"
     }
   ]
 }

@@ -1,0 +1,328 @@
+{
+  "assembly": {
+    "baseline": "03afb2456834f4686fd9e966070bab9fa2b89ff9",
+    "feedbackReviews": 149,
+    "acceptedUnchangedIds": [
+      "58oo02cv",
+      "986487og",
+      "irma08fi",
+      "k1t4gr6o",
+      "opening_tail_warning",
+      "v17izdvn",
+      "5stlid22",
+      "gjwqntp5",
+      "opening_second_hit_rebuke",
+      "wxlmihwk",
+      "9nwggcga",
+      "p4p4l5nc",
+      "d8fiin5a",
+      "vfo56g8o",
+      "2360dvsq",
+      "v3dynf75",
+      "sb63ua0q",
+      "mb2zb98l",
+      "n4owcxly",
+      "7y5p4ecl",
+      "udtz7wdn",
+      "du33qrza",
+      "oxt0ch9a",
+      "0npzmlbh",
+      "dmbm0jfv",
+      "jqmeeaid",
+      "huyyx0s8",
+      "jpgy8sfu",
+      "fm43foif",
+      "o1frkrlk",
+      "x5l5e2zq",
+      "gdn4c513",
+      "l96c0f8q",
+      "clfnykuw",
+      "7oxowej6",
+      "macs2evb",
+      "twdgdg8k",
+      "unfmnv5c",
+      "ysfx3a0y",
+      "wb0jt6bd",
+      "dk3o5u4e",
+      "19j7cn4u",
+      "otgvk12p",
+      "yh5ghjft",
+      "zv50a61e",
+      "n1u3boys",
+      "il5kovq6",
+      "rfxtpyjg",
+      "q975yrh8",
+      "dg7yx2u8",
+      "iuosg2a2",
+      "gleiylad",
+      "f8e6wh8c",
+      "cvelvwin",
+      "7ukunjp3",
+      "pzcqedbf",
+      "c6aajftq",
+      "vkft1lib",
+      "d2nuypd0",
+      "5p228zu3",
+      "e72ipq1f",
+      "g3zkq3se",
+      "kwsqkrhm",
+      "qptgrijt",
+      "4x70thl5",
+      "7esq5eqm",
+      "6s4ciafk",
+      "dfkb4sfb",
+      "rkd43n5l",
+      "w34adbpj",
+      "7atacaud",
+      "90lgbmcw",
+      "pkayznot",
+      "ga1pjox5",
+      "o48jgiqf",
+      "akyb83h7",
+      "c8sbjdev",
+      "pluotwwi",
+      "cti6ecmm",
+      "oihue35n",
+      "owfvy7rh",
+      "t1bp3pex",
+      "buecga5x",
+      "uy92oyxq",
+      "al61w9p3",
+      "bd1u0b5w",
+      "vck6fztl",
+      "3awuittl",
+      "u7fab4y8",
+      "urwxpwpj",
+      "1ysm319j",
+      "toipot06",
+      "vqks6qld",
+      "toiw2hsb",
+      "k8xf3if4",
+      "v7m6mpzz",
+      "z8w99xv9",
+      "kg8xkzda",
+      "mgmzmu9k",
+      "v1te4c45",
+      "medydevq",
+      "mel30c1l",
+      "ee55vw64",
+      "6sp5iou0",
+      "v1qxertc",
+      "hwgm8mxk",
+      "szo91re8",
+      "9jxix8yv",
+      "t8r1ystg",
+      "dwy8u0bl",
+      "4wcig7s7",
+      "5d1gx8hr",
+      "tafoincj",
+      "4f99m6q7",
+      "a7c5njix",
+      "whyy1s3e",
+      "li3y809n",
+      "slxkh5nb",
+      "b88ptsjs",
+      "uvtoc02j",
+      "fxl393bw",
+      "3bymlu28",
+      "ajgkhqy0",
+      "7ev68l3r",
+      "tyqbvu4h",
+      "t779xb9d",
+      "cpdfhp17",
+      "3aua7rck",
+      "qsews8jw",
+      "6psxxipg",
+      "afyc4302",
+      "g3dcgcse",
+      "sfpzh3jx",
+      "nthjz7h6",
+      "ngfxexp1"
+    ],
+    "acceptedUnchangedCount": 135,
+    "changedClips": 13,
+    "selectedByOrigin": {
+      "local_clause_pause": 1,
+      "local_single_word_gain": 1,
+      "local_pause_retiming": 1,
+      "local_context_split": 1,
+      "new_qwen_generation": 6,
+      "local_context_split_provisional": 2,
+      "local_whole_word_timing_gain": 1
+    },
+    "voicesBefore": 825,
+    "voicesAfter": 824,
+    "firstTwoVoices": 150,
+    "removedVoiceId": "f8iqmtlj",
+    "nodes": 3315,
+    "nodeIdsOrderChoicesAndVarsUnchanged": true,
+    "scriptTextChanges": {
+      "3iq8cnx2": "「看……看什么！」",
+      "8bl6cnrg": "「浅滩。人类，往东三里是小镇。」"
+    },
+    "nonVoiceAssetsUnchanged": true,
+    "otherSettingsUnchanged": true,
+    "unreviewedIds": [
+      "9nq3isso",
+      "sb0dfj4m"
+    ],
+    "manualListeningByCodex": false,
+    "distanceEffects": false
+  },
+  "fullRegression": {
+    "load_s": 3.12,
+    "body": "game playing",
+    "chapters": 18,
+    "walk": {
+      "n": 3315,
+      "p50": 0.09999999403953552,
+      "p99": 0.800000011920929,
+      "max": 37.400000005960464,
+      "bad": [],
+      "nbad": 0
+    },
+    "cg": {
+      "n": 32,
+      "p50": 85.2000000178814,
+      "max": 187.09999999403954,
+      "heapMB": 11
+    },
+    "save": {
+      "want": {
+        "idx": 1504,
+        "id": "6cdt4nv4",
+        "vars": "{\"好感\":0,\"尾鳍\":7,\"贝壳延后\":0,\"玩笑\":0,\"海星放生\":0,\"周目\":1,\"结局数\":0}"
+      },
+      "got": {
+        "idx": 1504,
+        "id": "6cdt4nv4",
+        "vars": "{\"好感\":0,\"尾鳍\":7,\"贝壳延后\":0,\"玩笑\":0,\"海星放生\":0,\"周目\":1,\"结局数\":0}"
+      }
+    },
+    "prev": [
+      302,
+      301
+    ],
+    "errs": [],
+    "nerrs": 0
+  },
+  "audioReviewHtml": {
+    "mainAudioEmbedded150": true,
+    "allEmbeddedAudioDecodedAndMatchRuntime": true,
+    "voiceCounts": [
+      60,
+      90
+    ],
+    "noCancelled12Or58OrThirdChapter": true,
+    "new13MatchRuntimeAndSelectedClips": true,
+    "clause68TwoPartsEmbeddedAndDecoded": true,
+    "sourceRuntimeVoices": 824,
+    "inherited135AndNew13UnheardWithReferences": {
+      "accept": 135,
+      "repairs": [
+        {
+          "id": "lt5k0xiy",
+          "decision": "",
+          "history": 1
+        },
+        {
+          "id": "m4wlasdc",
+          "decision": "",
+          "history": 1
+        },
+        {
+          "id": "8bl6cnrg",
+          "decision": "",
+          "history": 1
+        },
+        {
+          "id": "ofo60hm7",
+          "decision": "",
+          "history": 1
+        },
+        {
+          "id": "3iq8cnx2",
+          "decision": "",
+          "history": 1
+        },
+        {
+          "id": "i99npm13",
+          "decision": "",
+          "history": 1
+        },
+        {
+          "id": "s8tmtnhe",
+          "decision": "",
+          "history": 1
+        },
+        {
+          "id": "f3o1uyy0",
+          "decision": "",
+          "history": 1
+        },
+        {
+          "id": "ta9pcdes",
+          "decision": "",
+          "history": 1
+        },
+        {
+          "id": "5f7xxj54",
+          "decision": "",
+          "history": 1
+        },
+        {
+          "id": "12ib88ay",
+          "decision": "",
+          "history": 1
+        },
+        {
+          "id": "6b6yfsh8",
+          "decision": "",
+          "history": 1
+        },
+        {
+          "id": "o1bis57q",
+          "decision": "",
+          "history": 1
+        }
+      ],
+      "notCovered": [
+        "",
+        ""
+      ]
+    },
+    "actual149FeedbackImportKeeps135Accepts13UnheardAnd2Uncovered": true,
+    "clause68PartsPlayableOfflineInBrowser": true,
+    "filtered13ExportsIncludeAll135Reviewed": true,
+    "feedbackPersistsAcrossReloadInIsolatedProfile": true,
+    "jsonImportMergesAndIsolatesOldShaAndOutsideChapters": true,
+    "newerLocalFeedbackPreservedOnImport": true,
+    "csvImportHandlesQuotesNewlinesAndOldShaIsolation": true,
+    "csvExportRoundtrip": true,
+    "stableStorageKeyPreservesOldFeedbackButResetsChangedAudio": true,
+    "filteredPlaybackAdvancesOnRealEndedAndStops": true,
+    "speedDefault1AndOptional125": true,
+    "narrowStickyExportButtonsReachableAndNoHorizontalOverflow": true,
+    "noPageErrors": true,
+    "noExternalRequests": true,
+    "userBrowserStorageAccessed": false,
+    "usedDisposableOfflineBrowserContexts": true,
+    "sourceAndFinalHtmlUnmodified": true,
+    "htmlBytes": 3873684,
+    "htmlSha256": "511bd34438a876bee7f1eaa1443ec7e441d5126111a87c890dad103ac88e4063",
+    "passed": true,
+    "visualReview": {
+      "desktop": "review-desktop.png",
+      "narrow": "review-narrow.png",
+      "actuallyViewedWithImageTool": true,
+      "layoutAccepted": true
+    }
+  },
+  "manualListeningByCodex": false,
+  "documentationLinks": {
+    "method": "Repository checker link syntax against fetched full branch tree plus new files",
+    "links": 83,
+    "broken": [],
+    "passed": true
+  }
+}

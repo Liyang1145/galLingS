@@ -18,6 +18,7 @@
 | [重构方案](docs/design/2026-10-23_重构-Gal-report.md) | 目标架构、契约及 M0～M7；建议与待决策不等于已实现 |
 | [领域术语](CONTEXT.md) | 领域用语；不承载实施进度 |
 | [实施入口](docs/rebuild/README.md) | 已落地范围、命令、当前交付和后续接点 |
+| [当前进度与接续点](docs/rebuild/status.md) | 阶段能力、剩余事项、真实执行边界及下一片；开始新会话先读，实际 Git 状态仍须重新确认 |
 | [迁移语义](docs/rebuild/legacy-semantics.md) | 旧行为、保留方式、差异及未覆盖项 |
 | `海风与布丁/game.js` | 迁移期间唯一权威剧情输入；作者源尚未切换 |
 | `海风与布丁/player.js`、`index.html` | 保留的完整旧播放器与入口；不是新核心依赖 |

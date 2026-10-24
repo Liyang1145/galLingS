@@ -68,6 +68,9 @@
 - [local-scene-audio-assembly.md](local-scene-audio-assembly.md) — 本地场景与音频成果提交
 
 ## 引擎、打包、整合
+- [promo-trailer-demo-integration-20261024.md](promo-trailer-demo-integration-20261024.md) — 10-24 多分支合流整合（fix/character-performance + memory-provenance + linux + main）、原创 1080p60 宣传片与可提交 Demo 全套打包
+- [linux-port-20261023.md](linux-port-20261023.md) — 10-23 Linux 平台支持（start.sh、Tauri deb/AppImage、Steam Linux depot 与本地存档 XDG 路径）
+- [cg-loop-animations-20261023.md](cg-loop-animations-20261023.md) — 10-23 27 段无缝循环 CG 视频动画接入舞台与鉴赏
 - [20261022_repo-structure-optimization.md](20261022_repo-structure-optimization.md) — 10-22 全仓结构优化与 4abcd03 目录重构回归修复（修复单作品路径拼接、单文件/编辑器 player.js 导出、73 处 Markdown 断链；拆分 server/api/、server/memory/text_index.py、server/plugins/sse.py 与 Tauri Rust 四模块）
 - [lingshu-multi-llm-galagent-mcp-20261021.md](lingshu-multi-llm-galagent-mcp-20261021.md) — 10-21 灵枢认知图 MCP 记忆库、多模型插件（OpenAI/Claude/Gemini/Ollama）、GalAgent 完整工具链与 MCP 扩展整合及 Steam 双模桌面包
 - [memory-provenance.md](memory-provenance.md) — 10-23 记忆来源标签 / 修订作废 / 引擎真值、确定性态度过滤、say 情绪差分、人设与洗记忆评测（整合方案 P0）

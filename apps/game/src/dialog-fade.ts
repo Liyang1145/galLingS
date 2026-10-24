@@ -168,6 +168,17 @@ export class DialogFade {
     if (captured) this.begin(captured, document.body, null);
   }
 
+  /** A registered dialog's internal UI changes immediately; only its old view is retained. */
+  change(dialog: HTMLDialogElement, change: () => void): void {
+    this.registered(dialog);
+    this.cancel();
+    const captured = dialog.open ? this.capture(dialog, false) : null;
+    try { change(); }
+    catch (error: unknown) { captured?.host.remove(); throw error; }
+    if (captured && dialog.open) this.begin(captured, dialog, dialog);
+    else captured?.host.remove();
+  }
+
   private registered(dialog: HTMLDialogElement): void {
     if (!this.#dialogs.has(dialog)) throw new Error("弹层不属于当前游戏的视觉过渡范围");
   }

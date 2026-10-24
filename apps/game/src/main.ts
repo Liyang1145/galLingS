@@ -1137,7 +1137,8 @@ async function main(): Promise<void> {
       const records = await playerRecords.read();
       if (closed || exiting || request !== entryRequest || mediaRequest !== galleryRequest || session) return;
       stageFade?.cancel();
-      galleryPanel ??= new GalleryPanel(galleryBody, content, resources);
+      galleryPanel ??= new GalleryPanel(galleryBody, content, resources,
+        change => dialogDisplay.change(gallery, change));
       galleryPanel.open(records);
       dialogDisplay.open(gallery);
     } catch (error: unknown) {

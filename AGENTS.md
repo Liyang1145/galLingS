@@ -28,7 +28,7 @@
 | `packages/player/src/` | 共享会话、取消及有效计时；表现适配器不得自行计算剧情分支 |
 | `packages/chat/src/` | 通关后玩法的只读上下文；只接已提交事实读取，不接主线可写对象或预览记录 |
 | [检查点与存储](docs/rebuild/saves.md) | M4 检查点封装、独立校验、浏览器隔离槽位、只读分组详情及进度恢复；[命名槽位目录](docs/rebuild/slots.md)说明分页、选择及原目标重试 |
-| [全局玩家记录](docs/rebuild/records.md) | 周目、结局与 CG 解锁的独立记录、幂等事实及主页分类鉴赏；进度槽位不得回滚全局成果，[鉴赏图片](docs/rebuild/gallery.md)独立重试及关闭/换类清理 |
+| [全局玩家记录](docs/rebuild/records.md) | 周目、结局与 CG 解锁的独立记录、幂等事实及主页分类鉴赏；进度槽位不得回滚全局成果，[鉴赏图片](docs/rebuild/gallery.md)独立查看/原图重试及关闭/换类清理 |
 | [结局卡片](docs/rebuild/endings.md) | 游戏/预览共享终态显示；达成、待提交、失败和已保存分开，重试原事实而不重新结算 |
 | [独立玩家偏好](docs/rebuild/preferences.md) | 分轨音量、阅读节奏/显示及按钮声音开关、作者默认与稀疏覆盖、独立原子保存；旧版逐行设置布局，不进入进度、成果或预览记录 |
 | [话末存档点数值显示](docs/rebuild/readout.md) | 共享会话的原存档点显示副本、同一自动等待文字长度及独立剧透偏好；缺省关闭，当前开关变化不重打/重计时，不改核心原文或触发存档 |
@@ -57,7 +57,7 @@
 | `packages/player/src/web/input.ts` | 输入只向当前共享会话发意图；编辑预览限于自身焦点范围，隐藏/按键/手势不进入存储 |
 | `packages/player/src/web/fullscreen.ts` | 游戏/预览共用显示控件与浏览器全屏，原生适配器只提供受限显示能力 |
 | `apps/game/` | 沿旧版迁移的游戏界面壳、共享游玩与随包启动装配；当前仍为开发记录，未切换正式发行入口 |
-| `apps/game/src/dialog-fade.ts` | 只对登记的游戏画面/弹层作 360ms 静态淡出；封闭影子树只带两份游戏样式，开关及暂停释放不等待动画，不复制编辑制作区 |
+| `apps/game/src/dialog-fade.ts` | 只对登记的游戏画面/弹层及鉴赏内部显示切换作 360ms 静态淡出；封闭影子树只带两份游戏样式，开关/变更/暂停释放不等待动画，不复制编辑制作区 |
 | `apps/editor/` | 独立对白编辑试用，预览复用共享播放器、只用内存记录；局部约束见目录入口 |
 | `tools/content/` | 旧导出转换与内容产物生成；命令见实施入口，不是游戏解释器 |
 | `tools/content/appearance.ts`、`collection-appearance.ts`、`tools/dev/appearance.ts` | 提取原鲸鱼图形、收藏/游玩图标及原配乐装饰图，登记来源并装配前端；旧 HTML、CSS、播放器图标表与原 B38 图片仍有构建消费者，不得提前删除 |

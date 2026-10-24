@@ -90,16 +90,19 @@ export class GalleryPanel {
   readonly #content: StoryContent;
   readonly #resources: ResourceAccess;
   readonly #catalog: ReturnType<typeof galleryCatalog>;
+  readonly #transition: (change: () => void) => void;
   #events: AbortController | null = null;
   #images: GalleryImage[] = [];
   #open = false;
   #disposed = false;
 
-  constructor(root: HTMLElement, content: StoryContent, resources: ResourceAccess) {
+  constructor(root: HTMLElement, content: StoryContent, resources: ResourceAccess,
+    transition: (change: () => void) => void = change => change()) {
     this.#root = root;
     this.#content = content;
     this.#resources = resources;
     this.#catalog = galleryCatalog(content);
+    this.#transition = transition;
   }
 
   open(records: PlayerRecords): void {
@@ -129,43 +132,66 @@ export class GalleryPanel {
       list.append(item);
     }
     if (!catalog.endings.length) list.append(element("li", "当前作品尚未登记结局。"));
+    const directory = element("div", "", "gallery-directory");
     const grid = element("div", "", "gallery-grid");
-    const viewer = element("figure");
+    const viewer = element("figure", "", "gallery-viewer");
     viewer.hidden = true;
     viewer.tabIndex = -1;
     viewer.setAttribute("aria-label", "已解锁 CG 大图");
     const fullImageRoot = element("div", "", "gallery-image-host");
     const caption = element("figcaption");
+    const viewerHeading = element("div", "", "gallery-viewer-heading");
+    const viewerContent = element("div", "", "gallery-viewer-content");
+    const nameLabel = element("strong");
+    const identity = element("small");
+    caption.append(nameLabel, identity);
     const fullStatus = element("p", "", "gallery-image-status");
     fullStatus.setAttribute("role", "status");
     fullStatus.setAttribute("aria-live", "polite");
     const retryFull = action("重试本地大图");
-    const close = action("收起大图");
+    const close = action("返回鉴赏目录");
+    let directoryScroll = 0;
     let selected: { id: string; name: string; button: HTMLButtonElement } | null = null;
     const fullImage = new GalleryImage(fullImageRoot, this.#resources, "gallery-full-image", false, state => {
       if (!this.#open || !selected) return;
-      retryFull.hidden = state.kind !== "failed";
-      fullImageRoot.hidden = state.kind !== "ready";
-      fullStatus.textContent = state.kind === "loading" ? `正在读取本地大图：${selected.name}（${selected.id}）……`
-        : state.kind === "ready" ? `已显示：${selected.name}`
-        : `大图未能显示：${selected.name}（${selected.id}）。${state.message}。可重试本地图片，收藏记录仍保留。`;
+      const current = selected;
+      const update = (): void => {
+        if (!this.#open || selected !== current) return;
+        retryFull.hidden = state.kind !== "failed";
+        fullImageRoot.hidden = state.kind !== "ready";
+        fullStatus.textContent = state.kind === "loading" ? `正在读取本地大图：${current.name}（${current.id}）……`
+          : state.kind === "ready" ? `已显示：${current.name}`
+          : `大图未能显示：${current.name}（${current.id}）。${state.message}。可重试本地图片，收藏记录仍保留。`;
+      };
+      // Loading/failure belong to the original request. Only accepted decoded content fades in.
+      if (state.kind === "ready") this.#transition(update);
+      else update();
     });
     this.#images.push(fullImage);
     retryFull.hidden = true;
     retryFull.addEventListener("click", () => {
-      if (this.#open && selected) fullImage.load(selected.id, selected.name);
+      if (this.#open && selected) this.#transition(() => {
+        if (selected) fullImage.load(selected.id, selected.name);
+      });
     }, { signal });
     const closeViewer = (restoreFocus: boolean): void => {
-      if (!this.#open) return;
+      if (!this.#open || !selected) return;
       fullImage.clear();
       viewer.hidden = true;
+      directory.hidden = false;
+      this.#root.dataset.galleryView = "directory";
       fullStatus.textContent = "";
       const previous = selected;
       selected = null;
+      this.#root.scrollTop = directoryScroll;
       if (restoreFocus && previous?.button.isConnected) previous.button.focus({ preventScroll: true });
     };
-    close.addEventListener("click", () => closeViewer(true), { signal });
-    viewer.append(caption, fullStatus, fullImageRoot, retryFull, close);
+    close.addEventListener("click", () => {
+      if (this.#open && selected) this.#transition(() => closeViewer(true));
+    }, { signal });
+    viewerHeading.append(caption, close);
+    viewerContent.append(fullStatus, fullImageRoot, retryFull);
+    viewer.append(viewerHeading, viewerContent);
     for (const asset of catalog.cgs) {
       const card = element("article", "", "gallery-card");
       const button = action("");
@@ -194,12 +220,18 @@ export class GalleryPanel {
       retryThumbnail.addEventListener("click", () => { if (this.#open) thumbnail.load(asset.id, name); }, { signal });
       button.addEventListener("click", () => {
         if (!this.#open) return;
-        selected = { id: asset.id, name, button };
-        caption.textContent = name;
-        viewer.hidden = false;
-        fullImage.load(asset.id, name);
-        viewer.scrollIntoView({ block: "nearest" });
-        viewer.focus({ preventScroll: true });
+        this.#transition(() => {
+          directoryScroll = this.#root.scrollTop;
+          selected = { id: asset.id, name, button };
+          nameLabel.textContent = name;
+          identity.textContent = asset.id;
+          directory.hidden = true;
+          viewer.hidden = false;
+          this.#root.dataset.galleryView = "image";
+          this.#root.scrollTop = viewerContent.scrollTop = 0;
+          fullImage.load(asset.id, name);
+          close.focus({ preventScroll: true });
+        });
       }, { signal });
       card.append(button, thumbnailStatus, retryThumbnail);
       grid.append(card);
@@ -208,7 +240,7 @@ export class GalleryPanel {
     if (!catalog.cgs.length) grid.append(element("p", "当前作品尚未登记 CG。"));
     const cgSection = element("section", "", "gallery-cg-section");
     cgSection.setAttribute("aria-label", "CG 鉴赏");
-    cgSection.append(element("h3", "CG 鉴赏"), viewer, grid);
+    cgSection.append(element("h3", "CG 鉴赏"), grid);
     const endingSection = element("section");
     endingSection.setAttribute("aria-label", "结局收藏");
     endingSection.hidden = true;
@@ -220,18 +252,22 @@ export class GalleryPanel {
     cgTab.setAttribute("aria-pressed", "true");
     endingTab.setAttribute("aria-pressed", "false");
     const selectTab = (showCG: boolean): void => {
-      if (!this.#open) return;
-      // Switching categories leaves the active full image; old decode callbacks cannot reveal it later.
-      if (!showCG) closeViewer(false);
-      cgSection.hidden = !showCG;
-      endingSection.hidden = showCG;
-      cgTab.setAttribute("aria-pressed", String(showCG));
-      endingTab.setAttribute("aria-pressed", String(!showCG));
+      if (!this.#open || showCG === !cgSection.hidden) return;
+      this.#transition(() => {
+        // Category changes clear the original attempt before its decode can publish.
+        if (!showCG) closeViewer(false);
+        cgSection.hidden = !showCG;
+        endingSection.hidden = showCG;
+        cgTab.setAttribute("aria-pressed", String(showCG));
+        endingTab.setAttribute("aria-pressed", String(!showCG));
+      });
     };
     cgTab.addEventListener("click", () => selectTab(true), { signal });
     endingTab.addEventListener("click", () => selectTab(false), { signal });
     nav.append(cgTab, endingTab);
-    this.#root.append(nav, cgSection, endingSection, stats);
+    directory.append(nav, cgSection, endingSection, stats);
+    this.#root.dataset.galleryView = "directory";
+    this.#root.append(directory, viewer);
   }
 
   close(): void {
@@ -241,6 +277,7 @@ export class GalleryPanel {
     for (const image of this.#images) image.clear();
     this.#images = [];
     this.#root.replaceChildren();
+    delete this.#root.dataset.galleryView;
   }
 
   dispose(): void {

@@ -536,6 +536,7 @@ sceneInspector = new AuthorScene({
   } : null,
   current: snapshot => !disposed && baseline !== null && baseline.content === snapshot.content
     && baseline.sourceSha256 === snapshot.sourceSha256 && revision === snapshot.revision && selected === snapshot.nodeId,
+  inspectResource: (snapshot, assetId) => references?.openResource(assetId, snapshot) ?? false,
 });
 authorDiagnostic = new AuthorDiagnostic({
   root: element("author-diagnostic", HTMLElement),

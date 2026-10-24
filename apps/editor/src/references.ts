@@ -5,10 +5,12 @@ import type {
 } from "../../../packages/story-model/src/references.ts";
 import { playerReferences } from "../../../packages/player/src/references.ts";
 
-export interface ReferenceSnapshot {
+export interface ReferenceOrigin {
   readonly content: StoryContent;
   readonly sourceSha256: string;
   readonly revision: number;
+}
+export interface ReferenceSnapshot extends ReferenceOrigin {
   readonly textOverrides: ReadonlyMap<string, string>;
 }
 
@@ -108,6 +110,7 @@ export class AuthorReferences {
     }
     this.#targets.size = 6;
     this.#targets.setAttribute("aria-label", "选择引用目标");
+    this.#inHeading.tabIndex = -1;
     incoming.append(queryLabel, kindLabel, this.#targets,
       this.pager(this.#targetCount, this.#targetPrevious, this.#targetNext), this.#inHeading, this.#inList,
       this.pager(this.#inCount, this.#inPrevious, this.#inNext));
@@ -204,11 +207,34 @@ export class AuthorReferences {
     this.#selected = nodeId;
     if (!this.valid(false)) return;
     this.#outPage = 0;
-    this.#target = nodeId ? { kind: "node", id: nodeId } : null;
-    this.#inPage = 0;
     this.renderOutgoing();
-    this.renderIncoming();
-    this.#targets.value = this.#target ? referenceKey(this.#target) : "";
+    if (nodeId) this.choose({ kind: "node", id: nodeId });
+    else {
+      this.#target = null;
+      this.#inPage = 0;
+      this.renderTargets();
+      this.renderIncoming();
+    }
+  }
+
+  /** Exact registered resource only. Origin is checked before a stale index may be rebuilt. */
+  openResource(assetId: string, origin: ReferenceOrigin): boolean {
+    if (this.#closed || !this.#available) return false;
+    const captured = this.#options.capture();
+    if (!captured || !this.#options.current(captured) || captured.content !== origin.content
+      || captured.sourceSha256 !== origin.sourceSha256 || captured.revision !== origin.revision
+      || !captured.content.resources.some(resource => resource.id === assetId)) return false;
+    if (!this.valid(false)) this.refresh();
+    const snapshot = this.#snapshot;
+    if (!this.valid() || !snapshot || snapshot.content !== origin.content
+      || snapshot.sourceSha256 !== origin.sourceSha256 || snapshot.revision !== origin.revision) return false;
+    const target: ReferenceTarget = { kind: "resource", id: assetId };
+    if (!this.#definitions.has(referenceKey(target))) return false;
+    this.#version++;
+    this.renderOutgoing();
+    this.choose(target);
+    this.#inHeading.focus();
+    return true;
   }
 
   private valid(requireAvailable = true): boolean {
@@ -220,8 +246,10 @@ export class AuthorReferences {
   private choose(target: ReferenceTarget): void {
     this.#target = target;
     this.#inPage = 0;
+    const position = this.filteredTargets().findIndex(item => referenceKey(item.target) === referenceKey(target));
+    if (position >= 0) this.#targetPage = Math.floor(position / PAGE_SIZE);
+    this.renderTargets();
     this.renderIncoming();
-    this.#targets.value = referenceKey(target);
   }
 
   private page<T>(
@@ -244,19 +272,35 @@ export class AuthorReferences {
     this.#outList.replaceChildren(...page.items.map(reference => this.row(reference)));
   }
 
-  private renderTargets(): void {
+  private filteredTargets(): readonly ReferenceDefinition[] {
     const query = this.#query.value.trim().toLocaleLowerCase();
     const kind = this.#kind.value;
-    const items = this.#catalog.filter(item => (!kind || item.target.kind === kind)
+    return this.#catalog.filter(item => (!kind || item.target.kind === kind)
       && `${targetLabel(item.target)} ${item.label}`.toLocaleLowerCase().includes(query));
+  }
+
+  private renderTargets(): void {
+    const items = this.filteredTargets();
     const page = this.page(items, this.#targetPage, this.#targetCount, this.#targetPrevious, this.#targetNext);
     this.#targetPage = page.page;
-    this.#targets.replaceChildren(...page.items.map(item => {
+    const optionFor = (item: ReferenceDefinition): HTMLOptionElement => {
       const option = element("option", `${targetLabel(item.target)} · ${item.label}`);
       option.value = referenceKey(item.target);
       return option;
-    }));
-    this.#targets.value = this.#target ? referenceKey(this.#target) : "";
+    };
+    const rows: (HTMLOptionElement | HTMLOptGroupElement)[] = page.items.map(optionFor);
+    const key = this.#target ? referenceKey(this.#target) : "";
+    const current = this.#definitions.get(key);
+    if (current && !page.items.some(item => referenceKey(item.target) === key)) {
+      const pinned = element("optgroup");
+      pinned.label = items.some(item => referenceKey(item.target) === key)
+        ? "当前引用目标（不在本页）" : "当前引用目标（不匹配筛选）";
+      pinned.append(optionFor(current));
+      rows.unshift(pinned);
+      this.#targetCount.textContent += "；另保留当前引用目标";
+    }
+    this.#targets.replaceChildren(...rows);
+    this.#targets.value = key;
   }
 
   private renderIncoming(): void {

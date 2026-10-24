@@ -10,6 +10,7 @@ interface Options {
   root: HTMLElement;
   capture(): SceneSnapshot | null;
   current(snapshot: SceneSnapshot): boolean;
+  inspectResource(snapshot: SceneSnapshot, assetId: string): boolean;
 }
 const PAGE_SIZE = 20;
 function element<K extends keyof HTMLElementTagNameMap>(tag: K, value = ""): HTMLElementTagNameMap[K] {
@@ -191,6 +192,24 @@ export class AuthorScene {
     }
     card.append(this.rows([["资源种类", resource.kind], ["作者资源路径（文字）", resource.path]]),
       this.json(`资源 ${id} 元数据原值`, resource.metadata, signal));
+    const inspect = button(`查看资源 ${id} 的引用`);
+    const status = element("p");
+    status.className = "help";
+    status.setAttribute("role", "status");
+    const snapshot = this.#snapshot;
+    const version = this.#version;
+    inspect.addEventListener("click", () => {
+      if (signal.aborted || version !== this.#version || snapshot === null || snapshot !== this.#snapshot || !this.valid()) return;
+      try {
+        const accepted = this.#options.inspectResource(snapshot, id);
+        status.textContent = accepted
+          ? `已按原资源 ID ${id} 打开引用查询；未加载媒体或修改内容。`
+          : "本次资源引用查询未采用，请确认摘要仍有效，并查看引用面板的诊断后重新刷新。";
+      } catch (error: unknown) {
+        status.textContent = `资源引用暂未显示：${error instanceof Error ? error.message : "查询错误"}。原资源、草稿与预览保持原状。`;
+      }
+    }, { signal });
+    card.append(inspect, status);
     return card;
   }
 

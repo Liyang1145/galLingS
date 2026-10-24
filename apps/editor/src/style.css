@@ -79,6 +79,9 @@
 .author-scene summary { cursor: pointer; padding: 10px 0; overflow-wrap: anywhere; min-height: 40px; }
 .author-scene summary:focus-visible, .author-scene button:focus-visible { outline: 3px solid #aed9e7; outline-offset: 2px; }
 .scene-resource { margin-top: 14px; }
+.scene-resource button { min-height: 40px; max-width: 100%; white-space: normal; overflow-wrap: anywhere; }
+.scene-resource .help:empty { display: none; }
+.reference-panel h4:focus-visible { outline: 3px solid #aed9e7; outline-offset: 3px; }
 .scene-pager { margin-top: 12px; font-size: .8rem; }
 .reference-panel { margin: 24px 0; border: 1px solid #557682; border-radius: 8px; padding: 16px; }
 .reference-panel h3 { margin: 0; font-size: 1rem; font-weight: 500; }

@@ -54,6 +54,7 @@ import { renderExitStatus } from "./exit-status.ts";
 import type { ExitProgress } from "./exit-status.ts";
 import { RollbackLocations } from "./rollback-locations.ts";
 import { connectOrientationHint } from "./orientation-hint.ts";
+import { MenuFocus } from "./menu-focus.ts";
 import type { GamePanel } from "./panels.ts";
 import "./style.css";
 import "./shell.css";
@@ -233,6 +234,7 @@ async function main(): Promise<void> {
   let stageFade: StageFade | null = null;
   let dialogFade: DialogFade | null = null;
   let panels: GamePanels | null = null;
+  let menuFocus: MenuFocus | null = null;
   let panelRollback: AbortController | null = null;
   let endingVisualKey = "";
   let generation = 0;
@@ -369,6 +371,7 @@ async function main(): Promise<void> {
     session?.send({ type: "pause", reason: "host", paused: state.paused });
     dialoguePanel?.refresh(state.audioAllowed);
     soundPanel?.refresh(state.audioAllowed);
+    menuFocus?.refresh();
   }, () => {
     if (exiting) { host.cancelExit(); return true; }
     if (dialogue.open) { closeDialogue(true); return true; }
@@ -568,6 +571,13 @@ async function main(): Promise<void> {
     changed: () => { input?.reset(); stageFade?.cancel(); dialogFade?.cancel(); },
     ...(displayDriver ? { driver: displayDriver } : {}),
   });
+  menuFocus = new MenuFocus({
+    surface: element("player-surface", HTMLElement), menu,
+    initial: element("close-menu", HTMLButtonElement), fallback: stage,
+    background: [scene, title, choices, playControls],
+    owner: () => session,
+    enabled: () => !closed && !exiting && !document.hidden && !host.state().paused && !panels?.active,
+  });
 
   panels = new GamePanels({
     dialogs: shellDialogs,
@@ -633,6 +643,7 @@ async function main(): Promise<void> {
     }
     element("aftergame-open", HTMLButtonElement).disabled = blocked || active;
     element("timed", HTMLButtonElement).disabled = blocked;
+    menuFocus?.refresh();
   }
 
   function openPanel(name: GamePanel): void {
@@ -812,6 +823,7 @@ async function main(): Promise<void> {
       rollbackKey = "";
       menu.hidden = title.hidden = problem.hidden = true;
       dockNotices(false);
+      menuFocus?.refresh();
       choicePanel.clear();
       closeGallery();
       closeAftergame();
@@ -938,6 +950,7 @@ async function main(): Promise<void> {
     title.hidden = false;
     menu.hidden = problem.hidden = true;
     dockNotices(false);
+    menuFocus?.refresh();
     next.disabled = auto.disabled = skip.disabled = pause.disabled = audio.disabled = save.disabled = dialogueOpen.disabled = true;
     resetRollback();
     resetSaveMessage();
@@ -1339,10 +1352,12 @@ async function main(): Promise<void> {
     session?.send({ type: "pause", reason: "background", paused: document.hidden });
     dialoguePanel?.refresh(host.state().audioAllowed);
     soundPanel?.refresh(host.state().audioAllowed);
+    menuFocus?.refresh();
   };
   document.addEventListener("visibilitychange", visibility);
   const dispose = (): void => {
     closed = true;
+    menuFocus?.dispose();
     disposeExitStatus?.();
     dialogFade?.dispose();
     panels?.dispose();

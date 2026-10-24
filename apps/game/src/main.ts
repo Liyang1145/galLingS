@@ -1,4 +1,4 @@
-import { loadContent } from "virtual:haifeng-content";
+import { development, loadContent } from "virtual:haifeng-content";
 import { whaleSkin } from "virtual:haifeng-appearance";
 import { collectionSkin } from "virtual:haifeng-collection-appearance";
 import { createGameSession } from "../../../packages/player/src/session.ts";
@@ -7,7 +7,7 @@ import { WebPresentation } from "../../../packages/player/src/web/presentation.t
 import { createResourceAccess } from "../../../packages/player/src/web/resources.ts";
 import type { Clock } from "../../../packages/player/src/clock.ts";
 import { SaveRepository } from "../../../packages/player/src/saves.ts";
-import type { InspectedSave } from "../../../packages/player/src/saves.ts";
+import type { InspectedSave, RecordScope } from "../../../packages/player/src/saves.ts";
 import { PlayerRepository, PlayerRecordWriter, galleryCatalog, playerProjection } from "../../../packages/player/src/records.ts";
 import { prepareGameRestore } from "../../../packages/player/src/checkpoint.ts";
 import type { GameCheckpoint } from "../../../packages/player/src/checkpoint.ts";
@@ -87,9 +87,13 @@ async function main(): Promise<void> {
   const title = element("title", HTMLElement);
   const choices = element("choices", HTMLElement);
   const menu = element("menu", HTMLElement);
-  const status = element("status", HTMLElement);
-  const debug = element("debug", HTMLElement);
+  const status = development ? element("status", HTMLElement) : null;
+  const debug = development ? element("debug", HTMLElement) : null;
   const note = element("preview-note", HTMLElement);
+  if (development) {
+    element("tools-panel", HTMLDialogElement).append(note);
+    note.hidden = false;
+  }
   const problem = element("problem", HTMLElement);
   const problemMessage = element("problem-message", HTMLElement);
   const next = element("next", HTMLButtonElement);
@@ -121,8 +125,8 @@ async function main(): Promise<void> {
   const chaptersBody = element("chapters-body", HTMLElement);
   const dialogue = element("dialogue-history", HTMLDialogElement);
   const dialogueBody = element("dialogue-history-body", HTMLElement);
-  const aftergame = element("aftergame", HTMLDialogElement);
-  const aftergameBody = element("aftergame-body", HTMLElement);
+  const aftergame = development ? element("aftergame", HTMLDialogElement) : null;
+  const aftergameBody = development ? element("aftergame-body", HTMLElement) : null;
   const dialogueOpen = element("dialogue-history-open", HTMLButtonElement);
   const voiceChoice = element("restore-voice", HTMLSelectElement);
   const rollbackVoice = element("rollback-voice", HTMLSelectElement);
@@ -171,14 +175,18 @@ async function main(): Promise<void> {
     main: content,
     timed: { ...content, entryNodeId: "pm8x8v2h", revision: `m3-preview:pm8x8v2h:${content.revision}` },
   };
-  const storage = connectGameStorage(content.workId, element("storage-notice", HTMLElement));
+  const storage = connectGameStorage(content.workId, element("storage-notice", HTMLElement), development);
   const store = storage.store;
   startup.signal.addEventListener("abort", storage.dispose, { once: true });
+  const recordScope: Readonly<RecordScope> = Object.freeze({
+    kind: development ? "development" : "game", id: development ? "normal-entry" : "main",
+  });
+  const saveEntries: readonly Entry[] = development ? ["main", "timed"] : ["main"];
   const saves = {
-    main: new SaveRepository(sources.main, { kind: "development", id: "normal-entry" }, store),
+    main: new SaveRepository(sources.main, recordScope, store),
     timed: new SaveRepository(sources.timed, { kind: "preview", id: "timed-choice:pm8x8v2h" }, store),
   };
-  const playerRecords = new PlayerRepository(content, { kind: "development", id: "normal-entry" }, store);
+  const playerRecords = new PlayerRepository(content, recordScope, store);
   type EndingOwner = { generation: number; presentation: WebPresentation; endingId: string; state: EndingRecordState };
   const endingFeedbackOwners = new Map<string, EndingOwner>();
   const endingIds = galleryCatalog(content).endings;
@@ -271,12 +279,12 @@ async function main(): Promise<void> {
     retry: token => { if (currentTerminal(token) && !exiting) void flushRecords().catch(() => {}); },
   });
   const slots = new SaveSlots({
-    root: element("save-slots", HTMLElement), repositories: saves, label: entryName,
+    root: element("save-slots", HTMLElement), repositories: saves, entries: saveEntries, label: entryName,
     scope: () => panels?.signalFor("saves") ?? null,
     blocked: () => closed || exiting || savePreparation !== null || entryPreparation === entryRequest || !panels?.signalFor("saves"),
     changed: () => { resetSaveMessage(); refreshSaveControls(); },
   });
-  const audioRepository = new AudioPreferenceRepository(content.workId, { kind: "development", id: "normal-entry" },
+  const audioRepository = new AudioPreferenceRepository(content.workId, recordScope,
     authorAudioVolumes(content.source.settings), store);
   const audioLabels = { music: "配乐", ambience: "环境声", voice: "语音", effects: "音效" };
   const audioPreferences = new PreferencesPanel({
@@ -315,7 +323,7 @@ async function main(): Promise<void> {
     })),
     defaults: authorReadingPreferences(content.source.settings),
     readValues: readReadingPreferences,
-    repository: new ReadingPreferenceRepository(content.workId, { kind: "development", id: "normal-entry" },
+    repository: new ReadingPreferenceRepository(content.workId, recordScope,
       authorReadingPreferences(content.source.settings), store),
     blocked: () => closed || exiting,
     trackWrite: operation => writes.run("reading-preferences", operation, "阅读偏好"),
@@ -331,7 +339,7 @@ async function main(): Promise<void> {
     fields: [{ kind: "checkbox", key: "enabled", label: "播放按钮声音" }],
     defaults: authorButtonPreferences(content.source.settings),
     readValues: readButtonPreferences,
-    repository: new ButtonPreferenceRepository(content.workId, { kind: "development", id: "normal-entry" },
+    repository: new ButtonPreferenceRepository(content.workId, recordScope,
       authorButtonPreferences(content.source.settings), store),
     blocked: () => closed || exiting,
     trackWrite: operation => writes.run("button-preferences", operation, "按钮声音偏好"),
@@ -349,7 +357,7 @@ async function main(): Promise<void> {
     fields: [{ kind: "checkbox", key: "enabled", label: "显示好感数值（剧透向）" }],
     defaults: authorReadoutPreferences(content.source.settings),
     readValues: readReadoutPreferences,
-    repository: new ReadoutPreferenceRepository(content.workId, { kind: "development", id: "normal-entry" },
+    repository: new ReadoutPreferenceRepository(content.workId, recordScope,
       authorReadoutPreferences(content.source.settings), store),
     blocked: () => closed || exiting,
     trackWrite: operation => writes.run("readout-preferences", operation, "话末数值偏好"),
@@ -371,14 +379,14 @@ async function main(): Promise<void> {
     },
     play: cue => presentation?.interaction({ type: "cue", cue }),
   });
-  const hostStatus = document.createElement("p");
+  const hostStatus = development ? document.createElement("p") : null;
   const hostNotice = element("host-notice", HTMLElement);
-  note.insertAdjacentElement("afterend", hostStatus);
+  if (hostStatus) note.insertAdjacentElement("afterend", hostStatus);
   const host = connectHost(state => {
     const platform = state.issue ? `宿主状态异常，已暂停：${state.issue}`
       : state.platform === "windows-trial" ? "Windows 集成试用 · 记录与旧版隔离"
       : state.platform === "android-trial" ? "Android 集成试用 · 记录与旧版隔离" : "浏览器试播";
-    hostStatus.textContent = `${platform}${state.audioIssue ? ` · ${state.audioIssue}` : ""}`;
+    if (hostStatus) hostStatus.textContent = `${platform}${state.audioIssue ? ` · ${state.audioIssue}` : ""}`;
     const issue = [state.issue ? `宿主状态异常，已暂停：${state.issue}` : "", state.audioIssue ?? ""].filter(Boolean).join(" · ");
     if (hostNotice.textContent !== issue) hostNotice.textContent = issue;
     presentation?.setAudioAllowed(state.audioAllowed);
@@ -393,7 +401,7 @@ async function main(): Promise<void> {
     if (chapters.open) { closeChapters(true); return true; }
     if (sounds.open) { closeSounds(true); return true; }
     if (gallery.open) { closeGallery(true); return true; }
-    if (aftergame.open) { closeAftergame(true); return true; }
+    if (aftergame?.open) { closeAftergame(true); return true; }
     if (panels?.close()) return true;
     if (input?.reveal()) return true;
     if (session) { toggleMenu(); return true; }
@@ -404,17 +412,18 @@ async function main(): Promise<void> {
     stage,
     layers: () => [scene, title, choices, menu, ...stage.querySelectorAll<HTMLElement>(":scope > .ending-panel")],
     enabled: () => !closed && !exiting && !document.hidden && !host.state().paused && !session?.view().skipping,
-    issue: message => { if (!closed) status.textContent += ` · 界面过渡未能完成：${message}`; },
+    issue: message => { if (!closed) notify(`界面过渡未能完成：${message}`); },
   });
   const shellDialogs = {
     saves: element("saves-panel", HTMLDialogElement),
     settings: element("settings-panel", HTMLDialogElement),
     rollback: element("rollback-panel", HTMLDialogElement),
-    tools: element("tools-panel", HTMLDialogElement),
+    ...(development ? { tools: element("tools-panel", HTMLDialogElement) } : {}),
   };
   const dialogDisplay = new DialogFade({
     surface: element("player-surface", HTMLElement),
-    dialogs: [...Object.values(shellDialogs), dialogue, gallery, sounds, chapters, aftergame],
+    dialogs: [...Object.values(shellDialogs).filter((dialog): dialog is HTMLDialogElement => dialog !== undefined),
+      dialogue, gallery, sounds, chapters, ...(aftergame ? [aftergame] : [])],
     enabled: () => !closed && !exiting && !host.state().paused && !session?.view().skipping,
     issue: message => notify(`界面过渡未能完成：${message}。当前操作仍按原流程处理。`),
   });
@@ -576,7 +585,7 @@ async function main(): Promise<void> {
     stage, scene, choices, controls: playControls, hide, keyboardScopes: [document],
     session: () => session,
     enabled: () => !closed && !exiting && !panels?.active
-      && !dialogue.open && !gallery.open && !chapters.open && !sounds.open && !aftergame.open && !host.state().paused,
+      && !dialogue.open && !gallery.open && !chapters.open && !sounds.open && !aftergame?.open && !host.state().paused,
     unlockAudio, menu: toggleMenu, history: openDialogue,
   });
   const displayDriver = nativeFullscreenDriver();
@@ -604,7 +613,7 @@ async function main(): Promise<void> {
     dialogs: shellDialogs,
     display: dialogDisplay,
     enabled: () => ready && !closed && !exiting && entryPreparation !== entryRequest
-      && !dialogue.open && !gallery.open && !chapters.open && !sounds.open && !aftergame.open,
+      && !dialogue.open && !gallery.open && !chapters.open && !sounds.open && !aftergame?.open,
     acquirePause: () => {
       const owner = session;
       const acquired = !!owner && !owner.view().paused.includes("menu");
@@ -662,12 +671,15 @@ async function main(): Promise<void> {
       button.disabled = blocked || (button.dataset.panelOpen === "rollback" && !active)
         || (button.closest(".play-controls") !== null && !active);
     }
-    element("aftergame-open", HTMLButtonElement).disabled = blocked || active;
-    element("timed", HTMLButtonElement).disabled = blocked;
+    if (development) {
+      element("aftergame-open", HTMLButtonElement).disabled = blocked || active;
+      element("timed", HTMLButtonElement).disabled = blocked;
+    }
     menuFocus?.refresh();
   }
 
   function openPanel(name: GamePanel): void {
+    if (name === "tools" && !development) return;
     if (name === "rollback" && !session) return;
     try {
       stageFade?.cancel();
@@ -702,12 +714,12 @@ async function main(): Promise<void> {
     menu.hidden = menuHidden;
     dockNotices(!menuHidden);
     const phases = { presenting: "呈现中", ready: "可继续", choosing: "等待选择", ended: "本段结束" };
-    status.textContent = `${story.nodeId} · ${phases[story.phase]}${view.paused.length ? ` · 已暂停：${view.paused.join(" / ")}` : ""}`
+    if (status) status.textContent = `${story.nodeId} · ${phases[story.phase]}${view.paused.length ? ` · 已暂停：${view.paused.join(" / ")}` : ""}`
       + (story.terminal?.kind === "ending" ? ` · ${story.terminal.endingId}` : "")
       + (view.newEnding ? " · 新结局已保存，可从主页鉴赏" : "");
     problem.hidden = !view.problem;
     problemMessage.textContent = view.problem ? `${view.problem.blocking ? "已暂停" : "媒体提示"}：${view.problem.message}` : "";
-    debug.textContent = JSON.stringify({ nodeId: story.nodeId, token, variables: story.variables,
+    if (debug) debug.textContent = JSON.stringify({ nodeId: story.nodeId, token, variables: story.variables,
       player: story.player, phase: story.phase, choiceRemainingMs: view.choiceRemainingMs }, null, 2);
     refreshReadout(view);
     choicePanel.render(view);
@@ -764,7 +776,7 @@ async function main(): Promise<void> {
     save.disabled = blocked || saving || mode === "chapter" || !(view ?? session?.view())?.canCheckpoint;
     save.textContent = mode === "chapter" ? "章节试阅不写入存档槽位"
       : `保存${entryName(mode)}到 ${JSON.stringify(slots.slot(mode))}`;
-    for (const entry of ["main", "timed"] as const) {
+    for (const entry of saveEntries) {
       const suffix = entry === "main" ? "main" : "timed";
       const inspect = element(`inspect-${suffix}`, HTMLButtonElement);
       const load = element(`load-${suffix}`, HTMLButtonElement);
@@ -803,7 +815,7 @@ async function main(): Promise<void> {
   }
 
   async function start(selected: Entry | ChapterEntry, restore?: { voice: RestoreVoice; slotId: string }): Promise<void> {
-    if (exiting || closed) return;
+    if (exiting || closed || (!development && selected === "timed")) return;
     savePreparation?.abort();
     const entry: PlayEntry = typeof selected === "string" ? selected : "chapter";
     const request = ++entryRequest;
@@ -986,7 +998,7 @@ async function main(): Promise<void> {
     next.disabled = auto.disabled = skip.disabled = pause.disabled = audio.disabled = save.disabled = dialogueOpen.disabled = true;
     resetRollback();
     resetSaveMessage();
-    status.textContent = "已返回标题；旧会话的任务已取消";
+    if (status) status.textContent = "已返回标题；旧会话的任务已取消";
     notify("");
     input?.refresh();
     refreshSaveControls();
@@ -1154,6 +1166,7 @@ async function main(): Promise<void> {
   }
 
   async function inspectSaved(entry: Entry): Promise<void> {
+    if (!saveEntries.includes(entry)) return;
     const scope = panels?.signalFor("saves");
     if (!scope || scope.aborted || savePreparation || exiting || closed || entryPreparation === entryRequest) return;
     const slotId = slots.slot(entry);
@@ -1173,10 +1186,10 @@ async function main(): Promise<void> {
   }
 
   function load(entry: Entry): void {
-    if (exiting || closed || entryPreparation === entryRequest) return;
+    if (exiting || closed || entryPreparation === entryRequest || !saveEntries.includes(entry)) return;
     const voice = voiceChoice.value;
     if (voice !== "silent" && voice !== "replay" && voice !== "resume") {
-      saveMessage.textContent = "先选择本次读档的语音方式；这个试播选择不会改写正式默认体验。";
+      saveMessage.textContent = "请先选择本次读档的语音方式。";
       return;
     }
     void start(entry, { voice, slotId: slots.slot(entry) });
@@ -1350,13 +1363,14 @@ async function main(): Promise<void> {
   }
 
   function closeAftergame(animate = false): void {
+    if (!aftergame || !aftergameBody) return;
     dialogDisplay.close(aftergame, animate);
     aftergamePanel?.close();
     aftergameBody.replaceChildren();
   }
 
   async function openAftergame(): Promise<void> {
-    if (exiting || closed || session || aftergame.open) return;
+    if (!development || !aftergame || !aftergameBody || exiting || closed || session || aftergame.open) return;
     const request = ++entryRequest;
     const active = (): boolean => !closed && !exiting && !session && aftergame.open && request === entryRequest;
     try {
@@ -1368,9 +1382,8 @@ async function main(): Promise<void> {
       // No chat module, backend or provider is required for mainline startup.
       const { createAftergamePanel } = await import("./aftergame.ts");
       if (!active()) return;
-      aftergamePanel ??= createAftergamePanel(aftergameBody, content, {
-        kind: "development", id: "normal-entry",
-      }, { read: () => playerRecords.readCompletions() });
+      aftergamePanel ??= createAftergamePanel(aftergameBody, content, recordScope,
+        { read: () => playerRecords.readCompletions() });
       await aftergamePanel.open();
     } catch (error: unknown) {
       if (active()) {
@@ -1413,7 +1426,7 @@ async function main(): Promise<void> {
   }
 
   element("start", HTMLButtonElement).onclick = () => { void start("main"); };
-  element("timed", HTMLButtonElement).onclick = () => { void start("timed"); };
+  if (development) element("timed", HTMLButtonElement).onclick = () => { void start("timed"); };
   element("restart", HTMLButtonElement).onclick = () => {
     if (mode === "chapter") { if (activeChapter) void start(activeChapter.entry); }
     else void start(mode);
@@ -1428,9 +1441,9 @@ async function main(): Promise<void> {
   audio.onclick = unlockAudio;
   save.onclick = () => { void saveCheckpoint(); };
   element("inspect-main", HTMLButtonElement).onclick = () => { void inspectSaved("main"); };
-  element("inspect-timed", HTMLButtonElement).onclick = () => { void inspectSaved("timed"); };
+  if (development) element("inspect-timed", HTMLButtonElement).onclick = () => { void inspectSaved("timed"); };
   element("load-main", HTMLButtonElement).onclick = () => load("main");
-  element("load-timed", HTMLButtonElement).onclick = () => load("timed");
+  if (development) element("load-timed", HTMLButtonElement).onclick = () => load("timed");
   element("gallery-open", HTMLButtonElement).onclick = () => { void openGallery(); };
   element("gallery-close", HTMLButtonElement).onclick = () => closeGallery(true);
   gallery.addEventListener("cancel", event => { event.preventDefault(); closeGallery(true); });
@@ -1445,13 +1458,15 @@ async function main(): Promise<void> {
   element("chapters-close", HTMLButtonElement).onclick = () => closeChapters(true);
   chapters.addEventListener("cancel", event => { event.preventDefault(); closeChapters(true); });
   chapters.addEventListener("close", () => { if (!chapters.open) chapterPanel?.close(); });
-  element("aftergame-open", HTMLButtonElement).onclick = () => {
-    panels?.close("leave");
-    void openAftergame();
-  };
-  element("aftergame-close", HTMLButtonElement).onclick = () => closeAftergame(true);
-  aftergame.addEventListener("cancel", event => { event.preventDefault(); closeAftergame(true); });
-  aftergame.addEventListener("close", () => { if (!aftergame.open) aftergamePanel?.close(); });
+  if (development && aftergame) {
+    element("aftergame-open", HTMLButtonElement).onclick = () => {
+      panels?.close("leave");
+      void openAftergame();
+    };
+    element("aftergame-close", HTMLButtonElement).onclick = () => closeAftergame(true);
+    aftergame.addEventListener("cancel", event => { event.preventDefault(); closeAftergame(true); });
+    aftergame.addEventListener("close", () => { if (!aftergame.open) aftergamePanel?.close(); });
+  }
   dialogueOpen.onclick = openDialogue;
   element("dialogue-history-close", HTMLButtonElement).onclick = () => closeDialogue(true);
   dialogue.addEventListener("cancel", event => { event.preventDefault(); closeDialogue(true); });
@@ -1525,8 +1540,11 @@ async function main(): Promise<void> {
   if (closed || startup.signal.aborted) return;
   ready = true;
   element("loading-screen", HTMLElement).hidden = true;
-  note.textContent = "本地内容已载入。可以从第一话开始，或选择明确标注初始条件的章节试阅与限时样例。";
-  for (const id of ["start", "timed", "gallery-open", "sounds-open", "chapters-open", "aftergame-open"]) element(id, HTMLButtonElement).disabled = false;
+  note.textContent = development
+    ? "本地内容已载入。可以从第一话开始，或选择明确标注初始条件的章节试阅与限时样例。"
+    : "本地内容已载入，可以开始游戏。";
+  for (const id of ["start", "gallery-open", "sounds-open", "chapters-open",
+    ...(development ? ["timed", "aftergame-open"] : [])]) element(id, HTMLButtonElement).disabled = false;
   refreshSaveControls();
   slots.refresh();
 }

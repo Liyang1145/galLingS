@@ -131,36 +131,36 @@ impl NativeRecordStore {
         match fs::symlink_metadata(&root) {
             Ok(metadata) => {
                 if !metadata.is_dir() || metadata.file_attributes() & REPARSE_POINT != 0 {
-                    return Err(error("NATIVE_STORAGE_ROOT", "试用记录根须为独立普通目录"));
+                    return Err(error("NATIVE_STORAGE_ROOT", "游戏记录根须为独立普通目录"));
                 }
             }
             Err(source) if source.kind() == std::io::ErrorKind::NotFound => {
-                fs::create_dir_all(&root).map_err(|source| io_error("无法创建试用记录目录", source))?;
+                fs::create_dir_all(&root).map_err(|source| io_error("无法创建游戏记录目录", source))?;
             }
-            Err(source) => return Err(io_error("无法读取试用记录目录", source)),
+            Err(source) => return Err(io_error("无法读取游戏记录目录", source)),
         }
-        let metadata = fs::symlink_metadata(&root).map_err(|source| io_error("无法确认试用记录目录", source))?;
+        let metadata = fs::symlink_metadata(&root).map_err(|source| io_error("无法确认游戏记录目录", source))?;
         if !metadata.is_dir() || metadata.file_attributes() & REPARSE_POINT != 0 {
-            return Err(error("NATIVE_STORAGE_ROOT", "试用记录根不能是重解析点"));
+            return Err(error("NATIVE_STORAGE_ROOT", "游戏记录根不能是重解析点"));
         }
-        let root = fs::canonicalize(root).map_err(|source| io_error("无法定位试用记录目录", source))?;
+        let root = fs::canonicalize(root).map_err(|source| io_error("无法定位游戏记录目录", source))?;
         let lock = root.join("store.lock");
         match fs::symlink_metadata(&lock) {
             Ok(metadata) if !metadata.is_file() || metadata.file_attributes() & REPARSE_POINT != 0 => {
-                return Err(error("NATIVE_STORAGE_LOCK", "试用记录锁不是普通文件"));
+                return Err(error("NATIVE_STORAGE_LOCK", "游戏记录锁不是普通文件"));
             }
             Ok(_) => {}
             Err(source) if source.kind() == std::io::ErrorKind::NotFound => {}
-            Err(source) => return Err(io_error("无法读取试用记录锁", source)),
+            Err(source) => return Err(io_error("无法读取游戏记录锁", source)),
         }
         let lease = OpenOptions::new().read(true).write(true).create(true).share_mode(0).open(lock)
-            .map_err(|source| error("NATIVE_STORAGE_LOCK", format!("无法独占试用记录目录；请关闭使用它的其他宿主后重试：{source}")))?;
+            .map_err(|source| error("NATIVE_STORAGE_LOCK", format!("无法独占游戏记录目录；请关闭使用它的其他宿主后重试：{source}")))?;
         Ok(Self { root, work_id, addresses, _lease: lease, serial: Mutex::new(0) })
     }
 
     pub(crate) fn read(&self, key: &str) -> Result<ReadResult> {
         self.check_key(key)?;
-        let mut serial = self.serial.lock().map_err(|_| error("NATIVE_STORAGE_LOCK", "试用记录操作已异常，需重开宿主"))?;
+        let mut serial = self.serial.lock().map_err(|_| error("NATIVE_STORAGE_LOCK", "游戏记录操作已异常，需重开宿主"))?;
         let loaded = self.load()?;
         observe(&mut serial, loaded.table.revision)?;
         Ok(ReadResult {
@@ -175,7 +175,7 @@ impl NativeRecordStore {
             || after.map(|key| !key.starts_with(prefix) || !self.addresses.is_progress(key)).unwrap_or(false) {
             return Err(error("NATIVE_STORAGE_PAGE", "目录范围、游标或容量无效"));
         }
-        let mut serial = self.serial.lock().map_err(|_| error("NATIVE_STORAGE_LOCK", "试用记录操作已异常，需重开宿主"))?;
+        let mut serial = self.serial.lock().map_err(|_| error("NATIVE_STORAGE_LOCK", "游戏记录操作已异常，需重开宿主"))?;
         let loaded = self.load()?;
         observe(&mut serial, loaded.table.revision)?;
         let mut entries: Vec<_> = loaded.table.entries.0.iter().filter(|(key, _)| {
@@ -189,9 +189,9 @@ impl NativeRecordStore {
     }
 
     pub(crate) fn replace_progress(&self, key: &str, value: Box<RawValue>) -> Result<CommitResult> {
-        if !self.addresses.is_progress(key) { return Err(error("NATIVE_STORAGE_KEY", "此操作仅替换当前试用进度槽位")); }
+        if !self.addresses.is_progress(key) { return Err(error("NATIVE_STORAGE_KEY", "此操作仅替换当前游戏进度槽位")); }
         self.check_value(key, &value)?;
-        let mut serial = self.serial.lock().map_err(|_| error("NATIVE_STORAGE_LOCK", "试用记录操作已异常，需重开宿主"))?;
+        let mut serial = self.serial.lock().map_err(|_| error("NATIVE_STORAGE_LOCK", "游戏记录操作已异常，需重开宿主"))?;
         let mut loaded = self.load()?;
         observe(&mut serial, loaded.table.revision)?;
         loaded.table.entries.0.insert(key.into(), value);
@@ -206,7 +206,7 @@ impl NativeRecordStore {
             return Err(error("NATIVE_STORAGE_CAS", "仅已登记的成果/偏好地址可使用有效存储代次更新"));
         }
         self.check_value(key, &value)?;
-        let mut serial = self.serial.lock().map_err(|_| error("NATIVE_STORAGE_LOCK", "试用记录操作已异常，需重开宿主"))?;
+        let mut serial = self.serial.lock().map_err(|_| error("NATIVE_STORAGE_LOCK", "游戏记录操作已异常，需重开宿主"))?;
         let mut loaded = self.load()?;
         observe(&mut serial, loaded.table.revision)?;
         if expected > loaded.table.revision {
@@ -222,7 +222,7 @@ impl NativeRecordStore {
     }
 
     fn check_key(&self, key: &str) -> Result<()> {
-        if !self.addresses.contains(key) { return Err(error("NATIVE_STORAGE_KEY", "记录地址不属于当前作品的已登记试用范围")); }
+        if !self.addresses.contains(key) { return Err(error("NATIVE_STORAGE_KEY", "记录地址不属于当前作品的已登记游戏范围")); }
         Ok(())
     }
 
@@ -231,27 +231,27 @@ impl NativeRecordStore {
         if !self.addresses.matches_value(key, value) {
             return Err(error("NATIVE_STORAGE_FAMILY", "记录封装与目标地址种类不一致"));
         }
-        if value.get().len() > MAX_RECORD_BYTES { return Err(error("NATIVE_STORAGE_CAPACITY", "单条试用记录超过 2 MiB；未截断或覆盖旧记录")); }
+        if value.get().len() > MAX_RECORD_BYTES { return Err(error("NATIVE_STORAGE_CAPACITY", "单条游戏记录超过 2 MiB；未截断或覆盖旧记录")); }
         Ok(())
     }
 
     fn layout(&self) -> Result<Layout> {
         let mut layout = Layout { committed: Vec::new(), pending: 0 };
-        for (index, entry) in fs::read_dir(&self.root).map_err(|source| io_error("无法读取试用记录目录", source))?.enumerate() {
-            if index >= MAX_FILES { return Err(error("NATIVE_STORAGE_CAPACITY", "试用记录目录文件过多，需保留诊断后处理")); }
-            let entry = entry.map_err(|source| io_error("无法读取试用记录目录项", source))?;
-            let name = entry.file_name().into_string().map_err(|_| error("NATIVE_STORAGE_LAYOUT", "试用记录文件名无效"))?;
+        for (index, entry) in fs::read_dir(&self.root).map_err(|source| io_error("无法读取游戏记录目录", source))?.enumerate() {
+            if index >= MAX_FILES { return Err(error("NATIVE_STORAGE_CAPACITY", "游戏记录目录文件过多，需保留诊断后处理")); }
+            let entry = entry.map_err(|source| io_error("无法读取游戏记录目录项", source))?;
+            let name = entry.file_name().into_string().map_err(|_| error("NATIVE_STORAGE_LAYOUT", "游戏记录文件名无效"))?;
             if name == "store.lock" { continue; }
-            let metadata = fs::symlink_metadata(entry.path()).map_err(|source| io_error("无法确认试用记录目录项", source))?;
+            let metadata = fs::symlink_metadata(entry.path()).map_err(|source| io_error("无法确认游戏记录目录项", source))?;
             if !metadata.is_file() || metadata.file_attributes() & REPARSE_POINT != 0 {
-                return Err(error("NATIVE_STORAGE_LAYOUT", "试用记录目录包含非普通文件；未自动修复"));
+                return Err(error("NATIVE_STORAGE_LAYOUT", "游戏记录目录包含非普通文件；未自动修复"));
             }
             if let Some(revision) = snapshot_revision(&name) {
                 layout.committed.push((revision, entry.path()));
             } else if pending_name(&name) {
                 layout.pending += 1;
             } else {
-                return Err(error("NATIVE_STORAGE_LAYOUT", "试用记录目录含未知文件，不能按空记录初始化"));
+                return Err(error("NATIVE_STORAGE_LAYOUT", "游戏记录目录含未知文件，不能按空记录初始化"));
             }
         }
         layout.committed.sort_by_key(|(revision, _)| *revision);
@@ -295,11 +295,11 @@ impl NativeRecordStore {
         let revision = loaded.table.revision.checked_add(1).filter(|revision| *revision <= MAX_REVISION)
             .ok_or_else(|| error("NATIVE_STORAGE_REVISION", "存储代次已耗尽，未覆盖旧记录"))?;
         if loaded.table.entries.0.len() > MAX_RECORDS {
-            return Err(error("NATIVE_STORAGE_CAPACITY", "试用记录超过 4096 个逻辑地址；未删除旧记录"));
+            return Err(error("NATIVE_STORAGE_CAPACITY", "游戏记录超过 4096 个逻辑地址；未删除旧记录"));
         }
         loaded.table.revision = revision;
         let bytes = serde_json::to_vec(&loaded.table).map_err(|source| error("NATIVE_STORAGE_VALUE", source.to_string()))?;
-        if bytes.len() > MAX_TABLE_BYTES { return Err(error("NATIVE_STORAGE_CAPACITY", "试用记录总量超过 32 MiB；未截断或覆盖旧记录")); }
+        if bytes.len() > MAX_TABLE_BYTES { return Err(error("NATIVE_STORAGE_CAPACITY", "游戏记录总量超过 32 MiB；未截断或覆盖旧记录")); }
         let nanos = SystemTime::now().duration_since(UNIX_EPOCH)
             .map_err(|_| error("NATIVE_STORAGE_CLOCK", "无法生成临时文件身份；未采用默认时间"))?.as_nanos();
         let attempt = ATTEMPT.fetch_add(1, Ordering::Relaxed);

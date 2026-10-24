@@ -19,7 +19,7 @@ export interface GamePackage {
   format: "haifeng.game-package/2";
   hostBridge: typeof HOST_BRIDGE_PROTOCOL;
   target: "shared-web";
-  purpose: "integration-trial";
+  purpose: "game";
   workId: string;
   contentRevision: string;
   entry: "index.html";
@@ -95,7 +95,7 @@ export function readGamePackage(input: unknown): GamePackage {
     format: "haifeng.game-package/2",
     hostBridge: oneOf(data.hostBridge, [HOST_BRIDGE_PROTOCOL] as const, at(ROOT, "hostBridge")),
     target: oneOf(data.target, ["shared-web"] as const, at(ROOT, "target")),
-    purpose: oneOf(data.purpose, ["integration-trial"] as const, at(ROOT, "purpose")),
+    purpose: oneOf(data.purpose, ["game"] as const, at(ROOT, "purpose")),
     entry: oneOf(data.entry, ["index.html"] as const, at(ROOT, "entry")),
     workId: nonempty(data.workId, at(ROOT, "workId")), contentRevision: hash(data.contentRevision, at(ROOT, "contentRevision")),
     build: {

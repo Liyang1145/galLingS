@@ -5,6 +5,7 @@ export type SaveEntry = "main" | "timed";
 interface Options {
   root: HTMLElement;
   repositories: Readonly<Record<SaveEntry, SaveRepository>>;
+  entries: readonly SaveEntry[];
   label(entry: SaveEntry): string;
   scope(): AbortSignal | null;
   blocked(): boolean;
@@ -32,7 +33,7 @@ export class SaveSlots {
   readonly #refresh = button("刷新槽位目录");
   readonly #previous = button("上一页");
   readonly #nextButton = button("下一页");
-  readonly #status = element("p", "尚未读取槽位目录；两个入口原有的 manual 槽位继续保留。");
+  readonly #status = element("p", "尚未读取槽位目录。");
   readonly #selection = element("p");
   readonly #page = element("span");
   readonly #rows = element("fieldset");
@@ -51,12 +52,13 @@ export class SaveSlots {
   constructor(options: Options) {
     this.#options = options;
     const namespace = element("label", "浏览槽位所属入口");
-    for (const entry of ["main", "timed"] as const) {
+    for (const entry of options.entries) {
       const option = element("option", options.label(entry));
       option.value = entry;
       this.#namespace.append(option);
     }
     namespace.append(this.#namespace);
+    namespace.hidden = options.entries.length === 1;
     const form = element("form");
     const name = element("label", "本入口的槽位名称");
     this.#name.type = "text";
@@ -78,7 +80,8 @@ export class SaveSlots {
     this.#status.setAttribute("role", "status");
     this.#status.setAttribute("aria-live", "polite");
     const note = element("p",
-      "名称先用于选择目标，点击“保存”后重新检查原槽位；已有记录需确认覆盖。第一话与限时样例分别保存，查看或选择目录项不会读档。");
+      "名称先用于选择目标，点击“保存”后重新检查原槽位；已有记录需确认覆盖。查看或选择目录项不会读档。"
+      + (options.entries.length > 1 ? "正常游玩与限时样例分别保存。" : ""));
     note.className = "help";
     options.root.classList.add("save-slots");
     options.root.append(namespace, form, this.#selection, note, this.#status, this.#rows, pager);
@@ -91,7 +94,7 @@ export class SaveSlots {
     }, { signal });
     this.#namespace.addEventListener("change", () => {
       const entry = this.#namespace.value;
-      if (this.#closed || options.blocked() || (entry !== "main" && entry !== "timed")) return;
+      if (this.#closed || options.blocked() || (entry !== "main" && entry !== "timed") || !options.entries.includes(entry)) return;
       this.browse(entry);
     }, { signal });
     this.#refresh.addEventListener("click", () => this.refresh(), { signal });
@@ -109,7 +112,7 @@ export class SaveSlots {
 
   /** Opening the shell directory selects its range only; it never adopts saved progress. */
   browse(entry: SaveEntry): void {
-    if (this.#closed || this.#options.blocked()) return;
+    if (this.#closed || this.#options.blocked() || !this.#options.entries.includes(entry)) return;
     this.#entry = entry;
     this.#namespace.value = entry;
     this.#name.value = this.#selected[entry];
@@ -123,6 +126,7 @@ export class SaveSlots {
   }
 
   private use(entry: SaveEntry, slotId: string): void {
+    if (!this.#options.entries.includes(entry)) return;
     this.#name.value = slotId;
     if (this.#selected[entry] === slotId) return;
     this.#selected[entry] = slotId;

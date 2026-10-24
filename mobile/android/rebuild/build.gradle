@@ -13,7 +13,7 @@ android {
         applicationId 'net.gallings.haifeng.rebuild'
         minSdk 24
         targetSdk 34
-        // Keep the existing trial build inputs; these are not a new product release version.
+        // Build labels remain inputs, independent of the formal game runtime profile.
         versionCode((System.getenv('APK_VERSION_CODE') ?: '1') as int)
         versionName(System.getenv('APK_VERSION_NAME') ?: 'playtest')
     }
@@ -37,7 +37,8 @@ tasks.named('preBuild').configure {
         def receipt = new groovy.json.JsonSlurper().parse(receiptFile, 'UTF-8')
         if (receipt.format != 'haifeng.android-preparation/3' || receipt.hostBridge != 'haifeng.host-bridge/3'
                 || receipt.packageId != packageId
-                || receipt.purpose != 'integration-trial') throw new GradleException('Android 准备记录无效')
+                || receipt.purpose != 'game'
+                || receipt.storage != 'native-files/game') throw new GradleException('Android 准备记录不是正式运行配置，请重新构建并准备')
         def digest = { File file -> java.security.MessageDigest.getInstance('SHA-256').digest(file.bytes).encodeHex().toString() }
         if (digest(new File(prepared, 'assets/game/game-package.json')) != receipt.manifestSha256
                 || digest(new File(prepared, 'assets/host-bootstrap.js')) != receipt.bridgeSha256

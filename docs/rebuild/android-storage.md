@@ -1,8 +1,8 @@
-# Android 试用原生记录后端
+# Android 原生记录后端
 
-2026-10-24 从 `62b9746` 编写 Android 物理后端，再从干净的 `7c25552` 接通显式试用装配与受限请求/回执。只有启动 `RebuildActivity` 时传入布尔 extra `rebuild-file-records=true` 才选择独立文件记录，普通启动仍 IndexedDB。当前为**已编写并接线，未运行**；没有实际创建数据、执行准备、Gradle、类型检查、测试、设备操作或验收。
+原后端和受限请求/回执已编写；2026-10-25 按[正式运行配置](run-profile.md)收尾，`:rebuild` 普通启动默认打开私有 `files/records/`，只接正式 `game/main`，不再读取布尔启动 extra。未准备、编译、运行、测试或创建数据。
 
-本片沿既有主线离线和平台存储边界实施，不决定正式数据落点、默认记录源、迁移、备份/卸载保留、分发、宿主统一、系统回收恢复或缩略图。Windows 显式文件试用见[对应说明](native-storage.md)，不能将其运行参数直接用于 Android。
+沿既有离线主线和平台存储契约，仅收尾默认接线、正式地址及显示名称；原 JSON/提交/CAS/回执算法保持。没有旧档迁移，存档体验、回退与异常恢复后置，不决定备份/卸载、分发、宿主统一或缩略图。
 
 ## 模块和接口
 
@@ -12,7 +12,7 @@
 | 同目录 `NativeRecordAddress.java` | 当前作品的受限地址、记录种类及槽位名称边界；逻辑键永不转为文件名 |
 | 同目录 `NativeRecordJson.java` | 严格 JSON 边界、重复字段拒绝、原值切片和 UTF-16 字符串转义；不归一化剧情或记录值 |
 | 同目录 `NativeRecordBridge.java` | 单一工作线程打开/读写/关闭、页面代次/身份/ID、单队首观察及原请求缓存回执；不开放 JavaScript 通用原生命令 |
-| 同目录 `RebuildActivity.java` | 布尔启动 extra、包内客户端能力核对、启动前注入、页面生命周期及关闭接线 |
+| 同目录 `RebuildActivity.java` | 正式用途/客户端能力核对、默认文件后端及启动前注入、页面生命周期和关闭接线 |
 | `packages/player/src/web/native-records-bootstrap.js`、`native-records.ts` | 两端共用的受限队列/回执与原存储接口适配，TS 仓库继续做领域验证/合并 |
 | `apps/game/src/platform/storage.ts` | 按原生页面来源和固定模式选择单一源，显示对应平台及警告，不迁移浏览器记录 |
 
@@ -31,13 +31,13 @@
 
 ## 地址、载荷与内部格式
 
-登记范围与 Windows 试用后端相同：
+登记范围与 Windows 正式后端相同：
 
-- `haifeng.save/1` 的当前作品 `development/normal-entry`、`preview/timed-choice:pm8x8v2h` 进度。
-- 当前作品 `development/normal-entry` 的 `haifeng.player-records/1`。
+- `haifeng.save/1` 的当前作品 `game/main` 进度。
+- 当前作品 `game/main` 的 `haifeng.player-records/1`。
 - 同范围独立的 `haifeng.audio-preferences/1`、`haifeng.reading-preferences/1`、`haifeng.button-preferences/1`、`haifeng.readout-preferences/1`。
 
-没有正式 `game`、聊天、缩略图、任意预览或其他作品地址。槽位名称按解码后的 1～128 个 UTF-16 单元校验；字符串拼写兼容 JavaScript `JSON.stringify`，包括孤立代理项转义。Java 字符串自然顺序与 JS 逻辑地址的 UTF-16 排序一致，不以 UTF-8 字节序改排补充字符名称。
+没有开发/预览、聊天、缩略图、任意预览或其他作品地址。槽位名称按解码后的 1～128 个 UTF-16 单元校验；字符串拼写兼容 JavaScript `JSON.stringify`，包括孤立代理项转义。Java 字符串自然顺序与 JS 逻辑地址的 UTF-16 排序一致，不以 UTF-8 字节序改排补充字符名称。
 
 内部容器使用已有 `haifeng.native-record-table/1`，仍含作品、存储代次和逻辑键到原 JSON 值的 `entries`。原 JSON 数字、转义和字段次序不重编码为 Java 数值/领域对象，UTF-8 编解码遇无效字节明确报错；独立代理项通过 JSON 转义保留，不允许有损替换字符。此内部容器不是玩家导出格式或跨平台目录导入承诺；两端目录锁/临时文件布局由各自后端拥有。
 
@@ -57,21 +57,13 @@
 
 Android 此处使用完整文件的硬链接提交，Windows 使用 `MoveFileExW`；这是各自后端的物理实现差异。目录同步失败后只能确认文件可读，不能承诺断电持久性。网络盘、损坏修复、手工替换文件、未知文件清理、系统强杀/回收和设备文件系统兼容仍未验收。
 
-## 显式启动与兼容
+## 默认启动与包兼容
 
-文件试用仅使用独立重构应用私有 `files/native-records-trial/`，与原 IndexedDB/WebView 数据分开，不向页面提供路径。此位置是试用装配，不决定正式落点、卸载保留或跨平台导入。
+应用普通启动固定使用私有 `files/records/`，不向页面提供路径，不再读取 `rebuild-file-records` extra。既有 IndexedDB/试用文件不读取、复制或删除。
 
-先沿 [Android 集成说明](android.md#统一测试阶段入口)重新构建游戏包、准备并编译 APK；本轮没有执行。只有新编译的 `:rebuild` 支持该布尔启动 extra，既有图标普通启动仍使用 IndexedDB。例如在未来统一测试时，先沿正常退出关闭当前实例，再用已连接的设备显式启动：
+统一测试阶段按 `game:build`、`android:prepare` 及准备输出的 Gradle 命令重新生成 APK，普通图标启动即可。包用途必须为 `game`，准备 `/3` 继续登记两份桥摘要并要求 `storage: native-files/game`；旧试用用途拒绝，须重新构建/准备。本轮没有执行。
 
-```powershell
-adb shell am start -n net.gallings.haifeng.rebuild/.RebuildActivity --ez rebuild-file-records true
-```
-
-这不是 Gradle/prepare 参数，不保存为玩家偏好；后续普通启动不会自动沿用文件模式。未安装新 APK 或没有显式布尔参数，均不能据此认为已选择文件存储。2026-10-25 旧模块 `:app` 已按用户授权删除，没有旧档兼容/迁移要求；本片既有文件开关不变。
-
-启动前检查游戏清单唯一登记的 `assets/native-record-client.json`，核对实际字节大小/SHA-256、`haifeng.native-record-client/1` 与 `haifeng.native-records/1`。能力缺失/错误、参数类型错误、文件/锁打开失败均显示原生错误并拒绝开局，不切 IndexedDB。成功打开后才加载入口；页面脚本之前先注入固定模式/作品的记录桥，再注入基础宿主桥。
-
-`android:prepare` 现在额外复制共享 `native-records-bootstrap.js` 并替换 Android 平台标记，Android 准备记录升级为 `haifeng.android-preparation/3`，登记 `recordsBridgeSha256`。`:rebuild` 的 `preBuild` 核对新格式与模板摘要；旧 `/2` 准备输入须重新生成。随包仍 `/2`、基础桥仍 `/3`、可选记录协议仍 `/1`，记录载荷和内部容器不变。Windows 仍嵌入同一模板，仅补其平台标记替换；没有切默认记录源或改 Windows 准备格式。
+启动前核对清单唯一登记的原生客户端及实际大小/SHA-256，客户端 `/1`、记录协议 `/1`、基础桥 `/3`、游戏包 `/2` 和持久载荷不变。成功打开唯一工作线程后才加载前端；能力或后端失败拒绝开局，不换源。原页面身份/原请求、确认丢失和退出保护如下保持。
 
 ## 请求、确认与页面生命周期
 
@@ -89,6 +81,6 @@ adb shell am start -n net.gallings.haifeng.rebuild/.RebuildActivity --ez rebuild
 
 后端情景：独占锁、非法地址、Unicode/孤立代理项、`null`/无键、UTF-16 分页、原样数字/转义、CAS 冲突/代次倒退、容量/结构限额、写入/同步/链接故障、目标冲突、目录同步警告、最新容器损坏、不支持硬链接、清理失败、关闭和重新打开。
 
-接线情景：普通/显式启动隔离、能力/参数/旧准备格式拒绝、首次打开失败不加载游戏、单队首与收短页、重复/改变载荷/旧 ID/换身份拒绝、页面求值丢失/迟到、12 秒超时与原回执恢复、重试幂等、后台/退出期间确认、取消退出与 Activity 重建、旧页面结果不得影响新页面或关闭新 Activity。
+接线情景：普通启动正式文件、开发/正式隔离、能力/试用用途/旧准备格式拒绝、首次打开失败不加载游戏、单队首与收短页、重复/改变载荷/旧 ID/换身份拒绝、页面求值丢失/迟到、12 秒超时与原回执恢复、重试幂等、后台/退出期间确认、取消退出与 Activity 重建、旧页面结果不得影响新页面或关闭新 Activity。
 
 目前全部未执行，不能据源码宣布 Android 平台存储已完成。正式存储/迁移、备份导出、自动恢复和缩略图仍未完成或待确认；两端设备与全路线验收继续留到用户安排的统一测试。

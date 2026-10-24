@@ -34,11 +34,23 @@ function packagedContent(root: string): Plugin {
   return {
     name: "haifeng-packaged-content",
     apply: "build",
+    transformIndexHtml: {
+      order: "pre",
+      handler(html) {
+        const result = html.replace(/<!-- GAME_DEV_START -->[\s\S]*?<!-- GAME_DEV_END -->/gu, "");
+        if (result === html || result.includes("GAME_DEV_START") || result.includes("GAME_DEV_END")
+          || /id="(?:tools-panel|tools-open|timed|aftergame|debug|inspect-timed|load-timed)"|data-panel-open="tools"/u.test(result)) {
+          throw new Error("正式页面的开发区标记缺失、不完整或仍有开发入口");
+        }
+        return result;
+      },
+    },
     resolveId(id) { if (id === virtualId) return resolvedId; },
     load(id) {
       if (id !== resolvedId) return;
       const reader = normalizePath(resolve(root, "packages/player/src/web/package.ts"));
       return `import { loadPackagedContent } from ${JSON.stringify(reader)};
+        export const development = false;
         export function loadContent(signal) {
           return loadPackagedContent(new URL(".", window.location.href), signal);
         }`;
@@ -186,7 +198,7 @@ async function build(): Promise<void> {
     const resources = await copyMedia(root, loaded.files, temporary);
     const manifest = readGamePackage({
       format: "haifeng.game-package/2", hostBridge: HOST_BRIDGE_PROTOCOL,
-      target: "shared-web", purpose: "integration-trial",
+      target: "shared-web", purpose: "game",
       workId: content.workId, contentRevision: content.revision, entry: "index.html",
       build: stamp, story, provenance, frontend, resources,
     });
@@ -202,7 +214,7 @@ async function build(): Promise<void> {
     await rename(temporary, destination);
     published = true;
     console.log(`游戏集成产物已生成：${relative(root, destination)}`);
-    console.log("仍使用隔离试播记录；不是 Windows/APK 安装包，未执行路线、媒体或平台验收。");
+    console.log("正式运行配置：独立 game 记录，不带开发入口；尚不是 EXE/APK，未执行路线、媒体或平台验收。");
   } finally {
     try {
       if (temporary && !published) await removeStaging(base, temporary);

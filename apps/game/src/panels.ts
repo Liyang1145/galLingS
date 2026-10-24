@@ -1,7 +1,7 @@
 export type GamePanel = "saves" | "settings" | "rollback" | "tools";
 
 interface Options {
-  dialogs: Readonly<Record<GamePanel, HTMLDialogElement>>;
+  dialogs: Readonly<Record<Exclude<GamePanel, "tools">, HTMLDialogElement> & Partial<Record<"tools", HTMLDialogElement>>>;
   enabled(): boolean;
   acquirePause(): () => void;
   changed(): void;
@@ -22,7 +22,9 @@ export class GamePanels {
   constructor(options: Options) {
     this.#options = options;
     const { signal } = this.#events;
-    for (const dialog of Object.values(options.dialogs)) {
+    for (const name of ["saves", "settings", "rollback", "tools"] as const) {
+      const dialog = options.dialogs[name];
+      if (!dialog) continue;
       dialog.addEventListener("cancel", event => {
         event.preventDefault();
         this.close();
@@ -47,6 +49,7 @@ export class GamePanels {
   open(name: GamePanel): boolean {
     if (this.#disposed || !this.#options.enabled() || this.#current) return false;
     const dialog = this.#options.dialogs[name];
+    if (!dialog) return false;
     const lifetime = new AbortController();
     let release = (): void => {};
     try {

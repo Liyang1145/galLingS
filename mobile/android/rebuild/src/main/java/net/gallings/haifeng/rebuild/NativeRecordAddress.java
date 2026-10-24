@@ -15,12 +15,11 @@ final class NativeRecordAddress {
         }
         String work = NativeRecordJson.quote(workId);
         progress = new String[] {
-            "[\"" + SAVE + "\"," + work + ",\"development\",\"normal-entry\",",
-            "[\"" + SAVE + "\"," + work + ",\"preview\",\"timed-choice:pm8x8v2h\",",
+            "[\"" + SAVE + "\"," + work + ",\"game\",\"main\",",
         };
         for (String family : new String[] { "haifeng.player-records/1", "haifeng.audio-preferences/1",
                 "haifeng.reading-preferences/1", "haifeng.button-preferences/1", "haifeng.readout-preferences/1" }) {
-            records.put("[\"" + family + "\"," + work + ",\"development\",\"normal-entry\"]", family);
+            records.put("[\"" + family + "\"," + work + ",\"game\",\"main\"]", family);
         }
     }
 

@@ -116,26 +116,26 @@ final class NativeRecordStore implements AutoCloseable {
             File absolute = requestedRoot.getAbsoluteFile();
             File parent = absolute.getParentFile();
             if (parent == null || ".".equals(absolute.getName()) || "..".equals(absolute.getName())) {
-                throw error("ROOT", "试用目录须在受信任应用数据目录下");
+                throw error("ROOT", "游戏目录须在受信任应用数据目录下");
             }
             // The trusted native caller owns the parent. Never follow a link at the selected root.
             File root = new File(parent.getCanonicalFile(), absolute.getName());
             try { Os.mkdir(root.getPath(), 0700); }
             catch (ErrnoException failure) { if (failure.errno != OsConstants.EEXIST) throw failure; }
             if (!OsConstants.S_ISDIR(Os.lstat(root.getPath()).st_mode)) {
-                throw error("ROOT", "试用记录根须为普通目录，不能是符号链接");
+                throw error("ROOT", "游戏记录根须为普通目录，不能是符号链接");
             }
-            if (!LEASED_ROOTS.add(root.getPath())) throw error("LOCK", "当前进程已持有此试用记录目录");
+            if (!LEASED_ROOTS.add(root.getPath())) throw error("LOCK", "当前进程已持有此游戏记录目录");
             reservedRoot = root.getPath();
             File lock = new File(root, "store.lock");
             FileDescriptor descriptor = Os.open(lock.getPath(),
                     OsConstants.O_RDWR | OsConstants.O_CREAT | OsConstants.O_NOFOLLOW | OsConstants.O_CLOEXEC, 0600);
             lease = new FileOutputStream(descriptor);
             if (!OsConstants.S_ISREG(Os.fstat(descriptor).st_mode)) {
-                throw error("LOCK", "试用目录锁必须是普通文件");
+                throw error("LOCK", "游戏目录锁必须是普通文件");
             }
             FileLock exclusive = lease.getChannel().tryLock();
-            if (exclusive == null) throw error("LOCK", "试用记录目录已被其他宿主独占");
+            if (exclusive == null) throw error("LOCK", "游戏记录目录已被其他宿主独占");
             return new NativeRecordStore(root, workId, addresses, lease, exclusive);
         } catch (IOException | ErrnoException | OverlappingFileLockException | StorageError failure) {
             boolean released = lease == null;
@@ -145,7 +145,7 @@ final class NativeRecordStore implements AutoCloseable {
             }
             if (released && reservedRoot != null) LEASED_ROOTS.remove(reservedRoot);
             if (failure instanceof StorageError) throw (StorageError) failure;
-            throw error("LOCK", "无法打开或独占试用记录目录；已有文件保留，请关闭其他宿主后重试");
+            throw error("LOCK", "无法打开或独占游戏记录目录；已有文件保留，请关闭其他宿主后重试");
         }
     }
 
@@ -173,7 +173,7 @@ final class NativeRecordStore implements AutoCloseable {
     }
 
     synchronized WriteResult replaceProgress(String key, String rawValue) {
-        if (!addresses.progress(key)) throw error("KEY", "此操作仅替换当前试用进度槽位");
+        if (!addresses.progress(key)) throw error("KEY", "此操作仅替换当前游戏进度槽位");
         value(key, rawValue);
         Table table = load();
         table.entries.put(key, rawValue);
@@ -193,7 +193,7 @@ final class NativeRecordStore implements AutoCloseable {
     }
 
     private void key(String key) {
-        if (!addresses.contains(key)) throw error("KEY", "记录地址不属于当前作品已登记的试用范围");
+        if (!addresses.contains(key)) throw error("KEY", "记录地址不属于当前作品已登记的游戏范围");
     }
     private void value(String key, String raw) {
         key(key);
@@ -206,25 +206,25 @@ final class NativeRecordStore implements AutoCloseable {
     }
 
     private Layout layout() {
-        if (closed || !directoryLock.isValid()) throw error("LOCK", "试用记录实例已经关闭或失去目录锁");
+        if (closed || !directoryLock.isValid()) throw error("LOCK", "游戏记录实例已经关闭或失去目录锁");
         try {
-            if (!OsConstants.S_ISDIR(Os.lstat(root.getPath()).st_mode)) throw error("ROOT", "试用记录根已不再是普通目录");
+            if (!OsConstants.S_ISDIR(Os.lstat(root.getPath()).st_mode)) throw error("ROOT", "游戏记录根已不再是普通目录");
             String[] names = root.list();
-            if (names == null) throw error("IO", "无法列举试用记录目录");
-            if (names.length > MAX_FILES) throw error("CAPACITY", "试用记录目录超过 4096 个文件，未清空数据");
+            if (names == null) throw error("IO", "无法列举游戏记录目录");
+            if (names.length > MAX_FILES) throw error("CAPACITY", "游戏记录目录超过 4096 个文件，未清空数据");
             Layout result = new Layout();
             result.count = names.length;
             for (String name : names) {
                 File file = new File(root, name);
                 if (!OsConstants.S_ISREG(Os.lstat(file.getPath()).st_mode)) {
-                    throw error("LAYOUT", "试用记录目录包含非普通文件，未自动处理");
+                    throw error("LAYOUT", "游戏记录目录包含非普通文件，未自动处理");
                 }
                 if ("store.lock".equals(name)) continue;
                 if (name.matches("pending-[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\.tmp")) {
                     result.pending++;
                     continue;
                 }
-                if (!name.matches("records-[0-9]{20}\\.json")) throw error("LAYOUT", "试用记录目录包含未知文件");
+                if (!name.matches("records-[0-9]{20}\\.json")) throw error("LAYOUT", "游戏记录目录包含未知文件");
                 long revision;
                 try { revision = Long.parseLong(name.substring(8, 28)); }
                 catch (NumberFormatException invalid) { throw error("REVISION", "容器文件名中的代次无效"); }
@@ -233,7 +233,7 @@ final class NativeRecordStore implements AutoCloseable {
             }
             if (!new File(root, "store.lock").exists()) throw error("LOCK", "目录锁文件已丢失");
             return result;
-        } catch (ErrnoException failure) { throw error("IO", "无法确认试用目录文件属性"); }
+        } catch (ErrnoException failure) { throw error("IO", "无法确认游戏目录文件属性"); }
     }
 
     private Table load() {
@@ -385,6 +385,6 @@ final class NativeRecordStore implements AutoCloseable {
             lease.close();
             synchronized (NativeRecordStore.class) { LEASED_ROOTS.remove(root.getPath()); }
         }
-        catch (IOException failure) { throw error("LOCK", "关闭试用记录目录锁失败；请重开宿主"); }
+        catch (IOException failure) { throw error("LOCK", "关闭游戏记录目录锁失败；请重开宿主"); }
     }
 }

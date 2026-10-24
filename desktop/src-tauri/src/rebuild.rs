@@ -1,4 +1,4 @@
-//! Explicit Windows integration trial. No Python, legacy protocol or interpreter fallback.
+//! Windows game host. No Python, legacy protocol or interpreter fallback.
 use std::sync::atomic::{AtomicBool, AtomicU64, Ordering};
 use std::sync::{mpsc, Mutex};
 #[cfg(target_os = "windows")]
@@ -320,7 +320,6 @@ pub fn run() {
         "com.gallings.haifeng.rebuild",
         "请先显式准备游戏包，并使用生成的宿主配置"
     );
-    let file_records = std::env::args_os().skip(1).any(|argument| argument == "--rebuild-file-records");
     tauri::Builder::default()
         .on_window_event(|window, event| {
             if window.label() == "rebuild" {
@@ -352,7 +351,8 @@ pub fn run() {
             let asset = app.asset_resolver().get("game-package.json".into())
                 .ok_or_else(|| std::io::Error::new(std::io::ErrorKind::InvalidData, "缺少游戏包清单，请重新准备"))?;
             let manifest: serde_json::Value = serde_json::from_slice(&asset.bytes)?;
-            if manifest["format"] != "haifeng.game-package/2" || manifest["hostBridge"] != "haifeng.host-bridge/3" {
+            if manifest["format"] != "haifeng.game-package/2" || manifest["hostBridge"] != "haifeng.host-bridge/3"
+                || manifest["purpose"] != "game" {
                 return Err(std::io::Error::new(std::io::ErrorKind::InvalidData, "游戏包与宿主协议不匹配，请重新构建并准备").into());
             }
             let work_id = manifest["workId"].as_str()
@@ -368,7 +368,7 @@ pub fn run() {
                 || audio_capability["protocol"] != "haifeng.audio-output/1" {
                 return Err(std::io::Error::new(std::io::ErrorKind::InvalidData, "Windows 声音输出客户端与宿主不匹配，请重新构建并准备").into());
             }
-            if file_records {
+            {
                 let registered = manifest["frontend"].as_array().map(|files| {
                     files.iter().any(|file| file["path"] == "assets/native-record-client.json")
                 }).unwrap_or(false);
@@ -388,16 +388,14 @@ pub fn run() {
                 .map_err(|_| std::io::Error::new(std::io::ErrorKind::AlreadyExists, "声音许可任务已建立"))?;
             let local_data = app.path().app_local_data_dir()?;
             #[cfg(target_os = "windows")]
-            let native_store = if file_records {
-                Some(std::sync::Arc::new(crate::rebuild_storage::NativeRecordStore::open(
-                    local_data.join("native-records-trial"), work_id.clone(),
-                )?))
-            } else { None };
+            let native_store = Some(std::sync::Arc::new(crate::rebuild_storage::NativeRecordStore::open(
+                local_data.join("records"), work_id.clone(),
+            )?));
             let data = local_data.join("webview");
             std::fs::create_dir_all(&data)?;
             let records_bootstrap = include_str!("../../../packages/player/src/web/native-records-bootstrap.js")
                 .replace("__HAIFENG_RECORD_PLATFORM__", "windows-trial")
-                .replace("__HAIFENG_FILE_RECORDS__", if file_records { "true" } else { "false" })
+                .replace("__HAIFENG_FILE_RECORDS__", "true")
                 .replace("__HAIFENG_RECORD_WORK__", &serde_json::to_string(&work_id)?);
             // Private per-document identity. No page command, persistent value or optional display dependency.
             let page_bootstrap = r#"(() => {
@@ -414,7 +412,7 @@ pub fn run() {
                 .replace("__HAIFENG_PLATFORM__", "windows-trial"),
                 include_str!("../../../packages/player/src/web/windows-audio-bootstrap.js"));
             WebviewWindowBuilder::new(app, "rebuild", WebviewUrl::App("index.html".into()))
-                .title(if file_records { "海风与布丁 · 文件记录试用" } else { "海风与布丁 · 重构集成试用" })
+                .title("海风与布丁")
                 .inner_size(1440.0, 810.0)
                 .min_inner_size(960.0, 540.0)
                 .center()

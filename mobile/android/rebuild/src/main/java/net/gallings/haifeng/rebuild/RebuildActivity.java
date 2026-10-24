@@ -39,7 +39,7 @@ import java.util.Map;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-/** Explicit integration trial. Local packaged content, no legacy bridge or interpreter fallback. */
+/** Local packaged game, no legacy bridge or interpreter fallback. */
 public final class RebuildActivity extends Activity {
     private static final String ORIGIN = "https://appassets.androidplatform.net";
     private static final String START = ORIGIN + "/assets/game/index.html";
@@ -108,19 +108,16 @@ public final class RebuildActivity extends Activity {
         try {
             JSONObject manifest = new JSONObject(assetText("game/game-package.json"));
             if (!"haifeng.game-package/2".equals(manifest.getString("format"))
-                    || !"haifeng.host-bridge/3".equals(manifest.getString("hostBridge"))) {
+                    || !"haifeng.host-bridge/3".equals(manifest.getString("hostBridge"))
+                    || !"game".equals(manifest.getString("purpose"))) {
                 fail("游戏包与原生宿主协议不匹配，请重新构建并准备。");
                 return;
             }
             String workId = manifest.getString("workId");
             media = new PackagedMedia(getAssets(), manifest.getJSONArray("resources"));
-            Object mode = getIntent().hasExtra("rebuild-file-records")
-                    ? getIntent().getExtras().get("rebuild-file-records") : Boolean.FALSE;
-            if (!(mode instanceof Boolean)) throw new IllegalArgumentException("rebuild-file-records 必须是布尔启动参数");
-            boolean fileRecords = (Boolean) mode;
-            if (fileRecords) checkRecordClient(manifest);
+            checkRecordClient(manifest);
             String recordScript = replaceMarker(assetText("native-records-bootstrap.js"),
-                    "__HAIFENG_FILE_RECORDS__", fileRecords ? "true" : "false");
+                    "__HAIFENG_FILE_RECORDS__", "true");
             recordScript = replaceMarker(recordScript, "__HAIFENG_RECORD_WORK__", NativeRecordJson.quote(workId));
             WebViewCompat.addWebMessageListener(web, "__HAIFENG_NATIVE_AUDIO__", Collections.singleton(ORIGIN),
                     (view, message, origin, mainFrame, reply) -> {
@@ -165,9 +162,7 @@ public final class RebuildActivity extends Activity {
                         }
                     });
             WebViewCompat.addDocumentStartJavaScript(web, recordScript + "\n" + assetText("host-bootstrap.js"), Collections.singleton(ORIGIN));
-            if (fileRecords) {
-                records = new NativeRecordBridge(web, new File(getFilesDir(), "native-records-trial"), workId);
-            }
+            records = new NativeRecordBridge(web, new File(getFilesDir(), "records"), workId);
         } catch (Exception error) {
             fail("游戏包或宿主桥未载入：" + error.getMessage());
             return;
@@ -229,12 +224,12 @@ public final class RebuildActivity extends Activity {
         });
         setContentView(web);
         // WebView history is not a story checkpoint. Recreate at title and let the player load progress.
-        if (records == null) web.loadUrl(START);
+        if (records == null) fail("本地记录未准备完成，尚未开始游玩。");
         else {
             NativeRecordBridge selected = records;
             selected.start(() -> {
                 if (!destroyed && web != null && records == selected) web.loadUrl(START);
-            }, message -> fail("文件记录试用未启动：" + message));
+            }, message -> fail("本地记录未启动：" + message));
         }
     }
 

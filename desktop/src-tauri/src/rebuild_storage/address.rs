@@ -1,4 +1,4 @@
-//! Integration addresses only. These strings are never converted into filesystem paths.
+//! Formal game addresses only. These strings are never converted into filesystem paths.
 use serde::Deserialize;
 use serde_json::value::RawValue;
 
@@ -10,10 +10,7 @@ const RECORDS: [&str; 5] = [
     "haifeng.button-preferences/1",
     "haifeng.readout-preferences/1",
 ];
-const RANGES: [(&str, &str); 2] = [
-    ("development", "normal-entry"),
-    ("preview", "timed-choice:pm8x8v2h"),
-];
+const RANGES: [(&str, &str); 1] = [("game", "main")];
 
 pub(super) struct Addresses {
     progress: Vec<String>,
@@ -33,7 +30,7 @@ impl Addresses {
             key
         }).collect();
         let records = RECORDS.iter().map(|format| {
-            serde_json::to_string(&[*format, work, "development", "normal-entry"])
+            serde_json::to_string(&[*format, work, "game", "main"])
                 .expect("固定字符串地址可以序列化")
         }).collect();
         Ok(Self { progress, records })

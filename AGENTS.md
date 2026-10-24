@@ -27,7 +27,7 @@
 | `packages/story-runtime/src/` | 新版唯一纯剧情核心；通过公开接口推进和恢复逻辑状态 |
 | `packages/player/src/` | 共享会话、取消及有效计时；表现适配器不得自行计算剧情分支 |
 | `packages/chat/src/` | 通关后玩法的只读上下文；只接已提交事实读取，不接主线可写对象或预览记录 |
-| [检查点与存储](docs/rebuild/saves.md) | M4 检查点封装、独立校验、浏览器隔离槽位、只读分组详情及进度恢复；[命名槽位目录](docs/rebuild/slots.md)说明分页、选择及原目标重试 |
+| [检查点与存储](docs/rebuild/saves.md) | M4 检查点封装、独立校验、浏览器隔离槽位、只读分组详情及进度恢复；[命名槽位目录](docs/rebuild/slots.md)说明分页/原目标，[缩略图边界](docs/rebuild/thumbnails.md)仅为待确认方案，尚未实现 |
 | [全局玩家记录](docs/rebuild/records.md) | 周目、结局与 CG 解锁的独立记录、幂等事实及主页分类鉴赏；进度槽位不得回滚全局成果，[鉴赏图片](docs/rebuild/gallery.md)独立查看/原图重试及关闭/换类清理 |
 | [结局卡片](docs/rebuild/endings.md) | 游戏/预览共享终态显示；达成、待提交、失败和已保存分开，重试原事实而不重新结算 |
 | [独立玩家偏好](docs/rebuild/preferences.md) | 分轨音量、阅读节奏/显示及按钮声音开关、作者默认与稀疏覆盖、独立原子保存；旧版逐行设置布局，不进入进度、成果或预览记录 |

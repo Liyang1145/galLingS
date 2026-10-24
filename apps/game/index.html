@@ -187,12 +187,16 @@
       <p class="help">点击画面 / 空格 / → 继续，Esc 打开菜单，A 切换自动，按住 Ctrl 快进已读。H / 画面右键 / 触屏长按可隐藏界面，下一次点击只恢复；隐藏不会暂停。场面向下滑或上滚打开回看，长对白和选项区保留滚动。全屏按钮 / F11 / Alt+Enter 切换显示，浏览器全屏时 Esc 先退出全屏。快进遇到未读或选择会停下。</p>
       </dialog>
     </main>
-    <dialog id="exit-dialog" class="gallery-dialog" aria-labelledby="exit-heading">
-      <h2 id="exit-heading">退出前完成保存</h2>
-      <p>将等待已经发起的手动存档和偏好保存，并提交待保存的周目、解锁和已读记录。当前未手动保存的剧情位置不会因此新建存档；未点击保存的设置也不会自动写入。</p>
+    <dialog id="exit-dialog" class="gallery-dialog exit-dialog" aria-labelledby="exit-heading" aria-describedby="exit-intro">
+      <header><div><small class="panel-kicker">离开之前</small><h2 id="exit-heading">完成已有保存</h2></div></header>
+      <div class="exit-content">
+      <p id="exit-intro">等待已经发起的手动存档和偏好保存，并提交待保存的周目、解锁与已读记录。未手动保存的剧情位置、未点击保存的设置不会因此写入。</p>
+      <div id="exit-operations" aria-label="本次退出的已有保存状态"></div>
       <p id="exit-message" role="status" aria-live="polite"></p>
-      <div class="controls">
-        <button type="button" id="exit-retry" hidden>重试尚未完成的写入</button>
+      <p class="exit-note">取消退出不会撤销已经开始的保存。若宿主超时撤回关闭请求，窗口保留，原写入仍可能继续完成。</p>
+      </div>
+      <div class="controls exit-actions">
+        <button type="button" id="exit-retry" hidden>重试原写入</button>
         <button type="button" id="exit-cancel" autofocus>取消退出</button>
       </div>
     </dialog>

@@ -50,6 +50,8 @@ import { DialogFade } from "./dialog-fade.ts";
 import { decoratePlayControls } from "./control-artwork.ts";
 import { setButtonLabel } from "../../../packages/player/src/web/button-label.ts";
 import { renderSaveDetails } from "./save-details.ts";
+import { renderExitStatus } from "./exit-status.ts";
+import type { ExitProgress } from "./exit-status.ts";
 import type { GamePanel } from "./panels.ts";
 import "./style.css";
 import "./shell.css";
@@ -124,6 +126,7 @@ async function main(): Promise<void> {
   if (!(page instanceof HTMLElement)) throw new Error("页面缺少主区域");
   const exitDialog = element("exit-dialog", HTMLDialogElement);
   const exitMessage = element("exit-message", HTMLElement);
+  const exitOperations = element("exit-operations", HTMLElement);
   const exitRetry = element("exit-retry", HTMLButtonElement);
   const exitCancel = element("exit-cancel", HTMLButtonElement);
   const writes = new PendingWrites();
@@ -161,6 +164,8 @@ async function main(): Promise<void> {
   const endingIds = galleryCatalog(content).endings;
   let terminalRecord: EndingOwner | null = null;
   let recordFailure: string | null = null;
+  let refreshExitStatus: (() => void) | null = null;
+  let disposeExitStatus: (() => void) | null = null;
   const recordWriter = new PlayerRecordWriter(playerRecords, (records, receipt) => {
     const owner = endingFeedbackOwners.get(receipt.batchId);
     endingFeedbackOwners.delete(receipt.batchId);
@@ -190,6 +195,7 @@ async function main(): Promise<void> {
       }
     }
     refreshEnding();
+    refreshExitStatus?.();
   }, error => {
     if (closed) return;
     recordFailure = error instanceof Error ? error.message : "存储失败";
@@ -198,6 +204,7 @@ async function main(): Promise<void> {
     recordStatus.hidden = false;
     if (terminalRecord && terminalRecord.state.kind !== "committed") terminalRecord.state = { kind: "failed", message: recordFailure };
     refreshEnding();
+    refreshExitStatus?.();
   });
   const entryName = (entry: Entry): string => entry === "main" ? "正常游玩" : "限时选择样例";
   let saving = false;
@@ -256,7 +263,7 @@ async function main(): Promise<void> {
       update: async changes => ({ values: (await audioRepository.update(changes)).volumes }),
     },
     blocked: () => closed || exiting,
-    trackWrite: operation => writes.run("audio-preferences", operation),
+    trackWrite: operation => writes.run("audio-preferences", operation, "音量偏好"),
     valuesChanged: volumes => {
       presentation?.setAudioVolumes(volumes);
       dialoguePanel?.setVolumes(volumes);
@@ -280,7 +287,7 @@ async function main(): Promise<void> {
     repository: new ReadingPreferenceRepository(content.workId, { kind: "development", id: "normal-entry" },
       authorReadingPreferences(content.source.settings), store),
     blocked: () => closed || exiting,
-    trackWrite: operation => writes.run("reading-preferences", operation),
+    trackWrite: operation => writes.run("reading-preferences", operation, "阅读偏好"),
     valuesChanged: values => {
       presentation?.setReadingPreferences(values);
       session?.send({ type: "auto-wait", multiplier: values.autoWaitMultiplier });
@@ -296,7 +303,7 @@ async function main(): Promise<void> {
     repository: new ButtonPreferenceRepository(content.workId, { kind: "development", id: "normal-entry" },
       authorButtonPreferences(content.source.settings), store),
     blocked: () => closed || exiting,
-    trackWrite: operation => writes.run("button-preferences", operation),
+    trackWrite: operation => writes.run("button-preferences", operation, "按钮声音偏好"),
     valuesChanged: () => {},
   });
   const readout = new StoryReadout(content);
@@ -314,7 +321,7 @@ async function main(): Promise<void> {
     repository: new ReadoutPreferenceRepository(content.workId, { kind: "development", id: "normal-entry" },
       authorReadoutPreferences(content.source.settings), store),
     blocked: () => closed || exiting,
-    trackWrite: operation => writes.run("readout-preferences", operation),
+    trackWrite: operation => writes.run("readout-preferences", operation, "话末数值偏好"),
     valuesChanged: values => {
       session?.send({ type: "readout", enabled: values.enabled });
       refreshReadout();
@@ -437,9 +444,29 @@ async function main(): Promise<void> {
     exitRetry.hidden = true;
     exitCancel.disabled = false;
     let released = false;
+    let progress: ExitProgress = { kind: "writes", retry: false };
+    const render = (): void => {
+      if (released || closed || signal.aborted || refreshExitStatus !== render) return;
+      try { renderExitStatus(exitOperations, progress, writes.view(), { pending: recordWriter.pending(), issue: recordFailure }); }
+      catch (error: unknown) {
+        exitOperations.textContent = `写入状态暂未显示：${error instanceof Error ? error.message : "显示错误"}。本次退出仍按原写入确认结果处理。`;
+      }
+    };
+    refreshExitStatus = render;
+    const unsubscribe = writes.subscribe(render);
+    const stopStatus = (): void => {
+      unsubscribe();
+      if (refreshExitStatus === render) {
+        refreshExitStatus = null;
+        exitOperations.replaceChildren();
+      }
+      if (disposeExitStatus === stopStatus) disposeExitStatus = null;
+    };
+    disposeExitStatus = stopStatus;
     const cleanup = (): void => {
       if (released) return;
       released = true;
+      stopStatus();
       exiting = false;
       fullscreen?.refresh();
       audioPreferences.refresh();
@@ -457,6 +484,7 @@ async function main(): Promise<void> {
     signal.addEventListener("abort", cleanup, { once: true });
     try {
       exitDialog.showModal();
+      render();
       await new Promise<void>((resolve, reject) => {
         let running = false;
         const aborted = (): void => reject(new Error("退出已取消，原写入如已发起仍会继续"));
@@ -464,21 +492,31 @@ async function main(): Promise<void> {
         const attempt = async (retry: boolean): Promise<void> => {
           if (running || signal.aborted || closed) return;
           running = true;
+          progress = { kind: "writes", retry };
           exitRetry.hidden = true;
           exitMessage.textContent = "正在等待已发起的保存，并提交全局成果……";
+          render();
+          let stage: "writes" | "records" = "writes";
           try {
             if (retry) await writes.retryFailed();
             else await writes.settle();
             if (signal.aborted || closed) return;
+            stage = "records";
+            progress = { kind: "records" };
+            render();
             await flushRecords();
             if (signal.aborted || closed) return;
             if (recordWriter.pending()) throw new Error("仍有未提交的全局记录");
+            progress = { kind: "ready" };
+            render();
             signal.removeEventListener("abort", aborted);
             exitMessage.textContent = "写入已完成，正在退出。未手动保存的剧情位置不会自动保存。";
             exitCancel.disabled = true;
             resolve();
           } catch (error: unknown) {
             if (!signal.aborted && !closed) {
+              progress = { kind: "failed", stage, message: error instanceof Error ? error.message : "写入失败" };
+              render();
               exitMessage.textContent = `退出尚未获准：${error instanceof Error ? error.message : "写入失败"}。可以重试原写入，或取消退出后继续处理。`;
               exitRetry.hidden = false;
             }
@@ -947,7 +985,7 @@ async function main(): Promise<void> {
             catch { /* Optional feedback has no effect on the committed checkpoint. */ }
           }
         }
-      });
+      }, `${entryName(entry)} · 槽位 ${JSON.stringify(slotId)}`);
     } catch (error: unknown) {
       if (!closed && request === storageMessageEpoch) {
         saveMessage.textContent = `保存失败：${error instanceof Error ? error.message : "未知存储错误"}。可重新保存，未先删除原槽位。`;
@@ -1278,6 +1316,7 @@ async function main(): Promise<void> {
   document.addEventListener("visibilitychange", visibility);
   const dispose = (): void => {
     closed = true;
+    disposeExitStatus?.();
     dialogFade?.dispose();
     panels?.dispose();
     stageFade?.dispose();

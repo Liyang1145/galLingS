@@ -184,6 +184,40 @@ body.game-shell { overflow: hidden; background: #08191d; }
 @media (max-width: 650px) {
   .game-shell .save-detail-group dl { grid-template-columns: minmax(0, 1fr); }
 }
+.game-shell #exit-dialog[open] {
+  display: flex; flex-direction: column; width: min(760px, calc(100vw - 40px));
+  max-height: calc(100dvh - 40px); overflow: hidden;
+}
+.game-shell #exit-dialog > header { position: static; flex-shrink: 0; }
+.game-shell #exit-dialog h2 { margin: 6px 0 0; }
+.game-shell #exit-intro { flex-shrink: 0; color: #b9cbc3; line-height: 1.7; font-size: 14px; }
+.game-shell .exit-content { flex: 1; min-height: 0; overflow: auto; overscroll-behavior: contain; }
+.game-shell .exit-steps { list-style: none; padding: 0; margin: 0; }
+.game-shell .exit-steps > li {
+  margin: 0 0 12px; padding: 16px; background: #183437; border: 1px solid #9cbcad33; border-radius: 8px;
+}
+.game-shell .exit-steps h3 { margin: 0 0 8px; font-size: 17px; font-weight: 400; color: #e9efdf; }
+.game-shell .exit-steps p { margin: 6px 0 0; color: #b9cbc3; font-size: 14px; line-height: 1.7; overflow-wrap: anywhere; }
+.game-shell .exit-steps > li[data-state="done"],
+.game-shell .exit-steps > li[data-state="ready"] { border-color: #b6cead77; }
+.game-shell .exit-steps > li[data-state="failed"] { border-color: #c68b66aa; }
+.game-shell .exit-steps ul { list-style: none; padding: 0; margin: 12px 0 0; }
+.game-shell .exit-steps ul li { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 16px; padding: 10px 0; border-top: 1px solid #9cbcad33; }
+.game-shell .exit-steps ul strong { font-weight: 400; color: #e9efdf; overflow-wrap: anywhere; }
+.game-shell .exit-steps ul span { flex-shrink: 0; color: #a8c2b5; font-size: 13px; }
+.game-shell .exit-steps ul p { width: 100%; color: #f0c5a4; }
+.game-shell #exit-message { flex-shrink: 0; margin: 12px 0 0; color: #e4d8b8; font-size: 14px; line-height: 1.7; overflow-wrap: anywhere; }
+.game-shell .exit-actions { flex-shrink: 0; justify-content: flex-end; gap: 12px; }
+.game-shell .exit-actions button { min-height: 44px; background: #183437; border-color: #9cbcad55; }
+.game-shell .exit-actions #exit-cancel { background: #d5e4ce; border-color: #d5e4ce; color: #263f36; }
+.game-shell .exit-note { flex-shrink: 0; color: #a8c2b5; font-size: 13px; line-height: 1.6; margin: 12px 0 0; }
+@media (max-aspect-ratio: 20 / 23) {
+  .game-shell #exit-dialog[open] { width: calc(100vw - 20px); max-height: calc(100dvh - 20px); }
+}
+@media (max-height: 500px) {
+  .game-shell #exit-dialog { padding: 12px; }
+  .game-shell #exit-dialog > header { padding: 4px 0; }
+}
 @media (max-width: 850px) {
   .game-shell .save-slots .save-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .game-shell .save-entry-actions { grid-template-columns: repeat(2, minmax(0, 1fr)); }

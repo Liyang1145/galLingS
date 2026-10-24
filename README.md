@@ -14,7 +14,7 @@
 | Android | `npm run android:prepare -- <游戏包摘要>`，再按输出命令构建 `:rebuild` |
 | 制作入口 | 已有独立对白编辑/共享预览及旧制作工具保留；编辑器重构按用户要求暂停 |
 
-这些入口已编写，**不代表新界面、全路线、EXE/APK 已构建或验收**。用户安排重构末尾统一测试；当前不自动启动服务、构建、类型检查或测试。完整环境、产物和待验证范围见 [实施入口](docs/rebuild/README.md)。
+2026-10-25 已按用户明确要求首次构建 Windows x64 应用，EXE/ZIP 位于 `dist/windows/海风与布丁-Windows-x64-d54a18a` 及同名 ZIP，来源/摘要见 [Windows 产出记录](docs/rebuild/windows.md#首次-windows-应用产出)。**已编译不代表运行验收**，尚未启动试玩，Android 未构建；测试仍由用户安排。完整环境、产物和待验证范围见 [实施入口](docs/rebuild/README.md)。
 
 [正式运行配置](docs/rebuild/run-profile.md)已接入：随包正常游玩采用独立 `game/main`，不带开发工具/样例入口；Windows 与 Android 普通启动默认原生文件，开发入口继续隔离。包用途现为 `game`，旧试用产物须重新构建并准备。存档体验扩展、回退规则和异常退出恢复后置，现有机制保留；配置尚未运行验收。
 

@@ -1,6 +1,7 @@
 # 桌面宿主局部约束
 
 - 先遵循根入口与 `docs/rebuild/windows.md`。2026-10-25 用户授权清理后，此目录只保留共享 TypeScript 本体宿主；旧启动器及配套打包已删除，范围见 `docs/rebuild/cleanup.md`，不恢复旧入口或存档兼容。
+- 随后用户明确授权准备工具及产出 Windows 应用，现已完成 release 编译和本地 x64 EXE/ZIP；下文未编译描述记录各模块最初接线时状态，运行/试玩和功能验收仍未执行。打包路径须使用相对 `src-tauri` 的前端目录，不能让 Windows 盘符被当成 URL；修复生成入口后重新准备，不手改旧快照。具体来源及摘要见 Windows 文档。
 - `src-tauri/src/main.rs` 唯一调用 `rebuild::run()`，不再有 `rebuild-host` 特性或 `legacy.rs`。不得接回 Python 探测、旧协议、旧文件/模型配置/工作区命令或失败回退；源码清理不等于编译/运行验收。
 - `src-tauri/src/rebuild.rs` 只处理本地前端、窗口和生命周期；不启动 Python，不注册旧宿主工具/存档接口，不回落到另一解释器，不决定剧情分支。
 - 唯一宿主仍须消费 `windows:prepare` 复制核对的游戏包及生成配置；根 `tauri.conf.json` 只是同身份/受限能力的基础配置，不带旧资源或可玩内容，也不默认生成安装器。生成路径、配置和玩家数据不得提交。

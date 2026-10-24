@@ -165,7 +165,25 @@ body.game-shell { overflow: hidden; background: #08191d; }
 }
 .game-shell .save-entry-actions h4 { margin: 0; font-size: 14px; color: #c0d0c2; font-weight: 400; }
 .game-shell #save-message { padding: 12px 16px; background: #183437; border-radius: 8px; font-size: 14px; }
-.game-shell #save-details { max-height: 360px; overflow: auto; padding: 16px; background: #061119; font-size: 13px; }
+.game-shell #save-details { border: 1px solid #a7c2b329; border-radius: 8px; padding: 18px; margin-top: 20px; }
+.game-shell #save-details h3 { color: #e9efdf; font-size: 22px; font-weight: 400; margin: 0 0 12px; }
+.game-shell .save-detail-group { border-top: 1px solid #a7c2b329; padding: 16px 0; }
+.game-shell .save-detail-group h4 { margin: 0 0 12px; color: #e9efdf; font-size: 17px; font-weight: 400; }
+.game-shell .save-detail-group dl { margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 24px; }
+.game-shell .save-detail-group dl > div { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: 12px; padding: 6px 0; border-bottom: 1px solid #a7c2b31a; }
+.game-shell .save-detail-group dt { color: #a8c2b5; overflow-wrap: anywhere; }
+.game-shell .save-detail-group dd { margin: 0; color: #e9efdf; white-space: pre-wrap; overflow-wrap: anywhere; }
+.game-shell .save-detail-group p { font-size: 14px; margin: 10px 0 0; }
+.game-shell .save-detail-group blockquote { margin: 8px 0 0; padding: 12px 16px; border-left: 2px solid #9cbcad55; white-space: pre-wrap; overflow-wrap: anywhere; color: #e9efdf; background: #183437; }
+.game-shell .save-detail-group .save-detail-speaker { color: #b8d9df; font-size: 16px; }
+.game-shell .save-detail-group ol { margin: 12px 0 0; padding-left: 24px; color: #e4d8b8; }
+.game-shell #save-details .save-detail-note { font-size: 13px; line-height: 1.7; color: #a8c2b5; }
+.game-shell .save-detail-diagnostic summary { min-height: 44px; padding: 10px 0; cursor: pointer; color: #a8c2b5; }
+.game-shell .save-detail-diagnostic summary:focus-visible { outline: 3px solid #d8e4b5; outline-offset: -3px; }
+.game-shell .save-detail-diagnostic pre { max-height: 360px; overflow: auto; padding: 16px; background: #061119; font-size: 13px; }
+@media (max-width: 650px) {
+  .game-shell .save-detail-group dl { grid-template-columns: minmax(0, 1fr); }
+}
 @media (max-width: 850px) {
   .game-shell .save-slots .save-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .game-shell .save-entry-actions { grid-template-columns: repeat(2, minmax(0, 1fr)); }

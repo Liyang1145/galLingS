@@ -49,6 +49,7 @@ import { GamePanels } from "./panels.ts";
 import { DialogFade } from "./dialog-fade.ts";
 import { decoratePlayControls } from "./control-artwork.ts";
 import { setButtonLabel } from "../../../packages/player/src/web/button-label.ts";
+import { renderSaveDetails } from "./save-details.ts";
 import type { GamePanel } from "./panels.ts";
 import "./style.css";
 import "./shell.css";
@@ -904,14 +905,13 @@ async function main(): Promise<void> {
   }
 
   function describeSave(entry: Entry, inspected: InspectedSave): void {
-    const { record, checkpoint, view } = inspected;
+    const { record, view } = inspected;
     saveMessage.textContent = `${entryName(entry)} · 槽位 ${JSON.stringify(record.slotId)} · ${new Date(record.savedAt).toLocaleString()} · ${view.nodeId}。已读取并校验检查点；当前游玩位置未改变。`;
-    saveDetails.textContent = JSON.stringify({
-      entry: entryName(entry), scope: record.scope, slotId: record.slotId, contentRevision: record.checkpoint.story.contentRevision,
-      nodeId: view.nodeId, chapter: view.chapter, text: view.presentation.text,
-      variables: view.variables, player: view.player, phase: view.phase, choices: view.choices,
-      timing: checkpoint.timing, playback: checkpoint.presentation.playback, controls: checkpoint.controls,
-    }, null, 2);
+    try { renderSaveDetails(saveDetails, entryName(entry), inspected, content); }
+    catch (error: unknown) {
+      // A display failure must not turn an already committed progress write into a storage failure.
+      saveDetails.textContent = `存档详情暂未显示：${error instanceof Error ? error.message : "显示错误"}。可再次查看；当前进度及已经完成的存档操作未因显示错误改变。`;
+    }
     saveDetails.hidden = false;
   }
 

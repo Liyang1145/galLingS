@@ -42,7 +42,7 @@
 | [对白回看](docs/rebuild/history.md) | 当前会话内有界文字/语音身份记录、旧版条目与独立试听；回退设置可展开，条目回退须显式操作并复用检查点恢复，不按节点猜历史位置 |
 | [会话内回退](docs/rebuild/rollback.md) | 有界检查点、访问顺序分章列表及选定位置只读详情、显式跨选择策略及恢复；不反算变量或覆盖全局成果，正式边界仍待决定 |
 | [随包加载与集成产物](docs/rebuild/delivery.md) | M5 的严格随包读取、资源映射、显式构建和只读完整包核验；未执行，不等于正式安装/激活或两端验收 |
-| [Windows 集成宿主](docs/rebuild/windows.md) | 显式特性与隔离配置、输入准备、窗口/系统电源暂停和原页面确认；声音输出监听后端未实例化/接许可，均未编译或验收，未切正式发行 |
+| [Windows 集成宿主](docs/rebuild/windows.md) | 显式特性/隔离输入、窗口/系统电源暂停、声音输出监听和原页面/请求许可；新宿主要求匹配声音客户端，未编译或验收，未切正式发行 |
 | [Windows 试用原生记录后端](docs/rebuild/native-storage.md) | 受限地址、完整物理提交、分页与存储代次 CAS；仅运行参数 `--rebuild-file-records` 显式接线，默认 IndexedDB，未运行验收或决定正式落点 |
 | [Android 集成宿主](docs/rebuild/android.md) | 独立 Gradle 模块、输入准备、前后台/返回键及独立焦点/输出中断控制；未构建或真机验收 |
 | [Android 试用原生记录后端](docs/rebuild/android-storage.md) | 受限地址/原 JSON、目录独占、完整文件提交及 CAS；仅 Activity 布尔 extra 显式接线，准备记录 `/3` 核对桥摘要，默认 IndexedDB，未运行验收 |
@@ -53,7 +53,7 @@
 | [只读节点流转定位](docs/rebuild/flow.md) | 全节点结构连线索引、当前节点一层前驱/后继及只读条件/动作；原源/草稿绑定，不求值、写入或启动预览 |
 | [检查点初始条件预览](docs/rebuild/preview-checkpoints.md) | 独立预览封装、显式本机导入导出、同修订恢复与保存时投影；不读写玩家槽位或覆盖全局记录 |
 | [通关后入口准备](docs/rebuild/chat.md) | 已提交通关事实的只读上下文与显式选择；正式聊天解锁、供应和发送尚未接入 |
-| `packages/story-model/src/host.ts` | 基础桥 `/3`、独立文件记录 `/1` 及客户端能力标识；随包 `/2` 登记基础桥及能力文件摘要，不与剧情修订或存档版本混用 |
+| `packages/story-model/src/host.ts` | 基础桥 `/3`、独立文件记录 `/1`、Windows 输出许可 `/1` 及客户端能力标识；随包 `/2` 登记能力文件摘要，不与剧情修订或存档版本混用 |
 | `packages/player/src/web/` | 浏览器画面和音频实现；不得反向依赖游戏页面或编辑器 |
 | [共享场面与角色演出](docs/rebuild/performance.md) | 原镜头/角色/氛围曲线、同背景镜头连续、独立遮罩及主线静态淡出；共享标题/菜单/终态及游戏专用弹层过渡分别取消，不带剧情或存储能力 |
 | `packages/player/src/web/choices.ts`、`stage-layout.ts` | 游戏/预览共用的可见选项、首立绘避让、倒计时显示、舞台比例及横竖分区；只管显示，不计算剧情或有效时间 |

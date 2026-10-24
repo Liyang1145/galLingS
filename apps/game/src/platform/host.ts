@@ -1,4 +1,4 @@
-import { HOST_BRIDGE_PROTOCOL } from "../../../../packages/story-model/src/host.ts";
+import { HOST_BRIDGE_PROTOCOL, WINDOWS_AUDIO_PROTOCOL } from "../../../../packages/story-model/src/host.ts";
 
 type NativePlatform = "windows-trial" | "android-trial";
 
@@ -44,6 +44,7 @@ export function connectHost(
   dispose(): void;
 } {
   const injected: unknown = Reflect.get(window, "__HAIFENG_HOST__");
+  const windowsAudio: unknown = Reflect.get(window, "__HAIFENG_WINDOWS_AUDIO__");
   let state: HostState = { platform: "browser", paused: false, issue: null, audioAllowed: true, audioIssue: null };
   let sequence = -1;
   let audioSequence = -1;
@@ -53,6 +54,20 @@ export function connectHost(
   let installed = false;
   const expected: NativePlatform | null = window.location.origin === "https://tauri.localhost" ? "windows-trial"
     : window.location.origin === "https://appassets.androidplatform.net" ? "android-trial" : null;
+  const outputView = (): { issue: string | null; pending: number | null } | null => {
+    if (expected !== "windows-trial" || windowsAudio === undefined) return null;
+    const driver = record(windowsAudio);
+    if (driver.protocol !== WINDOWS_AUDIO_PROTOCOL || typeof driver.read !== "function"
+      || typeof driver.request !== "function" || typeof driver.release !== "function") throw new Error("Windows 声音输出接口无效");
+    const view = record(Reflect.apply(driver.read, windowsAudio, []));
+    if (Object.keys(view).sort().join(",") !== "generation,issue,pending,ready,supported"
+      || typeof view.supported !== "boolean" || typeof view.ready !== "boolean"
+      || (view.generation !== null && (typeof view.generation !== "number" || !Number.isSafeInteger(view.generation) || view.generation < 1))
+      || (view.pending !== null && (typeof view.pending !== "number" || !Number.isSafeInteger(view.pending) || view.pending < 1))
+      || (view.issue !== null && (typeof view.issue !== "string" || view.issue.length > 1024))
+      || (view.supported !== (view.generation !== null))) throw new Error("Windows 声音输出状态无效");
+    return { issue: view.issue, pending: view.pending };
+  };
   const handleBack = (): boolean => {
     if (disposed) return false;
     try { return backRequested(); }
@@ -94,12 +109,14 @@ export function connectHost(
       sequence = next.sequence;
       audioSequence = audio.sequence;
       const stale = performance.now() - receivedAt > 3500;
+      const output = outputView();
       state = {
-        platform: next.platform, paused: next.paused || stale, issue: stale ? "宿主状态已超时，等待重新同步" : null,
+        platform: next.platform, paused: next.paused || stale || audio.status === "interrupted", issue: stale ? "宿主状态已超时，等待重新同步" : null,
         audioAllowed: audio.status === "granted" && !stale,
-        audioIssue: audio.status === "denied" ? "尚未获准播放声音，可点击“启用声音”重试；主线可静音继续。"
+        audioIssue: output?.pending ? "正在等待 Windows 声音输出确认……" : output?.issue ?? (
+          audio.status === "denied" ? "尚未获准播放声音，可点击“启用声音”重试；主线可静音继续。"
           : audio.status === "interrupted" ? "声音焦点或播放设备发生变化，当前游玩已暂停；可等待临时焦点恢复，或确认设备后点击“启用声音”重试。"
-          : null,
+          : null),
       };
     } catch (error: unknown) {
       state = {
@@ -129,23 +146,38 @@ export function connectHost(
       Reflect.apply(bridge.cancelCurrentExit, injected, []);
     },
     requestAudio: () => {
-      if (disposed || state.platform !== "android-trial" || state.audioAllowed || performance.now() - requestedAt < 500) return;
+      if (disposed || state.platform === "browser" || state.audioAllowed || performance.now() - requestedAt < 500) return;
       requestedAt = performance.now();
       try {
-        const bridge = record(injected);
-        if (typeof bridge.requestAudio !== "function") throw new Error("缺少音频焦点请求接口");
-        Reflect.apply(bridge.requestAudio, injected, []);
+        if (state.platform === "windows-trial") {
+          outputView();
+          const driver = record(windowsAudio);
+          if (typeof driver.request !== "function") throw new Error("缺少 Windows 声音请求接口");
+          Reflect.apply(driver.request, windowsAudio, []);
+        } else {
+          const bridge = record(injected);
+          if (typeof bridge.requestAudio !== "function") throw new Error("缺少音频焦点请求接口");
+          Reflect.apply(bridge.requestAudio, injected, []);
+        }
       } catch (error: unknown) {
         state = { ...state, audioAllowed: false, audioIssue: error instanceof Error ? error.message : "音频焦点请求失败" };
         changed({ ...state });
       }
     },
     releaseAudio: () => {
-      if (disposed || state.platform !== "android-trial") return;
+      if (disposed || state.platform === "browser") return;
       try {
-        const bridge = record(injected);
-        if (typeof bridge.releaseAudio !== "function") throw new Error("缺少音频焦点释放接口");
-        Reflect.apply(bridge.releaseAudio, injected, []);
+        if (state.platform === "windows-trial") {
+          if (windowsAudio === undefined) return;
+          outputView();
+          const driver = record(windowsAudio);
+          if (typeof driver.release !== "function") throw new Error("缺少 Windows 声音释放接口");
+          Reflect.apply(driver.release, windowsAudio, []);
+        } else {
+          const bridge = record(injected);
+          if (typeof bridge.releaseAudio !== "function") throw new Error("缺少音频焦点释放接口");
+          Reflect.apply(bridge.releaseAudio, injected, []);
+        }
       } catch (error: unknown) {
         state = { ...state, audioAllowed: false, audioIssue: error instanceof Error ? error.message : "音频焦点释放失败" };
         changed({ ...state });

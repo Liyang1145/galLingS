@@ -14,6 +14,8 @@
 
 从 `0177602` 接续[Windows 文件记录试用](native-storage.md)，构建在收集前端文件前写入 `assets/native-record-client.json`，登记客户端 `haifeng.native-record-client/1` 与可选协议 `haifeng.native-records/1`。随后 [Android 显式文件试用](android-storage.md)复用同一能力文件、共享记录桥及 TS 适配器。它按普通前端文件参与现有清单及准备摘要，未扩展随包 `/2` 或基础桥 `/3`；默认启动不选文件模式。显式文件试用要求能力文件已登记且内容匹配，否则拒绝旧包，不让旧前端静默写回浏览器记录。本轮未执行构建/准备。
 
+从 `a291587` 接续 [Windows 输出许可](windows.md#声音输出许可与原请求确认)，另写入 `assets/windows-audio-client.json`，格式 `haifeng.windows-audio-client/1`、协议 `haifeng.audio-output/1`。同样由原前端清单覆盖，基础桥/随包/准备格式保持；**新编译 Windows 重构宿主要求已登记的匹配客户端，旧包须显式重新构建和准备**。Windows 独立初始化脚本进入原生编译，不加载于普通浏览器或 Android；Android 只复制该普通能力文件，其焦点协议不变。没有新增作者数据、进度字段、声音资源或保存触发，未执行构建/准备或验收。
+
 ## 两条内容接入
 
 `virtual:haifeng-content` 现在提供异步 `loadContent(signal?)`：

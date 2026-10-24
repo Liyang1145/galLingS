@@ -52,6 +52,7 @@ static STATE: Mutex<State> = Mutex::new(State {
 static CHANGED: Condvar = Condvar::new();
 static ATTEMPTED: AtomicBool = AtomicBool::new(false);
 static WARNED: AtomicBool = AtomicBool::new(false);
+static WAKE_REVISION: AtomicU64 = AtomicU64::new(0);
 
 fn warn_state() {
     if !WARNED.swap(true, Ordering::SeqCst) {
@@ -228,18 +229,18 @@ pub fn acknowledge(page: u64, generation: u64) {
     CHANGED.notify_all();
 }
 
-pub fn revision() -> Option<u64> {
+pub fn revision() -> Option<(u64, u64)> {
     match STATE.lock() {
-        Ok(state) => Some(state.revision),
+        Ok(state) => Some((state.revision, WAKE_REVISION.load(Ordering::SeqCst))),
         Err(_) => { warn_state(); None }
     }
 }
-pub fn wait(observed: Option<u64>, timeout: Duration) {
+pub fn wait(observed: Option<(u64, u64)>, timeout: Duration) {
     match STATE.lock() {
         Ok(state) => {
-            if state.stopped || Some(state.revision) != observed { return; }
+            if state.stopped || Some((state.revision, WAKE_REVISION.load(Ordering::SeqCst))) != observed { return; }
             if CHANGED.wait_timeout_while(state, timeout,
-                |current| !current.stopped && Some(current.revision) == observed).is_err() {
+                |current| !current.stopped && Some((current.revision, WAKE_REVISION.load(Ordering::SeqCst))) == observed).is_err() {
                 warn_state();
                 std::thread::sleep(timeout);
             }
@@ -253,5 +254,12 @@ pub fn stop() {
         state.registered = false;
         state.revision = state.revision.saturating_add(1);
     }
+    CHANGED.notify_all();
+}
+/// Wake the existing host sampler for another native capability without changing power ownership.
+pub fn notify_host() {
+    // A native device callback may wake delivery without waiting for the power lock.
+    // This counter is only a wake hint; it is never a permission/message identity.
+    WAKE_REVISION.fetch_add(1, Ordering::SeqCst);
     CHANGED.notify_all();
 }

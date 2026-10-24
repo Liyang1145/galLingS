@@ -1,6 +1,8 @@
 //! Explicit Windows integration trial. No Python, legacy protocol or interpreter fallback.
 use std::sync::atomic::{AtomicBool, AtomicU64, Ordering};
 use std::sync::{mpsc, Mutex};
+#[cfg(target_os = "windows")]
+use std::sync::{Arc, OnceLock};
 use std::time::{Duration, Instant};
 use tauri::webview::{NewWindowResponse, PageLoadEvent};
 use tauri::{Manager, WebviewUrl, WebviewWindow, WebviewWindowBuilder, WindowEvent};
@@ -13,6 +15,12 @@ mod power;
 #[cfg(target_os = "windows")]
 #[path = "rebuild_audio_devices.rs"]
 mod audio_devices;
+#[cfg(target_os = "windows")]
+#[path = "rebuild_audio.rs"]
+mod audio_output;
+#[cfg(target_os = "windows")]
+static AUDIO_OUTPUT: OnceLock<Arc<audio_output::Output>> = OnceLock::new();
+static AUDIO_WARNED: AtomicBool = AtomicBool::new(false);
 
 static SEQUENCE: AtomicU64 = AtomicU64::new(0);
 static ACKNOWLEDGED: AtomicU64 = AtomicU64::new(0);
@@ -105,6 +113,12 @@ fn publish_fullscreen(window: &WebviewWindow) {
 struct ExitReply {
     id: u64,
     status: String,
+}
+#[derive(serde::Deserialize)]
+#[serde(deny_unknown_fields)]
+struct HostReply {
+    sequence: u64,
+    audio: serde_json::Value,
 }
 
 fn request_exit(window: WebviewWindow) {
@@ -207,9 +221,17 @@ fn prepare_page(window: &WebviewWindow) {
                 warn_delivery();
                 return;
             }
-            *current = Some((page, identity));
-            PAGE_READY.store(true, Ordering::SeqCst);
+            *current = Some((page, identity.clone()));
         }
+        #[cfg(target_os = "windows")]
+        if AUDIO_OUTPUT.get().ok_or_else(|| "声音许可任务没有建立".to_owned())
+            .and_then(|output| output.bind(page, &identity)).is_err() {
+            if PAGE_SEQUENCE.load(Ordering::SeqCst) == page { PAGE_READY.store(false, Ordering::SeqCst); }
+            warn_delivery();
+            return;
+        }
+        if PAGE_SEQUENCE.load(Ordering::SeqCst) != page || !PAGE_FINISHED.load(Ordering::SeqCst) { return; }
+        PAGE_READY.store(true, Ordering::SeqCst);
         publish(&owner);
     }).is_err() { warn_delivery(); }
 }
@@ -221,8 +243,9 @@ fn publish(window: &WebviewWindow) {
         let Ok(current) = PAGE_IDENTITY.lock() else { warn_delivery(); return };
         let Some((bound_page, identity)) = current.as_ref() else { return };
         if *bound_page != page { return; }
-        serde_json::json!(identity)
+        identity.clone()
     };
+    let encoded_identity = serde_json::json!(&identity);
     publish_fullscreen(window);
     #[cfg(target_os = "windows")]
     let power = power::snapshot(page, &SEQUENCE);
@@ -230,10 +253,26 @@ fn publish(window: &WebviewWindow) {
     let (sequence, power_paused) = (power.sequence, power.paused);
     #[cfg(not(target_os = "windows"))]
     let (sequence, power_paused) = (SEQUENCE.fetch_add(1, Ordering::SeqCst) + 1, true);
-    let paused = power_paused || !window.is_focused().unwrap_or(false)
+    #[cfg(target_os = "windows")]
+    let audio_snapshot = AUDIO_OUTPUT.get().ok_or_else(|| "声音许可任务没有建立".to_owned())
+        .and_then(|output| output.snapshot(page, &identity));
+    #[cfg(target_os = "windows")]
+    let (audio_script, audio_paused) = match audio_snapshot {
+        Ok(snapshot) => {
+            AUDIO_WARNED.store(false, Ordering::SeqCst);
+            (format!("a.receive({});", snapshot.value), snapshot.paused)
+        }
+        Err(issue) => {
+            if !AUDIO_WARNED.swap(true, Ordering::SeqCst) { eprintln!("Windows 声音许可未确认，保持暂停：{issue}"); }
+            (String::new(), true)
+        }
+    };
+    #[cfg(not(target_os = "windows"))]
+    let (audio_script, audio_paused) = (String::new(), true);
+    let paused = power_paused || audio_paused || !window.is_focused().unwrap_or(false)
         || window.is_minimized().unwrap_or(true);
     let script = format!(
-        "(() => {{const b=window.__HAIFENG_HOST__; if(b?.protocol!=='haifeng.host-bridge/3'||window.__HAIFENG_WINDOWS_PAGE_ID__!=={identity}) return null; b.receive({{format:'haifeng.host-state/1',platform:'windows-trial',sequence:{sequence},paused:{paused}}); return b.read().sequence;}})()"
+        "(() => {{const b=window.__HAIFENG_HOST__,a=window.__HAIFENG_WINDOWS_AUDIO__; if(b?.protocol!=='haifeng.host-bridge/3'||window.__HAIFENG_WINDOWS_PAGE_ID__!=={encoded_identity}||a?.protocol!=='haifeng.audio-output/1') return null; {audio_script} b.receive({{format:'haifeng.host-state/1',platform:'windows-trial',sequence:{sequence},paused:{paused}}); return {{sequence:b.read().sequence,audio:a.readRequest()}};}})()"
     );
     if sequence.saturating_sub(ACKNOWLEDGED.load(Ordering::SeqCst)) > 4 {
         warn_delivery();
@@ -241,12 +280,26 @@ fn publish(window: &WebviewWindow) {
     if window.eval_with_callback(script, move |answer| {
         if STOP_HEARTBEAT.load(Ordering::SeqCst) || !PAGE_READY.load(Ordering::SeqCst)
             || PAGE_SEQUENCE.load(Ordering::SeqCst) != page { return; }
-        if let Ok(ack) = serde_json::from_str::<u64>(&answer) {
+        if let Ok(reply) = serde_json::from_str::<HostReply>(&answer) {
+            let ack = reply.sequence;
             if ack >= sequence && ack <= SEQUENCE.load(Ordering::SeqCst) {
                 ACKNOWLEDGED.fetch_max(ack, Ordering::SeqCst);
                 DELIVERY_WARNED.store(false, Ordering::SeqCst);
                 #[cfg(target_os = "windows")]
                 if let Some(generation) = power.generation { power::acknowledge(page, generation); }
+                #[cfg(target_os = "windows")]
+                if !reply.audio.is_null() {
+                    match serde_json::from_value::<audio_output::Request>(reply.audio) {
+                        Ok(request) => {
+                            if let Some(output) = AUDIO_OUTPUT.get() {
+                                if let Err(issue) = output.submit(page, request) {
+                                    if !AUDIO_WARNED.swap(true, Ordering::SeqCst) { eprintln!("Windows 声音请求未采用：{issue}"); }
+                                }
+                            }
+                        }
+                        Err(_) => { eprintln!("Windows 声音请求格式无效，未采用"); }
+                    }
+                }
                 return;
             }
         }
@@ -284,7 +337,10 @@ pub fn run() {
                 PAGE_READY.store(false, Ordering::SeqCst);
                 if let Ok(mut identity) = PAGE_IDENTITY.lock() { *identity = None; }
                 #[cfg(target_os = "windows")]
-                power::stop();
+                {
+                    if let Some(output) = AUDIO_OUTPUT.get() { output.stop(); }
+                    power::stop();
+                }
             }
             if matches!(event, WindowEvent::Focused(_) | WindowEvent::Resized(_)) {
                 if let Some(webview) = window.app_handle().get_webview_window(window.label()) {
@@ -301,6 +357,17 @@ pub fn run() {
             }
             let work_id = manifest["workId"].as_str()
                 .ok_or_else(|| std::io::Error::new(std::io::ErrorKind::InvalidData, "游戏包缺少作品身份"))?.to_owned();
+            let audio_registered = manifest["frontend"].as_array().map(|files| {
+                files.iter().any(|file| file["path"] == "assets/windows-audio-client.json")
+            }).unwrap_or(false);
+            let audio_capability = app.asset_resolver().get("assets/windows-audio-client.json".into())
+                .ok_or_else(|| std::io::Error::new(std::io::ErrorKind::InvalidData, "游戏包缺少 Windows 声音输出客户端，请重新构建并准备"))?;
+            let audio_capability: serde_json::Value = serde_json::from_slice(&audio_capability.bytes)?;
+            if !audio_registered || audio_capability.as_object().map(|value| value.len()) != Some(2)
+                || audio_capability["format"] != "haifeng.windows-audio-client/1"
+                || audio_capability["protocol"] != "haifeng.audio-output/1" {
+                return Err(std::io::Error::new(std::io::ErrorKind::InvalidData, "Windows 声音输出客户端与宿主不匹配，请重新构建并准备").into());
+            }
             if file_records {
                 let registered = manifest["frontend"].as_array().map(|files| {
                     files.iter().any(|file| file["path"] == "assets/native-record-client.json")
@@ -316,6 +383,9 @@ pub fn run() {
             }
             #[cfg(target_os = "windows")]
             let power_notifications = power::subscribe()?;
+            #[cfg(target_os = "windows")]
+            AUDIO_OUTPUT.set(audio_output::Output::start()?)
+                .map_err(|_| std::io::Error::new(std::io::ErrorKind::AlreadyExists, "声音许可任务已建立"))?;
             let local_data = app.path().app_local_data_dir()?;
             #[cfg(target_os = "windows")]
             let native_store = if file_records {
@@ -340,8 +410,9 @@ pub fn run() {
                 } catch {}
                 Object.defineProperty(window,'__HAIFENG_WINDOWS_PAGE_ID__',{value:identity,writable:false,configurable:false});
             })();"#;
-            let bootstrap = format!("{page_bootstrap}\n{records_bootstrap}\n{}", include_str!("../../../packages/player/src/web/host-bootstrap.js")
-                .replace("__HAIFENG_PLATFORM__", "windows-trial"));
+            let bootstrap = format!("{page_bootstrap}\n{records_bootstrap}\n{}\n{}", include_str!("../../../packages/player/src/web/host-bootstrap.js")
+                .replace("__HAIFENG_PLATFORM__", "windows-trial"),
+                include_str!("../../../packages/player/src/web/windows-audio-bootstrap.js"));
             WebviewWindowBuilder::new(app, "rebuild", WebviewUrl::App("index.html".into()))
                 .title(if file_records { "海风与布丁 · 文件记录试用" } else { "海风与布丁 · 重构集成试用" })
                 .inner_size(1440.0, 810.0)

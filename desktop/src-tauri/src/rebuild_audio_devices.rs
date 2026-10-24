@@ -104,6 +104,7 @@ impl Signals {
         if unsafe { SetEvent(self.event as *mut c_void) } == 0 {
             self.failed.store(true, Ordering::SeqCst);
         }
+        super::power::notify_host();
     }
     fn fault(&self) {
         self.failed.store(true, Ordering::SeqCst);
@@ -218,6 +219,16 @@ pub struct Inspection {
 #[derive(Clone)]
 pub struct Wake(Arc<Signals>);
 impl Wake {
+    pub fn cancel(&self) {
+        self.0.alive.store(false, Ordering::SeqCst);
+        unsafe { SetEvent(self.0.event as *mut c_void); }
+        super::power::notify_host();
+    }
+    pub fn generation(&self) -> Result<u64, String> {
+        if !self.0.alive.load(Ordering::SeqCst) { return Err("声音输出监听已停止".into()); }
+        if self.0.failed.load(Ordering::SeqCst) { return Err("声音输出监听状态异常，请重新启动宿主".into()); }
+        Ok(self.0.generation.load(Ordering::SeqCst))
+    }
     pub fn signal(&self) -> Result<(), String> {
         if !self.0.alive.load(Ordering::SeqCst) { return Err("声音输出监听已停止".into()); }
         if unsafe { SetEvent(self.0.event as *mut c_void) } == 0 { return Err("无法唤醒声音输出线程".into()); }

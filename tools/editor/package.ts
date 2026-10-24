@@ -40,7 +40,9 @@ export function readEditorPackage(input: unknown): EditorPackage {
   if (typeof stamp.dirty !== "boolean") reject("EDITOR_PACKAGE", "缺少工作区状态标记", at(source, "build.dirty"));
   const skin = object(data.uiSkin, at(source, "uiSkin"));
   knownFields(skin, ["file", "sha256", "blockSha256"], at(source, "uiSkin"));
-  if (skin.file !== "海风与布丁/index.html") reject("EDITOR_PACKAGE", "鲸鱼皮肤来源不符", at(source, "uiSkin.file"));
+  if (skin.file !== "海风与布丁/index.html" && skin.file !== "content/game-ui/whale.json") {
+    reject("EDITOR_PACKAGE", "鲸鱼皮肤来源不符", at(source, "uiSkin.file"));
+  }
   const files = (field: "frontend" | "runtimeInputs", limit: number): readonly EditorFile[] => {
     const entries = array(data[field], at(source, field));
     if (!entries.length || entries.length > limit) reject("EDITOR_PACKAGE", "文件数量超出本片集成范围", at(source, field));

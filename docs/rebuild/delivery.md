@@ -8,9 +8,13 @@
 
 构建入口是 `tools/game/build.ts`，只在显式执行 `npm run game:build` 时工作。它复用同一个旧作者源转换器和唯一 TypeScript 核心；运行端不再访问作者 `game.js`、旧播放器、本机 `/@fs/` 资源或 Node 内容工具。
 
-[外观装配](appearance.md)另在构建时只读提取旧 `index.html` 标记区的三个原鲸鱼 SVG，游戏/编辑开发入口共用同一插件；不执行旧页面或复制旧脚本。图形字节进入前端，原文件及标记区摘要进入 `content/sources.json.uiSkin`，由既有前端和来源文件摘要覆盖。无需新清单/宿主版本，运行端不读取旧文件；旧 HTML 仍有这个明确的构建消费者，不能提前删除。
+[外观装配](appearance.md)现从 `content/game-ui/whale.json` 读取原三个鲸鱼 SVG，游戏及已有共享预览继续用同一插件。图形字节进入前端，`content/sources.json.uiSkin` 记录当前定义文件摘要，保留原三个字段；新来源下 `blockSha256` 为按 menu/choice/dialogue 顺序构造的图形对象 `JSON.stringify` 摘要。新构建不再打开旧 HTML，不执行旧页面或复制旧脚本。
 
-[声音收藏装饰](appearance.md#声音收藏的原装饰来源)沿同一装配方式读取旧 CSS 实际指向的原 B38 WebP 与播放器静态 JSON 中三个图标形状，单独通过游戏专用虚拟模块内嵌前端；不执行旧 JS，也不替换为剧情当前登记的改版图。`content/sources.json.uiCollection` 登记这些来源/字节摘要，现有清单/桥/内容格式不变；原图片、CSS 和图标表仍有构建消费者。该入口尚未执行，未生成或验收产物。
+[声音收藏及操作栏装饰](appearance.md#声音收藏的原装饰来源)从 `content/game-ui/collection.json` 读取原 11 个图标形状及原 B38 WebP 位置，通过游戏专用虚拟模块内嵌前端；不再解析旧 CSS 或播放器，不替换为剧情当前登记的改版图。`content/sources.json.uiCollection` 改记 `definition` 当前定义摘要、`backdrop` 原图片摘要和 `icons` 图标对象摘要/名称，原 `stylesheet` 及图标旧脚本位置由历史来源取代。
+
+`content/game-ui/origins.json` 保留拆分时的提交、原文件/块及新定义摘要，构建作为 `uiOrigins: {file, sha256, record}` 写入同份来源文件，不重新读取旧文件核对历史。`targets` 是迁移时快照，当前字节由本次 `uiSkin/uiCollection` 登记。来源 JSON 属随包清单覆盖的不透明追溯文件，无运行端字段消费者；其格式标识、游戏包 `/2`、桥 `/3`、剧情修订及持久格式保持。以后外部追溯工具若读取旧 `uiCollection.stylesheet` 须改读 `definition` 和 `uiOrigins`。已有完整产物保留，不需要迁移玩家记录。
+
+解除这三项构建依赖不等于旧链路已退出：原入口/播放器/样式继续保留，原 B38 图片和唯一剧情源仍有真实消费者。本片只拆分源码资源并接线，未执行项目提取器、构建或验收。
 
 从 `0177602` 接续[Windows 文件记录试用](native-storage.md)，构建在收集前端文件前写入 `assets/native-record-client.json`，登记客户端 `haifeng.native-record-client/1` 与可选协议 `haifeng.native-records/1`。随后 [Android 显式文件试用](android-storage.md)复用同一能力文件、共享记录桥及 TS 适配器。它按普通前端文件参与现有清单及准备摘要，未扩展随包 `/2` 或基础桥 `/3`；默认启动不选文件模式。显式文件试用要求能力文件已登记且内容匹配，否则拒绝旧包，不让旧前端静默写回浏览器记录。本轮未执行构建/准备。
 

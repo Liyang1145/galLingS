@@ -36,7 +36,7 @@ export interface WhaleSkin {
   artwork: WhaleArtwork;
   source: { file: string; sha256: string; blockSha256: string };
 }
-/** Game UI decoration from checked legacy sources, separate from story resources. */
+/** Game UI decoration from independent definitions, separate from story resources. */
 export interface CollectionArtwork {
   musicBackdrop: string;
   soundIcons: Readonly<Record<"music" | "ambience" | "effect", string>>;
@@ -45,9 +45,9 @@ export interface CollectionArtwork {
 export interface CollectionSkin {
   artwork: CollectionArtwork;
   source: {
-    stylesheet: { file: string; sha256: string; blockSha256: string };
+    definition: { file: string; sha256: string };
     backdrop: { file: string; sha256: string; bytes: number };
-    icons: { file: string; sha256: string; blockSha256: string; names: readonly string[] };
+    icons: { blockSha256: string; names: readonly string[] };
   };
 }
 

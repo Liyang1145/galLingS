@@ -16,6 +16,7 @@ import type { ResourceFile } from "../content/build.ts";
 import { HOST_BRIDGE_PROTOCOL, NATIVE_RECORD_CLIENT, NATIVE_RECORD_PROTOCOL, WINDOWS_AUDIO_CLIENT, WINDOWS_AUDIO_PROTOCOL } from "../../packages/story-model/src/host.ts";
 import { readWhaleSkin } from "../content/appearance.ts";
 import { readCollectionSkin } from "../content/collection-appearance.ts";
+import { readUiOrigins } from "../content/ui-source.ts";
 import { collectionAppearance, whaleAppearance } from "../dev/appearance.ts";
 
 const exec = promisify(execFile);
@@ -127,7 +128,7 @@ async function build(): Promise<void> {
   }
   const loaded = await loadSourceContent();
   const content = readStoryContent(loaded.content);
-  const [skin, collection] = await Promise.all([readWhaleSkin(), readCollectionSkin()]);
+  const [skin, collection, uiOrigins] = await Promise.all([readWhaleSkin(), readCollectionSkin(), readUiOrigins()]);
   const [commit, state, lockBytes] = await Promise.all([
     exec("git", ["rev-parse", "HEAD"], { cwd: root }),
     exec("git", ["status", "--porcelain", "--untracked-files=normal"], { cwd: root }),
@@ -176,6 +177,7 @@ async function build(): Promise<void> {
       choiceIdentities: { file: "docs/rebuild/baseline/choices.json", sha256: loaded.identitySha256 },
       uiSkin: skin.source,
       uiCollection: collection.source,
+      uiOrigins,
       resources: content.resources.map(resource => ({
         assetId: resource.id, sourcePath: resource.path, metadata: resource.metadata,
       })),

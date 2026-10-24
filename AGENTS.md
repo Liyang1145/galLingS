@@ -22,6 +22,7 @@
 | [迁移语义](docs/rebuild/legacy-semantics.md) | 旧行为、保留方式、差异及未覆盖项 |
 | `海风与布丁/game.js` | 迁移期间唯一权威剧情输入；作者源尚未切换 |
 | `海风与布丁/player.js`、`index.html` | 保留的完整旧播放器与入口；不是新核心依赖 |
+| `content/game-ui/` | 新游戏独立的原鲸鱼图形/图标定义及固定迁移来源；原 B38 装饰图仍读取原文件，不是第二份剧情源 |
 | `docs/rebuild/baseline/` | 固定基线与身份映射；不是另一份作者源 |
 | `packages/story-model/src/` | 内容模型、受限表达式、规范化数据/随包清单读取、共享修订算法、对白占位语法及只读引用索引 |
 | `packages/story-runtime/src/` | 新版唯一纯剧情核心；通过公开接口推进和恢复逻辑状态 |
@@ -68,7 +69,7 @@
 | `apps/game/src/dialog-fade.ts` | 只对登记的游戏画面/弹层及鉴赏/声音内部显示切换作 360ms 静态淡出；封闭影子树只带两份游戏样式，开关/变更/暂停释放不等待动画，不复制编辑制作区 |
 | `apps/editor/` | 独立对白编辑试用，预览复用共享播放器、只用内存记录；局部约束见目录入口 |
 | `tools/content/` | 旧导出转换与内容产物生成；命令见实施入口，不是游戏解释器 |
-| `tools/content/appearance.ts`、`collection-appearance.ts`、`tools/dev/appearance.ts` | 提取原鲸鱼图形、收藏/游玩图标及原配乐装饰图，登记来源并装配前端；旧 HTML、CSS、播放器图标表与原 B38 图片仍有构建消费者，不得提前删除 |
+| `tools/content/appearance.ts`、`collection-appearance.ts`、`ui-source.ts`、`tools/dev/appearance.ts` | 校验独立 UI 定义、原配乐装饰图及迁移来源并装配前端；新构建不再从旧 HTML/CSS/播放器提取图形，旧链路和原素材仍保留 |
 | `tools/editor/` | 开发/构建共用本机 API、独立前端集成构建/显式启动及固定作者文件写回；不进入游戏/宿主构建，保存仅由显式动作触发 |
 | `tools/dev/story.ts` | 独立终端逻辑试播，不是正式游戏或编辑器 |
 | `tools/dev/vite.config.ts` | 本地可视试播装配；开发资源 URL 不得当作正式发行清单 |

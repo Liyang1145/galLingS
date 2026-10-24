@@ -11,6 +11,7 @@
     "editor:build": "node tools/editor/build.ts",
     "editor:serve": "node tools/editor/serve.ts",
     "game:build": "node tools/game/build.ts",
+    "game:verify": "node tools/game/verify.ts",
     "windows:prepare": "node tools/game/windows.ts",
     "android:prepare": "node tools/game/android.ts",
     "typecheck": "tsc --noEmit && tsc --noEmit -p tsconfig.web.json"

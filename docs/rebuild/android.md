@@ -8,6 +8,8 @@
 
 `npm run android:prepare -- <产物摘要>` 调用 `tools/game/prepare.ts`，复用 Windows 的清单摘要、剧情修订、文件边界及逐文件大小/SHA-256 核对。只复制已登记文件，写入：
 
+从 `38702ff` 接续时，将只读清单/剧情/文件核对集中到 `tools/game/package-input.ts`，供两端准备与显式 `game:verify` 共用；`prepare.ts` 仍负责输出与逐次复制。原准备导出、命令和格式保持，独立核验不启动 Android/Gradle，也不能让复制跳过重新校验；见[完整包核验](delivery.md#只读完整包核验)。本轮未执行这些命令。
+
 ```text
 dist/android/<产物摘要>/
   assets/game/             完整共享游戏包

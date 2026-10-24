@@ -41,7 +41,7 @@
 | [共享全屏与原生显示](docs/rebuild/fullscreen.md) | 底部/设置显式按钮与快捷键共用同一驱动，浏览器与两端独立显示能力、原页面请求确认；竖屏建议仅本页关闭，不进入剧情或存储 |
 | [对白回看](docs/rebuild/history.md) | 当前会话内有界文字/语音身份记录、旧版条目与独立试听；回退设置可展开，条目回退须显式操作并复用检查点恢复，不按节点猜历史位置 |
 | [会话内回退](docs/rebuild/rollback.md) | 有界检查点、访问顺序分章列表及选定位置只读详情、显式跨选择策略及恢复；不反算变量或覆盖全局成果，正式边界仍待决定 |
-| [随包加载与集成产物](docs/rebuild/delivery.md) | M5 前置的严格随包读取、资源映射和构建入口；未执行构建，未接正式宿主 |
+| [随包加载与集成产物](docs/rebuild/delivery.md) | M5 的严格随包读取、资源映射、显式构建和只读完整包核验；未执行，不等于正式安装/激活或两端验收 |
 | [Windows 集成宿主](docs/rebuild/windows.md) | 显式特性与隔离配置、输入准备、窗口暂停；未执行准备或编译，未切换正式发行 |
 | [Windows 试用原生记录后端](docs/rebuild/native-storage.md) | 受限地址、完整物理提交、分页与存储代次 CAS；仅运行参数 `--rebuild-file-records` 显式接线，默认 IndexedDB，未运行验收或决定正式落点 |
 | [Android 集成宿主](docs/rebuild/android.md) | 独立 Gradle 模块、输入准备、前后台/返回键及独立焦点/输出中断控制；未构建或真机验收 |
@@ -75,7 +75,8 @@
 | `tools/game/build.ts` | 显式游戏集成构建；生成前端、剧情与素材清单，不自动运行或发布 |
 | `tools/game/windows.ts` | 已有游戏包的 Windows 集成输入准备；核对与复制清单文件，不自动编译 |
 | `tools/game/android.ts` | 已有游戏包的 Android 输入准备，复制共享宿主/记录桥并登记 `/3` 摘要，不执行 Gradle |
-| `tools/game/prepare.ts` | 平台共享的包摘要、内容修订及登记文件核对与复制，只由显式命令调用 |
+| `tools/game/package-input.ts`、`verify.ts` | 两端准备和只读核验共用清单/剧情/文件边界；显式核验逐文件读取，不写凭据或替代后来复制校验，不启动任何宿主 |
+| `tools/game/prepare.ts` | 平台共享的独占输出和登记文件复制，核对复用原包读取边界；旧导出保留，只由显式命令调用 |
 | `apps/game/src/platform/` | 宿主消息校验、会话生命周期、独立显示及单一记录源选择，不另写剧情逻辑；原生记录失败不切换来源 |
 | `desktop/` | 既有宿主及显式重构集成入口；默认仍是旧路径，局部规则见目录入口 |
 | `mobile/android/` | 旧 `:app` 与新 `:rebuild` 集成模块并存；局部规则见目录入口，未切正式入口 |

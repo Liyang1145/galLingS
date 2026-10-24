@@ -14,7 +14,7 @@
 
 `tools/game/windows.ts` 提供 `npm run windows:prepare -- <产物摘要>`，仅接受 `game:build` 输出的摘要目录：
 
-摘要读取、内容修订核对及清单复制现集中在 `tools/game/prepare.ts`，供两个平台复用；Windows 命令与目录约定保持不变。
+摘要读取、内容修订及登记文件核对集中在 `tools/game/package-input.ts`，`tools/game/prepare.ts` 供两个平台复用输出/复制；Windows 命令、原导出与目录约定保持不变。另有[只读完整包核验](delivery.md#只读完整包核验)供显式检查已有游戏构建产物，准备仍在复制时重新校验，不能采用先前结果跳过原件读取；本轮均未执行。
 
 1. 严格读取随包清单，核对目录摘要，读取剧情并重现内容修订。
 2. 按清单逐个核对前端、剧情、来源及素材文件的大小和 SHA-256；读取位置必须位于该游戏包内。

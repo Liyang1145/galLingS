@@ -1,0 +1,158 @@
+{
+  "assembly": {
+    "baseline": "47ebb284d0a2bed8b5bdaade4850fc56c0006912",
+    "nodes": 3315,
+    "voicesBefore": 826,
+    "voicesAfter": 825,
+    "firstTwoVoices": 151,
+    "rerecordedIds": [
+      "v17izdvn",
+      "m4wlasdc",
+      "nthjz7h6"
+    ],
+    "removedVoiceId": "ktsw1bk3",
+    "cancelledLineTextUnchanged": true,
+    "acceptedUserAudioUnchanged": [
+      "3iq8cnx2",
+      "19j7cn4u",
+      "otgvk12p",
+      "yh5ghjft",
+      "zv50a61e",
+      "cvelvwin",
+      "7atacaud",
+      "z8w99xv9",
+      "kg8xkzda",
+      "a7c5njix",
+      "7ev68l3r",
+      "tyqbvu4h",
+      "afyc4302",
+      "o1bis57q",
+      "ngfxexp1",
+      "v6ie2fz1",
+      "cn2w22jy",
+      "qxxueop2",
+      "yxgi0uzv",
+      "ps2hyhs3",
+      "j1p38sz6",
+      "60i847f9",
+      "iiaf2vk3",
+      "3ehne90j",
+      "uha06gql",
+      "0d929whm",
+      "s6oh5ha5",
+      "icw1ify0",
+      "b1361ohk",
+      "ofwg93nd",
+      "o0h73fjv",
+      "k4pt124a",
+      "uo7d2oue",
+      "ol9a44fr",
+      "0mndhltp"
+    ],
+    "scriptExceptVoiceUnchanged": true,
+    "nonVoiceAssetsUnchanged": true,
+    "distanceEffects": false,
+    "manualListeningByCodex": false
+  },
+  "fullRegression": {
+    "load_s": 3.14,
+    "body": "game playing",
+    "chapters": 18,
+    "walk": {
+      "n": 3315,
+      "p50": 0.09999999403953552,
+      "p99": 0.7000000178813934,
+      "max": 73.19999998807907,
+      "bad": [],
+      "nbad": 0
+    },
+    "cg": {
+      "n": 32,
+      "p50": 92.69999998807907,
+      "max": 172.5,
+      "heapMB": 9
+    },
+    "save": {
+      "want": {
+        "idx": 1504,
+        "id": "6cdt4nv4",
+        "vars": "{\"好感\":0,\"尾鳍\":7,\"贝壳延后\":0,\"玩笑\":0,\"海星放生\":0,\"周目\":1,\"结局数\":0}"
+      },
+      "got": {
+        "idx": 1504,
+        "id": "6cdt4nv4",
+        "vars": "{\"好感\":0,\"尾鳍\":7,\"贝壳延后\":0,\"玩笑\":0,\"海星放生\":0,\"周目\":1,\"结局数\":0}"
+      }
+    },
+    "prev": [
+      302,
+      301
+    ],
+    "errs": [],
+    "nerrs": 0
+  },
+  "audioOnlyReview": {
+    "audioEmbedded151": true,
+    "allEmbeddedAudioDecodedAndMatchRuntime": true,
+    "voiceCounts": [
+      61,
+      90
+    ],
+    "noCancelled12OrThirdChapter": true,
+    "new3MatchRuntime": true,
+    "guihuaMatchesFinalTimingSelection": true,
+    "sourceRuntimeVoices": 825,
+    "inherited15AndNew3UnheardWithReferences": {
+      "accept": 15,
+      "repairs": [
+        {
+          "id": "v17izdvn",
+          "decision": "",
+          "history": 1
+        },
+        {
+          "id": "m4wlasdc",
+          "decision": "",
+          "history": 1
+        },
+        {
+          "id": "nthjz7h6",
+          "decision": "",
+          "history": 1
+        }
+      ]
+    },
+    "filtered3ExportsIncludeAll15Reviewed": true,
+    "feedbackPersistsAcrossReloadInIsolatedProfile": true,
+    "jsonImportMergesAndIsolatesOldShaAndOutsideChapters": true,
+    "newerLocalFeedbackPreservedOnImport": true,
+    "csvImportHandlesQuotesNewlinesAndOldShaIsolation": true,
+    "csvExportRoundtrip": true,
+    "stableStorageKeyPreservesOldFeedbackButResetsChangedAudio": true,
+    "filteredPlaybackAdvancesOnRealEndedAndStops": true,
+    "speedDefault1AndOptional125": true,
+    "narrowStickyExportButtonsReachableAndNoHorizontalOverflow": true,
+    "noPageErrors": true,
+    "noExternalRequests": true,
+    "userBrowserStorageAccessed": false,
+    "usedDisposableOfflineBrowserContexts": true,
+    "sourceAndFinalHtmlUnmodified": true,
+    "htmlBytes": 3836664,
+    "htmlSha256": "41ab1ac12d3cf4c8625804340417ec1e639514c8f5e2918ddf3a07989b34d6c5",
+    "passed": true,
+    "visualReview": {
+      "desktop": "review-desktop.png",
+      "narrow": "review-narrow.png",
+      "actuallyViewedWithImageTool": true,
+      "layoutAccepted": true
+    }
+  },
+  "directionsWrittenBy": "Codex directly from user feedback and scene context",
+  "manualListeningByCodex": false,
+  "documentationLinks": {
+    "method": "repository checker relative-link expression against full fetched branch tree plus publication files",
+    "modifiedMarkdownLinks": 81,
+    "broken": [],
+    "passed": true
+  }
+}

@@ -1,0 +1,103 @@
+[
+  {
+    "id": "v17izdvn",
+    "index": 27,
+    "speaker": "鲸鱼小姐",
+    "scriptText": "「尾巴尖。也不行。」",
+    "sha256": "c66858cbf0ef796010514f6a972a976b26255c9c178568cc0a3756a9755ecefb",
+    "speak": "尾巴尖。也不行。",
+    "direction": "先点明尾巴尖，后半句轻轻咬字，坚定又带点嗔意",
+    "instruction": "嗓音再圆润成熟一点，像二十岁左右的甜萌动漫女声，日系动画女主的配音腔，甜美清透不尖锐，先点明尾巴尖，后半句轻轻咬字，坚定又带点嗔意，清晰，音量适中，语速自然不拖腔，音色保持一致",
+    "instructionAuthor": "Codex主代理按本轮用户截图批注与剧情逐句编写；未使用额外提示生成模型",
+    "model": "qwen-audio-3.0-tts-plus",
+    "voice": "qwen-audio-3.0-tts-plus-longcanruishuang",
+    "pitch": 1.0,
+    "rate": 1.1,
+    "asr": "尾巴 尖 也 不行",
+    "asr_similarity": 1.0,
+    "dur": 2.2456875,
+    "status": "needs_listening",
+    "batch": "20261024-ch12-followup",
+    "origin": "new_qwen_generation",
+    "manualListeningPerformed": false,
+    "distanceEffects": false,
+    "takeKey": "v17izdvn_t2_2ae17284b818"
+  },
+  {
+    "id": "m4wlasdc",
+    "index": 41,
+    "speaker": "鲸鱼小姐",
+    "scriptText": "「你们人类掉海里都不忘带奇怪的本子吗？」",
+    "sha256": "fc83e73609914333916b1712c6e4e564affbd972f40054b38d22a7e734c52862",
+    "speak": "你们人类掉海里，都不忘带奇怪的本子吗？",
+    "direction": "海字略着重，带点打趣，后半句一气说完不数落",
+    "instruction": "嗓音再圆润成熟一点，像二十岁左右的甜萌动漫女声，日系动画女主的配音腔，甜美清透不尖锐，海字略着重，带点打趣，后半句一气说完不数落，清晰，音量适中，语速自然不拖腔，音色保持一致",
+    "instructionAuthor": "Codex主代理按本轮用户截图批注与剧情逐句编写；未使用额外提示生成模型",
+    "model": "qwen-audio-3.0-tts-plus",
+    "voice": "qwen-audio-3.0-tts-plus-longcanruishuang",
+    "pitch": 1.0,
+    "rate": 1.1,
+    "asr": "你们 人类 掉 海里 都 不 往 大 奇怪 的 本子 吗",
+    "asr_similarity": 0.9411764705882353,
+    "dur": 2.8945625,
+    "status": "needs_listening",
+    "batch": "20261024-ch12-followup",
+    "origin": "new_qwen_generation",
+    "manualListeningPerformed": false,
+    "distanceEffects": false,
+    "takeKey": "m4wlasdc_t2_0917c0550736"
+  },
+  {
+    "id": "nthjz7h6",
+    "index": 326,
+    "speaker": "鲸鱼小姐",
+    "scriptText": "「明天！桂花！」",
+    "sha256": "e49641670be864edbeca1c97bb2bea19087d13a4dab207b824f076588dac4490",
+    "speak": "明天，桂花！",
+    "direction": "明天随口喊出，桂字延展两拍，花字高而短促收住",
+    "instruction": "嗓音再圆润成熟一点，像二十岁左右的甜萌动漫女声，日系动画女主的配音腔，甜美清透不尖锐，明天随口喊出，桂字延展两拍，花字高而短促收住，轻柔，音量适中，语速自然不拖腔，音色保持一致",
+    "instructionAuthor": "Codex主代理按本轮用户截图批注与剧情逐句编写；未使用额外提示生成模型",
+    "model": "qwen-audio-3.0-tts-plus",
+    "voice": "qwen-audio-3.0-tts-plus-longcanruishuang",
+    "pitch": 1.0,
+    "rate": 1.1,
+    "asr": "明天 桂花",
+    "asr_similarity": 1.0,
+    "dur": 2.389637,
+    "status": "needs_listening",
+    "batch": "20261024-ch12-followup",
+    "origin": "local_pitch_preserving_timing_adjustment",
+    "manualListeningPerformed": false,
+    "distanceEffects": false,
+    "takeKey": "nthjz7h6_t3_dd280eda774d",
+    "timingEdit": {
+      "guiIntervalSeconds": [
+        1.829002267573696,
+        2.0649886621315194
+      ],
+      "huaIntervalSeconds": [
+        2.1149886621315193,
+        2.335011337868481
+      ],
+      "tempoFactors": {
+        "gui": 0.8,
+        "hua": 1.18
+      },
+      "pitch": 1,
+      "crossfadeSeconds": 0.002993197278911565,
+      "sourceTakeKey": "nthjz7h6_t3_dd280eda774d",
+      "sourceSHA256": "2de8c9161a27cd1eae9b97f0ae0cb299cf1826ce5c293c64139cfec2b84df8ec",
+      "voicedProxySeconds": {
+        "gui": 0.26,
+        "hua": 0.17
+      },
+      "estimatedPitchDeltaSemitones": {
+        "gui": 0.10609221592270703,
+        "hua": -0.13015884304789627
+      },
+      "phonemeAlignmentConfirmed": false,
+      "manualListeningPerformed": false
+    },
+    "originalSynthesisKey": "nthjz7h6_t3_dd280eda774d"
+  }
+]

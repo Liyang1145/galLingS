@@ -5,37 +5,16 @@
     "老奶奶": "content/audio/voice-refs/granny.mp3",
     "银匠": "content/audio/voice-refs/smith.mp3"
   },
-  "count": 826,
+  "count": 825,
   "by_speaker": {
-    "???": 1,
     "鲸鱼小姐": 808,
     "摊主": 1,
     "老奶奶": 14,
     "摊主甲": 1,
     "摊主乙": 1
   },
-  "needs_review": 55,
+  "needs_review": 46,
   "items": [
-    {
-      "line": "ktsw1bk3",
-      "speaker": "???",
-      "asset": "vo_ktsw1bk3",
-      "src": "assets/vo/ktsw1bk3.mp3",
-      "dur": 0.386599,
-      "sha256": "ca57de8a22b2efc2c37e4203a1637762627f131ff642deb140f45561c5b1377b",
-      "speak": "啊！",
-      "direction": "尾尖突然被碰到，短促一声气音惊讶，立刻收住",
-      "asr": "",
-      "asr_similarity": 0.0,
-      "status": "needs_listening",
-      "batch": "20261024-feedback-repair",
-      "generator": "qwen-audio-3.0-tts-plus qwen-audio-3.0-tts-plus-longcanruishuang",
-      "origin": "new_qwen_generation",
-      "manualListeningPerformed": false,
-      "distanceEffects": false,
-      "instruction": "嗓音再圆润成熟一点，像二十岁左右的甜萌动漫女声，日系动画女主的配音腔，甜美清透不尖锐，尾尖突然被碰到，短促一声气音惊讶，立刻收住，音量适中，语速自然不拖腔，音色保持一致",
-      "instructionAuthor": "Codex主代理逐句阅读上下文后撰写，无外部提示生成模型"
-    },
     {
       "line": "58oo02cv",
       "speaker": "鲸鱼小姐",
@@ -116,20 +95,20 @@
       "speaker": "鲸鱼小姐",
       "asset": "vo_v17izdvn",
       "src": "assets/vo/v17izdvn.mp3",
-      "dur": 2.238912,
-      "sha256": "92c29a0528ff048bca40730d7782c46cab2817905feae07da250c71f5b242cb7",
+      "dur": 2.2456875,
+      "sha256": "c66858cbf0ef796010514f6a972a976b26255c9c178568cc0a3756a9755ecefb",
       "speak": "尾巴尖。也不行。",
-      "direction": "接住上句警告，尾巴尖三字咬清，后半句收稳",
+      "direction": "先点明尾巴尖，后半句轻轻咬字，坚定又带点嗔意",
       "asr": "尾巴 尖 也 不行",
       "asr_similarity": 1.0,
-      "status": "automatic_screen_pass",
-      "batch": "20261024-feedback-repair",
+      "status": "needs_listening",
+      "batch": "20261024-ch12-followup",
       "generator": "qwen-audio-3.0-tts-plus qwen-audio-3.0-tts-plus-longcanruishuang",
       "origin": "new_qwen_generation",
       "manualListeningPerformed": false,
       "distanceEffects": false,
-      "instruction": "嗓音再圆润成熟一点，像二十岁左右的甜萌动漫女声，日系动画女主的配音腔，甜美清透不尖锐，接住上句警告，尾巴尖三字咬清，后半句收稳，自然，音量适中，语速自然不拖腔，音色保持一致",
-      "instructionAuthor": "Codex主代理逐句阅读上下文后撰写，无外部提示生成模型"
+      "instruction": "嗓音再圆润成熟一点，像二十岁左右的甜萌动漫女声，日系动画女主的配音腔，甜美清透不尖锐，先点明尾巴尖，后半句轻轻咬字，坚定又带点嗔意，清晰，音量适中，语速自然不拖腔，音色保持一致",
+      "instructionAuthor": "Codex主代理按本轮用户截图批注与剧情逐句编写；未使用额外提示生成模型"
     },
     {
       "line": "lt5k0xiy",
@@ -226,20 +205,20 @@
       "speaker": "鲸鱼小姐",
       "asset": "vo_m4wlasdc",
       "src": "assets/vo/m4wlasdc.mp3",
-      "dur": 3.197642,
-      "sha256": "dcbaee331c8400507da265665a4c6b9b0d7a6a4093c915019c15a70c0a2a494d",
+      "dur": 2.8945625,
+      "sha256": "fc83e73609914333916b1712c6e4e564affbd972f40054b38d22a7e734c52862",
       "speak": "你们人类掉海里，都不忘带奇怪的本子吗？",
-      "direction": "拿落海带本子逗他，都不忘三字分清，连贯问完",
+      "direction": "海字略着重，带点打趣，后半句一气说完不数落",
       "asr": "你们 人类 掉 海里 都 不 往 大 奇怪 的 本子 吗",
       "asr_similarity": 0.9411764705882353,
-      "status": "automatic_screen_pass",
-      "batch": "20261024-feedback-repair",
+      "status": "needs_listening",
+      "batch": "20261024-ch12-followup",
       "generator": "qwen-audio-3.0-tts-plus qwen-audio-3.0-tts-plus-longcanruishuang",
       "origin": "new_qwen_generation",
       "manualListeningPerformed": false,
       "distanceEffects": false,
-      "instruction": "嗓音再圆润成熟一点，像二十岁左右的甜萌动漫女声，日系动画女主的配音腔，甜美清透不尖锐，拿落海带本子逗他，都不忘三字分清，连贯问完，音量适中，语速自然不拖腔，音色保持一致",
-      "instructionAuthor": "Codex主代理按剧情逐句撰写，不调用外部提示模型"
+      "instruction": "嗓音再圆润成熟一点，像二十岁左右的甜萌动漫女声，日系动画女主的配音腔，甜美清透不尖锐，海字略着重，带点打趣，后半句一气说完不数落，清晰，音量适中，语速自然不拖腔，音色保持一致",
+      "instructionAuthor": "Codex主代理按本轮用户截图批注与剧情逐句编写；未使用额外提示生成模型"
     },
     {
       "line": "p4p4l5nc",
@@ -514,7 +493,14 @@
       "manualListeningPerformed": false,
       "distanceEffects": false,
       "instruction": "嗓音再圆润成熟一点，像二十岁左右的甜萌动漫女声，日系动画女主的配音腔，甜美清透不尖锐，偷帮对方被发现，装凶反问，音色甜而带刺，音量适中，语速自然不拖腔，音色保持一致",
-      "instructionAuthor": "Codex主代理逐句阅读上下文后撰写，无外部提示生成模型"
+      "instructionAuthor": "Codex主代理逐句阅读上下文后撰写，无外部提示生成模型",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "2861d2813fbd6845e63dadb5e4d4b002d4e66471c1a9f41d08f3539ca21f358c",
+        "date": "2026-10-24",
+        "source": "user_supplied_screenshot_review",
+        "note": ""
+      }
     },
     {
       "line": "i99npm13",
@@ -805,7 +791,14 @@
       "distanceEffects": false,
       "instruction": "嗓音再圆润成熟一点，像二十岁左右的甜萌动漫女声，日系动画女主的配音腔，甜美清透不尖锐，被夸中秘密便连编借口，三句承接，嘴硬掩心虚，自然，音量适中，语速自然不拖腔，音色保持一致",
       "instructionAuthor": "Codex主代理按剧情逐句撰写，不调用外部提示模型",
-      "contextCutBoundariesReliable": true
+      "contextCutBoundariesReliable": true,
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "c9f7ca4993908449c079a7da82a602d43fcdce3149ea17cd16b2376858bc6f94",
+        "date": "2026-10-24",
+        "source": "user_supplied_screenshot_review",
+        "note": ""
+      }
     },
     {
       "line": "otgvk12p",
@@ -826,7 +819,14 @@
       "distanceEffects": false,
       "instruction": "嗓音再圆润成熟一点，像二十岁左右的甜萌动漫女声，日系动画女主的配音腔，甜美清透不尖锐，被夸中秘密便连编借口，三句承接，嘴硬掩心虚，清晰，音量适中，语速自然不拖腔，音色保持一致",
       "instructionAuthor": "Codex主代理按剧情逐句撰写，不调用外部提示模型",
-      "contextCutBoundariesReliable": true
+      "contextCutBoundariesReliable": true,
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "a1bed6228adb73370ce654bf0b1936a8a210acfdb2e46eec8488336e461267b7",
+        "date": "2026-10-24",
+        "source": "user_supplied_screenshot_review",
+        "note": ""
+      }
     },
     {
       "line": "yh5ghjft",
@@ -847,7 +847,14 @@
       "distanceEffects": false,
       "instruction": "嗓音再圆润成熟一点，像二十岁左右的甜萌动漫女声，日系动画女主的配音腔，甜美清透不尖锐，被夸中秘密便连编借口，三句承接，嘴硬掩心虚，音量适中，语速自然不拖腔，音色保持一致",
       "instructionAuthor": "Codex主代理按剧情逐句撰写，不调用外部提示模型",
-      "contextCutBoundariesReliable": true
+      "contextCutBoundariesReliable": true,
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "7bc249090cbdba4cbcef30ed3957be52e5d3680678b0d481455ac9002f6ea6a4",
+        "date": "2026-10-24",
+        "source": "user_supplied_screenshot_review",
+        "note": ""
+      }
     },
     {
       "line": "zv50a61e",
@@ -867,7 +874,14 @@
       "manualListeningPerformed": false,
       "distanceEffects": false,
       "instruction": "嗓音再圆润成熟一点，像二十岁左右的甜萌动漫女声，日系动画女主的配音腔，甜美清透不尖锐，接着对方道谢顶嘴，说到一半自己收住话头，自然，音量适中，语速自然不拖腔，音色保持一致",
-      "instructionAuthor": "Codex主代理逐句阅读上下文后撰写，无外部提示生成模型"
+      "instructionAuthor": "Codex主代理逐句阅读上下文后撰写，无外部提示生成模型",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "5c870e83756462131d5be4764514ecbb27e8b11019c0adbdac950fae0b2932e8",
+        "date": "2026-10-24",
+        "source": "user_supplied_screenshot_review",
+        "note": ""
+      }
     },
     {
       "line": "n1u3boys",
@@ -1037,7 +1051,14 @@
       "manualListeningPerformed": false,
       "distanceEffects": false,
       "instruction": "嗓音再圆润成熟一点，像二十岁左右的甜萌动漫女声，日系动画女主的配音腔，甜美清透不尖锐，临时找来见面理由，顺便后留气口，笑着试探，音量适中，语速自然不拖腔，音色保持一致",
-      "instructionAuthor": "Codex主代理逐句阅读上下文后撰写，无外部提示生成模型"
+      "instructionAuthor": "Codex主代理逐句阅读上下文后撰写，无外部提示生成模型",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "4e4b317a568cd867ee35435ceded87c752ac5cf62d368a316194992182b37769",
+        "date": "2026-10-24",
+        "source": "user_supplied_screenshot_review",
+        "note": ""
+      }
     },
     {
       "line": "7ukunjp3",
@@ -1312,7 +1333,14 @@
       "manualListeningPerformed": false,
       "distanceEffects": false,
       "instruction": "嗓音再圆润成熟一点，像二十岁左右的甜萌动漫女声，日系动画女主的配音腔，甜美清透不尖锐，郑重又俏皮地立规矩，引用暗号时轻轻点明，音量适中，语速自然不拖腔，音色保持一致",
-      "instructionAuthor": "Codex主代理逐句阅读上下文后撰写，无外部提示生成模型"
+      "instructionAuthor": "Codex主代理逐句阅读上下文后撰写，无外部提示生成模型",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "0a331e3cb274d4272ab0e4f963392e7bcb6f3ea0b46acdfa4edd2682b01c2b47",
+        "date": "2026-10-24",
+        "source": "user_supplied_screenshot_review",
+        "note": ""
+      }
     },
     {
       "line": "90lgbmcw",
@@ -1735,7 +1763,14 @@
       "manualListeningPerformed": false,
       "distanceEffects": false,
       "instruction": "嗓音再圆润成熟一点，像二十岁左右的甜萌动漫女声，日系动画女主的配音腔，甜美清透不尖锐，一本正经宣读专属条款，逐个分句，尾音落定，清晰，音量适中，语速自然不拖腔，音色保持一致",
-      "instructionAuthor": "Codex主代理逐句阅读上下文后撰写，无外部提示生成模型"
+      "instructionAuthor": "Codex主代理逐句阅读上下文后撰写，无外部提示生成模型",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "36857ee130e892f37ea0847d6a55f7de68e776609067ab9d20b4688eac2127ee",
+        "date": "2026-10-24",
+        "source": "user_supplied_screenshot_review",
+        "note": ""
+      }
     },
     {
       "line": "kg8xkzda",
@@ -1755,7 +1790,14 @@
       "manualListeningPerformed": false,
       "distanceEffects": false,
       "instruction": "嗓音再圆润成熟一点，像二十岁左右的甜萌动漫女声，日系动画女主的配音腔，甜美清透不尖锐，把本子递到面前，带笑催对方落款，清脆两字，音量适中，语速自然不拖腔，音色保持一致",
-      "instructionAuthor": "Codex主代理逐句阅读上下文后撰写，无外部提示生成模型"
+      "instructionAuthor": "Codex主代理逐句阅读上下文后撰写，无外部提示生成模型",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "c480d2dc6172e6d4f6e802816255474b40bc43f2d60bbe06ae0556ad340b68c3",
+        "date": "2026-10-24",
+        "source": "user_supplied_screenshot_review",
+        "note": ""
+      }
     },
     {
       "line": "mgmzmu9k",
@@ -2015,7 +2057,14 @@
       "manualListeningPerformed": false,
       "distanceEffects": false,
       "instruction": "嗓音再圆润成熟一点，像二十岁左右的甜萌动漫女声，日系动画女主的配音腔，甜美清透不尖锐，怕自己的记忆惹麻烦，语势逐渐放轻，试探收尾，自然，音量适中，语速自然不拖腔，音色保持一致",
-      "instructionAuthor": "Codex主代理逐句阅读上下文后撰写，无外部提示生成模型"
+      "instructionAuthor": "Codex主代理逐句阅读上下文后撰写，无外部提示生成模型",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "52091f92695536c2ab9bdd0775385a5849e086a878b4d973fbe24dda81682d9f",
+        "date": "2026-10-24",
+        "source": "user_supplied_screenshot_review",
+        "note": ""
+      }
     },
     {
       "line": "whyy1s3e",
@@ -2200,7 +2249,14 @@
       "manualListeningPerformed": false,
       "distanceEffects": false,
       "instruction": "嗓音再圆润成熟一点，像二十岁左右的甜萌动漫女声，日系动画女主的配音腔，甜美清透不尖锐，用嘴硬遮住难堪，前句承接数落，后半句稳住，自然，音量适中，语速自然不拖腔，音色保持一致",
-      "instructionAuthor": "Codex主代理逐句阅读上下文后撰写，无外部提示生成模型"
+      "instructionAuthor": "Codex主代理逐句阅读上下文后撰写，无外部提示生成模型",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "4f4efa58ebe4269b9dc3976e296bb48399587b41647fba1e1014b8578d2c7a30",
+        "date": "2026-10-24",
+        "source": "user_supplied_screenshot_review",
+        "note": ""
+      }
     },
     {
       "line": "tyqbvu4h",
@@ -2220,7 +2276,14 @@
       "manualListeningPerformed": false,
       "distanceEffects": false,
       "instruction": "嗓音再圆润成熟一点，像二十岁左右的甜萌动漫女声，日系动画女主的配音腔，甜美清透不尖锐，接住上一句的嘴硬，故作威严落四字，带笑意，音量适中，语速自然不拖腔，音色保持一致",
-      "instructionAuthor": "Codex主代理逐句阅读上下文后撰写，无外部提示生成模型"
+      "instructionAuthor": "Codex主代理逐句阅读上下文后撰写，无外部提示生成模型",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "e17038d3ba46cc63e854cc9eaf452a35ed672ba2edc8255d780556b139db2614",
+        "date": "2026-10-24",
+        "source": "user_supplied_screenshot_review",
+        "note": ""
+      }
     },
     {
       "line": "t779xb9d",
@@ -2315,7 +2378,14 @@
       "manualListeningPerformed": false,
       "distanceEffects": false,
       "instruction": "嗓音再圆润成熟一点，像二十岁左右的甜萌动漫女声，日系动画女主的配音腔，甜美清透不尖锐，延续暗号清单，引用两字分清，后半句柔中带刺，自然，音量适中，语速自然不拖腔，音色保持一致",
-      "instructionAuthor": "Codex主代理逐句阅读上下文后撰写，无外部提示生成模型"
+      "instructionAuthor": "Codex主代理逐句阅读上下文后撰写，无外部提示生成模型",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "b167394afc82fd72502d24324416f23e8f3cfaf355b66d42acd6588f2ab9ff9f",
+        "date": "2026-10-24",
+        "source": "user_supplied_screenshot_review",
+        "note": ""
+      }
     },
     {
       "line": "g3dcgcse",
@@ -2352,20 +2422,48 @@
       "speaker": "鲸鱼小姐",
       "asset": "vo_nthjz7h6",
       "src": "assets/vo/nthjz7h6.mp3",
-      "dur": 1.117438,
-      "sha256": "3558b8468af344115e39f775b988a5192c9f741226c908c30815baa79a3ec2c8",
-      "speak": "明天！桂花！",
-      "direction": "已经游远仍惦记约定，两短句留气口，带笑呼唤",
+      "dur": 2.389637,
+      "sha256": "e49641670be864edbeca1c97bb2bea19087d13a4dab207b824f076588dac4490",
+      "speak": "明天，桂花！",
+      "direction": "明天随口喊出，桂字延展两拍，花字高而短促收住",
       "asr": "明天 桂花",
       "asr_similarity": 1.0,
       "status": "needs_listening",
-      "batch": "20261024-feedback-repair",
+      "batch": "20261024-ch12-followup",
       "generator": "qwen-audio-3.0-tts-plus qwen-audio-3.0-tts-plus-longcanruishuang",
-      "origin": "new_qwen_generation",
+      "origin": "local_pitch_preserving_timing_adjustment",
       "manualListeningPerformed": false,
       "distanceEffects": false,
-      "instruction": "嗓音再圆润成熟一点，像二十岁左右的甜萌动漫女声，日系动画女主的配音腔，甜美清透不尖锐，已经游远仍惦记约定，两短句留气口，带笑呼唤，清晰，音量适中，语速自然不拖腔，音色保持一致",
-      "instructionAuthor": "Codex主代理逐句阅读上下文后撰写，无外部提示生成模型"
+      "instruction": "嗓音再圆润成熟一点，像二十岁左右的甜萌动漫女声，日系动画女主的配音腔，甜美清透不尖锐，明天随口喊出，桂字延展两拍，花字高而短促收住，轻柔，音量适中，语速自然不拖腔，音色保持一致",
+      "instructionAuthor": "Codex主代理按本轮用户截图批注与剧情逐句编写；未使用额外提示生成模型",
+      "timingEdit": {
+        "guiIntervalSeconds": [
+          1.829002267573696,
+          2.0649886621315194
+        ],
+        "huaIntervalSeconds": [
+          2.1149886621315193,
+          2.335011337868481
+        ],
+        "tempoFactors": {
+          "gui": 0.8,
+          "hua": 1.18
+        },
+        "pitch": 1,
+        "crossfadeSeconds": 0.002993197278911565,
+        "sourceTakeKey": "nthjz7h6_t3_dd280eda774d",
+        "sourceSHA256": "2de8c9161a27cd1eae9b97f0ae0cb299cf1826ce5c293c64139cfec2b84df8ec",
+        "voicedProxySeconds": {
+          "gui": 0.26,
+          "hua": 0.17
+        },
+        "estimatedPitchDeltaSemitones": {
+          "gui": 0.10609221592270703,
+          "hua": -0.13015884304789627
+        },
+        "phonemeAlignmentConfirmed": false,
+        "manualListeningPerformed": false
+      }
     },
     {
       "line": "o1bis57q",
@@ -2385,7 +2483,14 @@
       "manualListeningPerformed": false,
       "distanceEffects": false,
       "instruction": "嗓音再圆润成熟一点，像二十岁左右的甜萌动漫女声，日系动画女主的配音腔，甜美清透不尖锐，隔海补一句嘴硬叮嘱，惩罚话一气连贯说完，自然，音量适中，语速自然不拖腔，音色保持一致",
-      "instructionAuthor": "Codex主代理逐句阅读上下文后撰写，无外部提示生成模型"
+      "instructionAuthor": "Codex主代理逐句阅读上下文后撰写，无外部提示生成模型",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "a646d272699468767ba197006615310a49d8841a37bdbff2e8718ff1d6400887",
+        "date": "2026-10-24",
+        "source": "user_supplied_screenshot_review",
+        "note": ""
+      }
     },
     {
       "line": "ngfxexp1",
@@ -2405,7 +2510,14 @@
       "manualListeningPerformed": false,
       "distanceEffects": false,
       "instruction": "嗓音再圆润成熟一点，像二十岁左右的甜萌动漫女声，日系动画女主的配音腔，甜美清透不尖锐，装作伤口是小事，看什么轻问，小伤咬清再解释，音量适中，语速自然不拖腔，音色保持一致",
-      "instructionAuthor": "Codex主代理按剧情逐句撰写，不调用外部提示模型"
+      "instructionAuthor": "Codex主代理按剧情逐句撰写，不调用外部提示模型",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "07798f86f06ab8106fc08d1806e0529f904e7317886f09f4f3dc2915caccf75d",
+        "date": "2026-10-24",
+        "source": "user_supplied_screenshot_review",
+        "note": ""
+      }
     },
     {
       "line": "ferlzwz9",
@@ -8252,7 +8364,14 @@
       "manualListeningPerformed": false,
       "distanceEffects": false,
       "sourceStatus": "通过",
-      "sourcePackageSha256": "bc5e3885ed72e8b55db394ca5d1997b571e4bd07ef842641d85958325d88a3e0"
+      "sourcePackageSha256": "bc5e3885ed72e8b55db394ca5d1997b571e4bd07ef842641d85958325d88a3e0",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "95c1c39231876388120259c1972d72d70e6b929fc68452f264155233d110373e",
+        "date": "2026-10-24",
+        "source": "user_supplied_screenshot_review",
+        "note": ""
+      }
     },
     {
       "line": "cn2w22jy",
@@ -8272,7 +8391,14 @@
       "manualListeningPerformed": false,
       "distanceEffects": false,
       "sourceStatus": "通过",
-      "sourcePackageSha256": "bc5e3885ed72e8b55db394ca5d1997b571e4bd07ef842641d85958325d88a3e0"
+      "sourcePackageSha256": "bc5e3885ed72e8b55db394ca5d1997b571e4bd07ef842641d85958325d88a3e0",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "01e7a36cb6315e203e3567e4d57989e0cd86f09a8cac26a1c6bbc3809a43154a",
+        "date": "2026-10-24",
+        "source": "user_supplied_screenshot_review",
+        "note": ""
+      }
     },
     {
       "line": "qxxueop2",
@@ -8292,7 +8418,14 @@
       "manualListeningPerformed": false,
       "distanceEffects": false,
       "sourceStatus": "通过",
-      "sourcePackageSha256": "bc5e3885ed72e8b55db394ca5d1997b571e4bd07ef842641d85958325d88a3e0"
+      "sourcePackageSha256": "bc5e3885ed72e8b55db394ca5d1997b571e4bd07ef842641d85958325d88a3e0",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "d3ccfe06e1b964a928883ccdc3e8c2f583bb22a9c58ee495a2b535514857ec1f",
+        "date": "2026-10-24",
+        "source": "user_supplied_screenshot_review",
+        "note": ""
+      }
     },
     {
       "line": "yxgi0uzv",
@@ -8312,7 +8445,14 @@
       "manualListeningPerformed": false,
       "distanceEffects": false,
       "sourceStatus": "通过",
-      "sourcePackageSha256": "bc5e3885ed72e8b55db394ca5d1997b571e4bd07ef842641d85958325d88a3e0"
+      "sourcePackageSha256": "bc5e3885ed72e8b55db394ca5d1997b571e4bd07ef842641d85958325d88a3e0",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "9bc7a22d8d9a9daecd26b214c010ec851fb4a1a352650a55cb912078656f0687",
+        "date": "2026-10-24",
+        "source": "user_supplied_screenshot_review",
+        "note": ""
+      }
     },
     {
       "line": "ps2hyhs3",
@@ -8332,7 +8472,14 @@
       "manualListeningPerformed": false,
       "distanceEffects": false,
       "sourceStatus": "通过",
-      "sourcePackageSha256": "bc5e3885ed72e8b55db394ca5d1997b571e4bd07ef842641d85958325d88a3e0"
+      "sourcePackageSha256": "bc5e3885ed72e8b55db394ca5d1997b571e4bd07ef842641d85958325d88a3e0",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "8579a595e3a8d95809000f1835bd2db22a8c1c4e294c7e42de879ac76f022ba3",
+        "date": "2026-10-24",
+        "source": "user_supplied_screenshot_review",
+        "note": ""
+      }
     },
     {
       "line": "j1p38sz6",
@@ -8352,7 +8499,14 @@
       "manualListeningPerformed": false,
       "distanceEffects": false,
       "sourceStatus": "通过",
-      "sourcePackageSha256": "bc5e3885ed72e8b55db394ca5d1997b571e4bd07ef842641d85958325d88a3e0"
+      "sourcePackageSha256": "bc5e3885ed72e8b55db394ca5d1997b571e4bd07ef842641d85958325d88a3e0",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "6688ab64bb28bd0db6cebe233c27b240b9b486b18f435fcdb1363918f9749907",
+        "date": "2026-10-24",
+        "source": "user_supplied_screenshot_review",
+        "note": ""
+      }
     },
     {
       "line": "60i847f9",
@@ -8372,7 +8526,14 @@
       "manualListeningPerformed": false,
       "distanceEffects": false,
       "sourceStatus": "通过",
-      "sourcePackageSha256": "bc5e3885ed72e8b55db394ca5d1997b571e4bd07ef842641d85958325d88a3e0"
+      "sourcePackageSha256": "bc5e3885ed72e8b55db394ca5d1997b571e4bd07ef842641d85958325d88a3e0",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "eb01c2c4f0caf1aabe748b160666cee04918a484ca5b9166687a001dbfb6bef9",
+        "date": "2026-10-24",
+        "source": "user_supplied_screenshot_review",
+        "note": ""
+      }
     },
     {
       "line": "x1cvmz4s",
@@ -8432,7 +8593,14 @@
       "manualListeningPerformed": false,
       "distanceEffects": false,
       "sourceStatus": "通过",
-      "sourcePackageSha256": "bc5e3885ed72e8b55db394ca5d1997b571e4bd07ef842641d85958325d88a3e0"
+      "sourcePackageSha256": "bc5e3885ed72e8b55db394ca5d1997b571e4bd07ef842641d85958325d88a3e0",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "975aa9851a3d7fa796764df4f24ffb489065902edee0e0264e3fd044fcf846f4",
+        "date": "2026-10-24",
+        "source": "user_supplied_screenshot_review",
+        "note": "好!"
+      }
     },
     {
       "line": "3ehne90j",
@@ -8452,7 +8620,14 @@
       "manualListeningPerformed": false,
       "distanceEffects": false,
       "sourceStatus": "通过",
-      "sourcePackageSha256": "bc5e3885ed72e8b55db394ca5d1997b571e4bd07ef842641d85958325d88a3e0"
+      "sourcePackageSha256": "bc5e3885ed72e8b55db394ca5d1997b571e4bd07ef842641d85958325d88a3e0",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "dd1b11c46ace882714a2651fc655d043c878f00dab28dd76f240d0a47890e5eb",
+        "date": "2026-10-24",
+        "source": "user_supplied_screenshot_review",
+        "note": ""
+      }
     },
     {
       "line": "uha06gql",
@@ -8472,7 +8647,14 @@
       "manualListeningPerformed": false,
       "distanceEffects": false,
       "sourceStatus": "通过",
-      "sourcePackageSha256": "bc5e3885ed72e8b55db394ca5d1997b571e4bd07ef842641d85958325d88a3e0"
+      "sourcePackageSha256": "bc5e3885ed72e8b55db394ca5d1997b571e4bd07ef842641d85958325d88a3e0",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "ddc8b97d0946e2e5a5986c5acdd21877cf78e31f38ab4bb15655e1f5f2ed8b97",
+        "date": "2026-10-24",
+        "source": "user_supplied_screenshot_review",
+        "note": "好!"
+      }
     },
     {
       "line": "y8o8c15n",
@@ -8552,7 +8734,14 @@
       "manualListeningPerformed": false,
       "distanceEffects": false,
       "sourceStatus": "通过",
-      "sourcePackageSha256": "bc5e3885ed72e8b55db394ca5d1997b571e4bd07ef842641d85958325d88a3e0"
+      "sourcePackageSha256": "bc5e3885ed72e8b55db394ca5d1997b571e4bd07ef842641d85958325d88a3e0",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "4cc1e46ca7bbb4b9669dd0d33b904d7e688f9e02db8c6d52071aed0d128bd48e",
+        "date": "2026-10-24",
+        "source": "user_supplied_screenshot_review",
+        "note": ""
+      }
     },
     {
       "line": "s6oh5ha5",
@@ -8572,7 +8761,14 @@
       "manualListeningPerformed": false,
       "distanceEffects": false,
       "sourceStatus": "通过",
-      "sourcePackageSha256": "bc5e3885ed72e8b55db394ca5d1997b571e4bd07ef842641d85958325d88a3e0"
+      "sourcePackageSha256": "bc5e3885ed72e8b55db394ca5d1997b571e4bd07ef842641d85958325d88a3e0",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "34dba654538253ff2e11cbfdbf3cc12801c7a31e142b471f563744c0bc873be2",
+        "date": "2026-10-24",
+        "source": "user_supplied_screenshot_review",
+        "note": ""
+      }
     },
     {
       "line": "icw1ify0",
@@ -8592,7 +8788,14 @@
       "manualListeningPerformed": false,
       "distanceEffects": false,
       "sourceStatus": "通过",
-      "sourcePackageSha256": "bc5e3885ed72e8b55db394ca5d1997b571e4bd07ef842641d85958325d88a3e0"
+      "sourcePackageSha256": "bc5e3885ed72e8b55db394ca5d1997b571e4bd07ef842641d85958325d88a3e0",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "79339f45cc6ca5078ae7cf30359862e7dd2ad969a6e0258549ac6cac7c497db2",
+        "date": "2026-10-24",
+        "source": "user_supplied_screenshot_review",
+        "note": ""
+      }
     },
     {
       "line": "b1361ohk",
@@ -8612,7 +8815,14 @@
       "manualListeningPerformed": false,
       "distanceEffects": false,
       "sourceStatus": "通过",
-      "sourcePackageSha256": "bc5e3885ed72e8b55db394ca5d1997b571e4bd07ef842641d85958325d88a3e0"
+      "sourcePackageSha256": "bc5e3885ed72e8b55db394ca5d1997b571e4bd07ef842641d85958325d88a3e0",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "b855bd4d5abd963d2c9ead2ce94745c41a1e59f84904e83335f33393850ff629",
+        "date": "2026-10-24",
+        "source": "user_supplied_screenshot_review",
+        "note": ""
+      }
     },
     {
       "line": "ofwg93nd",
@@ -8632,7 +8842,14 @@
       "manualListeningPerformed": false,
       "distanceEffects": false,
       "sourceStatus": "通过",
-      "sourcePackageSha256": "bc5e3885ed72e8b55db394ca5d1997b571e4bd07ef842641d85958325d88a3e0"
+      "sourcePackageSha256": "bc5e3885ed72e8b55db394ca5d1997b571e4bd07ef842641d85958325d88a3e0",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "3d14c83cb683e82e515403d00273b054692563ad9e4d2c1c39f56db63d59a597",
+        "date": "2026-10-24",
+        "source": "user_supplied_screenshot_review",
+        "note": ""
+      }
     },
     {
       "line": "o0h73fjv",
@@ -8652,7 +8869,14 @@
       "manualListeningPerformed": false,
       "distanceEffects": false,
       "sourceStatus": "通过",
-      "sourcePackageSha256": "bc5e3885ed72e8b55db394ca5d1997b571e4bd07ef842641d85958325d88a3e0"
+      "sourcePackageSha256": "bc5e3885ed72e8b55db394ca5d1997b571e4bd07ef842641d85958325d88a3e0",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "ac759176a72ca1cbba802db95559dd84b854331346dfdfa07cd5400abd48c9de",
+        "date": "2026-10-24",
+        "source": "user_supplied_screenshot_review",
+        "note": ""
+      }
     },
     {
       "line": "k4pt124a",
@@ -8672,7 +8896,14 @@
       "manualListeningPerformed": false,
       "distanceEffects": false,
       "sourceStatus": "通过",
-      "sourcePackageSha256": "bc5e3885ed72e8b55db394ca5d1997b571e4bd07ef842641d85958325d88a3e0"
+      "sourcePackageSha256": "bc5e3885ed72e8b55db394ca5d1997b571e4bd07ef842641d85958325d88a3e0",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "43a65ab3f89e5cfa7f995bfec88adbe7acc614f2cbaf493d0d8a3b2901448c06",
+        "date": "2026-10-24",
+        "source": "user_supplied_screenshot_review",
+        "note": ""
+      }
     },
     {
       "line": "v3ktezzn",
@@ -8712,7 +8943,14 @@
       "manualListeningPerformed": false,
       "distanceEffects": false,
       "instruction": "嗓音再圆润成熟一点，像二十岁左右的甜萌动漫女声，日系动画女主的配音腔，甜美清透不尖锐，护住箱底的小秘密，底层清楚落字，带笑挡回去，轻柔，音量适中，语速自然不拖腔，音色保持一致",
-      "instructionAuthor": "Codex主代理按剧情逐句撰写，无外部提示生成模型"
+      "instructionAuthor": "Codex主代理按剧情逐句撰写，无外部提示生成模型",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "ac233c221f059b1081e5f257674438335db442496721b305c40fa5c019893c56",
+        "date": "2026-10-24",
+        "source": "user_supplied_screenshot_review",
+        "note": ""
+      }
     },
     {
       "line": "ol9a44fr",
@@ -8732,7 +8970,14 @@
       "manualListeningPerformed": false,
       "distanceEffects": false,
       "sourceStatus": "通过",
-      "sourcePackageSha256": "bc5e3885ed72e8b55db394ca5d1997b571e4bd07ef842641d85958325d88a3e0"
+      "sourcePackageSha256": "bc5e3885ed72e8b55db394ca5d1997b571e4bd07ef842641d85958325d88a3e0",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "a7e08525beee98e148618308b23e75ef47bfc6921d5ed3c27b12aada68f3f94d",
+        "date": "2026-10-24",
+        "source": "user_supplied_screenshot_review",
+        "note": ""
+      }
     },
     {
       "line": "0mndhltp",
@@ -8752,7 +8997,14 @@
       "manualListeningPerformed": false,
       "distanceEffects": false,
       "sourceStatus": "通过",
-      "sourcePackageSha256": "bc5e3885ed72e8b55db394ca5d1997b571e4bd07ef842641d85958325d88a3e0"
+      "sourcePackageSha256": "bc5e3885ed72e8b55db394ca5d1997b571e4bd07ef842641d85958325d88a3e0",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "9eb987487e06e274d7b0ff8c0450c715db5167e148974e56cf78fb52b7de9e8e",
+        "date": "2026-10-24",
+        "source": "user_supplied_screenshot_review",
+        "note": ""
+      }
     },
     {
       "line": "f3ljmtlu",
@@ -12956,11 +13208,20 @@
   ],
   "latestBatch": {
     "date": "2026-10-24",
-    "changedClips": 232,
-    "newBindings": 111,
-    "existingBindingsReplaced": 121,
-    "manualListeningPerformed": false,
+    "id": "20261024-ch12-followup",
+    "rerecorded": 3,
+    "voiceBindingRemoved": "ktsw1bk3",
+    "acceptedByUser": 35,
+    "firstTwoVoiceCount": 151,
     "distanceEffects": false,
-    "directionsForNewSynthesis": "Written directly by Codex from scene context; no separate prompt-writing model call"
-  }
+    "manualListeningByCodex": false
+  },
+  "removedBindings": [
+    {
+      "line": "ktsw1bk3",
+      "reason": "用户要求纯文本表现，不需要啊的配音",
+      "date": "2026-10-24",
+      "previousAudioSha256": "ca57de8a22b2efc2c37e4203a1637762627f131ff642deb140f45561c5b1377b"
+    }
+  ]
 }

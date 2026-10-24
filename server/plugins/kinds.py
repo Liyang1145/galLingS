@@ -171,7 +171,7 @@ class Timeline:
 class MemoryRecord:
     content: str  # 原文，零 LLM 改写
     timeline: Timeline
-    kind: str = "event"  # fact | event | diary | dialogue
+    kind: str = "event"  # fact | event | diary | dialogue | note（fact 只能由剧本 / 引擎落账写，见 server/memory/provenance.py）
     tags: tuple[str, ...] = ()
     importance: float = 0.5
     meta: dict[str, Any] = field(default_factory=dict)
@@ -196,7 +196,14 @@ class MemoryPlugin(Plugin):
 
     @abc.abstractmethod
     async def recall(self, query: str, k: int, visible: list[Timeline]) -> list[MemoryHit]:
-        """召回。``visible`` 是当前可见的时间线前缀（读档后被放弃的分支不在其中），插件必须据此过滤。"""
+        """召回。``visible`` 是当前可见的时间线前缀（读档后被放弃的分支不在其中），插件必须据此过滤。
+        被标成 ``superseded``（已被修订作废）的条目默认不返回；``MemoryHit.meta`` 尽量带回写入时的 meta（source 等）。"""
+
+    async def mark(self, ids: list[str], status: str, by: str | None = None) -> int:
+        """给已有条目打状态（整合方案 W2）：``status="superseded"`` 表示被 ``by`` 这条新记忆修订作废。
+        只打标、不删原文（原文仍可在时间轴 / dump 里查到）。返回实际打上的条数。
+        旧插件没实现就抛 NotImplementedError，网关据此拒绝修订并记一条 verdict。"""
+        raise NotImplementedError(f"{type(self).__name__} 不支持 mark")
 
 
 # ---------------------------------------------------------------- tool（PLAN §11 Agent 工具）

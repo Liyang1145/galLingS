@@ -434,14 +434,15 @@
         "text",
         "guard_version"
       ],
-      "description": "文本守卫结论（server/guard）。stage=input 是玩家输入（plugin 有值 = guard 插件的结论），sentence 是模型的一句（attempt 0–2 为重写次数），perform 是换卡演绎层改写的剧本台词（src 为原台词），tool 是严肃模板下会话层驳回的工具调用（tool / args）",
+      "description": "文本守卫结论（server/guard）。stage=input 是玩家输入（plugin 有值 = guard 插件的结论），sentence 是模型的一句（attempt 0–2 为重写次数），perform 是换卡演绎层改写的剧本台词（src 为原台词），tool 是严肃模板下会话层驳回的工具调用（tool / args）；memory 是记忆修订被拒（整合方案 W2：没有本轮 read_token、来源权级不够或插件不支持 mark）",
       "properties": {
         "stage": {
           "enum": [
             "input",
             "sentence",
             "perform",
-            "tool"
+            "tool",
+            "memory"
           ]
         },
         "src": {
@@ -509,6 +510,32 @@
             "type": "string"
           },
           "description": "AGM 联想路径（agm 补位条目才有）"
+        },
+        "provenance": {
+          "enum": ["script", "engine", "player_claim", "heroine_line", "model_note", "unknown"],
+          "description": "记忆来源（整合方案 W1，server/memory/provenance.py）；与 source（哪个检索器召回的）不是一回事"
+        },
+        "kind": {
+          "type": ["string", "null"]
+        },
+        "evidence_key": {
+          "type": "string",
+          "description": "sha1(来源 + 规范化原文) 前 16 位；召回按它去重（重复不等于证据）"
+        },
+        "as_of_turn": {
+          "type": "integer",
+          "description": "条目带数量 / 归属 / 称呼时：这是第几回合时的说法，当前真值只认引擎状态（W3）"
+        },
+        "stance": {
+          "type": "string",
+          "description": "确定性态度过滤的注记（R1，server/memory/stance.py），不写回记忆"
+        },
+        "show": {
+          "type": "boolean",
+          "description": "false = 态度过滤判定这条不进提示词"
+        },
+        "stance_rule": {
+          "type": "string"
         }
       }
     },
@@ -574,6 +601,18 @@
           "items": {
             "$ref": "#/$defs/timeline_prefix"
           }
+        },
+        "read_token": {
+          "type": "string",
+          "description": "本次召回的先读后写令牌（W2：修订必须带本轮召回给的令牌）"
+        },
+        "deduped": {
+          "type": "integer",
+          "description": "同 evidence_key 去掉的条数"
+        },
+        "stance": {
+          "type": "object",
+          "description": "态度过滤用到的状态与被隐藏的条目（R1）"
         }
       }
     },
@@ -600,6 +639,19 @@
         },
         "diary": {
           "const": true
+        },
+        "supersedes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "修订作废的旧条目（W2）：旧条只打 superseded，原文不删"
+        },
+        "revise": {
+          "const": true
+        },
+        "memory_source": {
+          "type": "string"
         }
       }
     },
@@ -624,6 +676,22 @@
             "string",
             "null"
           ]
+        },
+        "memory_source": {
+          "type": "string",
+          "description": "write_memory 写入的来源（恒为 model_note，W1）"
+        },
+        "emotion": {
+          "type": "string",
+          "description": "say 的情绪标签（E1）"
+        },
+        "emotion_mood_conflict": {
+          "const": true,
+          "description": "情绪标签与 mood 方向冲突（时间轴标红、评测计数，不驳回）"
+        },
+        "via": {
+          "type": "string",
+          "description": "set_sprite 由 say.emotion 映射而来时为 say.emotion"
         }
       }
     },

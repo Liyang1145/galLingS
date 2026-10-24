@@ -73,7 +73,22 @@
     "assets": {"type": "object", "properties": {
       "sprites": {"type": "array", "items": {"type": "string"}},
       "live2d": {"type": ["string", "null"], "description": "Live2D 模型路径（预留）"},
-      "voice": {"type": ["string", "null"], "description": "TTS 声线 id（预留）"}}},
+      "voice": {"type": ["string", "null"], "description": "TTS 声线 id（预留）"},
+      "emotions": {"type": "object", "additionalProperties": {"type": "string"},
+        "description": "say 的情绪枚举 → 立绘差分（整合方案 E1）；值必须在 sprites 里。不写 = 每个差分名就是一个情绪"},
+      "emotion_valence": {"type": "object", "additionalProperties": {"type": "integer", "minimum": -1, "maximum": 1},
+        "description": "情绪方向（-1/0/1），与 mood 对照标出冲突回合；不写按词表推断"}}},
+    "stance_rules": {"type": "array", "description": "确定性态度过滤规则（整合方案 R1，server/memory/stance.py）：召回后按引擎状态给条目加注记或不进提示词",
+      "items": {"type": "object", "additionalProperties": false, "required": ["id"], "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "when": {"type": "object", "additionalProperties": false, "properties": {
+          "wound": {"type": "array", "items": {"enum": ["none", "angry", "dead", "reconciled"]}},
+          "provenance": {"type": "array", "items": {"enum": ["script", "engine", "player_claim", "heroine_line", "model_note", "unknown"]}},
+          "mood_min": {"type": "integer"}, "mood_max": {"type": "integer"},
+          "stage_min": {"type": "integer", "minimum": 0}, "stage_max": {"type": "integer", "minimum": 0}}},
+        "match": {"oneOf": [{"enum": ["warm", "any"]}, {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 1}]},
+        "note": {"type": "string"},
+        "hide": {"type": "boolean"}}}},
     "style_examples": {"type": "array", "items": {"type": "string"}, "minItems": 3},
     "build_record": {"type": "object", "description": "建卡页记录：原始描述、适配度评估等"}
   }

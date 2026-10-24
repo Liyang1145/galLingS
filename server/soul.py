@@ -17,6 +17,8 @@ from typing import Any, Awaitable, Callable
 from .director import prompts
 from .director.llm import complete, parse_json
 from .guard import TextGuard
+from .memory import MemoryGateway
+from .memory import provenance as pv
 from .plugins import MemoryPlugin, MemoryRecord, Timeline
 
 log = logging.getLogger("gallings.soul")
@@ -90,11 +92,15 @@ class SoulSession:
             log.exception("soul message failed")
             await self.send({"type": "error", "id": rid, "message": str(e)[:200]})
 
-    async def write(self, content: str, kind: str, tl: Timeline) -> str | None:
+    async def write(self, content: str, kind: str, tl: Timeline, source: str | None = None) -> str | None:
         if not self.memory or not content.strip():
             return None
         kind = kind if kind in ("fact", "event", "diary", "dialogue") else "event"
-        return await self.memory.write(MemoryRecord(content=content, timeline=tl, kind=kind, tags=("vn",)))
+        # 来源标签（整合方案 W1）：作品剧情事件算 script；手账里玩家写的是 player_claim、她回的是 heroine_line
+        if source is None:
+            source = "script" if kind in ("fact", "event") else None
+        kind, meta = MemoryGateway.build_meta(content, kind, tl.turn, source, None)
+        return await self.memory.write(MemoryRecord(content=content, timeline=tl, kind=kind, tags=("vn",), meta=meta))
 
     async def whisper(self, msg: dict[str, Any]) -> dict[str, Any]:
         text = str(msg.get("input") or "").strip()[:120]
@@ -109,7 +115,9 @@ class SoulSession:
         hits = []
         if self.memory and vis:
             hits = await self.memory.recall(f"{text} {msg.get('chapter') or ''}", 7, vis)
-        rec = {"hits": [{"content": h.content} for h in hits], "agm": []}
+        rec = {"hits": [{"content": h.content, "provenance": pv.provenance_of(h.meta, h.content),
+                         **({"as_of_turn": h.meta["as_of_turn"]} if (h.meta or {}).get("as_of_turn") is not None else {})}
+                        for h in hits if (h.meta or {}).get("status", "live") == "live"], "agm": []}
         n = TALK_LINES.get(str(msg.get("talk")), 2)
         hist = [("我：" if h.get("me") else "她：") + str(h.get("t", ""))[:80] for h in (msg.get("history") or [])[-10:]]
         msgs = [
@@ -125,8 +133,8 @@ class SoulSession:
             return {"fallback": True, "reason": "model_failed"}
         if emo not in self.sprites:
             emo = ""
-        await self.write(f"玩家在手账上写：{text}", "dialogue", tl)
-        await self.write(f"她在手账上回：{''.join(lines)}", "dialogue", Timeline(tl.lineage, tl.turn))
+        await self.write(f"玩家在手账上写：{text}", "dialogue", tl, source="player_claim")
+        await self.write(f"她在手账上回：{''.join(lines)}", "dialogue", Timeline(tl.lineage, tl.turn), source="heroine_line")
         return {"text": "".join(lines), "lines": lines, "emotion": emo, "source": "llm", "recall": len(hits)}
 
     async def ask(self, msgs: list[dict[str, str]], n: int) -> tuple[list[str], str]:

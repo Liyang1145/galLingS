@@ -9,6 +9,7 @@
   - mdcg_get：按节点 ID 读取记忆节点与邻边
   - mdcg_link：显式建立两个记忆节点的关联边
   - mdcg_status：查看认知图节点数、边数与存储路径
+  - mdcg_mark：给节点打状态（如 superseded = 被修订作废）；只打标不删原文，search 默认只返回 active 节点
 """
 from __future__ import annotations
 
@@ -54,8 +55,10 @@ class CognitiveGraph:
                     n = json.loads(line)
                     nid = n.get("id")
                     if nid:
+                        fresh = nid not in self.nodes  # mdcg_mark 会追加同 id 的状态行：后写覆盖先写，不重复建索引
                         self.nodes[nid] = n
-                        self._index_node(nid, n.get("content", ""))
+                        if fresh:
+                            self._index_node(nid, n.get("content", ""))
                 except json.JSONDecodeError:
                     continue
         if self.edges_file.is_file():
@@ -141,7 +144,10 @@ class CognitiveGraph:
         n_docs = max(1, len(self.nodes))
         direct_scores: dict[str, float] = {}
 
+        include_inactive = bool(args.get("include_inactive"))
         for nid, node in self.nodes.items():
+            if not include_inactive and node.get("state", "active") != "active":
+                continue  # 被修订作废（superseded）等非 active 节点默认不召回
             d_feats = self._node_feats.get(nid) or set()
             shared = q_feats & d_feats
             if not shared:
@@ -155,6 +161,8 @@ class CognitiveGraph:
         final_scores = dict(direct_scores)
         for nid, s in sorted(direct_scores.items(), key=lambda x: -x[1])[:12]:
             for nb, w in self._adj.get(nid, ()):
+                if not include_inactive and self.nodes.get(nb, {}).get("state", "active") != "active":
+                    continue
                 boost = 0.18 * s * w
                 if boost > 0.02:
                     final_scores[nb] = final_scores.get(nb, 0.0) + boost
@@ -192,6 +200,24 @@ class CognitiveGraph:
         with self.edges_file.open("a", encoding="utf-8", newline="\n") as f:
             f.write(json.dumps(edge, ensure_ascii=False) + "\n")
         return {"ok": True, "edge": edge}
+
+    def mark(self, args: dict[str, Any]) -> dict[str, Any]:
+        """打状态：原节点内容不变，只改 state 并记 superseded_by；追加一行同 id 节点到 nodes.jsonl（加载时后写的覆盖先写的）。"""
+        ids = [str(x) for x in (args.get("ids") or [])]
+        state = str(args.get("state") or "superseded")
+        by = args.get("by")
+        marked = []
+        with self.nodes_file.open("a", encoding="utf-8", newline="\n") as f:
+            for nid in ids:
+                node = self.nodes.get(nid)
+                if not node:
+                    continue
+                node["state"] = state
+                if by:
+                    node.setdefault("frontmatter", {})["superseded_by"] = str(by)
+                f.write(json.dumps(node, ensure_ascii=False) + "\n")
+                marked.append(nid)
+        return {"ok": True, "marked": marked, "state": state}
 
     def status(self, _args: dict[str, Any]) -> dict[str, Any]:
         return {
@@ -231,6 +257,7 @@ TOOLS_SPEC = [
             "properties": {
                 "query": {"type": "string", "description": "查询语句或关键词"},
                 "k": {"type": "integer", "default": 10, "minimum": 1, "maximum": 200},
+                "include_inactive": {"type": "boolean", "default": False, "description": "true = 连被作废的节点也返回（调试时间轴看修订链）"},
             },
         },
     },
@@ -254,6 +281,19 @@ TOOLS_SPEC = [
                 "dst": {"type": "string"},
                 "weight": {"type": "number", "default": 0.6},
                 "kind": {"type": "string", "default": "manual"},
+            },
+        },
+    },
+    {
+        "name": "mdcg_mark",
+        "description": "给记忆节点打状态（superseded = 已被修订作废）；只打标，不删原文。",
+        "inputSchema": {
+            "type": "object",
+            "required": ["ids"],
+            "properties": {
+                "ids": {"type": "array", "items": {"type": "string"}},
+                "state": {"type": "string", "default": "superseded"},
+                "by": {"type": "string", "description": "作废它的新节点 id"},
             },
         },
     },
@@ -290,6 +330,7 @@ def main() -> int:
         "mdcg_get": graph.get_node,
         "mdcg_link": graph.link,
         "mdcg_status": graph.status,
+        "mdcg_mark": graph.mark,
     }
 
     for raw in sys.stdin:

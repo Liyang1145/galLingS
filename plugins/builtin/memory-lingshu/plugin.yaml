@@ -13,7 +13,7 @@ requires:
 runtime:
   type: python
   entry: plugin.py:LingshuMemory
-capabilities: [timeline_filter, verbatim]
+capabilities: [timeline_filter, verbatim, status_mark]
 config_schema:
   type: object
   additionalProperties: false

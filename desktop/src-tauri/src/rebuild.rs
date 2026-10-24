@@ -272,7 +272,7 @@ fn publish(window: &WebviewWindow) {
     let paused = power_paused || audio_paused || !window.is_focused().unwrap_or(false)
         || window.is_minimized().unwrap_or(true);
     let script = format!(
-        "(() => {{const b=window.__HAIFENG_HOST__,a=window.__HAIFENG_WINDOWS_AUDIO__; if(b?.protocol!=='haifeng.host-bridge/3'||window.__HAIFENG_WINDOWS_PAGE_ID__!=={encoded_identity}||a?.protocol!=='haifeng.audio-output/1') return null; {audio_script} b.receive({{format:'haifeng.host-state/1',platform:'windows-trial',sequence:{sequence},paused:{paused}}); return {{sequence:b.read().sequence,audio:a.readRequest()}};}})()"
+        "(() => {{const b=window.__HAIFENG_HOST__,a=window.__HAIFENG_WINDOWS_AUDIO__; if(b?.protocol!=='haifeng.host-bridge/3'||window.__HAIFENG_WINDOWS_PAGE_ID__!=={encoded_identity}||a?.protocol!=='haifeng.audio-output/1') return null; {audio_script} b.receive({{format:'haifeng.host-state/1',platform:'windows-trial',sequence:{sequence},paused:{paused}}}); return {{sequence:b.read().sequence,audio:a.readRequest()}};}})()"
     );
     if sequence.saturating_sub(ACKNOWLEDGED.load(Ordering::SeqCst)) > 4 {
         warn_delivery();

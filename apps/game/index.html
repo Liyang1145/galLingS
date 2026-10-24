@@ -2,17 +2,12 @@
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="color-scheme" content="dark" />
-    <title>海风与布丁 · 重构独立试播</title>
+    <title>海风与布丁</title>
   </head>
-  <body>
+  <body class="game-shell">
     <main id="app">
-      <header class="page-heading">
-        <div><p class="eyebrow">海风与布丁 · 重构试播</p><h1>一套剧情核心，一段新的试航。</h1></div>
-        <span class="badge">重构开发入口 · 非正式发行版</span>
-      </header>
-      <p class="scope-note">本页使用独立试播记录。存读档及回退恢复当局进度；周目、结局和 CG 解锁单独保留。章节试阅使用明确初值，不写入玩家存档或成果。通关后入口仅准备只读上下文，联网发送尚未接入。</p>
       <div class="player-surface" id="player-surface">
       <section class="stage" id="stage" aria-label="剧情画面" tabindex="0">
         <div class="scene" id="scene"></div>
@@ -20,50 +15,70 @@
           <div class="title-content">
           <div class="title-copy" id="title-copy"><p id="work-title">海风与布丁</p></div>
           <div class="title-menu">
-            <button id="start" type="button" disabled>从第一话开始</button>
+            <button id="start" type="button" disabled>开始游戏</button>
+            <button id="title-load" type="button" data-panel-open="saves" disabled>读取进度</button>
             <button id="gallery-open" type="button" disabled>鉴赏</button>
-            <button id="aftergame-open" type="button" disabled>通关后玩法</button>
-            <button id="sounds-open" type="button" disabled>声音收藏</button>
             <button id="chapters-open" type="button" disabled>章节试阅</button>
-            <button id="timed" type="button" disabled>限时选择样例</button>
-            <small>试阅与样例使用声明初值<br />不代表真实路线进度</small>
+            <button id="sounds-open" type="button" disabled>声音收藏</button>
+            <button id="title-settings" type="button" data-panel-open="settings" disabled>设置</button>
           </div>
           </div>
+          <p class="title-help">点击 / 空格 继续　·　滚轮上翻 回看　·　H 隐藏界面</p>
         </div>
         <div class="choices" id="choices" hidden></div>
         <section class="menu-overlay" id="menu" aria-label="暂停菜单" hidden>
-          <div><h2>先在海风里歇一会。</h2><p>菜单和后台会暂停文字、声音及有效计时。</p>
-            <button type="button" id="close-menu">继续</button>
-            <button type="button" id="restart">重新开始此入口</button>
-            <button type="button" id="home">返回试播标题</button>
+          <div><h2>暂停</h2>
+            <button type="button" id="close-menu">继续游戏</button>
+            <button type="button" data-panel-open="saves">存档 / 读档</button>
+            <button type="button" data-panel-open="settings">设置</button>
+            <button type="button" data-panel-open="rollback">回退进度</button>
+            <button type="button" id="restart">重新开始</button>
+            <button type="button" id="home">返回标题</button>
+            <button type="button" data-panel-open="tools">开发工具</button>
           </div>
         </section>
       </section>
-      <p id="cover-status" class="preview-note" role="status" aria-live="polite"></p>
-      <button type="button" id="retry-cover" hidden>重试本地标题背景</button>
-      <nav class="controls play-controls" id="play-controls" aria-label="试播控制">
-        <button type="button" id="next" disabled>继续 / 补全文字</button>
+      <nav class="controls play-controls" id="play-controls" aria-label="游玩操作" hidden>
+        <button type="button" id="next" disabled>继续</button>
+        <button type="button" id="dialogue-history-open" disabled>回看</button>
         <button type="button" id="auto" disabled aria-pressed="false">自动</button>
         <button type="button" id="skip" disabled aria-pressed="false">快进已读</button>
-        <button type="button" id="pause" disabled>菜单 / 暂停</button>
-        <button type="button" id="dialogue-history-open" disabled>对白回看</button>
-        <button type="button" id="audio" disabled>启用声音</button>
+        <button type="button" id="toolbar-saves" data-panel-open="saves" disabled>存读档</button>
+        <button type="button" id="toolbar-settings" data-panel-open="settings" disabled>设置</button>
         <button type="button" id="hide-ui" disabled aria-pressed="false" data-reveal-ui>隐藏界面</button>
         <button type="button" id="fullscreen" disabled aria-pressed="false">全屏显示</button>
+        <button type="button" id="audio" disabled>启用声音</button>
+        <button type="button" id="pause" disabled>菜单</button>
       </nav>
+      <aside class="shell-utilities" aria-label="开发版信息">
+        <span>重构开发版 · 记录与旧版隔离</span>
+        <button type="button" id="tools-open" data-panel-open="tools" disabled>开发工具</button>
+      </aside>
+      <p id="entry-banner" class="entry-banner" hidden></p>
+      <p id="shell-message" class="shell-message" role="status" aria-live="polite" hidden></p>
+      <section id="loading-screen" class="loading-screen" aria-label="载入作品">
+        <p role="status">正在载入本地作品，请稍候……</p>
+      </section>
+      <div class="shell-notices">
+      <p id="cover-status" class="preview-note" role="status" aria-live="polite"></p>
+      <button type="button" id="retry-cover" hidden>重试本地标题背景</button>
       <p id="fullscreen-status" class="fullscreen-status" role="status" aria-live="polite"></p>
-      <p class="preview-note" id="preview-note">正在载入本地作品；所有资源就绪后可开始。首次启动可能需要等待资源校验。</p>
-      <p id="status" role="status" aria-live="polite">准备试播</p>
+      <p id="host-notice" class="preview-note" role="status" aria-live="polite"></p>
       <section class="problem" id="problem" role="alert" hidden>
         <p id="problem-message"></p><button id="retry" type="button">重建当前场面</button>
       </section>
       </div>
+      </div>
+      <dialog id="settings-panel" class="gallery-dialog shell-dialog" aria-labelledby="settings-heading">
+        <header><h2 id="settings-heading">设置</h2><button type="button" data-panel-close autofocus>返回</button></header>
       <section id="audio-preferences" class="checkpoint-panel" aria-label="声音设置"></section>
       <section id="reading-preferences" class="checkpoint-panel" aria-label="阅读设置"></section>
       <section id="button-preferences" class="checkpoint-panel" aria-label="按钮声音设置"></section>
       <section id="readout-preferences" class="checkpoint-panel" aria-label="话末数值显示设置"></section>
+      </dialog>
+      <dialog id="saves-panel" class="gallery-dialog shell-dialog" aria-labelledby="checkpoint-heading">
+        <header><h2 id="checkpoint-heading">存档 / 读档</h2><button type="button" data-panel-close autofocus>返回</button></header>
       <section class="checkpoint-panel" aria-labelledby="checkpoint-heading">
-        <h2 id="checkpoint-heading">试播存读档</h2>
         <p>保存当前剧情位置、当局变量和剩余有效时间。读档保留全局的周目与鉴赏成果；“查看”只显示详情。</p>
         <section id="save-slots" aria-label="手动存档槽位选择与目录"></section>
         <div class="controls">
@@ -72,9 +87,9 @@
           <button type="button" id="inspect-timed">查看限时样例检查点</button>
         </div>
         <div class="controls">
-          <label for="restore-voice">本次恢复语音（读档 / 回退）</label>
+          <label for="restore-voice">本次读档语音</label>
           <select id="restore-voice">
-            <option value="">请选择试听方式</option>
+            <option value="">请选择语音方式</option>
             <option value="silent">不播放当前句</option>
             <option value="replay">从头播放当前句</option>
             <option value="resume">按保存的位置续播当前句</option>
@@ -86,9 +101,20 @@
         <p id="save-message" role="status" aria-live="polite">场面就绪并完整显示文字后，可保存到当前入口选中的命名槽位。两个入口分别保留。</p>
         <pre id="save-details" hidden></pre>
       </section>
+      </dialog>
+      <dialog id="rollback-panel" class="gallery-dialog shell-dialog" aria-labelledby="rollback-heading">
+        <header><h2 id="rollback-heading">回退进度</h2><button type="button" data-panel-close autofocus>返回</button></header>
       <section class="checkpoint-panel" aria-labelledby="rollback-heading">
-        <h2 id="rollback-heading">试播进度回退</h2>
-        <p>本次游玩最多保留 500 个稳定检查点。请选择回退位置、范围及上方的恢复语音方式。结局后回退暂未接入；新开、读档或离开页面后重新记录。以上设置仅供试播，正式回退规则仍待确定。</p>
+        <p>本次游玩最多保留 500 个稳定检查点。请选择回退位置、范围及本次语音方式。结局后回退暂未接入；新开、读档或离开页面后重新记录。以上设置仅供试播，正式回退规则仍待确定。</p>
+        <div class="controls">
+          <label for="rollback-voice">本次回退语音</label>
+          <select id="rollback-voice">
+            <option value="">请选择语音方式</option>
+            <option value="silent">不播放当前句</option>
+            <option value="replay">从头播放当前句</option>
+            <option value="resume">按检查点位置续播当前句</option>
+          </select>
+        </div>
         <div class="controls">
           <label for="rollback-target">回退位置</label>
           <select id="rollback-target" disabled><option value="">请选择本次回退位置</option></select>
@@ -105,7 +131,8 @@
         <p id="rollback-message" role="status" aria-live="polite">本次游玩达到稳定检查点后会记录回退位置；回退保留全局成果。</p>
         <p id="rollback-warning" role="status" hidden></p>
       </section>
-      <section class="record-status" aria-label="全局玩家记录">
+      </dialog>
+      <section class="record-status shell-records" aria-label="全局玩家记录" hidden>
         <p id="record-message" role="status" aria-live="polite">第一话的全局记录与进度分开保存，章节试阅与限时样例不写入全局成果。</p>
         <button type="button" id="retry-records" hidden>重试保存全局记录</button>
       </section>
@@ -132,8 +159,19 @@
         <header><h2 id="aftergame-heading">通关后玩法 · 入口准备</h2><button type="button" id="aftergame-close" autofocus>返回主页</button></header>
         <div id="aftergame-body"></div>
       </dialog>
+      <dialog id="tools-panel" class="gallery-dialog shell-dialog" aria-labelledby="tools-heading">
+        <header><h2 id="tools-heading">开发工具</h2><button type="button" data-panel-close autofocus>返回</button></header>
+        <p>当前为重构开发入口，尚未切换正式发行或旧版记录。下列样例与诊断仅供开发试用。</p>
+        <div class="controls">
+          <button id="timed" type="button" disabled>限时选择样例</button>
+          <button id="aftergame-open" type="button" disabled>通关后入口准备</button>
+        </div>
+        <p>限时样例采用全部声明初值 0、周目 1、结局数 0；不是第五话真实路线进度。通关后入口仅显示已保存的事实，未接联网聊天。</p>
+        <p class="preview-note" id="preview-note">正在载入本地作品。</p>
+        <p id="status" role="status" aria-live="polite">准备游玩</p>
       <details class="debug"><summary>当前剧情状态（仅试播）</summary><pre id="debug">尚未开始</pre></details>
       <p class="help">点击画面 / 空格 / → 继续，Esc 打开菜单，A 切换自动，按住 Ctrl 快进已读。H / 画面右键 / 触屏长按可隐藏界面，下一次点击只恢复；隐藏不会暂停。场面向下滑或上滚打开回看，长对白和选项区保留滚动。全屏按钮 / F11 / Alt+Enter 切换显示，浏览器全屏时 Esc 先退出全屏。快进遇到未读或选择会停下。</p>
+      </dialog>
     </main>
     <dialog id="exit-dialog" class="gallery-dialog" aria-labelledby="exit-heading">
       <h2 id="exit-heading">退出前完成保存</h2>

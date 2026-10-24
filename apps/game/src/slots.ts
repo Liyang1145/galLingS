@@ -106,6 +106,18 @@ export class SaveSlots {
 
   slot(entry: SaveEntry): string { return this.#selected[entry]; }
 
+  /** Opening the shell directory selects its range only; it never adopts saved progress. */
+  browse(entry: SaveEntry): void {
+    if (this.#closed || this.#options.blocked()) return;
+    this.#entry = entry;
+    this.#namespace.value = entry;
+    this.#name.value = this.#selected[entry];
+    this.#after = this.#next = null;
+    this.#back = [];
+    this.selection();
+    this.refresh();
+  }
+
   private use(entry: SaveEntry, slotId: string): void {
     this.#name.value = slotId;
     if (this.#selected[entry] === slotId) return;

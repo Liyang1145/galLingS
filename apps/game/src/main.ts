@@ -44,7 +44,10 @@ import type { SaveEntry as Entry } from "./slots.ts";
 import { EndingPanel } from "../../../packages/player/src/web/ending.ts";
 import type { EndingRecordState } from "../../../packages/player/src/web/ending.ts";
 import { StageFade } from "../../../packages/player/src/web/stage-fade.ts";
+import { GamePanels } from "./panels.ts";
+import type { GamePanel } from "./panels.ts";
 import "./style.css";
+import "./shell.css";
 
 type PlayEntry = Entry | "chapter";
 
@@ -83,6 +86,10 @@ async function main(): Promise<void> {
   const audio = element("audio", HTMLButtonElement);
   const hide = element("hide-ui", HTMLButtonElement);
   const playControls = element("play-controls", HTMLElement);
+  const entryBanner = element("entry-banner", HTMLElement);
+  const shellMessage = element("shell-message", HTMLElement);
+  const recordStatus = element("record-message", HTMLElement).parentElement;
+  if (!(recordStatus instanceof HTMLElement)) throw new Error("页面缺少全局记录提示区域");
   const fullscreenButton = element("fullscreen", HTMLButtonElement);
   const save = element("save-checkpoint", HTMLButtonElement);
   const saveMessage = element("save-message", HTMLElement);
@@ -101,6 +108,7 @@ async function main(): Promise<void> {
   const aftergameBody = element("aftergame-body", HTMLElement);
   const dialogueOpen = element("dialogue-history-open", HTMLButtonElement);
   const voiceChoice = element("restore-voice", HTMLSelectElement);
+  const rollbackVoice = element("rollback-voice", HTMLSelectElement);
   const rollbackTarget = element("rollback-target", HTMLSelectElement);
   const rollbackBoundary = element("rollback-boundary", HTMLSelectElement);
   const rollbackButton = element("rollback", HTMLButtonElement);
@@ -160,6 +168,7 @@ async function main(): Promise<void> {
     const player = playerProjection(records);
     recordMessage.textContent = `全局记录已保存：周目 ${player["周目"]} · 已解锁结局 ${player["结局数"]} · CG ${records.cgIds.length}`;
     retryRecords.hidden = true;
+    recordStatus.hidden = true;
     if (owner && !exiting && owner.generation === generation && owner.presentation === presentation
       && mode === "main" && session) {
       try {
@@ -171,6 +180,7 @@ async function main(): Promise<void> {
       } catch (error: unknown) {
         // A feedback observer cannot turn a committed unlock into a failed write.
         recordMessage.textContent += `；结局声音反馈未完成：${error instanceof Error ? error.message : "声音不可用"}`;
+        recordStatus.hidden = false;
       }
     }
     refreshEnding();
@@ -179,19 +189,23 @@ async function main(): Promise<void> {
     recordFailure = error instanceof Error ? error.message : "存储失败";
     recordMessage.textContent = `全局记录尚未保存：${recordFailure}。请重试；待保存记录暂留本页内存。`;
     retryRecords.hidden = false;
+    recordStatus.hidden = false;
     if (terminalRecord && terminalRecord.state.kind !== "committed") terminalRecord.state = { kind: "failed", message: recordFailure };
     refreshEnding();
   });
-  const entryName = (entry: Entry): string => entry === "main" ? "第一话试播" : "限时选择样例";
+  const entryName = (entry: Entry): string => entry === "main" ? "正常游玩" : "限时选择样例";
   let saving = false;
   let storageMessageEpoch = 0;
   let closed = false;
+  let ready = false;
   let session: GameSession | null = null;
   let dialogueOwner: GameSession | null = null;
   let presentation: WebPresentation | null = null;
   let input: PlayerInput | null = null;
   let fullscreen: PlayerFullscreen | null = null;
   let stageFade: StageFade | null = null;
+  let panels: GamePanels | null = null;
+  let panelRollback: AbortController | null = null;
   let endingVisualKey = "";
   let generation = 0;
   let mode: PlayEntry = "main";
@@ -208,7 +222,7 @@ async function main(): Promise<void> {
   let chapterPanel: ChapterPanel | null = null;
   let dialoguePanel: DialoguePanel | null = null;
   const endingPanel = new EndingPanel(stage, {
-    leaveLabel: "返回试播标题",
+    leaveLabel: "返回标题",
     leave: token => { if (currentTerminal(token)) home(); },
     retry: token => { if (currentTerminal(token) && !exiting) void flushRecords().catch(() => {}); },
   });
@@ -302,7 +316,8 @@ async function main(): Promise<void> {
   readoutRoot.append(readoutSummary);
   const buttonEvents = new AbortController();
   connectButtonSounds({
-    buttons: [next, auto, skip, pause, dialogueOpen, audio, hide, fullscreenButton],
+    buttons: [next, auto, skip, pause, dialogueOpen, audio, hide, fullscreenButton,
+      element("toolbar-saves", HTMLButtonElement), element("toolbar-settings", HTMLButtonElement)],
     signal: buttonEvents.signal,
     enabled: () => {
       if (closed || exiting || document.hidden || !session || !buttonPreferences.values(mode).enabled) return false;
@@ -312,12 +327,15 @@ async function main(): Promise<void> {
     play: cue => presentation?.interaction({ type: "cue", cue }),
   });
   const hostStatus = document.createElement("p");
+  const hostNotice = element("host-notice", HTMLElement);
   note.insertAdjacentElement("afterend", hostStatus);
   const host = connectHost(state => {
     const platform = state.issue ? `宿主状态异常，已暂停：${state.issue}`
       : state.platform === "windows-trial" ? "Windows 集成试用 · 记录与旧版隔离"
       : state.platform === "android-trial" ? "Android 集成试用 · 记录与旧版隔离" : "浏览器试播";
     hostStatus.textContent = `${platform}${state.audioIssue ? ` · ${state.audioIssue}` : ""}`;
+    const issue = [state.issue ? `宿主状态异常，已暂停：${state.issue}` : "", state.audioIssue ?? ""].filter(Boolean).join(" · ");
+    if (hostNotice.textContent !== issue) hostNotice.textContent = issue;
     presentation?.setAudioAllowed(state.audioAllowed);
     if (state.paused) stageFade?.cancel();
     session?.send({ type: "pause", reason: "host", paused: state.paused });
@@ -330,6 +348,7 @@ async function main(): Promise<void> {
     if (sounds.open) { closeSounds(); return true; }
     if (gallery.open) { closeGallery(); return true; }
     if (aftergame.open) { closeAftergame(); return true; }
+    if (panels?.close()) return true;
     if (input?.reveal()) return true;
     if (session) { toggleMenu(); return true; }
     return false;
@@ -391,6 +410,7 @@ async function main(): Promise<void> {
     closeSounds();
     closeGallery();
     closeAftergame();
+    panels?.close("leave");
     const wasInert = page.inert;
     page.inert = true;
     exitRetry.hidden = true;
@@ -459,11 +479,12 @@ async function main(): Promise<void> {
     unlockAudio();
     session?.send({ type: "choose", token, choiceId });
   });
-  const layout = connectStageLayout(stage);
+  const layout = connectStageLayout(stage, { controls: playControls });
   input = new PlayerInput({
     stage, scene, choices, controls: playControls, hide, keyboardScopes: [document],
     session: () => session,
-    enabled: () => !closed && !exiting && !dialogue.open && !gallery.open && !chapters.open && !sounds.open && !aftergame.open && !host.state().paused,
+    enabled: () => !closed && !exiting && !panels?.active
+      && !dialogue.open && !gallery.open && !chapters.open && !sounds.open && !aftergame.open && !host.state().paused,
     unlockAudio, menu: toggleMenu, history: openDialogue,
   });
   const displayDriver = nativeFullscreenDriver();
@@ -474,6 +495,79 @@ async function main(): Promise<void> {
     changed: () => { input?.reset(); stageFade?.cancel(); },
     ...(displayDriver ? { driver: displayDriver } : {}),
   });
+
+  panels = new GamePanels({
+    dialogs: {
+      saves: element("saves-panel", HTMLDialogElement),
+      settings: element("settings-panel", HTMLDialogElement),
+      rollback: element("rollback-panel", HTMLDialogElement),
+      tools: element("tools-panel", HTMLDialogElement),
+    },
+    enabled: () => ready && !closed && !exiting && entryPreparation !== entryRequest
+      && !dialogue.open && !gallery.open && !chapters.open && !sounds.open && !aftergame.open,
+    acquirePause: () => {
+      const owner = session;
+      const acquired = !!owner && !owner.view().paused.includes("menu");
+      if (owner && acquired) owner.send({ type: "pause", reason: "menu", paused: true });
+      return () => {
+        if (owner && acquired && !closed && owner === session && !owner.view().disposed) {
+          owner.send({ type: "pause", reason: "menu", paused: false });
+        }
+      };
+    },
+    changed: () => {
+      if (panels?.active !== "rollback") panelRollback?.abort();
+      input?.reset();
+      input?.refresh();
+      refreshShell();
+    },
+    dismissed: () => {
+      // Closing a panel cancels only an entry which has not yet been adopted.
+      if (entryPreparation !== null && entryPreparation === entryRequest) {
+        entryRequest++;
+        entryPreparation = null;
+        session?.send({ type: "pause", reason: "operation", paused: false });
+        notify("已取消尚未采用的开局或读档准备，当前进度保持原状。");
+        refreshSaveControls();
+        refreshEnding();
+      }
+    },
+  });
+
+  function notify(message: string): void {
+    shellMessage.textContent = message;
+    shellMessage.hidden = !message;
+  }
+
+  function refreshShell(view = session?.view()): void {
+    const active = !!view && !view.disposed;
+    const blocked = !ready || closed || exiting || entryPreparation === entryRequest;
+    document.body.dataset.playing = String(active);
+    playControls.hidden = !active || view?.story.phase === "ended";
+    entryBanner.hidden = !active || mode === "main";
+    if (!entryBanner.hidden && entryBanner.textContent !== note.textContent) entryBanner.textContent = note.textContent;
+    for (const button of document.querySelectorAll<HTMLButtonElement>("[data-panel-open]")) {
+      button.disabled = blocked || (button.dataset.panelOpen === "rollback" && !active)
+        || (button.closest(".play-controls") !== null && !active);
+    }
+    element("aftergame-open", HTMLButtonElement).disabled = blocked || active;
+    element("timed", HTMLButtonElement).disabled = blocked;
+  }
+
+  function openPanel(name: GamePanel): void {
+    if (name === "rollback" && !session) return;
+    try {
+      if (!panels?.open(name)) return;
+      if (name === "saves") {
+        slots.browse(mode === "timed" ? "timed" : "main");
+        refreshSaveControls();
+      }
+      if (name === "rollback" && session) showRollback(session.view());
+    } catch (error: unknown) {
+      panels?.close("leave");
+      notify(`面板未能打开：${error instanceof Error ? error.message : "界面不可用"}。当前进度保持原状。`);
+    }
+  }
 
   function show(view: SessionView): void {
     input?.refresh();
@@ -488,7 +582,7 @@ async function main(): Promise<void> {
     dialogueOpen.disabled = view.disposed || view.dialogueCount === 0;
     auto.setAttribute("aria-pressed", String(view.auto));
     skip.setAttribute("aria-pressed", String(view.skipping));
-    pause.textContent = view.paused.includes("menu") ? "关闭菜单" : "菜单 / 暂停";
+    pause.textContent = view.paused.includes("menu") ? "继续游戏" : "菜单";
     const menuHidden = !view.paused.includes("menu");
     if (menu.hidden !== menuHidden) stageFade?.begin();
     menu.hidden = menuHidden;
@@ -506,6 +600,7 @@ async function main(): Promise<void> {
     if (view.disposed || view.skipping || view.problem?.blocking
       || view.paused.some(reason => reason === "background" || reason === "host" || reason === "exit")) stageFade?.cancel();
     showRollback(view);
+    refreshShell(view);
   }
 
   function currentTerminal(token: SessionView["token"]): boolean {
@@ -561,6 +656,7 @@ async function main(): Promise<void> {
       load.textContent = `读取${entryName(entry)} ${JSON.stringify(slots.slot(entry))}`;
     }
     slots.refreshControls();
+    refreshShell(view);
   }
 
   function showRollback(view: SessionView): void {
@@ -579,7 +675,7 @@ async function main(): Promise<void> {
     }
     rollbackTarget.disabled = rollingBack || view.rollbackCount === 0;
     rollbackButton.disabled = rollingBack || !view.canCheckpoint || !rollbackTarget.value
-      || !["silent", "replay", "resume"].includes(voiceChoice.value)
+      || !["silent", "replay", "resume"].includes(rollbackVoice.value)
       || !["within", "across"].includes(rollbackBoundary.value);
     rollbackWarning.hidden = !view.rollbackIssue;
     rollbackWarning.textContent = view.rollbackIssue ?? "";
@@ -620,6 +716,7 @@ async function main(): Promise<void> {
       closeSounds();
       input?.reset();
       owner?.dispose();
+      panels?.close("leave");
       session = null;
       terminalRecord = null;
       endingVisualKey = "";
@@ -646,7 +743,8 @@ async function main(): Promise<void> {
         ? `章节试阅：${trial.entry.title}（${trial.entry.nodeId}）。声明初值 ${JSON.stringify(trial.initialVariables)}，周目 1、结局数 0；不是此前真实路线进度，不写玩家存档、全局成果或正常偏好。`
         : entry === "timed"
         ? "限时选择样例：声明初值 0、周目 1、结局数 0；不是第五话真实路线，不写全局成果。"
-        : "第一话试播：进度与全局成果分别保存，重新开始和读档保留已解锁的结局与 CG。";
+        : "正常游玩：进度与全局成果分别保存，重新开始和读档保留已解锁的结局与 CG。";
+      notify("");
       let sequence = 0;
       const reading = readingPreferences.values(entry);
       const newPresentation = new WebPresentation(scene, source, resources, host.state().audioAllowed,
@@ -707,6 +805,7 @@ async function main(): Promise<void> {
         resetRollback();
       }
       saveMessage.textContent = `未能${restoreVoice ? "读档" : "开局"}：${error instanceof Error ? error.message : "未知错误"}。全局成果与原槽位保持原值。`;
+      notify(saveMessage.textContent);
     } finally {
       if (entryPreparation === request) entryPreparation = null;
       if (!closed && request === entryRequest && session === owner) owner?.send({ type: "pause", reason: "operation", paused: false });
@@ -738,6 +837,7 @@ async function main(): Promise<void> {
     closeAftergame();
     session?.dispose();
     session = null;
+    panels?.close("leave");
     activeChapter = null;
     mode = "main";
     terminalRecord = null;
@@ -757,7 +857,8 @@ async function main(): Promise<void> {
     next.disabled = auto.disabled = skip.disabled = pause.disabled = audio.disabled = save.disabled = dialogueOpen.disabled = true;
     resetRollback();
     resetSaveMessage();
-    status.textContent = "已返回试播标题；旧会话的任务已取消";
+    status.textContent = "已返回标题；旧会话的任务已取消";
+    notify("");
     input?.refresh();
     refreshSaveControls();
   }
@@ -865,12 +966,18 @@ async function main(): Promise<void> {
 
   async function rollback(): Promise<void> {
     const owner = session;
-    const voice = voiceChoice.value;
+    const voice = rollbackVoice.value;
     const boundary = rollbackBoundary.value;
     const targetId = Number(rollbackTarget.value);
     if (!owner || (boundary !== "within" && boundary !== "across")
       || (voice !== "silent" && voice !== "replay" && voice !== "resume")) return;
-    await rollbackTo(owner, { targetId, voice, crossChoices: boundary === "across" });
+    if (panels?.active !== "rollback" || panelRollback) return;
+    const controller = new AbortController();
+    panelRollback = controller;
+    try {
+      const result = await rollbackTo(owner, { targetId, voice, crossChoices: boundary === "across" }, controller.signal);
+      if (result.accepted && !controller.signal.aborted && owner === session) panels?.close("leave");
+    } finally { if (panelRollback === controller) panelRollback = null; }
   }
 
   async function rollbackTo(
@@ -894,7 +1001,7 @@ async function main(): Promise<void> {
     rollbackMessage.textContent = "正在准备回退位置和当前全局记录……";
     const cancelPreparation = (): void => {
       if (!closed && request === entryRequest && owner === session && !adopted) {
-        rollbackMessage.textContent = "回看已关闭，本次尚未采用的回退已取消。已发起的全局记录提交仍可完成。";
+        rollbackMessage.textContent = "回退界面已关闭，本次尚未采用的回退已取消。已发起的全局记录提交仍可完成。";
         owner.send({ type: "pause", reason: "operation", paused: false });
       }
     };
@@ -928,7 +1035,7 @@ async function main(): Promise<void> {
       signal?.removeEventListener("abort", cancelPreparation);
       rollingBack = false;
       if (!closed && request === entryRequest && owner === session) {
-        if (signal?.aborted && adopted) rollbackMessage.textContent = "回退已采用；关闭回看不会撤销已经恢复的进度。";
+        if (signal?.aborted && adopted) rollbackMessage.textContent = "回退已采用；关闭界面不会撤销已经恢复的进度。";
         owner.send({ type: "pause", reason: "operation", paused: false });
       }
       if (!closed && session) showRollback(session.view());
@@ -952,6 +1059,7 @@ async function main(): Promise<void> {
       if (!closed && request === entryRequest && mediaRequest === galleryRequest) {
         closeGallery();
         recordMessage.textContent = `鉴赏未能打开：${error instanceof Error ? error.message : "记录或本地图片读取失败"}。已有全局成果保留。`;
+        recordStatus.hidden = false;
       }
     }
   }
@@ -986,7 +1094,7 @@ async function main(): Promise<void> {
       soundPanel.refresh(host.state().audioAllowed);
     } catch (error: unknown) {
       closeSounds();
-      status.textContent = `声音收藏未能打开：${error instanceof Error ? error.message : "本地目录读取失败"}。主线仍可开始，已有成果保留。`;
+      notify(`声音收藏未能打开：${error instanceof Error ? error.message : "本地目录读取失败"}。主线仍可开始，已有成果保留。`);
     }
   }
 
@@ -1012,7 +1120,7 @@ async function main(): Promise<void> {
       chapters.showModal();
     } catch (error: unknown) {
       closeChapters();
-      status.textContent = `章节目录未能打开：${error instanceof Error ? error.message : "本地章节读取失败"}。仍可从第一话开始。`;
+      notify(`章节目录未能打开：${error instanceof Error ? error.message : "本地章节读取失败"}。仍可从第一话开始。`);
     }
   }
 
@@ -1117,7 +1225,10 @@ async function main(): Promise<void> {
   element("chapters-close", HTMLButtonElement).onclick = closeChapters;
   chapters.addEventListener("cancel", event => { event.preventDefault(); closeChapters(); });
   chapters.addEventListener("close", () => { if (!chapters.open) chapterPanel?.close(); });
-  element("aftergame-open", HTMLButtonElement).onclick = () => { void openAftergame(); };
+  element("aftergame-open", HTMLButtonElement).onclick = () => {
+    panels?.close("leave");
+    void openAftergame();
+  };
   element("aftergame-close", HTMLButtonElement).onclick = closeAftergame;
   aftergame.addEventListener("cancel", event => { event.preventDefault(); closeAftergame(); });
   aftergame.addEventListener("close", () => { if (!aftergame.open) aftergamePanel?.close(); });
@@ -1125,12 +1236,15 @@ async function main(): Promise<void> {
   element("dialogue-history-close", HTMLButtonElement).onclick = closeDialogue;
   dialogue.addEventListener("cancel", event => { event.preventDefault(); closeDialogue(); });
   dialogue.addEventListener("close", () => { if (!dialogue.open) closeDialogue(); });
+  for (const button of document.querySelectorAll<HTMLButtonElement>("[data-panel-open]")) {
+    button.addEventListener("click", () => {
+      const name = button.dataset.panelOpen;
+      if (name === "saves" || name === "settings" || name === "rollback" || name === "tools") openPanel(name);
+    }, { signal: buttonEvents.signal });
+  }
   exitDialog.addEventListener("cancel", event => { event.preventDefault(); host.cancelExit(); });
-  voiceChoice.onchange = () => {
-    refreshSaveControls();
-    if (session) showRollback(session.view());
-  };
-  rollbackTarget.onchange = rollbackBoundary.onchange = () => { if (session) showRollback(session.view()); };
+  voiceChoice.onchange = () => refreshSaveControls();
+  rollbackTarget.onchange = rollbackBoundary.onchange = rollbackVoice.onchange = () => { if (session) showRollback(session.view()); };
   rollbackButton.onclick = () => { void rollback(); };
   retryRecords.onclick = () => { void flushRecords().catch(() => {}); };
   const visibility = (): void => {
@@ -1142,6 +1256,7 @@ async function main(): Promise<void> {
   document.addEventListener("visibilitychange", visibility);
   const dispose = (): void => {
     closed = true;
+    panels?.dispose();
     stageFade?.dispose();
     entryRequest++;
     storageMessageEpoch++;
@@ -1171,12 +1286,15 @@ async function main(): Promise<void> {
     host.dispose();
     choicePanel.dispose();
     layout.dispose();
+    delete document.body.dataset.playing;
     document.removeEventListener("visibilitychange", visibility);
   };
   window.addEventListener("pagehide", dispose, { once: true });
   import.meta.hot?.dispose(dispose);
   await Promise.all([audioPreferences.load(), readingPreferences.load(), buttonPreferences.load(), readoutPreferences.load()]);
   if (closed || startup.signal.aborted) return;
+  ready = true;
+  element("loading-screen", HTMLElement).hidden = true;
   note.textContent = "本地内容已载入。可以从第一话开始，或选择明确标注初始条件的章节试阅与限时样例。";
   for (const id of ["start", "timed", "gallery-open", "sounds-open", "chapters-open", "aftergame-open"]) element(id, HTMLButtonElement).disabled = false;
   refreshSaveControls();
@@ -1192,6 +1310,8 @@ void main().catch((error: unknown) => {
   const retry = document.getElementById("retry");
   if (message) message.textContent = `内容未载入：${error instanceof Error ? error.message : "未知错误"}。请使用完整的同一份游戏包重试。`;
   if (panel) panel.hidden = false;
+  const loading = document.getElementById("loading-screen");
+  if (loading) loading.hidden = true;
   if (status) status.textContent = "内容加载失败，尚未开始游玩";
   if (retry instanceof HTMLButtonElement) {
     retry.disabled = false;

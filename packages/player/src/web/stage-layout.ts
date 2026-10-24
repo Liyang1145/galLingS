@@ -1,11 +1,11 @@
 const PROPERTIES = [
-  "--stage-scale", "--stage-unit", "--stage-left", "--stage-top", "--stage-canvas-height",
+  "--stage-scale", "--stage-unit", "--stage-left", "--stage-top", "--stage-canvas-height", "--stage-controls-inset",
   "--portrait-scene-top", "--portrait-dialogue-top", "--portrait-dialogue-height",
   "--portrait-choice-top", "--portrait-choice-height", "--portrait-title-top", "--portrait-text-scale",
 ] as const;
 
 /** Shared author-coordinate layout only; resizing never accesses story, media or timers. */
-export function connectStageLayout(stage: HTMLElement): { dispose(): void } {
+export function connectStageLayout(stage: HTMLElement, options: { controls?: HTMLElement } = {}): { dispose(): void } {
   let closed = false;
   const update = (width: number, height: number): void => {
     if (closed || !Number.isFinite(width) || width <= 0 || !Number.isFinite(height) || height <= 0) return;
@@ -18,17 +18,22 @@ export function connectStageLayout(stage: HTMLElement): { dispose(): void } {
     stage.style.setProperty("--stage-canvas-height", `${portrait ? height / scale : 720}px`);
     stage.dataset.layout = portrait ? "portrait" : "landscape";
     stage.dataset.smallStage = String(!portrait && scale < 0.75);
+    const controls = options.controls;
+    const inset = controls && !controls.hidden
+      ? Math.max(0, height - (controls.getBoundingClientRect().top - stage.getBoundingClientRect().top)) : 0;
+    stage.style.setProperty("--stage-controls-inset", `${inset / scale}px`);
     if (!portrait) {
       for (const property of PROPERTIES) if (property.startsWith("--portrait-")) stage.style.removeProperty(property);
       return;
     }
-    // The original fit() rules, adapted to the trial's controls remaining outside the stage.
+    // Game controls may overlay the stage; independent editor controls remain outside it.
+    const availableHeight = Math.max(0, height - inset);
     const sceneHeight = 720 * scale;
-    const top = Math.round(Math.min(48, Math.max(0, (height - sceneHeight - 480) / 3)));
+    const top = Math.round(Math.min(48, Math.max(0, (availableHeight - sceneHeight - 480) / 3)));
     const dialogueTop = top + sceneHeight + 16;
-    const dialogueHeight = Math.round(Math.max(150, Math.min(240, (height - dialogueTop - 16) * 0.62)));
+    const dialogueHeight = Math.round(Math.max(150, Math.min(240, (availableHeight - dialogueTop - 16) * 0.62)));
     let choiceTop = dialogueTop + dialogueHeight + 10;
-    let choiceHeight = height - 14 - choiceTop;
+    let choiceHeight = availableHeight - 14 - choiceTop;
     if (choiceHeight < 150) {
       choiceTop = top + 6;
       choiceHeight = dialogueTop + dialogueHeight - top - 12;
@@ -43,10 +48,13 @@ export function connectStageLayout(stage: HTMLElement): { dispose(): void } {
     stage.style.setProperty("--portrait-text-scale", String(0.68 / scale));
   };
   const resize = new ResizeObserver(entries => {
-    for (const entry of entries) if (entry.target === stage) update(entry.contentRect.width, entry.contentRect.height);
+    if (entries.some(entry => entry.target === stage || entry.target === options.controls)) {
+      update(stage.clientWidth, stage.clientHeight);
+    }
   });
   update(stage.clientWidth, stage.clientHeight);
   resize.observe(stage);
+  if (options.controls) resize.observe(options.controls);
   return {
     dispose: () => {
       if (closed) return;

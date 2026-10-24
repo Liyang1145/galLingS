@@ -32,8 +32,15 @@
         <aside aria-label="节点列表">
           <label for="search">查找 ID、章节、说话人或对白</label>
           <input id="search" type="search" placeholder="输入关键词" />
-          <p id="count" class="help"></p>
-          <select id="nodes" size="18" aria-label="选择已有节点"></select>
+          <p id="count" class="help" role="status" aria-live="polite"></p>
+          <select id="nodes" size="18" aria-label="选择已有节点" aria-describedby="count"></select>
+          <div class="controls node-pager" role="group" aria-label="节点目录分页">
+            <button id="nodes-previous" type="button" disabled>上一页</button>
+            <span id="nodes-page">尚未读取节点</span>
+            <button id="nodes-next" type="button" disabled>下一页</button>
+            <button id="nodes-current" type="button" disabled>定位当前节点</button>
+          </div>
+          <p class="help">每页 200 个匹配节点，按作者顺序排列。翻页和搜索保留当前编辑节点与草稿；引用或流程定位不会自动清除筛选。</p>
         </aside>
         <section aria-label="编辑与预览">
           <h2 id="node-title" tabindex="-1">请选择节点</h2>

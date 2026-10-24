@@ -16,6 +16,8 @@ import { AuthorFlow } from "./flow.ts";
 import "../../game/src/style.css";
 import "./style.css";
 
+type AuthorNode = AuthorDocument["content"]["nodes"][number];
+
 function element<T extends HTMLElement>(id: string, kind: { new(...args: never[]): T }): T {
   const result = document.getElementById(id);
   if (!(result instanceof kind)) throw new Error(`编辑页面缺少元素：${id}`);
@@ -30,6 +32,8 @@ const el = {
   message: element("message", HTMLElement), source: element("source-info", HTMLElement),
   search: element("search", HTMLInputElement), count: element("count", HTMLElement),
   nodes: element("nodes", HTMLSelectElement), nodeTitle: element("node-title", HTMLElement),
+  nodePrevious: button("nodes-previous"), nodeNext: button("nodes-next"), nodeCurrent: button("nodes-current"),
+  nodePage: element("nodes-page", HTMLElement),
   speaker: element("speaker", HTMLInputElement), text: element("text", HTMLTextAreaElement),
   fieldNote: element("field-note", HTMLElement), reset: button("reset-node"),
   previewStart: button("preview-start"), previewSelected: button("preview-selected"),
@@ -59,6 +63,12 @@ let importer: AuthorDraftImporter | null = null;
 let references: AuthorReferences | null = null;
 let flow: AuthorFlow | null = null;
 let checkpoints: PreviewCheckpoints | null = null;
+const NODE_PAGE_SIZE = 200;
+let nodePage = 0;
+let nodeList: {
+  source: AuthorDocument | null; revision: number; query: string;
+  matches: readonly AuthorNode[];
+} | null = null;
 
 function message(value: string, error = false): void {
   el.message.textContent = value;
@@ -109,6 +119,7 @@ function controls(): void {
   el.text.disabled = !node || locked || !fields.includes("text");
   el.nodes.disabled = locked;
   el.search.disabled = locked;
+  nodePaging();
   importer?.setEnabled(!!baseline && operation === null);
   references?.setAvailable(!!baseline && !locked);
   flow?.setAvailable(!!baseline && !locked);
@@ -135,32 +146,64 @@ function nodeForm(): void {
   controls();
 }
 
-function list(): void {
+function nodePaging(): void {
+  const locked = disposed || !baseline || operation === "load" || operation === "save";
+  const total = nodeList?.matches.length ?? 0;
+  el.nodePrevious.disabled = locked || nodePage === 0;
+  el.nodeNext.disabled = locked || (nodePage + 1) * NODE_PAGE_SIZE >= total;
+  el.nodeCurrent.disabled = locked || !selectedNode();
+}
+
+function list(options: { resetPage?: boolean; revealSelected?: boolean; resetScroll?: boolean } = {}): void {
   const query = el.search.value.trim().toLocaleLowerCase();
-  const matches = baseline?.content.nodes.filter(node => [
-    node.id, node.chapter, textFor(node.id, "speaker", node.presentation.speaker),
-    textFor(node.id, "text", node.presentation.text),
-  ].some(value => value.toLocaleLowerCase().includes(query))) ?? [];
-  const visible = matches.slice(0, 200);
-  const optionFor = (node: AuthorDocument["content"]["nodes"][number]): HTMLOptionElement => {
+  const previousPage = nodePage;
+  const sameSource = nodeList?.source === baseline;
+  const sameQuery = nodeList?.query === query;
+  if (!nodeList || !sameSource || !sameQuery || nodeList.revision !== revision) {
+    nodeList = { source: baseline, revision, query, matches: baseline?.content.nodes.filter(node => [
+      node.id, node.chapter, textFor(node.id, "speaker", node.presentation.speaker),
+      textFor(node.id, "text", node.presentation.text),
+    ].some(value => value.toLocaleLowerCase().includes(query))) ?? [] };
+  }
+  const matches = nodeList.matches;
+  if (options.resetPage || !sameSource || !sameQuery) nodePage = 0;
+  const selectedIndex = matches.findIndex(node => node.id === selected);
+  if (options.revealSelected && selectedIndex >= 0) nodePage = Math.floor(selectedIndex / NODE_PAGE_SIZE);
+  const pages = Math.ceil(matches.length / NODE_PAGE_SIZE);
+  nodePage = Math.min(nodePage, Math.max(0, pages - 1));
+  const offset = nodePage * NODE_PAGE_SIZE;
+  const visible = matches.slice(offset, offset + NODE_PAGE_SIZE);
+  const optionFor = (node: AuthorNode): HTMLOptionElement => {
     const option = document.createElement("option");
     const edited = drafts.has(key(node.id, "speaker")) || drafts.has(key(node.id, "text"));
     option.value = node.id;
     option.textContent = `${edited ? "＊" : ""}${node.id} · ${node.chapter} · ${textFor(node.id, "text", node.presentation.text).slice(0, 55)}`;
     return option;
   };
-  const options: (HTMLOptionElement | HTMLOptGroupElement)[] = visible.map(optionFor);
+  const rows: (HTMLOptionElement | HTMLOptGroupElement)[] = visible.map(optionFor);
   const current = selectedNode();
   const pinned = !!current && !visible.some(node => node.id === current.id);
   if (current && pinned) {
     const group = document.createElement("optgroup");
-    group.label = "当前定位节点（筛选外或超过显示上限）";
+    group.label = selectedIndex < 0 ? "当前编辑节点（不匹配筛选）" : "当前编辑节点（不在本页）";
     group.append(optionFor(current));
-    options.unshift(group);
+    rows.unshift(group);
   }
-  el.nodes.replaceChildren(...options);
+  const scroll = el.nodes.scrollTop;
+  el.nodes.replaceChildren(...rows);
   el.nodes.value = selected;
-  el.count.textContent = `匹配 ${matches.length} 个节点，显示前 ${visible.length} 个${pinned ? "，另保留当前定位节点" : ""}；草稿修改 ${drafts.size} 个字段。`;
+  if (!options.revealSelected) {
+    el.nodes.scrollTop = !options.resetPage && !options.resetScroll
+      && sameSource && sameQuery && previousPage === nodePage ? scroll : 0;
+  }
+  const count = !baseline ? "读取作者源后可浏览节点。"
+    : `共 ${baseline.content.nodes.length} 个节点，匹配 ${matches.length} 个；`
+      + (visible.length ? `本页第 ${offset + 1}～${offset + visible.length} 项。` : "本页没有匹配项。")
+      + (pinned ? selectedIndex < 0 ? "当前编辑节点不匹配筛选，另固定显示。" : "当前编辑节点在其他页，另固定显示。" : "")
+      + `草稿修改 ${drafts.size} 个字段。`;
+  if (el.count.textContent !== count) el.count.textContent = count;
+  el.nodePage.textContent = pages ? `第 ${nodePage + 1} / ${pages} 页` : baseline ? "无匹配页" : "尚未读取节点";
+  nodePaging();
 }
 
 function change(field: "speaker" | "text"): void {
@@ -179,16 +222,16 @@ function change(field: "speaker" | "text"): void {
   }
 }
 
-function draftChanged(cancelImport = true, refreshForm = false): void {
+function draftChanged(options: { cancelImport?: boolean; refreshForm?: boolean; revealSelected?: boolean } = {}): void {
   revision++;
-  if (cancelImport) importer?.invalidate();
+  if (options.cancelImport !== false) importer?.invalidate();
   references?.invalidate();
   flow?.invalidate();
   checkpoints?.invalidatePending("草稿已变化，未采用旧检查点读取；已有待用数据保留，恢复时仍须匹配当前修订。");
   el.discard.checked = false;
   preview.draftChanged();
-  list();
-  if (refreshForm) nodeForm();
+  list({ revealSelected: options.revealSelected === true });
+  if (options.refreshForm) nodeForm();
   else controls();
 }
 
@@ -198,7 +241,7 @@ function historyStep(direction: "undo" | "redo"): void {
     const step = direction === "undo" ? drafts.undo() : drafts.redo();
     if (!step) return;
     if (step.nodeId !== null) selected = step.nodeId;
-    draftChanged(true, true);
+    draftChanged({ refreshForm: true, revealSelected: step.nodeId !== null });
     message(`已${direction === "undo" ? "撤销" : "重做"}：${step.label}。仅更新本页草稿，请重新预览当前修改。`);
   } catch (error: unknown) {
     message(error instanceof Error ? error.message : "草稿历史未采用", true);
@@ -265,7 +308,7 @@ async function perform(kind: "load" | "preview" | "save", start: PreviewStart = 
       el.discard.checked = false;
       if (!result.content.nodes.some(node => node.id === selected)) selected = result.content.entryNodeId;
       el.source.textContent = `作者源 SHA-256：${result.sourceSha256}；节点 ${result.content.nodes.length} 个；内容修订：${result.content.revision}`;
-      list();
+      list({ revealSelected: true });
       nodeForm();
       references?.refresh();
       flow?.refresh();
@@ -306,7 +349,22 @@ button("stop").addEventListener("click", () => {
   controls();
   message("已取消采用预览结果；草稿保留。后台转换若尚未结束，下次请求可能需要稍后重试。");
 }, { signal });
-el.search.addEventListener("input", list, { signal });
+el.search.addEventListener("input", () => { list({ resetPage: true }); }, { signal });
+const turnNodePage = (direction: -1 | 1): void => {
+  if (disposed || !baseline || operation === "load" || operation === "save") return;
+  const last = Math.max(0, Math.ceil((nodeList?.matches.length ?? 0) / NODE_PAGE_SIZE) - 1);
+  nodePage = Math.max(0, Math.min(last, nodePage + direction));
+  drafts.closeGroup();
+  list({ resetScroll: true });
+};
+el.nodePrevious.addEventListener("click", () => turnNodePage(-1), { signal });
+el.nodeNext.addEventListener("click", () => turnNodePage(1), { signal });
+el.nodeCurrent.addEventListener("click", () => {
+  if (disposed || !selectedNode() || operation === "load" || operation === "save") return;
+  drafts.closeGroup();
+  list({ revealSelected: true });
+  el.nodes.focus();
+}, { signal });
 el.nodes.addEventListener("change", () => { selected = el.nodes.value; list(); nodeForm(); }, { signal });
 for (const field of ["speaker", "text"] as const) {
   const input = el[field];
@@ -324,7 +382,7 @@ el.reset.addEventListener("click", () => {
   if (!selected || operation === "load" || operation === "save") return;
   const result = drafts.removeNode(selected);
   if (!result.changed) return;
-  draftChanged(true, true);
+  draftChanged({ refreshForm: true });
   message(result.overflow ? "已还原本节点草稿；本次操作超过历史容量，未保留撤销记录。"
     : "已还原本节点草稿，可用“撤销草稿操作”找回；作者文件未改动。");
 }, { signal });
@@ -347,6 +405,8 @@ function dispose(): void {
   references?.dispose();
   flow?.dispose();
   checkpoints?.dispose();
+  nodeList = null;
+  el.nodes.replaceChildren();
   drafts.clear();
   events.abort();
 }
@@ -368,7 +428,7 @@ importer = new AuthorDraftImporter({
       throw new Error("当前源或草稿已改变，请重新导入比较。");
     }
     const change = drafts.replace(result);
-    if (change.changed) draftChanged(false, true);
+    if (change.changed) draftChanged({ cancelImport: false, refreshForm: true });
     message(`导入结果已采用到当前作者源上的草稿${change.overflow ? "，本次操作超过历史容量，未保留撤销记录" : ""}；请预览，确认后再点击“保存到作者源”。`);
   },
 });
@@ -391,7 +451,7 @@ function navigateNode(nodeId: string): void {
   if (disposed || operation === "load" || operation === "save"
     || !baseline?.content.nodes.some(node => node.id === nodeId)) return;
   selected = nodeId;
-  list();
+  list({ revealSelected: true });
   nodeForm();
   el.nodeTitle.focus();
 }

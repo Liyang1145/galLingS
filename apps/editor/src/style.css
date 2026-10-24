@@ -11,6 +11,10 @@
 .editor-layout textarea { resize: vertical; line-height: 1.7; }
 #nodes { font-size: .8rem; height: min(70vh, 760px); padding: 4px; }
 #nodes option { padding: 7px; }
+.node-pager { gap: 8px; align-items: center; margin-top: 12px; }
+.node-pager span { font-size: .8rem; color: #bdd8df; overflow-wrap: anywhere; }
+.node-pager button { min-height: 40px; padding: 8px 10px; font-size: .8rem; }
+.node-pager button:focus-visible { outline: 3px solid #aed9e7; outline-offset: 2px; }
 #source-info { overflow-wrap: anywhere; }
 #message { white-space: pre-wrap; overflow-wrap: anywhere; line-height: 1.7; }
 #preview-status { min-height: 3em; color: #bdd8df; font-size: .85rem; line-height: 1.7; overflow-wrap: anywhere; }

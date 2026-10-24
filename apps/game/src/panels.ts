@@ -12,11 +12,11 @@ interface Options {
   };
 }
 
-/** Owns only shell dialogs and their pause lease; progress stays with the application. */
+/** Owns shell dialogs, opening lifetimes and pause leases; progress stays with the application. */
 export class GamePanels {
   readonly #options: Options;
   readonly #events = new AbortController();
-  #current: { name: GamePanel; dialog: HTMLDialogElement; release: () => void } | null = null;
+  #current: { name: GamePanel; dialog: HTMLDialogElement; release: () => void; lifetime: AbortController } | null = null;
   #disposed = false;
 
   constructor(options: Options) {
@@ -39,18 +39,25 @@ export class GamePanels {
 
   get active(): GamePanel | null { return this.#current?.name ?? null; }
 
+  /** Read-only lifetime of this exact opening; reopening the same dialog creates a new signal. */
+  signalFor(name: GamePanel): AbortSignal | null {
+    return this.#current?.name === name ? this.#current.lifetime.signal : null;
+  }
+
   open(name: GamePanel): boolean {
     if (this.#disposed || !this.#options.enabled() || this.#current) return false;
     const dialog = this.#options.dialogs[name];
+    const lifetime = new AbortController();
     let release = (): void => {};
     try {
       this.#options.display.open(dialog, () => {
         release = this.#options.acquirePause();
-        this.#current = { name, dialog, release };
+        this.#current = { name, dialog, release, lifetime };
       });
       this.#options.changed();
       return true;
     } catch (error: unknown) {
+      lifetime.abort();
       this.#current = null;
       if (dialog.open) this.#options.display.close(dialog, false);
       release();
@@ -63,6 +70,7 @@ export class GamePanels {
     const current = this.#current;
     if (!current) return false;
     this.#current = null;
+    current.lifetime.abort();
     this.#options.display.close(current.dialog, reason === "dismiss");
     if (reason === "dismiss") this.#options.dismissed();
     current.release();

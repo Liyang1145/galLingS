@@ -6,6 +6,7 @@ interface Options {
   root: HTMLElement;
   repositories: Readonly<Record<SaveEntry, SaveRepository>>;
   label(entry: SaveEntry): string;
+  scope(): AbortSignal | null;
   blocked(): boolean;
   changed(): void;
 }
@@ -117,6 +118,7 @@ export class SaveSlots {
     this.clearRows();
     this.#page.textContent = "";
     this.selection();
+    this.#options.changed();
     this.refresh();
   }
 
@@ -174,15 +176,18 @@ export class SaveSlots {
   }
 
   private async load(after: string | null, back: (string | null)[]): Promise<void> {
-    if (this.#closed || this.#options.blocked()) return;
+    const scope = this.#options.scope();
+    if (this.#closed || this.#options.blocked() || !scope || scope.aborted) return;
     const entry = this.#entry;
     const epoch = ++this.#epoch;
+    const active = (): boolean => !this.#closed && epoch === this.#epoch && entry === this.#entry
+      && !scope.aborted && this.#options.scope() === scope;
     this.#loading = true;
     this.#status.textContent = `正在读取${this.#options.label(entry)}槽位目录……`;
     this.refreshControls();
     try {
       const page = await this.#options.repositories[entry].list({ after, limit: 20 });
-      if (this.#closed || epoch !== this.#epoch || entry !== this.#entry) return;
+      if (!active()) return;
       this.#after = after;
       this.#back = back;
       this.#next = page.next;
@@ -194,10 +199,10 @@ export class SaveSlots {
       this.#status.textContent = `本页 ${page.items.length} 个已保存槽位，按地址顺序显示。`
         + (page.items.length ? "查看和读档会重新读取，不直接采用目录摘要。" : "此页没有已保存槽位，可选择名称后手动保存。");
     } catch (error: unknown) {
-      if (this.#closed || epoch !== this.#epoch) return;
+      if (!active()) return;
       this.#status.textContent = `目录读取失败：${error instanceof Error ? error.message : "存储错误"}。已有存档未改，可刷新重试。`;
     } finally {
-      if (!this.#closed && epoch === this.#epoch) { this.#loading = false; this.refreshControls(); }
+      if (active()) { this.#loading = false; this.refreshControls(); }
     }
   }
 

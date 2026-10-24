@@ -265,7 +265,8 @@ async function main(): Promise<void> {
   });
   const slots = new SaveSlots({
     root: element("save-slots", HTMLElement), repositories: saves, label: entryName,
-    blocked: () => closed || exiting || entryPreparation === entryRequest,
+    scope: () => panels?.signalFor("saves") ?? null,
+    blocked: () => closed || exiting || entryPreparation === entryRequest || !panels?.signalFor("saves"),
     changed: () => { resetSaveMessage(); refreshSaveControls(); },
   });
   const audioRepository = new AudioPreferenceRepository(content.workId, { kind: "development", id: "normal-entry" },
@@ -605,7 +606,7 @@ async function main(): Promise<void> {
       if (panels?.active !== "rollback") panelRollback?.abort();
       input?.reset();
       input?.refresh();
-      refreshShell();
+      refreshSaveControls();
     },
     dismissed: () => {
       // Closing a panel cancels only an entry which has not yet been adopted.
@@ -1007,14 +1008,22 @@ async function main(): Promise<void> {
     saveDetails.hidden = false;
   }
 
+  function currentSaveFeedback(request: number, scope: AbortSignal): boolean {
+    return !closed && !exiting && !scope.aborted && panels?.signalFor("saves") === scope
+      && request === storageMessageEpoch;
+  }
+
   async function saveCheckpoint(): Promise<void> {
     const owner = session;
     const entry = mode;
-    if (entry === "chapter" || exiting || closed || entryPreparation === entryRequest || !owner || saving || !owner.view().canCheckpoint) return;
+    const scope = panels?.signalFor("saves");
+    if (!scope || scope.aborted || entry === "chapter" || exiting || closed
+      || entryPreparation === entryRequest || !owner || saving || !owner.view().canCheckpoint) return;
     const slotId = slots.slot(entry);
     const savedPresentation = presentation;
     const request = ++storageMessageEpoch;
     let feedbackRequest = request;
+    let feedbackScope = scope;
     saving = true;
     save.disabled = true;
     saveDetails.hidden = true;
@@ -1034,17 +1043,18 @@ async function main(): Promise<void> {
         const inspected = await saves[entry].save(slotId, payload.checkpoint, payload.savedAt);
         // Catalogue, display and optional audio observers cannot reject a committed write.
         try {
-          if (!closed) slots.saved(entry);
-          if (!closed && feedbackRequest === storageMessageEpoch) {
+          if (!closed && !feedbackScope.aborted && panels?.signalFor("saves") === feedbackScope) slots.saved(entry);
+          if (currentSaveFeedback(feedbackRequest, feedbackScope)) {
             describeSave(entry, inspected);
             saveMessage.textContent = `${entryName(entry)}进度已保存到 ${JSON.stringify(slotId)}；可刷新页面后查看或读取。周目与鉴赏成果单独保留。`;
-            if (!exiting && owner === session && savedPresentation === presentation && !owner.view().skipping) {
-              try { savedPresentation?.interaction({ type: "cue", cue: "save" }); }
-              catch { /* Optional feedback has no effect on the committed checkpoint. */ }
-            }
+          }
+          if (!closed && !exiting && feedbackRequest === storageMessageEpoch && owner === session
+            && savedPresentation === presentation && !owner.view().skipping) {
+            try { savedPresentation?.interaction({ type: "cue", cue: "save" }); }
+            catch { /* Optional feedback has no effect on the committed checkpoint. */ }
           }
         } catch (error: unknown) {
-          if (!closed && feedbackRequest === storageMessageEpoch) saveMessage.textContent =
+          if (currentSaveFeedback(feedbackRequest, feedbackScope)) saveMessage.textContent =
             `${entryName(entry)}进度已保存到 ${JSON.stringify(slotId)}；界面刷新未完成：${error instanceof Error ? error.message : "显示错误"}。可再次查看原槽位。`;
         }
       }, `${entryName(entry)} · 槽位 ${JSON.stringify(slotId)}`);
@@ -1052,14 +1062,16 @@ async function main(): Promise<void> {
         pendingSaves.register(key, {
           view: () => tracked.view(),
           location: () => payload ? { nodeId: payload.checkpoint.story.nodeId, savedAt: payload.savedAt } : null,
-          retry: () => { void retryProgressSave(tracked, epoch => { feedbackRequest = epoch; }); },
+          retry: () => {
+            void retryProgressSave(tracked, (epoch, scope) => { feedbackRequest = epoch; feedbackScope = scope; });
+          },
         });
       } catch (error: unknown) {
         saveMessage.textContent = `原保存已发起，重试状态暂未显示：${error instanceof Error ? error.message : "界面不可用"}。实际写入仍按原操作处理。`;
       }
       await tracked.result;
     } catch (error: unknown) {
-      if (!closed && request === storageMessageEpoch) {
+      if (currentSaveFeedback(feedbackRequest, feedbackScope)) {
         saveMessage.textContent = `保存尚未提交：${error instanceof Error ? error.message : "未知存储错误"}。可在“尚未完成的手动存档”中重试原操作，或显式保存当前进度；原槽位未先删除。`;
       }
     } finally {
@@ -1068,17 +1080,19 @@ async function main(): Promise<void> {
     }
   }
 
-  async function retryProgressSave(tracked: TrackedWrite, report: (epoch: number) => void): Promise<void> {
-    if (closed || exiting || saving || entryPreparation === entryRequest || tracked.view().state !== "failed") return;
+  async function retryProgressSave(tracked: TrackedWrite, report: (epoch: number, scope: AbortSignal) => void): Promise<void> {
+    const scope = panels?.signalFor("saves");
+    if (!scope || scope.aborted || closed || exiting || saving || entryPreparation === entryRequest
+      || tracked.view().state !== "failed") return;
     const request = ++storageMessageEpoch;
-    report(request);
+    report(request, scope);
     saving = true;
     saveDetails.hidden = true;
     saveMessage.textContent = `正在重试原存档：${tracked.view().label}；检查点和时间保持原值……`;
     refreshSaveControls();
     try { await tracked.retry(); }
     catch (error: unknown) {
-      if (!closed && request === storageMessageEpoch) {
+      if (currentSaveFeedback(request, scope)) {
         const state = tracked.view();
         saveMessage.textContent = state.state === "superseded"
           ? `原存档操作已被后来的显式保存替代：${state.label}。本次旧重试未执行。`
@@ -1091,18 +1105,19 @@ async function main(): Promise<void> {
   }
 
   async function inspectSaved(entry: Entry): Promise<void> {
-    if (exiting || closed || entryPreparation === entryRequest) return;
+    const scope = panels?.signalFor("saves");
+    if (!scope || scope.aborted || exiting || closed || entryPreparation === entryRequest) return;
     const slotId = slots.slot(entry);
     const request = ++storageMessageEpoch;
     saveDetails.hidden = true;
     saveMessage.textContent = `正在查看${entryName(entry)} ${JSON.stringify(slotId)} 检查点……`;
     try {
       const inspected = await saves[entry].read(slotId);
-      if (closed || request !== storageMessageEpoch) return;
+      if (!currentSaveFeedback(request, scope)) return;
       if (inspected) describeSave(entry, inspected);
       else saveMessage.textContent = `${entryName(entry)}的 ${JSON.stringify(slotId)} 槽位尚未保存检查点。`;
     } catch (error: unknown) {
-      if (!closed && request === storageMessageEpoch) {
+      if (currentSaveFeedback(request, scope)) {
         saveMessage.textContent = `读取失败：${error instanceof Error ? error.message : "未知存储错误"}。当前会话保持原状，已有数据未被删除。`;
       }
     }

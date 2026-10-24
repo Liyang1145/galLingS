@@ -1,6 +1,7 @@
 import type { Clock } from "../../../packages/player/src/clock.ts";
 import { createGameSession } from "../../../packages/player/src/session.ts";
-import type { GameSession, RestoreVoice, SessionView } from "../../../packages/player/src/session.ts";
+import type { GameSession, MediaProblem, RestoreVoice, SessionToken, SessionView } from "../../../packages/player/src/session.ts";
+import type { SourceLocation } from "../../../packages/story-model/src/model.ts";
 import { WebPresentation } from "../../../packages/player/src/web/presentation.ts";
 import { createResourceAccess } from "../../../packages/player/src/web/resources.ts";
 import { authorButtonPreferences } from "../../../packages/player/src/button-preferences.ts";
@@ -21,6 +22,21 @@ export type PreviewStart =
   | { readonly kind: "entry" }
   | { readonly kind: "selected"; readonly nodeId: string }
   | { readonly kind: "checkpoint"; readonly input: PreviewCheckpointInput; readonly voice: RestoreVoice };
+
+export interface PreviewOrigin {
+  readonly sourceSha256: string;
+  readonly revision: number;
+}
+export interface PreviewProblem {
+  readonly token: Readonly<SessionToken>;
+  readonly nodeId: string;
+  readonly chapter: string;
+  readonly source: Readonly<SourceLocation>;
+  readonly problem: Readonly<MediaProblem>;
+  readonly contentRevision: string;
+  readonly candidateSourceSha256: string;
+  readonly origin: Readonly<PreviewOrigin>;
+}
 
 export interface PreviewElements {
   stage: HTMLElement; scene: HTMLElement; choices: HTMLElement;
@@ -49,7 +65,7 @@ export class EditorPreview {
   #generation = 0;
   #activeNote = "";
   #buttonSoundsEnabled = true;
-  #context: { document: AuthorDocument; selectedEntry: string | null } | null = null;
+  #context: { document: AuthorDocument; selectedEntry: string | null; origin: Readonly<PreviewOrigin>; contentRevision: string } | null = null;
 
   constructor(elements: PreviewElements) {
     this.#elements = elements;
@@ -113,7 +129,7 @@ export class EditorPreview {
   get running(): boolean { return this.#session !== null; }
   get canCheckpoint(): boolean { return this.#session?.view().canCheckpoint ?? false; }
 
-  start(draft: AuthorDocument, start: PreviewStart): PreviewCheckpointRecord | null {
+  start(draft: AuthorDocument, start: PreviewStart, origin: PreviewOrigin): PreviewCheckpointRecord | null {
     const { content, locations } = draft;
     const restored = start.kind === "checkpoint" ? inspectPreviewCheckpoint(content, start.input) : null;
     if (start.kind === "checkpoint" && !["silent", "replay", "resume"].includes(start.voice)) {
@@ -151,7 +167,7 @@ export class EditorPreview {
     const presentation = new WebPresentation(this.#elements.scene, source, resources, true, undefined, undefined,
       whaleSkin.artwork, { stage: this.#elements.stage, choices: this.#elements.choices });
     this.#presentation = presentation;
-    this.#context = { document: draft, selectedEntry: selectedNode };
+    this.#context = { document: draft, selectedEntry: selectedNode, origin: Object.freeze({ ...origin }), contentRevision: source.revision };
     try {
       this.#session = createGameSession({
         content: source, player: initial.player, generation, clock, presentation, seen: new Set<string>(),
@@ -182,6 +198,32 @@ export class EditorPreview {
     if (owner !== this.#session || generation !== this.#generation) throw new Error("预览已变化，未采用旧检查点");
     if (!result.accepted) throw new Error(`${result.code}：${result.message}`);
     return capturePreviewCheckpoint(context.document.content, context.selectedEntry, result.checkpoint);
+  }
+
+  /** Detached issue metadata only; no session, document, variables or retry capability escapes. */
+  problem(): Readonly<PreviewProblem> | null {
+    const view = this.#session?.view();
+    const context = this.#context;
+    if (!view || view.disposed || !view.problem || !context) return null;
+    const node = context.document.content.nodes.find(item => item.id === view.story.nodeId);
+    if (!node) return null;
+    return Object.freeze({
+      token: Object.freeze({ ...view.token }), nodeId: node.id, chapter: view.story.chapter,
+      source: Object.freeze({ ...node.source }), problem: Object.freeze({ ...view.problem }),
+      contentRevision: context.contentRevision, candidateSourceSha256: context.document.sourceSha256,
+      origin: context.origin,
+    });
+  }
+
+  matchesProblem(snapshot: Readonly<PreviewProblem>): boolean {
+    const current = this.problem();
+    return current !== null && current.token.session === snapshot.token.session
+      && current.token.epoch === snapshot.token.epoch && current.token.step === snapshot.token.step
+      && current.nodeId === snapshot.nodeId && current.contentRevision === snapshot.contentRevision
+      && current.candidateSourceSha256 === snapshot.candidateSourceSha256
+      && current.origin.sourceSha256 === snapshot.origin.sourceSha256 && current.origin.revision === snapshot.origin.revision
+      && current.problem.code === snapshot.problem.code && current.problem.message === snapshot.problem.message
+      && current.problem.blocking === snapshot.problem.blocking;
   }
 
   private render(view: SessionView, initial: unknown): void {

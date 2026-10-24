@@ -25,6 +25,14 @@
 .author-diagnostic p { line-height: 1.7; overflow-wrap: anywhere; font-size: .85rem; }
 .author-diagnostic button { min-height: 40px; }
 .author-diagnostic button:focus-visible { outline: 3px solid #aed9e7; outline-offset: 2px; }
+.preview-problem-panel { border: 1px solid #e7aa78; border-radius: 8px; padding: 16px; margin: 16px 0; }
+.preview-problem-panel h3 { margin: 0; font-size: 1rem; font-weight: 500; }
+.preview-problem-panel dl { display: grid; grid-template-columns: minmax(130px, 30%) minmax(0, 1fr); gap: 8px 16px; font-size: .85rem; }
+.preview-problem-panel dt, .preview-problem-panel dd { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+.preview-problem-panel dt { color: #bdd8df; }
+.preview-problem-panel p { font-size: .85rem; line-height: 1.7; overflow-wrap: anywhere; }
+.preview-problem-panel button { min-height: 40px; max-width: 100%; white-space: normal; }
+.preview-problem-panel button:focus-visible { outline: 3px solid #aed9e7; outline-offset: 2px; }
 #preview-status { min-height: 3em; color: #bdd8df; font-size: .85rem; line-height: 1.7; overflow-wrap: anywhere; }
 #debug { max-height: 320px; overflow: auto; padding: 12px; background: #061119; font-size: .8rem; }
 .draft-file { display: flex; align-items: center; gap: 12px; margin-top: 16px; }
@@ -124,4 +132,6 @@ input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 3px
   .author-scene dd { margin-bottom: 8px; }
   .author-diagnostic dl { grid-template-columns: minmax(0, 1fr); }
   .author-diagnostic dd { margin-bottom: 8px; }
+  .preview-problem-panel dl { grid-template-columns: minmax(0, 1fr); }
+  .preview-problem-panel dd { margin-bottom: 8px; }
 }

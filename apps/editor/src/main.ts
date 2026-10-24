@@ -17,6 +17,7 @@ import { AuthorChanges } from "./changes.ts";
 import { AuthorScene } from "./scene.ts";
 import { AuthorDiagnostic } from "./diagnostic.ts";
 import type { DiagnosticContext } from "./diagnostic.ts";
+import { PreviewProblemPanel } from "./preview-problem.ts";
 import "../../game/src/style.css";
 import "./style.css";
 
@@ -70,6 +71,7 @@ let checkpoints: PreviewCheckpoints | null = null;
 let changes: AuthorChanges | null = null;
 let sceneInspector: AuthorScene | null = null;
 let authorDiagnostic: AuthorDiagnostic | null = null;
+let previewProblem: PreviewProblemPanel | null = null;
 const NODE_PAGE_SIZE = 200;
 let nodePage = 0;
 let nodeList: {
@@ -133,6 +135,7 @@ function controls(): void {
   changes?.setAvailable(!!baseline && !locked);
   sceneInspector?.setAvailable(!!baseline && !locked);
   authorDiagnostic?.setAvailable(!disposed && !locked);
+  previewProblem?.refresh();
   checkpoints?.setEnabled(!disposed && !!baseline && operation === null && !reviewing);
 }
 
@@ -244,6 +247,7 @@ function draftChanged(options: { cancelImport?: boolean; refreshForm?: boolean; 
   checkpoints?.invalidatePending("草稿已变化，未采用旧检查点读取；已有待用数据保留，恢复时仍须匹配当前修订。");
   el.discard.checked = false;
   preview.draftChanged();
+  previewProblem?.refresh();
   list({ revealSelected: options.revealSelected === true });
   if (options.refreshForm) nodeForm();
   else controls();
@@ -314,7 +318,10 @@ async function perform(kind: "load" | "preview" | "save", start: PreviewStart = 
       return;
     }
     if (kind === "preview") {
-      const checkpoint = preview.start(result, start);
+      if (diagnosticContext.sourceSha256 === null) throw new Error("预览缺少原作者基线身份，请先读取作者源");
+      const checkpoint = preview.start(result, start, {
+        sourceSha256: diagnosticContext.sourceSha256, revision: draftRevision,
+      });
       if (start.kind === "checkpoint" && checkpoint) checkpoints?.confirmed(start.input, checkpoint);
       message(start.kind === "checkpoint"
         ? "已通过共享核心从检查点继续预览，未重执行进入动作或写入作者源/玩家记录。"
@@ -437,6 +444,7 @@ function dispose(): void {
   changes?.dispose();
   sceneInspector?.dispose();
   authorDiagnostic?.dispose();
+  previewProblem?.dispose();
   nodeList = null;
   el.nodes.replaceChildren();
   drafts.clear();
@@ -533,6 +541,16 @@ authorDiagnostic = new AuthorDiagnostic({
   root: element("author-diagnostic", HTMLElement),
   current: context => !disposed && context.request === requestEpoch && context.revision === revision
     && context.content === (baseline?.content ?? null) && context.sourceSha256 === (baseline?.sourceSha256 ?? null),
+  navigate: navigateNode,
+});
+previewProblem = new PreviewProblemPanel({
+  root: element("preview-problem", HTMLElement),
+  fallback: el.nodeTitle,
+  read: () => preview.problem(),
+  current: problem => !disposed && baseline !== null && problem.origin.sourceSha256 === baseline.sourceSha256
+    && problem.origin.revision === revision && preview.matchesProblem(problem)
+    && baseline.content.nodes.some(node => node.id === problem.nodeId && node.source.file === problem.source.file),
+  blocked: () => disposed || operation !== null,
   navigate: navigateNode,
 });
 controls();

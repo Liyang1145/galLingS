@@ -77,16 +77,19 @@
       <section id="readout-preferences" class="checkpoint-panel" aria-label="话末数值显示设置"></section>
       </dialog>
       <dialog id="saves-panel" class="gallery-dialog shell-dialog" aria-labelledby="checkpoint-heading">
-        <header><h2 id="checkpoint-heading">存档 / 读档</h2><button type="button" data-panel-close autofocus>返回</button></header>
-      <section class="checkpoint-panel" aria-labelledby="checkpoint-heading">
-        <p>保存当前剧情位置、当局变量和剩余有效时间。读档保留全局的周目与鉴赏成果；“查看”只显示详情。</p>
+        <header><div><small class="save-kicker">旅途记录</small><h2 id="checkpoint-heading">存档 / 读档</h2></div><button type="button" data-panel-close autofocus>返回</button></header>
+      <section class="save-browser" aria-labelledby="checkpoint-heading">
+        <p class="save-intro">把这一刻留下，或回到上次停下的地方。读档保留全局的周目与鉴赏成果。</p>
         <section id="save-slots" aria-label="手动存档槽位选择与目录"></section>
-        <div class="controls">
+        <section class="save-actions" aria-labelledby="save-current-heading">
+          <h3 id="save-current-heading">保存当前进度</h3>
+          <p>保存到当前游玩入口选中的名称；已有同名进度会被替换。</p>
           <button type="button" id="save-checkpoint" disabled>保存当前检查点</button>
-          <button type="button" id="inspect-main">查看第一话检查点</button>
-          <button type="button" id="inspect-timed">查看限时样例检查点</button>
-        </div>
-        <div class="controls">
+        </section>
+        <section class="save-actions" aria-labelledby="save-read-heading">
+          <h3 id="save-read-heading">查看与读取</h3>
+          <p>“查看”只显示详情。选择本次语音方式，再点击对应入口的“读取”恢复进度。</p>
+          <div class="save-voice">
           <label for="restore-voice">本次读档语音</label>
           <select id="restore-voice">
             <option value="">请选择语音方式</option>
@@ -94,10 +97,19 @@
             <option value="replay">从头播放当前句</option>
             <option value="resume">按保存的位置续播当前句</option>
           </select>
-          <button type="button" id="load-main" disabled>读取第一话进度</button>
-          <button type="button" id="load-timed" disabled>读取限时样例进度</button>
-        </div>
-        <p>语音方式仅用于本次恢复试用，尚未设定正式默认体验。文字恢复为完整显示，音乐和环境声按可用的保存位置恢复。</p>
+          </div>
+          <div class="save-entry-actions" role="group" aria-label="正常游玩所选槽位">
+            <h4>正常游玩</h4>
+            <button type="button" id="inspect-main">查看第一话检查点</button>
+            <button type="button" id="load-main" disabled>读取第一话进度</button>
+          </div>
+          <div class="save-entry-actions" role="group" aria-label="限时选择样例所选槽位">
+            <h4>限时选择样例</h4>
+            <button type="button" id="inspect-timed">查看限时样例检查点</button>
+            <button type="button" id="load-timed" disabled>读取限时样例进度</button>
+          </div>
+          <p class="help">语音方式仅用于本次恢复试用，尚未设定正式默认体验。文字恢复为完整显示，音乐和环境声按可用的保存位置恢复。</p>
+        </section>
         <p id="save-message" role="status" aria-live="polite">场面就绪并完整显示文字后，可保存到当前入口选中的命名槽位。两个入口分别保留。</p>
         <pre id="save-details" hidden></pre>
       </section>

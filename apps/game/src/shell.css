@@ -85,6 +85,89 @@ body.game-shell { overflow: hidden; background: #08191d; }
 .game-shell .gallery-dialog h2 { color: #eaf0e4; font-weight: 400; letter-spacing: 3px; }
 .game-shell .gallery-dialog > header button { min-height: 44px; flex-shrink: 0; background: #183437; border-color: #9cbcad55; }
 .game-shell .shell-dialog .checkpoint-panel { border-color: #9cbcad33; color: #d5e3da; }
+.game-shell #saves-panel .save-kicker { color: #a8c2b5; font-size: 13px; letter-spacing: 4px; }
+.game-shell #saves-panel h2 { margin: 6px 0 0; }
+.game-shell .save-browser { color: #d5e3da; line-height: 1.65; }
+.game-shell .save-browser p { overflow-wrap: anywhere; }
+.game-shell .save-intro { margin: 16px 0 24px; }
+.game-shell .save-slots { border: 0; margin: 0; padding: 0; }
+.game-shell .save-slots label { color: #c0d0c2; font-size: 14px; }
+.game-shell .save-slots form { gap: 8px 16px; }
+.game-shell .save-slots input,
+.game-shell .save-browser select {
+  background: #183437; border-color: #9cbcad55; min-height: 44px; max-width: 100%;
+}
+.game-shell .save-slots input:focus-visible,
+.game-shell .save-browser select:focus-visible { outline: 3px solid #aed9e7; outline-offset: 3px; }
+.game-shell .save-browser button {
+  min-height: 44px; max-width: 100%; background: #183437; border-color: #9cbcad55;
+  white-space: normal; overflow-wrap: anywhere; text-align: left;
+}
+.game-shell .save-browser button:hover:not(:disabled) { background: #2b4d49; border-color: #b6cead; }
+.game-shell .save-slots .save-selection { color: #e9efdf; margin: 16px 0 4px; }
+.game-shell .save-slots .help,
+.game-shell .save-slots [role="status"] { font-size: 13px; color: #a8c2b5; }
+.game-shell .save-slots fieldset { padding: 0; border: 0; margin: 22px 0 0; }
+.game-shell .save-slots legend { padding: 0; margin-bottom: 12px; font-size: 15px; color: #c0d0c2; }
+.game-shell .save-slots .save-card-grid {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px;
+  max-height: none; overflow: visible; list-style: none; padding: 0; margin: 0;
+}
+.game-shell .save-slots .save-card {
+  display: flex; flex-direction: column; gap: 8px; min-width: 0; min-height: 220px; padding: 16px;
+  border: 1px solid #ffffff30; border-radius: 10px;
+  background: linear-gradient(145deg, #253f3f, #182e32); color: #e9efdf;
+}
+.game-shell .save-card-heading { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px 12px; }
+.game-shell .save-card-heading strong { flex: 1; min-width: 0; font-size: 20px; font-weight: 500; }
+.game-shell .save-card-badge { color: #c0d0c2; font-size: 12px; white-space: nowrap; }
+.game-shell .save-slots .save-card small { display: block; margin: 0; color: #c0d0c2; font-size: 13px; }
+.game-shell .save-slots .save-card .save-card-chapter { font-size: 14px; }
+.game-shell .save-slots .save-card p { margin: 0; font-size: 16px; line-height: 1.65; }
+.game-shell .save-card-excerpt { flex: 1; white-space: pre-wrap; }
+.game-shell .save-card time,
+.game-shell .save-slots .save-card .save-card-location { color: #a4bdb0; font-size: 12px; }
+.game-shell .save-card > button { align-self: stretch; margin-top: auto; text-align: center; }
+.game-shell .save-slots .save-card[data-selected="true"] {
+  border-color: #b6cead; box-shadow: inset 0 0 0 1px #b6cead;
+}
+.game-shell .save-card button[aria-pressed="true"] { background: #3b5c50; border-color: #b6cead; color: #f1f2df; }
+.game-shell .save-slots .save-card[data-kind="unreadable"] { background: #2c302b; border-style: dashed; }
+.game-shell .save-slots .save-card-diagnostic,
+.game-shell .save-card[data-kind="unreadable"] .save-card-badge { color: #f0c5a4; }
+.game-shell .save-card code { white-space: pre-wrap; font-size: 12px; }
+.game-shell .save-empty {
+  text-align: center; padding: 32px 20px; border: 1px dashed #9cbcad55; border-radius: 10px;
+  background: linear-gradient(145deg, #253f3f, #182e32); color: #c0d0c2;
+}
+.game-shell .save-pager { justify-content: center; align-items: center; padding: 20px 0; }
+.game-shell .save-pager span { min-width: 5em; text-align: center; color: #c0d0c2; }
+.game-shell .save-actions { border-top: 1px solid #a7c2b329; padding: 20px 0; }
+.game-shell .save-actions h3 { margin: 0; color: #e9efdf; font-size: 20px; font-weight: 400; }
+.game-shell .save-actions p { margin: 8px 0 16px; font-size: 14px; color: #c0d0c2; }
+.game-shell .save-voice { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin: 16px 0; }
+.game-shell .save-entry-actions {
+  display: grid; grid-template-columns: 8em minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: 12px;
+  padding: 12px 0;
+}
+.game-shell .save-entry-actions h4 { margin: 0; font-size: 14px; color: #c0d0c2; font-weight: 400; }
+.game-shell #save-message { padding: 12px 16px; background: #183437; border-radius: 8px; font-size: 14px; }
+.game-shell #save-details { max-height: 360px; overflow: auto; padding: 16px; background: #061119; font-size: 13px; }
+@media (max-width: 850px) {
+  .game-shell .save-slots .save-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .game-shell .save-entry-actions { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .game-shell .save-entry-actions h4 { grid-column: 1 / -1; }
+}
+@media (max-width: 560px) {
+  .game-shell .save-slots .save-card-grid { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .game-shell .save-slots .save-card { min-height: 150px; }
+  .game-shell .save-slots form { align-items: stretch; }
+  .game-shell .save-slots form label { width: 100%; }
+  .game-shell .save-slots input { flex: 1; width: 100%; }
+  .game-shell .save-entry-actions { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  .game-shell .save-pager { gap: 8px; }
+  .game-shell .save-pager > button:first-child { flex-basis: 100%; text-align: center; }
+}
 .game-shell .preferences-grid input[type="range"] {
   appearance: none; height: 32px; border: 0; background: linear-gradient(#638c86, #638c86) center / 100% 4px no-repeat;
 }

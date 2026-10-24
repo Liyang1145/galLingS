@@ -45,6 +45,7 @@
 | [Windows 集成宿主](docs/rebuild/windows.md) | 显式特性与隔离配置、输入准备、窗口暂停；未执行准备或编译，未切换正式发行 |
 | [Windows 试用原生记录后端](docs/rebuild/native-storage.md) | 受限地址、完整物理提交、分页与存储代次 CAS；仅运行参数 `--rebuild-file-records` 显式接线，默认 IndexedDB，未运行验收或决定正式落点 |
 | [Android 集成宿主](docs/rebuild/android.md) | 独立 Gradle 模块、输入准备、前后台/返回键及独立焦点/输出中断控制；未构建或真机验收 |
+| [Android 试用原生记录后端](docs/rebuild/android-storage.md) | 受限地址/原 JSON、目录独占、完整文件提交和存储代次 CAS；仅已编写，未创建/接桥，默认仍 IndexedDB |
 | [正常退出协调](docs/rebuild/exits.md) | 已有写入的只读状态、全局事实等待、失败原操作重试/取消和原生关闭票据；不是自动存档或强杀恢复 |
 | [独立对白编辑](docs/rebuild/editor.md) | 有限字符串写回、摘要冲突保护、草稿导入比较、有界草稿撤销及共享隔离预览；未运行，未决定最终编辑器或切换源 |
 | [只读引用与影响查询](docs/rebuild/references.md) | 带类型的节点/资源/变量等结构引用、当前草稿刷新及定位；不推断可达性或授予删除权限 |

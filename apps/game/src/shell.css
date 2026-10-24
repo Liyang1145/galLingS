@@ -59,34 +59,59 @@ body.game-shell { overflow: hidden; background: #08191d; }
   position: absolute; inset: 0; z-index: 40; display: grid; place-items: center;
   background: #102327f7; color: #eaf3e6; padding: 24px; text-align: center;
 }
-.game-shell .entry-banner,
-.game-shell .shell-message {
-  position: absolute; top: max(10px, env(safe-area-inset-top)); left: max(12px, env(safe-area-inset-left));
-  z-index: 24; max-width: min(720px, calc(100% - 24px)); max-height: 24%; overflow: auto;
+.game-shell #notices-home {
+  position: absolute; top: max(12px, env(safe-area-inset-top)); right: max(12px, env(safe-area-inset-right));
+  left: max(12px, env(safe-area-inset-left)); z-index: 25;
+  height: max(0px, calc(100% - 140px - env(safe-area-inset-bottom))); max-height: 65%; pointer-events: none;
+  display: flex; flex-direction: column; align-items: flex-end;
+}
+.game-shell .shell-status-stack { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; min-height: 0; max-height: 100%; width: 100%; }
+.game-shell .entry-banner {
+  flex-shrink: 0; width: min(720px, 100%); max-height: 24dvh; overflow: auto; pointer-events: auto;
   margin: 0; padding: 8px 12px; border-radius: 6px; background: #102327ed;
   color: #eaf3e6; font-size: 13px; line-height: 1.6; overflow-wrap: anywhere;
 }
-.game-shell .shell-message { top: auto; bottom: 68px; color: #ffe2c7; border: 1px solid #c68b6666; }
 .game-shell .shell-notices {
-  position: absolute; top: max(12px, env(safe-area-inset-top)); right: max(12px, env(safe-area-inset-right));
-  z-index: 25; width: min(420px, calc(100% - 24px)); max-height: 55%; overflow: auto;
-  pointer-events: none;
+  min-height: 0; width: min(600px, 100%); overflow: auto; overscroll-behavior: contain; pointer-events: auto;
 }
 .game-shell .shell-notices > :empty { display: none; }
 .game-shell .shell-notices > :not(:empty) {
   pointer-events: auto; margin: 0 0 8px; padding: 10px 12px; border-radius: 6px; background: #102327ed;
+  overflow-wrap: anywhere; line-height: 1.65; font-size: 14px;
 }
-.game-shell .shell-notices .problem { background: #30251ff2; }
-.game-shell .shell-records {
-  position: fixed; left: max(12px, env(safe-area-inset-left)); bottom: 72px;
-  z-index: 25; width: min(600px, calc(100% - 24px)); max-height: 30%; overflow: auto;
-  border: 1px solid #c68b6666; border-radius: 8px; padding: 12px; background: #30251ff2; color: #ffe2c7;
+.game-shell .shell-notices > :last-child { margin-bottom: 0; }
+.game-shell .shell-notices .problem,
+.game-shell .shell-notices .shell-records,
+.game-shell .shell-notices .shell-message { background: #30251ff2; border: 1px solid #c68b6666; color: #ffe2c7; }
+.game-shell .shell-notices button { min-height: 44px; max-width: 100%; white-space: normal; overflow-wrap: anywhere; }
+.game-shell .shell-notices .problem p,
+.game-shell .shell-records p { margin: 0 0 10px; }
+.game-shell .menu-overlay {
+  display: flex; align-items: center; justify-content: center; overflow: hidden; z-index: 26;
+  padding: max(24px, env(safe-area-inset-top)) max(24px, env(safe-area-inset-right)) max(24px, env(safe-area-inset-bottom)) max(24px, env(safe-area-inset-left));
+  background: linear-gradient(145deg, #142f32f7, #102327fc);
 }
-.game-shell .shell-records p { margin: 0 0 8px; }
-.game-shell .menu-overlay { padding: max(24px, env(safe-area-inset-top)) 24px; background: #102327ed; overflow: auto; }
-.game-shell .menu-overlay > div { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; width: min(480px, 100%); }
-.game-shell .menu-overlay h2 { grid-column: 1 / -1; font-size: 30px; letter-spacing: 6px; color: #eaf0e4; }
-.game-shell .menu-overlay button { margin: 0; min-height: 44px; background: #183437; border-color: #9cbcad55; }
+.game-shell .menu-overlay > .pause-card { display: flex; flex-direction: column; width: min(620px, 100%); min-height: 0; max-height: 100%; text-align: left; }
+.game-shell .pause-heading { display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; gap: 16px; padding-bottom: 18px; }
+.game-shell .pause-heading h2 { margin: 6px 0 0; font-size: 30px; font-weight: 400; letter-spacing: 6px; color: #eaf0e4; }
+.game-shell .pause-scroll { min-height: 0; overflow: auto; overscroll-behavior: contain; padding: 4px; }
+.game-shell .pause-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.game-shell .menu-overlay button { margin: 0; min-height: 44px; max-width: 100%; white-space: normal; overflow-wrap: anywhere; background: #183437; border-color: #9cbcad55; }
+.game-shell .menu-overlay #close-menu { flex-shrink: 0; background: #d5e4ce; color: #263f36; border-color: #d5e4ce; }
+.game-shell .pause-tools { grid-column: 1 / -1; }
+.game-shell #menu-notices-home .shell-status-stack { display: block; max-height: none; margin-top: 16px; }
+.game-shell #menu-notices-home .entry-banner,
+.game-shell #menu-notices-home .shell-notices { width: 100%; max-height: none; overflow: visible; }
+.game-shell #menu-notices-home .entry-banner { margin-bottom: 12px; }
+@media (max-width: 420px) {
+  .game-shell .pause-actions { grid-template-columns: minmax(0, 1fr); }
+  .game-shell .pause-heading { gap: 10px; }
+  .game-shell .pause-heading h2 { font-size: 25px; }
+}
+@media (max-height: 500px) {
+  .game-shell .menu-overlay { padding: max(12px, env(safe-area-inset-top)) max(12px, env(safe-area-inset-right)) max(12px, env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left)); }
+  .game-shell .pause-heading { padding-bottom: 8px; }
+}
 .game-shell .gallery-dialog {
   background: linear-gradient(145deg, #142f32f7, #102327fc); color: #f4efe5;
   border: 1px solid #9cbcad55; border-radius: 10px; padding: 28px 36px;
@@ -482,8 +507,6 @@ body.game-shell { overflow: hidden; background: #08191d; }
 @media (max-aspect-ratio: 20 / 23) {
   .game-shell .play-controls { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); }
   .game-shell .play-controls button { min-width: 0; min-height: 46px; padding: 0 2px; gap: 3px; font-size: 13px; }
-  .game-shell .shell-message { bottom: 124px; }
-  .game-shell .shell-records { bottom: 124px; }
   .game-shell .gallery-dialog {
     width: calc(100vw - 20px); max-height: calc(100dvh - 20px);
     padding: max(16px, env(safe-area-inset-top)) 16px max(24px, env(safe-area-inset-bottom));

@@ -97,6 +97,9 @@ async function main(): Promise<void> {
   decoratePlayControls(playControls, collectionSkin.artwork.controlIcons);
   const entryBanner = element("entry-banner", HTMLElement);
   const shellMessage = element("shell-message", HTMLElement);
+  const noticeStack = element("shell-status-stack", HTMLElement);
+  const noticesHome = element("notices-home", HTMLElement);
+  const menuNoticesHome = element("menu-notices-home", HTMLElement);
   const recordStatus = element("record-message", HTMLElement).parentElement;
   if (!(recordStatus instanceof HTMLElement)) throw new Error("页面缺少全局记录提示区域");
   const fullscreenButton = element("fullscreen", HTMLButtonElement);
@@ -598,6 +601,18 @@ async function main(): Promise<void> {
     shellMessage.hidden = !message;
   }
 
+  function dockNotices(inMenu: boolean): void {
+    const destination = inMenu ? menuNoticesHome : noticesHome;
+    if (noticeStack.parentElement === destination) return;
+    const focused = document.activeElement;
+    const keepFocus = focused instanceof HTMLElement && noticeStack.contains(focused);
+    // Move the same status nodes/buttons; their sources and original retry handlers stay attached.
+    destination.append(noticeStack);
+    if (keepFocus && focused instanceof HTMLElement && focused.getClientRects().length) {
+      focused.focus({ preventScroll: true });
+    }
+  }
+
   function refreshShell(view = session?.view()): void {
     const active = !!view && !view.disposed;
     const blocked = !ready || closed || exiting || entryPreparation === entryRequest;
@@ -646,6 +661,7 @@ async function main(): Promise<void> {
     const menuHidden = !view.paused.includes("menu");
     if (menu.hidden !== menuHidden) stageFade?.begin();
     menu.hidden = menuHidden;
+    dockNotices(!menuHidden);
     const phases = { presenting: "呈现中", ready: "可继续", choosing: "等待选择", ended: "本段结束" };
     status.textContent = `${story.nodeId} · ${phases[story.phase]}${view.paused.length ? ` · 已暂停：${view.paused.join(" / ")}` : ""}`
       + (story.terminal?.kind === "ending" ? ` · ${story.terminal.endingId}` : "")
@@ -788,6 +804,7 @@ async function main(): Promise<void> {
       readoutPreferences.setMode(entry);
       rollbackKey = "";
       menu.hidden = title.hidden = problem.hidden = true;
+      dockNotices(false);
       choicePanel.clear();
       closeGallery();
       closeAftergame();
@@ -913,6 +930,7 @@ async function main(): Promise<void> {
     choicePanel.clear();
     title.hidden = false;
     menu.hidden = problem.hidden = true;
+    dockNotices(false);
     next.disabled = auto.disabled = skip.disabled = pause.disabled = audio.disabled = save.disabled = dialogueOpen.disabled = true;
     resetRollback();
     resetSaveMessage();

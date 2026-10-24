@@ -26,15 +26,23 @@
           <p class="title-help">点击 / 空格 继续　·　滚轮上翻 回看　·　H 隐藏界面</p>
         </div>
         <div class="choices" id="choices" hidden></div>
-        <section class="menu-overlay" id="menu" aria-label="暂停菜单" hidden>
-          <div><h2>暂停</h2>
-            <button type="button" id="close-menu">继续游戏</button>
+        <section class="menu-overlay" id="menu" aria-labelledby="menu-heading" hidden>
+          <div class="pause-card">
+            <header class="pause-heading">
+              <div><small class="panel-kicker">歇一会儿，再继续</small><h2 id="menu-heading">暂停</h2></div>
+              <button type="button" id="close-menu">继续游戏</button>
+            </header>
+            <div class="pause-scroll">
+            <nav class="pause-actions" aria-label="暂停时的操作">
             <button type="button" data-panel-open="saves">存档 / 读档</button>
             <button type="button" data-panel-open="settings">设置</button>
             <button type="button" data-panel-open="rollback">回退进度</button>
             <button type="button" id="restart">重新开始</button>
             <button type="button" id="home">返回标题</button>
-            <button type="button" data-panel-open="tools">开发工具</button>
+            <button type="button" data-panel-open="tools" class="pause-tools">开发工具</button>
+            </nav>
+            <div id="menu-notices-home"></div>
+            </div>
           </div>
         </section>
       </section>
@@ -54,19 +62,27 @@
         <span>重构开发版 · 记录与旧版隔离</span>
         <button type="button" id="tools-open" data-panel-open="tools" disabled>开发工具</button>
       </aside>
-      <p id="entry-banner" class="entry-banner" hidden></p>
-      <p id="shell-message" class="shell-message" role="status" aria-live="polite" hidden></p>
       <section id="loading-screen" class="loading-screen" aria-label="载入作品">
         <p role="status">正在载入本地作品，请稍候……</p>
       </section>
-      <div class="shell-notices">
-      <p id="cover-status" class="preview-note" role="status" aria-live="polite"></p>
-      <button type="button" id="retry-cover" hidden>重试本地标题背景</button>
-      <p id="fullscreen-status" class="fullscreen-status" role="status" aria-live="polite"></p>
-      <p id="host-notice" class="preview-note" role="status" aria-live="polite"></p>
+      <div id="notices-home">
+      <div id="shell-status-stack" class="shell-status-stack">
+      <p id="entry-banner" class="entry-banner" hidden></p>
+      <aside class="shell-notices" aria-label="当前操作与异常提示">
       <section class="problem" id="problem" role="alert" hidden>
         <p id="problem-message"></p><button id="retry" type="button">重建当前场面</button>
       </section>
+      <p id="host-notice" class="preview-note" role="status" aria-live="polite"></p>
+      <p id="shell-message" class="shell-message" role="status" aria-live="polite" hidden></p>
+      <section class="record-status shell-records" aria-label="全局玩家记录" hidden>
+        <p id="record-message" role="status" aria-live="polite">第一话的全局记录与进度分开保存，章节试阅与限时样例不写入全局成果。</p>
+        <button type="button" id="retry-records" hidden>重试保存全局记录</button>
+      </section>
+      <p id="cover-status" class="preview-note" role="status" aria-live="polite"></p>
+      <button type="button" id="retry-cover" hidden>重试本地标题背景</button>
+      <p id="fullscreen-status" class="fullscreen-status" role="status" aria-live="polite"></p>
+      </aside>
+      </div>
       </div>
       </div>
       <dialog id="settings-panel" class="gallery-dialog shell-dialog" aria-labelledby="settings-heading">
@@ -149,10 +165,6 @@
           <button type="button" id="rollback" disabled>回退到选定位置</button>
         </footer>
       </dialog>
-      <section class="record-status shell-records" aria-label="全局玩家记录" hidden>
-        <p id="record-message" role="status" aria-live="polite">第一话的全局记录与进度分开保存，章节试阅与限时样例不写入全局成果。</p>
-        <button type="button" id="retry-records" hidden>重试保存全局记录</button>
-      </section>
       <dialog id="gallery" class="gallery-dialog collection-dialog" aria-labelledby="gallery-heading">
         <header><div><small class="panel-kicker">旅途留下的风景</small><h2 id="gallery-heading">鉴赏</h2></div><button type="button" id="gallery-close" autofocus>返回主页</button></header>
         <p class="collection-intro">已解锁的结局和 CG 跨存档保留。图片不可用时可重试，收藏记录仍保留；鉴赏不改变剧情进度。</p>

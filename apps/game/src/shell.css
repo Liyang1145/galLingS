@@ -168,16 +168,55 @@ body.game-shell { overflow: hidden; background: #08191d; }
   .game-shell .save-pager { gap: 8px; }
   .game-shell .save-pager > button:first-child { flex-basis: 100%; text-align: center; }
 }
-.game-shell .preferences-grid input[type="range"] {
-  appearance: none; height: 32px; border: 0; background: linear-gradient(#638c86, #638c86) center / 100% 4px no-repeat;
+.game-shell .panel-kicker { color: #a8c2b5; font-size: 13px; letter-spacing: 4px; }
+.game-shell #settings-panel h2 { margin: 6px 0 0; }
+.game-shell .settings-intro,
+.game-shell .settings-footnote { color: #a8c2b5; line-height: 1.7; font-size: 14px; }
+.game-shell .settings-group { margin-top: 24px; padding-top: 20px; border-top: 1px solid #62b1c326; }
+.game-shell .settings-group h3 { margin: 0; color: #e9efdf; font-size: 20px; font-weight: 400; }
+.game-shell .settings-group .preferences-note,
+.game-shell .settings-group .preferences-status { margin: 10px 0; color: #a8c2b5; font-size: 14px; line-height: 1.7; overflow-wrap: anywhere; }
+.game-shell #settings-panel .preferences-grid { display: flex; flex-direction: column; gap: 0; margin-top: 18px; }
+.game-shell #settings-panel .preference-row {
+  display: grid; grid-template-columns: minmax(140px, 210px) minmax(0, 1fr);
+  align-items: center; gap: 16px; padding: 10px 0; border-top: 1px solid #62b1c326;
 }
-.game-shell .preferences-grid input[type="range"]::-webkit-slider-thumb {
-  appearance: none; width: 18px; height: 18px; border: 1px solid #e8ead8; border-radius: 3px; background: #a9c6b9;
+.game-shell .preference-label { color: #b8d9df; letter-spacing: .025em; font-size: 16px; overflow-wrap: anywhere; }
+.game-shell .preference-control { display: grid; grid-template-columns: minmax(0, 1fr) 5em; align-items: center; gap: 12px; min-width: 0; }
+.game-shell #settings-panel output { color: #f0cc82; font-size: 14px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.game-shell #settings-panel input[type="range"] {
+  appearance: none; width: 100%; min-width: 0; height: 40px; margin: 0; padding: 0; border: 0; border-radius: 1px;
+  background: linear-gradient(90deg, #75d4dd 0%, #75d4dd var(--slider-pct, 0%), #ffffff22 var(--slider-pct, 0%), #ffffff22 100%) center / 100% 4px no-repeat;
+  cursor: pointer;
 }
-.game-shell .preferences-grid input[type="range"]::-moz-range-thumb {
-  width: 18px; height: 18px; border: 1px solid #e8ead8; border-radius: 3px; background: #a9c6b9;
+.game-shell #settings-panel input[type="range"]::-webkit-slider-thumb {
+  appearance: none; width: 18px; height: 18px; border-radius: 3px; background: #d4ffff;
+  border: 1px solid #67d7e1; box-shadow: 0 0 10px #75d4ddaa;
 }
-.game-shell .preferences-grid input[type="range"]::-moz-range-track { height: 4px; background: #638c86; }
+.game-shell #settings-panel input[type="range"]::-moz-range-thumb {
+  width: 16px; height: 16px; border-radius: 3px; background: #d4ffff;
+  border: 1px solid #67d7e1; box-shadow: 0 0 10px #75d4ddaa;
+}
+.game-shell #settings-panel input[type="range"]::-moz-range-track { height: 4px; background: transparent; }
+.game-shell #settings-panel input:focus-visible { outline: 2px solid #7ee5e9; outline-offset: 4px; }
+.game-shell #settings-panel input:disabled { opacity: .45; cursor: default; }
+.game-shell #settings-panel input[type="checkbox"] { width: 24px; height: 24px; margin: 10px 0; accent-color: #75d4dd; }
+.game-shell .preferences-actions { gap: 10px; margin: 6px 0; }
+.game-shell .preferences-actions button {
+  min-height: 44px; border-radius: 3px; background: #0a1d25; color: #b8d9df; border-color: #6bc3cc77;
+}
+.game-shell .preferences-actions button:hover:not(:disabled) { background: #123642; border-color: #7ee5e9; color: #e1ffff; }
+.game-shell #readout-preferences > p:last-child { color: #e4d8b8; font-size: 14px; line-height: 1.7; overflow-wrap: anywhere; }
+@media (max-width: 560px) {
+  .game-shell #settings-panel .preference-row { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  .game-shell #settings-panel output { font-size: 16px; }
+  .game-shell #settings-panel .preferences-actions { display: grid; grid-template-columns: minmax(0, 1fr); }
+}
+@media (pointer: coarse) {
+  .game-shell #settings-panel input[type="range"] { height: 44px; }
+  .game-shell #settings-panel input[type="range"]::-webkit-slider-thumb { width: 24px; height: 24px; }
+  .game-shell #settings-panel input[type="range"]::-moz-range-thumb { width: 22px; height: 22px; }
+}
 @media (max-width: 950px) {
   .game-shell .play-controls { left: 10px; right: 10px; gap: 5px; }
   .game-shell .play-controls button { min-height: 36px; padding: 0 6px; font-size: 12px; }

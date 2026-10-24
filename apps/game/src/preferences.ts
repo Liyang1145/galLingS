@@ -59,9 +59,13 @@ export class PreferencesPanel<Key extends string, Value extends number | boolean
     this.#timed = { ...this.#defaults };
     this.#chapter = { ...this.#defaults };
     this.#message = `${options.noun}偏好尚未读取，当前使用作者默认。`;
-    const heading = document.createElement("h2");
+    options.root.classList.add("preferences-panel");
+    const heading = document.createElement("h3");
+    heading.id = `${options.root.id}-heading`;
     heading.textContent = `${options.noun}设置`;
+    options.root.setAttribute("aria-labelledby", heading.id);
     const note = document.createElement("p");
+    note.className = "preferences-note";
     note.textContent = options.note;
     const controls = document.createElement("div");
     controls.className = "preferences-grid";
@@ -69,7 +73,10 @@ export class PreferencesPanel<Key extends string, Value extends number | boolean
     for (const field of options.fields) {
       const { key } = field;
       const label = document.createElement("label");
+      label.className = "preference-row";
+      label.dataset.kind = field.kind ?? "range";
       const text = document.createElement("span");
+      text.className = "preference-label";
       text.textContent = field.label;
       const input = document.createElement("input");
       input.type = field.kind === "checkbox" ? "checkbox" : "range";
@@ -80,6 +87,8 @@ export class PreferencesPanel<Key extends string, Value extends number | boolean
       }
       input.setAttribute("aria-label", field.label);
       const output = document.createElement("output");
+      const control = document.createElement("span");
+      control.className = "preference-control";
       this.#inputs.set(key, { input, output, field });
       input.addEventListener("input", () => {
         if (this.#saving || this.#reading || this.#disposed || options.blocked()) return;
@@ -95,7 +104,8 @@ export class PreferencesPanel<Key extends string, Value extends number | boolean
         options.valuesChanged(values);
         this.render();
       }, { signal });
-      label.append(text, input, output);
+      control.append(input, output);
+      label.append(text, control);
       controls.append(label);
     }
     this.#save = document.createElement("button");
@@ -124,9 +134,10 @@ export class PreferencesPanel<Key extends string, Value extends number | boolean
       if (this.#retryOperation) void this.run(this.#retryOperation);
     }, { signal });
     const actions = document.createElement("div");
-    actions.className = "controls";
+    actions.className = "controls preferences-actions";
     actions.append(this.#save, this.#reset, this.#retry);
     this.#status = document.createElement("p");
+    this.#status.className = "preferences-status";
     this.#status.setAttribute("role", "status");
     this.#status.setAttribute("aria-live", "polite");
     options.root.replaceChildren(heading, note, controls, actions, this.#status);
@@ -236,6 +247,8 @@ export class PreferencesPanel<Key extends string, Value extends number | boolean
         if (typeof value !== "number") throw new Error(`数值偏好控件需要数值：${key}`);
         item.input.value = String(value);
         item.output.value = item.field.format(value);
+        const percentage = Math.max(0, Math.min(100, (value - item.field.min) / (item.field.max - item.field.min) * 100));
+        item.input.style.setProperty("--slider-pct", `${percentage}%`);
       }
       item.input.disabled = disabled;
     }

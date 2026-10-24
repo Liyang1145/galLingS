@@ -1,0 +1,111 @@
+{
+  "passed": true,
+  "branch": "fix/character-performance",
+  "baseline": "ffa0311c217a434c098af52abe4d1fc75432825a",
+  "approval": {
+    "date": "2026-10-25",
+    "approved": [
+      "V01",
+      "V02",
+      "V03",
+      "V04",
+      "V05",
+      "V06",
+      "V07",
+      "V08",
+      "V09",
+      "V10",
+      "V11",
+      "V12",
+      "V15",
+      "V16",
+      "V17",
+      "V18",
+      "V21",
+      "V22",
+      "V23",
+      "V24",
+      "V25",
+      "V26"
+    ],
+    "deferred": [
+      "V13",
+      "V14"
+    ],
+    "notApproved": [
+      "V19",
+      "V20"
+    ],
+    "animationsApproved": false,
+    "userQuote": "v01 02..一直到12都行.1314待定，15161718,212223242526 都可以用了"
+  },
+  "assets": 22,
+  "changedNodes": 308,
+  "sourcePixelsAndAlphaUnchanged": true,
+  "losslessWebP": true,
+  "allOriginalArtworkFilesPreserved": true,
+  "nonVisualNodeFieldsUnchanged": true,
+  "all3315StableIdsOrderTextChoicesVarsPreserved": true,
+  "allVoiceMusicAndSfxBindingsPreserved": true,
+  "voiceBindingCount": 824,
+  "pendingAndUnspecifiedFourLeftUnchanged": true,
+  "animationsIntegrated": false,
+  "visual": {
+    "passed": true,
+    "checkedChangedNodes": 308,
+    "approvedAssets": 22,
+    "screenshotPairs": 22,
+    "missingAssetNodes": [],
+    "pageErrors": [],
+    "imagesDecodedInBrowser": true,
+    "onlyApprovedArtIntegrated": true
+  },
+  "fullRegression": {
+    "load_s": 3.16,
+    "body": "game playing",
+    "chapters": 18,
+    "walk": {
+      "n": 3315,
+      "p50": 0.09999999403953552,
+      "p99": 0.9000000059604645,
+      "max": 82.2999999821186,
+      "bad": [],
+      "nbad": 0
+    },
+    "cg": {
+      "n": 31,
+      "p50": 91.90000000596046,
+      "max": 179.59999999403954,
+      "heapMB": 10
+    },
+    "save": {
+      "want": {
+        "idx": 1504,
+        "id": "6cdt4nv4",
+        "vars": "{\"好感\":0,\"尾鳍\":7,\"贝壳延后\":0,\"玩笑\":0,\"海星放生\":0,\"周目\":1,\"结局数\":0}"
+      },
+      "got": {
+        "idx": 1504,
+        "id": "6cdt4nv4",
+        "vars": "{\"好感\":0,\"尾鳍\":7,\"贝壳延后\":0,\"玩笑\":0,\"海星放生\":0,\"周目\":1,\"结局数\":0}"
+      }
+    },
+    "prev": [
+      302,
+      301
+    ],
+    "errs": [],
+    "nerrs": 0
+  },
+  "desktopComparisonsVisuallyInspected": 22,
+  "activeCGCount": 31,
+  "bellGallerySlotAndUnlockIdPreserved": true,
+  "phoneC12RetiredFromGalleryAfterStandingPoseReplacement": true,
+  "viewingNote": "V21/V22 table and notebook overlap the existing dialogue panel; no global dialogue relocation; hide UI to see complete approved artwork",
+  "changedDocumentLinks": {
+    "passed": true,
+    "checked": 92,
+    "broken": [],
+    "method": "Repository checker syntax against full fetched tree plus changes"
+  }
+}

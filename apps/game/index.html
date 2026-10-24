@@ -150,9 +150,9 @@
         <p id="record-message" role="status" aria-live="polite">第一话的全局记录与进度分开保存，章节试阅与限时样例不写入全局成果。</p>
         <button type="button" id="retry-records" hidden>重试保存全局记录</button>
       </section>
-      <dialog id="gallery" class="gallery-dialog" aria-labelledby="gallery-heading">
-        <header><h2 id="gallery-heading">鉴赏</h2><button type="button" id="gallery-close">返回主页</button></header>
-        <p>已解锁的结局和 CG 跨存档保留。图片不可用时可重试，收藏记录仍保留；鉴赏不改变剧情进度。</p>
+      <dialog id="gallery" class="gallery-dialog collection-dialog" aria-labelledby="gallery-heading">
+        <header><div><small class="panel-kicker">旅途留下的风景</small><h2 id="gallery-heading">鉴赏</h2></div><button type="button" id="gallery-close" autofocus>返回主页</button></header>
+        <p class="collection-intro">已解锁的结局和 CG 跨存档保留。图片不可用时可重试，收藏记录仍保留；鉴赏不改变剧情进度。</p>
         <div id="gallery-body"></div>
       </dialog>
       <dialog id="dialogue-history" class="gallery-dialog dialogue-history-dialog" aria-labelledby="dialogue-history-heading">
@@ -160,13 +160,13 @@
         <p class="dialogue-intro">本次游玩最近 300 条对白与选择。查看时暂停主线，关闭会停止试听；重新开始或读档后从当前位置重新记录。</p>
         <div id="dialogue-history-body"></div>
       </dialog>
-      <dialog id="sounds" class="gallery-dialog sound-dialog" aria-labelledby="sounds-heading">
-        <header><h2 id="sounds-heading">声音收藏</h2><button type="button" id="sounds-close" autofocus>返回主页</button></header>
-        <p>重听一段旋律，或留在熟悉的海风里。试听只读取本地声音，不改变剧情进度与收藏成果。</p>
+      <dialog id="sounds" class="gallery-dialog collection-dialog sound-dialog" aria-labelledby="sounds-heading">
+        <header><div><small class="panel-kicker">海风与布丁</small><h2 id="sounds-heading">声音收藏</h2></div><button type="button" id="sounds-close" autofocus>返回主页</button></header>
+        <p class="collection-intro">重听一段旋律，或留在熟悉的海风里。试听只读取本地声音，不改变剧情进度与收藏成果。</p>
         <div id="sounds-body"></div>
       </dialog>
-      <dialog id="chapters" class="gallery-dialog chapter-dialog" aria-labelledby="chapters-heading">
-        <header><h2 id="chapters-heading">章节试阅</h2><button type="button" id="chapters-close" autofocus>返回主页</button></header>
+      <dialog id="chapters" class="gallery-dialog collection-dialog chapter-dialog" aria-labelledby="chapters-heading">
+        <header><div><small class="panel-kicker">故事的起点</small><h2 id="chapters-heading">章节试阅</h2></div><button type="button" id="chapters-close" autofocus>返回主页</button></header>
         <div id="chapters-body"></div>
       </dialog>
       <dialog id="aftergame" class="gallery-dialog aftergame-dialog" aria-labelledby="aftergame-heading">

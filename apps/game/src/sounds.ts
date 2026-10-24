@@ -72,6 +72,7 @@ export class SoundLibraryPanel {
       tabs.set(category, button);
       nav.append(button);
       const panel = element("section");
+      panel.dataset.soundCategory = category;
       panel.setAttribute("aria-label", `${LABELS[category]}曲目`);
       panel.hidden = category !== "music";
       panel.append(this.grid(this.#entries.filter(entry => entry.category === category && !entry.auditionOnly), signal));

@@ -27,11 +27,20 @@ export class ChapterPanel {
     const events = new AbortController();
     this.#events = events;
     const note = element("p", "每次试阅从所选章节的声明初值开始，周目 1、结局数 0；不是此前真实路线进度。不读取或写入玩家存档、全局成果和聊天记录。试阅调整使用独立内存偏好，返回主页后恢复正常入口设置。");
-    const initial = element("pre", JSON.stringify({
-      variables: Object.fromEntries(this.#content.variables.map(variable => [variable.name, variable.initial])),
-      player: { "周目": 1, "结局数": 0 },
-    }, null, 2), "chapter-initial");
+    const initial = element("section", "", "chapter-initial");
     initial.setAttribute("aria-label", "每次试阅的完整初始条件");
+    const values = element("dl");
+    for (const variable of this.#content.variables) {
+      const item = element("div");
+      item.append(element("dt", variable.name), element("dd", JSON.stringify(variable.initial)));
+      values.append(item);
+    }
+    for (const [name, value] of [["周目", "1"], ["结局数", "0"]] as const) {
+      const item = element("div");
+      item.append(element("dt", name), element("dd", value));
+      values.append(item);
+    }
+    initial.append(element("h3", "每次试阅的初始条件"), values);
     const grid = element("div", "", "chapter-grid");
     for (const entry of chapterCatalog(this.#content)) {
       const button = element("button");

@@ -114,12 +114,21 @@ export class GalleryPanel {
     const catalog = this.#catalog;
     const stats = element("p", `周目 ${playerProjection(records)["周目"]} · 通关 ${records.clears.length} 次 · `
       + `结局 ${catalog.endings.filter(id => endings.has(id)).length}/${catalog.endings.length} · `
-      + `CG ${catalog.cgs.filter(asset => cgs.has(asset.id)).length}/${catalog.cgs.length}`);
-    const list = element("ul");
+      + `CG ${catalog.cgs.filter(asset => cgs.has(asset.id)).length}/${catalog.cgs.length}`, "gallery-stats");
+    const list = element("ul", "", "gallery-endings");
     for (const id of catalog.endings) {
       const ending = endings.get(id);
-      list.append(element("li", ending ? `${id} · ${new Date(ending.unlockedAt).toLocaleDateString()}` : "尚未解锁的结局"));
+      const item = element("li");
+      item.dataset.unlocked = String(!!ending);
+      item.append(element("strong", ending ? id : "尚未解锁的结局"));
+      if (ending) {
+        const time = element("time", new Date(ending.unlockedAt).toLocaleDateString());
+        time.dateTime = new Date(ending.unlockedAt).toISOString();
+        item.append(time);
+      }
+      list.append(item);
     }
+    if (!catalog.endings.length) list.append(element("li", "当前作品尚未登记结局。"));
     const grid = element("div", "", "gallery-grid");
     const viewer = element("figure");
     viewer.hidden = true;
@@ -146,15 +155,16 @@ export class GalleryPanel {
     retryFull.addEventListener("click", () => {
       if (this.#open && selected) fullImage.load(selected.id, selected.name);
     }, { signal });
-    close.addEventListener("click", () => {
+    const closeViewer = (restoreFocus: boolean): void => {
       if (!this.#open) return;
       fullImage.clear();
       viewer.hidden = true;
       fullStatus.textContent = "";
       const previous = selected;
       selected = null;
-      if (previous?.button.isConnected) previous.button.focus({ preventScroll: true });
-    }, { signal });
+      if (restoreFocus && previous?.button.isConnected) previous.button.focus({ preventScroll: true });
+    };
+    close.addEventListener("click", () => closeViewer(true), { signal });
     viewer.append(caption, fullStatus, fullImageRoot, retryFull, close);
     for (const asset of catalog.cgs) {
       const card = element("article", "", "gallery-card");
@@ -195,7 +205,33 @@ export class GalleryPanel {
       grid.append(card);
       thumbnail.load(asset.id, name);
     }
-    this.#root.append(stats, element("h3", "结局收藏"), list, element("h3", "CG 鉴赏"), viewer, grid);
+    if (!catalog.cgs.length) grid.append(element("p", "当前作品尚未登记 CG。"));
+    const cgSection = element("section", "", "gallery-cg-section");
+    cgSection.setAttribute("aria-label", "CG 鉴赏");
+    cgSection.append(element("h3", "CG 鉴赏"), viewer, grid);
+    const endingSection = element("section");
+    endingSection.setAttribute("aria-label", "结局收藏");
+    endingSection.hidden = true;
+    endingSection.append(element("h3", "结局收藏"), list);
+    const nav = element("nav", "", "gallery-tabs");
+    nav.setAttribute("aria-label", "鉴赏分类");
+    const cgTab = action(`CG ${catalog.cgs.filter(asset => cgs.has(asset.id)).length}/${catalog.cgs.length}`);
+    const endingTab = action(`结局 ${catalog.endings.filter(id => endings.has(id)).length}/${catalog.endings.length}`);
+    cgTab.setAttribute("aria-pressed", "true");
+    endingTab.setAttribute("aria-pressed", "false");
+    const selectTab = (showCG: boolean): void => {
+      if (!this.#open) return;
+      // Switching categories leaves the active full image; old decode callbacks cannot reveal it later.
+      if (!showCG) closeViewer(false);
+      cgSection.hidden = !showCG;
+      endingSection.hidden = showCG;
+      cgTab.setAttribute("aria-pressed", String(showCG));
+      endingTab.setAttribute("aria-pressed", String(!showCG));
+    };
+    cgTab.addEventListener("click", () => selectTab(true), { signal });
+    endingTab.addEventListener("click", () => selectTab(false), { signal });
+    nav.append(cgTab, endingTab);
+    this.#root.append(nav, cgSection, endingSection, stats);
   }
 
   close(): void {

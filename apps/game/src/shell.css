@@ -269,6 +269,92 @@ body.game-shell { overflow: hidden; background: #08191d; }
 @media (max-aspect-ratio: 20 / 23) {
   .game-shell .dialogue-history-dialog[open] { height: calc(100dvh - 20px); }
 }
+.game-shell .collection-dialog[open] {
+  display: flex; flex-direction: column; height: min(860px, calc(100dvh - 40px)); overflow: hidden;
+}
+.game-shell .collection-dialog > header { position: static; flex-shrink: 0; }
+.game-shell .collection-dialog h2 { margin: 6px 0 0; }
+.game-shell .collection-intro { flex-shrink: 0; margin: 12px 0; color: #b9cbc3; font-size: 15px; line-height: 1.7; }
+.game-shell #gallery-body,
+.game-shell #sounds-body,
+.game-shell #chapters-body { flex: 1; min-height: 0; overflow: auto; overscroll-behavior: contain; }
+.game-shell .gallery-tabs,
+.game-shell .sound-tabs { display: flex; flex-wrap: wrap; gap: 12px; margin: 16px 0 24px; padding-bottom: 16px; border-bottom: 1px solid #bdd2c12b; }
+.game-shell .gallery-tabs button,
+.game-shell .sound-tabs button,
+.game-shell .sound-player button {
+  min-height: 44px; border: 1px solid #a9c3b64a; border-radius: 6px; background: #203f40;
+  color: #dce9db; padding: 10px 24px; font-size: 18px;
+}
+.game-shell .gallery-tabs button[aria-pressed="true"],
+.game-shell .sound-tabs button[aria-pressed="true"] { background: #d5e4ce; color: #263f36; border-color: #d5e4ce; }
+.game-shell .collection-dialog h3 { font-size: 20px; color: #e9efdf; font-weight: 400; margin: 16px 0; }
+.game-shell .gallery-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+.game-shell .gallery-cg { border-color: #ffffff30; border-radius: 8px; min-height: 0; background: #1a1c24; }
+.game-shell .gallery-cg:disabled { opacity: 1; background: linear-gradient(145deg, #233c3c, #172c30); color: #abc3b1; border: 1px dashed #9db6a740; }
+.game-shell .gallery-image-status { color: #b9cbc3; font-size: 13px; }
+.game-shell .gallery-card > button:not(.gallery-cg),
+.game-shell .gallery-cg-section figure > button { min-height: 44px; background: #183437; border-color: #9cbcad55; }
+.game-shell .gallery-cg-section figure { padding: 12px; border: 1px solid #9cbcad55; border-radius: 8px; background: #102327; }
+.game-shell .gallery-cg-section figure:focus-visible { outline: 3px solid #d8e4b5; outline-offset: -3px; }
+.game-shell .gallery-cg-section figcaption { color: #e9efdf; overflow-wrap: anywhere; }
+.game-shell .gallery-endings { list-style: none; padding: 0; margin: 0 auto; max-width: 620px; }
+.game-shell .gallery-endings li {
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px 16px;
+  margin-bottom: 10px; padding: 14px 16px; border-radius: 8px; background: #ffffff10; color: #e9efdf;
+}
+.game-shell .gallery-endings strong { font-weight: 400; font-size: 20px; overflow-wrap: anywhere; }
+.game-shell .gallery-endings time { color: #a8c2b5; font-size: 14px; }
+.game-shell .gallery-endings li[data-unlocked="false"] { color: #abc3b1; background: linear-gradient(145deg, #233c3c, #172c30); border: 1px dashed #9db6a740; }
+.game-shell .gallery-stats { text-align: center; color: #a8c2b5; line-height: 1.7; margin: 24px 0 12px; font-size: 14px; }
+.game-shell .sound-player {
+  background: #142f32; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 12px 0;
+  border-color: #bdd2c12b;
+}
+.game-shell .sound-player p { flex: 1; min-width: min(260px, 100%); margin: 0; font-size: 16px; color: #dce9db; }
+.game-shell .sound-player button + button { margin: 0; }
+.game-shell .sound-player button { font-size: 14px; padding: 8px 16px; }
+.game-shell .sound-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.game-shell .sound-grid button { min-height: 92px; padding: 18px 20px; border: 1px solid #91b3a43a; border-radius: 8px; background: #ffffff06; color: #f0f0df; font-size: 18px; }
+.game-shell .sound-grid button:hover:not(:disabled) { background-color: #accdbd14; border-color: #b4d0b777; }
+.game-shell .sound-grid button[aria-pressed="true"] { background-color: #63897530; border-color: #c2d8ae; }
+.game-shell .sound-grid b { font-weight: 500; }
+.game-shell .sound-grid small { color: #a6c2b4; font-size: 14px; }
+.game-shell [data-sound-category="music"] .sound-grid { grid-template-columns: minmax(0, 1fr); }
+.game-shell [data-sound-category="music"] .sound-grid button { min-height: 220px; padding: 40px; font-size: 29px; background: linear-gradient(90deg, #193a3afa 20%, #173435cf 62%, #15353c40); }
+.game-shell [data-sound-category="music"] .sound-grid small { font-size: 17px; }
+.game-shell .sound-archive { margin-top: 32px; border-color: #a7c2b329; padding-top: 20px; color: #a8c2b5; }
+.game-shell .sound-archive summary { min-height: 44px; padding: 8px 0; cursor: pointer; }
+.game-shell .sound-archive summary:focus-visible { outline: 3px solid #d8e4b5; outline-offset: -3px; }
+.game-shell .chapter-initial { background: #183437; border: 1px solid #afcfc43a; border-radius: 6px; padding: 16px; overflow: visible; }
+.game-shell .chapter-initial h3 { margin: 0 0 12px; font-size: 16px; }
+.game-shell .chapter-initial dl { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px 16px; margin: 0; }
+.game-shell .chapter-initial dl > div { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; border-bottom: 1px solid #afcfc429; padding: 6px 0; min-width: 0; }
+.game-shell .chapter-initial dt { color: #b9cbc3; overflow-wrap: anywhere; }
+.game-shell .chapter-initial dd { margin: 0; color: #e4d8b8; overflow-wrap: anywhere; }
+.game-shell .chapter-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 28px 0 12px; gap: 12px; }
+.game-shell .chapter-grid button { min-height: 84px; border: 1px solid #afcfc43a; border-radius: 6px; background: #d6e2d80a; color: #f8f4e9; padding: 18px 16px; font-size: 18px; }
+.game-shell .chapter-grid button:hover:not(:disabled) { background: #b7d5c21c; border-color: #b7d5c296; }
+.game-shell .chapter-grid b { font-weight: 400; }
+.game-shell .chapter-grid small { color: #a8c2b5; font-size: 13px; }
+@media (max-width: 850px) {
+  .game-shell .gallery-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .game-shell .sound-grid,
+  .game-shell .chapter-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 560px) {
+  .game-shell .gallery-grid,
+  .game-shell .chapter-initial dl { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .game-shell .sound-grid,
+  .game-shell .chapter-grid { grid-template-columns: minmax(0, 1fr); }
+  .game-shell .gallery-tabs button,
+  .game-shell .sound-tabs button { font-size: 16px; padding: 8px 16px; }
+  .game-shell [data-sound-category="music"] .sound-grid button { min-height: 120px; padding: 20px; font-size: 22px; }
+  .game-shell .gallery-cg { font-size: 14px; }
+}
+@media (max-aspect-ratio: 20 / 23) {
+  .game-shell .collection-dialog[open] { height: calc(100dvh - 20px); }
+}
 @media (max-width: 950px) {
   .game-shell .play-controls { left: 10px; right: 10px; gap: 5px; }
   .game-shell .play-controls button { min-height: 36px; padding: 0 6px; font-size: 12px; }

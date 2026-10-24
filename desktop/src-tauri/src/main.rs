@@ -1,4 +1,4 @@
-//! galLingS 桌面程序（Steam 发行版 & Windows 独立客户端）：
+//! galLingS 桌面程序（Steam 发行版 & Windows / Linux 独立客户端）：
 //! - `backend`：Python `galLingS` 完整引擎进程探测、启动与生命周期管理
 //! - `host_api`：`/__host/*` 窗口控制、Steam Auto-Cloud 原子存档、独立大模型配置
 //! - `tools`：GalAgent 结局后自由聊天工作区工具执行器
@@ -125,7 +125,20 @@ fn respond(app: &AppHandle, root: &Path, req: &Request<Vec<u8>>) -> Response<Vec
     b.body(buf).unwrap()
 }
 
+/// Linux（WebKitGTK）上的已知坑：部分 NVIDIA / 虚拟机 / Wayland 环境下 DMA-BUF 渲染会白屏或黑屏。
+/// 用户自己设置过就尊重用户的设置；`GALLINGS_WEBKIT_DMABUF=1` 可以显式打开。
+#[cfg(target_os = "linux")]
+fn linux_webkit_env() {
+    if std::env::var_os("WEBKIT_DISABLE_DMABUF_RENDERER").is_none()
+        && std::env::var("GALLINGS_WEBKIT_DMABUF").as_deref() != Ok("1")
+    {
+        std::env::set_var("WEBKIT_DISABLE_DMABUF_RENDERER", "1");
+    }
+}
+
 fn main() {
+    #[cfg(target_os = "linux")]
+    linux_webkit_env();
     tauri::Builder::default()
         .register_uri_scheme_protocol("app", |ctx, req| {
             let app = ctx.app_handle();

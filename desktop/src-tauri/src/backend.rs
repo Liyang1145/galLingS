@@ -197,6 +197,17 @@ pub fn ensure_python_backend(app: &AppHandle) -> Option<String> {
         use std::os::windows::process::CommandExt;
         cmd.creation_flags(0x08000000);
     }
+    #[cfg(target_os = "linux")]
+    {
+        // 外壳被 kill -9 或崩溃时内核给后端发 SIGTERM，不留孤儿 Python 进程占着端口
+        use std::os::unix::process::CommandExt;
+        unsafe {
+            cmd.pre_exec(|| {
+                libc::prctl(libc::PR_SET_PDEATHSIG, libc::SIGTERM);
+                Ok(())
+            });
+        }
+    }
 
     let child = cmd.spawn().ok()?;
     if let Ok(mut guard) = server_slot().lock() {

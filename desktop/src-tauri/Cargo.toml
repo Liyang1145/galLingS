@@ -15,6 +15,10 @@ percent-encoding = "2"
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 
+[target.'cfg(target_os = "linux")'.dependencies]
+# 后台 Python 进程设 PR_SET_PDEATHSIG：外壳被强杀时后端跟着退出（Windows 由窗口销毁事件清理）
+libc = "0.2"
+
 [profile.release]
 lto = true
 codegen-units = 1

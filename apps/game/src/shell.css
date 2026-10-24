@@ -217,6 +217,58 @@ body.game-shell { overflow: hidden; background: #08191d; }
   .game-shell #settings-panel input[type="range"]::-webkit-slider-thumb { width: 24px; height: 24px; }
   .game-shell #settings-panel input[type="range"]::-moz-range-thumb { width: 22px; height: 22px; }
 }
+.game-shell .dialogue-history-dialog[open] {
+  display: flex; flex-direction: column; height: min(780px, calc(100dvh - 40px)); overflow: hidden;
+}
+.game-shell .dialogue-history-dialog > header { position: static; flex-shrink: 0; }
+.game-shell .dialogue-history-dialog h2 { margin: 6px 0 0; }
+.game-shell .dialogue-intro { flex-shrink: 0; margin: 8px 0 16px; color: #b9cbc3; font-size: 14px; line-height: 1.65; }
+.game-shell #dialogue-history-body { flex: 1; min-height: 0; overflow: auto; overscroll-behavior: contain; }
+.game-shell .dialogue-tools {
+  position: sticky; top: 0; z-index: 1; padding: 8px 0; background: #142f32;
+  max-height: min(360px, 50dvh); overflow: auto; border-bottom: 1px solid #a5c0b229;
+}
+.game-shell .dialogue-tools .dialogue-audio-controls {
+  position: static; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px;
+  padding: 0; border: 0; background: transparent;
+}
+.game-shell .dialogue-audio-controls p { flex: 1; min-width: min(220px, 100%); margin: 0; color: #c0d0c2; }
+.game-shell .dialogue-tools > p { color: #c0d0c2; font-size: 13px; line-height: 1.65; margin: 8px 0 0; overflow-wrap: anywhere; }
+.game-shell .dialogue-tools button,
+.game-shell .dialogue-entry-actions button {
+  min-height: 44px; border: 1px solid #6bc3cc77; border-radius: 3px; background: #0a1d25;
+  color: #b8d9df; font-size: 14px;
+}
+.game-shell .dialogue-tools button:hover:not(:disabled),
+.game-shell .dialogue-entry-actions button:hover:not(:disabled),
+.game-shell .dialogue-entry-actions button[aria-pressed="true"] { background: #225d68; color: #d8ffff; border-color: #7ee5e9; }
+.game-shell .dialogue-rollback-settings summary { padding: 10px 0; min-height: 44px; cursor: pointer; color: #b8d9df; font-size: 14px; }
+.game-shell .dialogue-rollback-settings summary:focus-visible { outline: 2px solid #7ee5e9; outline-offset: -2px; }
+.game-shell .dialogue-rollback-controls { margin: 0; border-color: #a5c0b229; padding: 12px; }
+.game-shell .dialogue-rollback-controls legend { color: #c0d0c2; font-size: 14px; }
+.game-shell .dialogue-rollback-controls label { font-size: 14px; color: #c0d0c2; }
+.game-shell .dialogue-rollback-controls select { min-height: 44px; background: #183437; border-color: #9cbcad55; }
+.game-shell .dialogue-rollback-controls p { margin: 8px 0 0; color: #a8c2b5; }
+.game-shell .dialogue-history { margin: 0; }
+.game-shell .dialogue-history li { padding: 18px 4px; border: 0; border-bottom: 1px solid #a5c0b229; }
+.game-shell .dialogue-history b { display: block; color: #b8d9df; font-size: 18px; font-weight: 500; margin-bottom: 5px; }
+.game-shell .dialogue-history p { font-size: 25px; line-height: 1.65; margin: 0; color: #e9efdf; }
+.game-shell .dialogue-history li[data-kind="choice"] p { color: #e4d8b8; }
+.game-shell .dialogue-history .dialogue-chapter { color: #a8c2b5; font-size: 13px; letter-spacing: .08em; margin: 0 0 12px; }
+.game-shell .dialogue-entry-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 12px; }
+.game-shell .dialogue-entry-actions button,
+.game-shell .dialogue-entry-actions button + button { margin: 0; }
+.game-shell .dialogue-entry-actions small { margin: 0; font-size: 13px; color: #c0d0c2; }
+.game-shell .dialogue-empty { padding: 24px 4px; color: #c0d0c2; line-height: 1.7; }
+@media (max-width: 560px) {
+  .game-shell .dialogue-history p { font-size: 17px; }
+  .game-shell .dialogue-history b { font-size: 15px; }
+  .game-shell .dialogue-history li { padding: 12px 2px; }
+  .game-shell .dialogue-rollback-controls label { align-items: stretch; flex-direction: column; }
+}
+@media (max-aspect-ratio: 20 / 23) {
+  .game-shell .dialogue-history-dialog[open] { height: calc(100dvh - 20px); }
+}
 @media (max-width: 950px) {
   .game-shell .play-controls { left: 10px; right: 10px; gap: 5px; }
   .game-shell .play-controls button { min-height: 36px; padding: 0 6px; font-size: 12px; }

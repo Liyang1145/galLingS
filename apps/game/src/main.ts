@@ -1177,7 +1177,7 @@ async function main(): Promise<void> {
       dialoguePanel?.open(owner.dialogueHistory(), owner.rollbackTargets());
       dialogue.showModal();
       dialoguePanel?.refresh(host.state().audioAllowed);
-      dialogueBody.lastElementChild?.lastElementChild?.scrollIntoView({ block: "nearest" });
+      dialogueBody.scrollTop = dialogueBody.scrollHeight;
     } catch (error: unknown) {
       closeDialogue();
       throw error;

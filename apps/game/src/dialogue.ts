@@ -75,52 +75,81 @@ export class DialoguePanel {
     boundaryLabel.append("回退范围", this.#boundary);
     this.#rollbackStatus.setAttribute("role", "status");
     this.#rollbackStatus.setAttribute("aria-live", "polite");
-    this.#rollbackStatus.textContent = "请先选本次范围和语音方式，再点击条目回退；已解锁成果保留。当前句显示完整、画面就绪后才可操作，结局后暂不支持。";
-    rollbackControls.append(legend, voiceLabel, boundaryLabel, this.#rollbackStatus);
+    this.#rollbackStatus.textContent = "查看和试听不会回退；回退会保留已解锁成果。";
+    rollbackControls.append(legend, voiceLabel, boundaryLabel);
     this.#voice.addEventListener("change", () => this.refreshRollback(), { signal });
     this.#boundary.addEventListener("change", () => this.refreshRollback(), { signal });
+    const rollbackSettings = document.createElement("details");
+    rollbackSettings.className = "dialogue-rollback-settings";
+    const summary = document.createElement("summary");
+    summary.textContent = "回退设置 · 先选范围与语音，再点条目";
+    rollbackSettings.append(summary, rollbackControls);
+    // Keep result diagnostics visible even when the settings disclosure is closed.
+    const help = document.createElement("p");
+    help.textContent = "当前句完整显示、画面就绪后才可回退，结局后暂不支持。每次打开都需明确选择本次范围与语音；关闭取消尚未采用的回退。";
+    rollbackControls.append(help);
+    const tools = document.createElement("div");
+    tools.className = "dialogue-tools";
+    tools.append(controls, rollbackSettings, this.#rollbackStatus);
     const rollbackTargets = new Map<number, RollbackTarget>(targets.map(target => [target.id, target]));
     const list = document.createElement("ol");
     list.className = "dialogue-history";
+    let chapter: string | null = null;
     for (const entry of entries) {
       const item = document.createElement("li");
+      item.dataset.kind = entry.kind;
+      if (entry.chapter !== chapter) {
+        chapter = entry.chapter;
+        if (chapter) {
+          const chapterHeading = document.createElement("small");
+          chapterHeading.className = "dialogue-chapter";
+          chapterHeading.textContent = chapter;
+          item.append(chapterHeading);
+        }
+      }
       const label = document.createElement("b");
       label.textContent = entry.kind === "choice"
         ? entry.timedOut ? "超时选择" : "选择" : entry.speaker || "旁白";
       const text = document.createElement("p");
       text.textContent = entry.text;
       item.append(label, text);
+      const actions = document.createElement("div");
+      actions.className = "dialogue-entry-actions";
       if (entry.kind === "line" && entry.voiceId) {
         const voiceId = entry.voiceId;
         const button = document.createElement("button");
         button.type = "button";
+        button.className = "dialogue-voice-action";
         button.textContent = "重播语音";
         button.setAttribute("aria-pressed", "false");
         button.setAttribute("aria-label", `重播${entry.speaker || "旁白"}的语音：${entry.text.slice(0, 40)}`);
         button.addEventListener("click", () => this.play(button, voiceId), { signal });
-        item.append(button);
+        actions.append(button);
         this.#voiceButtons.push(button);
       }
       const target = rollbackTargets.get(entry.visitId);
       if (target) {
         const button = document.createElement("button");
         button.type = "button";
+        button.className = "dialogue-return-action";
         button.textContent = entry.kind === "choice" ? "回到此选择之前" : "回到此处";
         button.setAttribute("aria-label", `${button.textContent}：${entry.text.slice(0, 40)}${target.crossesChoice ? "（跨选择）" : ""}`);
         button.addEventListener("click", () => { void this.rollback(target.id); }, { signal });
-        item.append(button);
+        actions.append(button);
         this.#rollbackButtons.push(button);
         if (target.crossesChoice) {
           const boundary = document.createElement("small");
           boundary.textContent = "此处需要跨选择回退";
-          item.append(boundary);
+          actions.append(boundary);
         }
       }
+      if (actions.childElementCount) item.append(actions);
       list.append(item);
     }
-    root.append(controls, rollbackControls);
+    root.append(tools);
     if (!entries.length) {
       const empty = document.createElement("p");
+      empty.className = "dialogue-empty";
       empty.textContent = "这里会留下本次游玩中已经出现的对白和选择。";
       root.append(empty);
     } else root.append(list);

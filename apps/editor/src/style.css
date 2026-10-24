@@ -33,6 +33,20 @@
 .draft-comparison section { min-width: 0; }
 .draft-comparison h3 { font-size: .85rem; font-weight: 500; }
 .draft-comparison pre { max-height: 240px; overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere; background: #061119; padding: 10px; font-size: .8rem; }
+.changes-panel { margin: 24px 0; border: 1px solid #557682; border-radius: 8px; padding: 16px; }
+.changes-panel h3, .changes-panel h4 { margin: 0; font-size: 1rem; font-weight: 500; overflow-wrap: anywhere; }
+.changes-panel h5 { margin: 10px 0; font-size: .85rem; font-weight: 500; }
+.changes-panel p { line-height: 1.7; overflow-wrap: anywhere; white-space: pre-wrap; }
+.changes-panel fieldset { min-width: 0; border: 1px solid #39515c; margin: 12px 0 0; padding: 12px; }
+.changes-panel fieldset:disabled { opacity: .6; }
+.changes-panel select { width: 100%; background: #102632; color: inherit; border: 1px solid #557682; border-radius: 6px; padding: 8px; font: inherit; }
+.changes-panel ol { padding-left: 24px; max-height: 600px; overflow: auto; }
+.changes-panel li { padding: 14px 0; border-bottom: 1px solid #39515c; overflow-wrap: anywhere; }
+.changes-panel li button { margin-top: 10px; max-width: 100%; white-space: normal; overflow-wrap: anywhere; min-height: 40px; }
+.changes-panel summary { cursor: pointer; padding: 10px 0; min-height: 40px; }
+.changes-panel summary:focus-visible, .changes-panel button:focus-visible { outline: 3px solid #aed9e7; outline-offset: 2px; }
+.changes-panel fieldset:disabled summary { pointer-events: none; }
+.changes-pager { margin-top: 12px; font-size: .8rem; }
 .reference-panel { margin: 24px 0; border: 1px solid #557682; border-radius: 8px; padding: 16px; }
 .reference-panel h3 { margin: 0; font-size: 1rem; font-weight: 500; }
 .reference-panel h4 { font-size: .85rem; font-weight: 500; overflow-wrap: anywhere; }

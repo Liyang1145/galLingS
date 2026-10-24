@@ -13,6 +13,7 @@ import type { AuthorDraftBase } from "../../../packages/story-model/src/author-d
 import { downloadDraft } from "./download.ts";
 import { AuthorReferences } from "./references.ts";
 import { AuthorFlow } from "./flow.ts";
+import { AuthorChanges } from "./changes.ts";
 import "../../game/src/style.css";
 import "./style.css";
 
@@ -63,6 +64,7 @@ let importer: AuthorDraftImporter | null = null;
 let references: AuthorReferences | null = null;
 let flow: AuthorFlow | null = null;
 let checkpoints: PreviewCheckpoints | null = null;
+let changes: AuthorChanges | null = null;
 const NODE_PAGE_SIZE = 200;
 let nodePage = 0;
 let nodeList: {
@@ -123,6 +125,7 @@ function controls(): void {
   importer?.setEnabled(!!baseline && operation === null);
   references?.setAvailable(!!baseline && !locked);
   flow?.setAvailable(!!baseline && !locked);
+  changes?.setAvailable(!!baseline && !locked);
   checkpoints?.setEnabled(!disposed && !!baseline && operation === null && !reviewing);
 }
 
@@ -227,6 +230,7 @@ function draftChanged(options: { cancelImport?: boolean; refreshForm?: boolean; 
   if (options.cancelImport !== false) importer?.invalidate();
   references?.invalidate();
   flow?.invalidate();
+  changes?.invalidate();
   checkpoints?.invalidatePending("草稿已变化，未采用旧检查点读取；已有待用数据保留，恢复时仍须匹配当前修订。");
   el.discard.checked = false;
   preview.draftChanged();
@@ -285,6 +289,7 @@ async function perform(kind: "load" | "preview" | "save", start: PreviewStart = 
   if (kind === "preview") button("stop").disabled = false;
   message(kind === "load" ? "正在读取作者源并转换内容……"
     : kind === "save" ? "正在检查草稿、保留备份并保存到作者源……" : "正在通过同一转换器准备预览……");
+  let sourceAdopted = false;
   try {
     const result = await request(kind === "load" ? "source" : kind, kind === "load" ? {} : patch(), controller.signal);
     if (disposed || epoch !== requestEpoch) return;
@@ -305,6 +310,7 @@ async function perform(kind: "load" | "preview" | "save", start: PreviewStart = 
       revision++;
       references?.invalidate();
       flow?.invalidate();
+      changes?.invalidate();
       el.discard.checked = false;
       if (!result.content.nodes.some(node => node.id === selected)) selected = result.content.entryNodeId;
       el.source.textContent = `作者源 SHA-256：${result.sourceSha256}；节点 ${result.content.nodes.length} 个；内容修订：${result.content.revision}`;
@@ -312,6 +318,7 @@ async function perform(kind: "load" | "preview" | "save", start: PreviewStart = 
       nodeForm();
       references?.refresh();
       flow?.refresh();
+      sourceAdopted = true;
       message(kind === "save"
         ? `作者源已保存。原文件备份：${result.backup ?? "未返回备份位置，请检查作品目录"}。预览已停止，请重新预览本次修订。`
         : "已读取当前作者源；编辑保留为本页草稿，保存需点击“保存到作者源”。");
@@ -327,6 +334,7 @@ async function perform(kind: "load" | "preview" | "save", start: PreviewStart = 
       requestController = null;
       button("stop").disabled = !preview.running;
       controls();
+      if (sourceAdopted) changes?.refresh();
     }
   }
 }
@@ -405,6 +413,7 @@ function dispose(): void {
   references?.dispose();
   flow?.dispose();
   checkpoints?.dispose();
+  changes?.dispose();
   nodeList = null;
   el.nodes.replaceChildren();
   drafts.clear();
@@ -474,6 +483,20 @@ checkpoints = new PreviewCheckpoints({
   canCapture: () => preview.canCheckpoint,
   capture: () => preview.captureCheckpoint(),
   resume(input, voice) { void perform("preview", { kind: "checkpoint", input, voice }); },
+});
+changes = new AuthorChanges({
+  root: element("author-changes", HTMLElement),
+  capture() {
+    if (!baseline || disposed || operation === "load" || operation === "save") return null;
+    drafts.closeGroup();
+    return {
+      content: baseline.content, sourceSha256: baseline.sourceSha256, revision,
+      edits: Object.freeze([...drafts.values()]),
+    };
+  },
+  current: snapshot => !disposed && baseline !== null && baseline.content === snapshot.content
+    && baseline.sourceSha256 === snapshot.sourceSha256 && revision === snapshot.revision,
+  navigate: navigateNode,
 });
 controls();
 void perform("load");

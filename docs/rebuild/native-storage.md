@@ -12,7 +12,7 @@
 | `desktop/src-tauri/src/rebuild_storage/address.rs` | 当前作品/范围的受限逻辑地址、槽位 JSON 字面量边界、UTF-16 排序及记录种类匹配 |
 | `desktop/src-tauri/src/main.rs`、`rebuild.rs` | 限于重构 Windows 入口，显式参数与前端能力文件检查后创建试用实例、启动工作线程 |
 | `desktop/src-tauri/src/rebuild_storage_bridge.rs` | 有界请求、页面代次/身份/ID、原操作缓存回执、后台线程读写；不接通用文件命令 |
-| `packages/player/src/web/native-records-bootstrap.js` | 只在 Windows 主页面注入，冻结存储选择/桥、单一队首、确认超时及旧回执拒绝 |
+| `packages/player/src/web/native-records-bootstrap.js` | 两端共用、按明确平台标记限制主页面来源，冻结存储选择/桥、单一队首、确认超时及旧回执拒绝 |
 | `packages/player/src/web/native-records.ts` | 现有存储接口适配、严格回执/分页校验和有界 CAS 重读，不另写领域规则 |
 | `apps/game/src/platform/storage.ts` | 当前页面选择一个记录源、绑定作品/身份、展示来源与原生警告，失败不换源 |
 
@@ -76,7 +76,7 @@
 
 默认无参数保持 IndexedDB。文件试用启动前检查清单登记及嵌入的 `assets/native-record-client.json`，要求 `haifeng.native-record-client/1` 与 `haifeng.native-records/1`；能力文件由当前 `game:build` 写入并纳入前端字节摘要，旧包缺少该能力时拒绝文件试用，不悄悄继续用 IndexedDB。文件/锁打开失败也拒绝，不回落另一记录源。
 
-基础桥仍为 `haifeng.host-bridge/3`，随包仍为 `/2`，记录载荷/容器不变。能力常量在 `packages/story-model/src/host.ts` 单独登记，不等同于存档版本。没有修改默认宿主、安装器、CI 或正式 `game` 范围；浏览器、Android 和未选择文件模式的 Windows 仍用原 IndexedDB。
+基础桥仍为 `haifeng.host-bridge/3`，随包仍为 `/2`，记录载荷/容器不变。能力常量在 `packages/story-model/src/host.ts` 单独登记，不等同于存档版本。没有修改默认宿主、安装器、CI 或正式 `game` 范围；浏览器及未显式选择文件模式的两端仍用原 IndexedDB。Android 显式布尔启动 extra 与独立文件装配见[专门说明](android-storage.md)，不是 Windows 运行参数。
 
 ## 请求、确认与不确定结果
 
@@ -96,6 +96,6 @@ Windows 主页面固定本页选择及随机身份，通过受限 `__HAIFENG_REC
 
 页面离开/销毁清理状态监听与后续请求许可，已开始写入继续遵守原归属；存档面板的原操作句柄、关闭显示失效、全局幂等与正常退出等待均复用现有流程。原 IndexedDB 不自动导入、迁移或覆盖，正式落点/兼容仍待用户决定。
 
-Android [文件物理后端](android-storage.md)随后从 `62b9746` 编写，尚未创建/接桥，Android 默认仍 IndexedDB；文件接线、缩略图、正式布局、导出/云同步及进程回收恢复仍未完成。本轮只是已编写/接线，尚未运行或验收；旧包须重建，不能将能力文件存在当作设备验证。
+Android [文件后端及显式装配](android-storage.md)随后从 `62b9746`、`7c25552` 编写并接线，普通启动仍 IndexedDB；文件试用未运行，正式存储/迁移、缩略图、正式布局、导出/云同步及进程回收恢复仍未完成。Android 准备记录单独升为 `/3` 以核对共享记录桥摘要，Windows 准备保持原格式。本轮只是已编写/接线，尚未运行或验收；旧包须重建，不能将能力文件存在当作设备验证。
 
 统一测试预留：默认/显式模式隔离、旧包/错误能力拒绝、Unicode/代理项与 `null`、分页收短页、非法/跨范围请求、CAS 竞争/幂等、目录锁和写入/同步/移动故障、最新容器损坏/代次倒退、清理警告、投递丢失/重复/迟到、超时后新请求未发送、原回执恢复和显式重试、页面换代与退出等待。当前未执行。

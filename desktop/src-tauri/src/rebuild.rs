@@ -263,6 +263,7 @@ pub fn run() {
             let data = local_data.join("webview");
             std::fs::create_dir_all(&data)?;
             let records_bootstrap = include_str!("../../../packages/player/src/web/native-records-bootstrap.js")
+                .replace("__HAIFENG_RECORD_PLATFORM__", "windows-trial")
                 .replace("__HAIFENG_FILE_RECORDS__", if file_records { "true" } else { "false" })
                 .replace("__HAIFENG_RECORD_WORK__", &serde_json::to_string(&work_id)?);
             let bootstrap = format!("{records_bootstrap}\n{}", include_str!("../../../packages/player/src/web/host-bootstrap.js")

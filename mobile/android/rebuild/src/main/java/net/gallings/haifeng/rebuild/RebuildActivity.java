@@ -29,11 +29,14 @@ import androidx.webkit.WebViewCompat;
 import androidx.webkit.WebViewFeature;
 import androidx.webkit.WebMessageCompat;
 import java.io.ByteArrayInputStream;
+import java.io.File;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 /** Explicit integration trial. Local packaged content, no legacy bridge or interpreter fallback. */
@@ -57,6 +60,7 @@ public final class RebuildActivity extends Activity {
     private long exitStarted;
     private final Handler handler = new Handler(Looper.getMainLooper());
     private GameAudioFocus audioFocus;
+    private NativeRecordBridge records;
     private Runnable deliveryTimeout;
     private int deliveryAttempt;
     private boolean deliveryWarning;
@@ -107,6 +111,15 @@ public final class RebuildActivity extends Activity {
                 fail("游戏包与原生宿主协议不匹配，请重新构建并准备。");
                 return;
             }
+            String workId = manifest.getString("workId");
+            Object mode = getIntent().hasExtra("rebuild-file-records")
+                    ? getIntent().getExtras().get("rebuild-file-records") : Boolean.FALSE;
+            if (!(mode instanceof Boolean)) throw new IllegalArgumentException("rebuild-file-records 必须是布尔启动参数");
+            boolean fileRecords = (Boolean) mode;
+            if (fileRecords) checkRecordClient(manifest);
+            String recordScript = replaceMarker(assetText("native-records-bootstrap.js"),
+                    "__HAIFENG_FILE_RECORDS__", fileRecords ? "true" : "false");
+            recordScript = replaceMarker(recordScript, "__HAIFENG_RECORD_WORK__", NativeRecordJson.quote(workId));
             WebViewCompat.addWebMessageListener(web, "__HAIFENG_NATIVE_AUDIO__", Collections.singleton(ORIGIN),
                     (view, message, origin, mainFrame, reply) -> {
                         if (destroyed || view != web || !mainFrame || !ORIGIN.equals(origin.toString())
@@ -149,7 +162,10 @@ public final class RebuildActivity extends Activity {
                             Toast.makeText(this, "全屏请求格式无效，窗口保持原模式", Toast.LENGTH_SHORT).show();
                         }
                     });
-            WebViewCompat.addDocumentStartJavaScript(web, assetText("host-bootstrap.js"), Collections.singleton(ORIGIN));
+            WebViewCompat.addDocumentStartJavaScript(web, recordScript + "\n" + assetText("host-bootstrap.js"), Collections.singleton(ORIGIN));
+            if (fileRecords) {
+                records = new NativeRecordBridge(web, new File(getFilesDir(), "native-records-trial"), workId);
+            }
         } catch (Exception error) {
             fail("宿主桥未载入：" + error.getMessage());
             return;
@@ -173,6 +189,8 @@ public final class RebuildActivity extends Activity {
                 return !request.isForMainFrame() || !START.equals(request.getUrl().toString());
             }
             @Override public void onPageStarted(WebView view, String url, android.graphics.Bitmap icon) {
+                if (destroyed || view != web) return;
+                if (records != null) records.pageStarted();
                 page++;
                 resetFullscreen();
                 displayRequest = 0;
@@ -186,7 +204,11 @@ public final class RebuildActivity extends Activity {
                 if (!START.equals(url)) fail("已阻止离开本地游戏入口。");
             }
             @Override public void onPageFinished(WebView view, String url) {
-                if (START.equals(url)) { displayReady = true; publish(); }
+                if (!destroyed && view == web && START.equals(url)) {
+                    displayReady = true;
+                    if (records != null) records.pageFinished();
+                    publish();
+                }
             }
             @Override public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
                 if (request.isForMainFrame()) fail("本地游戏页无法读取：" + error.getDescription());
@@ -201,7 +223,47 @@ public final class RebuildActivity extends Activity {
         });
         setContentView(web);
         // WebView history is not a story checkpoint. Recreate at title and let the player load progress.
-        web.loadUrl(START);
+        if (records == null) web.loadUrl(START);
+        else {
+            NativeRecordBridge selected = records;
+            selected.start(() -> {
+                if (!destroyed && web != null && records == selected) web.loadUrl(START);
+            }, message -> fail("文件记录试用未启动：" + message));
+        }
+    }
+
+    private static String replaceMarker(String source, String marker, String value) {
+        int first = source.indexOf(marker);
+        if (first < 0 || source.indexOf(marker, first + marker.length()) >= 0) {
+            throw new IllegalArgumentException("记录桥装配标记无效，请重新准备");
+        }
+        return source.substring(0, first) + value + source.substring(first + marker.length());
+    }
+
+    private void checkRecordClient(JSONObject manifest) throws Exception {
+        String source = assetText("game/assets/native-record-client.json");
+        byte[] bytes = source.getBytes(StandardCharsets.UTF_8);
+        Map<String, String> client = NativeRecordJson.object(source);
+        if (client.size() != 2 || !client.containsKey("format") || !client.containsKey("protocol")
+                || !"haifeng.native-record-client/1".equals(NativeRecordJson.string(client.get("format")))
+                || !"haifeng.native-records/1".equals(NativeRecordJson.string(client.get("protocol")))) {
+            throw new IllegalArgumentException("游戏包没有兼容的原生记录客户端，请重新构建并准备");
+        }
+        StringBuilder digest = new StringBuilder();
+        for (byte part : MessageDigest.getInstance("SHA-256").digest(bytes)) {
+            digest.append("0123456789abcdef".charAt((part & 255) >> 4)).append("0123456789abcdef".charAt(part & 15));
+        }
+        int registered = 0;
+        JSONArray frontend = manifest.getJSONArray("frontend");
+        for (int index = 0; index < frontend.length(); index++) {
+            JSONObject file = frontend.getJSONObject(index);
+            if (!"assets/native-record-client.json".equals(file.getString("path"))) continue;
+            registered++;
+            if (file.getLong("bytes") != bytes.length || !digest.toString().equals(file.getString("sha256"))) {
+                throw new IllegalArgumentException("原生记录客户端与随包字节登记不一致，请重新准备");
+            }
+        }
+        if (registered != 1) throw new IllegalArgumentException("当前游戏清单未唯一登记原生记录客户端");
     }
 
     private String assetText(String path) throws java.io.IOException {
@@ -465,6 +527,7 @@ public final class RebuildActivity extends Activity {
         WebView failed = web;
         resetFullscreen();
         cancelExit();
+        if (records != null) { records.close(); records = null; }
         web = null;
         handler.removeCallbacks(heartbeat);
         cancelDelivery();
@@ -488,6 +551,7 @@ public final class RebuildActivity extends Activity {
         destroyed = true;
         activeExit = 0;
         handler.removeCallbacksAndMessages(null);
+        if (records != null) { records.close(); records = null; }
         if (audioFocus != null) audioFocus.close();
         page++;
         if (web != null) {

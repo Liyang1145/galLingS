@@ -1,6 +1,8 @@
-// Windows initialization only. No filesystem paths, domain merges or story commands.
-((enabled, workId) => {
-  if (window.top !== window || window.location.origin !== "https://tauri.localhost") return;
+// Explicit native trial initialization only. No filesystem paths, domain merges or story commands.
+((enabled, workId, platform) => {
+  const origin = platform === "windows-trial" ? "https://tauri.localhost"
+    : platform === "android-trial" ? "https://appassets.androidplatform.net" : null;
+  if (!origin || window.top !== window || window.location.origin !== origin) return;
   Object.defineProperty(window, "__HAIFENG_RECORD_MODE__", {
     configurable: false, writable: false, value: enabled ? "native-files" : "indexeddb",
   });
@@ -109,4 +111,4 @@
     head = null;
     queue = [];
   }, { once: true });
-})(__HAIFENG_FILE_RECORDS__, __HAIFENG_RECORD_WORK__);
+})(__HAIFENG_FILE_RECORDS__, __HAIFENG_RECORD_WORK__, "__HAIFENG_RECORD_PLATFORM__");

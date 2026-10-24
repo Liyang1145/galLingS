@@ -9,6 +9,8 @@
 - 可选显示扩展只通过本地主框架的专用消息接收布尔目标、页面身份和请求 ID；先确认当前页身份，旧页和重复请求拒绝。全屏只控制系统栏并恢复相关原设置，状态指原生接受的沉浸模式；不改变返回键、剧情暂停或存档，不擅自锁定方向或自动首触全屏。
 - WebView 只提供本地 HTTPS 包内资源，启动前注入桥须显式检查支持；不因为兼容旧 WebView 而降为文件 URL、延后到剧情已启动才接线或开放远程页面。
 - 进度和全局记录保持分开，当前 IndexedDB 仍是试播范围。进程重建回标题，不能拿 WebView 浏览历史冒充剧情恢复，也不能声称关闭应用自动保存。
-- `:rebuild` 的 `NativeRecordStore.java`、`NativeRecordAddress.java`、`NativeRecordJson.java` 仅为尚未创建/接桥的文件试用后端，见 `docs/rebuild/android-storage.md`。只处理登记逻辑地址、原样 JSON 和完整容器提交/CAS，不定义剧情或成果合并，不暴露路径/通用文件命令；同步方法不能在 UI 线程调用。目录与文件拒绝符号链接，已提交后的清理/目录同步失败须作为警告；不因后端存在就切换默认 IndexedDB、创建数据或自动恢复。
+- `:rebuild` 文件试用仅由 Activity 布尔 extra `rebuild-file-records=true` 选择，见 `docs/rebuild/android-storage.md`；普通启动仍 IndexedDB，不迁移已有数据。启动前核对包内客户端能力，单一工作线程成功打开独立目录后才加载页面，原生失败不换源。Android 准备记录 `/3` 登记两份共享桥摘要，旧 `/2` 输入须重新准备，不改游戏包 `/2` 或基础桥 `/3`。
+- `NativeRecordBridge` 只观察本地主入口的受限队首，按加载代次、页面身份、单调 ID 缓存原请求/回执；重复不得重新执行，迟到不得采用到新页。确认丢失沿 `NATIVE_STORAGE_UNCONFIRMED` 保留队首、不越过、不授权退出；后台/正常退出等待仍可投递，销毁排完已开始操作后释放锁。没有 `addJavascriptInterface`、路径、删除或通用文件命令。
+- `NativeRecordStore.java`、`NativeRecordAddress.java`、`NativeRecordJson.java` 只处理登记逻辑地址、原样 JSON 和完整容器提交/CAS，不定义剧情或成果合并；同步方法只由工作线程调用。目录与文件拒绝符号链接，已提交后的清理/目录同步失败须作为警告；已编写接线不等于运行或自动恢复。
 - 本机 SDK 路径、Gradle 缓存、编译物、密钥和玩家数据不提交。不改旧试玩发布流程，不自行签名发布或编版本号；工具环境与命令见实施文档。
 - 不自动执行 Gradle、SDK 安装、模拟器、设备操作、构建、测试或额外审查；此文件不授予新权限。

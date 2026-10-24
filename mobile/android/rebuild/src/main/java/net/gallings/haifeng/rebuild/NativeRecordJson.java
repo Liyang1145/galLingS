@@ -13,7 +13,10 @@ final class NativeRecordJson {
     private int offset;
     private int tokens;
 
-    private NativeRecordJson(String source) { this.source = source; }
+    private NativeRecordJson(String source) {
+        if (source == null) throw new IllegalArgumentException("缺少记录 JSON 字段");
+        this.source = source;
+    }
 
     static Map<String, String> object(String source) {
         NativeRecordJson parser = new NativeRecordJson(source);

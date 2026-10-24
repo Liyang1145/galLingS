@@ -13,22 +13,25 @@ function record(value: unknown): Record<string, unknown> {
 export function connectGameStorage(workId: string, notice: HTMLElement): { store: GameRecordStore; dispose(): void } {
   const mode: unknown = Reflect.get(window, "__HAIFENG_RECORD_MODE__");
   const injected: unknown = Reflect.get(window, "__HAIFENG_RECORDS__");
+  const platform = window.location.origin === "https://tauri.localhost" ? "windows-trial"
+    : window.location.origin === "https://appassets.androidplatform.net" ? "android-trial" : null;
   if (mode === undefined || mode === "indexeddb") {
     if (injected !== undefined) throw new Error("原生记录能力与本页存储选择不一致");
-    if (mode !== undefined && (window.top !== window || window.location.origin !== "https://tauri.localhost")) {
-      throw new Error("当前页面来源不接受 Windows 存储选择");
+    if (mode !== undefined && (window.top !== window || platform === null)) {
+      throw new Error("当前页面来源不接受原生存储选择");
     }
     notice.textContent = "";
     return { store: new IndexedDbSaveStore(), dispose: () => {} };
   }
-  if (mode !== "native-files" || window.top !== window || window.location.origin !== "https://tauri.localhost") {
+  if (mode !== "native-files" || window.top !== window || platform === null) {
     throw new Error("原生记录模式或页面来源无效");
   }
   const host = record(Reflect.get(window, "__HAIFENG_HOST__"));
   const bridge = record(injected);
   const read = bridge.read, ready = bridge.ready, request = bridge.request;
-  if (host.protocol !== HOST_BRIDGE_PROTOCOL || bridge.protocol !== NATIVE_RECORD_PROTOCOL
-    || typeof read !== "function" || typeof ready !== "function" || typeof request !== "function") {
+  if (host.protocol !== HOST_BRIDGE_PROTOCOL || bridge.protocol !== NATIVE_RECORD_PROTOCOL || typeof host.read !== "function"
+    || typeof read !== "function" || typeof ready !== "function" || typeof request !== "function"
+    || record(Reflect.apply(host.read, host, [])).platform !== platform) {
     throw new Error("已选择的原生记录接口不兼容，请重新构建并准备完整游戏包");
   }
   let disposed = false;
@@ -50,7 +53,7 @@ export function connectGameStorage(workId: string, notice: HTMLElement): { store
     try {
       const next = state();
       if (next.owner !== originalOwner) throw new Error("原生记录页面身份已改变");
-      const text = ["本次使用独立的 Windows 文件记录；浏览器记录未迁移。",
+      const text = [`本次使用独立的 ${platform === "android-trial" ? "Android" : "Windows"} 文件记录；浏览器记录未迁移。`,
         ...(typeof next.issue === "string" ? [next.issue] : []), ...warnings].join(" ");
       if (notice.textContent !== text) notice.textContent = text;
     } catch (error: unknown) {

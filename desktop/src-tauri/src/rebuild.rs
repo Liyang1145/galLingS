@@ -311,14 +311,14 @@ fn publish(window: &WebviewWindow) {
 
 pub fn run() {
     if !cfg!(target_os = "windows") {
-        panic!("rebuild-host 当前仅用于 Windows 集成试用");
+        panic!("当前桌面宿主仅支持 Windows");
     }
     let context = tauri::generate_context!();
-    // A feature flag alone must never start the legacy placeholder/resources.
+    // Only the prepared game package may start; the base placeholder has no manifest.
     assert_eq!(
         context.config().identifier,
         "com.gallings.haifeng.rebuild",
-        "请先显式准备游戏包，并通过生成的重构配置启用宿主"
+        "请先显式准备游戏包，并使用生成的宿主配置"
     );
     let file_records = std::env::args_os().skip(1).any(|argument| argument == "--rebuild-file-records");
     tauri::Builder::default()

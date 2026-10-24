@@ -21,7 +21,7 @@ async function prepare(): Promise<void> {
       build: {
         frontendDist: frontend,
         devUrl: null, beforeDevCommand: null, beforeBuildCommand: null, beforeBundleCommand: null,
-        features: ["rebuild-host", "custom-protocol"],
+        features: ["custom-protocol"],
       },
       app: {
         windows: [], withGlobalTauri: false,
@@ -30,7 +30,7 @@ async function prepare(): Promise<void> {
           csp: "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self' blob:; connect-src 'self'; font-src 'self'; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'",
         },
       },
-      // Clear the legacy game resource mapping. This trial embeds the prepared frontend snapshot.
+      // Embed only the prepared frontend snapshot, without an external legacy game directory.
       bundle: { active: false, resources: [] },
     };
     const configPath = resolve(output, "tauri.rebuild.conf.json");

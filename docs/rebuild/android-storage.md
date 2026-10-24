@@ -67,7 +67,7 @@ Android 此处使用完整文件的硬链接提交，Windows 使用 `MoveFileExW
 adb shell am start -n net.gallings.haifeng.rebuild/.RebuildActivity --ez rebuild-file-records true
 ```
 
-这不是 Gradle/prepare 参数，不保存为玩家偏好；后续普通启动不会自动沿用文件模式。未安装新 APK、没有显式布尔参数或旧模块 `:app` 均不能据此认为已选择文件存储。
+这不是 Gradle/prepare 参数，不保存为玩家偏好；后续普通启动不会自动沿用文件模式。未安装新 APK 或没有显式布尔参数，均不能据此认为已选择文件存储。2026-10-25 旧模块 `:app` 已按用户授权删除，没有旧档兼容/迁移要求；本片既有文件开关不变。
 
 启动前检查游戏清单唯一登记的 `assets/native-record-client.json`，核对实际字节大小/SHA-256、`haifeng.native-record-client/1` 与 `haifeng.native-records/1`。能力缺失/错误、参数类型错误、文件/锁打开失败均显示原生错误并拒绝开局，不切 IndexedDB。成功打开后才加载入口；页面脚本之前先注入固定模式/作品的记录桥，再注入基础宿主桥。
 

@@ -4,7 +4,7 @@
 
 ## 入口与产物
 
-保留 `mobile/android/app` 及其默认入口、资源、旧桥和构建配置。新增同一 Gradle 工程下的 `:rebuild` 模块，使用独立应用 ID `net.gallings.haifeng.rebuild`，从已准备的共享前端启动，不加载旧作者脚本、播放器、WASM 或插件。Android 与 Windows 仍复用唯一 TypeScript 核心，不决定两端以后是否统一宿主。
+2026-10-25 按用户清理授权删除旧 `mobile/android/app`、`mobile/prepare_assets.py`、`mobile/host.js` 及旧 APK 自动交付工作流，详见 [清理记录](cleanup.md)。同一 Gradle 工程只保留 `:rebuild`，沿用应用 ID `net.gallings.haifeng.rebuild`，只从已准备的共享前端启动，不加载旧作者脚本、播放器、WASM、`AndroidHost` 或插件。没有旧档迁移要求；Android 与 Windows 仍复用唯一 TypeScript 核心，不决定两端以后是否统一宿主。
 
 `npm run android:prepare -- <产物摘要>` 调用 `tools/game/prepare.ts`，复用 Windows 的清单摘要、剧情修订、文件边界及逐文件大小/SHA-256 核对。只复制已登记文件，写入：
 
@@ -20,9 +20,9 @@ dist/android/<产物摘要>/
 
 目录独占创建，不覆盖已有产物；失败保留不完整目录供定位，不自动删除。桥来自当前共享实现，只替换平台标记。准备命令不执行 Gradle、安装 SDK、编译或连接设备。
 
-Gradle 参数 `-PrebuildPackage=<产物摘要>` 指定这份输入；`:rebuild` 的 `preBuild` 拒绝没有完成记录的目录，并核对记录身份、游戏清单和两份桥摘要。当前 Android 准备记录为 `/3`，增加 `recordsBridgeSha256`，旧 `/2` 输入须重新准备，游戏包仍 `/2`、基础桥仍 `/3`。它不重新核对每个素材字节，准备后须保持目录原样，不能据此宣称具备已验证的安装校验。未指定参数时只在执行新模块构建任务时报告，不将准备要求加到旧 `:app` 的任务上。
+Gradle 参数 `-PrebuildPackage=<产物摘要>` 指定这份输入；`:rebuild` 的 `preBuild` 拒绝没有完成记录的目录，并核对记录身份、游戏清单和两份桥摘要。当前 Android 准备记录为 `/3`，增加 `recordsBridgeSha256`，旧 `/2` 输入须重新准备，游戏包仍 `/2`、基础桥仍 `/3`。它不重新核对每个素材字节，准备后须保持目录原样，不能据此宣称具备已验证的安装校验。现在没有旧 `:app` 构建任务；缺少参数时明确拒绝新游戏模块构建。
 
-新模块沿用现有 Android 工程的编译配置及版本环境输入，没有编新的作品发行版本。新模块只提供明确的调试构建入口，没有为其启用旧模块的 release 调试签名安排，没有改 CI 或发布工作流。
+模块沿用现有 Android 工程的编译配置及版本环境输入，没有编新的作品发行版本。只提供明确的调试构建入口，没有启用旧模块的 release 调试签名安排；旧自动交付已删除，没有新增或运行 CI/发布工作流。
 
 ## 本地读取与启动
 

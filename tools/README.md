@@ -1,11 +1,13 @@
 # tools/ 索引
 
 ## 日常在用
+
+新本体的唯一游戏/两端构建入口为根目录 `npm run game:build`、`windows:prepare` 和 `android:prepare`，详见 [实施入口](../docs/rebuild/README.md)。用户安排最后统一测试，当前不自动执行。旧 Windows Python/Steam 打包、Android 复制桥及三条旧游戏自动交付工作流已按 2026-10-25 授权删除，详见 [清理记录](../docs/rebuild/cleanup.md)。
+
 | 脚本 | 做什么 |
 |---|---|
-| `build_playtest_html.py` | 单文件试玩版（含对白账本，账本脚本 `playtest_ledger.js`）：`python tools/build_playtest_html.py 输出.html [作品文件夹]` |
-| `build_single_file_game.py` | 早期的单文件打包（不含账本），保留兼容 |
-| `build_desktop_dist.py` | 作品页离线包，供 `desktop/` Tauri 外壳和静态服务器 |
+| `build_playtest_html.py` | 保留的制作批注产物生成（含 `playtest_ledger.js`）；不是新本体或两端发行入口 |
+| `build_single_file_game.py` | 保留的制作项目/原素材打包导出，不是新本体构建，也不承担旧档兼容 |
 | `check_full_regression.py` | 全作回归：走完 3315 节点，报 nbad / nerrs |
 | `check_editor_roundtrip.py` | D04：编辑器 JSON / 单文件 HTML / 文件夹导出往返无损 |
 | `check_hosted_galcore.py` | B02：托管作品页下 galcore 接管剧情、连推、0 分歧 |
@@ -14,9 +16,7 @@
 | `build_current_art_gallery.py` | 只含当前在用图片的图库 |
 | `compress_art_upgrade.py`、`compress_wav_assets.py` | 生成播放副本（webp / mp3），母图和 WAV 原件不动 |
 
-安卓包相关脚本在 `mobile/`（`prepare_assets.py`、`host.js`），由 `.github/workflows/android.yml` 调用。
-
-预发布 `html-playtest` 的自动构建（`.github/workflows/playtest-html.yml`：推送工作分支且改了作品文件夹、`build_playtest_html.py` 或 `playtest_ledger.js` 时用本脚本构建并上传 `haifeng-pudding-playtest.html`）已于 2026-10-20 按用户要求暂停；删不删先问用户（见 [待办总表](../docs/collab/待办总表.md) C06）。需要单文件时本地运行本脚本。
+上述制作导出工具随暂停重构的旧制作入口保留，没有自动构建或发布接线；历史交接中的旧工作流/审批不再适用。Android 现在只消费 `tools/game/android.ts` 准备的同份新游戏包。
 
 ## 历次流水线（已执行，留作复现与审计）
 下列脚本对应 10-13～10-16 各轮美术、音乐、演出接入，详情见对应 work-ledger。**它们基于当时的基线，直接重跑会覆盖之后的修改，不要在现行分支上重跑。**

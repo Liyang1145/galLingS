@@ -52,11 +52,12 @@
 | [通关后入口准备](docs/rebuild/chat.md) | 已提交通关事实的只读上下文与显式选择；正式聊天解锁、供应和发送尚未接入 |
 | `packages/story-model/src/host.ts` | 原生/页面桥协议标识；随包 `/2` 明确登记，不与剧情修订或存档版本混用 |
 | `packages/player/src/web/` | 浏览器画面和音频实现；不得反向依赖游戏页面或编辑器 |
-| [共享场面与角色演出](docs/rebuild/performance.md) | 原镜头/角色/氛围曲线、同背景镜头连续、独立遮罩及主线静态淡出；现有标题/暂停菜单/终态过渡独立取消，其余弹层尚未迁移 |
+| [共享场面与角色演出](docs/rebuild/performance.md) | 原镜头/角色/氛围曲线、同背景镜头连续、独立遮罩及主线静态淡出；共享标题/菜单/终态及游戏专用弹层过渡分别取消，不带剧情或存储能力 |
 | `packages/player/src/web/choices.ts`、`stage-layout.ts` | 游戏/预览共用的可见选项、首立绘避让、倒计时显示、舞台比例及横竖分区；只管显示，不计算剧情或有效时间 |
 | `packages/player/src/web/input.ts` | 输入只向当前共享会话发意图；编辑预览限于自身焦点范围，隐藏/按键/手势不进入存储 |
 | `packages/player/src/web/fullscreen.ts` | 游戏/预览共用显示控件与浏览器全屏，原生适配器只提供受限显示能力 |
 | `apps/game/` | 沿旧版迁移的游戏界面壳、共享游玩与随包启动装配；当前仍为开发记录，未切换正式发行入口 |
+| `apps/game/src/dialog-fade.ts` | 只对登记的游戏画面/弹层作 360ms 静态淡出；封闭影子树只带两份游戏样式，开关及暂停释放不等待动画，不复制编辑制作区 |
 | `apps/editor/` | 独立对白编辑试用，预览复用共享播放器、只用内存记录；局部约束见目录入口 |
 | `tools/content/` | 旧导出转换与内容产物生成；命令见实施入口，不是游戏解释器 |
 | `tools/content/appearance.ts`、`collection-appearance.ts`、`tools/dev/appearance.ts` | 提取原鲸鱼图形、声音收藏图标及原配乐装饰图，登记来源并装配前端；旧 HTML、CSS、播放器图标表与原 B38 图片仍有构建消费者，不得提前删除 |

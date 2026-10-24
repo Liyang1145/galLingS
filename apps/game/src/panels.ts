@@ -6,6 +6,10 @@ interface Options {
   acquirePause(): () => void;
   changed(): void;
   dismissed(): void;
+  display: {
+    open(dialog: HTMLDialogElement, before: () => void): void;
+    close(dialog: HTMLDialogElement, animate: boolean): void;
+  };
 }
 
 /** Owns only shell dialogs and their pause lease; progress stays with the application. */
@@ -38,15 +42,17 @@ export class GamePanels {
   open(name: GamePanel): boolean {
     if (this.#disposed || !this.#options.enabled() || this.#current) return false;
     const dialog = this.#options.dialogs[name];
-    const release = this.#options.acquirePause();
-    this.#current = { name, dialog, release };
+    let release = (): void => {};
     try {
-      dialog.showModal();
+      this.#options.display.open(dialog, () => {
+        release = this.#options.acquirePause();
+        this.#current = { name, dialog, release };
+      });
       this.#options.changed();
       return true;
     } catch (error: unknown) {
       this.#current = null;
-      if (dialog.open) dialog.close();
+      if (dialog.open) this.#options.display.close(dialog, false);
       release();
       this.#options.changed();
       throw error;
@@ -57,7 +63,7 @@ export class GamePanels {
     const current = this.#current;
     if (!current) return false;
     this.#current = null;
-    current.dialog.close();
+    this.#options.display.close(current.dialog, reason === "dismiss");
     if (reason === "dismiss") this.#options.dismissed();
     current.release();
     this.#options.changed();

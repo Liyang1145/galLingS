@@ -46,6 +46,7 @@ import { EndingPanel } from "../../../packages/player/src/web/ending.ts";
 import type { EndingRecordState } from "../../../packages/player/src/web/ending.ts";
 import { StageFade } from "../../../packages/player/src/web/stage-fade.ts";
 import { GamePanels } from "./panels.ts";
+import { DialogFade } from "./dialog-fade.ts";
 import type { GamePanel } from "./panels.ts";
 import "./style.css";
 import "./shell.css";
@@ -205,6 +206,7 @@ async function main(): Promise<void> {
   let input: PlayerInput | null = null;
   let fullscreen: PlayerFullscreen | null = null;
   let stageFade: StageFade | null = null;
+  let dialogFade: DialogFade | null = null;
   let panels: GamePanels | null = null;
   let panelRollback: AbortController | null = null;
   let endingVisualKey = "";
@@ -338,17 +340,17 @@ async function main(): Promise<void> {
     const issue = [state.issue ? `宿主状态异常，已暂停：${state.issue}` : "", state.audioIssue ?? ""].filter(Boolean).join(" · ");
     if (hostNotice.textContent !== issue) hostNotice.textContent = issue;
     presentation?.setAudioAllowed(state.audioAllowed);
-    if (state.paused) stageFade?.cancel();
+    if (state.paused) { stageFade?.cancel(); dialogFade?.cancel(); }
     session?.send({ type: "pause", reason: "host", paused: state.paused });
     dialoguePanel?.refresh(state.audioAllowed);
     soundPanel?.refresh(state.audioAllowed);
   }, () => {
     if (exiting) { host.cancelExit(); return true; }
-    if (dialogue.open) { closeDialogue(); return true; }
-    if (chapters.open) { closeChapters(); return true; }
-    if (sounds.open) { closeSounds(); return true; }
-    if (gallery.open) { closeGallery(); return true; }
-    if (aftergame.open) { closeAftergame(); return true; }
+    if (dialogue.open) { closeDialogue(true); return true; }
+    if (chapters.open) { closeChapters(true); return true; }
+    if (sounds.open) { closeSounds(true); return true; }
+    if (gallery.open) { closeGallery(true); return true; }
+    if (aftergame.open) { closeAftergame(true); return true; }
     if (panels?.close()) return true;
     if (input?.reveal()) return true;
     if (session) { toggleMenu(); return true; }
@@ -361,6 +363,19 @@ async function main(): Promise<void> {
     enabled: () => !closed && !exiting && !document.hidden && !host.state().paused && !session?.view().skipping,
     issue: message => { if (!closed) status.textContent += ` · 界面过渡未能完成：${message}`; },
   });
+  const shellDialogs = {
+    saves: element("saves-panel", HTMLDialogElement),
+    settings: element("settings-panel", HTMLDialogElement),
+    rollback: element("rollback-panel", HTMLDialogElement),
+    tools: element("tools-panel", HTMLDialogElement),
+  };
+  const dialogDisplay = new DialogFade({
+    surface: element("player-surface", HTMLElement),
+    dialogs: [...Object.values(shellDialogs), dialogue, gallery, sounds, chapters, aftergame],
+    enabled: () => !closed && !exiting && !host.state().paused && !session?.view().skipping,
+    issue: message => notify(`界面过渡未能完成：${message}。当前操作仍按原流程处理。`),
+  });
+  dialogFade = dialogDisplay;
 
   dialoguePanel = new DialoguePanel({
     root: dialogueBody, resources, settings: content.source.settings,
@@ -395,6 +410,7 @@ async function main(): Promise<void> {
     if (exiting) throw new Error("已有退出请求");
     exiting = true;
     stageFade?.cancel();
+    dialogFade?.cancel();
     fullscreen?.refresh();
     audioPreferences.refresh();
     readingPreferences.refresh();
@@ -493,17 +509,13 @@ async function main(): Promise<void> {
     root: document.documentElement, surface: element("player-surface", HTMLElement),
     button: fullscreenButton, status: element("fullscreen-status", HTMLElement),
     keyboardScopes: [document], enabled: () => !closed && !exiting,
-    changed: () => { input?.reset(); stageFade?.cancel(); },
+    changed: () => { input?.reset(); stageFade?.cancel(); dialogFade?.cancel(); },
     ...(displayDriver ? { driver: displayDriver } : {}),
   });
 
   panels = new GamePanels({
-    dialogs: {
-      saves: element("saves-panel", HTMLDialogElement),
-      settings: element("settings-panel", HTMLDialogElement),
-      rollback: element("rollback-panel", HTMLDialogElement),
-      tools: element("tools-panel", HTMLDialogElement),
-    },
+    dialogs: shellDialogs,
+    display: dialogDisplay,
     enabled: () => ready && !closed && !exiting && entryPreparation !== entryRequest
       && !dialogue.open && !gallery.open && !chapters.open && !sounds.open && !aftergame.open,
     acquirePause: () => {
@@ -558,6 +570,7 @@ async function main(): Promise<void> {
   function openPanel(name: GamePanel): void {
     if (name === "rollback" && !session) return;
     try {
+      stageFade?.cancel();
       if (!panels?.open(name)) return;
       if (name === "saves") {
         slots.browse(mode === "timed" ? "timed" : "main");
@@ -599,7 +612,10 @@ async function main(): Promise<void> {
     choicePanel.render(view);
     refreshEnding(view);
     if (view.disposed || view.skipping || view.problem?.blocking
-      || view.paused.some(reason => reason === "background" || reason === "host" || reason === "exit")) stageFade?.cancel();
+      || view.paused.some(reason => reason === "background" || reason === "host" || reason === "exit")) {
+      stageFade?.cancel();
+      dialogFade?.cancel();
+    }
     showRollback(view);
     refreshShell(view);
   }
@@ -711,6 +727,7 @@ async function main(): Promise<void> {
       const delivery = crypto.randomUUID();
       if (closed || request !== entryRequest) return;
       // All content, slot and global data are prepared before leaving live play.
+      dialogFade?.cancel();
       stageFade?.begin();
       closeDialogue();
       closeChapters();
@@ -829,6 +846,7 @@ async function main(): Promise<void> {
 
   function home(): void {
     if (exiting || closed) return;
+    dialogFade?.cancel();
     stageFade?.begin();
     entryRequest++;
     input?.reset();
@@ -1055,7 +1073,7 @@ async function main(): Promise<void> {
       stageFade?.cancel();
       galleryPanel ??= new GalleryPanel(galleryBody, content, resources);
       galleryPanel.open(records);
-      gallery.showModal();
+      dialogDisplay.open(gallery);
     } catch (error: unknown) {
       if (!closed && request === entryRequest && mediaRequest === galleryRequest) {
         closeGallery();
@@ -1065,10 +1083,10 @@ async function main(): Promise<void> {
     }
   }
 
-  function closeGallery(): void {
+  function closeGallery(animate = false): void {
     galleryRequest++;
+    dialogDisplay.close(gallery, animate);
     galleryPanel?.close();
-    gallery.close();
   }
 
   function openSounds(): void {
@@ -1091,7 +1109,7 @@ async function main(): Promise<void> {
       });
       soundPanel.setVolumes(audioPreferences.values("main"));
       soundPanel.open();
-      sounds.showModal();
+      dialogDisplay.open(sounds);
       soundPanel.refresh(host.state().audioAllowed);
     } catch (error: unknown) {
       closeSounds();
@@ -1099,10 +1117,10 @@ async function main(): Promise<void> {
     }
   }
 
-  function closeSounds(): void {
+  function closeSounds(animate = false): void {
     const wasOpen = sounds.open || soundPanel?.isOpen;
+    dialogDisplay.close(sounds, animate);
     soundPanel?.close();
-    sounds.close();
     if (wasOpen && !session) host.releaseAudio();
   }
 
@@ -1118,21 +1136,21 @@ async function main(): Promise<void> {
         if (!closed && !exiting && !session && chapters.open) void start(entry);
       });
       chapterPanel.open();
-      chapters.showModal();
+      dialogDisplay.open(chapters);
     } catch (error: unknown) {
       closeChapters();
       notify(`章节目录未能打开：${error instanceof Error ? error.message : "本地章节读取失败"}。仍可从第一话开始。`);
     }
   }
 
-  function closeChapters(): void {
+  function closeChapters(animate = false): void {
+    dialogDisplay.close(chapters, animate);
     chapterPanel?.close();
-    chapters.close();
   }
 
-  function closeAftergame(): void {
+  function closeAftergame(animate = false): void {
+    dialogDisplay.close(aftergame, animate);
     aftergamePanel?.close();
-    aftergame.close();
     aftergameBody.replaceChildren();
   }
 
@@ -1143,7 +1161,7 @@ async function main(): Promise<void> {
     try {
       stageFade?.cancel();
       aftergameBody.textContent = "正在提交已有全局事实并准备通关记录……";
-      aftergame.showModal();
+      dialogDisplay.open(aftergame);
       await flushRecords();
       if (!active()) return;
       // No chat module, backend or provider is required for mainline startup.
@@ -1176,7 +1194,7 @@ async function main(): Promise<void> {
     owner.send({ type: "pause", reason: "history", paused: true });
     try {
       dialoguePanel?.open(owner.dialogueHistory(), owner.rollbackTargets());
-      dialogue.showModal();
+      dialogDisplay.open(dialogue);
       dialoguePanel?.refresh(host.state().audioAllowed);
       dialogueBody.scrollTop = dialogueBody.scrollHeight;
     } catch (error: unknown) {
@@ -1185,11 +1203,11 @@ async function main(): Promise<void> {
     }
   }
 
-  function closeDialogue(): void {
+  function closeDialogue(animate = false): void {
     const owner = dialogueOwner;
+    dialogDisplay.close(dialogue, animate);
     dialogueOwner = null;
     dialoguePanel?.close();
-    dialogue.close();
     owner?.send({ type: "pause", reason: "history", paused: false });
   }
 
@@ -1213,29 +1231,29 @@ async function main(): Promise<void> {
   element("load-main", HTMLButtonElement).onclick = () => load("main");
   element("load-timed", HTMLButtonElement).onclick = () => load("timed");
   element("gallery-open", HTMLButtonElement).onclick = () => { void openGallery(); };
-  element("gallery-close", HTMLButtonElement).onclick = closeGallery;
-  gallery.addEventListener("cancel", event => { event.preventDefault(); closeGallery(); });
+  element("gallery-close", HTMLButtonElement).onclick = () => closeGallery(true);
+  gallery.addEventListener("cancel", event => { event.preventDefault(); closeGallery(true); });
   gallery.addEventListener("close", () => { if (!gallery.open) galleryPanel?.close(); });
   element("sounds-open", HTMLButtonElement).onclick = openSounds;
-  element("sounds-close", HTMLButtonElement).onclick = closeSounds;
-  sounds.addEventListener("cancel", event => { event.preventDefault(); closeSounds(); });
+  element("sounds-close", HTMLButtonElement).onclick = () => closeSounds(true);
+  sounds.addEventListener("cancel", event => { event.preventDefault(); closeSounds(true); });
   sounds.addEventListener("close", () => {
     if (!sounds.open && soundPanel?.isOpen) closeSounds();
   });
   element("chapters-open", HTMLButtonElement).onclick = openChapters;
-  element("chapters-close", HTMLButtonElement).onclick = closeChapters;
-  chapters.addEventListener("cancel", event => { event.preventDefault(); closeChapters(); });
+  element("chapters-close", HTMLButtonElement).onclick = () => closeChapters(true);
+  chapters.addEventListener("cancel", event => { event.preventDefault(); closeChapters(true); });
   chapters.addEventListener("close", () => { if (!chapters.open) chapterPanel?.close(); });
   element("aftergame-open", HTMLButtonElement).onclick = () => {
     panels?.close("leave");
     void openAftergame();
   };
-  element("aftergame-close", HTMLButtonElement).onclick = closeAftergame;
-  aftergame.addEventListener("cancel", event => { event.preventDefault(); closeAftergame(); });
+  element("aftergame-close", HTMLButtonElement).onclick = () => closeAftergame(true);
+  aftergame.addEventListener("cancel", event => { event.preventDefault(); closeAftergame(true); });
   aftergame.addEventListener("close", () => { if (!aftergame.open) aftergamePanel?.close(); });
   dialogueOpen.onclick = openDialogue;
-  element("dialogue-history-close", HTMLButtonElement).onclick = closeDialogue;
-  dialogue.addEventListener("cancel", event => { event.preventDefault(); closeDialogue(); });
+  element("dialogue-history-close", HTMLButtonElement).onclick = () => closeDialogue(true);
+  dialogue.addEventListener("cancel", event => { event.preventDefault(); closeDialogue(true); });
   dialogue.addEventListener("close", () => { if (!dialogue.open) closeDialogue(); });
   for (const button of document.querySelectorAll<HTMLButtonElement>("[data-panel-open]")) {
     button.addEventListener("click", () => {
@@ -1249,7 +1267,7 @@ async function main(): Promise<void> {
   rollbackButton.onclick = () => { void rollback(); };
   retryRecords.onclick = () => { void flushRecords().catch(() => {}); };
   const visibility = (): void => {
-    if (document.hidden) stageFade?.cancel();
+    if (document.hidden) { stageFade?.cancel(); dialogFade?.cancel(); }
     session?.send({ type: "pause", reason: "background", paused: document.hidden });
     dialoguePanel?.refresh(host.state().audioAllowed);
     soundPanel?.refresh(host.state().audioAllowed);
@@ -1257,6 +1275,7 @@ async function main(): Promise<void> {
   document.addEventListener("visibilitychange", visibility);
   const dispose = (): void => {
     closed = true;
+    dialogFade?.dispose();
     panels?.dispose();
     stageFade?.dispose();
     entryRequest++;

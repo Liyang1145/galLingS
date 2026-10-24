@@ -1,5 +1,11 @@
 /* Game-only shell. Shared stage and editor preview styling remains in style.css. */
 body.game-shell { overflow: hidden; background: #08191d; }
+.dialog-fade {
+  position: fixed; inset: 0; z-index: 1000; pointer-events: none; overflow: hidden; isolation: isolate;
+}
+.dialog-fade, .dialog-fade *, .dialog-fade *::before, .dialog-fade *::after {
+  pointer-events: none !important; animation: none !important; transition: none !important; caret-color: transparent !important;
+}
 .game-shell #app { width: 100%; height: 100vh; height: 100dvh; margin: 0; }
 .game-shell .player-surface,
 .game-shell .player-surface[data-fullscreen="true"] {

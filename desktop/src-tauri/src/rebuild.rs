@@ -10,6 +10,9 @@ mod records_bridge;
 #[cfg(target_os = "windows")]
 #[path = "rebuild_power.rs"]
 mod power;
+#[cfg(target_os = "windows")]
+#[path = "rebuild_audio_devices.rs"]
+mod audio_devices;
 
 static SEQUENCE: AtomicU64 = AtomicU64::new(0);
 static ACKNOWLEDGED: AtomicU64 = AtomicU64::new(0);

@@ -81,6 +81,7 @@
 | `apps/game/src/platform/` | 宿主消息校验、会话生命周期、独立显示及单一记录源选择，不另写剧情逻辑；原生记录失败不切换来源 |
 | `desktop/` | `main.rs` 按特性只编译旧 `legacy.rs` 或重构宿主；默认仍是旧路径，局部规则见目录入口 |
 | `mobile/android/` | 旧 `:app` 与新 `:rebuild` 集成模块并存；局部规则见目录入口，未切正式入口 |
+| `mobile/android/rebuild/src/main/java/net/gallings/haifeng/rebuild/PackagedMedia.java` | Android 已登记随包媒体的流式完整/单段范围读取，不决定播放位置或剧情恢复，未运行验收 |
 | `A素材库/`、旧工具和归档 | 制作输入或历史资产；有真实消费者，不按目录名清理 |
 
 未来目录只有随实际实现才加入实施入口。旧 README、交接、work-ledger、旧分支审批和旧验证命令不是当前工作流依据；历史内容供追溯，不恢复已废止规则。旧根入口可从本次重建之前的 Git 历史查阅，不另设第二个有效入口。

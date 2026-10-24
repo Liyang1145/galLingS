@@ -104,6 +104,7 @@ public final class RebuildActivity extends Activity {
             fail("当前系统 WebView 不支持启动前宿主接线；请更新 WebView 后重试。没有切换旧播放器。");
             return;
         }
+        final PackagedMedia media;
         try {
             JSONObject manifest = new JSONObject(assetText("game/game-package.json"));
             if (!"haifeng.game-package/2".equals(manifest.getString("format"))
@@ -112,6 +113,7 @@ public final class RebuildActivity extends Activity {
                 return;
             }
             String workId = manifest.getString("workId");
+            media = new PackagedMedia(getAssets(), manifest.getJSONArray("resources"));
             Object mode = getIntent().hasExtra("rebuild-file-records")
                     ? getIntent().getExtras().get("rebuild-file-records") : Boolean.FALSE;
             if (!(mode instanceof Boolean)) throw new IllegalArgumentException("rebuild-file-records 必须是布尔启动参数");
@@ -167,15 +169,19 @@ public final class RebuildActivity extends Activity {
                 records = new NativeRecordBridge(web, new File(getFilesDir(), "native-records-trial"), workId);
             }
         } catch (Exception error) {
-            fail("宿主桥未载入：" + error.getMessage());
+            fail("游戏包或宿主桥未载入：" + error.getMessage());
             return;
         }
         final WebViewAssetLoader loader = new WebViewAssetLoader.Builder()
                 .addPathHandler("/assets/", new WebViewAssetLoader.AssetsPathHandler(this)).build();
         web.setWebViewClient(new WebViewClient() {
             @Override public WebResourceResponse shouldInterceptRequest(WebView view, WebResourceRequest request) {
-                if (!isLocal(request.getUrl()) || !"GET".equals(request.getMethod())) return missing();
-                WebResourceResponse response = loader.shouldInterceptRequest(request.getUrl());
+                if (!isLocal(request.getUrl())) return missing();
+                String path = request.getUrl().getPath().substring("/assets/game/".length());
+                WebResourceResponse response;
+                if (path.startsWith("media/")) response = media.serve(request, path);
+                else if ("GET".equals(request.getMethod())) response = loader.shouldInterceptRequest(request.getUrl());
+                else return missing();
                 if (response == null) return missing();
                 Map<String, String> headers = new HashMap<>();
                 if (response.getResponseHeaders() != null) headers.putAll(response.getResponseHeaders());

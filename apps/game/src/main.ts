@@ -577,6 +577,11 @@ async function main(): Promise<void> {
   fullscreen = new PlayerFullscreen({
     root: document.documentElement, surface: element("player-surface", HTMLElement),
     button: fullscreenButton, status: element("fullscreen-status", HTMLElement),
+    additionalControls: [{
+      button: element("settings-fullscreen", HTMLButtonElement),
+      status: element("settings-fullscreen-status", HTMLElement),
+      state: element("settings-display-mode", HTMLOutputElement),
+    }],
     keyboardScopes: [document], enabled: () => !closed && !exiting,
     changed: () => { input?.reset(); stageFade?.cancel(); dialogFade?.cancel(); },
     ...(displayDriver ? { driver: displayDriver } : {}),

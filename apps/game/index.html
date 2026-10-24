@@ -94,11 +94,25 @@
       <dialog id="settings-panel" class="gallery-dialog shell-dialog" aria-labelledby="settings-heading">
         <header><div><small class="panel-kicker">按自己的节奏</small><h2 id="settings-heading">声音与阅读</h2></div><button type="button" data-panel-close autofocus>返回</button></header>
         <div class="settings-content">
-        <p class="settings-intro">调整用于当前入口；每组单独保存后，下次游玩也可沿用。剧情进度与鉴赏成果分别保留。</p>
+        <p class="settings-intro">声音、阅读等偏好用于当前入口；各组单独保存后，下次游玩也可沿用。下方显示按钮只切换本次画面。</p>
       <section id="audio-preferences" class="settings-group" aria-label="声音设置"></section>
       <section id="reading-preferences" class="settings-group" aria-label="阅读设置"></section>
       <section id="button-preferences" class="settings-group" aria-label="按钮声音设置"></section>
       <section id="readout-preferences" class="settings-group" aria-label="话末数值显示设置"></section>
+      <section id="display-settings" class="settings-group" aria-labelledby="display-settings-heading">
+        <h3 id="display-settings-heading">显示</h3>
+        <p class="preferences-note">切换当前画面的全屏或窗口显示，也可使用 F11 / Alt+Enter。显示选择只用于本次打开，不随进度保存。</p>
+        <div class="preferences-grid">
+          <div class="preference-row">
+            <span class="preference-label" id="display-mode-label">当前显示</span>
+            <div class="display-mode-control">
+              <output id="settings-display-mode" aria-labelledby="display-mode-label" aria-live="off">显示状态待确认</output>
+              <button id="settings-fullscreen" type="button" aria-pressed="false" disabled>全屏显示</button>
+            </div>
+          </div>
+        </div>
+        <p id="settings-fullscreen-status" class="preferences-status" role="status" aria-live="polite"></p>
+      </section>
         <p class="settings-footnote">快进仍只经过已读内容。限时样例和章节试阅的调整分别留在本页，不写入正常游玩偏好。</p>
         </div>
       </dialog>

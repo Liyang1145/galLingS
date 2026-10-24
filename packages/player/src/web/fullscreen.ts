@@ -78,11 +78,18 @@ function browserFullscreen(root: HTMLElement): FullscreenDriver {
   };
 }
 
+export interface FullscreenControl {
+  button: HTMLButtonElement;
+  status: HTMLElement;
+  state?: HTMLOutputElement;
+}
+
 interface FullscreenOptions {
   root: HTMLElement;
   surface: HTMLElement;
   button: HTMLButtonElement;
   status: HTMLElement;
+  additionalControls?: readonly FullscreenControl[];
   keyboardScopes: readonly Node[];
   enabled(): boolean;
   changed?(): void;
@@ -93,6 +100,7 @@ interface FullscreenOptions {
 export class PlayerFullscreen {
   readonly #options: FullscreenOptions;
   readonly #driver: FullscreenDriver;
+  readonly #controls: readonly FullscreenControl[];
   readonly #events = new AbortController();
   readonly #unsubscribe: () => void;
   #active = false;
@@ -102,10 +110,16 @@ export class PlayerFullscreen {
 
   constructor(options: FullscreenOptions) {
     this.#options = options;
+    this.#controls = [{ button: options.button, status: options.status }, ...(options.additionalControls ?? [])];
+    if (new Set(this.#controls.map(control => control.button)).size !== this.#controls.length) {
+      throw new Error("全屏控件不能重复绑定同一按钮");
+    }
     this.#driver = options.driver ?? browserFullscreen(options.root);
     this.#unsubscribe = this.#driver.subscribe(() => this.refresh());
     const { signal } = this.#events;
-    options.button.addEventListener("click", () => this.toggle(), { signal });
+    for (const control of this.#controls) {
+      control.button.addEventListener("click", () => this.toggle(), { signal });
+    }
     document.addEventListener("keydown", event => {
       const target = event.target;
       if (event.defaultPrevented || event.repeat || event.isComposing || !(target instanceof Node)
@@ -141,19 +155,24 @@ export class PlayerFullscreen {
   refresh(): void {
     if (this.#closed) return;
     const state = this.#driver.read();
-    const { root, surface, button, status } = this.#options;
+    const { root, surface, button } = this.#options;
     root.dataset.playerFullscreen = String(state.active);
     surface.dataset.fullscreen = String(state.active);
-    button.disabled = !this.#options.enabled() || !state.supported || state.pending;
     const label = state.pending ? "正在切换全屏…" : state.active ? "退出全屏" : "全屏显示";
-    setButtonLabel(button, label);
-    button.setAttribute("aria-pressed", String(state.active));
     const message = state.issue ? `显示切换未完成：${state.issue}`
       : !state.supported ? "当前环境尚未提供此全屏控制，可继续使用窗口模式。"
       : state.pending ? "正在等待显示切换确认…"
       : state.active ? "已进入全屏；可用按钮、F11 或 Alt+Enter 返回。"
       : "";
-    if (status.textContent !== message) status.textContent = message;
+    for (const control of this.#controls) {
+      control.button.disabled = !this.#options.enabled() || !state.supported || state.pending;
+      setButtonLabel(control.button, label);
+      control.button.setAttribute("aria-pressed", String(state.active));
+      if (control.status.textContent !== message) control.status.textContent = message;
+      const mode = !state.supported ? "全屏控制暂不可用" : state.pending ? "正在切换"
+        : state.issue ? "显示状态待确认" : state.active ? "全屏" : "窗口";
+      if (control.state && control.state.value !== mode) control.state.value = mode;
+    }
     if (this.#active === state.active) return;
     this.#active = state.active;
     this.#options.changed?.();

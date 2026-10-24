@@ -375,6 +375,13 @@ body.game-shell { overflow: hidden; background: #08191d; }
   min-height: 44px; border-radius: 3px; background: #0a1d25; color: #b8d9df; border-color: #6bc3cc77;
 }
 .game-shell .preferences-actions button:hover:not(:disabled) { background: #123642; border-color: #7ee5e9; color: #e1ffff; }
+.game-shell .display-mode-control { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; min-width: 0; }
+.game-shell #settings-panel .display-mode-control output { white-space: normal; overflow-wrap: anywhere; }
+.game-shell .display-mode-control button {
+  min-height: 44px; min-width: 8em; border-radius: 3px; background: #0a1d25; color: #b8d9df; border-color: #6bc3cc77;
+}
+.game-shell .display-mode-control button:hover:not(:disabled) { background: #123642; border-color: #7ee5e9; color: #e1ffff; }
+.game-shell .display-mode-control button:focus-visible { outline: 2px solid #7ee5e9; outline-offset: 4px; }
 .game-shell #readout-preferences > p:last-child { color: #e4d8b8; font-size: 14px; line-height: 1.7; overflow-wrap: anywhere; }
 @media (max-width: 560px) {
   .game-shell #settings-panel .preference-row { grid-template-columns: minmax(0, 1fr); gap: 4px; }

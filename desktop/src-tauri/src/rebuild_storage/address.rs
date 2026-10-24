@@ -1,5 +1,6 @@
 //! Integration addresses only. These strings are never converted into filesystem paths.
-use serde_json::Value;
+use serde::Deserialize;
+use serde_json::value::RawValue;
 
 const SAVE: &str = "haifeng.save/1";
 const RECORDS: [&str; 5] = [
@@ -58,13 +59,15 @@ impl Addresses {
         self.progress.iter().any(|allowed| allowed == prefix)
     }
 
-    pub(super) fn matches_value(&self, key: &str, value: &Value) -> bool {
+    pub(super) fn matches_value(&self, key: &str, value: &RawValue) -> bool {
         // Domain fields remain opaque: TypeScript repositories validate their full payloads.
         // The native boundary only prevents a record family from being written to another family.
-        let Some(format) = value.get("format").and_then(Value::as_str) else { return false };
-        if self.is_progress(key) { return format == SAVE; }
+        #[derive(Deserialize)]
+        struct Header { format: String }
+        let Ok(header) = serde_json::from_str::<Header>(value.get()) else { return false };
+        if self.is_progress(key) { return header.format == SAVE; }
         self.records.iter().zip(RECORDS.iter()).any(|(allowed, family)| {
-            allowed == key && format == *family
+            allowed == key && header.format == *family
         })
     }
 }

@@ -13,7 +13,7 @@ import { assertPackageContent, readGamePackage } from "../../packages/story-mode
 import type { GamePackage, PackageFile, PackagedResource } from "../../packages/story-model/src/package.ts";
 import { loadSourceContent, REPOSITORY_ROOT } from "../content/build.ts";
 import type { ResourceFile } from "../content/build.ts";
-import { HOST_BRIDGE_PROTOCOL } from "../../packages/story-model/src/host.ts";
+import { HOST_BRIDGE_PROTOCOL, NATIVE_RECORD_CLIENT, NATIVE_RECORD_PROTOCOL } from "../../packages/story-model/src/host.ts";
 import { readWhaleSkin } from "../content/appearance.ts";
 import { readCollectionSkin } from "../content/collection-appearance.ts";
 import { collectionAppearance, whaleAppearance } from "../dev/appearance.ts";
@@ -160,6 +160,10 @@ async function build(): Promise<void> {
         outDir: temporary, emptyOutDir: false, copyPublicDir: false, sourcemap: false,
         assetsInlineLimit: 0,
       },
+    });
+    // Capability file is covered by the frontend manifest; old packages cannot opt into file records.
+    await writeJson(temporary, "assets/native-record-client.json", {
+      format: NATIVE_RECORD_CLIENT, protocol: NATIVE_RECORD_PROTOCOL,
     });
     const frontend = await frontendFiles(temporary);
     const story = await writeJson(temporary, "content/story.json", content);

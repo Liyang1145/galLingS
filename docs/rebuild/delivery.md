@@ -12,6 +12,8 @@
 
 [声音收藏装饰](appearance.md#声音收藏的原装饰来源)沿同一装配方式读取旧 CSS 实际指向的原 B38 WebP 与播放器静态 JSON 中三个图标形状，单独通过游戏专用虚拟模块内嵌前端；不执行旧 JS，也不替换为剧情当前登记的改版图。`content/sources.json.uiCollection` 登记这些来源/字节摘要，现有清单/桥/内容格式不变；原图片、CSS 和图标表仍有构建消费者。该入口尚未执行，未生成或验收产物。
 
+从 `0177602` 接续[Windows 文件记录试用](native-storage.md)，构建在收集前端文件前写入 `assets/native-record-client.json`，登记客户端 `haifeng.native-record-client/1` 与可选协议 `haifeng.native-records/1`。它按普通前端文件参与现有清单及准备摘要，未扩展随包 `/2` 或基础桥 `/3`；默认启动不选文件模式。显式文件试用要求能力文件已登记且内容匹配，否则拒绝旧包，不让旧前端静默写回浏览器记录。本轮未执行构建/准备。
+
 ## 两条内容接入
 
 `virtual:haifeng-content` 现在提供异步 `loadContent(signal?)`：

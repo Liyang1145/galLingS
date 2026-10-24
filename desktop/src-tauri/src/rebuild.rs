@@ -4,6 +4,9 @@ use std::sync::{mpsc, Mutex};
 use std::time::{Duration, Instant};
 use tauri::webview::{NewWindowResponse, PageLoadEvent};
 use tauri::{Manager, WebviewUrl, WebviewWindow, WebviewWindowBuilder, WindowEvent};
+#[cfg(target_os = "windows")]
+#[path = "rebuild_storage_bridge.rs"]
+mod records_bridge;
 
 static SEQUENCE: AtomicU64 = AtomicU64::new(0);
 static ACKNOWLEDGED: AtomicU64 = AtomicU64::new(0);
@@ -208,6 +211,7 @@ pub fn run() {
         "com.gallings.haifeng.rebuild",
         "请先显式准备游戏包，并通过生成的重构配置启用宿主"
     );
+    let file_records = std::env::args_os().skip(1).any(|argument| argument == "--rebuild-file-records");
     tauri::Builder::default()
         .on_window_event(|window, event| {
             if window.label() == "rebuild" {
@@ -227,26 +231,50 @@ pub fn run() {
                 }
             }
         })
-        .setup(|app| {
+        .setup(move |app| {
             let asset = app.asset_resolver().get("game-package.json".into())
                 .ok_or_else(|| std::io::Error::new(std::io::ErrorKind::InvalidData, "缺少游戏包清单，请重新准备"))?;
             let manifest: serde_json::Value = serde_json::from_slice(&asset.bytes)?;
             if manifest["format"] != "haifeng.game-package/2" || manifest["hostBridge"] != "haifeng.host-bridge/3" {
                 return Err(std::io::Error::new(std::io::ErrorKind::InvalidData, "游戏包与宿主协议不匹配，请重新构建并准备").into());
             }
-            let data = app.path().app_local_data_dir()?.join("webview");
+            let work_id = manifest["workId"].as_str()
+                .ok_or_else(|| std::io::Error::new(std::io::ErrorKind::InvalidData, "游戏包缺少作品身份"))?.to_owned();
+            if file_records {
+                let registered = manifest["frontend"].as_array().map(|files| {
+                    files.iter().any(|file| file["path"] == "assets/native-record-client.json")
+                }).unwrap_or(false);
+                let capability = app.asset_resolver().get("assets/native-record-client.json".into())
+                    .ok_or_else(|| std::io::Error::new(std::io::ErrorKind::InvalidData, "此游戏包没有原生记录客户端，请重新构建并准备"))?;
+                let capability: serde_json::Value = serde_json::from_slice(&capability.bytes)?;
+                if !registered || capability.as_object().map(|value| value.len()) != Some(2)
+                    || capability["format"] != "haifeng.native-record-client/1"
+                    || capability["protocol"] != "haifeng.native-records/1" {
+                    return Err(std::io::Error::new(std::io::ErrorKind::InvalidData, "原生记录客户端能力与当前游戏包不匹配").into());
+                }
+            }
+            let local_data = app.path().app_local_data_dir()?;
+            #[cfg(target_os = "windows")]
+            let native_store = if file_records {
+                Some(std::sync::Arc::new(crate::rebuild_storage::NativeRecordStore::open(
+                    local_data.join("native-records-trial"), work_id.clone(),
+                )?))
+            } else { None };
+            let data = local_data.join("webview");
             std::fs::create_dir_all(&data)?;
+            let records_bootstrap = include_str!("../../../packages/player/src/web/native-records-bootstrap.js")
+                .replace("__HAIFENG_FILE_RECORDS__", if file_records { "true" } else { "false" })
+                .replace("__HAIFENG_RECORD_WORK__", &serde_json::to_string(&work_id)?);
+            let bootstrap = format!("{records_bootstrap}\n{}", include_str!("../../../packages/player/src/web/host-bootstrap.js")
+                .replace("__HAIFENG_PLATFORM__", "windows-trial"));
             WebviewWindowBuilder::new(app, "rebuild", WebviewUrl::App("index.html".into()))
-                .title("海风与布丁 · 重构集成试用")
+                .title(if file_records { "海风与布丁 · 文件记录试用" } else { "海风与布丁 · 重构集成试用" })
                 .inner_size(1440.0, 810.0)
                 .min_inner_size(960.0, 540.0)
                 .center()
                 .use_https_scheme(true)
                 .data_directory(data)
-                .initialization_script(
-                    include_str!("../../../packages/player/src/web/host-bootstrap.js")
-                        .replace("__HAIFENG_PLATFORM__", "windows-trial"),
-                )
+                .initialization_script(bootstrap)
                 .on_navigation(|url| {
                     url.scheme() == "https"
                         && url.host_str() == Some("tauri.localhost")
@@ -269,6 +297,8 @@ pub fn run() {
                     }
                 })
                 .build()?;
+            #[cfg(target_os = "windows")]
+            if let Some(store) = native_store { records_bridge::start(app.handle().clone(), store, work_id)?; }
             let handle = app.handle().clone();
             std::thread::Builder::new().name("haifeng-host-state".into()).spawn(move || {
                 while !STOP_HEARTBEAT.load(Ordering::SeqCst) {

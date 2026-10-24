@@ -49,6 +49,7 @@ async function prepare(): Promise<void> {
     console.log("尚未编译、启动或生成安装包。保留此目录原样；手改后须重新准备，不能据此声称验收。");
     console.log("后续测试阶段可在 desktop/src-tauri 目录显式执行：");
     console.log(`cargo tauri build --no-bundle --config "${configPath}" -- --target-dir "${resolve(output, "native-target")}"`);
+    console.log("默认继续使用独立 WebView 记录。文件记录试用须在运行新编译 EXE 时显式追加 --rebuild-file-records；不会迁移浏览器记录。");
   } catch (error: unknown) {
     console.error(`Windows 准备未完成，保留本次目录供定位，不自动删除或覆盖：${output}`);
     throw error;

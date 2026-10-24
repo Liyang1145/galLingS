@@ -8,7 +8,6 @@ import { createResourceAccess } from "../../../packages/player/src/web/resources
 import type { Clock } from "../../../packages/player/src/clock.ts";
 import { SaveRepository } from "../../../packages/player/src/saves.ts";
 import type { InspectedSave } from "../../../packages/player/src/saves.ts";
-import { IndexedDbSaveStore } from "../../../packages/player/src/web/saves.ts";
 import { PlayerRepository, PlayerRecordWriter, galleryCatalog, playerProjection } from "../../../packages/player/src/records.ts";
 import { prepareGameRestore } from "../../../packages/player/src/checkpoint.ts";
 import type { GameCheckpoint } from "../../../packages/player/src/checkpoint.ts";
@@ -19,6 +18,7 @@ import { prepareChapterTrial } from "../../../packages/player/src/chapters.ts";
 import type { ChapterEntry, ChapterTrial } from "../../../packages/player/src/chapters.ts";
 import { DialoguePanel } from "./dialogue.ts";
 import { connectHost } from "./platform/host.ts";
+import { connectGameStorage } from "./platform/storage.ts";
 import { PendingWrites } from "../../../packages/player/src/writes.ts";
 import type { TrackedWrite } from "../../../packages/player/src/writes.ts";
 import type { AftergamePanel } from "./aftergame.ts";
@@ -170,7 +170,9 @@ async function main(): Promise<void> {
     main: content,
     timed: { ...content, entryNodeId: "pm8x8v2h", revision: `m3-preview:pm8x8v2h:${content.revision}` },
   };
-  const store = new IndexedDbSaveStore();
+  const storage = connectGameStorage(content.workId, element("storage-notice", HTMLElement));
+  const store = storage.store;
+  startup.signal.addEventListener("abort", storage.dispose, { once: true });
   const saves = {
     main: new SaveRepository(sources.main, { kind: "development", id: "normal-entry" }, store),
     timed: new SaveRepository(sources.timed, { kind: "preview", id: "timed-choice:pm8x8v2h" }, store),
@@ -216,7 +218,7 @@ async function main(): Promise<void> {
   }, error => {
     if (closed) return;
     recordFailure = error instanceof Error ? error.message : "存储失败";
-    recordMessage.textContent = `全局记录尚未保存：${recordFailure}。请重试；待保存记录暂留本页内存。`;
+    recordMessage.textContent = `全局记录未取得保存确认：${recordFailure}。请重试；原事实暂留本页内存。`;
     retryRecords.hidden = false;
     recordStatus.hidden = false;
     if (terminalRecord && terminalRecord.state.kind !== "committed") terminalRecord.state = { kind: "failed", message: recordFailure };
@@ -1072,7 +1074,7 @@ async function main(): Promise<void> {
       await tracked.result;
     } catch (error: unknown) {
       if (currentSaveFeedback(feedbackRequest, feedbackScope)) {
-        saveMessage.textContent = `保存尚未提交：${error instanceof Error ? error.message : "未知存储错误"}。可在“尚未完成的手动存档”中重试原操作，或显式保存当前进度；原槽位未先删除。`;
+        saveMessage.textContent = `保存未取得完成确认：${error instanceof Error ? error.message : "未知存储错误"}。可在“尚未完成的手动存档”中重试原操作或查看原槽位；原槽位未先删除。`;
       }
     } finally {
       saving = false;
@@ -1096,7 +1098,7 @@ async function main(): Promise<void> {
         const state = tracked.view();
         saveMessage.textContent = state.state === "superseded"
           ? `原存档操作已被后来的显式保存替代：${state.label}。本次旧重试未执行。`
-          : `原存档仍未提交：${state.label}。${error instanceof Error ? error.message : "存储错误"}。原目标和检查点继续保留，可再次重试。`;
+          : `原存档尚未取得完成确认：${state.label}。${error instanceof Error ? error.message : "存储错误"}。原目标和检查点继续保留，可查看原槽位或再次重试。`;
       }
     } finally {
       saving = false;
@@ -1462,6 +1464,7 @@ async function main(): Promise<void> {
     session?.dispose();
     host.releaseAudio();
     host.dispose();
+    storage.dispose();
     choicePanel.dispose();
     layout.dispose();
     delete document.body.dataset.playing;

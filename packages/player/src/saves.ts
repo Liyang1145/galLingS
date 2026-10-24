@@ -22,7 +22,9 @@ export interface InspectedSave extends InspectedCheckpoint {
   record: SaveRecord;
 }
 
-/** Resolve replacement only on commit. Failure must preserve the previous value. */
+/** Resolve replacement only on commit. A confirmed failure preserves the previous value.
+ * A native acknowledgement loss is NATIVE_STORAGE_UNCONFIRMED: neither success nor proof of no write.
+ */
 export type StoredSlot = { found: false } | { found: true; value: unknown };
 
 export interface StoredSavePage {

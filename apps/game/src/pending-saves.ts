@@ -81,7 +81,7 @@ export class PendingSavesPanel {
       row.root.dataset.state = view.state;
       const location = row.attempt.location();
       text(row.state, view.state === "pending" ? "原保存正在进行，请等待。"
-        : location ? "本次保存尚未提交，原槽位保持原值。"
+        : location ? "本次保存没有取得完成确认，请查看原槽位或显式重试这一次操作。"
           : "本次检查点未捕获成功，不能重试持久写入；请回到稳定位置，向原槽位显式重新保存。");
       text(row.location, location
         ? `原检查点：${location.nodeId} · ${new Date(location.savedAt).toLocaleString()}`

@@ -1,10 +1,10 @@
-//! Windows integration backend only; not selected by the running host or exposed to page scripts yet.
+//! Windows integration backend, selected only by the host's explicit file-record trial flag.
 //! Each logical record retains its existing TypeScript key/value. No story or merge rules run here.
 mod address;
 
 use address::{compare_keys, Addresses};
 use serde::{Deserialize, Serialize};
-use serde_json::Value;
+use serde_json::value::RawValue;
 use std::collections::BTreeMap;
 use std::fs::{self, File, OpenOptions};
 use std::io::{Read, Write};
@@ -51,7 +51,7 @@ fn io_error(label: &str, source: std::io::Error) -> StorageError {
 
 #[derive(Default, Serialize)]
 #[serde(transparent)]
-struct Entries(BTreeMap<String, Value>);
+struct Entries(BTreeMap<String, Box<RawValue>>);
 impl<'de> Deserialize<'de> for Entries {
     fn deserialize<D: serde::Deserializer<'de>>(deserializer: D) -> std::result::Result<Self, D::Error> {
         struct Visitor;
@@ -62,7 +62,7 @@ impl<'de> Deserialize<'de> for Entries {
             }
             fn visit_map<M: serde::de::MapAccess<'de>>(self, mut map: M) -> std::result::Result<Entries, M::Error> {
                 let mut entries = BTreeMap::new();
-                while let Some((key, value)) = map.next_entry::<String, Value>()? {
+                while let Some((key, value)) = map.next_entry::<String, Box<RawValue>>()? {
                     if entries.len() >= MAX_RECORDS || entries.insert(key, value).is_some() {
                         return Err(serde::de::Error::custom("记录表超出容量或含重复键"));
                     }
@@ -96,13 +96,13 @@ struct Loaded {
 pub(crate) struct ReadResult {
     /// Storage CAS generation only; not a content revision, core step or save-format version.
     pub revision: u64,
-    /// None is missing; Some(Value::Null) is an existing, possibly invalid record.
-    pub value: Option<Value>,
+    /// None is missing; Some(raw JSON null) is existing. Raw JSON preserves UTF-16 escapes.
+    pub value: Option<Box<RawValue>>,
     pub warnings: Vec<String>,
 }
 pub(crate) struct ScanResult {
     pub revision: u64,
-    pub entries: Vec<(String, Value)>,
+    pub entries: Vec<(String, Box<RawValue>)>,
     pub next: Option<String>,
     pub warnings: Vec<String>,
 }
@@ -121,7 +121,7 @@ pub(crate) struct NativeRecordStore {
     addresses: Addresses,
     // No sharing: another backend/process must not open this same integration store concurrently.
     _lease: File,
-    serial: Mutex<()>,
+    serial: Mutex<u64>,
 }
 
 impl NativeRecordStore {
@@ -155,13 +155,14 @@ impl NativeRecordStore {
         }
         let lease = OpenOptions::new().read(true).write(true).create(true).share_mode(0).open(lock)
             .map_err(|source| error("NATIVE_STORAGE_LOCK", format!("无法独占试用记录目录；请关闭使用它的其他宿主后重试：{source}")))?;
-        Ok(Self { root, work_id, addresses, _lease: lease, serial: Mutex::new(()) })
+        Ok(Self { root, work_id, addresses, _lease: lease, serial: Mutex::new(0) })
     }
 
     pub(crate) fn read(&self, key: &str) -> Result<ReadResult> {
         self.check_key(key)?;
-        let _serial = self.serial.lock().map_err(|_| error("NATIVE_STORAGE_LOCK", "试用记录操作已异常，需重开宿主"))?;
+        let mut serial = self.serial.lock().map_err(|_| error("NATIVE_STORAGE_LOCK", "试用记录操作已异常，需重开宿主"))?;
         let loaded = self.load()?;
+        observe(&mut serial, loaded.table.revision)?;
         Ok(ReadResult {
             revision: loaded.table.revision,
             value: loaded.table.entries.0.get(key).cloned(),
@@ -174,8 +175,9 @@ impl NativeRecordStore {
             || after.map(|key| !key.starts_with(prefix) || !self.addresses.is_progress(key)).unwrap_or(false) {
             return Err(error("NATIVE_STORAGE_PAGE", "目录范围、游标或容量无效"));
         }
-        let _serial = self.serial.lock().map_err(|_| error("NATIVE_STORAGE_LOCK", "试用记录操作已异常，需重开宿主"))?;
+        let mut serial = self.serial.lock().map_err(|_| error("NATIVE_STORAGE_LOCK", "试用记录操作已异常，需重开宿主"))?;
         let loaded = self.load()?;
+        observe(&mut serial, loaded.table.revision)?;
         let mut entries: Vec<_> = loaded.table.entries.0.iter().filter(|(key, _)| {
             key.starts_with(prefix) && after.map(|cursor| compare_keys(key, cursor).is_gt()).unwrap_or(true)
         }).collect();
@@ -186,28 +188,37 @@ impl NativeRecordStore {
         Ok(ScanResult { revision: loaded.table.revision, entries, next, warnings: warnings(&loaded.layout) })
     }
 
-    pub(crate) fn replace_progress(&self, key: &str, value: Value) -> Result<CommitResult> {
+    pub(crate) fn replace_progress(&self, key: &str, value: Box<RawValue>) -> Result<CommitResult> {
         if !self.addresses.is_progress(key) { return Err(error("NATIVE_STORAGE_KEY", "此操作仅替换当前试用进度槽位")); }
         self.check_value(key, &value)?;
-        let _serial = self.serial.lock().map_err(|_| error("NATIVE_STORAGE_LOCK", "试用记录操作已异常，需重开宿主"))?;
+        let mut serial = self.serial.lock().map_err(|_| error("NATIVE_STORAGE_LOCK", "试用记录操作已异常，需重开宿主"))?;
         let mut loaded = self.load()?;
+        observe(&mut serial, loaded.table.revision)?;
         loaded.table.entries.0.insert(key.into(), value);
-        self.commit(loaded)
+        let committed = self.commit(loaded)?;
+        *serial = committed.revision;
+        Ok(committed)
     }
 
     /// Merge/validation stays in TypeScript. A stale storage generation is a conflict, not a write.
-    pub(crate) fn compare_exchange(&self, key: &str, expected: u64, value: Value) -> Result<ExchangeResult> {
+    pub(crate) fn compare_exchange(&self, key: &str, expected: u64, value: Box<RawValue>) -> Result<ExchangeResult> {
         if !self.addresses.is_record(key) || expected > MAX_REVISION {
             return Err(error("NATIVE_STORAGE_CAS", "仅已登记的成果/偏好地址可使用有效存储代次更新"));
         }
         self.check_value(key, &value)?;
-        let _serial = self.serial.lock().map_err(|_| error("NATIVE_STORAGE_LOCK", "试用记录操作已异常，需重开宿主"))?;
+        let mut serial = self.serial.lock().map_err(|_| error("NATIVE_STORAGE_LOCK", "试用记录操作已异常，需重开宿主"))?;
         let mut loaded = self.load()?;
+        observe(&mut serial, loaded.table.revision)?;
+        if expected > loaded.table.revision {
+            return Err(error("NATIVE_STORAGE_REVISION", "提交代次低于预期，不能据旧容器覆盖记录"));
+        }
         if expected != loaded.table.revision {
             return Ok(ExchangeResult::Conflict { revision: loaded.table.revision, warnings: warnings(&loaded.layout) });
         }
         loaded.table.entries.0.insert(key.into(), value);
-        self.commit(loaded).map(ExchangeResult::Committed)
+        let committed = self.commit(loaded)?;
+        *serial = committed.revision;
+        Ok(ExchangeResult::Committed(committed))
     }
 
     fn check_key(&self, key: &str) -> Result<()> {
@@ -215,13 +226,12 @@ impl NativeRecordStore {
         Ok(())
     }
 
-    fn check_value(&self, key: &str, value: &Value) -> Result<()> {
+    fn check_value(&self, key: &str, value: &RawValue) -> Result<()> {
         self.check_key(key)?;
         if !self.addresses.matches_value(key, value) {
             return Err(error("NATIVE_STORAGE_FAMILY", "记录封装与目标地址种类不一致"));
         }
-        let bytes = serde_json::to_vec(value).map_err(|source| error("NATIVE_STORAGE_VALUE", format!("记录无法编码：{source}")))?;
-        if bytes.len() > MAX_RECORD_BYTES { return Err(error("NATIVE_STORAGE_CAPACITY", "单条试用记录超过 2 MiB；未截断或覆盖旧记录")); }
+        if value.get().len() > MAX_RECORD_BYTES { return Err(error("NATIVE_STORAGE_CAPACITY", "单条试用记录超过 2 MiB；未截断或覆盖旧记录")); }
         Ok(())
     }
 
@@ -263,7 +273,7 @@ impl NativeRecordStore {
         for (key, value) in &table.entries.0 {
             self.check_key(key)?;
             // Existing corrupt payloads remain readable as opaque values for TypeScript diagnostics.
-            if serde_json::to_vec(value).map_err(|source| error("NATIVE_STORAGE_CORRUPT", source.to_string()))?.len() > MAX_RECORD_BYTES {
+            if value.get().len() > MAX_RECORD_BYTES {
                 return Err(error("NATIVE_STORAGE_CAPACITY", "原生容器中的单条记录超过容量；未截断"));
             }
         }
@@ -316,6 +326,12 @@ impl NativeRecordStore {
         }
         Ok(CommitResult { revision, warnings })
     }
+}
+
+fn observe(seen: &mut u64, revision: u64) -> Result<()> {
+    if revision < *seen { return Err(error("NATIVE_STORAGE_REVISION", "存储代次发生倒退，未自动采用旧容器")); }
+    *seen = revision;
+    Ok(())
 }
 
 fn warnings(layout: &Layout) -> Vec<String> {

@@ -1,0 +1,129 @@
+{
+  "assembly": {
+    "baseline": "cd521697bc08a9421325ef8864d71a04dc7009a6",
+    "feedbackSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+    "feedbackReviews": 144,
+    "resolvedAcceptedCount": 143,
+    "acceptedUnchangedCount": 141,
+    "userSelectedCandidates": {
+      "lt5k0xiy": {
+        "key": "C",
+        "sha256": "f20c639b5805acb7751651e45cef2aabbaa27f8ac7bb3966a25d9bff431f043a",
+        "reason": "较晚批注明确这个更好，最终选这个；覆盖先前B版就这个"
+      },
+      "o1bis57q": {
+        "key": "A",
+        "sha256": "23d84ebe9536d0c97d185a17058e4565d182d9bb89a44ffd04590d9855175fa3",
+        "reason": "候选A明确accept并备注就这个"
+      }
+    },
+    "changedClips": 5,
+    "redoTargets": [
+      "3iq8cnx2",
+      "i99npm13",
+      "nthjz7h6"
+    ],
+    "uncovered": [
+      {
+        "id": "f3o1uyy0",
+        "index": 174
+      },
+      {
+        "id": "sb0dfj4m",
+        "index": 187
+      },
+      {
+        "id": "12ib88ay",
+        "index": 304
+      },
+      {
+        "id": "6b6yfsh8",
+        "index": 305
+      }
+    ],
+    "firstTwoVoices": 150,
+    "voicesAfter": 824,
+    "nodes": 3315,
+    "allStoryNodesAndTextUnchanged": true,
+    "nonVoiceAssetsUnchanged": true,
+    "tempoApplied": false,
+    "manualListeningByCodex": false,
+    "distanceEffects": false
+  },
+  "fullRegression": {
+    "load_s": 3.19,
+    "body": "game playing",
+    "chapters": 18,
+    "walk": {
+      "n": 3315,
+      "p50": 0.09999999403953552,
+      "p99": 0.800000011920929,
+      "max": 85.80000001192093,
+      "bad": [],
+      "nbad": 0
+    },
+    "cg": {
+      "n": 32,
+      "p50": 95.7000000178814,
+      "max": 204.5,
+      "heapMB": 12
+    },
+    "save": {
+      "want": {
+        "idx": 1504,
+        "id": "6cdt4nv4",
+        "vars": "{\"好感\":0,\"尾鳍\":7,\"贝壳延后\":0,\"玩笑\":0,\"海星放生\":0,\"周目\":1,\"结局数\":0}"
+      },
+      "got": {
+        "idx": 1504,
+        "id": "6cdt4nv4",
+        "vars": "{\"好感\":0,\"尾鳍\":7,\"贝壳延后\":0,\"玩笑\":0,\"海星放生\":0,\"周目\":1,\"结局数\":0}"
+      }
+    },
+    "prev": [
+      302,
+      301
+    ],
+    "errs": [],
+    "nerrs": 0
+  },
+  "audioReviewHtml": {
+    "passed": true,
+    "mainVoices": 150,
+    "byChapter": [
+      60,
+      90
+    ],
+    "inheritedAccepted": 143,
+    "unheard": 7,
+    "candidateCount": 4,
+    "allEmbeddedAudioDecodedAndSHA256Matched": 156,
+    "userChosen28CAnd327AMatchBytes": true,
+    "notesApprove41And65": true,
+    "oldFeedbackCannotUndoReceipt": true,
+    "newCandidatesNotApprovedByOldRecords": true,
+    "mainAndCandidateFeedbackIndependent": true,
+    "selectionAndFeedbackPersist": true,
+    "jsonAndCsvRoundtripExact": true,
+    "exportsAllRegardlessOfFilter": true,
+    "oldSHAIsolation": true,
+    "offlinePlaybackQueueAdvanceAndStop": true,
+    "mobileStickyExports": true,
+    "noExternalRequests": true,
+    "noPageErrors": true,
+    "manualListeningByCodex": false,
+    "htmlBytes": 4195659,
+    "htmlSha256": "8776b2897a3cd19fa7dea6d5edf28e88277c2e14c95f9f2f8f7d30cc5f5d122d",
+    "sourceGameSha256": "7f4340b898d67235953d9b04542dcc47deccc490e2822f42420ef74dfd9c23f0",
+    "audioFingerprint": "0ffa0d4fee18456d3a42e6d490815fdad1aa415b753280b4b92e4ec0c95320c5",
+    "variantFingerprint": "c0a4fcbd107e2688dad3b404f81d76d22e2c36b7c2d7f6d5fcffa908704da235",
+    "desktopAndNarrowScreenshotsVisuallyInspected": true
+  },
+  "manualListeningByCodex": false,
+  "documentationLinks": {
+    "passed": true,
+    "links": 86,
+    "broken": [],
+    "method": "Repository link syntax checked against fetched full branch tree and new files"
+  }
+}

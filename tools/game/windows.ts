@@ -1,8 +1,8 @@
 import { writeFile } from "node:fs/promises";
-import { resolve } from "node:path";
+import { relative, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import { ContentError } from "../../packages/story-model/src/model.ts";
-import { prepareInput, sha256 } from "./prepare.ts";
+import { prepareInput, repository, sha256 } from "./prepare.ts";
 
 /** Prepare an isolated snapshot/config only; never invokes Cargo, Tauri, installers or the game. */
 async function prepare(): Promise<void> {
@@ -13,13 +13,19 @@ async function prepare(): Promise<void> {
   }
   const { output, frontend, manifest, manifestBytes } = await prepareInput(packageId, "windows");
   try {
+    // Tauri first parses frontendDist as a URL; a Windows drive prefix is a URL scheme.
+    // Relative paths are resolved from src-tauri, including when --config is elsewhere.
+    const frontendDist = relative(resolve(repository, "desktop/src-tauri"), frontend).split(sep).join("/");
+    if (!frontendDist.startsWith("../../dist/windows/") || resolve(repository, "desktop/src-tauri", frontendDist) !== frontend) {
+      throw new Error("Windows 前端相对目录不在当前准备位置");
+    }
     // Config is written last: only a fully copied snapshot receives an entry for native building.
     const config = {
       $schema: "https://schema.tauri.app/config/2",
       productName: "海风与布丁",
       identifier: "com.gallings.haifeng.rebuild",
       build: {
-        frontendDist: frontend,
+        frontendDist,
         devUrl: null, beforeDevCommand: null, beforeBuildCommand: null, beforeBundleCommand: null,
         features: ["custom-protocol"],
       },

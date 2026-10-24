@@ -17,6 +17,14 @@
 .node-pager button:focus-visible { outline: 3px solid #aed9e7; outline-offset: 2px; }
 #source-info { overflow-wrap: anywhere; }
 #message { white-space: pre-wrap; overflow-wrap: anywhere; line-height: 1.7; }
+.author-diagnostic { border: 1px solid #e7aa78; border-radius: 8px; padding: 16px; margin-top: 16px; }
+.author-diagnostic h2 { margin: 0; font-size: 1rem; font-weight: 500; }
+.author-diagnostic dl { display: grid; grid-template-columns: minmax(130px, 24%) minmax(0, 1fr); gap: 8px 16px; font-size: .85rem; }
+.author-diagnostic dt, .author-diagnostic dd { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+.author-diagnostic dt { color: #bdd8df; }
+.author-diagnostic p { line-height: 1.7; overflow-wrap: anywhere; font-size: .85rem; }
+.author-diagnostic button { min-height: 40px; }
+.author-diagnostic button:focus-visible { outline: 3px solid #aed9e7; outline-offset: 2px; }
 #preview-status { min-height: 3em; color: #bdd8df; font-size: .85rem; line-height: 1.7; overflow-wrap: anywhere; }
 #debug { max-height: 320px; overflow: auto; padding: 12px; background: #061119; font-size: .8rem; }
 .draft-file { display: flex; align-items: center; gap: 12px; margin-top: 16px; }
@@ -114,4 +122,6 @@ input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 3px
   .reference-columns { grid-template-columns: 1fr; }
   .author-scene dl { grid-template-columns: minmax(0, 1fr); }
   .author-scene dd { margin-bottom: 8px; }
+  .author-diagnostic dl { grid-template-columns: minmax(0, 1fr); }
+  .author-diagnostic dd { margin-bottom: 8px; }
 }

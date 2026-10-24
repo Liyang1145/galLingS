@@ -1,7 +1,7 @@
 import { token } from "virtual:haifeng-editor";
 import type { AuthorTextPatch } from "../../../packages/story-model/src/author.ts";
 import { AuthorDraftHistory } from "../../../packages/story-model/src/author-history.ts";
-import { readAuthorDocument } from "./document.ts";
+import { AuthorRequestError, readAuthorDocument, readAuthorFailure } from "./document.ts";
 import type { AuthorDocument } from "./document.ts";
 import { EditorPreview } from "./preview.ts";
 import type { PreviewStart } from "./preview.ts";
@@ -15,6 +15,8 @@ import { AuthorReferences } from "./references.ts";
 import { AuthorFlow } from "./flow.ts";
 import { AuthorChanges } from "./changes.ts";
 import { AuthorScene } from "./scene.ts";
+import { AuthorDiagnostic } from "./diagnostic.ts";
+import type { DiagnosticContext } from "./diagnostic.ts";
 import "../../game/src/style.css";
 import "./style.css";
 
@@ -67,6 +69,7 @@ let flow: AuthorFlow | null = null;
 let checkpoints: PreviewCheckpoints | null = null;
 let changes: AuthorChanges | null = null;
 let sceneInspector: AuthorScene | null = null;
+let authorDiagnostic: AuthorDiagnostic | null = null;
 const NODE_PAGE_SIZE = 200;
 let nodePage = 0;
 let nodeList: {
@@ -129,6 +132,7 @@ function controls(): void {
   flow?.setAvailable(!!baseline && !locked);
   changes?.setAvailable(!!baseline && !locked);
   sceneInspector?.setAvailable(!!baseline && !locked);
+  authorDiagnostic?.setAvailable(!disposed && !locked);
   checkpoints?.setEnabled(!disposed && !!baseline && operation === null && !reviewing);
 }
 
@@ -236,6 +240,7 @@ function draftChanged(options: { cancelImport?: boolean; refreshForm?: boolean; 
   flow?.invalidate();
   changes?.invalidate();
   sceneInspector?.invalidate();
+  authorDiagnostic?.refresh();
   checkpoints?.invalidatePending("草稿已变化，未采用旧检查点读取；已有待用数据保留，恢复时仍须匹配当前修订。");
   el.discard.checked = false;
   preview.draftChanged();
@@ -265,9 +270,10 @@ async function request(route: string, input: unknown, signal: AbortSignal): Prom
   });
   const value: unknown = await response.json();
   if (!response.ok) {
-    const error = typeof value === "object" && value !== null && "error" in value && typeof value.error === "string"
-      ? value.error : `作者操作失败（${response.status}）`;
-    throw new Error(error);
+    let failure: AuthorRequestError;
+    try { failure = readAuthorFailure(value); }
+    catch { throw new Error(`作者操作失败响应无效（${response.status}），未采用其中的诊断定位；保存结果仍须重新读取确认。`); }
+    throw failure;
   }
   return readAuthorDocument(value);
 }
@@ -288,6 +294,11 @@ async function perform(kind: "load" | "preview" | "save", start: PreviewStart = 
   operation = kind;
   const epoch = ++requestEpoch;
   const draftRevision = revision;
+  const diagnosticContext: DiagnosticContext = {
+    content: baseline?.content ?? null, sourceSha256: baseline?.sourceSha256 ?? null,
+    revision: draftRevision, request: epoch, operation: kind,
+  };
+  authorDiagnostic?.clear();
   const controller = new AbortController();
   requestController = controller;
   controls();
@@ -331,6 +342,7 @@ async function perform(kind: "load" | "preview" | "save", start: PreviewStart = 
     }
   } catch (error: unknown) {
     if (disposed || epoch !== requestEpoch) return;
+    if (error instanceof AuthorRequestError && error.diagnostic) authorDiagnostic?.show(error.diagnostic, diagnosticContext);
     message(`${error instanceof Error ? error.message : "作者操作失败"}${kind === "save"
       ? " 草稿保留；若连接中断，先导出草稿并重新读取确认源文件，不要假定未写入。"
       : " 当前草稿保留。"}`, true);
@@ -424,6 +436,7 @@ function dispose(): void {
   checkpoints?.dispose();
   changes?.dispose();
   sceneInspector?.dispose();
+  authorDiagnostic?.dispose();
   nodeList = null;
   el.nodes.replaceChildren();
   drafts.clear();
@@ -515,6 +528,12 @@ sceneInspector = new AuthorScene({
   } : null,
   current: snapshot => !disposed && baseline !== null && baseline.content === snapshot.content
     && baseline.sourceSha256 === snapshot.sourceSha256 && revision === snapshot.revision && selected === snapshot.nodeId,
+});
+authorDiagnostic = new AuthorDiagnostic({
+  root: element("author-diagnostic", HTMLElement),
+  current: context => !disposed && context.request === requestEpoch && context.revision === revision
+    && context.content === (baseline?.content ?? null) && context.sourceSha256 === (baseline?.sourceSha256 ?? null),
+  navigate: navigateNode,
 });
 controls();
 void perform("load");

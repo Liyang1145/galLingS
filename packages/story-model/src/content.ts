@@ -44,7 +44,7 @@ export function localPath(input: unknown, source: SourceLocation): string {
   return value;
 }
 
-function sourceLocation(input: unknown, source: SourceLocation): SourceLocation {
+export function readSourceLocation(input: unknown, source: SourceLocation): SourceLocation {
   const data = object(input, source);
   knownFields(data, ["file", "field", "nodeId", "index"], source);
   const result: SourceLocation = {
@@ -264,7 +264,7 @@ export function readStoryContent(input: unknown, file = "content/story.json"): S
           return {
             id, text: string(choice.text, at(where, "text")), condition: expression(choice.condition, at(where, "condition")),
             actions: actions(choice.actions, at(where, "actions")), target: target(choice.target, at(where, "target")),
-            source: sourceLocation(choice.source, at(where, "source")),
+            source: readSourceLocation(choice.source, at(where, "source")),
           };
         });
         if (!choices.length) reject("CONTENT_CHOICE", "选择节点必须包含选项", source);
@@ -291,7 +291,7 @@ export function readStoryContent(input: unknown, file = "content/story.json"): S
     const where = { ...base, nodeId: id, index };
     return {
       id, label: string(item.label, at(where, "label")), chapter: string(item.chapter, at(where, "chapter")),
-      source: sourceLocation(item.source, at(where, "source")), enter: actions(item.enter, at(where, "enter")),
+      source: readSourceLocation(item.source, at(where, "source")), enter: actions(item.enter, at(where, "enter")),
       presentation: presentation(item.presentation, at(where, "presentation")), flow: flow(item.flow, at(where, "flow")),
     };
   });

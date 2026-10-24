@@ -1,5 +1,5 @@
-import { hash, localPath, oneOf, readStoryContent } from "../../../packages/story-model/src/content.ts";
-import type { StoryContent } from "../../../packages/story-model/src/model.ts";
+import { hash, localPath, oneOf, readSourceLocation, readStoryContent } from "../../../packages/story-model/src/content.ts";
+import type { Diagnostic, StoryContent } from "../../../packages/story-model/src/model.ts";
 import { array, at, knownFields, object, reject, string } from "../../../packages/story-model/src/read.ts";
 
 export interface AuthorDocument {
@@ -8,6 +8,36 @@ export interface AuthorDocument {
   locations: Record<string, string>;
   editable: Record<string, ("speaker" | "text")[]>;
   backup: string | null;
+}
+
+/** Existing editor error response, not another content validator or a saved-write receipt. */
+export class AuthorRequestError extends Error {
+  readonly diagnostic: Diagnostic | null;
+  constructor(message: string, diagnostic: Diagnostic | null) {
+    super(message);
+    this.name = "AuthorRequestError";
+    this.diagnostic = diagnostic;
+  }
+}
+
+export function readAuthorFailure(input: unknown): AuthorRequestError {
+  const source = { file: "editor-error-response", field: "" };
+  const data = object(input, source);
+  knownFields(data, ["error", "diagnostic"], source);
+  const message = string(data.error, at(source, "error"));
+  let diagnostic: Diagnostic | null = null;
+  if (Object.hasOwn(data, "diagnostic")) {
+    const where = at(source, "diagnostic");
+    const item = object(data.diagnostic, where);
+    knownFields(item, ["code", "message", "source"], where);
+    const code = string(item.code, at(where, "code"));
+    if (!code.trim()) reject("AUTHOR_DIAGNOSTIC", "诊断代码不能为空", at(where, "code"));
+    diagnostic = Object.freeze({
+      code, message: string(item.message, at(where, "message")),
+      source: Object.freeze(readSourceLocation(item.source, at(where, "source"))),
+    });
+  }
+  return new AuthorRequestError(message, diagnostic);
 }
 
 export function readAuthorDocument(input: unknown): AuthorDocument {

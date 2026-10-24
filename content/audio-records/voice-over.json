@@ -13,7 +13,7 @@
     "摊主甲": 1,
     "摊主乙": 1
   },
-  "needs_review": 47,
+  "needs_review": 41,
   "items": [
     {
       "line": "58oo02cv",
@@ -26,17 +26,16 @@
       "direction": "音量平稳、语调下沉，短促有力，带俯视感，像在点名",
       "asr": "人类。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "a1942e0070d09ac6a202c320db24ecd78038fdfbe2a30aff37734690eff0ae07",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:08:18.805Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:08:18.805Z"
       }
     },
     {
@@ -50,17 +49,16 @@
       "direction": "咬字清晰、语速偏慢，每个字都像在盖章，压着怒气还未爆发",
       "asr": "你刚才摸的是本小姐的尾巴尖？",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "2d9ec00812831a5b48a81101806d719f862f0fe50cac79445a3e133788ccba9b",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:08:24.051Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:08:24.051Z"
       }
     },
     {
@@ -74,17 +72,16 @@
       "direction": "停顿后轻声逼问，声音低且冷，像在给最后一次机会",
       "asr": "说话。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "bce79b2794187c7b2961a331071ee640c684877eafed2a0122deff268743af93",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:08:26.803Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:08:26.803Z"
       }
     },
     {
@@ -98,17 +95,16 @@
       "direction": "上扬一个字，语气短促，带审问感，眼神像刀",
       "asr": "解释。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "bf8246354de144624395d5c0fa54bdc438f244c7a87acb66ca945c091c8e7976",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:08:31.094Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:08:31.094Z"
       }
     },
     {
@@ -122,17 +118,16 @@
       "direction": "一字一顿，语调居高临下，像在宣读某条不可撼动的戒律",
       "asr": "鲸鱼的尾巴摸不得。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "c38cf8f695d553096e6defabf19c431b8e35a54114f678b04eb587392af3aec7",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:08:32.118Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:08:32.118Z"
       }
     },
     {
@@ -146,7 +141,7 @@
       "direction": "先点明尾巴尖，后半句轻轻咬字，坚定又带点嗔意",
       "asr": "尾巴 尖 也 不行",
       "asr_similarity": 1.0,
-      "status": "needs_listening",
+      "status": "accepted",
       "batch": "20261024-ch12-followup",
       "generator": "qwen-audio-3.0-tts-plus qwen-audio-3.0-tts-plus-longcanruishuang",
       "origin": "new_qwen_generation",
@@ -158,10 +153,9 @@
         "decision": "accept",
         "audioSha256": "c66858cbf0ef796010514f6a972a976b26255c9c178568cc0a3756a9755ecefb",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:08:36.785Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:08:36.785Z"
       }
     },
     {
@@ -192,10 +186,9 @@
         "decision": "accept",
         "audioSha256": "f20c639b5805acb7751651e45cef2aabbaa27f8ac7bb3966a25d9bff431f043a",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "这个更好，最终选这个",
-        "updatedAt": "2026-10-24T14:40:04.407Z",
-        "resolvedFromNote": true
+        "updatedAt": "2026-10-24T14:40:04.407Z"
       }
     },
     {
@@ -209,17 +202,16 @@
       "direction": "音量回落，哼出来多于说出来，带着轻蔑的收尾",
       "asr": "真是没礼貌。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "4a602cb3e4605f4d02e349b656eae698a45391d2c80b3e55fccd945cd50c8a0f",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:09:11.468Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:09:11.468Z"
       }
     },
     {
@@ -233,17 +225,16 @@
       "direction": "沉默后缓缓开口，语速极慢，每个字都绷着，像暴风前的静止",
       "asr": "你刚才，说什么？",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "c671d135ee2ea7c08fba0351f5e3aba4eda78b128704830599dcbac620b245de",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:09:54.719Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:09:54.719Z"
       }
     },
     {
@@ -257,17 +248,16 @@
       "direction": "爆发式短喝，音量突然冲顶，干脆有力，带真实的羞恼",
       "asr": "流氓。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "bedc7614ad8b0788abd081e0c00a6c0691b2975d45ec3db5ff01a666a9c072e2",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:10:41.165Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:10:41.165Z"
       }
     },
     {
@@ -281,17 +271,16 @@
       "direction": "低声默读，语速平缓，像在自言自语，尾音带一丝困惑",
       "asr": "记录单元、反思单元、验证单元。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "0138b081c0492416d7184800de872eb55ddcfaa5792fd8262281ec4a49352506",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:10:44.420Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:10:44.420Z"
       }
     },
     {
@@ -305,17 +294,16 @@
       "direction": "轻哼，语气随意带嫌弃，像把本子翻了个白眼",
       "asr": "写的什么乱七八糟的东西。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "037fa46a8d3c9e3afe26523f8fa3e3e5f069332c2a93e9891b7e7cdff8170aaa",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:10:47.053Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:10:47.053Z"
       }
     },
     {
@@ -329,7 +317,7 @@
       "direction": "本子比落海还要紧似的，重音落在海里，带困惑反问",
       "asr": "你们 人类 掉 海里 都 不 往 大 奇怪 的 本子 吗",
       "asr_similarity": 0.9411764705882353,
-      "status": "needs_listening",
+      "status": "accepted",
       "batch": "20261024-ch12-r3",
       "generator": "qwen-audio-3.0-tts-plus qwen-audio-3.0-tts-plus-longcanruishuang",
       "origin": "local_whole_word_stress",
@@ -410,10 +398,9 @@
         "decision": "accept",
         "audioSha256": "30881771353be79e9f54f0c46ea77871178178d323960ba6bd790f8970d88319",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "没问题啊可以",
-        "updatedAt": "2026-10-24T14:40:22.987Z",
-        "resolvedFromNote": true
+        "updatedAt": "2026-10-24T14:40:22.987Z"
       }
     },
     {
@@ -427,17 +414,16 @@
       "direction": "挑眉式反问，一个字，音调微扬，带威胁性的轻慢",
       "asr": "重要。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "e9ca83eb73c7f0d1e7c5b3781ee133f3b6e6736f9ccb21092c346da07cbbfe07",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:11:35.034Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:11:35.034Z"
       }
     },
     {
@@ -451,17 +437,16 @@
       "direction": "拉长语尾，故意停顿，像在为接下来的刁难蓄力",
       "asr": "那你说。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "b072bfa1bd9541cebc71b603dbc751e2887d28d1be1d373901058f4794ca35b5",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:11:36.812Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:11:36.812Z"
       }
     },
     {
@@ -475,17 +460,16 @@
       "direction": "语速不快，字字清晰，带居高临下的审判感，末尾微微上扬",
       "asr": "是本小姐的尾巴重要，还是你的本子重要？",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "cff98d14234b06b02eb3b1e79f1cfed1f2a34f46eee35706b246d74c010333d0",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:11:40.832Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:11:40.832Z"
       }
     },
     {
@@ -499,17 +483,16 @@
       "direction": "短促鼻音，轻而冷，听不出满不满意",
       "asr": "哼。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "2775f159099e5155bf95ce8e2f8162e41f97294858419f935df81fd08e69bd3d",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:11:43.580Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:11:43.580Z"
       }
     },
     {
@@ -523,17 +506,16 @@
       "direction": "语气松了一丝，带傲娇的勉强认可，故作淡然",
       "asr": "算你还有点眼光。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "6d0493a4e86b4507fa22e3fad9baa28f462f4536cee5c6abfdb80d8d81fb65bc",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:11:47.034Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:11:47.034Z"
       }
     },
     {
@@ -547,17 +529,16 @@
       "direction": "语调上扬，短促，带一点意外，像被什么东西勾住了兴趣",
       "asr": "哦？",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "d0adf10ed118aa8dc53fcccaf44117e0f1574db14f6483f9bfc326ac30952ddc",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:11:49.694Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:11:49.694Z"
       }
     },
     {
@@ -571,17 +552,16 @@
       "direction": "音量平，语气冷静，像裁判宣判，但压着一丝满意",
       "asr": "很好。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "97c9bf0612eb38cd30de189b478216dc53d4fab0bef65fb7669e7c346ead9720",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:11:52.038Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:11:52.038Z"
       }
     },
     {
@@ -595,17 +575,16 @@
       "direction": "语速稳，语调微扬，像随口说出的玩笑，但带着真实的威胁",
       "asr": "那你的本子喂鱼，你喂本小姐？",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "3c4260268ba74ad06bc31f84efff06d617f185a3474206a6b57455e3ec1bc220",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:11:56.484Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:11:56.484Z"
       }
     },
     {
@@ -619,17 +598,16 @@
       "direction": "反问，语气轻，像在挑剔一个贪心的借口，带一丝无奈",
       "asr": "都重要。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "52edf98d58b1c6e61ceaca0b034c45e6cc42f3beab81134b4a20c37ef4d40ed9",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:12:15.537Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:12:15.537Z"
       }
     },
     {
@@ -643,17 +621,16 @@
       "direction": "语速平缓，带告诫口吻，声音略低，像真的在提醒，尾音沉",
       "asr": "人类，太贪心是会被淹死的。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "dc4a9281da8518ed1ae1d23802a0b4ec7d4c39546fb0928f32b1a1a918837807",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:12:19.071Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:12:19.071Z"
       }
     },
     {
@@ -667,7 +644,7 @@
       "direction": "语调收敛、干脆，像随口指路又不想多说，声音偏低",
       "asr": "浅滩 人类 往东 丧礼 是 小镇",
       "asr_similarity": 0.9090909090909091,
-      "status": "needs_listening",
+      "status": "accepted",
       "batch": "20261024-ch12-r3",
       "generator": "qwen-audio-3.0-tts-plus qwen-audio-3.0-tts-plus-longcanruishuang",
       "origin": "local_comma_pause_retiming",
@@ -716,10 +693,9 @@
         "decision": "accept",
         "audioSha256": "706c6b7458ff3c83a9e30d8ca857144c93007d72cecc8491147c368a39a13499",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "可以",
-        "updatedAt": "2026-10-24T14:40:31.487Z",
-        "resolvedFromNote": true
+        "updatedAt": "2026-10-24T14:40:31.487Z"
       }
     },
     {
@@ -733,17 +709,16 @@
       "direction": "语速放慢，语尾悬停，有点骄傲，像在故意卖一个关子",
       "asr": "往西。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "1f5725576d45efc8b92f55e8574dcca446abc6b67f1fc46cdb8d970cdfce802d",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:12:40.511Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:12:40.511Z"
       }
     },
     {
@@ -757,7 +732,7 @@
       "direction": "前半句带自豪，后半句语速加快带嫌弃，尾音轻而凉",
       "asr": "本 小姐 家 你 这种 连 游泳 都 费劲 的 家伙 最好 别去",
       "asr_similarity": 0.975609756097561,
-      "status": "needs_listening",
+      "status": "accepted",
       "batch": "20261024-ch12-r2",
       "generator": "qwen-audio-3.0-tts-plus qwen-audio-3.0-tts-plus-longcanruishuang",
       "origin": "local_clause_pause",
@@ -779,10 +754,9 @@
         "decision": "accept",
         "audioSha256": "3da50631a84d84ed94f1898d9e1d7ee27fe7be9430c89f3980e1501753cb847c",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T11:42:05.839Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T11:42:05.839Z"
       }
     },
     {
@@ -796,17 +770,16 @@
       "direction": "立刻拔高音量，语速急，带强烈否认，像被踩到尾巴",
       "asr": "谁救你了？",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "d50c2a73cc3b48ba5c127e6a3df7d5655164c04838d944442aed58e4ecf91283",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:15:41.510Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:15:41.510Z"
       }
     },
     {
@@ -820,17 +793,16 @@
       "direction": "继续大声，语速快，语气强硬，像在堵死所有追问",
       "asr": "本小姐只是路过。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "5b0a208710b0efeb56eacddd95bae115d2810532cbd41a242cba3896edd13e5f",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:15:43.862Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:15:43.862Z"
       }
     },
     {
@@ -844,17 +816,16 @@
       "direction": "重复强调，越说越急，音量没降，带一丝心虚的慌乱",
       "asr": "顺便，懂吗？顺便。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "8a812d3e17dba17609416596ac0dffefa028ec9f28d71b7f660fc3ddab6d8c52",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T14:40:36.377Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T14:40:36.377Z"
       }
     },
     {
@@ -868,7 +839,7 @@
       "direction": "被看穿偷偷帮忙，先轻轻顿一下，再利落地反问",
       "asr": "看 看 什么",
       "asr_similarity": 1.0,
-      "status": "needs_listening",
+      "status": "accepted",
       "batch": "20261024-ch12-r4",
       "generator": "qwen-audio-3.0-tts-plus qwen-audio-3.0-tts-plus-longcanruishuang",
       "origin": "fresh_synthesis_no_tempo",
@@ -889,7 +860,15 @@
       "rate": 1.1,
       "takeKey": "3iq8cnx2_t0_03fcc863e31b",
       "tempoProcessing": false,
-      "bitrate": 128000
+      "bitrate": 128000,
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "ff033ccc31f16b96e2341d82e7a5bd0c36c2f4b94f7cb5d2cf7603b855836c4e",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
+        "note": "",
+        "updatedAt": "2026-10-24T15:03:25.625Z"
+      }
     },
     {
       "line": "i99npm13",
@@ -902,7 +881,7 @@
       "direction": "怕被发现偷偷帮忙，用水流来搪塞，清楚利落地解释",
       "asr": "那 是 水流 海流 懂不懂",
       "asr_similarity": 1.0,
-      "status": "needs_listening",
+      "status": "accepted",
       "batch": "20261024-ch12-r4",
       "generator": "qwen-audio-3.0-tts-plus qwen-audio-3.0-tts-plus-longcanruishuang",
       "origin": "fresh_synthesis_no_tempo",
@@ -923,7 +902,15 @@
       "rate": 1.1,
       "takeKey": "i99npm13_t1_0397af17a3ea",
       "tempoProcessing": false,
-      "bitrate": 128000
+      "bitrate": 128000,
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "342b43a9bfe20f0c371ab09f01f790ff9d665383a571b626433103a7ff7656c1",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
+        "note": "",
+        "updatedAt": "2026-10-24T15:03:33.179Z"
+      }
     },
     {
       "line": "dmbm0jfv",
@@ -936,17 +923,16 @@
       "direction": "主动开口，音量压低，刻意显得平静，像在压住心虚",
       "asr": "别误会。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "3d75671b8c98481ab7de7ef4b5f74c50722310e40e121d300d013c3a4a25b7f1",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:15:59.318Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:15:59.318Z"
       }
     },
     {
@@ -960,17 +946,16 @@
       "direction": "语速平稳，语气一本正经，像在为自己的行为找台阶，尾字微微拖长",
       "asr": "本小姐是防止可疑人类污染这片海域。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "5b5c27b3448e48917bf39593d0531e70f5eb8f0d75b8cd57406463b8003ca7ce",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:16:03.132Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:16:03.132Z"
       }
     },
     {
@@ -984,17 +969,16 @@
       "direction": "沉默后轻声开口，音量很小，像鼓起了点勇气又不想太明显",
       "asr": "喂。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "c00bec194b948b2105552a1efac55a37064cd555834c347b05901ac99a1a0f35",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:19:37.218Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:19:37.218Z"
       }
     },
     {
@@ -1008,17 +992,16 @@
       "direction": "试探性开口，语速慢，语尾悬停，有点不自然地假装随意",
       "asr": "你那个本子里。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "643b297e59e825e15dfa39a5fcf50d1610f9e46776ddeb03a9c62d7bc22f83e8",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:19:50.474Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:19:50.474Z"
       }
     },
     {
@@ -1032,17 +1015,16 @@
       "direction": "语速放慢，音量稍低，问得有点小心翼翼，带着真实的好奇",
       "asr": "记得，都是什么？",
       "asr_similarity": 0.833,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "35414f3fc6da49fba8eb92ec7db24638d0ae4a311c153fb5d7b3777b16a27f0d",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:19:52.846Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:19:52.846Z"
       }
     },
     {
@@ -1056,17 +1038,16 @@
       "direction": "轻声接话，语气比平时软一点，像不知不觉被带进去了",
       "asr": "什么问题？",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "feae8319aa9aa074441b881e98edb6975a6d7a647e9989c75e62aeeb4029b5a4",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:20:01.160Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:20:01.160Z"
       }
     },
     {
@@ -1080,17 +1061,16 @@
       "direction": "停顿后发出困惑短音，音量低，语调上扬，像没反应过来",
       "asr": "哈？",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "6bf9abce6efc5d2fb02c9d49a23f0a6ff9ccf92d4516a86237137685505e9ffd",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:20:03.280Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:20:03.280Z"
       }
     },
     {
@@ -1104,17 +1084,16 @@
       "direction": "语速回升，带嫌弃又带着掩饰的慌乱，语尾微微上翘",
       "asr": "人类，你搭讪的方式是抄的哪本破书？",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "11f0a7db87fba702d5ec9bfde96548f732e2508a6dec029d1fa57f2b931bd3de",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:20:05.686Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:20:05.686Z"
       }
     },
     {
@@ -1128,17 +1107,16 @@
       "direction": "轻哼一声，短促，像是轻蔑，但语气里藏着点被逗到",
       "asr": "呵。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "a40e9b4e7a23623e9c37a6bacad14427c5575095bcc21ae2704faadcee8f33a8",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:20:10.974Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:20:10.974Z"
       }
     },
     {
@@ -1152,17 +1130,16 @@
       "direction": "语气强硬，语速快，像在找一个合理的借口，行动先于理由",
       "asr": "可疑人类，笔记本没收。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "ba1a3575709430f6debfcb576d47be8a03ffaac21c8d21d7727ceead0104987c",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:20:15.893Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:20:15.893Z"
       }
     },
     {
@@ -1176,17 +1153,16 @@
       "direction": "撇嘴音，语调落下，像在掩饰看不懂的尴尬，故作无所谓",
       "asr": "什么嘛，无聊。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "26fe9c09c6fe424c5f59081162bcbc4f79cfb829b5bc7c42f5fe86ac049b0cf2",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:20:27.735Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:20:27.735Z"
       }
     },
     {
@@ -1200,17 +1176,16 @@
       "direction": "语速放慢，语气偏轻，带一点认真，像不小心说了句真心话",
       "asr": "答案哪有那么好找的？",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "7ded76ce8aa601b02cad71b986500451da69278ea5171aa02c0feacec9127450",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:20:35.741Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:20:35.741Z"
       }
     },
     {
@@ -1224,17 +1199,16 @@
       "direction": "语气回硬，带嫌弃，但比之前少了些尖锐，像在收场",
       "asr": "你们人类就是爱想这些没用的。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "37d817d3fa33c29dd7393031ce4110945279467e7a0799a87527db517b838ef2",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:20:37.619Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:20:37.619Z"
       }
     },
     {
@@ -1248,17 +1222,16 @@
       "direction": "抢先一步喊出，音量高，语气强硬急迫，像在堵住对方的疑问",
       "asr": "酬劳。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "c138d90970015cb345a408737e8d3728904fec8de7e12cbe1be25167910e740c",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:20:40.331Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:20:40.331Z"
       }
     },
     {
@@ -1272,17 +1245,16 @@
       "direction": "语速平稳，带审判感，像在宣读罪状，但语气比开头软了不少",
       "asr": "你摸了本小姐尾巴尖儿，按理说要被拍进深海的。",
       "asr_similarity": 0.974,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "3d5de5b934bf60f14826f19d7edc0d2cf9bc25b01a335752bf60bae9af2819cd",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:20:43.171Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:20:43.171Z"
       }
     },
     {
@@ -1296,17 +1268,16 @@
       "direction": "故作大方，语气傲慢中带点温度，语速稍慢，尾音微微拖",
       "asr": "看在你本子快烂了的可怜份上，赦免你。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "004fa7c722129577d4c7fa0801df2591235c1b99878b30b768eadb16972818f4",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:20:48.129Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:20:48.129Z"
       }
     },
     {
@@ -1320,17 +1291,16 @@
       "direction": "语速加快，语气强硬，像在下逐客令，但音量比预期的小一点",
       "asr": "吃了糍粑就走，天黑之前离开这片海域，听懂了没有？",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "b515ab15130295cf2b76785c71f49b7341f4b324deb45459aea846f3e85c816a",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:20:50.113Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:20:50.113Z"
       }
     },
     {
@@ -1344,7 +1314,7 @@
       "direction": "被夸中秘密便连编借口，三句承接，嘴硬掩心虚",
       "asr": "是 是 外婆 做 的",
       "asr_similarity": 1.0,
-      "status": "automatic_screen_pass",
+      "status": "accepted",
       "batch": "20261024-feedback-repair",
       "generator": "qwen-audio-3.0-tts-plus qwen-audio-3.0-tts-plus-longcanruishuang",
       "origin": "same_character_context_split",
@@ -1357,10 +1327,9 @@
         "decision": "accept",
         "audioSha256": "c9f7ca4993908449c079a7da82a602d43fcdce3149ea17cd16b2376858bc6f94",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": null,
-        "resolvedFromNote": false
+        "updatedAt": null
       }
     },
     {
@@ -1374,7 +1343,7 @@
       "direction": "被夸中秘密便连编借口，三句承接，嘴硬掩心虚",
       "asr": "深海 的 还有 带 过来 的",
       "asr_similarity": 0.8888888888888888,
-      "status": "needs_listening",
+      "status": "accepted",
       "batch": "20261024-feedback-repair",
       "generator": "qwen-audio-3.0-tts-plus qwen-audio-3.0-tts-plus-longcanruishuang",
       "origin": "same_character_context_split",
@@ -1387,10 +1356,9 @@
         "decision": "accept",
         "audioSha256": "a1bed6228adb73370ce654bf0b1936a8a210acfdb2e46eec8488336e461267b7",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": null,
-        "resolvedFromNote": false
+        "updatedAt": null
       }
     },
     {
@@ -1404,7 +1372,7 @@
       "direction": "被夸中秘密便连编借口，三句承接，嘴硬掩心虚",
       "asr": "跟 本 小姐 一点 关系 都 没有",
       "asr_similarity": 1.0,
-      "status": "automatic_screen_pass",
+      "status": "accepted",
       "batch": "20261024-feedback-repair",
       "generator": "qwen-audio-3.0-tts-plus qwen-audio-3.0-tts-plus-longcanruishuang",
       "origin": "same_character_context_split",
@@ -1417,10 +1385,9 @@
         "decision": "accept",
         "audioSha256": "7bc249090cbdba4cbcef30ed3957be52e5d3680678b0d481455ac9002f6ea6a4",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": null,
-        "resolvedFromNote": false
+        "updatedAt": null
       }
     },
     {
@@ -1434,7 +1401,7 @@
       "direction": "接着对方道谢顶嘴，说到一半自己收住话头",
       "asr": "谁 要 替 你",
       "asr_similarity": 1.0,
-      "status": "needs_listening",
+      "status": "accepted",
       "batch": "20261024-feedback-repair",
       "generator": "qwen-audio-3.0-tts-plus qwen-audio-3.0-tts-plus-longcanruishuang",
       "origin": "new_qwen_generation",
@@ -1446,10 +1413,9 @@
         "decision": "accept",
         "audioSha256": "5c870e83756462131d5be4764514ecbb27e8b11019c0adbdac950fae0b2932e8",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": null,
-        "resolvedFromNote": false
+        "updatedAt": null
       }
     },
     {
@@ -1463,17 +1429,16 @@
       "direction": "拔高音量，语速加快，语气里有恼火也有无奈，像被气到了",
       "asr": "人类，你这个人怎么听不懂话啊？",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "72429f47037507ea8fa2c32cafc1080989932ad82a1d8b7b0ac59b09a466bbf6",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:21:22.886Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:21:22.886Z"
       }
     },
     {
@@ -1487,17 +1452,16 @@
       "direction": "停顿后轻轻应声，音量很小，语调平，像不知道该说什么，只好这样",
       "asr": "嗯。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "97e53080134d63f9329d27fdc5abb69709d63b8b547138b5d516d52277123453",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:21:25.952Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:21:25.952Z"
       }
     },
     {
@@ -1511,17 +1475,16 @@
       "direction": "语气压着，语速慢，带傲娇式的认可，像勉强给出一个好评",
       "asr": "算你有品味。",
       "asr_similarity": 0.8,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "960bc59130d3a2915c1428d91a0e40eacbd73540cb72c42b720b4b302aa40e20",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:21:29.448Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:21:29.448Z"
       }
     },
     {
@@ -1535,7 +1498,7 @@
       "direction": "见他闷头吃有点失落，随口催走，像自然聊天",
       "asr": "吃 完 就 走 啊 还 愣 着 干嘛",
       "asr_similarity": 1.0,
-      "status": "needs_listening",
+      "status": "accepted",
       "batch": "20261024-ch12-r2",
       "generator": "qwen-audio-3.0-tts-plus qwen-audio-3.0-tts-plus-longcanruishuang",
       "origin": "new_qwen_generation",
@@ -1547,10 +1510,9 @@
         "decision": "accept",
         "audioSha256": "1598f2c7e11d368f9c9472f6b4737d26759b266a7b302d0dc2aa00803008e98a",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T14:41:36.405Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T14:41:36.405Z"
       }
     },
     {
@@ -1564,17 +1526,16 @@
       "direction": "干脆短喝，音量高，语气强硬，像是条件反射，但太快了有点假",
       "asr": "不准来。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "e519cfcf1fa49a9be07785c4a03c6e72631d34cdd27b2e6ffd67fe7433f29577",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:21:45.988Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:21:45.988Z"
       }
     },
     {
@@ -1588,17 +1549,16 @@
       "direction": "沉默后轻声说出，语调平，音量小，像极力压住什么，尾音极软",
       "asr": "随便你。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "39756d197ac347129835099f2b7b179148f17d1dd137268284130c8a0050852c",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:21:50.299Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:21:50.299Z"
       }
     },
     {
@@ -1612,17 +1572,16 @@
       "direction": "漂远了还喊回来，音量高，语速快，语气凶但藏不住期待",
       "asr": "酸梅汤里要加桂花。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "26475cf1ee411a815ffe2a3aff0e7b7e7daee8c5d3816765603df6e316ab7d5f",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:23:13.601Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:23:13.601Z"
       }
     },
     {
@@ -1636,17 +1595,16 @@
       "direction": "继续大声威胁，语速快，语气硬，但尾音莫名地软下去一点",
       "asr": "不加的话，连人带壶一起扔进深海。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "729852f754a26362f18ed13ad0a847e9da4a9171848df6b24d61791fa7cc0647",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:23:36.347Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:23:36.347Z"
       }
     },
     {
@@ -1660,14 +1618,22 @@
       "direction": "躲在礁石后被发现，装作没等人，一口气轻轻顶回",
       "asr": "谁 说 在 等 你 的",
       "asr_similarity": 1.0,
-      "status": "needs_listening",
+      "status": "accepted",
       "batch": "20261024-ch12-r2",
       "generator": "qwen-audio-3.0-tts-plus qwen-audio-3.0-tts-plus-longcanruishuang",
       "origin": "new_qwen_generation",
       "manualListeningPerformed": false,
       "distanceEffects": false,
       "instruction": "嗓音再圆润成熟一点，像二十岁左右的甜萌动漫女声，日系动画女主的配音腔，甜美清透不尖锐，躲在礁石后被发现，装作没等人，一口气轻轻顶回，清晰，音量适中，语速自然不拖腔，音色保持一致",
-      "instructionAuthor": "Codex主代理根据2026-10-24本轮JSON批注和真实前后文直接编写，无外部提示生成模型"
+      "instructionAuthor": "Codex主代理根据2026-10-24本轮JSON批注和真实前后文直接编写，无外部提示生成模型",
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "715a521c5e89027728590dd1af25e95e6bb1ef015d97c682e2b54d4bcf9d1df4",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
+        "note": "",
+        "updatedAt": "2026-10-24T15:03:36.083Z"
+      }
     },
     {
       "line": "f8e6wh8c",
@@ -1680,17 +1646,16 @@
       "direction": "故作严肃找借口，语速稍快带点理直气壮",
       "asr": "本小姐是在检查礁石的风化程度。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "b28f390aacd32f38e17a47f27a578b67875ecb064e97bffe770b4050ebe86dbc",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:23:42.807Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:23:42.807Z"
       }
     },
     {
@@ -1704,7 +1669,7 @@
       "direction": "临时找来见面理由，顺便后留气口，笑着试探",
       "asr": "顺便 看看 你 这种 人类 会不会 不 守 信用",
       "asr_similarity": 1.0,
-      "status": "automatic_screen_pass",
+      "status": "accepted",
       "batch": "20261024-feedback-repair",
       "generator": "qwen-audio-3.0-tts-plus qwen-audio-3.0-tts-plus-longcanruishuang",
       "origin": "new_qwen_generation",
@@ -1716,10 +1681,9 @@
         "decision": "accept",
         "audioSha256": "4e4b317a568cd867ee35435ceded87c752ac5cf62d368a316194992182b37769",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": null,
-        "resolvedFromNote": false
+        "updatedAt": null
       }
     },
     {
@@ -1733,17 +1697,16 @@
       "direction": "急促打断自己，提高音量掩饰心虚",
       "asr": "无关紧要。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "3d1c64f6284a159a5c3f732a183cb713f5a2a630aefaaf7ed120c1a0bc323a98",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:24:07.848Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:24:07.848Z"
       }
     },
     {
@@ -1757,17 +1720,16 @@
       "direction": "迅速转移话题，语气笃定带点理所当然",
       "asr": "重点是酸梅汤。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "1da9f0739d1a824ad6d657f122301f4d83668e815732229c33c9c94924a382bf",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:24:09.976Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:24:09.976Z"
       }
     },
     {
@@ -1781,17 +1743,16 @@
       "direction": "猛然炸毛，音量拉高，又惊又气",
       "asr": "哈。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "0390a96f7793d32b9e09ce6f1a553c71353f1f92128dba18104694bce115c761",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:24:12.916Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:24:12.916Z"
       }
     },
     {
@@ -1805,17 +1766,16 @@
       "direction": "吼出来，带点威胁语气但更多是恼怒",
       "asr": "人类，自恋是会被淹死的。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "382cc83f27525467651c7e57b4e7e7eac09b345b752dfa2c5422add299656d21",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:24:16.050Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:24:16.050Z"
       }
     },
     {
@@ -1829,17 +1789,16 @@
       "direction": "气急败坏，语速快，带质问的上扬尾音",
       "asr": "昨天刚学的道理今天就忘了。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "0158bc89644d9be4b680855457b581af44f9ec408dfeda2428fa623ede36f926",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:24:18.582Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:24:18.582Z"
       }
     },
     {
@@ -1853,17 +1812,16 @@
       "direction": "喝完酸梅汤后短促一声，故作淡定的鼻音",
       "asr": "哼。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "1329f42519ddf4d0fe43c6b74718530c4fdac34a38366aeb9864f1ad0948a6cd",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:24:20.366Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:24:20.366Z"
       }
     },
     {
@@ -1871,15 +1829,32 @@
       "speaker": "鲸鱼小姐",
       "asset": "vo_sb0dfj4m",
       "src": "assets/vo/sb0dfj4m.mp3",
-      "dur": 3.579,
-      "sha256": "4f2317abc97678a1ad7ee5afbe4c42ced0b0377d1d1195297b63299a4aea7275",
+      "dur": 3.471519,
+      "sha256": "971ba9454367c30aab4934cde1f757481830685f6c01d8e38dc47a5580d6b98a",
       "speak": "勉强及格。冰再多放一刻钟就更好了。",
-      "direction": "端着架子挑刺点评，语气装作权威、不甘承认好喝",
-      "asr": "勉强及格。冰再多放一刻钟就更好了。",
+      "direction": "端着架子挑刺点评，装作权威，藏着不肯承认的喜欢",
+      "asr": "勉强 及格 并 在 多 放 一刻钟 就 更好 了",
       "asr_similarity": 1.0,
-      "status": "ok",
-      "batch": "20261019-ch1-7",
-      "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）"
+      "status": "accepted",
+      "batch": "20261024-ch12-final",
+      "generator": "qwen-audio-3.0-tts-plus qwen-audio-3.0-tts-plus-longcanruishuang",
+      "instruction": "嗓音再圆润成熟一点，像二十岁左右的甜萌动漫女声，日系动画女主的配音腔，甜美清透不尖锐，端着架子挑刺点评，装作权威，藏着不肯承认的喜欢，音量适中，语速自然不拖腔，音色保持一致",
+      "instructionAuthor": "Codex主代理根据第187句上下文和用户要求直接撰写",
+      "model": "qwen-audio-3.0-tts-plus",
+      "voice": "qwen-audio-3.0-tts-plus-longcanruishuang",
+      "pitch": 1.0,
+      "rate": 1.1,
+      "origin": "user_selected_line187_A",
+      "distanceEffects": false,
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "971ba9454367c30aab4934cde1f757481830685f6c01d8e38dc47a5580d6b98a",
+        "source": "explicit_user_selected_variant",
+        "variant": "A",
+        "date": "2026-10-24",
+        "note": "用户明确选A版并要求同步仓库",
+        "priorFeedbackFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe"
+      }
     },
     {
       "line": "e72ipq1f",
@@ -1892,17 +1867,16 @@
       "direction": "低声嘟囔，带点傲娇式的小抱怨",
       "asr": "没规矩。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "a1c5f9ecd304d74ee9fc84fea5585551ba81ae5901a758fe7a794cb1c5012ff6",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:24:24.484Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:24:24.484Z"
       }
     },
     {
@@ -1916,17 +1890,16 @@
       "direction": "摆出规矩架势，语气故意拿腔拿调",
       "asr": "在本小姐的地盘，投喂之前要先报菜名。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "9d60c92ed1278a1a2592f0dddd1dac894137683daf77e1d0651979e8cb9e204f",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:24:29.041Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:24:29.041Z"
       }
     },
     {
@@ -1940,17 +1913,16 @@
       "direction": "边喝边挑刺，语气轻描淡写却带点满足",
       "asr": "桂花放多了。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "f0e7225e1c8a1e14357c190995be61f73920be19242fb87aa823babcd5375305",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:24:31.607Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:24:31.607Z"
       }
     },
     {
@@ -1964,17 +1936,16 @@
       "direction": "继续挑刺，语速平稳带点随口的调子",
       "asr": "糖也多了半勺。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "a7e16ba2b1a447bca6345fb9d265c3cf20dbab891e76e6b65ce27d9c6240b1b8",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:24:34.227Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:24:34.227Z"
       }
     },
     {
@@ -1988,17 +1959,16 @@
       "direction": "吐槽认真又挑剔，语气带点较真的小题大做",
       "asr": "冰块的形状不够规整。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "b6003d8fe1b5d553f4b3ef470e1933d93212a9b1417986f20eda0a4383f40e10",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:24:35.655Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:24:35.655Z"
       }
     },
     {
@@ -2012,17 +1982,16 @@
       "direction": "理直气壮地找借口，语气轻快带点得意",
       "asr": "销毁证据。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "5458fda82637b7c8d2bb7b85cbfa0c7efa4cca5a9bd52170eb762b9a5c5700b2",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:24:37.843Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:24:37.843Z"
       }
     },
     {
@@ -2036,17 +2005,16 @@
       "direction": "忽然放缓语气，声音低了下来，带点犹豫",
       "asr": "喂，人类。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "19f7c55003ffd55bb7299cfa44736a00b040a145dd39c0cee3a17ae778e969ee",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:24:39.567Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:24:39.567Z"
       }
     },
     {
@@ -2060,17 +2028,16 @@
       "direction": "语气放软，带点认真回忆的停顿感",
       "asr": "昨天那个，加桂花的要求。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "dc702aa41d05c70a8aa0766ea058e24dd979e2ce8123fd6bb1fb037108e9c9ff",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:24:41.545Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:24:41.545Z"
       }
     },
     {
@@ -2084,17 +2051,16 @@
       "direction": "故作考官口吻，语气里藏着一点被重视的欣慰",
       "asr": "你还记得，算你过关。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "ad939c62087d4e1bd20872b07ce06b068328c539729cb7fc032945740e6208f1",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:24:44.105Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:24:44.105Z"
       }
     },
     {
@@ -2108,17 +2074,16 @@
       "direction": "郑重宣布，语气认真带点骄傲地提高一点音量",
       "asr": "所以从现在开始，桂花就是我们的第一个暗号。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "1177de875c88d5af2d0b6fb70a1c9c16fce0f5c7e5ed4e12c7cf1dccbc0478ec",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:24:46.681Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:24:46.681Z"
       }
     },
     {
@@ -2132,7 +2097,7 @@
       "direction": "郑重又俏皮地立规矩，引用暗号时轻轻点明",
       "asr": "小姐 说 今天 没有 桂花 的 时候",
       "asr_similarity": 0.96,
-      "status": "automatic_screen_pass",
+      "status": "accepted",
       "batch": "20261024-feedback-repair",
       "generator": "qwen-audio-3.0-tts-plus qwen-audio-3.0-tts-plus-longcanruishuang",
       "origin": "new_qwen_generation",
@@ -2144,10 +2109,9 @@
         "decision": "accept",
         "audioSha256": "0a331e3cb274d4272ab0e4f963392e7bcb6f3ea0b46acdfa4edd2682b01c2b47",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": null,
-        "resolvedFromNote": false
+        "updatedAt": null
       }
     },
     {
@@ -2161,7 +2125,7 @@
       "direction": "接上暗号的解释，明天处略着重，尾音藏期待",
       "asr": "意思 就是 明天 来 的 时候 要 带 酸梅汤",
       "asr_similarity": 1.0,
-      "status": "automatic_screen_pass",
+      "status": "accepted",
       "batch": "20261024-feedback-repair",
       "generator": "qwen-audio-3.0-tts-plus qwen-audio-3.0-tts-plus-longcanruishuang",
       "origin": "new_qwen_generation",
@@ -2173,10 +2137,9 @@
         "decision": "accept",
         "audioSha256": "8550ed97f439f1647e47c3476e4aeae1d9f627f8bfddb7821c1cbdd34ad0c3f2",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:24:50.835Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:24:50.835Z"
       }
     },
     {
@@ -2190,7 +2153,7 @@
       "direction": "看着对方确认约定，小小得意，问句轻巧上挑",
       "asr": "听懂 没有",
       "asr_similarity": 1.0,
-      "status": "needs_listening",
+      "status": "accepted",
       "batch": "20261024-feedback-repair",
       "generator": "qwen-audio-3.0-tts-plus qwen-audio-3.0-tts-plus-longcanruishuang",
       "origin": "new_qwen_generation",
@@ -2202,10 +2165,9 @@
         "decision": "accept",
         "audioSha256": "2c9c6e33023c6e094a5d97a09b4203480234ef70a9f99e235be018342c917b80",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:24:52.591Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:24:52.591Z"
       }
     },
     {
@@ -2219,17 +2181,16 @@
       "direction": "短促重复反问，语气带点轻蔑的不以为意",
       "asr": "别人。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "70b5ff880fcfb25f2ed40306de626f6062223fd0d731fa72b83cb385a6aab024",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:24:55.938Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:24:55.938Z"
       }
     },
     {
@@ -2243,7 +2204,7 @@
       "direction": "带点傲气宣示主权，语气自信又藏着亲近",
       "asr": "那 片 海域 除了 你 谁 敢 跟 本 小姐 对 暗号",
       "asr_similarity": 0.9375,
-      "status": "needs_listening",
+      "status": "accepted",
       "batch": "20261024-ch12-r2",
       "generator": "qwen-audio-3.0-tts-plus qwen-audio-3.0-tts-plus-longcanruishuang",
       "origin": "local_single_word_gain",
@@ -2271,10 +2232,9 @@
         "decision": "accept",
         "audioSha256": "7e1d8ddeb0296dfa2faaa0151bc29812fdb901145795d2984cc280f50ebfe776",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T11:43:39.217Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T11:43:39.217Z"
       }
     },
     {
@@ -2288,17 +2248,16 @@
       "direction": "语气突然放低，带点欲言又止的转折感",
       "asr": "再说了。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "68d3d19e38b379a5fdda548bb4b523b66b480fa85538e9cf4f2a51d81722c52f",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:25:57.105Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:25:57.105Z"
       }
     },
     {
@@ -2312,17 +2271,16 @@
       "direction": "声音变轻变软，像在认真回味细节，带点害羞",
       "asr": "桂花泡开是什么样子？放几朵？冰几度？",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "e9196b2ac066e1f1764e815135bb1525f56906534fa83606d2aaf537aabdf2af",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:25:55.660Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:25:55.660Z"
       }
     },
     {
@@ -2336,17 +2294,16 @@
       "direction": "低声认真地说出，语气带点珍重和一丝脆弱",
       "asr": "全世界只有你知道。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "ca9fd9f33ffb3d73b9cbeef6a5a528dcd0afc9278fd30c930dd61b1367af8345",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:25:54.069Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:25:54.069Z"
       }
     },
     {
@@ -2360,17 +2317,16 @@
       "direction": "轻声收尾，语气笃定又带点温柔",
       "asr": "这就是暗号。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "c4f8d3a4a02383c6de5845a0d986268e9c272206acf72bceac3287475cfa23a7",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:25:51.843Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:25:51.843Z"
       }
     },
     {
@@ -2384,17 +2340,16 @@
       "direction": "惊讶反问，语气陡然拔高带点不解",
       "asr": "直接说。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "7a61b433018181a180b9319a1356d40b656d2379269dae4ebd0e6a496be6de33",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:25:49.786Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:25:49.786Z"
       }
     },
     {
@@ -2408,17 +2363,16 @@
       "direction": "重复确认，语气带点难以置信的夸张",
       "asr": "直接说，我想喝酸梅汤了。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "582c4e1e7935302c137dea9b48be2d73e8e05cc08ac06ab07ed09c65b738a651",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:25:48.866Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:25:48.866Z"
       }
     },
     {
@@ -2432,17 +2386,16 @@
       "direction": "羞怒交加地喊出来，音量大、语速快",
       "asr": "人类，那种话是能直接说的吗？",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "3ba383d378fe0abcdab0f6f3c71a60201ba5f199a49cfbc943bbd927be2f46e0",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:25:42.788Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:25:42.788Z"
       }
     },
     {
@@ -2456,17 +2409,16 @@
       "direction": "强硬下结论，带点色厉内荏的急躁",
       "asr": "暗号就是暗号，不许质疑。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "fcf57a9b03c20216c7a20922b3a31d10046311c1bbd9bc5d9952db263bd1f371",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:25:46.198Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:25:46.198Z"
       }
     },
     {
@@ -2480,17 +2432,16 @@
       "direction": "满意地轻哼，语气带点得意的轻松",
       "asr": "满意的轻哼，语气带点得意的轻松，说：“哼，上道。”",
       "asr_similarity": 0.286,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "f985019cbb493b98cab5f11637002a63ac84eda796c640998ba6e67877c239d8",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:26:01.303Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:26:01.303Z"
       }
     },
     {
@@ -2504,17 +2455,16 @@
       "direction": "故作高高在上，语气带点卖关子的轻快",
       "asr": "第二个暗号，看你表现再说。",
       "asr_similarity": 0.909,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "c5020810cf287c6c1654a302a3db564f4875a9327bad310bb786c7580c846368",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:26:03.227Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:26:03.227Z"
       }
     },
     {
@@ -2528,17 +2478,16 @@
       "direction": "简短命令式，语气干脆带点理所当然",
       "asr": "本子。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "8a36975baa7f71f1c856863ae744a0435e5e5d0453c4daed228823930936db91",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:26:05.391Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:26:05.391Z"
       }
     },
     {
@@ -2552,17 +2501,16 @@
       "direction": "不耐烦地打断，语速快带点随意",
       "asr": "知道知道，你的问题答案吗？",
       "asr_similarity": 0.909,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "1825c2763320a6746e28bfbb8e6bc29b100dbd15e5e7311d66464dd9b3d45d42",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:26:07.891Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:26:07.891Z"
       }
     },
     {
@@ -2576,17 +2524,16 @@
       "direction": "理直气壮地辩解，语气带点炫耀的骄傲",
       "asr": "借用一下。本小姐的契约，当然要用最珍贵的纸来写。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "92d0e5e6f6187d1de65b5081ca4df1bbe2fae504f203bc2652ea71199b050b33",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:26:10.669Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:26:10.669Z"
       }
     },
     {
@@ -2600,17 +2547,16 @@
       "direction": "愣住后低声吐槽，语气轻却带点藏不住的触动",
       "asr": "字真丑。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "e2d7f43109ad3eed2b21a2b5d4b4279bd13d9942ba35c5fc2bd0025bdbaebec1",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:26:13.113Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:26:13.113Z"
       }
     },
     {
@@ -2624,17 +2570,16 @@
       "direction": "郑重念出，语气一本正经带点仪式感",
       "asr": "念给你听，条款一。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "7df256af56ac5832e8bcb61ed19f1fac8349a3df9dcfb2c5ae37e6cddf47b040",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:26:16.317Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:26:16.317Z"
       }
     },
     {
@@ -2648,17 +2593,16 @@
       "direction": "认真宣读条款，语速平稳带点强调的重音",
       "asr": "暗号只有两个人知道。不许告诉外婆，不许告诉海鸥，更不许告诉任何一条鱼。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "752dcaa7072bc61f7437ae321919ce415a77d6cec85e4dd6c5d5bc56c9f7cb13",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:26:18.407Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:26:18.407Z"
       }
     },
     {
@@ -2672,17 +2616,16 @@
       "direction": "干脆利落地过渡，语气带点权威感",
       "asr": "条款二。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "de245029254e843b2ee3e9eb0122d2e069484050d27c149b1f3a747ddbdeea20",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:26:22.444Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:26:22.444Z"
       }
     },
     {
@@ -2696,17 +2639,16 @@
       "direction": "故意严肃宣判，语气带点威胁却藏着玩笑",
       "asr": "你要是哪天忘了暗号，就降回普通人类。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "b4568646968440e9f8ab58a25adf7db1d9d210f2515db7011ca47988e8c2e9b5",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:26:25.969Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:26:25.969Z"
       }
     },
     {
@@ -2720,17 +2662,16 @@
       "direction": "语气加重强调惩罚，带点孩子气的较真",
       "asr": "酸梅汤没有你的份儿。糍粑，没有你的份儿。",
       "asr_similarity": 0.938,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "326356603b454e21ce886a578e92be3a0192b1d4772752729dc01da0cee35e7e",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:26:29.201Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:26:29.201Z"
       }
     },
     {
@@ -2744,17 +2685,16 @@
       "direction": "语气进一步升级，带点蛮不讲理的强硬",
       "asr": "连浅滩都不许你踩。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "e61dff0b16dfd407224870ea096ca4ef02e82b460e5137c6105a4929844358b1",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:26:32.154Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:26:32.154Z"
       }
     },
     {
@@ -2768,17 +2708,16 @@
       "direction": "打断抗议，提高音量，语气带点不容反驳",
       "asr": "条款三。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "c90f677c0830f9f8a1f40e7dd50dc449ae76bf6e4ec932fa79f276219452e51c",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:26:35.052Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:26:35.052Z"
       }
     },
     {
@@ -2792,17 +2731,16 @@
       "direction": "宣布特权，语气骄傲又带点霸道",
       "asr": "本小姐随时可以新增暗号。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "f2c626344c50cd3d53c538858502410060414a860d73fefa7136048ab76a1f4c",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:26:37.548Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:26:37.548Z"
       }
     },
     {
@@ -2816,7 +2754,7 @@
       "direction": "一本正经宣读专属条款，逐个分句，尾音落定",
       "asr": "你 当场 学会 不得 有误",
       "asr_similarity": 1.0,
-      "status": "automatic_screen_pass",
+      "status": "accepted",
       "batch": "20261024-feedback-repair",
       "generator": "qwen-audio-3.0-tts-plus qwen-audio-3.0-tts-plus-longcanruishuang",
       "origin": "new_qwen_generation",
@@ -2828,10 +2766,9 @@
         "decision": "accept",
         "audioSha256": "36857ee130e892f37ea0847d6a55f7de68e776609067ab9d20b4688eac2127ee",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": null,
-        "resolvedFromNote": false
+        "updatedAt": null
       }
     },
     {
@@ -2845,7 +2782,7 @@
       "direction": "把本子递到面前，带笑催对方落款，清脆两字",
       "asr": "签字",
       "asr_similarity": 1.0,
-      "status": "needs_listening",
+      "status": "accepted",
       "batch": "20261024-feedback-repair",
       "generator": "qwen-audio-3.0-tts-plus qwen-audio-3.0-tts-plus-longcanruishuang",
       "origin": "new_qwen_generation",
@@ -2857,10 +2794,9 @@
         "decision": "accept",
         "audioSha256": "c480d2dc6172e6d4f6e802816255474b40bc43f2d60bbe06ae0556ad340b68c3",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": null,
-        "resolvedFromNote": false
+        "updatedAt": null
       }
     },
     {
@@ -2874,17 +2810,16 @@
       "direction": "低声念出，语气认真里藏着一丝紧张的郑重",
       "asr": "暗号持有人是终身制的。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "3ff42b4283d3fb2f70de5ab2e85010da92f70fddbd2016a254fbb3783fac6c86",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:26:45.290Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:26:45.290Z"
       }
     },
     {
@@ -2898,17 +2833,16 @@
       "direction": "故作严肃宣告后果，语气带点认真的威胁",
       "asr": "中途退出，按契约条款二处理。酸梅汤，永久断供。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "dd5ec61a6dd10305d708ea9e0a779cb91215903d1fe96fffb2954ab91ba1da93",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:26:48.290Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:26:48.290Z"
       }
     },
     {
@@ -2922,17 +2856,16 @@
       "direction": "语气略带不自然的坚持，带点小心翼翼",
       "asr": "这个，本小姐先保管。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "bd37b44884a106b248561fe53e47bf511ca38d6abfbde3d65113c4d6a87d6d0b",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:26:51.260Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:26:51.260Z"
       }
     },
     {
@@ -2946,17 +2879,16 @@
       "direction": "小声找借口，语气放软带点害羞的掩饰",
       "asr": "怕你弄丢。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "4b54055c3f9bb3d52a32c772a849a0d2173162e242d3e3daca1573db4aaa644b",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:26:53.684Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:26:53.684Z"
       }
     },
     {
@@ -2970,17 +2902,16 @@
       "direction": "疑惑反问，语气带点挑眉的轻挑",
       "asr": "权利。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "2bc0c3b4a0ca27b5f7fc992982c8f087188756e8a39ec5376f7388ef526aeb0e",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:26:55.448Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:26:55.448Z"
       }
     },
     {
@@ -2994,17 +2925,16 @@
       "direction": "傲气又带点认真宣告，语气里藏着重视",
       "asr": "你能留在本小姐的海域，就是最大的权利了。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "4a9530454b92c1c612bd1757c6ff50a7282cf436645030bef1aa9c8c53766785",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:26:58.138Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:26:58.138Z"
       }
     },
     {
@@ -3018,17 +2948,16 @@
       "direction": "轻笑着重复，语气带点危险的玩味",
       "asr": "卖身契？",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "a321697bd6dfa8e569c74682a0df2f08f4c14a90fc9bdb9faf6c48806e982a56",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:27:00.590Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:27:00.590Z"
       }
     },
     {
@@ -3042,17 +2971,16 @@
       "direction": "笑意里带威胁，语气慢而危险，刻意拖长",
       "asr": "人类，你知道被鲸鱼尾巴卷住，拖到深海需要几秒吗？",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "36de6961ad263b6a615d75b945adf13a167bb5dc33e2f3a3d213abf23cd91997",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:27:07.068Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:27:07.068Z"
       }
     },
     {
@@ -3066,17 +2994,16 @@
       "direction": "干脆利落地吐出数字，语气轻松带点恐吓的笑意",
       "asr": "三秒。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "e904300981cd422cb588d10dbed376a9427515745647408cee89296d30431d96",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:27:08.944Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:27:08.944Z"
       }
     },
     {
@@ -3090,17 +3017,16 @@
       "direction": "挑逗般地反问，语气拉低带点危险的笑",
       "asr": "想体验一下吗？",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "d0b889d7d00b0df3e24a680851a7e8a29eb2fc7cde0fd21d0fb0bd261dc24308",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:27:12.889Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:27:12.889Z"
       }
     },
     {
@@ -3114,17 +3040,16 @@
       "direction": "满意地轻声夸赞，语气放软带点宠溺",
       "asr": "乖。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "2f5bd7da526e3dbbe5255605f45ddcd28a16a9bbc9ad01b8f659773afdb1f6d2",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:27:14.759Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:27:14.759Z"
       }
     },
     {
@@ -3138,17 +3063,16 @@
       "direction": "轻声呼唤，语气比平时温柔很多，带点犹豫",
       "asr": "喂。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "94402c79bdd92617e707fa526548bcb2e52103ffd633b099558417bc0c52f48d",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:27:16.455Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:27:16.455Z"
       }
     },
     {
@@ -3162,17 +3086,16 @@
       "direction": "语气放低认真，带点欲言又止的试探",
       "asr": "暗号还有一个用处。本小姐没写进条款里。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "31eae4c9fbc66b6346dde57cdd40842dab4dde3a017a309da1ed4bea167e92ea",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:27:21.597Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:27:21.597Z"
       }
     },
     {
@@ -3186,17 +3109,16 @@
       "direction": "语气低落又带点自我解嘲的小声承认",
       "asr": "本小姐记性一般，你是知道的吧？",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "8358a45725271d24eddae02b832da3f1e2ae3c1ba821422a27aad4a2aa8a9824",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:27:24.773Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:27:24.773Z"
       }
     },
     {
@@ -3210,17 +3132,16 @@
       "direction": "低声诉说，语气带点落寞和不安",
       "asr": "有些事，今天记得，明天可能就记岔了。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "318ef77479e131920940cca5af86198071fb60a1ac9711b06205e3fd37b5b585",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:27:26.613Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:27:26.613Z"
       }
     },
     {
@@ -3234,17 +3155,16 @@
       "direction": "语速放慢，带点自我剖析的脆弱感",
       "asr": "昨天吃了什么，前天说了什么，那种细节。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "ace09761e623574093ef4741bffeba39d05b9bffbb27e525c96ecd8e4b553d22",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:27:28.461Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:27:28.461Z"
       }
     },
     {
@@ -3258,7 +3178,7 @@
       "direction": "怕自己的记忆惹麻烦，语势逐渐放轻，试探收尾",
       "asr": "记错 错 了 的话 你们 人类 会 觉得 麻烦 吧",
       "asr_similarity": 0.967741935483871,
-      "status": "automatic_screen_pass",
+      "status": "accepted",
       "batch": "20261024-feedback-repair",
       "generator": "qwen-audio-3.0-tts-plus qwen-audio-3.0-tts-plus-longcanruishuang",
       "origin": "new_qwen_generation",
@@ -3270,10 +3190,9 @@
         "decision": "accept",
         "audioSha256": "52091f92695536c2ab9bdd0775385a5849e086a878b4d973fbe24dda81682d9f",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": null,
-        "resolvedFromNote": false
+        "updatedAt": null
       }
     },
     {
@@ -3287,17 +3206,16 @@
       "direction": "猛然抬眼，语气带点被说中心事的紧张",
       "asr": "什么？",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "14a45acfe3607267c23570e6111f1449537194d1424044781c963c6c9f21151c",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:27:33.703Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:27:33.703Z"
       }
     },
     {
@@ -3311,17 +3229,16 @@
       "direction": "小声反驳，语气发紧带点不知所措",
       "asr": "暗号才不是这么用的！",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "a00c5c47b7cc9f8cb4a00ac9546a54f98b7d261889ab1747bda75379f7127054",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:27:36.567Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:27:36.567Z"
       }
     },
     {
@@ -3335,17 +3252,16 @@
       "direction": "语气带点抗拒，声音略微发抖却舍不得拒绝",
       "asr": "暗号哪有把心情都写进去的？",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "c53876c8f72c80ca125ee21ea7324be07ef0ea29488297c7a6ba9cfca59eaccb",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:27:40.237Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:27:40.237Z"
       }
     },
     {
@@ -3359,17 +3275,16 @@
       "direction": "轻声骂出口，语气却软得没有攻击性，带点哽咽感",
       "asr": "笨蛋。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "6523378d9b6f42742851e35d7d03f101f86866ebd4dbf2ad604c1cc97713291b",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:27:42.325Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:27:42.325Z"
       }
     },
     {
@@ -3383,17 +3298,16 @@
       "direction": "语气转折后低声认下，带点羞涩的妥协",
       "asr": "不过，条款四，就这么定了。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "97d6d42fb19508bddf9c07d7bfa2ab3e73013d98e37bc2d3eb3b8f483eb5e441",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:27:46.791Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:27:46.791Z"
       }
     },
     {
@@ -3407,17 +3321,16 @@
       "direction": "轻声确认，语气带点意外和小心的期待",
       "asr": "你记得。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "dcd8f05940e8781b4076281501568af4a2b504ab8ae6a01699dd1b8a80c11ed9",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:27:48.808Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:27:48.808Z"
       }
     },
     {
@@ -3431,7 +3344,7 @@
       "direction": "明知被照顾仍装挑剔，转口接受，末句藏着依赖",
       "asr": "你 家 的 有 什么 用 那 是 你 的 脑子 又 不是 本 小姐 的",
       "asr_similarity": 0.95,
-      "status": "needs_listening",
+      "status": "accepted",
       "batch": "20261024-ch12-r2",
       "generator": "qwen-audio-3.0-tts-plus qwen-audio-3.0-tts-plus-longcanruishuang",
       "origin": "local_context_split_provisional",
@@ -3449,10 +3362,9 @@
         "decision": "accept",
         "audioSha256": "c460e8c419791d9722e2557c40f2e5da44d45fa9dfe3c6f87134f82a1aa803e9",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T14:41:52.253Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T14:41:52.253Z"
       }
     },
     {
@@ -3466,7 +3378,7 @@
       "direction": "明知被照顾仍装挑剔，转口接受，末句藏着依赖",
       "asr": "话 虽 这么说",
       "asr_similarity": 1.0,
-      "status": "needs_listening",
+      "status": "accepted",
       "batch": "20261024-ch12-r2",
       "generator": "qwen-audio-3.0-tts-plus qwen-audio-3.0-tts-plus-longcanruishuang",
       "origin": "local_context_split",
@@ -3476,7 +3388,15 @@
       "instructionAuthor": "Codex主代理根据2026-10-24本轮JSON批注和真实前后文直接编写，无外部提示生成模型",
       "contextSourceKey": "ctx_borrow_brain_t1_5f7319242658",
       "contextRegionSeconds": null,
-      "provisional": false
+      "provisional": false,
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "83de3a622033f184b86e48292793f00adc25ab250750c45e91142cde9fd0e2c0",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
+        "note": "",
+        "updatedAt": "2026-10-24T15:04:06.208Z"
+      }
     },
     {
       "line": "6b6yfsh8",
@@ -3489,7 +3409,7 @@
       "direction": "明知被照顾仍装挑剔，转口接受，末句藏着依赖",
       "asr": "条款 私照 定 你 的 脑子 勉强 家 本 小姐 存 东西",
       "asr_similarity": 0.9444444444444444,
-      "status": "needs_listening",
+      "status": "accepted",
       "batch": "20261024-ch12-r2",
       "generator": "qwen-audio-3.0-tts-plus qwen-audio-3.0-tts-plus-longcanruishuang",
       "origin": "local_context_split_provisional",
@@ -3502,7 +3422,15 @@
         5.2236965,
         9.8254375
       ],
-      "provisional": true
+      "provisional": true,
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "fcaf7c098849d07d27f95c35f295dc882f3c1d9c9942cc021cef9516f984b4fe",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
+        "note": "",
+        "updatedAt": "2026-10-24T15:04:04.404Z"
+      }
     },
     {
       "line": "3bymlu28",
@@ -3515,17 +3443,16 @@
       "direction": "猛然炸毛否认，音量提高，语速快而急",
       "asr": "好什么好？",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "f94c557b986defd1ac644b2e721ce893a796e892f185e220e9cfcaf92597ea43",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:29:10.749Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:29:10.749Z"
       }
     },
     {
@@ -3539,17 +3466,16 @@
       "direction": "越说越气，语速加快，带点自曝糗事的恼怒",
       "asr": "上个月把香煎鱼排记成清蒸的，上上个月把吉事记成在深海。",
       "asr_similarity": 0.92,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "fb707a40a4fde602a77f38f348aaa1e907b76de7b80d49b0f0b0fb178282e741",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:29:12.877Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:29:12.877Z"
       }
     },
     {
@@ -3563,7 +3489,7 @@
       "direction": "用嘴硬遮住难堪，前句承接数落，后半句稳住",
       "asr": "总之 不许 说 本 小姐 记性 好",
       "asr_similarity": 1.0,
-      "status": "automatic_screen_pass",
+      "status": "accepted",
       "batch": "20261024-feedback-repair",
       "generator": "qwen-audio-3.0-tts-plus qwen-audio-3.0-tts-plus-longcanruishuang",
       "origin": "new_qwen_generation",
@@ -3575,10 +3501,9 @@
         "decision": "accept",
         "audioSha256": "4f4efa58ebe4269b9dc3976e296bb48399587b41647fba1e1014b8578d2c7a30",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": null,
-        "resolvedFromNote": false
+        "updatedAt": null
       }
     },
     {
@@ -3592,7 +3517,7 @@
       "direction": "接住上一句的嘴硬，故作威严落四字，带笑意",
       "asr": "这 是 命令",
       "asr_similarity": 1.0,
-      "status": "needs_listening",
+      "status": "accepted",
       "batch": "20261024-feedback-repair",
       "generator": "qwen-audio-3.0-tts-plus qwen-audio-3.0-tts-plus-longcanruishuang",
       "origin": "new_qwen_generation",
@@ -3604,10 +3529,9 @@
         "decision": "accept",
         "audioSha256": "e17038d3ba46cc63e854cc9eaf452a35ed672ba2edc8255d780556b139db2614",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": null,
-        "resolvedFromNote": false
+        "updatedAt": null
       }
     },
     {
@@ -3621,17 +3545,16 @@
       "direction": "故作随意地推还，语气轻描淡写掩饰不舍",
       "asr": "喏，还你。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "64443fd23925718bf83359736c08c90acbad18be009fca3b6c9e532c964240e8",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:29:19.700Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:29:19.700Z"
       }
     },
     {
@@ -3645,17 +3568,16 @@
       "direction": "嘴硬澄清，语气带点别扭的强调",
       "asr": "别以为本小姐真的没收了。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "51b6e1453c5d44d95b3c291d06861e4658fd9d16fe020928fdbf1ce89bc8ca2d",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:29:22.500Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:29:22.500Z"
       }
     },
     {
@@ -3669,17 +3591,16 @@
       "direction": "声音放软，带点不舍又找理由的犹豫停顿",
       "asr": "只是，代管。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "9787f46a8b45fb478f7f53b3ed0f6e1fcea32015a93e3898c10bdbcb71d1f940",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:29:25.990Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:29:25.990Z"
       }
     },
     {
@@ -3693,17 +3614,16 @@
       "direction": "清楚复述暗号，语气干脆带点认真",
       "asr": "桂花，酸梅汤。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "fb6dea96601ed7a6306d316b58e83327db6542b0e69ae95023620ad9e028b781",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:29:27.998Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:29:27.998Z"
       }
     },
     {
@@ -3717,17 +3637,16 @@
       "direction": "语气轻快，带点坦然的俏皮",
       "asr": "涨潮，本小姐心情好。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "4175a105040801d598f640524ded3fd2e41decce46e234e4f156ceae75eef0ee",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:29:31.324Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:29:31.324Z"
       }
     },
     {
@@ -3741,7 +3660,7 @@
       "direction": "延续暗号清单，引用两字分清，后半句柔中带刺",
       "asr": "退潮 别来 烦 本 小姐",
       "asr_similarity": 1.0,
-      "status": "automatic_screen_pass",
+      "status": "accepted",
       "batch": "20261024-feedback-repair",
       "generator": "qwen-audio-3.0-tts-plus qwen-audio-3.0-tts-plus-longcanruishuang",
       "origin": "new_qwen_generation",
@@ -3753,10 +3672,9 @@
         "decision": "accept",
         "audioSha256": "b167394afc82fd72502d24324416f23e8f3cfaf355b66d42acd6588f2ab9ff9f",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": null,
-        "resolvedFromNote": false
+        "updatedAt": null
       }
     },
     {
@@ -3770,17 +3688,16 @@
       "direction": "语气停顿后放低，带点害羞的悄悄话感",
       "asr": "还有，看到本小姐的尾巴卷起来了。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "b4d4890a7aef7dfabb9b88b62538b4ebbea10e09af0b965c1a4ff0d7a6130d76",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:29:38.808Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:29:38.808Z"
       }
     },
     {
@@ -3794,17 +3711,16 @@
       "direction": "小声收尾，语气温柔又带点藏不住的喜欢",
       "asr": "就说明你及格了。",
       "asr_similarity": 1.0,
-      "status": "ok",
+      "status": "accepted",
       "batch": "20261019-ch1-7",
       "generator": "qwen-audio-3.0-tts-plus 龙璨蕊霜（pitch1.0 语速1.1）",
       "userReview": {
         "decision": "accept",
         "audioSha256": "878898b735a85652629a665a6f120be4c2690214a3f495f5a932c5dfba48c211",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": "2026-10-24T09:29:41.238Z",
-        "resolvedFromNote": false
+        "updatedAt": "2026-10-24T09:29:41.238Z"
       }
     },
     {
@@ -3818,7 +3734,7 @@
       "direction": "明天随口喊出，桂字延展两拍，花字高而短促收住",
       "asr": "明天 桂花",
       "asr_similarity": 1.0,
-      "status": "needs_listening",
+      "status": "accepted",
       "batch": "20261024-ch12-r4",
       "generator": "qwen-audio-3.0-tts-plus qwen-audio-3.0-tts-plus-longcanruishuang",
       "origin": "original_mingtian_and_unstretched_guihua",
@@ -3852,7 +3768,15 @@
         "manualListeningPerformed": false
       },
       "tempoProcessing": false,
-      "bitrate": 128000
+      "bitrate": 128000,
+      "userReview": {
+        "decision": "accept",
+        "audioSha256": "a051225ce38bf244ffcb6de054b343a53b692159e8d574a8ad63adca6a436fff",
+        "source": "user_json_feedback",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
+        "note": "",
+        "updatedAt": "2026-10-24T15:04:14.778Z"
+      }
     },
     {
       "line": "o1bis57q",
@@ -3882,10 +3806,9 @@
         "decision": "accept",
         "audioSha256": "23d84ebe9536d0c97d185a17058e4565d182d9bb89a44ffd04590d9855175fa3",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "就这个",
-        "updatedAt": "2026-10-24T14:43:24.239Z",
-        "resolvedFromNote": true
+        "updatedAt": "2026-10-24T14:43:24.239Z"
       }
     },
     {
@@ -3899,7 +3822,7 @@
       "direction": "装作伤口是小事，看什么轻问，小伤咬清再解释",
       "asr": "为什么 小 伤 海里 的 生灵 愈合 的 会 三天 就 行",
       "asr_similarity": 0.8333333333333334,
-      "status": "needs_listening",
+      "status": "accepted",
       "batch": "20261024-feedback-repair",
       "generator": "qwen-audio-3.0-tts-plus qwen-audio-3.0-tts-plus-longcanruishuang",
       "origin": "new_qwen_generation",
@@ -3911,10 +3834,9 @@
         "decision": "accept",
         "audioSha256": "07798f86f06ab8106fc08d1806e0529f904e7317886f09f4f3dc2915caccf75d",
         "source": "user_json_feedback",
-        "sourceFileSha256": "e37454cedd8c3ffc3b925870c9ad17edec074151474af7f624c5d7fb53f3a64a",
+        "sourceFileSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
         "note": "",
-        "updatedAt": null,
-        "resolvedFromNote": false
+        "updatedAt": null
       }
     },
     {
@@ -14605,27 +14527,14 @@
     }
   ],
   "latestBatch": {
-    "id": "20261024-ch12-r4",
-    "feedbackReviews": 144,
-    "resolvedAcceptedVoices": 143,
-    "userSelectedCandidates": {
-      "lt5k0xiy": "C",
-      "o1bis57q": "A"
-    },
-    "freshOrRestoredVoices": [
-      "3iq8cnx2",
-      "i99npm13",
-      "nthjz7h6"
-    ],
-    "guihuaAlternatives": 4,
-    "unreviewedIds": [
-      "f3o1uyy0",
-      "sb0dfj4m",
-      "12ib88ay",
-      "6b6yfsh8"
-    ],
-    "tempoApplied": false,
+    "id": "20261024-ch12-final",
+    "date": "2026-10-24",
     "firstTwoVoices": 150,
+    "firstTwoUserAccepted": 150,
+    "feedbackReviews": 150,
+    "unchangedAccepted": 149,
+    "selectedLine187Version": "A",
+    "changedAudioCount": 1,
     "distanceEffects": false
   },
   "removedBindings": [

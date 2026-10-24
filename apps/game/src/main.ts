@@ -1,5 +1,6 @@
 import { loadContent } from "virtual:haifeng-content";
 import { whaleSkin } from "virtual:haifeng-appearance";
+import { collectionSkin } from "virtual:haifeng-collection-appearance";
 import { createGameSession } from "../../../packages/player/src/session.ts";
 import type { GameSession, RestoreVoice, RollbackRequest, RollbackResult, SessionView } from "../../../packages/player/src/session.ts";
 import { WebPresentation } from "../../../packages/player/src/web/presentation.ts";
@@ -1079,7 +1080,7 @@ async function main(): Promise<void> {
     closeAftergame();
     try {
       soundPanel ??= new SoundLibraryPanel({
-        root: soundsBody, content, resources, volumes: audioPreferences.values("main"),
+        root: soundsBody, content, resources, artwork: collectionSkin.artwork, volumes: audioPreferences.values("main"),
         audioAllowed: host.state().audioAllowed,
         available: () => !closed && !exiting && !session && sounds.open && !document.hidden,
         paused: () => closed || exiting || !!session || !sounds.open || document.hidden || host.state().paused,

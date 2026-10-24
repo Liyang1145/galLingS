@@ -10,6 +10,8 @@
 
 [外观装配](appearance.md)另在构建时只读提取旧 `index.html` 标记区的三个原鲸鱼 SVG，游戏/编辑开发入口共用同一插件；不执行旧页面或复制旧脚本。图形字节进入前端，原文件及标记区摘要进入 `content/sources.json.uiSkin`，由既有前端和来源文件摘要覆盖。无需新清单/宿主版本，运行端不读取旧文件；旧 HTML 仍有这个明确的构建消费者，不能提前删除。
 
+[声音收藏装饰](appearance.md#声音收藏的原装饰来源)沿同一装配方式读取旧 CSS 实际指向的原 B38 WebP 与播放器静态 JSON 中三个图标形状，单独通过游戏专用虚拟模块内嵌前端；不执行旧 JS，也不替换为剧情当前登记的改版图。`content/sources.json.uiCollection` 登记这些来源/字节摘要，现有清单/桥/内容格式不变；原图片、CSS 和图标表仍有构建消费者。该入口尚未执行，未生成或验收产物。
+
 ## 两条内容接入
 
 `virtual:haifeng-content` 现在提供异步 `loadContent(signal?)`：

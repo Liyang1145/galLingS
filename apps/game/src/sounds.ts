@@ -4,11 +4,13 @@ import type { LibraryCategory, LibraryEntry } from "../../../packages/player/src
 import type { AudioVolumes } from "../../../packages/player/src/preferences.ts";
 import { AudioMixer } from "../../../packages/player/src/web/audio.ts";
 import type { ResourceAccess } from "../../../packages/player/src/web/resources.ts";
+import type { CollectionArtwork } from "../../../packages/player/src/appearance.ts";
 
 interface Options {
   root: HTMLElement;
   content: StoryContent;
   resources: ResourceAccess;
+  artwork: CollectionArtwork;
   volumes: AudioVolumes;
   audioAllowed: boolean;
   available(): boolean;
@@ -61,6 +63,7 @@ export class SoundLibraryPanel {
     this.close();
     this.#open = true;
     this.#events = new AbortController();
+    this.#options.root.style.setProperty("--sound-card-backdrop", `url(${JSON.stringify(this.#options.artwork.musicBackdrop)})`);
     const { signal } = this.#events;
     const nav = element("nav", "", "sound-tabs");
     nav.setAttribute("aria-label", "声音分类");
@@ -119,7 +122,14 @@ export class SoundLibraryPanel {
       button.setAttribute("aria-label", `试听${LABELS[entry.category]}：${entry.name}`);
       const duration = entry.durationSeconds === null ? "时长未标注"
         : `${entry.durationSeconds < 10 ? entry.durationSeconds.toFixed(1) : Math.round(entry.durationSeconds)} 秒（作者标注）`;
-      button.append(element("b", entry.name), element("small", `${LABELS[entry.category]} · ${duration}`));
+      const icon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+      icon.setAttribute("viewBox", "0 0 24 24");
+      icon.setAttribute("aria-hidden", "true");
+      icon.setAttribute("focusable", "false");
+      icon.classList.add("sound-track-icon");
+      // The build reader accepts only the original inert path/circle markup.
+      icon.innerHTML = this.#options.artwork.soundIcons[entry.category];
+      button.append(icon, element("b", entry.name), element("small", `${LABELS[entry.category]} · ${duration}`));
       this.#buttons.set(button, entry);
       button.addEventListener("click", () => this.play(button, entry), { signal });
       grid.append(button);
@@ -205,6 +215,7 @@ export class SoundLibraryPanel {
     this.#buttons.clear();
     this.#status = this.#stop = this.#enable = null;
     this.#options.root.replaceChildren();
+    this.#options.root.style.removeProperty("--sound-card-backdrop");
   }
 
   dispose(): void {

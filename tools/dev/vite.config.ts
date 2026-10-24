@@ -2,7 +2,7 @@ import { resolve } from "node:path";
 import { defineConfig, normalizePath } from "vite";
 import type { Plugin } from "vite";
 import { loadSourceContent, REPOSITORY_ROOT } from "../content/build.ts";
-import { whaleAppearance } from "./appearance.ts";
+import { collectionAppearance, whaleAppearance } from "./appearance.ts";
 
 const virtualId = "virtual:haifeng-content";
 const resolvedId = `\0${virtualId}`;
@@ -33,7 +33,7 @@ function localContent(): Plugin {
 
 export default defineConfig({
   root: resolve(REPOSITORY_ROOT, "apps/game"),
-  plugins: [localContent(), whaleAppearance()],
+  plugins: [localContent(), whaleAppearance(), collectionAppearance()],
   server: {
     host: "127.0.0.1",
     port: 5173,

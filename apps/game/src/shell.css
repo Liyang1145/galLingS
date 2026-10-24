@@ -315,13 +315,17 @@ body.game-shell { overflow: hidden; background: #08191d; }
 .game-shell .sound-player button + button { margin: 0; }
 .game-shell .sound-player button { font-size: 14px; padding: 8px 16px; }
 .game-shell .sound-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
-.game-shell .sound-grid button { min-height: 92px; padding: 18px 20px; border: 1px solid #91b3a43a; border-radius: 8px; background: #ffffff06; color: #f0f0df; font-size: 18px; }
+.game-shell .sound-grid button { display: grid; grid-template-columns: 42px minmax(0, 1fr); align-items: center; gap: 4px 12px; min-height: 92px; padding: 18px 20px; border: 1px solid #91b3a43a; border-radius: 8px; background: #ffffff06; color: #f0f0df; font-size: 18px; }
 .game-shell .sound-grid button:hover:not(:disabled) { background-color: #accdbd14; border-color: #b4d0b777; }
 .game-shell .sound-grid button[aria-pressed="true"] { background-color: #63897530; border-color: #c2d8ae; }
 .game-shell .sound-grid b { font-weight: 500; }
-.game-shell .sound-grid small { color: #a6c2b4; font-size: 14px; }
+.game-shell .sound-grid small { grid-column: 2; color: #a6c2b4; font-size: 14px; }
+.game-shell .sound-track-icon {
+  grid-row: span 2; width: 28px; height: 28px; color: #b3cdb0; fill: none; stroke: currentColor;
+  stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; shape-rendering: geometricPrecision; pointer-events: none;
+}
 .game-shell [data-sound-category="music"] .sound-grid { grid-template-columns: minmax(0, 1fr); }
-.game-shell [data-sound-category="music"] .sound-grid button { min-height: 220px; padding: 40px; font-size: 29px; background: linear-gradient(90deg, #193a3afa 20%, #173435cf 62%, #15353c40); }
+.game-shell [data-sound-category="music"] .sound-grid button { min-height: 220px; padding: 40px; font-size: 29px; background: linear-gradient(90deg, #193a3afa 20%, #173435cf 62%, #15353c40), var(--sound-card-backdrop) right center / cover; }
 .game-shell [data-sound-category="music"] .sound-grid small { font-size: 17px; }
 .game-shell .sound-archive { margin-top: 32px; border-color: #a7c2b329; padding-top: 20px; color: #a8c2b5; }
 .game-shell .sound-archive summary { min-height: 44px; padding: 8px 0; cursor: pointer; }

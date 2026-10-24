@@ -98,6 +98,52 @@ body.game-shell { overflow: hidden; background: #08191d; }
 .game-shell .gallery-dialog h2 { color: #eaf0e4; font-weight: 400; letter-spacing: 3px; }
 .game-shell .gallery-dialog > header button { min-height: 44px; flex-shrink: 0; background: #183437; border-color: #9cbcad55; }
 .game-shell .shell-dialog .checkpoint-panel { border-color: #9cbcad33; color: #d5e3da; }
+.game-shell .rollback-dialog[open] {
+  display: flex; flex-direction: column; height: min(820px, calc(100dvh - 40px)); overflow: hidden;
+}
+.game-shell .rollback-dialog > header { position: static; flex-shrink: 0; }
+.game-shell .rollback-dialog h2 { margin: 6px 0 0; }
+.game-shell .rollback-content { flex: 1; min-height: 0; overflow: auto; overscroll-behavior: contain; }
+.game-shell .rollback-intro,
+.game-shell #rollback-location-count { color: #a8c2b5; font-size: 14px; line-height: 1.7; overflow-wrap: anywhere; }
+.game-shell .rollback-locations > label { display: block; margin-top: 20px; color: #e9efdf; font-size: 18px; }
+.game-shell #rollback-target {
+  display: block; width: 100%; min-width: 0; padding: 8px; border-color: #9cbcad55;
+  background: #183437; font-size: 14px; line-height: 1.7;
+}
+.game-shell #rollback-target optgroup { color: #e4d8b8; font-style: normal; }
+.game-shell #rollback-target option { padding: 9px 8px; color: #d5e3da; font-weight: 400; }
+.game-shell #rollback-location-details { margin-top: 16px; padding: 16px; border: 1px solid #9cbcad33; border-radius: 8px; background: #183437; }
+.game-shell #rollback-location-details h3 { margin: 0 0 12px; font-size: 17px; font-weight: 400; color: #e9efdf; }
+.game-shell #rollback-location-details dl { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 20px; margin: 0; font-size: 14px; }
+.game-shell #rollback-location-details dl > div { min-width: 0; }
+.game-shell #rollback-location-details dt { color: #a8c2b5; }
+.game-shell #rollback-location-details dd { margin: 4px 0 0; color: #e4d8b8; overflow-wrap: anywhere; }
+.game-shell #rollback-location-details p { margin: 12px 0 0; color: #b9cbc3; line-height: 1.8; overflow-wrap: anywhere; }
+.game-shell #rollback-location-details .rollback-location-text { color: #e9efdf; white-space: pre-wrap; }
+.game-shell #rollback-location-details [data-crosses-choice="true"] { color: #f0c5a4; }
+.game-shell .rollback-settings {
+  display: grid; grid-template-columns: minmax(100px, auto) minmax(0, 1fr); align-items: center;
+  gap: 12px 20px; min-width: 0; margin: 24px 0 16px; padding: 16px; border-color: #9cbcad33;
+}
+.game-shell .rollback-settings legend,
+.game-shell .rollback-settings label { color: #c0d0c2; font-size: 14px; }
+.game-shell .rollback-settings select { min-width: 0; width: 100%; min-height: 44px; background: #183437; border-color: #9cbcad55; }
+.game-shell .rollback-dialog select:focus-visible { outline: 3px solid #aed9e7; outline-offset: 2px; }
+.game-shell .rollback-actions { flex-shrink: 0; padding-top: 12px; border-top: 1px solid #9cbcad33; }
+.game-shell #rollback-message { margin: 0 0 10px; color: #b9cbc3; font-size: 14px; line-height: 1.65; overflow-wrap: anywhere; }
+.game-shell #rollback { min-height: 44px; width: 100%; background: #183437; border-color: #9cbcad55; white-space: normal; }
+@media (max-width: 560px) {
+  .game-shell .rollback-settings,
+  .game-shell #rollback-location-details dl { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-aspect-ratio: 20 / 23) {
+  .game-shell .rollback-dialog[open] { height: calc(100dvh - 20px); }
+}
+@media (max-height: 500px) {
+  .game-shell .rollback-dialog { padding: 12px; }
+  .game-shell .rollback-dialog > header { padding: 4px 0; }
+}
 .game-shell #saves-panel .save-kicker { color: #a8c2b5; font-size: 13px; letter-spacing: 4px; }
 .game-shell #saves-panel h2 { margin: 6px 0 0; }
 .game-shell .save-browser { color: #d5e3da; line-height: 1.65; }

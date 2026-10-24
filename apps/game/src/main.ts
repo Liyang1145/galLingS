@@ -52,6 +52,7 @@ import { setButtonLabel } from "../../../packages/player/src/web/button-label.ts
 import { renderSaveDetails } from "./save-details.ts";
 import { renderExitStatus } from "./exit-status.ts";
 import type { ExitProgress } from "./exit-status.ts";
+import { RollbackLocations } from "./rollback-locations.ts";
 import type { GamePanel } from "./panels.ts";
 import "./style.css";
 import "./shell.css";
@@ -122,6 +123,9 @@ async function main(): Promise<void> {
   const rollbackButton = element("rollback", HTMLButtonElement);
   const rollbackMessage = element("rollback-message", HTMLElement);
   const rollbackWarning = element("rollback-warning", HTMLElement);
+  const rollbackLocations = new RollbackLocations(
+    rollbackTarget, element("rollback-location-details", HTMLElement), element("rollback-location-count", HTMLElement),
+  );
   const page = document.querySelector("main");
   if (!(page instanceof HTMLElement)) throw new Error("页面缺少主区域");
   const exitDialog = element("exit-dialog", HTMLDialogElement);
@@ -722,18 +726,12 @@ async function main(): Promise<void> {
     const key = `${view.token.session}:${view.token.epoch}:${view.token.step}:${view.rollbackCount}`;
     if (key !== rollbackKey) {
       rollbackKey = key;
-      const selected = rollbackTarget.value;
-      rollbackTarget.replaceChildren(new Option("请选择本次回退位置", ""));
-      for (const target of session?.rollbackTargets() ?? []) {
-        const text = target.text.replace(/\s+/gu, " ").slice(0, 65) || "演出节点";
-        const label = `${target.crossesChoice ? "跨选择 · " : ""}${target.speaker ? `${target.speaker}：` : ""}${text} [${target.nodeId}]`;
-        rollbackTarget.add(new Option(label, String(target.id)));
-      }
-      rollbackTarget.value = selected;
-      if (rollbackTarget.selectedIndex < 0) rollbackTarget.selectedIndex = 0;
+      rollbackLocations.setTargets(session?.rollbackTargets() ?? []);
     }
+    const selected = rollbackLocations.refresh(rollbackBoundary.value);
     rollbackTarget.disabled = rollingBack || view.rollbackCount === 0;
-    rollbackButton.disabled = rollingBack || !view.canCheckpoint || !rollbackTarget.value
+    rollbackBoundary.disabled = rollbackVoice.disabled = rollingBack;
+    rollbackButton.disabled = rollingBack || !view.canCheckpoint || !selected
       || !["silent", "replay", "resume"].includes(rollbackVoice.value)
       || !["within", "across"].includes(rollbackBoundary.value);
     rollbackWarning.hidden = !view.rollbackIssue;
@@ -926,7 +924,9 @@ async function main(): Promise<void> {
 
   function resetRollback(): void {
     rollbackKey = "";
-    rollbackTarget.replaceChildren(new Option("请选择本次回退位置", ""));
+    rollbackLocations.setTargets([]);
+    rollbackLocations.refresh(rollbackBoundary.value);
+    rollbackBoundary.disabled = rollbackVoice.disabled = false;
     rollbackTarget.disabled = rollbackButton.disabled = true;
     rollbackMessage.textContent = "本次游玩达到稳定检查点后会记录回退位置；回退保留全局成果。";
     rollbackWarning.hidden = true;

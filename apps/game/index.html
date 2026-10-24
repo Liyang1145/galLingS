@@ -116,35 +116,38 @@
         <section id="save-details" aria-label="所选存档的只读详情" hidden></section>
       </section>
       </dialog>
-      <dialog id="rollback-panel" class="gallery-dialog shell-dialog" aria-labelledby="rollback-heading">
-        <header><h2 id="rollback-heading">回退进度</h2><button type="button" data-panel-close autofocus>返回</button></header>
-      <section class="checkpoint-panel" aria-labelledby="rollback-heading">
-        <p>本次游玩最多保留 500 个稳定检查点。请选择回退位置、范围及本次语音方式。结局后回退暂未接入；新开、读档或离开页面后重新记录。以上设置仅供试播，正式回退规则仍待确定。</p>
-        <div class="controls">
-          <label for="rollback-voice">本次回退语音</label>
-          <select id="rollback-voice">
-            <option value="">请选择语音方式</option>
-            <option value="silent">不播放当前句</option>
-            <option value="replay">从头播放当前句</option>
-            <option value="resume">按检查点位置续播当前句</option>
-          </select>
+      <dialog id="rollback-panel" class="gallery-dialog shell-dialog rollback-dialog" aria-labelledby="rollback-heading">
+        <header><div><small class="panel-kicker">走过的片刻</small><h2 id="rollback-heading">回退进度</h2></div><button type="button" data-panel-close autofocus>返回</button></header>
+        <div class="rollback-content">
+          <p class="rollback-intro">本次游玩最多保留 500 个稳定检查点。请选择回退位置、范围及本次语音方式。结局后回退暂未接入；新开、读档或离开页面后重新记录。以上设置仅供试播，正式回退规则仍待确定。</p>
+          <section class="rollback-locations" aria-labelledby="rollback-target-label">
+            <label id="rollback-target-label" for="rollback-target">回退位置</label>
+            <p id="rollback-location-count">本次会话尚无可选的回退位置；当前访问不列为回退目标。</p>
+            <select id="rollback-target" size="8" aria-describedby="rollback-location-count" disabled><option value="">请选择本次回退位置</option></select>
+            <section id="rollback-location-details" aria-label="选定回退位置的只读详情"></section>
+          </section>
+          <fieldset class="rollback-settings">
+            <legend>本次恢复方式</legend>
+            <label for="rollback-boundary">回退范围</label>
+            <select id="rollback-boundary">
+              <option value="">请选择本次范围</option>
+              <option value="within">仅当前选择之后的片段</option>
+              <option value="across">允许跨选择回退</option>
+            </select>
+            <label for="rollback-voice">本次回退语音</label>
+            <select id="rollback-voice">
+              <option value="">请选择语音方式</option>
+              <option value="silent">不播放当前句</option>
+              <option value="replay">从头播放当前句</option>
+              <option value="resume">按检查点位置续播当前句</option>
+            </select>
+          </fieldset>
+          <p id="rollback-warning" role="status" hidden></p>
         </div>
-        <div class="controls">
-          <label for="rollback-target">回退位置</label>
-          <select id="rollback-target" disabled><option value="">请选择本次回退位置</option></select>
-        </div>
-        <div class="controls">
-          <label for="rollback-boundary">本次回退范围</label>
-          <select id="rollback-boundary">
-            <option value="">请选择本次范围</option>
-            <option value="within">仅当前选择之后的片段</option>
-            <option value="across">允许跨选择回退</option>
-          </select>
+        <footer class="rollback-actions">
+          <p id="rollback-message" role="status" aria-live="polite">本次游玩达到稳定检查点后会记录回退位置；回退保留全局成果。</p>
           <button type="button" id="rollback" disabled>回退到选定位置</button>
-        </div>
-        <p id="rollback-message" role="status" aria-live="polite">本次游玩达到稳定检查点后会记录回退位置；回退保留全局成果。</p>
-        <p id="rollback-warning" role="status" hidden></p>
-      </section>
+        </footer>
       </dialog>
       <section class="record-status shell-records" aria-label="全局玩家记录" hidden>
         <p id="record-message" role="status" aria-live="polite">第一话的全局记录与进度分开保存，章节试阅与限时样例不写入全局成果。</p>

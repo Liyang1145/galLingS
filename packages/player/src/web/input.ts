@@ -1,4 +1,5 @@
 import type { GameSession, SessionToken } from "../session.ts";
+import { setButtonLabel } from "./button-label.ts";
 
 interface InputOptions {
   stage: HTMLElement;
@@ -121,7 +122,7 @@ export class PlayerInput {
     const moveFocus = hidden && active instanceof HTMLElement && [...this.#inert.keys()].some(element => element.contains(active));
     stage.dataset.uiHidden = controls.dataset.uiHidden = String(hidden);
     for (const [element, initial] of this.#inert) element.inert = hidden || initial;
-    hide.textContent = hidden ? "显示界面" : "隐藏界面";
+    setButtonLabel(hide, hidden ? "显示界面" : "隐藏界面");
     hide.setAttribute("aria-pressed", String(hidden));
     if (moveFocus) hide.focus({ preventScroll: true });
   }

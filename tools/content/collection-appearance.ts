@@ -54,7 +54,7 @@ export async function readCollectionSkin(): Promise<CollectionSkin> {
   const table = object(input, iconSource);
   const icon = (name: string): string => {
     const shapes = string(table[name], at(iconSource, name));
-    // Only the exact inert shape forms used by these three original icons are accepted.
+    // Only the exact inert shape forms used by the selected original icons are accepted.
     if (shapes.length > 32 * 1024 || !/^(?:<path d="[A-Za-z0-9.,+\s-]+"\/>|<circle cx="[0-9.+-]+" cy="[0-9.+-]+" r="[0-9.+-]+"\/>)+$/u.test(shapes)) {
       reject("UI_COLLECTION_ICON", "声音图标只接受原 path/circle，无脚本、事件、样式或外链", at(iconSource, name));
     }
@@ -64,11 +64,18 @@ export async function readCollectionSkin(): Promise<CollectionSkin> {
     artwork: {
       musicBackdrop: `data:image/webp;base64,${backdrop.toString("base64")}`,
       soundIcons: { music: icon("music"), ambience: icon("waves"), effect: icon("bell") },
+      controlIcons: {
+        next: icon("arrow-right"), history: icon("scroll-text"), auto: icon("circle-play"), skip: icon("fast-forward"),
+        saves: icon("save"), settings: icon("settings"), hide: icon("eye"), audio: icon("volume-2"),
+      },
     },
     source: {
       stylesheet: { file: STYLESHEET, sha256: sha256(styleBytes), blockSha256: sha256(block) },
       backdrop: { file, sha256: sha256(backdrop), bytes: backdrop.byteLength },
-      icons: { file: ICONS, sha256: sha256(iconBytes), blockSha256: sha256(tableText), names: ["music", "waves", "bell"] },
+      icons: {
+        file: ICONS, sha256: sha256(iconBytes), blockSha256: sha256(tableText),
+        names: ["music", "waves", "bell", "arrow-right", "scroll-text", "circle-play", "fast-forward", "save", "settings", "eye", "volume-2"],
+      },
     },
   };
 }

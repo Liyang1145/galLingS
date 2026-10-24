@@ -26,11 +26,18 @@ body.game-shell { overflow: hidden; background: #08191d; }
   justify-content: flex-end; gap: 6px; padding: 0; margin: 0; pointer-events: none;
 }
 .game-shell .play-controls button {
+  display: inline-flex; align-items: center; justify-content: center; gap: 5px;
   pointer-events: auto; min-width: 48px; min-height: 30px; padding: 0 8px;
   border: 1px solid #9cbcad33; border-radius: 5px; background: #10282bb3;
   color: #eaf3e6; font-size: 14px; line-height: 1.5; opacity: .85;
   text-shadow: 0 1px 2px #000c, 0 0 6px #0009;
 }
+.game-shell .ui-icon {
+  fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round;
+  shape-rendering: geometricPrecision; pointer-events: none;
+}
+.game-shell .control-icon { width: 1.15em; height: 1.15em; flex: 0 0 auto; }
+.game-shell .control-label { min-width: 0; overflow-wrap: anywhere; line-height: 1.3; }
 .game-shell .play-controls button:hover:not(:disabled) { background: #b8d6cb2b; opacity: 1; }
 .game-shell .play-controls button[aria-pressed="true"] { background: #b8d6cb2b; color: #dceacb; opacity: 1; }
 .game-shell .play-controls button:disabled { opacity: .4; }
@@ -376,7 +383,7 @@ body.game-shell { overflow: hidden; background: #08191d; }
 }
 @media (max-aspect-ratio: 20 / 23) {
   .game-shell .play-controls { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); }
-  .game-shell .play-controls button { min-width: 0; min-height: 46px; padding: 0 2px; font-size: 13px; }
+  .game-shell .play-controls button { min-width: 0; min-height: 46px; padding: 0 2px; gap: 3px; font-size: 13px; }
   .game-shell .shell-message { bottom: 124px; }
   .game-shell .shell-records { bottom: 124px; }
   .game-shell .gallery-dialog {

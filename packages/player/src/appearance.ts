@@ -36,10 +36,11 @@ export interface WhaleSkin {
   artwork: WhaleArtwork;
   source: { file: string; sha256: string; blockSha256: string };
 }
-/** Game collection decoration from checked legacy UI sources, separate from story resources. */
+/** Game UI decoration from checked legacy sources, separate from story resources. */
 export interface CollectionArtwork {
   musicBackdrop: string;
   soundIcons: Readonly<Record<"music" | "ambience" | "effect", string>>;
+  controlIcons: Readonly<Record<"next" | "history" | "auto" | "skip" | "saves" | "settings" | "hide" | "audio", string>>;
 }
 export interface CollectionSkin {
   artwork: CollectionArtwork;

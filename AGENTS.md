@@ -60,7 +60,7 @@
 | `apps/game/src/dialog-fade.ts` | 只对登记的游戏画面/弹层作 360ms 静态淡出；封闭影子树只带两份游戏样式，开关及暂停释放不等待动画，不复制编辑制作区 |
 | `apps/editor/` | 独立对白编辑试用，预览复用共享播放器、只用内存记录；局部约束见目录入口 |
 | `tools/content/` | 旧导出转换与内容产物生成；命令见实施入口，不是游戏解释器 |
-| `tools/content/appearance.ts`、`collection-appearance.ts`、`tools/dev/appearance.ts` | 提取原鲸鱼图形、声音收藏图标及原配乐装饰图，登记来源并装配前端；旧 HTML、CSS、播放器图标表与原 B38 图片仍有构建消费者，不得提前删除 |
+| `tools/content/appearance.ts`、`collection-appearance.ts`、`tools/dev/appearance.ts` | 提取原鲸鱼图形、收藏/游玩图标及原配乐装饰图，登记来源并装配前端；旧 HTML、CSS、播放器图标表与原 B38 图片仍有构建消费者，不得提前删除 |
 | `tools/editor/` | 独立本机编辑 API 和固定作者文件写回；不进入游戏构建，保存仅由显式动作触发 |
 | `tools/dev/story.ts` | 独立终端逻辑试播，不是正式游戏或编辑器 |
 | `tools/dev/vite.config.ts` | 本地可视试播装配；开发资源 URL 不得当作正式发行清单 |

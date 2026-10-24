@@ -1,3 +1,5 @@
+import { setButtonLabel } from "./button-label.ts";
+
 export interface FullscreenState {
   supported: boolean;
   active: boolean;
@@ -144,7 +146,7 @@ export class PlayerFullscreen {
     surface.dataset.fullscreen = String(state.active);
     button.disabled = !this.#options.enabled() || !state.supported || state.pending;
     const label = state.pending ? "正在切换全屏…" : state.active ? "退出全屏" : "全屏显示";
-    if (button.textContent !== label) button.textContent = label;
+    setButtonLabel(button, label);
     button.setAttribute("aria-pressed", String(state.active));
     const message = state.issue ? `显示切换未完成：${state.issue}`
       : !state.supported ? "当前环境尚未提供此全屏控制，可继续使用窗口模式。"

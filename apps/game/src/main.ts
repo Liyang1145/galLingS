@@ -47,6 +47,8 @@ import type { EndingRecordState } from "../../../packages/player/src/web/ending.
 import { StageFade } from "../../../packages/player/src/web/stage-fade.ts";
 import { GamePanels } from "./panels.ts";
 import { DialogFade } from "./dialog-fade.ts";
+import { decoratePlayControls } from "./control-artwork.ts";
+import { setButtonLabel } from "../../../packages/player/src/web/button-label.ts";
 import type { GamePanel } from "./panels.ts";
 import "./style.css";
 import "./shell.css";
@@ -88,6 +90,7 @@ async function main(): Promise<void> {
   const audio = element("audio", HTMLButtonElement);
   const hide = element("hide-ui", HTMLButtonElement);
   const playControls = element("play-controls", HTMLElement);
+  decoratePlayControls(playControls, collectionSkin.artwork.controlIcons);
   const entryBanner = element("entry-banner", HTMLElement);
   const shellMessage = element("shell-message", HTMLElement);
   const recordStatus = element("record-message", HTMLElement).parentElement;
@@ -596,7 +599,7 @@ async function main(): Promise<void> {
     dialogueOpen.disabled = view.disposed || view.dialogueCount === 0;
     auto.setAttribute("aria-pressed", String(view.auto));
     skip.setAttribute("aria-pressed", String(view.skipping));
-    pause.textContent = view.paused.includes("menu") ? "继续游戏" : "菜单";
+    setButtonLabel(pause, view.paused.includes("menu") ? "继续游戏" : "菜单");
     const menuHidden = !view.paused.includes("menu");
     if (menu.hidden !== menuHidden) stageFade?.begin();
     menu.hidden = menuHidden;

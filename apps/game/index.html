@@ -102,7 +102,7 @@
         </div>
       </dialog>
       <dialog id="saves-panel" class="gallery-dialog shell-dialog" aria-labelledby="checkpoint-heading">
-        <header><div><small class="save-kicker">旅途记录</small><h2 id="checkpoint-heading">存档 / 读档</h2></div><button type="button" data-panel-close autofocus>返回</button></header>
+        <header><div><small class="save-kicker">旅途记录</small><h2 id="checkpoint-heading" tabindex="-1">存档 / 读档</h2></div><button type="button" data-panel-close autofocus>返回</button></header>
       <section class="save-browser" aria-labelledby="checkpoint-heading">
         <p class="save-intro">把这一刻留下，或回到上次停下的地方。读档保留全局的周目与鉴赏成果。</p>
         <section id="save-slots" aria-label="手动存档槽位选择与目录"></section>
@@ -110,6 +110,11 @@
           <h3 id="save-current-heading">保存当前进度</h3>
           <p>保存到当前游玩入口选中的名称；已有同名进度会被替换。</p>
           <button type="button" id="save-checkpoint" disabled>保存当前检查点</button>
+        </section>
+        <section id="pending-saves" class="save-actions" aria-labelledby="pending-saves-heading" hidden>
+          <h3 id="pending-saves-heading">尚未完成的手动存档</h3>
+          <p>重试使用下方原入口、槽位、检查点和时间，不重新捕获进度。“保存当前进度”会发起新的保存；同一槽位的新保存会替代原失败操作。</p>
+          <p>待重试操作仅留在本页内存，刷新或关闭页面后不能从这里继续重试。</p>
         </section>
         <section class="save-actions" aria-labelledby="save-read-heading">
           <h3 id="save-read-heading">查看与读取</h3>

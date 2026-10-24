@@ -27,7 +27,7 @@
 | `packages/story-runtime/src/` | 新版唯一纯剧情核心；通过公开接口推进和恢复逻辑状态 |
 | `packages/player/src/` | 共享会话、取消及有效计时；表现适配器不得自行计算剧情分支 |
 | `packages/chat/src/` | 通关后玩法的只读上下文；只接已提交事实读取，不接主线可写对象或预览记录 |
-| [检查点与存储](docs/rebuild/saves.md) | M4 检查点封装、独立校验、浏览器隔离槽位、只读分组详情及进度恢复；[命名槽位目录](docs/rebuild/slots.md)说明分页/原目标，[缩略图边界](docs/rebuild/thumbnails.md)仅为待确认方案，尚未实现 |
+| [检查点与存储](docs/rebuild/saves.md) | M4 检查点封装、独立校验、浏览器隔离槽位、只读详情及原操作重试；[命名槽位目录](docs/rebuild/slots.md)说明分页/原目标，[缩略图边界](docs/rebuild/thumbnails.md)仅为待确认方案，尚未实现 |
 | [全局玩家记录](docs/rebuild/records.md) | 周目、结局与 CG 解锁的独立记录、幂等事实及主页分类鉴赏；进度槽位不得回滚全局成果，[鉴赏图片](docs/rebuild/gallery.md)独立查看/原图重试及关闭/换类清理 |
 | [结局卡片](docs/rebuild/endings.md) | 游戏/预览共享终态显示；达成、待提交、失败和已保存分开，重试原事实而不重新结算 |
 | [独立玩家偏好](docs/rebuild/preferences.md) | 分轨音量、阅读节奏/显示及按钮声音开关、作者默认与稀疏覆盖、独立原子保存；旧版逐行设置布局，不进入进度、成果或预览记录 |
@@ -58,6 +58,7 @@
 | `packages/player/src/web/fullscreen.ts` | 游戏/预览共用显示控件与浏览器全屏，原生适配器只提供受限显示能力 |
 | `apps/game/` | 沿旧版迁移的游戏界面壳、共享游玩与随包启动装配；当前仍为开发记录，未切换正式发行入口 |
 | `apps/game/src/menu-focus.ts` | 暂停菜单的 DOM 焦点/背景交互归属；只接不透明会话身份，原生弹层让位，恢复原 aria-hidden，不改共享输入的 inert 或剧情暂停 |
+| `apps/game/src/pending-saves.ts` | 同页原手动存档状态与显式重试意图；只接原请求摘要/回调，不读取当前会话或修改目标，同槽位新保存使旧重试失效 |
 | `apps/game/src/dialog-fade.ts` | 只对登记的游戏画面/弹层及鉴赏/声音内部显示切换作 360ms 静态淡出；封闭影子树只带两份游戏样式，开关/变更/暂停释放不等待动画，不复制编辑制作区 |
 | `apps/editor/` | 独立对白编辑试用，预览复用共享播放器、只用内存记录；局部约束见目录入口 |
 | `tools/content/` | 旧导出转换与内容产物生成；命令见实施入口，不是游戏解释器 |

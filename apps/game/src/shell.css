@@ -214,6 +214,13 @@ body.game-shell { overflow: hidden; background: #08191d; }
   white-space: normal; overflow-wrap: anywhere; text-align: left;
 }
 .game-shell .save-browser button:hover:not(:disabled) { background: #2b4d49; border-color: #b6cead; }
+.game-shell .pending-save-list { list-style: none; padding: 0; margin: 12px 0 0; }
+.game-shell .pending-save-list li { margin: 0 0 12px; padding: 14px; background: #183437; border: 1px solid #9cbcad55; border-radius: 8px; }
+.game-shell .pending-save-list li[data-state="failed"] { border-color: #c68b6688; }
+.game-shell .pending-save-list strong { font-size: 16px; font-weight: 400; color: #e9efdf; overflow-wrap: anywhere; }
+.game-shell .pending-save-list p { margin: 8px 0; color: #b9cbc3; font-size: 14px; line-height: 1.7; }
+.game-shell .pending-save-list .pending-save-issue { color: #f0c5a4; }
+.game-shell #checkpoint-heading:focus-visible { outline: 2px solid #aed9e7; outline-offset: 3px; }
 .game-shell .save-slots .save-selection { color: #e9efdf; margin: 16px 0 4px; }
 .game-shell .save-slots .help,
 .game-shell .save-slots [role="status"] { font-size: 13px; color: #a8c2b5; }

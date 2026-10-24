@@ -20,6 +20,7 @@ import type { ChapterEntry, ChapterTrial } from "../../../packages/player/src/ch
 import { DialoguePanel } from "./dialogue.ts";
 import { connectHost } from "./platform/host.ts";
 import { PendingWrites } from "../../../packages/player/src/writes.ts";
+import type { TrackedWrite } from "../../../packages/player/src/writes.ts";
 import type { AftergamePanel } from "./aftergame.ts";
 import { AUDIO_CHANNELS, AudioPreferenceRepository, authorAudioVolumes, readAudioVolumes } from "../../../packages/player/src/preferences.ts";
 import {
@@ -55,6 +56,7 @@ import type { ExitProgress } from "./exit-status.ts";
 import { RollbackLocations } from "./rollback-locations.ts";
 import { connectOrientationHint } from "./orientation-hint.ts";
 import { MenuFocus } from "./menu-focus.ts";
+import { PendingSavesPanel } from "./pending-saves.ts";
 import type { GamePanel } from "./panels.ts";
 import "./style.css";
 import "./shell.css";
@@ -251,6 +253,11 @@ async function main(): Promise<void> {
   let soundPanel: SoundLibraryPanel | null = null;
   let chapterPanel: ChapterPanel | null = null;
   let dialoguePanel: DialoguePanel | null = null;
+  const pendingSaves = new PendingSavesPanel({
+    root: element("pending-saves", HTMLElement), fallback: element("checkpoint-heading", HTMLElement),
+    blocked: () => closed || exiting || saving || entryPreparation === entryRequest,
+  });
+  const unsubscribePendingSaves = writes.subscribe(refreshPendingSaves);
   const endingPanel = new EndingPanel(stage, {
     leaveLabel: "返回标题",
     leave: token => { if (currentTerminal(token)) home(); },
@@ -753,7 +760,16 @@ async function main(): Promise<void> {
       load.textContent = `读取${entryName(entry)} ${JSON.stringify(slots.slot(entry))}`;
     }
     slots.refreshControls();
+    refreshPendingSaves();
     refreshShell(view);
+  }
+
+  function refreshPendingSaves(): void {
+    if (closed) return;
+    try { pendingSaves.refresh(); }
+    catch (error: unknown) {
+      saveMessage.textContent = `手动存档状态暂未显示：${error instanceof Error ? error.message : "界面不可用"}。实际写入仍按原操作处理，可重新打开面板查看。`;
+    }
   }
 
   function showRollback(view: SessionView): void {
@@ -998,6 +1014,7 @@ async function main(): Promise<void> {
     const slotId = slots.slot(entry);
     const savedPresentation = presentation;
     const request = ++storageMessageEpoch;
+    let feedbackRequest = request;
     saving = true;
     save.disabled = true;
     saveDetails.hidden = true;
@@ -1005,28 +1022,67 @@ async function main(): Promise<void> {
     try {
       const capture = owner.captureCheckpoint(owner.view().token);
       let payload: { checkpoint: GameCheckpoint; savedAt: number } | null = null;
-      await writes.run(JSON.stringify(["progress", entry, slotId]), async () => {
+      const key = JSON.stringify(["progress", entry, slotId]);
+      const tracked = writes.track(key, async () => {
         if (!payload) {
           const result = await capture;
           if (!result.accepted) throw new Error(`${result.code}：${result.message}`);
           payload = { checkpoint: result.checkpoint, savedAt: Date.now() };
+          refreshPendingSaves();
         }
         if (entry === "main") await flushRecords();
         const inspected = await saves[entry].save(slotId, payload.checkpoint, payload.savedAt);
-        if (!closed) slots.saved(entry);
-        if (!closed && request === storageMessageEpoch) {
-          describeSave(entry, inspected);
-          saveMessage.textContent = `${entryName(entry)}进度已保存到 ${JSON.stringify(slotId)}；可刷新页面后查看或读取。周目与鉴赏成果单独保留。`;
-          if (!exiting && owner === session && savedPresentation === presentation && !owner.view().skipping) {
-            // The storage transaction is already committed. Audio cannot turn it into a failed save.
-            try { savedPresentation?.interaction({ type: "cue", cue: "save" }); }
-            catch { /* Optional feedback has no effect on the committed checkpoint. */ }
+        // Catalogue, display and optional audio observers cannot reject a committed write.
+        try {
+          if (!closed) slots.saved(entry);
+          if (!closed && feedbackRequest === storageMessageEpoch) {
+            describeSave(entry, inspected);
+            saveMessage.textContent = `${entryName(entry)}进度已保存到 ${JSON.stringify(slotId)}；可刷新页面后查看或读取。周目与鉴赏成果单独保留。`;
+            if (!exiting && owner === session && savedPresentation === presentation && !owner.view().skipping) {
+              try { savedPresentation?.interaction({ type: "cue", cue: "save" }); }
+              catch { /* Optional feedback has no effect on the committed checkpoint. */ }
+            }
           }
+        } catch (error: unknown) {
+          if (!closed && feedbackRequest === storageMessageEpoch) saveMessage.textContent =
+            `${entryName(entry)}进度已保存到 ${JSON.stringify(slotId)}；界面刷新未完成：${error instanceof Error ? error.message : "显示错误"}。可再次查看原槽位。`;
         }
       }, `${entryName(entry)} · 槽位 ${JSON.stringify(slotId)}`);
+      try {
+        pendingSaves.register(key, {
+          view: () => tracked.view(),
+          location: () => payload ? { nodeId: payload.checkpoint.story.nodeId, savedAt: payload.savedAt } : null,
+          retry: () => { void retryProgressSave(tracked, epoch => { feedbackRequest = epoch; }); },
+        });
+      } catch (error: unknown) {
+        saveMessage.textContent = `原保存已发起，重试状态暂未显示：${error instanceof Error ? error.message : "界面不可用"}。实际写入仍按原操作处理。`;
+      }
+      await tracked.result;
     } catch (error: unknown) {
       if (!closed && request === storageMessageEpoch) {
-        saveMessage.textContent = `保存失败：${error instanceof Error ? error.message : "未知存储错误"}。可重新保存，未先删除原槽位。`;
+        saveMessage.textContent = `保存尚未提交：${error instanceof Error ? error.message : "未知存储错误"}。可在“尚未完成的手动存档”中重试原操作，或显式保存当前进度；原槽位未先删除。`;
+      }
+    } finally {
+      saving = false;
+      if (!closed) refreshSaveControls();
+    }
+  }
+
+  async function retryProgressSave(tracked: TrackedWrite, report: (epoch: number) => void): Promise<void> {
+    if (closed || exiting || saving || entryPreparation === entryRequest || tracked.view().state !== "failed") return;
+    const request = ++storageMessageEpoch;
+    report(request);
+    saving = true;
+    saveDetails.hidden = true;
+    saveMessage.textContent = `正在重试原存档：${tracked.view().label}；检查点和时间保持原值……`;
+    refreshSaveControls();
+    try { await tracked.retry(); }
+    catch (error: unknown) {
+      if (!closed && request === storageMessageEpoch) {
+        const state = tracked.view();
+        saveMessage.textContent = state.state === "superseded"
+          ? `原存档操作已被后来的显式保存替代：${state.label}。本次旧重试未执行。`
+          : `原存档仍未提交：${state.label}。${error instanceof Error ? error.message : "存储错误"}。原目标和检查点继续保留，可再次重试。`;
       }
     } finally {
       saving = false;
@@ -1357,6 +1413,8 @@ async function main(): Promise<void> {
   document.addEventListener("visibilitychange", visibility);
   const dispose = (): void => {
     closed = true;
+    unsubscribePendingSaves();
+    pendingSaves.dispose();
     menuFocus?.dispose();
     disposeExitStatus?.();
     dialogFade?.dispose();

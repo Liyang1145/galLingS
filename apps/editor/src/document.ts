@@ -52,7 +52,8 @@ export function readAuthorDocument(input: unknown): AuthorDocument {
   const locations = Object.fromEntries(content.resources.map(resource => {
     const value = string(rawLocations[resource.id], at(source, `locations.${resource.id}`));
     const url = new URL(value, location.origin);
-    if (!value.startsWith("/@fs/") || url.origin !== location.origin || url.search || url.hash) {
+    const match = /^\/__editor\/media\/[a-f0-9]{64}\/([^/?#]+)$/u.exec(value);
+    if (!match || match[1] !== encodeURIComponent(resource.id) || url.origin !== location.origin || url.search || url.hash) {
       reject("AUTHOR_RESOURCE", "预览只允许本机登记资源", at(source, `locations.${resource.id}`));
     }
     return [resource.id, value];

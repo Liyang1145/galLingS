@@ -1,4 +1,4 @@
-import { token } from "virtual:haifeng-editor";
+import { editorSessionToken } from "./session.ts";
 import type { AuthorTextPatch } from "../../../packages/story-model/src/author.ts";
 import { AuthorDraftHistory } from "../../../packages/story-model/src/author-history.ts";
 import { AuthorRequestError, readAuthorDocument, readAuthorFailure } from "./document.ts";
@@ -280,7 +280,7 @@ function historyStep(direction: "undo" | "redo"): void {
 async function request(route: string, input: unknown, signal: AbortSignal): Promise<AuthorDocument> {
   const response = await fetch(`/__editor/${route}`, {
     method: "POST", mode: "same-origin", credentials: "same-origin", cache: "no-store", signal,
-    headers: { "Content-Type": "application/json", "X-Haifeng-Editor": token },
+    headers: { "Content-Type": "application/json", "X-Haifeng-Editor": editorSessionToken() },
     body: JSON.stringify(input),
   });
   const value: unknown = await response.json();

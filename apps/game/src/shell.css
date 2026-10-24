@@ -499,6 +499,21 @@ body.game-shell { overflow: hidden; background: #08191d; }
 .game-shell .sound-player p { flex: 1; min-width: min(260px, 100%); margin: 0; font-size: 16px; color: #dce9db; }
 .game-shell .sound-player button + button { margin: 0; }
 .game-shell .sound-player button { font-size: 14px; padding: 8px 16px; }
+.game-shell #sounds-body { display: flex; flex-direction: column; overflow: hidden; }
+.game-shell #sounds-body > .sound-player { flex-shrink: 0; margin: 0; padding: 4px 4px 12px; }
+.game-shell #sounds-body .sound-player p {
+  flex-basis: 100%; min-width: 0; max-height: min(100px, 18dvh); overflow: auto;
+  overscroll-behavior: contain; overflow-wrap: anywhere; font-size: 14px; line-height: 1.65;
+}
+.game-shell .sound-player-actions { display: flex; flex-wrap: wrap; gap: 8px; min-width: 0; }
+.game-shell .sound-player-actions button { min-height: 44px; max-width: 100%; white-space: normal; overflow-wrap: anywhere; }
+.game-shell .sound-directory { flex: 1; min-height: 0; overflow: auto; overscroll-behavior: contain; padding: 4px; }
+@media (max-height: 500px) {
+  .game-shell #sounds { padding: 12px; }
+  .game-shell #sounds > header { padding: 4px 0 8px; }
+  .game-shell #sounds > .collection-intro { display: none; }
+  .game-shell #sounds-body > .sound-player { padding-bottom: 8px; }
+}
 .game-shell .sound-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
 .game-shell .sound-grid button { display: grid; grid-template-columns: 42px minmax(0, 1fr); align-items: center; gap: 4px 12px; min-height: 92px; padding: 18px 20px; border: 1px solid #91b3a43a; border-radius: 8px; background: #ffffff06; color: #f0f0df; font-size: 18px; }
 .game-shell .sound-grid button:hover:not(:disabled) { background-color: #accdbd14; border-color: #b4d0b777; }

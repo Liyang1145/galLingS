@@ -17,6 +17,7 @@ interface Options {
   available(): boolean;
   paused(): boolean;
   requestAudio(): void;
+  transition?(change: () => void): void;
 }
 const LABELS: Readonly<Record<LibraryCategory, string>> = { music: "配乐", ambience: "环境", effect: "音效" };
 function element<K extends keyof HTMLElementTagNameMap>(tag: K, text = "", className = ""): HTMLElementTagNameMap[K] {
@@ -66,6 +67,8 @@ export class SoundLibraryPanel {
     this.#events = new AbortController();
     this.#options.root.style.setProperty("--sound-card-backdrop", `url(${JSON.stringify(this.#options.artwork.musicBackdrop)})`);
     const { signal } = this.#events;
+    const transition: (change: () => void) => void = this.#options.transition ?? (change => change());
+    const directory = element("div", "", "sound-directory");
     const nav = element("nav", "", "sound-tabs");
     nav.setAttribute("aria-label", "声音分类");
     const tabs = new Map<LibraryCategory, HTMLButtonElement>();
@@ -82,9 +85,11 @@ export class SoundLibraryPanel {
       panel.append(this.grid(this.#entries.filter(entry => entry.category === category && !entry.auditionOnly), signal));
       panels.set(category, panel);
       button.addEventListener("click", () => {
-        if (!this.#open) return;
-        for (const [id, tab] of tabs) tab.setAttribute("aria-pressed", String(id === category));
-        for (const [id, section] of panels) section.hidden = id !== category;
+        if (!this.#open || button.getAttribute("aria-pressed") === "true") return;
+        transition(() => {
+          for (const [id, tab] of tabs) tab.setAttribute("aria-pressed", String(id === category));
+          for (const [id, section] of panels) section.hidden = id !== category;
+        });
       }, { signal });
     }
     const controls = element("div", "", "sound-player");
@@ -105,12 +110,23 @@ export class SoundLibraryPanel {
           : "当前窗口或声音许可尚未就绪；恢复后可再次点击曲目，不会排队补播。";
       }
     }, { signal });
-    controls.append(this.#status, this.#stop, this.#enable);
+    const playerActions = element("div", "", "sound-player-actions");
+    playerActions.setAttribute("role", "group");
+    playerActions.setAttribute("aria-label", "独立试听操作");
+    playerActions.append(this.#stop, this.#enable);
+    controls.append(this.#status, playerActions);
     const archive = element("details", "", "sound-archive");
-    archive.append(element("summary", "素材归档 · 候选试听"),
+    const archiveSummary = element("summary", "素材归档 · 候选试听");
+    archiveSummary.addEventListener("click", event => {
+      // Capture before the native details state changes; keyboard summary activation also clicks.
+      event.preventDefault();
+      if (this.#open) transition(() => { archive.open = !archive.open; });
+    }, { signal });
+    archive.append(archiveSummary,
       element("p", "作者标记为候选的原件，保留供制作比较；不代表它们已经用于剧情。"),
       this.grid(this.#entries.filter(entry => entry.auditionOnly), signal));
-    this.#options.root.append(nav, controls, ...panels.values(), archive);
+    directory.append(nav, ...panels.values(), archive);
+    this.#options.root.append(controls, directory);
     this.refresh(this.#audioAllowed);
   }
 

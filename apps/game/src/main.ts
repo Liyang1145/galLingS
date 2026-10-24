@@ -1173,6 +1173,7 @@ async function main(): Promise<void> {
           host.requestAudio();
           soundPanel?.refresh(host.state().audioAllowed);
         },
+        transition: change => dialogDisplay.change(sounds, change),
       });
       soundPanel.setVolumes(audioPreferences.values("main"));
       soundPanel.open();

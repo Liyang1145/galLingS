@@ -53,6 +53,7 @@ import { renderSaveDetails } from "./save-details.ts";
 import { renderExitStatus } from "./exit-status.ts";
 import type { ExitProgress } from "./exit-status.ts";
 import { RollbackLocations } from "./rollback-locations.ts";
+import { connectOrientationHint } from "./orientation-hint.ts";
 import type { GamePanel } from "./panels.ts";
 import "./style.css";
 import "./shell.css";
@@ -148,6 +149,12 @@ async function main(): Promise<void> {
     cover: appearance.cover, resources,
   });
   startup.signal.addEventListener("abort", cover.dispose, { once: true });
+  const orientationHint = connectOrientationHint({
+    root: element("orientation-hint", HTMLElement),
+    accept: element("accept-portrait", HTMLButtonElement),
+    focusTarget: () => menu.hidden ? stage : element("close-menu", HTMLButtonElement),
+  });
+  startup.signal.addEventListener("abort", orientationHint.dispose, { once: true });
   const clock: Clock = {
     now: () => performance.now(),
     schedule: (delay, callback) => {
@@ -1361,6 +1368,7 @@ async function main(): Promise<void> {
     input?.dispose();
     fullscreen?.dispose();
     cover.dispose();
+    orientationHint.dispose();
     session?.dispose();
     host.releaseAudio();
     host.dispose();

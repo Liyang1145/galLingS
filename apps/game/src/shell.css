@@ -86,6 +86,9 @@ body.game-shell { overflow: hidden; background: #08191d; }
 .game-shell .shell-notices button { min-height: 44px; max-width: 100%; white-space: normal; overflow-wrap: anywhere; }
 .game-shell .shell-notices .problem p,
 .game-shell .shell-records p { margin: 0 0 10px; }
+.game-shell .orientation-hint h2 { margin: 0 0 6px; font-size: 17px; font-weight: 400; color: #e9efdf; }
+.game-shell .orientation-hint p { margin: 0 0 10px; color: #b9cbc3; }
+.game-shell .orientation-hint button { background: #183437; border-color: #9cbcad55; }
 .game-shell .menu-overlay {
   display: flex; align-items: center; justify-content: center; overflow: hidden; z-index: 26;
   padding: max(24px, env(safe-area-inset-top)) max(24px, env(safe-area-inset-right)) max(24px, env(safe-area-inset-bottom)) max(24px, env(safe-area-inset-left));

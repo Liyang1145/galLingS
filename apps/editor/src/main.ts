@@ -8,6 +8,7 @@ import type { PreviewStart } from "./preview.ts";
 import { PreviewCheckpoints } from "./checkpoint-panel.ts";
 import { AuthorDraftImporter } from "./imports.ts";
 import type { DraftImportSnapshot } from "./imports.ts";
+import { AuthorSourceComparison } from "./reconcile.ts";
 import { authorTextKey } from "../../../packages/story-model/src/author-draft.ts";
 import type { AuthorDraftBase } from "../../../packages/story-model/src/author-draft.ts";
 import { downloadDraft } from "./download.ts";
@@ -31,6 +32,7 @@ function element<T extends HTMLElement>(id: string, kind: { new(...args: never[]
 const button = (id: string): HTMLButtonElement => element(id, HTMLButtonElement);
 const el = {
   reload: button("reload"), save: button("save"), export: button("export"),
+  compare: button("compare-source"), cancelCompare: button("cancel-source-comparison"),
   undo: button("undo-draft"), redo: button("redo-draft"), history: element("draft-history", HTMLElement),
   importFile: element("import-file", HTMLInputElement), importPanel: element("import-panel", HTMLElement),
   discard: element("discard", HTMLInputElement), discardLabel: element("discard-label", HTMLElement),
@@ -56,15 +58,17 @@ const preview = new EditorPreview({
   stopped: () => checkpoints?.invalidatePending("预览已停止，未采用旧检查点读取；此前待用数据保留。"),
 });
 const events = new AbortController();
-const drafts = new AuthorDraftHistory({ maxEntries: 100, maxUnits: 2_000_000 });
+const createDraftHistory = (): AuthorDraftHistory => new AuthorDraftHistory({ maxEntries: 100, maxUnits: 2_000_000 });
+let drafts = createDraftHistory();
 let baseline: AuthorDocument | null = null;
 let selected = "";
 let revision = 0;
 let requestEpoch = 0;
 let requestController: AbortController | null = null;
-let operation: "load" | "preview" | "save" | null = null;
+let operation: "load" | "compare" | "preview" | "save" | null = null;
 let disposed = false;
 let importer: AuthorDraftImporter | null = null;
+let sourceComparison: AuthorSourceComparison | null = null;
 let references: AuthorReferences | null = null;
 let flow: AuthorFlow | null = null;
 let checkpoints: PreviewCheckpoints | null = null;
@@ -104,12 +108,17 @@ function draftBase(source: AuthorDocument): AuthorDraftBase {
   };
 }
 
+function sourceBusy(): boolean { return operation === "save" || operation === "load" || operation === "compare"; }
+
 function controls(): void {
-  const locked = operation === "save" || operation === "load";
-  const reviewing = !!importer?.active;
+  const locked = sourceBusy();
+  const reviewing = !!importer?.active || !!sourceComparison?.active;
   const node = selectedNode();
   const fields = baseline?.editable[selected] ?? [];
   el.reload.disabled = operation !== null || reviewing;
+  el.compare.disabled = !baseline || !drafts.size || operation !== null || reviewing || !!sourceComparison?.hasRecovery;
+  el.cancelCompare.hidden = operation !== "compare";
+  el.cancelCompare.disabled = operation !== "compare";
   el.discard.disabled = locked;
   el.discardLabel.hidden = drafts.size === 0;
   el.save.disabled = !baseline || !drafts.size || operation !== null || reviewing;
@@ -129,7 +138,8 @@ function controls(): void {
   el.nodes.disabled = locked;
   el.search.disabled = locked;
   nodePaging();
-  importer?.setEnabled(!!baseline && operation === null);
+  importer?.setEnabled(!!baseline && operation === null && !sourceComparison?.active);
+  sourceComparison?.setEnabled(!!baseline && operation === null && !importer?.active);
   references?.setAvailable(!!baseline && !locked);
   flow?.setAvailable(!!baseline && !locked);
   changes?.setAvailable(!!baseline && !locked);
@@ -161,7 +171,7 @@ function nodeForm(): void {
 }
 
 function nodePaging(): void {
-  const locked = disposed || !baseline || operation === "load" || operation === "save";
+  const locked = disposed || !baseline || sourceBusy();
   const total = nodeList?.matches.length ?? 0;
   el.nodePrevious.disabled = locked || nodePage === 0;
   el.nodeNext.disabled = locked || (nodePage + 1) * NODE_PAGE_SIZE >= total;
@@ -222,7 +232,7 @@ function list(options: { resetPage?: boolean; revealSelected?: boolean; resetScr
 
 function change(field: "speaker" | "text"): void {
   const node = selectedNode();
-  if (!node || operation === "load" || operation === "save") return;
+  if (!node || sourceBusy()) return;
   if (!baseline?.editable[node.id]?.includes(field)) return;
   const after = el[field].value;
   try {
@@ -239,6 +249,7 @@ function change(field: "speaker" | "text"): void {
 function draftChanged(options: { cancelImport?: boolean; refreshForm?: boolean; revealSelected?: boolean } = {}): void {
   revision++;
   if (options.cancelImport !== false) importer?.invalidate();
+  sourceComparison?.invalidate();
   references?.invalidate();
   flow?.invalidate();
   changes?.invalidate();
@@ -254,7 +265,7 @@ function draftChanged(options: { cancelImport?: boolean; refreshForm?: boolean; 
 }
 
 function historyStep(direction: "undo" | "redo"): void {
-  if (disposed || !baseline || operation === "load" || operation === "save") return;
+  if (disposed || !baseline || sourceBusy()) return;
   try {
     const step = direction === "undo" ? drafts.undo() : drafts.redo();
     if (!step) return;
@@ -282,10 +293,30 @@ async function request(route: string, input: unknown, signal: AbortSignal): Prom
   return readAuthorDocument(value);
 }
 
-async function perform(kind: "load" | "preview" | "save", start: PreviewStart = { kind: "entry" }): Promise<void> {
+function adoptSource(result: AuthorDocument, nextDrafts: AuthorDraftHistory): void {
+  preview.stop();
+  drafts.clear();
+  drafts = nextDrafts;
+  baseline = result;
+  revision++;
+  references?.invalidate();
+  flow?.invalidate();
+  changes?.invalidate();
+  sceneInspector?.invalidate();
+  authorDiagnostic?.clear();
+  el.discard.checked = false;
+  if (!result.content.nodes.some(node => node.id === selected)) selected = result.content.entryNodeId;
+  el.source.textContent = `作者源 SHA-256：${result.sourceSha256}；节点 ${result.content.nodes.length} 个；内容修订：${result.content.revision}`;
+  list({ revealSelected: true });
+  nodeForm();
+  references?.refresh();
+  flow?.refresh();
+}
+
+async function perform(kind: "load" | "compare" | "preview" | "save", start: PreviewStart = { kind: "entry" }): Promise<void> {
   if (operation || disposed) return;
-  if (importer?.active) {
-    message("先采用或取消本次导入比较，再读取、预览或保存。");
+  if (importer?.active || sourceComparison?.active) {
+    message("先采用或取消本次草稿比较，再读取、预览或保存。");
     return;
   }
   if (kind === "load" && drafts.size && !el.discard.checked) {
@@ -294,30 +325,39 @@ async function perform(kind: "load" | "preview" | "save", start: PreviewStart = 
   }
   if (kind !== "load" && !baseline) return;
   if (kind === "save" && !drafts.size) return;
+  if (kind === "compare" && (!drafts.size || sourceComparison?.hasRecovery)) return;
   drafts.closeGroup();
+  const comparisonSnapshot = kind === "compare" && baseline ? { source: baseline, revision, patch: patch() } : null;
   operation = kind;
   const epoch = ++requestEpoch;
   const draftRevision = revision;
   const diagnosticContext: DiagnosticContext = {
     content: baseline?.content ?? null, sourceSha256: baseline?.sourceSha256 ?? null,
-    revision: draftRevision, request: epoch, operation: kind,
+    revision: draftRevision, request: epoch, operation: kind === "compare" ? "load" : kind,
   };
   authorDiagnostic?.clear();
   const controller = new AbortController();
   requestController = controller;
   controls();
   if (kind === "preview") button("stop").disabled = false;
-  message(kind === "load" ? "正在读取作者源并转换内容……"
+  message(kind === "compare" ? "正在读取磁盘源以比较；原基线、草稿与预览继续保留……" : kind === "load" ? "正在读取作者源并转换内容……"
     : kind === "save" ? "正在检查草稿、保留备份并保存到作者源……" : "正在通过同一转换器准备预览……");
   let sourceAdopted = false;
   try {
-    const result = await request(kind === "load" ? "source" : kind, kind === "load" ? {} : patch(), controller.signal);
+    const reading = kind === "load" || kind === "compare";
+    const result = await request(reading ? "source" : kind, reading ? {} : patch(), controller.signal);
     if (disposed || epoch !== requestEpoch) return;
     if (draftRevision !== revision) {
       message("请求期间草稿已变化，未采用旧预览结果；请重新预览当前草稿。");
       return;
     }
-    if (kind === "preview") {
+    if (kind === "compare") {
+      if (!comparisonSnapshot || baseline !== comparisonSnapshot.source || !sourceComparison) {
+        throw new Error("本次比较缺少原基线身份，未采用读取结果。");
+      }
+      sourceComparison.offer(comparisonSnapshot, result, draftBase(result));
+      message("磁盘源已读取，仅用于下方比较；原基线、草稿历史和预览尚未改变。请逐项选择并明确采用。");
+    } else if (kind === "preview") {
       if (diagnosticContext.sourceSha256 === null) throw new Error("预览缺少原作者基线身份，请先读取作者源");
       const checkpoint = preview.start(result, start, {
         sourceSha256: diagnosticContext.sourceSha256, revision: draftRevision,
@@ -327,21 +367,9 @@ async function perform(kind: "load" | "preview" | "save", start: PreviewStart = 
         ? "已通过共享核心从检查点继续预览，未重执行进入动作或写入作者源/玩家记录。"
         : "已采用本次草稿修订进行预览，未写入作者源。");
     } else {
-      preview.stop();
-      drafts.reset(draftBase(result));
-      baseline = result;
-      revision++;
-      references?.invalidate();
-      flow?.invalidate();
-      changes?.invalidate();
-      sceneInspector?.invalidate();
-      el.discard.checked = false;
-      if (!result.content.nodes.some(node => node.id === selected)) selected = result.content.entryNodeId;
-      el.source.textContent = `作者源 SHA-256：${result.sourceSha256}；节点 ${result.content.nodes.length} 个；内容修订：${result.content.revision}`;
-      list({ revealSelected: true });
-      nodeForm();
-      references?.refresh();
-      flow?.refresh();
+      const nextDrafts = createDraftHistory();
+      nextDrafts.reset(draftBase(result));
+      adoptSource(result, nextDrafts);
       sourceAdopted = true;
       message(kind === "save"
         ? `作者源已保存。原文件备份：${result.backup ?? "未返回备份位置，请检查作品目录"}。预览已停止，请重新预览本次修订。`
@@ -351,7 +379,7 @@ async function perform(kind: "load" | "preview" | "save", start: PreviewStart = 
     if (disposed || epoch !== requestEpoch) return;
     if (error instanceof AuthorRequestError && error.diagnostic) authorDiagnostic?.show(error.diagnostic, diagnosticContext);
     message(`${error instanceof Error ? error.message : "作者操作失败"}${kind === "save"
-      ? " 草稿保留；若连接中断，先导出草稿并重新读取确认源文件，不要假定未写入。"
+      ? " 草稿保留；若连接中断，可保留草稿并与磁盘源比较，不要假定未写入。"
       : " 当前草稿保留。"}`, true);
   } finally {
     if (epoch === requestEpoch) {
@@ -369,6 +397,16 @@ async function perform(kind: "load" | "preview" | "save", start: PreviewStart = 
 
 const { signal } = events;
 el.reload.addEventListener("click", () => { void perform("load"); }, { signal });
+el.compare.addEventListener("click", () => { void perform("compare"); }, { signal });
+el.cancelCompare.addEventListener("click", () => {
+  if (operation !== "compare") return;
+  ++requestEpoch;
+  requestController?.abort();
+  requestController = null;
+  operation = null;
+  controls();
+  message("已取消采用磁盘比较读取；原基线、草稿历史和预览继续保留。后台读取若尚未结束，下次请求可能需要稍后重试。");
+}, { signal });
 el.save.addEventListener("click", () => { void perform("save"); }, { signal });
 el.undo.addEventListener("click", () => historyStep("undo"), { signal });
 el.redo.addEventListener("click", () => historyStep("redo"), { signal });
@@ -385,9 +423,11 @@ button("stop").addEventListener("click", () => {
   controls();
   message("已取消采用预览结果；草稿保留。后台转换若尚未结束，下次请求可能需要稍后重试。");
 }, { signal });
-el.search.addEventListener("input", () => { list({ resetPage: true }); }, { signal });
+el.search.addEventListener("input", () => {
+  if (!disposed && !sourceBusy()) list({ resetPage: true });
+}, { signal });
 const turnNodePage = (direction: -1 | 1): void => {
-  if (disposed || !baseline || operation === "load" || operation === "save") return;
+  if (disposed || !baseline || sourceBusy()) return;
   const last = Math.max(0, Math.ceil((nodeList?.matches.length ?? 0) / NODE_PAGE_SIZE) - 1);
   nodePage = Math.max(0, Math.min(last, nodePage + direction));
   drafts.closeGroup();
@@ -396,12 +436,17 @@ const turnNodePage = (direction: -1 | 1): void => {
 el.nodePrevious.addEventListener("click", () => turnNodePage(-1), { signal });
 el.nodeNext.addEventListener("click", () => turnNodePage(1), { signal });
 el.nodeCurrent.addEventListener("click", () => {
-  if (disposed || !selectedNode() || operation === "load" || operation === "save") return;
+  if (disposed || !selectedNode() || sourceBusy()) return;
   drafts.closeGroup();
   list({ revealSelected: true });
   el.nodes.focus();
 }, { signal });
-el.nodes.addEventListener("change", () => { selected = el.nodes.value; list(); nodeForm(); }, { signal });
+el.nodes.addEventListener("change", () => {
+  if (disposed || sourceBusy()) return;
+  selected = el.nodes.value;
+  list();
+  nodeForm();
+}, { signal });
 for (const field of ["speaker", "text"] as const) {
   const input = el[field];
   input.addEventListener("focus", () => drafts.closeGroup(), { signal });
@@ -415,7 +460,7 @@ for (const field of ["speaker", "text"] as const) {
   }, { signal });
 }
 el.reset.addEventListener("click", () => {
-  if (!selected || operation === "load" || operation === "save") return;
+  if (disposed || !selected || sourceBusy()) return;
   const result = drafts.removeNode(selected);
   if (!result.changed) return;
   draftChanged({ refreshForm: true });
@@ -429,7 +474,9 @@ el.export.addEventListener("click", () => {
   message("已请求下载修改草稿；可在本入口重新导入并逐项比较。这是带原摘要的修改记录，不是另一份作者源。");
 }, { signal });
 window.addEventListener("beforeunload", event => {
-  if (drafts.size || importer?.active || operation === "save") { event.preventDefault(); event.returnValue = ""; }
+  if (drafts.size || importer?.active || sourceComparison?.active || sourceComparison?.hasRecovery || operation === "save") {
+    event.preventDefault(); event.returnValue = "";
+  }
 }, { signal });
 function dispose(): void {
   if (disposed) return;
@@ -438,6 +485,7 @@ function dispose(): void {
   requestController?.abort();
   preview.dispose();
   importer?.dispose();
+  sourceComparison?.dispose();
   references?.dispose();
   flow?.dispose();
   checkpoints?.dispose();
@@ -472,6 +520,26 @@ importer = new AuthorDraftImporter({
     message(`导入结果已采用到当前作者源上的草稿${change.overflow ? "，本次操作超过历史容量，未保留撤销记录" : ""}；请预览，确认后再点击“保存到作者源”。`);
   },
 });
+sourceComparison = new AuthorSourceComparison({
+  root: element("source-comparison", HTMLElement),
+  current: snapshot => !disposed && operation === null && baseline === snapshot.source && revision === snapshot.revision,
+  apply(snapshot, result, merged) {
+    if (disposed || operation !== null || baseline !== snapshot.source || revision !== snapshot.revision
+      || importer?.active || merged.sourceSha256 !== result.sourceSha256) {
+      throw new Error("原基线、草稿或操作已变化，请重新读取比较。");
+    }
+    // Validate the entire new history before releasing the original baseline/draft.
+    const nextDrafts = createDraftHistory();
+    nextDrafts.reset(draftBase(result));
+    const change = nextDrafts.replace(merged);
+    adoptSource(result, nextDrafts);
+    changes?.refresh();
+    sceneInspector?.refresh();
+    message(`已采用比较后的新基线与草稿，未写作者文件${change.overflow ? "；本次恢复超过历史容量，未保留撤销记录" : ""}。旧预览已停止，请重新预览后再保存。`);
+  },
+  changed: controls,
+  notice: value => message(value),
+});
 references = new AuthorReferences({
   root: element("author-references", HTMLElement),
   capture() {
@@ -488,7 +556,7 @@ references = new AuthorReferences({
   navigate: navigateNode,
 });
 function navigateNode(nodeId: string): void {
-  if (disposed || operation === "load" || operation === "save"
+  if (disposed || sourceBusy()
     || !baseline?.content.nodes.some(node => node.id === nodeId)) return;
   selected = nodeId;
   list({ revealSelected: true });
@@ -518,7 +586,7 @@ checkpoints = new PreviewCheckpoints({
 changes = new AuthorChanges({
   root: element("author-changes", HTMLElement),
   capture() {
-    if (!baseline || disposed || operation === "load" || operation === "save") return null;
+    if (!baseline || disposed || sourceBusy()) return null;
     drafts.closeGroup();
     return {
       content: baseline.content, sourceSha256: baseline.sourceSha256, revision,

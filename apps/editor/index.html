@@ -13,6 +13,8 @@
         <p class="help">编辑已有节点的说话人和对白。草稿仅在本页内存中；“保存到作者源”才会修改作品文件。</p>
         <div class="controls">
           <button id="reload">读取作者源</button>
+          <button id="compare-source" disabled>保留草稿并与磁盘源比较</button>
+          <button id="cancel-source-comparison" hidden disabled>取消磁盘比较读取</button>
           <label id="discard-label" hidden><input id="discard" type="checkbox" /> 本次允许丢弃当前草稿并重新读取</label>
           <button id="export" disabled>导出修改草稿</button>
           <button id="save" disabled>保存到作者源</button>
@@ -23,6 +25,7 @@
         <p id="message" role="status" aria-live="polite">尚未读取作者源。</p>
         <section id="author-diagnostic" aria-label="本次作者操作的只读诊断" hidden></section>
         <p id="source-info" class="help"></p>
+        <section id="source-comparison" class="draft-import-panel source-comparison" aria-label="保留草稿与磁盘源比较" hidden></section>
         <label class="draft-file">导入修改草稿
           <input id="import-file" type="file" accept=".json,application/json" disabled />
         </label>

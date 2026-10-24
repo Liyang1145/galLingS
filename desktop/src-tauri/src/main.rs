@@ -11,6 +11,8 @@
 
 #[cfg(feature = "rebuild-host")]
 mod rebuild;
+#[cfg(all(feature = "rebuild-host", target_os = "windows"))]
+mod rebuild_storage;
 
 use std::fs::{self, File};
 use std::io::{Read, Seek, SeekFrom, Write};

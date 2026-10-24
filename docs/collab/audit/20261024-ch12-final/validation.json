@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "baseline": "181a1288d47cb2b74567474c6a3e3d2397c691f7",
+  "selectedLine": "sb0dfj4m",
+  "selectedIndex": 187,
+  "selectedVersion": "A",
+  "selectedSHA256": "971ba9454367c30aab4934cde1f757481830685f6c01d8e38dc47a5580d6b98a",
+  "selectedFileBytesExactlyPreserved": true,
+  "mp3DecodingPassed": true,
+  "audioFormat": {
+    "sampleRate": 44100,
+    "channels": 1,
+    "bitrate": 128000
+  },
+  "feedbackSha256": "7ff14e7371e32eae22265e816d8aaa8a6a5e212aa038411a9ec523b9604cccbe",
+  "feedbackIdsTextAndAudioSHAAllMatched": true,
+  "firstTwoUserAccepted": 150,
+  "firstTwoVoices": 150,
+  "other149AudioUnchanged": true,
+  "all3315StoryNodesAndTextUnchanged": true,
+  "voiceBindings": 824,
+  "nonVoiceAssetsUnchanged": true,
+  "manualListeningByCodex": false,
+  "distanceEffects": false,
+  "validationScope": "Data and asset update only: exact selected bytes, decode, 149 prior hashes, complete story equality and 150 acceptance bindings; no engine changes"
+}

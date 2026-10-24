@@ -71,9 +71,9 @@
 - [promo-trailer-demo-integration-20261024.md](promo-trailer-demo-integration-20261024.md) — 10-24 多分支合流整合（fix/character-performance + memory-provenance + linux + main）、原创 1080p60 宣传片与可提交 Demo 全套打包
 - [linux-port-20261023.md](linux-port-20261023.md) — 10-23 Linux 平台支持（start.sh、Tauri deb/AppImage、Steam Linux depot 与本地存档 XDG 路径）
 - [cg-loop-animations-20261023.md](cg-loop-animations-20261023.md) — 10-23 27 段无缝循环 CG 视频动画接入舞台与鉴赏
+- [memory-provenance.md](memory-provenance.md) — 10-23 记忆来源标签 / 修订作废 / 引擎真值、确定性态度过滤、say 情绪差分、人设与洗记忆评测（整合方案 P0）
 - [20261022_repo-structure-optimization.md](20261022_repo-structure-optimization.md) — 10-22 全仓结构优化与 4abcd03 目录重构回归修复（修复单作品路径拼接、单文件/编辑器 player.js 导出、73 处 Markdown 断链；拆分 server/api/、server/memory/text_index.py、server/plugins/sse.py 与 Tauri Rust 四模块）
 - [lingshu-multi-llm-galagent-mcp-20261021.md](lingshu-multi-llm-galagent-mcp-20261021.md) — 10-21 灵枢认知图 MCP 记忆库、多模型插件（OpenAI/Claude/Gemini/Ollama）、GalAgent 完整工具链与 MCP 扩展整合及 Steam 双模桌面包
-- [memory-provenance.md](memory-provenance.md) — 10-23 记忆来源标签 / 修订作废 / 引擎真值、确定性态度过滤、say 情绪差分、人设与洗记忆评测（整合方案 P0）
 - [steam-release-package-20261021.md](steam-release-package-20261021.md) — 10-21 Steam 正式版客户端封装（纯净游戏模式、本地文件存档、内置 GalAgent 直连与工具引擎、SteamPipe 仓库构建、待办 B08 解决）
 - [desktop-package.md](desktop-package.md) — 桌面封装（WASM + Tauri）
 - [tanpowasd-dev-integration.md](tanpowasd-dev-integration.md) — tanpowasd/dev 审核与合并
@@ -105,3 +105,5 @@
 - [前两话第三轮听审与多候选](ch12-feedback-r3-20261024.md) — 143条反馈及桂花追加要求；4份节奏/重音修订，三句各4版候选，150条主语音离线试听。
 
 - [前两话第四轮配音反馈与选版](ch12-feedback-r4-20261024.md) — 接入28C/327A，确认41/65，重录76/77，桂花恢复原表演及新整词替换候选；150主语音试听。
+
+- [前两话配音最终确认](ch12-final-20261024.md) — 第187句选A接入，完整反馈归档；前两话150句均获用户确认。

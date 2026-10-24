@@ -1,0 +1,256 @@
+{
+  "assembly": {
+    "baseline": "f77a3f890c029c26402f4e70270d7f1ec7278890",
+    "nodes": 3315,
+    "changedClips": 232,
+    "newBindings": 111,
+    "replacedBindings": 121,
+    "boundVoicesBefore": 715,
+    "boundVoicesAfter": 826,
+    "selectedByOrigin": {
+      "delivered_new_voice_package": 197,
+      "new_qwen_generation": 26,
+      "same_character_context_split": 8,
+      "local_phrase_gain": 1
+    },
+    "selectedByStatus": {
+      "source_passed_auto_screen_pass": 163,
+      "source_passed_needs_listening": 34,
+      "needs_listening": 20,
+      "automatic_screen_pass": 14,
+      "local_phrase_gain_candidate_needs_listening": 1
+    },
+    "distanceEffects": false,
+    "scriptExceptVoiceUnchanged": true,
+    "nonVoiceAssetsUnchanged": true,
+    "otherGameSettingsUnchanged": true,
+    "accepted1769Preserved": true,
+    "manualListeningPerformed": false,
+    "allSelectedAudioDecoded44100MonoMp3": true
+  },
+  "fullRegression": {
+    "load_s": 3.1,
+    "body": "game playing",
+    "chapters": 18,
+    "walk": {
+      "n": 3315,
+      "p50": 0.09999999403953552,
+      "p99": 0.9000000059604645,
+      "max": 79,
+      "bad": [],
+      "nbad": 0
+    },
+    "cg": {
+      "n": 32,
+      "p50": 84.40000000596046,
+      "max": 218.69999998807907,
+      "heapMB": 9
+    },
+    "save": {
+      "want": {
+        "idx": 1504,
+        "id": "6cdt4nv4",
+        "vars": "{\"好感\":0,\"尾鳍\":7,\"贝壳延后\":0,\"玩笑\":0,\"海星放生\":0,\"周目\":1,\"结局数\":0}"
+      },
+      "got": {
+        "idx": 1504,
+        "id": "6cdt4nv4",
+        "vars": "{\"好感\":0,\"尾鳍\":7,\"贝壳延后\":0,\"玩笑\":0,\"海星放生\":0,\"周目\":1,\"结局数\":0}"
+      }
+    },
+    "prev": [
+      302,
+      301
+    ],
+    "errs": [],
+    "nerrs": 0
+  },
+  "voiceSwitch": {
+    "source": {
+      "third": 344,
+      "first": 12,
+      "second": 174,
+      "later": 348,
+      "fourth": 521,
+      "extra": 3092,
+      "nodes": 3315,
+      "oldVolume": 0.73,
+      "enabled": false,
+      "beforeThirdAudible": true,
+      "laterChaptersDefaultSilent": true,
+      "genericVoiceSwitch": true,
+      "earlyManualOnDoesNotOptInLater": true,
+      "manualOnAndReload": true,
+      "manualOffStopsCurrentVoice": true,
+      "explicitBacklogListen": true,
+      "jumpBackToChapterTwoAudible": true,
+      "loadIntoChapterThreeSilent": true,
+      "narrowSettingVisible": true,
+      "pageErrors": [],
+      "passed": true
+    },
+    "singleFile": {
+      "third": 344,
+      "first": 12,
+      "second": 174,
+      "later": 348,
+      "fourth": 521,
+      "extra": 3092,
+      "nodes": 3315,
+      "oldVolume": 0.73,
+      "enabled": false,
+      "beforeThirdAudible": true,
+      "laterChaptersDefaultSilent": true,
+      "genericVoiceSwitch": true,
+      "earlyManualOnDoesNotOptInLater": true,
+      "manualOnAndReload": true,
+      "manualOffStopsCurrentVoice": true,
+      "explicitBacklogListen": true,
+      "jumpBackToChapterTwoAudible": true,
+      "loadIntoChapterThreeSilent": true,
+      "narrowSettingVisible": true,
+      "pageErrors": [],
+      "passed": true
+    }
+  },
+  "browserAudio": {
+    "folder": {
+      "nodes": 3315,
+      "boundVoices": 826,
+      "selectedDecoded": 232,
+      "actualPlayerSamples": [
+        {
+          "id": "ktsw1bk3",
+          "index": 12,
+          "currentTime": 0.061135,
+          "paused": false,
+          "sourceMatches": true
+        },
+        {
+          "id": "m4wlasdc",
+          "index": 41,
+          "currentTime": 0.035934,
+          "paused": false,
+          "sourceMatches": true
+        },
+        {
+          "id": "19j7cn4u",
+          "index": 123,
+          "currentTime": 0.049074,
+          "paused": false,
+          "sourceMatches": true
+        },
+        {
+          "id": "yh5ghjft",
+          "index": 125,
+          "currentTime": 0.042473,
+          "paused": false,
+          "sourceMatches": true
+        },
+        {
+          "id": "ta9pcdes",
+          "index": 211,
+          "currentTime": 0.007105,
+          "paused": false,
+          "sourceMatches": true
+        },
+        {
+          "id": "kzr515f8",
+          "index": 1582,
+          "currentTime": 0.008628,
+          "paused": false,
+          "sourceMatches": true
+        },
+        {
+          "id": "9jsc7ccp",
+          "index": 1668,
+          "currentTime": 0.016608,
+          "paused": false,
+          "sourceMatches": true
+        }
+      ],
+      "thirdOnwardsDefaultOff": true,
+      "cgCount": 32,
+      "pageErrors": [],
+      "passed": true
+    },
+    "singleFile": {
+      "nodes": 3315,
+      "boundVoices": 826,
+      "selectedDecoded": 232,
+      "actualPlayerSamples": [
+        {
+          "id": "ktsw1bk3",
+          "index": 12,
+          "currentTime": 0.02322,
+          "paused": false,
+          "sourceMatches": true
+        },
+        {
+          "id": "m4wlasdc",
+          "index": 41,
+          "currentTime": 0.052619,
+          "paused": false,
+          "sourceMatches": true
+        },
+        {
+          "id": "19j7cn4u",
+          "index": 123,
+          "currentTime": 0.047329,
+          "paused": false,
+          "sourceMatches": true
+        },
+        {
+          "id": "yh5ghjft",
+          "index": 125,
+          "currentTime": 0.060691,
+          "paused": false,
+          "sourceMatches": true
+        },
+        {
+          "id": "ta9pcdes",
+          "index": 211,
+          "currentTime": 0.057934,
+          "paused": false,
+          "sourceMatches": true
+        },
+        {
+          "id": "kzr515f8",
+          "index": 1582,
+          "currentTime": 0.060207,
+          "paused": false,
+          "sourceMatches": true
+        },
+        {
+          "id": "9jsc7ccp",
+          "index": 1668,
+          "currentTime": 0.026861,
+          "paused": false,
+          "sourceMatches": true
+        }
+      ],
+      "thirdOnwardsDefaultOff": true,
+      "cgCount": 32,
+      "pageErrors": [],
+      "passed": true
+    },
+    "manualListeningPerformed": false
+  },
+  "manualListeningPerformed": false,
+  "limitations": "ASR, duration and decoding checks are technical screening, not verification of timbre or acting. 55 assembled clips retain listening-required flags; 3 unreliable candidates are held outside the game.",
+  "documentationLinks": {
+    "method": "Same relative-link regex as tools/check_md_links.py, verified against full fetched branch tree plus publication files",
+    "modifiedMarkdownFiles": [
+      "docs/collab/work-ledger/README.md",
+      "docs/collab/work-ledger/tts-feedback-intake-20261024.md"
+    ],
+    "links": 82,
+    "broken": [],
+    "passed": true,
+    "wholeLocalCheckout": {
+      "links": 673,
+      "broken": 27,
+      "scope": "Current partial local checkout including fetched remote ledgers; not a clean full-tree result."
+    }
+  }
+}

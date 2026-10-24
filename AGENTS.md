@@ -42,7 +42,7 @@
 | [对白回看](docs/rebuild/history.md) | 当前会话内有界文字/语音身份记录、旧版条目与独立试听；回退设置可展开，条目回退须显式操作并复用检查点恢复，不按节点猜历史位置 |
 | [会话内回退](docs/rebuild/rollback.md) | 有界检查点、访问顺序分章列表及选定位置只读详情、显式跨选择策略及恢复；不反算变量或覆盖全局成果，正式边界仍待决定 |
 | [随包加载与集成产物](docs/rebuild/delivery.md) | M5 的严格随包读取、资源映射、显式构建和只读完整包核验；未执行，不等于正式安装/激活或两端验收 |
-| [Windows 集成宿主](docs/rebuild/windows.md) | 显式特性与隔离配置、输入准备、窗口暂停；未执行准备或编译，未切换正式发行 |
+| [Windows 集成宿主](docs/rebuild/windows.md) | 显式特性与隔离配置、输入准备、窗口/系统电源暂停和原页面确认；未准备、编译或验收，未切换正式发行 |
 | [Windows 试用原生记录后端](docs/rebuild/native-storage.md) | 受限地址、完整物理提交、分页与存储代次 CAS；仅运行参数 `--rebuild-file-records` 显式接线，默认 IndexedDB，未运行验收或决定正式落点 |
 | [Android 集成宿主](docs/rebuild/android.md) | 独立 Gradle 模块、输入准备、前后台/返回键及独立焦点/输出中断控制；未构建或真机验收 |
 | [Android 试用原生记录后端](docs/rebuild/android-storage.md) | 受限地址/原 JSON、目录独占、完整文件提交及 CAS；仅 Activity 布尔 extra 显式接线，准备记录 `/3` 核对桥摘要，默认 IndexedDB，未运行验收 |

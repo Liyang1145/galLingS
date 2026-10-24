@@ -7,6 +7,9 @@ use tauri::{Manager, WebviewUrl, WebviewWindow, WebviewWindowBuilder, WindowEven
 #[cfg(target_os = "windows")]
 #[path = "rebuild_storage_bridge.rs"]
 mod records_bridge;
+#[cfg(target_os = "windows")]
+#[path = "rebuild_power.rs"]
+mod power;
 
 static SEQUENCE: AtomicU64 = AtomicU64::new(0);
 static ACKNOWLEDGED: AtomicU64 = AtomicU64::new(0);
@@ -16,6 +19,8 @@ static EXIT_RUNNING: AtomicBool = AtomicBool::new(false);
 static EXIT_SEQUENCE: AtomicU64 = AtomicU64::new(0);
 static PAGE_SEQUENCE: AtomicU64 = AtomicU64::new(0);
 static PAGE_READY: AtomicBool = AtomicBool::new(false);
+static PAGE_FINISHED: AtomicBool = AtomicBool::new(false);
+static PAGE_IDENTITY: Mutex<Option<(u64, String)>> = Mutex::new(None);
 static FULLSCREEN_SEQUENCE: AtomicU64 = AtomicU64::new(0);
 static FULLSCREEN: Mutex<FullscreenControl> = Mutex::new(FullscreenControl {
     page: 0, request: 0, owner: None, target: false, issue: None,
@@ -175,22 +180,70 @@ fn warn_delivery() {
     }
 }
 
+/// The native counter alone cannot identify which document eventually executes
+/// queued JavaScript. Bind a fresh private initialization identity before delivery.
+fn prepare_page(window: &WebviewWindow) {
+    if STOP_HEARTBEAT.load(Ordering::SeqCst) || !PAGE_FINISHED.load(Ordering::SeqCst)
+        || PAGE_READY.load(Ordering::SeqCst) { return; }
+    let page = PAGE_SEQUENCE.load(Ordering::SeqCst);
+    let owner = window.clone();
+    let script = "(() => {const b=window.__HAIFENG_HOST__;return b?.protocol==='haifeng.host-bridge/3'?window.__HAIFENG_WINDOWS_PAGE_ID__:null;})()";
+    if window.eval_with_callback(script, move |answer| {
+        if STOP_HEARTBEAT.load(Ordering::SeqCst) || !PAGE_FINISHED.load(Ordering::SeqCst)
+            || PAGE_SEQUENCE.load(Ordering::SeqCst) != page { return; }
+        let Ok(Some(identity)) = serde_json::from_str::<Option<String>>(&answer) else { warn_delivery(); return };
+        if identity.len() != 32 || !identity.bytes().all(|byte| byte.is_ascii_hexdigit()) {
+            warn_delivery();
+            return;
+        }
+        {
+            let Ok(mut current) = PAGE_IDENTITY.lock() else { warn_delivery(); return };
+            if STOP_HEARTBEAT.load(Ordering::SeqCst) || PAGE_SEQUENCE.load(Ordering::SeqCst) != page { return; }
+            if current.as_ref().map(|(bound_page, value)| *bound_page == page && value != &identity).unwrap_or(false) {
+                PAGE_READY.store(false, Ordering::SeqCst);
+                warn_delivery();
+                return;
+            }
+            *current = Some((page, identity));
+            PAGE_READY.store(true, Ordering::SeqCst);
+        }
+        publish(&owner);
+    }).is_err() { warn_delivery(); }
+}
+
 fn publish(window: &WebviewWindow) {
+    if STOP_HEARTBEAT.load(Ordering::SeqCst) || !PAGE_READY.load(Ordering::SeqCst) { return; }
+    let page = PAGE_SEQUENCE.load(Ordering::SeqCst);
+    let identity = {
+        let Ok(current) = PAGE_IDENTITY.lock() else { warn_delivery(); return };
+        let Some((bound_page, identity)) = current.as_ref() else { return };
+        if *bound_page != page { return; }
+        serde_json::json!(identity)
+    };
     publish_fullscreen(window);
-    let paused = !window.is_focused().unwrap_or(false)
+    #[cfg(target_os = "windows")]
+    let power = power::snapshot(page, &SEQUENCE);
+    #[cfg(target_os = "windows")]
+    let (sequence, power_paused) = (power.sequence, power.paused);
+    #[cfg(not(target_os = "windows"))]
+    let (sequence, power_paused) = (SEQUENCE.fetch_add(1, Ordering::SeqCst) + 1, true);
+    let paused = power_paused || !window.is_focused().unwrap_or(false)
         || window.is_minimized().unwrap_or(true);
-    let sequence = SEQUENCE.fetch_add(1, Ordering::SeqCst) + 1;
     let script = format!(
-        "(() => {{const b=window.__HAIFENG_HOST__; if(b?.protocol!=='haifeng.host-bridge/3') return null; b.receive({{format:'haifeng.host-state/1',platform:'windows-trial',sequence:{sequence},paused:{paused}}); return b.read().sequence;}})()"
+        "(() => {{const b=window.__HAIFENG_HOST__; if(b?.protocol!=='haifeng.host-bridge/3'||window.__HAIFENG_WINDOWS_PAGE_ID__!=={identity}) return null; b.receive({{format:'haifeng.host-state/1',platform:'windows-trial',sequence:{sequence},paused:{paused}}); return b.read().sequence;}})()"
     );
     if sequence.saturating_sub(ACKNOWLEDGED.load(Ordering::SeqCst)) > 4 {
         warn_delivery();
     }
     if window.eval_with_callback(script, move |answer| {
+        if STOP_HEARTBEAT.load(Ordering::SeqCst) || !PAGE_READY.load(Ordering::SeqCst)
+            || PAGE_SEQUENCE.load(Ordering::SeqCst) != page { return; }
         if let Ok(ack) = serde_json::from_str::<u64>(&answer) {
             if ack >= sequence && ack <= SEQUENCE.load(Ordering::SeqCst) {
                 ACKNOWLEDGED.fetch_max(ack, Ordering::SeqCst);
                 DELIVERY_WARNED.store(false, Ordering::SeqCst);
+                #[cfg(target_os = "windows")]
+                if let Some(generation) = power.generation { power::acknowledge(page, generation); }
                 return;
             }
         }
@@ -224,6 +277,11 @@ pub fn run() {
             }
             if window.label() == "rebuild" && matches!(event, WindowEvent::Destroyed) {
                 STOP_HEARTBEAT.store(true, Ordering::SeqCst);
+                PAGE_FINISHED.store(false, Ordering::SeqCst);
+                PAGE_READY.store(false, Ordering::SeqCst);
+                if let Ok(mut identity) = PAGE_IDENTITY.lock() { *identity = None; }
+                #[cfg(target_os = "windows")]
+                power::stop();
             }
             if matches!(event, WindowEvent::Focused(_) | WindowEvent::Resized(_)) {
                 if let Some(webview) = window.app_handle().get_webview_window(window.label()) {
@@ -253,6 +311,8 @@ pub fn run() {
                     return Err(std::io::Error::new(std::io::ErrorKind::InvalidData, "原生记录客户端能力与当前游戏包不匹配").into());
                 }
             }
+            #[cfg(target_os = "windows")]
+            let power_notifications = power::subscribe()?;
             let local_data = app.path().app_local_data_dir()?;
             #[cfg(target_os = "windows")]
             let native_store = if file_records {
@@ -266,7 +326,18 @@ pub fn run() {
                 .replace("__HAIFENG_RECORD_PLATFORM__", "windows-trial")
                 .replace("__HAIFENG_FILE_RECORDS__", if file_records { "true" } else { "false" })
                 .replace("__HAIFENG_RECORD_WORK__", &serde_json::to_string(&work_id)?);
-            let bootstrap = format!("{records_bootstrap}\n{}", include_str!("../../../packages/player/src/web/host-bootstrap.js")
+            // Private per-document identity. No page command, persistent value or optional display dependency.
+            let page_bootstrap = r#"(() => {
+                if(window.top!==window||window.location.origin!=='https://tauri.localhost') return;
+                let identity=null;
+                try {
+                    const bytes=new Uint8Array(16);
+                    crypto.getRandomValues(bytes);
+                    identity=Array.from(bytes,byte=>byte.toString(16).padStart(2,'0')).join('');
+                } catch {}
+                Object.defineProperty(window,'__HAIFENG_WINDOWS_PAGE_ID__',{value:identity,writable:false,configurable:false});
+            })();"#;
+            let bootstrap = format!("{page_bootstrap}\n{records_bootstrap}\n{}", include_str!("../../../packages/player/src/web/host-bootstrap.js")
                 .replace("__HAIFENG_PLATFORM__", "windows-trial"));
             WebviewWindowBuilder::new(app, "rebuild", WebviewUrl::App("index.html".into()))
                 .title(if file_records { "海风与布丁 · 文件记录试用" } else { "海风与布丁 · 重构集成试用" })
@@ -290,11 +361,13 @@ pub fn run() {
                 .on_page_load(|window, payload| {
                     if matches!(payload.event(), PageLoadEvent::Started) {
                         PAGE_READY.store(false, Ordering::SeqCst);
+                        PAGE_FINISHED.store(false, Ordering::SeqCst);
                         PAGE_SEQUENCE.fetch_add(1, Ordering::SeqCst);
+                        if let Ok(mut identity) = PAGE_IDENTITY.lock() { *identity = None; }
                     }
                     if matches!(payload.event(), PageLoadEvent::Finished) {
-                        PAGE_READY.store(true, Ordering::SeqCst);
-                        publish(&window);
+                        PAGE_FINISHED.store(true, Ordering::SeqCst);
+                        prepare_page(&window);
                     }
                 })
                 .build()?;
@@ -302,12 +375,20 @@ pub fn run() {
             if let Some(store) = native_store { records_bridge::start(app.handle().clone(), store, work_id)?; }
             let handle = app.handle().clone();
             std::thread::Builder::new().name("haifeng-host-state".into()).spawn(move || {
+                #[cfg(target_os = "windows")]
+                let _power_notifications = power_notifications;
                 while !STOP_HEARTBEAT.load(Ordering::SeqCst) {
+                    #[cfg(target_os = "windows")]
+                    let power_revision = power::revision();
                     if let Some(window) = handle.get_webview_window("rebuild") {
-                        publish(&window);
+                        if PAGE_READY.load(Ordering::SeqCst) { publish(&window); }
+                        else { prepare_page(&window); }
                     } else {
                         break;
                     }
+                    #[cfg(target_os = "windows")]
+                    power::wait(power_revision, Duration::from_secs(1));
+                    #[cfg(not(target_os = "windows"))]
                     std::thread::sleep(Duration::from_secs(1));
                 }
             })?;

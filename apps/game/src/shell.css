@@ -262,6 +262,16 @@ body.game-shell { overflow: hidden; background: #08191d; }
 .game-shell .save-actions { border-top: 1px solid #a7c2b329; padding: 20px 0; }
 .game-shell .save-actions h3 { margin: 0; color: #e9efdf; font-size: 20px; font-weight: 400; }
 .game-shell .save-actions p { margin: 8px 0 16px; font-size: 14px; color: #c0d0c2; }
+.game-shell .save-overwrite {
+  margin-top: 18px; padding: 18px; border: 1px solid #d4b67488; border-radius: 8px; background: #283d35;
+}
+.game-shell .save-overwrite h4 { margin: 0 0 12px; color: #f0dfb5; font-size: 19px; font-weight: 400; }
+.game-shell .save-overwrite p { overflow-wrap: anywhere; line-height: 1.7; }
+.game-shell .save-overwrite .save-overwrite-target { color: #f0dfb5; font-weight: 600; }
+.game-shell .save-overwrite .save-overwrite-excerpt { color: #dce8d5; white-space: pre-wrap; }
+.game-shell .save-overwrite-actions { align-items: stretch; margin-bottom: 0; }
+.game-shell .save-overwrite-actions button { min-height: 44px; flex: 1 1 11em; }
+.game-shell .save-overwrite-actions button:focus-visible { outline: 2px solid #7ee5e9; outline-offset: 3px; }
 .game-shell .save-voice { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin: 16px 0; }
 .game-shell .save-entry-actions {
   display: grid; grid-template-columns: 8em minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: 12px;

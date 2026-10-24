@@ -42,6 +42,10 @@ export interface SaveSlotPage {
   /** Opaque continuation address; scoped and checked again by the repository. */
   readonly next: string | null;
 }
+/** Read-only replacement prompt data. Not a write reservation or an adoptable checkpoint. */
+export type SaveTargetState =
+  | { readonly kind: "empty"; readonly slotId: string }
+  | { readonly kind: "occupied"; readonly slotId: string; readonly summary: Readonly<SaveSlotSummary> };
 
 export interface AtomicSaveStore {
   read(key: string): Promise<StoredSlot>;
@@ -151,6 +155,37 @@ export class SaveRepository {
     return stored.found ? this.inspect(stored.value, slotId) : null;
   }
 
+  async target(slot: string): Promise<SaveTargetState> {
+    const slotId = identifier(slot, "slotId");
+    const key = this.key(slotId);
+    // A storage error must propagate, never turn an unknown target into an empty slot.
+    const stored = await this.#store.read(key);
+    return stored.found
+      ? Object.freeze({ kind: "occupied", slotId, summary: this.summary(key, stored.value) })
+      : Object.freeze({ kind: "empty", slotId });
+  }
+
+  private summary(address: string, value: unknown): Readonly<SaveSlotSummary> {
+    let slotId: string | null = null;
+    try {
+      slotId = this.slotFromKey(address);
+      const inspected = this.inspect(value, slotId);
+      const { view, checkpoint, record } = inspected;
+      if (view.phase !== "ready" && view.phase !== "choosing") throw new SaveStorageError("SAVE_PHASE", "槽位不是稳定检查点");
+      return Object.freeze({
+        kind: "readable", slotId, savedAt: record.savedAt, nodeId: view.nodeId, chapter: view.chapter,
+        speaker: view.presentation.speaker, text: view.presentation.text, phase: view.phase,
+        choiceRemainingMs: checkpoint.timing.choiceRemainingMs,
+      });
+    } catch (error: unknown) {
+      return Object.freeze({
+        kind: "unreadable", slotId, address,
+        code: error instanceof ContentError ? error.diagnostic.code : error instanceof SaveStorageError ? error.code : "SAVE_RECORD",
+        message: error instanceof Error ? error.message : "槽位数据无法读取",
+      });
+    }
+  }
+
   async list(options: { after: string | null; limit: number }): Promise<SaveSlotPage> {
     if (!Number.isSafeInteger(options.limit) || options.limit < 1 || options.limit > 100) {
       throw new SaveStorageError("SAVE_PAGE", "每页需要 1～100 个槽位");
@@ -170,24 +205,7 @@ export class SaveRepository {
         throw new SaveStorageError("SAVE_PAGE", "存储返回了范围外或乱序槽位");
       }
       previous = entry.key;
-      let slotId: string | null = null;
-      try {
-        slotId = this.slotFromKey(entry.key);
-        const inspected = this.inspect(entry.value, slotId);
-        const { view, checkpoint, record } = inspected;
-        if (view.phase !== "ready" && view.phase !== "choosing") throw new SaveStorageError("SAVE_PHASE", "槽位不是稳定检查点");
-        items.push(Object.freeze({
-          kind: "readable", slotId, savedAt: record.savedAt, nodeId: view.nodeId, chapter: view.chapter,
-          speaker: view.presentation.speaker, text: view.presentation.text, phase: view.phase,
-          choiceRemainingMs: checkpoint.timing.choiceRemainingMs,
-        }));
-      } catch (error: unknown) {
-        items.push(Object.freeze({
-          kind: "unreadable", slotId, address: entry.key,
-          code: error instanceof ContentError ? error.diagnostic.code : error instanceof SaveStorageError ? error.code : "SAVE_RECORD",
-          message: error instanceof Error ? error.message : "槽位数据无法读取",
-        }));
-      }
+      items.push(this.summary(entry.key, entry.value));
     }
     return Object.freeze({ items: Object.freeze(items), next: page.next });
   }

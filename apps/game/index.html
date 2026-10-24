@@ -123,8 +123,9 @@
         <section id="save-slots" aria-label="手动存档槽位选择与目录"></section>
         <section class="save-actions" aria-labelledby="save-current-heading">
           <h3 id="save-current-heading">保存当前进度</h3>
-          <p>保存到当前游玩入口选中的名称；已有同名进度会被替换。</p>
+          <p>保存到当前游玩入口选中的名称；已有记录时会显示原目标与本次进度，确认覆盖后才写入。</p>
           <button type="button" id="save-checkpoint" disabled>保存当前检查点</button>
+          <section id="save-overwrite" class="save-overwrite" hidden></section>
         </section>
         <section id="pending-saves" class="save-actions" aria-labelledby="pending-saves-heading" hidden>
           <h3 id="pending-saves-heading">尚未完成的手动存档</h3>

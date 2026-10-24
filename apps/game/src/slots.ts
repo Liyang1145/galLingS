@@ -78,7 +78,7 @@ export class SaveSlots {
     this.#status.setAttribute("role", "status");
     this.#status.setAttribute("aria-live", "polite");
     const note = element("p",
-      "名称先用于选择目标，点击“保存”才写入。已有同名槽位会被本次手动保存替换；第一话与限时样例分别保存，查看或选择目录项不会读档。");
+      "名称先用于选择目标，点击“保存”后重新检查原槽位；已有记录需确认覆盖。第一话与限时样例分别保存，查看或选择目录项不会读档。");
     note.className = "help";
     options.root.classList.add("save-slots");
     options.root.append(namespace, form, this.#selection, note, this.#status, this.#rows, pager);
@@ -236,7 +236,7 @@ export class SaveSlots {
       if (item.slotId === null) row.append(element("code", item.address));
       row.append(element("small", item.slotId === null
         ? "地址无法识别，不能选择；原记录保留。"
-        : "原记录保留。选择只更改目标；手动保存到同名槽位会替换原记录。"));
+        : "原记录保留。选择只更改目标；手动保存到同名槽位仍须确认覆盖原记录。"));
     }
     if (item.slotId !== null) {
       const slotId = item.slotId;

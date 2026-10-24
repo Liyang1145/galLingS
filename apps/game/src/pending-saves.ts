@@ -91,7 +91,7 @@ export class PendingSavesPanel {
       row.retry.disabled = this.#options.blocked() || view.state !== "failed" || !location;
     }
     this.#options.root.hidden = this.#rows.size === 0;
-    text(this.#status, this.#rows.size ? `进行中 ${pending} 项 · 未提交 ${failed} 项。重试不采用当前游玩位置或后来选中的名称。` : "");
+    text(this.#status, this.#rows.size ? `进行中 ${pending} 项 · 未取得完成确认 ${failed} 项。重试不采用当前游玩位置或后来选中的名称。` : "");
   }
 
   private remove(key: string, row: Row): void {

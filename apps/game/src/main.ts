@@ -35,6 +35,7 @@ import {
 import { StoryReadout } from "../../../packages/player/src/readout.ts";
 import { connectButtonSounds } from "../../../packages/player/src/web/button-sounds.ts";
 import { PreferencesPanel } from "./preferences.ts";
+import { SaveOverwritePrompt } from "./save-overwrite.ts";
 import { applyAuthorAppearance, connectTitleCover } from "../../../packages/player/src/web/appearance.ts";
 import { ChoicePanel } from "../../../packages/player/src/web/choices.ts";
 import { connectStageLayout } from "../../../packages/player/src/web/stage-layout.ts";
@@ -227,6 +228,7 @@ async function main(): Promise<void> {
   });
   const entryName = (entry: Entry): string => entry === "main" ? "正常游玩" : "限时选择样例";
   let saving = false;
+  let savePreparation: AbortController | null = null;
   let storageMessageEpoch = 0;
   let closed = false;
   let ready = false;
@@ -255,6 +257,9 @@ async function main(): Promise<void> {
   let soundPanel: SoundLibraryPanel | null = null;
   let chapterPanel: ChapterPanel | null = null;
   let dialoguePanel: DialoguePanel | null = null;
+  const overwritePrompt = new SaveOverwritePrompt(
+    element("save-overwrite", HTMLElement), element("checkpoint-heading", HTMLElement),
+  );
   const pendingSaves = new PendingSavesPanel({
     root: element("pending-saves", HTMLElement), fallback: element("checkpoint-heading", HTMLElement),
     blocked: () => closed || exiting || saving || entryPreparation === entryRequest,
@@ -268,7 +273,7 @@ async function main(): Promise<void> {
   const slots = new SaveSlots({
     root: element("save-slots", HTMLElement), repositories: saves, label: entryName,
     scope: () => panels?.signalFor("saves") ?? null,
-    blocked: () => closed || exiting || entryPreparation === entryRequest || !panels?.signalFor("saves"),
+    blocked: () => closed || exiting || savePreparation !== null || entryPreparation === entryRequest || !panels?.signalFor("saves"),
     changed: () => { resetSaveMessage(); refreshSaveControls(); },
   });
   const audioRepository = new AudioPreferenceRepository(content.workId, { kind: "development", id: "normal-entry" },
@@ -447,6 +452,7 @@ async function main(): Promise<void> {
     if (closed || signal.aborted) throw new Error("页面已离开或退出已取消");
     if (exiting) throw new Error("已有退出请求");
     exiting = true;
+    savePreparation?.abort();
     stageFade?.cancel();
     dialogFade?.cancel();
     fullscreen?.refresh();
@@ -754,7 +760,7 @@ async function main(): Promise<void> {
   }
 
   function refreshSaveControls(view?: SessionView): void {
-    const blocked = closed || exiting || entryPreparation === entryRequest;
+    const blocked = closed || exiting || savePreparation !== null || entryPreparation === entryRequest;
     save.disabled = blocked || saving || mode === "chapter" || !(view ?? session?.view())?.canCheckpoint;
     save.textContent = mode === "chapter" ? "章节试阅不写入存档槽位"
       : `保存${entryName(mode)}到 ${JSON.stringify(slots.slot(mode))}`;
@@ -798,6 +804,7 @@ async function main(): Promise<void> {
 
   async function start(selected: Entry | ChapterEntry, restore?: { voice: RestoreVoice; slotId: string }): Promise<void> {
     if (exiting || closed) return;
+    savePreparation?.abort();
     const entry: PlayEntry = typeof selected === "string" ? selected : "chapter";
     const request = ++entryRequest;
     entryPreparation = request;
@@ -946,6 +953,7 @@ async function main(): Promise<void> {
 
   function home(): void {
     if (exiting || closed) return;
+    savePreparation?.abort();
     dialogFade?.cancel();
     stageFade?.begin();
     entryRequest++;
@@ -1029,23 +1037,50 @@ async function main(): Promise<void> {
     const slotId = slots.slot(entry);
     const savedPresentation = presentation;
     const request = ++storageMessageEpoch;
+    const preparation = new AbortController();
+    savePreparation = preparation;
+    scope.addEventListener("abort", () => preparation.abort(), { once: true, signal: preparation.signal });
+    let cancelWait: () => void = () => {};
+    const cancelled = new Promise<never>((_resolve, reject) => {
+      cancelWait = () => reject(new Error("原保存准备已取消，尚未发起进度写入"));
+      preparation.signal.addEventListener("abort", cancelWait, { once: true });
+    });
+    const currentPreparation = (): boolean => savePreparation === preparation && !preparation.signal.aborted
+      && owner === session && mode === entry && !owner.view().disposed
+      && entryPreparation !== entryRequest && currentSaveFeedback(request, scope);
     let feedbackRequest = request;
     let feedbackScope = scope;
+    let writeStarted = false;
     saving = true;
-    save.disabled = true;
     saveDetails.hidden = true;
-    saveMessage.textContent = `正在保存${entryName(entry)}到 ${JSON.stringify(slotId)}……`;
+    saveMessage.textContent = `正在准备${entryName(entry)} ${JSON.stringify(slotId)} 的本次检查点，尚未写入进度……`;
+    refreshSaveControls();
     try {
-      const capture = owner.captureCheckpoint(owner.view().token);
-      let payload: { checkpoint: GameCheckpoint; savedAt: number } | null = null;
+      const captured = await Promise.race([owner.captureCheckpoint(owner.view().token), cancelled]);
+      if (!currentPreparation()) return;
+      if (!captured.accepted) throw new Error(`${captured.code}：${captured.message}`);
+      const payload = { checkpoint: captured.checkpoint, savedAt: Date.now() };
+      saveMessage.textContent = `正在重新检查${entryName(entry)} ${JSON.stringify(slotId)} 是否已有记录，尚未写入进度……`;
+      const target = await Promise.race([saves[entry].target(slotId), cancelled]);
+      if (!currentPreparation()) return;
+      if (target.kind === "occupied") {
+        saveMessage.textContent = `原槽位 ${JSON.stringify(slotId)} 已有记录，请确认是否用本次捕获的进度覆盖。`;
+        const accepted = await overwritePrompt.ask({
+          entryLabel: entryName(entry), target, nodeId: payload.checkpoint.story.nodeId, savedAt: payload.savedAt,
+        }, preparation.signal);
+        if (!currentPreparation()) return;
+        if (!accepted) {
+          saveMessage.textContent = `已取消这次保存；未发起对${entryName(entry)} ${JSON.stringify(slotId)} 的进度写入。`;
+          return;
+        }
+      }
+      if (!currentPreparation()) return;
+      // Acceptance belongs to this captured target/payload. Subsequent selection or close cannot retarget it.
+      savePreparation = null;
+      saveMessage.textContent = `正在保存${entryName(entry)}到原槽位 ${JSON.stringify(slotId)}……`;
+      refreshSaveControls();
       const key = JSON.stringify(["progress", entry, slotId]);
       const tracked = writes.track(key, async () => {
-        if (!payload) {
-          const result = await capture;
-          if (!result.accepted) throw new Error(`${result.code}：${result.message}`);
-          payload = { checkpoint: result.checkpoint, savedAt: Date.now() };
-          refreshPendingSaves();
-        }
         if (entry === "main") await flushRecords();
         const inspected = await saves[entry].save(slotId, payload.checkpoint, payload.savedAt);
         // Catalogue, display and optional audio observers cannot reject a committed write.
@@ -1065,10 +1100,11 @@ async function main(): Promise<void> {
             `${entryName(entry)}进度已保存到 ${JSON.stringify(slotId)}；界面刷新未完成：${error instanceof Error ? error.message : "显示错误"}。可再次查看原槽位。`;
         }
       }, `${entryName(entry)} · 槽位 ${JSON.stringify(slotId)}`);
+      writeStarted = true;
       try {
         pendingSaves.register(key, {
           view: () => tracked.view(),
-          location: () => payload ? { nodeId: payload.checkpoint.story.nodeId, savedAt: payload.savedAt } : null,
+          location: () => ({ nodeId: payload.checkpoint.story.nodeId, savedAt: payload.savedAt }),
           retry: () => {
             void retryProgressSave(tracked, (epoch, scope) => { feedbackRequest = epoch; feedbackScope = scope; });
           },
@@ -1079,9 +1115,15 @@ async function main(): Promise<void> {
       await tracked.result;
     } catch (error: unknown) {
       if (currentSaveFeedback(feedbackRequest, feedbackScope)) {
-        saveMessage.textContent = `保存未取得完成确认：${error instanceof Error ? error.message : "未知存储错误"}。可在“尚未完成的手动存档”中重试原操作或查看原槽位；原槽位未先删除。`;
+        saveMessage.textContent = writeStarted
+          ? `保存未取得完成确认：${error instanceof Error ? error.message : "未知存储错误"}。可在“尚未完成的手动存档”中重试原操作或查看原槽位；原槽位未先删除。`
+          : preparation.signal.aborted ? "已取消尚未采用的保存准备；这次没有发起进度写入。"
+            : `保存准备未完成：${error instanceof Error ? error.message : "检查失败"}。这次没有发起进度写入，请在稳定位置重新点击保存。`;
       }
     } finally {
+      if (savePreparation === preparation) savePreparation = null;
+      preparation.signal.removeEventListener("abort", cancelWait);
+      preparation.abort();
       saving = false;
       if (!closed) refreshSaveControls();
     }
@@ -1113,7 +1155,7 @@ async function main(): Promise<void> {
 
   async function inspectSaved(entry: Entry): Promise<void> {
     const scope = panels?.signalFor("saves");
-    if (!scope || scope.aborted || exiting || closed || entryPreparation === entryRequest) return;
+    if (!scope || scope.aborted || savePreparation || exiting || closed || entryPreparation === entryRequest) return;
     const slotId = slots.slot(entry);
     const request = ++storageMessageEpoch;
     saveDetails.hidden = true;
@@ -1435,6 +1477,8 @@ async function main(): Promise<void> {
   document.addEventListener("visibilitychange", visibility);
   const dispose = (): void => {
     closed = true;
+    savePreparation?.abort();
+    overwritePrompt.dispose();
     unsubscribePendingSaves();
     pendingSaves.dispose();
     menuFocus?.dispose();

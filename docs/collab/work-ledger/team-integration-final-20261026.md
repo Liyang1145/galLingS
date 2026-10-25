@@ -41,6 +41,7 @@
 - check_player_progress.py：11 项全部通过，errors=[]；默认 ghost 0.55、刷新音频位置、环境音、自动/手动档、稳定 ID 与保存失败保护通过。
 - 内容机械审计：18 张现行静态图/279 处采用、29 处撤回保持；824 条语音、前两话 150 句、945 个音频逐 SHA、16 首在用 BGM 通过；L15/C20 与 B02T C/F3 不变。
 - Windows 运行资源计划：1223 个文件；6 项打包边界测试通过，nnnVideosIncluded=false、nnnLive2DIncluded=false、rebuildIncluded=false。
+- 桌面兼容修正：当前 server CLI 仅接受 --port，桌面不再传入 --host；监听地址仍由服务端配置/默认 127.0.0.1 决定，端口回退与 Windows Job Object 不变。该修正以独立后续提交保存，不重写首次整合提交。
 - 上述均为源码、功能与机械检查，不宣称重新完成全作人工听审或美术验收。桌面 CI、EXE 实机与最终 ZIP 校验在外部交付记录中继续核验。
 
 ## 下一位 agent 的接续点

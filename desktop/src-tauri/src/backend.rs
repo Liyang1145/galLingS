@@ -218,8 +218,7 @@ pub fn ensure_python_backend(app: &AppHandle) -> Option<String> {
         "-m",
         "server",
         "--no-browser",
-        "--host",
-        "127.0.0.1",
+        // 当前 server 的 CLI 只接受 --port；监听地址由服务端配置/默认值决定。
         "--port",
         &port.to_string(),
     ])

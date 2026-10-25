@@ -191,7 +191,7 @@ const labelIndex = name => P.lines.findIndex(l => l.label === name);
 function blank() {
   return { v: 3, id: uid(), title: '', assets: {}, recent: { bg: [], ch: [], au: [] }, lines: [mkLine()], cur: 0,
            vars: [], chars: [], plugins: [],
-           settings: { tip: 'brief', ghost: 0.35, speed: 30, link: true, dlg: 'ghost', vbgm: 0.25, vse: 0.8, vamb: 0.8, vvo: 1, autoMul: 1, skipRead: true, focus: true, agentProvider: 'mock', agentUrl: '', pluginData: {}, bw: 110, tlh: 260, trk: { hide: {}, lock: {} } } };
+           settings: { tip: 'brief', ghost: 0.55, speed: 30, link: true, dlg: 'ghost', vbgm: 0.25, vse: 0.8, vamb: 0.8, vvo: 1, autoMul: 1, skipRead: true, focus: true, agentProvider: 'mock', agentUrl: '', pluginData: {}, bw: 110, tlh: 260, trk: { hide: {}, lock: {} } } };
 }
 const VN_VERSION = '0.20.0';
 const studioEditor = !!window.VN_EDITOR || new URLSearchParams(location.search).get('editor') === '1';
@@ -626,7 +626,10 @@ function stageShot(line, editable) {
   }, () => {});
 }
 function renderStage(line, editable) {
-  const backdrop=A(line.bg);stage.dataset.light=backdrop?.lighting||(/夜/.test(backdrop?.name||'')?'night':'');stage.dataset.library=backdrop?.libraryAsset?'true':'false';
+  const backdrop=A(line.bg);stage.dataset.light=backdrop?.lighting||(/夜/.test(backdrop?.name||'')?'night':'');
+  const dim = /night|underwater/.test(stage.dataset.light) || /dark|underwater/.test(line.mood || '');
+  const reading = dim && (backdrop?.sceneFit?.warmth || 0) > .25 ? 'warm' : dim ? 'dim' : 'day';
+  if (stage.dataset.reading !== reading) stage.dataset.reading = reading;stage.dataset.library=backdrop?.libraryAsset?'true':'false';
   bgEl.style.backgroundSize=backdrop?.view?.size||'';bgEl.style.backgroundPosition=backdrop?.view?.position||'';
   const hideBg = editable && hiddenLane('bg');
   stage.dataset.mood = (editable && hiddenLane('mood')) ? '' : (line.mood || '');
@@ -715,7 +718,7 @@ function renderDialog() {
   if (document.activeElement !== $('#tx')) $('#tx').value = l.text;
   $('#nm').style.color = charOf(l.speaker)?.color || '';
   stage.dataset.dlg = P.settings.dlg;
-  document.documentElement.style.setProperty('--ghost', Math.max(.35, Math.min(.95, +(pref('ghost') ?? .35))));
+  document.documentElement.style.setProperty('--ghost', Math.max(.35, Math.min(.95, +(pref('ghost') ?? .55))));
 }
 /* ========== 多轨时间轴（参考剪辑软件） ========== */
 // 横向一格 = 一“节”（一句台词）。上：立绘轨（每个角色一条）；中：文本轨；下：场景、音乐、音效轨。
@@ -1789,6 +1792,7 @@ function syncGlobals() {
 const RT = { idx: 0, vars: {}, varsBefore: {}, back: [], auto: false, skip: false, chat: null, timer: null, onTyped: null };
 let playing = false, typer = null, full = '', lastShown = null;
 function startPlay(fromIdx, state) {
+  clearTimeout(progressTimer); progressActive = true;
   playing = true; selUid = null;
   document.activeElement?.blur();
   document.body.classList.add('playing'); stage.classList.remove('hideui'); hideOverlays(); clearTimers(); fit();
@@ -1807,6 +1811,8 @@ function startPlay(fromIdx, state) {
   showPlay(true);
 }
 function stopPlay() {
+  if (progressActive) { void saveProgress('exit'); progressActive = false; }
+  clearTimeout(progressTimer);
   if (RT.chat && !RT.chat.ending) { RT.chat.ending = true; VNPlugins.emit('chat:end', RT.chat); }
   VNPlugins.emit('stop');
   stopChoiceTimer(); stopAmb(); clearStageShot();
@@ -1870,6 +1876,7 @@ function showPlay(first) {
   const stats = pref('showStats') && SAVE_POINT_RE.test(l.text || '') ? statsText() : '';
   typeText(stats ? shown + '　' + stats : shown, () => afterText(l), l.typeMul, l.holdMs);
   warmUpcomingSprites(RT.idx);
+  scheduleProgressSave(l);
 }
 // fix9：好感数值默认不显示；设置里打开后，章末“存档点”句子后面追加当前值
 const SAVE_POINT_RE = /^【[^】]*完[^】]*】\s*存档点/;
@@ -1988,7 +1995,7 @@ function showGallery(tab = 'cg') {
   box.onclick = e => { e.stopPropagation(); if (e.target === box) box.classList.remove('show'); };
 }
 function advance() {
-  if (!playing || overlayOpen()) return;
+  if (!playing || progressLeaving || overlayOpen()) return;
   if (typer) return finishTyping();
   if (RT.chat) {                                  // Agent 对话：结束后才能往下
     if (!RT.chat.ending) return;
@@ -2116,7 +2123,7 @@ $('#pctl').addEventListener('click', e => {
   if (a === 'hide') setHideUI(true);
   if (a === 'save' || a === 'load') showSlots(a);
   if (a === 'set') showPrefs();
-  if (a === 'exit') stopPlay();
+  if (a === 'exit') return leaveForTitle();
   if (a === 'auto' || a === 'skip') { RT[a] = !RT[a]; RT[a === 'auto' ? 'skip' : 'auto'] = false; if (RT.skip) VN_FADE.cancel(); updPctl(); kick(); }
 });
 $('#soulTab').addEventListener('click', e => { e.stopPropagation(); if ($('#soul').classList.contains('show')) hideSoul(); else showSoul(); });
@@ -2185,12 +2192,121 @@ function miniScene(el, l) {
   });
 }
 const saveKey = () => 'saves:' + P.id;
+const recoveryKey = () => 'vncontinue:' + P.id;
+let progressActive = false, progressLeaving = false, progressTimer = null, titleProgressToken = 0;
+let playerSaveQueue = Promise.resolve(), progressWarned = false;
+// Manual slots and the independent auto slot share one serialized read/modify/write.
+// Keeping the same key/shape also lets the galcore bridge attach its snapshot.
+function updatePlayerSaves(change) {
+  const key = saveKey();
+  const pending = playerSaveQueue.catch(() => false).then(async () => {
+    const saves = (await idbGet(key)) || {};
+    change(saves);
+    return idbSet(key, saves);
+  }).catch(() => false);
+  playerSaveQueue = pending;
+  return pending;
+}
+function capturePlayerSave(reason) {
+  const l = P.lines[RT.idx];
+  return { time: Date.now(), saveId: Date.now().toString(36) + '-' + Math.random().toString(36).slice(2), idx: RT.idx, lineId: l.id, vars: clone(RT.varsBefore || RT.vars),
+    back: clone(RT.back.slice(-100)), soul: RT.soul ? clone(RT.soul) : undefined,
+    text: l.text || '', bg: l.bg, audio: captureAudioState(), reason };
+}
+function validPlayerSave(s) {
+  return !!s && typeof s === 'object' && typeof s.lineId === 'string' && P.lines.some(l => l.id === s.lineId);
+}
+function readRecovery() {
+  try { const s = JSON.parse(localStorage.getItem(recoveryKey()) || 'null'); return validPlayerSave(s) ? s : null; }
+  catch (e) { return null; }
+}
+function stashProgress(s) {
+  try { localStorage.setItem(recoveryKey(), JSON.stringify(s)); return true; }
+  catch (e) { return false; }
+}
+function flushReadRecord() {
+  clearTimeout(readT);
+  try { localStorage.setItem('vnread:' + P.id, JSON.stringify([...READ])); } catch (e) {}
+}
+async function saveProgress(reason = 'reading') {
+  clearTimeout(progressTimer);
+  if (!gameMode || !progressActive || !P.lines[RT.idx]) return true;
+  const s = capturePlayerSave(reason), recovery = recoveryKey();
+  // Synchronous recovery survives a refresh while IndexedDB is still committing.
+  const fallback = stashProgress(s);
+  const ok = await updatePlayerSaves(saves => { saves.auto = s; });
+  if (ok) {
+    // Preserve a newer recovery written while this transaction was in flight.
+    try { const current = JSON.parse(localStorage.getItem(recovery) || 'null'); if (current?.saveId === s.saveId) localStorage.removeItem(recovery); } catch (e) {}
+  }
+  if (ok || fallback) {
+    progressWarned = false;
+    if (reason === 'chapter' && progressActive && P.lines[RT.idx]?.id === s.lineId) pluginToast('进度已自动保存');
+    return true;
+  }
+  if (!progressWarned) { progressWarned = true; pluginToast('自动保存未成功，请先手动存档'); }
+  return false;
+}
+function scheduleProgressSave(l) {
+  if (!gameMode || !progressActive) return;
+  clearTimeout(progressTimer);
+  const reason = SAVE_POINT_RE.test(l.text || '') ? 'chapter' : l.ending ? 'ending' : l.choices.length ? 'choice' : 'reading';
+  if (reason !== 'reading') { void saveProgress(reason); return; }
+  // No thumbnail work during play; rapid skipping coalesces into the latest line.
+  progressTimer = setTimeout(() => { void saveProgress(); }, 650);
+}
+async function continueSave() {
+  await playerSaveQueue;
+  const saves = (await idbGet(saveKey())) || {};
+  return [...Object.values(saves), readRecovery()].filter(validPlayerSave).sort((a, b) => b.time - a.time)[0] || null;
+}
+function loadPlayerSave(s) {
+  const i = P.lines.findIndex(l => l.id === s?.lineId);
+  if (i >= 0) startPlay(i, s);
+}
+function startNewGame(ask) {
+  if (ask && !confirm('从头开始游戏？自动进度会从新一局重新记录，手动存档会保留。')) return;
+  const entry = P.lines.findIndex(l => l.chapter); startPlay(entry >= 0 ? entry : 0);
+}
+async function leaveForTitle() {
+  if (!gameMode) return stopPlay();
+  if (progressLeaving) return;
+  progressLeaving = true; clearTimeout(RT.timer); RT.timer = null;
+  try {
+    const ok = await saveProgress('exit');
+    flushReadRecord();
+    if (!ok && !confirm('进度未能自动保存。仍要返回标题吗？选择取消可留在游戏中手动存档。')) { kick(); return; }
+    progressActive = false; stopPlay();
+  } finally { progressLeaving = false; }
+}
+function stashOnLeave(e) {
+  if (!gameMode || !progressActive) return;
+  clearTimeout(progressTimer); flushReadRecord();
+  const ok = stashProgress(capturePlayerSave('close'));
+  if (!ok && e.type === 'beforeunload') { e.preventDefault(); e.returnValue = ''; }
+}
+window.addEventListener('beforeunload', stashOnLeave);
+window.addEventListener('pagehide', stashOnLeave);
 async function showSlots(mode) {
   clearTimeout(RT.timer); RT.timer = null; RT.auto = RT.skip = false; updPctl();
+  await playerSaveQueue;
   const saves = (await idbGet(saveKey())) || {}, box = $('#slots');
+  const auto = [saves.auto, readRecovery()].filter(validPlayerSave).sort((a, b) => b.time - a.time)[0];
   VN_FADE.begin(); // 异步读取完成后、真正替换列表前再采样。
-  box.innerHTML = '<header class="panel-heading"><small>旅途记录</small><h2>' + (mode === 'save' ? '保存进度' : '读取进度') + '</h2><p>' + (mode === 'save' ? '选一个位置，把这一刻留下。' : Object.keys(saves).length ? '回到上次停下的地方。' : '还没有保存的进度。开始游戏后，随时可以存档。') + '</p></header><div class="grid2"></div>';
+  box.innerHTML = '<header class="panel-heading"><small>旅途记录</small><h2>' + (mode === 'save' ? '保存进度' : '读取进度') + '</h2><p>' + (mode === 'save' ? '选一个位置，把这一刻留下。自动进度另行保留，不占手动存档。' : auto || Object.values(saves).some(validPlayerSave) ? '回到上次停下的地方。' : '还没有保存的进度。开始游戏后会自动记录，也可以手动存档。') + '</p></header><div class="grid2"></div>';
   const g = box.querySelector('.grid2');
+  if (mode === 'load' && (auto || Object.values(saves).some(validPlayerSave))) {
+    const restart = document.createElement('button'); restart.type = 'button'; restart.className = 'save-restart'; restart.textContent = '从头开始';
+    restart.onclick = e => { e.stopPropagation(); startNewGame(true); };
+    box.querySelector('.panel-heading').appendChild(restart);
+  }
+  if (mode === 'load' && auto) {
+    const resume = document.createElement('button'); resume.className = 'resume-save'; resume.type = 'button';
+    const i = P.lines.findIndex(l => l.id === auto.lineId);
+    resume.innerHTML = '<b>自动保存 · 继续游戏</b><small>' + esc(chapterAt(i)) + '</small><span>' + esc((auto.text || '').slice(0, 48)) + '</span><time>' + esc(new Date(auto.time).toLocaleString()) + '</time>';
+    resume.onclick = e => { e.stopPropagation(); loadPlayerSave(auto); };
+    box.insertBefore(resume, g);
+  }
   for (let k = 1; k <= 6; k++) {
     const s = saves[k], d = document.createElement('button'); d.type = 'button'; d.className = 'slot' + (s ? '' : ' empty'); d.disabled = !s && mode === 'load';
     if (s?.thumb) d.style.backgroundImage = cssUrl(s.thumb);
@@ -2204,9 +2320,9 @@ async function showSlots(mode) {
       if (mode === 'save') {
         if (s && !confirm('覆盖存档 ' + String(k).padStart(2, '0') + '？原进度会被替换。')) return;
         d.disabled = true;
-        const l = P.lines[RT.idx];
-        saves[k] = { time: Date.now(), idx: RT.idx, lineId: l.id, vars: clone(RT.varsBefore), back: RT.back.slice(-100), soul: RT.soul ? clone(RT.soul) : undefined, text: l.text || '', bg: l.bg, thumb: await makeThumb(l), audio:captureAudioState() };
-        const ok = await idbSet(saveKey(), saves);
+        const l = P.lines[RT.idx], state = capturePlayerSave('manual');
+        state.thumb = await makeThumb(l);
+        const ok = await updatePlayerSaves(current => { current[k] = state; });
         if (!ok) alert('存档失败：浏览器存储不可用'); else playUi('save');
         showSlots('save');
       } else if (s) {
@@ -2221,6 +2337,8 @@ async function showSlots(mode) {
   box.onclick = e => { e.stopPropagation(); if (e.target === box) box.classList.remove('show'); };
 }
 function showTitle() {
+  progressActive = false; clearTimeout(progressTimer);
+  const progressToken = ++titleProgressToken;
   playing = true; document.body.classList.add('playing'); hideOverlays(); clearTimers(); stopAllAudio(); stopTick(); stopChoiceTimer();
   RT.chat = null; $('#pin').classList.remove('show'); $('#choices').className = ''; $('#soulTab').classList.remove('show');
   const t = $('#title'), first = P.lines[0];
@@ -2235,7 +2353,15 @@ function showTitle() {
   t.insertAdjacentHTML('beforeend', '<p class="play-help">点击 / 空格 继续　·　滚轮上翻 回看　·　H 隐藏界面</p>');
   t.querySelector('[data-t=gal]')?.addEventListener('click', e => { e.stopPropagation(); showGallery(); });
   t.querySelector('h1').textContent = P.title || '';
-  t.querySelector('[data-t=start]').onclick = e => { e.stopPropagation(); const entry=P.lines.findIndex(l=>l.chapter);startPlay(entry>=0?entry:0); };
+  t.querySelector('[data-t=start]').onclick = e => { e.stopPropagation(); startNewGame(false); };
+  continueSave().then(s => {
+    if (!s || progressToken !== titleProgressToken || !t.classList.contains('show')) return;
+    const button = t.querySelector('[data-t=start]'); button.textContent = '继续游戏';
+    button.onclick = e => { e.stopPropagation(); loadPlayerSave(s); };
+    const restart = document.createElement('button'); restart.type = 'button'; restart.className = 'restart-link'; restart.textContent = '从头开始';
+    restart.onclick = e => { e.stopPropagation(); startNewGame(true); };
+    t.querySelector('.play-help')?.appendChild(restart);
+  });
   t.querySelector('[data-t=load]').onclick = e => { e.stopPropagation(); showSlots('load'); };
   t.querySelector('[data-t=chapters]').onclick=e=>{e.stopPropagation();showChapterReview();};
   t.querySelector('[data-t=audio]').onclick=e=>{e.stopPropagation();showAudioLibrary();};
@@ -2891,7 +3017,7 @@ document.addEventListener('keydown', e => {
     if (e.key === 'Escape') {
       const open = [...document.querySelectorAll('.ovl.show')].filter(o => o.id !== 'title');
       if (open.length) { open.forEach(o => o.classList.remove('show')); return kick(); }
-      if (!$('#title').classList.contains('show') || !gameMode) stopPlay();
+      if (!$('#title').classList.contains('show') || !gameMode) void leaveForTitle();
       return;
     }
     if (overlayOpen() || ([' ', 'Enter'].includes(e.key) && e.target.closest('button,summary,[role=button]'))) return;
@@ -3467,7 +3593,7 @@ if (HOSTED) {
     setPref(k, v) { const sc = PREF_SCHEMA().find(x => x.k === k); if (!sc) return; if (k === 'voiceEnabled') setVoiceEnabled(v); else setPref(k, sc.inv ? sc.inv - v : v); SOUL_REV++; soulTabUpd(); },
     save() { if (playing) showSlots('save'); },
     load() { showSlots('load'); },
-    title() { if (playing) stopPlay(); },
+    title() { if (playing) return leaveForTitle(); },
     forget() { if (playing) soulForget(); },
     connect() { soulSock.close(); return soulSock.open(); },
     plugins: () => VNPlugins.list().map(p => ({ id: p.id, name: p.name, version: p.version, src: p.src, enabled: p.enabled, error: p.error })),

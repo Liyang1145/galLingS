@@ -68,6 +68,7 @@
 - [local-scene-audio-assembly.md](local-scene-audio-assembly.md) — 本地场景与音频成果提交
 
 ## 引擎、打包、整合
+- [team-integration-final-20261026.md](team-integration-final-20261026.md) — 10-26 队友成果选择性整合：阅读/进度保护、桌面启动与 Windows 便携打包；排除 rebuild、nnn 视频与 Live2D
 - [promo-trailer-demo-integration-20261024.md](promo-trailer-demo-integration-20261024.md) — 10-24 多分支合流整合（fix/character-performance + memory-provenance + linux + main）、原创 1080p60 宣传片与可提交 Demo 全套打包
 - [linux-port-20261023.md](linux-port-20261023.md) — 10-23 Linux 平台支持（start.sh、Tauri deb/AppImage、Steam Linux depot 与本地存档 XDG 路径）
 - [cg-loop-animations-20261023.md](cg-loop-animations-20261023.md) — 10-23 27 段无缝循环 CG 视频动画接入舞台与鉴赏

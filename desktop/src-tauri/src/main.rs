@@ -8,6 +8,8 @@
 mod backend;
 mod host_api;
 mod tools;
+#[cfg(windows)]
+mod windows_job;
 
 use std::fs::File;
 use std::io::{Read, Seek, SeekFrom};
@@ -16,7 +18,7 @@ use std::path::{Component, Path, PathBuf};
 use tauri::http::{header, Request, Response, StatusCode};
 use tauri::{AppHandle, WebviewUrl, WebviewWindowBuilder, WindowEvent};
 
-use crate::backend::{ensure_python_backend, stop_python_server};
+use crate::backend::{ensure_python_backend, has_startup_issue, startup_diagnostic_script, stop_python_server};
 use crate::host_api::{handle_host, resolve_game_root};
 
 fn mime(p: &Path) -> &'static str {
@@ -65,6 +67,11 @@ fn resolve(root: &Path, url_path: &str) -> Option<PathBuf> {
 }
 
 fn respond(app: &AppHandle, root: &Path, req: &Request<Vec<u8>>) -> Response<Vec<u8>> {
+    if req.uri().path() == "/__desktop_startup.html" {
+        return Response::builder().header(header::CONTENT_TYPE, "text/html; charset=utf-8")
+            .header(header::CACHE_CONTROL, "no-store")
+            .body(b"<!doctype html><meta charset=utf-8><title>galLingS</title><style>body{background:#101c26;color:#e8f6fa;font:18px sans-serif;padding:120px 24px}</style><p>galLingS</p>".to_vec()).unwrap();
+    }
     if req.uri().path().starts_with("/__host/") {
         return handle_host(app, req);
     }
@@ -156,12 +163,19 @@ fn main() {
             #[cfg(not(windows))]
             let fallback_url = "app://localhost/vn.html?steam=1".to_string();
 
-            let url = ensure_python_backend(app.handle()).unwrap_or(fallback_url);
+            let online = ensure_python_backend(app.handle());
+            let url = online.unwrap_or_else(|| {
+                if has_startup_issue() && !resolve_game_root(app.handle()).join("vn.html").is_file() {
+                    fallback_url.replace("vn.html?steam=1", "__desktop_startup.html")
+                } else { fallback_url }
+            });
             WebviewWindowBuilder::new(app, "main", WebviewUrl::External(url.parse().unwrap()))
                 .title("海风与布丁")
                 .inner_size(1440.0, 810.0)
                 .min_inner_size(960.0, 540.0)
                 .center()
+                .initialization_script(include_str!("pure_game.js"))
+                .initialization_script(&startup_diagnostic_script())
                 .build()?;
             Ok(())
         })

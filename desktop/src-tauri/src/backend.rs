@@ -1,4 +1,5 @@
 //! Python 完整引擎后台进程管理：探测、启动、/health 轮询与退出清理。
+use std::fs::{self, File};
 use std::io::{Read, Write};
 use std::net::{SocketAddr, TcpListener, TcpStream};
 use std::path::{Path, PathBuf};
@@ -10,19 +11,50 @@ use tauri::AppHandle;
 
 use crate::host_api::{config_dir, exe_dir, save_dir, workspace_dir};
 
-static PYTHON_SERVER: OnceLock<Mutex<Option<Child>>> = OnceLock::new();
+struct PythonBackend {
+    child: Child,
+    #[cfg(windows)]
+    _job: crate::windows_job::PythonJob,
+}
 
-fn server_slot() -> &'static Mutex<Option<Child>> {
+static PYTHON_SERVER: OnceLock<Mutex<Option<PythonBackend>>> = OnceLock::new();
+static STARTUP_ISSUE: OnceLock<Mutex<Option<String>>> = OnceLock::new();
+
+fn server_slot() -> &'static Mutex<Option<PythonBackend>> {
     PYTHON_SERVER.get_or_init(|| Mutex::new(None))
 }
 
 pub fn stop_python_server() {
     if let Ok(mut guard) = server_slot().lock() {
-        if let Some(mut child) = guard.take() {
-            let _ = child.kill();
-            let _ = child.wait();
+        if let Some(mut backend) = guard.take() {
+            let _ = backend.child.kill();
+            let _ = backend.child.wait();
         }
     }
+}
+
+fn startup_issue(message: String) {
+    if let Ok(mut issue) = STARTUP_ISSUE.get_or_init(|| Mutex::new(None)).lock() {
+        *issue = Some(message);
+    }
+}
+
+pub fn has_startup_issue() -> bool {
+    STARTUP_ISSUE.get().and_then(|v| v.lock().ok()).map(|v| v.is_some()).unwrap_or(false)
+}
+
+/// 只显示错误和日志位置，不把后端日志/配置中的可能私密内容注入页面。
+pub fn startup_diagnostic_script() -> String {
+    let message = STARTUP_ISSUE.get().and_then(|v| v.lock().ok()).and_then(|v| v.clone());
+    let Some(message) = message else { return String::new(); };
+    let encoded = serde_json::to_string(&message).unwrap_or_else(|_| "\"启动失败，请查看日志\"".into());
+    format!(r#"(() => {{ const message = {encoded}; const show = () => {{
+      const box = document.createElement('aside'); box.setAttribute('role','alert');
+      box.style.cssText = 'position:fixed;z-index:2147483647;left:20px;right:20px;top:20px;padding:16px 20px;background:#142b38;color:#edf7fa;border:1px solid #86c9da;border-radius:8px;font:15px/1.7 sans-serif;white-space:pre-wrap';
+      const text = document.createElement('span'); text.textContent = message; box.append(text);
+      const close = document.createElement('button'); close.textContent = '关闭提示'; close.style.cssText = 'display:block;margin-top:10px'; close.onclick = () => box.remove(); box.append(close);
+      document.body.append(box);
+    }}; if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded',show,{{once:true}}); else show(); }})();"#)
 }
 
 pub fn check_server_health(port: u16) -> bool {
@@ -60,6 +92,8 @@ fn resolve_backend_root() -> Option<PathBuf> {
         candidates.push(PathBuf::from(custom));
     }
     if let Some(ed) = exe_dir() {
+        // build_windows_app.py 的完整便携布局：exe / python / galLingS。
+        candidates.push(ed.join("galLingS"));
         candidates.push(ed.clone());
         if let Some(p1) = ed.parent() {
             candidates.push(p1.to_path_buf());
@@ -157,12 +191,27 @@ pub fn ensure_python_backend(app: &AppHandle) -> Option<String> {
     }
 
     let backend_root = resolve_backend_root()?;
-    let py = find_python_executable(&backend_root)?;
+    let Some(py) = find_python_executable(&backend_root) else {
+        startup_issue("完整引擎未启动：没有可用的 Python 运行环境。可继续使用已有离线包；完整便携版请检查 python 文件夹是否完整。".into());
+        return None;
+    };
     let port = pick_available_port(preferred_port);
 
     let sdir = save_dir(app);
     let cdir = config_dir(app);
     let wdir = workspace_dir(app);
+    let log_path = cdir.join("logs").join("server.log");
+    let log_file = match log_path.parent().map(fs::create_dir_all).transpose().and_then(|_| File::create(&log_path)) {
+        Ok(file) => file,
+        Err(error) => {
+            startup_issue(format!("完整引擎无法创建启动日志：{error}\n日志位置：{}", log_path.display()));
+            return None;
+        }
+    };
+    let stderr_file = match log_file.try_clone() {
+        Ok(file) => file,
+        Err(error) => { startup_issue(format!("完整引擎日志不可写：{error}")); return None; }
+    };
 
     let mut cmd = Command::new(&py);
     cmd.args([
@@ -178,9 +227,12 @@ pub fn ensure_python_backend(app: &AppHandle) -> Option<String> {
     .env("GALLINGS_SAVE_DIR", &sdir)
     .env("GALLINGS_CONFIG_DIR", &cdir)
     .env("GALLINGS_WORKSPACE_DIR", &wdir)
+    .env("PYTHONUTF8", "1")
+    .env("PYTHONIOENCODING", "utf-8")
+    .env("PYTHONUNBUFFERED", "1")
     .stdin(Stdio::null())
-    .stdout(Stdio::null())
-    .stderr(Stdio::null());
+    .stdout(Stdio::from(log_file))
+    .stderr(Stdio::from(stderr_file));
 
     // 若在 Steam 打包目录下运行（游戏本体位于 game/vn），自动关联作品目录与插件目录
     let bundled_vn = backend_root.join("game").join("vn");
@@ -209,9 +261,25 @@ pub fn ensure_python_backend(app: &AppHandle) -> Option<String> {
         }
     }
 
-    let child = cmd.spawn().ok()?;
+    let mut child = match cmd.spawn() {
+        Ok(child) => child,
+        Err(error) => { startup_issue(format!("完整引擎启动失败：{error}\n日志位置：{}", log_path.display())); return None; }
+    };
+    #[cfg(windows)]
+    let job = match crate::windows_job::PythonJob::bind(&child) {
+        Ok(job) => job,
+        Err(error) => {
+            let _ = child.kill(); let _ = child.wait();
+            startup_issue(format!("完整引擎进程保护无法建立：{error}\n日志位置：{}", log_path.display()));
+            return None;
+        }
+    };
     if let Ok(mut guard) = server_slot().lock() {
-        *guard = Some(child);
+        *guard = Some(PythonBackend { child, #[cfg(windows)] _job: job });
+    } else {
+        let _ = child.kill(); let _ = child.wait();
+        startup_issue("完整引擎启动状态不可用。".into());
+        return None;
     }
 
     let deadline = Instant::now() + Duration::from_millis(5500);
@@ -219,9 +287,16 @@ pub fn ensure_python_backend(app: &AppHandle) -> Option<String> {
         if check_server_health(port) {
             return Some(format!("http://127.0.0.1:{port}/vn.html?steam=1"));
         }
+        let exited = server_slot().lock().ok().and_then(|mut guard| guard.as_mut().and_then(|b| b.child.try_wait().ok().flatten())).is_some();
+        if exited {
+            stop_python_server();
+            startup_issue(format!("完整引擎在启动时退出，请查看日志。\n日志位置：{}", log_path.display()));
+            return None;
+        }
         std::thread::sleep(Duration::from_millis(80));
     }
 
     stop_python_server();
+    startup_issue(format!("完整引擎启动超过等待时间，已停止本次后台进程。\n日志位置：{}", log_path.display()));
     None
 }

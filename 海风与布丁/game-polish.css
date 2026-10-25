@@ -228,3 +228,23 @@ body.game #psettings input[type="range"]{background-size:100% 4px!important;back
 }
 body.game.vport #psettings input[type="range"]{height:40px}
 body.game.vport #psettings output[data-value]{font-size:16px;min-width:56px}
+
+/* Reading and player progress: keep saved preferences and manual slots. */
+body.game #slots .resume-save { display:grid; grid-template-columns:1fr auto; gap:4px 20px; width:100%; margin:0 0 22px; padding:16px 20px; border:1px solid #8fbccb70; border-radius:8px; background:#244854; color:#edf5f8; text-align:left; cursor:pointer; }
+body.game #slots .resume-save b { font-size:19px; font-weight:500; }
+body.game #slots .resume-save small,body.game #slots .resume-save time { color:#c1d7df; font-size:13px; }
+body.game #slots .resume-save span { grid-column:1; font-size:15px; }
+body.game #slots .resume-save time { grid-column:2; grid-row:2; }
+body.game #slots .resume-save:hover { background:#2e5663; border-color:#bddde7; }
+body.game #slots .save-restart { padding:6px 12px; border:1px solid #8fbccb70; border-radius:5px; background:transparent; color:#d9edf4; font-size:15px; cursor:pointer; }
+@media (pointer:coarse) {
+  body.game #slots .save-restart { min-height:44px; }
+  body.game.smallstage #slots .resume-save b { font-size:30px; }
+  body.game.smallstage #slots .resume-save small,body.game.smallstage #slots .resume-save time { font-size:24px; }
+  body.game.smallstage #slots .resume-save span,body.game.smallstage #slots .save-restart { font-size:28px; }
+}
+@media (max-width:600px) { body.game #slots .resume-save { grid-template-columns:1fr; } body.game #slots .resume-save time { grid-column:1; grid-row:auto; } }
+body.game #stage #ptx { color:var(--reading-text,#f7faff); text-shadow:0 1px 3px var(--reading-shadow,#102e4d99); transition:opacity .4s,color .35s,text-shadow .35s; }
+body.game #stage[data-reading=dim] { --reading-text:#edf4fc; --reading-shadow:#102e4d77; }
+body.game #stage[data-reading=warm] { --reading-text:#f7f5f0; --reading-shadow:#172b3b88; }
+body.game #title .play-help .restart-link { display:inline; width:auto; min-height:0; height:auto; padding:0 0 0 12px; margin:0; border:0; background:none; color:#eaf3e6; font:inherit; letter-spacing:0; text-decoration:underline; box-shadow:none; }

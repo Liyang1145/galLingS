@@ -124,6 +124,7 @@ const PROVIDER_DEFAULTS = {
 async function loadSettings() { srv = await (await fetch("/api/settings")).json(); tick(); return srv; }
 const formatGamePref = (p, value) => /^(vbgm|vse|vamb|vvo|readerScale)$/.test(p.k) ? Math.round(+value * 100) + "%" : (+value).toFixed(p.step < 1 ? 1 : 0);
 function renderGamePrefs() {
+  // 清单来自游戏（VNHost.prefs()）：音乐 / 音效 / 环境音（VN Studio v0.19 起）/ 语音 / 文字…… 游戏加了新偏好，这里自动多一行
   const list = H ? H.prefs() : [];
   const row = (p) => {
     if (p.type === "range") return `<label class="set-row"><span>${p.label}</span><input type="range" min="${p.min}" max="${p.max}" step="${p.step}" value="${p.value}" data-gp="${p.k}"><small class="muted rv">${formatGamePref(p, p.value)}</small></label>`;

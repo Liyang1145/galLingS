@@ -14,7 +14,9 @@
 | 模型 | 服务地址、模型名、API 密钥、测试 | `~/.gallings/settings.json`；密钥在 `secrets.json`（本机，权限 600，网页只拿得到末 4 位）。系统环境变量 GALLINGS_LLM_API_KEY 优先 |
 | 记忆 | 本地 / 灵枢 dsh-memory（填 FuRongJun-1999/dsh-memory 检出目录，里面要有 md_cg/mcp_server.py；不对时 /api/settings 不改记忆设置并回 warn） | 同上；保存后插件重启；灵枢起不来自动落到本地 |
 | 手账 | 陪伴模式、话量、全部遗忘 | 游戏的玩家偏好（随作品存在浏览器里） |
-| 游戏 | 音乐 / 音效 / 语音音量、文字速度、自动播放、只快进已读、作品文件夹 | 同上；作品文件夹存 settings.json |
+| 游戏 | 音乐 / 音效 / 环境音 / 语音音量、文字速度、自动播放、只快进已读、作品文件夹 | 同上；作品文件夹存 settings.json |
+
+游戏这一组的滑块不是 galLingS 写死的：`renderGamePrefs()` 每次打开设置时读游戏的 `VNHost.prefs()` 清单来画，拖动时调 `VNHost.setPref(k, v)`，值存在游戏自己的玩家偏好里（浏览器 localStorage），不经过 `settings.json`。所以游戏新增一个偏好（例如 VN Studio v0.19 的“环境音”`vamb`，控制海浪、集市人声这类循环环境声），这里会自动多一行，不用改 galLingS。
 
 ## 放作品
 把 VN Studio 导出的游戏文件夹（里面有 index.html）放进 `content/imports/vnstudio/作品名/`（默认不进 git；用户明确授权代交的 `海风与布丁/` 目录已单独开放并归档，其他本地作品仍忽略），刷新作品页即可。

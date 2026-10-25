@@ -1,0 +1,101 @@
+{
+  "passed": true,
+  "withdrawn": [
+    "V10",
+    "V11",
+    "V15",
+    "V16"
+  ],
+  "restoredNodes": 29,
+  "counts": {
+    "V10": 13,
+    "V11": 4,
+    "V15": 10,
+    "V16": 2
+  },
+  "remainingActiveVariants": [
+    "V01",
+    "V02",
+    "V03",
+    "V04",
+    "V05",
+    "V06",
+    "V07",
+    "V08",
+    "V09",
+    "V12",
+    "V17",
+    "V18",
+    "V21",
+    "V22",
+    "V23",
+    "V24",
+    "V25",
+    "V26"
+  ],
+  "remainingActiveVariantCount": 18,
+  "remainingAppliedNodes": 279,
+  "allOtherNodesUnchanged": true,
+  "allNonVisualNodeFieldsUnchanged": true,
+  "voiceBindings": 824,
+  "nodes": 3315,
+  "originalFilesPreserved": true,
+  "withdrawnAssetReferences": 0,
+  "branch": "fix/character-performance",
+  "baseline": "6c757ac3455f196efd58733d2980323790d64c0c",
+  "userRequest": "先撤回v15，v16 v10v11",
+  "fullRegression": {
+    "load_s": 3.15,
+    "body": "game playing",
+    "chapters": 18,
+    "walk": {
+      "n": 3315,
+      "p50": 0.09999996423721313,
+      "p99": 0.7999999523162842,
+      "max": 72,
+      "bad": [],
+      "nbad": 0
+    },
+    "cg": {
+      "n": 31,
+      "p50": 88.89999997615814,
+      "max": 172.89999997615814,
+      "heapMB": 10
+    },
+    "save": {
+      "want": {
+        "idx": 1504,
+        "id": "6cdt4nv4",
+        "vars": "{\"好感\":0,\"尾鳍\":7,\"贝壳延后\":0,\"玩笑\":0,\"海星放生\":0,\"周目\":1,\"结局数\":0}"
+      },
+      "got": {
+        "idx": 1504,
+        "id": "6cdt4nv4",
+        "vars": "{\"好感\":0,\"尾鳍\":7,\"贝壳延后\":0,\"玩笑\":0,\"海星放生\":0,\"周目\":1,\"结局数\":0}"
+      }
+    },
+    "prev": [
+      302,
+      301
+    ],
+    "errs": [],
+    "nerrs": 0
+  },
+  "visual": {
+    "passed": true,
+    "screenshots": 5,
+    "imagesDecoded": true,
+    "pageErrors": [],
+    "allVisualReferencesMatchPreIntegration": true
+  },
+  "manuallyInspectedRestoredScreenshots": 5,
+  "activeCGCount": 31,
+  "changedDocumentLinks": {
+    "passed": true,
+    "checked": 91,
+    "broken": [],
+    "method": "Repository checker syntax against full fetched remote tree plus publication files",
+    "localSparseCheckoutCheckerExitCode": 1,
+    "localSparseCheckoutLimit": "Existing files missing locally after repository migration; changed links verified against complete remote tree"
+  }
+}

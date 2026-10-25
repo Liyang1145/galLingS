@@ -1,0 +1,127 @@
+{
+  "passed": true,
+  "selected": "C / F3",
+  "assetId": "b02t_tc01",
+  "before": {
+    "id": "b02t_tc01",
+    "type": "bg",
+    "name": "浅滩_指尖触尾",
+    "src": "assets/art-upgrade/B02T.webp",
+    "w": 3840,
+    "h": 2160,
+    "scenePlanId": "B02T",
+    "sceneReserve": false,
+    "previousSourcePath": null,
+    "sourceMasterPath": "A素材库/art-upgrade/originals/B02T.webp",
+    "productionArtId": "B02T",
+    "modelRequested": "gpt-image-2.5-sunburst",
+    "modelReported": null,
+    "imageQualityReported": "high",
+    "note": "第一话开场 #9–11：第一人称水下近景，指尖刚碰到鲸鱼尾鳍尖（B02 + L01 尾巴参考生成，2026-10-19 开场演出重做）"
+  },
+  "after": {
+    "id": "b02t_tc01",
+    "type": "bg",
+    "name": "浅滩_撑沙触尾",
+    "src": "assets/art-upgrade/B02T_user_C_20261025.webp",
+    "w": 2752,
+    "h": 1536,
+    "scenePlanId": "B02T",
+    "sceneReserve": false,
+    "previousSourcePath": "assets/art-upgrade/B02T.webp",
+    "sourceMasterPath": "A素材库/art-upgrade/originals/B02T_user_C_20261025.png",
+    "productionArtId": "B02T",
+    "modelRequested": "gpt-image-2.5-sunburst",
+    "modelReported": null,
+    "imageQualityReported": null,
+    "note": "用户选择本轮C/F3，第一人称右手从左下低平撑沙触尾；保留原资源ID及全部剧情节点。",
+    "qualityRequested": "high",
+    "userApproved": true,
+    "approvalDate": "2026-10-25",
+    "reviewStatus": "user_approved",
+    "sourceSha256": "cc0596aa848d42fa0d75d7dc32ae4b5bcf3aca1bacaa202f8eb9cfed62239896",
+    "sha256": "f5388cd5ebff6b44717c0d6812ca5fd31c9c55cceb0ff1843d81e16819267bdf"
+  },
+  "affectedNodes": [
+    {
+      "number": 10,
+      "id": "3tp1qwm9",
+      "text": "撑着水底站起来——指尖碰到了一样东西。"
+    },
+    {
+      "number": 11,
+      "id": "15lmqdee",
+      "text": "凉凉的。滑滑的。似乎还带着一点鳞片的纹路。"
+    },
+    {
+      "number": 12,
+      "id": "929w6urb",
+      "text": "顺着指缝，滑了一下。"
+    }
+  ],
+  "nodeCount": 3315,
+  "allNodesByteEquivalentAsObjects": true,
+  "allOtherAssetsUnchanged": true,
+  "allOtherTopLevelFieldsUnchanged": true,
+  "voiceBindings": 824,
+  "voiceMusicAndSfxUnchanged": true,
+  "oldImageFilesPreserved": true,
+  "sourcePixelsPreserved": true,
+  "branch": "fix/character-performance",
+  "baseline": "a65f95d9e313485d6877b9d4846f892a0d860bd8",
+  "fullRegression": {
+    "load_s": 3.12,
+    "body": "game playing",
+    "chapters": 18,
+    "walk": {
+      "n": 3315,
+      "p50": 0.09999996423721313,
+      "p99": 0.800000011920929,
+      "max": 78.69999998807907,
+      "bad": [],
+      "nbad": 0
+    },
+    "cg": {
+      "n": 31,
+      "p50": 87.10000002384186,
+      "max": 162.9000000357628,
+      "heapMB": 10
+    },
+    "save": {
+      "want": {
+        "idx": 1504,
+        "id": "6cdt4nv4",
+        "vars": "{\"好感\":0,\"尾鳍\":7,\"贝壳延后\":0,\"玩笑\":0,\"海星放生\":0,\"周目\":1,\"结局数\":0}"
+      },
+      "got": {
+        "idx": 1504,
+        "id": "6cdt4nv4",
+        "vars": "{\"好感\":0,\"尾鳍\":7,\"贝壳延后\":0,\"玩笑\":0,\"海星放生\":0,\"周目\":1,\"结局数\":0}"
+      }
+    },
+    "prev": [
+      302,
+      301
+    ],
+    "errs": [],
+    "nerrs": 0
+  },
+  "visual": {
+    "passed": true,
+    "actualPlayerImage": {
+      "src": "assets/art-upgrade/B02T_user_C_20261025.webp",
+      "w": 2752,
+      "h": 1536
+    },
+    "pageErrors": []
+  },
+  "userApproval": "选择C，然后同步仓库，立刻",
+  "changedDocumentLinks": {
+    "passed": true,
+    "checked": 92,
+    "broken": [],
+    "localSparseCheckoutCheckerExitCode": 1,
+    "method": "Repository checker syntax against complete fetched remote tree plus publication files",
+    "localLimit": "Existing unrelated missing files in sparse legacy checkout"
+  }
+}

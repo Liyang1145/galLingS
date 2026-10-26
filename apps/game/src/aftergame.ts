@@ -2,6 +2,8 @@ import type { StoryContent } from "../../../packages/story-model/src/model.ts";
 import type { CompletionScope } from "../../../packages/story-model/src/completion.ts";
 import { ClearedContextReader } from "../../../packages/chat/src/context.ts";
 import type { CompletionSource, ContextCandidate } from "../../../packages/chat/src/context.ts";
+import { createChatPanel } from "./chat-panel.ts";
+import type { ChatPanel } from "./chat-panel.ts";
 
 export interface AftergamePanel {
   open(): Promise<void>;
@@ -9,7 +11,7 @@ export interface AftergamePanel {
   dispose(): void;
 }
 
-/** Lazy local panel. There is deliberately no transport or writable game object. */
+/** Lazy development panel. Network requires explicit configuration and per-turn consent. */
 export function createAftergamePanel(
   root: HTMLElement, content: StoryContent, scope: CompletionScope, source: CompletionSource,
 ): AftergamePanel {
@@ -18,11 +20,14 @@ export function createAftergamePanel(
   let disposed = false;
   let epoch = 0;
   let events = new AbortController();
+  let chat: ChatPanel | null = null;
 
   function close(): void {
     visible = false;
     ++epoch;
     events.abort();
+    chat?.dispose();
+    chat = null;
     root.replaceChildren();
   }
 
@@ -51,17 +56,18 @@ export function createAftergamePanel(
     details.setAttribute("aria-label", "所选通关上下文");
     const limit = document.createElement("p");
     limit.className = "help";
-    limit.textContent = "结局与角色的正式解锁规则、模型供应方式尚未配置，暂不开放发送。没有上传数据或创建聊天记录。";
-    const send = document.createElement("button");
-    send.type = "button";
-    send.textContent = "聊天发送暂不可用";
-    send.disabled = true;
-    root.replaceChildren(info, refresh, state, label, details, limit, send);
+    limit.textContent = "正式解锁规则和供应方式未定。下面只提供独立开发聊天试用，不自动连接服务；每轮上传前需明确确认。";
+    const chatRoot = document.createElement("section");
+    chatRoot.className = "aftergame-chat";
+    root.replaceChildren(info, refresh, state, label, details, limit, chatRoot);
     let candidates: readonly ContextCandidate[] = [];
 
     const current = (request: number): boolean => visible && !disposed && request === epoch && !signal.aborted;
     async function refreshRecords(): Promise<void> {
       const request = ++epoch;
+      chat?.dispose();
+      chat = null;
+      chatRoot.replaceChildren();
       candidates = [];
       details.replaceChildren();
       selection.replaceChildren(new Option("请明确选择一条通关记录", ""));
@@ -94,6 +100,9 @@ export function createAftergamePanel(
 
     async function choose(): Promise<void> {
       const request = ++epoch;
+      chat?.dispose();
+      chat = null;
+      chatRoot.replaceChildren();
       const factId = selection.value;
       const candidate = candidates.find(item => item.completion.factId === factId);
       details.replaceChildren();
@@ -119,7 +128,8 @@ export function createAftergamePanel(
         json.textContent = JSON.stringify(context, null, 2);
         debug.append(summary, json);
         details.append(title, coverage, privacy, debug);
-        state.textContent = "所选通关事实已重新读取确认。只读上下文准备完成，正式聊天解锁与联网发送尚未接入。";
+        state.textContent = "所选通关事实已重新确认。可显式配置独立开发聊天；正式入口仍未开放。";
+        chat = createChatPanel(chatRoot, reader, context.completion);
       } catch (error: unknown) {
         if (current(request)) state.textContent = `上下文未采用：${error instanceof Error ? error.message : "读取失败"}。未发送聊天请求，也未修改主线。`;
       }

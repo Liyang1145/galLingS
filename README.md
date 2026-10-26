@@ -6,6 +6,8 @@
 
 ## 当前本体入口
 
+2026-10-26 已接续编写[独立 Agent 聊天基础](docs/rebuild/agent.md)：在开发工具逐条选择已保存通关后，显式连接独立服务并选择角色，每轮确认上传再接收文字流，可停止并隔离失败。服务默认关闭、无模型/角色，不运行旧 GalAgent 工具；正式解锁/供应未定，未测试、构建、启动或试用。
+
 2026-10-26 已将唯一作者源迁至 `content/story/`：按十六话、两篇番外及开局节点组拆分，变量、设置、分类资源与来源单独维护。构建、开发、终端和已有对白写回已改接同一分章读取器，原 `game.js` 数据与旧 TS 转换入口退出；详见[分章作者源](docs/rebuild/author-source.md)。本片未运行新读取器、测试、构建或试玩，之前的 Windows 产物未重新生成。
 
 随后已按用户要求[清理无需保留的旧链路](docs/rebuild/cleanup.md)：旧 OP 编译器、Rust/WASM 剧情核心、托管会话/回放、专属桥/测试和旧核心 CI 已退出。`start.bat` / Python 服务只用于保留的旧制作与独立聊天，不再安装或运行旧剧情核心；完整美术制作、导出和聊天仍有真实消费者，继续保留。本轮未运行测试、构建或服务。
@@ -36,7 +38,8 @@
 | `desktop/`、`mobile/android/rebuild/` | 两端唯一原生游戏宿主 |
 | `tools/content/`、`tools/game/` | 内容转换、共享游戏包、两端输入准备 |
 | `apps/editor/`、`tools/editor/` | 暂停扩展的独立对白编辑及共享预览 |
-| `packages/chat/` | 通关后只读上下文，正式联网发送尚未接入 |
+| `packages/chat/` | 通关后只读上下文、独立流式会话/显式 HTTP 连接；正式联网发送尚未接入 |
+| `server/api/aftergame.py`、`config.aftergame.example.yaml` | 默认关闭的独立无工具聊天开发服务，不由游戏或旧辅助服务启动 |
 | 旧制作模板、`server/`、`plugins/`、`web/vn*` | 保留旧制作和独立聊天；旧 `core/` / `compiler/` 及托管回放已退出，不进入新主线 |
 | `docs/rebuild/` | 当前实施事实、接口、命令与接续点 |
 

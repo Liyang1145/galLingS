@@ -1,0 +1,506 @@
+{
+  "date": "2026-10-26",
+  "base": "61beb1dfb045a5eef915e596412a40dec09b3124",
+  "folder": {
+    "initial": [
+      {
+        "text": "开始游戏",
+        "left": 0,
+        "inside": true
+      },
+      {
+        "text": "读取进度",
+        "left": -18,
+        "inside": true
+      },
+      {
+        "text": "鉴赏",
+        "left": -36,
+        "inside": true
+      },
+      {
+        "text": "和鲸鱼小姐聊聊",
+        "left": -54,
+        "inside": true
+      },
+      {
+        "text": "章节试阅",
+        "left": -72,
+        "inside": true
+      },
+      {
+        "text": "声音收藏",
+        "left": -90,
+        "inside": true
+      },
+      {
+        "text": "设置",
+        "left": -108,
+        "inside": true
+      },
+      {
+        "text": "插件",
+        "left": -126,
+        "inside": true
+      }
+    ],
+    "extraRows": [
+      {
+        "text": "开始游戏",
+        "left": 0,
+        "inside": true
+      },
+      {
+        "text": "读取进度",
+        "left": -18,
+        "inside": true
+      },
+      {
+        "text": "鉴赏",
+        "left": -36,
+        "inside": true
+      },
+      {
+        "text": "和鲸鱼小姐聊聊",
+        "left": -54,
+        "inside": true
+      },
+      {
+        "text": "章节试阅",
+        "left": -72,
+        "inside": true
+      },
+      {
+        "text": "声音收藏",
+        "left": -90,
+        "inside": true
+      },
+      {
+        "text": "设置",
+        "left": -108,
+        "inside": true
+      },
+      {
+        "text": "插件",
+        "left": -126,
+        "inside": true
+      },
+      {
+        "text": "宿主追加 0",
+        "left": -144,
+        "inside": true
+      },
+      {
+        "text": "宿主追加 1",
+        "left": -162,
+        "inside": true
+      }
+    ],
+    "hiddenRow": [
+      {
+        "text": "开始游戏",
+        "left": 0,
+        "inside": true
+      },
+      {
+        "text": "读取进度",
+        "left": -18,
+        "inside": true
+      },
+      {
+        "text": "鉴赏",
+        "left": -36,
+        "inside": true
+      },
+      {
+        "text": "章节试阅",
+        "left": -54,
+        "inside": true
+      },
+      {
+        "text": "声音收藏",
+        "left": -72,
+        "inside": true
+      },
+      {
+        "text": "设置",
+        "left": -90,
+        "inside": true
+      },
+      {
+        "text": "插件",
+        "left": -108,
+        "inside": true
+      },
+      {
+        "text": "宿主追加 0",
+        "left": -126,
+        "inside": true
+      },
+      {
+        "text": "宿主追加 1",
+        "left": -144,
+        "inside": true
+      }
+    ],
+    "smallStage": [
+      {
+        "text": "开始游戏",
+        "left": 0,
+        "inside": true
+      },
+      {
+        "text": "读取进度",
+        "left": 0,
+        "inside": true
+      },
+      {
+        "text": "鉴赏",
+        "left": 0,
+        "inside": true
+      },
+      {
+        "text": "和鲸鱼小姐聊聊",
+        "left": 0,
+        "inside": true
+      },
+      {
+        "text": "章节试阅",
+        "left": 0,
+        "inside": true
+      },
+      {
+        "text": "声音收藏",
+        "left": 0,
+        "inside": true
+      },
+      {
+        "text": "设置",
+        "left": 0,
+        "inside": true
+      },
+      {
+        "text": "插件",
+        "left": 0,
+        "inside": true
+      }
+    ],
+    "startClick": true,
+    "errors": [],
+    "passed": true
+  },
+  "singleFile": {
+    "initial": [
+      {
+        "text": "开始游戏",
+        "left": 0,
+        "inside": true
+      },
+      {
+        "text": "读取进度",
+        "left": -18,
+        "inside": true
+      },
+      {
+        "text": "鉴赏",
+        "left": -36,
+        "inside": true
+      },
+      {
+        "text": "和鲸鱼小姐聊聊",
+        "left": -54,
+        "inside": true
+      },
+      {
+        "text": "章节试阅",
+        "left": -72,
+        "inside": true
+      },
+      {
+        "text": "声音收藏",
+        "left": -90,
+        "inside": true
+      },
+      {
+        "text": "设置",
+        "left": -108,
+        "inside": true
+      },
+      {
+        "text": "插件",
+        "left": -126,
+        "inside": true
+      }
+    ],
+    "extraRows": [
+      {
+        "text": "开始游戏",
+        "left": 0,
+        "inside": true
+      },
+      {
+        "text": "读取进度",
+        "left": -18,
+        "inside": true
+      },
+      {
+        "text": "鉴赏",
+        "left": -36,
+        "inside": true
+      },
+      {
+        "text": "和鲸鱼小姐聊聊",
+        "left": -54,
+        "inside": true
+      },
+      {
+        "text": "章节试阅",
+        "left": -72,
+        "inside": true
+      },
+      {
+        "text": "声音收藏",
+        "left": -90,
+        "inside": true
+      },
+      {
+        "text": "设置",
+        "left": -108,
+        "inside": true
+      },
+      {
+        "text": "插件",
+        "left": -126,
+        "inside": true
+      },
+      {
+        "text": "宿主追加 0",
+        "left": -144,
+        "inside": true
+      },
+      {
+        "text": "宿主追加 1",
+        "left": -162,
+        "inside": true
+      }
+    ],
+    "hiddenRow": [
+      {
+        "text": "开始游戏",
+        "left": 0,
+        "inside": true
+      },
+      {
+        "text": "读取进度",
+        "left": -18,
+        "inside": true
+      },
+      {
+        "text": "鉴赏",
+        "left": -36,
+        "inside": true
+      },
+      {
+        "text": "章节试阅",
+        "left": -54,
+        "inside": true
+      },
+      {
+        "text": "声音收藏",
+        "left": -72,
+        "inside": true
+      },
+      {
+        "text": "设置",
+        "left": -90,
+        "inside": true
+      },
+      {
+        "text": "插件",
+        "left": -108,
+        "inside": true
+      },
+      {
+        "text": "宿主追加 0",
+        "left": -126,
+        "inside": true
+      },
+      {
+        "text": "宿主追加 1",
+        "left": -144,
+        "inside": true
+      }
+    ],
+    "smallStage": [
+      {
+        "text": "开始游戏",
+        "left": 0,
+        "inside": true
+      },
+      {
+        "text": "读取进度",
+        "left": 0,
+        "inside": true
+      },
+      {
+        "text": "鉴赏",
+        "left": 0,
+        "inside": true
+      },
+      {
+        "text": "和鲸鱼小姐聊聊",
+        "left": 0,
+        "inside": true
+      },
+      {
+        "text": "章节试阅",
+        "left": 0,
+        "inside": true
+      },
+      {
+        "text": "声音收藏",
+        "left": 0,
+        "inside": true
+      },
+      {
+        "text": "设置",
+        "left": 0,
+        "inside": true
+      },
+      {
+        "text": "插件",
+        "left": 0,
+        "inside": true
+      }
+    ],
+    "startClick": true,
+    "errors": [],
+    "passed": true
+  },
+  "Windows": {
+    "passed": true,
+    "visibleMenu": [
+      {
+        "text": "继续游戏",
+        "logicalLeft": 0,
+        "visible": true,
+        "clipped": false
+      },
+      {
+        "text": "读取进度",
+        "logicalLeft": -18,
+        "visible": true,
+        "clipped": false
+      },
+      {
+        "text": "鉴赏",
+        "logicalLeft": -36,
+        "visible": true,
+        "clipped": false
+      },
+      {
+        "text": "重播录像",
+        "logicalLeft": -54,
+        "visible": true,
+        "clipped": false
+      },
+      {
+        "text": "和鲸鱼小姐聊聊",
+        "logicalLeft": -72,
+        "visible": true,
+        "clipped": false
+      },
+      {
+        "text": "章节试阅",
+        "logicalLeft": -90,
+        "visible": true,
+        "clipped": false
+      },
+      {
+        "text": "声音收藏",
+        "logicalLeft": -108,
+        "visible": true,
+        "clipped": false
+      },
+      {
+        "text": "设置",
+        "logicalLeft": -126,
+        "visible": true,
+        "clipped": false
+      },
+      {
+        "text": "插件",
+        "logicalLeft": -144,
+        "visible": false,
+        "clipped": false
+      },
+      {
+        "text": "退出游戏",
+        "logicalLeft": -144,
+        "visible": true,
+        "clipped": false
+      }
+    ],
+    "nodes": 3315,
+    "pageErrors": [],
+    "saveRoundtrip": true,
+    "processCleanupPassed": true
+  },
+  "fullRegression": {
+    "load_s": 3.23,
+    "body": "game playing",
+    "chapters": 18,
+    "walk": {
+      "n": 3315,
+      "p50": 0.09999996423721313,
+      "p99": 2.300000011920929,
+      "max": 72.5,
+      "bad": [],
+      "nbad": 0
+    },
+    "cg": {
+      "n": 31,
+      "p50": 98.80000001192093,
+      "max": 172.19999998807907,
+      "heapMB": 16
+    },
+    "save": {
+      "want": {
+        "idx": 1504,
+        "id": "6cdt4nv4",
+        "vars": "{\"好感\":0,\"尾鳍\":7,\"贝壳延后\":0,\"玩笑\":0,\"海星放生\":0,\"周目\":1,\"结局数\":0}"
+      },
+      "got": {
+        "idx": 1504,
+        "id": "6cdt4nv4",
+        "vars": "{\"好感\":0,\"尾鳍\":7,\"贝壳延后\":0,\"玩笑\":0,\"海星放生\":0,\"周目\":1,\"结局数\":0}"
+      }
+    },
+    "prev": [
+      302,
+      301
+    ],
+    "errs": [],
+    "nerrs": 0
+  },
+  "localCleanup": {
+    "completedTargets": 85,
+    "logicalBytesRemoved": 5006951150,
+    "observedFreeBytesIncrease": 4966555648,
+    "failed": [],
+    "latestHtmlPreserved": true,
+    "latestWindowsZipPreserved": true
+  },
+  "artifacts": [
+    {
+      "file": "海风与布丁_最新试玩.html",
+      "bytes": 185108583,
+      "sha256": "61c91aa6dafd98810695d5c4cb7219c86b5be18389302b811793f93996748b6f"
+    },
+    {
+      "file": "海风与布丁_Windows最新便携版.zip",
+      "bytes": 259349709,
+      "sha256": "d6533780e691ba2fb7fc7d6ac732fa1aedc4223f75089b0cebb054147f4ede14"
+    }
+  ]
+}

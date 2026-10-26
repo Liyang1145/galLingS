@@ -2346,6 +2346,15 @@ async function showSlots(mode) {
   addClose(box); box.classList.add('show');
   box.onclick = e => { e.stopPropagation(); if (e.target === box) box.classList.remove('show'); };
 }
+function layoutTitleMenu() {
+  let row = 0;
+  document.querySelectorAll('#title .menu button').forEach(button => {
+    if (button.hidden || getComputedStyle(button).display === 'none') return;
+    const value = String(row++);
+    if (button.style.getPropertyValue('--title-menu-row') !== value) button.style.setProperty('--title-menu-row', value);
+  });
+}
+new MutationObserver(layoutTitleMenu).observe($('#title'), { childList: true, subtree: true, attributes: true, attributeFilter: ['style', 'hidden'] });
 function showTitle() {
   progressActive = false; clearTimeout(progressTimer);
   const progressToken = ++titleProgressToken;
@@ -2380,7 +2389,7 @@ function showTitle() {
   t.querySelectorAll('[data-tp]').forEach(b => b.onclick = e => { e.stopPropagation(); try { VNPlugins.R.titleBtns[+b.dataset.tp].onClick(); } catch (er) { console.warn(er); } });
   t.onclick = e => e.stopPropagation();
   VNPlugins.emit('title');
-  t.classList.add('show'); fit();
+  t.classList.add('show'); layoutTitleMenu(); fit();
 }
 
 /* ========== 灵枢手账：游戏内侧边栏（记得的事 / 信号收集 / 悄悄话 / 规矩） ==========

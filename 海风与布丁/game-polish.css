@@ -254,3 +254,5 @@ body.game #title .play-help .restart-link { display:inline; width:auto; min-heig
 /* Desktop host buttons may add rows; keep the start button inside the stage. */
 body.game:not(.smallstage):not(.vport) #stage #title .menu { max-height:calc(100% - 112px); }
 body.game:not(.smallstage):not(.vport) #stage #title .menu button { min-height:36px; flex-shrink:1; }
+/* Count visible entries so host/plugin additions continue the approved stagger. */
+body.game:not(.smallstage):not(.vport) #stage #title .menu button { left:calc(var(--title-menu-row,0) * -18px); }

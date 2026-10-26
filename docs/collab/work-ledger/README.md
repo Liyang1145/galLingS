@@ -1,5 +1,7 @@
 # 任务记录索引（work-ledger）
 
+- [开始菜单完整错位与本机清理](title-menu-cleanup-20261026.md) — 最新可玩包与动态菜单验证通过，释放约4.97 GB。
+
 - [现行对话框背景与不透明度调节](dialogue-opacity-20261026.md) — 默认45%，完整0%–100%调节，移除固定深色托底与强制下限，覆盖上一轮55%说明。
 
 - [background-classification-20261023.md](background-classification-20261023.md) — B02A与抱臂监视整图CG_DRY均归背景，排除CG

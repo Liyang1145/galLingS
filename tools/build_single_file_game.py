@@ -60,7 +60,11 @@ def build(output: Path, project_file: Path | None = None) -> dict:
             if urlparse(src).scheme or src.startswith("/"):
                 raise ValueError(f"Unsupported media URL; use the repository libraryPath: {src}")
             path = (GAME / src).resolve()
-        if (ROOT / "content").resolve() not in path.parents or not path.is_file():
+        repository = ROOT.resolve()
+        media_roots = (GAME.resolve(), (repository / "A素材库").resolve())
+        if (repository not in path.parents
+                or not any(directory in path.parents for directory in media_roots)
+                or not path.is_file()):
             raise ValueError(f"Missing or unsafe media path: {library_path or src}")
         # Windows registry MIME entries may omit WebP or override its media type.
         mime = MEDIA_MIME.get(path.suffix.lower()) or mimetypes.guess_type(path.name)[0] or "application/octet-stream"

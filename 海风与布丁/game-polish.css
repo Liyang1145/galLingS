@@ -248,3 +248,6 @@ body.game #stage #ptx { color:var(--reading-text,#f7faff); text-shadow:0 1px 3px
 body.game #stage[data-reading=dim] { --reading-text:#edf4fc; --reading-shadow:#102e4d77; }
 body.game #stage[data-reading=warm] { --reading-text:#f7f5f0; --reading-shadow:#172b3b88; }
 body.game #title .play-help .restart-link { display:inline; width:auto; min-height:0; height:auto; padding:0 0 0 12px; margin:0; border:0; background:none; color:#eaf3e6; font:inherit; letter-spacing:0; text-decoration:underline; box-shadow:none; }
+/* Desktop host buttons may add rows; keep the start button inside the stage. */
+body.game:not(.smallstage):not(.vport) #stage #title .menu { max-height:calc(100% - 112px); }
+body.game:not(.smallstage):not(.vport) #stage #title .menu button { min-height:36px; flex-shrink:1; }

@@ -67,6 +67,15 @@ assert '<script src="game.js"></script>' in html
 pre, post = html.split('<script src="game.js"></script>', 1)
 if os.path.exists(f'{G}/player.js') and '<script src="player.js"></script>' in post:
     player_code = open(f'{G}/player.js', encoding='utf-8').read().replace('</script', '<\\/script')
+    # The standalone player dynamically loads GalAgent even when offline.
+    # Embed that local dependency too, preserving its normal plugin lifecycle.
+    plugin_loader = "s.src = 'galagent.vnplugin.js';"
+    if plugin_loader in player_code:
+        plugin_path = pathlib.Path(G) / 'galagent.vnplugin.js'
+        if not plugin_path.is_file():
+            raise FileNotFoundError('Missing runtime plugin: galagent.vnplugin.js')
+        plugin_uri = 'data:text/javascript;base64,' + base64.b64encode(plugin_path.read_bytes()).decode('ascii')
+        player_code = player_code.replace(plugin_loader, 's.src = ' + json.dumps(plugin_uri) + ';')
     post = post.replace('<script src="player.js"></script>', '<script>\n' + player_code + '\n</script>', 1)
 i = post.rfind('</body>')
 out = sys.argv[1] if len(sys.argv) > 1 else 'out.html'

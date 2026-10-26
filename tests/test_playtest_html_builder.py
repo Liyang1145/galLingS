@@ -50,6 +50,22 @@ class PlaytestHtmlBuilderTests(unittest.TestCase):
         self.assertIn('Missing runtime assets: assets/current.png', result.stderr)
         self.assertFalse((self.root / 'play.html').exists())
 
+    def test_dynamic_local_plugin_is_embedded(self):
+        (self.game / 'player.js').write_text("const s=document.createElement('script');s.src = 'galagent.vnplugin.js';document.head.appendChild(s);", encoding='utf-8')
+        (self.game / 'galagent.vnplugin.js').write_text('window.localPluginLoaded=true;', encoding='utf-8')
+        result = self.build()
+        self.assertEqual(result.returncode, 0, result.stderr)
+        page = (self.root / 'play.html').read_text(encoding='utf-8')
+        self.assertNotIn("s.src = 'galagent.vnplugin.js';", page)
+        self.assertIn('data:text/javascript;base64,', page)
+
+    def test_missing_dynamic_plugin_stops_export(self):
+        (self.game / 'player.js').write_text("s.src = 'galagent.vnplugin.js';", encoding='utf-8')
+        result = self.build()
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn('Missing runtime plugin: galagent.vnplugin.js', result.stderr)
+        self.assertFalse((self.root / 'play.html').exists())
+
 
 if __name__ == '__main__':
     unittest.main()

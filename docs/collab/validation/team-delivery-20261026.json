@@ -1,0 +1,136 @@
+{
+  "date": "2026-10-26",
+  "branch": "fix/character-performance",
+  "compiledSourceCommit": "fd6ae6854385505b3ac62e10e89a3a34e166da83",
+  "ci": {
+    "run": 40255825879,
+    "url": "https://github.com/Liyang1145/galLingS/actions/runs/40255825879",
+    "Windows": "success",
+    "Linux": "success",
+    "healthProbeTestsPerPlatform": 2
+  },
+  "pythonUnitTests": {
+    "passed": 10,
+    "exportTests": 4,
+    "packagingTests": 6
+  },
+  "folderRegression": {
+    "chapters": 18,
+    "walk": {
+      "n": 3315,
+      "p50": 0.09999996423721313,
+      "p99": 2.099999964237213,
+      "max": 66.5,
+      "bad": [],
+      "nbad": 0
+    },
+    "save": {
+      "want": {
+        "idx": 1504,
+        "id": "6cdt4nv4",
+        "vars": "{\"好感\":0,\"尾鳍\":7,\"贝壳延后\":0,\"玩笑\":0,\"海星放生\":0,\"周目\":1,\"结局数\":0}"
+      },
+      "got": {
+        "idx": 1504,
+        "id": "6cdt4nv4",
+        "vars": "{\"好感\":0,\"尾鳍\":7,\"贝壳延后\":0,\"玩笑\":0,\"海星放生\":0,\"周目\":1,\"结局数\":0}"
+      }
+    },
+    "prev": [
+      302,
+      301
+    ],
+    "nerrs": 0
+  },
+  "singleFile": {
+    "file": "海风与布丁_整合试玩_20261026.html",
+    "bytes": 185107292,
+    "sha256": "5e85e25148c18bb1abc04204d067568123743a214608ac1384420ec4d23084e0",
+    "passed": true,
+    "nodes": 3315,
+    "nbad": 0,
+    "nerrs": 0,
+    "externalRequests": 0,
+    "localDependencies": 0,
+    "embeddedRuntimeMedia": 1113,
+    "voice": {
+      "thirdStart": 344,
+      "first": true,
+      "thirdDefault": false,
+      "manualOn": true,
+      "offAgain": true
+    },
+    "manualSaveRoundtrip": true,
+    "autosaveAndContinue": true,
+    "refreshRestores": true,
+    "ledgerExportPassed": true,
+    "exporterSha256": "df938236b87fcfde408593fc14c943ebc3b9f2355fd4866f1f6288fa6e9303c4",
+    "titleMenuClipped": 0
+  },
+  "Windows": {
+    "file": "海风与布丁_Windows便携版_20261026.zip",
+    "fileCount": 2099,
+    "zipBytes": 259349443,
+    "uncompressedBytes": 291229731,
+    "sha256": "f8610204894c0707aa404e7734bc85d81d95d9c6d136dd085e9ac014bea82e74",
+    "crcPassed": true,
+    "actualExeRunPassed": true,
+    "nodes": 3315,
+    "nbad": 0,
+    "nerrs": 0,
+    "failedResponses": 0,
+    "audioRange": {
+      "status": 206,
+      "bytes": 1024,
+      "contentRange": "bytes 0-1023/6251599"
+    },
+    "manualSaveRoundtrip": true,
+    "noResidualPython": true,
+    "titleMenuClipped": 0,
+    "continueButtons": 1
+  },
+  "content": {
+    "nodes": 3315,
+    "voiceBindings": 824,
+    "userAcceptedFirstTwoVoices": 150,
+    "line187Take": "A",
+    "activeMusicTracks": 16,
+    "openingSelected": "C/F3",
+    "nnnApproved": 18,
+    "nnnAppliedNodes": 279,
+    "nnnWithdrawn": [
+      "V10",
+      "V11",
+      "V15",
+      "V16"
+    ],
+    "restoredNodes": 29,
+    "deferred": [
+      "V13",
+      "V14"
+    ],
+    "notSelected": [
+      "V19",
+      "V20"
+    ],
+    "oldL15C20Kept": true,
+    "nnnVideosIncluded": false,
+    "nnnLive2DIncluded": false
+  },
+  "docs": {
+    "checkedAtCompiledCommit": 178,
+    "relativeLinks": 740,
+    "broken": 0,
+    "finalPlanMarkdownFiles": 179,
+    "finalPlanRelativeLinks": 744
+  },
+  "limits": [
+    "在线模型与外部灵枢未带私人配置，也未调用收费模型进行验收。",
+    "未重新进行整作人工听感或美术验收；保留用户已确认的版本。"
+  ],
+  "routeDecision": "rebuild 是独立新引擎；当前正式入口保持现有播放器。",
+  "runtimeOverridesSha256": {
+    "海风与布丁/game-polish.css": "9eb3b18ba9248aaf0491dd5028540f3819ec4e440792e31ce452a0cbbacac4d6",
+    "web/offline/steam-host.js": "0ceb0bd581751efcf9678ce5956cf2b06a7e83e94af26298412bdbdae56b799b"
+  }
+}

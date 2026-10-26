@@ -969,7 +969,8 @@
           menu.appendChild(qb);
         }
         const startBtn = menu.querySelector('[data-t="start"]');
-        if (startBtn && !menu.querySelector('[data-t="continue"]') && typeof window.idbGet === 'function') {
+        // Current players own recovery/continue; keep this fallback for older exports.
+        if (startBtn && typeof window.continueSave !== 'function' && !menu.querySelector('[data-t="continue"]') && typeof window.idbGet === 'function') {
           const pid = window.VN_GAME?.id || '';
           window.idbGet('saves:' + pid).then(saves => {
             if (!saves || typeof saves !== 'object') return;

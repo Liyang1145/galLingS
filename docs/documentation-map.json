@@ -1,0 +1,1202 @@
+{
+  "format": "haifeng.documentation-map/1",
+  "date": "2026-10-26",
+  "sourceCommit": "d920be390ebd56290ac931a3f99873ef4587715d",
+  "purpose": "文档迁移及来源追溯，不是作者源、运行配置或第二套维护入口",
+  "documents": [
+    {
+      "oldPath": "AGENTS.md",
+      "oldSha256": "33dc31d3aea38b660be46ab2744116fd39dc5951137faf08d733d6c05b1f460a",
+      "target": "AGENTS.md",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "A素材库/README.md",
+      "oldSha256": "c127ecd732d9b71e4cfeabc3cff57173fbc8d0061607bc438690c7dac0394f00",
+      "target": "docs/sources.md#source-001",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "A素材库/audio/bgm/README.md",
+      "oldSha256": "551b1d25eba700004443fcb226299f10912350b7184398fe6174e5a1716ebc09",
+      "target": "docs/sources.md#source-002",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "A素材库/audio/mp3/README.md",
+      "oldSha256": "011d362e48ac2a69dcda4b4c958a2c8c27e5e8d2b0be91d261b8294d6a96b541",
+      "target": "docs/sources.md#source-003",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "A素材库/audio/sfx/README.md",
+      "oldSha256": "68e3bd1effaa6e2d9c22f82dcb657911f317775e06f2b978d7537e15999c1872",
+      "target": "docs/sources.md#source-004",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "A素材库/image-trials/生图工具使用说明.md",
+      "oldSha256": "fda9b04d588530b4253586ca2086c7ff0668bf21062af0c7c43f5c9378be8223",
+      "target": "docs/sources.md#source-005",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "A素材库/music/配乐曲目简要明细、方向指导 Ver. 1.0.md",
+      "oldSha256": "95a7523a066bd488c949cb35f9356106bfe5a5131c19f6da080f4dade2d12d17",
+      "target": "docs/sources.md#source-006",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "A素材库/prompts_round2.md",
+      "oldSha256": "23fe4e4f02c2204a58f4c15d6b2770ec6c8d8bcf118d6857607d66e1e0aa9e3e",
+      "target": "docs/sources.md#source-007",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "A素材库/scene-backgrounds/README.md",
+      "oldSha256": "f57b002e9ae5c370bba2c56b813475675bdf09364eb6dc0bdc5ebd005923124f",
+      "target": "docs/sources.md#source-008",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "A素材库/scene-backgrounds/场景素材说明与审核.md",
+      "oldSha256": "b054cc44393796c251f27f8c33d8e6bed1ef1a9aaa5890f177982a0d4ed5ce09",
+      "target": "docs/sources.md#source-009",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "A素材库/归档/README.md",
+      "oldSha256": "55e46c4a734dfee487e1b13c9415e25ed2e68819c39154426ec4d40e7da62275",
+      "target": "docs/sources.md#source-010",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "A素材库/归档/deliveries/art-editor/README.md",
+      "oldSha256": "9cc294a51e168c101ad06b28071e3ab8e8976997aac4d4df38371604ce75fe8c",
+      "target": "docs/sources.md#source-011",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "A素材库/归档/deliveries/art-upgrade-validation/README.md",
+      "oldSha256": "00625916581fb9075df6e4f0cb4adc608407c0147e81bac6f73d9b4091feb676",
+      "target": "docs/sources.md#source-012",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "A素材库/归档/deliveries/atri-music/README.md",
+      "oldSha256": "8c862b03973cefa3744ead972d957a9c5e6a3a7736a0ff5c69814c242cf13bd0",
+      "target": "docs/sources.md#source-013",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "A素材库/归档/deliveries/boliyer-galagent/README.md",
+      "oldSha256": "c5a36bdaa6c15c51e5d911f9885d118c1456403f5bdb3644b26b4fc84d32c890",
+      "target": "docs/sources.md#source-014",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "A素材库/归档/deliveries/character-direction/README.md",
+      "oldSha256": "b5a893a1498d88ed9ce58acfac789b152b6e1f47eec7b7424cff3d303676e032",
+      "target": "docs/sources.md#source-015",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "A素材库/归档/deliveries/larry-vn/README.md",
+      "oldSha256": "8dbd7d4ea4069b5103e720877a42ed6da9e56d9868b0b58431948614cdfa5dec",
+      "target": "docs/sources.md#source-016",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "A素材库/归档/deliveries/local-assembly/Atri方案_配乐定向参考.md",
+      "oldSha256": "009f21ce2cd099cce5260e893935f2856b7fc06d1112322a51f21e7c0711a405",
+      "target": "docs/sources.md#source-017",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "A素材库/归档/deliveries/local-assembly/Atri音乐协作.md",
+      "oldSha256": "5325ac4bba9385e3fa7e3144f80ba3b8fba9ffbcd5c5b9a1d02706029d4d7f0a",
+      "target": "docs/sources.md#source-018",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "A素材库/归档/deliveries/local-assembly/sound-source-audit/音效来源核对.md",
+      "oldSha256": "668a76e372758acbf3fb5acba9f45dd56b36632ec36d2a942efccd34e10c7eed",
+      "target": "docs/sources.md#source-019",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "A素材库/归档/deliveries/local-assembly/场景装配/装配说明.md",
+      "oldSha256": "581cc8e32f9ff14101d7873be4b994f1153bbcb5e5a60c9e135bc431df380bc0",
+      "target": "docs/sources.md#source-020",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "A素材库/归档/deliveries/local-assembly/缺失音效表.md",
+      "oldSha256": "bd16e70289762d4330ecce3bf86119505b6b1d8c2aa64e50bf9fa89a3a195bd2",
+      "target": "docs/sources.md#source-021",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "A素材库/归档/deliveries/local-assembly/融合说明与待确认清单.md",
+      "oldSha256": "46f689c467dd86019774243f3d7b39b6de15722a2c71784d53a52f5c591f0c4c",
+      "target": "docs/sources.md#source-022",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "A素材库/归档/deliveries/local-assembly/视觉全量复核/图片全量复核与补图清单.md",
+      "oldSha256": "2982db47e4502e0440382b808592e5ef84b1532eba54c01e118d3963ae96c391",
+      "target": "docs/sources.md#source-023",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "A素材库/归档/deliveries/scene-character-integration/README.md",
+      "oldSha256": "9581e1b1b72d9a640d748b6b82949295ec043e13d9a7a41a939d84158e685fbb",
+      "target": "docs/sources.md#source-024",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "A素材库/归档/deliveries/scene-character-integration/中间状态审核_非最终柜台.md",
+      "oldSha256": "71120e1bbb67059e8a615c2322fc7e1274268ee2f077d47d500ba227c89e601a",
+      "target": "docs/sources.md#source-025",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "A素材库/归档/deliveries/tanpowasd-dev-review/README.md",
+      "oldSha256": "6f7228fc0c4af239a953cc11433743ca856a5e251f2a2c02bc5956b6f0b7334e",
+      "target": "docs/sources.md#source-026",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "A素材库/归档/deliveries/whale-ui/README.md",
+      "oldSha256": "926b06a7efa365a785c987a2122d8c4300c85e609f337d1a14837d7a4b088abb",
+      "target": "docs/sources.md#source-027",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "A素材库/归档/deliveries/whale-ui/更新说明-透明鲸鱼UI与渐变.md",
+      "oldSha256": "59203fb54e40414704dec9925e94db805fc9399d2ce9f8a7a8b980c3abd8e2b5",
+      "target": "docs/sources.md#source-028",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "CONTEXT.md",
+      "oldSha256": "6c0c01fde78da35ed4707f98968d1b0ef2b3e753120b4e395663532c307160db",
+      "target": "docs/README.md#terms",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "README.md",
+      "oldSha256": "35197ed1f80564fbf4d46e3b590edb846814a8b1613533e6db10acea0958dd03",
+      "target": "README.md",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "apps/editor/AGENTS.md",
+      "oldSha256": "68678125b03d34259a26032b47e857c64011e6cbf09761903d435727b5dd09d4",
+      "target": "docs/engineering.md#scope-3",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "content/README.md",
+      "oldSha256": "d957f7baea7da689879bd613d1d358c3f7e4c9155c26b8b7b5fc10ec149ff62d",
+      "target": "docs/content.md#directories",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "content/game-ui/README.md",
+      "oldSha256": "ade5150dd92669ca051714dfe9843c57e1a5ce8673a916ac28668a95954c93d1",
+      "target": "docs/content.md#game-ui",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "content/scripts/haifeng-pudding_s1_v5.0_draft.md",
+      "oldSha256": "6f0f8718e36c81499d7404eea9bfa2f5b818bf9d93ea690a0472adb703d77293",
+      "target": "content/scripts/haifeng-pudding_s1_v5.0_draft.md",
+      "treatment": "原地址与原字节保留的内容证据"
+    },
+    {
+      "oldPath": "content/story/README.md",
+      "oldSha256": "50918b7d3b6970f1037590c6468d6fb8e27d03774e1dd08ef21ed9837063638e",
+      "target": "docs/content.md#author-source",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "content/vn_plugins/README.md",
+      "oldSha256": "82ed576959b68c2576b5f9f701d89882cb72930b06ea2d528e49a4bbfbd56ae0",
+      "target": "docs/chat.md#legacy-plugins",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "desktop/AGENTS.md",
+      "oldSha256": "bb721b163b0f1999bf5db85c99fb3020e999d2060feafa5991c7831ba1c8641d",
+      "target": "docs/engineering.md#scope-5",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/PLAN.md",
+      "oldSha256": "7bb0efe7d5d65d0e010ed0fd7e5788a890811bf4c87f4897c72dbd4599ba2a4e",
+      "target": "docs/migration.md#history",
+      "treatment": "有效内容决定/缺口已提取；过期工程与协作叙事退役"
+    },
+    {
+      "oldPath": "docs/README.md",
+      "oldSha256": "5fbe4cdf250c14a341e3ce05708c16a44d152b0b114a7c7e755c392c86346c4a",
+      "target": "docs/README.md",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/card-format.md",
+      "oldSha256": "23228448f4f2d506ac840844db7849b03d974b4a4d2c33784793e6eef89964a7",
+      "target": "docs/chat.md#legacy-cards",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/collab/audit/20261018/art_report.md",
+      "oldSha256": "71ef44618f7ced1b482145420ea825a0102c24b1464476b31b5f9d1043ffad3c",
+      "target": "docs/production.md#content-backlog",
+      "treatment": "有效内容决定/缺口已提取；过期工程与协作叙事退役"
+    },
+    {
+      "oldPath": "docs/collab/audit/20261018/audio_ui_report.md",
+      "oldSha256": "32df14c53d97c7c80a460cf57aa1fc47c0610e755969544de8e51bf5be86bf9a",
+      "target": "docs/production.md#content-backlog",
+      "treatment": "有效内容决定/缺口已提取；过期工程与协作叙事退役"
+    },
+    {
+      "oldPath": "docs/collab/audit/20261018/script_report.md",
+      "oldSha256": "d5bae82f98b351dedd985223d8e0f2b98d955cfd5be1f16aa3244ad503b77751",
+      "target": "docs/production.md#content-backlog",
+      "treatment": "有效内容决定/缺口已提取；过期工程与协作叙事退役"
+    },
+    {
+      "oldPath": "docs/collab/handoff/AGENTS_20261018_历史.md",
+      "oldSha256": "5cff9d5e6c75197c19db7619bae6907d8aa08c741a8541431ec4cc3fe37fb84d",
+      "target": "docs/migration.md#history",
+      "treatment": "有效内容决定/缺口已提取；过期工程与协作叙事退役"
+    },
+    {
+      "oldPath": "docs/collab/handoff/Hark会话交接_20261020.md",
+      "oldSha256": "a26662886ec002d41bd7ba0819982ae3c7c14588cd78f7a33531a723fbd82c70",
+      "target": "docs/migration.md#history",
+      "treatment": "有效内容决定/缺口已提取；过期工程与协作叙事退役"
+    },
+    {
+      "oldPath": "docs/collab/handoff/仓库盘点_20261014_历史.md",
+      "oldSha256": "f96456977355bd572f3bf7eee7f7a659f428fa9b0ac25ffb033e1b6c34ff327b",
+      "target": "docs/migration.md#history",
+      "treatment": "有效内容决定/缺口已提取；过期工程与协作叙事退役"
+    },
+    {
+      "oldPath": "docs/collab/handoff/共享台账_20261017_历史.md",
+      "oldSha256": "91f1e7aa6560441cc68b25e56923f228bc0f156b7d2143d2133b2219448e2ec4",
+      "target": "docs/migration.md#history",
+      "treatment": "有效内容决定/缺口已提取；过期工程与协作叙事退役"
+    },
+    {
+      "oldPath": "docs/collab/handoff/剩余任务_20261014_历史.md",
+      "oldSha256": "d7471c9e3a8e10b4d7d243263d12c2bdf101a9c0f37a9e4e1c5bff9770188b54",
+      "target": "docs/migration.md#history",
+      "treatment": "有效内容决定/缺口已提取；过期工程与协作叙事退役"
+    },
+    {
+      "oldPath": "docs/collab/handoff/待办总表_20261017_历史.md",
+      "oldSha256": "0b090ff458ff2571f6587aec51823d16d4459764c8188eab5bb1787bdb078a30",
+      "target": "docs/migration.md#history",
+      "treatment": "有效内容决定/缺口已提取；过期工程与协作叙事退役"
+    },
+    {
+      "oldPath": "docs/collab/handoff/待办总表_20261019_历史.md",
+      "oldSha256": "8c74b132bec7922b387de253e867b2b3228c8d96d4e63b775f675afe5bc6ff4f",
+      "target": "docs/migration.md#history",
+      "treatment": "有效内容决定/缺口已提取；过期工程与协作叙事退役"
+    },
+    {
+      "oldPath": "docs/collab/handoff/接手说明_20261017_历史.md",
+      "oldSha256": "7db0b7a4d1896c34886229a851bbec1ec0acd9994422de3967199778c7622edd",
+      "target": "docs/migration.md#history",
+      "treatment": "有效内容决定/缺口已提取；过期工程与协作叙事退役"
+    },
+    {
+      "oldPath": "docs/collab/handoff/接手说明_20261019_历史.md",
+      "oldSha256": "2495190def535669e17c42ffbfda0fa5fc7840e23035b63aaf45ea21e51cc7a1",
+      "target": "docs/migration.md#history",
+      "treatment": "有效内容决定/缺口已提取；过期工程与协作叙事退役"
+    },
+    {
+      "oldPath": "docs/collab/handoff/最新游玩_20261017_历史.md",
+      "oldSha256": "e838f2c0db56b81e51f382d11836108765958aa5506db693c74860778e0a3485",
+      "target": "docs/migration.md#history",
+      "treatment": "有效内容决定/缺口已提取；过期工程与协作叙事退役"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/2026-10-18-full-audit.md",
+      "oldSha256": "f77931ed54c27baf8f17786af61793c75862e8163b51e69084f4ffc0e26900b8",
+      "target": "docs/sources.md#source-029",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/README.md",
+      "oldSha256": "5ba535046ce9c2cf1c2be2367fa6fcc2f82f9ec6cd3157c549c981c17450aee7",
+      "target": "docs/migration.md#history",
+      "treatment": "有效内容决定/缺口已提取；过期工程与协作叙事退役"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/_template.md",
+      "oldSha256": "46402b6a201ebb8c03d29df0e71777d8b70fc35b1c956ab9dc4ece66252bb9cf",
+      "target": "docs/migration.md#history",
+      "treatment": "有效内容决定/缺口已提取；过期工程与协作叙事退役"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/agent-handoff-cg-pause.md",
+      "oldSha256": "a404018b3e30abf2df930a92b4594f75bac00b7b5c177a453ea50422b4a91915",
+      "target": "docs/sources.md#source-030",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/art-acceptance-20261018.md",
+      "oldSha256": "a213283bfe4883b7444cb22a144bee1fcf668918c5a4ce1e955a7eb29fcc14a0",
+      "target": "docs/sources.md#source-031",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/art-consistency.md",
+      "oldSha256": "62df22058c07d8cbeb970745ff37f7785cf72e9ddb41165edf58912ecc9a3a7f",
+      "target": "docs/sources.md#source-032",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/art-editor-library.md",
+      "oldSha256": "32715d196a890607ab071f1c3d7a563eeb4a01a8fcf2494653e22771d3a91d35",
+      "target": "docs/sources.md#source-033",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/art-layout-20261019.md",
+      "oldSha256": "5611b5f2a326c95e4fdba866c3adc7d4f15749750b3ba4b67bbabcf26a4afcba",
+      "target": "docs/sources.md#source-034",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/art-selfaudit-20261019.md",
+      "oldSha256": "98a6743d11bcf0eb3d966f1fd329524bd5735808d8e7188074eb77068deac4d5",
+      "target": "docs/sources.md#source-035",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/atri-feedback-vo-20261018.md",
+      "oldSha256": "d831fdda43aa30e9b5680e520c32f45e7a9529c977be4f781da09a7bc1b6d89e",
+      "target": "docs/sources.md#source-036",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/atri-home-cue-20261018.md",
+      "oldSha256": "1dcfa0a29ea58d64ccaaeb5cd9e2f37938e7ea9c200a71eb8c69d931c4e4fffc",
+      "target": "docs/sources.md#source-037",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/atri-music-assembly.md",
+      "oldSha256": "8eea56bf2592ede6b45300316e7ae88c6a0f27ee0c53e0f54544744cd997a4b1",
+      "target": "docs/sources.md#source-038",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/atri-music-v11.md",
+      "oldSha256": "fa4c43314cb4392b739e028cecca28c297f83423907f7a916a972036e910452e",
+      "target": "docs/collab/work-ledger/atri-music-v11.md",
+      "treatment": "原地址与原字节保留的内容证据"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/atri-ui-sync-android-20261019.md",
+      "oldSha256": "c61a5230e4e55227d165f1658069088da643c8b09df9e31005569de4cebdd7cd",
+      "target": "docs/sources.md#source-039",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/audio-integration.md",
+      "oldSha256": "cccb1c9af17c53793df5e77f51c53e545be66a8661872210ab0b098ef1e9da54",
+      "target": "docs/sources.md#source-040",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/backend-demo-closeout-20261019.md",
+      "oldSha256": "6f789faa84b7c3bc773af8bc0c5bb1ed973316fae5e92db3ad174d1db826ed4b",
+      "target": "docs/migration.md#history",
+      "treatment": "有效内容决定/缺口已提取；过期工程与协作叙事退役"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/boliyer-galagent-integration.md",
+      "oldSha256": "868da0dea7c3c3a7984aec41300823c076f10cdc44659510b1ab3f7dd0f5c269",
+      "target": "docs/sources.md#source-041",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/c02-afternoon-sky-20261018.md",
+      "oldSha256": "adaa3350f0606b369753553115b60a4dd43e460663eafde5bc21741c239bb1b5",
+      "target": "docs/sources.md#source-042",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/chapter1-cg-animations-20261019.md",
+      "oldSha256": "4011750cc55628be159ca1a7740a8fbd057c0b1eb978654b7c41f80f10a89d07",
+      "target": "docs/sources.md#source-043",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/character-direction.md",
+      "oldSha256": "cbfbc6c6cd9f5eb1ec09cd85b06ea293adee2408b037deaa89d3ccccc7fe72fb",
+      "target": "docs/sources.md#source-044",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/character-performance.md",
+      "oldSha256": "0eafa7c0d0c4d926cf39234f39d691e4176cedde6015b99a01aaccdd00e1deeb",
+      "target": "docs/sources.md#source-045",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/collaborator-invitations-20261016.md",
+      "oldSha256": "9f2a2db45fad7e2b7e95320ee2b0564e59a65e21ce4c0b6399c5b1ad9c087658",
+      "target": "docs/migration.md#history",
+      "treatment": "有效内容决定/缺口已提取；过期工程与协作叙事退役"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/completion-package-publication.md",
+      "oldSha256": "d1a29d86c5884733aeed67c88d4de94cd534f0f490cacd81da6a697f8cd471b1",
+      "target": "docs/sources.md#source-046",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/coordination-setup.md",
+      "oldSha256": "4210098aa4a730f4136f8f83a42e3d9928ac226b7882b0d485cd8d298389886e",
+      "target": "docs/migration.md#history",
+      "treatment": "有效内容决定/缺口已提取；过期工程与协作叙事退役"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/current-art-gallery.md",
+      "oldSha256": "09a69fa6b067201c3e9be6cca0b3fecf8a359a347c3d04aa52c74300bb25bbbd",
+      "target": "docs/sources.md#source-047",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/deepsea-emerald-piano-20261021.md",
+      "oldSha256": "91a26c2f926633ec9de7874075a5d1274ad7b250a96d353281cc17bbb1711e8a",
+      "target": "docs/sources.md#source-048",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/desktop-package.md",
+      "oldSha256": "541ef6d0887ee87bc3f040aeb734e77d92d5811a53bcd6787f17d98d01888da2",
+      "target": "docs/migration.md#history",
+      "treatment": "有效内容决定/缺口已提取；过期工程与协作叙事退役"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/docs-cleanup-20261020.md",
+      "oldSha256": "8965a0df5f34e3c6996f9309a33b8f30b5f05a112c7863b68c2ec6021a6e06bb",
+      "target": "docs/migration.md#history",
+      "treatment": "有效内容决定/缺口已提取；过期工程与协作叙事退役"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/docs-refresh-20261018.md",
+      "oldSha256": "366488c81fe39573789c4389146972c1f9c34216c06e8e71a78fe04cacbf5fdc",
+      "target": "docs/migration.md#history",
+      "treatment": "有效内容决定/缺口已提取；过期工程与协作叙事退役"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/e4-sunset-wait.md",
+      "oldSha256": "cceb01df1a3c9734f8db19280bde9364e82a54f92d19c7d310bc64b1831c0878",
+      "target": "docs/sources.md#source-049",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/emerald-meeting-cue.md",
+      "oldSha256": "0e7d5506a65d19bafa69dc78a1741674dd11c5d86edb31469e72759eda76aa3c",
+      "target": "docs/sources.md#source-050",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/handoff-assets.md",
+      "oldSha256": "74d1be97ec1540aca48ee2b02bdc1dcd30c16f630e361e4f79fd9245ac4d0e48",
+      "target": "docs/sources.md#source-051",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/hd-art-music-20261019.md",
+      "oldSha256": "3a7fadfa994bf56a0e278c14f4938f2316428338ae54e4247042422ba2006255",
+      "target": "docs/sources.md#source-052",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/image25-art-upgrade.md",
+      "oldSha256": "421907e5bb4041ef4e3f0f57bff0385221f9d016a8b522198662129ff606528f",
+      "target": "docs/sources.md#source-053",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/image25-pass2.md",
+      "oldSha256": "7096907de20c664c79534aa35b488e67f2970941e26a95e48fd3e1d6d3dc9bcd",
+      "target": "docs/sources.md#source-054",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/l37-tail-l01-20261018.md",
+      "oldSha256": "e2bd417f3296019134ac52827cf8ecf084df10c6346467438e0cc327cbb90f93",
+      "target": "docs/sources.md#source-055",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/lingshu-multi-llm-galagent-mcp-20261021.md",
+      "oldSha256": "41ec4c0ad94052f103046ff3b217e28440b9b1b237607f414cee1a05c5d756af",
+      "target": "docs/sources.md#source-056",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/local-production-workflows-20261020.md",
+      "oldSha256": "fb42d54fa9ac9183b3460da9ab6ee8d2c0fa7b9b2b4e78381b4d4f434149cb72",
+      "target": "docs/sources.md#source-057",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/local-scene-audio-assembly.md",
+      "oldSha256": "9f21e864ede27bea202fb7df6aeb46a1087fdfe6bc53c87df42c12452c05fad2",
+      "target": "docs/sources.md#source-058",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/m1-shallows-day.md",
+      "oldSha256": "a95284f6dc5de8356928b8389d111b95d35828fba2b379dfc31c7a0221010112",
+      "target": "docs/sources.md#source-059",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/music-progress-sync.md",
+      "oldSha256": "4e1735774a3bbe487c7af9518a93853b1f2ab803fc3594d5f9a57ace0da6ccf7",
+      "target": "docs/migration.md#history",
+      "treatment": "有效内容决定/缺口已提取；过期工程与协作叙事退役"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/opening-art-sound-corrections.md",
+      "oldSha256": "8767a44644263445b32e7674a6640a8f4253615a0d05018ffc80b388e7e8b55c",
+      "target": "docs/sources.md#source-060",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/opening-performance-20261019.md",
+      "oldSha256": "41c10d909b120a9d0e54460b97a37ede50dcdc5d224a941bf08c84c5df0b12ec",
+      "target": "docs/sources.md#source-061",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/player-experience-polish.md",
+      "oldSha256": "deac3867956e6c4d05f91490bf522205c7f561c0786d71df0e618feed075ce1e",
+      "target": "docs/sources.md#source-062",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/playtest-ledger-20261018.md",
+      "oldSha256": "250158add721a2d53da37aec93bd4313d106d19986f7cc95ff37d89def826476",
+      "target": "docs/sources.md#source-063",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/repo-consolidation.md",
+      "oldSha256": "150776e03896a31e9ff1013482507ac2075949c2efe4e123da54e6a172e04e77",
+      "target": "docs/migration.md#history",
+      "treatment": "有效内容决定/缺口已提取；过期工程与协作叙事退役"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/repo-tidy-20261019.md",
+      "oldSha256": "e4680677a57c1a2610fe52cfeee9273541d1fcab38f7e6a3c5600b9d09e7d075",
+      "target": "docs/migration.md#history",
+      "treatment": "有效内容决定/缺口已提取；过期工程与协作叙事退役"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/repository-public-visibility.md",
+      "oldSha256": "7cf21e47fd6def32f2ae166091bb82c7c90d140244258c6e12a0f8998b458c9f",
+      "target": "docs/migration.md#history",
+      "treatment": "有效内容决定/缺口已提取；过期工程与协作叙事退役"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/scene-character-integration.md",
+      "oldSha256": "0b27503f4246bf40b5fb5bce0a95abbee589eef896b4dc37baf75806519b0ebf",
+      "target": "docs/sources.md#source-064",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/script-fix-20261018.md",
+      "oldSha256": "3c52cfff3e0983bcecb395c7aa1869a569d6397cf18b7e05163b83c9292c6460",
+      "target": "docs/sources.md#source-065",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/settings-rollback-ui.md",
+      "oldSha256": "5194d9374fb9dcf9d148fd49c9c7ea82c2910b95e3283d5f56fd020b9e659372",
+      "target": "docs/sources.md#source-066",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/sfx-20261018.md",
+      "oldSha256": "344bec315f02c0759b9aee5ee01614945d17c0ee57b61f4e3605d5e05d68a014",
+      "target": "docs/sources.md#source-067",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/steam-release-package-20261021.md",
+      "oldSha256": "589cfe2f504c3db866e40757cfb60383779a6e51abad12f2f1033c591f6357e8",
+      "target": "docs/migration.md#history",
+      "treatment": "有效内容决定/缺口已提取；过期工程与协作叙事退役"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/tail-skin-corrections.md",
+      "oldSha256": "764af6204540777ad7a9cf0351d300299d5625af5c57a4e10a1a7547b24b752f",
+      "target": "docs/sources.md#source-068",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/tail-unify-c05.md",
+      "oldSha256": "068acf7459e6a6b5a86d49f1924d1e1c6c9fcea7a3d03fa06e006b5701b27684",
+      "target": "docs/sources.md#source-069",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/tails-20261018-evening.md",
+      "oldSha256": "8dbdefa71b6ceab2d206f4fa4341c910b08304c662c073894982c444a0b85c1b",
+      "target": "docs/sources.md#source-070",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/tanpowasd-dev-integration.md",
+      "oldSha256": "34661910770cb1fe67494a675d618e34ee669f4d3d666001e2c87c073a1f39f2",
+      "target": "docs/migration.md#history",
+      "treatment": "有效内容决定/缺口已提取；过期工程与协作叙事退役"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/todo-document-sync.md",
+      "oldSha256": "0e5e01533e55bebaf220790c5a529fad5f94e14bf826a4f8d20ab3f3c5448399",
+      "target": "docs/migration.md#history",
+      "treatment": "有效内容决定/缺口已提取；过期工程与协作叙事退役"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/ui-fix-20261018.md",
+      "oldSha256": "227f4aa8de211268143e6fc76067dd025e65142368f7c24637e54d54ce35e8d7",
+      "target": "docs/sources.md#source-071",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/vn-export.md",
+      "oldSha256": "ad64e5bdb7d4856cee6a9afe9aa7723ab8d446e60dd6dd7922be604d7ab4f1d7",
+      "target": "docs/sources.md#source-072",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/vo-ch1-7-new-voice-20261019.md",
+      "oldSha256": "ebbe50216b506c21a83903048b399318f017834359b1aa83841d3d7602f15ec9",
+      "target": "docs/sources.md#source-073",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/voice-over.md",
+      "oldSha256": "3b6b05326b1977310f54007743655953b8e9f74335220a685439d24c03e97d79",
+      "target": "docs/sources.md#source-074",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/wav-mp3-playback.md",
+      "oldSha256": "ad88dc6d0db02c6fe4cf64c22b1964e5ea532e7650083ae58bfacea94ab23b24",
+      "target": "docs/sources.md#source-075",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/whale-ui-fades.md",
+      "oldSha256": "10e526ca157e9d73b0bae7bc9453e44daea914f3099561b07ac5bd52e40999c0",
+      "target": "docs/sources.md#source-076",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "docs/collab/工作流速查.md",
+      "oldSha256": "4f0be10c5690be04a3351943263c58ce63eabaf98dbff97906452fbde6b89c88",
+      "target": "docs/migration.md#history",
+      "treatment": "有效内容决定/缺口已提取；过期工程与协作叙事退役"
+    },
+    {
+      "oldPath": "docs/collab/待办总表.md",
+      "oldSha256": "431f6a555207cbbd044d9eccf32c8b728ac80c0b08ddfa669a74fc69a019638c",
+      "target": "docs/production.md#content-backlog",
+      "treatment": "有效内容决定/缺口已提取；过期工程与协作叙事退役"
+    },
+    {
+      "oldPath": "docs/collab/接手说明.md",
+      "oldSha256": "aed90425bced8d95e86b42569cb89ce4adcbb8ec8fa249486dd47843dda46b3f",
+      "target": "docs/migration.md#history",
+      "treatment": "有效内容决定/缺口已提取；过期工程与协作叙事退役"
+    },
+    {
+      "oldPath": "docs/content/art-production/Image2.5全量重制分析与清单.md",
+      "oldSha256": "4db8883c385c028cdc7ad90e25a69c4161185fe7f526c4abf92e790cf17ffb5d",
+      "target": "docs/production.md#content-backlog",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/content/art-production/参考重制与人工缺口.md",
+      "oldSha256": "3e074b71ef9c7fdc09e1f1d7c5fc1e2824a339c3ffd08c0e93004bd3b613eef6",
+      "target": "docs/production.md#content-backlog",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/content/art-production/精修图包接续标准.md",
+      "oldSha256": "3836a3346b9052e44ff2fbae1a719535eb94359395dad70ca80e455cd28dc1fa",
+      "target": "docs/production.md#content-backlog",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/content/art-production/角色与场景融合审核.md",
+      "oldSha256": "e8cdede2bfcd675cfcf0980f826e94caf5806c0853e283047459bd66b469c375",
+      "target": "docs/production.md#content-backlog",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/content/music-direction.md",
+      "oldSha256": "dcaa50ac56263f3ed337d97cd93e3eb3848ea97c04682da2165fea2d74f3f02a",
+      "target": "docs/production.md#content-backlog",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/content/music-progress.md",
+      "oldSha256": "2700652e198c6a2bdb933cdde04be8b062c55fd13279ee46f99b8b7589522557",
+      "target": "docs/production.md#content-backlog",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/content/music-tracklist.md",
+      "oldSha256": "6a90cf8066f483917f3870cfe720e52749320988b9657e5d9281d378f226a508",
+      "target": "docs/production.md#content-backlog",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/content/opening-revision-20261015.md",
+      "oldSha256": "39fff28a8d63d7d247352b01fddedf4eea0cc1e2020cef7ad04a00335b80e67a",
+      "target": "docs/sources.md#source-077",
+      "treatment": "来源及采用证据集中保存；完整原文可从基线 Git 追溯"
+    },
+    {
+      "oldPath": "docs/content/player-aesthetic-review.md",
+      "oldSha256": "5536657e519ae5698c002333109b296f06d7babd9eaa2aec6ca570982e187adf",
+      "target": "docs/production.md#content-backlog",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/content/sfx-gaps.md",
+      "oldSha256": "79751fc673e445f3b6056fb58c380144d236728f7870350be0bfbd2f6e521249",
+      "target": "docs/production.md#content-backlog",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/decisions.md",
+      "oldSha256": "c82f2680c54409fd705cdccfe7423a5ab238f03b5e5058a9a7551d19648149ce",
+      "target": "docs/migration.md#history",
+      "treatment": "有效内容决定/缺口已提取；过期工程与协作叙事退役"
+    },
+    {
+      "oldPath": "docs/design/2026-10-23_重构-Gal-report.md",
+      "oldSha256": "558b6dea4baea4b6f5800fb21f5f8ca479b904b32b4f635ab3f50251f8e7cace",
+      "target": "docs/migration.md#history",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/design/2026-10-25_重构剩余工作与旧文件清理调研.md",
+      "oldSha256": "61ee6d71647814d8ffa2567eb5c3405574e99b44de80ef17b822aa86a794f012",
+      "target": "docs/migration.md#history",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/design/art-editor.md",
+      "oldSha256": "deb95d85e3ffced2b80becc490ce722aa63d85bd4f9c167cdc7fdca6adb5063f",
+      "target": "docs/editor.md#legacy-authoring",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/design/demo.md",
+      "oldSha256": "95eb67c0faf2b9b7de62ab5deeb15909cb18255ad4910a83e57faac2f869a37a",
+      "target": "docs/migration.md#history",
+      "treatment": "有效内容决定/缺口已提取；过期工程与协作叙事退役"
+    },
+    {
+      "oldPath": "docs/design/galagent.md",
+      "oldSha256": "67a33be8055ae601ad31a1ba6cb0cba668f0c3a62316550e65129feb7c0cce26",
+      "target": "docs/chat.md#legacy-agent",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/design/memory-bench.md",
+      "oldSha256": "751805b6eb82a58b2bf9479be9bfa3e2e7451cef3063093a0bfc73c929b166d0",
+      "target": "docs/migration.md#history",
+      "treatment": "有效内容决定/缺口已提取；过期工程与协作叙事退役"
+    },
+    {
+      "oldPath": "docs/design/plugin-format.md",
+      "oldSha256": "dbecdf911f14154302f5ceae85b8cad5a7415f17f506077b6ae458a3108227d6",
+      "target": "docs/chat.md#legacy-plugins",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/design/soul-port.md",
+      "oldSha256": "72ac42b6009e05366618e8b4a4ce1a5b95fc4fed072f4c7ebb0c021271a352f0",
+      "target": "docs/chat.md#legacy-soul",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/design/vn-page.md",
+      "oldSha256": "24828e1172cff69c939bd46c73830b6a033089cbcde06822c5d099fbf24166e0",
+      "target": "docs/editor.md#legacy-authoring",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/migration/01-内容与旧语义清单.md",
+      "oldSha256": "89b314431d94c0846f6a471cf066953c878ef74c9c80b95367a1d54390212f43",
+      "target": "docs/migration.md#history",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/protocol.md",
+      "oldSha256": "083e68ee290e6f026e4af050226ff64012bf2246eedd2bbd343877afea9d775a",
+      "target": "docs/chat.md#legacy-protocol",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/rebuild/README.md",
+      "oldSha256": "97512565c123f57e2623952a2c43afb30f6a686a3f86d3d143a85ec20026cde9",
+      "target": "docs/README.md#commands",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/rebuild/agent-verification.md",
+      "oldSha256": "e19eb2ca81c0332e4af24552c79cb96c1b1a769b393787c45e7897e1701f1344",
+      "target": "docs/chat.md#agent-verification",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/rebuild/agent.md",
+      "oldSha256": "06d8afe96b6c9dc4f5e13c44552c2736460ff8e2ece56a64c40abe31ba2be42c",
+      "target": "docs/chat.md#agent",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/rebuild/android-storage.md",
+      "oldSha256": "451682b56c509f0cccca78dd6f7f9c9c4e4d23c1e7e3c0b4f3a8af2971165705",
+      "target": "docs/delivery.md#android-storage",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/rebuild/android.md",
+      "oldSha256": "4bc7ea252392b90b39d1ed461102d6b73d5f1a64f7865a6ee7a723182d13eb1d",
+      "target": "docs/delivery.md#android",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/rebuild/appearance.md",
+      "oldSha256": "683313b936c2fae16526ef34fdc754ae17910aa8793bf3fb2c75fe5ffd72294b",
+      "target": "docs/player.md#appearance",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/rebuild/audio-library.md",
+      "oldSha256": "c574d99329924ef10cc92a379a0afc7a6328f53cda01b941aa7d0c3415220c58",
+      "target": "docs/player.md#audio-library",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/rebuild/author-source.md",
+      "oldSha256": "6b828eb443afc16b79ee76eddd2407c38decbd3743b3b9ca60d0728307797197",
+      "target": "docs/content.md#author-source",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/rebuild/baseline/README.md",
+      "oldSha256": "15dae8e36b2306d767b93968344e83ef8303c797217e751a269d1a824abe8693",
+      "target": "docs/migration.md#baseline",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/rebuild/chapters.md",
+      "oldSha256": "c608d458f26060b6c6ddc9b3f3f2c3b4544f7e03f19eb6547f8646eec67c2e1d",
+      "target": "docs/player.md#chapters",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/rebuild/chat.md",
+      "oldSha256": "40ef237dc6f6d1c219a0c22c9c2c2ec76d252caff86a4439fb706ed41f8a022d",
+      "target": "docs/chat.md#chat",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/rebuild/cleanup.md",
+      "oldSha256": "edf9da1bad6d443828e28be28a4cbb957f7b15c1937909b98bd179c7b4045f2b",
+      "target": "docs/migration.md#retired",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/rebuild/content.md",
+      "oldSha256": "104622f2e5d7f1c7422b78ffcd2536631ff1bbe1c242fad103173c2c5e162232",
+      "target": "docs/content.md#content",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/rebuild/continuation.md",
+      "oldSha256": "641e649b10131b3c8645772c6ff144c0ff6da153639ea8c386cd8d62bf651693",
+      "target": "docs/README.md#next",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/rebuild/delivery.md",
+      "oldSha256": "856cb640cbdcae9372b772ab4185b36b87a0b423335e99bca6c0ebaf3b9ea433",
+      "target": "docs/delivery.md#delivery",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/rebuild/editor-delivery.md",
+      "oldSha256": "685f315afc101e44ef9cc4f3971dcaf1b8c5b82e2f60b6c4f547f351894ba49e",
+      "target": "docs/editor.md#editor-delivery",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/rebuild/editor.md",
+      "oldSha256": "1fa26c5163cfdd2d779734fcafddd3343ca1b488ceb925092ce896afce31dd5a",
+      "target": "docs/editor.md#editor",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/rebuild/endings.md",
+      "oldSha256": "3fc26fb490b9450bfb8bac2545a8c7f83af4adb35c7579c61ad9cb8445f03194",
+      "target": "docs/storage.md#endings",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/rebuild/exits.md",
+      "oldSha256": "e1fc7dd31a3459f7dd61f0cab1432374293ac60e0c2833b4c77f7c830b5a9bb4",
+      "target": "docs/storage.md#exits",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/rebuild/feedback.md",
+      "oldSha256": "a601123d5ca0bcb11a646a9361e36df08579c4cd4219a80cdebb6b718fe8a04f",
+      "target": "docs/player.md#feedback",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/rebuild/flow.md",
+      "oldSha256": "e96c69917edb704ceb4f179f1ea66a3dc10e932102729392eab9eba92705d854",
+      "target": "docs/editor.md#flow",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/rebuild/fullscreen.md",
+      "oldSha256": "dc0b267ae780d0481400604e1a659dc6a7d4ae50b19cf10635014b52f9608641",
+      "target": "docs/player.md#fullscreen",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/rebuild/gallery.md",
+      "oldSha256": "78bc63f9b1773b213c1ce89d577684ab22096ec89cd45800da4606af8f3b142f",
+      "target": "docs/player.md#gallery",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/rebuild/game-ui.md",
+      "oldSha256": "9bf10df118b005a265b5bd96a31eddf0cbd17ae476d58431b47b284591bd12d3",
+      "target": "docs/player.md#game-ui",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/rebuild/history.md",
+      "oldSha256": "dd25df86c6c53da66e0fae98eb90135d677d8a9a9f40474d771531760396f5fd",
+      "target": "docs/player.md#history",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/rebuild/input.md",
+      "oldSha256": "1a80062a3292bd6fcc5512f878c8d8d25cb82c0bdfb8a9aa853dd8f46b2e6278",
+      "target": "docs/player.md#input",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/rebuild/legacy-semantics.md",
+      "oldSha256": "f6fdb501ab82c30c3777a66f5e59d6a81583cbd924f7f8334b37b8437200b733",
+      "target": "docs/migration.md#semantics",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/rebuild/native-storage.md",
+      "oldSha256": "60e56fb81534edc939451eac387a1aef8fb4867665abbd1b189c69ae7d440cd9",
+      "target": "docs/delivery.md#native-storage",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/rebuild/performance.md",
+      "oldSha256": "38a35f3cdb24ff06e34ead821514992c00120909d4906d36132d36f0ce192767",
+      "target": "docs/player.md#performance",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/rebuild/player.md",
+      "oldSha256": "96f100afb32b31f298b33bf7fa2a9cf548f3e1d60e349a1beaac94898ee52ad1",
+      "target": "docs/runtime.md#player",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/rebuild/preferences.md",
+      "oldSha256": "64a0cc372d389d6f60ea38359c0598ab704c8ee62bb77297c625f8fe4329b7fd",
+      "target": "docs/player.md#preferences",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/rebuild/preview-checkpoints.md",
+      "oldSha256": "d4f54a8b2873cdfc47ebb8d6d03515511354e3a4582c2f34b21214d7ac1e0327",
+      "target": "docs/editor.md#preview-checkpoints",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/rebuild/readout.md",
+      "oldSha256": "1e29a49063af7799953ebdec77b3bde35c460d75d2e8d6fd0a84ec7233df695f",
+      "target": "docs/player.md#readout",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/rebuild/records.md",
+      "oldSha256": "a08f9dc64a973432b85b7c247ae604d828d58fd1981a1c277247fb0a4abe2bec",
+      "target": "docs/storage.md#records",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/rebuild/references.md",
+      "oldSha256": "1b3448220ebc2eaeb851a4457796345abd72eb7dd147125164599f857902fd17",
+      "target": "docs/editor.md#references",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/rebuild/rollback.md",
+      "oldSha256": "8161216bc4368467cacf4693296b3374664b3b7db449f08cf28e7c2a17ad28d4",
+      "target": "docs/storage.md#rollback",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/rebuild/run-profile.md",
+      "oldSha256": "e77b401a080e1e9a6ceb0a4a7cdb92334c7220f4b54cd044224385a05b815197",
+      "target": "docs/delivery.md#run-profile",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/rebuild/runtime.md",
+      "oldSha256": "af9303293088054bf19c282365d4f022daa2ad025a4bf027e5a7d12be0eb2ee4",
+      "target": "docs/runtime.md#runtime",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/rebuild/saves.md",
+      "oldSha256": "506f6e7336deaa6ce203fe1753b0a148b57ebf6797328ddfbba3534fb254cd44",
+      "target": "docs/storage.md#saves",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/rebuild/slots.md",
+      "oldSha256": "f284ace119179c6f184674800518a342345fcbbc650269ad145b379b19eddf20",
+      "target": "docs/storage.md#slots",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/rebuild/status.md",
+      "oldSha256": "ac41d3be941e2aa35e4880f2140ab5c48dfb4bf4b721120a1f22a987f87177c3",
+      "target": "docs/README.md#status",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/rebuild/thumbnails.md",
+      "oldSha256": "95d236fee8929259ec301186b26e8ddbf6832a95393450b14b239b68efee0e19",
+      "target": "docs/storage.md#pending",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/rebuild/windows.md",
+      "oldSha256": "70d2733edc07301a20d83ca9ef1d6d154fd8c4f7bf51d7469966f34a3217f2b4",
+      "target": "docs/delivery.md#windows",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/script-syntax.md",
+      "oldSha256": "0f49c6a477fda293560283008752c815eab54551cc71334ff9de643ced943dad",
+      "target": "docs/migration.md#history",
+      "treatment": "有效内容决定/缺口已提取；过期工程与协作叙事退役"
+    },
+    {
+      "oldPath": "docs/项目结构报告.md",
+      "oldSha256": "eca94d3da5cbe145c50e7ddb7d544eb38d8335cc2ca09294b8bd3d80472971d8",
+      "target": "docs/migration.md#history",
+      "treatment": "有效内容决定/缺口已提取；过期工程与协作叙事退役"
+    },
+    {
+      "oldPath": "mobile/android/AGENTS.md",
+      "oldSha256": "43842fd7d2604901ccad2c3e0f318faf319cbad224e58726eacebbbf5c16196d",
+      "target": "docs/engineering.md#scope-6",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "packages/chat/AGENTS.md",
+      "oldSha256": "f45695b0301c818029ec1e43bfad9e8ebbdc323df67c1ddee33ff6bf3175e95d",
+      "target": "docs/engineering.md#scope-2",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "packages/player/AGENTS.md",
+      "oldSha256": "09688cbe99b205722a0705a9ba20b53ed4359d0982f041b40b3bb4be1393412d",
+      "target": "docs/engineering.md#scope-1",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "plugins/builtin/galagent/README.md",
+      "oldSha256": "a6c48c43eefda79871f0dcfd40162574dc3c7605c6546969ac0b5d05d5967c90",
+      "target": "docs/chat.md#legacy-agent",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "tests/chat/README.md",
+      "oldSha256": "99b8804bd120e68bf051c1b67b5028a05c1a5900994bae8b56c594619f05b9e2",
+      "target": "docs/chat.md#verification",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "tests/evals/README.md",
+      "oldSha256": "7adc2a5d39fa9cc7986eec2018ce9746033dbad69204014cc37ab930fb535687",
+      "target": "docs/migration.md#history",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "tests/evals/reports/scripted-after-fix.md",
+      "oldSha256": "57336a90558d4323077790d338cd91a4d6bc2dcf6531160f43b7183a47376fd4",
+      "target": "docs/migration.md#history",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "tests/evals/reports/scripted-baseline.md",
+      "oldSha256": "07dc22174521436738bbc57272be6d426a1312370070deb8b0483479f8c808f4",
+      "target": "docs/migration.md#history",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "tools/README.md",
+      "oldSha256": "b33468c770d3ab1884a514a31c9fe2920f6d00f3a530bbf70ad871554f6ec318",
+      "target": "docs/README.md#directories",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "tools/editor/AGENTS.md",
+      "oldSha256": "fdb80614dc6995c72b3abbfc08b83444c85076adac682803dc74a9c14aba7d37",
+      "target": "docs/engineering.md#scope-4",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "tools/oneoff/README.md",
+      "oldSha256": "77637186bdd2168012d248a30cd84884fa5ea5c1110d5113499043b17f698b2c",
+      "target": "docs/engineering.md#historical-tools",
+      "treatment": "有效职责、契约或接口归并到主题文档"
+    }
+  ]
+}

@@ -1,0 +1,1009 @@
+{
+  "mni51ori": {
+    "id": "mni51ori",
+    "type": "se",
+    "name": "作者原声·UI_CG",
+    "src": "assets/se/UI_CG.mp3",
+    "dur": 2.458118,
+    "audioCategory": "effect",
+    "auditionOnly": false
+  },
+  "yq8tcybf": {
+    "id": "yq8tcybf",
+    "type": "se",
+    "name": "作者原声·UI_好感上升",
+    "src": "assets/se/UI_好感上升.mp3",
+    "dur": 0.69585,
+    "audioCategory": "effect",
+    "auditionOnly": false
+  },
+  "dwromo3v": {
+    "id": "dwromo3v",
+    "type": "se",
+    "name": "作者原声·UI_好感下降",
+    "src": "assets/se/UI_好感下降.mp3",
+    "dur": 1.08712,
+    "audioCategory": "effect",
+    "auditionOnly": false
+  },
+  "jsxl4tcf": {
+    "id": "jsxl4tcf",
+    "type": "se",
+    "name": "作者原声·UI_存档",
+    "src": "assets/se/UI_存档.mp3",
+    "dur": 1.271905,
+    "audioCategory": "effect",
+    "auditionOnly": false
+  },
+  "ayhs65mz": {
+    "id": "ayhs65mz",
+    "type": "se",
+    "name": "作者原声·UI_尾鳍标记",
+    "src": "assets/se/UI_尾鳍标记.mp3",
+    "dur": 0.215624,
+    "audioCategory": "effect",
+    "auditionOnly": false
+  },
+  "ubotdcr5": {
+    "id": "ubotdcr5",
+    "type": "se",
+    "name": "作者原声·UI_新结局",
+    "src": "assets/se/UI_新结局.mp3",
+    "dur": 6.0,
+    "audioCategory": "effect",
+    "auditionOnly": false
+  },
+  "84dehvnk": {
+    "id": "84dehvnk",
+    "type": "se",
+    "name": "作者原声·UI_话末",
+    "src": "assets/se/UI_话末.mp3",
+    "dur": 3.883537,
+    "audioCategory": "effect",
+    "auditionOnly": false
+  },
+  "0l5canwg": {
+    "id": "0l5canwg",
+    "type": "se",
+    "name": "作者原声·UI_超时沉默",
+    "src": "assets/se/UI_超时沉默.mp3",
+    "dur": 2.733039,
+    "audioCategory": "effect",
+    "auditionOnly": true
+  },
+  "084gbl61": {
+    "id": "084gbl61",
+    "type": "se",
+    "name": "作者原声·UI_退潮线倒计时",
+    "src": "assets/se/UI_退潮线倒计时.mp3",
+    "dur": 3.986531,
+    "audioCategory": "effect",
+    "auditionOnly": false
+  },
+  "b6keau2r": {
+    "id": "b6keau2r",
+    "type": "se",
+    "name": "作者原声·UI_选项出现",
+    "src": "assets/se/UI_选项出现.mp3",
+    "dur": 0.140363,
+    "audioCategory": "effect",
+    "auditionOnly": false
+  },
+  "f8c9r2uu": {
+    "id": "f8c9r2uu",
+    "type": "se",
+    "name": "作者原声·UI_选项确认",
+    "src": "assets/se/UI_选项确认.mp3",
+    "dur": 0.299796,
+    "audioCategory": "effect",
+    "auditionOnly": false
+  },
+  "we9vnprm": {
+    "id": "we9vnprm",
+    "type": "se",
+    "name": "作者原声·剧情_发梢滴水",
+    "src": "assets/se/剧情_发梢滴水.mp3",
+    "dur": 3.9,
+    "audioCategory": "effect",
+    "auditionOnly": true
+  },
+  "3vid9p95": {
+    "id": "3vid9p95",
+    "type": "se",
+    "name": "作者原声·剧情_合上笔记本",
+    "src": "assets/se/剧情_合上笔记本.mp3",
+    "dur": 0.297324,
+    "audioCategory": "effect",
+    "auditionOnly": true
+  },
+  "9pewhqn1": {
+    "id": "9pewhqn1",
+    "type": "se",
+    "name": "作者原声·剧情_呛水",
+    "src": "assets/se/剧情_呛水.mp3",
+    "dur": 5.6,
+    "audioCategory": "effect",
+    "auditionOnly": true
+  },
+  "hl08iesl": {
+    "id": "hl08iesl",
+    "type": "se",
+    "name": "作者原声·剧情_定格重音",
+    "src": "assets/se/剧情_定格重音.mp3",
+    "dur": 1.253878,
+    "audioCategory": "effect",
+    "auditionOnly": true
+  },
+  "t4n910zd": {
+    "id": "t4n910zd",
+    "type": "se",
+    "name": "作者原声·剧情_尾巴急甩",
+    "src": "assets/se/剧情_尾巴急甩.mp3",
+    "dur": 2.43424,
+    "audioCategory": "effect",
+    "auditionOnly": true
+  },
+  "z99ks1g9": {
+    "id": "z99ks1g9",
+    "type": "se",
+    "name": "作者原声·剧情_尾巴拍平水面",
+    "src": "assets/se/剧情_尾巴拍平水面.mp3",
+    "dur": 1.819977,
+    "audioCategory": "effect",
+    "auditionOnly": true
+  },
+  "y4yar145": {
+    "id": "y4yar145",
+    "type": "se",
+    "name": "作者原声·剧情_巨大拍水",
+    "src": "assets/se/剧情_巨大拍水.mp3",
+    "dur": 2.172268,
+    "audioCategory": "effect",
+    "auditionOnly": true
+  },
+  "jpswn4ou": {
+    "id": "jpswn4ou",
+    "type": "se",
+    "name": "作者原声·剧情_心跳",
+    "src": "assets/se/剧情_心跳.mp3",
+    "dur": 5.5,
+    "audioCategory": "effect",
+    "auditionOnly": true
+  },
+  "j3r2wgjd": {
+    "id": "j3r2wgjd",
+    "type": "se",
+    "name": "作者原声·剧情_手机扣礁石",
+    "src": "assets/se/剧情_手机扣礁石.mp3",
+    "dur": 2.366667,
+    "audioCategory": "effect",
+    "auditionOnly": true
+  },
+  "wq1hcql9": {
+    "id": "wq1hcql9",
+    "type": "se",
+    "name": "作者原声·剧情_手机来电",
+    "src": "assets/se/剧情_手机来电.mp3",
+    "dur": 0.617029,
+    "audioCategory": "effect",
+    "auditionOnly": true
+  },
+  "ikmmc4rd": {
+    "id": "ikmmc4rd",
+    "type": "se",
+    "name": "作者原声·剧情_接挂电话",
+    "src": "assets/se/剧情_接挂电话.mp3",
+    "dur": 3.385465,
+    "audioCategory": "effect",
+    "auditionOnly": true
+  },
+  "62zsrlep": {
+    "id": "62zsrlep",
+    "type": "se",
+    "name": "作者原声·剧情_撕开小鱼干",
+    "src": "assets/se/剧情_撕开小鱼干.mp3",
+    "dur": 2.420023,
+    "audioCategory": "effect",
+    "auditionOnly": true
+  },
+  "ked1340w": {
+    "id": "ked1340w",
+    "type": "se",
+    "name": "作者原声·剧情_水花溅脸",
+    "src": "assets/se/剧情_水花溅脸.mp3",
+    "dur": 1.102086,
+    "audioCategory": "effect",
+    "auditionOnly": true
+  },
+  "01xv6k84": {
+    "id": "01xv6k84",
+    "type": "se",
+    "name": "作者原声·剧情_海鸥",
+    "src": "assets/se/剧情_海鸥.mp3",
+    "dur": 4.988571,
+    "audioCategory": "effect",
+    "auditionOnly": true
+  },
+  "p9peyxja": {
+    "id": "p9peyxja",
+    "type": "se",
+    "name": "作者原声·剧情_海鸥叼食",
+    "src": "assets/se/剧情_海鸥叼食.mp3",
+    "dur": 4.5,
+    "audioCategory": "effect",
+    "auditionOnly": true
+  },
+  "6186g35b": {
+    "id": "6186g35b",
+    "type": "se",
+    "name": "作者原声·剧情_深潜水压",
+    "src": "assets/se/剧情_深潜水压.mp3",
+    "dur": 5.589728,
+    "audioCategory": "effect",
+    "auditionOnly": true
+  },
+  "rfiajeti": {
+    "id": "rfiajeti",
+    "type": "se",
+    "name": "作者原声·剧情_窸窸窣窣",
+    "src": "assets/se/剧情_窸窸窣窣.mp3",
+    "dur": 2.745828,
+    "audioCategory": "effect",
+    "auditionOnly": true
+  },
+  "8op9un8s": {
+    "id": "8op9un8s",
+    "type": "se",
+    "name": "作者原声·剧情_笔尖书写",
+    "src": "assets/se/剧情_笔尖书写.mp3",
+    "dur": 3.389456,
+    "audioCategory": "effect",
+    "auditionOnly": true
+  },
+  "ruxo9hhr": {
+    "id": "ruxo9hhr",
+    "type": "se",
+    "name": "作者原声·剧情_落水",
+    "src": "assets/se/剧情_落水.mp3",
+    "dur": 2.832517,
+    "audioCategory": "effect",
+    "auditionOnly": true
+  },
+  "fitkd10c": {
+    "id": "fitkd10c",
+    "type": "se",
+    "name": "作者原声·剧情_风铃单响",
+    "src": "assets/se/剧情_风铃单响.mp3",
+    "dur": 2.104467,
+    "audioCategory": "effect",
+    "auditionOnly": true
+  },
+  "x1tt92z6": {
+    "id": "x1tt92z6",
+    "type": "se",
+    "name": "作者原声·尾巴_卷圈",
+    "src": "assets/se/尾巴_卷圈.mp3",
+    "dur": 1.130884,
+    "audioCategory": "effect",
+    "auditionOnly": true
+  },
+  "1vlwjxq8": {
+    "id": "1vlwjxq8",
+    "type": "se",
+    "name": "作者原声·尾巴_慌乱甩圈",
+    "src": "assets/se/尾巴_慌乱甩圈.mp3",
+    "dur": 3.450703,
+    "audioCategory": "effect",
+    "auditionOnly": true
+  },
+  "oirfbiqt": {
+    "id": "oirfbiqt",
+    "type": "se",
+    "name": "作者原声·尾巴_拍地",
+    "src": "assets/se/尾巴_拍地.mp3",
+    "dur": 0.393946,
+    "audioCategory": "effect",
+    "auditionOnly": true
+  },
+  "ckztcn3x": {
+    "id": "ckztcn3x",
+    "type": "se",
+    "name": "作者原声·尾巴_拍床",
+    "src": "assets/se/尾巴_拍床.mp3",
+    "dur": 1.579932,
+    "audioCategory": "effect",
+    "auditionOnly": true
+  },
+  "guntvixk": {
+    "id": "guntvixk",
+    "type": "se",
+    "name": "作者原声·尾巴_拍桌",
+    "src": "assets/se/尾巴_拍桌.mp3",
+    "dur": 2.454989,
+    "audioCategory": "effect",
+    "auditionOnly": true
+  },
+  "ulncpcrt": {
+    "id": "ulncpcrt",
+    "type": "se",
+    "name": "作者原声·尾巴_拍水",
+    "src": "assets/se/尾巴_拍水.mp3",
+    "dur": 1.600023,
+    "audioCategory": "effect",
+    "auditionOnly": true
+  },
+  "bg9y8h6j": {
+    "id": "bg9y8h6j",
+    "type": "se",
+    "name": "作者原声·尾巴_拍沙",
+    "src": "assets/se/尾巴_拍沙.mp3",
+    "dur": 1.938163,
+    "audioCategory": "effect",
+    "auditionOnly": true
+  },
+  "300w0xmn": {
+    "id": "300w0xmn",
+    "type": "se",
+    "name": "作者原声·尾巴_放平",
+    "src": "assets/se/尾巴_放平.mp3",
+    "dur": 0.38873,
+    "audioCategory": "effect",
+    "auditionOnly": true
+  },
+  "9pxap24y": {
+    "id": "9pxap24y",
+    "type": "se",
+    "name": "作者原声·尾巴_缠绕",
+    "src": "assets/se/尾巴_缠绕.mp3",
+    "dur": 4.006508,
+    "audioCategory": "effect",
+    "auditionOnly": true
+  },
+  "35ne6hcj": {
+    "id": "35ne6hcj",
+    "type": "se",
+    "name": "作者原声·尾巴_翘起",
+    "src": "assets/se/尾巴_翘起.mp3",
+    "dur": 1.735624,
+    "audioCategory": "effect",
+    "auditionOnly": true
+  },
+  "gjflu4vq": {
+    "id": "gjflu4vq",
+    "type": "se",
+    "name": "作者原声·环境_帐篷海风",
+    "src": "assets/se/环境_帐篷海风.mp3",
+    "dur": 32.2,
+    "audioCategory": "ambience",
+    "auditionOnly": true
+  },
+  "1n1k47zu": {
+    "id": "1n1k47zu",
+    "type": "se",
+    "name": "作者原声·环境_店内底噪",
+    "src": "assets/se/环境_店内底噪.mp3",
+    "dur": 60.0,
+    "audioCategory": "ambience",
+    "auditionOnly": true
+  },
+  "y8a9djv3": {
+    "id": "y8a9djv3",
+    "type": "se",
+    "name": "作者原声·环境_水下嗡鸣",
+    "src": "assets/se/环境_水下嗡鸣.mp3",
+    "dur": 60.0,
+    "audioCategory": "ambience",
+    "auditionOnly": true
+  },
+  "c417hz1z": {
+    "id": "c417hz1z",
+    "type": "se",
+    "name": "作者原声·环境_潮声常规",
+    "src": "assets/se/环境_潮声常规.mp3",
+    "dur": 30.000181,
+    "audioCategory": "ambience",
+    "auditionOnly": true
+  },
+  "je287mgp": {
+    "id": "je287mgp",
+    "type": "se",
+    "name": "作者原声·环境_潮声暴烈",
+    "src": "assets/se/环境_潮声暴烈.mp3",
+    "dur": 30.000181,
+    "audioCategory": "ambience",
+    "auditionOnly": true
+  },
+  "hax42gix": {
+    "id": "hax42gix",
+    "type": "se",
+    "name": "作者原声·环境_潮声轻",
+    "src": "assets/se/环境_潮声轻.mp3",
+    "dur": 30.000181,
+    "audioCategory": "ambience",
+    "auditionOnly": true
+  },
+  "xnqc8ujq": {
+    "id": "xnqc8ujq",
+    "type": "se",
+    "name": "作者原声·环境_潮声远",
+    "src": "assets/se/环境_潮声远.mp3",
+    "dur": 30.000181,
+    "audioCategory": "ambience",
+    "auditionOnly": true
+  },
+  "bahuc7vr": {
+    "id": "bahuc7vr",
+    "type": "se",
+    "name": "作者原声·环境_潮声铺底",
+    "src": "assets/se/环境_潮声铺底.mp3",
+    "dur": 30.000181,
+    "audioCategory": "ambience",
+    "auditionOnly": true
+  },
+  "3dk9mevc": {
+    "id": "3dk9mevc",
+    "type": "se",
+    "name": "作者原声·环境_篝火",
+    "src": "assets/se/环境_篝火.mp3",
+    "dur": 60.0,
+    "audioCategory": "ambience",
+    "auditionOnly": true
+  },
+  "iav5u9l3": {
+    "id": "iav5u9l3",
+    "type": "se",
+    "name": "作者原声·环境_贝壳风铃",
+    "src": "assets/se/环境_贝壳风铃.mp3",
+    "dur": 27.2,
+    "audioCategory": "ambience",
+    "auditionOnly": true
+  },
+  "fu6lfpbq": {
+    "id": "fu6lfpbq",
+    "type": "se",
+    "name": "作者原声·环境_集市人声",
+    "src": "assets/se/环境_集市人声.mp3",
+    "dur": 60.0,
+    "audioCategory": "ambience",
+    "auditionOnly": true
+  },
+  "amb_a01_waves_normal_v01": {
+    "id": "amb_a01_waves_normal_v01",
+    "type": "se",
+    "name": "潮声·常规",
+    "src": "assets/audio/amb_a01_waves_normal_v01.ogg",
+    "dur": 29.2,
+    "audioCategory": "ambience"
+  },
+  "amb_a02_waves_soft_v01": {
+    "id": "amb_a02_waves_soft_v01",
+    "type": "se",
+    "name": "潮声·轻",
+    "src": "assets/audio/amb_a02_waves_soft_v01.ogg",
+    "dur": 29.2,
+    "audioCategory": "ambience"
+  },
+  "amb_a03_waves_distant_ebb_v01": {
+    "id": "amb_a03_waves_distant_ebb_v01",
+    "type": "se",
+    "name": "潮声·远",
+    "src": "assets/audio/amb_a03_waves_distant_ebb_v01.ogg",
+    "dur": 29.2,
+    "audioCategory": "ambience"
+  },
+  "amb_a04_waves_bed_v01": {
+    "id": "amb_a04_waves_bed_v01",
+    "type": "se",
+    "name": "潮声·单独铺底（含音乐，仅试听）",
+    "src": "assets/audio/amb_a04_waves_bed_v01.ogg",
+    "dur": 29.2,
+    "audioCategory": "ambience"
+  },
+  "amb_a05_waves_violent_v01": {
+    "id": "amb_a05_waves_violent_v01",
+    "type": "se",
+    "name": "潮声·暴烈",
+    "src": "assets/audio/amb_a05_waves_violent_v01.ogg",
+    "dur": 29.2,
+    "audioCategory": "ambience"
+  },
+  "amb_a06_seagulls_v01": {
+    "id": "amb_a06_seagulls_v01",
+    "type": "se",
+    "name": "海鸥",
+    "src": "assets/audio/amb_a06_seagulls_v01.ogg",
+    "dur": 29.0,
+    "audioCategory": "ambience"
+  },
+  "amb_a07_underwater_low_hum_v01": {
+    "id": "amb_a07_underwater_low_hum_v01",
+    "type": "se",
+    "name": "水下·低频嗡鸣",
+    "src": "assets/audio/amb_a07_underwater_low_hum_v01.ogg",
+    "dur": 29.2,
+    "audioCategory": "ambience"
+  },
+  "amb_a08_underwater_heartbeat_v01": {
+    "id": "amb_a08_underwater_heartbeat_v01",
+    "type": "se",
+    "name": "水下·心跳声",
+    "src": "assets/audio/amb_a08_underwater_heartbeat_v01.ogg",
+    "dur": 13.2,
+    "audioCategory": "ambience"
+  },
+  "amb_a09_water_splash_v01": {
+    "id": "amb_a09_water_splash_v01",
+    "type": "se",
+    "name": "水花",
+    "src": "assets/audio/amb_a09_water_splash_v01.ogg",
+    "dur": 4.285188,
+    "audioCategory": "effect"
+  },
+  "amb_a10_market_crowd_v01": {
+    "id": "amb_a10_market_crowd_v01",
+    "type": "se",
+    "name": "集市人声",
+    "src": "assets/audio/amb_a10_market_crowd_v01.ogg",
+    "dur": 47.2,
+    "audioCategory": "ambience"
+  },
+  "amb_a11_shell_wind_chimes_v01": {
+    "id": "amb_a11_shell_wind_chimes_v01",
+    "type": "se",
+    "name": "贝壳风铃",
+    "src": "assets/audio/amb_a11_shell_wind_chimes_v01.ogg",
+    "dur": 34.0,
+    "audioCategory": "ambience"
+  },
+  "amb_a12_tent_sea_wind_v01": {
+    "id": "amb_a12_tent_sea_wind_v01",
+    "type": "se",
+    "name": "帐篷海风",
+    "src": "assets/audio/amb_a12_tent_sea_wind_v01.ogg",
+    "dur": 29.2,
+    "audioCategory": "ambience"
+  },
+  "amb_a13_lighter_ignites_wick_v01": {
+    "id": "amb_a13_lighter_ignites_wick_v01",
+    "type": "se",
+    "name": "打火机点燃灯芯",
+    "src": "assets/audio/amb_a13_lighter_ignites_wick_v01.ogg",
+    "dur": 2.8,
+    "audioCategory": "effect"
+  },
+  "amb_a14_campfire_v01": {
+    "id": "amb_a14_campfire_v01",
+    "type": "se",
+    "name": "篝火",
+    "src": "assets/audio/amb_a14_campfire_v01.ogg",
+    "dur": 39.2,
+    "audioCategory": "ambience"
+  },
+  "amb_a15_shop_room_tone_v01": {
+    "id": "amb_a15_shop_room_tone_v01",
+    "type": "se",
+    "name": "店内底噪",
+    "src": "assets/audio/amb_a15_shop_room_tone_v01.ogg",
+    "dur": 29.2,
+    "audioCategory": "ambience"
+  },
+  "sfx_s01_large_water_slap_v01": {
+    "id": "sfx_s01_large_water_slap_v01",
+    "type": "se",
+    "name": "巨大拍水",
+    "src": "assets/audio/sfx_s01_large_water_slap_v01.ogg",
+    "dur": 2.17225,
+    "audioCategory": "effect"
+  },
+  "sfx_s02_choking_water_v01": {
+    "id": "sfx_s02_choking_water_v01",
+    "type": "se",
+    "name": "呛水",
+    "src": "assets/audio/sfx_s02_choking_water_v01.ogg",
+    "dur": 5.5,
+    "audioCategory": "effect"
+  },
+  "sfx_s02_fall_into_water_v01": {
+    "id": "sfx_s02_fall_into_water_v01",
+    "type": "se",
+    "name": "落水",
+    "src": "assets/audio/sfx_s02_fall_into_water_v01.ogg",
+    "dur": 2.5,
+    "audioCategory": "effect"
+  },
+  "sfx_s03_splash_on_face_v01": {
+    "id": "sfx_s03_splash_on_face_v01",
+    "type": "se",
+    "name": "水花溅脸",
+    "src": "assets/audio/sfx_s03_splash_on_face_v01.ogg",
+    "dur": 3.0,
+    "audioCategory": "effect"
+  },
+  "sfx_s04_tail_flattens_water_v01": {
+    "id": "sfx_s04_tail_flattens_water_v01",
+    "type": "se",
+    "name": "尾巴拍平水面",
+    "src": "assets/audio/sfx_s04_tail_flattens_water_v01.ogg",
+    "dur": 2.5,
+    "audioCategory": "effect"
+  },
+  "sfx_s05_seagull_takes_food_v01": {
+    "id": "sfx_s05_seagull_takes_food_v01",
+    "type": "se",
+    "name": "海鸥叼食",
+    "src": "assets/audio/sfx_s05_seagull_takes_food_v01.ogg",
+    "dur": 4.0,
+    "audioCategory": "effect"
+  },
+  "sfx_s06_pen_writing_v01": {
+    "id": "sfx_s06_pen_writing_v01",
+    "type": "se",
+    "name": "笔尖书写",
+    "src": "assets/audio/sfx_s06_pen_writing_v01.ogg",
+    "dur": 4.5,
+    "audioCategory": "effect"
+  },
+  "sfx_s07_notebook_close_v01": {
+    "id": "sfx_s07_notebook_close_v01",
+    "type": "se",
+    "name": "合上笔记本",
+    "src": "assets/audio/sfx_s07_notebook_close_v01.ogg",
+    "dur": 1.423854,
+    "audioCategory": "effect"
+  },
+  "sfx_s08_wind_chime_single_v01": {
+    "id": "sfx_s08_wind_chime_single_v01",
+    "type": "se",
+    "name": "风铃单响",
+    "src": "assets/audio/sfx_s08_wind_chime_single_v01.ogg",
+    "dur": 4.1,
+    "audioCategory": "effect"
+  },
+  "sfx_s09_phone_ringing_v01": {
+    "id": "sfx_s09_phone_ringing_v01",
+    "type": "se",
+    "name": "手机来电",
+    "src": "assets/audio/sfx_s09_phone_ringing_v01.ogg",
+    "dur": 1.714292,
+    "audioCategory": "effect"
+  },
+  "sfx_s10_phone_answer_hangup_v01": {
+    "id": "sfx_s10_phone_answer_hangup_v01",
+    "type": "se",
+    "name": "接挂电话",
+    "src": "assets/audio/sfx_s10_phone_answer_hangup_v01.ogg",
+    "dur": 2.5,
+    "audioCategory": "effect"
+  },
+  "sfx_s11_tail_quick_swish_v01": {
+    "id": "sfx_s11_tail_quick_swish_v01",
+    "type": "se",
+    "name": "尾巴急甩",
+    "src": "assets/audio/sfx_s11_tail_quick_swish_v01.ogg",
+    "dur": 2.0,
+    "audioCategory": "effect"
+  },
+  "sfx_s12_deep_dive_pressure_v01": {
+    "id": "sfx_s12_deep_dive_pressure_v01",
+    "type": "se",
+    "name": "深潜水压",
+    "src": "assets/audio/sfx_s12_deep_dive_pressure_v01.ogg",
+    "dur": 5.0,
+    "audioCategory": "effect"
+  },
+  "sfx_s13_hair_drips_v01": {
+    "id": "sfx_s13_hair_drips_v01",
+    "type": "se",
+    "name": "发梢滴水",
+    "src": "assets/audio/sfx_s13_hair_drips_v01.ogg",
+    "dur": 4.5,
+    "audioCategory": "effect"
+  },
+  "sfx_s14_rustling_v01": {
+    "id": "sfx_s14_rustling_v01",
+    "type": "se",
+    "name": "窸窸窣窣",
+    "src": "assets/audio/sfx_s14_rustling_v01.ogg",
+    "dur": 2.5,
+    "audioCategory": "effect"
+  },
+  "sfx_s15_dried_fish_tear_v01": {
+    "id": "sfx_s15_dried_fish_tear_v01",
+    "type": "se",
+    "name": "小鱼干撕开",
+    "src": "assets/audio/sfx_s15_dried_fish_tear_v01.ogg",
+    "dur": 2.246667,
+    "audioCategory": "effect"
+  },
+  "sfx_s16_comic_freeze_sting_v01": {
+    "id": "sfx_s16_comic_freeze_sting_v01",
+    "type": "se",
+    "name": "被雷劈的定格重音",
+    "src": "assets/audio/sfx_s16_comic_freeze_sting_v01.ogg",
+    "dur": 1.253854,
+    "audioCategory": "effect"
+  },
+  "sfx_s17_phone_set_on_reef_v01": {
+    "id": "sfx_s17_phone_set_on_reef_v01",
+    "type": "se",
+    "name": "手机扣在礁石上",
+    "src": "assets/audio/sfx_s17_phone_set_on_reef_v01.ogg",
+    "dur": 1.8,
+    "audioCategory": "effect"
+  },
+  "sfx_tail_water_light": {
+    "id": "sfx_tail_water_light",
+    "type": "se",
+    "name": "尾巴·轻拍水一下",
+    "src": "assets/audio/tail_water_light.ogg",
+    "dur": 0.46,
+    "audioCategory": "effect",
+    "auditionOnly": false,
+    "sourceFile": "T01拍水（轻档）.flac",
+    "sourceRegion": [
+      3.0,
+      3.46
+    ],
+    "review": "原件中裁出的真实短动作；听感与最终混音仍待音乐负责人试听。"
+  },
+  "sfx_tail_water_double": {
+    "id": "sfx_tail_water_double",
+    "type": "se",
+    "name": "尾巴·轻拍水两下",
+    "src": "assets/audio/tail_water_double.ogg",
+    "dur": 0.9,
+    "audioCategory": "effect",
+    "auditionOnly": false,
+    "sourceFile": "T01拍水（轻档）.flac",
+    "sourceRegion": [
+      6.78,
+      7.68
+    ],
+    "review": "原件中裁出的真实短动作；听感与最终混音仍待音乐负责人试听。"
+  },
+  "sfx_tail_sand": {
+    "id": "sfx_tail_sand",
+    "type": "se",
+    "name": "尾巴·轻拍沙",
+    "src": "assets/audio/tail_sand.ogg",
+    "dur": 0.64,
+    "audioCategory": "effect",
+    "auditionOnly": false,
+    "sourceFile": "T02拍沙.wav",
+    "sourceRegion": [
+      1.12,
+      1.76
+    ],
+    "review": "原件中裁出的真实短动作；听感与最终混音仍待音乐负责人试听。"
+  },
+  "sfx_tail_wood": {
+    "id": "sfx_tail_wood",
+    "type": "se",
+    "name": "尾巴·轻拍木桌",
+    "src": "assets/audio/tail_wood.ogg",
+    "dur": 0.66,
+    "audioCategory": "effect",
+    "auditionOnly": false,
+    "sourceFile": "T03拍桌、桌腿.wav",
+    "sourceRegion": [
+      0.28,
+      0.94
+    ],
+    "review": "原件中裁出的真实短动作；听感与最终混音仍待音乐负责人试听。"
+  },
+  "sfx_tail_wood_leg": {
+    "id": "sfx_tail_wood_leg",
+    "type": "se",
+    "name": "尾巴·轻拍桌腿",
+    "src": "assets/audio/tail_wood_leg.ogg",
+    "dur": 0.72,
+    "audioCategory": "effect",
+    "auditionOnly": false,
+    "sourceFile": "T03拍桌、桌腿.wav",
+    "sourceRegion": [
+      1.7,
+      2.42
+    ],
+    "review": "原件中裁出的真实短动作；听感与最终混音仍待音乐负责人试听。"
+  },
+  "sfx_tail_soft": {
+    "id": "sfx_tail_soft",
+    "type": "se",
+    "name": "尾巴·床与沙发轻碰",
+    "src": "assets/audio/tail_soft.ogg",
+    "dur": 1.0,
+    "audioCategory": "effect",
+    "auditionOnly": false,
+    "sourceFile": "T04拍床、沙发.wav",
+    "sourceRegion": [
+      0,
+      1.0
+    ],
+    "review": "原件中裁出的真实短动作；听感与最终混音仍待音乐负责人试听。"
+  },
+  "sfx_tail_close_door": {
+    "id": "sfx_tail_close_door",
+    "type": "se",
+    "name": "尾巴·轻带上门",
+    "src": "assets/audio/tail_close_door.ogg",
+    "dur": 1.3,
+    "audioCategory": "effect",
+    "auditionOnly": false,
+    "sourceFile": "T11尾巴带上门.wav",
+    "sourceRegion": [
+      0.35,
+      1.65
+    ],
+    "review": "原件中裁出的真实短动作；听感与最终混音仍待音乐负责人试听。"
+  },
+  "sfx_tail_floor_review": {
+    "id": "sfx_tail_floor_review",
+    "type": "se",
+    "name": "尾巴·拍地（待复核）",
+    "src": "assets/audio/tail_floor_review.ogg",
+    "dur": 0.393958,
+    "audioCategory": "effect",
+    "auditionOnly": true,
+    "sourceFile": "T05拍地.wav",
+    "sourceRegion": [
+      0,
+      null
+    ],
+    "review": "保留试听；不作为每个尾鳍表情的提示音。"
+  },
+  "sfx_tail_curl_review": {
+    "id": "sfx_tail_curl_review",
+    "type": "se",
+    "name": "尾巴·轻卷（仅试听）",
+    "src": "assets/audio/tail_curl_review.ogg",
+    "dur": 1.155542,
+    "audioCategory": "effect",
+    "auditionOnly": true,
+    "sourceFile": "T06卷圈、轻卷.wav",
+    "sourceRegion": [
+      0,
+      null
+    ],
+    "review": "保留试听；不作为每个尾鳍表情的提示音。"
+  },
+  "sfx_tail_raise_review": {
+    "id": "sfx_tail_raise_review",
+    "type": "se",
+    "name": "尾巴·翘起（仅试听）",
+    "src": "assets/audio/tail_raise_review.ogg",
+    "dur": 11.562667,
+    "audioCategory": "effect",
+    "auditionOnly": true,
+    "sourceFile": "T07翘起、高翘.wav",
+    "sourceRegion": [
+      0,
+      null
+    ],
+    "review": "保留试听；不作为每个尾鳍表情的提示音。"
+  },
+  "sfx_tail_fluster_review": {
+    "id": "sfx_tail_fluster_review",
+    "type": "se",
+    "name": "尾巴·慌乱甩圈（仅试听）",
+    "src": "assets/audio/tail_fluster_review.ogg",
+    "dur": 11.891458,
+    "audioCategory": "effect",
+    "auditionOnly": true,
+    "sourceFile": "T08慌乱甩圈.wav",
+    "sourceRegion": [
+      0,
+      null
+    ],
+    "review": "保留试听；不作为每个尾鳍表情的提示音。"
+  },
+  "sfx_tail_wrap_review": {
+    "id": "sfx_tail_wrap_review",
+    "type": "se",
+    "name": "尾巴·缠绕（仅试听）",
+    "src": "assets/audio/tail_wrap_review.ogg",
+    "dur": 15.004708,
+    "audioCategory": "effect",
+    "auditionOnly": true,
+    "sourceFile": "T09缠绕.wav",
+    "sourceRegion": [
+      0,
+      null
+    ],
+    "review": "保留试听；不作为每个尾鳍表情的提示音。"
+  },
+  "sfx_tail_flat_review": {
+    "id": "sfx_tail_flat_review",
+    "type": "se",
+    "name": "尾巴·放平沉底（仅试听）",
+    "src": "assets/audio/tail_flat_review.ogg",
+    "dur": 0.396146,
+    "audioCategory": "effect",
+    "auditionOnly": true,
+    "sourceFile": "T10放平、沉底.wav",
+    "sourceRegion": [
+      0,
+      null
+    ],
+    "review": "保留试听；不作为每个尾鳍表情的提示音。"
+  },
+  "sfx_pen_tap_paper_double": {
+    "id": "sfx_pen_tap_paper_double",
+    "type": "se",
+    "name": "笔杆·轻敲纸面两下",
+    "src": "assets/audio/sfx_pen_tap_paper_double.ogg",
+    "dur": 1.12,
+    "audioCategory": "effect",
+    "auditionOnly": false,
+    "sourceFile": "缺失音效/笔杆轻敲纸面.wav",
+    "sourceRegion": [
+      0.1,
+      1.22
+    ],
+    "sha256": "c9bdb4ec8c66be82ab3d78f864726508973a636ebb7a55bce6ae35d61912a7e3",
+    "review": "用户 2026-10-18 交付的真实录音；从原件裁出单次动作并做峰值对齐，听感与混音待音乐负责人确认。"
+  },
+  "sfx_tail_pat_leg_ch07": {
+    "id": "sfx_tail_pat_leg_ch07",
+    "type": "se",
+    "name": "尾巴·腿边不满轻拍",
+    "src": "assets/audio/sfx_tail_pat_leg_ch07.ogg",
+    "dur": 0.85,
+    "audioCategory": "effect",
+    "auditionOnly": false,
+    "sourceFile": "缺失音效/第七、八话轻拍.wav",
+    "sourceRegion": [
+      0.1,
+      0.95
+    ],
+    "sha256": "775d0d31af71055d9f36aaeb235a86010d22c76365433871b1b504d84187a8a0",
+    "review": "用户 2026-10-18 交付的真实录音；从原件裁出单次动作并做峰值对齐，听感与混音待音乐负责人确认。"
+  },
+  "sfx_tail_pat_hand_ch08": {
+    "id": "sfx_tail_pat_hand_ch08",
+    "type": "se",
+    "name": "尾巴·制止伸手轻拍",
+    "src": "assets/audio/sfx_tail_pat_hand_ch08.ogg",
+    "dur": 0.69,
+    "audioCategory": "effect",
+    "auditionOnly": false,
+    "sourceFile": "缺失音效/第七、八话轻拍.wav",
+    "sourceRegion": [
+      0.98,
+      1.67
+    ],
+    "sha256": "5dd741b7ce6fedd64029e603359ccd15d3bca621a6a18c059d5d8162b1b83b9b",
+    "review": "用户 2026-10-18 交付的真实录音；从原件裁出单次动作并做峰值对齐，听感与混音待音乐负责人确认。"
+  },
+  "sfx_tail_pat_floor_ch12": {
+    "id": "sfx_tail_pat_floor_ch12",
+    "type": "se",
+    "name": "尾鳍·拍一下（店内）",
+    "src": "assets/audio/sfx_tail_pat_floor_ch12.ogg",
+    "dur": 0.81,
+    "audioCategory": "effect",
+    "auditionOnly": false,
+    "sourceFile": "缺失音效/第十二、十四话.wav",
+    "sourceRegion": [
+      18.64,
+      19.45
+    ],
+    "sha256": "0e5271f8774d1ebbdf8438a834b45e850e4b79e172f08dd7211c162c05aa5e7a",
+    "review": "用户 2026-10-18 交付的真实录音；从原件裁出单次动作并做峰值对齐，听感与混音待音乐负责人确认。"
+  },
+  "sfx_tail_pat_floor_soft_ch14": {
+    "id": "sfx_tail_pat_floor_soft_ch14",
+    "type": "se",
+    "name": "尾鳍·柜台下极轻一拍",
+    "src": "assets/audio/sfx_tail_pat_floor_soft_ch14.ogg",
+    "dur": 0.62,
+    "audioCategory": "effect",
+    "auditionOnly": false,
+    "sourceFile": "缺失音效/第十二、十四话.wav",
+    "sourceRegion": [
+      41.93,
+      42.55
+    ],
+    "sha256": "c1a2876544eb578b9fdca2253295bbb43617728d1bed8d4dd7d5eda156990cc4",
+    "review": "用户 2026-10-18 交付的真实录音；从原件裁出单次动作并做峰值对齐，听感与混音待音乐负责人确认。"
+  }
+}

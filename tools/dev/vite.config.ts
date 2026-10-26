@@ -7,7 +7,7 @@ import { collectionAppearance, whaleAppearance } from "./appearance.ts";
 const virtualId = "virtual:haifeng-content";
 const resolvedId = `\0${virtualId}`;
 
-/** Development only: compile trusted local author data, never execute game.js. */
+/** Development only: compile the same chapter project as packaged game and editor. */
 function localContent(): Plugin {
   let content: ReturnType<typeof loadSourceContent> | null = null;
   return {

@@ -1,6 +1,6 @@
 # content/
 
-TypeScript 重构的独立游戏界面资源见 [game-ui](game-ui/README.md)，只含原图形定义及迁移来源；唯一剧情作者源仍为 `海风与布丁/game.js`。下方为保留的原 Demo 内容说明，不作为当前重构命令或授权依据。
+TypeScript 本体的唯一分章剧情作者源见 [story](story/README.md)，界面资源见 [game-ui](game-ui/README.md)。2026-10-26 已切换读取/有限写回并删除原 `game.js` 作者数据；尚未运行新读取器、测试或构建。下方为保留的原 Demo 内容说明，不作为当前重构命令或授权依据；正式作品已跟踪内容的权利边界仍见根 README，不能用下方旧 Demo 描述否认实际作者文件。
 
 剧本、角色卡、素材。**仓库是公开的，正式剧本与角色卡继续不进 git；用户明确授权上传的素材收录在 [素材库](assets/README.md)，权利说明见该目录。**
 

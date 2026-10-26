@@ -9,6 +9,8 @@ from collections import defaultdict
 from pathlib import Path
 
 from PIL import Image
+import game_data
+from author_project import current_digest
 
 ROOT = Path(__file__).resolve().parents[1]
 GAME = ROOT / "海风与布丁"
@@ -16,8 +18,7 @@ IMAGE_EXTENSIONS = {".png", ".jpg", ".jpeg", ".webp"}
 
 
 def build() -> dict:
-    text = (GAME / "game.js").read_text(encoding="utf-8-sig")
-    project = json.loads(text[text.index("=") + 1:].strip().removesuffix(";"))
+    project = game_data.load(GAME / "game.js")
     scenes = json.loads((ROOT / "A素材库/scene-backgrounds/场景素材台账.json").read_text(encoding="utf-8-sig"))["items"]
     scene_paths = {str(v["path"]).replace("\\", "/"): (k, v["name"]) for k, v in scenes.items()}
     roots = [GAME / "assets/bg", GAME / "assets/ch", ROOT / "A素材库/backgrounds",
@@ -142,7 +143,7 @@ def build() -> dict:
         })
     items.sort(key=lambda a: (a["category"], a["status"] != "adopted", a["scene"] or "", a["name"]))
     catalog = {"projectId": project["id"], "base": subprocess.check_output(["git", "rev-parse", "HEAD"],cwd=ROOT,text=True).strip(),
-               "projectFingerprint":hashlib.sha256((GAME / "game.js").read_bytes()).hexdigest(),
+               "projectFingerprint":current_digest(),
                "physicalFiles": len(paths), "items": items,
                "scope": "全部运行美术、参考重制PNG母版、WebP、试制及退选原件均可调用；同SHA合并为文件变体。用户身份参考、审核截图与缩略图不作生产素材。"}
     out = GAME / "art-catalog.js"

@@ -13,6 +13,8 @@ from collections import Counter
 from pathlib import Path
 
 from PIL import Image
+import game_data
+from author_project import current_digest
 
 ROOT = Path(__file__).resolve().parents[1]
 GAME = ROOT / '海风与布丁'
@@ -26,7 +28,7 @@ def data_url(data, mime):
 
 def build(destination):
     game_file = GAME / 'game.js'
-    project = json.loads(game_file.read_text('utf-8-sig').split('=', 1)[1].strip().removesuffix(';'))
+    project = game_data.load(game_file)
     production = json.loads((ART / 'production.json').read_text('utf-8'))['items']
     cover = project.get('settings', {}).get('cover', {}).get('img')
     used = {cover} if cover else set()
@@ -86,8 +88,8 @@ def build(destination):
         row['usage'] = len(row['nodeIds'])
     manifest = {'title': '海风与布丁 · 当前图库', 'snapshotDate': '2026-10-16',
         'sourceCommit': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
-        'gameSha256': hashlib.sha256(game_file.read_bytes()).hexdigest(),
-        'scope': '仅当前game.js的封面、逐句背景和立绘引用；相同SHA合并。未引用图不进入HTML或清单。',
+        'gameSha256': current_digest(),
+        'scope': '仅当前分章作者源的封面、逐句背景和立绘引用；相同SHA合并。未引用图不进入HTML或清单。',
         'activeAssetIds': len(active), 'uniqueImages': len(rows), 'counts': counts,
         'manualCurrentImages': sum(row['manual'] for row in rows),
         'items': [{k: v for k, v in row.items() if k not in {'src', 'thumb'}} for row in rows]}

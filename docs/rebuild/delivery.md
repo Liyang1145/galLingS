@@ -1,12 +1,14 @@
 # M5 前置：随包加载与游戏集成产物
 
+2026-10-26 [分章源切换](author-source.md)后，`game:build` 仍复用唯一共享读取/编译路径。`content/sources.json` 以 `authorFiles` 登记全部作者文件，不再登记构建期 `choiceIdentities`；来源文件仍为清单覆盖的不透明追溯数据，游戏包协议和运行载荷不变。本片没有重新构建，旧 Windows 产物不包含此次接线。
+
 从 `3a4a1c2` 接续原方案第 17、19 节。当前只完成读取、装包入口与独立应用接线；没有执行依赖安装、构建、类型检查、测试、启动、额外审查或子代理，磁盘上没有本轮生成的游戏包。测试留到用户安排的重构末尾。
 
 ## 当前交付范围
 
 现有 DOM 应用已接随包启动和两端唯一宿主。2026-10-25 先完成[旧链路清理](cleanup.md)，再按用户要求收尾[正式运行配置](run-profile.md)：`game:build` 只输出 `purpose: game` 的包，正常记录统一正式 `game/main`，移除开发 DOM/诊断/样例入口；`game:dev` 继续开发范围。两端默认现有原生文件后端，普通浏览器仍 IndexedDB；未运行或编译，不决定最终框架、宿主统一、安装器或签名。
 
-构建入口是 `tools/game/build.ts`，只在显式执行 `npm run game:build` 时工作。它复用同一个旧作者源转换器和唯一 TypeScript 核心；运行端不再访问作者 `game.js`、旧播放器、本机 `/@fs/` 资源或 Node 内容工具。
+构建入口是 `tools/game/build.ts`，只在显式执行 `npm run game:build` 时工作。它复用同一个分章作者源读取/编译器和唯一 TypeScript 核心；运行端不访问分章作者源、旧播放器、本机 `/@fs/` 资源或 Node 内容工具。
 
 [外观装配](appearance.md)现从 `content/game-ui/whale.json` 读取原三个鲸鱼 SVG，游戏及已有共享预览继续用同一插件。图形字节进入前端，`content/sources.json.uiSkin` 记录当前定义文件摘要，保留原三个字段；新来源下 `blockSha256` 为按 menu/choice/dialogue 顺序构造的图形对象 `JSON.stringify` 摘要。新构建不再打开旧 HTML，不执行旧页面或复制旧脚本。
 

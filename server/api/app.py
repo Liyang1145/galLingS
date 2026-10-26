@@ -352,8 +352,8 @@ def create_app(runtime: Runtime | None = None) -> FastAPI:
             raise HTTPException(404)
         return FileResponse(f, media_type="text/javascript")
 
-    @app.get("/vn/{game}/{path:path}")
-    async def vn_file(game: str, path: str) -> FileResponse:
+    @app.get("/vn/{game}/{path:path}", response_model=None)
+    async def vn_file(game: str, path: str) -> FileResponse | PlainTextResponse:
         root = rt().games_dir.resolve()
         if (root / "index.html").is_file() and game == root.name:
             base = root  # 单作品：games_dir 自己就是作品目录
@@ -363,6 +363,19 @@ def create_app(runtime: Runtime | None = None) -> FastAPI:
         # 作品名本身也可能是 ".." 或 Windows 盘符 "C:"：
         # 作品目录只能是 games_dir 本身（单作品）或它下一层，且文件必须在作品目录里
         allowed = base == root or base.parent == root
+        # Retained legacy editor/export only: project data is generated in memory
+        # from the sole chapter source, never from a second writable game.js.
+        if allowed and base == (ROOT / "海风与布丁").resolve() and path == "game.js":
+            from tools.author_project import current_project
+            try:
+                project = await asyncio.to_thread(current_project)
+            except (ValueError, KeyError, TypeError, OSError):
+                return PlainTextResponse("throw new Error('分章作者源读取失败，请检查作者文件或未完成事务');",
+                                         status_code=409, media_type="text/javascript",
+                                         headers={"Cache-Control": "no-store"})
+            data = json.dumps(project, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")
+            return PlainTextResponse("window.VN_GAME = " + data + ";", media_type="text/javascript",
+                                     headers={"Cache-Control": "no-store"})
         if not allowed or base not in f.parents or not f.is_file():
             raise HTTPException(404)
         return FileResponse(f)

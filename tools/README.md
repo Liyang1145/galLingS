@@ -1,5 +1,7 @@
 # tools/ 索引
 
+2026-10-26 唯一作者源已迁至 `content/story/`，详见[分章源](../docs/rebuild/author-source.md)。`author_project.py` 提供保留工具共用的只读旧格式投影，`game_data.load` 对原作品地址转读新源，旧写入明确拒绝；不运行历史采纳脚本回灌当前作品。旧提取器 `content/inventory.mjs` 已退出，固定基线只作历史证据。
+
 ## 日常在用
 
 新本体的唯一游戏/两端构建入口为根目录 `npm run game:build`、`windows:prepare` 和 `android:prepare`，详见 [实施入口](../docs/rebuild/README.md)。用户安排最后统一测试，当前不自动执行。旧 Windows Python/Steam 打包、Android 复制桥及三条旧游戏自动交付工作流已按 2026-10-25 授权删除，详见 [清理记录](../docs/rebuild/cleanup.md)。
@@ -8,9 +10,9 @@
 |---|---|
 | `build_playtest_html.py` | 保留的制作批注产物生成（含 `playtest_ledger.js`）；不是新本体或两端发行入口 |
 | `build_single_file_game.py` | 保留的制作项目/原素材打包导出，不是新本体构建，也不承担旧档兼容 |
-| `check_full_regression.py` | 全作回归：走完 3315 节点，报 nbad / nerrs |
-| `check_editor_roundtrip.py` | D04：编辑器 JSON / 单文件 HTML / 文件夹导出往返无损 |
-| `check_hosted_galcore.py` | B02：托管作品页下 galcore 接管剧情、连推、0 分歧 |
+| `check_full_regression.py` | 仅旧播放器显示回归；不验证新 TS 核心，默认旧仓库文件直开已退出，应只用于独立历史导出对照 |
+| `check_editor_roundtrip.py` | 仅旧制作的 JSON/HTML/文件夹往返对照；不是新分章源写回验收，不能直接套新作者目录 |
+| `check_hosted_galcore.py` | 仅旧 Python/galcore 托管对照，不验证新核心；保留不表示本轮执行通过 |
 | `check_md_links.py` | 文档检查：仓库内所有 `.md` 的相对链接都指向存在的文件（`python tools/check_md_links.py`，有断链时退出码 1） |
 | `build_art_catalog.py` | 生成编辑器用的美术目录 `art-catalog.js` |
 | `build_current_art_gallery.py` | 只含当前在用图片的图库 |

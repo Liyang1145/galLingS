@@ -36,3 +36,7 @@ mobile/android/**/build/
 /海风与布丁/.rebuild-editor-backup-*.js
 /海风与布丁/.rebuild-editor-*.tmp
 /海风与布丁/.rebuild-editor-lock/
+
+# 分章作者源：事务锁、原文件备份和失败候选只留本机
+/content/story/.author-lock/
+/content/story/.author-backups/

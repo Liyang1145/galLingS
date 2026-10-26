@@ -186,7 +186,7 @@ async function build(): Promise<void> {
     const provenance = await writeJson(temporary, "content/sources.json", {
       format: "haifeng.package-sources/1",
       author: content.source,
-      choiceIdentities: { file: "docs/rebuild/baseline/choices.json", sha256: loaded.identitySha256 },
+      authorFiles: loaded.authorFiles,
       uiSkin: skin.source,
       uiCollection: collection.source,
       uiOrigins,

@@ -26,6 +26,7 @@ from pathlib import Path
 from typing import Any
 
 from .compile import CompileError, canonical, line_hash
+from tools.author_project import current_digest, current_project, is_current_source
 
 #: VN Studio 变量名 → 引擎通道
 VAR_MAP = {"好感": "affection", "尾鳍": "tails"}
@@ -38,6 +39,8 @@ _COND_RE = re.compile(r"^\s*([^\s=<>!&]+)\s*(<=|>=|==|!=|<|>)\s*(-?\d+)\s*$")
 
 def read_game_js(path: Path) -> dict[str, Any]:
     """读 ``window.VN_GAME = {...};``。"""
+    if is_current_source(path):
+        return current_project()
     s = Path(path).read_text(encoding="utf-8")
     i = s.find("{")
     if i < 0:
@@ -306,13 +309,24 @@ def import_dir(game_dir: Path) -> tuple[dict[str, Any], str]:
 
 
 def ensure_imported(game_dir: Path, cache_dir: Path) -> Path:
-    """导入结果缓存到 cache_dir；game.js 比缓存新就重导。"""
+    """旧托管导入：本作品按全部作者文件摘要失效，外部历史导出仍按 mtime。"""
     game_dir = Path(game_dir)
     src = game_dir / "game.js"
     cache_dir.mkdir(parents=True, exist_ok=True)
     out = cache_dir / f"{game_dir.name}.chapter.json"
-    if not out.exists() or src.stat().st_mtime > out.stat().st_mtime:
+    stamp = cache_dir / f"{game_dir.name}.author-sha256"
+    digest = current_digest() if is_current_source(src) else None
+    changed = (not stamp.is_file() or stamp.read_text(encoding="utf-8").strip() != digest) if digest else (
+        not out.exists() or src.stat().st_mtime > out.stat().st_mtime)
+    if not out.exists() or changed:
+        if digest:
+            stamp.unlink(missing_ok=True)
         ch, report = import_dir(game_dir)
         out.write_text(canonical(ch) + "\n", encoding="utf-8", newline="\n")
         (cache_dir / f"{game_dir.name}.report.md").write_text(report, encoding="utf-8", newline="\n")
+        if digest:
+            # Never cache a mixture of source revisions under the old digest.
+            if current_digest() != digest:
+                raise CompileError("旧托管导入期间作者源改变，请重新读取")
+            stamp.write_text(digest + "\n", encoding="utf-8", newline="\n")
     return out

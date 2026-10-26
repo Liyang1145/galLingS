@@ -10,6 +10,10 @@ import re
 from pathlib import Path
 from urllib.parse import unquote, urlparse
 from urllib.request import url2pathname
+try:
+    from . import game_data
+except ImportError:
+    import game_data
 
 ROOT = Path(__file__).resolve().parents[1]
 GAME = ROOT / "海风与布丁"
@@ -26,8 +30,7 @@ def build(output: Path, project_file: Path | None = None) -> dict:
         project["cur"] = 0
         project.pop("recent", None)
     else:
-        source = (GAME / "game.js").read_text(encoding="utf-8-sig")
-        project = json.loads(source[source.index("=") + 1:].strip().removesuffix(";"))
+        project = game_data.load(GAME / "game.js")
     used = set()
     def scan(value):
         if isinstance(value,str):used.add(value)

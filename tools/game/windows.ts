@@ -1,6 +1,6 @@
+import { isCommandEntry } from "../cli-entry.ts";
 import { writeFile } from "node:fs/promises";
 import { relative, resolve, sep } from "node:path";
-import { fileURLToPath } from "node:url";
 import { ContentError } from "../../packages/story-model/src/model.ts";
 import { prepareInput, repository, sha256 } from "./prepare.ts";
 
@@ -62,7 +62,7 @@ async function prepare(): Promise<void> {
   }
 }
 
-if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+if (isCommandEntry(import.meta.url)) {
   prepare().catch((error: unknown) => {
     if (error instanceof ContentError) console.error(JSON.stringify(error.diagnostic, null, 2));
     else console.error(error instanceof Error ? error.message : "Windows 集成准备失败");

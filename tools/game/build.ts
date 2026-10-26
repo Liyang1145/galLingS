@@ -1,8 +1,8 @@
+import { isCommandEntry } from "../cli-entry.ts";
 import { execFile } from "node:child_process";
 import { createHash } from "node:crypto";
 import { mkdir, mkdtemp, readFile, readdir, realpath, rename, rm, rmdir, lstat, writeFile } from "node:fs/promises";
 import { basename, dirname, extname, isAbsolute, relative, resolve, sep } from "node:path";
-import { fileURLToPath } from "node:url";
 import { promisify } from "node:util";
 import { build as buildFrontend, normalizePath, version as viteVersion } from "vite";
 import type { Plugin } from "vite";
@@ -225,7 +225,7 @@ async function build(): Promise<void> {
   }
 }
 
-if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+if (isCommandEntry(import.meta.url)) {
   build().catch((error: unknown) => {
     if (error instanceof ContentError) console.error(JSON.stringify(error.diagnostic, null, 2));
     else console.error(error instanceof Error ? error.message : "游戏构建失败");

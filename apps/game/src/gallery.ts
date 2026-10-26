@@ -20,7 +20,7 @@ interface ImageRequest {
   events: AbortController;
   decoding: boolean;
 }
-type ImageState = { kind: "loading" | "ready" } | { kind: "failed"; message: string };
+type ImageState = { kind: "loading" } | { kind: "ready" } | { kind: "failed"; message: string };
 
 /** Owns one local image attempt; decoding cannot adopt into another attempt or a closed panel. */
 class GalleryImage {

@@ -3,12 +3,13 @@ use serde::Deserialize;
 use serde_json::value::RawValue;
 
 const SAVE: &str = "haifeng.save/1";
-const RECORDS: [&str; 5] = [
+const RECORDS: [&str; 6] = [
     "haifeng.player-records/1",
     "haifeng.audio-preferences/1",
     "haifeng.reading-preferences/1",
     "haifeng.button-preferences/1",
     "haifeng.readout-preferences/1",
+    "haifeng.voice-preferences/1",
 ];
 const RANGES: [(&str, &str); 1] = [("game", "main")];
 

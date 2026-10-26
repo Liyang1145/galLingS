@@ -1,3 +1,4 @@
+import type { AtomicVoicePreferenceStore, VoicePreferenceRecord } from "../voice-preferences.ts";
 import { SaveStorageError } from "../saves.ts";
 import type { AtomicSaveStore, SaveRecord, StoredSavePage, StoredSlot } from "../saves.ts";
 import type { AtomicPlayerStore, PlayerRecords } from "../records.ts";
@@ -11,7 +12,7 @@ const STORE = "slots";
 
 /** New TypeScript records only. No localStorage or legacy database access. */
 export class IndexedDbSaveStore implements AtomicSaveStore, AtomicPlayerStore, AtomicAudioPreferenceStore, AtomicReadingPreferenceStore,
-  AtomicButtonPreferenceStore, AtomicReadoutPreferenceStore {
+  AtomicButtonPreferenceStore, AtomicReadoutPreferenceStore, AtomicVoicePreferenceStore {
   private open(): Promise<IDBDatabase> {
     return new Promise((resolve, reject) => {
       if (typeof indexedDB === "undefined") {
@@ -161,6 +162,10 @@ export class IndexedDbSaveStore implements AtomicSaveStore, AtomicPlayerStore, A
 
   async updateReadout(key: string, change: (stored: StoredSlot) => ReadoutPreferenceRecord): Promise<ReadoutPreferenceRecord> {
     return this.updateRecord(key, change, "READOUT_PREFERENCES", "数值显示偏好");
+  }
+
+  async updateVoice(key: string, change: (stored: StoredSlot) => VoicePreferenceRecord): Promise<VoicePreferenceRecord> {
+    return this.updateRecord(key, change, "VOICE_PREFERENCES", "语音偏好");
   }
 
   private async updateRecord<T>(

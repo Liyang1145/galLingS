@@ -1,3 +1,4 @@
+import type { AtomicVoicePreferenceStore, VoicePreferenceRecord } from "../voice-preferences.ts";
 import type { AtomicSaveStore, SaveRecord, StoredSlot, StoredSavePage } from "../saves.ts";
 import { SaveStorageError } from "../saves.ts";
 import type { AtomicPlayerStore, PlayerRecords } from "../records.ts";
@@ -7,7 +8,7 @@ import type { AtomicButtonPreferenceStore, ButtonPreferenceRecord } from "../but
 import type { AtomicReadoutPreferenceStore, ReadoutPreferenceRecord } from "../readout-preferences.ts";
 
 export type GameRecordStore = AtomicSaveStore & AtomicPlayerStore & AtomicAudioPreferenceStore
-  & AtomicReadingPreferenceStore & AtomicButtonPreferenceStore & AtomicReadoutPreferenceStore;
+  & AtomicReadingPreferenceStore & AtomicButtonPreferenceStore & AtomicReadoutPreferenceStore & AtomicVoicePreferenceStore;
 export type NativeRecordOperation =
   | { op: "read"; key: string }
   | { op: "scan"; prefix: string; after: string | null; limit: number }
@@ -139,5 +140,6 @@ export class NativeRecordStore implements GameRecordStore {
   updateAudio(key: string, change: (stored: StoredSlot) => AudioPreferenceRecord): Promise<AudioPreferenceRecord> { return this.updateRecord(key, change); }
   updateReading(key: string, change: (stored: StoredSlot) => ReadingPreferenceRecord): Promise<ReadingPreferenceRecord> { return this.updateRecord(key, change); }
   updateButtons(key: string, change: (stored: StoredSlot) => ButtonPreferenceRecord): Promise<ButtonPreferenceRecord> { return this.updateRecord(key, change); }
+  updateVoice(key: string, change: (stored: StoredSlot) => VoicePreferenceRecord): Promise<VoicePreferenceRecord> { return this.updateRecord(key, change); }
   updateReadout(key: string, change: (stored: StoredSlot) => ReadoutPreferenceRecord): Promise<ReadoutPreferenceRecord> { return this.updateRecord(key, change); }
 }

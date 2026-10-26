@@ -6,6 +6,8 @@ import { AudioMixer } from "./audio.ts";
 import type { EntryAudio } from "./audio.ts";
 import type { ResourceAccess } from "./resources.ts";
 import { setting } from "./resources.ts";
+import { VoicePolicy, readVoicePreferences } from "../voice-preferences.ts";
+import type { VoicePreferences } from "../voice-preferences.ts";
 import type { AudioVolumes } from "../preferences.ts";
 import { authorReadingPreferences, readReadingPreferences } from "../reading-preferences.ts";
 import type { ReadingPreferences } from "../reading-preferences.ts";
@@ -104,6 +106,9 @@ export class WebPresentation implements PresentationAdapter {
   readonly #appearance: AuthorAppearance;
   readonly #fadeSurface: SceneFadeSurface | undefined;
   #reading: ReadingPreferences;
+  readonly #voicePolicy: VoicePolicy;
+  #voicePreferences: VoicePreferences;
+  #voiceNode: string | null = null;
   readonly #actors = new Map<string, Actor>();
   #backgroundId: string | null = null;
   #hasScene = false;
@@ -116,6 +121,8 @@ export class WebPresentation implements PresentationAdapter {
     reading?: ReadingPreferences, artwork?: WhaleArtwork, fadeSurface?: SceneFadeSurface) {
     this.#root = root;
     this.#content = content;
+    this.#voicePolicy = new VoicePolicy(content);
+    this.#voicePreferences = { ...this.#voicePolicy.defaults };
     this.#resources = resources;
     this.#fadeSurface = fadeSurface;
     this.#appearance = applyAuthorAppearance(root, content, resources, artwork);
@@ -157,6 +164,10 @@ export class WebPresentation implements PresentationAdapter {
   unlockAudio(): void { this.#audio.unlock(); }
   setAudioAllowed(allowed: boolean): void { this.#audio.setAudioAllowed(allowed); }
   setAudioVolumes(volumes: AudioVolumes): void { this.#audio.setVolumes(volumes); }
+  setVoicePreferences(input: VoicePreferences): void {
+    this.#voicePreferences = readVoicePreferences(input);
+    if (this.#voiceNode) this.#audio.setVoiceEnabled(this.#voicePreferences[this.#voicePolicy.key(this.#voiceNode)]);
+  }
   interaction(feedback: InteractionFeedback): void {
     if (this.#disposed) return;
     const ending = feedback.type === "cue" && feedback.cue === "endingNew";
@@ -191,6 +202,8 @@ export class WebPresentation implements PresentationAdapter {
     if (this.#ended) throw new Error("已结束的表现不能重新呈现剧情");
     const textSpeedMs = this.#reading.textSpeedMs;
     this.#active?.cancel();
+    this.#voiceNode = view.nodeId;
+    this.#audio.setVoiceEnabled(this.#voicePreferences[this.#voicePolicy.key(view.nodeId)]);
     let paused = context.paused;
     let skipping = context.skipping;
     let cancelled = false;

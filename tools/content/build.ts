@@ -1,3 +1,4 @@
+import { isCommandEntry } from "../cli-entry.ts";
 import { createHash } from "node:crypto";
 import { mkdir, mkdtemp, readFile, realpath, rename, rm, writeFile } from "node:fs/promises";
 import { dirname, isAbsolute, relative, resolve, sep } from "node:path";
@@ -81,7 +82,7 @@ async function build(): Promise<void> {
   console.log("这是内容产物，不是游戏包；未执行路线、媒体解码或平台验收。");
 }
 
-if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+if (isCommandEntry(import.meta.url)) {
   build().catch((error: unknown) => {
     if (error instanceof ContentError) console.error(JSON.stringify(error.diagnostic, null, 2));
     else console.error(error instanceof Error ? error.message : "内容构建失败");

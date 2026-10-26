@@ -156,6 +156,11 @@ export class PreferencesPanel<Key extends string, Value extends number | boolean
 
   refresh(): void { this.render(); }
 
+  setFieldVisible(key: Key, visible: boolean): void {
+    const input = this.#inputs.get(key)?.input;
+    if (input?.parentElement?.parentElement) input.parentElement.parentElement.hidden = !visible;
+  }
+
   async load(): Promise<void> {
     const epoch = ++this.#loadEpoch;
     this.#reading = true;

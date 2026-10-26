@@ -12,7 +12,7 @@ export const READING_LIMITS = {
   textSpeedMs: { min: 5, max: 80, step: 5 },
   autoWaitMultiplier: { min: 0.4, max: 2.5, step: 0.1 },
   textScale: { min: 1, max: 1.25, step: 0.05 },
-  dialogueOpacity: { min: 0.35, max: 0.95, step: 0.05 },
+  dialogueOpacity: { min: 0, max: 1, step: 0.01 },
 } as const;
 
 export interface ReadingPreferenceRecord {
@@ -60,7 +60,7 @@ export function authorReadingPreferences(settings: JsonObject): ReadingPreferenc
     textSpeedMs: value("speed", 30),
     autoWaitMultiplier: value("autoMul", 1),
     textScale: value("readerScale", 1),
-    dialogueOpacity: value("ghost", 0.35),
+    dialogueOpacity: value("ghost", 0.45),
   });
 }
 

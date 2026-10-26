@@ -51,6 +51,7 @@ export class AudioMixer {
   #choiceTickFailed = false;
   #paused = false;
   #audioAllowed: boolean;
+  #voiceEnabled = true;
   #disposed = false;
   #clock: Clock | null = null;
   #report: (problem: MediaProblem) => void = () => {};
@@ -72,6 +73,17 @@ export class AudioMixer {
     this.#volumes = values;
     for (const track of this.#tracks) this.applyVolume(track);
     this.syncChoiceTick();
+  }
+
+  setVoiceEnabled(enabled: boolean): void {
+    this.#voiceEnabled = enabled;
+    if (enabled) return;
+    for (const track of [...this.#tracks]) {
+      if (track.kind !== "voice") continue;
+      const ended = track.ended;
+      this.stop(track);
+      ended?.();
+    }
   }
 
   private track(id: string, channel: AudioChannel, gain: number, ended: (() => void) | null = null, seekMs: number | null = null,
@@ -373,7 +385,7 @@ export class AudioMixer {
     if (resumeVoice && restoredVoice?.state === "active" && restoredVoice.positionMs === null) {
       context.problem({ code: "VOICE_POSITION", message: "这份进度没有可用的语音续播位置，本次读档保持语音停止。", blocking: false });
     }
-    if (presentation.performance.voiceId && !skipped && playVoice) {
+    if (presentation.performance.voiceId && this.#voiceEnabled && !skipped && playVoice) {
       voice = this.track(presentation.performance.voiceId, "voice", 1, voiceEnded,
         resumeVoice ? restoredVoice?.positionMs ?? null : null);
     } else voiceEnded();
@@ -423,7 +435,7 @@ export class AudioMixer {
         const voiceId = presentation.performance.voiceId;
         let capturedVoice: VoiceCheckpoint | null = null;
         if (voiceId) {
-          const state: VoiceCheckpoint["state"] = skipped || !playVoice ? "skipped"
+          const state: VoiceCheckpoint["state"] = skipped || !this.#voiceEnabled || !playVoice ? "skipped"
             : voice?.failed || voice?.playRejected ? "unavailable"
             : voice?.alive ? "active" : "finished";
           capturedVoice = { ...position(voiceId, voice), state };

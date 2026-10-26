@@ -53,6 +53,17 @@ export function connectTitleCover(options: {
   retry: HTMLButtonElement; cover: AuthorCover; resources: ResourceAccess;
 }): { retry(): void; dispose(): void } {
   let closed = false;
+  const layoutMenu = (): void => {
+    let row = 0;
+    for (const button of options.menu.querySelectorAll<HTMLButtonElement>(":scope > button")) {
+      if (button.hidden || getComputedStyle(button).display === "none") continue;
+      const value = String(row++);
+      if (button.style.getPropertyValue("--title-menu-row") !== value) button.style.setProperty("--title-menu-row", value);
+    }
+  };
+  const menuObserver = new MutationObserver(layoutMenu);
+  menuObserver.observe(options.menu, { childList: true, subtree: true, attributes: true, attributeFilter: ["style", "hidden"] });
+  layoutMenu();
   let active: { image: HTMLImageElement; events: AbortController } | null = null;
   const cancel = (): void => {
     active?.events.abort();
@@ -97,6 +108,7 @@ export function connectTitleCover(options: {
     retry,
     dispose: () => {
       closed = true;
+      menuObserver.disconnect();
       events.abort();
       cancel();
     },

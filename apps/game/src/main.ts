@@ -32,6 +32,8 @@ import {
 import {
   ReadoutPreferenceRepository, authorReadoutPreferences, readReadoutPreferences,
 } from "../../../packages/player/src/readout-preferences.ts";
+import { VoicePolicy, VoicePreferenceRepository, VOICE_KEYS, readVoicePreferences } from "../../../packages/player/src/voice-preferences.ts";
+import type { VoiceKey } from "../../../packages/player/src/voice-preferences.ts";
 import { StoryReadout } from "../../../packages/player/src/readout.ts";
 import { connectButtonSounds } from "../../../packages/player/src/web/button-sounds.ts";
 import { PreferencesPanel } from "./preferences.ts";
@@ -109,8 +111,9 @@ async function main(): Promise<void> {
   const noticeStack = element("shell-status-stack", HTMLElement);
   const noticesHome = element("notices-home", HTMLElement);
   const menuNoticesHome = element("menu-notices-home", HTMLElement);
-  const recordStatus = element("record-message", HTMLElement).parentElement;
-  if (!(recordStatus instanceof HTMLElement)) throw new Error("页面缺少全局记录提示区域");
+  const recordStatusElement = element("record-message", HTMLElement).parentElement;
+  if (!(recordStatusElement instanceof HTMLElement)) throw new Error("页面缺少全局记录提示区域");
+  const recordStatus: HTMLElement = recordStatusElement;
   const fullscreenButton = element("fullscreen", HTMLButtonElement);
   const save = element("save-checkpoint", HTMLButtonElement);
   const saveMessage = element("save-message", HTMLElement);
@@ -138,8 +141,9 @@ async function main(): Promise<void> {
   const rollbackLocations = new RollbackLocations(
     rollbackTarget, element("rollback-location-details", HTMLElement), element("rollback-location-count", HTMLElement),
   );
-  const page = document.querySelector("main");
-  if (!(page instanceof HTMLElement)) throw new Error("页面缺少主区域");
+  const pageElement = document.querySelector("main");
+  if (!(pageElement instanceof HTMLElement)) throw new Error("页面缺少主区域");
+  const page: HTMLElement = pageElement;
   const exitDialog = element("exit-dialog", HTMLDialogElement);
   const exitMessage = element("exit-message", HTMLElement);
   const exitOperations = element("exit-operations", HTMLElement);
@@ -309,6 +313,18 @@ async function main(): Promise<void> {
       soundPanel?.setVolumes(volumes);
     },
   });
+  const voicePolicy = new VoicePolicy(content);
+  const voicePreferences = new PreferencesPanel<VoiceKey, boolean>({
+    root: element("voice-preferences", HTMLElement), noun: "语音",
+    note: "用于当前章节的自动配音；保存后下次沿用。回看中仍可单独试听。",
+    fields: VOICE_KEYS.map(key => ({ kind: "checkbox", key, label: "语音开关" })),
+    defaults: voicePolicy.defaults, readValues: readVoicePreferences,
+    repository: new VoicePreferenceRepository(content.workId, recordScope, voicePolicy.defaults, store),
+    blocked: () => closed || exiting,
+    trackWrite: operation => writes.run("voice-preferences", operation, "语音偏好"),
+    valuesChanged: values => { presentation?.setVoicePreferences(values); },
+  });
+  voicePreferences.setFieldVisible("later", false);
   const readingLabels = {
     textSpeedMs: "逐字间隔", autoWaitMultiplier: "自动等待", textScale: "文字大小", dialogueOpacity: "对话框不透明度",
   };
@@ -467,6 +483,7 @@ async function main(): Promise<void> {
     fullscreen?.refresh();
     audioPreferences.refresh();
     readingPreferences.refresh();
+    voicePreferences.refresh();
     buttonPreferences.refresh();
     readoutPreferences.refresh();
     slots.refreshControls();
@@ -513,6 +530,7 @@ async function main(): Promise<void> {
       fullscreen?.refresh();
       audioPreferences.refresh();
       readingPreferences.refresh();
+      voicePreferences.refresh();
       buttonPreferences.refresh();
       readoutPreferences.refresh();
       refreshSaveControls();
@@ -700,6 +718,8 @@ async function main(): Promise<void> {
     fullscreen?.refresh();
     dialoguePanel?.refresh(host.state().audioAllowed);
     const { story, token } = view;
+    const voiceKey = voicePolicy.key(story.nodeId);
+    for (const key of VOICE_KEYS) voicePreferences.setFieldVisible(key, key === voiceKey);
     const blocked = view.paused.length > 0 || view.disposed;
     next.disabled = blocked || story.phase === "choosing" || story.phase === "ended";
     auto.disabled = skip.disabled = story.phase === "ended";
@@ -861,6 +881,7 @@ async function main(): Promise<void> {
       activeChapter = trial;
       audioPreferences.setMode(entry);
       readingPreferences.setMode(entry);
+      voicePreferences.setMode(entry);
       buttonPreferences.setMode(entry);
       readoutPreferences.setMode(entry);
       rollbackKey = "";
@@ -886,6 +907,7 @@ async function main(): Promise<void> {
       const reading = readingPreferences.values(entry);
       const newPresentation = new WebPresentation(scene, source, resources, host.state().audioAllowed,
         audioPreferences.values(entry), reading, whaleSkin.artwork, { stage, choices });
+      newPresentation.setVoicePreferences(voicePreferences.values(entry));
       presentation = newPresentation;
       const sessionGeneration = ++generation;
       session = createGameSession({
@@ -934,6 +956,9 @@ async function main(): Promise<void> {
         host.releaseAudio();
         audioPreferences.setMode("main");
         readingPreferences.setMode("main");
+        voicePreferences.setMode("main");
+        voicePreferences.setFieldVisible("early", true);
+        voicePreferences.setFieldVisible("later", false);
         buttonPreferences.setMode("main");
         readoutPreferences.setMode("main");
         title.hidden = false;
@@ -985,6 +1010,9 @@ async function main(): Promise<void> {
     presentation = null;
     audioPreferences.setMode("main");
     readingPreferences.setMode("main");
+    voicePreferences.setMode("main");
+    voicePreferences.setFieldVisible("early", true);
+    voicePreferences.setFieldVisible("later", false);
     buttonPreferences.setMode("main");
     readoutPreferences.setMode("main");
     host.releaseAudio();
@@ -1517,6 +1545,7 @@ async function main(): Promise<void> {
     dialoguePanel?.dispose();
     audioPreferences.dispose();
     readingPreferences.dispose();
+    voicePreferences.dispose();
     buttonPreferences.dispose();
     readoutPreferences.dispose();
     slots.dispose();
@@ -1536,7 +1565,7 @@ async function main(): Promise<void> {
   };
   window.addEventListener("pagehide", dispose, { once: true });
   import.meta.hot?.dispose(dispose);
-  await Promise.all([audioPreferences.load(), readingPreferences.load(), buttonPreferences.load(), readoutPreferences.load()]);
+  await Promise.all([voicePreferences.load(), audioPreferences.load(), readingPreferences.load(), buttonPreferences.load(), readoutPreferences.load()]);
   if (closed || startup.signal.aborted) return;
   ready = true;
   element("loading-screen", HTMLElement).hidden = true;

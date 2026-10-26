@@ -18,7 +18,7 @@ final class NativeRecordAddress {
             "[\"" + SAVE + "\"," + work + ",\"game\",\"main\",",
         };
         for (String family : new String[] { "haifeng.player-records/1", "haifeng.audio-preferences/1",
-                "haifeng.reading-preferences/1", "haifeng.button-preferences/1", "haifeng.readout-preferences/1" }) {
+                "haifeng.reading-preferences/1", "haifeng.button-preferences/1", "haifeng.readout-preferences/1", "haifeng.voice-preferences/1" }) {
             records.put("[\"" + family + "\"," + work + ",\"game\",\"main\"]", family);
         }
     }

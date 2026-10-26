@@ -8,6 +8,8 @@
 
 新本体的唯一游戏/两端构建入口为根目录 `npm run game:build`、`windows:prepare` 和 `android:prepare`，详见 [实施入口](../docs/rebuild/README.md)。用户安排最后统一测试，当前不自动执行。旧 Windows Python/Steam 打包、Android 复制桥及三条旧游戏自动交付工作流已按 2026-10-25 授权删除，详见 [清理记录](../docs/rebuild/cleanup.md)。
 
+独立 Agent 的显式验证入口为 `npm run chat:test`、`npm run chat:test:browser` 及标准库 Python 用例，说明见 [tests/chat](../tests/chat/README.md)。2026-10-26 已获当次授权并执行[离线基础验证](../docs/rebuild/agent-verification.md)；没有接入自动 CI、真实模型或两端构建，不将本次授权变成默认执行规则。
+
 | 脚本 | 做什么 |
 |---|---|
 | `build_playtest_html.py` | 保留的制作批注产物生成（含 `playtest_ledger.js`）；不是新本体或两端发行入口 |

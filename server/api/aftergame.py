@@ -188,26 +188,26 @@ def create_app(config: dict[str, Any]) -> FastAPI:
             await manager.stop()
 
     app = FastAPI(title="海风与布丁 · 独立聊天开发服务", lifespan=lifespan)
-    app.add_middleware(
-        CORSMiddleware, allow_origins=srv["allowed_origins"], allow_credentials=False,
-        allow_methods=["GET", "POST"], allow_headers=["Content-Type", "X-Haifeng-Chat-Token"], max_age=300,
-    )
-
     @app.middleware("http")
     async def guard(request: Request, call_next: Any) -> Any:
+        def denied(code: str, status: int) -> JSONResponse:
+            return JSONResponse({"code": code}, status, headers={
+                "Cache-Control": "no-store", "X-Content-Type-Options": "nosniff",
+            })
+
         # Host check is independent of the browser's CORS behavior (DNS rebinding).
         if request.url.hostname not in ("localhost", "127.0.0.1", "::1"):
-            return JSONResponse({"code": "auth"}, 403)
+            return denied("auth", 403)
         origin = request.headers.get("origin")
         if origin is not None and origin not in srv["allowed_origins"]:
-            return JSONResponse({"code": "auth"}, 403)
+            return denied("auth", 403)
         # Preflights carry no credentials/payload; CORSMiddleware still checks exact origin/method/headers.
         if request.method != "OPTIONS":
             given = request.headers.get("x-haifeng-chat-token", "")
             if not cfg["enabled"]:
-                return JSONResponse({"code": "unavailable"}, 503)
+                return denied("unavailable", 503)
             if not given or not secrets.compare_digest(given.encode("utf-8"), token.encode("utf-8")):
-                return JSONResponse({"code": "auth"}, 401)
+                return denied("auth", 401)
         response = await call_next(request)
         response.headers["Cache-Control"] = "no-store"
         response.headers["X-Content-Type-Options"] = "nosniff"
@@ -247,6 +247,12 @@ def create_app(config: dict[str, Any]) -> FastAPI:
             media_type="application/x-ndjson", headers={"X-Accel-Buffering": "no", "Cache-Control": "no-store"},
         )
 
+    # Outermost CORS must also wrap early guard failures, so an allowed page can
+    # distinguish auth/unavailable from a network error. Rejected origins stay rejected.
+    app.add_middleware(
+        CORSMiddleware, allow_origins=srv["allowed_origins"], allow_credentials=False,
+        allow_methods=["GET", "POST"], allow_headers=["Content-Type", "X-Haifeng-Chat-Token"], max_age=300,
+    )
     return app
 
 
@@ -289,11 +295,16 @@ async def turns(
         messages += [ChatMessage(message["role"], message["text"]) for message in data["messages"]]
         stream = model.stream(ChatRequest(messages=messages, tools=[], max_tokens=4096)).__aiter__()
         length = 0
+        has_text = False
         frames = 0
+        loop = asyncio.get_running_loop()
+        first_text_deadline = loop.time() + 15
         async with asyncio.timeout(60):
             while True:
                 try:
-                    ev = await asyncio.wait_for(anext(stream), 15 if length == 0 else 60)
+                    # Usage/empty/whitespace events do not buy another 15 seconds.
+                    timeout = max(0, first_text_deadline - loop.time()) if not has_text else 60
+                    ev = await asyncio.wait_for(anext(stream), timeout)
                 except StopAsyncIteration:
                     break
                 frames += 1
@@ -304,6 +315,7 @@ async def turns(
                     if not isinstance(ev.text, str):
                         raise Invalid("provider.text")
                     length += units(ev.text)
+                    has_text = has_text or bool(ev.text.strip())
                     if length > REPLY_LIMIT:
                         yield event("error", code="limit")
                         return
@@ -320,7 +332,7 @@ async def turns(
                 elif not isinstance(ev, Usage):
                     yield event("error", code="protocol")
                     return
-        if not length:
+        if not has_text:
             yield event("error", code="protocol")
             return
         yield event("done")

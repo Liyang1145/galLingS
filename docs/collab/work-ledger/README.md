@@ -122,3 +122,5 @@
 - [队友整合与可玩包收尾](team-completion-20261026.md) — 修复健康探针与导出/调试脚本、收齐静态来源；保留全部用户采用与撤回状态。
 
 - [本轮整合与可玩交付完成](team-delivery-20261026.md) — Windows/Linux构建、实际EXE与完整离线HTML验证通过，含反馈账本；不含nnn视频/Live2D。
+
+- [分发与仓库个人路径清理](repository-privacy-20261027.md) — 历史交接路径泛化，Windows 组装去除 pip 本机来源并同步 RECORD，保留公共来源及包元数据。

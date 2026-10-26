@@ -11,7 +11,9 @@
 from __future__ import annotations
 
 import argparse
+import csv
 import hashlib
+import io
 import json
 import os
 import re
@@ -166,6 +168,32 @@ def extract_python(archive: Path, destination: Path) -> None:
         raise ValueError("Python 压缩包不是 Windows 嵌入式运行时")
 
 
+def remove_local_install_sources(python_dir: Path) -> int:
+    """移除 pip 的本机安装来源；保留版本、许可证和公共下载来源。"""
+    site_packages = python_dir / "Lib/site-packages"
+    removed = 0
+    for metadata in site_packages.glob("*.dist-info/direct_url.json"):
+        origin = json.loads(metadata.read_text(encoding="utf-8"))
+        if not isinstance(origin, dict) or not isinstance(origin.get("url"), str):
+            raise ValueError("Python 安装来源记录格式无效")
+        if urllib.parse.urlsplit(origin["url"]).scheme.lower() != "file":
+            continue
+        record = metadata.with_name("RECORD")
+        if record.is_file():
+            relative = metadata.relative_to(site_packages).as_posix()
+            with record.open(encoding="utf-8", newline="") as handle:
+                rows = list(csv.reader(handle))
+            retained = [row for row in rows if not row or
+                        PurePosixPath(row[0].replace("\\", "/")).as_posix() != relative]
+            contents = io.StringIO(newline="")
+            csv.writer(contents, lineterminator="\n").writerows(retained)
+            with record.open("w", encoding="utf-8", newline="") as handle:
+                handle.write(contents.getvalue())
+        metadata.unlink()
+        removed += 1
+    return removed
+
+
 def install_python(args: argparse.Namespace, out: Path, source: Path) -> None:
     dest = out / "python"
     if args.python_dir:
@@ -190,6 +218,8 @@ def install_python(args: argparse.Namespace, out: Path, source: Path) -> None:
                         "--target", str(dest / "Lib/site-packages"), "--platform", "win_amd64",
                         "--python-version", "3.11", "--implementation", "cp", "--only-binary=:all:",
                         "-r", str(source / "requirements.txt"), str(wheel)], check=True)
+    # 两条安装路径都会带入 pip 来源记录；它不参与运行，也不应公开本机目录。
+    remove_local_install_sources(dest)
     # 嵌入式 Python 的导入根固定为这个便携包，既不带作者 venv，也不读取系统 site-packages。
     pth_files = list(dest.glob("python*._pth"))
     if len(pth_files) != 1:

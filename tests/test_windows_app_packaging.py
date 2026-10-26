@@ -1,5 +1,6 @@
 """便携包的复制边界和现有输出保护；不下载 Python 或启动后端。"""
 import importlib.util
+import csv
 import json
 from pathlib import Path, PurePosixPath
 import tempfile
@@ -42,6 +43,37 @@ class WindowsPackageTests(unittest.TestCase):
     def test_current_game_bytes_not_rewritten(self):
         plan = builder.payload_plan(self.root, self.game)
         self.assertEqual(plan[f"galLingS/{builder.GAME_NAME}/game.js"].read_bytes(), (self.game / "game.js").read_bytes())
+
+    def test_local_install_origin_removed_without_changing_package(self):
+        python = self.root / "python"
+        site = python / "Lib/site-packages"
+        info = site / "example-1.0.dist-info"
+        info.mkdir(parents=True)
+        origin = info / "direct_url.json"
+        origin.write_text(json.dumps({"url": "file:///C:/Users/build-user/wheels/example.whl"}))
+        metadata = info / "METADATA"
+        metadata.write_bytes(b"Name: example\nVersion: 1.0\n")
+        record = info / "RECORD"
+        with record.open("w", encoding="utf-8", newline="") as handle:
+            csv.writer(handle).writerows([
+                ["example-1.0.dist-info/direct_url.json", "sha256=origin", "80"],
+                ["example/data,with-comma.txt", "sha256=content", "10"],
+            ])
+        self.assertEqual(builder.remove_local_install_sources(python), 1)
+        self.assertFalse(origin.exists())
+        self.assertEqual(metadata.read_bytes(), b"Name: example\nVersion: 1.0\n")
+        with record.open(encoding="utf-8", newline="") as handle:
+            self.assertEqual(list(csv.reader(handle)), [["example/data,with-comma.txt", "sha256=content", "10"]])
+
+    def test_public_install_origin_is_preserved(self):
+        python = self.root / "python"
+        info = python / "Lib/site-packages/example-1.0.dist-info"
+        info.mkdir(parents=True)
+        origin = info / "direct_url.json"
+        original = json.dumps({"url": "https://packages.example.org/example.whl"}).encode()
+        origin.write_bytes(original)
+        self.assertEqual(builder.remove_local_install_sources(python), 0)
+        self.assertEqual(origin.read_bytes(), original)
 
     def test_forbidden_media_reference_is_reported(self):
         (self.game / "game.js").write_text('window.VN_GAME=' + json.dumps({"assets": {"video": {"src": "assets/a.mp4"}}, "lines": []}) + ';')

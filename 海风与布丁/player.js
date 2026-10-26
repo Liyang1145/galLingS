@@ -395,11 +395,24 @@ function assetPath(a, blob, used) {
   used.add(p); return p;
 }
 const writtenFiles = new Set();        // 这次打开后已经写进文件夹的素材 id
+async function assertLegacyFolder(dir) {
+  let moved = false;
+  try { await dir.getFileHandle('author-source.json'); moved = true; }
+  catch (error) { if (error.name !== 'NotFoundError') throw error; }
+  if (moved) throw new Error('这个目录的作者源已迁至 content/story，旧制作工具只能导出到另外的文件夹。');
+  try {
+    const source = JSON.parse(await (await fsRead(dir, 'project.json')).text());
+    if (source?.format === 'haifeng.author-project/1') throw new Error('不能用旧制作项目覆盖分章作者源，请选择另外的文件夹。');
+  } catch (error) {
+    if (error.name !== 'NotFoundError' && !(error instanceof SyntaxError)) throw error;
+  }
+}
 const projJson = o => JSON.stringify(o, (k, v) => (k === 'src' && typeof v === 'string' && (v.startsWith('blob:'))) ? undefined : v, 1);
 async function flushFolder() {
   if (saving) { saveAgain = true; return; }
   saving = true; let ok = true;
   try {
+    await assertLegacyFolder(DIR);
     const used = new Set(Object.values(P.assets).map(a => a.file).filter(Boolean));
     for (const a of Object.values(P.assets)) {
       if (a.file && (writtenFiles.has(a.id) || !a.src || a.src.startsWith('blob:'))) { writtenFiles.add(a.id); continue; }
@@ -416,6 +429,7 @@ async function flushFolder() {
   if (saveAgain) { saveAgain = false; flushFolder(); }
 }
 async function openFolder(dir) {
+  await assertLegacyFolder(dir);
   const o = JSON.parse(await (await fsRead(dir, 'project.json')).text());
   if (!o || !Array.isArray(o.lines)) throw new Error('project.json 格式不对');
   const missing = [];
@@ -442,6 +456,7 @@ async function folderMenu() {
       if (f === 'open') { const d = await pickFolder(); await openFolder(d); }
       if (f === 'save') {
         const d = await pickFolder();
+        await assertLegacyFolder(d);
         try { await d.getFileHandle('project.json'); if (!confirm('这个文件夹里已经有 project.json，覆盖它？')) return; } catch (e) {}
         // 素材要写进新文件夹：先换回完整数据
         for (const a of Object.values(P.assets)) if (a.src?.startsWith('blob:')) { a.src = await blobToData(await srcBlob(a.src)); }
@@ -462,6 +477,7 @@ async function exportGameFolder() {
   const problems = runCheck().filter(([, m]) => !m.startsWith('空台词') && !m.includes('走不到'));
   if (problems.length && !confirm(`检查发现 ${problems.length} 个问题，仍然导出？`)) return openCheck();
   const d = await pickFolder();
+  await assertLegacyFolder(d);
   const project = studioEditor ? window.VNArtLibrary.playableProject() : P;
   const source = studioEditor ? await window.VNArtLibrary.sourceForExport() : undefined;
   const used = new Set(), assets = {};
@@ -4055,6 +4071,12 @@ window.addEventListener('pagehide', VN_FADE.cancel);
 
 /* ========== 启动 ========== */
 (async () => {
+  if (window.VN_AUTHOR_REQUIRED && !window.VN_GAME) {
+    document.body.replaceChildren(Object.assign(document.createElement('p'), {
+      textContent: '旧制作页不再带独立 game.js 作者数据。请从本机旧制作服务打开，或使用 content/story 分章作者源；正式游戏请用新本体入口。',
+    }));
+    return;
+  }
   if (studioEditor) {
     const script = src => new Promise((resolve, reject) => { const el = document.createElement('script'); el.src = src; el.onload = resolve; el.onerror = () => reject(new Error('无法加载 ' + src)); document.head.appendChild(el); });
     try {

@@ -1,0 +1,84 @@
+{
+  "format": "haifeng.author-project/1",
+  "workId": "bqlsg5c2-local-fusion",
+  "title": "海风与布丁",
+  "entryNodeId": "fhww88n3",
+  "chapters": [
+    {
+      "id": "opening",
+      "file": "chapters/opening.json"
+    },
+    {
+      "id": "chapter-01",
+      "file": "chapters/chapter-01.json"
+    },
+    {
+      "id": "chapter-02",
+      "file": "chapters/chapter-02.json"
+    },
+    {
+      "id": "chapter-03",
+      "file": "chapters/chapter-03.json"
+    },
+    {
+      "id": "chapter-04",
+      "file": "chapters/chapter-04.json"
+    },
+    {
+      "id": "chapter-05",
+      "file": "chapters/chapter-05.json"
+    },
+    {
+      "id": "chapter-06",
+      "file": "chapters/chapter-06.json"
+    },
+    {
+      "id": "chapter-07",
+      "file": "chapters/chapter-07.json"
+    },
+    {
+      "id": "chapter-08",
+      "file": "chapters/chapter-08.json"
+    },
+    {
+      "id": "chapter-09",
+      "file": "chapters/chapter-09.json"
+    },
+    {
+      "id": "chapter-10",
+      "file": "chapters/chapter-10.json"
+    },
+    {
+      "id": "chapter-11",
+      "file": "chapters/chapter-11.json"
+    },
+    {
+      "id": "chapter-12",
+      "file": "chapters/chapter-12.json"
+    },
+    {
+      "id": "chapter-13",
+      "file": "chapters/chapter-13.json"
+    },
+    {
+      "id": "chapter-14",
+      "file": "chapters/chapter-14.json"
+    },
+    {
+      "id": "chapter-15",
+      "file": "chapters/chapter-15.json"
+    },
+    {
+      "id": "chapter-16",
+      "file": "chapters/chapter-16.json"
+    },
+    {
+      "id": "extra-01",
+      "file": "chapters/extra-01.json"
+    },
+    {
+      "id": "extra-02",
+      "file": "chapters/extra-02.json"
+    }
+  ]
+}

@@ -1,0 +1,7610 @@
+{
+  "format": "haifeng.author-chapter/1",
+  "id": "chapter-02",
+  "title": "第二话 · 暗号契约",
+  "nodes": [
+    {
+      "label": "第二话",
+      "trans": "black",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e1_comedy",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "ug2p5hux",
+      "speaker": "",
+      "text": "第二天上午。我带着冰镇酸梅汤，加桂花。",
+      "bg": "qla5b3w0",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.8
+        },
+        {
+          "id": "amb_a06_seagulls_v01",
+          "gain": 0.25
+        }
+      ],
+      "_musicCue": "潮声＋海鸥",
+      "_musicFadeOutMs": 600
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e1_comedy",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "ody5kvwg",
+      "speaker": "",
+      "text": "浅滩上没有人。",
+      "bg": "qla5b3w0",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.8
+        },
+        {
+          "id": "amb_a06_seagulls_v01",
+          "gain": 0.25
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e1_comedy",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "wod0fzli",
+      "speaker": "",
+      "text": "只有一行小字，用贝壳压在礁石上——",
+      "bg": "qla5b3w0",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.8
+        },
+        {
+          "id": "amb_a06_seagulls_v01",
+          "gain": 0.25
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e1_comedy",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "g8mglqiu",
+      "speaker": "",
+      "text": "『本小姐今天不在。』",
+      "bg": "qla5b3w0",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.8
+        },
+        {
+          "id": "amb_a06_seagulls_v01",
+          "gain": 0.25
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e1_comedy",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "h2tzp1sk",
+      "speaker": "",
+      "text": "……以及礁石后面，露出的一小截亮蓝色的发顶。",
+      "bg": "qla5b3w0",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.8
+        },
+        {
+          "id": "amb_a06_seagulls_v01",
+          "gain": 0.25
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e1_comedy",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "4kcuh7ue",
+      "speaker": "我",
+      "text": "「加桂花的来了。」",
+      "bg": "qla5b3w0",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.8
+        },
+        {
+          "id": "amb_a06_seagulls_v01",
+          "gain": 0.25
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e1_comedy",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "lffkdixc",
+      "speaker": "",
+      "text": "发顶动了动。没出来。",
+      "bg": "qla5b3w0",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.8
+        },
+        {
+          "id": "amb_a06_seagulls_v01",
+          "gain": 0.25
+        }
+      ],
+      "_musicFadeOutMs": 120
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_f3o1uyy0",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e1_comedy",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "f3o1uyy0",
+      "speaker": "鲸鱼小姐",
+      "text": "「……谁说在等你的。」",
+      "bg": "qla5b3w0",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.8
+        },
+        {
+          "id": "amb_a06_seagulls_v01",
+          "gain": 0.25
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {
+        "鲸鱼小姐": "settle"
+      },
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e1_comedy",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "nkz1goaq",
+      "speaker": "",
+      "text": "她从礁石后面绕出来，抱臂，别着脸。",
+      "bg": "qla5b3w0",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "art_upgrade_p01",
+          "x": 926.25,
+          "y": 1008.12,
+          "h": 960.0,
+          "flip": false,
+          "in": "right"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.8
+        },
+        {
+          "id": "amb_a06_seagulls_v01",
+          "gain": 0.25
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_f8e6wh8c",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e1_comedy",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "f8e6wh8c",
+      "speaker": "鲸鱼小姐",
+      "text": "「本小姐是在检查礁石的风化程度。」",
+      "bg": "qla5b3w0",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "xfg3qcn2",
+          "x": 900.0,
+          "y": 1000.0,
+          "h": 960.0,
+          "flip": false,
+          "in": "right"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.8
+        },
+        {
+          "id": "amb_a06_seagulls_v01",
+          "gain": 0.25
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_cvelvwin",
+      "se": null,
+      "set": "",
+      "choices": [
+        {
+          "text": "「那风化程度如何？」",
+          "target": "7ukunjp3",
+          "cond": "",
+          "set": "好感 += 3",
+          "id": "choice-000016"
+        },
+        {
+          "text": "「想我了吗？」",
+          "target": "trj3l6tu",
+          "cond": "",
+          "set": "好感 += 5",
+          "id": "choice-000017"
+        },
+        {
+          "text": "把酸梅汤直接递过去。",
+          "target": "n9jp23uy",
+          "cond": "",
+          "set": "好感 += 1",
+          "id": "choice-000018"
+        }
+      ],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e1_comedy",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "cvelvwin",
+      "speaker": "鲸鱼小姐",
+      "text": "「顺便，看看你这种人类会不会不守信用。」",
+      "bg": "qla5b3w0",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "xfg3qcn2",
+          "x": 900.0,
+          "y": 1000.0,
+          "h": 960.0,
+          "flip": false,
+          "in": "right"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.8
+        },
+        {
+          "id": "amb_a06_seagulls_v01",
+          "gain": 0.25
+        }
+      ]
+    },
+    {
+      "label": "c2q1a",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_7ukunjp3",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e1_comedy",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "7ukunjp3",
+      "speaker": "鲸鱼小姐",
+      "text": "「……无关紧要！」",
+      "bg": "qla5b3w0",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "z869j1e3",
+          "x": 909.38,
+          "y": 1009.29,
+          "h": 960.0,
+          "flip": false,
+          "in": "right"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.8
+        },
+        {
+          "id": "amb_a06_seagulls_v01",
+          "gain": 0.25
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_pzcqedbf",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e1_comedy",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "pzcqedbf",
+      "speaker": "鲸鱼小姐",
+      "text": "「重点是酸梅汤。」",
+      "bg": "qla5b3w0",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "xfg3qcn2",
+          "x": 900.0,
+          "y": 1000.0,
+          "h": 960.0,
+          "flip": false,
+          "in": "right"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.8
+        },
+        {
+          "id": "amb_a06_seagulls_v01",
+          "gain": 0.25
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "尾鳍 += 1",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "kwsqkrhm",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e1_comedy",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "ww8jppa2",
+      "speaker": "",
+      "text": "（尾鳍拍水一下。）",
+      "bg": "qla5b3w0",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "xfg3qcn2",
+          "x": 900.0,
+          "y": 1000.0,
+          "h": 960.0,
+          "flip": false,
+          "in": "right"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.8
+        },
+        {
+          "id": "amb_a06_seagulls_v01",
+          "gain": 0.25
+        }
+      ],
+      "seEvents": [
+        {
+          "id": "sfx_tail_water_light",
+          "gain": 0.6
+        }
+      ]
+    },
+    {
+      "label": "c2q1b",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {
+        "鲸鱼小姐": "jump"
+      },
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e1_comedy",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "trj3l6tu",
+      "speaker": "",
+      "text": "她整个人像被点了穴。",
+      "bg": "qla5b3w0",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "z869j1e3",
+          "x": 909.38,
+          "y": 1009.29,
+          "h": 960.0,
+          "flip": false,
+          "in": "right"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.8
+        },
+        {
+          "id": "amb_a06_seagulls_v01",
+          "gain": 0.25
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_c6aajftq",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e1_comedy",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "c6aajftq",
+      "speaker": "鲸鱼小姐",
+      "text": "「哈？！」",
+      "bg": "qla5b3w0",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "z869j1e3",
+          "x": 909.38,
+          "y": 1009.29,
+          "h": 960.0,
+          "flip": false,
+          "in": "right"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.8
+        },
+        {
+          "id": "amb_a06_seagulls_v01",
+          "gain": 0.25
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_vkft1lib",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e1_comedy",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "vkft1lib",
+      "speaker": "鲸鱼小姐",
+      "text": "「人类，自恋是会被淹死的！」",
+      "bg": "qla5b3w0",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "z869j1e3",
+          "x": 909.38,
+          "y": 1009.29,
+          "h": 960.0,
+          "flip": false,
+          "in": "right"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.8
+        },
+        {
+          "id": "amb_a06_seagulls_v01",
+          "gain": 0.25
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_d2nuypd0",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e1_comedy",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "d2nuypd0",
+      "speaker": "鲸鱼小姐",
+      "text": "「昨天刚学的道理今天就忘了？！」",
+      "bg": "qla5b3w0",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "z869j1e3",
+          "x": 909.38,
+          "y": 1009.29,
+          "h": 960.0,
+          "flip": false,
+          "in": "right"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.8
+        },
+        {
+          "id": "amb_a06_seagulls_v01",
+          "gain": 0.25
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e1_comedy",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "g3u1vj7p",
+      "speaker": "",
+      "text": "她一把抢过酸梅汤，灌了一大口。",
+      "bg": "qla5b3w0",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "art_action26_v02",
+          "x": 909.38,
+          "y": 1009.29,
+          "h": 960.0,
+          "flip": false,
+          "in": "right",
+          "poseSwitch": "soft"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.8
+        },
+        {
+          "id": "amb_a06_seagulls_v01",
+          "gain": 0.25
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_5p228zu3",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e1_comedy",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "5p228zu3",
+      "speaker": "鲸鱼小姐",
+      "text": "「……哼。」",
+      "bg": "qla5b3w0",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "x013srmu",
+          "x": 895.0,
+          "y": 1005.62,
+          "h": 960.0,
+          "flip": false,
+          "in": "right"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.8
+        },
+        {
+          "id": "amb_a06_seagulls_v01",
+          "gain": 0.25
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_sb0dfj4m",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e1_comedy",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "sb0dfj4m",
+      "speaker": "鲸鱼小姐",
+      "text": "「勉强及格。冰再多放一刻钟就更好了。」",
+      "bg": "qla5b3w0",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "x013srmu",
+          "x": 895.0,
+          "y": 1005.62,
+          "h": 960.0,
+          "flip": false,
+          "in": "right"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.8
+        },
+        {
+          "id": "amb_a06_seagulls_v01",
+          "gain": 0.25
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "尾鳍 += 1",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "kwsqkrhm",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e1_comedy",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "lmt2wdi5",
+      "speaker": "",
+      "text": "（耳朵红了。尾鳍卷了一个小圈。）",
+      "bg": "qla5b3w0",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "x013srmu",
+          "x": 895.0,
+          "y": 1005.62,
+          "h": 960.0,
+          "flip": false,
+          "in": "right"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.8
+        },
+        {
+          "id": "amb_a06_seagulls_v01",
+          "gain": 0.25
+        }
+      ]
+    },
+    {
+      "label": "c2q1c",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e1_comedy",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "n9jp23uy",
+      "speaker": "",
+      "text": "她盯着递到面前的酸梅汤，又盯着我。",
+      "bg": "qla5b3w0",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "x013srmu",
+          "x": 895.0,
+          "y": 1005.62,
+          "h": 960.0,
+          "flip": false,
+          "in": "right"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.8
+        },
+        {
+          "id": "amb_a06_seagulls_v01",
+          "gain": 0.25
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_e72ipq1f",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e1_comedy",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "e72ipq1f",
+      "speaker": "鲸鱼小姐",
+      "text": "「……没规矩。」",
+      "bg": "qla5b3w0",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "x013srmu",
+          "x": 895.0,
+          "y": 1005.62,
+          "h": 960.0,
+          "flip": false,
+          "in": "right"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.8
+        },
+        {
+          "id": "amb_a06_seagulls_v01",
+          "gain": 0.25
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_g3zkq3se",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e1_comedy",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "g3zkq3se",
+      "speaker": "鲸鱼小姐",
+      "text": "「在本小姐的地盘，投喂之前要先报菜名。」",
+      "bg": "qla5b3w0",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "2qshq03j",
+          "x": 902.5,
+          "y": 1013.75,
+          "h": 960.0,
+          "flip": false,
+          "in": "right"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.8
+        },
+        {
+          "id": "amb_a06_seagulls_v01",
+          "gain": 0.25
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "尾鳍 += 1",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e1_comedy",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "2zmyc7ul",
+      "speaker": "",
+      "text": "（尾鳍拍水一下。）",
+      "bg": "qla5b3w0",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "2qshq03j",
+          "x": 902.5,
+          "y": 1013.75,
+          "h": 960.0,
+          "flip": false,
+          "in": "right"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.8
+        },
+        {
+          "id": "amb_a06_seagulls_v01",
+          "gain": 0.25
+        }
+      ],
+      "seEvents": [
+        {
+          "id": "sfx_tail_water_light",
+          "gain": 0.6
+        }
+      ]
+    },
+    {
+      "label": "c2m1",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_kwsqkrhm",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e1_comedy",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "kwsqkrhm",
+      "speaker": "鲸鱼小姐",
+      "text": "「桂花放多了。」",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "art_action26_v01",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false,
+          "in": "right",
+          "poseSwitch": "soft"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ],
+      "_musicCue": "「翡翠之梦」"
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_qptgrijt",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e1_comedy",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "qptgrijt",
+      "speaker": "鲸鱼小姐",
+      "text": "「糖也多了半勺。」",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "art_action26_v01",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false,
+          "in": "right",
+          "poseSwitch": "soft"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_4x70thl5",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e1_comedy",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "4x70thl5",
+      "speaker": "鲸鱼小姐",
+      "text": "「冰块的形状不够规整。」",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "art_action26_v01",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false,
+          "in": "right",
+          "poseSwitch": "soft"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e1_comedy",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "ab62ikza",
+      "speaker": "",
+      "text": "她一条条挑着刺，手里那杯酸梅汤却以肉眼可见的速度变少。",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "art_action26_v02",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false,
+          "in": "right",
+          "poseSwitch": "soft"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e1_comedy",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "oqqus6vm",
+      "speaker": "我",
+      "text": "「那你手里那杯……」",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "art_action26_v01",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false,
+          "in": "right",
+          "poseSwitch": "soft"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_7esq5eqm",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e1_comedy",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "7esq5eqm",
+      "speaker": "鲸鱼小姐",
+      "text": "「销毁证据。」",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "art_action26_v01",
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
+          "flip": false,
+          "in": "right",
+          "poseSwitch": "soft"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e1_comedy",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "fwmdeekd",
+      "speaker": "",
+      "text": "又一大口。",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "art_action26_v02",
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
+          "flip": false,
+          "in": "right",
+          "poseSwitch": "soft"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "3frz0272",
+      "speaker": "",
+      "text": "喝到最后，她忽然停下来，盯着杯子里的桂花看了一会儿。",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "wrwcdezj",
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
+          "flip": false,
+          "in": "right"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ],
+      "_musicFadeOutMs": 120
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_6s4ciafk",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "6s4ciafk",
+      "speaker": "鲸鱼小姐",
+      "text": "「……喂，人类。」",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "wrwcdezj",
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
+          "flip": false,
+          "in": "right"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_dfkb4sfb",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "dfkb4sfb",
+      "speaker": "鲸鱼小姐",
+      "text": "「昨天那个，加桂花的要求。」",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "wrwcdezj",
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
+          "flip": false,
+          "in": "right"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_rkd43n5l",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "rkd43n5l",
+      "speaker": "鲸鱼小姐",
+      "text": "「你还记得，算你过关。」",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "wrwcdezj",
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
+          "flip": false,
+          "in": "right"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_w34adbpj",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "w34adbpj",
+      "speaker": "鲸鱼小姐",
+      "text": "「所以从现在开始，『桂花』就是我们的第一个暗号。」",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "2qshq03j",
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
+          "flip": false,
+          "in": "right"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "6zxigva5",
+      "speaker": "我",
+      "text": "「暗号？」",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "2qshq03j",
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
+          "flip": false,
+          "in": "right"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_7atacaud",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "7atacaud",
+      "speaker": "鲸鱼小姐",
+      "text": "「本小姐说『今天没有桂花』的时候——」",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "2qshq03j",
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
+          "flip": false,
+          "in": "right"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_90lgbmcw",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "90lgbmcw",
+      "speaker": "鲸鱼小姐",
+      "text": "「意思就是，明天来的时候要带酸梅汤。」",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "2qshq03j",
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
+          "flip": false,
+          "in": "right"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_pkayznot",
+      "se": null,
+      "set": "",
+      "choices": [
+        {
+          "text": "「要是别人也喊桂花呢？」",
+          "target": "ga1pjox5",
+          "cond": "",
+          "set": "好感 += 8",
+          "id": "choice-000019"
+        },
+        {
+          "text": "「为什么是暗号，不能直接说吗？」",
+          "target": "cti6ecmm",
+          "cond": "",
+          "set": "好感 += 4",
+          "id": "choice-000020"
+        },
+        {
+          "text": "「成交。那第二个暗号是什么？」",
+          "target": "buecga5x",
+          "cond": "",
+          "set": "好感 += 3",
+          "id": "choice-000021"
+        }
+      ],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "pkayznot",
+      "speaker": "鲸鱼小姐",
+      "text": "「听懂没有？」",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "2qshq03j",
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
+          "flip": false,
+          "in": "right"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "c2q2a",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_ga1pjox5",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "ga1pjox5",
+      "speaker": "鲸鱼小姐",
+      "text": "「别人？」",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "xfg3qcn2",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false,
+          "in": "right"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "toghethw",
+      "speaker": "",
+      "text": "她眯起眼睛。",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "xfg3qcn2",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false,
+          "in": "right"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_ta9pcdes",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "ta9pcdes",
+      "speaker": "鲸鱼小姐",
+      "text": "「这片海域，除了你，谁敢跟本小姐对暗号？」",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "xfg3qcn2",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false,
+          "in": "right"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_o48jgiqf",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "o48jgiqf",
+      "speaker": "鲸鱼小姐",
+      "text": "「再说了——」",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "xfg3qcn2",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false,
+          "in": "right"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "8wmdwyo7",
+      "speaker": "",
+      "text": "她的声音低了一点。",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "wrwcdezj",
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
+          "flip": false,
+          "in": "right"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_akyb83h7",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "akyb83h7",
+      "speaker": "鲸鱼小姐",
+      "text": "「桂花泡开是什么样子，放几朵，冰几度……」",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "wrwcdezj",
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
+          "flip": false,
+          "in": "right"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_c8sbjdev",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "c8sbjdev",
+      "speaker": "鲸鱼小姐",
+      "text": "「全世界只有你知道。」",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "wrwcdezj",
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
+          "flip": false,
+          "in": "right"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_pluotwwi",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "pluotwwi",
+      "speaker": "鲸鱼小姐",
+      "text": "「这就是暗号。」",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "wrwcdezj",
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
+          "flip": false,
+          "in": "right"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "尾鳍 += 1",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "8ran0ojk",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "ww12xqqe",
+      "speaker": "",
+      "text": "（尾鳍卷了一个圈。缓慢，郑重。）",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "wrwcdezj",
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
+          "flip": false,
+          "in": "right"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "c2q2b",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_cti6ecmm",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "cti6ecmm",
+      "speaker": "鲸鱼小姐",
+      "text": "「直接说？」",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "wrwcdezj",
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
+          "flip": false,
+          "in": "right"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_oihue35n",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "oihue35n",
+      "speaker": "鲸鱼小姐",
+      "text": "「直接说『我想喝酸梅汤了』？」",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "wrwcdezj",
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
+          "flip": false,
+          "in": "right"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {
+        "鲸鱼小姐": "jump"
+      },
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "w4vz2j61",
+      "speaker": "",
+      "text": "她的耳朵以肉眼可见的速度红透。",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "z869j1e3",
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
+          "flip": false,
+          "in": "right"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_owfvy7rh",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "owfvy7rh",
+      "speaker": "鲸鱼小姐",
+      "text": "「人类！那种话是能直接说的吗！」",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "z869j1e3",
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
+          "flip": false,
+          "in": "right"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_t1bp3pex",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "t1bp3pex",
+      "speaker": "鲸鱼小姐",
+      "text": "「暗号就是暗号！不许质疑！」",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "z869j1e3",
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
+          "flip": false,
+          "in": "right"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "尾鳍 += 1",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "8ran0ojk",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "9lvy8mwm",
+      "speaker": "",
+      "text": "（尾鳍慌乱地甩了个圈。）",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "z869j1e3",
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
+          "flip": false,
+          "in": "right"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "c2q2c",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_buecga5x",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "buecga5x",
+      "speaker": "鲸鱼小姐",
+      "text": "「哼，上道。」",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "2qshq03j",
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
+          "flip": false,
+          "in": "right"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_uy92oyxq",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "uy92oyxq",
+      "speaker": "鲸鱼小姐",
+      "text": "「第二个暗号，看你表现再授。」",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "2qshq03j",
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
+          "flip": false,
+          "in": "right"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "c2m2",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "8ran0ojk",
+      "speaker": "",
+      "text": "她忽然朝我伸出手。",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "xfg3qcn2",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false,
+          "in": "right"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_al61w9p3",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "al61w9p3",
+      "speaker": "鲸鱼小姐",
+      "text": "「本子。」",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "xfg3qcn2",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false,
+          "in": "right"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "gc1t657z",
+      "speaker": "我",
+      "text": "「那个很重要——」",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "xfg3qcn2",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false,
+          "in": "right"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_bd1u0b5w",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "bd1u0b5w",
+      "speaker": "鲸鱼小姐",
+      "text": "「知道知道，你的『问题答案』嘛。」",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "xfg3qcn2",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false,
+          "in": "right"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_vck6fztl",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "vck6fztl",
+      "speaker": "鲸鱼小姐",
+      "text": "「借用一下。本小姐的契约，当然要用最珍贵的纸来写。」",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "xfg3qcn2",
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
+          "flip": false,
+          "in": "right"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "ci68sroe",
+      "speaker": "",
+      "text": "她抢过笔记本，翻到崭新的一页。",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "art_upgrade_p14",
+          "x": 633.49,
+          "y": 1055.21,
+          "h": 1000.0,
+          "flip": false,
+          "in": "right"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "l1p8d9ay",
+      "speaker": "",
+      "text": "然后愣住了。",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "art_upgrade_p14",
+          "x": 633.49,
+          "y": 1055.21,
+          "h": 1000.0,
+          "flip": false,
+          "in": "right"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "6pjogay4",
+      "speaker": "",
+      "text": "那一页的最上方，已经写着一行字——",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "art_upgrade_p14",
+          "x": 633.49,
+          "y": 1055.21,
+          "h": 1000.0,
+          "flip": false,
+          "in": "right"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "yn0vgxnv",
+      "speaker": "",
+      "text": "『明天带酸梅汤。加桂花的。』",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "art_upgrade_p14",
+          "x": 633.49,
+          "y": 1055.21,
+          "h": 1000.0,
+          "flip": false,
+          "in": "right"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "elw59ee8",
+      "speaker": "",
+      "text": "她盯着那行字看了三秒。",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "art_upgrade_p14",
+          "x": 633.49,
+          "y": 1055.21,
+          "h": 1000.0,
+          "flip": false,
+          "in": "right"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_3awuittl",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "3awuittl",
+      "speaker": "鲸鱼小姐",
+      "text": "「……字真丑。」",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "pj7k3972",
+          "asset": "art_upgrade_p14",
+          "x": 633.49,
+          "y": 1055.21,
+          "h": 1000.0,
+          "flip": false,
+          "in": "right"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "74kcvphs",
+      "speaker": "",
+      "text": "然后低下头，一笔一画地开始写。",
+      "bg": "xndnkx8k",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ],
+      "seEvents": [
+        {
+          "id": "sfx_s06_pen_writing_v01",
+          "gain": 0.45
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_u7fab4y8",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "u7fab4y8",
+      "speaker": "鲸鱼小姐",
+      "text": "「念给你听。条款一——」",
+      "bg": "xndnkx8k",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_urwxpwpj",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "urwxpwpj",
+      "speaker": "鲸鱼小姐",
+      "text": "「『暗号只有两个人知道。不许告诉外婆，不许告诉海鸥，更不许告诉任何一条鱼。』」",
+      "bg": "xndnkx8k",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_1ysm319j",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "1ysm319j",
+      "speaker": "鲸鱼小姐",
+      "text": "「条款二——」",
+      "bg": "xndnkx8k",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_toipot06",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "toipot06",
+      "speaker": "鲸鱼小姐",
+      "text": "「『你要是哪天忘了暗号，就降回普通人类。』」",
+      "bg": "xndnkx8k",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_vqks6qld",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "vqks6qld",
+      "speaker": "鲸鱼小姐",
+      "text": "「『酸梅汤没有你的份。糍粑没有你的份。』」",
+      "bg": "xndnkx8k",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_toiw2hsb",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "toiw2hsb",
+      "speaker": "鲸鱼小姐",
+      "text": "「『连浅滩都不许你踩。』」",
+      "bg": "xndnkx8k",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "d8bbbrvg",
+      "speaker": "我",
+      "text": "「这惩罚是不是太重了——」",
+      "bg": "xndnkx8k",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_k8xf3if4",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "k8xf3if4",
+      "speaker": "鲸鱼小姐",
+      "text": "「条款三！」",
+      "bg": "xndnkx8k",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "d8i8u3h4",
+      "speaker": "",
+      "text": "她用笔杆敲了敲纸面。",
+      "bg": "xndnkx8k",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ],
+      "seEvents": [
+        {
+          "id": "sfx_pen_tap_paper_double",
+          "gain": 0.45
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_v7m6mpzz",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "v7m6mpzz",
+      "speaker": "鲸鱼小姐",
+      "text": "「『本小姐随时可以新增暗号。』」",
+      "bg": "xndnkx8k",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_z8w99xv9",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "z8w99xv9",
+      "speaker": "鲸鱼小姐",
+      "text": "「『你，当场学会，不得有误。』」",
+      "bg": "xndnkx8k",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "r8v5y3ag",
+      "speaker": "",
+      "text": "她把本子转过来，尾巴尖点了点落款处。",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "art_upgrade_p14",
+          "x": 633.49,
+          "y": 1055.21,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_kg8xkzda",
+      "se": null,
+      "set": "",
+      "choices": [
+        {
+          "text": "签字，并在落款后加一行小字。",
+          "target": "q9ajcdwz",
+          "cond": "",
+          "set": "好感 += 10",
+          "id": "choice-000022"
+        },
+        {
+          "text": "讨价还价：「那我的权利呢？」",
+          "target": "ee55vw64",
+          "cond": "",
+          "set": "好感 += 5",
+          "id": "choice-000023"
+        },
+        {
+          "text": "「这算卖身契吗？」",
+          "target": "v1qxertc",
+          "cond": "",
+          "set": "好感 -= 3",
+          "id": "choice-000024"
+        }
+      ],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "kg8xkzda",
+      "speaker": "鲸鱼小姐",
+      "text": "「签字。」",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "2qshq03j",
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "c2q3a",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "q9ajcdwz",
+      "speaker": "",
+      "text": "我签下名字。",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "2qshq03j",
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "a509mb44",
+      "speaker": "",
+      "text": "想了想，在自己的名字后面，加了一行小字。",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "2qshq03j",
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "4tor1p7t",
+      "speaker": "",
+      "text": "『鲸鱼小姐的暗号持有人。』",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "2qshq03j",
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "mvroolxb",
+      "speaker": "",
+      "text": "她盯着那行小字看了很久。",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "wrwcdezj",
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_mgmzmu9k",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "mgmzmu9k",
+      "speaker": "鲸鱼小姐",
+      "text": "「……暗号持有人，是终身制的。」",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "wrwcdezj",
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_v1te4c45",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "v1te4c45",
+      "speaker": "鲸鱼小姐",
+      "text": "「中途退出，按契约条款二处理。酸梅汤，永久断供。」",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "wrwcdezj",
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "013i215o",
+      "speaker": "",
+      "text": "她把本子合上，抱在怀里，没还。",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "hfcyjlxm",
+          "x": 641.3,
+          "y": 1041.95,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ],
+      "seEvents": [
+        {
+          "id": "sfx_s07_notebook_close_v01",
+          "gain": 0.6
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_medydevq",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "medydevq",
+      "speaker": "鲸鱼小姐",
+      "text": "「这个，本小姐先保管。」",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "hfcyjlxm",
+          "x": 641.3,
+          "y": 1041.95,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_mel30c1l",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "mel30c1l",
+      "speaker": "鲸鱼小姐",
+      "text": "「怕你弄丢。」",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "hfcyjlxm",
+          "x": 641.3,
+          "y": 1041.95,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "尾鳍 += 1",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "mt31fbu7",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "gwl7op6h",
+      "speaker": "",
+      "text": "（尾鳍卷成一个圈，收紧——很久都没松开。）",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "hfcyjlxm",
+          "x": 641.3,
+          "y": 1041.95,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "c2q3b",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_ee55vw64",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "ee55vw64",
+      "speaker": "鲸鱼小姐",
+      "text": "「权利？」",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "hfcyjlxm",
+          "x": 641.3,
+          "y": 1041.95,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_6sp5iou0",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "6sp5iou0",
+      "speaker": "鲸鱼小姐",
+      "text": "「你能留在本小姐的海域，就是最大的权利了。」",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "hfcyjlxm",
+          "x": 641.3,
+          "y": 1041.95,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "zynsrwzg",
+      "speaker": "",
+      "text": "她大笔一挥，在条款三后面补了一行小字。",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "art_upgrade_s02",
+          "x": 659.53,
+          "y": 798.78,
+          "h": 781.82,
+          "flip": false,
+          "poseSwitch": "soft"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "cgtze1bj",
+      "speaker": "",
+      "text": "『补充：他不服的话，可以申诉。』",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "art_upgrade_s02",
+          "x": 659.53,
+          "y": 798.78,
+          "h": 781.82,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "ijg7nr68",
+      "speaker": "",
+      "text": "『申诉方式：给本小姐做一顿好吃的。』",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "art_upgrade_s02",
+          "x": 659.53,
+          "y": 798.78,
+          "h": 781.82,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "尾鳍 += 1",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "mt31fbu7",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "joe6542h",
+      "speaker": "",
+      "text": "（尾鳍拍水一下。心情不错。）",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "art_upgrade_s02",
+          "x": 659.53,
+          "y": 798.78,
+          "h": 781.82,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ],
+      "seEvents": [
+        {
+          "id": "sfx_tail_water_light",
+          "gain": 0.6
+        }
+      ]
+    },
+    {
+      "label": "c2q3c",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_v1qxertc",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "v1qxertc",
+      "speaker": "鲸鱼小姐",
+      "text": "「卖身契？」",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "cbx03q1l",
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "nro2r52j",
+      "speaker": "",
+      "text": "她笑了。",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "cbx03q1l",
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "ujjrks38",
+      "speaker": "",
+      "text": "是那种尾巴尖都翘起来的、危险的笑。",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "cbx03q1l",
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_hwgm8mxk",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "hwgm8mxk",
+      "speaker": "鲸鱼小姐",
+      "text": "「人类，你知道被鲸鱼尾巴卷住拖到深海需要几秒吗？」",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "cbx03q1l",
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {
+        "鲸鱼小姐": "nod"
+      },
+      "voice": "vo_szo91re8",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "szo91re8",
+      "speaker": "鲸鱼小姐",
+      "text": "「三秒。」",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "cbx03q1l",
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_9jxix8yv",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "9jxix8yv",
+      "speaker": "鲸鱼小姐",
+      "text": "「想体验一下吗？」",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "cbx03q1l",
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "5yiba8l2",
+      "speaker": "我",
+      "text": "「我签。」",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "cbx03q1l",
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_t8r1ystg",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "t8r1ystg",
+      "speaker": "鲸鱼小姐",
+      "text": "「乖。」",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "2qshq03j",
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "尾鳍 += 1",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_main_v01",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "frtp4eyj",
+      "speaker": "",
+      "text": "（尾鳍拍水三下。）",
+      "bg": "9vjefxje",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "2qshq03j",
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ],
+      "seEvents": [
+        {
+          "id": "sfx_tail_water_double",
+          "gain": 0.6
+        },
+        {
+          "id": "sfx_tail_water_light",
+          "gain": 0.6,
+          "delayMs": 1000
+        }
+      ]
+    },
+    {
+      "label": "c2m3",
+      "trans": "black",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_piano",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "mt31fbu7",
+      "speaker": "",
+      "text": "傍晚。契约签完了，酸梅汤也见底了。",
+      "bg": "uhhb6qjn",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "wrwcdezj",
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ],
+      "_musicCue": "「翡翠之梦」变奏（钢琴solo）"
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_piano",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "53dpn8dm",
+      "speaker": "",
+      "text": "她忽然开口，声音比海风还轻。",
+      "bg": "uhhb6qjn",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "wrwcdezj",
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_dwy8u0bl",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_piano",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "dwy8u0bl",
+      "speaker": "鲸鱼小姐",
+      "text": "「喂。」",
+      "bg": "uhhb6qjn",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "wrwcdezj",
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_4wcig7s7",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_piano",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "4wcig7s7",
+      "speaker": "鲸鱼小姐",
+      "text": "「暗号还有一个用处。本小姐没写进条款里。」",
+      "bg": "uhhb6qjn",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "wrwcdezj",
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_piano",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "tz0vk1ss",
+      "speaker": "我",
+      "text": "「什么用处？」",
+      "bg": "uhhb6qjn",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "wrwcdezj",
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_piano",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "atftsuc7",
+      "speaker": "鲸鱼小姐",
+      "text": "「……」",
+      "bg": "uhhb6qjn",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "wrwcdezj",
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_5d1gx8hr",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_piano",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "5d1gx8hr",
+      "speaker": "鲸鱼小姐",
+      "text": "「本小姐记性一般。你是知道的吧。」",
+      "bg": "uhhb6qjn",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "wrwcdezj",
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_piano",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "xoc3t6th",
+      "speaker": "",
+      "text": "她盯着自己的尾巴尖，没看我。",
+      "bg": "uhhb6qjn",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "wrwcdezj",
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_tafoincj",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_piano",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "tafoincj",
+      "speaker": "鲸鱼小姐",
+      "text": "「有些事，今天记得，明天可能就记岔了。」",
+      "bg": "uhhb6qjn",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "wrwcdezj",
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_4f99m6q7",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_piano",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "4f99m6q7",
+      "speaker": "鲸鱼小姐",
+      "text": "「昨天吃了什么，前天说了什么……那种细节。」",
+      "bg": "uhhb6qjn",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "wrwcdezj",
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_a7c5njix",
+      "se": null,
+      "set": "",
+      "choices": [
+        {
+          "text": "「那就把重要的事都写进暗号里。」",
+          "target": "ymbvisqf",
+          "cond": "",
+          "set": "好感 += 12",
+          "id": "choice-000025"
+        },
+        {
+          "text": "「记不住也没关系，我记得。」",
+          "target": "fxl393bw",
+          "cond": "",
+          "set": "好感 += 6",
+          "id": "choice-000026"
+        },
+        {
+          "text": "「你记性明明很好。」",
+          "target": "3bymlu28",
+          "cond": "",
+          "set": "",
+          "id": "choice-000027"
+        }
+      ],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_piano",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "a7c5njix",
+      "speaker": "鲸鱼小姐",
+      "text": "「记错了的话，你们人类会觉得麻烦吧。」",
+      "bg": "uhhb6qjn",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "wrwcdezj",
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "c2q4a",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_piano",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "ymbvisqf",
+      "speaker": "",
+      "text": "她抬起眼。",
+      "bg": "uhhb6qjn",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "wrwcdezj",
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_whyy1s3e",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_piano",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "whyy1s3e",
+      "speaker": "鲸鱼小姐",
+      "text": "「……什么？」",
+      "bg": "uhhb6qjn",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "wrwcdezj",
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_piano",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "dx9q0ctu",
+      "speaker": "我",
+      "text": "「容易记错的，都写成暗号。」",
+      "bg": "uhhb6qjn",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "wrwcdezj",
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_piano",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "f5em80mi",
+      "speaker": "我",
+      "text": "「『桂花』是酸梅汤。」",
+      "bg": "uhhb6qjn",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "wrwcdezj",
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_piano",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "inmcmx6k",
+      "speaker": "我",
+      "text": "「那以后，『涨潮』是你心情好，『退潮』是你想一个人待着。」",
+      "bg": "uhhb6qjn",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "wrwcdezj",
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_piano",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "d2db3cya",
+      "speaker": "我",
+      "text": "「谁也不用解释，对上了就是对的。」",
+      "bg": "uhhb6qjn",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "wrwcdezj",
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_piano",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "ciswga6p",
+      "speaker": "",
+      "text": "她一动不动地看着我。",
+      "bg": "uhhb6qjn",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "wrwcdezj",
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_piano",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "nxlik4mf",
+      "speaker": "",
+      "text": "很久。",
+      "bg": "uhhb6qjn",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "wrwcdezj",
+          "x": 857.5,
+          "y": 1003.12,
+          "h": 960.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_li3y809n",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_piano",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "li3y809n",
+      "speaker": "鲸鱼小姐",
+      "text": "「……暗号才不是这么用的。」",
+      "bg": "uhhb6qjn",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "x013srmu",
+          "x": 855.0,
+          "y": 1005.62,
+          "h": 960.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_slxkh5nb",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_piano",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "slxkh5nb",
+      "speaker": "鲸鱼小姐",
+      "text": "「暗号哪有把心情都写进去的。」",
+      "bg": "uhhb6qjn",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "x013srmu",
+          "x": 855.0,
+          "y": 1005.62,
+          "h": 960.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_piano",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "5w5wtlgf",
+      "speaker": "",
+      "text": "她的声音有点发紧。",
+      "bg": "uhhb6qjn",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "x013srmu",
+          "x": 855.0,
+          "y": 1005.62,
+          "h": 960.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_b88ptsjs",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_piano",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "b88ptsjs",
+      "speaker": "鲸鱼小姐",
+      "text": "「笨蛋。」",
+      "bg": "uhhb6qjn",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "x013srmu",
+          "x": 855.0,
+          "y": 1005.62,
+          "h": 960.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_uvtoc02j",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_piano",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "uvtoc02j",
+      "speaker": "鲸鱼小姐",
+      "text": "「……不过，条款四，就这么定了。」",
+      "bg": "uhhb6qjn",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "x013srmu",
+          "x": 855.0,
+          "y": 1005.62,
+          "h": 960.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "尾鳍 += 1",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "8d3i7kly",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_piano",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "jnpfwdxs",
+      "speaker": "",
+      "text": "（尾鳍卷了一个圈，然后整条尾巴都放平了。）",
+      "bg": "uhhb6qjn",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "x013srmu",
+          "x": 855.0,
+          "y": 1005.62,
+          "h": 960.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "c2q4b",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_fxl393bw",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_piano",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "fxl393bw",
+      "speaker": "鲸鱼小姐",
+      "text": "「你记得？」",
+      "bg": "uhhb6qjn",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "xfg3qcn2",
+          "x": 860.0,
+          "y": 1000.0,
+          "h": 960.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_5f7xxj54",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_piano",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "5f7xxj54",
+      "speaker": "鲸鱼小姐",
+      "text": "「你记得有什么用，那是你的脑子，又不是本小姐的。」",
+      "bg": "uhhb6qjn",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "xfg3qcn2",
+          "x": 860.0,
+          "y": 1000.0,
+          "h": 960.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_piano",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "kq3urcbr",
+      "speaker": "",
+      "text": "她哼了一声。",
+      "bg": "uhhb6qjn",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "xfg3qcn2",
+          "x": 860.0,
+          "y": 1000.0,
+          "h": 960.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_12ib88ay",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_piano",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "12ib88ay",
+      "speaker": "鲸鱼小姐",
+      "text": "「……话虽这么说。」",
+      "bg": "uhhb6qjn",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "x013srmu",
+          "x": 855.0,
+          "y": 1005.62,
+          "h": 960.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_6b6yfsh8",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_piano",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "6b6yfsh8",
+      "speaker": "鲸鱼小姐",
+      "text": "「条款四照定。你的脑子，勉强借本小姐存东西。」",
+      "bg": "uhhb6qjn",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "x013srmu",
+          "x": 855.0,
+          "y": 1005.62,
+          "h": 960.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "尾鳍 += 1",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "8d3i7kly",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_piano",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "hnan3hhf",
+      "speaker": "",
+      "text": "（尾鳍卷了一个圈。）",
+      "bg": "uhhb6qjn",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "x013srmu",
+          "x": 855.0,
+          "y": 1005.62,
+          "h": 960.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "c2q4c",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {
+        "鲸鱼小姐": "shake"
+      },
+      "voice": "vo_3bymlu28",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_piano",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "3bymlu28",
+      "speaker": "鲸鱼小姐",
+      "text": "「好什么好！」",
+      "bg": "uhhb6qjn",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "z869j1e3",
+          "x": 869.38,
+          "y": 1009.29,
+          "h": 960.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_ajgkhqy0",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_piano",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "ajgkhqy0",
+      "speaker": "鲸鱼小姐",
+      "text": "「上个月把香煎鱼排记成清蒸的，上上个月把集市记成在深海……」",
+      "bg": "uhhb6qjn",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "z869j1e3",
+          "x": 869.38,
+          "y": 1009.29,
+          "h": 960.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_piano",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "qnvw9nqf",
+      "speaker": "",
+      "text": "她掰着手指数，越数越气。",
+      "bg": "uhhb6qjn",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "88v1dull",
+          "x": 858.75,
+          "y": 1006.88,
+          "h": 960.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_7ev68l3r",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_piano",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "7ev68l3r",
+      "speaker": "鲸鱼小姐",
+      "text": "「总之，不许说本小姐记性好！」",
+      "bg": "uhhb6qjn",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "88v1dull",
+          "x": 858.75,
+          "y": 1006.88,
+          "h": 960.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_tyqbvu4h",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_piano",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "tyqbvu4h",
+      "speaker": "鲸鱼小姐",
+      "text": "「这是命令！」",
+      "bg": "uhhb6qjn",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "88v1dull",
+          "x": 858.75,
+          "y": 1006.88,
+          "h": 960.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "尾鳍 += 1",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_piano",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "6tr9fpio",
+      "speaker": "",
+      "text": "（尾鳍拍水两下。恼羞成怒。）",
+      "bg": "uhhb6qjn",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "88v1dull",
+          "x": 858.75,
+          "y": 1006.88,
+          "h": 960.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ],
+      "seEvents": [
+        {
+          "id": "sfx_tail_water_double",
+          "gain": 0.6
+        }
+      ]
+    },
+    {
+      "label": "c2m4",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_piano",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "8d3i7kly",
+      "speaker": "",
+      "text": "她把笔记本抱在怀里，忽然用尾巴尖把本子往我这边推了推。",
+      "bg": "uhhb6qjn",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "hfcyjlxm",
+          "x": 861.25,
+          "y": 1001.88,
+          "h": 960.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ],
+      "_musicCue": "渐弱",
+      "_musicFadeOutMs": 2200
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_t779xb9d",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_piano",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "t779xb9d",
+      "speaker": "鲸鱼小姐",
+      "text": "「喏。还你。」",
+      "bg": "uhhb6qjn",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "hfcyjlxm",
+          "x": 861.25,
+          "y": 1001.88,
+          "h": 960.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_cpdfhp17",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_piano",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "cpdfhp17",
+      "speaker": "鲸鱼小姐",
+      "text": "「别以为本小姐真的没收了。」",
+      "bg": "uhhb6qjn",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "xfg3qcn2",
+          "x": 860.0,
+          "y": 1000.0,
+          "h": 960.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_3aua7rck",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_piano",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "3aua7rck",
+      "speaker": "鲸鱼小姐",
+      "text": "「只是……代管。」",
+      "bg": "uhhb6qjn",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "xfg3qcn2",
+          "x": 860.0,
+          "y": 1000.0,
+          "h": 960.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_piano",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "yfn66191",
+      "speaker": "我",
+      "text": "「那暗号——」",
+      "bg": "uhhb6qjn",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "xfg3qcn2",
+          "x": 860.0,
+          "y": 1000.0,
+          "h": 960.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_qsews8jw",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_piano",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "qsews8jw",
+      "speaker": "鲸鱼小姐",
+      "text": "「『桂花』，酸梅汤。」",
+      "bg": "uhhb6qjn",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "2qshq03j",
+          "x": 862.5,
+          "y": 1013.75,
+          "h": 960.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_6psxxipg",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_piano",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "6psxxipg",
+      "speaker": "鲸鱼小姐",
+      "text": "「『涨潮』，本小姐心情好。」",
+      "bg": "uhhb6qjn",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "2qshq03j",
+          "x": 862.5,
+          "y": 1013.75,
+          "h": 960.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_afyc4302",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_piano",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "afyc4302",
+      "speaker": "鲸鱼小姐",
+      "text": "「『退潮』，别来烦本小姐。」",
+      "bg": "uhhb6qjn",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "2qshq03j",
+          "x": 862.5,
+          "y": 1013.75,
+          "h": 960.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_piano",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "vzzgzsqz",
+      "speaker": "",
+      "text": "她顿了顿，补了第四条。",
+      "bg": "uhhb6qjn",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "x013srmu",
+          "x": 855.0,
+          "y": 1005.62,
+          "h": 960.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_g3dcgcse",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_piano",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "g3dcgcse",
+      "speaker": "鲸鱼小姐",
+      "text": "「还有。看到本小姐的尾巴卷起来了——」",
+      "bg": "uhhb6qjn",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "x013srmu",
+          "x": 855.0,
+          "y": 1005.62,
+          "h": 960.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_sfpzh3jx",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_piano",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "sfpzh3jx",
+      "speaker": "鲸鱼小姐",
+      "text": "「就说明，你及格了。」",
+      "bg": "uhhb6qjn",
+      "sprites": [
+        {
+          "uid": "mimdz81b",
+          "asset": "x013srmu",
+          "x": 855.0,
+          "y": 1005.62,
+          "h": 960.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_piano",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "vx9nl7ok",
+      "speaker": "",
+      "text": "说完，她扎进水里，速度快得像在逃。",
+      "bg": "uhhb6qjn",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ],
+      "seEvents": [
+        {
+          "id": "sfx_s02_fall_into_water_v01",
+          "gain": 0.55
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_piano",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "lwdt5497",
+      "speaker": "",
+      "text": "只留下一句顺着浪花飘回来的话。",
+      "bg": "uhhb6qjn",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_nthjz7h6",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_piano",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "nthjz7h6",
+      "speaker": "鲸鱼小姐",
+      "text": "「明天！桂花！」",
+      "bg": "uhhb6qjn",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_o1bis57q",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_emerald_dream_piano",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "o1bis57q",
+      "speaker": "鲸鱼小姐",
+      "text": "「忘了的话连人带壶扔进深海！！」",
+      "bg": "uhhb6qjn",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a01_waves_normal_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "black",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_t4_night",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "qmcoedvg",
+      "speaker": "",
+      "text": "天黑透了，我还坐在礁石上。翻开笔记本，契约那一页的最下方，多了一行不是她写的、也不是我写的字。",
+      "bg": "acqkjhf8",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a02_waves_soft_v01",
+          "gain": 0.7
+        }
+      ],
+      "_musicCue": "无",
+      "_musicFadeOutMs": 600
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_t4_night",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "hjpxvyn2",
+      "speaker": "",
+      "text": "是桂花。",
+      "bg": "acqkjhf8",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a02_waves_soft_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_t4_night",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "mhq5o9pv",
+      "speaker": "",
+      "text": "几朵压平的、淡黄色的桂花。",
+      "bg": "acqkjhf8",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a02_waves_soft_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_t4_night",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "ixxo305v",
+      "speaker": "",
+      "text": "我拿起笔，在日期下面补了一行小字。",
+      "bg": "acqkjhf8",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a02_waves_soft_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_t4_night",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "6l8jf42a",
+      "speaker": "",
+      "text": "『暗号的本质：当记忆靠不住的时候——』",
+      "bg": "acqkjhf8",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a02_waves_soft_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_t4_night",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "8jzfi71p",
+      "speaker": "",
+      "text": "『只要对得上暗号，她就是她。我就是我。』",
+      "bg": "acqkjhf8",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a02_waves_soft_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_t4_night",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "yijv1xzp",
+      "speaker": "",
+      "text": "收本子的时候，我想起她的手腕内侧有一道口子，泡得发白。",
+      "bg": "acqkjhf8",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a02_waves_soft_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_t4_night",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "a07puhm9",
+      "speaker": "",
+      "text": "白天搬礁石压出来的。",
+      "bg": "acqkjhf8",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a02_waves_soft_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "gray",
+      "wait": 0,
+      "acts": {},
+      "voice": "vo_ngfxexp1",
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_t4_night",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "ngfxexp1",
+      "speaker": "鲸鱼小姐",
+      "text": "「看什么。小伤。海里的生灵愈合得快，三天就好。」",
+      "bg": "acqkjhf8",
+      "sprites": [
+        {
+          "uid": "q1az3dwx",
+          "asset": "wrwcdezj",
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
+          "flip": false,
+          "look": "gray"
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a02_waves_soft_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_t4_night",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "nikgzx7u",
+      "speaker": "",
+      "text": "第二天，我的包里多了一盒药膏。",
+      "bg": "acqkjhf8",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a02_waves_soft_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_t4_night",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "j2nxtm67",
+      "speaker": "",
+      "text": "来源不明。",
+      "bg": "acqkjhf8",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a02_waves_soft_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_t4_night",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "b5a694mn",
+      "speaker": "",
+      "text": "她的伤，两天就好了。",
+      "bg": "acqkjhf8",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a02_waves_soft_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_t4_night",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "cj5frvkm",
+      "speaker": "",
+      "text": "比三天，快了一天。",
+      "bg": "acqkjhf8",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a02_waves_soft_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_t4_night",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "pinfqujw",
+      "speaker": "",
+      "text": "『桂花不能断供。比记忆重要。』",
+      "bg": "acqkjhf8",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a02_waves_soft_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "black",
+      "fx": "",
+      "mood": "",
+      "wait": 1,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_t4_night",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "xmv0cpil",
+      "speaker": "",
+      "text": "",
+      "bg": "acqkjhf8",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a02_waves_soft_v01",
+          "gain": 0.7
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_t4_night",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "vv0uzcdx",
+      "speaker": "",
+      "text": "【第二话完】 存档点：桂花不断供",
+      "bg": "acqkjhf8",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a02_waves_soft_v01",
+          "gain": 0.7
+        }
+      ]
+    }
+  ]
+}

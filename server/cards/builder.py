@@ -35,7 +35,7 @@ def _clean_id(card: dict[str, Any]) -> None:
     card["locked_script"] = False
 
 
-async def generate(description: str, chain: list, chapter: dict[str, Any]) -> dict[str, Any]:
+async def generate(description: str, chain: list, chapter: dict[str, Any] | None = None) -> dict[str, Any]:
     if not chain:
         return {"ok": False, "error": "没有配置模型（GALLINGS_LLM_API_KEY），无法 AI 填卡"}
     msgs = prompts.card_fill_messages(description, TEMPLATE)

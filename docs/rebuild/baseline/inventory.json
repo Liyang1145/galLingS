@@ -1,0 +1,93 @@
+{
+  "sourceCommit": "2dfda33ea1eed1c98d6f37ab147bf2a96026b50b",
+  "sourceFiles": {
+    "海风与布丁/game.js": "ad59eef726dde64b4788ebe84661c55e2a522d843b0231e52935718dd67a36fa",
+    "海风与布丁/player.js": "adc0a13fca83c354d646e6d9f8f46fc9d095e4b702b0dc5e26043030aa1563d2",
+    "web/galcore.vnplugin.js": "ac37ac7539991800bcbb73e8eb717c097c60053cd49170c1d387266cab4a7e12",
+    "compiler/vnstudio.py": "21ee1609dc234ad13945b7e90139fa500be6976193cc0fe791fcdd8d6735e493"
+  },
+  "workId": "bqlsg5c2-local-fusion",
+  "legacyFormat": 3,
+  "title": "海风与布丁",
+  "entryNodeId": "fhww88n3",
+  "counts": {
+    "nodes": 3315,
+    "assets": 983,
+    "choiceNodes": 58,
+    "choices": 167,
+    "timedChoices": 2,
+    "endings": 4,
+    "chapters": 18
+  },
+  "variables": [
+    {
+      "name": "好感",
+      "init": "0"
+    },
+    {
+      "name": "尾鳍",
+      "init": "0"
+    },
+    {
+      "name": "贝壳延后",
+      "init": "0"
+    },
+    {
+      "name": "玩笑",
+      "init": "0"
+    },
+    {
+      "name": "海星放生",
+      "init": "0"
+    }
+  ],
+  "readOnlyPlayerVariables": [
+    "周目",
+    "结局数"
+  ],
+  "nodeFields": {
+    "_musicCue": 90,
+    "_musicFadeOutMs": 75,
+    "acts": 3315,
+    "agent": 3315,
+    "amb": 3315,
+    "amb2": 3315,
+    "amb2v": 3315,
+    "ambience": 3315,
+    "ambv": 3315,
+    "bg": 3315,
+    "bgm": 3315,
+    "cdef": 3315,
+    "chapter": 3315,
+    "choices": 3315,
+    "ctime": 3315,
+    "ending": 3315,
+    "fx": 3315,
+    "holdMs": 4,
+    "id": 3315,
+    "jump": 3315,
+    "jumpIf": 3315,
+    "label": 3315,
+    "mood": 3315,
+    "motionCount": 1,
+    "se": 3315,
+    "seEvents": 102,
+    "set": 3315,
+    "speaker": 3315,
+    "sprites": 3315,
+    "text": 3315,
+    "trans": 3315,
+    "typeMul": 6,
+    "voice": 3315,
+    "wait": 3315
+  },
+  "assetKinds": {
+    "bg": 91,
+    "bgm": 17,
+    "ch": 57,
+    "se": 103,
+    "vo": 715
+  },
+  "resourceFilesChecked": false,
+  "runtimeBehaviorChecked": false
+}

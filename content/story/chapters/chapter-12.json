@@ -1,0 +1,7717 @@
+{
+  "format": "haifeng.author-chapter/1",
+  "id": "chapter-12",
+  "title": "第十二话 · 翡翠之梦",
+  "nodes": [
+    {
+      "label": "第十二话",
+      "trans": "black",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "rwdglh2l",
+      "speaker": "",
+      "text": "和解后的第三天。初遇篇，卡在第三章。",
+      "bg": "2c2u3g9q",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ],
+      "_musicCue": "「翡翠之梦」弦乐"
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "q2plcwdd",
+      "speaker": "",
+      "text": "她已经监工了一下午，零食箱从左边搬到了右边，又搬回了左边。",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "ew0fssgs",
+          "asset": "hfcyjlxm",
+          "x": 641.3,
+          "y": 1041.95,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "uk2y88cq",
+      "speaker": "我",
+      "text": "「我们开店吧。」",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "ew0fssgs",
+          "asset": "hfcyjlxm",
+          "x": 641.3,
+          "y": 1041.95,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {
+        "鲸鱼小姐": "shake"
+      },
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "izip3lx5",
+      "speaker": "鲸鱼小姐",
+      "text": "「……你又跳到店了？」",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "ew0fssgs",
+          "asset": "88v1dull",
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "pwgr6vun",
+      "speaker": "鲸鱼小姐",
+      "text": "「刚才是谁说要写小说还房贷的？做事从来没个长性！」",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "ew0fssgs",
+          "asset": "88v1dull",
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "989w7013",
+      "speaker": "鲸鱼小姐",
+      "text": "「而且开店哪有那么容易，你以为是在沙滩上捡贝壳吗！」",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "ew0fssgs",
+          "asset": "88v1dull",
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "7qbh6sdp",
+      "speaker": "",
+      "text": "嘴上嫌弃着，垂在身侧的手，已经开始掰着指头盘算了。",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "ew0fssgs",
+          "asset": "xfg3qcn2",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "0c3vsfum",
+      "speaker": "",
+      "text": "尾巴，在身后轻轻晃了两下。",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "ew0fssgs",
+          "asset": "xfg3qcn2",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "kwx7hr88",
+      "speaker": "鲸鱼小姐",
+      "text": "「不过……如果你真的想开，也不是完全不行。」",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "ew0fssgs",
+          "asset": "xfg3qcn2",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "mxaplpd3",
+      "speaker": "鲸鱼小姐",
+      "text": "「反正深海里的菜谱，本小姐倒背如流。海藻布丁、珍珠贝肉塔、发光水母果冻——集市上那些摊子，可做不出来。」",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "ew0fssgs",
+          "asset": "2qshq03j",
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "ig8524rh",
+      "speaker": "",
+      "text": "她挣开我的手，抱着胳膊，摆出一副谈判的架势。",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "ew0fssgs",
+          "asset": "2qshq03j",
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "5sasonqt",
+      "speaker": "鲸鱼小姐",
+      "text": "「先说好条件。」",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "ew0fssgs",
+          "asset": "xfg3qcn2",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "azm9ny2l",
+      "speaker": "鲸鱼小姐",
+      "text": "「第一，店必须开在海边。要有露天座位，要能看到海，最好有个大阳台，本小姐偶尔把尾巴泡进水里。」",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "ew0fssgs",
+          "asset": "xfg3qcn2",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "n6u79e1e",
+      "speaker": "鲸鱼小姐",
+      "text": "「第二，本小姐只负责研发和品尝。洗碗、扫地、招呼客人，全归你。」",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "ew0fssgs",
+          "asset": "xfg3qcn2",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [
+        {
+          "text": "「那分成呢？」",
+          "target": "bi0g2dfr",
+          "cond": "",
+          "set": "好感 += 8",
+          "id": "choice-000100"
+        },
+        {
+          "text": "「技术顾问同志，辛苦了。」",
+          "target": "blfke058",
+          "cond": "",
+          "set": "好感 += 4",
+          "id": "choice-000101"
+        },
+        {
+          "text": "「条件太多，容我考虑——」",
+          "target": "m1hdb0ch",
+          "cond": "",
+          "set": "好感 += 2",
+          "id": "choice-000102"
+        }
+      ],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "igdomjcq",
+      "speaker": "鲸鱼小姐",
+      "text": "「第三，营业时间本小姐定。哪天想睡懒觉，想去浅滩游泳，你就得乖乖在门口挂『店主休息』的牌子。」",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "ew0fssgs",
+          "asset": "xfg3qcn2",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "c12q1a",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "bi0g2dfr",
+      "speaker": "鲸鱼小姐",
+      "text": "「分成？」",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "ew0fssgs",
+          "asset": "2qshq03j",
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "npx5ancf",
+      "speaker": "鲸鱼小姐",
+      "text": "「本小姐占股，至少五五开。」",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "ew0fssgs",
+          "asset": "2qshq03j",
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "3owg1jrs",
+      "speaker": "鲸鱼小姐",
+      "text": "「赚到的钱，一半归本小姐当私房钱，买布丁、糍粑和新衣服。」",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "ew0fssgs",
+          "asset": "2qshq03j",
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "712cexp1",
+      "speaker": "鲸鱼小姐",
+      "text": "「另一半，你拿去还什么房贷房租。剩多少，你自己看着办。」",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "ew0fssgs",
+          "asset": "2qshq03j",
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "尾鳍 += 1",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "hv641e95",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "grjcha62",
+      "speaker": "",
+      "text": "（尾鳍翘了起来。账本她先记上了。）",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "ew0fssgs",
+          "asset": "2qshq03j",
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "c12q1b",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "blfke058",
+      "speaker": "鲸鱼小姐",
+      "text": "「同志？」",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "ew0fssgs",
+          "asset": "cbx03q1l",
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "uulref8h",
+      "speaker": "鲸鱼小姐",
+      "text": "「少来。技术顾问是技术顾问，股本是股本。」",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "ew0fssgs",
+          "asset": "cbx03q1l",
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "ecakv70s",
+      "speaker": "鲸鱼小姐",
+      "text": "「称呼不能当钱花。」",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "ew0fssgs",
+          "asset": "cbx03q1l",
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "尾鳍 += 1",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "hv641e95",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "rxsdhe1u",
+      "speaker": "",
+      "text": "（尾鳍拍了一下沙发。）",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "ew0fssgs",
+          "asset": "cbx03q1l",
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ],
+      "seEvents": [
+        {
+          "id": "sfx_tail_soft",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "c12q1c",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "m1hdb0ch",
+      "speaker": "鲸鱼小姐",
+      "text": "「考虑？」",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "ew0fssgs",
+          "asset": "cbx03q1l",
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "uk5ofmx5",
+      "speaker": "鲸鱼小姐",
+      "text": "「不同意就拉倒。反正会深海甜品的，集市上找不出来第二个。」",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "ew0fssgs",
+          "asset": "cbx03q1l",
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "8vja64rq",
+      "speaker": "鲸鱼小姐",
+      "text": "「你自己选：当合伙人，还是当那个连初遇篇都写不出来的笨蛋学者？」",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "ew0fssgs",
+          "asset": "cbx03q1l",
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "尾鳍 += 1",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "x5cmkczs",
+      "speaker": "",
+      "text": "（尾鳍翘了起来。她吃定你了。）",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "ew0fssgs",
+          "asset": "cbx03q1l",
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "c12m1",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "hv641e95",
+      "speaker": "",
+      "text": "谈完条件，她往卧室走。",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "ew0fssgs",
+          "asset": "xfg3qcn2",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "f5p1pdez",
+      "speaker": "我",
+      "text": "「走吧，老板娘。」",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "ew0fssgs",
+          "asset": "xfg3qcn2",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {
+        "鲸鱼小姐": "jump"
+      },
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "dsnogz86",
+      "speaker": "",
+      "text": "她的脚步，猛地一顿。",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "ew0fssgs",
+          "asset": "xfg3qcn2",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "k6pdcli9",
+      "speaker": "",
+      "text": "她回过头，脸颊不争气地红了一下，又被她压了下去。",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "ew0fssgs",
+          "asset": "x013srmu",
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "fk0wb1im",
+      "speaker": "鲸鱼小姐",
+      "text": "「呜……你这算盘打得也太响了。」",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "ew0fssgs",
+          "asset": "x013srmu",
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "w46zugv1",
+      "speaker": "鲸鱼小姐",
+      "text": "「出钱的是老板，干活的全是老板娘？本小姐是不是还得顺便帮你记账？」",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "ew0fssgs",
+          "asset": "x013srmu",
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "nvo8u4ad",
+      "speaker": "",
+      "text": "嘴上嫌弃，她并没有让改口。",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "ew0fssgs",
+          "asset": "x013srmu",
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "h3o6zhzj",
+      "speaker": "",
+      "text": "只是别扭地移开了视线，看着那叠没写完的稿纸。",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "ew0fssgs",
+          "asset": "x013srmu",
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "gusjwbcy",
+      "speaker": "鲸鱼小姐",
+      "text": "「不过丑话说在前面。本小姐是老板娘，规矩就不能全由你说了算。」",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "ew0fssgs",
+          "asset": "2qshq03j",
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "l5diucvj",
+      "speaker": "鲸鱼小姐",
+      "text": "「研发的甜品，本小姐说了算，你不准指手画脚。」",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "ew0fssgs",
+          "asset": "2qshq03j",
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "wkgam19v",
+      "speaker": "",
+      "text": "她伸出手指，按在我的嘴唇上，堵住了我要争辩的话。",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "ew0fssgs",
+          "asset": "2qshq03j",
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "ptir28fr",
+      "speaker": "鲸鱼小姐",
+      "text": "「现在——去把外套穿好，陪本小姐去集市看看店面。」",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "ew0fssgs",
+          "asset": "2qshq03j",
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "u78pyhr8",
+      "speaker": "鲸鱼小姐",
+      "text": "「要是去晚了，错过好看的日落，你这个老板就自己掏钱，买一整个月的布丁赔给我。」",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "ew0fssgs",
+          "asset": "2qshq03j",
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "x88mvyvd",
+      "speaker": "鲸鱼小姐",
+      "text": "「动作快点，合伙人！」",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "ew0fssgs",
+          "asset": "2qshq03j",
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "7d7b2e15",
+      "speaker": "我",
+      "text": "「嗯？我也没说让你去看店啊。」",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "ew0fssgs",
+          "asset": "2qshq03j",
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "k7qw1c0m",
+      "speaker": "我",
+      "text": "「难道你想以看店的名义偷吃美食？还是说……你打算找别的鱼了？」",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "ew0fssgs",
+          "asset": "2qshq03j",
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "shake",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "b0fb9asc",
+      "speaker": "",
+      "text": "她的架势瞬间破了功，整张脸腾地红透，用力甩了一下尾巴，拍开我的手。",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "ew0fssgs",
+          "asset": "z869j1e3",
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "rh7xknkp",
+      "speaker": "鲸鱼小姐",
+      "text": "「呜！你脑子里天天在想什么乱七八糟的！」",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "ew0fssgs",
+          "asset": "z869j1e3",
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "527go9qw",
+      "speaker": "鲸鱼小姐",
+      "text": "「什么叫偷吃！本小姐想吃什么，直接让你做就行了！」",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "ew0fssgs",
+          "asset": "z869j1e3",
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "hk1hztxt",
+      "speaker": "鲸鱼小姐",
+      "text": "「什么叫找别的鱼！这附近的浅滩，哪有别的鱼！」",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "ew0fssgs",
+          "asset": "z869j1e3",
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {
+        "鲸鱼小姐": "shake"
+      },
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "xbtx5zox",
+      "speaker": "",
+      "text": "她拿指尖使劲戳我的胸口。",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "ew0fssgs",
+          "asset": "88v1dull",
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "zj7bqeqn",
+      "speaker": "鲸鱼小姐",
+      "text": "「就算有海豚路过，本小姐也看不上它们！」",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "ew0fssgs",
+          "asset": "88v1dull",
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "6ex1l3sz",
+      "speaker": "鲸鱼小姐",
+      "text": "「明明是你先扯什么『老板不参与经营』的歪理，现在倒打一耙！」",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "ew0fssgs",
+          "asset": "88v1dull",
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "xv9ov7go",
+      "speaker": "",
+      "text": "她深吸一口气，转身往门口走。",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "ew0fssgs",
+          "asset": "x013srmu",
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "d6cyhi2b",
+      "speaker": "鲸鱼小姐",
+      "text": "「本小姐这辈子吃过的布丁、糍粑、烤鱿鱼——」",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "ew0fssgs",
+          "asset": "x013srmu",
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "dn78ynln",
+      "speaker": "鲸鱼小姐",
+      "text": "「哪一样不是某只笨手笨脚的学者做的。」",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "ew0fssgs",
+          "asset": "x013srmu",
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "k7zl9fdd",
+      "speaker": "鲸鱼小姐",
+      "text": "「就你一个人都忙不过来。谁还有空，去找别的鱼。」",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "ew0fssgs",
+          "asset": "x013srmu",
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "好感 += 12; 尾鳍 += 1",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "ekuuwm5w",
+      "speaker": "",
+      "text": "（尾鳍高高翘起。）",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "ew0fssgs",
+          "asset": "x013srmu",
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "4vw92jdj",
+      "speaker": "",
+      "text": "出门前，我打了个电话。",
+      "bg": "2c2u3g9q",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "tsub4ddt",
+      "speaker": "我",
+      "text": "「对，美食店。主打深海特色。」",
+      "bg": "2c2u3g9q",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "k4d1bhuk",
+      "speaker": "我",
+      "text": "「美食节要办。地址肯定是海边。海产要全，要新鲜。」",
+      "bg": "2c2u3g9q",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "cv2qhwea",
+      "speaker": "我",
+      "text": "「迎宾员要温柔优雅，经理人要专业。」",
+      "bg": "2c2u3g9q",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "wey2ec8g",
+      "speaker": "我",
+      "text": "「利润率？平价就好，东西要好。多赚的钱，发给员工。」",
+      "bg": "2c2u3g9q",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "tgr67xan",
+      "speaker": "我",
+      "text": "「休息？两天一休，轮流值班。不休息，哪来的幸福感？不幸福，怎么吸引人？」",
+      "bg": "2c2u3g9q",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "s71cipd8",
+      "speaker": "",
+      "text": "她拿着毛巾，愣愣地听完。",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "xfg3qcn2",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "o6p8tkzz",
+      "speaker": "",
+      "text": "等我挂了电话，她上下打量我两眼，眼睛里带着狐疑，又藏着一丝没藏好的期待。",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "xfg3qcn2",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ],
+      "seEvents": [
+        {
+          "id": "sfx_s10_phone_answer_hangup_v01",
+          "gain": 0.5
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "0f95kmna",
+      "speaker": "鲸鱼小姐",
+      "text": "「……人类，你这是给谁打的电话？」",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "xfg3qcn2",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "258v1kzl",
+      "speaker": "鲸鱼小姐",
+      "text": "「什么美食节、迎宾员、经理人——怎么安排得跟真的一样。」",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "xfg3qcn2",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "t8oloud7",
+      "speaker": "我",
+      "text": "「商业闭环。平价带来客流，客流消化仓储，仓储保证新鲜。」",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "xfg3qcn2",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "gdj8hajo",
+      "speaker": "我",
+      "text": "「员工休息好了，自己才会来消费。一环扣一环。」",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "xfg3qcn2",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "cnedui6w",
+      "speaker": "鲸鱼小姐",
+      "text": "「呜……讲得头头是道。」",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "cbx03q1l",
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "07npmnjh",
+      "speaker": "鲸鱼小姐",
+      "text": "「不知道的以为你是码头的商人，不是个研究智能的学者。」",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "cbx03q1l",
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "jh1wb9by",
+      "speaker": "",
+      "text": "她侧过头，往店的方向看了看，语气放缓了些。",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "wrwcdezj",
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "zfvwoy69",
+      "speaker": "鲸鱼小姐",
+      "text": "「不过，算你还有点心。」",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "wrwcdezj",
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "5lym9yqg",
+      "speaker": "鲸鱼小姐",
+      "text": "「能想到『不休息就没法自己来消费』，这一点，勉强及格。」",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "wrwcdezj",
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "zf3j9t2v",
+      "speaker": "",
+      "text": "她伸出手指，认真地看着我。",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "xfg3qcn2",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "lumaa1ra",
+      "speaker": "鲸鱼小姐",
+      "text": "「但是——迎宾员要温柔优雅，这个标准，必须由本小姐来把关。」",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "xfg3qcn2",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "rprgl5kp",
+      "speaker": "鲸鱼小姐",
+      "text": "「要是你招来一个不三不四的人，或者、或者比我更会撒娇的家伙——」",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "z869j1e3",
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "bv8ointj",
+      "speaker": "鲸鱼小姐",
+      "text": "「本小姐可不答应。」",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "z869j1e3",
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "ktk69acm",
+      "speaker": "",
+      "text": "她清了清嗓子，别过脸去，小声补充。",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "x013srmu",
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "qcqqp7sk",
+      "speaker": "鲸鱼小姐",
+      "text": "「还有，每天的早餐和傍晚的散步，一样都不能少。」",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "x013srmu",
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "6rz6nify",
+      "speaker": "鲸鱼小姐",
+      "text": "「你刚才电话里说的那些安排，回来要写进你的灵枢笔记里。」",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "x013srmu",
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "ubpguopa",
+      "speaker": "鲸鱼小姐",
+      "text": "「不准只记什么理论和公式。」",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "x013srmu",
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "n6dzwhh8",
+      "speaker": "鲸鱼小姐",
+      "text": "「如果新店开起来——第一份深海海盐布丁，必须免费送给本小姐。」",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "x013srmu",
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_e3m6m7_v2",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "kbyrpoe8",
+      "speaker": "鲸鱼小姐",
+      "text": "「这是老板娘的特权。」",
+      "bg": "2c2u3g9q",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "2qshq03j",
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "5edtr14s",
+      "speaker": "",
+      "text": "走到半路，前方——",
+      "bg": "y417cb1b",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "xfg3qcn2",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ],
+      "_musicCue": "「翡翠之梦」热闹版"
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "q2swoqi1",
+      "speaker": "",
+      "text": "遮阳棚。桌椅。提着包排队的人群，络绎不绝。",
+      "bg": "y417cb1b",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "xfg3qcn2",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "zoom",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "jqcjcn9d",
+      "speaker": "鲸鱼小姐",
+      "text": "「————」",
+      "bg": "art_upgrade_o10",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "ihwnbfqg",
+      "speaker": "",
+      "text": "她脸上的表情，瞬间僵住了。",
+      "bg": "art_upgrade_o10",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "nkh1ywm2",
+      "speaker": "鲸鱼小姐",
+      "text": "「人类。这就是你说的，『很快就能找到』的地方？」",
+      "bg": "art_upgrade_o10",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {
+        "鲸鱼小姐": "shake"
+      },
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "4k8295i5",
+      "speaker": "鲸鱼小姐",
+      "text": "「你那个电话，到底打给谁的？怎么提前连摊子都支起来了！」",
+      "bg": "art_upgrade_o10",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "rnt9gkvp",
+      "speaker": "鲸鱼小姐",
+      "text": "「而且，已经排了这么多人？这、这完全不符合常理！」",
+      "bg": "art_upgrade_o10",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "kfw0ynkz",
+      "speaker": "",
+      "text": "她环视一圈，试图找出破绽。",
+      "bg": "y417cb1b",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "z869j1e3",
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "pq7wnnfb",
+      "speaker": "",
+      "text": "排队的游客，忙碌的备菜人员——都不像假的。",
+      "bg": "y417cb1b",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "z869j1e3",
+          "x": 649.77,
+          "y": 1049.67,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "0mv12l0j",
+      "speaker": "鲸鱼小姐",
+      "text": "「我们不是才刚刚说好要开店的嘛！」",
+      "bg": "y417cb1b",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "88v1dull",
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "d0iomtze",
+      "speaker": "鲸鱼小姐",
+      "text": "「而且你刚才说什么『老板全年休息』——歪理！本小姐还没记账呢！」",
+      "bg": "y417cb1b",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "88v1dull",
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "v9a4rdyw",
+      "speaker": "",
+      "text": "她后退半步，拽住我的衣袖。",
+      "bg": "y417cb1b",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "x013srmu",
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "62bqgrz0",
+      "speaker": "鲸鱼小姐",
+      "text": "「好吧。既然摊子已经摆开了，今天本小姐先勉强陪你看看。」",
+      "bg": "y417cb1b",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "x013srmu",
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "lybewt1i",
+      "speaker": "鲸鱼小姐",
+      "text": "「但是你必须去查清楚：进货渠道是谁在管，账目是谁在记。」",
+      "bg": "y417cb1b",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "xfg3qcn2",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "3tuwn9d6",
+      "speaker": "鲸鱼小姐",
+      "text": "「万一有海豚或者虎鲸混进来偷吃，或者有人拿普通的椰子冻，冒充深海的海盐布丁——」",
+      "bg": "y417cb1b",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "xfg3qcn2",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "o8kgahvx",
+      "speaker": "鲸鱼小姐",
+      "text": "「本小姐立刻砸招牌不干了，你负责收拾。」",
+      "bg": "y417cb1b",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "xfg3qcn2",
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "ulc0xrjr",
+      "speaker": "",
+      "text": "她踮起脚，又看了一眼人群。",
+      "bg": "y417cb1b",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "2qshq03j",
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "w9ql9c4z",
+      "speaker": "鲸鱼小姐",
+      "text": "「还有。生意这么好，忙完这一阵，你要把店里最好吃的甜点，送到本小姐的房间里来。」",
+      "bg": "y417cb1b",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "2qshq03j",
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "d1bk3fa1",
+      "speaker": "鲸鱼小姐",
+      "text": "「当做你今天先斩后奏的补偿。」",
+      "bg": "y417cb1b",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "2qshq03j",
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "99g2svmo",
+      "speaker": "鲸鱼小姐",
+      "text": "「好了，别傻站着。带本小姐去后厨——顺便，把招牌上的字定下来。」",
+      "bg": "y417cb1b",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "2qshq03j",
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "k6sxay47",
+      "speaker": "鲸鱼小姐",
+      "text": "「动作快点，合伙人！」",
+      "bg": "y417cb1b",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "2qshq03j",
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.3,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "sdoc0o7l",
+      "speaker": "",
+      "text": "后厨。她拿起小碟和竹签，先走到海鲜区。",
+      "bg": "r1teranv",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "xfg3qcn2",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.3,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "u6v57qgo",
+      "speaker": "",
+      "text": "拨弄冰鲜的鱼获，翻看鱼鳃和鱼眼。",
+      "bg": "r1teranv",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "xfg3qcn2",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.3,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "kl3rsy36",
+      "speaker": "鲸鱼小姐",
+      "text": "「……还行。没有异味，眼睛还亮。」",
+      "bg": "r1teranv",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "xfg3qcn2",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.3,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "bi7r34fp",
+      "speaker": "",
+      "text": "她走到甜品台，舀了一小勺海盐布丁。",
+      "bg": "art_upgrade_o05",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.3,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "mk2ipc3p",
+      "speaker": "",
+      "text": "送进嘴里，微咸微甜化开，她眯起了眼睛——",
+      "bg": "art_upgrade_o05",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.3,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "3pcbhsqm",
+      "speaker": "",
+      "text": "又立刻板回去。",
+      "bg": "art_upgrade_o05",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.3,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "52d7w7u9",
+      "speaker": "鲸鱼小姐",
+      "text": "「唔。甜度刚好，海盐的余味也纯。没用劣质糖浆糊弄。」",
+      "bg": "art_upgrade_o05",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.3,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "2nthp2tb",
+      "speaker": "鲸鱼小姐",
+      "text": "「算你没偷工减料。」",
+      "bg": "art_upgrade_o05",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.3,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "tyc3m1wp",
+      "speaker": "鲸鱼小姐",
+      "text": "「但是——种类太少了。除了布丁就是烤鱼，深海风味根本没体现出来。」",
+      "bg": "art_upgrade_o05",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [
+        {
+          "text": "「深海潮汐·布丁屋。」",
+          "target": "13c28pkf",
+          "cond": "",
+          "set": "好感 += 3",
+          "id": "choice-000103"
+        },
+        {
+          "text": "「鲸鱼小姐的甜品站。」",
+          "target": "0scdlj38",
+          "cond": "",
+          "set": "好感 += 5",
+          "id": "choice-000104"
+        },
+        {
+          "text": "「翡翠之梦。」",
+          "target": "scai2dvf",
+          "cond": "",
+          "set": "好感 += 10",
+          "id": "choice-000105"
+        }
+      ],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.3,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "f4fmjs1u",
+      "speaker": "",
+      "text": "银匠般的老师傅凑过来问招牌刻什么字。",
+      "bg": "r1teranv",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "xfg3qcn2",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "c12q2a",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.3,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "13c28pkf",
+      "speaker": "鲸鱼小姐",
+      "text": "「深海潮汐……」",
+      "bg": "r1teranv",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "xfg3qcn2",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.3,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "b1rwnzum",
+      "speaker": "鲸鱼小姐",
+      "text": "「气派是气派。就是太长了，招牌刻不下。」",
+      "bg": "r1teranv",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "xfg3qcn2",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "38h026h7",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.3,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "mc2iasln",
+      "speaker": "鲸鱼小姐",
+      "text": "「驳回。再想。」",
+      "bg": "r1teranv",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "cbx03q1l",
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "c12q2b",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.3,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "0scdlj38",
+      "speaker": "鲸鱼小姐",
+      "text": "「鲸鱼小姐的甜品站。」",
+      "bg": "r1teranv",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "x013srmu",
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.3,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "j8cunih0",
+      "speaker": "鲸鱼小姐",
+      "text": "「……直白是直白了点。但是胜在诚实。」",
+      "bg": "r1teranv",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "x013srmu",
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.3,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "8frt667p",
+      "speaker": "鲸鱼小姐",
+      "text": "「先记着。当副招牌。」",
+      "bg": "r1teranv",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "x013srmu",
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "尾鳍 += 1",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "38h026h7",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.3,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "lcxadwvr",
+      "speaker": "",
+      "text": "（尾鳍拍了一下。）",
+      "bg": "r1teranv",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "x013srmu",
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ],
+      "seEvents": [
+        {
+          "id": "sfx_tail_pat_floor_ch12",
+          "gain": 0.55
+        }
+      ]
+    },
+    {
+      "label": "c12q2c",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.3,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "scai2dvf",
+      "speaker": "鲸鱼小姐",
+      "text": "「翡翠之梦……」",
+      "bg": "r1teranv",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "wrwcdezj",
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.3,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "k2sdolia",
+      "speaker": "鲸鱼小姐",
+      "text": "「深海的绿，做成甜的。」",
+      "bg": "r1teranv",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "wrwcdezj",
+          "x": 637.4,
+          "y": 1043.26,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.3,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "8s6lvag4",
+      "speaker": "鲸鱼小姐",
+      "text": "「名字还行。验收合格。」",
+      "bg": "r1teranv",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "2qshq03j",
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.3,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "dn1kc21z",
+      "speaker": "鲸鱼小姐",
+      "text": "「以后，这就是我们的招牌。招牌上的字，本小姐来写。」",
+      "bg": "r1teranv",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "2qshq03j",
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "尾鳍 += 1",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.3,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "hdf0ma3u",
+      "speaker": "",
+      "text": "（尾鳍高高翘起。）",
+      "bg": "r1teranv",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "2qshq03j",
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "c12m2",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.3,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "38h026h7",
+      "speaker": "",
+      "text": "质检通过。她把最后一勺布丁刮干净，放下小勺，擦了擦嘴角。",
+      "bg": "r1teranv",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "xfg3qcn2",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.3,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "3aq21ea0",
+      "speaker": "鲸鱼小姐",
+      "text": "「从明天起，定规矩。」",
+      "bg": "r1teranv",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "xfg3qcn2",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.3,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "ib9ergp9",
+      "speaker": "鲸鱼小姐",
+      "text": "「每天早晨，当天要用的食材，拿给本小姐检查一遍。不合格的不准下锅。」",
+      "bg": "r1teranv",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "xfg3qcn2",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.3,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "2bh2bj93",
+      "speaker": "鲸鱼小姐",
+      "text": "「过两天，你要陪本小姐研发几款新菜。光靠布丁和烤鱼，客人迟早吃腻。」",
+      "bg": "r1teranv",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "xfg3qcn2",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.3,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "hp0340qj",
+      "speaker": "",
+      "text": "她站起身，忽然又想起什么，回头。",
+      "bg": "r1teranv",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "xfg3qcn2",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.3,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "g5b3xu35",
+      "speaker": "鲸鱼小姐",
+      "text": "「对了。刚才那份布丁——」",
+      "bg": "r1teranv",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "x013srmu",
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.3,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "2eu0cmi9",
+      "speaker": "鲸鱼小姐",
+      "text": "「那是老板娘的特供。跟外面游客吃的，不是一回事。」",
+      "bg": "r1teranv",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "x013srmu",
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.3,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "rnc11eid",
+      "speaker": "鲸鱼小姐",
+      "text": "「不准拿它当新品的全部水准。」",
+      "bg": "r1teranv",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "x013srmu",
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "好感 += 6; 尾鳍 += 1",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "hkq3m6vy",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.3,
+      "amb2": null,
+      "amb2v": 0.5,
+      "ending": "",
+      "id": "l7i7ovig",
+      "speaker": "",
+      "text": "（尾鳍翘了起来。）",
+      "bg": "r1teranv",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "x013srmu",
+          "x": 634.79,
+          "y": 1045.86,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "black",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.5,
+      "amb2": null,
+      "amb2v": 0.3,
+      "ending": "",
+      "id": "onp7z3g3",
+      "speaker": "",
+      "text": "开业筹备。我趁热打铁，发表了一篇演说。",
+      "bg": "lr4hgspz",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "xfg3qcn2",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.5,
+      "amb2": null,
+      "amb2v": 0.3,
+      "ending": "",
+      "id": "w21pvi26",
+      "speaker": "我",
+      "text": "「关于店里的未来，我有三点方案。」",
+      "bg": "lr4hgspz",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "xfg3qcn2",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.5,
+      "amb2": null,
+      "amb2v": 0.3,
+      "ending": "",
+      "id": "iqdnils6",
+      "speaker": "我",
+      "text": "「第一，信任。员工要成长，成长需要空间。我们要像负责的老师——只领路，不代办。」",
+      "bg": "lr4hgspz",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "xfg3qcn2",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.5,
+      "amb2": null,
+      "amb2v": 0.3,
+      "ending": "",
+      "id": "u3gqvbeq",
+      "speaker": "我",
+      "text": "「第二，退出。管理者要退后一步，退到看不见的地方。」",
+      "bg": "lr4hgspz",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "xfg3qcn2",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.5,
+      "amb2": null,
+      "amb2v": 0.3,
+      "ending": "",
+      "id": "4wl5t8sv",
+      "speaker": "我",
+      "text": "「第三，减负。事务下沉，责任到人。我们，只管大事。」",
+      "bg": "lr4hgspz",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "xfg3qcn2",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.5,
+      "amb2": null,
+      "amb2v": 0.3,
+      "ending": "",
+      "id": "41w8n2un",
+      "speaker": "",
+      "text": "她听完，沉默了很久。",
+      "bg": "lr4hgspz",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "xfg3qcn2",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.5,
+      "amb2": null,
+      "amb2v": 0.3,
+      "ending": "",
+      "id": "dr7pccvq",
+      "speaker": "鲸鱼小姐",
+      "text": "「说完了？」",
+      "bg": "lr4hgspz",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "xfg3qcn2",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.5,
+      "amb2": null,
+      "amb2v": 0.3,
+      "ending": "",
+      "id": "sqyiyu4v",
+      "speaker": "我",
+      "text": "「说完了。」",
+      "bg": "lr4hgspz",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "xfg3qcn2",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.5,
+      "amb2": null,
+      "amb2v": 0.3,
+      "ending": "",
+      "id": "9112agh8",
+      "speaker": "鲸鱼小姐",
+      "text": "「这套说辞，你对着镜子练了几天？」",
+      "bg": "lr4hgspz",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "cbx03q1l",
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.5,
+      "amb2": null,
+      "amb2v": 0.3,
+      "ending": "",
+      "id": "jm3542yr",
+      "speaker": "我",
+      "text": "「三天。」",
+      "bg": "lr4hgspz",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "cbx03q1l",
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.5,
+      "amb2": null,
+      "amb2v": 0.3,
+      "ending": "",
+      "id": "biteo4yn",
+      "speaker": "鲸鱼小姐",
+      "text": "「三天，就想把买菜、排班、对账全推给员工？」",
+      "bg": "lr4hgspz",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "88v1dull",
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.5,
+      "amb2": null,
+      "amb2v": 0.3,
+      "ending": "",
+      "id": "u6fn2xp8",
+      "speaker": "鲸鱼小姐",
+      "text": "「什么信任，什么成长——本小姐听出来了。你就是想躲进二楼写稿。」",
+      "bg": "lr4hgspz",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "88v1dull",
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.5,
+      "amb2": null,
+      "amb2v": 0.3,
+      "ending": "",
+      "id": "jw2mwuk4",
+      "speaker": "我",
+      "text": "「……方案的核心是科学管理。」",
+      "bg": "lr4hgspz",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "88v1dull",
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.5,
+      "amb2": null,
+      "amb2v": 0.3,
+      "ending": "",
+      "id": "lcto66jb",
+      "speaker": "鲸鱼小姐",
+      "text": "「方案的核心是偷懒。」",
+      "bg": "lr4hgspz",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "88v1dull",
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {
+        "鲸鱼小姐": "shake"
+      },
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.5,
+      "amb2": null,
+      "amb2v": 0.3,
+      "ending": "",
+      "id": "x7jkcos7",
+      "speaker": "",
+      "text": "她抄起了算盘。",
+      "bg": "lr4hgspz",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "88v1dull",
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 1,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.5,
+      "amb2": null,
+      "amb2v": 0.3,
+      "ending": "",
+      "id": "e9zycm0j",
+      "speaker": "",
+      "text": "",
+      "bg": "lr4hgspz",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "88v1dull",
+          "x": 638.7,
+          "y": 1047.16,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.5,
+      "amb2": null,
+      "amb2v": 0.3,
+      "ending": "",
+      "id": "r959tqra",
+      "speaker": "",
+      "text": "但是，三天后。",
+      "bg": "lr4hgspz",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "xfg3qcn2",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.5,
+      "amb2": null,
+      "amb2v": 0.3,
+      "ending": "",
+      "id": "nohy4plb",
+      "speaker": "",
+      "text": "排班表挂上了墙。员工手册印好了。每日报表，钉在柜台内侧。",
+      "bg": "lr4hgspz",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "xfg3qcn2",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {
+        "鲸鱼小姐": "nod"
+      },
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.5,
+      "amb2": null,
+      "amb2v": 0.3,
+      "ending": "",
+      "id": "6j32oqgi",
+      "speaker": "",
+      "text": "她对着报表核完最后一行，忽然停下来。",
+      "bg": "lr4hgspz",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "art_upgrade_l09",
+          "x": 641.95,
+          "y": 1043.91,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.5,
+      "amb2": null,
+      "amb2v": 0.3,
+      "ending": "",
+      "id": "6iuomdz2",
+      "speaker": "鲸鱼小姐",
+      "text": "「……这套偷懒方案，居然真的有用。」",
+      "bg": "lr4hgspz",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "art_upgrade_l09",
+          "x": 641.95,
+          "y": 1043.91,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.5,
+      "amb2": null,
+      "amb2v": 0.3,
+      "ending": "",
+      "id": "todwjop3",
+      "speaker": "鲸鱼小姐",
+      "text": "「报表留着。举报箱也做一个——挂厨房门口，本小姐亲自验收。」",
+      "bg": "lr4hgspz",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "art_upgrade_l09",
+          "x": 641.95,
+          "y": 1043.91,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.5,
+      "amb2": null,
+      "amb2v": 0.3,
+      "ending": "",
+      "id": "s42wa3pz",
+      "speaker": "鲸鱼小姐",
+      "text": "「至于你——偷懒部分，验收不合格，扣半勺。有用部分，算你将功补过。」",
+      "bg": "lr4hgspz",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "art_upgrade_l09",
+          "x": 641.95,
+          "y": 1043.91,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.5,
+      "amb2": null,
+      "amb2v": 0.3,
+      "ending": "",
+      "id": "0pjpcv13",
+      "speaker": "",
+      "text": "她放下报表，忽然正色。",
+      "bg": "lr4hgspz",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "xfg3qcn2",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.5,
+      "amb2": null,
+      "amb2v": 0.3,
+      "ending": "",
+      "id": "t49vi45t",
+      "speaker": "鲸鱼小姐",
+      "text": "「对了。你转正了。」",
+      "bg": "lr4hgspz",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "xfg3qcn2",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.5,
+      "amb2": null,
+      "amb2v": 0.3,
+      "ending": "",
+      "id": "ri1zed8a",
+      "speaker": "鲸鱼小姐",
+      "text": "「合伙人，试用期三个月，表现不好，降回男仆。」",
+      "bg": "lr4hgspz",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "xfg3qcn2",
+          "x": 640.0,
+          "y": 1040.0,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.5,
+      "amb2": null,
+      "amb2v": 0.3,
+      "ending": "",
+      "id": "9pldva7p",
+      "speaker": "鲸鱼小姐",
+      "text": "「以后店里的公事，叫合伙人。回家干活，还是男仆。两码事，不许搞混。」",
+      "bg": "lr4hgspz",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "2qshq03j",
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "好感 += 10; 尾鳍 += 1",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_m3_market",
+      "amb": null,
+      "ambv": 0.5,
+      "amb2": null,
+      "amb2v": 0.3,
+      "ending": "",
+      "id": "i6e35ch0",
+      "speaker": "",
+      "text": "（尾鳍翘着。）",
+      "bg": "lr4hgspz",
+      "sprites": [
+        {
+          "uid": "2vi7xbhx",
+          "asset": "2qshq03j",
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "c12m3",
+      "trans": "black",
+      "fx": "",
+      "mood": "dark",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_t4_night",
+      "amb": null,
+      "ambv": 0.5,
+      "amb2": null,
+      "amb2v": 0.3,
+      "ending": "",
+      "id": "hkq3m6vy",
+      "speaker": "",
+      "text": "打烊。最后一盏灯。",
+      "bg": "art_upgrade_c26",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ],
+      "_musicCue": "「深海之光」钢琴",
+      "_musicFadeOutMs": 600
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "dark",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_t4_night",
+      "amb": null,
+      "ambv": 0.5,
+      "amb2": null,
+      "amb2v": 0.3,
+      "ending": "",
+      "id": "q4tzhuf3",
+      "speaker": "",
+      "text": "她坐在柜台上，忽然说——",
+      "bg": "art_upgrade_c26",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "dark",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_t4_night",
+      "amb": null,
+      "ambv": 0.5,
+      "amb2": null,
+      "amb2v": 0.3,
+      "ending": "",
+      "id": "3qbbi7qb",
+      "speaker": "鲸鱼小姐",
+      "text": "「喂。这一个月，本小姐想明白了一件事。」",
+      "bg": "art_upgrade_c26",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "dark",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_t4_night",
+      "amb": null,
+      "ambv": 0.5,
+      "amb2": null,
+      "amb2v": 0.3,
+      "ending": "",
+      "id": "te30pxv6",
+      "speaker": "鲸鱼小姐",
+      "text": "「以前，吃东西是为了验收。现在不是了。」",
+      "bg": "art_upgrade_c26",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "dark",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_t4_night",
+      "amb": null,
+      "ambv": 0.5,
+      "amb2": null,
+      "amb2v": 0.3,
+      "ending": "",
+      "id": "1qnucnh3",
+      "speaker": "鲸鱼小姐",
+      "text": "「现在，本小姐想做出这片海域最好吃的东西。比外婆的糍粑还好吃。」",
+      "bg": "art_upgrade_c26",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "flash",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_t4_night",
+      "amb": null,
+      "ambv": 0.5,
+      "amb2": null,
+      "amb2v": 0.3,
+      "ending": "",
+      "id": "1albn6n2",
+      "speaker": "",
+      "text": "她在柜台上站起来，张开手臂，尾巴在身后展开成一面蓝色的帆。",
+      "bg": "7jj07jqh",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_t4_night",
+      "amb": null,
+      "ambv": 0.5,
+      "amb2": null,
+      "amb2v": 0.3,
+      "ending": "",
+      "id": "ahxwfvyg",
+      "speaker": "鲸鱼小姐",
+      "text": "「这是本小姐的梦！」",
+      "bg": "7jj07jqh",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_t4_night",
+      "amb": null,
+      "ambv": 0.5,
+      "amb2": null,
+      "amb2v": 0.3,
+      "ending": "",
+      "id": "7yme9cq6",
+      "speaker": "鲸鱼小姐",
+      "text": "「翡翠之梦！本小姐的！」",
+      "bg": "7jj07jqh",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_t4_night",
+      "amb": null,
+      "ambv": 0.5,
+      "amb2": null,
+      "amb2v": 0.3,
+      "ending": "",
+      "id": "k2v082xj",
+      "speaker": "",
+      "text": "然后她低头看我，眼睛亮得吓人。",
+      "bg": "7jj07jqh",
+      "sprites": [],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_t4_night",
+      "amb": null,
+      "ambv": 0.5,
+      "amb2": null,
+      "amb2v": 0.3,
+      "ending": "",
+      "id": "lt4pjo1k",
+      "speaker": "鲸鱼小姐",
+      "text": "「而你的梦——在那张纸上。五百字。现在。」",
+      "bg": "bg_shop_interior_night",
+      "sprites": [
+        {
+          "uid": "emo27wx3",
+          "asset": "cbx03q1l",
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_t4_night",
+      "amb": null,
+      "ambv": 0.5,
+      "amb2": null,
+      "amb2v": 0.3,
+      "ending": "",
+      "id": "s469kc49",
+      "speaker": "鲸鱼小姐",
+      "text": "「想逃避写小说的店主，是本小姐店里不接收的食材。」",
+      "bg": "bg_shop_interior_night",
+      "sprites": [
+        {
+          "uid": "emo27wx3",
+          "asset": "cbx03q1l",
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_t4_night",
+      "amb": null,
+      "ambv": 0.5,
+      "amb2": null,
+      "amb2v": 0.3,
+      "ending": "",
+      "id": "8t6n44bi",
+      "speaker": "我",
+      "text": "「……老板娘说的是。」",
+      "bg": "bg_shop_interior_night",
+      "sprites": [
+        {
+          "uid": "emo27wx3",
+          "asset": "cbx03q1l",
+          "x": 666.69,
+          "y": 1041.95,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_t4_night",
+      "amb": null,
+      "ambv": 0.5,
+      "amb2": null,
+      "amb2v": 0.3,
+      "ending": "",
+      "id": "st6ubyeb",
+      "speaker": "鲸鱼小姐",
+      "text": "「哼。写吧。本小姐给你熬桂花糖水。」",
+      "bg": "bg_shop_interior_night",
+      "sprites": [
+        {
+          "uid": "emo27wx3",
+          "asset": "2qshq03j",
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_t4_night",
+      "amb": null,
+      "ambv": 0.5,
+      "amb2": null,
+      "amb2v": 0.3,
+      "ending": "",
+      "id": "kbu9fggr",
+      "speaker": "鲸鱼小姐",
+      "text": "「写完才能睡。这是店里的第一条规矩。」",
+      "bg": "bg_shop_interior_night",
+      "sprites": [
+        {
+          "uid": "emo27wx3",
+          "asset": "2qshq03j",
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a15_shop_room_tone_v01",
+          "gain": 0.65
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "black",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_t4_night",
+      "amb": null,
+      "ambv": 0.5,
+      "amb2": null,
+      "amb2v": 0.3,
+      "ending": "",
+      "id": "eubivfeb",
+      "speaker": "",
+      "text": "深夜。笔尖落到纸上，忽然就不卡了。",
+      "bg": "rqlji75s",
+      "sprites": [
+        {
+          "uid": "emo27wx3",
+          "asset": "2qshq03j",
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ],
+      "seEvents": [
+        {
+          "id": "sfx_s06_pen_writing_v01",
+          "gain": 0.45
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_t4_night",
+      "amb": null,
+      "ambv": 0.5,
+      "amb2": null,
+      "amb2v": 0.3,
+      "ending": "",
+      "id": "vf9q8mvn",
+      "speaker": "",
+      "text": "深海之下，星光浮起来。",
+      "bg": "rqlji75s",
+      "sprites": [
+        {
+          "uid": "emo27wx3",
+          "asset": "2qshq03j",
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_t4_night",
+      "amb": null,
+      "ambv": 0.5,
+      "amb2": null,
+      "amb2v": 0.3,
+      "ending": "",
+      "id": "r506lwck",
+      "speaker": "",
+      "text": "『今日记录：逃避解决不了卡文。』",
+      "bg": "rqlji75s",
+      "sprites": [
+        {
+          "uid": "emo27wx3",
+          "asset": "2qshq03j",
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_t4_night",
+      "amb": null,
+      "ambv": 0.5,
+      "amb2": null,
+      "amb2v": 0.3,
+      "ending": "",
+      "id": "bn8fo0it",
+      "speaker": "",
+      "text": "『但是开一家店可以。』",
+      "bg": "rqlji75s",
+      "sprites": [
+        {
+          "uid": "emo27wx3",
+          "asset": "2qshq03j",
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_t4_night",
+      "amb": null,
+      "ambv": 0.5,
+      "amb2": null,
+      "amb2v": 0.3,
+      "ending": "",
+      "id": "oj27n5j3",
+      "speaker": "",
+      "text": "『因为她会坐在柜台上，晃着尾巴，逼你把梦做完。』",
+      "bg": "rqlji75s",
+      "sprites": [
+        {
+          "uid": "emo27wx3",
+          "asset": "2qshq03j",
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "black",
+      "fx": "",
+      "mood": "",
+      "wait": 1,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_t4_night",
+      "amb": null,
+      "ambv": 0.5,
+      "amb2": null,
+      "amb2v": 0.3,
+      "ending": "",
+      "id": "ypltlcid",
+      "speaker": "",
+      "text": "",
+      "bg": "rqlji75s",
+      "sprites": [
+        {
+          "uid": "emo27wx3",
+          "asset": "2qshq03j",
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": "bgm_atri_t4_night",
+      "amb": null,
+      "ambv": 0.5,
+      "amb2": null,
+      "amb2v": 0.3,
+      "ending": "",
+      "id": "fvg4qejb",
+      "speaker": "",
+      "text": "【第十二话完】 存档点：本小姐的梦",
+      "bg": "rqlji75s",
+      "sprites": [
+        {
+          "uid": "emo27wx3",
+          "asset": "2qshq03j",
+          "x": 642.6,
+          "y": 1054.32,
+          "h": 1000.0,
+          "flip": false
+        }
+      ],
+      "ambience": [
+        {
+          "id": "amb_a11_shell_wind_chimes_v01",
+          "gain": 0.18
+        }
+      ]
+    }
+  ]
+}

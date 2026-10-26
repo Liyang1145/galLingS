@@ -1,0 +1,68 @@
+const PROPERTIES = [
+  "--stage-scale", "--stage-unit", "--stage-left", "--stage-top", "--stage-canvas-height", "--stage-controls-inset",
+  "--portrait-scene-top", "--portrait-dialogue-top", "--portrait-dialogue-height",
+  "--portrait-choice-top", "--portrait-choice-height", "--portrait-title-top", "--portrait-text-scale",
+] as const;
+
+/** Shared author-coordinate layout only; resizing never accesses story, media or timers. */
+export function connectStageLayout(stage: HTMLElement, options: { controls?: HTMLElement } = {}): { dispose(): void } {
+  let closed = false;
+  const update = (width: number, height: number): void => {
+    if (closed || !Number.isFinite(width) || width <= 0 || !Number.isFinite(height) || height <= 0) return;
+    const portrait = height > width * 1.15;
+    const scale = portrait ? width / 1280 : Math.min(width / 1280, height / 720);
+    stage.style.setProperty("--stage-scale", String(scale));
+    stage.style.setProperty("--stage-unit", `${1 / scale}px`);
+    stage.style.setProperty("--stage-left", `${(width - 1280 * scale) / 2}px`);
+    stage.style.setProperty("--stage-top", portrait ? "0px" : `${(height - 720 * scale) / 2}px`);
+    stage.style.setProperty("--stage-canvas-height", `${portrait ? height / scale : 720}px`);
+    stage.dataset.layout = portrait ? "portrait" : "landscape";
+    stage.dataset.smallStage = String(!portrait && scale < 0.75);
+    const controls = options.controls;
+    const inset = controls && !controls.hidden
+      ? Math.max(0, height - (controls.getBoundingClientRect().top - stage.getBoundingClientRect().top)) : 0;
+    stage.style.setProperty("--stage-controls-inset", `${inset / scale}px`);
+    if (!portrait) {
+      for (const property of PROPERTIES) if (property.startsWith("--portrait-")) stage.style.removeProperty(property);
+      return;
+    }
+    // Game controls may overlay the stage; independent editor controls remain outside it.
+    const availableHeight = Math.max(0, height - inset);
+    const sceneHeight = 720 * scale;
+    const top = Math.round(Math.min(48, Math.max(0, (availableHeight - sceneHeight - 480) / 3)));
+    const dialogueTop = top + sceneHeight + 16;
+    const dialogueHeight = Math.round(Math.max(150, Math.min(240, (availableHeight - dialogueTop - 16) * 0.62)));
+    let choiceTop = dialogueTop + dialogueHeight + 10;
+    let choiceHeight = availableHeight - 14 - choiceTop;
+    if (choiceHeight < 150) {
+      choiceTop = top + 6;
+      choiceHeight = dialogueTop + dialogueHeight - top - 12;
+    }
+    const coordinate = (value: number): string => `${value / scale}px`;
+    stage.style.setProperty("--portrait-scene-top", coordinate(top));
+    stage.style.setProperty("--portrait-dialogue-top", coordinate(dialogueTop));
+    stage.style.setProperty("--portrait-dialogue-height", coordinate(dialogueHeight));
+    stage.style.setProperty("--portrait-choice-top", coordinate(choiceTop));
+    stage.style.setProperty("--portrait-choice-height", coordinate(Math.max(0, choiceHeight)));
+    stage.style.setProperty("--portrait-title-top", `${top + 28}px`);
+    stage.style.setProperty("--portrait-text-scale", String(0.68 / scale));
+  };
+  const resize = new ResizeObserver(entries => {
+    if (entries.some(entry => entry.target === stage || entry.target === options.controls)) {
+      update(stage.clientWidth, stage.clientHeight);
+    }
+  });
+  update(stage.clientWidth, stage.clientHeight);
+  resize.observe(stage);
+  if (options.controls) resize.observe(options.controls);
+  return {
+    dispose: () => {
+      if (closed) return;
+      closed = true;
+      resize.disconnect();
+      for (const property of PROPERTIES) stage.style.removeProperty(property);
+      delete stage.dataset.smallStage;
+      delete stage.dataset.layout;
+    },
+  };
+}

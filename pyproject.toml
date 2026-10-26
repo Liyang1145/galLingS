@@ -1,7 +1,7 @@
 [project]
 name = "gallings"
 version = "0.1.0"
-description = "galLingS：角色卡驱动、模型以 agent 身份接入的 Galgame 引擎"
+description = "海风与布丁保留的旧制作、角色卡与独立聊天辅助服务"
 requires-python = ">=3.11"
 dependencies = [
   "pyyaml>=6",
@@ -11,8 +11,6 @@ dependencies = [
   "fastapi>=0.110",
   "uvicorn>=0.29",
   "websockets>=12",
-  # 确定性核心（Rust，core/）：Windows 用 CI 产出的轮子，见 docs/design/demo.md
-  # "galcore==0.1.0",
 ]
 
 [project.optional-dependencies]

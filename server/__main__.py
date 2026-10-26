@@ -1,4 +1,4 @@
-"""python -m server → 启动本地后端；有作品时打开作品页，否则打开 API 文档。"""
+"""python -m server → 仅启动旧制作/独立聊天辅助服务，不是游戏本体。"""
 from __future__ import annotations
 
 import argparse
@@ -44,7 +44,7 @@ def main(argv: list[str] | None = None) -> int:
     host = srv.get("host", "127.0.0.1")
     port = a.port or int(srv.get("port", 8765))
     url = f"http://{host}:{port}" + ("/vn.html" if _has_games(cfg) else "/docs")
-    print(f"galLingS 已启动：{url}")
+    print(f"旧制作/独立聊天辅助服务：{url}（不运行正式游戏，不加载 Rust 剧情核心）")
     if not a.no_browser:
         threading.Timer(1.5, lambda: webbrowser.open(url)).start()
     uvicorn.run(create_app(), host=host, port=port, log_level="warning")

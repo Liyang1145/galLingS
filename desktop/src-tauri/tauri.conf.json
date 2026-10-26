@@ -2,22 +2,22 @@
   "$schema": "https://schema.tauri.app/config/2",
   "productName": "海风与布丁",
   "version": "0.1.0",
-  "identifier": "com.gallings.haifeng",
+  "identifier": "com.gallings.haifeng.rebuild",
   "build": {
-    "frontendDist": "../placeholder"
+    "frontendDist": "../placeholder",
+    "features": ["custom-protocol"]
   },
   "app": {
     "windows": [],
-    "security": { "csp": null }
+    "withGlobalTauri": false,
+    "security": {
+      "capabilities": [],
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self' blob:; connect-src 'self'; font-src 'self'; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'"
+    }
   },
   "bundle": {
-    "active": true,
-    "targets": ["nsis"],
+    "active": false,
     "icon": ["icons/32x32.png", "icons/128x128.png", "icons/128x128@2x.png", "icons/icon.ico"],
-    "resources": { "../../dist/desktop/": "game/" },
-    "windows": {
-      "webviewInstallMode": { "type": "embedBootstrapper" },
-      "nsis": { "languages": ["SimpChinese"], "installMode": "currentUser" }
-    }
+    "resources": []
   }
 }

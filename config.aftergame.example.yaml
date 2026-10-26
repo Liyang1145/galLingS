@@ -1,0 +1,30 @@
+# 新版独立聊天开发服务；不是旧 GalAgent 配置，也不是正式供应/付费模式。
+# 复制为被忽略的 config.aftergame.yaml，再显式配置。主线不读取、启动本服务。
+# python -m server.api.aftergame --config config.aftergame.yaml
+# 独立服务令牌从 HAIFENG_CHAT_TOKEN 环境变量读取，不填模型 Key 到游戏页面。
+# 模型密钥仍由被明确选中的 LLM 插件从自己的环境变量读取。
+
+server:
+  host: 127.0.0.1
+  port: 8766
+  data_dir: ~/.gallings/aftergame-development
+  allowed_origins: []             # 填实际开发页面的完整源；不能用 *、null 或路径
+
+aftergame:
+  enabled: false                  # 默认关闭，不因安装游戏或开旧辅助服务而开启
+  service_id: haifeng-chat-development
+  name: 本机独立聊天开发服务
+  work_id: bqlsg5c2-local-fusion
+  characters: []                  # 不默认决定角色与结局解锁
+  # 每个角色需完整声明：id、revision、name、persona、ending_ids（稳定结局 ID 列表）。
+  # 人设来自作者确认的设定；修改人设或绑定结局时同时更新 revision。
+  # 此处只是开发用允许列表，不是正式身份、付费授权或服务端通关证明。
+
+plugins:
+  paths: [plugins/builtin]        # 只选所需 LLM，不使用用户全局插件/设置
+  select:
+    llm: []                      # 显式选择一个现有模型插件；不自动降级/重发
+  tools: []
+  guards: []
+  importers: []
+  config: {}                     # 对应插件的模型/地址配置；不写密钥

@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-26",
+  "upstream": "2d9959b",
+  "authorSource": "content/story/project.json",
+  "nodes": 3315,
+  "resources": 1115,
+  "voices": 824,
+  "typecheck": {
+    "node": true,
+    "web": true
+  },
+  "coreAndSessionTests": {
+    "passed": 4,
+    "sampledRoutes": 20,
+    "acceptedInputs": 89370,
+    "choices": 992,
+    "restores": 383,
+    "endingIds": [
+      "海风与布丁",
+      "退潮之后"
+    ],
+    "sampledNotExhaustive": true
+  },
+  "existingChatTestsPassed": 28,
+  "browser": {
+    "engine": "Microsoft Edge",
+    "formalPackage": true,
+    "titleDynamicRows": true,
+    "opacityZeroPersists": true,
+    "textOpacityUnaffected": true,
+    "chapter3VoiceDefaultOff": true,
+    "manualVoiceSwitch": true,
+    "mutedVoiceNotRequested": true,
+    "scriptErrors": 0,
+    "failedResourceResponses": 0
+  },
+  "packageVerified": {
+    "id": "a42645f0723613d63c76a3db280536d3b5679a8e5e4de17ca08c5a68449629f1",
+    "files": 1120,
+    "bytes": 249562966
+  },
+  "nativeRecompiledThisRound": false,
+  "androidDeviceTestedThisRound": false
+}

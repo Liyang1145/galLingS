@@ -4,6 +4,7 @@ import json
 import copy
 from stage_art_upgrade import project
 from produce_art_upgrade import ART, GAME, ROOT
+from author_project import current_digest
 
 def verify():
     before=project(ROOT/'A素材库/归档/deliveries/opening-revision/before-game.js')
@@ -105,7 +106,7 @@ def verify():
         'currentAudioAssets':sum(a['type'] not in {'bg','ch'} for a in current['assets'].values()),
         'activeReplacedVisualIds':len(active)-len(remaining),'manualWardrobeVisualIds':remaining,
         'wavPlaybackAssets':0,'chapters':sum(bool(l.get('chapter')) for l in current['lines']),
-        'gameSha256':hashlib.sha256((GAME/'game.js').read_bytes()).hexdigest()}
+        'gameSha256':current_digest()}
     out=ART/'integration-validation.json'
     out.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(json.dumps(report,ensure_ascii=True))

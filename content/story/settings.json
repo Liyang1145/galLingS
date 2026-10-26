@@ -1,0 +1,60 @@
+{
+  "tip": "brief",
+  "ghost": 0.45,
+  "speed": 30,
+  "link": true,
+  "dlg": "ghost",
+  "vbgm": 0.25,
+  "vse": 0.55,
+  "vamb": 0.3,
+  "vvo": 1,
+  "autoMul": 1,
+  "skipRead": true,
+  "focus": true,
+  "agentProvider": "mock",
+  "agentUrl": "",
+  "bw": 110,
+  "tlh": 260,
+  "trk": {
+    "hide": {},
+    "lock": {}
+  },
+  "soul": {
+    "char": "鲸鱼小姐",
+    "signal": "尾鳍"
+  },
+  "uiSe": {
+    "choiceShow": "b6keau2r",
+    "choiceConfirm": "f8c9r2uu",
+    "timeoutTick": "084gbl61",
+    "favorUp": "yq8tcybf",
+    "favorDown": "dwromo3v",
+    "tailfin": "ayhs65mz",
+    "cg": "mni51ori",
+    "save": "jsxl4tcf",
+    "chapterEnd": "84dehvnk",
+    "endingNew": "ubotdcr5",
+    "btnClick": "f8c9r2uu",
+    "btnHover": "b6keau2r"
+  },
+  "cover": {
+    "img": "32lrbngt",
+    "menu": "left",
+    "title": "left",
+    "ty": 135
+  },
+  "theme": {
+    "preset": "default",
+    "box": "#14292b",
+    "alpha": 0.85,
+    "text": "#f7f2e9",
+    "name": "#2c494b",
+    "accent": "#b8d6cb",
+    "font": "sans",
+    "size": 25,
+    "radius": 10,
+    "layout": "float"
+  },
+  "voiceOptionalFromChapterId": "5rviaadn",
+  "voiceLaterChapters": false
+}

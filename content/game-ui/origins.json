@@ -1,0 +1,34 @@
+{
+  "commit": "db8a5fd9bc2f51afc5ee79161c46befe83b548d9",
+  "sources": [
+    {
+      "file": "海风与布丁/index.html",
+      "sha256": "434c83c139bcda32a496ced396a8d2cfd72dd82a3c8c6930b5c49902db8dacc1",
+      "field": "WHALE_UI_APPROVED",
+      "blockSha256": "6f67c81b912bda80993e1c1582097a40747dab1b1c4035422f77d3ca19921aa5"
+    },
+    {
+      "file": "海风与布丁/player.js",
+      "sha256": "adc0a13fca83c354d646e6d9f8f46fc9d095e4b702b0dc5e26043030aa1563d2",
+      "field": "ICON",
+      "blockSha256": "1826a869e653df0de6899540f6cde177bbea3761c25947ae6857a28dde946463"
+    },
+    {
+      "file": "海风与布丁/game-polish.css",
+      "sha256": "36d2911c1b73521e141f1fd154c7a8d3edf87966a69ec43e70ca0db6bce163d7",
+      "field": "music-card.background",
+      "blockSha256": "aecab4e3eb8a416e90dd18eb861a60135289430465f78eb354beb69afb81e957"
+    }
+  ],
+  "targets": [
+    {
+      "file": "content/game-ui/whale.json",
+      "sha256": "7759f14da1a199bab5f216538e45dfc696d1908e3ecbfdffdb19da7b5632cda5"
+    },
+    {
+      "file": "content/game-ui/collection.json",
+      "sha256": "9e1dd99d823aec09e6443b0e0c25d21ed7e03ede286c60e2b57acd73337b565d"
+    }
+  ],
+  "notice": "迁移时的原字节来源及独立定义摘要；原文件保留供旧链路使用，新构建不再读取它们。此记录不表示素材授权或运行验收。"
+}

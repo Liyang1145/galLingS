@@ -5,7 +5,7 @@ from server.api.app import create_app
 from .conftest import FIX, make_runtime
 
 
-def test_art_file_access_and_boundaries(tmp_path, mini_dir, monkeypatch):
+def test_art_file_access_and_boundaries(tmp_path, monkeypatch):
     from server.api import app as api
     root = tmp_path / "repo"
     art = root / "A素材库/backgrounds/a.png"
@@ -21,7 +21,7 @@ def test_art_file_access_and_boundaries(tmp_path, mini_dir, monkeypatch):
     outside.parent.mkdir(parents=True)
     outside.write_bytes(b"nope")
     monkeypatch.setattr(api, "ROOT", root)
-    rt = make_runtime(tmp_path, mini_dir, FIX / "cards", None)
+    rt = make_runtime(tmp_path, FIX / "cards", None)
     rt.config.setdefault("vn", {})["games_dir"] = str(root / "海风与布丁")
     rt.base_config.setdefault("vn", {})["games_dir"] = str(root / "海风与布丁")
     with TestClient(create_app(rt), base_url="http://127.0.0.1:8765") as client:

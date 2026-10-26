@@ -4,7 +4,6 @@ import android.content.res.AssetManager;
 import android.webkit.MimeTypeMap;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebResourceResponse;
-import java.io.ByteArrayInputStream;
 import java.io.EOFException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -20,7 +19,6 @@ import org.json.JSONObject;
 /** Local registered media only. No network, storage writes or story/playback decisions. */
 final class PackagedMedia {
     private static final Pattern RANGE = Pattern.compile("bytes=([0-9]*)-([0-9]*)", Pattern.CASE_INSENSITIVE);
-    private static final long MAX_SAFE_INTEGER = 9007199254740991L;
     private final AssetManager assets;
     private final Map<String, Media> files;
 
@@ -40,7 +38,7 @@ final class PackagedMedia {
             Object sha256 = resource.get("sha256");
             if (!(path instanceof String) || !mediaPath((String) path)
                     || !(bytes instanceof Integer || bytes instanceof Long)
-                    || ((Number) bytes).longValue() < 0 || ((Number) bytes).longValue() > MAX_SAFE_INTEGER
+                    || ((Number) bytes).longValue() < 0 || ((Number) bytes).longValue() > Integer.MAX_VALUE
                     || !(sha256 instanceof String) || !((String) sha256).matches("[a-f0-9]{64}")) {
                 throw new IllegalArgumentException("资源登记无效：resources[" + index + "]");
             }
@@ -71,11 +69,16 @@ final class PackagedMedia {
         Media file = files.get(path);
         boolean head = "HEAD".equals(request.getMethod());
         if (file == null || !head && !"GET".equals(request.getMethod())) return empty(404, "Not Found", null);
+        // WebView independently applies the original Range even to intercepted responses.
+        // These forms cannot truthfully return an unsliced representation through this API.
+        if (header(request, "If-Range") != null || head && header(request, "Range") != null) {
+            return empty(400, "Unsupported Range Condition", null);
+        }
         InputStream stream = null;
         try {
             // ACCESS_RANDOM also works for compressed assets; no temporary extraction or whole-file buffer.
             stream = assets.open("game/" + path, AssetManager.ACCESS_RANDOM);
-            String range = head || header(request, "If-Range") != null ? null : header(request, "Range");
+            String range = head ? null : header(request, "Range");
             Span span = span(range, file.bytes);
             if (span.unsatisfied) {
                 closeQuietly(stream);
@@ -91,10 +94,10 @@ final class PackagedMedia {
             if (head) {
                 closeQuietly(stream);
                 stream = null;
-                body = new ByteArrayInputStream(new byte[0]);
+                body = new MetadataInputStream(file.bytes);
             } else {
                 skipFully(stream, span.start);
-                body = new SliceInputStream(stream, span.length);
+                body = new SliceInputStream(stream, span.start, span.length, file.bytes);
                 stream = null; // Ownership passes to WebView, which closes each response body.
             }
             try {
@@ -212,7 +215,7 @@ final class PackagedMedia {
             headers.put("Accept-Ranges", "bytes");
             headers.put("Content-Range", "bytes */" + bytes);
         }
-        return new WebResourceResponse("text/plain", "utf-8", status, reason, headers, new ByteArrayInputStream(new byte[0]));
+        return new WebResourceResponse("text/plain", "utf-8", status, reason, headers, new MetadataInputStream(0));
     }
 
     private static void closeQuietly(InputStream stream) {
@@ -220,16 +223,35 @@ final class PackagedMedia {
         try { stream.close(); } catch (IOException ignored) { /* No writable state or alternate source. */ }
     }
 
-    /** Read at most this response's bytes. WebView cancellation closes only its own APK stream. */
+    /** WebView derives its own length/seek from available() before appending response headers. */
+    private static final class MetadataInputStream extends InputStream {
+        private final int length;
+        MetadataInputStream(long length) { this.length = (int) length; }
+        @Override public int available() { return length; }
+        @Override public int read() { return -1; }
+        @Override public long skip(long count) { return Math.max(0, count); }
+    }
+
+    /** Body is already positioned; acknowledge WebView's one initial seek without skipping twice. */
     private static final class SliceInputStream extends InputStream {
         private final InputStream source;
+        private final long start;
+        private final int representationLength;
         private long remaining;
+        private boolean reading;
+        private boolean acknowledgedSeek;
         private boolean closed;
-        SliceInputStream(InputStream source, long remaining) { this.source = source; this.remaining = remaining; }
+        SliceInputStream(InputStream source, long start, long remaining, long representationLength) {
+            this.source = source;
+            this.start = start;
+            this.remaining = remaining;
+            this.representationLength = (int) representationLength;
+        }
         private void requireOpen() throws IOException { if (closed) throw new IOException("媒体响应已关闭"); }
 
         @Override public int read() throws IOException {
             requireOpen();
+            reading = true;
             if (remaining == 0) return -1;
             int value = source.read();
             if (value < 0) throw new EOFException("媒体短于登记范围");
@@ -242,6 +264,7 @@ final class PackagedMedia {
             if (offset < 0 || length < 0 || offset > buffer.length - length) throw new IndexOutOfBoundsException();
             requireOpen();
             if (length == 0) return 0;
+            reading = true;
             if (remaining == 0) return -1;
             int count = source.read(buffer, offset, (int) Math.min(length, remaining));
             if (count < 0) throw new EOFException("媒体短于登记范围");
@@ -251,12 +274,18 @@ final class PackagedMedia {
         @Override public long skip(long count) throws IOException {
             requireOpen();
             if (count <= 0) return 0;
+            if (!reading && !acknowledgedSeek && start > 0) {
+                if (count != start) throw new IOException("WebView 初始媒体定位与登记范围不一致");
+                acknowledgedSeek = true;
+                return count;
+            }
             long skipped = source.skip(Math.min(count, remaining));
             remaining -= skipped;
             return skipped;
         }
         @Override public int available() throws IOException {
             requireOpen();
+            if (!reading) return representationLength;
             return (int) Math.min(remaining, source.available());
         }
         @Override public void close() throws IOException {

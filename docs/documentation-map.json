@@ -1197,6 +1197,20 @@
       "oldSha256": "77637186bdd2168012d248a30cd84884fa5ea5c1110d5113499043b17f698b2c",
       "target": "docs/engineering.md#historical-tools",
       "treatment": "有效职责、契约或接口归并到主题文档"
+    },
+    {
+      "oldPath": "docs/collab/work-ledger/cg-loop-animations-20261023.md",
+      "oldSha256": "6ddbc62fe5ff97c84e0afe47ba28f6034261fe516bfc4cdb37a861d2b17a69b9",
+      "sourceCommit": "be8a6e5763537de8295c4743c49df5d86fd5c1f5",
+      "target": "docs/sources.md#cg-loops-delivery",
+      "treatment": "交付说明及全部提示词集中保留；删除分散 Markdown，素材及清单保持原样"
+    },
+    {
+      "oldPath": "A素材库/cg-animations/loops/CG_循环动画提示词总表.md",
+      "oldSha256": "3388621c14f4ace0a69732e6c257c9e3396e0d04a46af815824145ddbb0dc11b",
+      "sourceCommit": "be8a6e5763537de8295c4743c49df5d86fd5c1f5",
+      "target": "docs/sources.md#cg-loop-prompts",
+      "treatment": "交付说明及全部提示词集中保留；删除分散 Markdown，素材及清单保持原样"
     }
   ]
 }

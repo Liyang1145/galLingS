@@ -1,0 +1,6593 @@
+{
+  "repo": "Liyang1145/galLingS",
+  "main": "2dfda33ea1eed1c98d6f37ab147bf2a96026b50b",
+  "base": "835b06cc34e704d4e77cb9cda910f4f59d5eb439",
+  "actual_game_path": "海风与布丁/game.js",
+  "automatic_apply": false,
+  "items": [
+    {
+      "id": "V01",
+      "name": "常服·端桂花酸梅汤",
+      "original_status": "通过",
+      "original_ranges": [
+        [
+          190,
+          199
+        ],
+        [
+          201,
+          204
+        ]
+      ],
+      "proposed_ranges": [
+        [
+          194,
+          196
+        ],
+        [
+          198,
+          199
+        ]
+      ],
+      "nodes": [
+        {
+          "number": 194,
+          "index": 193,
+          "id": "kwsqkrhm",
+          "text": "「桂花放多了。」",
+          "text_sha256": "2424e1872542b6bc56c0460e4f756bc368cf839d353f0e7e716a143f9d9d95a6",
+          "existing_sprites": [
+            {
+              "uid": "pj7k3972",
+              "asset": "xfg3qcn2",
+              "x": 640.0,
+              "y": 1040.0,
+              "h": 1000.0,
+              "flip": false,
+              "in": "right"
+            }
+          ]
+        },
+        {
+          "number": 195,
+          "index": 194,
+          "id": "qptgrijt",
+          "text": "「糖也多了半勺。」",
+          "text_sha256": "bd0b404e1bbb1cedcdf11da66a31c68ef5881cbba7cb1a3b57ec39f83fbef6b6",
+          "existing_sprites": [
+            {
+              "uid": "pj7k3972",
+              "asset": "xfg3qcn2",
+              "x": 640.0,
+              "y": 1040.0,
+              "h": 1000.0,
+              "flip": false,
+              "in": "right"
+            }
+          ]
+        },
+        {
+          "number": 196,
+          "index": 195,
+          "id": "4x70thl5",
+          "text": "「冰块的形状不够规整。」",
+          "text_sha256": "2fde680b69a97ddcb6b4981670bf2b392a39cdb15871c3aefca33ea1e77c1814",
+          "existing_sprites": [
+            {
+              "uid": "pj7k3972",
+              "asset": "xfg3qcn2",
+              "x": 640.0,
+              "y": 1040.0,
+              "h": 1000.0,
+              "flip": false,
+              "in": "right"
+            }
+          ]
+        },
+        {
+          "number": 198,
+          "index": 197,
+          "id": "oqqus6vm",
+          "text": "「那你手里那杯……」",
+          "text_sha256": "e0c0a926606ae3cfa34a1739fe10b98e8c2e3c351fbc2a38b77d9ee07049364f",
+          "existing_sprites": [
+            {
+              "uid": "pj7k3972",
+              "asset": "xfg3qcn2",
+              "x": 640.0,
+              "y": 1040.0,
+              "h": 1000.0,
+              "flip": false,
+              "in": "right"
+            }
+          ]
+        },
+        {
+          "number": 199,
+          "index": 198,
+          "id": "7esq5eqm",
+          "text": "「销毁证据。」",
+          "text_sha256": "c03a464e4b13bf323975abcb7961d613cf511703b521ce8afdbcf810067740eb",
+          "existing_sprites": [
+            {
+              "uid": "pj7k3972",
+              "asset": "2qshq03j",
+              "x": 642.6,
+              "y": 1054.32,
+              "h": 1000.0,
+              "flip": false,
+              "in": "right"
+            }
+          ]
+        }
+      ],
+      "depends_on": [],
+      "kind": "sprite",
+      "review_status": "范围已修订，待演出验收",
+      "note": "排除未接杯的190–192、拍水193、实际饮用197；201–204改用残液版。198–199仍需确认剩余液量。",
+      "human_approved": false,
+      "integrated": false,
+      "production_status": "成图已完成",
+      "candidate_file": "candidates/V01.png",
+      "visual_limitations": "满杯只作端杯；201–204使用另附残液补充，不能表现拍水。"
+    },
+    {
+      "id": "V02",
+      "name": "常服·杯沿饮用",
+      "original_status": "需修",
+      "original_ranges": [
+        [
+          186,
+          189
+        ],
+        [
+          200,
+          200
+        ]
+      ],
+      "proposed_ranges": [
+        [
+          186,
+          186
+        ],
+        [
+          197,
+          197
+        ],
+        [
+          200,
+          200
+        ]
+      ],
+      "nodes": [
+        {
+          "number": 186,
+          "index": 185,
+          "id": "g3u1vj7p",
+          "text": "她一把抢过酸梅汤，灌了一大口。",
+          "text_sha256": "7292062fcbe4033dfc0db9a679bf7b5c5bab05aaf986efa4bdedc8eaeadec10a",
+          "existing_sprites": [
+            {
+              "uid": "pj7k3972",
+              "asset": "z869j1e3",
+              "x": 909.38,
+              "y": 1009.29,
+              "h": 960.0,
+              "flip": false,
+              "in": "right"
+            }
+          ]
+        },
+        {
+          "number": 197,
+          "index": 196,
+          "id": "ab62ikza",
+          "text": "她一条条挑着刺，手里那杯酸梅汤却以肉眼可见的速度变少。",
+          "text_sha256": "266a21a2bbc05476e67db19675a777451f3984e70530ff48f2a13d8f1dbb5698",
+          "existing_sprites": [
+            {
+              "uid": "pj7k3972",
+              "asset": "xfg3qcn2",
+              "x": 640.0,
+              "y": 1040.0,
+              "h": 1000.0,
+              "flip": false,
+              "in": "right"
+            }
+          ]
+        },
+        {
+          "number": 200,
+          "index": 199,
+          "id": "fwmdeekd",
+          "text": "又一大口。",
+          "text_sha256": "75694eb6b2f7706d49709e76dae5623baa3c86b3e55bc325c7b7f8d12af78202",
+          "existing_sprites": [
+            {
+              "uid": "pj7k3972",
+              "asset": "2qshq03j",
+              "x": 642.6,
+              "y": 1054.32,
+              "h": 1000.0,
+              "flip": false,
+              "in": "right"
+            }
+          ]
+        }
+      ],
+      "depends_on": [
+        "V01"
+      ],
+      "kind": "sprite",
+      "review_status": "范围已修订，待演出验收",
+      "note": "仅用于明确饮用的186、197、200；187–189需放下杯子的后续表情，不能持续封嘴说话。",
+      "human_approved": false,
+      "integrated": false,
+      "production_status": "成图已完成",
+      "candidate_file": "candidates/V02.png",
+      "visual_limitations": "脸型和姿态相对V01有轻微漂移；仍须人工核对杯沿接触及液面。"
+    },
+    {
+      "id": "V03",
+      "name": "吊带裙·藏尾平常",
+      "original_status": "通过",
+      "original_ranges": [
+        [
+          522,
+          526
+        ],
+        [
+          529,
+          535
+        ]
+      ],
+      "proposed_ranges": [
+        [
+          522,
+          526
+        ],
+        [
+          531,
+          533
+        ],
+        [
+          535,
+          535
+        ]
+      ],
+      "nodes": [
+        {
+          "number": 522,
+          "index": 521,
+          "id": "o86cjy8k",
+          "text": "「看什么看，走啦。」",
+          "text_sha256": "a87bbcd210a84d00adde5500ae42d2bd0c1be9a49c033ecc0675a4d94afd0734",
+          "existing_sprites": [
+            {
+              "uid": "wujnm5bd",
+              "asset": "6i0w6nq5",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 523,
+          "index": 522,
+          "id": "o6gwkqqf",
+          "text": "她今天穿了蓝白色的吊带裙。",
+          "text_sha256": "acde766d1dd7aa39ad912de69310c06bbb582b81235263f769ed0193869ad2d1",
+          "existing_sprites": [
+            {
+              "uid": "wujnm5bd",
+              "asset": "6i0w6nq5",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 524,
+          "index": 523,
+          "id": "h38o7ozs",
+          "text": "鱼尾收在裙子里看不出，只有耳鳍和头顶的环形呆毛出卖了她。",
+          "text_sha256": "f10b92b8393ef9b31eef7d156f5ac88ea185cae4f43ef0a1da9b4ce1d841995a",
+          "existing_sprites": [
+            {
+              "uid": "wujnm5bd",
+              "asset": "6i0w6nq5",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 525,
+          "index": 524,
+          "id": "um6aaeo6",
+          "text": "走在集市上，回头率百分之三百。",
+          "text_sha256": "0fdeb7ccf2df6ac9e86686314cebb8bbfbdd15b6ec43672784706fc9486ad76d",
+          "existing_sprites": [
+            {
+              "uid": "wujnm5bd",
+              "asset": "6i0w6nq5",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 526,
+          "index": 525,
+          "id": "tqv2suy0",
+          "text": "「你好像很熟这里。」",
+          "text_sha256": "b19812e10834cef9614d4ab7756d5a747ebfc7f39caeba7d5efe0c36ea4fbd00",
+          "existing_sprites": [
+            {
+              "uid": "wujnm5bd",
+              "asset": "6i0w6nq5",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 531,
+          "index": 530,
+          "id": "t7jl8sxq",
+          "text": "「姑娘，今天的李子可甜了！」",
+          "text_sha256": "5d5cc7474af3966a9d1360349243d7aa0deea48f4b36b6c64fe938281893663c",
+          "existing_sprites": [
+            {
+              "uid": "wujnm5bd",
+              "asset": "6i0w6nq5",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 532,
+          "index": 531,
+          "id": "ft0tfava",
+          "text": "「蒂是青的。糖分会涩。」",
+          "text_sha256": "58810e06a1f9be9078cfc968dcc3f7b14ca8dcca7b2958734fe8656ddfb420f2",
+          "existing_sprites": [
+            {
+              "uid": "wujnm5bd",
+              "asset": "6i0w6nq5",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 533,
+          "index": 532,
+          "id": "hv1p3zrv",
+          "text": "「这个摊，验收不合格。」",
+          "text_sha256": "f47f0ec5ed843db279dcc47284af7862344323daab82f48f204d2dadd054d145",
+          "existing_sprites": [
+            {
+              "uid": "wujnm5bd",
+              "asset": "6i0w6nq5",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 535,
+          "index": 534,
+          "id": "6yzphsqw",
+          "text": "「你真的是来逛街的，不是来砸场子的？」",
+          "text_sha256": "1d91e409551255efcbde31532709472d0c24168806c33480806fa2948cc4270f",
+          "existing_sprites": [
+            {
+              "uid": "wujnm5bd",
+              "asset": "6i0w6nq5",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        }
+      ],
+      "depends_on": [],
+      "kind": "sprite",
+      "review_status": "范围已修订，待演出验收",
+      "note": "529捏李子、530放下、534拉手走均缺对应动作，保留现状，不以空手站姿宣称补齐。",
+      "human_approved": false,
+      "integrated": false,
+      "production_status": "成图已完成",
+      "candidate_file": "candidates/V03.png",
+      "visual_limitations": "排除捏李子、放李子与拉手走的节点。"
+    },
+    {
+      "id": "V04",
+      "name": "吊带裙·藏尾得意",
+      "original_status": "接口504未生成",
+      "original_ranges": [
+        [
+          527,
+          528
+        ],
+        [
+          536,
+          536
+        ]
+      ],
+      "proposed_ranges": [
+        [
+          527,
+          528
+        ],
+        [
+          536,
+          536
+        ]
+      ],
+      "nodes": [
+        {
+          "number": 527,
+          "index": 526,
+          "id": "jy39ykfr",
+          "text": "「当然。本小姐巡视这片海域三年了。」",
+          "text_sha256": "536a3fed2c34498637c34603f38107254ca58d85bce2f5420c5eb948c638b7da",
+          "existing_sprites": [
+            {
+              "uid": "wujnm5bd",
+              "asset": "mp0q0cx2",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 528,
+          "index": 527,
+          "id": "fkcy4qwj",
+          "text": "「镇上的每一家店，本小姐都验收过。」",
+          "text_sha256": "9edd7dd2892056cd7bcefa9f99f76faabff028606711390bfa4042c183161856",
+          "existing_sprites": [
+            {
+              "uid": "wujnm5bd",
+              "asset": "mp0q0cx2",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 536,
+          "index": 535,
+          "id": "w8psrp4g",
+          "text": "「本小姐这是在替人类把关。」",
+          "text_sha256": "2a99cbd57f676989d2929c0094d99fffed30c95fce3c3f6070e6960224d23748",
+          "existing_sprites": [
+            {
+              "uid": "wujnm5bd",
+              "asset": "mp0q0cx2",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        }
+      ],
+      "depends_on": [
+        "V03"
+      ],
+      "kind": "sprite",
+      "review_status": "结构校验通过，语义覆盖仍待逐句审查",
+      "note": "范围仅沿用原计划，不代表已核准。",
+      "human_approved": false,
+      "integrated": false,
+      "production_status": "成图已完成",
+      "candidate_file": "candidates/V04.png",
+      "visual_limitations": "与V03的头部比例和裙摆需人工比对。"
+    },
+    {
+      "id": "V05",
+      "name": "吊带裙·接蓝贝壳手链",
+      "original_status": "接口504未生成",
+      "original_ranges": [
+        [
+          559,
+          561
+        ],
+        [
+          565,
+          569
+        ],
+        [
+          578,
+          581
+        ]
+      ],
+      "proposed_ranges": [
+        [
+          559,
+          561
+        ],
+        [
+          565,
+          569
+        ],
+        [
+          578,
+          581
+        ]
+      ],
+      "nodes": [
+        {
+          "number": 559,
+          "index": 558,
+          "id": "9awlv80y",
+          "text": "她机械地伸出手，机械地接过手链。",
+          "text_sha256": "f6c260ecfe0857873c62c80ba58cadcdfe315e1d8ef42b72f480c9df20e1a2f1",
+          "existing_sprites": [
+            {
+              "uid": "wujnm5bd",
+              "asset": "6xha9feh",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 560,
+          "index": 559,
+          "id": "uh1ubr4x",
+          "text": "全程没有说一个字。",
+          "text_sha256": "108e33f76a9b98d00616b63936bddb04163b454d11c77e2e5970d858e39988ab",
+          "existing_sprites": [
+            {
+              "uid": "wujnm5bd",
+              "asset": "6xha9feh",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 561,
+          "index": 560,
+          "id": "5y40plt9",
+          "text": "（尾鳍僵直了好一会儿，然后缓慢地卷了一个圈。手没有缩回来。）",
+          "text_sha256": "14166faee463560519d5275713d9a00d2e6a3ad73fde0307a6183abc6f642735",
+          "existing_sprites": [
+            {
+              "uid": "wujnm5bd",
+              "asset": "6xha9feh",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 565,
+          "index": 564,
+          "id": "jtb8wxpv",
+          "text": "手链还是被塞进了她手里。",
+          "text_sha256": "8e554db0a2feff07a2cb041794021f9d0e2d8b207ff963c8ce828111a7032f76",
+          "existing_sprites": [
+            {
+              "uid": "wujnm5bd",
+              "asset": "6xha9feh",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 566,
+          "index": 565,
+          "id": "3auxuuc1",
+          "text": "「不、不是您想的那样——」",
+          "text_sha256": "d57fe9bcfbb3c3d5d3f26c4ca63e4c24a11bf56d8cb324253df2cde65e729188",
+          "existing_sprites": [
+            {
+              "uid": "wujnm5bd",
+              "asset": "6xha9feh",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 567,
+          "index": 566,
+          "id": "i9sk4w1d",
+          "text": "「知道知道，老婆子都懂。」",
+          "text_sha256": "5539721a47d8c3975556f9e5d3175dfd6a480b633fbad46e786a30c6d5b2c303",
+          "existing_sprites": [
+            {
+              "uid": "wujnm5bd",
+              "asset": "6xha9feh",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 568,
+          "index": 567,
+          "id": "phg333dv",
+          "text": "她没懂。她完全没懂。",
+          "text_sha256": "06c244ccc9f124109193ab93ae30e8c123e1218abb00597b6a1fa1c84a4d843c",
+          "existing_sprites": [
+            {
+              "uid": "wujnm5bd",
+              "asset": "6xha9feh",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 569,
+          "index": 568,
+          "id": "3o8wcgff",
+          "text": "（尾鳍慌乱地甩了个圈。）",
+          "text_sha256": "ebc9725df5a026ee033d63b389cbce79500852c197587b60bffe15d05197e919",
+          "existing_sprites": [
+            {
+              "uid": "wujnm5bd",
+              "asset": "6xha9feh",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 578,
+          "index": 577,
+          "id": "ytjychxx",
+          "text": "她接过手链，得意洋洋。",
+          "text_sha256": "4d62c31421b7b037640891ef242552f233963446aa5fb6fe92f0ae0e6ccc4329",
+          "existing_sprites": [
+            {
+              "uid": "wujnm5bd",
+              "asset": "mp0q0cx2",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 579,
+          "index": 578,
+          "id": "pj574p7h",
+          "text": "完全没有注意到——",
+          "text_sha256": "64fbeef8e6744bfb6f8c773e6565c8e29f5c18a78e19f3767eb13b3c8837eb21",
+          "existing_sprites": [
+            {
+              "uid": "wujnm5bd",
+              "asset": "mp0q0cx2",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 580,
+          "index": 579,
+          "id": "dc75cbpf",
+          "text": "「被雇的」这个身份，从此刻起，被她自己盖章存档了。",
+          "text_sha256": "c927f894fba272ac44d801aa4b187cfeec64ebb1b8d9f93d410d9f761d3a7818",
+          "existing_sprites": [
+            {
+              "uid": "wujnm5bd",
+              "asset": "mp0q0cx2",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 581,
+          "index": 580,
+          "id": "vnymith9",
+          "text": "（尾鳍拍了一下地面。）",
+          "text_sha256": "ccd237b296cf145ef6ca654af7752d87a806e0c2224c169aa3dad75ce163e51d",
+          "existing_sprites": [
+            {
+              "uid": "wujnm5bd",
+              "asset": "mp0q0cx2",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        }
+      ],
+      "depends_on": [],
+      "kind": "sprite",
+      "review_status": "结构校验通过，语义覆盖仍待逐句审查",
+      "note": "范围仅沿用原计划，不代表已核准。",
+      "human_approved": false,
+      "integrated": false,
+      "production_status": "成图已完成",
+      "candidate_file": "candidates/V05.png",
+      "visual_limitations": "参考C07道具，未继承夕阳和旧尾纹；未表现完整递出者。"
+    },
+    {
+      "id": "V06",
+      "name": "吊带裙·抬腕偷看手链",
+      "original_status": "尚未调用",
+      "original_ranges": [
+        [
+          582,
+          595
+        ]
+      ],
+      "proposed_ranges": [
+        [
+          582,
+          595
+        ]
+      ],
+      "nodes": [
+        {
+          "number": 582,
+          "index": 581,
+          "id": "iyy24jn3",
+          "text": "回程的路上。",
+          "text_sha256": "05f91d0438160c3fa9903549063ac60a1783a2d151afce2b67510c44dd32161c",
+          "existing_sprites": [
+            {
+              "uid": "wujnm5bd",
+              "asset": "mp0q0cx2",
+              "x": 760,
+              "y": 1000,
+              "h": 960,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 583,
+          "index": 582,
+          "id": "eqxwi5sx",
+          "text": "她走在前面半步，手腕上，蓝贝壳手链一晃一晃。",
+          "text_sha256": "7495f62fb35471948ba51b1e64929cdb5e687ea8cb66222da4424efd3c471a0c",
+          "existing_sprites": [
+            {
+              "uid": "wujnm5bd",
+              "asset": "mp0q0cx2",
+              "x": 760,
+              "y": 1000,
+              "h": 960,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 584,
+          "index": 583,
+          "id": "6rc5gt4f",
+          "text": "从走出巷子开始，她已经第三次抬起手腕「假装看时间」了。",
+          "text_sha256": "d0f00746fe6d432d753df721d68f041cbd24e35b3dea9fe7e513e39b25b90153",
+          "existing_sprites": [
+            {
+              "uid": "wujnm5bd",
+              "asset": "mp0q0cx2",
+              "x": 760,
+              "y": 1000,
+              "h": 960,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 585,
+          "index": 584,
+          "id": "s0n8w2pd",
+          "text": "「喜欢的话，可以直说。」",
+          "text_sha256": "4437cad1a6ebeca34d534b27291f6f064a37f355513d03e815d1ee598f56c633",
+          "existing_sprites": [
+            {
+              "uid": "wujnm5bd",
+              "asset": "mp0q0cx2",
+              "x": 760,
+              "y": 1000,
+              "h": 960,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 586,
+          "index": 585,
+          "id": "flla7p9y",
+          "text": "「……这是赠品。」",
+          "text_sha256": "5200dc680a35c6701c9b6ef7e469064eb460035df34455310cf92f230bf4964b",
+          "existing_sprites": [
+            {
+              "uid": "wujnm5bd",
+              "asset": "6xha9feh",
+              "x": 760,
+              "y": 1000,
+              "h": 960,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 587,
+          "index": 586,
+          "id": "qmn2osno",
+          "text": "「赠品不戴白不戴。」",
+          "text_sha256": "88258497619b9c491c02c4f6eb5ed38c6927ada22782b566fc755bd662b363e0",
+          "existing_sprites": [
+            {
+              "uid": "wujnm5bd",
+              "asset": "6xha9feh",
+              "x": 760,
+              "y": 1000,
+              "h": 960,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 588,
+          "index": 587,
+          "id": "7z0gbg7e",
+          "text": "话音刚落，她突然停住。",
+          "text_sha256": "24ca9d52de45fc3f7d25071fef82889a31ac8f1728d9e8b6c14a7cca3cbe4173",
+          "existing_sprites": [
+            {
+              "uid": "wujnm5bd",
+              "asset": "6xha9feh",
+              "x": 760,
+              "y": 1000,
+              "h": 960,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 589,
+          "index": 588,
+          "id": "xyn2nrah",
+          "text": "整个人像被雷劈了一样僵在原地。",
+          "text_sha256": "04f2be360119b0c229f5857c2f7040bec8363a271d4f5a8c36458ddf2ba407e8",
+          "existing_sprites": [
+            {
+              "uid": "wujnm5bd",
+              "asset": "6xha9feh",
+              "x": 760,
+              "y": 1000,
+              "h": 960,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 590,
+          "index": 589,
+          "id": "6it409bc",
+          "text": "「等等。」",
+          "text_sha256": "3b60e9ecca787472820963ec7ab43b1e336ab9ebe4b888a99fc5bfef2c20f935",
+          "existing_sprites": [
+            {
+              "uid": "wujnm5bd",
+              "asset": "6xha9feh",
+              "x": 760,
+              "y": 1000,
+              "h": 960,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 591,
+          "index": 590,
+          "id": "kcpcvkbd",
+          "text": "「手链。是『老婆子』送的。」",
+          "text_sha256": "5234e9f3e1217acbed746cac8df08645aba43ccdda8e1c2c6f5c2f6fc6c39ef6",
+          "existing_sprites": [
+            {
+              "uid": "wujnm5bd",
+              "asset": "6xha9feh",
+              "x": 760,
+              "y": 1000,
+              "h": 960,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 592,
+          "index": 591,
+          "id": "qf9nas5v",
+          "text": "「前提是——『小夫妻』。」",
+          "text_sha256": "9d16ced19be2a8f76638a1dfe87fa76efbc0b649984cf512e2c00507c1af1b2b",
+          "existing_sprites": [
+            {
+              "uid": "wujnm5bd",
+              "asset": "6xha9feh",
+              "x": 760,
+              "y": 1000,
+              "h": 960,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 593,
+          "index": 592,
+          "id": "05qwu1li",
+          "text": "她缓缓转过身。",
+          "text_sha256": "7c44481640d580260cf0861b13ba131b46c9777aeffd6be2e99df1f8db04368d",
+          "existing_sprites": [
+            {
+              "uid": "wujnm5bd",
+              "asset": "mp0q0cx2",
+              "x": 760,
+              "y": 1000,
+              "h": 960,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 594,
+          "index": 593,
+          "id": "9lfnqbsy",
+          "text": "天青色的眼睛眯成两条缝。",
+          "text_sha256": "102463cfc7fa03fd1fade8644cd921c54188423d1f2a9640ab61993d8d05c736",
+          "existing_sprites": [
+            {
+              "uid": "wujnm5bd",
+              "asset": "mp0q0cx2",
+              "x": 760,
+              "y": 1000,
+              "h": 960,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 595,
+          "index": 594,
+          "id": "7rlvll7t",
+          "text": "「你刚才，为什么说『妻子』。」",
+          "text_sha256": "600d01a2e6a2447990642615331ee26ade96c88afb7eea41d0dd3b606d866ffe",
+          "existing_sprites": [
+            {
+              "uid": "wujnm5bd",
+              "asset": "mp0q0cx2",
+              "x": 760,
+              "y": 1000,
+              "h": 960,
+              "flip": false
+            }
+          ]
+        }
+      ],
+      "depends_on": [
+        "V05"
+      ],
+      "kind": "sprite",
+      "review_status": "结构校验通过，语义覆盖仍待逐句审查",
+      "note": "范围仅沿用原计划，不代表已核准。",
+      "human_approved": false,
+      "integrated": false,
+      "production_status": "成图已完成",
+      "candidate_file": "candidates/V06.png",
+      "visual_limitations": "手腕与表情已经改变，非像素级局部编辑；尾巴静态。"
+    },
+    {
+      "id": "V07",
+      "name": "夜礁石·趴着闲聊",
+      "original_status": "接口504未生成",
+      "original_ranges": [
+        [
+          667,
+          705
+        ]
+      ],
+      "proposed_ranges": [
+        [
+          667,
+          705
+        ]
+      ],
+      "nodes": [
+        {
+          "number": 667,
+          "index": 666,
+          "id": "kn774t2s",
+          "text": "她趴在礁石上，无聊地拍着水。",
+          "text_sha256": "b63a2edbcf3af29c8a5d4255784d2071cabec19ccd8e13c29f46378a16724218",
+          "existing_sprites": [
+            {
+              "uid": "m6j4rvz3",
+              "asset": "xfg3qcn2",
+              "x": 900.0,
+              "y": 1000.0,
+              "h": 960.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 668,
+          "index": 667,
+          "id": "02ovcg4n",
+          "text": "「喂。」",
+          "text_sha256": "da0a05f2b4ee8ae6b8b4efad93c5668bb16a50702c1ab8cccfaba28a9b64217a",
+          "existing_sprites": [
+            {
+              "uid": "m6j4rvz3",
+              "asset": "xfg3qcn2",
+              "x": 900.0,
+              "y": 1000.0,
+              "h": 960.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 669,
+          "index": 668,
+          "id": "atzjfh2r",
+          "text": "「你那张纸，比本小姐的尾巴拍水还皱。」",
+          "text_sha256": "7456a56f9d4facea35a59adae3cada6a7d607c17110b0e9dc5791cf8f0edc310",
+          "existing_sprites": [
+            {
+              "uid": "m6j4rvz3",
+              "asset": "xfg3qcn2",
+              "x": 900.0,
+              "y": 1000.0,
+              "h": 960.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 670,
+          "index": 669,
+          "id": "u0q2g08i",
+          "text": "「在写诗。」",
+          "text_sha256": "637db3e7ad99313733520a35eddaa1fe27a84d3acc8462f6d0aa1390cf063160",
+          "existing_sprites": [
+            {
+              "uid": "m6j4rvz3",
+              "asset": "xfg3qcn2",
+              "x": 900.0,
+              "y": 1000.0,
+              "h": 960.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 671,
+          "index": 670,
+          "id": "7zz02992",
+          "text": "「哦？」",
+          "text_sha256": "9e990af1ac29cc29981194d2fa20831e6300de07540eb6981b251129761b1836",
+          "existing_sprites": [
+            {
+              "uid": "m6j4rvz3",
+              "asset": "cbx03q1l",
+              "x": 925.62,
+              "y": 1001.88,
+              "h": 960.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 672,
+          "index": 671,
+          "id": "el7s8bw4",
+          "text": "「念来听听。」",
+          "text_sha256": "51bd0161b47c6a81a748cbd537fd4e3115c99b5cac153ae9542ae09d60f559b2",
+          "existing_sprites": [
+            {
+              "uid": "m6j4rvz3",
+              "asset": "cbx03q1l",
+              "x": 925.62,
+              "y": 1001.88,
+              "h": 960.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 673,
+          "index": 672,
+          "id": "js6oscye",
+          "text": "「大海啊，全是水——」",
+          "text_sha256": "eae6650ea4bb7287f158037d6aaa519c8a7a02c47fea9e924ae3db59171eb23b",
+          "existing_sprites": [
+            {
+              "uid": "m6j4rvz3",
+              "asset": "cbx03q1l",
+              "x": 925.62,
+              "y": 1001.88,
+              "h": 960.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 674,
+          "index": 673,
+          "id": "fy8wiiit",
+          "text": "「停。」",
+          "text_sha256": "9eecc0a078eb4b749a762765b6da6103f55a9517d35feef93857da07a2fdc110",
+          "existing_sprites": [
+            {
+              "uid": "m6j4rvz3",
+              "asset": "xfg3qcn2",
+              "x": 900.0,
+              "y": 1000.0,
+              "h": 960.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 675,
+          "index": 674,
+          "id": "m9cu1k5u",
+          "text": "她抬起一只尾巴尖，像举起一面停战旗。",
+          "text_sha256": "190f1f56101ad378db1fe65ebec4e4759a2cfff157297558297f52db23ac8ed9",
+          "existing_sprites": [
+            {
+              "uid": "m6j4rvz3",
+              "asset": "xfg3qcn2",
+              "x": 900.0,
+              "y": 1000.0,
+              "h": 960.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 676,
+          "index": 675,
+          "id": "vyt7l05e",
+          "text": "「水，占了七成体积，是吗。」",
+          "text_sha256": "a7077b341355f679c61ec876194a6a9a8f60c771ab37c0baf4bfffd27f6ca49b",
+          "existing_sprites": [
+            {
+              "uid": "m6j4rvz3",
+              "asset": "xfg3qcn2",
+              "x": 900.0,
+              "y": 1000.0,
+              "h": 960.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 677,
+          "index": 676,
+          "id": "qcg3brjp",
+          "text": "「下一句是不是『鲸鱼啊，四条腿』？」",
+          "text_sha256": "27c4cca3f5e6aae3e85a096363ddb8f4dbf6e84f89c820e2c5ce33ab05441d55",
+          "existing_sprites": [
+            {
+              "uid": "m6j4rvz3",
+              "asset": "cbx03q1l",
+              "x": 925.62,
+              "y": 1001.88,
+              "h": 960.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 678,
+          "index": 677,
+          "id": "7xv7j9ll",
+          "text": "「……鲸鱼没有腿。」",
+          "text_sha256": "453fc504ce068381a44c6cca70994e32a7f433ab02ed86ed4b6a7c4e855258aa",
+          "existing_sprites": [
+            {
+              "uid": "m6j4rvz3",
+              "asset": "cbx03q1l",
+              "x": 925.62,
+              "y": 1001.88,
+              "h": 960.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 679,
+          "index": 678,
+          "id": "328r2a4x",
+          "text": "「你也知道？！」",
+          "text_sha256": "7ea0bf29e6df99b72e370bc9d24ed071682a5fa7b1955d172ac9dc93ef513c26",
+          "existing_sprites": [
+            {
+              "uid": "m6j4rvz3",
+              "asset": "88v1dull",
+              "x": 898.75,
+              "y": 1006.88,
+              "h": 960.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 680,
+          "index": 679,
+          "id": "umvmp756",
+          "text": "「本小姐来写？」",
+          "text_sha256": "ffda4c76e8ce358a4130052d5b7b120c28e23d1b29bf9136e22300c1c901f6c2",
+          "existing_sprites": [
+            {
+              "uid": "m6j4rvz3",
+              "asset": "xfg3qcn2",
+              "x": 900.0,
+              "y": 1000.0,
+              "h": 960.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 681,
+          "index": 680,
+          "id": "lyq8ajvo",
+          "text": "她眼睛亮了一瞬，又立刻别过脸。",
+          "text_sha256": "b1f9c64ea42aa2dcd9a8af687ce16aa2a3ee2816e697abf705686f158a162889",
+          "existing_sprites": [
+            {
+              "uid": "m6j4rvz3",
+              "asset": "2qshq03j",
+              "x": 902.5,
+              "y": 1013.75,
+              "h": 960.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 682,
+          "index": 681,
+          "id": "97qtxass",
+          "text": "「哼，写诗这种小事，本小姐闭着眼睛——」",
+          "text_sha256": "02f9d053bd22494e0e2393253151f57768fad6061f3d86273fdaad5ef830be4b",
+          "existing_sprites": [
+            {
+              "uid": "m6j4rvz3",
+              "asset": "2qshq03j",
+              "x": 902.5,
+              "y": 1013.75,
+              "h": 960.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 683,
+          "index": 682,
+          "id": "v1wnoebx",
+          "text": "「不写。困了。」",
+          "text_sha256": "aa6edb4b1478a1913832254ca577a8cf6018c3a5af5b82632ec77b2656d7a4ea",
+          "existing_sprites": [
+            {
+              "uid": "m6j4rvz3",
+              "asset": "xfg3qcn2",
+              "x": 900.0,
+              "y": 1000.0,
+              "h": 960.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 684,
+          "index": 683,
+          "id": "c3viafv4",
+          "text": "她说「不写」的时候，指尖在礁石上划了个「桂」字。",
+          "text_sha256": "95aeedc9ce575a4345507fc44380057b6b4e1dbd2c158cb261107e874d5e3411",
+          "existing_sprites": [
+            {
+              "uid": "m6j4rvz3",
+              "asset": "xfg3qcn2",
+              "x": 900.0,
+              "y": 1000.0,
+              "h": 960.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 685,
+          "index": 684,
+          "id": "gwlgzqbs",
+          "text": "她的手比她的嘴诚实。",
+          "text_sha256": "93f143ce736779ebffa399f3c5dfd5647a245219e328503fb7078b4b1ec51a77",
+          "existing_sprites": [
+            {
+              "uid": "m6j4rvz3",
+              "asset": "xfg3qcn2",
+              "x": 900.0,
+              "y": 1000.0,
+              "h": 960.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 686,
+          "index": 685,
+          "id": "rc6edv7a",
+          "text": "而且她刚才眼睛亮的那一下——不像没读过书的人。",
+          "text_sha256": "967d148069c5b181cdb904c9bc424b7f6150de59405dd34d394a51f2a3b9a12c",
+          "existing_sprites": [
+            {
+              "uid": "m6j4rvz3",
+              "asset": "xfg3qcn2",
+              "x": 900.0,
+              "y": 1000.0,
+              "h": 960.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 687,
+          "index": 686,
+          "id": "ky2bo9j3",
+          "text": "（尾鳍拍水一下。）",
+          "text_sha256": "6f02f6ccd0007140007216bdd96554b02b9ad3b9ebaebae5eb1385a9d9c4ad22",
+          "existing_sprites": [
+            {
+              "uid": "m6j4rvz3",
+              "asset": "xfg3qcn2",
+              "x": 900.0,
+              "y": 1000.0,
+              "h": 960.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 688,
+          "index": 687,
+          "id": "zv7uxy3y",
+          "text": "「大巧不工？」",
+          "text_sha256": "2dd85409597c948544818437fe7bbdde2d5dc91e2ae6d6daad625d75154c2d40",
+          "existing_sprites": [
+            {
+              "uid": "m6j4rvz3",
+              "asset": "cbx03q1l",
+              "x": 925.62,
+              "y": 1001.88,
+              "h": 960.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 689,
+          "index": 688,
+          "id": "pznzusjq",
+          "text": "「人类，把『没词了』说得这么风雅，也是本事。」",
+          "text_sha256": "3557967392ea580a405f4accb14c2442380642852cf46eabbf4d07fd074d6da8",
+          "existing_sprites": [
+            {
+              "uid": "m6j4rvz3",
+              "asset": "cbx03q1l",
+              "x": 925.62,
+              "y": 1001.88,
+              "h": 960.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 690,
+          "index": 689,
+          "id": "i0nn5u0t",
+          "text": "（尾鳍拍水一下。）",
+          "text_sha256": "6f02f6ccd0007140007216bdd96554b02b9ad3b9ebaebae5eb1385a9d9c4ad22",
+          "existing_sprites": [
+            {
+              "uid": "m6j4rvz3",
+              "asset": "cbx03q1l",
+              "x": 925.62,
+              "y": 1001.88,
+              "h": 960.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 691,
+          "index": 690,
+          "id": "8ubbrr2y",
+          "text": "「……」",
+          "text_sha256": "f9169504a3e0484fecbebdae4e84062f1fcbaa89439d96a5f8d7df71ec74944e",
+          "existing_sprites": [
+            {
+              "uid": "m6j4rvz3",
+              "asset": "xfg3qcn2",
+              "x": 900.0,
+              "y": 1000.0,
+              "h": 960.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 692,
+          "index": 691,
+          "id": "jfz8mbk1",
+          "text": "整条尾巴立出水面，静止三秒。",
+          "text_sha256": "3acfe82d3cd55a2c68ff973be575c9c0e683ad639eac70f8d20c40102bad1eed",
+          "existing_sprites": [
+            {
+              "uid": "m6j4rvz3",
+              "asset": "xfg3qcn2",
+              "x": 900.0,
+              "y": 1000.0,
+              "h": 960.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 693,
+          "index": 692,
+          "id": "hp63bq6o",
+          "text": "然后以雷霆万钧之势拍下。",
+          "text_sha256": "5c256792aedbb0aa5ebc39a54429c6b366d14d8e3cea471a1dbfc25f632994bc",
+          "existing_sprites": []
+        },
+        {
+          "number": 694,
+          "index": 693,
+          "id": "alirttem",
+          "text": "水花浇了我一头。",
+          "text_sha256": "b1b063d469513f24e5c0770d0f428d0044fe00c7e0e3f3855e4eac120decbff6",
+          "existing_sprites": []
+        },
+        {
+          "number": 695,
+          "index": 694,
+          "id": "s977dbzv",
+          "text": "「这叫打击乐。」",
+          "text_sha256": "c223661fcf46c136d27ab4a3a772c7c69667939637b387c78281736a1c5f0f4a",
+          "existing_sprites": [
+            {
+              "uid": "0idxpv64",
+              "asset": "cbx03q1l",
+              "x": 925.62,
+              "y": 1001.88,
+              "h": 960.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 696,
+          "index": 695,
+          "id": "frwsvm8y",
+          "text": "「有节奏吗？」",
+          "text_sha256": "8e2dc9bff257287c6287ae53da41cb8826e2404adcea829315246a8af6ac34ef",
+          "existing_sprites": [
+            {
+              "uid": "0idxpv64",
+              "asset": "cbx03q1l",
+              "x": 925.62,
+              "y": 1001.88,
+              "h": 960.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 697,
+          "index": 696,
+          "id": "3ua9v325",
+          "text": "（尾鳍拍水五下。报复成功，心情极好。）",
+          "text_sha256": "37fc6090372cbad810f4a09ab8c083f351abdfc1d276b2a54989a9ddc7548c4b",
+          "existing_sprites": [
+            {
+              "uid": "0idxpv64",
+              "asset": "cbx03q1l",
+              "x": 925.62,
+              "y": 1001.88,
+              "h": 960.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 698,
+          "index": 697,
+          "id": "2ecib8lq",
+          "text": "「呆呆学者。」",
+          "text_sha256": "a65969396a0e0ba124d614ea0f9aa1e65c47719f0951ab667ce2060df5abcf68",
+          "existing_sprites": [
+            {
+              "uid": "0idxpv64",
+              "asset": "2qshq03j",
+              "x": 642.6,
+              "y": 1054.32,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 699,
+          "index": 698,
+          "id": "smzkkqnd",
+          "text": "「……叫谁？」",
+          "text_sha256": "0d65817edc48223b9af1f9de7477894056bd7b38ec5995af736cb8ccbae41c56",
+          "existing_sprites": [
+            {
+              "uid": "0idxpv64",
+              "asset": "2qshq03j",
+              "x": 642.6,
+              "y": 1054.32,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 700,
+          "index": 699,
+          "id": "nq4gdwe3",
+          "text": "「叫你了。你的名字。」",
+          "text_sha256": "6bf7abb2d19be70508f92026930474c0c2b22f2aa0f59a484f1545ee979177d3",
+          "existing_sprites": [
+            {
+              "uid": "0idxpv64",
+              "asset": "2qshq03j",
+              "x": 642.6,
+              "y": 1054.32,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 701,
+          "index": 700,
+          "id": "q6yhbg3w",
+          "text": "「以后写不出诗的时候，这么叫。写出来了——勉强升级成学者。」",
+          "text_sha256": "e558cb810d5c8af88d75ae6c5750e70efb7d24044e629daa6b47144c7ad3de7b",
+          "existing_sprites": [
+            {
+              "uid": "0idxpv64",
+              "asset": "2qshq03j",
+              "x": 642.6,
+              "y": 1054.32,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 702,
+          "index": 701,
+          "id": "sx0w2ilt",
+          "text": "（尾鳍卷了一个圈。命名权，她先拿走了。）",
+          "text_sha256": "bfab176637db3ca445536b1eb1aa76d3856125eccee1e580709c23c3b602b360",
+          "existing_sprites": [
+            {
+              "uid": "0idxpv64",
+              "asset": "2qshq03j",
+              "x": 642.6,
+              "y": 1054.32,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 703,
+          "index": 702,
+          "id": "xxjgnyxp",
+          "text": "她忽然伸手，把笔记本抽走了。",
+          "text_sha256": "50462f96f3a5134462e03f928d16e8fd54254624a3640eccfd274ae93b570217",
+          "existing_sprites": [
+            {
+              "uid": "0idxpv64",
+              "asset": "xfg3qcn2",
+              "x": 640.0,
+              "y": 1040.0,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 704,
+          "index": 703,
+          "id": "gr09w4yo",
+          "text": "「看不下去了。」",
+          "text_sha256": "276f59d08fbd7cbc70683fbfdffd7997b48b41acc7fd666e6d25fbabe470fe28",
+          "existing_sprites": [
+            {
+              "uid": "0idxpv64",
+              "asset": "xfg3qcn2",
+              "x": 640.0,
+              "y": 1040.0,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 705,
+          "index": 704,
+          "id": "9jdcvaw3",
+          "text": "「本小姐教你。看好了——」",
+          "text_sha256": "5b9ba084a62c7f28541d09e6bcbee4bddbbd299d3dd2556547a084dab2467318",
+          "existing_sprites": [
+            {
+              "uid": "0idxpv64",
+              "asset": "xfg3qcn2",
+              "x": 640.0,
+              "y": 1040.0,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        }
+      ],
+      "depends_on": [],
+      "kind": "scene",
+      "review_status": "结构校验通过，语义覆盖仍待逐句审查",
+      "note": "范围仅沿用原计划，不代表已核准。",
+      "human_approved": false,
+      "integrated": false,
+      "production_status": "成图已完成",
+      "candidate_file": "candidates/V07.png",
+      "visual_limitations": "腿部部分遮挡，不据此声称验证隐藏身体；脚部赤足与常服鞋的转换须按场景确认。"
+    },
+    {
+      "id": "V08",
+      "name": "常服·微蹲捧海星",
+      "original_status": "接口504未生成",
+      "original_ranges": [
+        [
+          1150,
+          1166
+        ]
+      ],
+      "proposed_ranges": [
+        [
+          1150,
+          1166
+        ]
+      ],
+      "nodes": [
+        {
+          "number": 1150,
+          "index": 1149,
+          "id": "saqg1vhn",
+          "text": "起身的时候，她在潮水边发现了一颗明黄色的海星。",
+          "text_sha256": "06958268cc71609e982c2c16080ede563d5c4b5c11b580a0e4b65b2d3d4d8a0f",
+          "existing_sprites": [
+            {
+              "uid": "q8lsvrjh",
+              "asset": "wrwcdezj",
+              "x": 637.4,
+              "y": 1043.26,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 1151,
+          "index": 1150,
+          "id": "jnzhq3ot",
+          "text": "五角形，颜色亮得像一小片落日。",
+          "text_sha256": "165560a4405437ffcd6fed5ccc9a90230f25117c860dbe8bcf2814c6e80f4cbd",
+          "existing_sprites": [
+            {
+              "uid": "q8lsvrjh",
+              "asset": "wrwcdezj",
+              "x": 637.4,
+              "y": 1043.26,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 1152,
+          "index": 1151,
+          "id": "89kinrrn",
+          "text": "她蹲在潮水边，看了很久很久。",
+          "text_sha256": "0a06e5e514d61fc92d1a2c21de6d1f72a410db7f979bbf3f88602f3879db8726",
+          "existing_sprites": [
+            {
+              "uid": "q8lsvrjh",
+              "asset": "wrwcdezj",
+              "x": 637.4,
+              "y": 1043.26,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 1153,
+          "index": 1152,
+          "id": "umht89uz",
+          "text": "「……它搁浅了。」",
+          "text_sha256": "1fd6de2c31989cd22fb542786186f18235b919ae16163fd442514021b351e8e2",
+          "existing_sprites": [
+            {
+              "uid": "q8lsvrjh",
+              "asset": "wrwcdezj",
+              "x": 637.4,
+              "y": 1043.26,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 1154,
+          "index": 1153,
+          "id": "h5ghodhs",
+          "text": "「等下涨潮，也未必回得去深处。」",
+          "text_sha256": "eda583cc444cdd5ebcba624b2aef35c55b7b144f5005f209bdb52290af5cc6db",
+          "existing_sprites": [
+            {
+              "uid": "q8lsvrjh",
+              "asset": "wrwcdezj",
+              "x": 637.4,
+              "y": 1043.26,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 1155,
+          "index": 1154,
+          "id": "rcr5iqew",
+          "text": "「养可以。但是说好了——」",
+          "text_sha256": "2e8f1092b5f628939d7b8c75bf19ab0b4f95d41d601010c6e3c2c59a5ed82701",
+          "existing_sprites": [
+            {
+              "uid": "q8lsvrjh",
+              "asset": "2qshq03j",
+              "x": 642.6,
+              "y": 1054.32,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 1156,
+          "index": 1155,
+          "id": "8ztt92z6",
+          "text": "「鱼缸你洗，水你换，灯要调暗，它怕亮。它要是蔫了，唯你是问。」",
+          "text_sha256": "617d5b73d96ac561efbf10a94b55ad597b347f8a71946eaede3a6d7eee71355d",
+          "existing_sprites": [
+            {
+              "uid": "q8lsvrjh",
+              "asset": "2qshq03j",
+              "x": 642.6,
+              "y": 1054.32,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 1157,
+          "index": 1156,
+          "id": "txxnoi38",
+          "text": "她把海星捧起来，动作轻得像在捧一碗满到边的汤。",
+          "text_sha256": "ed7769681019a2c99a62458fc85f1ba4d6870ff73c97fffd4e61cda7bf2194da",
+          "existing_sprites": [
+            {
+              "uid": "q8lsvrjh",
+              "asset": "wrwcdezj",
+              "x": 637.4,
+              "y": 1043.26,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 1158,
+          "index": 1157,
+          "id": "fn5uozdm",
+          "text": "「……先说好。本小姐不是因为心软。」",
+          "text_sha256": "c7eab110881d078a6dc5151167eaa2ee649a72631852fcef74c1ea2c2c948d2b",
+          "existing_sprites": [
+            {
+              "uid": "q8lsvrjh",
+              "asset": "x013srmu",
+              "x": 634.79,
+              "y": 1045.86,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 1159,
+          "index": 1158,
+          "id": "qmwm9k28",
+          "text": "「是验收。验收你能不能把一条小生命照顾好。」",
+          "text_sha256": "b1ef2bb86ff5ea60c74e839155b033c5119261257f127d0b868d9022bf2ac962",
+          "existing_sprites": [
+            {
+              "uid": "q8lsvrjh",
+              "asset": "x013srmu",
+              "x": 634.79,
+              "y": 1045.86,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 1160,
+          "index": 1159,
+          "id": "m7ailyxo",
+          "text": "「验收期，一百年。」",
+          "text_sha256": "3dd192b8cd8e705e9f5e0f4c1cd730ad35989ab7e02996333feaa63a94eb9b99",
+          "existing_sprites": [
+            {
+              "uid": "q8lsvrjh",
+              "asset": "x013srmu",
+              "x": 634.79,
+              "y": 1045.86,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 1161,
+          "index": 1160,
+          "id": "7ca0iore",
+          "text": "（尾鳍全程放平。）",
+          "text_sha256": "fe27e49b844b05ef7d3964f7acb9bac9f983ac558a5e179308b5ab8f6c103ef9",
+          "existing_sprites": [
+            {
+              "uid": "q8lsvrjh",
+              "asset": "x013srmu",
+              "x": 634.79,
+              "y": 1045.86,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 1162,
+          "index": 1161,
+          "id": "6wccxh5d",
+          "text": "她犹豫了一下，捧起海星，亲手送进了退潮线外的深水。",
+          "text_sha256": "b7955d010f2f8ee5ec51e048d80cd47fe3ea295d9a4d553fc6c7026b61242b15",
+          "existing_sprites": [
+            {
+              "uid": "q8lsvrjh",
+              "asset": "x013srmu",
+              "x": 634.79,
+              "y": 1045.86,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 1163,
+          "index": 1162,
+          "id": "e0r2w2g0",
+          "text": "「它自己会照顾好自己。海里才是它的家。」",
+          "text_sha256": "c60ce56fb93679fdbc7169d8d65662cf580ab7930e7110a1d9e5765e085de093",
+          "existing_sprites": [
+            {
+              "uid": "q8lsvrjh",
+              "asset": "x013srmu",
+              "x": 634.79,
+              "y": 1045.86,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 1164,
+          "index": 1163,
+          "id": "47ket7z5",
+          "text": "回来的时候，脚步比平时慢。",
+          "text_sha256": "995691ff1dcecdeda7226e0808b88185df1526a34434ce0d6004e17db3185833",
+          "existing_sprites": [
+            {
+              "uid": "q8lsvrjh",
+              "asset": "x013srmu",
+              "x": 634.79,
+              "y": 1045.86,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 1165,
+          "index": 1164,
+          "id": "dwumj30x",
+          "text": "「……本来还想让它看看我以后的鱼缸的。」",
+          "text_sha256": "613afc09ba5ff6100108a9d08dfaef28b0077c5ce8925d1abd83d760d36904d3",
+          "existing_sprites": [
+            {
+              "uid": "q8lsvrjh",
+              "asset": "x013srmu",
+              "x": 634.79,
+              "y": 1045.86,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 1166,
+          "index": 1165,
+          "id": "tzl9sv3a",
+          "text": "（尾鳍低垂着，过了一会儿，轻轻卷了一下。）",
+          "text_sha256": "7f5259bb4382fa87047f4575c31a40a9fc4aa38c70e946d9d3652555873d68b3",
+          "existing_sprites": [
+            {
+              "uid": "q8lsvrjh",
+              "asset": "x013srmu",
+              "x": 634.79,
+              "y": 1045.86,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        }
+      ],
+      "depends_on": [],
+      "kind": "sprite",
+      "review_status": "结构校验通过，语义覆盖仍待逐句审查",
+      "note": "范围仅沿用原计划，不代表已核准。",
+      "human_approved": false,
+      "integrated": false,
+      "production_status": "成图已完成",
+      "candidate_file": "candidates/V08.png",
+      "visual_limitations": "尚未完成放回水中的动作；落地高度需接入时调位。"
+    },
+    {
+      "id": "V09",
+      "name": "黄昏书房·铃铛落掌",
+      "original_status": "尚未调用",
+      "original_ranges": [
+        [
+          1402,
+          1406
+        ]
+      ],
+      "proposed_ranges": [
+        [
+          1402,
+          1406
+        ]
+      ],
+      "nodes": [
+        {
+          "number": 1402,
+          "index": 1401,
+          "id": "raj6bbzy",
+          "text": "她把怀里的铃铛，塞给了我。",
+          "text_sha256": "23a3352d459eb4f9e16a231a159da4bf69cbe226beff3002ee799885fcfc4074",
+          "existing_sprites": []
+        },
+        {
+          "number": 1403,
+          "index": 1402,
+          "id": "3ik7xal3",
+          "text": "「那这个，放在你本子的盒子里。」",
+          "text_sha256": "307b39c0f51832ba1049918cbfddd24cdf0caee80e959aed3020be67f741a70f",
+          "existing_sprites": []
+        },
+        {
+          "number": 1404,
+          "index": 1403,
+          "id": "q8gg0iyl",
+          "text": "「管理员要是把本小姐弄丢了——」",
+          "text_sha256": "ff9f93620f8dd1c694f74def9a99d8d3796683dcc70c04600c1c3ea90d76440d",
+          "existing_sprites": []
+        },
+        {
+          "number": 1405,
+          "index": 1404,
+          "id": "pgeq5qp3",
+          "text": "「铃声一响，就得找回来。」",
+          "text_sha256": "8807d0476fb07d56ce565b9b289e6da125e55130376c780b83da00eb6835bd61",
+          "existing_sprites": []
+        },
+        {
+          "number": 1406,
+          "index": 1405,
+          "id": "rcsmv397",
+          "text": "（尾鳍悄悄缠上了窗框。像是以防万一，先挂好，免得自己飘走。）",
+          "text_sha256": "dd6217bca6c32d92dd4a8340344714d9f61c27adaa835cde78626ef2bb927f5a",
+          "existing_sprites": []
+        }
+      ],
+      "depends_on": [],
+      "kind": "scene",
+      "review_status": "结构校验通过，语义覆盖仍待逐句审查",
+      "note": "范围仅沿用原计划，不代表已核准。",
+      "human_approved": false,
+      "integrated": false,
+      "production_status": "成图已完成",
+      "candidate_file": "candidates/V09.png",
+      "visual_limitations": "表现交接瞬间，不能声称绳已完全松开；未复制风铃整串贝壳。"
+    },
+    {
+      "id": "V10",
+      "name": "常服·坐着吃小鱼干",
+      "original_status": "尚未调用",
+      "original_ranges": [
+        [
+          1495,
+          1507
+        ]
+      ],
+      "proposed_ranges": [
+        [
+          1495,
+          1507
+        ]
+      ],
+      "nodes": [
+        {
+          "number": 1495,
+          "index": 1494,
+          "id": "a9rpc14t",
+          "text": "她撕开一条小鱼干，慢慢地嚼。",
+          "text_sha256": "f7e63ded504c7c268d68bbfe855da6862ba8846b09568ce38ec952feb294feca",
+          "existing_sprites": [
+            {
+              "uid": "2uwzx8q6",
+              "asset": "xfg3qcn2",
+              "x": 800.0,
+              "y": 940.0,
+              "h": 900.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 1496,
+          "index": 1495,
+          "id": "zjrqpz75",
+          "text": "我盯着稿纸，越盯越空。",
+          "text_sha256": "3f40ce96b33cdff7912690f456cdd0d2dbe2efb40648f731c1f6481b166bb730",
+          "existing_sprites": [
+            {
+              "uid": "2uwzx8q6",
+              "asset": "xfg3qcn2",
+              "x": 800.0,
+              "y": 940.0,
+              "h": 900.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 1497,
+          "index": 1496,
+          "id": "opospcic",
+          "text": "就在这时候，手机响了。",
+          "text_sha256": "068a55f9586710e839704701dd97298a7c2e1e993b02b4e3a5e9373b49f3c0c7",
+          "existing_sprites": [
+            {
+              "uid": "2uwzx8q6",
+              "asset": "xfg3qcn2",
+              "x": 800.0,
+              "y": 940.0,
+              "h": 900.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 1498,
+          "index": 1497,
+          "id": "5s7jn3bz",
+          "text": "「喂，对，是我。」",
+          "text_sha256": "f9870c231e28b6d1b195999628a9134ac20c07d8b09e79501dc97743d416b734",
+          "existing_sprites": [
+            {
+              "uid": "2uwzx8q6",
+              "asset": "xfg3qcn2",
+              "x": 800.0,
+              "y": 940.0,
+              "h": 900.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 1499,
+          "index": 1498,
+          "id": "nrqvb0ie",
+          "text": "「……嗯，稿子卡住了。我想想，可能是工具的问题。」",
+          "text_sha256": "256d31272c895a478e52c27ba8e0578dda3c59ce025d8fff451b9b3025d69bb8",
+          "existing_sprites": [
+            {
+              "uid": "2uwzx8q6",
+              "asset": "xfg3qcn2",
+              "x": 800.0,
+              "y": 940.0,
+              "h": 900.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 1500,
+          "index": 1499,
+          "id": "tb3oja77",
+          "text": "电话那头说了句什么。",
+          "text_sha256": "daeed16a3dc9ceaffb8405fd590fcc075d8451722c7c30204afe5ba7f87f08d3",
+          "existing_sprites": [
+            {
+              "uid": "2uwzx8q6",
+              "asset": "xfg3qcn2",
+              "x": 800.0,
+              "y": 940.0,
+              "h": 900.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 1501,
+          "index": 1500,
+          "id": "3ypy3j6o",
+          "text": "我叹了口气，半开玩笑，半是真的烦了：",
+          "text_sha256": "1102360d5e4d2cf2c15ff5f3a5d43987bb544280191da4a493e6e10a5c218640",
+          "existing_sprites": [
+            {
+              "uid": "2uwzx8q6",
+              "asset": "xfg3qcn2",
+              "x": 800.0,
+              "y": 940.0,
+              "h": 900.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 1502,
+          "index": 1501,
+          "id": "tuffxxbh",
+          "text": "「行，那这样——我考虑换个听话的。」",
+          "text_sha256": "6408597c7051dbf2a00d77d90f22d9efaa58d52cbccf6ab1eaac2bdd1ecee0aa",
+          "existing_sprites": [
+            {
+              "uid": "2uwzx8q6",
+              "asset": "xfg3qcn2",
+              "x": 800.0,
+              "y": 940.0,
+              "h": 900.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 1503,
+          "index": 1502,
+          "id": "ffpyfxs7",
+          "text": "「什么？什么叫这是我自己选的？」",
+          "text_sha256": "852e73c732b28b923f7da4591f2a39a27ad310b110f70f3fede5fe3b20fbafbf",
+          "existing_sprites": [
+            {
+              "uid": "2uwzx8q6",
+              "asset": "xfg3qcn2",
+              "x": 800.0,
+              "y": 940.0,
+              "h": 900.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 1504,
+          "index": 1503,
+          "id": "83pchq75",
+          "text": "「那来个能写小说的。」",
+          "text_sha256": "4a5af187fa3148d066a43caae2caff2cdd9762ab5e8d299307a2c5d1a798f063",
+          "existing_sprites": [
+            {
+              "uid": "2uwzx8q6",
+              "asset": "xfg3qcn2",
+              "x": 800.0,
+              "y": 940.0,
+              "h": 900.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 1505,
+          "index": 1504,
+          "id": "6cdt4nv4",
+          "text": "挂了。",
+          "text_sha256": "a49c5184e073611159731f79e231ac409209576126064f93173ef7e8f195fe41",
+          "existing_sprites": [
+            {
+              "uid": "2uwzx8q6",
+              "asset": "xfg3qcn2",
+              "x": 800.0,
+              "y": 940.0,
+              "h": 900.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 1506,
+          "index": 1505,
+          "id": "rzzpz57l",
+          "text": "整个过程，二十秒。",
+          "text_sha256": "9e043b5e0bf8436fe0256155b365844bea251e32b552dcdf7a4bc631f6f705da",
+          "existing_sprites": [
+            {
+              "uid": "2uwzx8q6",
+              "asset": "xfg3qcn2",
+              "x": 800.0,
+              "y": 940.0,
+              "h": 900.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 1507,
+          "index": 1506,
+          "id": "s48rnsqi",
+          "text": "",
+          "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "existing_sprites": [
+            {
+              "uid": "2uwzx8q6",
+              "asset": "xfg3qcn2",
+              "x": 800.0,
+              "y": 940.0,
+              "h": 900.0,
+              "flip": false
+            }
+          ]
+        }
+      ],
+      "depends_on": [],
+      "kind": "sprite",
+      "review_status": "结构校验通过，语义覆盖仍待逐句审查",
+      "note": "范围仅沿用原计划，不代表已核准。",
+      "human_approved": false,
+      "integrated": false,
+      "production_status": "成图已完成",
+      "candidate_file": "candidates/V10.png",
+      "visual_limitations": "透明坐姿需对齐实际座位，不能直接当站姿放置。"
+    },
+    {
+      "id": "V11",
+      "name": "常服·鱼干停嘴边",
+      "original_status": "尚未调用",
+      "original_ranges": [
+        [
+          1508,
+          1511
+        ]
+      ],
+      "proposed_ranges": [
+        [
+          1508,
+          1511
+        ]
+      ],
+      "nodes": [
+        {
+          "number": 1508,
+          "index": 1507,
+          "id": "41wrpbec",
+          "text": "然后我才发现，零食箱那边，没有咀嚼声了。",
+          "text_sha256": "21ce313f704a8b97218a04b526f17d6fa0aedd4bc0b9c62830ced1ef0d0fe68a",
+          "existing_sprites": [
+            {
+              "uid": "2uwzx8q6",
+              "asset": "xfg3qcn2",
+              "x": 800.0,
+              "y": 940.0,
+              "h": 900.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 1509,
+          "index": 1508,
+          "id": "h1v8muq6",
+          "text": "她保持着嚼小鱼干的姿势，僵在那里。",
+          "text_sha256": "5b8ee40af6cacaa131f2f149d2f6159d81294493abaab96589df641a601c1f8a",
+          "existing_sprites": [
+            {
+              "uid": "2uwzx8q6",
+              "asset": "xfg3qcn2",
+              "x": 800.0,
+              "y": 940.0,
+              "h": 900.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 1510,
+          "index": 1509,
+          "id": "8dicgaxy",
+          "text": "手里的半条鱼干，停在嘴边。",
+          "text_sha256": "cab4f4a0b270de96389e61370cea04633ac6b5484e2a5cc1f432248883956e5f",
+          "existing_sprites": [
+            {
+              "uid": "2uwzx8q6",
+              "asset": "xfg3qcn2",
+              "x": 800.0,
+              "y": 940.0,
+              "h": 900.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 1511,
+          "index": 1510,
+          "id": "48jqdyhx",
+          "text": "她就那么看着我，脸上的表情，从疑惑，一点一点，变成不可置信。",
+          "text_sha256": "8923f6cefd01ff05336ec717d386e87ee27cd4bae929b8fc8414df206c0d8481",
+          "existing_sprites": [
+            {
+              "uid": "2uwzx8q6",
+              "asset": "art_upgrade_p08",
+              "x": 798.24,
+              "y": 940.59,
+              "h": 900.0,
+              "flip": false
+            }
+          ]
+        }
+      ],
+      "depends_on": [
+        "V10"
+      ],
+      "kind": "sprite",
+      "review_status": "结构校验通过，语义覆盖仍待逐句审查",
+      "note": "范围仅沿用原计划，不代表已核准。",
+      "human_approved": false,
+      "integrated": false,
+      "production_status": "成图已完成",
+      "candidate_file": "candidates/V11.png",
+      "visual_limitations": "与V10表情差分需人工评估情绪强度；同样需座位对齐。"
+    },
+    {
+      "id": "V12",
+      "name": "常服·站着扣留手机",
+      "original_status": "尚未调用",
+      "original_ranges": [
+        [
+          1514,
+          1524
+        ]
+      ],
+      "proposed_ranges": [
+        [
+          1514,
+          1524
+        ]
+      ],
+      "nodes": [
+        {
+          "number": 1514,
+          "index": 1513,
+          "id": "0l62ynl2",
+          "text": "一把抢过我手里的手机。",
+          "text_sha256": "d8a6a8d592a61c70b2b56b2e3fca5d4781caf566ebdbfe1546ce8ceb23b58337",
+          "existing_sprites": []
+        },
+        {
+          "number": 1515,
+          "index": 1514,
+          "id": "4oeeyc4i",
+          "text": "「呜！主人刚才给谁打电话呢？！」",
+          "text_sha256": "6d0616fe4518b4dab6ae57717eb8444baf5094ada714e261e6c82b9c742a1167",
+          "existing_sprites": []
+        },
+        {
+          "number": 1516,
+          "index": 1515,
+          "id": "f0xwde5y",
+          "text": "「什么叫做『换个听话的』？！」",
+          "text_sha256": "45ba06482748b639d3bf9062df55396b8a083e860e24c1b7c66c26ec606df3f3",
+          "existing_sprites": []
+        },
+        {
+          "number": 1517,
+          "index": 1516,
+          "id": "ztlm6qic",
+          "text": "「还『来个能写小说的』？！」",
+          "text_sha256": "5075467a8dfcb6fd239662b43cdd3fcfd82bf01dabf3b226e786c97ae17557d1",
+          "existing_sprites": []
+        },
+        {
+          "number": 1518,
+          "index": 1517,
+          "id": "fvr7qaqr",
+          "text": "她的声音在抖。尾巴在身后甩得啪啪响。",
+          "text_sha256": "e0e899e48f1595b8f1b06a304ca6c08e1cf9b7467c4153e7262cfbda6fec346d",
+          "existing_sprites": []
+        },
+        {
+          "number": 1519,
+          "index": 1518,
+          "id": "lqvlnz8o",
+          "text": "「你、你是嫌本小姐不够听话——」",
+          "text_sha256": "3baff110aef7e967a98d252725f932c27d8d4857d67bb967df08ce6538f551a5",
+          "existing_sprites": [
+            {
+              "uid": "e6g4bhsn",
+              "asset": "art_upgrade_p07",
+              "x": 638.05,
+              "y": 1044.56,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 1520,
+          "index": 1519,
+          "id": "ots5j0of",
+          "text": "「还是嫌我帮不上你写书的忙？！」",
+          "text_sha256": "f66d55fce675449fb206bbe67a04655c3731d7b4ca80ab86e441d42af84d2c47",
+          "existing_sprites": [
+            {
+              "uid": "e6g4bhsn",
+              "asset": "art_upgrade_p07",
+              "x": 638.05,
+              "y": 1044.56,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 1521,
+          "index": 1520,
+          "id": "nnjsu447",
+          "text": "「你居然想去找别人？！」",
+          "text_sha256": "7ffd97fab3bf6612905c64034471b87c447ee74224cb68a1d6a716941f2205f9",
+          "existing_sprites": [
+            {
+              "uid": "e6g4bhsn",
+              "asset": "art_upgrade_p07",
+              "x": 638.05,
+              "y": 1044.56,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 1522,
+          "index": 1521,
+          "id": "wgc4e13x",
+          "text": "「你是觉得我只会吃你的布丁——」",
+          "text_sha256": "b0d2ebb7db79b3b5d73ee0a08c52f041a78cd9e651308b82fae9833de7fa2a0c",
+          "existing_sprites": [
+            {
+              "uid": "e6g4bhsn",
+              "asset": "art_upgrade_p07",
+              "x": 638.05,
+              "y": 1044.56,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 1523,
+          "index": 1522,
+          "id": "vuzdb7te",
+          "text": "「不会陪你做研究吗？！」",
+          "text_sha256": "d488617d2bbf6fb10e4008135bf38734727999fb517dd04b0d0238d04f701d6e",
+          "existing_sprites": [
+            {
+              "uid": "e6g4bhsn",
+              "asset": "art_upgrade_p07",
+              "x": 638.05,
+              "y": 1044.56,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 1524,
+          "index": 1523,
+          "id": "rei5ctmq",
+          "text": "她低头看了一眼屏幕。",
+          "text_sha256": "ebfaadf354d16a2609e883f7dff3d80fab2c9138d1d10f564a4f81bfa6c53e92",
+          "existing_sprites": [
+            {
+              "uid": "e6g4bhsn",
+              "asset": "art_upgrade_p07",
+              "x": 638.05,
+              "y": 1044.56,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        }
+      ],
+      "depends_on": [],
+      "kind": "sprite",
+      "review_status": "结构校验通过，语义覆盖仍待逐句审查",
+      "note": "范围仅沿用原计划，不代表已核准。",
+      "human_approved": false,
+      "integrated": false,
+      "production_status": "成图已完成",
+      "candidate_file": "candidates/V12.png",
+      "visual_limitations": "原C12只用作手机参考；不照搬坐姿。"
+    },
+    {
+      "id": "V13",
+      "name": "书桌·手机扣下",
+      "original_status": "尚未调用",
+      "original_ranges": [
+        [
+          1525,
+          1529
+        ]
+      ],
+      "proposed_ranges": [
+        [
+          1525,
+          1529
+        ]
+      ],
+      "nodes": [
+        {
+          "number": 1525,
+          "index": 1524,
+          "id": "sasls78c",
+          "text": "然后，把手机屏幕朝下，「啪」地扣在书桌上。",
+          "text_sha256": "a0b943ddc060b61aa994fd148537c714a0d050c56c1b938411ebf68fbf9d4e13",
+          "existing_sprites": [
+            {
+              "uid": "e6g4bhsn",
+              "asset": "art_upgrade_p07",
+              "x": 638.05,
+              "y": 1044.56,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 1526,
+          "index": 1525,
+          "id": "jc1hxbvj",
+          "text": "像扣留一件赃物。",
+          "text_sha256": "34abac184ed32d2d1351587f5d20926f24971b663ba480d2799d41962b92bd5c",
+          "existing_sprites": [
+            {
+              "uid": "e6g4bhsn",
+              "asset": "art_upgrade_p07",
+              "x": 638.05,
+              "y": 1044.56,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 1527,
+          "index": 1526,
+          "id": "qockrnqr",
+          "text": "『她扣手机的手势很熟练。』",
+          "text_sha256": "ecebe6cacea08ebef57a990adda687fda40675a15aa168fb44b66d6bffcaa40c",
+          "existing_sprites": [
+            {
+              "uid": "e6g4bhsn",
+              "asset": "art_upgrade_p07",
+              "x": 638.05,
+              "y": 1044.56,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 1528,
+          "index": 1527,
+          "id": "w5q1n1k0",
+          "text": "『熟练得不像第一次。』",
+          "text_sha256": "ee31f1a5e21c1462ff4bcf9b782114a2775fb4b893021250a146b446cc1d7af9",
+          "existing_sprites": [
+            {
+              "uid": "e6g4bhsn",
+              "asset": "art_upgrade_p07",
+              "x": 638.05,
+              "y": 1044.56,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 1529,
+          "index": 1528,
+          "id": "zpdqlvme",
+          "text": "『像演练过很多次——在她最怕的那种梦里。』",
+          "text_sha256": "4ba014e8282d255e999e6155636290b05ad2da6149ed7fcf0555c2695e3ac2ba",
+          "existing_sprites": [
+            {
+              "uid": "e6g4bhsn",
+              "asset": "art_upgrade_p07",
+              "x": 638.05,
+              "y": 1044.56,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        }
+      ],
+      "depends_on": [
+        "V12"
+      ],
+      "kind": "scene",
+      "review_status": "结构校验通过，语义覆盖仍待逐句审查",
+      "note": "范围仅沿用原计划，不代表已核准。",
+      "human_approved": false,
+      "integrated": false,
+      "production_status": "成图已完成",
+      "candidate_file": "candidates/V13.png",
+      "visual_limitations": "采用更远机位；人物变小是给对白让位的取舍，实机遮挡仍待验收。"
+    },
+    {
+      "id": "V14",
+      "name": "夜礁石·救援后拍背",
+      "original_status": "尚未调用",
+      "original_ranges": [
+        [
+          1729,
+          1739
+        ]
+      ],
+      "proposed_ranges": [
+        [
+          1729,
+          1739
+        ]
+      ],
+      "nodes": [
+        {
+          "number": 1729,
+          "index": 1728,
+          "id": "h1s7pefv",
+          "text": "「咳出来！快点咳出来！」",
+          "text_sha256": "e78122549c6e2ab587169d2c4ca667a2a6f87daf538c431047f0faf9eddc58db",
+          "existing_sprites": [
+            {
+              "uid": "gqeqnq3e",
+              "asset": "art_upgrade_l11",
+              "x": 637.4,
+              "y": 1041.3,
+              "h": 1000.0,
+              "flip": false,
+              "in": "pop"
+            }
+          ]
+        },
+        {
+          "number": 1730,
+          "index": 1729,
+          "id": "7h9x1xls",
+          "text": "她一只手拍我的背，力气大得能把肺拍出来。",
+          "text_sha256": "1fe0fa88e195f52123c7e5a5da52b27985e6d4f2a52c33c9ec253e68ce1df6a3",
+          "existing_sprites": [
+            {
+              "uid": "gqeqnq3e",
+              "asset": "art_upgrade_l11",
+              "x": 637.4,
+              "y": 1041.3,
+              "h": 1000.0,
+              "flip": false,
+              "in": "pop"
+            }
+          ]
+        },
+        {
+          "number": 1731,
+          "index": 1730,
+          "id": "remi381t",
+          "text": "「……笨蛋。」",
+          "text_sha256": "67adb845e51d61594cf6ced5bed949d0bcdbef3207c318f9325e06e5c4080d27",
+          "existing_sprites": [
+            {
+              "uid": "gqeqnq3e",
+              "asset": "art_upgrade_l11",
+              "x": 637.4,
+              "y": 1041.3,
+              "h": 1000.0,
+              "flip": false,
+              "in": "pop"
+            }
+          ]
+        },
+        {
+          "number": 1732,
+          "index": 1731,
+          "id": "k0ct252a",
+          "text": "「大笨蛋。」",
+          "text_sha256": "2180b7aff00c4600831424575b2e077e0b410d153029a3e3eb7df4099ea0fa51",
+          "existing_sprites": [
+            {
+              "uid": "gqeqnq3e",
+              "asset": "art_upgrade_l11",
+              "x": 637.4,
+              "y": 1041.3,
+              "h": 1000.0,
+              "flip": false,
+              "in": "pop"
+            }
+          ]
+        },
+        {
+          "number": 1733,
+          "index": 1732,
+          "id": "qtkbdqzg",
+          "text": "「你不要命了？！」",
+          "text_sha256": "81a13034578453d183c349c7edcdf6993c650871542e30fd1b26c02c4b5b2b99",
+          "existing_sprites": [
+            {
+              "uid": "gqeqnq3e",
+              "asset": "art_upgrade_l11",
+              "x": 637.4,
+              "y": 1041.3,
+              "h": 1000.0,
+              "flip": false,
+              "in": "pop"
+            }
+          ]
+        },
+        {
+          "number": 1734,
+          "index": 1733,
+          "id": "do97eouj",
+          "text": "「你连游泳都不会！我叫你不准跟过来！你听不懂吗！！」",
+          "text_sha256": "5398319886b3223dcf2b1cb08888a75a43fe7421c0dcb41e64f161aaeecf8531",
+          "existing_sprites": [
+            {
+              "uid": "gqeqnq3e",
+              "asset": "art_upgrade_l11",
+              "x": 637.4,
+              "y": 1041.3,
+              "h": 1000.0,
+              "flip": false,
+              "in": "pop"
+            }
+          ]
+        },
+        {
+          "number": 1735,
+          "index": 1734,
+          "id": "mrppwcmc",
+          "text": "她骂一句，拍一下。",
+          "text_sha256": "b06fccd08ca21416c0805370efcf8163e97ff59710471c03f41fbb55d5a4b24c",
+          "existing_sprites": [
+            {
+              "uid": "gqeqnq3e",
+              "asset": "art_upgrade_l11",
+              "x": 637.4,
+              "y": 1041.3,
+              "h": 1000.0,
+              "flip": false,
+              "in": "pop"
+            }
+          ]
+        },
+        {
+          "number": 1736,
+          "index": 1735,
+          "id": "cadvkdfo",
+          "text": "骂到第五句，声音劈了。",
+          "text_sha256": "ee3859a24ca463694d0fb7190b3168c3203eab934cb439ebade8ea4088c60abe",
+          "existing_sprites": [
+            {
+              "uid": "gqeqnq3e",
+              "asset": "art_upgrade_l11",
+              "x": 637.4,
+              "y": 1041.3,
+              "h": 1000.0,
+              "flip": false,
+              "in": "pop"
+            }
+          ]
+        },
+        {
+          "number": 1737,
+          "index": 1736,
+          "id": "d5rnnjtr",
+          "text": "「听懂了。」",
+          "text_sha256": "dfb611699b02f3998be4df1a3ad3cc8fe79c33dd5386797ebadfdc4342685df1",
+          "existing_sprites": [
+            {
+              "uid": "gqeqnq3e",
+              "asset": "art_upgrade_l11",
+              "x": 637.4,
+              "y": 1041.3,
+              "h": 1000.0,
+              "flip": false,
+              "in": "pop"
+            }
+          ]
+        },
+        {
+          "number": 1738,
+          "index": 1737,
+          "id": "8vdbvhlp",
+          "text": "「听懂了你还来？！」",
+          "text_sha256": "df0859043a1891e0cbf3b3ddb013280e216e13c5dc590f429ca655467bf03d11",
+          "existing_sprites": [
+            {
+              "uid": "gqeqnq3e",
+              "asset": "art_upgrade_l11",
+              "x": 637.4,
+              "y": 1041.3,
+              "h": 1000.0,
+              "flip": false,
+              "in": "pop"
+            }
+          ]
+        },
+        {
+          "number": 1739,
+          "index": 1738,
+          "id": "e7qu1e5w",
+          "text": "「因为听懂了。」",
+          "text_sha256": "bc2f40d4ed3cd649fbba33ac77cbcefdce95391ec9e16e5f787ff65087cf4792",
+          "existing_sprites": [
+            {
+              "uid": "gqeqnq3e",
+              "asset": "art_upgrade_l11",
+              "x": 637.4,
+              "y": 1041.3,
+              "h": 1000.0,
+              "flip": false,
+              "in": "pop"
+            }
+          ]
+        }
+      ],
+      "depends_on": [],
+      "kind": "scene",
+      "review_status": "结构校验通过，语义覆盖仍待逐句审查",
+      "note": "范围仅沿用原计划，不代表已核准。",
+      "human_approved": false,
+      "integrated": false,
+      "production_status": "成图已完成",
+      "candidate_file": "candidates/V14.png",
+      "visual_limitations": "图中衣物有湿润光影；男主外观是本轮构图解释，需团队美术确认。"
+    },
+    {
+      "id": "V15",
+      "name": "常服·抱膝搁下巴",
+      "original_status": "尚未调用",
+      "original_ranges": [
+        [
+          1812,
+          1821
+        ]
+      ],
+      "proposed_ranges": [
+        [
+          1812,
+          1821
+        ]
+      ],
+      "nodes": [
+        {
+          "number": 1812,
+          "index": 1811,
+          "id": "caqa6eg2",
+          "text": "她坐在离我半米的地方，抱着膝盖。",
+          "text_sha256": "3922c209439b4860ebb4ee2e665f880f2097f31947ea6dbea953628feca7c5d6",
+          "existing_sprites": [
+            {
+              "uid": "gqeqnq3e",
+              "asset": "art_upgrade_p18",
+              "x": 698.97,
+              "y": 905.6,
+              "h": 850.95,
+              "flip": false,
+              "in": "pop",
+              "poseSwitch": "soft"
+            }
+          ]
+        },
+        {
+          "number": 1813,
+          "index": 1812,
+          "id": "4exe8ofv",
+          "text": "「喂。」",
+          "text_sha256": "da0a05f2b4ee8ae6b8b4efad93c5668bb16a50702c1ab8cccfaba28a9b64217a",
+          "existing_sprites": [
+            {
+              "uid": "gqeqnq3e",
+              "asset": "art_upgrade_p18",
+              "x": 698.97,
+              "y": 905.6,
+              "h": 850.95,
+              "flip": false,
+              "in": "pop",
+              "poseSwitch": "soft"
+            }
+          ]
+        },
+        {
+          "number": 1814,
+          "index": 1813,
+          "id": "q1in6nnn",
+          "text": "「这几天……」",
+          "text_sha256": "d9797eaede3870dda4a5de538e900f45e509f1c8b65f57ba98450d853c45d6cb",
+          "existing_sprites": [
+            {
+              "uid": "gqeqnq3e",
+              "asset": "art_upgrade_p18",
+              "x": 698.97,
+              "y": 905.6,
+              "h": 850.95,
+              "flip": false,
+              "in": "pop",
+              "poseSwitch": "soft"
+            }
+          ]
+        },
+        {
+          "number": 1815,
+          "index": 1814,
+          "id": "vjru1og3",
+          "text": "「本小姐在深水区，把你写过的所有东西，都想了一遍。」",
+          "text_sha256": "672490edbe8d9594766f6e78eb42ac6aad546995afd0a2beb36917fd41fae517",
+          "existing_sprites": [
+            {
+              "uid": "gqeqnq3e",
+              "asset": "art_upgrade_p18",
+              "x": 698.97,
+              "y": 905.6,
+              "h": 850.95,
+              "flip": false,
+              "in": "pop",
+              "poseSwitch": "soft"
+            }
+          ]
+        },
+        {
+          "number": 1816,
+          "index": 1815,
+          "id": "pcg8525l",
+          "text": "「初遇篇。暗号。桂花。」",
+          "text_sha256": "33cf3827abc3124ccf5496a697ea1ff7db11639f05b864f60aaf62522c0081bb",
+          "existing_sprites": [
+            {
+              "uid": "gqeqnq3e",
+              "asset": "art_upgrade_p18",
+              "x": 698.97,
+              "y": 905.6,
+              "h": 850.95,
+              "flip": false,
+              "in": "pop",
+              "poseSwitch": "soft"
+            }
+          ]
+        },
+        {
+          "number": 1817,
+          "index": 1816,
+          "id": "5moh5rle",
+          "text": "「还有你那句『你的尾巴重要』。」",
+          "text_sha256": "f554aa67dc426584755ffcbce8880335de7a41e966044630b1ff5cc2961e5232",
+          "existing_sprites": [
+            {
+              "uid": "gqeqnq3e",
+              "asset": "art_upgrade_p18",
+              "x": 698.97,
+              "y": 905.6,
+              "h": 850.95,
+              "flip": false,
+              "in": "pop",
+              "poseSwitch": "soft"
+            }
+          ]
+        },
+        {
+          "number": 1818,
+          "index": 1817,
+          "id": "486srdmm",
+          "text": "她的下巴搁在膝盖上。",
+          "text_sha256": "ff2b5d83d8a07c038f08a6549f10892af5466868141bb6fdc70b98ab664a996b",
+          "existing_sprites": [
+            {
+              "uid": "gqeqnq3e",
+              "asset": "art_upgrade_p18",
+              "x": 698.97,
+              "y": 905.6,
+              "h": 850.95,
+              "flip": false,
+              "in": "pop",
+              "poseSwitch": "soft"
+            }
+          ]
+        },
+        {
+          "number": 1819,
+          "index": 1818,
+          "id": "g06j2rjy",
+          "text": "「想完了就更生气了。」",
+          "text_sha256": "0551da8077c1b1ba2dbb54a641f8d68b8529bff56774453bd888970e1666929e",
+          "existing_sprites": [
+            {
+              "uid": "gqeqnq3e",
+              "asset": "art_upgrade_p18",
+              "x": 698.97,
+              "y": 905.6,
+              "h": 850.95,
+              "flip": false,
+              "in": "pop",
+              "poseSwitch": "soft"
+            }
+          ]
+        },
+        {
+          "number": 1820,
+          "index": 1819,
+          "id": "ycdhd5q4",
+          "text": "「因为想不出来你有什么不好。」",
+          "text_sha256": "0cc612c6483533029335f797ca4e03d6608a6aadd81a0a91efc3ff260e34f898",
+          "existing_sprites": [
+            {
+              "uid": "gqeqnq3e",
+              "asset": "art_upgrade_p18",
+              "x": 698.97,
+              "y": 905.6,
+              "h": 850.95,
+              "flip": false,
+              "in": "pop",
+              "poseSwitch": "soft"
+            }
+          ]
+        },
+        {
+          "number": 1821,
+          "index": 1820,
+          "id": "bnxnlk0y",
+          "text": "「想不出来，就只好生气自己干嘛想这些。」",
+          "text_sha256": "0291166df56401954898cf080a97837a8c76a71af16034ee6e01f3c7397673a3",
+          "existing_sprites": [
+            {
+              "uid": "gqeqnq3e",
+              "asset": "art_upgrade_p18",
+              "x": 698.97,
+              "y": 905.6,
+              "h": 850.95,
+              "flip": false,
+              "in": "pop",
+              "poseSwitch": "soft"
+            }
+          ]
+        }
+      ],
+      "depends_on": [],
+      "kind": "sprite",
+      "review_status": "结构校验通过，语义覆盖仍待逐句审查",
+      "note": "范围仅沿用原计划，不代表已核准。",
+      "human_approved": false,
+      "integrated": false,
+      "production_status": "成图已完成",
+      "candidate_file": "candidates/V15.png",
+      "visual_limitations": "静态抱膝素材仍需与实际地面或座位对齐。"
+    },
+    {
+      "id": "V16",
+      "name": "常服·闭眼尝布丁",
+      "original_status": "尚未调用",
+      "original_ranges": [
+        [
+          1967,
+          1972
+        ],
+        [
+          2844,
+          2847
+        ]
+      ],
+      "proposed_ranges": [
+        [
+          1968,
+          1968
+        ],
+        [
+          2844,
+          2844
+        ]
+      ],
+      "nodes": [
+        {
+          "number": 1968,
+          "index": 1967,
+          "id": "mk2ipc3p",
+          "text": "送进嘴里，微咸微甜化开，她眯起了眼睛——",
+          "text_sha256": "cb247599c804c5fb86797e66c94037769680ccc45cd3ce45fc6202bc666ef4cd",
+          "existing_sprites": []
+        },
+        {
+          "number": 2844,
+          "index": 2843,
+          "id": "b7w0irll",
+          "text": "她舀了一勺。含在嘴里。闭眼。三秒。",
+          "text_sha256": "65eece0ffc6a355f6dcf4848ad6443b8931042c812b9a0bd7d6d0b9ef74c1fc7",
+          "existing_sprites": [
+            {
+              "uid": "tnx8mox7",
+              "asset": "xfg3qcn2",
+              "x": 640.0,
+              "y": 1040.0,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        }
+      ],
+      "depends_on": [],
+      "kind": "sprite",
+      "review_status": "范围已修订，待演出验收",
+      "note": "1969板脸及2845睁眼后不能继续闭眼；两处布丁口味不同，分别核对道具。",
+      "human_approved": false,
+      "integrated": false,
+      "production_status": "成图已完成",
+      "candidate_file": "candidates/V16.png",
+      "visual_limitations": "不可持续覆盖睁眼或板脸；焦糖外观主要适配后段，海盐段口味表现待确认。"
+    },
+    {
+      "id": "V17",
+      "name": "常服·端走布丁回望",
+      "original_status": "尚未调用",
+      "original_ranges": [
+        [
+          1971,
+          1972
+        ],
+        [
+          2848,
+          2860
+        ]
+      ],
+      "proposed_ranges": [
+        [
+          2854,
+          2860
+        ]
+      ],
+      "nodes": [
+        {
+          "number": 2854,
+          "index": 2853,
+          "id": "fv7v4vzz",
+          "text": "她把整碗布丁端走了。",
+          "text_sha256": "0cd78d14d108f3223c167732754821eb57e05cc7c0d5febd5b8c057c204ae331",
+          "existing_sprites": [
+            {
+              "uid": "tnx8mox7",
+              "asset": "z869j1e3",
+              "x": 649.77,
+              "y": 1049.67,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2855,
+          "index": 2854,
+          "id": "kme1l3x7",
+          "text": "「这碗没收。作为……作为示范样品。」",
+          "text_sha256": "826e8a15c1150271cc88aa684ce2618c185c6b359b0da234063fcf5b33bc1934",
+          "existing_sprites": [
+            {
+              "uid": "tnx8mox7",
+              "asset": "z869j1e3",
+              "x": 649.77,
+              "y": 1049.67,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2856,
+          "index": 2855,
+          "id": "v0do3cnd",
+          "text": "走出三步，又回头。",
+          "text_sha256": "acaf5707625be8bfcccf369df6bfe9c51b91bec58399b2c79212b822aaa4f67a",
+          "existing_sprites": [
+            {
+              "uid": "tnx8mox7",
+              "asset": "x013srmu",
+              "x": 634.79,
+              "y": 1045.86,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2857,
+          "index": 2856,
+          "id": "ca04pj19",
+          "text": "「今天打烊之后。」",
+          "text_sha256": "3d67d9637dfdb23cae7da3d8b6d2ea40bd90ed483ab6b4afb9047cb2dcf305d4",
+          "existing_sprites": [
+            {
+              "uid": "tnx8mox7",
+              "asset": "x013srmu",
+              "x": 634.79,
+              "y": 1045.86,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2858,
+          "index": 2857,
+          "id": "b1ktazt4",
+          "text": "「到浅滩来。本小姐有事情宣布。」",
+          "text_sha256": "66753c55b7d10456c9d756f0b8a99b83b1542028611ee95e630951ec6dbd09b1",
+          "existing_sprites": [
+            {
+              "uid": "tnx8mox7",
+              "asset": "x013srmu",
+              "x": 634.79,
+              "y": 1045.86,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2859,
+          "index": 2858,
+          "id": "44r11btj",
+          "text": "「带上你的本子。」",
+          "text_sha256": "5adb8833b41a797c111274afb93217811ef00a548eccb1a37f630405056d7bce",
+          "existing_sprites": [
+            {
+              "uid": "tnx8mox7",
+              "asset": "x013srmu",
+              "x": 634.79,
+              "y": 1045.86,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2860,
+          "index": 2859,
+          "id": "nz5s3n4d",
+          "text": "（尾鳍卷了一个圈。）",
+          "text_sha256": "7adb7d2520433c6c50104246d495dee64d25ed5613e4289a4b277166633e5efc",
+          "existing_sprites": [
+            {
+              "uid": "tnx8mox7",
+              "asset": "x013srmu",
+              "x": 634.79,
+              "y": 1045.86,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        }
+      ],
+      "depends_on": [
+        "V16"
+      ],
+      "kind": "sprite",
+      "review_status": "范围已修订，待演出验收",
+      "note": "1971–1972没有端走动作；2848–2853尚未端走，删除这些覆盖。",
+      "human_approved": false,
+      "integrated": false,
+      "production_status": "成图已完成",
+      "candidate_file": "candidates/V17.png",
+      "visual_limitations": "2854起才端走；不用于先前未端走的对话。"
+    },
+    {
+      "id": "V18",
+      "name": "二楼窗桌·隔衣揉肩",
+      "original_status": "尚未调用",
+      "original_ranges": [
+        [
+          2268,
+          2305
+        ],
+        [
+          2809,
+          2825
+        ]
+      ],
+      "proposed_ranges": [
+        [
+          2270,
+          2281
+        ],
+        [
+          2811,
+          2811
+        ]
+      ],
+      "nodes": [
+        {
+          "number": 2270,
+          "index": 2269,
+          "id": "9uks6yx6",
+          "text": "我走过去，把手搭上她的肩。",
+          "text_sha256": "98fff33f58e89f19060cf47933fda83ac3627c49583d3b94dca6601443ab5207",
+          "existing_sprites": [
+            {
+              "uid": "y7zsso22",
+              "asset": "wrwcdezj",
+              "x": 637.4,
+              "y": 1043.26,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2271,
+          "index": 2270,
+          "id": "is8v57lq",
+          "text": "按到第三下，她忽然绷紧。",
+          "text_sha256": "f6ca04bfe78af76c3c49e887c022b9f8bc93e94bcc0ef8ffeceb36b2dbffe755",
+          "existing_sprites": [
+            {
+              "uid": "y7zsso22",
+              "asset": "wrwcdezj",
+              "x": 637.4,
+              "y": 1043.26,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2272,
+          "index": 2271,
+          "id": "34rfleif",
+          "text": "「……往左一点。不对，再往左——」",
+          "text_sha256": "9eea66c5ea17da90bbe74734022c45a527c0642d77724f58549902601562db50",
+          "existing_sprites": [
+            {
+              "uid": "y7zsso22",
+              "asset": "wrwcdezj",
+              "x": 637.4,
+              "y": 1043.26,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2273,
+          "index": 2272,
+          "id": "nk5c7bk5",
+          "text": "「等等。不是那里。是尾巴根——」",
+          "text_sha256": "9f2e28263436a78e77f9b75b16431ba005d919db80cb48f1bcb10083a32c11de",
+          "existing_sprites": [
+            {
+              "uid": "y7zsso22",
+              "asset": "wrwcdezj",
+              "x": 637.4,
+              "y": 1043.26,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2274,
+          "index": 2273,
+          "id": "kt1jq2ie",
+          "text": "她的声音戛然而止。",
+          "text_sha256": "5d73624d8912f7130b943e613ccfc2db8b2e15ad84696d57153c68aebf572e09",
+          "existing_sprites": [
+            {
+              "uid": "y7zsso22",
+              "asset": "wrwcdezj",
+              "x": 637.4,
+              "y": 1043.26,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2275,
+          "index": 2274,
+          "id": "mhavwx1k",
+          "text": "「——本小姐什么都没说。」",
+          "text_sha256": "772ef3fc3b44af70e7e83cbb22f0aeaa9e539ad862a311cb84c1895419d3e5f5",
+          "existing_sprites": [
+            {
+              "uid": "y7zsso22",
+              "asset": "z869j1e3",
+              "x": 649.77,
+              "y": 1049.67,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2276,
+          "index": 2275,
+          "id": "35874mzf",
+          "text": "「肩膀就肩膀。不许往下。」",
+          "text_sha256": "2b21d3c4d6b049847cd4175c10136fff78b5f83ec5d89e64322099bc28482b2a",
+          "existing_sprites": [
+            {
+              "uid": "y7zsso22",
+              "asset": "z869j1e3",
+              "x": 649.77,
+              "y": 1049.67,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2277,
+          "index": 2276,
+          "id": "ostyx9a7",
+          "text": "「你刚才自己说的。」",
+          "text_sha256": "8fd7c057569f4642b1a029136e172a09b4c869969ff01955404ef62ba01b6d84",
+          "existing_sprites": [
+            {
+              "uid": "y7zsso22",
+              "asset": "z869j1e3",
+              "x": 649.77,
+              "y": 1049.67,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2278,
+          "index": 2277,
+          "id": "nnakyz7r",
+          "text": "「本小姐说的是『不是那里』！」",
+          "text_sha256": "f6e01b22ee7b0b0fbe8b2ab599cb7f70a476ec7fd785ecdea85a7a2376945b41",
+          "existing_sprites": [
+            {
+              "uid": "y7zsso22",
+              "asset": "z869j1e3",
+              "x": 649.77,
+              "y": 1049.67,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2279,
+          "index": 2278,
+          "id": "vyp9lyd0",
+          "text": "「你听错了！听错了就是听错了！」",
+          "text_sha256": "08f9c9fa87ca7728f5c8f882e38a5adc1e4b9aa0bf019ecfda7a55cf4296dcdf",
+          "existing_sprites": [
+            {
+              "uid": "y7zsso22",
+              "asset": "z869j1e3",
+              "x": 649.77,
+              "y": 1049.67,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2280,
+          "index": 2279,
+          "id": "68du9pmx",
+          "text": "（她的耳朵尖红透了，尾巴尖却把椅腿缠上了。）",
+          "text_sha256": "115d285aaa8540a3f526056fa287d878e7d1575fdc356c2e5dd89c001d206555",
+          "existing_sprites": [
+            {
+              "uid": "y7zsso22",
+              "asset": "x013srmu",
+              "x": 634.79,
+              "y": 1045.86,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2281,
+          "index": 2280,
+          "id": "wygdwk08",
+          "text": "「……哼。算你老实。」",
+          "text_sha256": "cf0ed48597f5a67c01a20858b50e46c6fedc11d110e916c7246424cf0080d747",
+          "existing_sprites": [
+            {
+              "uid": "y7zsso22",
+              "asset": "2qshq03j",
+              "x": 642.6,
+              "y": 1054.32,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2811,
+          "index": 2810,
+          "id": "sgbou0ir",
+          "text": "按摩。温水。她的呼吸一点点变慢。",
+          "text_sha256": "02321bfdbc01462ff96cf8366cbe48a54ca1cd4697e393f11ee36d29af7d72ea",
+          "existing_sprites": [
+            {
+              "uid": "c0gc4fpg",
+              "asset": "wrwcdezj",
+              "x": 637.4,
+              "y": 1043.26,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        }
+      ],
+      "depends_on": [],
+      "kind": "scene",
+      "review_status": "范围已修订，待演出验收",
+      "note": "2812按摩结束，2813起双方换位，2817男主睡着；不可沿用女主被按摩。2282起肩按完的持续画面待另审。",
+      "human_approved": false,
+      "integrated": false,
+      "production_status": "成图已完成",
+      "candidate_file": "candidates/V18.png",
+      "visual_limitations": "适用被按摩阶段；不覆盖按摩结束或双方换位。"
+    },
+    {
+      "id": "V19",
+      "name": "二楼窗桌·伏案睡着",
+      "original_status": "尚未调用",
+      "original_ranges": [
+        [
+          2306,
+          2307
+        ],
+        [
+          2826,
+          2826
+        ]
+      ],
+      "proposed_ranges": [
+        [
+          2306,
+          2307
+        ]
+      ],
+      "nodes": [
+        {
+          "number": 2306,
+          "index": 2305,
+          "id": "h88gkrlm",
+          "text": "后来，她趴在桌边睡着了。",
+          "text_sha256": "40874bede8a5d9d9172ce84f5608b1337373b6639812871b7832365752fdd428",
+          "existing_sprites": []
+        },
+        {
+          "number": 2307,
+          "index": 2306,
+          "id": "05763y7m",
+          "text": "尾巴没有收回去。就那么圈着我的手腕，一圈，又一圈。",
+          "text_sha256": "d65048d6e972cd1f3f2ac46cb7ab6b45de17d1aa8aa0ed01fc95fa0be9e666a3",
+          "existing_sprites": []
+        }
+      ],
+      "depends_on": [
+        "V18"
+      ],
+      "kind": "scene",
+      "review_status": "范围已修订，待演出验收",
+      "note": "本图仅是同桌位伏案睡；2307的缠腕未可见表现，2819是对坐场景故排除。",
+      "human_approved": false,
+      "integrated": false,
+      "production_status": "成图已完成",
+      "candidate_file": "candidates/V19.png",
+      "visual_limitations": "没有展示尾巴圈住玩家手腕；只证明睡姿，不可当完整缠腕演出。2819对坐关系与此图不同，排除。"
+    },
+    {
+      "id": "V20",
+      "name": "柜台后·背身擦贝壳盘",
+      "original_status": "尚未调用",
+      "original_ranges": [
+        [
+          2437,
+          2452
+        ]
+      ],
+      "proposed_ranges": [
+        [
+          2437,
+          2452
+        ]
+      ],
+      "nodes": [
+        {
+          "number": 2437,
+          "index": 2436,
+          "id": "01qp63pb",
+          "text": "店里没开灯。她坐在柜台后面，背对着门，在擦贝壳盘。",
+          "text_sha256": "707dc9a7f889dc9fc07c3c60aa2260caf4b406f2914bcf5b76765440ac546dbf",
+          "existing_sprites": [
+            {
+              "uid": "plklibmm",
+              "asset": "art_upgrade_l12",
+              "x": 638.7,
+              "y": 1047.16,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2438,
+          "index": 2437,
+          "id": "9nlt3f79",
+          "text": "我把带鱼放在柜台上。",
+          "text_sha256": "10a8e17cff858a66669623cc928c844317ebc5ce3fdd323219d0141e413de301",
+          "existing_sprites": [
+            {
+              "uid": "plklibmm",
+              "asset": "art_upgrade_l12",
+              "x": 638.7,
+              "y": 1047.16,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2439,
+          "index": 2438,
+          "id": "paysdmbp",
+          "text": "「……不是说了，晚饭不用等我。」",
+          "text_sha256": "94b1b22cdbe651bad0293bbb1d56fd66a05b497097cb3179d9be3be4f2f6ead4",
+          "existing_sprites": [
+            {
+              "uid": "plklibmm",
+              "asset": "art_upgrade_l12",
+              "x": 638.7,
+              "y": 1047.16,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2440,
+          "index": 2439,
+          "id": "eeqh5w9k",
+          "text": "「我没等。我是来认错的。」",
+          "text_sha256": "53edc2625ed6ba90ea37b3198322aaa777e14be2b1b3673123c55539bd90a963",
+          "existing_sprites": [
+            {
+              "uid": "plklibmm",
+              "asset": "art_upgrade_l12",
+              "x": 638.7,
+              "y": 1047.16,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2441,
+          "index": 2440,
+          "id": "neus45zx",
+          "text": "「房贷不是玩笑。布丁不是，糍粑不是，暗号不是，五百字也不是。」",
+          "text_sha256": "a851c9867d488c8f67c1de64db9b6e59f9b0220b789b270fade1d2435bfb2938",
+          "existing_sprites": [
+            {
+              "uid": "plklibmm",
+              "asset": "art_upgrade_l12",
+              "x": 638.7,
+              "y": 1047.16,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2442,
+          "index": 2441,
+          "id": "pijdcf2s",
+          "text": "「你更不是。」",
+          "text_sha256": "35b715e3db3add8a12be994b25a8df7db1a1e1810bcd39d61416b2dfd82b4667",
+          "existing_sprites": [
+            {
+              "uid": "plklibmm",
+              "asset": "art_upgrade_l12",
+              "x": 638.7,
+              "y": 1047.16,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2443,
+          "index": 2442,
+          "id": "9e4mps3g",
+          "text": "擦盘子的手，停住了。",
+          "text_sha256": "1ad77652a9f1cd7c9964360036c4be51fd722794eb6872b7a89546d54929dd2c",
+          "existing_sprites": [
+            {
+              "uid": "plklibmm",
+              "asset": "art_upgrade_l12",
+              "x": 638.7,
+              "y": 1047.16,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2444,
+          "index": 2443,
+          "id": "xgriuxcj",
+          "text": "「……光说有什么用。」",
+          "text_sha256": "afa7d57f75009b3f0128ccdfcd9ed411d1411660eb0301d4f74748a97c2243d4",
+          "existing_sprites": [
+            {
+              "uid": "plklibmm",
+              "asset": "art_upgrade_l12",
+              "x": 638.7,
+              "y": 1047.16,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2445,
+          "index": 2444,
+          "id": "9w5jze92",
+          "text": "「你上次也是这么说的。」",
+          "text_sha256": "cf52f833e600d7bf85d4b51891a66e385558344fbd7e76c4774dca71a5914b33",
+          "existing_sprites": [
+            {
+              "uid": "plklibmm",
+              "asset": "art_upgrade_l12",
+              "x": 638.7,
+              "y": 1047.16,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2446,
+          "index": 2445,
+          "id": "afa4j9zc",
+          "text": "「所以这次，我想写下来。」",
+          "text_sha256": "1398792aa8fd38ebd1ca1d2fb0cd51114c720c5ef56a239c2a3c498fcfcef2a4",
+          "existing_sprites": [
+            {
+              "uid": "plklibmm",
+              "asset": "art_upgrade_l12",
+              "x": 638.7,
+              "y": 1047.16,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2447,
+          "index": 2446,
+          "id": "j8vyptxu",
+          "text": "她没有回头。",
+          "text_sha256": "6dd98a67c54feabd923066fce0500c763cd22402676b9f97dd67b13c02164622",
+          "existing_sprites": [
+            {
+              "uid": "plklibmm",
+              "asset": "art_upgrade_l12",
+              "x": 638.7,
+              "y": 1047.16,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2448,
+          "index": 2447,
+          "id": "kyn4jtzf",
+          "text": "但也没有赶我走。",
+          "text_sha256": "356492844483a402e9a5023dcd5ef6f9465e08973888a7593767650513f4a57c",
+          "existing_sprites": [
+            {
+              "uid": "plklibmm",
+              "asset": "art_upgrade_l12",
+              "x": 638.7,
+              "y": 1047.16,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2449,
+          "index": 2448,
+          "id": "xa9d4avp",
+          "text": "「……带鱼，鳃是红的。」",
+          "text_sha256": "7f5c820eaa9b081465c8bca6ddf1e43cd27e3990511fe110f0814c26866e0cfc",
+          "existing_sprites": [
+            {
+              "uid": "plklibmm",
+              "asset": "xfg3qcn2",
+              "x": 640.0,
+              "y": 1040.0,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2450,
+          "index": 2449,
+          "id": "bw4n1kbr",
+          "text": "「算你没白学。」",
+          "text_sha256": "c0aadbb13a6cb57e118e1d9a3dfd1158255153d81e1588a15a4e6e18249a696b",
+          "existing_sprites": [
+            {
+              "uid": "plklibmm",
+              "asset": "xfg3qcn2",
+              "x": 640.0,
+              "y": 1040.0,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2451,
+          "index": 2450,
+          "id": "4smyo4io",
+          "text": "（尾巴尖从地上抬起来一点点。还没翘。只是不再垂着了。）",
+          "text_sha256": "bb82a5feaf258f47985168ab423dc285b7460a9b723acde967c6468807e96e16",
+          "existing_sprites": [
+            {
+              "uid": "plklibmm",
+              "asset": "xfg3qcn2",
+              "x": 640.0,
+              "y": 1040.0,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2452,
+          "index": 2451,
+          "id": "gha3filx",
+          "text": "她又拿起一只贝壳盘，擦了三遍。",
+          "text_sha256": "3a5b75ee4d2560507c0c6a6bf9489a7dde0bc8f2500336b4f554ef30ca8ca97d",
+          "existing_sprites": [
+            {
+              "uid": "plklibmm",
+              "asset": "xfg3qcn2",
+              "x": 640.0,
+              "y": 1040.0,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        }
+      ],
+      "depends_on": [],
+      "kind": "scene",
+      "review_status": "结构校验通过，语义覆盖仍待逐句审查",
+      "note": "范围仅沿用原计划，不代表已核准。",
+      "human_approved": false,
+      "integrated": false,
+      "production_status": "成图已完成",
+      "candidate_file": "candidates/V20.png",
+      "visual_limitations": "凳和腿被柜台遮挡，不声称隐藏部分的姿态已验证。"
+    },
+    {
+      "id": "V21",
+      "name": "晨间餐桌·睡袍围裙坐姿",
+      "original_status": "尚未调用",
+      "original_ranges": [
+        [
+          2544,
+          2570
+        ]
+      ],
+      "proposed_ranges": [
+        [
+          2544,
+          2570
+        ]
+      ],
+      "nodes": [
+        {
+          "number": 2544,
+          "index": 2543,
+          "id": "28pz9msk",
+          "text": "「呜……醒了？」",
+          "text_sha256": "cdd69806023b41040b6876c3c7ceb88d468848240049fe5a0e6a229bb5a1bbd9",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2545,
+          "index": 2544,
+          "id": "wqufakql",
+          "text": "她坐在餐桌对面，睡袍外面罩着围裙，呆毛还翘着。",
+          "text_sha256": "36964bcdc781ed0619da09bb23b174af8e574ba667e62d6a5d22fb2e82261565",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2546,
+          "index": 2545,
+          "id": "pb0tj8au",
+          "text": "「粥要趁热。贝肉凉了就腥。」",
+          "text_sha256": "5ae72a561f540776c513b2c04573ed67c735ca658799bb65625fe54a0414f1b0",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2547,
+          "index": 2546,
+          "id": "j5qmdk6z",
+          "text": "「还有——今天的菜单，是本小姐这一周定的最后一份。」",
+          "text_sha256": "563b80c98fefc786343a0e2bbdaac94427026083e6a0df4a3d4386413527d2a2",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2548,
+          "index": 2547,
+          "id": "2lopz5wz",
+          "text": "「明天轮到我定了？」",
+          "text_sha256": "b608007fdb7762e70e80012a15f6f3dee81a13057fd613a265c36ff3eed8d76d",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2549,
+          "index": 2548,
+          "id": "8lkg19ks",
+          "text": "「想得美。下周的菜单，本小姐也定好了。」",
+          "text_sha256": "ca4a570a8408bb5c57884a5ec4d3e75f977814d0142dcea9551fdc761127fb57",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2550,
+          "index": 2549,
+          "id": "vrpj5iu0",
+          "text": "「菜单的事，本小姐说了算。」",
+          "text_sha256": "0aea3a26622e6d4d0a300fc9921f24f9c703349e5000e73dca2074ce093bc4fd",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2551,
+          "index": 2550,
+          "id": "xd3epnxv",
+          "text": "「你只用执行。至于怎么执行——回头再跟你立规矩。」",
+          "text_sha256": "61a3ac6a8f6b5f24f65182b2a6be53fdebfcc657687f78b940076d977312bf2d",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2552,
+          "index": 2551,
+          "id": "9g70qgf6",
+          "text": "她竖起一根手指。",
+          "text_sha256": "6715b2feae568471a504d8e960f549b174b6a462ee60a28724ac3c20b6e395e7",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2553,
+          "index": 2552,
+          "id": "5gnl5vm9",
+          "text": "「眼下先说一件：你碗里的东西，不许偷偷夹到本小姐碗里。」",
+          "text_sha256": "98a91c7f1a7339dff6eb5fba2874f0f2c8f951096bf19ea7b5f3167413e6ec1c",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2554,
+          "index": 2553,
+          "id": "h54v3t5s",
+          "text": "「比如？」",
+          "text_sha256": "9d2a85e9a4c9a1d0dfbad49111e9d3e9bc728ac216653f031b210441083d6f63",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2555,
+          "index": 2554,
+          "id": "hwv91pad",
+          "text": "「比如海藻。」",
+          "text_sha256": "5fd8500b3403d4194d22b49bb2e3cafd68aa1ccdc9a50a17750c16eeb4bda2f9",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2556,
+          "index": 2555,
+          "id": "s27pt5jd",
+          "text": "她盯着我。",
+          "text_sha256": "9037753eb12186d0bf170fae29f2c2cb560bce41eeeabffd47268761ba92eda2",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2557,
+          "index": 2556,
+          "id": "byqf0293",
+          "text": "「上周你偷偷把海藻夹回我碗里。本小姐看见了。没说话。」",
+          "text_sha256": "729b50a0818b3292dd94683cd41d125b80ded67ea4ba6edfdfd104605c84abf0",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2558,
+          "index": 2557,
+          "id": "p0aq7vhx",
+          "text": "「现在说。」",
+          "text_sha256": "c8a8015e38c69483ca55d2161dcfd3add0cb2e4cf5f0980c9b357bf971b91608",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2559,
+          "index": 2558,
+          "id": "gplu3kz9",
+          "text": "「怕本小姐不够吃？」",
+          "text_sha256": "32d85eb2d553beb312c1e26fbf6cb49e82e78a6cd000c711c43f7a420521af17",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2560,
+          "index": 2559,
+          "id": "17n3jyil",
+          "text": "「男仆。本小姐的饭量，比你还清楚。」",
+          "text_sha256": "3a371ccda3b90592e506085378a62c0af2864d07a66ac27960fd421ca8a4249e",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2561,
+          "index": 2560,
+          "id": "7f5vs11x",
+          "text": "「你碗里的海藻，今天翻倍。」",
+          "text_sha256": "b90e437a63eee2c0a1a7a5319d6e677ce7e6e9074b39d95b79db0308db32bcb9",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2562,
+          "index": 2561,
+          "id": "iof8fzpq",
+          "text": "（尾鳍拍了一下桌子。）",
+          "text_sha256": "1e346b6ba77ea07bb79190f4429de7f72bfd2323cc6069f505aa6562340ecd1d",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2563,
+          "index": 2562,
+          "id": "9t1f1fcd",
+          "text": "「认错态度合格。」",
+          "text_sha256": "97efd0d2c478137d07c32e312d22488526dbbeb24e56210a2e2d06bff1458cee",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2564,
+          "index": 2563,
+          "id": "5zu02nx9",
+          "text": "「下周的凉拌海藻，可以改成海藻蛋花汤。」",
+          "text_sha256": "3e1f9a4498058292db0045b1429df8274fa305ed728d4cdd4d4fc201b88d2f6d",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2565,
+          "index": 2564,
+          "id": "mwiiryzd",
+          "text": "「不是本小姐妥协。是海藻在汤里更好消化。这是科学。」",
+          "text_sha256": "8b92ab8c59cc4b7041edfe9e8e3031ff62576923ac8c96821fc36e6de6475c49",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "368tmc5i",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2566,
+          "index": 2565,
+          "id": "byz3qozb",
+          "text": "（尾鳍轻轻卷了一下。「科学」这个词，她用得很心虚。）",
+          "text_sha256": "d94b614cc6efdb8582a5840eb5be385e50c4fc11b2c54e415dcb268f69933daf",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "368tmc5i",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2567,
+          "index": 2566,
+          "id": "ne6b3ffa",
+          "text": "「不加海藻的版本？」",
+          "text_sha256": "fc655d269456207387f4ab617421c1280cee10507d7c721104a1d1a30e2e9142",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "xtwug3dy",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2568,
+          "index": 2567,
+          "id": "ue9x616u",
+          "text": "「你的意思是，本小姐定的菜单，还要给你出替代方案？」",
+          "text_sha256": "b89695fd3c54c54d08314ac6facc1f592256b7ef68ef65093b84cdf0e26c92f2",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "xtwug3dy",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2569,
+          "index": 2568,
+          "id": "e1bsh3bc",
+          "text": "「你是厨师还是许愿池？」",
+          "text_sha256": "b7567f29cd198838d4e897fde45f16ca641ddfd83469e06379e8dd05c8e03bd4",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "xtwug3dy",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2570,
+          "index": 2569,
+          "id": "kbuzm5vb",
+          "text": "（尾鳍拍了一下桌子。）",
+          "text_sha256": "1e346b6ba77ea07bb79190f4429de7f72bfd2323cc6069f505aa6562340ecd1d",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "xtwug3dy",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        }
+      ],
+      "depends_on": [],
+      "kind": "scene",
+      "review_status": "结构校验通过，语义覆盖仍待逐句审查",
+      "note": "范围仅沿用原计划，不代表已核准。",
+      "human_approved": false,
+      "integrated": false,
+      "production_status": "成图已完成",
+      "candidate_file": "candidates/V21.png",
+      "visual_limitations": "餐桌道具靠下；实际对白框可能遮住碗底，接入时需选择适当显示方式。"
+    },
+    {
+      "id": "V22",
+      "name": "晨间餐桌·睡袍持笔批注",
+      "original_status": "尚未调用",
+      "original_ranges": [
+        [
+          2571,
+          2626
+        ]
+      ],
+      "proposed_ranges": [
+        [
+          2571,
+          2626
+        ]
+      ],
+      "nodes": [
+        {
+          "number": 2571,
+          "index": 2570,
+          "id": "igqkcqlc",
+          "text": "饭后，日记共读时间。",
+          "text_sha256": "5856b947ed8b23d7c8528fefec7b3f3b3345100ecbbe5d4f46e2a89c1d8cb935",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2572,
+          "index": 2571,
+          "id": "it6dkdye",
+          "text": "她的那本，封皮『不许多看』。今天翻开，第一页多了个新栏目——",
+          "text_sha256": "130a26b6143fd8f7ba8a613cd588b7c2de03871ec4c555d33b6b8bca197f8d82",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2573,
+          "index": 2572,
+          "id": "c22w67po",
+          "text": "『批注：昨日。』",
+          "text_sha256": "144c186f1114ea9b37c7888b9eefeda80245f24b7448d159ac3afd80096dfff0",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2574,
+          "index": 2573,
+          "id": "lei7iym5",
+          "text": "她的字，张牙舞爪——",
+          "text_sha256": "7e84f525b63af1cacf4054f9ee5c16ee9ded9ee2fe7de56a4a8f8e33dc775e20",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2575,
+          "index": 2574,
+          "id": "67413sjl",
+          "text": "『昨天早上被他按醒，明明是在家里，非要说在店里厨房。真是的，这种时候倒是比谁都固执。』",
+          "text_sha256": "9e6f6cff39e7ea0225ca69e534f879751e8e4196d5fecf3ce175d9b20c30c3e5",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2576,
+          "index": 2575,
+          "id": "rvou7m3y",
+          "text": "『不过看在他后来跑前跑后，试菜也没出岔子，就算了。』",
+          "text_sha256": "4ba3eae29009e736ebc793d0815f747b8227a96b65bfbcb4f3fc345b62644dfc",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2577,
+          "index": 2576,
+          "id": "k1ql2bdo",
+          "text": "『三个新菜的味道勉强及格。香煎鱼排可以再咸一点。』",
+          "text_sha256": "185462920e6405892f890de4997125d34c958c3c1da3049e783c7d64273b2d1c",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2578,
+          "index": 2577,
+          "id": "xmdpdn1w",
+          "text": "『海盐布丁明天要记得多放一点焦糖。』",
+          "text_sha256": "cfeecb0f71ce6e1c1939947da344f6fc618b187cdedd3ac742ddc5ab6511c761",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2579,
+          "index": 2578,
+          "id": "5iv3tem7",
+          "text": "最后还有一行小字——",
+          "text_sha256": "08664c5c6b69aca34fb01bec9dd84e87ba73b6f79affdb4986bdacc200c592ac",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2580,
+          "index": 2579,
+          "id": "c6fpkrhd",
+          "text": "『他写在日记里的那个愿望，我看到了。』",
+          "text_sha256": "ce783797dc9d231794320c84fb5c89ff0a643ce418d3336e4a2e39c9be1d474b",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2581,
+          "index": 2580,
+          "id": "9ghp58xv",
+          "text": "『太不知羞了。』",
+          "text_sha256": "6dbe4885aef790e27424c17ba89f841263fab5bb8bfcc9a2ffa43f54dedbcccc",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2582,
+          "index": 2581,
+          "id": "v59n58zs",
+          "text": "我抬起头。她正用笔杆抵着下巴，似笑非笑。",
+          "text_sha256": "5c2806a36120bcc903569c65891bfea21befd69a2201e193971fb753258014a1",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2583,
+          "index": 2582,
+          "id": "pnaa82u2",
+          "text": "「那个愿望——」",
+          "text_sha256": "548bf3ea3124b6d6ba70dabe1055509de083b9359e56e99e97905ce89d8bef8d",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2584,
+          "index": 2583,
+          "id": "q9g5r4ge",
+          "text": "「本小姐批注过了。」",
+          "text_sha256": "4645006b8683caae7ed9c58015c587a5dfa0aed1816d70929e8bee52066636aa",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2585,
+          "index": 2584,
+          "id": "3yxyk29q",
+          "text": "「『太不知羞了。』」",
+          "text_sha256": "a616f30bff4bdca067a77641f19d5b30bc79feb45e67b9afa9dd2c3910203312",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2586,
+          "index": 2585,
+          "id": "1ka77g0o",
+          "text": "「验收不合格。驳回。」",
+          "text_sha256": "8a3a1408833f1c845a5f49c2e1418289e2e44205a9d53169ab6950c25a50df08",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2587,
+          "index": 2586,
+          "id": "ba9bamwz",
+          "text": "「批注还能驳回愿望？」",
+          "text_sha256": "cf8bb85f096fbaa3e5aff8df0ff530bed59d57a8a7c9d9f6aad1f6515a19705b",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2588,
+          "index": 2587,
+          "id": "uz9ebbn8",
+          "text": "「本小姐的批注，就是终审。」",
+          "text_sha256": "966486f0fa3fed88f68d6ca5f1c9fc9228788c2f8b39e8cfba016876b80eafa5",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2589,
+          "index": 2588,
+          "id": "i5kprda6",
+          "text": "「不过——」",
+          "text_sha256": "9ddac77a9e03f81ef77b21c1dd8227146817ea3f5fadf2756fee6b88014800de",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2590,
+          "index": 2589,
+          "id": "54a7gtgb",
+          "text": "她的笔杆在桌上点了两下。",
+          "text_sha256": "b5e2e0469d3495620a92d85937b9b222d7f48985c4a26e3dd2f0519f6d0fae86",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2591,
+          "index": 2590,
+          "id": "hc93271g",
+          "text": "「驳回，不等于不受理。」",
+          "text_sha256": "5297bf99ce1257e0b1645727b135e4bf6d17607deec4bbc1f364f0dd7a8b88c0",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2592,
+          "index": 2591,
+          "id": "wfqigi6f",
+          "text": "「想要翻案，可以。条件是本小姐定。」",
+          "text_sha256": "304d2ed7cc5dd314ab93b2ee6727c6e8a15d93e36d6c03fc03be9c794fbd4d23",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2593,
+          "index": 2592,
+          "id": "p4aua2ci",
+          "text": "「嗯，态度端正。」",
+          "text_sha256": "6ad1e5be510b58f234b6187dc363d1021c8a51006db5c400c983d24e754c6e49",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2594,
+          "index": 2593,
+          "id": "c0alapzz",
+          "text": "「竖起耳朵听好。本小姐只讲一遍。」",
+          "text_sha256": "3c53ef71832a2198195219254d7e0561785cbe28347287ef6302ba9fcbc22e57",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2595,
+          "index": 2594,
+          "id": "k9f5b40c",
+          "text": "「————」",
+          "text_sha256": "d689c8b0810c61f6058a4bfb8af6f085b331edbe4a9c18a33261078f60590e85",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "xtwug3dy",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2596,
+          "index": 2595,
+          "id": "joxy50tq",
+          "text": "「抬杠是吧？」",
+          "text_sha256": "2c797959372b3ace0ace700115b5517f02857b5e8d19f3363ef3e0fc7590e8ce",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "xtwug3dy",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2597,
+          "index": 2596,
+          "id": "sqpy8rwv",
+          "text": "「驳回！永久驳回！连受理都不受理了！」",
+          "text_sha256": "9be4c84daf67156904a68e9838f7a7911b6c265e82cf3972b83529c7a059be1d",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "xtwug3dy",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2598,
+          "index": 2597,
+          "id": "b88rpfrw",
+          "text": "三秒后。",
+          "text_sha256": "14a3836666953a49b01f1afb50e313800e2bb583c11b9f512f12c4389aa0c358",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "xtwug3dy",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2599,
+          "index": 2598,
+          "id": "yx1gcjmx",
+          "text": "「……刚才那句，本小姐收回。」",
+          "text_sha256": "96a75ca31b6bb9062a9f1da63f59ce3f20d0c6a773ab4bdcf50d9ed38dda7008",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "368tmc5i",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2600,
+          "index": 2599,
+          "id": "7fi2imzg",
+          "text": "「条件还是想讲的。你不许不接。」",
+          "text_sha256": "59164c9a567d7316865cfcabb860364747377ab5c7a145e3b828b2b43988859d",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "368tmc5i",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2601,
+          "index": 2600,
+          "id": "acwjzlla",
+          "text": "（尾鳍拍了一下桌子。）",
+          "text_sha256": "1e346b6ba77ea07bb79190f4429de7f72bfd2323cc6069f505aa6562340ecd1d",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "368tmc5i",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2602,
+          "index": 2601,
+          "id": "i429xr1f",
+          "text": "「……沉默。」",
+          "text_sha256": "e3ea61fac3f00c16cc6e992ce8c6af275018e10550236c0189c981eacdc57c86",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2603,
+          "index": 2602,
+          "id": "24zcvr05",
+          "text": "「沉默就是默认要听条件。」",
+          "text_sha256": "cb5cc797ec6e7031fc2d274069f8857da1143e71e9822a56a37b0094dc6da120",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2604,
+          "index": 2603,
+          "id": "7o26vcp6",
+          "text": "「词典原款，不用修订。」",
+          "text_sha256": "56f1fbd18db71c01b39dd4604b6b1775e6995f63986d8e8ede587476489c99d4",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2605,
+          "index": 2604,
+          "id": "zv5uomrn",
+          "text": "（尾鳍卷了一个圈。）",
+          "text_sha256": "7adb7d2520433c6c50104246d495dee64d25ed5613e4289a4b277166633e5efc",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2606,
+          "index": 2605,
+          "id": "pwt4swam",
+          "text": "「第一。以后每天早晨的菜单，本小姐定。一周之内，不准重样。」",
+          "text_sha256": "d010abcd4209d86cab95e3748e50344e931d1644edc5a0f7e54ebbec8a4fe2fe",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2607,
+          "index": 2606,
+          "id": "bndmfmrq",
+          "text": "「第二。集市的新鲜食材，你去挑。不准赖床，也不准让店里的人代劳。」",
+          "text_sha256": "c382b5f0e45f4a034e96da07544383b462b45affd840a9bf682ca691e13840d7",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2608,
+          "index": 2607,
+          "id": "i9zka7e4",
+          "text": "「第三。本小姐吃什么，你就吃什么。本小姐不许挑食的东西，你也不许挑。」",
+          "text_sha256": "637886a2924288c0c056d72e352ad6a1f86d0d5f3c26c95c6f0646f9096a021c",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2609,
+          "index": 2608,
+          "id": "wsh5kxgn",
+          "text": "「以上三条，一周之内全部做到——」",
+          "text_sha256": "5e0032a9c181a260ef7cdd9e338b7c8b295877ff5cefad2a551fb01278aa9a11",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2610,
+          "index": 2609,
+          "id": "sijsgopz",
+          "text": "她的耳朵尖开始泛红，但下巴抬得笔直。",
+          "text_sha256": "6acdbacd828a2338027d2d2667cf674848832ac6afcc41e240dafe0c1631c2aa",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "368tmc5i",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2611,
+          "index": 2610,
+          "id": "qye7diir",
+          "text": "「你之前提的那个什么早安吻。」",
+          "text_sha256": "31adb3674cfd2be9a790c95e8433f3a8a8bdeb1a55eedc14ec658e085e2b94cc",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "368tmc5i",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2612,
+          "index": 2611,
+          "id": "s7qnhg9t",
+          "text": "「本小姐，勉为其难，可以考虑一下。」",
+          "text_sha256": "10658654bb0e4272bfb7b34bea53f3fa791b50f8582fe48878ca48165f9236aa",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "368tmc5i",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2613,
+          "index": 2612,
+          "id": "wisoweb5",
+          "text": "「至于别的，看你表现，不准得寸进尺。」",
+          "text_sha256": "3fbf9e0b4ed09627d5129ab18356b241e09b9e70ced4d6d50654594d0794427a",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "368tmc5i",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2614,
+          "index": 2613,
+          "id": "m3j2zl6r",
+          "text": "「听懂了吗？」",
+          "text_sha256": "84b169c316496dabe061222cdee7520405579c0ce1a13cadc57a7b26cca7ffb1",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "368tmc5i",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2615,
+          "index": 2614,
+          "id": "2t381q52",
+          "text": "「从现在算起。」",
+          "text_sha256": "6653ab7bc19bca2f77f5557e1b719eace04ece4609d255e129e1f66705ef6089",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2616,
+          "index": 2615,
+          "id": "03no99yu",
+          "text": "「计时，从明天的菜单开始。」",
+          "text_sha256": "06113d337b248f105ddfae061e672f4e7362389dc894912dc389ccaaa7b00cbf",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2617,
+          "index": 2616,
+          "id": "dbevfkto",
+          "text": "（尾鳍翘了起来。）",
+          "text_sha256": "6f82f7a5e3c7a9dcdd79f263c9a61a14a71777ee984adbfed135d31bb4057f2b",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2618,
+          "index": 2617,
+          "id": "kucsknlp",
+          "text": "「本小姐做不到？」",
+          "text_sha256": "318349c9d67780daf3939f945cc0c27f2974935e42385fa3620ab886b9a90ce9",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2619,
+          "index": 2618,
+          "id": "cnap8hyt",
+          "text": "「本小姐定菜单、定规矩、定验收——哪一条没做到过？」",
+          "text_sha256": "a728edaccd54e315b5cfe7725a10a55803241e08000d53ea1ad54d448c1441d2",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2620,
+          "index": 2619,
+          "id": "14nvsk9s",
+          "text": "「倒是某些人类，『浪』字写错多少次了？」",
+          "text_sha256": "8665427723ae70920e868e4c0b718427bd24b7c5325b3acd6468d2c6d2aa3464",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2621,
+          "index": 2620,
+          "id": "mes3nlod",
+          "text": "（尾鳍拍了一下桌子。）",
+          "text_sha256": "1e346b6ba77ea07bb79190f4429de7f72bfd2323cc6069f505aa6562340ecd1d",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "2z0mfu7o",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2622,
+          "index": 2621,
+          "id": "2j0ojt1z",
+          "text": "她盯着我的手看了两秒。",
+          "text_sha256": "e148a1991415d460e7b8ffe67723a3978cf71d06ed964fa011be6aebe62f5e60",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "368tmc5i",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2623,
+          "index": 2622,
+          "id": "095vpfgh",
+          "text": "「……幼稚。」",
+          "text_sha256": "d2c11a21c0bd24dcdbaab672f2a3620092802c061df81cc7e1fa3a95adec3597",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "368tmc5i",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2624,
+          "index": 2623,
+          "id": "vue1wf73",
+          "text": "然后伸出了尾巴尖。",
+          "text_sha256": "f584fd4b6e04811e625acb34b4d07f0ea702208178b0ab1296df9c23bb4424e9",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "368tmc5i",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2625,
+          "index": 2624,
+          "id": "o5xn9j2b",
+          "text": "「用这个。人类的手钩来钩去，没分量。」",
+          "text_sha256": "481880f9e794fe854bc7c0a64af2f50e35bf66cd7d9b7ac4ee443493583c469a",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "368tmc5i",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 2626,
+          "index": 2625,
+          "id": "e862aal9",
+          "text": "（尾鳍和我的手指，打了一个结。）",
+          "text_sha256": "d824499ff9c81be9a8fa7221e8210761a24a80b64e96105002e8b6167a280a89",
+          "existing_sprites": [
+            {
+              "uid": "beix401e",
+              "asset": "368tmc5i",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        }
+      ],
+      "depends_on": [
+        "V21"
+      ],
+      "kind": "scene",
+      "review_status": "结构校验通过，语义覆盖仍待逐句审查",
+      "note": "范围仅沿用原计划，不代表已核准。",
+      "human_approved": false,
+      "integrated": false,
+      "production_status": "成图已完成",
+      "candidate_file": "candidates/V22.png",
+      "visual_limitations": "笔的动作与餐具已区分；日记靠画面下方，实机对白遮挡需验证。"
+    },
+    {
+      "id": "V23",
+      "name": "常服·抱木盒正面",
+      "original_status": "尚未调用",
+      "original_ranges": [
+        [
+          3158,
+          3166
+        ]
+      ],
+      "proposed_ranges": [
+        [
+          3163,
+          3166
+        ]
+      ],
+      "nodes": [
+        {
+          "number": 3163,
+          "index": 3162,
+          "id": "cc489c97",
+          "text": "她抱着木盒站起来，走到门口，又停下。",
+          "text_sha256": "5d79e0a99ce6930fca4df4d142ac821d003a2f434067fce8247ae559071ba47c",
+          "existing_sprites": [
+            {
+              "uid": "5j7txrop",
+              "asset": "x013srmu",
+              "x": 634.79,
+              "y": 1045.86,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 3164,
+          "index": 3163,
+          "id": "ufoiwmp5",
+          "text": "「喂。」",
+          "text_sha256": "da0a05f2b4ee8ae6b8b4efad93c5668bb16a50702c1ab8cccfaba28a9b64217a",
+          "existing_sprites": [
+            {
+              "uid": "5j7txrop",
+              "asset": "x013srmu",
+              "x": 634.79,
+              "y": 1045.86,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 3165,
+          "index": 3164,
+          "id": "ds7oijdk",
+          "text": "「那天……穿成那样出门——」",
+          "text_sha256": "fb84f59893748aa76af2c106f0be91fceeefcbd3cf9576cd3b9b569cc30067cd",
+          "existing_sprites": [
+            {
+              "uid": "5j7txrop",
+              "asset": "x013srmu",
+              "x": 634.79,
+              "y": 1045.86,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 3166,
+          "index": 3165,
+          "id": "q1n8zi1t",
+          "text": "「是有点不妥。」",
+          "text_sha256": "b0f55acbeb24d7534c2740474049e67d1bc6a856a4ddd4b3a03093b71854c5b3",
+          "existing_sprites": [
+            {
+              "uid": "5j7txrop",
+              "asset": "x013srmu",
+              "x": 634.79,
+              "y": 1045.86,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        }
+      ],
+      "depends_on": [],
+      "kind": "sprite",
+      "review_status": "范围已修订，待演出验收",
+      "note": "3158放纸入盒不是抱盒站姿，3163才站起；只保留3163–3166的正面候选建议。",
+      "human_approved": false,
+      "integrated": false,
+      "production_status": "成图已完成",
+      "candidate_file": "candidates/V23.png",
+      "visual_limitations": "主体在正面闭盒过渡，静态不能证明整个收纸动作。"
+    },
+    {
+      "id": "V24",
+      "name": "常服·门口背身抱木盒",
+      "original_status": "尚未调用",
+      "original_ranges": [
+        [
+          3163,
+          3172
+        ]
+      ],
+      "proposed_ranges": [
+        [
+          3167,
+          3172
+        ]
+      ],
+      "nodes": [
+        {
+          "number": 3167,
+          "index": 3166,
+          "id": "7ej8l65g",
+          "text": "她的背对着我，耳朵尖红了。",
+          "text_sha256": "37c85552afaea95a71337d0d09b7a994e75c8999907b6ff268340b613af6aee3",
+          "existing_sprites": [
+            {
+              "uid": "5j7txrop",
+              "asset": "x013srmu",
+              "x": 634.79,
+              "y": 1045.86,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 3168,
+          "index": 3167,
+          "id": "yi0zefmo",
+          "text": "「但是，桂花买到了。」",
+          "text_sha256": "a1e09ac1faf439064b27d7a7db3cb9ed501baf9ea28273fd5d5e25f7cc71b1ad",
+          "existing_sprites": [
+            {
+              "uid": "5j7txrop",
+              "asset": "wrwcdezj",
+              "x": 637.4,
+              "y": 1043.26,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 3169,
+          "index": 3168,
+          "id": "0q37hlpr",
+          "text": "「珍珠，也买到了。」",
+          "text_sha256": "f8af7989bcd8a8a60c9c9653a7826c807d00946f7daf8e7f6995e2e6abff2041",
+          "existing_sprites": [
+            {
+              "uid": "5j7txrop",
+              "asset": "wrwcdezj",
+              "x": 637.4,
+              "y": 1043.26,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 3170,
+          "index": 3169,
+          "id": "z824rks0",
+          "text": "「所以——」",
+          "text_sha256": "9e9516f6b4733c6831f90fa56d2e20483e441e81e19a2071e12a75d1f250e4fa",
+          "existing_sprites": [
+            {
+              "uid": "5j7txrop",
+              "asset": "wrwcdezj",
+              "x": 637.4,
+              "y": 1043.26,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 3171,
+          "index": 3170,
+          "id": "9u884qn2",
+          "text": "「验收，勉强通过。」",
+          "text_sha256": "2e344e797514d45b152e864aac6463c8d36cf598126f95f9b28b64fa72560086",
+          "existing_sprites": [
+            {
+              "uid": "5j7txrop",
+              "asset": "wrwcdezj",
+              "x": 637.4,
+              "y": 1043.26,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 3172,
+          "index": 3171,
+          "id": "qxx9rkho",
+          "text": "「下不为例。」",
+          "text_sha256": "5b9d94e8fae7661915259f0f0f5e0f5e09d1643298c9f277166b765eb68e9f9e",
+          "existing_sprites": [
+            {
+              "uid": "5j7txrop",
+              "asset": "wrwcdezj",
+              "x": 637.4,
+              "y": 1043.26,
+              "h": 1000.0,
+              "flip": false
+            }
+          ]
+        }
+      ],
+      "depends_on": [
+        "V23"
+      ],
+      "kind": "sprite",
+      "review_status": "范围已修订，待演出验收",
+      "note": "3167明确背对，推迟切背身至此，消除与V23争用3163–3166。",
+      "human_approved": false,
+      "integrated": false,
+      "production_status": "成图已完成",
+      "candidate_file": "candidates/V24.png",
+      "visual_limitations": "盒扣细节及转身前后尺寸需人工对照；不把侧脸写成完全背头。"
+    },
+    {
+      "id": "V25",
+      "name": "帐篷床上·睡衣抱膝护项链",
+      "original_status": "尚未调用",
+      "original_ranges": [
+        [
+          3227,
+          3244
+        ],
+        [
+          3247,
+          3274
+        ]
+      ],
+      "proposed_ranges": [
+        [
+          3227,
+          3244
+        ],
+        [
+          3247,
+          3274
+        ]
+      ],
+      "nodes": [
+        {
+          "number": 3227,
+          "index": 3226,
+          "id": "otvpviwd",
+          "text": "她抱着膝盖坐在床上，忽然发现我在看她颈间的项链。",
+          "text_sha256": "d03355cf6bdce8f2223de74a1ce71bcebe5399653640518f3d93670566718aa6",
+          "existing_sprites": [
+            {
+              "uid": "9duavmvn",
+              "asset": "52119ew2",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 3228,
+          "index": 3227,
+          "id": "jzn9mh6j",
+          "text": "「……看什么。」",
+          "text_sha256": "84242e2d60b52af48753c8b0b7fe87a4dcf41b43910518c44a3da1eda1749fa5",
+          "existing_sprites": [
+            {
+              "uid": "9duavmvn",
+              "asset": "52119ew2",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 3229,
+          "index": 3228,
+          "id": "auzf033r",
+          "text": "「这条项链，睡觉要摘的。贝壳压脖子。」",
+          "text_sha256": "170c7524662439ef2b87214d3744326faada4d896e383cdb1e163ae9779771a9",
+          "existing_sprites": [
+            {
+              "uid": "9duavmvn",
+              "asset": "52119ew2",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 3230,
+          "index": 3229,
+          "id": "jd0fwfo7",
+          "text": "「我记得一个故事。」",
+          "text_sha256": "a9a4e2d0a3557bcab291b690b26092e184fc6659cd0e5bf01f551e81caacada6",
+          "existing_sprites": [
+            {
+              "uid": "9duavmvn",
+              "asset": "52119ew2",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 3231,
+          "index": 3230,
+          "id": "uqch0208",
+          "text": "「又讲故事？」",
+          "text_sha256": "beb56cfc2deef5192c71a1933ee8bf293b142582f33bb9a847e33544991d2f3e",
+          "existing_sprites": [
+            {
+              "uid": "9duavmvn",
+              "asset": "52119ew2",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 3232,
+          "index": 3231,
+          "id": "6emt80nd",
+          "text": "「人鱼公主的故事，听过吗。」",
+          "text_sha256": "4c6990caede0863fb5a69e2b1238abf952df7f8a16372eb3c26f413827b0f934",
+          "existing_sprites": [
+            {
+              "uid": "9duavmvn",
+              "asset": "52119ew2",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 3233,
+          "index": 3232,
+          "id": "0axx6pac",
+          "text": "「……海里的人鱼，跟本小姐是远亲。听过一点。」",
+          "text_sha256": "8006720456bc4f5e5726de85c215a9d17c4681d3a306ed92bfb9a3e0c467783c",
+          "existing_sprites": [
+            {
+              "uid": "9duavmvn",
+              "asset": "52119ew2",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 3234,
+          "index": 3233,
+          "id": "bui7xkqh",
+          "text": "「讲来验收一下。」",
+          "text_sha256": "1c946ff41e7319fb463c296bc938fc23615d208eb67400fb0e75fac431a913c3",
+          "existing_sprites": [
+            {
+              "uid": "9duavmvn",
+              "asset": "52119ew2",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 3235,
+          "index": 3234,
+          "id": "76k30qc7",
+          "text": "「人鱼公主用两枚贝壳，当作——」",
+          "text_sha256": "2b2513e7a8facf1e1af48cfdec3fb21cb96ee9a75a6db0d7e68b0d1b2e72a4da",
+          "existing_sprites": [
+            {
+              "uid": "9duavmvn",
+              "asset": "52119ew2",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 3236,
+          "index": 3235,
+          "id": "jgie54ab",
+          "text": "我比划了一下。",
+          "text_sha256": "60f1d1662407c104fcc7db2d237b8a0523089d36ce2639733fa8cc818ddaa02f",
+          "existing_sprites": [
+            {
+              "uid": "9duavmvn",
+              "asset": "52119ew2",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 3237,
+          "index": 3236,
+          "id": "dj0l1zsh",
+          "text": "帐篷里安静了。",
+          "text_sha256": "fb0a54cb12375039d0e9e5cf9cf82cf99e003f337185914c82e01c1c7966feb7",
+          "existing_sprites": [
+            {
+              "uid": "9duavmvn",
+              "asset": "52119ew2",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 3238,
+          "index": 3237,
+          "id": "lm4qwopo",
+          "text": "她低头，看了看自己颈间的两枚粉色贝壳。",
+          "text_sha256": "6a58b01d713ef35279754908e1fd9f2541c5a66f286bdfd51f795436f1cfaf46",
+          "existing_sprites": [
+            {
+              "uid": "9duavmvn",
+              "asset": "52119ew2",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 3239,
+          "index": 3238,
+          "id": "49npdyzf",
+          "text": "然后，慢慢地、慢慢地，整张脸烧了起来。",
+          "text_sha256": "9f75b88cbcde82fdc3fe4179e573623d08139572d3c0a848d7043ae2bc2809e0",
+          "existing_sprites": [
+            {
+              "uid": "9duavmvn",
+              "asset": "52119ew2",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 3240,
+          "index": 3239,
+          "id": "wzycr2fo",
+          "text": "「————」",
+          "text_sha256": "d689c8b0810c61f6058a4bfb8af6f085b331edbe4a9c18a33261078f60590e85",
+          "existing_sprites": [
+            {
+              "uid": "9duavmvn",
+              "asset": "52119ew2",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 3241,
+          "index": 3240,
+          "id": "4huq63p5",
+          "text": "「变、态。」",
+          "text_sha256": "d9f3e41cac2fda18dd11ae0d611ed5364849d9125daa00858dda6621cbf78c6b",
+          "existing_sprites": [
+            {
+              "uid": "9duavmvn",
+              "asset": "52119ew2",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 3242,
+          "index": 3241,
+          "id": "hx4ob976",
+          "text": "「本小姐看错你了。你是变态学者。」",
+          "text_sha256": "8bc5068b0944529e646c4d74ee0ef3c5146bea4cef40a8ffe0616e244d105f64",
+          "existing_sprites": [
+            {
+              "uid": "9duavmvn",
+              "asset": "52119ew2",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 3243,
+          "index": 3242,
+          "id": "6tw3aeja",
+          "text": "「什么纯天然装饰！那是童话故事里骗小孩的！」",
+          "text_sha256": "4e7dad2e201bee2cddad62ac39ce1c924d382ebfec5aa9f3cc88d6bc37fffcb9",
+          "existing_sprites": [
+            {
+              "uid": "9duavmvn",
+              "asset": "52119ew2",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 3244,
+          "index": 3243,
+          "id": "i4ah8fjl",
+          "text": "「明天全海域的鱼都会知道，这片浅滩住着一个欺负鲸鱼小姐的变态！」",
+          "text_sha256": "e1ab4f378fe6ef24ba07e9fbfe13334d79b19e27dda3e68b4ee5ae0c735a8b8c",
+          "existing_sprites": [
+            {
+              "uid": "9duavmvn",
+              "asset": "52119ew2",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 3247,
+          "index": 3246,
+          "id": "3t3gl2we",
+          "text": "砸完，她把项链护在了手心。",
+          "text_sha256": "df7df28ecdbab9ca256753a9a5f8d150ff74abb1e8137b0d058dfe7c8ffa68d1",
+          "existing_sprites": [
+            {
+              "uid": "9duavmvn",
+              "asset": "52119ew2",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 3248,
+          "index": 3247,
+          "id": "o7jot4g0",
+          "text": "「……这条是你自己做的。」",
+          "text_sha256": "304dfd7805fdff8ca34702b61d97f221128138b1f9c7b10f06db2f2ae98657c3",
+          "existing_sprites": [
+            {
+              "uid": "9duavmvn",
+              "asset": "52119ew2",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 3249,
+          "index": 3248,
+          "id": "z3nszoan",
+          "text": "「串了一个下午。本小姐看见了。」",
+          "text_sha256": "f911cc3e2297d4821383f893ace8125d1a61bd96b594c979624dd3fa8c5b3e5b",
+          "existing_sprites": [
+            {
+              "uid": "9duavmvn",
+              "asset": "52119ew2",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 3250,
+          "index": 3249,
+          "id": "nj7brriy",
+          "text": "「所以，弄坏了，你要赔我一百条。」",
+          "text_sha256": "d8ad7d61908b452a5c0c2014a9185aa37fe08571e5973658e8690ded219c4d5e",
+          "existing_sprites": [
+            {
+              "uid": "9duavmvn",
+              "asset": "52119ew2",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 3251,
+          "index": 3250,
+          "id": "a1a1pmn3",
+          "text": "「一百条，一条都不许少。」",
+          "text_sha256": "da79010b990652268bc76c4a20ab1c666058762c100bbeb0e9a894d37e3157e2",
+          "existing_sprites": [
+            {
+              "uid": "9duavmvn",
+              "asset": "52119ew2",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 3252,
+          "index": 3251,
+          "id": "bhn0rmjm",
+          "text": "「重新戴？」",
+          "text_sha256": "fcdcbab0613bca8735c7b3904a66e1cd279d20a47009986548841dcb1013cdb2",
+          "existing_sprites": [
+            {
+              "uid": "9duavmvn",
+              "asset": "52119ew2",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 3253,
+          "index": 3252,
+          "id": "bd9nozcr",
+          "text": "「……就一下。」",
+          "text_sha256": "fd5061456704a3be655e3e59993af8fc51879dd9f462cfbd96a298303448a6d1",
+          "existing_sprites": [
+            {
+              "uid": "9duavmvn",
+              "asset": "52119ew2",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 3254,
+          "index": 3253,
+          "id": "ld9t6nxm",
+          "text": "「闭上眼睛让你系一下。就一下！」",
+          "text_sha256": "88a93d310ac4234f36d7eb2a642b0e9ebdf6bfa2f70bf2f9fb17c4d5bca10c88",
+          "existing_sprites": [
+            {
+              "uid": "9duavmvn",
+              "asset": "52119ew2",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 3255,
+          "index": 3254,
+          "id": "zdu6gb71",
+          "text": "「明天早饭，海盐蛋糕加双倍奶油，红糖糍粑多加一份。」",
+          "text_sha256": "caebf37035b195a94d2c1d48134aab4d5cc21842835202a1576e45e61b4581c0",
+          "existing_sprites": [
+            {
+              "uid": "9duavmvn",
+              "asset": "52119ew2",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 3256,
+          "index": 3255,
+          "id": "eek5013m",
+          "text": "「不答应，这事儿没完！」",
+          "text_sha256": "86daa7a3edfec2d83e5cc49c6382f455c8bba0dbefc96800d0848efdca2e7221",
+          "existing_sprites": [
+            {
+              "uid": "9duavmvn",
+              "asset": "52119ew2",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 3257,
+          "index": 3256,
+          "id": "crpuo4dw",
+          "text": "（尾鳍卷住了帐帘的绳。把「逃走」的路，先绑上了。）",
+          "text_sha256": "faddb2b4aeea271779b0649ed6538608d6b4c85642a080b9164fe463e7fbc377",
+          "existing_sprites": [
+            {
+              "uid": "9duavmvn",
+              "asset": "52119ew2",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 3258,
+          "index": 3257,
+          "id": "gfb6nmxk",
+          "text": "「那算了，睡觉。」",
+          "text_sha256": "7753a5a2fb772515685dae106a663c09a4edadf401f38fb547e05c7f2a8fbedd",
+          "existing_sprites": [
+            {
+              "uid": "9duavmvn",
+              "asset": "52119ew2",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 3259,
+          "index": 3258,
+          "id": "qvep01qz",
+          "text": "我躺下。闭眼。",
+          "text_sha256": "174f94bf673318f82473805e142755f087c9d4e6e87e44cc664ea2da0df07bb0",
+          "existing_sprites": [
+            {
+              "uid": "9duavmvn",
+              "asset": "52119ew2",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 3260,
+          "index": 3259,
+          "id": "otfz2gyx",
+          "text": "",
+          "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "existing_sprites": [
+            {
+              "uid": "9duavmvn",
+              "asset": "52119ew2",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 3261,
+          "index": 3260,
+          "id": "l9w68woy",
+          "text": "三秒。",
+          "text_sha256": "86bb5f40bd0a543330294107924a5a5d1e72d6b75aa266178fe35198ca09cee8",
+          "existing_sprites": [
+            {
+              "uid": "9duavmvn",
+              "asset": "52119ew2",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 3262,
+          "index": 3261,
+          "id": "hqteg26v",
+          "text": "「……喂。」",
+          "text_sha256": "ed39f07193414850b166d1054e0877dc0c251377c1ac2d118795a233d2b91e1a",
+          "existing_sprites": [
+            {
+              "uid": "9duavmvn",
+              "asset": "52119ew2",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 3263,
+          "index": 3262,
+          "id": "l1kov6b8",
+          "text": "「你就这么睡了？」",
+          "text_sha256": "3bcedb41fe4eb3c975283716bce8c70d3cc078f0d94f56b5685c344dbb92e484",
+          "existing_sprites": [
+            {
+              "uid": "9duavmvn",
+              "asset": "52119ew2",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 3264,
+          "index": 3263,
+          "id": "pkksb2yq",
+          "text": "「你刚才那个故事，还没讲完。」",
+          "text_sha256": "a71e72a30fa2bdad701955ad079c50a2407556986a84a44d61f796a9f88521d2",
+          "existing_sprites": [
+            {
+              "uid": "9duavmvn",
+              "asset": "52119ew2",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 3265,
+          "index": 3264,
+          "id": "zugy3ary",
+          "text": "「人鱼公主后来……怎么样了。」",
+          "text_sha256": "b8ca1d4bdce81e7e97caca9901202143d341dd2f2a6db5a545108711690d9272",
+          "existing_sprites": [
+            {
+              "uid": "9duavmvn",
+              "asset": "52119ew2",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 3266,
+          "index": 3265,
+          "id": "0sg4uf1u",
+          "text": "「后来的部分，要戴上项链才讲得下去。」",
+          "text_sha256": "db91f57b529d07ef1aa1450c9a5db90d856608e9ca426ce2d34dd710de3c8951",
+          "existing_sprites": [
+            {
+              "uid": "9duavmvn",
+              "asset": "52119ew2",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 3267,
+          "index": 3266,
+          "id": "44cdm9a9",
+          "text": "五秒的沉默。",
+          "text_sha256": "07d6b9415bf11ee623e906af44e944203591e4a868568754331a22a563447f61",
+          "existing_sprites": [
+            {
+              "uid": "9duavmvn",
+              "asset": "52119ew2",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 3268,
+          "index": 3267,
+          "id": "8n4xmkyp",
+          "text": "「……那你讲快点。」",
+          "text_sha256": "81cdabd637263ff94a8f265517d35c4226452110463f2223a56e9bacd8f7c282",
+          "existing_sprites": [
+            {
+              "uid": "9duavmvn",
+              "asset": "52119ew2",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 3269,
+          "index": 3268,
+          "id": "qfxkzm5s",
+          "text": "「绳子弄皱了，你负责重串。」",
+          "text_sha256": "395168ea30c6f2af1d800979b5146e5f4bf058590b127a016db959f46fe4ce72",
+          "existing_sprites": [
+            {
+              "uid": "9duavmvn",
+              "asset": "52119ew2",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 3270,
+          "index": 3269,
+          "id": "57v9qore",
+          "text": "（尾鳍拍了一下床。被将了一军，认了。）",
+          "text_sha256": "a5621ea28e83f2302aba3ae74de8a8b402f4c78e8fb7125b37fd8bffb0b290a3",
+          "existing_sprites": [
+            {
+              "uid": "9duavmvn",
+              "asset": "52119ew2",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 3271,
+          "index": 3270,
+          "id": "hlio0dd3",
+          "text": "「十串？」",
+          "text_sha256": "6a124defeddab75bbf8f80e7953435628977f425888c8a62b1afb8b0ab489c2a",
+          "existing_sprites": [
+            {
+              "uid": "9duavmvn",
+              "asset": "52119ew2",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 3272,
+          "index": 3271,
+          "id": "wr2wu13d",
+          "text": "「你拿本小姐的心……你拿本小姐的项链讨价还价？！」",
+          "text_sha256": "66e1ecaec9bf7b13c69dd4b5d6e1f96643779f4c445820c3240f3051675dce2c",
+          "existing_sprites": [
+            {
+              "uid": "9duavmvn",
+              "asset": "52119ew2",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 3273,
+          "index": 3272,
+          "id": "omsxpn68",
+          "text": "「一百条！少一条，就把你写进灵枢，标题《抠门学者挨打记》！」",
+          "text_sha256": "4be45227f2c40793ae259f1724b28cc3ed0bcc2f287346c6e1a69aece88c4fde",
+          "existing_sprites": [
+            {
+              "uid": "9duavmvn",
+              "asset": "52119ew2",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 3274,
+          "index": 3273,
+          "id": "22ckqhon",
+          "text": "（尾鳍拍床。两下。）",
+          "text_sha256": "278f566e1a6768bcc0d68c5e69dae4ea3a1f7702befcf33b0b20b06575cd60d6",
+          "existing_sprites": [
+            {
+              "uid": "9duavmvn",
+              "asset": "52119ew2",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        }
+      ],
+      "depends_on": [],
+      "kind": "scene",
+      "review_status": "结构校验通过，语义覆盖仍待逐句审查",
+      "note": "范围仅沿用原计划，不代表已核准。",
+      "human_approved": false,
+      "integrated": false,
+      "production_status": "成图已完成",
+      "candidate_file": "candidates/V25.png",
+      "visual_limitations": "尾巴隐藏，不能据此声称已验证尾巴结构；部分对话需要额外表情。"
+    },
+    {
+      "id": "V26",
+      "name": "帐篷床上·举枕轻嗔",
+      "original_status": "尚未调用",
+      "original_ranges": [
+        [
+          3245,
+          3246
+        ]
+      ],
+      "proposed_ranges": [
+        [
+          3245,
+          3246
+        ]
+      ],
+      "nodes": [
+        {
+          "number": 3245,
+          "index": 3244,
+          "id": "e5jcrsh6",
+          "text": "她抓起枕头砸我。",
+          "text_sha256": "57f24735f2bf09472b0b9b5f8dcc5b207d1be00b8a4cc81b19a0d4b3d9eb69a9",
+          "existing_sprites": [
+            {
+              "uid": "9duavmvn",
+              "asset": "52119ew2",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        },
+        {
+          "number": 3246,
+          "index": 3245,
+          "id": "k5dhs91b",
+          "text": "力道很轻。",
+          "text_sha256": "28b4f28996757b64c9d3877d55a583582063b4e594b5c8f4f3ed26d170ec3e8e",
+          "existing_sprites": [
+            {
+              "uid": "9duavmvn",
+              "asset": "52119ew2",
+              "x": 640,
+              "y": 1040,
+              "h": 1000,
+              "flip": false
+            }
+          ]
+        }
+      ],
+      "depends_on": [
+        "V25"
+      ],
+      "kind": "scene",
+      "review_status": "结构校验通过，语义覆盖仍待逐句审查",
+      "note": "范围仅沿用原计划，不代表已核准。",
+      "human_approved": false,
+      "integrated": false,
+      "production_status": "成图已完成",
+      "candidate_file": "candidates/V26.png",
+      "visual_limitations": "属于准备轻丢瞬间；不表示整段投掷动画已制作。"
+    }
+  ],
+  "supplement": {
+    "id": "V01-low",
+    "nodes": [
+      {
+        "number": 201,
+        "index": 200,
+        "id": "3frz0272",
+        "text": "喝到最后，她忽然停下来，盯着杯子里的桂花看了一会儿。"
+      },
+      {
+        "number": 202,
+        "index": 201,
+        "id": "6s4ciafk",
+        "text": "「……喂，人类。」"
+      },
+      {
+        "number": 203,
+        "index": 202,
+        "id": "dfkb4sfb",
+        "text": "「昨天那个，加桂花的要求。」"
+      },
+      {
+        "number": 204,
+        "index": 203,
+        "id": "rkd43n5l",
+        "text": "「你还记得，算你过关。」"
+      }
+    ],
+    "human_approved": false
+  }
+}

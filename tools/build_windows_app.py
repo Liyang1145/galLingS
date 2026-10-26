@@ -247,7 +247,7 @@ def main(argv: list[str] | None = None) -> int:
         shutil.copy2(loader, out / loader.name)
     (out / "galLingS/desktop-runtime.json").write_text(json.dumps({"format": report["format"], "game": GAME_NAME, "player": "official-vnstudio"}, ensure_ascii=False), encoding="utf-8")
     (out / "运行资源清单.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    debug = '@echo off\nchcp 65001 >nul\ncd /d "%~dp0galLingS"\n"%~dp0python\\python.exe" -X utf8 -m server --no-browser --host 127.0.0.1\npause\n'
+    debug = '@echo off\nchcp 65001 >nul\ncd /d "%~dp0galLingS"\n"%~dp0python\\python.exe" -X utf8 -m server --no-browser\npause\n'
     (out / "调试-启动后端.bat").write_bytes(debug.replace("\n", "\r\n").encode("utf-8"))
     if args.zip:
         shutil.make_archive(str(out), "zip", root_dir=out.parent, base_dir=out.name)

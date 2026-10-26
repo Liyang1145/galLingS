@@ -62,18 +62,24 @@ pub fn check_server_health(port: u16) -> bool {
     let Ok(mut stream) = TcpStream::connect_timeout(&addr, Duration::from_millis(180)) else {
         return false;
     };
-    let _ = stream.set_read_timeout(Some(Duration::from_millis(250)));
+    let _ = stream.set_read_timeout(Some(Duration::from_millis(500)));
     let _ = stream.set_write_timeout(Some(Duration::from_millis(250)));
     let req = format!("GET /health HTTP/1.1\r\nHost: 127.0.0.1:{port}\r\nConnection: close\r\n\r\n");
     if stream.write_all(req.as_bytes()).is_err() {
         return false;
     }
-    let mut buf = [0u8; 512];
-    let Ok(n) = stream.read(&mut buf) else {
+    // Headers and JSON body may arrive in different TCP reads. Connection: close
+    // bounds the response; cap it as well so an unrelated service cannot stream
+    // unbounded data into the startup probe.
+    let mut text = String::new();
+    if stream.take(8192).read_to_string(&mut text).is_err() {
         return false;
-    };
-    let text = String::from_utf8_lossy(&buf[..n]);
-    text.starts_with("HTTP/1.1 200") && (text.contains("\"status\"") || text.contains("\"ok\""))
+    }
+    let Some((headers, body)) = text.split_once("\r\n\r\n") else { return false; };
+    if !headers.starts_with("HTTP/1.1 200 ") { return false; }
+    let Ok(health) = serde_json::from_str::<serde_json::Value>(body) else { return false; };
+    health.get("service").and_then(|v| v.as_str()) == Some("gallings")
+        && health.get("ok").and_then(|v| v.as_bool()) == Some(true)
 }
 
 fn pick_available_port(preferred: u16) -> u16 {
@@ -281,7 +287,7 @@ pub fn ensure_python_backend(app: &AppHandle) -> Option<String> {
         return None;
     }
 
-    let deadline = Instant::now() + Duration::from_millis(5500);
+    let deadline = Instant::now() + Duration::from_secs(15);
     while Instant::now() < deadline {
         if check_server_health(port) {
             return Some(format!("http://127.0.0.1:{port}/vn.html?steam=1"));
@@ -298,4 +304,38 @@ pub fn ensure_python_backend(app: &AppHandle) -> Option<String> {
     stop_python_server();
     startup_issue(format!("完整引擎启动超过等待时间，已停止本次后台进程。\n日志位置：{}", log_path.display()));
     None
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    fn split_response(body: &'static str) -> (u16, std::thread::JoinHandle<()>) {
+        let listener = TcpListener::bind(("127.0.0.1", 0)).unwrap();
+        let port = listener.local_addr().unwrap().port();
+        let handle = std::thread::spawn(move || {
+            let (mut client, _) = listener.accept().unwrap();
+            let mut request = [0u8; 1024];
+            client.read(&mut request).unwrap();
+            write!(client, "HTTP/1.1 200 OK\r\nContent-Length: {}\r\nConnection: close\r\n\r\n", body.len()).unwrap();
+            client.flush().unwrap();
+            std::thread::sleep(Duration::from_millis(30));
+            client.write_all(body.as_bytes()).unwrap();
+        });
+        (port, handle)
+    }
+
+    #[test]
+    fn health_probe_reads_body_after_separate_headers() {
+        let (port, server) = split_response(r#"{"ok":true,"status":"ok","service":"gallings"}"#);
+        assert!(check_server_health(port));
+        server.join().unwrap();
+    }
+
+    #[test]
+    fn health_probe_does_not_reuse_another_service() {
+        let (port, server) = split_response(r#"{"ok":true,"status":"ok","service":"other"}"#);
+        assert!(!check_server_health(port));
+        server.join().unwrap();
+    }
 }

@@ -41,6 +41,8 @@ jobs:
         run: cargo build --release --target wasm32-unknown-unknown 2>&1 | tee -a "$RUNNER_TEMP/ci.log"; exit ${PIPESTATUS[0]}
       - name: 离线包
         run: python tools/build_desktop_dist.py 2>&1 | tee -a "$RUNNER_TEMP/ci.log"; exit ${PIPESTATUS[0]}
+      - name: 后端启动探针回归
+        run: cargo test --release --manifest-path desktop/src-tauri/Cargo.toml backend::tests 2>&1 | tee -a "$RUNNER_TEMP/ci.log"; exit ${PIPESTATUS[0]}
       - name: Tauri 打包
         working-directory: desktop
         run: npx --yes @tauri-apps/cli@2 build 2>&1 | tee -a "$RUNNER_TEMP/ci.log"; exit ${PIPESTATUS[0]}
@@ -93,6 +95,8 @@ jobs:
         run: cargo build --release --target wasm32-unknown-unknown 2>&1 | tee -a "$RUNNER_TEMP/ci.log"; exit ${PIPESTATUS[0]}
       - name: 离线包
         run: python tools/build_desktop_dist.py 2>&1 | tee -a "$RUNNER_TEMP/ci.log"; exit ${PIPESTATUS[0]}
+      - name: 后端启动探针回归
+        run: cargo test --release --manifest-path desktop/src-tauri/Cargo.toml backend::tests 2>&1 | tee -a "$RUNNER_TEMP/ci.log"; exit ${PIPESTATUS[0]}
       - name: Tauri 打包（AppImage + deb）
         working-directory: desktop
         run: npx --yes @tauri-apps/cli@2 build --bundles appimage,deb 2>&1 | tee -a "$RUNNER_TEMP/ci.log"; exit ${PIPESTATUS[0]}

@@ -43,18 +43,24 @@ def inline(text):
 
 html = open(f'{G}/index.html', encoding='utf-8').read()
 game = open(f'{G}/game.js', encoding='utf-8').read()
+# Only declared runtime sources are embedded; provenance paths may name archived files.
+parsed_game = json.loads(game.split('=', 1)[1].strip().rstrip(';'))
+asset_paths = {a.get('src') for a in parsed_game.get('assets', {}).values() if isinstance(a, dict)}
 css = open(f'{G}/game-polish.css', encoding='utf-8').read()
 ledger = open(pathlib.Path(__file__).with_name('playtest_ledger.js'), encoding='utf-8').read()
 
 order = []; idx = {}
 pat_js = re.compile(r'"(assets/[^"\s]+?\.(?:webp|png|jpe?g|mp3|ogg|wav|m4a))"')
 def rep_js(mo):
+    if mo.group(1) not in asset_paths: return mo.group(0)
     u = data_uri(mo.group(1))
     if not u: return mo.group(0)
     if mo.group(1) not in idx: idx[mo.group(1)] = len(order); order.append(u)
     return '__D[' + str(idx[mo.group(1)]) + ']'
 body = pat_js.sub(rep_js, game)
 css_i = inline(css)
+if stats['missing']:
+    raise FileNotFoundError('Missing runtime assets: ' + ', '.join(stats['missing']))
 html = html.replace('<link rel="stylesheet" href="game-polish.css">', '<style>\n' + css_i + '\n</style>', 1)
 html = html.replace('<title>VN Studio</title>', '<title>海风与布丁 · 试玩版（含对白账本）</title>', 1)
 assert '<script src="game.js"></script>' in html

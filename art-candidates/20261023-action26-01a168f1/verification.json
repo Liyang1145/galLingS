@@ -1,0 +1,14 @@
+{
+  "candidate_count": 26,
+  "unique_ids": 26,
+  "sprites_rgba": 15,
+  "scenes_opaque": 11,
+  "original_candidate_hashes_match": true,
+  "gallery_links_exist": true,
+  "png_decode": "passed",
+  "runtime_game_test": "not run; no game modifications",
+  "human_review": "pending",
+  "generation_calls_this_turn": 25,
+  "selected_new_images_this_turn": 22,
+  "superseded_versions_this_turn": 3
+}

@@ -9,7 +9,7 @@
 | | `tools/` | `tools/oneoff/` |
 |---|---|---|
 | 性质 | 长期工具，反复使用 | 一次性，只服务某一批次 |
-| 例子 | `check_full_regression.py`、`build_single_file_game.py`、`produce_art_upgrade.py` | `queue_art_review_round2.py`、`adopt_tail_skin_corrections.py` |
+| 例子 | `build_art_catalog.py`、`build_single_file_game.py`、`produce_art_upgrade.py` | `queue_art_review_round2.py`、`adopt_tail_skin_corrections.py` |
 | 出问题要修吗 | 要 | 不用，直接照抄思路重写一个即可 |
 
 ## 怎么判断一个脚本该进这里

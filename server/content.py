@@ -1,7 +1,6 @@
-"""内容加载：编译好的章节、角色卡（内置 content/cards 与玩家建的 ~/.gallings/cards）。"""
+"""辅助服务的角色卡读取；不编译或加载剧情章节。"""
 from __future__ import annotations
 
-import hashlib
 import json
 from pathlib import Path
 from typing import Any
@@ -9,32 +8,6 @@ from typing import Any
 import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
-
-
-def canonical(obj: Any) -> str:
-    return json.dumps(obj, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
-
-
-def sha16(obj: Any) -> str:
-    return hashlib.sha256(canonical(obj).encode("utf-8")).hexdigest()[:16]
-
-
-def load_chapter_file(path: Path) -> dict[str, Any]:
-    return json.loads(Path(path).read_text(encoding="utf-8"))
-
-
-def ensure_chapter(chapter_dir: Path) -> Path:
-    """chapter.json 不存在或比源稿旧时自动重编译。"""
-    out = chapter_dir / "chapter.json"
-    scripts = [p for p in chapter_dir.glob("*.md") if p.name not in ("report.md", "README.md")]
-    srcs = scripts + [chapter_dir / "beats.yaml"]
-    if not out.exists() or any(p.stat().st_mtime > out.stat().st_mtime for p in srcs if p.exists()):
-        from compiler.compile import canonical as c2, compile_chapter
-        appendix = chapter_dir.parent / "appendix_e.md"
-        ch, report = compile_chapter(scripts[0], chapter_dir / "beats.yaml", appendix if appendix.exists() else None)
-        out.write_text(c2(ch) + "\n", encoding="utf-8", newline="\n")
-        (chapter_dir / "report.md").write_text(report, encoding="utf-8", newline="\n")
-    return out
 
 
 def load_card_any(path: str | Path) -> dict[str, Any]:

@@ -1,4 +1,4 @@
-"""进程级运行时：配置、插件管理器、章节、角色卡库。一个进程一个，多个会话共用。"""
+"""旧制作/独立聊天辅助服务：配置、插件管理器与角色卡，不加载或运行剧情。"""
 from __future__ import annotations
 
 import asyncio
@@ -9,7 +9,7 @@ from typing import Any
 
 import yaml
 
-from .content import CardStore, ensure_chapter, load_chapter_file
+from .content import CardStore
 from .plugins import LLMPlugin, PluginManager, PluginSettings
 from .settings_store import SettingsStore
 
@@ -54,23 +54,6 @@ class Runtime:
         config = self.config = self.settings.overlay(config)
         game = config.get("game") or {}
         self.game = game
-        cdir = Path(game.get("chapter_dir", "content/scripts/ch01"))
-        cdir = cdir if cdir.is_absolute() else ROOT / cdir
-        vn_game = game.get("vn_game") if game.get("source") == "vnstudio" else None
-        try:
-            if vn_game:
-                # 一个游戏：VN Studio 作品经导入器变成 OP 程序，由 galcore 跑（PLAN §16.1 importer）
-                from compiler.vnstudio import ensure_imported
-                self.chapter_path = ensure_imported(self.games_dir / vn_game, self.data_dir / "imports")
-            else:
-                self.chapter_path = ensure_chapter(cdir)
-            self.chapter = load_chapter_file(self.chapter_path)
-            self.has_chapter = True
-        except (IndexError, FileNotFoundError):
-            # 没有剧本内容包（content/scripts/ch01）：AI 剧本会话不能用，但作品页 /vn.html 和设置照常可用
-            self.chapter_path = cdir / "chapter.json"
-            self.chapter = {"chapter_id": "none", "title": "（没有剧本内容包）", "content_hash": "", "program": [], "slots": []}
-            self.has_chapter = False
         self.cards = CardStore(ROOT / "content" / "cards", self.data_dir / "cards")
         self.plugins = self._make_plugins()
         self._reload_lock = asyncio.Lock()
@@ -80,7 +63,7 @@ class Runtime:
         return PluginManager(settings, self.data_dir, environ=self.settings.environ(self.base_environ))
 
     async def reload_plugins(self) -> dict[str, Any]:
-        """网页里改了设置：重新叠配置、重启插件。正在进行的剧本会话下次开局才用上新模型。"""
+        """辅助页修改配置后串行重启插件，不创建或迁移剧情会话。"""
         # 两次保存挨得很近时要排队：不然两个重启交错，前一个新起的插件（比如灵枢子进程）没人关
         async with self._reload_lock:
             await self.plugins.stop()

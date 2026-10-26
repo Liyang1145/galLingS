@@ -4,20 +4,19 @@
 <meta charset="utf-8">
 <link rel="icon" href="data:,">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>海风与布丁 · 游玩</title>
+<title>海风与布丁 · 旧制作与聊天辅助页</title>
 <link rel="stylesheet" href="/static/style.css">
 <style id="soulCss"></style>
 <link rel="stylesheet" href="/static/vn-polish.css">
 </head>
 <body class="player chrome vnpage">
 <header class="topbar">
-  <div class="brand"><b id="gameBrand">海风与布丁</b><span id="chapterTitle"></span></div>
+  <div class="brand"><b id="gameBrand">海风与布丁</b><span>旧制作辅助</span><span id="chapterTitle"></span></div>
   <div class="tb-group" role="group" aria-label="游戏">
     <button id="saveBtn" class="ib" title="存档"><svg class="gi" viewBox="0 0 24 24" aria-hidden="true"><path d="M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/> <path d="M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7"/> <path d="M7 3v4a1 1 0 0 0 1 1h7"/></svg><span>存档</span></button>
     <button id="loadBtn" class="ib" title="读档"><svg class="gi" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 14 1.5-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.54 6a2 2 0 0 1-1.95 1.5H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H18a2 2 0 0 1 2 2v2"/></svg><span>读档</span></button>
     <button id="journalBtn" class="ib" title="手账（右侧栏）"><svg class="gi" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/> <path d="M8.62 9.8A2.25 2.25 0 1 1 12 6.836a2.25 2.25 0 1 1 3.38 2.966l-2.626 2.856a.998.998 0 0 1-1.507 0z"/></svg><span>手账</span><b class="dotnew" id="journalNew" hidden></b></button>
     <button id="titleBtn" class="ib" title="回到标题画面"><svg class="gi" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/> <path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>标题</span></button>
-    <button id="replayBtn" class="ib" title="重播录像：把录下的一局按原节奏重放给观众看（不调用模型）"><svg class="gi" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/> <path d="M3 3v5h5"/> <path d="M12 7v5l4 2"/></svg><span>重播</span></button>
     <button id="audioBtn" class="ib" title="试听音乐与音效" hidden><svg class="gi" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 14v-3a9 9 0 0 1 18 0v3"/><rect x="2" y="12" width="5" height="9" rx="2"/><rect x="17" y="12" width="5" height="9" rx="2"/></svg><span>试听</span></button>
     <button id="plugBtn" hidden class="ib" title="插件：GalAgent 等（在游戏里打开插件面板）"><svg class="gi" viewBox="0 0 24 24" aria-hidden="true"><path d="M15.39 4.39a1 1 0 0 0 1.68-.474 2.5 2.5 0 1 1 3.014 3.015 1 1 0 0 0-.474 1.68l1.683 1.682a2.414 2.414 0 0 1 0 3.414L19.61 15.39a1 1 0 0 1-1.68-.474 2.5 2.5 0 1 0-3.014 3.015 1 1 0 0 1 .474 1.68l-1.683 1.682a2.414 2.414 0 0 1-3.414 0L8.61 19.61a1 1 0 0 0-1.68.474 2.5 2.5 0 1 1-3.014-3.015 1 1 0 0 0 .474-1.68l-1.683-1.682a2.414 2.414 0 0 1 0-3.414L4.39 8.61a1 1 0 0 1 1.68.474 2.5 2.5 0 1 0 3.014-3.015 1 1 0 0 1-.474-1.68l1.683-1.682a2.414 2.414 0 0 1 3.414 0z"/></svg><span>插件</span></button>
   </div>
@@ -30,7 +29,6 @@
   </div>
   <div class="tb-spacer"></div>
   <div id="status" class="status"></div>
-  <button id="tlBtn" class="ib" title="引擎时间轴：每一步的事件、裁决与状态（调试）" aria-expanded="false"><svg class="gi" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg><span>时间轴</span></button>
   <button id="setBtn" class="ib" title="设置：模型、记忆、手账、游戏"><svg class="gi" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"/> <circle cx="12" cy="12" r="3"/></svg><span>设置</span></button>
 </header>
 
@@ -45,16 +43,6 @@
     <div class="tl-resizer" id="tlResizer" title="拖动调整宽度，双击恢复默认"></div>
     <button class="j-close" id="jClose" title="收起手账（收起后手账回到游戏里）"><svg class="gi" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/> <path d="m6 6 12 12"/></svg></button>
     <div id="soulDock"></div>
-  </aside>
-  <aside class="engine-tl" id="engineTl" hidden aria-label="引擎时间轴">
-    <header class="etl-head">
-      <b>引擎时间轴</b><span id="etlSess" class="muted"></span>
-      <button class="j-close" id="etlClose" title="收起时间轴"><svg class="gi" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/> <path d="m6 6 12 12"/></svg></button>
-    </header>
-    <div class="etl-state" id="etlState"></div>
-    <div class="etl-seek" id="etlSeek" hidden></div>
-    <ol class="etl-rows" id="etlRows"></ol>
-    <footer class="etl-foot muted" id="etlFoot">还没有引擎会话：从作品标题画面开始游戏后，引擎每走一步都会列在这里。</footer>
   </aside>
 </main>
 
@@ -93,28 +81,8 @@
   <div class="set-foot"><small class="muted" id="saveOut"></small><button type="button" id="sClose">关闭</button><button type="button" class="primary" id="sSave">保存</button></div>
 </dialog>
 
-<dialog id="replayDlg">
-  <h3>重播录像</h3>
-  <div class="set-body">
-    <section id="rpCtlSec" class="rp-ctl" hidden>
-      <h4>正在重播 <small id="rpProg" class="muted"></small></h4>
-      <div class="set-row"><span>播放</span><button type="button" id="rpPause"></button><button type="button" id="rpStep"></button><button type="button" id="rpStop"></button></div>
-      <div class="set-row"><span>跳到第几步</span><input id="rpJump" type="number" min="0" step="1"><button type="button" id="rpJumpGo">跳过去</button></div>
-      <div class="set-row"><span>倍速</span><div class="seg" id="rpSpeedNow"></div></div>
-      <div class="set-row"><span></span><small class="muted" id="rpNote"></small></div>
-    </section>
-    <section>
-      <h4>录下的局 <small class="muted">每局都会自动录下；重播只用录像里的事件，不调用模型</small></h4>
-      <ul class="rp-list" id="rpList"></ul>
-      <div class="set-row"><span>倍速</span><div class="seg" id="rpSpeed"></div></div>
-    </section>
-  </div>
-  <div class="set-foot"><small class="muted" id="rpOut"></small><span class="tb-spacer"></span><button type="button" id="rpClose">关闭</button><button type="button" class="primary" id="rpGo">开始重播</button></div>
-</dialog>
 
-<script src="/static/offline/steam-host.js"></script>
 <script src="/static/icons.js"></script>
 <script src="/static/vn.js"></script>
-<script src="/static/timeline.js"></script>
 </body>
 </html>

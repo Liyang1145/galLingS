@@ -2,280 +2,23 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://gallings.dev/schemas/ws.schema.json",
   "title": "galLingS WebSocket 协议",
-  "description": "PLAN §14.1。所有消息都是一个 JSON 对象，用 type 区分。四个端点：/ws（引擎会话，server/session.py）、/ws/replay 与 /ws?replay=（录制回放演示模式，server/replay.py ReplayPlayer）、/ws/soul（灵枢外部端口 vn-soul/1，server/soul.py）、/ws/post_ending（结局后聊天 galagent/1，plugins/builtin/galagent/loop.py）。$defs 下 <端点>_c2s / <端点>_s2c 是各端点每个方向的全部消息。以实际代码为准；说明见 docs/protocol.md，契约测试 tests/contract/test_schemas.py。",
+  "description": "仅保留 /ws/soul（vn-soul/1）与 /ws/post_ending（galagent/1）的现有消息定义。旧托管剧情与回放端点已退役；正式 TypeScript 游戏不使用此协议。",
   "anyOf": [
-    {"$ref": "#/$defs/main_c2s"}, {"$ref": "#/$defs/main_s2c"},
-    {"$ref": "#/$defs/replay_c2s"}, {"$ref": "#/$defs/replay_s2c"},
-    {"$ref": "#/$defs/soul_c2s"}, {"$ref": "#/$defs/soul_s2c"},
-    {"$ref": "#/$defs/post_ending_c2s"}, {"$ref": "#/$defs/post_ending_s2c"}
+    {"$ref": "#/$defs/soul_c2s"},
+    {"$ref": "#/$defs/soul_s2c"},
+    {"$ref": "#/$defs/post_ending_c2s"},
+    {"$ref": "#/$defs/post_ending_s2c"}
   ],
   "$defs": {
     "msg_id": {"type": ["integer", "string", "null"], "description": "请求 ID，原样带回"},
-    "slot": {"type": ["string", "integer"], "description": "服务端按字符串处理（缺省 \"1\"）"},
-    "render_op": {"$ref": "op.schema.json#/$defs/render_op"},
-    "state_op": {"$ref": "op.schema.json#/$defs/op_STATE"},
-    "choice_op": {"allOf": [{"$ref": "op.schema.json#/$defs/render_op"}, {"properties": {"op": {"const": "CHOICE"}}}]},
 
-    "c_start": {"type": "object", "additionalProperties": false, "required": ["type", "line_id"],
-                "description": "从某一章开头开局（VN Studio 作品的章节入口句 ID）；只能是第一个动作",
-                "properties": {"type": {"const": "start"}, "line_id": {"type": "string"}}},
-    "c_advance": {"type": "object", "additionalProperties": false, "required": ["type"], "properties": {"type": {"const": "advance"}}},
-    "c_choose": {"type": "object", "additionalProperties": false, "required": ["type", "option_id"],
-                 "properties": {"type": {"const": "choose"}, "option_id": {"type": "string", "minLength": 1}}},
-    "c_input": {"type": "object", "additionalProperties": false, "required": ["type", "text"],
-                "description": "AI 模式下在选项点打字（服务端截到 200 字）",
-                "properties": {"type": {"const": "input"}, "text": {"type": "string"}}},
-    "c_mode": {"type": "object", "additionalProperties": false, "required": ["type", "mode"],
-               "properties": {"type": {"const": "mode"}, "mode": {"enum": ["choice", "ai"]}}},
-    "c_snapshot": {"type": "object", "additionalProperties": false, "required": ["type"],
-                   "description": "要一份可带走的引擎快照（播放器自己存档用；不改状态、不记事件）",
-                   "properties": {"type": {"const": "snapshot"}}},
-    "c_restore": {"type": "object", "additionalProperties": false, "required": ["type", "save"],
-                  "description": "新会话从播放器存档里的引擎快照接着跑（连接时带 ?restore=1，服务端不自己开局）",
-                  "properties": {"type": {"const": "restore"}, "save": {"$ref": "#/$defs/save_blob"}}},
-    "c_save": {"type": "object", "additionalProperties": false, "required": ["type"],
-               "properties": {"type": {"const": "save"}, "slot": {"$ref": "#/$defs/slot"}}},
-    "c_load": {"type": "object", "additionalProperties": false, "required": ["type"],
-               "properties": {"type": {"const": "load"}, "slot": {"$ref": "#/$defs/slot"}}},
-    "c_seek": {"type": "object", "additionalProperties": false, "required": ["type", "seq"],
-               "description": "调试时间轴拖动：回放到 seq 看那一刻（只看，不改进度）",
-               "properties": {"type": {"const": "seek"}, "seq": {"type": "integer", "minimum": 0}}},
-    "c_diary": {"type": "object", "additionalProperties": false, "required": ["type"], "properties": {"type": {"const": "diary"}}},
-
-    "main_c2s": {
-      "title": "/ws 客户端 → 服务端",
-      "type": "object", "required": ["type"],
-      "properties": {"type": {"enum": ["start", "advance", "choose", "input", "mode", "snapshot", "restore", "save", "load", "seek", "diary"]}},
-      "allOf": [
-        {"if": {"properties": {"type": {"const": "start"}}}, "then": {"$ref": "#/$defs/c_start"}},
-        {"if": {"properties": {"type": {"const": "advance"}}}, "then": {"$ref": "#/$defs/c_advance"}},
-        {"if": {"properties": {"type": {"const": "choose"}}}, "then": {"$ref": "#/$defs/c_choose"}},
-        {"if": {"properties": {"type": {"const": "input"}}}, "then": {"$ref": "#/$defs/c_input"}},
-        {"if": {"properties": {"type": {"const": "mode"}}}, "then": {"$ref": "#/$defs/c_mode"}},
-        {"if": {"properties": {"type": {"const": "snapshot"}}}, "then": {"$ref": "#/$defs/c_snapshot"}},
-        {"if": {"properties": {"type": {"const": "restore"}}}, "then": {"$ref": "#/$defs/c_restore"}},
-        {"if": {"properties": {"type": {"const": "save"}}}, "then": {"$ref": "#/$defs/c_save"}},
-        {"if": {"properties": {"type": {"const": "load"}}}, "then": {"$ref": "#/$defs/c_load"}},
-        {"if": {"properties": {"type": {"const": "seek"}}}, "then": {"$ref": "#/$defs/c_seek"}},
-        {"if": {"properties": {"type": {"const": "diary"}}}, "then": {"$ref": "#/$defs/c_diary"}}
-      ]
-    },
-
-    "save_blob": {
-      "type": "object", "additionalProperties": false, "required": ["snapshot", "content_hash", "seq", "recent", "choice_op"],
-      "properties": {
-        "snapshot": {"type": "string", "description": "Engine::snapshot() 的 JSON 字符串（结构见 event.schema.json#/$defs/engine_snapshot）"},
-        "content_hash": {"type": "string", "pattern": "^[0-9a-f]{16}$"},
-        "seq": {"type": "integer", "minimum": 0},
-        "recent": {"type": "array", "items": {"type": "string"}, "maxItems": 40},
-        "choice_op": {"anyOf": [{"type": "null"}, {"$ref": "#/$defs/choice_op"}]}
-      }
-    },
     "card_brief": {"type": "object", "additionalProperties": false, "required": ["id", "name"],
                    "properties": {"id": {"type": ["string", "null"]}, "name": {"type": ["string", "null"]}}},
-    "replay_info": {"type": "object", "additionalProperties": false, "required": ["id", "steps", "at", "speed", "paused", "recorded_screen"],
-                    "properties": {"id": {"type": "string"}, "steps": {"type": "integer", "minimum": 0}, "at": {"type": "integer", "minimum": 0},
-                                   "speed": {"type": "number", "exclusiveMinimum": 0}, "paused": {"type": "boolean"},
-                                   "recorded_screen": {"type": "boolean", "description": "日志里有 sent 行；false = 旧日志，画面按事件重建"}}},
-
-    "s_hello": {
-      "type": "object", "additionalProperties": false,
-      "required": ["type", "session", "card", "mode", "llm", "memory", "chapter", "seed", "header"],
-      "description": "连接后第一条：会话信息 + 日志头（去掉整张卡）。重播时 session 为 replay-<日志id>，多一个 replay",
-      "properties": {
-        "type": {"const": "hello"}, "session": {"type": "string", "minLength": 1}, "card": {"$ref": "#/$defs/card_brief"},
-        "mode": {"enum": ["choice", "ai"]}, "llm": {"type": "boolean"}, "memory": {"type": "boolean"},
-        "chapter": {"type": "object", "additionalProperties": false, "required": ["id", "title"],
-                    "properties": {"id": {"type": "string"}, "title": {"type": "string"}}},
-        "seed": {"type": ["integer", "null"]},
-        "header": {"allOf": [{"$ref": "event.schema.json#/$defs/header_fields"}, {"not": {"required": ["card"]}}]},
-        "replay": {"$ref": "#/$defs/replay_info"}
-      }
-    },
-    "s_ops": {"type": "object", "additionalProperties": false, "required": ["type", "ops"],
-              "description": "一批渲染指令（引擎 step 的 ops，过了锁定台词校验与演绎层），末尾通常是 STATE",
-              "properties": {"type": {"const": "ops"}, "ops": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/render_op"}}}},
-    "timeline_out": {
-      "type": "object", "additionalProperties": false, "required": ["op"],
-      "description": "这一步引擎吐出的指令摘要（最多 12 条）",
-      "properties": {"op": {"enum": ["SAY", "CHOICE", "SCENE", "BGM", "END", "TAIL", "INPUT"]},
-                     "speaker": {"type": ["string", "null"]}, "text": {"type": "string", "maxLength": 60},
-                     "src": {"type": ["string", "null"]}, "origin": {"type": ["string", "null"]},
-                     "id": {"type": ["string", "null"]}, "bg": {"type": "string"}, "track": {"type": ["string", "null"]},
-                     "ending": {"type": ["string", "null"]}, "ending_id": {"type": ["string", "null"]}, "kind": {"type": "string"}, "n": {"type": "integer", "minimum": 0}}
-    },
-    "timeline_row": {
-      "type": "object", "additionalProperties": false,
-      "required": ["seq", "kind", "source", "payload", "verdicts", "state_hash", "wall_ms", "out", "state"],
-      "description": "事件日志的一行 + 指令摘要 + 状态（只给调试时间轴；load 的 payload 去掉了快照）",
-      "properties": {
-        "seq": {"type": "integer", "minimum": 1}, "kind": {"$ref": "event.schema.json#/$defs/kind"},
-        "source": {"$ref": "event.schema.json#/$defs/source"}, "payload": {"type": "object"},
-        "verdicts": {"type": "array", "items": {"$ref": "event.schema.json#/$defs/verdict"}},
-        "state_hash": {"type": "string", "pattern": "^[0-9a-f]{16}$"}, "wall_ms": {"type": "integer", "minimum": 0},
-        "display": {"type": "object"},
-        "option_text": {"type": "string", "description": "choice 行：所选选项原文"},
-        "out": {"type": "array", "maxItems": 12, "items": {"$ref": "#/$defs/timeline_out"}},
-        "state": {"type": "object", "additionalProperties": false,
-                  "required": ["affection", "tails", "lineage", "turn", "wait", "mode", "vars"],
-                  "properties": {"affection": {"type": "integer"}, "tails": {"type": "integer", "minimum": 0},
-                                 "lineage": {"type": "string"}, "turn": {"type": "integer", "minimum": 0},
-                                 "wait": {"enum": ["ready", "say", "choice", "end"]}, "mode": {"enum": ["choice", "ai"]},
-                                 "vars": {"type": "object", "additionalProperties": {"type": "integer"}}}}
-      },
-      "allOf": [
-        {"if": {"properties": {"kind": {"const": "load"}}},
-         "then": {"properties": {"payload": {"type": "object", "additionalProperties": false, "required": ["slot", "new_lineage"],
-                                             "properties": {"slot": {"type": "string"}, "new_lineage": {"type": "string"}}}}},
-         "else": {"$ref": "event.schema.json#/$defs/payload_by_kind"}}
-      ]
-    },
-    "s_timeline": {"type": "object", "additionalProperties": false, "required": ["type", "row"],
-                   "description": "每个事件提交后一条",
-                   "properties": {"type": {"const": "timeline"}, "row": {"$ref": "#/$defs/timeline_row"}}},
-    "s_busy": {"type": "object", "additionalProperties": false, "required": ["type", "on"],
-               "description": "AI 回合进行中（输入框应禁用）",
-               "properties": {"type": {"const": "busy"}, "on": {"type": "boolean"}}},
-    "s_error": {"type": "object", "additionalProperties": false, "required": ["type", "message"],
-                "properties": {"type": {"const": "error"}, "message": {"type": "string", "minLength": 1}}},
-    "s_notice": {"type": "object", "additionalProperties": false, "required": ["type", "message"],
-                 "description": "给玩家看的提示（引回选项、降级到纯选项、日记写好了）",
-                 "properties": {"type": {"const": "notice"}, "message": {"type": "string", "minLength": 1}}},
-    "s_saved": {"type": "object", "additionalProperties": false, "required": ["type", "slot", "turn"],
-                "properties": {"type": {"const": "saved"}, "slot": {"type": "string"}, "turn": {"type": "integer", "minimum": 0}}},
-    "s_snapshot": {"type": "object", "additionalProperties": false, "required": ["type", "save"],
-                   "properties": {"type": {"const": "snapshot"}, "save": {"$ref": "#/$defs/save_blob"}}},
-    "screen": {
-      "type": "object", "additionalProperties": false,
-      "description": "把一串 ops 折叠成的“那一刻的画面”（server/replay.py screen_from_ops）；restore 后为空对象",
-      "properties": {
-        "scene": {"anyOf": [{"type": "null"}, {"$ref": "#/$defs/render_op"}]},
-        "bgm": {"anyOf": [{"type": "null"}, {"$ref": "#/$defs/render_op"}]},
-        "sprite": {"anyOf": [{"type": "null"}, {"$ref": "#/$defs/render_op"}]},
-        "say": {"anyOf": [{"type": "null"}, {"$ref": "#/$defs/render_op"}]},
-        "choice": {"anyOf": [{"type": "null"}, {"$ref": "#/$defs/render_op"}]},
-        "state": {"anyOf": [{"type": "null"}, {"$ref": "#/$defs/render_op"}]},
-        "tail": {"anyOf": [{"type": "null"}, {"$ref": "#/$defs/render_op"}]}
-      }
-    },
-    "s_screen": {
-      "type": "object", "additionalProperties": false, "required": ["type", "screen", "live"],
-      "description": "live=true：读档 / 重播跳转完成，当前进度就在这一刻（带 state）；live=false：时间轴拖动预览（带 seq、replay_ok），不改进度",
-      "properties": {"type": {"const": "screen"}, "screen": {"$ref": "#/$defs/screen"}, "live": {"type": "boolean"},
-                     "state": {"$ref": "#/$defs/state_op"}, "seq": {"type": "integer", "minimum": 0},
-                     "replay_ok": {"type": "boolean"}, "line_id": {"type": ["string", "null"], "description": "VN Studio 句子 ID（那一刻的台词）"},
-                     "replay": {"const": true}, "at": {"type": "integer", "minimum": 0}},
-      "allOf": [{"if": {"properties": {"live": {"const": true}}, "required": ["live"]}, "then": {"required": ["state"]},
-                 "else": {"required": ["seq", "replay_ok", "line_id"]}}]
-    },
-    "s_diary": {"type": "object", "additionalProperties": false, "required": ["type", "entries"],
-                "properties": {"type": {"const": "diary"},
-                               "entries": {"type": "array", "items": {"type": "object", "additionalProperties": false,
-                                                                     "required": ["text", "turn", "lineage"],
-                                                                     "properties": {"text": {"type": "string"}, "turn": {"type": "integer"},
-                                                                                    "lineage": {"type": "string"}}}}}},
-
-    "main_s2c": {
-      "title": "/ws 服务端 → 客户端",
-      "type": "object", "required": ["type"],
-      "properties": {"type": {"enum": ["hello", "ops", "timeline", "busy", "error", "notice", "saved", "snapshot", "screen", "diary"]}},
-      "allOf": [
-        {"if": {"properties": {"type": {"const": "hello"}}}, "then": {"$ref": "#/$defs/s_hello"}},
-        {"if": {"properties": {"type": {"const": "ops"}}}, "then": {"$ref": "#/$defs/s_ops"}},
-        {"if": {"properties": {"type": {"const": "timeline"}}}, "then": {"$ref": "#/$defs/s_timeline"}},
-        {"if": {"properties": {"type": {"const": "busy"}}}, "then": {"$ref": "#/$defs/s_busy"}},
-        {"if": {"properties": {"type": {"const": "error"}}}, "then": {"$ref": "#/$defs/s_error"}},
-        {"if": {"properties": {"type": {"const": "notice"}}}, "then": {"$ref": "#/$defs/s_notice"}},
-        {"if": {"properties": {"type": {"const": "saved"}}}, "then": {"$ref": "#/$defs/s_saved"}},
-        {"if": {"properties": {"type": {"const": "snapshot"}}}, "then": {"$ref": "#/$defs/s_snapshot"}},
-        {"if": {"properties": {"type": {"const": "screen"}}}, "then": {"$ref": "#/$defs/s_screen"}},
-        {"if": {"properties": {"type": {"const": "diary"}}}, "then": {"$ref": "#/$defs/s_diary"}}
-      ]
-    },
-    "screen_msg": {
-      "description": "录进事件日志 sent 行的画面消息（ops / screen / notice）",
-      "type": "object", "required": ["type"],
-      "properties": {"type": {"enum": ["ops", "screen", "notice"]}},
-      "allOf": [
-        {"if": {"properties": {"type": {"const": "ops"}}}, "then": {"$ref": "#/$defs/s_ops"}},
-        {"if": {"properties": {"type": {"const": "screen"}}}, "then": {"$ref": "#/$defs/s_screen"}},
-        {"if": {"properties": {"type": {"const": "notice"}}}, "then": {"$ref": "#/$defs/s_notice"}}
-      ]
-    },
-
-    "replay_control": {
-      "type": "object", "required": ["type"],
-      "properties": {"type": {"enum": ["pause", "resume", "play", "step", "speed", "jump", "seek", "stop"]}},
-      "allOf": [
-        {"if": {"properties": {"type": {"enum": ["pause", "resume", "play", "step", "stop"]}}},
-         "then": {"additionalProperties": false, "properties": {"type": true}}},
-        {"if": {"properties": {"type": {"const": "speed"}}},
-         "then": {"additionalProperties": false, "required": ["speed"],
-                  "properties": {"type": true, "speed": {"type": ["number", "string"], "description": "倍速，服务端夹到 0.1–1000"}}}},
-        {"if": {"properties": {"type": {"enum": ["jump", "seek"]}}},
-         "then": {"additionalProperties": false, "anyOf": [{"required": ["step"]}, {"required": ["at"]}],
-                  "properties": {"type": true, "step": {"type": "integer", "minimum": 0}, "at": {"type": "integer", "minimum": 0}}}}
-      ]
-    },
-    "replay_c2s": {
-      "title": "/ws/replay 客户端 → 服务端",
-      "description": "控制消息；/ws 的玩家操作（advance / choose / input / mode / save / load / restore / snapshot）照收但不生效，回 replay.ignored",
-      "anyOf": [{"$ref": "#/$defs/replay_control"},
-                {"allOf": [{"$ref": "#/$defs/main_c2s"},
-                           {"properties": {"type": {"enum": ["advance", "choose", "input", "mode", "save", "load", "restore", "snapshot"]}}}]}]
-    },
-    "s_replay": {
-      "type": "object", "required": ["type", "event"],
-      "description": "重播进度与控制回执",
-      "properties": {"type": {"const": "replay"}, "event": {"enum": ["step", "choose", "input", "done", "diverged", "control", "ignored"]}},
-      "allOf": [
-        {"if": {"properties": {"event": {"const": "step"}}},
-         "then": {"additionalProperties": false, "required": ["at", "steps", "seq", "kind"],
-                  "properties": {"type": true, "event": true, "at": {"type": "integer", "minimum": 1}, "steps": {"type": "integer"},
-                                 "seq": {"type": "integer"}, "kind": {"$ref": "event.schema.json#/$defs/kind"}}}},
-        {"if": {"properties": {"event": {"const": "choose"}}},
-         "then": {"additionalProperties": false, "required": ["option_id", "label", "seq"],
-                  "properties": {"type": true, "event": true, "option_id": {"type": "string"}, "label": {"type": "string"}, "seq": {"type": "integer"}}}},
-        {"if": {"properties": {"event": {"const": "input"}}},
-         "then": {"additionalProperties": false, "required": ["text", "seq"],
-                  "properties": {"type": true, "event": true, "text": {"type": "string"}, "seq": {"type": "integer"}}}},
-        {"if": {"properties": {"event": {"const": "done"}}},
-         "then": {"additionalProperties": false, "required": ["steps", "ok"],
-                  "properties": {"type": true, "event": true, "steps": {"type": "integer"}, "ok": {"type": "boolean"}}}},
-        {"if": {"properties": {"event": {"const": "diverged"}}},
-         "then": {"additionalProperties": false, "required": ["seq", "step", "kind", "expected", "got", "message"],
-                  "properties": {"type": true, "event": true, "seq": {"type": ["integer", "null"]}, "step": {"type": "integer"},
-                                 "kind": {"type": ["string", "null"]}, "expected": {"type": ["string", "null"]},
-                                 "got": {"type": ["string", "null"]}, "message": {"type": "string"}}}},
-        {"if": {"properties": {"event": {"const": "control"}}},
-         "then": {"additionalProperties": false, "required": ["id", "steps", "at", "speed", "paused", "recorded_screen"],
-                  "properties": {"type": true, "event": true, "id": {"type": "string"}, "steps": {"type": "integer", "minimum": 0},
-                                 "at": {"type": "integer", "minimum": 0}, "speed": {"type": "number", "exclusiveMinimum": 0},
-                                 "paused": {"type": "boolean"}, "recorded_screen": {"type": "boolean"}}}},
-        {"if": {"properties": {"event": {"const": "ignored"}}},
-         "then": {"additionalProperties": false, "required": ["message", "of"],
-                  "properties": {"type": true, "event": true, "message": {"type": "string"}, "of": {"type": "string"}}}}
-      ]
-    },
-    "replay_s2c": {
-      "title": "/ws/replay 服务端 → 客户端",
-      "description": "与 /ws 相同的 hello / timeline / ops / screen / notice / error，另加 replay",
-      "type": "object", "required": ["type"],
-      "properties": {"type": {"enum": ["hello", "timeline", "ops", "screen", "notice", "error", "replay"]}},
-      "allOf": [
-        {"if": {"properties": {"type": {"const": "hello"}}}, "then": {"allOf": [{"$ref": "#/$defs/s_hello"}, {"required": ["replay"]}]}},
-        {"if": {"properties": {"type": {"const": "timeline"}}}, "then": {"$ref": "#/$defs/s_timeline"}},
-        {"if": {"properties": {"type": {"const": "ops"}}}, "then": {"$ref": "#/$defs/s_ops"}},
-        {"if": {"properties": {"type": {"const": "screen"}}}, "then": {"$ref": "#/$defs/s_screen"}},
-        {"if": {"properties": {"type": {"const": "notice"}}}, "then": {"$ref": "#/$defs/s_notice"}},
-        {"if": {"properties": {"type": {"const": "error"}}}, "then": {"$ref": "#/$defs/s_error"}},
-        {"if": {"properties": {"type": {"const": "replay"}}}, "then": {"$ref": "#/$defs/s_replay"}}
-      ]
-    },
 
     "tl": {"type": "object", "additionalProperties": false, "required": ["lineage", "turn"],
            "description": "时间线位置（前端自己维护存读档）",
            "properties": {"lineage": {"type": "string"}, "turn": {"type": "integer", "minimum": 0}}},
+
     "soul_c2s": {
       "title": "/ws/soul 客户端 → 服务端（vn-soul/1）",
       "type": "object", "required": ["type"],
@@ -300,6 +43,7 @@
                                  "tl": {"$ref": "#/$defs/tl"}, "vis": {"type": "array", "items": {"$ref": "#/$defs/tl"}}}}}
       ]
     },
+
     "soul_s2c": {
       "title": "/ws/soul 服务端 → 客户端（vn-soul/1）",
       "type": "object", "required": ["type"],
@@ -337,6 +81,7 @@
                 "properties": {"name": {"type": "string", "minLength": 1}, "description": {"type": "string"},
                                "effect": {"enum": ["read", "perform", "memory", "propose"]}, "policy": {"enum": ["auto", "ask", "deny"]},
                                "source": {"type": "string", "description": "提供它的插件 id，前端工具为 client"}}},
+
     "post_ending_c2s": {
       "title": "/ws/post_ending 客户端 → 服务端（galagent/1）",
       "type": "object", "required": ["type"],
@@ -372,6 +117,7 @@
          "then": {"additionalProperties": false, "properties": {"type": true}}}
       ]
     },
+
     "post_ending_s2c": {
       "title": "/ws/post_ending 服务端 → 客户端（galagent/1）",
       "type": "object", "required": ["type"],

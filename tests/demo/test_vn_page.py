@@ -10,8 +10,8 @@ from server.api.app import create_app
 from .conftest import FIX, make_runtime
 
 
-def _client(tmp_path, mini_dir):
-    rt = make_runtime(tmp_path, mini_dir, FIX / "cards", None)
+def _client(tmp_path):
+    rt = make_runtime(tmp_path, FIX / "cards", None)
     games = tmp_path / "vn"
     (games / "作品甲").mkdir(parents=True)
     (games / "作品甲" / "index.html").write_text("<p>game</p>", encoding="utf-8")
@@ -21,8 +21,8 @@ def _client(tmp_path, mini_dir):
     return TestClient(create_app(rt), base_url="http://127.0.0.1:8765"), rt
 
 
-def test_games_and_files(tmp_path, mini_dir):
-    c, _ = _client(tmp_path, mini_dir)
+def test_games_and_files(tmp_path):
+    c, _ = _client(tmp_path)
     with c:
         assert c.get("/api/vn/games").json()["games"] == [{"id": "作品甲", "title": "作品甲"}]
         assert c.get("/vn/作品甲/index.html").text == "<p>game</p>"
@@ -32,9 +32,9 @@ def test_games_and_files(tmp_path, mini_dir):
         assert c.get("/vn.html").status_code == 200
 
 
-def test_settings_roundtrip(tmp_path, mini_dir, monkeypatch):
+def test_settings_roundtrip(tmp_path, monkeypatch):
     monkeypatch.delenv("GALLINGS_LLM_API_KEY", raising=False)
-    c, rt = _client(tmp_path, mini_dir)
+    c, rt = _client(tmp_path)
     with c:
         s = c.get("/api/settings").json()
         assert s["llm"]["key_set"] is False and s["memory"]["use"] == "local"
@@ -56,9 +56,9 @@ def test_lingshu_path_check(tmp_path):
     assert lingshu_path_problem(str(tmp_path / "dsh")) == ""
 
 
-def test_local_only_guard(tmp_path, mini_dir):
+def test_local_only_guard(tmp_path):
     """没有登录的 /api/settings 只认本机网页：挡 DNS 重绑定（Host）和别的网站的后台请求（Origin）。"""
-    c, _ = _client(tmp_path, mini_dir)
+    c, _ = _client(tmp_path)
     with c:
         assert c.get("/api/settings").status_code == 200
         assert c.get("/api/settings", headers={"Origin": "http://localhost:8765"}).status_code == 200
@@ -72,7 +72,7 @@ def test_local_only_guard(tmp_path, mini_dir):
             with c.websocket_connect("ws://127.0.0.1:8765/ws/soul?card=cat", headers={"Origin": "http://evil.example"}) as ws:
                 ws.receive_text()
     # server.host 改成 0.0.0.0（自己开局域网）：不查 Host，同源网页照常可用，别的网站仍然挡
-    rt2 = make_runtime(tmp_path / "lan", mini_dir, FIX / "cards", None)
+    rt2 = make_runtime(tmp_path / "lan", FIX / "cards", None)
     rt2.base_config["server"]["host"] = "0.0.0.0"
     c2 = TestClient(create_app(rt2), base_url="http://192.168.1.5:8765")
     with c2:
@@ -84,10 +84,10 @@ def test_local_only_guard(tmp_path, mini_dir):
             assert '"hello"' in ws.receive_text()
 
 
-def test_reload_plugins_serialized(tmp_path, mini_dir):
+def test_reload_plugins_serialized(tmp_path):
     """两次保存挨得很近：插件重启要排队，不能交错（一个刚起的插件被另一次重启半路关掉，或者没人关、灵枢子进程泄漏）。"""
     import asyncio
-    rt = make_runtime(tmp_path, mini_dir, FIX / "cards", None)
+    rt = make_runtime(tmp_path, FIX / "cards", None)
     started, stopped, early = [], [], []
 
     async def main():
@@ -120,9 +120,9 @@ def test_reload_plugins_serialized(tmp_path, mini_dir):
     assert len(started) == 3 and all(pm in stopped for pm in started) and not early
 
 
-def test_vn_plugins_dir(tmp_path, mini_dir):
+def test_vn_plugins_dir(tmp_path):
     """content/vn_plugins 里的 .js 会提供给作品页里的游戏（VN Studio v0.20 插件）；只给本文件夹里的 .js。"""
-    c, rt = _client(tmp_path, mini_dir)
+    c, rt = _client(tmp_path)
     d = tmp_path / "vn_plugins"
     d.mkdir()
     (d / "example.hello.vnplugin.js").write_text("VNPlugin.define({})", encoding="utf-8")

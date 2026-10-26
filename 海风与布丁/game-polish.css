@@ -109,6 +109,9 @@ body.game #psettings input[type="range"]:focus{outline:1px solid #7ee5e9;outline
 body.game #psettings input[type="range"]::-webkit-slider-thumb{appearance:none;width:15px;height:15px;border-radius:3px;background:#d4ffff;border:1px solid #67d7e1;box-shadow:0 0 10px #75d4ddaa;cursor:grab;}
 body.game #psettings input[type="range"]::-moz-range-thumb{width:11px;height:11px;border-radius:3px;background:#d4ffff;border:1px solid #67d7e1;box-shadow:0 0 10px #75d4ddaa;cursor:grab;}
 body.game #psettings output[data-value]{flex:0 0 58px;text-align:right;color:#f0cc82;font-size:13px;font-variant-numeric:tabular-nums;white-space:nowrap;}
+body.game #psettings .opacity-reset{flex:0 0 auto;min-height:32px;padding:4px 9px;font:inherit;font-size:13px;white-space:nowrap;color:#b8d9df;background:#0a1d25;border:1px solid #6bc3cc77;border-radius:3px;cursor:pointer;}
+body.game #psettings .opacity-reset:hover{color:#e1ffff;background:#123642;border-color:#7ee5e9;}
+@media(pointer:coarse){body.game #psettings .opacity-reset{min-height:44px;}}
 body.game #psettings .tg,body.game #psettings .seg button{border-radius:3px;background:#0a1d25;color:#b8d9df;border:1px solid #6bc3cc77;padding:7px 14px;cursor:pointer;transition:background .15s,border-color .15s,color .15s,transform .08s;}
 body.game #psettings .tg:hover,body.game #psettings .seg button:hover{border-color:#7ee5e9;color:#e1ffff;background:#123642;}
 body.game #psettings .tg:active,body.game #psettings .seg button:active{transform:translateY(1px);}

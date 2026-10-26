@@ -98,7 +98,7 @@ async def check(args):
 
         await page.goto(url)
         await loaded()
-        assert await page.evaluate('pref("ghost")') == .55
+        assert await page.evaluate('pref("ghost")') == .45
         assert await page.evaluate('pref("vbgm")') == .25
         assert await page.evaluate('voiceEnabledAt(0) && !voiceEnabledAt(P.lines.findIndex(l=>l.id===P.settings.voiceOptionalFromChapterId))')
         await at(45)
@@ -109,7 +109,7 @@ async def check(args):
         await at(1811)
         dim = await page.locator('#ptx').evaluate('(e)=>({color:getComputedStyle(e).color,size:getComputedStyle(e).fontSize})')
         assert bright['color'] != dim['color'] and bright['size'] == dim['size']
-        report['checks']['reading'] = {'defaultOpacity': .55, 'day': bright, 'night': dim}
+        report['checks']['reading'] = {'defaultOpacity': .45, 'day': bright, 'night': dim}
         if args.shots:
             await page.screenshot(path=str(args.shots / 'reading-night.jpg'), quality=88)
 

@@ -1,0 +1,294 @@
+{
+  "date": "2026-10-26",
+  "baseCommit": "694fd812611a499e097167d84d59309f6bc48db0",
+  "gameData": {
+    "onlyChange": "settings.ghost",
+    "before": 0.55,
+    "after": 0.45,
+    "nodes": 3315,
+    "allOtherDataUnchanged": true
+  },
+  "folderOpacity": {
+    "default": {
+      "pref": 0.45,
+      "stored": null,
+      "background": "rgba(0, 0, 0, 0)",
+      "boxOpacity": 1,
+      "skinOpacity": 0.45,
+      "textOpacity": 1,
+      "controlsOpacity": 1
+    },
+    "0": {
+      "pref": 0,
+      "stored": 0,
+      "background": "rgba(0, 0, 0, 0)",
+      "boxOpacity": 1,
+      "skinOpacity": 0,
+      "textOpacity": 1,
+      "controlsOpacity": 1
+    },
+    "0.2": {
+      "pref": 0.2,
+      "stored": 0.2,
+      "background": "rgba(0, 0, 0, 0)",
+      "boxOpacity": 1,
+      "skinOpacity": 0.2,
+      "textOpacity": 1,
+      "controlsOpacity": 1
+    },
+    "0.65": {
+      "pref": 0.65,
+      "stored": 0.65,
+      "background": "rgba(0, 0, 0, 0)",
+      "boxOpacity": 1,
+      "skinOpacity": 0.65,
+      "textOpacity": 1,
+      "controlsOpacity": 1
+    },
+    "1": {
+      "pref": 1,
+      "stored": 1,
+      "background": "rgba(0, 0, 0, 0)",
+      "boxOpacity": 1,
+      "skinOpacity": 1,
+      "textOpacity": 1,
+      "controlsOpacity": 1
+    },
+    "reloadedZero": {
+      "pref": 0,
+      "stored": 0,
+      "background": "rgba(0, 0, 0, 0)",
+      "boxOpacity": 1,
+      "skinOpacity": 0,
+      "textOpacity": 0.8,
+      "controlsOpacity": 1
+    },
+    "customSettingRetained": true,
+    "portraitZero": {
+      "pref": 0,
+      "stored": 0,
+      "background": "rgba(0, 0, 0, 0)",
+      "boxOpacity": 1,
+      "skinOpacity": 0,
+      "textOpacity": 0.8,
+      "controlsOpacity": 1
+    },
+    "portraitFull": {
+      "pref": 1,
+      "stored": 1,
+      "background": "rgba(0, 0, 0, 0)",
+      "boxOpacity": 1,
+      "skinOpacity": 1,
+      "textOpacity": 0.8,
+      "controlsOpacity": 1
+    },
+    "silent": {
+      "pref": 1,
+      "stored": 1,
+      "background": "rgba(0, 0, 0, 0)",
+      "boxOpacity": 1,
+      "skinOpacity": 0,
+      "textOpacity": 0,
+      "controlsOpacity": 1
+    },
+    "errors": [],
+    "passed": true
+  },
+  "singleFileOpacity": {
+    "default": {
+      "pref": 0.45,
+      "stored": null,
+      "background": "rgba(0, 0, 0, 0)",
+      "boxOpacity": 1,
+      "skinOpacity": 0.45,
+      "textOpacity": 1,
+      "controlsOpacity": 1
+    },
+    "0": {
+      "pref": 0,
+      "stored": 0,
+      "background": "rgba(0, 0, 0, 0)",
+      "boxOpacity": 1,
+      "skinOpacity": 0,
+      "textOpacity": 1,
+      "controlsOpacity": 1
+    },
+    "0.2": {
+      "pref": 0.2,
+      "stored": 0.2,
+      "background": "rgba(0, 0, 0, 0)",
+      "boxOpacity": 1,
+      "skinOpacity": 0.2,
+      "textOpacity": 1,
+      "controlsOpacity": 1
+    },
+    "0.65": {
+      "pref": 0.65,
+      "stored": 0.65,
+      "background": "rgba(0, 0, 0, 0)",
+      "boxOpacity": 1,
+      "skinOpacity": 0.65,
+      "textOpacity": 1,
+      "controlsOpacity": 1
+    },
+    "1": {
+      "pref": 1,
+      "stored": 1,
+      "background": "rgba(0, 0, 0, 0)",
+      "boxOpacity": 1,
+      "skinOpacity": 1,
+      "textOpacity": 1,
+      "controlsOpacity": 1
+    },
+    "reloadedZero": {
+      "pref": 0,
+      "stored": 0,
+      "background": "rgba(0, 0, 0, 0)",
+      "boxOpacity": 1,
+      "skinOpacity": 0,
+      "textOpacity": 0.8,
+      "controlsOpacity": 1
+    },
+    "customSettingRetained": true,
+    "portraitZero": {
+      "pref": 0,
+      "stored": 0,
+      "background": "rgba(0, 0, 0, 0)",
+      "boxOpacity": 1,
+      "skinOpacity": 0,
+      "textOpacity": 0.8,
+      "controlsOpacity": 1
+    },
+    "portraitFull": {
+      "pref": 1,
+      "stored": 1,
+      "background": "rgba(0, 0, 0, 0)",
+      "boxOpacity": 1,
+      "skinOpacity": 1,
+      "textOpacity": 0.8,
+      "controlsOpacity": 1
+    },
+    "silent": {
+      "pref": 1,
+      "stored": 1,
+      "background": "rgba(0, 0, 0, 0)",
+      "boxOpacity": 1,
+      "skinOpacity": 0,
+      "textOpacity": 0,
+      "controlsOpacity": 1
+    },
+    "errors": [],
+    "passed": true
+  },
+  "playerProgress": {
+    "checks": {
+      "reading": {
+        "defaultOpacity": 0.45,
+        "day": {
+          "color": "rgb(247, 250, 255)",
+          "size": "25px"
+        },
+        "night": {
+          "color": "rgb(237, 244, 252)",
+          "size": "25px"
+        }
+      },
+      "chapterAndManualCoexist": true,
+      "chapterReloadContinue": true,
+      "fastRefreshAndAudio": {
+        "idx": 301,
+        "tails": 1,
+        "music": "bgm_emerald_dream_piano",
+        "time": 12.284589,
+        "ambient": [
+          "amb_a01_waves_normal_v01"
+        ]
+      },
+      "entryEffectNotDoubled": true,
+      "customOpacityRetained": true,
+      "restartKeepsManualSlots": true,
+      "legacyByStableId": true,
+      "idbFailureRecovery": true,
+      "failedSaveCancelExit": true,
+      "failedSaveConfirmedExit": true
+    },
+    "errors": [],
+    "ok": true
+  },
+  "fullRegression": {
+    "load_s": 3.27,
+    "body": "game playing",
+    "chapters": 18,
+    "walk": {
+      "n": 3315,
+      "p50": 0.09999996423721313,
+      "p99": 2.100000023841858,
+      "max": 32.19999998807907,
+      "bad": [],
+      "nbad": 0
+    },
+    "cg": {
+      "n": 31,
+      "p50": 87.5,
+      "max": 143.19999998807907,
+      "heapMB": 9
+    },
+    "save": {
+      "want": {
+        "idx": 1504,
+        "id": "6cdt4nv4",
+        "vars": "{\"好感\":0,\"尾鳍\":7,\"贝壳延后\":0,\"玩笑\":0,\"海星放生\":0,\"周目\":1,\"结局数\":0}"
+      },
+      "got": {
+        "idx": 1504,
+        "id": "6cdt4nv4",
+        "vars": "{\"好感\":0,\"尾鳍\":7,\"贝壳延后\":0,\"玩笑\":0,\"海星放生\":0,\"周目\":1,\"结局数\":0}"
+      }
+    },
+    "prev": [
+      302,
+      301
+    ],
+    "errs": [],
+    "nerrs": 0
+  },
+  "Windows": {
+    "passed": true,
+    "walk": {
+      "nodes": 3315,
+      "nbad": 0,
+      "bad": [],
+      "seconds": 1.5281000000238418
+    },
+    "saveRoundtrip": true,
+    "opacityZero": {
+      "pref": 0,
+      "skin": 0,
+      "box": 1
+    },
+    "pageErrors": [],
+    "failedResponses": [],
+    "processCleanupPassed": true,
+    "compiledSourceCommit": "fd6ae6854385505b3ac62e10e89a3a34e166da83"
+  },
+  "artifacts": [
+    {
+      "file": "海风与布丁_对话框修正版.html",
+      "bytes": 185107847,
+      "sha256": "dd9e45d1213c51d1071730365beafc8d1d6cd071f0d665d3245fda87d2b7faa1"
+    },
+    {
+      "file": "海风与布丁_Windows便携版_对话框修正.zip",
+      "bytes": 259349449,
+      "sha256": "5a4c57aa7c843bae1a10253746e493990a811b14c1e1e1560485fd97ef49da9c",
+      "crcPassed": true
+    }
+  ],
+  "preserved": [
+    "3315节点及全部原ID、顺序、文案、分支变量与素材映射",
+    "824条配音及第三话默认关闭语义",
+    "全部音乐、音量与停奏",
+    "nnn静态18张采用及4张撤回状态；不含视频和Live2D",
+    "玩家已自定义的背景不透明度、音量和存档"
+  ]
+}

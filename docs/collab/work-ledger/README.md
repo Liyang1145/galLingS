@@ -1,5 +1,7 @@
 # 任务记录索引（work-ledger）
 
+- [现行对话框背景与不透明度调节](dialogue-opacity-20261026.md) — 默认45%，完整0%–100%调节，移除固定深色托底与强制下限，覆盖上一轮55%说明。
+
 - [background-classification-20261023.md](background-classification-20261023.md) — B02A与抱臂监视整图CG_DRY均归背景，排除CG
 
 - [underwater-filter-20261023.md](underwater-filter-20261023.md) — 水下去白色粒子/漂移/模糊，只保留静态淡蓝滤镜

@@ -191,7 +191,7 @@ const labelIndex = name => P.lines.findIndex(l => l.label === name);
 function blank() {
   return { v: 3, id: uid(), title: '', assets: {}, recent: { bg: [], ch: [], au: [] }, lines: [mkLine()], cur: 0,
            vars: [], chars: [], plugins: [],
-           settings: { tip: 'brief', ghost: 0.55, speed: 30, link: true, dlg: 'ghost', vbgm: 0.25, vse: 0.8, vamb: 0.8, vvo: 1, autoMul: 1, skipRead: true, focus: true, agentProvider: 'mock', agentUrl: '', pluginData: {}, bw: 110, tlh: 260, trk: { hide: {}, lock: {} } } };
+           settings: { tip: 'brief', ghost: 0.45, speed: 30, link: true, dlg: 'ghost', vbgm: 0.25, vse: 0.8, vamb: 0.8, vvo: 1, autoMul: 1, skipRead: true, focus: true, agentProvider: 'mock', agentUrl: '', pluginData: {}, bw: 110, tlh: 260, trk: { hide: {}, lock: {} } } };
 }
 const VN_VERSION = '0.20.0';
 const studioEditor = !!window.VN_EDITOR || new URLSearchParams(location.search).get('editor') === '1';
@@ -718,7 +718,7 @@ function renderDialog() {
   if (document.activeElement !== $('#tx')) $('#tx').value = l.text;
   $('#nm').style.color = charOf(l.speaker)?.color || '';
   stage.dataset.dlg = P.settings.dlg;
-  document.documentElement.style.setProperty('--ghost', Math.max(.35, Math.min(.95, +(pref('ghost') ?? .55))));
+  document.documentElement.style.setProperty('--ghost', dialogueOpacity(pref('ghost') ?? .45));
 }
 /* ========== 多轨时间轴（参考剪辑软件） ========== */
 // 横向一格 = 一“节”（一句台词）。上：立绘轨（每个角色一条）；中：文本轨；下：场景、音乐、音效轨。
@@ -1675,13 +1675,19 @@ function stopAmb(){playAmbience([]);}
 /* —— 玩家偏好：导出的游戏里存在玩家自己的浏览器；编辑器预览时直接改作者默认值 —— */
 let PREF = {};
 const pref = k => (gameMode && PREF[k] != null) ? PREF[k] : P.settings[k];
-function loadPrefs() { if (!gameMode) return; try { PREF = JSON.parse(localStorage.getItem('vnprefs:' + P.id) || '{}'); } catch (e) { PREF = {}; } }
+function loadPrefs() {
+  if (!gameMode) return;
+  try { PREF = JSON.parse(localStorage.getItem('vnprefs:' + P.id) || '{}'); } catch (e) { PREF = {}; }
+  document.documentElement.style.setProperty('--ghost', dialogueOpacity(pref('ghost') ?? .45));
+}
+function dialogueOpacity(value) { const n = Number(value); return Number.isFinite(n) ? Math.max(0, Math.min(1, n)) : .45; }
 function setPref(k, v) {
+  if (k === 'ghost') v = dialogueOpacity(v);
   if (gameMode) { PREF[k] = v; try { localStorage.setItem('vnprefs:' + P.id, JSON.stringify(PREF)); } catch (e) {} }
   else { P.settings[k] = v; autosave(); }
   refreshAudioVolumes(k);
   if (k === 'readerScale') applyTheme();
-  if (k === 'ghost') { v = Math.max(.35, Math.min(.95, +v || .35)); if (gameMode) PREF[k] = v; else P.settings[k] = v; document.documentElement.style.setProperty('--ghost', v); }
+  if (k === 'ghost') document.documentElement.style.setProperty('--ghost', v);
   if (k === 'vvo' && voEl) voEl.volume = v;
   if (playing && ((k === 'voiceLaterChapters' && voiceOptionalAt(RT.idx)) || (k === 'voiceEnabled' && !voiceOptionalAt(RT.idx)))) playVoice(RT.skip ? null : P.lines[RT.idx]?.voice, RT.idx);
 }
@@ -2135,12 +2141,16 @@ function showPrefs() {
   box.innerHTML = `<header class="panel-heading"><small>按自己的节奏</small><h2>声音与阅读</h2></header><div class="rows">
     ${sl('vbgm', ic('music') + ' 音乐', 0, 1, 0.05)}${sl('vse', ic('bell') + ' 音效', 0, 1, 0.05)}${sl('vamb', ic('waves') + ' 环境音', 0, 1, 0.05)}${P.lines.some(l => l.voice) ? sl('vvo', ic('mic') + ' 语音', 0, 1, 0.05) : ''}
     ${P.lines.some(l => l.voice) ? `<div class="row"><span>语音开关</span><button class="tg ${voiceEnabledAt(RT.idx) ? 'on' : ''}" data-tg="voiceEnabled" aria-pressed="${voiceEnabledAt(RT.idx)}">${voiceEnabledAt(RT.idx) ? '已开启' : '已关闭'}</button></div>` : ''}
-    ${sl('readerScale', '文字大小', 1, 1.25, 0.05)}${sl('speed', '文字速度', 5, 80, 5, 85)}${sl('autoMul', '自动播放等待', 0.4, 2.5, 0.1)}${sl('ghost', '对话框不透明度', 0.35, 0.95, 0.05)}
+    ${sl('readerScale', '文字大小', 1, 1.25, 0.05)}${sl('speed', '文字速度', 5, 80, 5, 85)}${sl('autoMul', '自动播放等待', 0.4, 2.5, 0.1)}${sl('ghost', '对话框不透明度', 0, 1, 0.01)}
     <div class="row"><span>快进</span><button class="tg ${pref('skipRead') ? 'on' : ''}" data-tg="skipRead">只快进已读</button></div>
     ${uiSe('btnClick') || uiSe('btnHover') ? `<div class="row"><span>按钮音效</span><button class="tg ${pref('btnSe') !== false ? 'on' : ''}" data-tg="btnSe" data-def="1">点按 / 悬停时轻响</button></div>` : ''}
     <div class="row stats-row"><span>好感数值</span><button class="tg ${pref('showStats') ? 'on' : ''}" data-tg="showStats">显示（剧透向）</button><small class="dim stats-now">${statsText(true)}</small></div>${soulPrefsHtml()}</div>`;
   const syncSlider = r => { const min=Number(r.min)||0, max=Number(r.max)||1, value=Number(r.value); const pct=max>min ? Math.max(0,Math.min(100,(value-min)/(max-min)*100)) : 0; r.style.setProperty('--slider-pct', pct+'%'); };
   box.querySelectorAll('input[type=range]').forEach(r => { const output=box.querySelector(`output[data-value="${r.dataset.k}"]`); syncSlider(r); if(output) output.textContent=fmt(r.dataset.k,r.value,r.dataset.inv); r.oninput = () => { setPref(r.dataset.k, r.dataset.inv ? +r.dataset.inv - +r.value : +r.value); syncSlider(r); if(output) output.textContent=fmt(r.dataset.k,r.value,r.dataset.inv); }; });
+  const opacitySlider = box.querySelector('[data-k="ghost"]');
+  const opacityReset = document.createElement('button'); opacityReset.type = 'button'; opacityReset.className = 'opacity-reset'; opacityReset.textContent = '默认'; opacityReset.title = '恢复默认（45%）'; opacityReset.setAttribute('aria-label', '恢复默认对话框不透明度');
+  opacityReset.onclick = e => { e.stopPropagation(); opacitySlider.value = .45; opacitySlider.dispatchEvent(new Event('input', { bubbles: true })); };
+  opacitySlider.closest('.control').appendChild(opacityReset);
   box.querySelectorAll('[data-tg]').forEach(b => b.onclick = e => { e.stopPropagation(); const cur = b.dataset.tg === 'voiceEnabled' ? voiceEnabledAt(RT.idx) : b.dataset.def ? pref(b.dataset.tg) !== false : !!pref(b.dataset.tg), v = !cur; if (b.dataset.tg === 'voiceEnabled') setVoiceEnabled(v); else setPref(b.dataset.tg, v); b.classList.toggle('on', v); if (b.dataset.tg === 'voiceEnabled') { b.setAttribute('aria-pressed', String(v)); b.textContent = v ? '已开启' : '已关闭'; } if (b.dataset.tg === 'showStats') box.querySelector('.stats-now').textContent = statsText(true); });
   soulPrefsBind(box);
   addClose(box, kick); box.classList.add('show');
@@ -2731,7 +2741,7 @@ function openSettings() {
   const box = modal(`
     <div class="row"><span>标题</span><input data-i="title" value="${esc(P.title)}"></div>
     <div class="row"><span>提示</span>${seg('tip', [['brief', '简略'], ['normal', '默认'], ['detail', '详细']])}</div>
-    <div class="row"><span>对话框</span><input type="range" min="0.05" max="0.9" step="0.05" value="${s.ghost}" data-r="ghost"></div>
+    <div class="row"><span>对话框</span><input type="range" min="0" max="1" step="0.01" value="${s.ghost}" data-r="ghost"></div>
     <div class="row"><span>文字速度</span><input type="range" min="5" max="80" step="5" value="${85 - s.speed}" data-r="speed"></div>
     <div class="row"><span>${ic('music')}</span><input type="range" min="0" max="1" step="0.05" value="${s.vbgm}" data-r="vbgm"></div>
     <div class="row"><span>${ic('bell')}</span><input type="range" min="0" max="1" step="0.05" value="${s.vse}" data-r="vse"></div>

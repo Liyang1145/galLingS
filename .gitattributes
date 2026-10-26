@@ -1,6 +1,7 @@
 *.bat text eol=crlf
 *.rs text eol=lf
 *.py text eol=lf
+content/story/**/*.json text eol=lf
 
 # Preserve the delivered VN export byte-for-byte.
 content/imports/vnstudio/海风与布丁/** -text

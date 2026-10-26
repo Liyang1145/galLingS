@@ -1,20 +1,14 @@
 # content/
 
-TypeScript 重构的独立游戏界面资源见 [game-ui](game-ui/README.md)，只含原图形定义及迁移来源；唯一剧情作者源仍为 `海风与布丁/game.js`。下方为保留的原 Demo 内容说明，不作为当前重构命令或授权依据。
+本目录保存当前作者内容、独立 UI 定义以及保留的角色卡/内容来源。公开仓库不等于作品内容已获开源授权，权利边界见根 README；不要提交私有卡片、玩家记录、凭据或机器配置。
 
-剧本、角色卡、素材。**仓库是公开的，正式剧本与角色卡继续不进 git；用户明确授权上传的素材收录在 [素材库](assets/README.md)，权利说明见该目录。**
+| 位置 | 当前用途 |
+|---|---|
+| [story](story/README.md) | 唯一分章作者源，含作品/章节、变量、设置、分类资源和来源；不是发行生成物 |
+| [game-ui](game-ui/README.md) | 原鲸鱼图形、图标和 UI 迁移来源的独立定义 |
+| `cards/` | 保留的独立聊天角色卡输入，与正式游戏进度隔离 |
+| `assets/`、`scripts/` 等既有内容 | 按实际素材/历史输入保留；不在此生成旧 OP，也不重跑历史采纳流程 |
 
-运行 Demo 需要：
+2026-10-26 已切换分章作者源并清退旧 Markdown/OP 编译、Rust/WASM 托管及回放链。旧 `python -m compiler` 命令不再存在；历史编译说明可从清理前的 Git 查看，不恢复为当前构建入口。新本体只使用根目录现有 TypeScript 内容/游戏构建入口，按用户统一安排执行。
 
-```
-content/
-├── cards/whale.yaml              鲸鱼小姐角色卡
-└── scripts/
-    ├── appendix_e.md             附录 E（制作 ID 登记表）
-    └── ch01/
-        ├── ch01.md               第一话剧本（全卷第 49–404 行）
-        └── beats.yaml            节拍层元数据（选项性质、节拍目的、槽位）
-```
-
-`chapter.json` 和 `report.md` 由编译器生成（`python -m compiler content/scripts/ch01 --appendix content/scripts/appendix_e.md`，服务启动时也会自动重编译）。
-测试用的原创迷你章节在 `tests/fixtures/`，CI 只用它。
+格式与读写边界见[分章作者源](../docs/rebuild/author-source.md)，删除及保留范围见[清理记录](../docs/rebuild/cleanup.md)。本轮没有运行新读取器、测试、类型检查、构建、服务或试玩，没有删除素材、母版或来源证据。

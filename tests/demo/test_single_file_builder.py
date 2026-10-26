@@ -38,9 +38,11 @@ def test_saved_project_export_keeps_adjustments_and_prunes_unused_library(tmp_pa
     assert 'old-host' not in html and 'missing.png' not in html
     assert '<link' not in html and 'src="game.js"' not in html
     # A crafted project may not package arbitrary local files even if disguised as media.
-    private = root / "private.png"
-    private.write_bytes(b"private")
-    project["assets"]["bg"]["libraryPath"] = "private.png"
-    saved.write_text(json.dumps(project), encoding="utf-8")
-    with pytest.raises(ValueError, match="unsafe media"):
-        pack.build(output, saved)
+    for private_path in ("private.png", "content/private.png", "A素材库/../private.png"):
+        private = root / private_path
+        private.parent.mkdir(parents=True, exist_ok=True)
+        private.write_bytes(b"private")
+        project["assets"]["bg"]["libraryPath"] = private_path
+        saved.write_text(json.dumps(project), encoding="utf-8")
+        with pytest.raises(ValueError, match="unsafe media"):
+            pack.build(output, saved)

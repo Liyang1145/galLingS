@@ -153,6 +153,9 @@ final class GameAudioFocus implements AutoCloseable {
                 result = manager.requestAudioFocus(listener, AudioManager.STREAM_MUSIC, AudioManager.AUDIOFOCUS_GAIN);
             }
             if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
+                // WebView requests its own playback focus. Release this permission probe
+                // before publishing grant so the two clients cannot interrupt each other.
+                abandon(false);
                 held = true;
                 status = "granted";
             } else {
@@ -193,6 +196,24 @@ final class GameAudioFocus implements AutoCloseable {
     void release() {
         if (closed) return;
         abandon(true);
+        changed.run();
+    }
+
+    /** The shared mixer reports an unsolicited WebView pause, never an application pause. */
+    void interrupted() {
+        if (closed || !wanted) return;
+        abandon(false);
+        focusInterrupted = true;
+        status = "interrupted";
+        changed.run();
+    }
+
+    /** WebView may resume its own players after a transient focus interruption. */
+    void resumedPlayback() {
+        if (closed || !wanted || !resumed || !focused || outputInterrupted || !focusInterrupted) return;
+        focusInterrupted = false;
+        held = true;
+        status = "granted";
         changed.run();
     }
 

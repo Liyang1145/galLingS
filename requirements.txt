@@ -1,4 +1,4 @@
-# 运行 Demo 所需（galcore 轮子另装，见 start.bat / docs/design/demo.md）
+# 旧制作/独立聊天辅助服务依赖；正式 TypeScript 游戏不需要 Python 或 galcore
 pyyaml>=6
 jsonschema>=4.20
 packaging>=23

@@ -181,4 +181,18 @@
       },
     }),
   });
+  if (platform === "android-trial") {
+    window.addEventListener("haifeng:audio-interrupted", () => {
+      const native = window.__HAIFENG_NATIVE_AUDIO__;
+      if (audio.status === "granted" && native && typeof native.postMessage === "function") {
+        native.postMessage("haifeng.audio.interrupted/1");
+      }
+    });
+    window.addEventListener("haifeng:audio-resumed", () => {
+      const native = window.__HAIFENG_NATIVE_AUDIO__;
+      if (audio.status === "interrupted" && native && typeof native.postMessage === "function") {
+        native.postMessage("haifeng.audio.resumed/1");
+      }
+    });
+  }
 })("__HAIFENG_PLATFORM__");

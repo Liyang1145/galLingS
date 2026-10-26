@@ -8,8 +8,9 @@ from pathlib import Path
 from PIL import Image
 from produce_art_upgrade import ART, GAME, ROOT, output
 from compress_art_upgrade import build as compress
+import game_data
 
-def project(path):return json.loads(path.read_text(encoding='utf-8-sig').split('=',1)[1].strip().removesuffix(';'))
+def project(path):return game_data.load(path)
 def build():
     original=project(GAME/'game.js');draft=copy.deepcopy(original)
     runtime=compress()

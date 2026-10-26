@@ -23,6 +23,8 @@ interface Track {
   playRejected: boolean;
   seekMs: number | null;
   ended: (() => void) | null;
+  expectedPauses: number;
+  externallyPaused: boolean;
 }
 
 export interface EntryAudio {
@@ -93,9 +95,23 @@ export class AudioMixer {
     element.loop = loop;
     element.preload = "auto";
     const track: Track = { id, channel, gain: volume(gain), kind: feedback ?? (loop ? "persistent" : ended ? "voice" : "effect"),
-      element, fade: null, alive: true, failed: false, playRejected: false, seekMs, ended };
+      element, fade: null, alive: true, failed: false, playRejected: false, seekMs, ended,
+      expectedPauses: 0, externallyPaused: false };
     this.applyVolume(track);
     this.#tracks.add(track);
+    element.addEventListener("pause", () => {
+      if (track.expectedPauses > 0) { track.expectedPauses--; return; }
+      if (!track.alive || track.failed || this.#disposed || this.#paused || !this.#audioAllowed || element.ended || element.error) return;
+      // Android WebView owns playback focus. Only an unsolicited media pause reports
+      // interruption; menu, lifecycle, cancellation and permission pauses are accounted for.
+      track.externallyPaused = true;
+      window.dispatchEvent(new Event("haifeng:audio-interrupted"));
+    });
+    element.addEventListener("playing", () => {
+      if (!track.externallyPaused || !track.alive || this.#disposed || element.paused) return;
+      track.externallyPaused = false;
+      window.dispatchEvent(new Event("haifeng:audio-resumed"));
+    });
     element.addEventListener("ended", () => {
       if (!track.alive) return;
       const callback = track.ended;
@@ -151,7 +167,7 @@ export class AudioMixer {
     void track.element.play().then(() => {
       track.playRejected = false;
       // play() may resolve after entry cancellation or a background pause.
-      if (!track.alive || this.#paused || !this.#audioAllowed || this.#disposed) track.element.pause();
+      if (!track.alive || this.#paused || !this.#audioAllowed || this.#disposed) this.pauseTrack(track);
     }).catch((error: unknown) => {
       if (!track.alive || this.#disposed) return;
       // A failed event cue is never retained for unlock or foreground catch-up.
@@ -234,11 +250,16 @@ export class AudioMixer {
     track.alive = false;
     track.fade?.cancel();
     track.fade = null;
-    track.element.pause();
+    this.pauseTrack(track);
     track.element.removeAttribute("src");
     track.element.load();
     this.#tracks.delete(track);
     if (this.#choiceTick === track) this.#choiceTick = null;
+  }
+
+  private pauseTrack(track: Track): void {
+    if (!track.element.paused) track.expectedPauses++;
+    track.element.pause();
   }
 
   /** One-shot UI feedback is an actual event, never a queued or restored sound. */
@@ -468,7 +489,7 @@ export class AudioMixer {
     this.#paused = paused;
     for (const track of this.#tracks) {
       track.fade?.setPaused(paused || !this.#audioAllowed);
-      if (paused) track.element.pause();
+      if (paused) this.pauseTrack(track);
       else if (track.element.paused) this.play(track);
     }
     for (const timer of this.#entryDelays ?? []) timer.setPaused(paused);
@@ -481,7 +502,7 @@ export class AudioMixer {
     for (const track of this.#tracks) {
       track.fade?.setPaused(this.#paused || !allowed);
       if (!allowed && track.kind === "feedback") this.stop(track);
-      else if (!allowed) track.element.pause();
+      else if (!allowed) this.pauseTrack(track);
       else if (!this.#paused && track.element.paused) this.play(track);
     }
     this.syncChoiceTick();

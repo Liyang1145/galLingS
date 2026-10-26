@@ -1,45 +1,45 @@
 import { isCommandEntry } from "../cli-entry.ts";
 import { createHash } from "node:crypto";
 import { mkdir, mkdtemp, readFile, realpath, rename, rm, writeFile } from "node:fs/promises";
-import { dirname, isAbsolute, relative, resolve, sep } from "node:path";
+import { isAbsolute, relative, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import { ContentError } from "../../packages/story-model/src/model.ts";
 import type { StoryContent } from "../../packages/story-model/src/model.ts";
 import { contentRevisionText } from "../../packages/story-model/src/integrity.ts";
 import type { ResourceDigest } from "../../packages/story-model/src/integrity.ts";
-import { convertLegacyGame, parseChoiceIdentities, readLegacyExport } from "./legacy.ts";
+import { compileAuthorProject } from "./compile.ts";
+import { REPOSITORY_ROOT, authorFileDigests, readAuthorProject } from "./source.ts";
+import type { AuthorProject } from "./source.ts";
 
-export const REPOSITORY_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "../..");
+export { REPOSITORY_ROOT } from "./source.ts";
 const sha256 = (value: string | Uint8Array): string => createHash("sha256").update(value).digest("hex");
 
 export type ResourceFile = ResourceDigest;
 
 /** Reads actual local files only when explicitly invoked by a content consumer. */
-export async function loadSourceContent(): Promise<{ content: StoryContent; files: ResourceFile[]; identitySha256: string }> {
-  const gameRoot = await realpath(resolve(REPOSITORY_ROOT, "海风与布丁"));
-  const bytes = await readFile(resolve(gameRoot, "game.js"));
-  return compileSourceContent(bytes);
+export async function loadSourceContent(): Promise<Awaited<ReturnType<typeof compileSourceContent>>> {
+  return compileSourceContent(await readAuthorProject());
 }
 
 /** Same converter and resource checks for explicit author editing; never executes source JS. */
-export async function compileSourceContent(bytes: Uint8Array): Promise<{ content: StoryContent; files: ResourceFile[]; identitySha256: string }> {
+export async function compileSourceContent(project: AuthorProject): Promise<{
+  content: StoryContent; files: ResourceFile[];
+  authorFiles: ReturnType<typeof authorFileDigests>;
+}> {
   const gameRoot = await realpath(resolve(REPOSITORY_ROOT, "海风与布丁"));
-  const identityBytes = await readFile(resolve(REPOSITORY_ROOT, "docs/rebuild/baseline/choices.json"));
-  const identities = parseChoiceIdentities(JSON.parse(identityBytes.toString("utf8")) as unknown);
-  const text = new TextDecoder("utf-8", { fatal: true }).decode(bytes);
-  const content = convertLegacyGame(readLegacyExport(text), identities, sha256(bytes), "pending");
+  const content = compileAuthorProject(project);
   const files: ResourceFile[] = [];
   const cache = new Map<string, { sha256: string; bytes: number }>();
   for (const resource of content.resources) {
     const filename = await realpath(resolve(gameRoot, resource.path)).catch(() => {
       throw new ContentError("RESOURCE_MISSING", `找不到资源「${resource.id}」`, {
-        file: content.source.file, field: `assets.${resource.id}.src`,
+        ...project.assets.find(asset => asset.key === resource.id)!.where, field: `${resource.id}.src`,
       });
     });
     const child = relative(gameRoot, filename);
     if (child === ".." || child.startsWith(`..${sep}`) || isAbsolute(child)) {
       throw new ContentError("RESOURCE_PATH", "资源符号链接越出作品目录", {
-        file: content.source.file, field: `assets.${resource.id}.src`,
+        ...project.assets.find(asset => asset.key === resource.id)!.where, field: `${resource.id}.src`,
       });
     }
     let info = cache.get(filename);
@@ -52,7 +52,7 @@ export async function compileSourceContent(bytes: Uint8Array): Promise<{ content
   }
   // Raw JSON whitespace/key order does not change the semantic content revision.
   content.revision = sha256(contentRevisionText(content, files));
-  return { content, files, identitySha256: sha256(identityBytes) };
+  return { content, files, authorFiles: authorFileDigests(project.files) };
 }
 
 async function build(): Promise<void> {

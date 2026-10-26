@@ -1,30 +1,9 @@
-"""作品数据 game.js 的读写（统一的序列化格式）。
+"""旧制作导出的序列化与只读作者投影。
 
-格式约定（2026-10-22 起固定）：
-
-    window.VN_GAME = {
-      "v": 3,
-      "assets": {
-        "md2p8m90": {"id":"md2p8m90","type":"bg",...},
-        ...
-      },
-      "lines": [
-        {"label":"","chapter":"第一话 · 浅滩上的偶遇",...},
-        ...
-      ],
-      ...
-    };
-
-- 顶层键缩进 2 空格；
-- `assets` / `lines` / `chars` 属于「容器键」：每个元素独立一行，元素内部紧凑无空格；
-- 其余键用标准 indent=2。
-
-这样做的好处：改一句台词只影响一行，git diff 可读；文件体积只比单行多约 1%。
-**所有写回 game.js 的脚本都必须走这里**，不要各自用 json.dumps 另设参数，
-否则格式会被改来改去、diff 全废。
-
-为什么扩展名仍是 .js 而不是 .json：作品要支持 `file://` 双击直开，
-fetch 本地 .json 会被同源策略拦掉，纯 JSON 塞进 <script> 又会被当 JS 解析报错。
+唯一作者源是 content/story/project.json 及其登记文件。
+读取本仓库原 game.js 地址时只在内存组装旧制作数据；禁止写回该地址
+或新作者目录。外部独立历史导出仍可使用原来的 JS 序列化格式。
+此模块不执行条件、动作或剧情流转，不维护第二套可写作者数据。
 """
 
 from __future__ import annotations
@@ -50,6 +29,12 @@ def loads(text: str) -> dict:
 
 
 def load(path) -> dict:
+    try:
+        from .author_project import current_project, is_current_source
+    except ImportError:
+        from author_project import current_project, is_current_source
+    if is_current_source(pathlib.Path(path)):
+        return current_project()
     return loads(pathlib.Path(path).read_text(encoding='utf-8'))
 
 
@@ -94,4 +79,12 @@ def save(path, data: dict) -> None:
     行尾交给平台默认处理（Windows 上为 CRLF，与 git checkout 的结果一致），
     这样脚本写回后工作区字节不变，git status 保持干净。
     """
+    try:
+        from .author_project import is_current_source
+    except ImportError:
+        from author_project import is_current_source
+    target = pathlib.Path(path).resolve()
+    author_root = pathlib.Path(__file__).resolve().parents[1] / "content/story"
+    if is_current_source(target) or target == author_root or author_root in target.parents:
+        raise ValueError("旧制作工具不能写回作者源；请编辑 content/story 的章节文件或使用独立对白编辑入口")
     pathlib.Path(path).write_text(dumps(data), encoding='utf-8')

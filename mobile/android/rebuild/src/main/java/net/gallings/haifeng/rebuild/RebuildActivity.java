@@ -124,6 +124,8 @@ public final class RebuildActivity extends Activity {
                         if (destroyed || view != web || !mainFrame || !ORIGIN.equals(origin.toString())
                                 || message.getType() != WebMessageCompat.TYPE_STRING) return;
                         if ("haifeng.audio.request/1".equals(message.getData())) audioFocus.request();
+                        else if ("haifeng.audio.interrupted/1".equals(message.getData())) audioFocus.interrupted();
+                        else if ("haifeng.audio.resumed/1".equals(message.getData())) audioFocus.resumedPlayback();
                         else if ("haifeng.audio.release/1".equals(message.getData())) {
                             audioFocus.release();
                         }

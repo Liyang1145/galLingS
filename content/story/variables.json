@@ -1,0 +1,27 @@
+[
+  {
+    "name": "好感",
+    "type": "number",
+    "initial": 0
+  },
+  {
+    "name": "尾鳍",
+    "type": "number",
+    "initial": 0
+  },
+  {
+    "name": "贝壳延后",
+    "type": "number",
+    "initial": 0
+  },
+  {
+    "name": "玩笑",
+    "type": "number",
+    "initial": 0
+  },
+  {
+    "name": "海星放生",
+    "type": "number",
+    "initial": 0
+  }
+]

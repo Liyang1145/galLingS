@@ -39,6 +39,9 @@ final class NativeRecordStore implements AutoCloseable {
     private static final int MAX_TABLE_BYTES = 32 * 1024 * 1024;
     private static final int MAX_RECORDS = 4096;
     private static final int MAX_FILES = 4096;
+    // Android's Linux ABI defines O_CLOEXEC as 02000000, including API 24.
+    // The Java constant is only public from API 27; keep the atomic open flag on older systems.
+    private static final int OPEN_CLOSE_ON_EXEC = 0x80000;
     // Reserve before opening another descriptor: closing one can release this process's POSIX locks.
     private static final Set<String> LEASED_ROOTS = new HashSet<>();
     private final File root;
@@ -128,8 +131,7 @@ final class NativeRecordStore implements AutoCloseable {
             if (!LEASED_ROOTS.add(root.getPath())) throw error("LOCK", "当前进程已持有此游戏记录目录");
             reservedRoot = root.getPath();
             File lock = new File(root, "store.lock");
-            FileDescriptor descriptor = Os.open(lock.getPath(),
-                    OsConstants.O_RDWR | OsConstants.O_CREAT | OsConstants.O_NOFOLLOW | OsConstants.O_CLOEXEC, 0600);
+            FileDescriptor descriptor = openFile(lock.getPath(), OsConstants.O_RDWR | OsConstants.O_CREAT, 0600);
             lease = new FileOutputStream(descriptor);
             if (!OsConstants.S_ISREG(Os.fstat(descriptor).st_mode)) {
                 throw error("LOCK", "游戏目录锁必须是普通文件");
@@ -216,20 +218,31 @@ final class NativeRecordStore implements AutoCloseable {
             result.count = names.length;
             for (String name : names) {
                 File file = new File(root, name);
-                if (!OsConstants.S_ISREG(Os.lstat(file.getPath()).st_mode)) {
-                    throw error("LAYOUT", "游戏记录目录包含非普通文件，未自动处理");
-                }
-                if ("store.lock".equals(name)) continue;
+                int mode = Os.lstat(file.getPath()).st_mode;
+                boolean regular = OsConstants.S_ISREG(mode);
+                boolean directory = OsConstants.S_ISDIR(mode);
+                if (!regular && !directory) throw error("LAYOUT", "游戏记录目录包含链接或特殊文件，未自动处理");
+                if ("store.lock".equals(name) && regular) continue;
                 if (name.matches("pending-[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\.tmp")) {
                     result.pending++;
                     continue;
                 }
-                if (!name.matches("records-[0-9]{20}\\.json")) throw error("LAYOUT", "游戏记录目录包含未知文件");
+                if (directory && name.matches("records-[0-9]{20}")) {
+                    String[] children = file.list();
+                    File payload = new File(file, "record.json");
+                    if (children == null || children.length != 1 || !"record.json".equals(children[0])
+                            || !OsConstants.S_ISREG(Os.lstat(payload.getPath()).st_mode)) {
+                        throw error("LAYOUT", "已提交记录目录不是完整的单文件容器");
+                    }
+                    file = payload;
+                } else if (!regular || !name.matches("records-[0-9]{20}\\.json")) {
+                    throw error("LAYOUT", "游戏记录目录包含未知文件");
+                }
                 long revision;
                 try { revision = Long.parseLong(name.substring(8, 28)); }
                 catch (NumberFormatException invalid) { throw error("REVISION", "容器文件名中的代次无效"); }
                 if (revision < 1 || revision > MAX_REVISION) throw error("REVISION", "容器文件名中的代次越界");
-                result.commits.put(revision, file);
+                if (result.commits.put(revision, file) != null) throw error("REVISION", "同一代次存在多个提交，拒绝猜测");
             }
             if (!new File(root, "store.lock").exists()) throw error("LOCK", "目录锁文件已丢失");
             return result;
@@ -284,44 +297,55 @@ final class NativeRecordStore implements AutoCloseable {
         byte[] bytes = encode(json.append("}}").toString());
         if (bytes.length > MAX_TABLE_BYTES) throw error("CAPACITY", "记录容器超过 32 MiB，未截断数据");
         File temporary = new File(root, "pending-" + UUID.randomUUID() + ".tmp");
-        File destination = new File(root, String.format(Locale.ROOT, "records-%020d.json", revision));
+        File destination = new File(root, String.format(Locale.ROOT, "records-%020d", revision));
         List<String> warnings = warnings(table.layout);
         try {
-            FileDescriptor descriptor = Os.open(temporary.getPath(),
-                    OsConstants.O_WRONLY | OsConstants.O_CREAT | OsConstants.O_EXCL | OsConstants.O_NOFOLLOW | OsConstants.O_CLOEXEC, 0600);
+            Os.mkdir(temporary.getPath(), 0700);
+            FileDescriptor descriptor = openFile(new File(temporary, "record.json").getPath(),
+                    OsConstants.O_WRONLY | OsConstants.O_CREAT | OsConstants.O_EXCL, 0600);
             try (FileOutputStream stream = new FileOutputStream(descriptor)) {
                 stream.write(bytes);
                 stream.getFD().sync();
             }
-            // Same-directory, no-replacement commit. A failed link leaves previous commits untouched.
-            // Unsupported filesystems are an error; do not substitute an overwriting rename or copy.
-            Os.link(temporary.getPath(), destination.getPath());
+            syncDirectory(temporary, warnings, revision);
+            // Apps cannot rely on hard-link permission. Publish a complete nonempty directory:
+            // rename cannot replace another nonempty committed directory or a legacy regular file.
+            Os.rename(temporary.getPath(), destination.getPath());
         } catch (IOException | ErrnoException failure) {
             throw error("IO", "记录未完成写入、同步或提交；旧提交保留，未自动采用临时文件");
         }
         seen = revision;
         // All following failures are warnings: the complete destination is already the new commit.
-        syncDirectory(warnings, revision);
-        try { Os.unlink(temporary.getPath()); }
-        catch (ErrnoException failure) { warnings.add("提交 " + revision + " 已完成，当前临时文件清理未完成"); }
+        syncDirectory(root, warnings, revision);
         for (Map.Entry<Long, File> older : table.layout.commits.entrySet()) {
             if (older.getKey() >= revision - 1) continue;
             try {
                 table(older.getValue(), older.getKey(), table.layout);
-                Os.unlink(older.getValue().getPath());
+                File payload = older.getValue();
+                if (payload.getParentFile().equals(root)) Os.remove(payload.getPath());
+                else {
+                    // Retire the complete directory before cleanup; an interrupted cleanup
+                    // remains pending and must never resemble a damaged committed generation.
+                    File retired = new File(root, "pending-" + UUID.randomUUID() + ".tmp");
+                    Os.rename(payload.getParentFile().getPath(), retired.getPath());
+                    Os.remove(new File(retired, "record.json").getPath());
+                    Os.remove(retired.getPath());
+                }
             } catch (StorageError | ErrnoException failure) {
                 warnings.add("提交 " + older.getKey() + " 的旧容器清理未完成；当前提交 " + revision + " 仍已保存");
             }
         }
-        syncDirectory(warnings, revision);
+        syncDirectory(root, warnings, revision);
         return new WriteResult(revision, true, warnings);
     }
 
-    private void syncDirectory(List<String> warnings, long revision) {
+    private void syncDirectory(File directory, List<String> warnings, long revision) {
         FileDescriptor descriptor = null;
         try {
-            descriptor = Os.open(root.getPath(), OsConstants.O_RDONLY | OsConstants.O_DIRECTORY
-                    | OsConstants.O_NOFOLLOW | OsConstants.O_CLOEXEC, 0);
+            descriptor = openFile(directory.getPath(), OsConstants.O_RDONLY, 0);
+            if (!OsConstants.S_ISDIR(Os.fstat(descriptor).st_mode)) {
+                throw new ErrnoException("fsync", OsConstants.ENOTDIR);
+            }
             Os.fsync(descriptor);
         } catch (ErrnoException failure) {
             warnings.add("提交 " + revision + " 已可读取，但目录同步未确认；不承诺断电持久性");
@@ -335,8 +359,7 @@ final class NativeRecordStore implements AutoCloseable {
 
     private static String readFile(File file) {
         try {
-            FileDescriptor descriptor = Os.open(file.getPath(), OsConstants.O_RDONLY
-                    | OsConstants.O_NOFOLLOW | OsConstants.O_CLOEXEC, 0);
+            FileDescriptor descriptor = openFile(file.getPath(), OsConstants.O_RDONLY, 0);
             try (FileInputStream stream = new FileInputStream(descriptor)) {
                 StructStat metadata = Os.fstat(descriptor);
                 if (!OsConstants.S_ISREG(metadata.st_mode) || metadata.st_size > MAX_TABLE_BYTES) {
@@ -367,6 +390,9 @@ final class NativeRecordStore implements AutoCloseable {
         } catch (CharacterCodingException invalid) {
             throw error("VALUE", "记录含有未转义的无配对 UTF-16 单元，拒绝有损编码");
         }
+    }
+    private static FileDescriptor openFile(String path, int flags, int mode) throws ErrnoException {
+        return Os.open(path, flags | OsConstants.O_NOFOLLOW | OPEN_CLOSE_ON_EXEC, mode);
     }
     private static List<String> warnings(Layout layout) {
         List<String> result = new ArrayList<>();

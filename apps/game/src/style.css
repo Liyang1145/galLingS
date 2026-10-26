@@ -226,6 +226,15 @@ select { font: inherit; color: inherit; background: #183443; border: 1px solid #
 .aftergame-context { border-top: 1px solid #39515c; margin-top: 18px; }
 .aftergame-context:empty { border: 0; }
 .aftergame-context pre { max-height: 320px; padding: 12px; overflow: auto; background: #061119; font-size: .8rem; }
+.aftergame-chat { border-top: 1px solid #39515c; margin-top: 20px; padding-top: 12px; }
+.aftergame-chat input, .aftergame-chat textarea { width: 100%; box-sizing: border-box; }
+.chat-actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 12px 0; }
+.chat-transcript { max-height: 360px; overflow: auto; overscroll-behavior: contain; }
+.chat-turn { padding: 12px; margin: 12px 0; background: #061119; border-radius: 10px; }
+.chat-turn .chat-speaker { color: #ead294; margin-bottom: 4px; }
+.chat-turn .chat-text { white-space: pre-wrap; margin-top: 4px; }
+.chat-disclosure:not(:empty) { border: 1px solid #b6a16b; border-radius: 10px; padding: 14px; margin-top: 16px; }
+.chat-disclosure pre { max-height: 280px; overflow: auto; padding: 12px; background: #061119; font-size: .8rem; }
 .scene.paused *, .scene.paused .world { animation-play-state: paused !important; transition-duration: 0ms; }
 .world[data-mood]:not([data-mood=""]) .mood-layer { opacity: 1; }
 .world[data-mood="dizzy"] .scene-layers { animation: scene-sway 7s ease-in-out infinite, scene-blur-pulse 5.3s ease-in-out infinite; }

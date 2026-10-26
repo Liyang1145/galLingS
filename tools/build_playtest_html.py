@@ -6,6 +6,7 @@ python tools/build_playtest_html.py <输出.html> [作品文件夹]
 import re, base64, io, os, json, sys
 from PIL import Image
 import pathlib
+import game_data
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 G = sys.argv[2] if len(sys.argv) > 2 else str(ROOT / '海风与布丁')
 MAXW = {'bg': 1920}
@@ -42,7 +43,7 @@ def inline(text):
     return pat.sub(rep, text)
 
 html = open(f'{G}/index.html', encoding='utf-8').read()
-game = open(f'{G}/game.js', encoding='utf-8').read()
+game = game_data.dumps(game_data.load(pathlib.Path(G) / "game.js"))
 css = open(f'{G}/game-polish.css', encoding='utf-8').read()
 ledger = open(pathlib.Path(__file__).with_name('playtest_ledger.js'), encoding='utf-8').read()
 

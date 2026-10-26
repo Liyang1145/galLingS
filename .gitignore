@@ -4,6 +4,7 @@ __pycache__/
 *.egg-info/
 .venv/
 config.yaml
+config.aftergame.yaml
 
 # 剧本、角色卡、素材：仓库公开，内容授权未定（PLAN §2.1、§22），不进仓库
 content/scripts/**/*.md
@@ -36,3 +37,7 @@ mobile/android/**/build/
 /海风与布丁/.rebuild-editor-backup-*.js
 /海风与布丁/.rebuild-editor-*.tmp
 /海风与布丁/.rebuild-editor-lock/
+
+# 分章作者源：事务锁、原文件备份和失败候选只留本机
+/content/story/.author-lock/
+/content/story/.author-backups/

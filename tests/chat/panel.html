@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<title>独立 Agent 隔离测试页</title>
+<style>
+  body { max-width: 900px; margin: 20px auto; padding: 16px; font: 16px sans-serif; color: #e2eef1; background: #102530; }
+  label { display: grid; gap: 8px; margin: 16px 0; }
+  input, select, textarea, button { font: inherit; padding: 8px; box-sizing: border-box; }
+  input, select, textarea { width: 100%; }
+  pre { max-height: 240px; overflow: auto; white-space: pre-wrap; }
+  .chat-actions { display: flex; gap: 10px; flex-wrap: wrap; margin: 10px 0; }
+  .chat-turn, .chat-disclosure { border: 1px solid #768c98; padding: 12px; margin: 16px 0; }
+  .chat-text { white-space: pre-wrap; overflow-wrap: anywhere; }
+</style>
+<main>
+  <h1>隔离 Agent 验证（合成事实，不是玩家成果）</h1>
+  <button id="open" type="button">打开测试面板</button>
+  <button id="close" type="button">关闭测试面板</button>
+  <section id="panel"></section>
+</main>
+<script type="module">
+  import { createAftergamePanel } from "../../apps/game/src/aftergame.ts";
+  import { content, records, scope } from "./fixtures.mjs";
+  function initialLedger() {
+    const value = records();
+    value.clears.push({ factId: "test-clear-2", endingId: "test-ending" });
+    return value;
+  }
+  let ledger = initialLedger();
+  let reads = 0;
+  const root = document.getElementById("panel");
+  const panel = createAftergamePanel(root, content, scope, { read: async () => { ++reads; return structuredClone(ledger); } });
+  document.getElementById("open").onclick = () => panel.open();
+  document.getElementById("close").onclick = () => panel.close();
+  // Only the isolated test page exposes these controls. Production has no synthetic unlock entry.
+  window.chatTest = {
+    empty() { ledger = records(); ledger.clears = []; },
+    reset() { ledger = initialLedger(); },
+    reads() { return reads; },
+  };
+  window.addEventListener("pagehide", () => panel.dispose(), { once: true });
+</script>
+</html>

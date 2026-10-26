@@ -1,0 +1,87 @@
+{
+  "format": "haifeng.author-chapter/1",
+  "id": "opening",
+  "title": "",
+  "nodes": [
+    {
+      "label": "",
+      "trans": "black",
+      "fx": "",
+      "mood": "",
+      "wait": 0.6,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "fhww88n3",
+      "jumpIf": "结局数 < 1",
+      "agent": null,
+      "bgm": null,
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "frqml99w",
+      "speaker": "",
+      "text": "",
+      "bg": "8eo1nf7q",
+      "sprites": [],
+      "ambience": []
+    },
+    {
+      "label": "",
+      "trans": "fade",
+      "fx": "",
+      "mood": "",
+      "wait": 0,
+      "acts": {},
+      "voice": null,
+      "se": null,
+      "set": "",
+      "choices": [
+        {
+          "text": "从第一话开始",
+          "target": "fhww88n3",
+          "cond": "",
+          "set": "",
+          "id": "choice-000001"
+        },
+        {
+          "text": "番外篇一 · 盒子越来越满了",
+          "target": "abqhgfod",
+          "cond": "",
+          "set": "",
+          "id": "choice-000002"
+        },
+        {
+          "text": "番外篇二 · 贝壳项链",
+          "target": "t2r382zo",
+          "cond": "",
+          "set": "",
+          "id": "choice-000003"
+        }
+      ],
+      "ctime": 0,
+      "cdef": "",
+      "jump": "",
+      "jumpIf": "",
+      "agent": null,
+      "bgm": null,
+      "amb": null,
+      "ambv": 0.6,
+      "amb2": null,
+      "amb2v": 0.6,
+      "ending": "",
+      "id": "kq4s0fev",
+      "speaker": "",
+      "text": "要从哪里开始？",
+      "bg": "8eo1nf7q",
+      "sprites": [],
+      "ambience": []
+    }
+  ]
+}

@@ -22,7 +22,7 @@ export function insideEditorRoot(root: string, filename: string): boolean {
   return !!child && child !== ".." && !child.startsWith(`..${sep}`) && !isAbsolute(child);
 }
 const RUNTIME_DIRS = ["tools/editor", "tools/content", "packages/story-model/src"] as const;
-const RUNTIME_FILES = ["package.json", "package-lock.json", "docs/rebuild/baseline/choices.json"] as const;
+const RUNTIME_FILES = ["package.json", "package-lock.json"] as const;
 const runtimePath = (path: string): boolean => RUNTIME_FILES.some(file => path === file)
   || RUNTIME_DIRS.some(folder => path.startsWith(`${folder}/`) && path.endsWith(".ts"));
 

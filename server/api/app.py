@@ -1,20 +1,9 @@
-"""HTTP + WebSocket（PLAN §14.1）。只监听 127.0.0.1。
+"""旧制作/独立聊天的本机辅助服务，不运行剧情或生成 OP。
 
-- ``GET /``                         跳转到 API 文档（旧播放器已移除）
-- ``GET /cards.html``               建卡页
-- ``WS  /ws?card=whale&mode=choice`` 一个连接 = 一个会话
-- ``WS  /ws/replay?log=<id>&speed=1``（或 ``/ws?replay=<id>``） 录制回放演示模式：按原节奏重播一局，不调用模型
-- ``GET /api/replays``              已录制的局（data_dir/sessions/*/events.jsonl）
-- ``/api/cards*``                   卡列表 / 读取 / 校验 / AI 填卡 / 保存
-- ``/api/report``                   编译报告
-- ``/api/plugins``                  插件状态
-- ``/api/agent/*``                  外部 Agent 端口（预留，默认关闭）
-- ``WS  /ws/post_ending``、``/galagent`` 结局后聊天 GalAgent（gallings.tool.galagent，见 docs/design/galagent.md）
-- ``GET /vn.html``                    作品页：玩 VN Studio 导出的游戏（窗口 / 全屏），手账停靠右侧栏
-- ``/vn/{作品}/…``、``/api/vn/games``  作品文件（vn.games_dir，默认仓库根的 海风与布丁/）
-- ``/api/vn/plugins``、``/vn_plugins/…`` 给作品用的 VN Studio 插件（vn-plugin/1）：GalAgent + content/vn_plugins/*.js
-- ``/api/settings``                 网页设置（模型 / 密钥 / 记忆底座），存 data_dir，改完重启插件
-- ``WS  /ws/soul?card=whale``         灵枢外部端口 vn-soul/1：外部前端（VN Studio）的手账记忆 / 悄悄话
+保留角色卡、插件/模型/记忆设置、旧制作静态文件与新作者源只读投影、
+/ws/soul、/ws/post_ending 及 /galagent。旧 /ws、/ws/replay、
+/api/replays、/api/report 和剧情 Agent 工具端口已退役。
+正式游戏只使用共享 TypeScript 本体，不连接此服务。
 """
 from __future__ import annotations
 
@@ -35,10 +24,7 @@ from fastapi.staticfiles import StaticFiles
 from server.api import post_ending
 from server.cards import builder
 from server.cards.validate import has_errors, validate_card
-from server.recorder import read_log_full
-from server.replay import ReplayPlayer, find_log, list_logs
 from server.runtime import ROOT, Runtime, load_config
-from server.session import TOOLS, Session, SessionOptions
 from server.soul import SoulSession
 
 log = logging.getLogger("gallings.api")
@@ -155,22 +141,15 @@ def create_app(runtime: Runtime | None = None) -> FastAPI:
     @app.get("/api/status")
     async def status() -> dict[str, Any]:
         r = rt()
-        return {"llm": bool(r.llm_chain()), "memory": r.plugins.get("memory") is not None,
-                "chapter": {"id": r.chapter["chapter_id"], "title": r.chapter["title"], "content_hash": r.chapter["content_hash"]},
-                "default_card": r.game.get("default_card", "whale"), "default_mode": r.game.get("default_mode", "choice"),
-                "reserved": {"cross_run_memory": bool(r.game.get("cross_run_memory")),
-                             "post_ending": (r.game.get("post_ending") or {}).get("mode", "off"),
-                             "agent_port": bool((r.game.get("agent_port") or {}).get("enabled")),
-                             "image": r.plugins.get("image") is not None, "tts": r.plugins.get("tts") is not None}}
+        return {"purpose": "legacy-authoring-and-chat", "llm": bool(r.llm_chain()),
+                "memory": r.plugins.get("memory") is not None,
+                "default_card": r.game.get("default_card", "whale"),
+                "post_ending": (r.game.get("post_ending") or {}).get("mode", "off"),
+                "image": r.plugins.get("image") is not None, "tts": r.plugins.get("tts") is not None}
 
     @app.get("/api/plugins")
     async def plugins() -> dict[str, Any]:
         return rt().plugins.report()
-
-    @app.get("/api/report", response_class=PlainTextResponse)
-    async def report() -> str:
-        p = rt().chapter_path.parent / "report.md"
-        return p.read_text(encoding="utf-8") if p.exists() else ""
 
     # ---------------------------------------------------------------- 角色卡
     @app.get("/api/cards")
@@ -187,7 +166,7 @@ def create_app(runtime: Runtime | None = None) -> FastAPI:
 
     @app.post("/api/cards/validate")
     async def validate(body: dict[str, Any]) -> dict[str, Any]:
-        f = validate_card(body, rt().chapter)
+        f = validate_card(body)
         return {"ok": not has_errors(f), "findings": [x.to_dict() for x in f]}
 
     @app.post("/api/cards/generate")
@@ -195,11 +174,11 @@ def create_app(runtime: Runtime | None = None) -> FastAPI:
         desc = str(body.get("description", "")).strip()
         if len(desc) < 10:
             return JSONResponse({"ok": False, "error": "描述太短，至少写一两句人设"}, 400)
-        return JSONResponse(await builder.generate(desc[:3000], rt().llm_chain(), rt().chapter))
+        return JSONResponse(await builder.generate(desc[:3000], rt().llm_chain()))
 
     @app.post("/api/cards")
     async def save(body: dict[str, Any]) -> JSONResponse:
-        f = validate_card(body, rt().chapter)
+        f = validate_card(body)
         if has_errors(f):
             return JSONResponse({"ok": False, "findings": [x.to_dict() for x in f]}, 400)
         try:
@@ -208,122 +187,8 @@ def create_app(runtime: Runtime | None = None) -> FastAPI:
             return JSONResponse({"ok": False, "error": str(e)}, 400)
         return JSONResponse({"ok": True, "id": body["id"], "findings": [x.to_dict() for x in f]})
 
-    # ---------------------------------------------------------------- 预留接口
-    @app.get("/api/agent/tools")
-    async def agent_tools() -> JSONResponse:
-        """外部 Agent 端口（PLAN §16）：工具注册表已就绪；调用端口默认关闭。"""
-        enabled = bool((rt().game.get("agent_port") or {}).get("enabled"))
-        return JSONResponse({"enabled": enabled, "tools": TOOLS})
-
-    @app.post("/api/agent/call")
-    async def agent_call(body: dict[str, Any]) -> JSONResponse:
-        return JSONResponse({"ok": False, "error": "外部 Agent 端口是预留接口，Demo 未开放"}, 501)
-
     # 结局后自由聊天（PLAN §16）：/ws/post_ending、/api/post_ending/*、/galagent，由 gallings.tool.galagent 插件提供实现
     post_ending.mount(app, rt)
-
-    # ---------------------------------------------------------------- 录制回放演示模式（PLAN §2.1、§20）
-    @app.get("/api/replays")
-    async def replays() -> dict[str, Any]:
-        r = rt()
-        cur = r.chapter.get("content_hash")
-        logs = list_logs(r.data_dir)
-        for x in logs:
-            x["current_chapter"] = bool(cur) and x["content_hash"] == cur
-            x.pop("path", None)
-            x.pop("chapter_path", None)
-        return {"logs": logs}
-
-    async def serve_replay(sock: WebSocket, log_id: str) -> None:
-        r = rt()
-        q = sock.query_params
-
-        async def send(m: dict[str, Any]) -> None:
-            await sock.send_text(json.dumps(m, ensure_ascii=False))
-
-        path = find_log(r.data_dir, log_id)
-        if not path:
-            await send({"type": "error", "message": f"没有这一局录像：{log_id}"})
-            await sock.close()
-            return
-        try:
-            h, events, sent = read_log_full(path)
-            player = ReplayPlayer(h, events, sent, send, log_id=log_id, speed=q.get("speed") or 1,
-                                  max_gap=float(q.get("max_gap") or 8), paused=q.get("paused") in ("1", "true"),
-                                  chapters=[r.chapter_path])
-        except (ValueError, OSError, KeyError) as e:
-            await send({"type": "error", "message": f"不能重播：{e}"})
-            await sock.close()
-            return
-        await player.hello()
-        if (q.get("from") or "0").isdigit() and int(q.get("from") or 0) > 0:
-            await player.jump(int(q["from"]))
-        task = asyncio.get_running_loop().create_task(player.run())
-        try:
-            while True:
-                raw = await sock.receive_text()
-                try:
-                    msg = json.loads(raw)
-                except json.JSONDecodeError:
-                    await send({"type": "error", "message": "不是 JSON"})
-                    continue
-                await player.control(msg if isinstance(msg, dict) else {})
-                if player.stopped:
-                    break
-        except WebSocketDisconnect:
-            pass
-        finally:
-            player.stopped = True
-            player._poke()
-            task.cancel()
-            with contextlib.suppress(asyncio.CancelledError, Exception):
-                await task
-
-    @app.websocket("/ws/replay")
-    async def ws_replay(sock: WebSocket) -> None:
-        await sock.accept()
-        await serve_replay(sock, sock.query_params.get("log") or sock.query_params.get("replay") or "")
-
-    # ---------------------------------------------------------------- 会话
-    @app.websocket("/ws")
-    async def ws(sock: WebSocket) -> None:
-        await sock.accept()
-        if sock.query_params.get("replay"):  # 同一个入口：/ws?replay=<日志id>&speed=1
-            await serve_replay(sock, sock.query_params["replay"])
-            return
-        r = rt()
-        if not getattr(r, "has_chapter", True):
-            await sock.send_text(json.dumps({"type": "error", "message": "缺少剧本内容（config.yaml 的 game.vn_game 作品或 game.chapter_dir），引擎会话暂时不能用。"}, ensure_ascii=False))
-            await sock.close()
-            return
-        q = sock.query_params
-        card_id = q.get("card") or r.game.get("default_card", "whale")
-        mode = q.get("mode") or r.game.get("default_mode", "choice")
-        if mode == "ai" and not r.llm_chain():
-            mode = "choice"
-
-        async def send(m: dict[str, Any]) -> None:
-            await sock.send_text(json.dumps(m, ensure_ascii=False))
-
-        try:
-            sess = Session(r, SessionOptions(card_id=card_id, mode=mode, agm_fill=bool(r.game.get("agm_fill", True)),
-                                             honesty_gap_rule=bool(r.game.get("honesty_gap_rule", False)),
-                                             endings_seen=int(q.get("endings") or 0) if (q.get("endings") or "0").isdigit() else 0), send)
-        except KeyError:
-            await send({"type": "error", "message": f"没有这张卡：{card_id}"})
-            await sock.close()
-            return
-        await sess.hello()
-        if not q.get("restore"):  # 读档局：等播放器发 restore，不自己开局
-            await sess.handle({"type": "start", "line_id": q["start"]} if q.get("start") else {"type": "advance"})
-        try:
-            while True:
-                msg = json.loads(await sock.receive_text())
-                await sess.handle(msg)
-        except WebSocketDisconnect:
-            pass
-        finally:
-            await sess.close()
 
     # ---------------------------------------------------------------- 作品（VN Studio 导出的游戏）+ 网页设置
     @app.get("/api/vn/games")
@@ -336,9 +201,6 @@ def create_app(runtime: Runtime | None = None) -> FastAPI:
         """作品页里的游戏（托管模式）启动时来取：galLingS 提供给它的 VN Studio 插件。玩家可以在游戏的“插件”面板里停用。"""
         r = rt()
         out = post_ending.vn_plugins(r)
-        if r.game.get("source") == "vnstudio" and getattr(r, "has_chapter", False):
-            # 一个游戏：作品的剧情交给 galcore 引擎（web/galcore.vnplugin.js 只接管服务器当前加载的那部作品）
-            out.insert(0, {"id": "gallings.galcore", "name": "galcore 引擎", "url": "/static/galcore.vnplugin.js"})
         d = VN_PLUGINS_DIR(r)
         if d.is_dir():
             out += [{"id": f.stem.removesuffix(".vnplugin"), "url": f"/vn_plugins/{f.name}"} for f in sorted(d.glob("*.js"))]
@@ -352,8 +214,8 @@ def create_app(runtime: Runtime | None = None) -> FastAPI:
             raise HTTPException(404)
         return FileResponse(f, media_type="text/javascript")
 
-    @app.get("/vn/{game}/{path:path}")
-    async def vn_file(game: str, path: str) -> FileResponse:
+    @app.get("/vn/{game}/{path:path}", response_model=None)
+    async def vn_file(game: str, path: str) -> FileResponse | PlainTextResponse:
         root = rt().games_dir.resolve()
         if (root / "index.html").is_file() and game == root.name:
             base = root  # 单作品：games_dir 自己就是作品目录
@@ -363,6 +225,19 @@ def create_app(runtime: Runtime | None = None) -> FastAPI:
         # 作品名本身也可能是 ".." 或 Windows 盘符 "C:"：
         # 作品目录只能是 games_dir 本身（单作品）或它下一层，且文件必须在作品目录里
         allowed = base == root or base.parent == root
+        # Retained legacy editor/export only: project data is generated in memory
+        # from the sole chapter source, never from a second writable game.js.
+        if allowed and base == (ROOT / "海风与布丁").resolve() and path == "game.js":
+            from tools.author_project import current_project
+            try:
+                project = await asyncio.to_thread(current_project)
+            except (ValueError, KeyError, TypeError, OSError):
+                return PlainTextResponse("throw new Error('分章作者源读取失败，请检查作者文件或未完成事务');",
+                                         status_code=409, media_type="text/javascript",
+                                         headers={"Cache-Control": "no-store"})
+            data = json.dumps(project, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")
+            return PlainTextResponse("window.VN_GAME = " + data + ";", media_type="text/javascript",
+                                     headers={"Cache-Control": "no-store"})
         if not allowed or base not in f.parents or not f.is_file():
             raise HTTPException(404)
         return FileResponse(f)

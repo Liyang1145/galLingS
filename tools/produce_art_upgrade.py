@@ -16,6 +16,8 @@ import sys
 import threading
 import time
 from PIL import Image, ImageDraw, ImageFont
+import game_data
+from author_project import current_digest
 
 ROOT=Path(__file__).resolve().parents[1]
 ART=ROOT/'A素材库/art-upgrade'
@@ -55,8 +57,8 @@ def record(path):
 def prepare():
     for folder in ['references','prompts','originals','review']:(ART/folder).mkdir(parents=True,exist_ok=True)
     old=json.loads((ROOT/'docs/content/art-production/全量图片制作清单.json').read_text(encoding='utf-8-sig'))
-    project=json.loads((GAME/'game.js').read_text(encoding='utf-8-sig').split('=',1)[1].strip().removesuffix(';'))
-    state=json.loads(MANIFEST.read_text(encoding='utf-8')) if MANIFEST.exists() else {'scope':'全量运行美术、36立绘、25事件CG、44背景、封面与必要增强，原件保留','requested_model':'gpt-image-2.5-flare','requested_quality':'max','source_game_sha256':hashlib.sha256((GAME/'game.js').read_bytes()).hexdigest(),'source_nodes':len(project['lines']),'items':{}}
+    project=game_data.load(GAME/'game.js')
+    state=json.loads(MANIFEST.read_text(encoding='utf-8')) if MANIFEST.exists() else {'scope':'全量运行美术、36立绘、25事件CG、44背景、封面与必要增强，原件保留','requested_model':'gpt-image-2.5-flare','requested_quality':'max','source_game_sha256':current_digest(),'source_nodes':len(project['lines']),'items':{}}
     overrides_file=ART/'overrides.json'
     overrides=json.loads(overrides_file.read_text(encoding='utf-8')) if overrides_file.exists() else {}
     jobs=[]

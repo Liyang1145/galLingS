@@ -16,6 +16,9 @@ def test_retired_player_and_remaining_pages():
         assert client.get("/docs").status_code == 200
         assert client.get("/static/index.html").status_code == 404
         assert client.get("/static/player.js").status_code == 404
+        for retired in ("/api/report", "/api/replays", "/api/agent/tools", "/static/galcore.vnplugin.js",
+                        "/static/offline/local-session.js", "/static/timeline.js"):
+            assert client.get(retired).status_code == 404
         cards = client.get("/cards.html")
         assert cards.status_code == 200
         assert "保存角色卡" in cards.text

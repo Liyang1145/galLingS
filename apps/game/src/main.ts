@@ -109,8 +109,9 @@ async function main(): Promise<void> {
   const noticeStack = element("shell-status-stack", HTMLElement);
   const noticesHome = element("notices-home", HTMLElement);
   const menuNoticesHome = element("menu-notices-home", HTMLElement);
-  const recordStatus = element("record-message", HTMLElement).parentElement;
-  if (!(recordStatus instanceof HTMLElement)) throw new Error("页面缺少全局记录提示区域");
+  const recordStatusElement = element("record-message", HTMLElement).parentElement;
+  if (!(recordStatusElement instanceof HTMLElement)) throw new Error("页面缺少全局记录提示区域");
+  const recordStatus = recordStatusElement;
   const fullscreenButton = element("fullscreen", HTMLButtonElement);
   const save = element("save-checkpoint", HTMLButtonElement);
   const saveMessage = element("save-message", HTMLElement);
@@ -138,8 +139,9 @@ async function main(): Promise<void> {
   const rollbackLocations = new RollbackLocations(
     rollbackTarget, element("rollback-location-details", HTMLElement), element("rollback-location-count", HTMLElement),
   );
-  const page = document.querySelector("main");
-  if (!(page instanceof HTMLElement)) throw new Error("页面缺少主区域");
+  const pageElement = document.querySelector("main");
+  if (!(pageElement instanceof HTMLElement)) throw new Error("页面缺少主区域");
+  const page = pageElement;
   const exitDialog = element("exit-dialog", HTMLDialogElement);
   const exitMessage = element("exit-message", HTMLElement);
   const exitOperations = element("exit-operations", HTMLElement);

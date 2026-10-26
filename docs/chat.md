@@ -338,7 +338,7 @@ haifeng.committed-clears/1
 
 #### 1.1 通过保留的辅助服务运行
 1. 把 `config.galagent.example.yaml` 里的 `game.post_ending` 和 `plugins.tools / plugins.config` 合并进 `config.yaml`。
-2. 设置 `GALLINGS_LLM_API_KEY`，`python -m server`（或 `start.bat`）。
+2. 设置 `GALLINGS_LLM_API_KEY`，在已有 Python 辅助环境执行 `python -m server`。根目录 `start.bat` 现为游戏入口，不启动此辅助服务。
 3. 浏览器打开 `http://127.0.0.1:8765/galagent?card=whale&bg=bg_shallows_sunset_v01&ending=真结局`（不同源时加 `&token=…`）。
    `bg` 写素材库 `content/assets/backgrounds` 里的文件名或完整网址；`sprite` 写立绘网址（可含 `{expr}`，随 `<emotion>` 切换）。
 

@@ -1,32 +1,47 @@
 @echo off
 chcp 65001 >nul
-rem 仅启动旧制作/独立聊天辅助服务，不启动正式游戏，不安装 Rust 或 galcore。
-setlocal
-cd /d "%~dp0"
-if not exist "requirements.txt" goto :wrongdir
-if not exist "server\__main__.py" goto :wrongdir
-where py >nul 2>nul && (set "PY=py -3") || (set "PY=python")
-set "VPY=%~dp0.venv\Scripts\python.exe"
-if not exist "%VPY%" (
-  echo [1/3] 创建辅助服务的 Python 虚拟环境 ...
-  %PY% -m venv .venv || goto :nopython
-)
-"%VPY%" -c "import sys; sys.exit(sys.version_info < (3, 11))" || goto :oldpython
-echo [2/3] 安装辅助服务依赖 ...
-"%VPY%" -m pip install -q --disable-pip-version-check -r requirements.txt || goto :fail
-echo [3/3] 启动旧制作/独立聊天服务，配置界面仅供制作与聊天使用。
-echo 正式游戏请使用新 TypeScript 本体或已经生成的 Windows 应用；这里不安装或运行旧剧情核心。
-"%VPY%" -m server
-goto :eof
+setlocal EnableExtensions DisableDelayedExpansion
+title 海风与布丁
+cd /d "%~dp0" || goto :wrongdir
+if not exist "package.json" goto :wrongdir
+if not exist "content\story\project.json" goto :wrongdir
+if not exist "tools\dev\vite.config.ts" goto :wrongdir
+where node >nul 2>nul
+if errorlevel 1 goto :nonode
+node -e "const [major, minor] = process.versions.node.split('.').map(Number); process.exit(major === 24 && minor >= 15 ? 0 : 1)"
+if errorlevel 1 goto :badnode
+where npm.cmd >nul 2>nul
+if errorlevel 1 goto :nonpm
+if not exist "node_modules\.bin\vite.cmd" goto :nodeps
+if not exist "node_modules\vite\bin\vite.js" goto :nodeps
+
+echo 正在启动《海风与布丁》...
+echo 游戏就绪后会自动打开浏览器；本窗口请保持开启。
+echo 结束游玩时，在本窗口按 Ctrl+C，或关闭本窗口。
+echo.
+call npm.cmd run game:dev -- --open
+if errorlevel 1 goto :startfailed
+exit /b 0
+
 :wrongdir
-echo 请在完整仓库根目录使用本脚本，旁边须有 requirements.txt 和 server。
-pause & exit /b 1
-:nopython
-echo 没找到 Python 3.11 或更新版本，请先安装 Python。
-pause & exit /b 1
-:oldpython
-echo 当前 .venv 的 Python 低于 3.11，请先自行处理本机环境。
-pause & exit /b 1
+echo 请在完整仓库根目录使用本脚本，保留 package.json、content 和 tools。
+goto :fail
+:nonode
+echo 没找到 Node.js，请先安装 Node.js 24.15.0 或更新的 24.x 版本。
+goto :fail
+:badnode
+echo 当前 Node.js 版本不符合要求，请使用 24.15.0 或更新的 24.x 版本。
+goto :fail
+:nonpm
+echo 没找到 npm.cmd，请修复 Node.js 的 npm 安装和 PATH 配置。
+goto :fail
+:nodeps
+echo 缺少游戏开发依赖，请先在仓库目录执行以下命令，再双击本脚本：
+echo   npm ci --ignore-scripts
+goto :fail
+:startfailed
+echo 游戏启动失败，请查看上方错误。
+echo 如果提示 5173 端口已被占用，请关闭之前的游戏启动窗口后重试。
 :fail
-echo 辅助服务依赖安装失败，请查看上面的错误；不会回退安装旧剧情核心。
-pause & exit /b 1
+pause
+exit /b 1

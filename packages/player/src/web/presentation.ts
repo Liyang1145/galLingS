@@ -5,7 +5,7 @@ import type { Playback, PresentationAdapter, PresentationContext, PresentationEn
 import { AudioMixer } from "./audio.ts";
 import type { EntryAudio } from "./audio.ts";
 import type { ResourceAccess } from "./resources.ts";
-import { setting } from "./resources.ts";
+import { setting, actorResourceKey } from "./resources.ts";
 import { VoicePolicy, readVoicePreferences } from "../voice-preferences.ts";
 import type { VoicePreferences } from "../voice-preferences.ts";
 import type { AudioVolumes } from "../preferences.ts";
@@ -35,6 +35,11 @@ const FX = ["", "shake", "quake", "flash", "redflash", "blink", "zoom", "whip"];
 const ACTIONS = Object.keys(ACTOR_ACTIONS);
 const ENTRIES = ["", "none", ...Object.keys(ACTOR_ENTRIES)];
 const EXITS = ["", "none", ...Object.keys(ACTOR_EXITS)];
+export const PRESENTATION_OPTIONS = {
+  moods: MOODS, effects: FX, looks: Object.keys(LOOKS),
+  transitions: ["", "fade", "black", "flash", "cut", "none"] as readonly string[],
+  entries: ENTRIES, exits: EXITS, actions: ACTIONS,
+} as const;
 
 function record(value: JsonValue | undefined): JsonObject {
   return value && typeof value === "object" && !Array.isArray(value) ? value : {};
@@ -289,7 +294,7 @@ export class WebPresentation implements PresentationAdapter {
       const presentation = view.presentation;
       if (!MOODS.includes(presentation.scene.mood)) throw new Error(`未支持氛围：${presentation.scene.mood}`);
       if (!FX.includes(presentation.performance.screenEffect)) throw new Error(`未支持镜头特效：${presentation.performance.screenEffect}`);
-      if (!["", "fade", "black", "flash", "cut", "none"].includes(presentation.performance.transition)) throw new Error("未支持转场");
+      if (!PRESENTATION_OPTIONS.transitions.includes(presentation.performance.transition)) throw new Error("未支持转场");
       for (const action of Object.values(presentation.performance.actorActions)) {
         if (!ACTIONS.includes(action)) throw new Error(`未支持角色动作：${action}`);
       }
@@ -301,11 +306,7 @@ export class WebPresentation implements PresentationAdapter {
       }
     };
     const actorKey = (id: string): string => {
-      const resource = this.#resources.get(id);
-      const character = resource.metadata.character;
-      if (typeof character === "string" && character) return character;
-      const name = resource.metadata.name;
-      return typeof name === "string" ? name.split(/[_\-—]/u)[0]! : id;
+      return actorResourceKey(this.#resources.get(id));
     };
     const updateScene = (): void => {
       if (!alive()) return;
@@ -354,6 +355,7 @@ export class WebPresentation implements PresentationAdapter {
         && scene.sprites.some(sprite => actorKey(sprite.assetId) === view.presentation.speaker);
       for (const [z, sprite] of scene.sprites.entries()) {
         const key = actorKey(sprite.assetId);
+        const actionName = actorActions[sprite.id] ?? actorActions[key];
         keep.add(sprite.id);
         let actor = this.#actors.get(sprite.id);
         const isNew = !actor;
@@ -372,7 +374,7 @@ export class WebPresentation implements PresentationAdapter {
         const { element, image } = actor;
         const previousFilter = image.style.filter;
         if (!isNew && previous.assetId !== sprite.assetId && sprite.poseSwitch === "soft"
-          && !changedBackground && !actorActions[key] && actorMotion) {
+          && !changedBackground && !actionName && actorMotion) {
           const ghost = element.cloneNode(true) as HTMLDivElement;
           ghost.classList.add("actor-ghost");
           ghost.setAttribute("aria-hidden", "true");
@@ -403,8 +405,8 @@ export class WebPresentation implements PresentationAdapter {
           if (!isNew && previousFilter !== filter) {
             animate(image, [{ filter: previousFilter || "none" }, { filter }], { duration: 900, easing: "ease" });
           }
-          if (actorActions[key]) {
-            const motion = ACTOR_ACTIONS[actorActions[key]!]!;
+          if (actionName) {
+            const motion = ACTOR_ACTIONS[actionName]!;
             animate(element, motion.frames, motion.timing);
           }
           else if (isNew && sprite.enter !== "none") {

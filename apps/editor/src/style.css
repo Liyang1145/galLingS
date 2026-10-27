@@ -261,6 +261,11 @@ input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 3px
 .author-canvas .actor.author-selected { outline: 3px solid #7aa2ff; outline-offset: 3px; }
 .author-canvas .author-resize { position: absolute; top: -8px; right: -8px; width: 16px; height: 16px; min-height: 0; padding: 0; border: 2px solid #fff; border-radius: 2px; background: #7aa2ff; cursor: ns-resize; }
 .author-canvas .actor:not(.author-selected) .author-resize { display: none; }
+.performance-editor { padding: 12px; font-size: 12px; }
+.performance-editor > fieldset { min-width: 0; margin: 0; padding: 10px; border: 1px solid #353947; border-radius: 7px; }
+.performance-editor h3 { margin: 18px 0 8px; }
+.performance-editor p { color: var(--studio-dim); line-height: 1.7; }
+.performance-editor section { border-bottom: 1px solid var(--studio-line); padding: 8px 0; }
 .studio-dock .flow-panel, .studio-dock .reference-panel { padding: 12px 16px; }
 .studio-dock .flow-viewport { max-height: none; }
 .studio-dock .flow-canvas { margin-inline: auto; }

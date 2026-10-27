@@ -26,6 +26,7 @@ import { AuthorWorkspace } from "./workspace.ts";
 import { AuthorStructureEditor } from "./structure.ts";
 import { AuthorAssetLibrary } from "./asset-library.ts";
 import { AuthorStageEditor } from "./stage-editor.ts";
+import { AuthorPerformanceEditor } from "./performance-editor.ts";
 import "../../game/src/style.css";
 import "./style.css";
 
@@ -87,6 +88,7 @@ let choiceText: AuthorLogicEditor | null = null;
 let structureEditor: AuthorStructureEditor | null = null;
 let assetLibrary: AuthorAssetLibrary | null = null;
 let stageEditor: AuthorStageEditor | null = null;
+let performanceEditor: AuthorPerformanceEditor | null = null;
 const NODE_PAGE_SIZE = 200;
 let nodePage = 0;
 let nodeList: {
@@ -135,6 +137,7 @@ function controls(): void {
   workspace.setState(!!baseline && !locked && !disposed, preview.running);
   stageEditor?.setState(!!baseline && !locked && !disposed, preview.running);
   assetLibrary?.setEnabled(!!baseline && !locked && !disposed);
+  performanceEditor?.setEnabled(!!baseline && !locked && !disposed);
   if (preview.running) assetLibrary?.stopAudio();
   const reviewing = !!importer?.active || !!sourceComparison?.active;
   const node = selectedNode();
@@ -197,6 +200,7 @@ function nodeForm(): void {
   structureEditor?.refresh();
   assetLibrary?.refresh();
   stageEditor?.refresh();
+  performanceEditor?.refresh();
 }
 
 function changeProject(label: string, update: (model: AuthorWorkspaceModel) => void, nextSelected?: string): void {
@@ -330,6 +334,7 @@ function draftChanged(options: { cancelImport?: boolean; refreshForm?: boolean; 
   else controls();
   assetLibrary?.refresh();
   stageEditor?.refresh();
+  performanceEditor?.refresh();
 }
 
 function historyStep(direction: "undo" | "redo"): void {
@@ -574,6 +579,7 @@ function dispose(): void {
   structureEditor?.dispose();
   stageEditor?.dispose();
   assetLibrary?.dispose();
+  performanceEditor?.dispose();
   workspace.dispose();
   nodeList = null;
   el.nodes.replaceChildren();
@@ -734,6 +740,13 @@ assetLibrary = new AuthorAssetLibrary({
   root: element("author-assets", HTMLElement),
   read: () => baseline && !disposed ? { model: drafts.model, locations: baseline.locations } : null,
   use(id, kind) { stageEditor?.useAsset(id, kind); workspace.open("stage"); },
+  notice: value => message(value, true),
+});
+performanceEditor = new AuthorPerformanceEditor({
+  root: element("author-performance", HTMLElement),
+  read: () => baseline && !disposed && selected ? { model: drafts.model, nodeId: selected } : null,
+  change: changeProject,
+  preview() { if (selected) void perform("preview", { kind: "selected", nodeId: selected }); },
   notice: value => message(value, true),
 });
 controls();

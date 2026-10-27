@@ -4,6 +4,13 @@ export interface ResourceAccess {
   get(id: string): Resource;
   url(id: string): string;
 }
+/** Legacy character names remain a fallback; instance-specific author actions use Sprite.id. */
+export function actorResourceKey(resource: Resource): string {
+  const character = resource.metadata.character;
+  if (typeof character === "string" && character) return character;
+  const name = resource.metadata.name;
+  return typeof name === "string" ? name.split(/[_\-—]/u)[0]! : resource.id;
+}
 
 export function createResourceAccess(content: StoryContent, locations: Readonly<Record<string, string>>): ResourceAccess {
   const entries = new Map(content.resources.map(resource => [resource.id, resource]));

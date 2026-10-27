@@ -1,6 +1,6 @@
 # 游戏界面、演出、声音与输入
 
-本文维护现行接口、职责与失败边界。实际已执行的验证、历史产物及未完成事项统一见[项目总览](<README.md#status>)，协作约束见[工程规则](<engineering.md>)。命令只供按用户安排手动使用，不构成自动测试、构建、服务或发布授权。
+本文维护现行接口、职责与失败边界。实际验证、历史产物及未完成事项见[项目总览](<README.md#status>)，小组协作统一遵循根 [AGENTS.md](<../AGENTS.md>)。
 
 [作者外观与舞台布局](<player.md#appearance>) · [镜头、角色、氛围与过渡](<player.md#performance>) · [游戏界面与弹层](<player.md#game-ui>) · [输入与隐藏界面](<player.md#input>) · [全屏与原生显示](<player.md#fullscreen>) · [独立声音、阅读与语音偏好](<player.md#preferences>) · [话末数值显示](<player.md#readout>) · [剧情与操作声音反馈](<player.md#feedback>) · [声音收藏](<player.md#audio-library>) · [对白回看与独立试听](<player.md#history>) · [鉴赏图片](<player.md#gallery>) · [章节初始条件试阅](<player.md#chapters>)
 

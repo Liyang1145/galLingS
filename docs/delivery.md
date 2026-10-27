@@ -1,6 +1,6 @@
 # 随包交付与 Windows、Android 宿主
 
-本文维护现行接口、职责与失败边界。实际已执行的验证、历史产物及未完成事项统一见[项目总览](<README.md#status>)，协作约束见[工程规则](<engineering.md>)。命令只供按用户安排手动使用，不构成自动测试、构建、服务或发布授权。
+本文维护现行接口、职责与失败边界。实际验证、历史产物及未完成事项见[项目总览](<README.md#status>)，小组协作统一遵循根 [AGENTS.md](<../AGENTS.md>)。
 
 [正式与开发运行配置](<delivery.md#run-profile>) · [游戏包与完整核验](<delivery.md#delivery>) · [Windows 宿主](<delivery.md#windows>) · [Windows 原生文件记录](<delivery.md#native-storage>) · [Android 宿主](<delivery.md#android>) · [Android 原生文件记录](<delivery.md#android-storage>)
 

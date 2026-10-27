@@ -1,6 +1,6 @@
 # 独立编辑、共享预览与旧制作
 
-本文维护现行接口、职责与失败边界。实际已执行的验证、历史产物及未完成事项统一见[项目总览](<README.md#status>)，协作约束见[工程规则](<engineering.md>)。命令只供按用户安排手动使用，不构成自动测试、构建、服务或发布授权。
+本文维护现行接口、职责与失败边界。实际验证、历史产物及未完成事项见[项目总览](<README.md#status>)，小组协作统一遵循根 [AGENTS.md](<../AGENTS.md>)。
 
 [独立对白编辑](<editor.md#editor>) · [编辑器本机集成](<editor.md#editor-delivery>) · [只读引用查询](<editor.md#references>) · [只读节点流转](<editor.md#flow>) · [预览检查点](<editor.md#preview-checkpoints>)
 

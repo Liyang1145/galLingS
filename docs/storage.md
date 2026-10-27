@@ -1,6 +1,6 @@
 # 存档、玩家成果与退出
 
-本文维护现行接口、职责与失败边界。实际已执行的验证、历史产物及未完成事项统一见[项目总览](<README.md#status>)，协作约束见[工程规则](<engineering.md>)。命令只供按用户安排手动使用，不构成自动测试、构建、服务或发布授权。
+本文维护现行接口、职责与失败边界。实际验证、历史产物及未完成事项见[项目总览](<README.md#status>)，小组协作统一遵循根 [AGENTS.md](<../AGENTS.md>)。
 
 [检查点与恢复](<storage.md#saves>) · [命名槽位与覆盖确认](<storage.md#slots>) · [全局成果与通关事实](<storage.md#records>) · [会话内回退](<storage.md#rollback>) · [正常退出协调](<storage.md#exits>) · [结局卡片](<storage.md#endings>)
 

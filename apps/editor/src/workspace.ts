@@ -6,7 +6,7 @@ export interface WorkspaceNode {
   changed: boolean;
   pinned: boolean;
 }
-type Panel = "dialogue" | "changes" | "source" | "checkpoints" | "story" | "flow" | "references";
+type Panel = "dialogue" | "structure" | "changes" | "source" | "checkpoints" | "story" | "flow" | "references";
 interface Options {
   root: HTMLElement;
   timeline: HTMLFieldSetElement;
@@ -100,6 +100,7 @@ export class AuthorWorkspace {
         const button = document.createElement("button");
         button.type = "button";
         button.className = "node-card";
+        button.draggable = true;
         button.dataset.nodeId = node.id;
         const chapter = document.createElement("small");
         const speaker = document.createElement("strong");

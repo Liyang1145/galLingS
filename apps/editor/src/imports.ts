@@ -3,6 +3,8 @@ import type { AuthorDraftBase, DraftImportChoice, DraftImportPlan, DraftImportRo
 import type { AuthorTextPatch } from "../../../packages/story-model/src/author.ts";
 import { authorTextLabel } from "../../../packages/story-model/src/author.ts";
 import { downloadDraft } from "./download.ts";
+import { readAuthorWorkspacePatch } from "../../../packages/story-model/src/author-workspace.ts";
+import type { AuthorWorkspacePatch } from "../../../packages/story-model/src/author-workspace.ts";
 
 export interface DraftImportSnapshot {
   revision: number;
@@ -16,6 +18,7 @@ interface Options {
   capture(): DraftImportSnapshot | null;
   current(snapshot: DraftImportSnapshot): boolean;
   apply(snapshot: DraftImportSnapshot, patch: AuthorTextPatch): void;
+  applyWorkspace(snapshot: DraftImportSnapshot, patch: AuthorWorkspacePatch): void;
   changed(): void;
   notice(message: string): void;
 }
@@ -39,6 +42,7 @@ export class AuthorDraftImporter {
   #enabled = false;
   #pending = false;
   #plan: DraftImportPlan | null = null;
+  #workspace: AuthorWorkspacePatch | null = null;
   #applyButton: HTMLButtonElement | null = null;
   #unresolved = 0;
 
@@ -47,7 +51,7 @@ export class AuthorDraftImporter {
     options.input.addEventListener("change", () => { void this.readFile(); }, { signal: this.#events.signal });
   }
 
-  get active(): boolean { return this.#pending || this.#plan !== null; }
+  get active(): boolean { return this.#pending || this.#plan !== null || this.#workspace !== null; }
 
   setEnabled(enabled: boolean): void {
     this.#enabled = enabled && !this.#disposed;
@@ -56,7 +60,8 @@ export class AuthorDraftImporter {
   }
 
   private updateApply(): void {
-    if (this.#applyButton) this.#applyButton.disabled = !this.#enabled || this.#unresolved > 0 || !this.#plan?.rows.length;
+    if (this.#applyButton) this.#applyButton.disabled = !this.#enabled || this.#unresolved > 0
+      || (!this.#workspace && !this.#plan?.rows.length);
   }
 
   private view(): AbortSignal {
@@ -73,6 +78,7 @@ export class AuthorDraftImporter {
     ++this.#epoch;
     this.#pending = false;
     this.#plan = null;
+    this.#workspace = null;
     this.#viewEvents.abort();
     this.#applyButton = null;
     this.#options.panel.replaceChildren();
@@ -98,6 +104,7 @@ export class AuthorDraftImporter {
     const request = ++this.#epoch;
     this.#pending = true;
     this.#plan = null;
+    this.#workspace = null;
     const signal = this.view();
     const loading = document.createElement("p");
     loading.setAttribute("role", "status");
@@ -105,11 +112,20 @@ export class AuthorDraftImporter {
     this.#options.panel.append(loading, this.cancelButton(signal));
     this.#options.changed();
     try {
-      if (file.size > 4 * 1024 * 1024) throw new Error("导入文件超过 4 MiB，请分批处理修改。");
+      if (file.size > 20 * 1024 * 1024) throw new Error("导入文件超过 20 MiB，请分批处理修改。");
       const text = new TextDecoder("utf-8", { fatal: true }).decode(await file.arrayBuffer());
       if (this.#disposed || request !== this.#epoch) return;
       if (!this.#options.current(snapshot)) throw new Error("读取文件期间草稿已改变，请重新选择文件。");
-      const plan = prepareDraftImport(snapshot.base, snapshot.patch, JSON.parse(text) as unknown);
+      const input: unknown = JSON.parse(text);
+      if (typeof input === "object" && input !== null && "format" in input && input.format === "haifeng.author-workspace-patch/1") {
+        const patch = readAuthorWorkspacePatch(input);
+        if (patch.sourceSha256 !== snapshot.base.sourceSha256) throw new Error("工程草稿来源与当前作者源不同，请先处理来源差异");
+        this.#workspace = patch;
+        this.#pending = false;
+        this.renderWorkspace(snapshot, patch);
+        return;
+      }
+      const plan = prepareDraftImport(snapshot.base, snapshot.patch, input);
       this.#plan = plan;
       this.#pending = false;
       this.renderPlan(snapshot, plan);
@@ -117,6 +133,7 @@ export class AuthorDraftImporter {
       if (this.#disposed || request !== this.#epoch) return;
       this.#pending = false;
       this.#plan = null;
+      this.#workspace = null;
       this.view();
       const problem = document.createElement("p");
       problem.className = "problem";
@@ -126,6 +143,38 @@ export class AuthorDraftImporter {
     } finally {
       if (!this.#disposed && request === this.#epoch) this.#options.changed();
     }
+  }
+
+  private renderWorkspace(snapshot: DraftImportSnapshot, patch: AuthorWorkspacePatch): void {
+    const signal = this.view();
+    this.#unresolved = 0;
+    const heading = document.createElement("h2");
+    heading.textContent = "导入完整工程草稿";
+    const note = document.createElement("p");
+    note.textContent = `包含 ${patch.workspace.chapters.length} 个章节、`
+      + `${patch.workspace.chapters.reduce((sum, chapter) => sum + chapter.nodes.length, 0)} 个节点。`
+      + "采用会替换本页当前草稿，可撤销；建议先导出需要保留的本页修改。采用不会写入作者文件，仍须明确保存。";
+    const apply = document.createElement("button");
+    apply.type = "button";
+    apply.textContent = "采用完整工程草稿，替换本页修改";
+    this.#applyButton = apply;
+    apply.addEventListener("click", () => {
+      if (!this.#enabled || this.#workspace !== patch) return;
+      try {
+        if (!this.#options.current(snapshot)) throw new Error("本页草稿已变化，请重新导入");
+        this.#options.applyWorkspace(snapshot, patch);
+        this.#workspace = null;
+        this.view();
+        const status = document.createElement("p");
+        status.textContent = "工程草稿已采用到本页，可预览、撤销或保存到作者源。";
+        this.#options.panel.append(status);
+        this.#options.changed();
+      } catch (error: unknown) {
+        note.textContent = `尚未采用：${error instanceof Error ? error.message : "工程草稿无效"}。当前草稿保留。`;
+      }
+    }, { signal });
+    this.#options.panel.append(heading, note, apply, this.cancelButton(signal));
+    this.updateApply();
   }
 
   private renderPlan(snapshot: DraftImportSnapshot, plan: DraftImportPlan): void {
@@ -240,6 +289,7 @@ export class AuthorDraftImporter {
     ++this.#epoch;
     this.#pending = false;
     this.#plan = null;
+    this.#workspace = null;
     this.#events.abort();
     this.#viewEvents.abort();
     this.#options.input.disabled = true;

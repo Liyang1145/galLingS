@@ -230,6 +230,14 @@ input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 3px
 .studio-panel .author-scene fieldset { padding: 8px; }
 .studio-panel .author-scene fieldset > details { padding: 6px 0; border-bottom: 1px solid var(--studio-line); }
 .studio-panel .author-scene fieldset > details > section { padding: 4px 0; }
+.structure-panel { padding: 12px; font-size: 12px; }
+.structure-panel > fieldset { min-width: 0; margin: 0; padding: 10px; border: 1px solid #353947; border-radius: 7px; }
+.structure-panel section { padding: 12px 0; border-bottom: 1px solid var(--studio-line); }
+.structure-panel h3 { margin: 0 0 8px; }
+.structure-panel p { line-height: 1.7; overflow-wrap: anywhere; color: var(--studio-dim); }
+.structure-panel button { white-space: normal; text-align: left; }
+.structure-panel input[type="checkbox"] { margin-right: 6px; }
+.node-card[draggable="true"] { cursor: grab; }
 .studio-dock .flow-panel, .studio-dock .reference-panel { padding: 12px 16px; }
 .studio-dock .flow-viewport { max-height: none; }
 .studio-dock .flow-canvas { margin-inline: auto; }

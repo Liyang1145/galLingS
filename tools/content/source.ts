@@ -105,7 +105,6 @@ export function assembleAuthorProject(files: AuthorFiles): AuthorProject {
     }
     const title = string(data.title, at(where, "title"));
     const values = array(data.nodes, at(where, "nodes"));
-    if (!values.length) reject("AUTHOR_CHAPTER", "章节节点不能为空", where);
     for (const [index, value] of values.entries()) {
       const source = { ...at(where, `nodes.${index}`), index };
       const record = object(value, source);
@@ -145,12 +144,22 @@ export function assembleAuthorProject(files: AuthorFiles): AuthorProject {
 }
 
 /** Refuse symlinks/junctions in the source path, including intermediate directories. */
-export async function authorPath(file: string): Promise<string> {
+export async function authorPath(file: string, allowMissing = false): Promise<string> {
   if (!FIXED_FILES.includes(file) && !/^chapters\/[a-z0-9][a-z0-9-]*\.json$/u.test(file)) {
     reject("AUTHOR_PATH", "不是作品清单支持的作者文件位置", authorLocation("project.json"));
   }
   const filename = resolve(AUTHOR_ROOT, file);
   const root = await realpath(REPOSITORY_ROOT);
+  if (allowMissing) {
+    if (await realpath(dirname(filename)) !== dirname(resolve(root, AUTHOR_DIRECTORY, file))) {
+      reject("AUTHOR_PATH", "作者文件父目录不是本仓库原目录", authorLocation(file));
+    }
+    const status = await lstat(filename).catch((error: unknown) => {
+      if (error instanceof Error && "code" in error && error.code === "ENOENT") return null;
+      throw error;
+    });
+    if (status === null) return filename;
+  }
   if (await realpath(filename) !== resolve(root, AUTHOR_DIRECTORY, file) || !(await lstat(filename)).isFile()) {
     reject("AUTHOR_PATH", "作者文件必须保持在本仓库原目录中，不能使用链接或特殊文件", authorLocation(file));
   }

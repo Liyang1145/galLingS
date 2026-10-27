@@ -2,6 +2,7 @@ import { assembleAuthorProject, RESOURCE_FILES } from "../../tools/content/sourc
 import type { AuthorProject } from "../../tools/content/source.ts";
 import { compileAuthorProject } from "../../tools/content/compile.ts";
 import { authorFields } from "../../tools/editor/patch.ts";
+import { authorWorkspace } from "../../tools/editor/workspace.ts";
 import type { AuthorDraftBase } from "../../packages/story-model/src/author-draft.ts";
 import { createHash } from "node:crypto";
 import { contentRevisionText } from "../../packages/story-model/src/integrity.ts";
@@ -54,5 +55,5 @@ export function base(project: AuthorProject): AuthorDraftBase {
 }
 
 export function documentFor(project: AuthorProject) {
-  return { content: compile(project), sourceSha256: project.sourceSha256, editable: authorFields(project), locations: {}, backup: null };
+  return { content: compile(project), sourceSha256: project.sourceSha256, editable: authorFields(project), workspace: authorWorkspace(project), locations: {}, backup: null };
 }

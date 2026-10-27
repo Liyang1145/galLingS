@@ -5,6 +5,7 @@ import { resolve } from "node:path";
 import { createServer } from "vite";
 import { ContentError } from "../../packages/story-model/src/model.ts";
 import { prepareAuthorPatch } from "../../tools/editor/patch.ts";
+import { prepareWorkspacePatch } from "../../tools/editor/workspace.ts";
 import { documentFor, fixture } from "./fixture.ts";
 
 const require = createRequire(process.env.HAIFENG_PLAYWRIGHT_PACKAGE ?? import.meta.url);
@@ -50,7 +51,9 @@ try {
     try {
       let candidate = project;
       if (url.pathname !== "/__editor/source") {
-        candidate = prepareAuthorPatch(project, route.request().postDataJSON()).updated;
+        const input = route.request().postDataJSON();
+        candidate = (input.format === "haifeng.author-workspace-patch/1"
+          ? prepareWorkspacePatch(project, input) : prepareAuthorPatch(project, input)).updated;
         documentFor(candidate); // The real shared compiler rejects invalid candidates before adoption.
       }
       if (url.pathname === "/__editor/save") { project = candidate; writes++; }
@@ -91,7 +94,7 @@ try {
   assert.ok(layout.cards.bottom < layout.height);
   await action("tab-dialogue").focus();
   await page.keyboard.press("ArrowRight");
-  assert.equal(await action("tab-changes").getAttribute("aria-selected"), "true");
+  assert.equal(await action("tab-structure").getAttribute("aria-selected"), "true");
   await page.keyboard.press("End");
   assert.equal(await action("panel-checkpoints").isVisible(), true);
   await page.keyboard.press("Home");
@@ -230,6 +233,60 @@ try {
   assert.ok(compact.dockBottom <= compact.height);
   check("narrow and compact desktop layouts keep author controls reachable without horizontal overflow");
   await page.setViewportSize({ width: 1440, height: 1000 });
+  await action("tab-structure").click();
+  await page.getByRole("textbox", { name: "新章节名称", exact: true }).fill("新增的章节");
+  await page.getByRole("button", { name: "新增章节", exact: true }).click();
+  await page.getByRole("button", { name: "在后面新增", exact: true }).click();
+  const firstNew = await action("nodes").inputValue();
+  await page.getByRole("button", { name: "在后面新增", exact: true }).click();
+  const secondNew = await action("nodes").inputValue();
+  assert.notEqual(firstNew, secondNew);
+  await page.getByRole("button", { name: "将所选节点设为开局", exact: true }).click();
+  await page.getByRole("checkbox", { name: /确认删除所选节点/u }).check();
+  await page.getByRole("button", { name: "删除所选节点", exact: true }).click();
+  assert.ok((await action("message").innerText()).includes("删除范围含作品入口"));
+  assert.equal(await action("nodes").inputValue(), secondNew);
+  await page.getByRole("textbox", { name: "删除后的替代节点", exact: true }).fill(firstNew);
+  await page.getByRole("button", { name: "删除所选节点", exact: true }).click();
+  assert.equal(await action("nodes").inputValue(), firstNew);
+  await page.getByRole("button", { name: "新增选项", exact: true }).click();
+  await page.getByRole("button", { name: "新增选项", exact: true }).click();
+  const managedChoices = page.getByRole("listbox", { name: "管理已有选项", exact: true });
+  const choiceIds = await managedChoices.locator("option").evaluateAll(options => options.map(option => option.value));
+  assert.equal(choiceIds.length, 2);
+  await managedChoices.selectOption(choiceIds[1]);
+  await page.getByRole("button", { name: "选项前移", exact: true }).click();
+  assert.equal(await managedChoices.locator("option").first().getAttribute("value"), choiceIds[1]);
+  await page.getByRole("button", { name: "删除选项", exact: true }).click();
+  assert.equal(await managedChoices.locator("option").count(), 1);
+  await action("undo-draft").click();
+  assert.equal(await managedChoices.locator("option").count(), 2);
+  const workspaceDownload = page.waitForEvent("download");
+  await action("export").click();
+  const workspaceFile = await workspaceDownload;
+  const workspaceStream = await workspaceFile.createReadStream();
+  const workspaceChunks = [];
+  for await (const chunk of workspaceStream) workspaceChunks.push(chunk);
+  const workspaceBytes = Buffer.concat(workspaceChunks);
+  const workspace = JSON.parse(workspaceBytes.toString("utf8"));
+  assert.equal(workspace.format, "haifeng.author-workspace-patch/1");
+  assert.equal(workspace.workspace.chapters.length, 2);
+  await page.getByRole("textbox", { name: "章节名称", exact: true }).fill("临时名称");
+  await page.getByRole("button", { name: "重命名章节", exact: true }).click();
+  await action("tab-source").click();
+  await action("import-file").setInputFiles({ name: "工程草稿.json", mimeType: "application/json", buffer: workspaceBytes });
+  await until(async () => (await action("import-panel").innerText()).includes("采用完整工程草稿"));
+  await page.getByRole("button", { name: "采用完整工程草稿，替换本页修改", exact: true }).click();
+  await action("tab-structure").click();
+  assert.equal(await page.getByRole("textbox", { name: "章节名称", exact: true }).inputValue(), "新增的章节");
+  await action("save").click();
+  await until(async () => (await action("message").innerText()).includes("作者源已保存"));
+  await action("reload").click();
+  await until(async () => (await action("message").innerText()).includes("已读取当前作者源"));
+  assert.equal(writes, 3);
+  assert.ok((await action("count").innerText()).includes("共 4 个节点"));
+  assert.equal(await action("nodes").inputValue(), firstNew);
+  check("chapter/node/choice structure, deletion retargeting, history and complete draft adoption save in the isolated project");
   assert.deepEqual(errors, []);
   assert.deepEqual(external, []);
   await page.screenshot({ path: resolve(artifacts, "editor.png"), fullPage: true });

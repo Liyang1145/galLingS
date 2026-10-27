@@ -1,7 +1,5 @@
-import type { AuthorTextPatch } from "../../../packages/story-model/src/author.ts";
-
 /** Local browser download only; no server request and no author-file write. */
-export function downloadDraft(patch: AuthorTextPatch, prefix = "剧情草稿"): void {
+export function downloadDraft(patch: { sourceSha256: string }, prefix = "剧情草稿"): void {
   downloadJson(patch, `${prefix}-${patch.sourceSha256.slice(0, 12)}.json`);
 }
 

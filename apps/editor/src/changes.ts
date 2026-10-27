@@ -7,6 +7,7 @@ export interface ChangeSnapshot {
   readonly sourceSha256: string;
   readonly revision: number;
   readonly edits: readonly Readonly<AuthorTextEdit>[];
+  readonly structure?: readonly string[];
 }
 
 interface Options {
@@ -38,6 +39,7 @@ export class AuthorChanges {
   readonly #refresh = button("按当前草稿刷新变更");
   readonly #status = element("p", "读取作者源后可查看草稿变更。");
   readonly #views = element("fieldset");
+  readonly #structure = element("div");
   readonly #query = element("input");
   readonly #field = element("select");
   readonly #rows = element("ol");
@@ -77,7 +79,7 @@ export class AuthorChanges {
     const pager = element("div");
     pager.className = "controls changes-pager";
     pager.append(this.#previous, this.#count, this.#next);
-    this.#views.append(element("legend", "只读差量"), query, field, pager, this.#rows);
+    this.#views.append(element("legend", "只读差量"), this.#structure, query, field, pager, this.#rows);
     options.root.classList.add("changes-panel");
     options.root.append(header, element("p",
       "对照已读取作者源与本页草稿，不是磁盘最新状态或正在运行的预览。展开查看完整原值 / 新值；定位只打开已有编辑表单。",
@@ -128,6 +130,7 @@ export class AuthorChanges {
   invalidate(): void {
     if (this.#closed) return;
     this.#snapshot = null;
+    this.#structure.replaceChildren();
     this.#chapters.clear();
     this.clearRows();
     this.#rows.scrollTop = 0;
@@ -142,6 +145,15 @@ export class AuthorChanges {
     const snapshot = this.#options.capture();
     if (!snapshot || !this.#options.current(snapshot)) { this.invalidate(); return; }
     this.#snapshot = snapshot;
+    this.#structure.replaceChildren();
+    if (snapshot.structure?.length) {
+      const details = element("details");
+      details.append(element("summary", `${snapshot.structure.length} 项工程结构变更`));
+      const list = element("ul");
+      list.append(...snapshot.structure.map(text => element("li", text)));
+      details.append(list);
+      this.#structure.append(details);
+    }
     this.#chapters = new Map(snapshot.content.nodes.map(node => [node.id, node.chapter]));
     this.#status.textContent = `作者源 ${snapshot.sourceSha256}；本页草稿代次 ${snapshot.revision}；`
       + `${snapshot.edits.length} 个字段，${new Set(snapshot.edits.map(edit => edit.nodeId)).size} 个节点。`

@@ -2,10 +2,11 @@ import type { SourceLocation } from "../../packages/story-model/src/model.ts";
 import { reject } from "../../packages/story-model/src/read.ts";
 
 export interface StringToken { start: number; end: number; value: string }
+export interface JsonToken { start: number; end: number }
 
 /** Strict JSON plus duplicate-key rejection; spans are only for byte-preserving text edits. */
 export function authorJson(bytes: Uint8Array, file: string): {
-  value: unknown; text: string; strings: ReadonlyMap<string, StringToken>;
+  value: unknown; text: string; strings: ReadonlyMap<string, StringToken>; values: ReadonlyMap<string, JsonToken>;
 } {
   const source: SourceLocation = { file, field: "" };
   let text: string;
@@ -17,6 +18,7 @@ export function authorJson(bytes: Uint8Array, file: string): {
     return reject("AUTHOR_JSON", "作者文件必须是有效 UTF-8 纯 JSON", source);
   }
   const strings = new Map<string, StringToken>();
+  const values = new Map<string, JsonToken>();
   let cursor = 0;
   let count = 0;
   const space = (): void => { while (cursor < text.length && /\s/u.test(text[cursor]!)) cursor++; };
@@ -32,6 +34,7 @@ export function authorJson(bytes: Uint8Array, file: string): {
   function value(path: (string | number)[], depth: number): void {
     if (depth > 128 || ++count > 1000000) reject("AUTHOR_LIMIT", "作者 JSON 嵌套或字段数量超出范围", source);
     space();
+    const start = cursor;
     if (text[cursor] === "\"") strings.set(JSON.stringify(path), quoted());
     else if (text[cursor] === "{") {
       cursor++;
@@ -64,7 +67,8 @@ export function authorJson(bytes: Uint8Array, file: string): {
     } else {
       while (cursor < text.length && !/[\s,\]}]/u.test(text[cursor]!)) cursor++;
     }
+    values.set(JSON.stringify(path), { start, end: cursor });
   }
   value([], 0);
-  return { value: parsed, text, strings };
+  return { value: parsed, text, strings, values };
 }

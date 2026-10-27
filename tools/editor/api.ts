@@ -3,11 +3,12 @@ import type { IncomingMessage, ServerResponse } from "node:http";
 import { ContentError } from "../../packages/story-model/src/model.ts";
 import { authorFields, previewAuthorText, readAuthorSource, saveAuthorText } from "./source.ts";
 import { EditorMedia } from "./media.ts";
+import { authorWorkspace } from "./workspace.ts";
 
 export const EDITOR_HOST = "127.0.0.1:5174";
 export const EDITOR_ORIGIN = `http://${EDITOR_HOST}`;
 export const EDITOR_SESSION_MARKER = "__HAIFENG_EDITOR_SESSION__";
-const MAX_BODY = 4 * 1024 * 1024;
+const MAX_BODY = 20 * 1024 * 1024;
 
 export function assertEditorSessionMarker(html: string): void {
   if (html.split(EDITOR_SESSION_MARKER).length !== 2) throw new Error("编辑页面缺少唯一的本机服务会话标记");
@@ -26,7 +27,7 @@ async function body(request: IncomingMessage): Promise<unknown> {
   for await (const chunk of request) {
     const bytes = Buffer.isBuffer(chunk) ? chunk : Buffer.from(chunk as Uint8Array);
     size += bytes.byteLength;
-    if (size > MAX_BODY) throw new ContentError("AUTHOR_LIMIT", "草稿请求超过 4 MiB", { file: "author-text-patch", field: "" });
+    if (size > MAX_BODY) throw new ContentError("AUTHOR_LIMIT", "草稿请求超过 20 MiB", { file: "author-text-patch", field: "" });
     chunks.push(bytes);
   }
   return JSON.parse(new TextDecoder("utf-8", { fatal: true }).decode(Buffer.concat(chunks))) as unknown;
@@ -42,9 +43,9 @@ export function createEditorApi(options: { beforeOperation?(): Promise<void> } =
   let pending = false;
   const document = (
     loaded: Awaited<ReturnType<typeof readAuthorSource>>["loaded"],
-    editable: ReturnType<typeof authorFields>, backup: string | null = null,
+    editable: ReturnType<typeof authorFields>, workspace: ReturnType<typeof authorWorkspace>, backup: string | null = null,
   ): unknown => ({
-    content: loaded.content, sourceSha256: loaded.content.source.sha256, editable, backup,
+    content: loaded.content, sourceSha256: loaded.content.source.sha256, editable, workspace, backup,
     locations: media.register(loaded.files),
   });
   return {
@@ -83,14 +84,14 @@ export function createEditorApi(options: { beforeOperation?(): Promise<void> } =
           await options.beforeOperation?.();
           if (route === "/__editor/source") {
             const source = await readAuthorSource();
-            reply(response, 200, document(source.loaded, source.editable));
+            reply(response, 200, document(source.loaded, source.editable, source.workspace));
           } else if (route === "/__editor/preview") {
             const preview = await previewAuthorText(input);
-            reply(response, 200, document(preview.loaded, authorFields(preview.updated)));
+            reply(response, 200, document(preview.loaded, authorFields(preview.updated), authorWorkspace(preview.updated)));
           } else {
             const saved = await saveAuthorText(input);
             // Save is already committed; only pure response assembly follows.
-            reply(response, 200, document(saved.loaded, saved.editable, saved.backup));
+            reply(response, 200, document(saved.loaded, saved.editable, saved.workspace, saved.backup));
           }
         } catch (error: unknown) {
           if (response.headersSent) { response.destroy(); return; }

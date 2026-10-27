@@ -3,12 +3,15 @@ import { authorChoiceId, readAuthorTextField } from "../../../packages/story-mod
 import type { AuthorFieldValue } from "../../../packages/story-model/src/author.ts";
 import type { Diagnostic, StoryContent } from "../../../packages/story-model/src/model.ts";
 import { array, at, knownFields, object, reject, string } from "../../../packages/story-model/src/read.ts";
+import { readAuthorWorkspace } from "../../../packages/story-model/src/author-workspace.ts";
+import type { AuthorWorkspaceModel } from "../../../packages/story-model/src/author-workspace.ts";
 
 export interface AuthorDocument {
   sourceSha256: string;
   content: StoryContent;
   locations: Record<string, string>;
   editable: Record<string, AuthorFieldValue[]>;
+  workspace: AuthorWorkspaceModel;
   backup: string | null;
 }
 
@@ -45,7 +48,7 @@ export function readAuthorFailure(input: unknown): AuthorRequestError {
 export function readAuthorDocument(input: unknown): AuthorDocument {
   const source = { file: "editor-response", field: "" };
   const data = object(input, source);
-  knownFields(data, ["sourceSha256", "content", "locations", "editable", "backup"], source);
+  knownFields(data, ["sourceSha256", "content", "locations", "editable", "workspace", "backup"], source);
   const content = readStoryContent(data.content, "editor-response.content");
   const sourceSha256 = hash(data.sourceSha256, at(source, "sourceSha256"));
   if (sourceSha256 !== content.source.sha256) reject("AUTHOR_HASH", "作者源摘要与内容来源不一致", source);
@@ -80,7 +83,7 @@ export function readAuthorDocument(input: unknown): AuthorDocument {
     return [node.id, fields];
   }));
   return {
-    sourceSha256, content, locations, editable,
+    sourceSha256, content, locations, editable, workspace: readAuthorWorkspace(data.workspace),
     backup: data.backup === null ? null : localPath(data.backup, at(source, "backup")),
   };
 }

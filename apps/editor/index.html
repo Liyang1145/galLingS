@@ -67,6 +67,7 @@
       <section class="studio-inspector studio-panel" aria-label="节点属性与作者文件">
         <div class="studio-tabs" role="tablist" aria-label="属性面板" data-workspace-tabs>
           <button id="tab-dialogue" role="tab" aria-selected="true" aria-controls="panel-dialogue" data-workspace-tab="dialogue">对白与逻辑</button>
+          <button id="tab-structure" role="tab" aria-selected="false" aria-controls="panel-structure" tabindex="-1" data-workspace-tab="structure">结构</button>
           <button id="tab-changes" role="tab" aria-selected="false" aria-controls="panel-changes" tabindex="-1" data-workspace-tab="changes">变更</button>
           <button id="tab-source" role="tab" aria-selected="false" aria-controls="panel-source" tabindex="-1" data-workspace-tab="source">文件</button>
           <button id="tab-checkpoints" role="tab" aria-selected="false" aria-controls="panel-checkpoints" tabindex="-1" data-workspace-tab="checkpoints">检查点</button>
@@ -80,6 +81,9 @@
           <p id="field-note" class="help">草稿仅在本页保留；点击保存才会修改作者源。</p>
           <button id="reset-node" disabled>还原本节点草稿</button>
           <section id="choice-text" aria-label="已有节点与选项逻辑编辑"></section>
+        </div>
+        <div id="panel-structure" class="panel-scroll" role="tabpanel" aria-labelledby="tab-structure" hidden>
+          <section id="author-structure" aria-label="章节、节点与选项结构编辑"></section>
         </div>
         <div id="panel-changes" class="panel-scroll" role="tabpanel" aria-labelledby="tab-changes" hidden>
           <section id="author-changes" aria-label="当前草稿的只读变更清单"></section>

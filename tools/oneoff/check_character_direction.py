@@ -49,7 +49,7 @@ async def review(out,edge,single):
   await ctx.close()
   reduced=await browser.new_context(reduced_motion='reduce');rp=await reduced.new_page();await rp.goto((GAME/'index.html').as_uri());await rp.wait_for_function('typeof P!=="undefined"');await settled(rp,'cp31i7u2')
   checks['reducedMotion']=await rp.evaluate('bgEl._shot===null && getComputedStyle(bgEl).animationName==="none"');assert checks['reducedMotion'];await reduced.close()
-  editor=await browser.new_page();editor.on('pageerror',lambda e:errors.append('editor:'+str(e)));await editor.goto((ROOT/'引擎开发.html').as_uri());await editor.wait_for_function('window.VN_ART_READY===true')
+  editor=await browser.new_page();editor.on('pageerror',lambda e:errors.append('editor:'+str(e)));await editor.goto((GAME/'index.html').as_uri()+'?editor=1');await editor.wait_for_function('window.VN_ART_READY===true')
   assert await editor.evaluate('VN_ART_CATALOG.items.every(a=>P.assets[a.id])')
   await editor.locator('#bArt').click();await editor.locator('[aria-label="搜索美术素材"]').fill('P16');await editor.locator('[aria-label="采用状态"]').select_option('adopted');await editor.locator('.art-card').first.click();before=await editor.evaluate('L().sprites.length');await editor.locator('[data-use=single]').click();assert await editor.evaluate('L().sprites.length')==before+1;await editor.locator('#bUndo').click();assert await editor.evaluate('L().sprites.length')==before
   checks['editor']=await editor.evaluate('({items:VN_ART_CATALOG.items.length,files:VN_ART_CATALOG.physicalFiles,insertUndo:true})');await editor.close()

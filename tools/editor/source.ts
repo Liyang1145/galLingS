@@ -3,20 +3,13 @@ import { lstat, mkdir, readFile, realpath, rename, rmdir, unlink, writeFile } fr
 import { dirname, resolve } from "node:path";
 import { compileSourceContent } from "../content/build.ts";
 import {
-  AUTHOR_DIRECTORY, AUTHOR_LOCK, AUTHOR_ROOT, assembleAuthorProject, authorFileDigests,
+  AUTHOR_DIRECTORY, AUTHOR_LOCK, AUTHOR_ROOT, authorFileDigests,
   authorHash, authorLocation, authorPath, readAuthorProject,
 } from "../content/source.ts";
-import type { AuthorProject } from "../content/source.ts";
-import { authorJson } from "../content/json.ts";
-import type { StringToken } from "../content/json.ts";
 import { readAuthorTextPatch } from "../../packages/story-model/src/author.ts";
 import { reject } from "../../packages/story-model/src/read.ts";
-
-export function authorFields(project: AuthorProject): Record<string, ("speaker" | "text")[]> {
-  return Object.fromEntries(project.nodes.map(({ record }) => [
-    String(record.id), (["speaker", "text"] as const).filter(field => typeof record[field] === "string"),
-  ]));
-}
+import { authorFields, prepareAuthorPatch } from "./patch.ts";
+export { authorFields } from "./patch.ts";
 
 export async function readAuthorSource(): Promise<{
   sourceSha256: string;
@@ -30,44 +23,7 @@ export async function readAuthorSource(): Promise<{
 async function candidate(input: unknown, holdingLock = false) {
   const patch = readAuthorTextPatch(input);
   const original = await readAuthorProject(holdingLock);
-  if (original.sourceSha256 !== patch.sourceSha256) {
-    reject("AUTHOR_CONFLICT", "作者源已改变；先导出草稿，再重新读取并处理冲突", authorLocation("project.json"));
-  }
-  const ids = new Map(original.nodes.map(node => [node.record.id, node]));
-  if (ids.size !== original.nodes.length) reject("AUTHOR_NODE", "作者节点 ID 重复", authorLocation("project.json"));
-  const documents = new Map<string, ReturnType<typeof authorJson>>();
-  const changes = new Map<string, (StringToken & { after: string })[]>();
-  for (const edit of patch.edits) {
-    const node = ids.get(edit.nodeId);
-    if (!node || typeof node.record[edit.field] !== "string" || node.record[edit.field] !== edit.before) {
-      reject("AUTHOR_CONFLICT", "原字段缺失、类型不符或已改变", node
-        ? { ...node.where, field: `${node.where.field}.${edit.field}` }
-        : { ...authorLocation("project.json"), nodeId: edit.nodeId });
-    }
-    let document = documents.get(node.file);
-    if (!document) {
-      document = authorJson(original.files.get(node.file)!, authorLocation(node.file).file);
-      documents.set(node.file, document);
-    }
-    const span = document.strings.get(JSON.stringify(["nodes", node.index, edit.field]));
-    if (!span) reject("AUTHOR_CONFLICT", "原字符串位置无法明确定位，拒绝写回", node.where);
-    if (edit.before === edit.after) continue;
-    const edits = changes.get(node.file) ?? [];
-    edits.push({ ...span, after: edit.after });
-    changes.set(node.file, edits);
-  }
-  const files = new Map(original.files);
-  const changed = new Map<string, Uint8Array>();
-  for (const [file, edits] of changes) {
-    let text = documents.get(file)!.text;
-    for (const edit of edits.sort((a, b) => b.start - a.start)) {
-      text = text.slice(0, edit.start) + JSON.stringify(edit.after) + text.slice(edit.end);
-    }
-    const bytes = Buffer.from(text, "utf8");
-    files.set(file, bytes);
-    changed.set(file, bytes);
-  }
-  const updated = assembleAuthorProject(files);
+  const { updated, changed } = prepareAuthorPatch(original, patch);
   // Same full compilation and resource checks as packaged content; no separate editor interpreter.
   const loaded = await compileSourceContent(updated);
   return { original, updated, changed, loaded };

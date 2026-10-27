@@ -1,11 +1,12 @@
 import { CONTENT_FORMAT, PLAYER_VARIABLES } from "../../packages/story-model/src/model.ts";
 import type {
-  Choice, Flow, JsonObject, Resource, SourceLocation, StoryContent, StoryNode, Value, ValueType,
+  Choice, JsonObject, Resource, SourceLocation, StoryContent, StoryNode, Value, ValueType,
 } from "../../packages/story-model/src/model.ts";
 import { localPath, nonempty, oneOf } from "../../packages/story-model/src/content.ts";
 import { AUTHOR_FILE, authorLocation } from "./source.ts";
 import type { AuthorProject } from "./source.ts";
-import { parseAssignments, parseExpression } from "../../packages/story-model/src/expression.ts";
+import { compileAuthorChoice } from "../../packages/story-model/src/author-choice.ts";
+import { compileAuthorLogic } from "../../packages/story-model/src/author-logic.ts";
 import type { VariableTypes } from "../../packages/story-model/src/expression.ts";
 import {
   array, at, boolean, json, jsonObject, knownFields, numeric, object, optionalString, reject, string,
@@ -87,10 +88,6 @@ export function compileAuthorProject(project: AuthorProject): StoryContent {
     }
     return { id, record, where, label, chapter };
   });
-  const nodeTarget = (target: string, where: SourceLocation): string => {
-    if (!nodeIds.has(target)) return reject("TARGET", `不存在目标节点「${target}」`, where);
-    return target;
-  };
   const usedIdentities = new Set<string>();
   const nodes: StoryNode[] = records.map(({ id, record: line, where, label, chapter }, index) => {
     const loc = (field: string): SourceLocation => at(where, field);
@@ -100,10 +97,6 @@ export function compileAuthorProject(project: AuthorProject): StoryContent {
     const rawChoices = array(line.choices, loc("choices"));
     const jump = text("jump");
     const ending = text("ending");
-    if ((rawChoices.length && (jump || ending)) || (jump && ending)) {
-      reject("FLOW_CONFLICT", "选择、跳转与结局存在冲突，需显式处理而非猜优先级", where);
-    }
-    const actions = (value: string, source: SourceLocation) => parseAssignments(value, writable, readable, source);
     const choices: Choice[] = rawChoices.map((item, choiceIndex) => {
       const source = loc(`choices.${choiceIndex}`);
       const record = object(item, source);
@@ -119,32 +112,12 @@ export function compileAuthorProject(project: AuthorProject): StoryContent {
         reject("CHOICE_ID", "选项身份重复；改文字或移动位置不能重新分配已有身份", source);
       }
       usedIdentities.add(choice.id);
-      return {
-        id: choice.id, text: choice.text, condition: parseExpression(choice.cond, readable, at(source, "cond")),
-        actions: actions(choice.set, at(source, "set")),
-        target: choice.target ? nodeTarget(choice.target, at(source, "target")) : sequential, source,
-      };
+      return compileAuthorChoice(choice, { source, writable, readable, nodeIds, sequential });
     });
-    const durationMs = nonNegative(line.ctime, loc("ctime")) * 1000;
-    const defaultChoice = text("cdef");
-    let flow: Flow;
-    if (choices.length) {
-      let timeout: Extract<Flow, { kind: "choice" }>["timeout"] = null;
-      if (durationMs > 0) {
-        const matches = choices.filter(choice => choice.id === defaultChoice);
-        if (matches.length !== 1) reject("TIMEOUT_DEFAULT", "超时必须指向唯一的显式默认选项", loc("cdef"));
-        timeout = { durationMs, choiceId: matches[0]!.id, unavailable: "error" };
-      } else if (defaultChoice) reject("TIMEOUT_DEFAULT", "无倒计时却指定默认选项", loc("cdef"));
-      flow = { kind: "choice", choices, emptyTarget: sequential, timeout };
-    } else {
-      if (durationMs > 0 || defaultChoice) reject("TIMEOUT_DEFAULT", "没有选项的节点不能配置选择倒计时", where);
-      flow = ending ? { kind: "ending", endingId: ending }
-        : jump ? {
-          kind: "branch", condition: parseExpression(text("jumpIf"), readable, loc("jumpIf")),
-          then: nodeTarget(jump, loc("jump")), otherwise: sequential,
-        } : { kind: "next", target: sequential };
-    }
-    if (!jump && text("jumpIf")) reject("FLOW_CONFLICT", "存在条件却没有跳转目标", loc("jumpIf"));
+    const logic = compileAuthorLogic({
+      set: text("set"), jump, jumpIf: text("jumpIf"), ending,
+      ctime: nonNegative(line.ctime, loc("ctime")), cdef: text("cdef"),
+    }, choices, { source: where, writable, readable, nodeIds, sequential });
     const sprites = array(line.sprites, loc("sprites")).map((item, spriteIndex) => {
       const source = loc(`sprites.${spriteIndex}`);
       const sprite = object(item, source);
@@ -198,7 +171,7 @@ export function compileAuthorProject(project: AuthorProject): StoryContent {
       if (line[field] !== undefined) sourceHints[field] = json(line[field], loc(field));
     }
     return {
-      id, label, chapter, source: where, enter: actions(text("set"), loc("set")), flow,
+      id, label, chapter, source: where, enter: logic.enter, flow: logic.flow,
       presentation: {
         speaker: text("speaker"), text: text("text"),
         scene: {
@@ -215,7 +188,8 @@ export function compileAuthorProject(project: AuthorProject): StoryContent {
       },
     };
   });
-  const entryNodeId = nodeTarget(project.entryNodeId, at(ROOT, "entryNodeId"));
+  const entryNodeId = project.entryNodeId;
+  if (!nodeIds.has(entryNodeId)) reject("TARGET", `不存在入口节点「${entryNodeId}」`, at(ROOT, "entryNodeId"));
   return {
     format: CONTENT_FORMAT, workId: project.workId, title: project.title, revision: "pending", entryNodeId,
     variables: definitions, nodes, resources,

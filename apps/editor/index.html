@@ -4,90 +4,141 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="haifeng-editor-session" content="__HAIFENG_EDITOR_SESSION__" />
-    <title>海风与布丁 · 对白编辑试用</title>
+    <title>海风与布丁 · VN Studio</title>
   </head>
   <body>
     <main id="editor">
-      <header>
-        <p class="eyebrow">独立制作入口 · M6 试用切片</p>
-        <h1>海风与布丁 · 对白编辑</h1>
-        <p class="help">编辑已有节点的说话人和对白。草稿仅在本页内存中；“保存到作者源”才会修改作品文件。</p>
-        <div class="controls">
-          <button id="reload">读取作者源</button>
-          <button id="compare-source" disabled>保留草稿并与磁盘源比较</button>
-          <button id="cancel-source-comparison" hidden disabled>取消磁盘比较读取</button>
-          <label id="discard-label" hidden><input id="discard" type="checkbox" /> 本次允许丢弃当前草稿并重新读取</label>
-          <button id="export" disabled>导出修改草稿</button>
-          <button id="save" disabled>保存到作者源</button>
-          <button id="undo-draft" disabled>撤销草稿操作</button>
-          <button id="redo-draft" disabled>重做草稿操作</button>
+      <header class="studio-toolbar">
+        <div class="studio-brand"><strong>VN</strong><h1>海风与布丁 <span>Studio</span></h1></div>
+        <div class="toolbar-group" aria-label="作者文件">
+          <button id="reload" title="重新读取作者源">读取</button>
+          <button id="save" class="primary-action" disabled>保存到作者源</button>
+          <button id="export" disabled>导出草稿</button>
         </div>
-        <p id="draft-history" class="help"></p>
-        <p id="message" role="status" aria-live="polite">尚未读取作者源。</p>
-        <section id="author-diagnostic" aria-label="本次作者操作的只读诊断" hidden></section>
-        <p id="source-info" class="help"></p>
-        <section id="source-comparison" class="draft-import-panel source-comparison" aria-label="保留草稿与磁盘源比较" hidden></section>
-        <label class="draft-file">导入修改草稿
-          <input id="import-file" type="file" accept=".json,application/json" disabled />
-        </label>
-        <p class="help">仅在本页读取所选 JSON，先比较并处理字段冲突，采用到草稿后仍须显式保存。不会执行文件内容。</p>
-        <section id="import-panel" class="draft-import-panel" aria-label="草稿导入比较" hidden></section>
+        <div class="toolbar-group" aria-label="草稿历史">
+          <button id="undo-draft" disabled aria-label="撤销草稿操作">↶ 撤销</button>
+          <button id="redo-draft" disabled aria-label="重做草稿操作">↷ 重做</button>
+        </div>
+        <div class="toolbar-group preview-launch">
+          <button id="preview-start" disabled>从开局预览</button>
+          <button id="preview-selected" class="primary-action" disabled>▶ 从所选节点预览</button>
+        </div>
       </header>
-      <div class="editor-layout">
-        <aside aria-label="节点列表">
-          <label for="search">查找 ID、章节、说话人或对白</label>
-          <input id="search" type="search" placeholder="输入关键词" />
-          <p id="count" class="help" role="status" aria-live="polite"></p>
-          <select id="nodes" size="18" aria-label="选择已有节点" aria-describedby="count"></select>
-          <div class="controls node-pager" role="group" aria-label="节点目录分页">
-            <button id="nodes-previous" type="button" disabled>上一页</button>
-            <span id="nodes-page">尚未读取节点</span>
-            <button id="nodes-next" type="button" disabled>下一页</button>
-            <button id="nodes-current" type="button" disabled>定位当前节点</button>
-          </div>
-          <p class="help">每页 200 个匹配节点，按作者顺序排列。翻页和搜索保留当前编辑节点与草稿；引用或流程定位不会自动清除筛选。</p>
-        </aside>
-        <section aria-label="编辑与预览">
-          <h2 id="node-title" tabindex="-1">请选择节点</h2>
-          <label for="speaker">说话人</label>
-          <input id="speaker" maxlength="100000" disabled />
-          <label for="text">对白</label>
-          <textarea id="text" rows="6" maxlength="100000" disabled></textarea>
-          <p id="field-note" class="help">本片不修改节点 ID、顺序、选项、流转、变量、演出或素材。</p>
-          <div class="controls">
-            <button id="reset-node" disabled>还原本节点草稿</button>
-            <button id="preview-start" disabled>从正常开局预览草稿</button>
-            <button id="preview-selected" disabled>从所选节点按声明初值预览</button>
-          </div>
-          <section id="author-changes" aria-label="当前草稿的只读变更清单"></section>
-          <section id="author-scene" aria-label="所选节点的只读场面与演出"></section>
-          <section id="author-references" aria-label="只读引用与影响查询"></section>
-          <section id="author-flow" aria-label="只读节点流转定位"></section>
-          <section id="preview-checkpoints" aria-label="隔离的预览检查点"></section>
-          <p id="preview-note" class="preview-note">预览不读取或写入玩家存档、全局解锁和聊天记录。</p>
-          <div id="preview-surface" class="player-surface">
+
+      <aside class="studio-sidebar studio-panel" aria-label="所选节点的场面">
+        <div class="panel-heading"><h2>场面与素材</h2><span class="panel-tag">只读</span></div>
+        <div class="panel-scroll"><section id="author-scene" aria-label="所选节点的只读场面与演出"></section></div>
+      </aside>
+
+      <section class="studio-preview" aria-label="剧情舞台与预览">
+        <div class="stage-heading"><span>剧情舞台</span><span>16 : 9 · 共享播放器</span></div>
+        <div id="preview-surface" class="player-surface">
           <div id="stage" class="stage" tabindex="0" aria-label="剧情预览画面">
             <div id="scene" class="scene"></div>
             <div id="choices" class="choices" hidden></div>
+            <div id="preview-empty" class="preview-empty">
+              <span class="empty-mark" aria-hidden="true">▷</span>
+              <strong>选择一句，开始预览</strong>
+              <p>在底部浏览剧情，在右侧编辑对白。<br />点击上方“从所选节点预览”查看当前草稿。</p>
+            </div>
           </div>
           <div class="controls play-controls" id="preview-controls" aria-label="预览控制">
-            <button id="next" disabled>补全文字 / 继续</button>
-            <button id="pause" disabled>暂停预览</button>
+            <button id="next" disabled>继续</button>
+            <button id="pause" disabled>暂停</button>
             <button id="auto" disabled aria-pressed="false">自动</button>
             <button id="audio" disabled>启用声音</button>
-            <button id="retry" disabled>重试当前媒体</button>
-            <button id="stop" disabled>停止预览</button>
+            <button id="retry" disabled>重试媒体</button>
+            <button id="stop" disabled>停止</button>
             <button id="hide-ui" disabled aria-pressed="false" data-reveal-ui>隐藏界面</button>
-            <button id="fullscreen" disabled aria-pressed="false">全屏显示</button>
+            <button id="fullscreen" disabled aria-pressed="false">全屏</button>
           </div>
           <p id="fullscreen-status" class="fullscreen-status" role="status" aria-live="polite"></p>
           <p id="preview-status" role="status">尚未预览。</p>
+        </div>
+        <p id="preview-note" class="preview-note">预览不读取或写入玩家存档、全局解锁和聊天记录。</p>
+        <section id="preview-problem" aria-label="运行预览问题的只读节点说明" hidden></section>
+        <details class="preview-details">
+          <summary>预览状态与快捷键</summary>
+          <p class="help">聚焦舞台后：空格 / → 继续，A 自动，按住 Ctrl 快进已读，Esc 暂停，H 隐藏界面，F11 / Alt+Enter 切换预览全屏。编辑输入框不响应游玩快捷键。</p>
+          <pre id="debug"></pre>
+        </details>
+      </section>
+
+      <section class="studio-inspector studio-panel" aria-label="节点属性与作者文件">
+        <div class="studio-tabs" role="tablist" aria-label="属性面板" data-workspace-tabs>
+          <button id="tab-dialogue" role="tab" aria-selected="true" aria-controls="panel-dialogue" data-workspace-tab="dialogue">对白与逻辑</button>
+          <button id="tab-changes" role="tab" aria-selected="false" aria-controls="panel-changes" tabindex="-1" data-workspace-tab="changes">变更</button>
+          <button id="tab-source" role="tab" aria-selected="false" aria-controls="panel-source" tabindex="-1" data-workspace-tab="source">文件</button>
+          <button id="tab-checkpoints" role="tab" aria-selected="false" aria-controls="panel-checkpoints" tabindex="-1" data-workspace-tab="checkpoints">检查点</button>
+        </div>
+        <div id="panel-dialogue" class="panel-scroll node-properties" role="tabpanel" aria-labelledby="tab-dialogue">
+          <div class="panel-heading"><h2 id="node-title" tabindex="-1">请选择节点</h2><span class="panel-tag">属性</span></div>
+          <label for="speaker">说话人</label>
+          <input id="speaker" maxlength="100000" disabled placeholder="旁白" />
+          <label for="text">对白</label>
+          <textarea id="text" rows="5" maxlength="100000" disabled placeholder="在这里编辑当前节点的对白"></textarea>
+          <p id="field-note" class="help">草稿仅在本页保留；点击保存才会修改作者源。</p>
+          <button id="reset-node" disabled>还原本节点草稿</button>
+          <section id="choice-text" aria-label="已有节点与选项逻辑编辑"></section>
+        </div>
+        <div id="panel-changes" class="panel-scroll" role="tabpanel" aria-labelledby="tab-changes" hidden>
+          <section id="author-changes" aria-label="当前草稿的只读变更清单"></section>
+        </div>
+        <div id="panel-source" class="panel-scroll source-tools" role="tabpanel" aria-labelledby="tab-source" hidden>
+          <h2>作者源与草稿</h2>
+          <p class="help">修改保留在当前页面；保存到作者源后生效。关闭前可导出草稿。</p>
+          <p id="draft-history" class="help"></p>
+          <label id="discard-label" hidden><input id="discard" type="checkbox" /> 本次允许丢弃当前草稿并重新读取</label>
+          <div class="controls">
+            <button id="compare-source" disabled>保留草稿并与磁盘源比较</button>
+            <button id="cancel-source-comparison" hidden disabled>取消磁盘比较读取</button>
           </div>
-          <section id="preview-problem" aria-label="运行预览问题的只读节点说明" hidden></section>
-          <p class="help">聚焦预览画面后可用空格 / → 继续、A 自动、按住 Ctrl 快进已读，Esc 切换暂停。H / 右键 / 长按可隐藏界面，点击只恢复；隐藏不会暂停。全屏按钮 / F11 / Alt+Enter 仅切换预览区，浏览器全屏时 Esc 先退出全屏。编辑输入框不响应游玩快捷键。</p>
-          <details><summary>预览状态与初始条件</summary><pre id="debug"></pre></details>
-        </section>
-      </div>
+          <section id="source-comparison" class="draft-import-panel source-comparison" aria-label="保留草稿与磁盘源比较" hidden></section>
+          <label class="draft-file">导入修改草稿
+            <input id="import-file" type="file" accept=".json,application/json" disabled />
+          </label>
+          <p class="help">导入后先比较并处理冲突，采用到草稿后再保存。</p>
+          <section id="import-panel" class="draft-import-panel" aria-label="草稿导入比较" hidden></section>
+          <section id="author-diagnostic" aria-label="本次作者操作的只读诊断" hidden></section>
+          <details><summary>作者源与内容修订</summary><p id="source-info" class="help"></p></details>
+        </div>
+        <div id="panel-checkpoints" class="panel-scroll" role="tabpanel" aria-labelledby="tab-checkpoints" hidden>
+          <section id="preview-checkpoints" aria-label="隔离的预览检查点"></section>
+        </div>
+      </section>
+
+      <section class="studio-dock studio-panel" aria-label="剧情导航">
+        <div class="dock-heading">
+          <div class="studio-tabs" role="tablist" aria-label="剧情导航面板" data-workspace-tabs>
+            <button id="tab-story" role="tab" aria-selected="true" aria-controls="panel-story" data-workspace-tab="story">剧情</button>
+            <button id="tab-flow" role="tab" aria-selected="false" aria-controls="panel-flow" tabindex="-1" data-workspace-tab="flow">流程</button>
+            <button id="tab-references" role="tab" aria-selected="false" aria-controls="panel-references" tabindex="-1" data-workspace-tab="references">引用</button>
+          </div>
+          <label class="node-search" for="search">查找<input id="search" type="search" placeholder="ID、章节、说话人、对白或选项" /></label>
+        </div>
+        <div id="panel-story" class="story-navigation" role="tabpanel" aria-labelledby="tab-story">
+          <fieldset id="node-timeline" aria-label="按作者顺序排列的节点卡片" disabled>
+            <div id="node-cards" class="node-cards"></div>
+          </fieldset>
+          <div class="node-navigation">
+            <label class="node-picker" for="nodes">节点<select id="nodes" aria-label="选择已有节点" aria-describedby="count"></select></label>
+            <div class="controls node-pager" role="group" aria-label="节点目录分页">
+              <button id="nodes-previous" type="button" disabled>上一页</button>
+              <span id="nodes-page">尚未读取节点</span>
+              <button id="nodes-next" type="button" disabled>下一页</button>
+              <button id="nodes-current" type="button" disabled>定位当前节点</button>
+            </div>
+          </div>
+          <p id="count" class="help" role="status" aria-live="polite"></p>
+        </div>
+        <div id="panel-flow" class="panel-scroll" role="tabpanel" aria-labelledby="tab-flow" hidden>
+          <section id="author-flow" aria-label="只读节点流转定位"></section>
+        </div>
+        <div id="panel-references" class="panel-scroll" role="tabpanel" aria-labelledby="tab-references" hidden>
+          <section id="author-references" aria-label="只读引用与影响查询"></section>
+        </div>
+      </section>
+      <footer class="studio-status"><span class="status-dot" aria-hidden="true"></span><p id="message" role="status" aria-live="polite">尚未读取作者源。</p></footer>
     </main>
     <script type="module" src="/src/main.ts"></script>
   </body>

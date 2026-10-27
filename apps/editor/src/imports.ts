@@ -1,6 +1,7 @@
 import { prepareDraftImport, resolveDraftImport } from "../../../packages/story-model/src/author-draft.ts";
 import type { AuthorDraftBase, DraftImportChoice, DraftImportPlan, DraftImportRow } from "../../../packages/story-model/src/author-draft.ts";
 import type { AuthorTextPatch } from "../../../packages/story-model/src/author.ts";
+import { authorTextLabel } from "../../../packages/story-model/src/author.ts";
 import { downloadDraft } from "./download.ts";
 
 export interface DraftImportSnapshot {
@@ -144,7 +145,7 @@ export class AuthorDraftImporter {
     for (const row of plan.rows) {
       const item = document.createElement("li");
       const title = document.createElement("strong");
-      title.textContent = `${row.edit.nodeId} · ${row.edit.field === "speaker" ? "说话人" : "对白"}`;
+      title.textContent = `${row.edit.nodeId} · ${authorTextLabel(row.edit.field)}`;
       const state = document.createElement("p");
       state.textContent = `${STATUS[row.status]}${row.status === "conflict"
         ? `（${row.sourceChanged ? "作者源与旧原文不同" : ""}${row.sourceChanged && row.localChanged ? "，" : ""}${row.localChanged ? "本页也有修改" : ""}）` : ""}`;

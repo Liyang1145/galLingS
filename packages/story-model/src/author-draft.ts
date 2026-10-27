@@ -1,5 +1,5 @@
-import { readAuthorTextPatch } from "./author.ts";
-import type { AuthorTextEdit, AuthorTextPatch } from "./author.ts";
+import { readAuthorTextField, readAuthorTextPatch } from "./author.ts";
+import type { AuthorFieldValue, AuthorTextEdit, AuthorTextPatch } from "./author.ts";
 import { hash } from "./content.ts";
 import { reject } from "./read.ts";
 
@@ -11,8 +11,7 @@ export interface AuthorDraftBase {
   readonly sourceSha256: string;
   readonly nodes: readonly {
     readonly id: string;
-    readonly speaker: string | null;
-    readonly text: string | null;
+    readonly fields: readonly AuthorFieldValue[];
   }[];
 }
 
@@ -37,6 +36,27 @@ export interface DraftImportPlan {
 const SOURCE = { file: "author-draft-import", field: "" };
 export const authorTextKey = (nodeId: string, field: Field): string => JSON.stringify([nodeId, field]);
 
+/** One editable-string catalog for history and conflict comparison. */
+export function authorDraftFields(base: AuthorDraftBase): ReadonlyMap<string, Readonly<Omit<AuthorTextEdit, "after">>> {
+  const fields = new Map<string, Readonly<Omit<AuthorTextEdit, "after">>>();
+  const ids = new Set<string>();
+  for (const node of base.nodes) {
+    if (!node.id.trim() || node.id.length > 256 || ids.has(node.id)) {
+      reject("DRAFT_NODE", "当前作者源节点标识无效或重复", SOURCE);
+    }
+    ids.add(node.id);
+    for (const entry of node.fields) {
+      const field = readAuthorTextField(entry.field, { ...SOURCE, nodeId: node.id });
+      const before = entry.value;
+      if (typeof before !== "string") reject("DRAFT_FIELD", "可编辑字段必须是已有字符串", { ...SOURCE, nodeId: node.id, field });
+      const key = authorTextKey(node.id, field);
+      if (fields.has(key)) reject("DRAFT_FIELD", "当前节点的可编辑字段重复", { ...SOURCE, nodeId: node.id, field });
+      fields.set(key, Object.freeze({ nodeId: node.id, field, before }));
+    }
+  }
+  return fields;
+}
+
 /** Compare strings by stable node/field identity; no fuzzy match or story execution. */
 export function prepareDraftImport(
   base: AuthorDraftBase, currentInput: unknown, importedInput: unknown,
@@ -45,10 +65,9 @@ export function prepareDraftImport(
   const current = readAuthorTextPatch(currentInput);
   const imported = readAuthorTextPatch(importedInput);
   if (current.sourceSha256 !== sourceSha256) reject("DRAFT_BASE", "当前草稿与已读取作者源不一致", SOURCE);
-  const nodes = new Map(base.nodes.map(node => [node.id, node]));
-  if (nodes.size !== base.nodes.length) reject("DRAFT_NODE", "当前作者源节点标识重复", SOURCE);
+  const fields = authorDraftFields(base);
   const existing = current.edits.map(edit => {
-    const source = nodes.get(edit.nodeId)?.[edit.field];
+    const source = fields.get(authorTextKey(edit.nodeId, edit.field))?.before;
     if (typeof source !== "string" || source !== edit.before) {
       reject("DRAFT_BASE", "当前草稿原值与可编辑字段不一致", { ...SOURCE, nodeId: edit.nodeId, field: edit.field });
     }
@@ -57,7 +76,7 @@ export function prepareDraftImport(
   const localEdits = new Map(existing.map(edit => [authorTextKey(edit.nodeId, edit.field), edit]));
   const rows = imported.edits.map((value, index): DraftImportRow => {
     const edit = Object.freeze({ ...value });
-    const source = nodes.get(edit.nodeId)?.[edit.field] ?? null;
+    const source = fields.get(authorTextKey(edit.nodeId, edit.field))?.before ?? null;
     const local = source === null ? null : localEdits.get(authorTextKey(edit.nodeId, edit.field))?.after ?? source;
     const sourceChanged = source !== null && source !== edit.before;
     const localChanged = local !== null && local !== source;
@@ -103,10 +122,10 @@ export function resolveDraftImport(
   }
   return {
     patch: readAuthorTextPatch({
-      format: "haifeng.author-text-patch/1", sourceSha256: plan.sourceSha256, edits: [...edits.values()],
+      format: "haifeng.author-text-patch/4", sourceSha256: plan.sourceSha256, edits: [...edits.values()],
     }),
     remaining: readAuthorTextPatch({
-      format: "haifeng.author-text-patch/1", sourceSha256: plan.importedSha256, edits: remaining,
+      format: "haifeng.author-text-patch/4", sourceSha256: plan.importedSha256, edits: remaining,
     }),
   };
 }

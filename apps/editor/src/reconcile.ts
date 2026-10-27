@@ -1,6 +1,7 @@
 import { prepareDraftImport, resolveDraftImport } from "../../../packages/story-model/src/author-draft.ts";
 import type { AuthorDraftBase, DraftImportChoice, DraftImportPlan, DraftImportRow } from "../../../packages/story-model/src/author-draft.ts";
 import type { AuthorTextPatch } from "../../../packages/story-model/src/author.ts";
+import { authorTextLabel } from "../../../packages/story-model/src/author.ts";
 import type { AuthorDocument } from "./document.ts";
 import { downloadDraft } from "./download.ts";
 
@@ -70,7 +71,7 @@ export class AuthorSourceComparison {
   offer(snapshot: SourceComparisonSnapshot, source: AuthorDocument, base: AuthorDraftBase): void {
     if (this.#closed || this.#remaining) throw new Error("先导出或明确关闭上次未采用的修改，再开始新的磁盘比较。");
     const plan = prepareDraftImport(base, {
-      format: "haifeng.author-text-patch/1", sourceSha256: base.sourceSha256, edits: [],
+      format: "haifeng.author-text-patch/4", sourceSha256: base.sourceSha256, edits: [],
     }, snapshot.patch);
     this.clear();
     const choices = new Map<number, DraftImportChoice>();
@@ -139,7 +140,7 @@ export class AuthorSourceComparison {
       rows.replaceChildren();
       for (const row of plan.rows.slice(this.#page * PAGE_SIZE, (this.#page + 1) * PAGE_SIZE)) {
         const item = element("li");
-        const title = element("strong", `${row.edit.nodeId} · ${row.edit.field === "speaker" ? "说话人" : "对白"}`);
+        const title = element("strong", `${row.edit.nodeId} · ${authorTextLabel(row.edit.field)}`);
         const state = element("p", STATUS[row.status]);
         const detail = element("details");
         const texts = element("div");

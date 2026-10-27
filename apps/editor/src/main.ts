@@ -1,5 +1,6 @@
 import { editorSessionToken } from "./session.ts";
-import type { AuthorTextPatch } from "../../../packages/story-model/src/author.ts";
+import { authorChoiceField } from "../../../packages/story-model/src/author.ts";
+import type { AuthorTextField, AuthorTextPatch } from "../../../packages/story-model/src/author.ts";
 import { AuthorDraftHistory } from "../../../packages/story-model/src/author-history.ts";
 import { AuthorRequestError, readAuthorDocument, readAuthorFailure } from "./document.ts";
 import type { AuthorDocument } from "./document.ts";
@@ -11,6 +12,7 @@ import type { DraftImportSnapshot } from "./imports.ts";
 import { AuthorSourceComparison } from "./reconcile.ts";
 import { authorTextKey } from "../../../packages/story-model/src/author-draft.ts";
 import type { AuthorDraftBase } from "../../../packages/story-model/src/author-draft.ts";
+import { projectAuthorDraft } from "../../../packages/story-model/src/author-projection.ts";
 import { downloadDraft } from "./download.ts";
 import { AuthorReferences } from "./references.ts";
 import { AuthorFlow } from "./flow.ts";
@@ -19,6 +21,8 @@ import { AuthorScene } from "./scene.ts";
 import { AuthorDiagnostic } from "./diagnostic.ts";
 import type { DiagnosticContext } from "./diagnostic.ts";
 import { PreviewProblemPanel } from "./preview-problem.ts";
+import { AuthorLogicEditor } from "./logic-editor.ts";
+import { AuthorWorkspace } from "./workspace.ts";
 import "../../game/src/style.css";
 import "./style.css";
 
@@ -76,12 +80,20 @@ let changes: AuthorChanges | null = null;
 let sceneInspector: AuthorScene | null = null;
 let authorDiagnostic: AuthorDiagnostic | null = null;
 let previewProblem: PreviewProblemPanel | null = null;
+let choiceText: AuthorLogicEditor | null = null;
 const NODE_PAGE_SIZE = 200;
 let nodePage = 0;
 let nodeList: {
   source: AuthorDocument | null; revision: number; query: string;
   matches: readonly AuthorNode[];
 } | null = null;
+const workspace = new AuthorWorkspace({
+  root: element("editor", HTMLElement),
+  timeline: element("node-timeline", HTMLFieldSetElement),
+  cards: element("node-cards", HTMLElement),
+  empty: element("preview-empty", HTMLElement),
+  select: selectNode,
+});
 
 function message(value: string, error = false): void {
   el.message.textContent = value;
@@ -90,8 +102,9 @@ function message(value: string, error = false): void {
 
 function selectedNode() { return baseline?.content.nodes.find(node => node.id === selected); }
 const key = authorTextKey;
-function textFor(nodeId: string, field: "speaker" | "text", original: string): string {
-  return drafts.get(key(nodeId, field))?.after ?? original;
+function textFor(nodeId: string, field: AuthorTextField, original: string): string {
+  return drafts.get(key(nodeId, field))?.after
+    ?? baseline?.editable[nodeId]?.find(entry => entry.field === field)?.value ?? original;
 }
 function patch(): AuthorTextPatch {
   if (!baseline) throw new Error("尚未读取作者源");
@@ -102,8 +115,7 @@ function draftBase(source: AuthorDocument): AuthorDraftBase {
     sourceSha256: source.sourceSha256,
     nodes: source.content.nodes.map(node => ({
       id: node.id,
-      speaker: source.editable[node.id]?.includes("speaker") ? node.presentation.speaker : null,
-      text: source.editable[node.id]?.includes("text") ? node.presentation.text : null,
+      fields: source.editable[node.id] ?? [],
     })),
   };
 }
@@ -112,6 +124,7 @@ function sourceBusy(): boolean { return operation === "save" || operation === "l
 
 function controls(): void {
   const locked = sourceBusy();
+  workspace.setState(!!baseline && !locked && !disposed, preview.running);
   const reviewing = !!importer?.active || !!sourceComparison?.active;
   const node = selectedNode();
   const fields = baseline?.editable[selected] ?? [];
@@ -132,9 +145,10 @@ function controls(): void {
     + (history.limited ? "较早历史或超过容量的操作已不再保留；当前草稿仍可导出或保存。" : "连续编辑同一字段合为一步；仅在本页保留，保存或重读成功后清空。");
   el.previewStart.disabled = !baseline || operation !== null || reviewing;
   el.previewSelected.disabled = !node || operation !== null || reviewing;
-  el.reset.disabled = !node || locked || (!drafts.has(key(selected, "speaker")) && !drafts.has(key(selected, "text")));
-  el.speaker.disabled = !node || locked || !fields.includes("speaker");
-  el.text.disabled = !node || locked || !fields.includes("text");
+  el.reset.disabled = !node || locked || ![...drafts.values()].some(edit => edit.nodeId === selected);
+  el.speaker.disabled = !node || locked || !fields.some(entry => entry.field === "speaker");
+  el.text.disabled = !node || locked || !fields.some(entry => entry.field === "text");
+  choiceText?.setEnabled(!!node && !locked && !disposed);
   el.nodes.disabled = locked;
   el.search.disabled = locked;
   nodePaging();
@@ -161,9 +175,8 @@ function nodeForm(): void {
     el.text.value = textFor(node.id, "text", node.presentation.text);
   }
   const fields = baseline?.editable[selected] ?? [];
-  el.fieldNote.textContent = fields.length === 2
-    ? "仅改已有说话人和对白字符串；选项、变量、流转、素材及演出保留。预览与保存都会调用同一内容转换器。"
-    : "缺失或非字符串字段在本片只读，不会自动添加字段。节点 ID、顺序、选项、变量、流转、素材及演出保留。";
+  el.fieldNote.textContent = "编辑已有对白与逻辑，缺失字段只读。修改仅在本页保留，保存后才写入作者源。";
+  choiceText?.show(node, fields);
   references?.select(selected);
   flow?.select(selected);
   controls();
@@ -187,6 +200,10 @@ function list(options: { resetPage?: boolean; revealSelected?: boolean; resetScr
     nodeList = { source: baseline, revision, query, matches: baseline?.content.nodes.filter(node => [
       node.id, node.chapter, textFor(node.id, "speaker", node.presentation.speaker),
       textFor(node.id, "text", node.presentation.text),
+      ...(node.flow.kind === "choice" ? node.flow.choices.flatMap(choice => [
+        choice.id, ...(["text", "cond", "set", "target"] as const).map(property =>
+          textFor(node.id, authorChoiceField(choice.id, property), property === "text" ? choice.text : "")),
+      ]) : []),
     ].some(value => value.toLocaleLowerCase().includes(query))) ?? [] };
   }
   const matches = nodeList.matches;
@@ -197,9 +214,10 @@ function list(options: { resetPage?: boolean; revealSelected?: boolean; resetScr
   nodePage = Math.min(nodePage, Math.max(0, pages - 1));
   const offset = nodePage * NODE_PAGE_SIZE;
   const visible = matches.slice(offset, offset + NODE_PAGE_SIZE);
+  const changedNodes = new Set([...drafts.values()].map(edit => edit.nodeId));
   const optionFor = (node: AuthorNode): HTMLOptionElement => {
     const option = document.createElement("option");
-    const edited = drafts.has(key(node.id, "speaker")) || drafts.has(key(node.id, "text"));
+    const edited = changedNodes.has(node.id);
     option.value = node.id;
     option.textContent = `${edited ? "＊" : ""}${node.id} · ${node.chapter} · ${textFor(node.id, "text", node.presentation.text).slice(0, 55)}`;
     return option;
@@ -227,23 +245,44 @@ function list(options: { resetPage?: boolean; revealSelected?: boolean; resetScr
       + `草稿修改 ${drafts.size} 个字段。`;
   if (el.count.textContent !== count) el.count.textContent = count;
   el.nodePage.textContent = pages ? `第 ${nodePage + 1} / ${pages} 页` : baseline ? "无匹配页" : "尚未读取节点";
+  workspace.nodes((current && pinned ? [current, ...visible] : visible).map(node => ({
+    id: node.id, chapter: node.chapter,
+    speaker: textFor(node.id, "speaker", node.presentation.speaker),
+    text: textFor(node.id, "text", node.presentation.text),
+    changed: changedNodes.has(node.id), pinned: pinned && node.id === selected,
+  })), selected, options.revealSelected === true);
   nodePaging();
+}
+
+function selectNode(nodeId: string): void {
+  if (disposed || sourceBusy() || !baseline?.content.nodes.some(node => node.id === nodeId)) return;
+  const moved = selected !== nodeId;
+  selected = nodeId;
+  list();
+  nodeForm();
+  workspace.open("dialogue");
+  if (moved) element("panel-dialogue", HTMLElement).scrollTop = 0;
 }
 
 function change(field: "speaker" | "text"): void {
   const node = selectedNode();
-  if (!node || sourceBusy()) return;
-  if (!baseline?.editable[node.id]?.includes(field)) return;
-  const after = el[field].value;
+  if (!node) return;
   try {
-    const result = drafts.update(node.id, field, after, key(node.id, field));
-    if (!result.changed) return;
-    draftChanged();
-    if (result.overflow) message("草稿已更新；本次操作超过历史容量，未保留撤销记录，可导出当前草稿。");
+    updateText(node.id, field, el[field].value);
   } catch (error: unknown) {
     el[field].value = textFor(node.id, field, node.presentation[field]);
     message(error instanceof Error ? error.message : "草稿修改未采用", true);
   }
+}
+
+function updateText(nodeId: string, field: AuthorTextField, after: string): void {
+  if (disposed || sourceBusy() || selected !== nodeId || !baseline?.editable[nodeId]?.some(entry => entry.field === field)) {
+    throw new Error("当前节点或可编辑字段已改变，未采用旧字段输入。");
+  }
+  const result = drafts.update(nodeId, field, after, key(nodeId, field));
+  if (!result.changed) return;
+  draftChanged();
+  if (result.overflow) message("草稿已更新；本次操作超过历史容量，未保留撤销记录，可导出当前草稿。");
 }
 
 function draftChanged(options: { cancelImport?: boolean; refreshForm?: boolean; revealSelected?: boolean } = {}): void {
@@ -320,6 +359,7 @@ async function perform(kind: "load" | "compare" | "preview" | "save", start: Pre
     return;
   }
   if (kind === "load" && drafts.size && !el.discard.checked) {
+    workspace.open("source");
     message("先导出需要保留的草稿；要重新读取，请勾选本次丢弃草稿。", true);
     return;
   }
@@ -356,7 +396,8 @@ async function perform(kind: "load" | "compare" | "preview" | "save", start: Pre
         throw new Error("本次比较缺少原基线身份，未采用读取结果。");
       }
       sourceComparison.offer(comparisonSnapshot, result, draftBase(result));
-      message("磁盘源已读取，仅用于下方比较；原基线、草稿历史和预览尚未改变。请逐项选择并明确采用。");
+      workspace.open("source");
+      message("磁盘源已读取，请在“文件”面板逐项选择并明确采用；原基线、草稿历史和预览尚未改变。");
     } else if (kind === "preview") {
       if (diagnosticContext.sourceSha256 === null) throw new Error("预览缺少原作者基线身份，请先读取作者源");
       const checkpoint = preview.start(result, start, {
@@ -377,7 +418,10 @@ async function perform(kind: "load" | "compare" | "preview" | "save", start: Pre
     }
   } catch (error: unknown) {
     if (disposed || epoch !== requestEpoch) return;
-    if (error instanceof AuthorRequestError && error.diagnostic) authorDiagnostic?.show(error.diagnostic, diagnosticContext);
+    if (error instanceof AuthorRequestError && error.diagnostic) {
+      authorDiagnostic?.show(error.diagnostic, diagnosticContext);
+      workspace.open("source");
+    }
     message(`${error instanceof Error ? error.message : "作者操作失败"}${kind === "save"
       ? " 草稿保留；若连接中断，可保留草稿并与磁盘源比较，不要假定未写入。"
       : " 当前草稿保留。"}`, true);
@@ -438,14 +482,12 @@ el.nodeNext.addEventListener("click", () => turnNodePage(1), { signal });
 el.nodeCurrent.addEventListener("click", () => {
   if (disposed || !selectedNode() || sourceBusy()) return;
   drafts.closeGroup();
+  workspace.open("story");
   list({ revealSelected: true });
   el.nodes.focus();
 }, { signal });
 el.nodes.addEventListener("change", () => {
-  if (disposed || sourceBusy()) return;
-  selected = el.nodes.value;
-  list();
-  nodeForm();
+  selectNode(el.nodes.value);
 }, { signal });
 for (const field of ["speaker", "text"] as const) {
   const input = el[field];
@@ -493,6 +535,8 @@ function dispose(): void {
   sceneInspector?.dispose();
   authorDiagnostic?.dispose();
   previewProblem?.dispose();
+  choiceText?.dispose();
+  workspace.dispose();
   nodeList = null;
   el.nodes.replaceChildren();
   drafts.clear();
@@ -546,8 +590,7 @@ references = new AuthorReferences({
     if (!baseline || disposed) return null;
     return {
       content: baseline.content, sourceSha256: baseline.sourceSha256, revision,
-      textOverrides: new Map([...drafts.values()].filter(edit => edit.field === "text")
-        .map(edit => [edit.nodeId, edit.after])),
+      draft: projectAuthorDraft(baseline.content, draftBase(baseline), patch()),
     };
   },
   current: snapshot => !disposed && baseline !== null && baseline.content === snapshot.content
@@ -561,6 +604,7 @@ function navigateNode(nodeId: string): void {
   selected = nodeId;
   list({ revealSelected: true });
   nodeForm();
+  workspace.open("dialogue");
   el.nodeTitle.focus();
 }
 flow = new AuthorFlow({
@@ -569,7 +613,7 @@ flow = new AuthorFlow({
     if (!baseline || disposed) return null;
     return {
       content: baseline.content, sourceSha256: baseline.sourceSha256, revision,
-      overrides: new Map([...drafts.values()].map(edit => [authorTextKey(edit.nodeId, edit.field), edit.after])),
+      draft: projectAuthorDraft(baseline.content, draftBase(baseline), patch()),
     };
   },
   current: snapshot => !disposed && baseline !== null && baseline.content === snapshot.content
@@ -604,7 +648,10 @@ sceneInspector = new AuthorScene({
   } : null,
   current: snapshot => !disposed && baseline !== null && baseline.content === snapshot.content
     && baseline.sourceSha256 === snapshot.sourceSha256 && revision === snapshot.revision && selected === snapshot.nodeId,
-  inspectResource: (snapshot, assetId) => references?.openResource(assetId, snapshot) ?? false,
+  inspectResource: (snapshot, assetId) => {
+    workspace.open("references");
+    return references?.openResource(assetId, snapshot) ?? false;
+  },
 });
 authorDiagnostic = new AuthorDiagnostic({
   root: element("author-diagnostic", HTMLElement),
@@ -621,6 +668,11 @@ previewProblem = new PreviewProblemPanel({
     && baseline.content.nodes.some(node => node.id === problem.nodeId && node.source.file === problem.source.file),
   blocked: () => disposed || operation !== null,
   navigate: navigateNode,
+});
+choiceText = new AuthorLogicEditor({
+  root: element("choice-text", HTMLElement), read: textFor, update: updateText,
+  closeGroup: () => drafts.closeGroup(), notice: value => message(value, true),
+  targets: () => baseline?.content.nodes ?? [], navigate: navigateNode,
 });
 controls();
 void perform("load");

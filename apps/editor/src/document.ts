@@ -1,4 +1,6 @@
-import { hash, localPath, oneOf, readSourceLocation, readStoryContent } from "../../../packages/story-model/src/content.ts";
+import { hash, localPath, readSourceLocation, readStoryContent } from "../../../packages/story-model/src/content.ts";
+import { authorChoiceId, readAuthorTextField } from "../../../packages/story-model/src/author.ts";
+import type { AuthorFieldValue } from "../../../packages/story-model/src/author.ts";
 import type { Diagnostic, StoryContent } from "../../../packages/story-model/src/model.ts";
 import { array, at, knownFields, object, reject, string } from "../../../packages/story-model/src/read.ts";
 
@@ -6,7 +8,7 @@ export interface AuthorDocument {
   sourceSha256: string;
   content: StoryContent;
   locations: Record<string, string>;
-  editable: Record<string, ("speaker" | "text")[]>;
+  editable: Record<string, AuthorFieldValue[]>;
   backup: string | null;
 }
 
@@ -62,8 +64,19 @@ export function readAuthorDocument(input: unknown): AuthorDocument {
   knownFields(rawEditable, content.nodes.map(node => node.id), at(source, "editable"));
   const editable = Object.fromEntries(content.nodes.map(node => {
     const where = at(source, `editable.${node.id}`);
-    const fields = array(rawEditable[node.id], where).map(value => oneOf(value, ["speaker", "text"] as const, where));
-    if (fields.length !== new Set(fields).size) reject("AUTHOR_FIELDS", "可编辑字段重复", where);
+    const fields = array(rawEditable[node.id], where).map(value => {
+      const entry = object(value, where);
+      knownFields(entry, ["field", "value"], where);
+      const field = readAuthorTextField(entry.field, where);
+      const raw = string(entry.value, where);
+      if (raw.length > 100000) reject("AUTHOR_FIELDS", "可编辑字段原文超过长度限制", where);
+      const choiceId = authorChoiceId(field);
+      if (choiceId !== null && (node.flow.kind !== "choice" || !node.flow.choices.some(choice => choice.id === choiceId))) {
+        reject("AUTHOR_FIELDS", "可编辑选项须属于当前节点", where);
+      }
+      return { field, value: raw };
+    });
+    if (fields.length !== new Set(fields.map(entry => entry.field)).size) reject("AUTHOR_FIELDS", "可编辑字段重复", where);
     return [node.id, fields];
   }));
   return {

@@ -11,7 +11,7 @@ export interface ReferenceOrigin {
   readonly revision: number;
 }
 export interface ReferenceSnapshot extends ReferenceOrigin {
-  readonly textOverrides: ReadonlyMap<string, string>;
+  readonly draft: StoryContent;
 }
 
 interface ReferenceOptions {
@@ -167,11 +167,11 @@ export class AuthorReferences {
 
   refresh(): void {
     if (this.#closed) return;
-    const snapshot = this.#options.capture();
-    if (!snapshot) { this.invalidate(); return; }
     try {
-      const index = createReferenceIndex(snapshot.content, {
-        textOverrides: snapshot.textOverrides, additional: playerReferences(snapshot.content),
+      const snapshot = this.#options.capture();
+      if (!snapshot) { this.invalidate(); return; }
+      const index = createReferenceIndex(snapshot.draft, {
+        additional: playerReferences(snapshot.draft),
       });
       this.#snapshot = snapshot;
       this.#index = index;
@@ -182,7 +182,7 @@ export class AuthorReferences {
       this.#selected = this.#options.selected();
       this.#target = this.#selected ? { kind: "node", id: this.#selected } : null;
       this.#outPage = this.#inPage = this.#targetPage = 0;
-      this.#status.textContent = `作者源 ${snapshot.sourceSha256}；内容修订 ${index.revision}；本页草稿代次 ${snapshot.revision}。包含当前对白草稿，不代表正在预览的旧修订。`;
+      this.#status.textContent = `作者源 ${snapshot.sourceSha256}；基线内容修订 ${index.revision}；本页草稿代次 ${snapshot.revision}。包含当前对白和选项字段，不代表正在运行的预览。`;
       this.renderOutgoing();
       this.renderTargets();
       this.renderIncoming();
@@ -220,7 +220,9 @@ export class AuthorReferences {
   /** Exact registered resource only. Origin is checked before a stale index may be rebuilt. */
   openResource(assetId: string, origin: ReferenceOrigin): boolean {
     if (this.#closed || !this.#available) return false;
-    const captured = this.#options.capture();
+    let captured: ReferenceSnapshot | null;
+    try { captured = this.#options.capture(); }
+    catch { this.refresh(); return false; }
     if (!captured || !this.#options.current(captured) || captured.content !== origin.content
       || captured.sourceSha256 !== origin.sourceSha256 || captured.revision !== origin.revision
       || !captured.content.resources.some(resource => resource.id === assetId)) return false;

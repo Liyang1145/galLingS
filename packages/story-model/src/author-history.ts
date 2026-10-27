@@ -1,6 +1,6 @@
-import { readAuthorTextPatch } from "./author.ts";
+import { authorTextLabel, readAuthorTextPatch } from "./author.ts";
 import type { AuthorTextEdit, AuthorTextPatch } from "./author.ts";
-import { authorTextKey } from "./author-draft.ts";
+import { authorDraftFields, authorTextKey } from "./author-draft.ts";
 import type { AuthorDraftBase } from "./author-draft.ts";
 import { hash } from "./content.ts";
 
@@ -22,7 +22,7 @@ export class AuthorDraftHistory {
   readonly #maxEntries: number;
   readonly #maxUnits: number;
   #source: string | null = null;
-  #base = new Map<string, { readonly nodeId: string; readonly field: Field; readonly before: string }>();
+  #base: ReadonlyMap<string, Readonly<Omit<AuthorTextEdit, "after">>> = new Map();
   #edits = new Map<string, Edit>();
   #past: Entry[] = [];
   #future: Entry[] = [];
@@ -41,16 +41,7 @@ export class AuthorDraftHistory {
 
   reset(base: AuthorDraftBase): void {
     const source = hash(base.sourceSha256, SOURCE);
-    const nodes = new Set<string>();
-    const fields = new Map<string, { readonly nodeId: string; readonly field: Field; readonly before: string }>();
-    for (const node of base.nodes) {
-      if (nodes.has(node.id)) throw new Error(`草稿基线节点重复：${node.id}`);
-      nodes.add(node.id);
-      for (const field of ["speaker", "text"] as const) {
-        const before = node[field];
-        if (before !== null) fields.set(authorTextKey(node.id, field), Object.freeze({ nodeId: node.id, field, before }));
-      }
-    }
+    const fields = authorDraftFields(base);
     this.clear();
     this.#source = source;
     this.#base = fields;
@@ -58,7 +49,7 @@ export class AuthorDraftHistory {
 
   clear(): void {
     this.#source = null;
-    this.#base.clear();
+    this.#base = new Map();
     this.#edits.clear();
     this.#past = [];
     this.#future = [];
@@ -83,7 +74,7 @@ export class AuthorDraftHistory {
   patch(): AuthorTextPatch {
     if (this.#source === null) throw new Error("尚未读取草稿基线");
     return {
-      format: "haifeng.author-text-patch/1", sourceSha256: this.#source,
+      format: "haifeng.author-text-patch/4", sourceSha256: this.#source,
       edits: [...this.#edits.values()].map(edit => ({ ...edit })),
     };
   }
@@ -96,12 +87,12 @@ export class AuthorDraftHistory {
     let next: Edit | null = null;
     if (after !== base.before) {
       const checked = readAuthorTextPatch({
-        format: "haifeng.author-text-patch/1", sourceSha256: this.#source, edits: [{ ...base, after }],
+        format: "haifeng.author-text-patch/4", sourceSha256: this.#source, edits: [{ ...base, after }],
       });
       next = Object.freeze({ ...checked.edits[0]! });
       if (before === null && this.#edits.size >= 1000) throw new Error("本片单次最多修改 1000 个字段；请先保存或导出已有草稿");
     }
-    return this.commit([{ key, before, after: next }], `${nodeId} · ${field === "text" ? "对白" : "说话人"}`, group);
+    return this.commit([{ key, before, after: next }], `${nodeId} · ${authorTextLabel(field)}`, group);
   }
 
   removeNode(nodeId: string): DraftChange {

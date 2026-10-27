@@ -52,9 +52,11 @@ export class AuthorScene {
     this.#status.setAttribute("role", "status");
     this.#status.setAttribute("aria-live", "polite");
     options.root.classList.add("author-scene");
-    options.root.append(heading, element("p",
+    const help = element("details");
+    help.append(element("summary", "查看说明"), element("p",
       "只读已读取作者源的规范化场面，不加载图片或声音、不演出。元数据展示原值；实际参数限制、镜头连续、音量与恢复行为由共享播放器处理。",
-    ), this.#status, this.#views);
+    ));
+    options.root.append(heading, this.#status, help, this.#views);
     this.#refresh.addEventListener("click", () => this.refresh(), { signal: this.#events.signal });
     this.enabled();
   }
@@ -112,14 +114,14 @@ export class AuthorScene {
     this.#snapshot = snapshot;
     this.#resources = new Map(snapshot.content.resources.map(resource => [resource.id, resource]));
     const { scene, performance } = node.presentation;
-    this.#status.textContent = `节点 ${node.id} · ${node.chapter || "未标章节"}；源 ${snapshot.sourceSha256}；`
-      + `草稿代次 ${snapshot.revision}。规范化内容修订 ${snapshot.content.revision} 为已读取源，不是正在播放的预览修订。`;
+    this.#status.textContent = `${node.chapter || "未标章节"} · ${node.id} · 草稿代次 ${snapshot.revision}`;
     this.#views.append(element("legend", "只读规范化场面"));
     const origin = element("section");
     origin.append(element("h4", "身份与来源"), this.rows([
       ["节点 ID", node.id], ["作者标签原值", literal(node.label)], ["章节原值", literal(node.chapter)],
       ["作者来源", `${node.source.file} · ${node.source.field}`],
       ["作者节点索引", node.source.index === undefined ? "未提供" : String(node.source.index)],
+      ["作者源 SHA-256", snapshot.sourceSha256], ["已读取内容修订", snapshot.content.revision],
     ]), element("p", "以下字段名属于规范化模型；作者来源定位不等同于每个字段在原文件中的 token 行列。"));
     const background = element("section");
     background.append(element("h4", "背景与场面"), this.rows([
@@ -145,7 +147,7 @@ export class AuthorScene {
         ["演出等待 waitMs", `${performance.waitMs} ms`], ["逐字倍率 typeMultiplier", String(performance.typeMultiplier)],
         ["话后停留 holdMs", `${performance.holdMs} ms`],
       ]), element("p", "以上是作者参数，不是当前有效倒计时；不计算自动等待、玩家偏好或检查点剩余时间。"));
-    this.#views.append(origin, background,
+    this.#views.append(this.group(background, true),
       this.list("立绘（保留原数组及显示层顺序）", scene.sprites, (sprite, signal) => {
         const card = element("div");
         card.append(this.rows([
@@ -155,12 +157,12 @@ export class AuthorScene {
           ["外观 look 原值", literal(sprite.look)], ["切姿态 poseSwitch 原值", literal(sprite.poseSwitch)],
         ]), this.resource(sprite.assetId, "立绘", signal));
         return card;
-      }), music,
+      }), this.group(music, true),
       this.list("环境声（原数组顺序）", scene.ambience, (track, signal) => {
         const card = element("div");
         card.append(this.rows([["节点增益 gain", String(track.gain)]]), this.resource(track.assetId, "环境声", signal));
         return card;
-      }), voice,
+      }), this.group(voice),
       this.list("一次性音效（原数组顺序）", performance.sounds, (sound, signal) => {
         const card = element("div");
         card.append(this.rows([["节点增益 gain", String(sound.gain)], ["延迟 delayMs", `${sound.delayMs} ms`]]),
@@ -170,6 +172,7 @@ export class AuthorScene {
       this.list("角色动作映射（只显示，不执行）", Object.entries(performance.actorActions), ([actor, action]) =>
         this.rows([["原映射键", literal(actor)], ["动作原值", literal(action)]])),
       element("p", "角色动作映射键与立绘实例 ID 分别显示，不按名字或数组位置推断匹配。恢复/快进时是否执行演出仍由共享播放器决定。"),
+      this.group(origin),
       this.json("保留的 performance.sourceHints（原 JSON）", performance.sourceHints),
       element("p", "条件、进入动作及流转另见节点流转定位；这里只读场面，不求值或模拟路线。"));
     this.enabled();
@@ -179,6 +182,16 @@ export class AuthorScene {
     const list = element("dl");
     for (const [name, value] of values) list.append(element("dt", name), element("dd", value));
     return list;
+  }
+
+  private group(section: HTMLElement, open = false): HTMLDetailsElement {
+    const heading = section.querySelector("h4")!;
+    const group = element("details");
+    group.open = open;
+    group.append(element("summary", heading.textContent ?? ""));
+    heading.remove();
+    group.append(section);
+    return group;
   }
 
   private resource(id: string, role: string, signal = this.#viewEvents.signal): HTMLElement {
@@ -228,8 +241,9 @@ export class AuthorScene {
   }
 
   private list<T>(title: string, items: readonly T[], render: (item: T, signal: AbortSignal) => HTMLElement): HTMLElement {
-    const section = element("section");
-    section.append(element("h4", `${title} · ${items.length} 项`));
+    const section = element("details");
+    section.open = items.length > 0;
+    section.append(element("summary", `${title} · ${items.length} 项`));
     if (!items.length) { section.append(element("p", "本节点此列表为空。")); return section; }
     const previous = button("上一页");
     const next = button("下一页");

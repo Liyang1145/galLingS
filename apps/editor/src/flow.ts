@@ -1,11 +1,10 @@
 import type { Assignment, Expression, SourceLocation, StoryContent, StoryNode } from "../../../packages/story-model/src/model.ts";
-import { authorTextKey } from "../../../packages/story-model/src/author-draft.ts";
 
 export interface FlowSnapshot {
   readonly content: StoryContent;
   readonly sourceSha256: string;
   readonly revision: number;
-  readonly overrides: ReadonlyMap<string, string>;
+  readonly draft: StoryContent;
 }
 
 interface FlowOptions {
@@ -118,10 +117,10 @@ export class AuthorFlow {
 
   refresh(): void {
     if (this.#closed) return;
-    const snapshot = this.#options.capture();
-    if (!snapshot) { this.invalidate(); return; }
     try {
-      this.#nodes = new Map(snapshot.content.nodes.map(node => [node.id, node]));
+      const snapshot = this.#options.capture();
+      if (!snapshot) { this.invalidate(); return; }
+      this.#nodes = new Map(snapshot.draft.nodes.map(node => [node.id, node]));
       this.#incoming.clear();
       this.#outgoing.clear();
       this.#edges.clear();
@@ -144,7 +143,7 @@ export class AuthorFlow {
         key: "entry", from: null, to: snapshot.content.entryNodeId, label: "作品入口",
         condition: null, actions: [], source: { file: snapshot.content.source.file, field: "" }, path: "entryNodeId",
       });
-      snapshot.content.nodes.forEach((node, index) => {
+      snapshot.draft.nodes.forEach((node, index) => {
         const flow = node.flow;
         const edge = (path: string, to: string | null, label: string, condition: Expression | null = null,
           actions: readonly Assignment[] = [], source = node.source): void => add({
@@ -176,7 +175,7 @@ export class AuthorFlow {
       this.#selected = this.#options.selected();
       this.#inPage = this.#outPage = 0;
       this.#stale = false;
-      this.#status.textContent = `作者源 ${snapshot.sourceSha256}；内容修订 ${snapshot.content.revision}；本页草稿代次 ${snapshot.revision}。结构覆盖 ${this.#nodes.size} 个节点，图中文字采用当前说话人/对白草稿。`;
+      this.#status.textContent = `作者源 ${snapshot.sourceSha256}；基线内容修订 ${snapshot.content.revision}；本页草稿代次 ${snapshot.revision}。结构覆盖 ${this.#nodes.size} 个节点，采用当前对白及选项条件、动作和目标草稿。`;
       this.render();
     } catch (error: unknown) {
       this.#snapshot = null;
@@ -225,8 +224,7 @@ export class AuthorFlow {
     jump.dataset.flowVersion = String(this.#version);
     const entry = node.id === this.#snapshot?.content.entryNodeId ? "作品入口 · " : "";
     card.append(jump, element("small", `${entry}${node.chapter || "未标章节"}${node.label ? ` · ${node.label}` : ""}`));
-    const field = (name: "speaker" | "text"): string =>
-      this.#snapshot?.overrides.get(authorTextKey(node.id, name)) ?? node.presentation[name];
+    const field = (name: "speaker" | "text"): string => node.presentation[name];
     const speaker = field("speaker");
     card.append(element("p", `${speaker ? `${speaker}：` : ""}${field("text").replace(/\s+/gu, " ").slice(0, 160) || "演出节点"}`));
     return card;

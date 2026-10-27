@@ -10,6 +10,8 @@
     "editor:dev": "vite --config tools/editor/vite.config.ts",
     "editor:build": "node tools/editor/build.ts",
     "editor:serve": "node tools/editor/serve.ts",
+    "editor:test": "node --test tests/editor/*.test.ts",
+    "editor:test:browser": "node tests/editor/browser.mjs",
     "game:build": "node tools/game/build.ts",
     "game:verify": "node tools/game/verify.ts",
     "windows:prepare": "node tools/game/windows.ts",

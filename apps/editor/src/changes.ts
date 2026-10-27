@@ -1,4 +1,5 @@
 import type { AuthorTextEdit } from "../../../packages/story-model/src/author.ts";
+import { authorTextLabel } from "../../../packages/story-model/src/author.ts";
 import type { StoryContent } from "../../../packages/story-model/src/model.ts";
 
 export interface ChangeSnapshot {
@@ -26,7 +27,7 @@ function button(value: string): HTMLButtonElement {
   result.type = "button";
   return result;
 }
-const fieldName = (edit: Readonly<AuthorTextEdit>): string => edit.field === "speaker" ? "说话人" : "对白";
+const fieldName = (edit: Readonly<AuthorTextEdit>): string => authorTextLabel(edit.field);
 const excerpt = (value: string): string => value.length ? value.slice(0, 120) + (value.length > 120 ? "…" : "") : "（空字符串）";
 
 /** Read-only snapshot of the existing draft delta. No draft mutator, repository or preview API. */
@@ -62,7 +63,12 @@ export class AuthorChanges {
     this.#query.type = "search";
     query.append(this.#query);
     const field = element("label", "修改字段");
-    for (const [value, label] of [["", "全部字段"], ["speaker", "说话人"], ["text", "对白"]] as const) {
+    for (const [value, label] of [
+      ["", "全部字段"], ["speaker", "说话人"], ["text", "对白"], ["choice:", "选项文字"],
+      ["choice-cond:", "选项条件"], ["choice-set:", "选项变量动作"], ["choice-target:", "选项目标"],
+      ["set", "节点进入动作"], ["jump", "节点跳转目标"], ["jumpIf", "节点跳转条件"],
+      ["ending", "结局名称"], ["cdef", "超时默认选项"],
+    ] as const) {
       const option = element("option", label);
       option.value = value;
       this.#field.append(option);
@@ -154,8 +160,9 @@ export class AuthorChanges {
     const snapshot = this.#snapshot;
     if (!snapshot || !this.valid()) return;
     const query = this.#query.value.trim().toLocaleLowerCase();
-    const matches = snapshot.edits.filter(edit => (!this.#field.value || this.#field.value === edit.field)
-      && [edit.nodeId, this.#chapters.get(edit.nodeId) ?? "", edit.before, edit.after]
+    const matches = snapshot.edits.filter(edit => (!this.#field.value || this.#field.value === edit.field
+      || (this.#field.value.endsWith(":") && edit.field.startsWith(this.#field.value)))
+      && [edit.nodeId, fieldName(edit), this.#chapters.get(edit.nodeId) ?? "", edit.before, edit.after]
         .some(value => value.toLocaleLowerCase().includes(query)));
     const pages = Math.ceil(matches.length / PAGE_SIZE);
     this.#page = Math.min(this.#page, Math.max(0, pages - 1));

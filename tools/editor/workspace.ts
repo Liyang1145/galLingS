@@ -11,13 +11,14 @@ export function authorWorkspace(project: AuthorProject): AuthorWorkspaceModel {
   const manifest = authorJson(project.files.get("project.json")!, authorLocation("project.json").file).value as {
     chapters: { id: string; file: string }[];
   };
+  const origins = authorJson(project.files.get("origins.json")!, authorLocation("origins.json").file).value as JsonObject;
   return readAuthorWorkspace({
     workId: project.workId, title: project.title, entryNodeId: project.entryNodeId,
     chapters: manifest.chapters.map(item => {
       const chapter = authorJson(project.files.get(item.file)!, authorLocation(item.file).file).value as JsonObject;
       return { id: item.id, title: chapter.title, nodes: chapter.nodes };
     }),
-    variables: project.variables, settings: project.settings, metadata: project.metadata,
+    variables: project.variables, settings: project.settings, metadata: project.metadata, migration: origins.migration,
     assets: project.assets.map(({ key, record }) => ({ key, record })),
   });
 }
@@ -83,7 +84,7 @@ export function prepareWorkspacePatch(original: AuthorProject, input: unknown): 
     reject("AUTHOR_CONFLICT", "作者源已改变，请先导出工程草稿再重新读取", authorLocation("project.json"));
   }
   const model = patch.workspace;
-  if (model.workId !== original.workId) reject("AUTHOR_ID", "草稿不能更换当前作品身份", authorLocation("project.json"));
+  if (model.workId !== original.workId && !patch.replaceProject) reject("AUTHOR_ID", "导入其他作品须明确采用完整项目替换", authorLocation("project.json"));
   const oldManifest = authorJson(original.files.get("project.json")!, authorLocation("project.json").file).value as JsonObject;
   const registered = oldManifest.chapters as { id: string; file: string }[];
   const paths = new Map(registered.map(item => [item.id, item.file]));
@@ -96,7 +97,7 @@ export function prepareWorkspacePatch(original: AuthorProject, input: unknown): 
     if (!before || Buffer.compare(Buffer.from(before), Buffer.from(bytes))) changed.set(file, bytes);
   };
   const chapters = model.chapters.map(chapter => ({ id: chapter.id, file: paths.get(chapter.id) ?? `chapters/${chapter.id}.json` }));
-  put("project.json", { ...oldManifest, title: model.title, entryNodeId: model.entryNodeId, chapters });
+  put("project.json", { ...oldManifest, workId: model.workId, title: model.title, entryNodeId: model.entryNodeId, chapters });
   for (const [index, chapter] of model.chapters.entries()) {
     put(chapters[index]!.file, { format: "haifeng.author-chapter/1", id: chapter.id, title: chapter.title, nodes: chapter.nodes });
   }
@@ -106,7 +107,7 @@ export function prepareWorkspacePatch(original: AuthorProject, input: unknown): 
   put("variables.json", model.variables);
   put("settings.json", model.settings);
   const origins = authorJson(original.files.get("origins.json")!, authorLocation("origins.json").file).value as JsonObject;
-  put("origins.json", { ...origins, metadata: model.metadata });
+  put("origins.json", { ...origins, metadata: model.metadata, migration: model.migration });
   put("resources/index.json", model.assets.map(asset => asset.key));
   for (const [index, file] of RESOURCE_FILES.entries()) {
     const kind = ["bg", "ch", "bgm", "se", "vo"][index];

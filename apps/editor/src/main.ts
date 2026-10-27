@@ -27,6 +27,8 @@ import { AuthorStructureEditor } from "./structure.ts";
 import { AuthorAssetLibrary } from "./asset-library.ts";
 import { AuthorStageEditor } from "./stage-editor.ts";
 import { AuthorPerformanceEditor } from "./performance-editor.ts";
+import { AuthorDeliveryPanel } from "./delivery-panel.ts";
+import { object, jsonObject, string } from "../../../packages/story-model/src/read.ts";
 import "../../game/src/style.css";
 import "./style.css";
 
@@ -89,6 +91,7 @@ let structureEditor: AuthorStructureEditor | null = null;
 let assetLibrary: AuthorAssetLibrary | null = null;
 let stageEditor: AuthorStageEditor | null = null;
 let performanceEditor: AuthorPerformanceEditor | null = null;
+let deliveryPanel: AuthorDeliveryPanel | null = null;
 const NODE_PAGE_SIZE = 200;
 let nodePage = 0;
 let nodeList: {
@@ -130,7 +133,7 @@ function draftBase(source: AuthorDocument): AuthorDraftBase {
   };
 }
 
-function sourceBusy(): boolean { return operation === "save" || operation === "load" || operation === "compare"; }
+function sourceBusy(): boolean { return operation === "save" || operation === "load" || operation === "compare" || !!deliveryPanel?.busy; }
 
 function controls(): void {
   const locked = sourceBusy();
@@ -142,14 +145,14 @@ function controls(): void {
   const reviewing = !!importer?.active || !!sourceComparison?.active;
   const node = selectedNode();
   const fields = baseline?.editable[selected] ?? [];
-  el.reload.disabled = operation !== null || reviewing;
-  el.compare.disabled = !baseline || !drafts.size || drafts.extended || operation !== null || reviewing || !!sourceComparison?.hasRecovery;
+  el.reload.disabled = locked || operation !== null || reviewing;
+  el.compare.disabled = locked || !baseline || !drafts.size || drafts.extended || operation !== null || reviewing || !!sourceComparison?.hasRecovery;
   el.compare.title = drafts.extended ? "结构、素材等工程修改请先导出完整工程草稿，再重新读取处理来源差异。" : "";
   el.cancelCompare.hidden = operation !== "compare";
   el.cancelCompare.disabled = operation !== "compare";
   el.discard.disabled = locked;
   el.discardLabel.hidden = drafts.size === 0;
-  el.save.disabled = !baseline || !drafts.size || operation !== null || reviewing;
+  el.save.disabled = locked || !baseline || !drafts.size || operation !== null || reviewing;
   el.export.disabled = !baseline || !drafts.size;
   const history = drafts.status;
   el.undo.disabled = !baseline || locked || history.undo === null;
@@ -158,8 +161,8 @@ function controls(): void {
   el.redo.title = history.redo ? `重做：${history.redo}` : "没有可重做的草稿操作";
   el.history.textContent = `草稿历史：可撤销 ${history.undoSteps} 步，可重做 ${history.redoSteps} 步。`
     + (history.limited ? "较早历史或超过容量的操作已不再保留；当前草稿仍可导出或保存。" : "连续编辑同一字段合为一步；仅在本页保留，保存或重读成功后清空。");
-  el.previewStart.disabled = !baseline || operation !== null || reviewing;
-  el.previewSelected.disabled = !node || operation !== null || reviewing;
+  el.previewStart.disabled = locked || !baseline || operation !== null || reviewing;
+  el.previewSelected.disabled = locked || !node || operation !== null || reviewing;
   el.reset.disabled = !node || locked || ![...drafts.values()].some(edit => edit.nodeId === selected);
   el.speaker.disabled = !node || locked || !fields.some(entry => entry.field === "speaker");
   el.text.disabled = !node || locked || !fields.some(entry => entry.field === "text");
@@ -168,15 +171,16 @@ function controls(): void {
   el.nodes.disabled = locked;
   el.search.disabled = locked;
   nodePaging();
-  importer?.setEnabled(!!baseline && operation === null && !sourceComparison?.active);
-  sourceComparison?.setEnabled(!!baseline && operation === null && !importer?.active);
+  importer?.setEnabled(!!baseline && !locked && operation === null && !sourceComparison?.active);
+  sourceComparison?.setEnabled(!!baseline && !locked && operation === null && !importer?.active);
   references?.setAvailable(!!baseline && !locked);
   flow?.setAvailable(!!baseline && !locked);
   changes?.setAvailable(!!baseline && !locked);
   sceneInspector?.setAvailable(!!baseline && !locked);
   authorDiagnostic?.setAvailable(!disposed && !locked);
   previewProblem?.refresh();
-  checkpoints?.setEnabled(!disposed && !!baseline && operation === null && !reviewing);
+  checkpoints?.setEnabled(!disposed && !!baseline && !locked && operation === null && !reviewing);
+  deliveryPanel?.setEnabled(!disposed && !!baseline && operation === null && !reviewing);
 }
 
 function nodeForm(): void {
@@ -387,7 +391,7 @@ function adoptSource(result: AuthorDocument, nextDrafts: EditorProjectDraft): vo
 }
 
 async function perform(kind: "load" | "compare" | "preview" | "save", start: PreviewStart = { kind: "entry" }): Promise<void> {
-  if (operation || disposed) return;
+  if (operation || disposed || deliveryPanel?.busy) return;
   if (importer?.active || sourceComparison?.active) {
     message("先采用或取消本次草稿比较，再读取、预览或保存。");
     return;
@@ -556,7 +560,7 @@ el.export.addEventListener("click", () => {
   message("已请求下载草稿；结构等工程修改会导出完整工程草稿，文字修改沿用字段比较。可在本入口重新导入，保存仍须明确操作。");
 }, { signal });
 window.addEventListener("beforeunload", event => {
-  if (drafts.size || importer?.active || sourceComparison?.active || sourceComparison?.hasRecovery || operation === "save") {
+  if (drafts.size || importer?.active || sourceComparison?.active || sourceComparison?.hasRecovery || operation === "save" || deliveryPanel?.busy) {
     event.preventDefault(); event.returnValue = "";
   }
 }, { signal });
@@ -580,6 +584,7 @@ function dispose(): void {
   stageEditor?.dispose();
   assetLibrary?.dispose();
   performanceEditor?.dispose();
+  deliveryPanel?.dispose();
   workspace.dispose();
   nodeList = null;
   el.nodes.replaceChildren();
@@ -748,6 +753,29 @@ performanceEditor = new AuthorPerformanceEditor({
   change: changeProject,
   preview() { if (selected) void perform("preview", { kind: "selected", nodeId: selected }); },
   notice: value => message(value, true),
+});
+deliveryPanel = new AuthorDeliveryPanel({
+  root: element("author-delivery", HTMLElement),
+  capture: () => baseline && !disposed ? {
+    revision, sourceSha256: baseline.sourceSha256, dirty: drafts.size > 0, patch: drafts.patch(),
+  } : null,
+  current: snapshot => !disposed && baseline?.sourceSha256 === snapshot.sourceSha256 && revision === snapshot.revision,
+  applyProject(snapshot, patch, locations) {
+    if (disposed || baseline?.sourceSha256 !== snapshot.sourceSha256 || revision !== snapshot.revision) throw new Error("原作者源或草稿已改变");
+    drafts.registerLocations(locations);
+    const change = drafts.replaceWorkspace(patch);
+    if (change.changed) draftChanged({ refreshForm: true, revealSelected: true });
+  },
+  applyResource(snapshot, asset, locations) {
+    if (disposed || baseline?.sourceSha256 !== snapshot.sourceSha256 || revision !== snapshot.revision) throw new Error("原作者源或草稿已改变");
+    const where = { file: "imported-resource", field: "" }, data = object(asset, where);
+    const key = string(data.key, where), record = jsonObject(data.record, where);
+    if (drafts.model.assets.some(asset => asset.key === key)) throw new Error("导入资源 ID 与已有素材重复");
+    drafts.registerLocations(locations);
+    const change = drafts.change("导入本机素材", model => { model.assets.push({ key, record }); });
+    if (change.changed) draftChanged({ refreshForm: true });
+  },
+  changed: controls, notice: value => message(value),
 });
 controls();
 void perform("load");

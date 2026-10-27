@@ -266,6 +266,13 @@ input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 3px
 .performance-editor h3 { margin: 18px 0 8px; }
 .performance-editor p { color: var(--studio-dim); line-height: 1.7; }
 .performance-editor section { border-bottom: 1px solid var(--studio-line); padding: 8px 0; }
+.delivery-panel { padding: 12px; font-size: 12px; }
+.delivery-panel section { padding: 10px 0; border-bottom: 1px solid var(--studio-line); }
+.delivery-panel h3 { margin: 0 0 10px; }
+.delivery-panel p { color: var(--studio-dim); line-height: 1.7; overflow-wrap: anywhere; }
+.delivery-panel a { color: var(--studio-accent); display: block; overflow-wrap: anywhere; margin: 10px 0; }
+.delivery-panel button { display: block; margin: 8px 0; max-width: 100%; white-space: normal; }
+.delivery-panel input[type="checkbox"] { margin-right: 6px; }
 .studio-dock .flow-panel, .studio-dock .reference-panel { padding: 12px 16px; }
 .studio-dock .flow-viewport { max-height: none; }
 .studio-dock .flow-canvas { margin-inline: auto; }

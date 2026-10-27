@@ -4,6 +4,7 @@ import { ContentError } from "../../packages/story-model/src/model.ts";
 import { authorFields, previewAuthorText, readAuthorSource, saveAuthorText } from "./source.ts";
 import { EditorMedia } from "./media.ts";
 import { authorWorkspace } from "./workspace.ts";
+import { EditorDelivery } from "./delivery.ts";
 
 export const EDITOR_HOST = "127.0.0.1:5174";
 export const EDITOR_ORIGIN = `http://${EDITOR_HOST}`;
@@ -15,6 +16,7 @@ export function assertEditorSessionMarker(html: string): void {
 }
 
 function reply(response: ServerResponse, status: number, data: unknown): void {
+  if (response.destroyed) return;
   response.writeHead(status, {
     "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store",
     "X-Content-Type-Options": "nosniff", "Cross-Origin-Resource-Policy": "same-origin",
@@ -40,6 +42,7 @@ export function createEditorApi(options: { beforeOperation?(): Promise<void> } =
 } {
   const token = randomBytes(32).toString("hex");
   const media = new EditorMedia();
+  const delivery = new EditorDelivery(media, options.beforeOperation);
   let pending = false;
   const document = (
     loaded: Awaited<ReturnType<typeof readAuthorSource>>["loaded"],
@@ -68,19 +71,28 @@ export function createEditorApi(options: { beforeOperation?(): Promise<void> } =
         void media.respond(request, response);
         return;
       }
+      if (route.startsWith("/__editor/delivery/")) {
+        void delivery.respond(request, response);
+        return;
+      }
+      const upload = route === "/__editor/import-resource" || route === "/__editor/import-project";
+      const expectedType = route === "/__editor/import-project" ? "application/zip" : upload ? "application/octet-stream" : "application/json";
       if (request.headers.origin !== EDITOR_ORIGIN || request.headers["x-haifeng-editor"] !== token
-        || request.headers["content-type"] !== "application/json" || request.method !== "POST") {
+        || request.headers["content-type"] !== expectedType || request.method !== "POST") {
         reply(response, 403, { error: "编辑请求来源或会话无效；请从本机编辑入口重新打开" });
         return;
       }
-      if (!["/__editor/source", "/__editor/preview", "/__editor/save"].includes(route)) {
+      if (!["/__editor/source", "/__editor/preview", "/__editor/save", "/__editor/export-project",
+        "/__editor/build-game", "/__editor/delivery-status", "/__editor/import-resource", "/__editor/import-project"].includes(route)) {
         reply(response, 404, { error: "没有此编辑操作" }); return;
       }
-      if (pending) { reply(response, 409, { error: "另一个作者操作尚未完成，请稍后重试" }); return; }
+      if (pending || (delivery.busy && route !== "/__editor/delivery-status")) {
+        reply(response, 409, { error: "另一个作者或项目交付操作尚未完成，请稍后重试" }); return;
+      }
       pending = true;
       void (async () => {
         try {
-          const input = await body(request);
+          const input = upload ? null : await body(request);
           await options.beforeOperation?.();
           if (route === "/__editor/source") {
             const source = await readAuthorSource();
@@ -88,18 +100,21 @@ export function createEditorApi(options: { beforeOperation?(): Promise<void> } =
           } else if (route === "/__editor/preview") {
             const preview = await previewAuthorText(input);
             reply(response, 200, document(preview.loaded, authorFields(preview.updated), authorWorkspace(preview.updated)));
-          } else {
+          } else if (route === "/__editor/save") {
             const saved = await saveAuthorText(input);
             // Save is already committed; only pure response assembly follows.
             reply(response, 200, document(saved.loaded, saved.editable, saved.workspace, saved.backup));
-          }
+          } else if (route === "/__editor/export-project") reply(response, 202, delivery.exportProject(input));
+          else if (route === "/__editor/build-game") reply(response, 202, delivery.buildGame(input));
+          else if (route === "/__editor/delivery-status") reply(response, 200, delivery.status(input));
+          else if (route === "/__editor/import-resource") reply(response, 200, await delivery.importResource(request));
+          else if (route === "/__editor/import-project") reply(response, 200, await delivery.importProject(request));
         } catch (error: unknown) {
           if (response.headersSent) { response.destroy(); return; }
           if (error instanceof ContentError) reply(response, error.diagnostic.code === "AUTHOR_CONFLICT" ? 409 : 422,
             { error: error.message, diagnostic: error.diagnostic });
-          else reply(response, 400, {
-            error: "作者操作未确认完成；草稿保留。保存请求若中断，先重新读取源确认结果。",
-          });
+          else reply(response, 400, { error: route !== "/__editor/source" && route !== "/__editor/preview" && route !== "/__editor/save"
+            && error instanceof Error ? error.message : "作者操作未确认完成；草稿保留。保存请求若中断，先重新读取源确认结果。" });
         } finally { pending = false; }
       })();
     },

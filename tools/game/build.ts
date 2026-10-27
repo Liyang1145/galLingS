@@ -18,6 +18,7 @@ import { readWhaleSkin } from "../content/appearance.ts";
 import { readCollectionSkin } from "../content/collection-appearance.ts";
 import { readUiOrigins } from "../content/ui-source.ts";
 import { collectionAppearance, whaleAppearance } from "../dev/appearance.ts";
+import { verifyGamePackageInput } from "./package-input.ts";
 
 const exec = promisify(execFile);
 const sha256 = (value: string | Uint8Array): string => createHash("sha256").update(value).digest("hex");
@@ -133,13 +134,15 @@ async function removeStaging(base: string, temporary: string): Promise<void> {
 }
 
 /** Explicit command only. No build, media copy or Git subprocess runs on import. */
-async function build(): Promise<void> {
+export async function buildGamePackage(options: { reuse?: boolean; expectedSourceSha256?: string } = {}):
+Promise<{ packageId: string; directory: string; reused: boolean }> {
   const root = await realpath(REPOSITORY_ROOT);
   if (!inside(root, await realpath(resolve(root, "海风与布丁")))) {
     throw new Error("作者目录越出当前仓库，拒绝从外部目录收集资源");
   }
   const loaded = await loadSourceContent();
   const content = readStoryContent(loaded.content);
+  if (options.expectedSourceSha256 && content.source.sha256 !== options.expectedSourceSha256) throw new Error("作者源已变化，请重新读取并保存后打包");
   const [skin, collection, uiOrigins] = await Promise.all([readWhaleSkin(), readCollectionSkin(), readUiOrigins()]);
   const [commit, state, lockBytes] = await Promise.all([
     exec("git", ["rev-parse", "HEAD"], { cwd: root }),
@@ -205,6 +208,17 @@ async function build(): Promise<void> {
     assertPackageContent(manifest, content);
     const packageId = sha256(canonical(manifest));
     const destination = resolve(base, packageId);
+    if (options.reuse) {
+      const existing = await lstat(destination).catch((error: unknown) => {
+        if (error instanceof Error && "code" in error && error.code === "ENOENT") return null;
+        throw error;
+      });
+      if (existing) {
+        const checked = await verifyGamePackageInput(packageId);
+        if (canonical(checked.input.manifest) !== canonical(manifest)) throw new Error("现有游戏包与本次构建输入不一致");
+        return { packageId, directory: destination, reused: true };
+      }
+    }
     await absent(destination);
     await writeJson(temporary, "game-package.json", manifest);
     // Both locations are physical absolute children of the checked output base.
@@ -215,6 +229,7 @@ async function build(): Promise<void> {
     published = true;
     console.log(`游戏集成产物已生成：${relative(root, destination)}`);
     console.log("正式运行配置：独立 game 记录，不带开发入口；尚不是 EXE/APK，未执行路线、媒体或平台验收。");
+    return { packageId, directory: destination, reused: false };
   } finally {
     try {
       if (temporary && !published) await removeStaging(base, temporary);
@@ -226,7 +241,7 @@ async function build(): Promise<void> {
 }
 
 if (isCommandEntry(import.meta.url)) {
-  build().catch((error: unknown) => {
+  buildGamePackage().catch((error: unknown) => {
     if (error instanceof ContentError) console.error(JSON.stringify(error.diagnostic, null, 2));
     else console.error(error instanceof Error ? error.message : "游戏构建失败");
     process.exitCode = 1;

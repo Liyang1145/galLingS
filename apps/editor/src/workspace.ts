@@ -6,7 +6,7 @@ export interface WorkspaceNode {
   changed: boolean;
   pinned: boolean;
 }
-type Panel = "dialogue" | "structure" | "stage" | "performance" | "changes" | "source" | "checkpoints" | "story" | "flow" | "references";
+type Panel = "dialogue" | "structure" | "stage" | "performance" | "delivery" | "changes" | "source" | "checkpoints" | "story" | "flow" | "references";
 interface Options {
   root: HTMLElement;
   timeline: HTMLFieldSetElement;

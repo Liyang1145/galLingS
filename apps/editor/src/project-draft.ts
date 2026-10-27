@@ -79,6 +79,7 @@ export class EditorProjectDraft {
   #document: AuthorDocument | null = null;
   #fields: Map<string, AuthorTextEdit> | null = null;
   #extended: boolean | null = null;
+  #locations: Record<string, string> = {};
   readonly #limits: { maxEntries: number; maxUnits: number };
   constructor(limits: { maxEntries: number; maxUnits: number }) { this.#limits = limits; }
 
@@ -91,6 +92,7 @@ export class EditorProjectDraft {
   clear(): void {
     this.#source = null; this.#model = null; this.#document = null; this.#fields = null; this.#extended = null;
     this.#past = []; this.#future = []; this.#limited = false; this.closeGroup();
+    this.#locations = {};
   }
   closeGroup(): void { this.#group = null; }
   get model(): AuthorWorkspaceModel {
@@ -105,6 +107,7 @@ export class EditorProjectDraft {
   }
   private fields(): Map<string, AuthorTextEdit> {
     if (this.#fields) return this.#fields;
+    if (!this.#model) return new Map();
     const originals = this.#source?.editable ?? {};
     this.#fields = new Map();
     for (const [nodeId, fields] of Object.entries(workspaceFields(this.model))) {
@@ -170,7 +173,8 @@ export class EditorProjectDraft {
   }
   patch(): AuthorWorkspacePatch {
     if (!this.#source) throw new Error("尚未读取作者源");
-    return { format: "haifeng.author-workspace-patch/1", sourceSha256: this.#source.sourceSha256, workspace: this.model };
+    return { format: "haifeng.author-workspace-patch/1", sourceSha256: this.#source.sourceSha256, workspace: this.model,
+      replaceProject: this.model.workId !== this.#source.workspace.workId };
   }
   inspect(): StoryContent {
     if (!this.#source) throw new Error("尚未读取作者源");
@@ -187,7 +191,8 @@ export class EditorProjectDraft {
     try { content = compileAuthorWorkspace(this.model, this.#source.sourceSha256); }
     catch { content = compileAuthorWorkspace(outlineModel(this.model), this.#source.sourceSha256); }
     content.revision = this.#source.content.revision;
-    this.#document = { ...this.#source, workspace: this.model, content, editable: workspaceFields(this.model) };
+    this.#document = { ...this.#source, workspace: this.model, content, editable: workspaceFields(this.model),
+      locations: { ...this.#source.locations, ...this.#locations } };
     return this.#document;
   }
   update(nodeId: string, field: AuthorTextField, after: string, group: string | null = null): Change {
@@ -221,12 +226,21 @@ export class EditorProjectDraft {
   }
   replaceWorkspace(input: unknown): Change {
     const patch = readAuthorWorkspacePatch(input);
-    if (!this.#source || patch.sourceSha256 !== this.#source.sourceSha256 || patch.workspace.workId !== this.model.workId) {
+    if (!this.#source || patch.sourceSha256 !== this.#source.sourceSha256
+      || (patch.workspace.workId !== this.model.workId && !patch.replaceProject)) {
       throw new Error("工程草稿与当前作品或作者源摘要不一致，请先处理来源差异");
     }
     compileAuthorWorkspace(outlineModel(patch.workspace), this.#source.sourceSha256);
     this.closeGroup();
     return this.commit(patch.workspace, "采用工程草稿", null);
+  }
+  registerLocations(locations: Record<string, string>): void {
+    for (const [id, value] of Object.entries(locations)) {
+      const match = /^\/__editor\/media\/[a-f0-9]{64}\/([^/?#]+)$/u.exec(value);
+      if (!match || match[1] !== encodeURIComponent(id)) throw new Error("导入资源位置未登记");
+    }
+    Object.assign(this.#locations, locations);
+    this.#document = null;
   }
   replace(input: unknown): Change {
     const patch = readAuthorTextPatch(input);

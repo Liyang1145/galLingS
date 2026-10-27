@@ -1,14 +1,14 @@
 import assert from "node:assert/strict";
 import { createRequire } from "node:module";
-import { deflateSync } from "node:zlib";
 import { mkdir, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import { createServer } from "vite";
 import { ContentError } from "../../packages/story-model/src/model.ts";
 import { prepareAuthorPatch } from "../../tools/editor/patch.ts";
-import { prepareWorkspacePatch } from "../../tools/editor/workspace.ts";
+import { authorWorkspace, prepareWorkspacePatch } from "../../tools/editor/workspace.ts";
 import { documentFor, fixture } from "./fixture.ts";
 import { ACTOR_ACTIONS } from "../../packages/player/src/web/motion.ts";
+import { fixtureImage, fixtureAudio } from "./media.mjs";
 
 const require = createRequire(process.env.HAIFENG_PLAYWRIGHT_PACKAGE ?? import.meta.url);
 const { chromium } = require("playwright");
@@ -20,6 +20,7 @@ const server = await createServer({
   server: { host: "127.0.0.1", port: 0, strictPort: false, open: false },
 });
 let browser;
+let page;
 let project = fixture();
 let writes = 0;
 const checks = [];
@@ -27,21 +28,6 @@ const errors = [];
 const external = [];
 const check = value => { checks.push(value); console.log(`PASS ${value}`); };
 const wait = ms => new Promise(resolveWait => setTimeout(resolveWait, ms));
-const crc32 = bytes => {
-  let crc = 0xffffffff;
-  for (const byte of bytes) { crc ^= byte; for (let bit = 0; bit < 8; bit++) crc = crc & 1 ? 0xedb88320 ^ crc >>> 1 : crc >>> 1; }
-  return (crc ^ 0xffffffff) >>> 0;
-};
-function fixtureImage() {
-  const chunk = (type, payload) => {
-    const name = Buffer.from(type), length = Buffer.alloc(4), checksum = Buffer.alloc(4);
-    length.writeUInt32BE(payload.length); checksum.writeUInt32BE(crc32(Buffer.concat([name, payload])));
-    return Buffer.concat([length, name, payload, checksum]);
-  };
-  const header = Buffer.alloc(13); header.writeUInt32BE(1, 0); header.writeUInt32BE(1, 4); header[8] = 8; header[9] = 6;
-  return Buffer.concat([Buffer.from([137,80,78,71,13,10,26,10]), chunk("IHDR", header),
-    chunk("IDAT", deflateSync(Buffer.from([0,70,120,200,255]))), chunk("IEND", Buffer.alloc(0))]);
-}
 async function until(predicate, timeout = 12000) {
   const deadline = Date.now() + timeout;
   while (Date.now() < deadline) { if (await predicate()) return; await wait(40); }
@@ -68,11 +54,7 @@ try {
       if (["fixture-bg", "fixture-ch"].includes(id)) return route.fulfill({
         contentType: "image/png", body: fixtureImage(),
       });
-      const wav = Buffer.alloc(46);
-      wav.write("RIFF"); wav.writeUInt32LE(38, 4); wav.write("WAVEfmt ", 8); wav.writeUInt32LE(16, 16);
-      wav.writeUInt16LE(1, 20); wav.writeUInt16LE(1, 22); wav.writeUInt32LE(8000, 24); wav.writeUInt32LE(16000, 28);
-      wav.writeUInt16LE(2, 32); wav.writeUInt16LE(16, 34); wav.write("data", 36); wav.writeUInt32LE(2, 40);
-      return route.fulfill({ contentType: "audio/wav", body: wav });
+      return route.fulfill({ contentType: "audio/wav", body: fixtureAudio() });
     }
     if (!["/__editor/source", "/__editor/preview", "/__editor/save"].includes(url.pathname)) return route.continue();
     // Exercise the real UI against isolated author data; never send a save to the actual project.
@@ -98,7 +80,7 @@ try {
       });
     }
   });
-  const page = await context.newPage();
+  page = await context.newPage();
   page.on("pageerror", error => errors.push(error.message));
   await page.goto(origin);
   await until(async () => (await page.locator("#message").innerText()).includes("已读取当前作者源"));
@@ -316,13 +298,45 @@ try {
   assert.ok((await action("count").innerText()).includes("共 4 个节点"));
   assert.equal(await action("nodes").inputValue(), firstNew);
   check("chapter/node/choice structure, deletion retargeting, history and complete draft adoption save in the isolated project");
+  const newChapterId = workspace.workspace.chapters.find(chapter => chapter.id !== "trial").id;
+  const saveStructure = async () => {
+    await action("save").click();
+    await until(async () => (await action("message").innerText()).includes("作者源已保存"));
+  };
+  await page.getByRole("combobox", { name: "管理章节", exact: true }).selectOption("trial");
+  await page.getByRole("button", { name: "移到所管理章节末尾", exact: true }).click();
+  await page.getByRole("button", { name: "节点前移", exact: true }).click();
+  await page.getByRole("button", { name: "节点后移", exact: true }).click();
+  await saveStructure();
+  assert.equal(authorWorkspace(project).chapters.find(chapter => chapter.id === "trial").nodes.at(-1).id, firstNew);
+  await page.getByRole("combobox", { name: "管理章节", exact: true }).selectOption(newChapterId);
+  await page.getByRole("button", { name: "移到所管理章节末尾", exact: true }).click();
+  await page.getByRole("button", { name: "章节前移", exact: true }).click();
+  await page.getByRole("textbox", { name: "章节名称", exact: true }).fill("已排序的新章节");
+  await page.getByRole("button", { name: "重命名章节", exact: true }).click();
+  await saveStructure();
+  assert.equal(authorWorkspace(project).chapters[0].id, newChapterId);
+  assert.equal(authorWorkspace(project).chapters[0].title, "已排序的新章节");
+  await page.getByRole("combobox", { name: "合并章节的目标", exact: true }).selectOption("trial");
+  await page.getByRole("button", { name: "合并节点并移除本章", exact: true }).click();
+  await saveStructure();
+  assert.equal(authorWorkspace(project).chapters.length, 1);
+  assert.equal(authorWorkspace(project).chapters[0].nodes.at(-1).id, firstNew);
+  await card("end").dragTo(card("menu"));
+  await action("undo-draft").click();
+  await action("redo-draft").click();
+  await saveStructure();
+  const reordered = authorWorkspace(project).chapters[0].nodes.map(node => node.id);
+  assert.ok(reordered.indexOf("end") < reordered.indexOf("menu"));
+  check("chapter rename/order/merge, cross-chapter moves, node ordering and timeline drag survive shared history and save");
   project = fixture(true);
   await action("reload").click();
   await until(async () => (await action("message").innerText()).includes("已读取当前作者源"));
+  await action("nodes").selectOption("start");
   await until(async () => await page.locator("#author-canvas .actor").count() === 1);
   await page.getByRole("combobox", { name: "素材类别", exact: true }).selectOption("ch");
   await page.getByRole("button", { name: "使用素材 fixture-ch", exact: true }).click();
-  await page.getByRole("button", { name: "使用素材 fixture-ch", exact: true }).click();
+  await page.getByRole("button", { name: "使用素材 fixture-ch", exact: true }).dragTo(action("author-canvas"));
   await until(async () => await page.locator("#author-canvas .actor").count() === 3);
   const placements = page.getByRole("listbox", { name: "选择舞台立绘实例", exact: true });
   const placementIds = await placements.locator("option").evaluateAll(options => options.map(option => option.value));
@@ -435,6 +449,10 @@ try {
     scope: "Real editor UI and shared compiler with isolated in-memory author data; actual author files untouched.",
   }, null, 2));
   console.log(JSON.stringify({ passed: checks.length, writes, artifacts }));
+} catch (error) {
+  console.error(JSON.stringify({ pageErrors: errors, message: await page?.locator("#message").textContent().catch(() => "") }));
+  await page?.screenshot({ path: resolve(artifacts, "editor-failure.png"), fullPage: true }).catch(() => {});
+  throw error;
 } finally {
   await browser?.close();
   await server.close();

@@ -21,10 +21,13 @@ export function insideEditorRoot(root: string, filename: string): boolean {
   const child = relative(root, filename);
   return !!child && child !== ".." && !child.startsWith(`..${sep}`) && !isAbsolute(child);
 }
-const RUNTIME_DIRS = ["tools/editor", "tools/content", "packages/story-model/src"] as const;
-const RUNTIME_FILES = ["package.json", "package-lock.json"] as const;
+const RUNTIME_DIRS = [
+  "tools/editor", "tools/content", "tools/game", "tools/dev", "packages/story-model/src",
+  "packages/story-runtime/src", "packages/player/src", "packages/chat/src", "apps/game",
+] as const;
+const RUNTIME_FILES = ["package.json", "package-lock.json", "tools/cli-entry.ts"] as const;
 const runtimePath = (path: string): boolean => RUNTIME_FILES.some(file => path === file)
-  || RUNTIME_DIRS.some(folder => path.startsWith(`${folder}/`) && path.endsWith(".ts"));
+  || RUNTIME_DIRS.some(folder => path.startsWith(`${folder}/`) && /\.(?:ts|js|css|html|json)$/u.test(path));
 
 export function readEditorPackage(input: unknown): EditorPackage {
   const source = { file: "editor-package.json", field: "" };
@@ -115,7 +118,7 @@ export async function editorFiles(root: string, folder = root, typescriptOnly = 
 }
 export async function editorRuntimeInputs(root: string): Promise<EditorFile[]> {
   const result: EditorFile[] = [];
-  for (const folder of RUNTIME_DIRS) result.push(...await editorFiles(root, resolve(root, folder), true));
+  for (const folder of RUNTIME_DIRS) result.push(...(await editorFiles(root, resolve(root, folder))).filter(file => runtimePath(file.path)));
   for (const path of RUNTIME_FILES) {
     const bytes = await editorFileBytes(root, path);
     result.push({ path, sha256: editorSha256(bytes), bytes: bytes.byteLength });

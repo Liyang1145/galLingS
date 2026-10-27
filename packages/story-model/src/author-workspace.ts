@@ -21,17 +21,19 @@ export interface AuthorWorkspaceModel {
   variables: JsonObject[];
   settings: JsonObject;
   metadata: JsonObject;
+  migration: JsonObject;
   assets: { key: string; record: JsonObject }[];
 }
 export interface AuthorWorkspacePatch {
   format: "haifeng.author-workspace-patch/1";
   sourceSha256: string;
   workspace: AuthorWorkspaceModel;
+  replaceProject: boolean;
 }
 const SOURCE = { file: "author-workspace", field: "" };
 export function readAuthorWorkspace(input: unknown): AuthorWorkspaceModel {
   const data = object(input, SOURCE);
-  knownFields(data, ["workId", "title", "entryNodeId", "chapters", "variables", "settings", "metadata", "assets"], SOURCE);
+  knownFields(data, ["workId", "title", "entryNodeId", "chapters", "variables", "settings", "metadata", "migration", "assets"], SOURCE);
   const ids = new Set<string>();
   const nodes = new Set<string>();
   const choices = new Set<string>();
@@ -78,13 +80,15 @@ export function readAuthorWorkspace(input: unknown): AuthorWorkspaceModel {
     entryNodeId, chapters, assets,
     variables: array(data.variables, at(SOURCE, "variables")).map((value, index) => jsonObject(value, at(SOURCE, `variables.${index}`))),
     settings: jsonObject(data.settings, at(SOURCE, "settings")), metadata: jsonObject(data.metadata, at(SOURCE, "metadata")),
+    migration: jsonObject(data.migration, at(SOURCE, "migration")),
   };
 }
 export function readAuthorWorkspacePatch(input: unknown): AuthorWorkspacePatch {
   const data = object(input, SOURCE);
-  knownFields(data, ["format", "sourceSha256", "workspace"], SOURCE);
+  knownFields(data, ["format", "sourceSha256", "workspace", "replaceProject"], SOURCE);
   if (data.format !== "haifeng.author-workspace-patch/1") reject("AUTHOR_FORMAT", "不支持的工程草稿格式", SOURCE);
-  return { format: data.format, sourceSha256: hash(data.sourceSha256, SOURCE), workspace: readAuthorWorkspace(data.workspace) };
+  if (data.replaceProject !== undefined && typeof data.replaceProject !== "boolean") reject("AUTHOR_FORMAT", "工程替换标记无效", SOURCE);
+  return { format: data.format, sourceSha256: hash(data.sourceSha256, SOURCE), workspace: readAuthorWorkspace(data.workspace), replaceProject: data.replaceProject === true };
 }
 export function compileAuthorWorkspace(model: AuthorWorkspaceModel, sourceSha256: string): StoryContent {
   return compileAuthorProject({

@@ -10,6 +10,13 @@ import { documentFor, fixture } from "./fixture.ts";
 const envelope = (workspace = authorWorkspace(fixture())) => ({
   format: "haifeng.author-workspace-patch/1" as const, sourceSha256: fixture().sourceSha256, workspace,
 });
+test("an unloaded workspace exposes empty history and change state for initial editor controls", () => {
+  const draft = new EditorProjectDraft({ maxEntries: 100, maxUnits: 2_000_000 });
+  assert.equal(draft.size, 0);
+  assert.deepEqual([...draft.values()], []);
+  assert.equal(draft.status.undoSteps, 0);
+  assert.equal(draft.extended, false);
+});
 
 test("workspace no-op retains all raw files; string changes match exact token patch bytes", () => {
   const source = fixture();

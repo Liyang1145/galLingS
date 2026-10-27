@@ -6,7 +6,7 @@ export interface WorkspaceNode {
   changed: boolean;
   pinned: boolean;
 }
-type Panel = "dialogue" | "structure" | "changes" | "source" | "checkpoints" | "story" | "flow" | "references";
+type Panel = "dialogue" | "structure" | "stage" | "changes" | "source" | "checkpoints" | "story" | "flow" | "references";
 interface Options {
   root: HTMLElement;
   timeline: HTMLFieldSetElement;
@@ -81,11 +81,12 @@ export class AuthorWorkspace {
       tab.tabIndex = selected ? 0 : -1;
       this.#options.root.querySelector<HTMLElement>(`#${tab.getAttribute("aria-controls")}`)!.hidden = !selected;
     }
+    active.scrollIntoView({ block: "nearest", inline: "nearest" });
   }
 
   setState(available: boolean, playing: boolean): void {
     this.#options.timeline.disabled = !available;
-    this.#options.empty.hidden = playing;
+    this.#options.empty.hidden = playing || available;
   }
 
   nodes(nodes: readonly WorkspaceNode[], selected: string, reveal: boolean): void {

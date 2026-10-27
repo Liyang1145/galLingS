@@ -24,6 +24,8 @@ import { PreviewProblemPanel } from "./preview-problem.ts";
 import { AuthorLogicEditor } from "./logic-editor.ts";
 import { AuthorWorkspace } from "./workspace.ts";
 import { AuthorStructureEditor } from "./structure.ts";
+import { AuthorAssetLibrary } from "./asset-library.ts";
+import { AuthorStageEditor } from "./stage-editor.ts";
 import "../../game/src/style.css";
 import "./style.css";
 
@@ -83,6 +85,8 @@ let authorDiagnostic: AuthorDiagnostic | null = null;
 let previewProblem: PreviewProblemPanel | null = null;
 let choiceText: AuthorLogicEditor | null = null;
 let structureEditor: AuthorStructureEditor | null = null;
+let assetLibrary: AuthorAssetLibrary | null = null;
+let stageEditor: AuthorStageEditor | null = null;
 const NODE_PAGE_SIZE = 200;
 let nodePage = 0;
 let nodeList: {
@@ -129,6 +133,9 @@ function sourceBusy(): boolean { return operation === "save" || operation === "l
 function controls(): void {
   const locked = sourceBusy();
   workspace.setState(!!baseline && !locked && !disposed, preview.running);
+  stageEditor?.setState(!!baseline && !locked && !disposed, preview.running);
+  assetLibrary?.setEnabled(!!baseline && !locked && !disposed);
+  if (preview.running) assetLibrary?.stopAudio();
   const reviewing = !!importer?.active || !!sourceComparison?.active;
   const node = selectedNode();
   const fields = baseline?.editable[selected] ?? [];
@@ -188,6 +195,8 @@ function nodeForm(): void {
   controls();
   sceneInspector?.refresh();
   structureEditor?.refresh();
+  assetLibrary?.refresh();
+  stageEditor?.refresh();
 }
 
 function changeProject(label: string, update: (model: AuthorWorkspaceModel) => void, nextSelected?: string): void {
@@ -319,6 +328,8 @@ function draftChanged(options: { cancelImport?: boolean; refreshForm?: boolean; 
   list({ revealSelected: options.revealSelected === true });
   if (options.refreshForm) nodeForm();
   else controls();
+  assetLibrary?.refresh();
+  stageEditor?.refresh();
 }
 
 function historyStep(direction: "undo" | "redo"): void {
@@ -561,6 +572,8 @@ function dispose(): void {
   previewProblem?.dispose();
   choiceText?.dispose();
   structureEditor?.dispose();
+  stageEditor?.dispose();
+  assetLibrary?.dispose();
   workspace.dispose();
   nodeList = null;
   el.nodes.replaceChildren();
@@ -710,6 +723,18 @@ structureEditor = new AuthorStructureEditor({
   root: element("author-structure", HTMLElement), cards: element("node-cards", HTMLElement),
   read: () => baseline ? drafts.model : null, selected: () => selected,
   change: changeProject, navigate: navigateNode, notice: value => message(value, true),
+});
+stageEditor = new AuthorStageEditor({
+  root: element("author-stage", HTMLElement), canvas: element("author-canvas", HTMLElement),
+  status: element("author-stage-status", HTMLElement),
+  read: () => baseline && !disposed && selected ? { document: baseline, model: drafts.model, nodeId: selected } : null,
+  change: changeProject, notice: value => message(value, true),
+});
+assetLibrary = new AuthorAssetLibrary({
+  root: element("author-assets", HTMLElement),
+  read: () => baseline && !disposed ? { model: drafts.model, locations: baseline.locations } : null,
+  use(id, kind) { stageEditor?.useAsset(id, kind); workspace.open("stage"); },
+  notice: value => message(value, true),
 });
 controls();
 void perform("load");

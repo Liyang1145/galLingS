@@ -7,7 +7,7 @@ import type { AuthorDraftBase } from "../../packages/story-model/src/author-draf
 import { createHash } from "node:crypto";
 import { contentRevisionText } from "../../packages/story-model/src/integrity.ts";
 
-export function fixture(): AuthorProject {
+export function fixture(media = false): AuthorProject {
   const node = (id: string) => ({
     id, label: id, speaker: "鲸鱼小姐", text: `节点 ${id}`, set: "", jump: "", jumpIf: "", ending: "",
     sprites: [], choices: [], ctime: 0, cdef: "", acts: {},
@@ -35,6 +35,21 @@ export function fixture(): AuthorProject {
     "chapters/trial.json": { format: "haifeng.author-chapter/1", id: "trial", title: "试用章", nodes },
   };
   for (const file of RESOURCE_FILES) values[file] = {};
+  if (media) {
+    const kinds = ["bg", "ch", "bgm", "se", "vo"];
+    const ids: string[] = [];
+    for (const [index, file] of RESOURCE_FILES.entries()) {
+      const kind = kinds[index]!;
+      const id = `fixture-${kind}`;
+      ids.push(id);
+      values[file] = { [id]: { id, type: kind, src: `assets/${id}.${["bg", "ch"].includes(kind) ? "png" : "wav"}`, name: `测试 ${kind}` } };
+    }
+    values["resources/index.json"] = ids;
+    Object.assign(nodes[0]!, {
+      bg: "fixture-bg",
+      sprites: [{ uid: "fixture-sprite", asset: "fixture-ch", x: 640, y: 700, h: 500, flip: false, in: "", out: "", look: "", poseSwitch: null }],
+    });
+  }
   const files = new Map(Object.entries(values).map(([file, value]) => {
     const text = `${JSON.stringify(value, null, 2)}\n`;
     return [file, Buffer.from(file.startsWith("chapters/") ? `\uFEFF${text.replace(/\n/gu, "\r\n")}` : text)];
@@ -55,5 +70,10 @@ export function base(project: AuthorProject): AuthorDraftBase {
 }
 
 export function documentFor(project: AuthorProject) {
-  return { content: compile(project), sourceSha256: project.sourceSha256, editable: authorFields(project), workspace: authorWorkspace(project), locations: {}, backup: null };
+  const content = compile(project);
+  return {
+    content, sourceSha256: project.sourceSha256, editable: authorFields(project), workspace: authorWorkspace(project),
+    locations: Object.fromEntries(content.resources.map(resource => [resource.id, `/__editor/media/${"a".repeat(64)}/${encodeURIComponent(resource.id)}`])),
+    backup: null,
+  };
 }

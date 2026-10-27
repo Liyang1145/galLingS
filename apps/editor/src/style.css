@@ -35,7 +35,7 @@ body { height: 100vh; height: 100dvh; overflow: hidden; }
 .panel-heading h2, .source-tools h2 { font-size: 12px; font-weight: 600; line-height: 1.6; margin: 0; overflow-wrap: anywhere; }
 .panel-tag { color: var(--studio-dim); font-size: 10px; white-space: nowrap; }
 .panel-scroll { flex: 1; min-height: 0; overflow: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-gutter: stable; }
-.studio-tabs { display: flex; flex-shrink: 0; border-bottom: 1px solid var(--studio-line); }
+.studio-tabs { display: flex; flex-shrink: 0; border-bottom: 1px solid var(--studio-line); overflow-x: auto; scrollbar-width: thin; }
 .studio-tabs button { border-radius: 0; padding: 9px 12px; color: var(--studio-dim); border-bottom: 2px solid transparent; white-space: nowrap; }
 .studio-tabs button[aria-selected="true"] { color: var(--studio-accent); border-bottom-color: var(--studio-accent); background: #202534; }
 .node-properties, .source-tools { padding: 12px; }
@@ -238,6 +238,29 @@ input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 3px
 .structure-panel button { white-space: normal; text-align: left; }
 .structure-panel input[type="checkbox"] { margin-right: 6px; }
 .node-card[draggable="true"] { cursor: grab; }
+.asset-library { padding: 12px; font-size: 11px; }
+.asset-library > input, .asset-library > select { margin-bottom: 8px; }
+.asset-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.asset-card { min-width: 0; border: 1px solid var(--studio-line); border-radius: 5px; overflow: hidden; background: #121318; }
+.studio-panel .asset-card > button { display: block; width: 100%; padding: 0 0 6px; text-align: left; border-radius: 0; }
+.asset-card img { display: block; width: 100%; height: 75px; object-fit: contain; background: repeating-conic-gradient(#23262f 0% 25%, #1b1d24 0% 50%) 0/12px 12px; }
+.asset-card strong, .asset-card small { display: block; font-size: 10px; font-weight: 400; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin: 4px 6px; }
+.asset-card button > span { display: block; height: 36px; text-align: center; padding: 10px; color: var(--studio-accent); }
+.asset-library audio { width: 100%; margin-top: 10px; height: 32px; }
+.asset-library > p, .scene-inspector-details > summary { color: var(--studio-dim); font-size: 11px; line-height: 1.6; }
+.scene-inspector-details { border-top: 1px solid var(--studio-line); }
+.scene-inspector-details > summary { cursor: pointer; padding: 12px; }
+.stage-properties { padding: 12px; font-size: 12px; }
+.stage-properties > fieldset { min-width: 0; margin: 0; padding: 10px; border: 1px solid #353947; border-radius: 7px; }
+.stage-properties h3 { margin-top: 18px; }
+.stage-properties .sound-row { border-bottom: 1px solid var(--studio-line); padding: 8px 0; }
+.stage-properties p { color: var(--studio-dim); line-height: 1.7; }
+.author-canvas .actors, .author-canvas .actor { pointer-events: auto; }
+.author-canvas .actor { cursor: move; touch-action: none; }
+.author-canvas .dialogue { pointer-events: none; }
+.author-canvas .actor.author-selected { outline: 3px solid #7aa2ff; outline-offset: 3px; }
+.author-canvas .author-resize { position: absolute; top: -8px; right: -8px; width: 16px; height: 16px; min-height: 0; padding: 0; border: 2px solid #fff; border-radius: 2px; background: #7aa2ff; cursor: ns-resize; }
+.author-canvas .actor:not(.author-selected) .author-resize { display: none; }
 .studio-dock .flow-panel, .studio-dock .reference-panel { padding: 12px 16px; }
 .studio-dock .flow-viewport { max-height: none; }
 .studio-dock .flow-canvas { margin-inline: auto; }

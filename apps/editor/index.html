@@ -26,8 +26,11 @@
       </header>
 
       <aside class="studio-sidebar studio-panel" aria-label="所选节点的场面">
-        <div class="panel-heading"><h2>场面与素材</h2><span class="panel-tag">只读</span></div>
-        <div class="panel-scroll"><section id="author-scene" aria-label="所选节点的只读场面与演出"></section></div>
+        <div class="panel-heading"><h2>素材库</h2><span class="panel-tag">本机素材</span></div>
+        <div class="panel-scroll">
+          <section id="author-assets" aria-label="已登记的本机素材库"></section>
+          <details class="scene-inspector-details"><summary>当前场面详情</summary><section id="author-scene" aria-label="所选节点的只读场面与演出"></section></details>
+        </div>
       </aside>
 
       <section class="studio-preview" aria-label="剧情舞台与预览">
@@ -36,6 +39,7 @@
           <div id="stage" class="stage" tabindex="0" aria-label="剧情预览画面">
             <div id="scene" class="scene"></div>
             <div id="choices" class="choices" hidden></div>
+            <div id="author-canvas" class="scene author-canvas" aria-label="可编辑的静态舞台"></div>
             <div id="preview-empty" class="preview-empty">
               <span class="empty-mark" aria-hidden="true">▷</span>
               <strong>选择一句，开始预览</strong>
@@ -55,6 +59,7 @@
           <p id="fullscreen-status" class="fullscreen-status" role="status" aria-live="polite"></p>
           <p id="preview-status" role="status">尚未预览。</p>
         </div>
+        <p id="author-stage-status" class="help" role="status"></p>
         <p id="preview-note" class="preview-note">预览不读取或写入玩家存档、全局解锁和聊天记录。</p>
         <section id="preview-problem" aria-label="运行预览问题的只读节点说明" hidden></section>
         <details class="preview-details">
@@ -68,6 +73,7 @@
         <div class="studio-tabs" role="tablist" aria-label="属性面板" data-workspace-tabs>
           <button id="tab-dialogue" role="tab" aria-selected="true" aria-controls="panel-dialogue" data-workspace-tab="dialogue">对白与逻辑</button>
           <button id="tab-structure" role="tab" aria-selected="false" aria-controls="panel-structure" tabindex="-1" data-workspace-tab="structure">结构</button>
+          <button id="tab-stage" role="tab" aria-selected="false" aria-controls="panel-stage" tabindex="-1" data-workspace-tab="stage">舞台</button>
           <button id="tab-changes" role="tab" aria-selected="false" aria-controls="panel-changes" tabindex="-1" data-workspace-tab="changes">变更</button>
           <button id="tab-source" role="tab" aria-selected="false" aria-controls="panel-source" tabindex="-1" data-workspace-tab="source">文件</button>
           <button id="tab-checkpoints" role="tab" aria-selected="false" aria-controls="panel-checkpoints" tabindex="-1" data-workspace-tab="checkpoints">检查点</button>
@@ -84,6 +90,9 @@
         </div>
         <div id="panel-structure" class="panel-scroll" role="tabpanel" aria-labelledby="tab-structure" hidden>
           <section id="author-structure" aria-label="章节、节点与选项结构编辑"></section>
+        </div>
+        <div id="panel-stage" class="panel-scroll" role="tabpanel" aria-labelledby="tab-stage" hidden>
+          <section id="author-stage" aria-label="背景、立绘与声音编辑"></section>
         </div>
         <div id="panel-changes" class="panel-scroll" role="tabpanel" aria-labelledby="tab-changes" hidden>
           <section id="author-changes" aria-label="当前草稿的只读变更清单"></section>

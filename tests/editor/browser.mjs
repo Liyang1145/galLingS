@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import { createRequire } from "node:module";
+import { deflateSync } from "node:zlib";
 import { mkdir, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import { createServer } from "vite";
@@ -25,6 +26,21 @@ const errors = [];
 const external = [];
 const check = value => { checks.push(value); console.log(`PASS ${value}`); };
 const wait = ms => new Promise(resolveWait => setTimeout(resolveWait, ms));
+const crc32 = bytes => {
+  let crc = 0xffffffff;
+  for (const byte of bytes) { crc ^= byte; for (let bit = 0; bit < 8; bit++) crc = crc & 1 ? 0xedb88320 ^ crc >>> 1 : crc >>> 1; }
+  return (crc ^ 0xffffffff) >>> 0;
+};
+function fixtureImage() {
+  const chunk = (type, payload) => {
+    const name = Buffer.from(type), length = Buffer.alloc(4), checksum = Buffer.alloc(4);
+    length.writeUInt32BE(payload.length); checksum.writeUInt32BE(crc32(Buffer.concat([name, payload])));
+    return Buffer.concat([length, name, payload, checksum]);
+  };
+  const header = Buffer.alloc(13); header.writeUInt32BE(1, 0); header.writeUInt32BE(1, 4); header[8] = 8; header[9] = 6;
+  return Buffer.concat([Buffer.from([137,80,78,71,13,10,26,10]), chunk("IHDR", header),
+    chunk("IDAT", deflateSync(Buffer.from([0,70,120,200,255]))), chunk("IEND", Buffer.alloc(0))]);
+}
 async function until(predicate, timeout = 12000) {
   const deadline = Date.now() + timeout;
   while (Date.now() < deadline) { if (await predicate()) return; await wait(40); }
@@ -45,6 +61,17 @@ try {
       if (["data:", "blob:"].includes(url.protocol)) return route.continue();
       external.push(url.origin);
       return route.abort();
+    }
+    if (url.pathname.startsWith("/__editor/media/")) {
+      const id = decodeURIComponent(url.pathname.split("/").at(-1));
+      if (["fixture-bg", "fixture-ch"].includes(id)) return route.fulfill({
+        contentType: "image/png", body: fixtureImage(),
+      });
+      const wav = Buffer.alloc(46);
+      wav.write("RIFF"); wav.writeUInt32LE(38, 4); wav.write("WAVEfmt ", 8); wav.writeUInt32LE(16, 16);
+      wav.writeUInt16LE(1, 20); wav.writeUInt16LE(1, 22); wav.writeUInt32LE(8000, 24); wav.writeUInt32LE(16000, 28);
+      wav.writeUInt16LE(2, 32); wav.writeUInt16LE(16, 34); wav.write("data", 36); wav.writeUInt32LE(2, 40);
+      return route.fulfill({ contentType: "audio/wav", body: wav });
     }
     if (!["/__editor/source", "/__editor/preview", "/__editor/save"].includes(url.pathname)) return route.continue();
     // Exercise the real UI against isolated author data; never send a save to the actual project.
@@ -82,7 +109,8 @@ try {
 
   const card = id => page.locator(`#node-cards [data-node-id="${id}"]`);
   assert.equal(await card("start").getAttribute("aria-current"), "true");
-  assert.equal(await action("preview-empty").isVisible(), true);
+  assert.equal(await action("preview-empty").isVisible(), false);
+  assert.equal(await action("author-canvas").isVisible(), true);
   const layout = await page.evaluate(() => ({
     overflow: document.documentElement.scrollWidth > window.innerWidth,
     stage: document.getElementById("stage").getBoundingClientRect().toJSON(),
@@ -287,6 +315,63 @@ try {
   assert.ok((await action("count").innerText()).includes("共 4 个节点"));
   assert.equal(await action("nodes").inputValue(), firstNew);
   check("chapter/node/choice structure, deletion retargeting, history and complete draft adoption save in the isolated project");
+  project = fixture(true);
+  await action("reload").click();
+  await until(async () => (await action("message").innerText()).includes("已读取当前作者源"));
+  await until(async () => await page.locator("#author-canvas .actor").count() === 1);
+  await page.getByRole("combobox", { name: "素材类别", exact: true }).selectOption("ch");
+  await page.getByRole("button", { name: "使用素材 fixture-ch", exact: true }).click();
+  await page.getByRole("button", { name: "使用素材 fixture-ch", exact: true }).click();
+  await until(async () => await page.locator("#author-canvas .actor").count() === 3);
+  const placements = page.getByRole("listbox", { name: "选择舞台立绘实例", exact: true });
+  const placementIds = await placements.locator("option").evaluateAll(options => options.map(option => option.value));
+  assert.equal(new Set(placementIds).size, 3);
+  for (const id of placementIds.filter(id => id !== "fixture-sprite")) {
+    await placements.selectOption(id);
+    await page.getByRole("button", { name: "移除这张立绘", exact: true }).click();
+  }
+  await placements.selectOption("fixture-sprite");
+  const number = async (name, value) => {
+    const input = page.getByRole("spinbutton", { name, exact: true });
+    await input.fill(String(value)); await input.press("Tab");
+  };
+  await number("立绘 X", 400);
+  await number("立绘 Y", 700);
+  await number("立绘高度", 500);
+  await page.getByRole("checkbox", { name: "水平翻转立绘", exact: true }).check();
+  await until(async () => await page.locator('#author-canvas .actor[data-instance="fixture-sprite"]').count() === 1);
+  const authorActor = page.locator('#author-canvas .actor[data-instance="fixture-sprite"]');
+  const scale = (await action("author-canvas").boundingBox()).width / 1280;
+  const box = await authorActor.boundingBox();
+  await page.mouse.move(box.x + box.width / 2, box.y + box.height / 2);
+  await page.mouse.down();
+  await page.mouse.move(box.x + box.width / 2 + 40, box.y + box.height / 2 + 20, { steps: 4 });
+  await page.mouse.up();
+  assert.equal(Number(await page.getByRole("spinbutton", { name: "立绘 X", exact: true }).inputValue()), Math.round(400 + 40 / scale));
+  assert.equal(Number(await page.getByRole("spinbutton", { name: "立绘 Y", exact: true }).inputValue()), Math.round(700 + 20 / scale));
+  await until(async () => await authorActor.locator(".author-resize").isVisible());
+  const handle = await authorActor.locator(".author-resize").boundingBox();
+  await page.mouse.move(handle.x + handle.width / 2, handle.y + handle.height / 2);
+  await page.mouse.down(); await page.mouse.move(handle.x + handle.width / 2, handle.y + handle.height / 2 - 24, { steps: 3 });
+  await page.mouse.up();
+  assert.ok(Number(await page.getByRole("spinbutton", { name: "立绘高度", exact: true }).inputValue()) > 500);
+  await page.getByRole("combobox", { name: "配乐", exact: true }).selectOption("fixture-bgm");
+  await page.getByRole("combobox", { name: "语音", exact: true }).selectOption("fixture-vo");
+  await page.getByRole("button", { name: "添加一次音效", exact: true }).click();
+  await page.getByRole("button", { name: "添加环境声", exact: true }).click();
+  await number("环境声增益 1", 0.4);
+  assert.equal(await page.locator("#author-assets audio").evaluate(audio => audio.paused), true);
+  await action("save").click();
+  await until(async () => (await action("message").innerText()).includes("作者源已保存"));
+  const savedStage = project.nodes.find(node => node.record.id === "start").record;
+  assert.equal(savedStage.bgm, "fixture-bgm");
+  assert.equal(savedStage.voice, "fixture-vo");
+  assert.equal(savedStage.sprites.length, 1);
+  assert.equal(savedStage.sprites[0].uid, "fixture-sprite");
+  assert.equal(savedStage.sprites[0].flip, true);
+  assert.equal(savedStage.seEvents[0].id, "fixture-se");
+  assert.equal(savedStage.ambience[0].gain, 0.4);
+  check("registered assets, distinct sprite instances, canvas dragging/resizing, flipping and sound selection reach the saved author model");
   assert.deepEqual(errors, []);
   assert.deepEqual(external, []);
   await page.screenshot({ path: resolve(artifacts, "editor.png"), fullPage: true });

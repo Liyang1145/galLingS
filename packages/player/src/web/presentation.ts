@@ -354,8 +354,8 @@ export class WebPresentation implements PresentationAdapter {
         && scene.sprites.some(sprite => actorKey(sprite.assetId) === view.presentation.speaker);
       for (const [z, sprite] of scene.sprites.entries()) {
         const key = actorKey(sprite.assetId);
-        keep.add(key);
-        let actor = this.#actors.get(key);
+        keep.add(sprite.id);
+        let actor = this.#actors.get(sprite.id);
         const isNew = !actor;
         if (!actor) {
           const element = document.createElement("div");
@@ -365,7 +365,7 @@ export class WebPresentation implements PresentationAdapter {
           image.draggable = false;
           element.append(image);
           actor = { element, image, sprite };
-          this.#actors.set(key, actor);
+          this.#actors.set(sprite.id, actor);
           this.#actorsLayer.append(element);
         }
         const previous = actor.sprite;

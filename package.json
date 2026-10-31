@@ -16,6 +16,7 @@
     "game:build": "node tools/game/build.ts",
     "game:verify": "node tools/game/verify.ts",
     "windows:prepare": "node tools/game/windows.ts",
+    "linux:prepare": "node tools/game/linux.ts",
     "android:prepare": "node tools/game/android.ts",
     "chat:test": "node --test tests/chat/*.test.mjs",
     "chat:test:browser": "node tests/chat/browser.mjs",

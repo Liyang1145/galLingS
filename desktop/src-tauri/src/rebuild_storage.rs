@@ -1,4 +1,4 @@
-//! Windows integration backend, selected only by the host's explicit file-record trial flag.
+//! Native file-record backend for the Windows and Linux game hosts.
 //! Each logical record retains its existing TypeScript key/value. No story or merge rules run here.
 mod address;
 
@@ -6,10 +6,8 @@ use address::{compare_keys, Addresses};
 use serde::{Deserialize, Serialize};
 use serde_json::value::RawValue;
 use std::collections::BTreeMap;
-use std::fs::{self, File, OpenOptions};
+use std::fs::{self, File};
 use std::io::{Read, Write};
-use std::os::windows::ffi::OsStrExt;
-use std::os::windows::fs::{MetadataExt, OpenOptionsExt};
 use std::path::{Path, PathBuf};
 use std::sync::atomic::{AtomicU64, Ordering};
 use std::sync::Mutex;
@@ -21,13 +19,64 @@ const MAX_RECORD_BYTES: usize = 2 * 1024 * 1024;
 const MAX_TABLE_BYTES: usize = 32 * 1024 * 1024;
 const MAX_RECORDS: usize = 4096;
 const MAX_FILES: usize = 4096;
-const REPARSE_POINT: u32 = 0x400;
-const MOVE_WRITE_THROUGH: u32 = 0x8;
 static ATTEMPT: AtomicU64 = AtomicU64::new(0);
 
-#[link(name = "kernel32")]
-extern "system" {
-    fn MoveFileExW(existing: *const u16, destination: *const u16, flags: u32) -> i32;
+/// Only file-system primitives differ by platform; record rules stay shared.
+#[cfg(target_os = "windows")]
+mod platform {
+    use std::fs::{File, Metadata, OpenOptions};
+    use std::os::windows::ffi::OsStrExt;
+    use std::os::windows::fs::{MetadataExt, OpenOptionsExt};
+    use std::path::Path;
+    const REPARSE_POINT: u32 = 0x400;
+    const MOVE_WRITE_THROUGH: u32 = 0x8;
+    #[link(name = "kernel32")]
+    extern "system" {
+        fn MoveFileExW(existing: *const u16, destination: *const u16, flags: u32) -> i32;
+    }
+    pub fn special(metadata: &Metadata) -> bool { platform::special(&metadata) }
+    pub fn lease(path: &Path) -> std::io::Result<File> {
+        OpenOptions::new().read(true).write(true).create(true).share_mode(0).open(path)
+    }
+    pub fn shared_read(path: &Path) -> std::io::Result<File> { platform::shared_read(path) }
+    pub fn exclusive_new(path: &Path) -> std::io::Result<File> {
+        OpenOptions::new().write(true).create_new(true).share_mode(0).open(path)
+    }
+    /// Same directory/volume; no copy/delete fallback and no replacement of an existing commit.
+    pub fn publish(from: &Path, to: &Path) -> std::io::Result<()> {
+        let from: Vec<u16> = from.as_os_str().encode_wide().chain(Some(0)).collect();
+        let to: Vec<u16> = to.as_os_str().encode_wide().chain(Some(0)).collect();
+        if unsafe { MoveFileExW(from.as_ptr(), to.as_ptr(), MOVE_WRITE_THROUGH) } == 0 {
+            return Err(std::io::Error::last_os_error());
+        }
+        Ok(())
+    }
+}
+
+#[cfg(not(target_os = "windows"))]
+mod platform {
+    use std::fs::{File, Metadata, OpenOptions};
+    use std::path::Path;
+    pub fn special(metadata: &Metadata) -> bool { metadata.file_type().is_symlink() }
+    /// Advisory exclusive lock held for the store lifetime; a second host fails instead of sharing.
+    pub fn lease(path: &Path) -> std::io::Result<File> {
+        let file = OpenOptions::new().read(true).write(true).create(true).truncate(false).open(path)?;
+        file.try_lock().map_err(|issue| match issue {
+            std::fs::TryLockError::Error(source) => source,
+            std::fs::TryLockError::WouldBlock => std::io::Error::new(std::io::ErrorKind::WouldBlock, "记录目录已被其他宿主占用"),
+        })?;
+        Ok(file)
+    }
+    pub fn shared_read(path: &Path) -> std::io::Result<File> { File::open(path) }
+    pub fn exclusive_new(path: &Path) -> std::io::Result<File> { OpenOptions::new().write(true).create_new(true).open(path) }
+    /// hard_link refuses an existing destination, matching the no-replace Windows move.
+    /// A leftover pending name after a failed unlink is reported as an uncommitted temporary only.
+    pub fn publish(from: &Path, to: &Path) -> std::io::Result<()> {
+        std::fs::hard_link(from, to)?;
+        let _ = std::fs::remove_file(from);
+        if let Some(parent) = to.parent() { File::open(parent)?.sync_all()?; }
+        Ok(())
+    }
 }
 
 #[derive(Debug)]
@@ -130,7 +179,7 @@ impl NativeRecordStore {
         let addresses = Addresses::new(&work_id).map_err(|message| error("NATIVE_STORAGE_WORK", message))?;
         match fs::symlink_metadata(&root) {
             Ok(metadata) => {
-                if !metadata.is_dir() || metadata.file_attributes() & REPARSE_POINT != 0 {
+                if !metadata.is_dir() || platform::special(&metadata) {
                     return Err(error("NATIVE_STORAGE_ROOT", "游戏记录根须为独立普通目录"));
                 }
             }
@@ -140,20 +189,20 @@ impl NativeRecordStore {
             Err(source) => return Err(io_error("无法读取游戏记录目录", source)),
         }
         let metadata = fs::symlink_metadata(&root).map_err(|source| io_error("无法确认游戏记录目录", source))?;
-        if !metadata.is_dir() || metadata.file_attributes() & REPARSE_POINT != 0 {
+        if !metadata.is_dir() || platform::special(&metadata) {
             return Err(error("NATIVE_STORAGE_ROOT", "游戏记录根不能是重解析点"));
         }
         let root = fs::canonicalize(root).map_err(|source| io_error("无法定位游戏记录目录", source))?;
         let lock = root.join("store.lock");
         match fs::symlink_metadata(&lock) {
-            Ok(metadata) if !metadata.is_file() || metadata.file_attributes() & REPARSE_POINT != 0 => {
+            Ok(metadata) if !metadata.is_file() || platform::special(&metadata) => {
                 return Err(error("NATIVE_STORAGE_LOCK", "游戏记录锁不是普通文件"));
             }
             Ok(_) => {}
             Err(source) if source.kind() == std::io::ErrorKind::NotFound => {}
             Err(source) => return Err(io_error("无法读取游戏记录锁", source)),
         }
-        let lease = OpenOptions::new().read(true).write(true).create(true).share_mode(0).open(lock)
+        let lease = platform::lease(&lock)
             .map_err(|source| error("NATIVE_STORAGE_LOCK", format!("无法独占游戏记录目录；请关闭使用它的其他宿主后重试：{source}")))?;
         Ok(Self { root, work_id, addresses, _lease: lease, serial: Mutex::new(0) })
     }
@@ -243,7 +292,7 @@ impl NativeRecordStore {
             let name = entry.file_name().into_string().map_err(|_| error("NATIVE_STORAGE_LAYOUT", "游戏记录文件名无效"))?;
             if name == "store.lock" { continue; }
             let metadata = fs::symlink_metadata(entry.path()).map_err(|source| io_error("无法确认游戏记录目录项", source))?;
-            if !metadata.is_file() || metadata.file_attributes() & REPARSE_POINT != 0 {
+            if !metadata.is_file() || platform::special(&metadata) {
                 return Err(error("NATIVE_STORAGE_LAYOUT", "游戏记录目录包含非普通文件；未自动修复"));
             }
             if let Some(revision) = snapshot_revision(&name) {
@@ -259,7 +308,7 @@ impl NativeRecordStore {
     }
 
     fn table(&self, path: &Path, revision: u64) -> Result<Table> {
-        let file = OpenOptions::new().read(true).share_mode(1).open(path)
+        let file = platform::shared_read(path)
             .map_err(|source| io_error("无法读取原生记录容器", source))?;
         let mut bytes = Vec::new();
         file.take((MAX_TABLE_BYTES + 1) as u64).read_to_end(&mut bytes)
@@ -304,17 +353,14 @@ impl NativeRecordStore {
             .map_err(|_| error("NATIVE_STORAGE_CLOCK", "无法生成临时文件身份；未采用默认时间"))?.as_nanos();
         let attempt = ATTEMPT.fetch_add(1, Ordering::Relaxed);
         let temporary = self.root.join(format!("pending-{}-{attempt}-{nanos}.tmp", std::process::id()));
-        let mut file = OpenOptions::new().write(true).create_new(true).share_mode(0).open(&temporary)
+        let mut file = platform::exclusive_new(&temporary)
             .map_err(|source| io_error("无法创建独占临时记录文件", source))?;
         file.write_all(&bytes).map_err(|source| io_error("临时记录未完整写入，旧提交保留", source))?;
         file.sync_all().map_err(|source| io_error("临时记录同步失败，旧提交保留", source))?;
         drop(file);
         let destination = self.root.join(format!("records-{revision:020}.json"));
-        let from: Vec<u16> = temporary.as_os_str().encode_wide().chain(Some(0)).collect();
-        let to: Vec<u16> = destination.as_os_str().encode_wide().chain(Some(0)).collect();
-        // Same directory/volume; do not allow copy/delete fallback or replacement of an existing commit.
-        let moved = unsafe { MoveFileExW(from.as_ptr(), to.as_ptr(), MOVE_WRITE_THROUGH) };
-        if moved == 0 { return Err(io_error("原生记录提交失败，已有提交未删除", std::io::Error::last_os_error())); }
+        platform::publish(&temporary, &destination)
+            .map_err(|source| io_error("原生记录提交失败，已有提交未删除", source))?;
         let mut warnings = warnings(&loaded.layout);
         // Cleanup happens after commit; failure cannot turn this committed write into a failed operation.
         for (older, path) in &loaded.layout.committed {

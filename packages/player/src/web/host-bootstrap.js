@@ -1,6 +1,7 @@
 // Native initialization only; not a second game runtime or a filesystem bridge.
 ((platform) => {
   const origin = platform === "windows-trial" ? "https://tauri.localhost"
+    : platform === "linux-trial" ? "tauri://localhost"
     : platform === "android-trial" ? "https://appassets.androidplatform.net" : null;
   if (!origin || window.top !== window || window.location.origin !== origin) return;
   let backHandler = null;

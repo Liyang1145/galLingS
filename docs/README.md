@@ -79,14 +79,17 @@
 |---|---|---|
 | 安装锁定前端依赖 | `npm ci --ignore-scripts` | 不自动安装原生工具链 |
 | Windows 双击游玩 | 根目录 `start.bat` | 检查已有 Node/npm 与依赖，启动新版开发服务并自动打开浏览器，无需先出包 |
+| Linux/macOS 游玩 | 根目录 `./start.sh` | 与 `start.bat` 相同检查后执行 `npm run game:dev -- --open` |
 | 浏览器游戏开发 | `npm run game:dev` | 开发记录范围，不是离线发行包 |
 | 终端逻辑试播 | `npm run story:dev` | 内存逻辑快照，不播放媒体或写玩家记录 |
 | 内容阶段输出 | `npm run content:build` | 不复制完整游戏媒体，不能单独充当发行包 |
 | 正式共享游戏包 | `npm run game:build` | 装配同一核心、前端、内容和随包资源 |
 | 完整包核验 | `npm run game:verify -- <完整产物摘要>` | 逐文件读取，不启动游戏 |
 | Windows 准备 | `npm run windows:prepare -- <完整产物摘要>` | 生成隔离输入；原生编译另行显式执行 |
+| Linux 准备 | `npm run linux:prepare -- <完整产物摘要>` | 仅在 Linux 执行；生成隔离输入，原生编译另需 WebKitGTK 4.1 开发包，见[交付](delivery.md#linux) |
 | Android 准备 | `npm run android:prepare -- <完整产物摘要>` | 生成隔离输入；Gradle 另行显式执行 |
 | Windows 双击编辑 | 根目录 `start-editor.bat` | 检查已有 Node/npm 与依赖，启动新版编辑器并自动打开浏览器；关闭前保存或导出草稿 |
+| Linux/macOS 编辑 | 根目录 `./start-editor.sh` | 与 `start-editor.bat` 相同 |
 | 编辑开发 | `npm run editor:dev` | 独立于正式游戏 |
 | 编辑构建/服务 | `npm run editor:build`；`npm run editor:serve -- <完整产物摘要>` | 服务本机制作与交付，依赖匹配的仓库环境 |
 | 编辑器专项检查 | `npm run editor:test`；`npm run editor:test:browser`；`npm run editor:test:production` | 后两者需已有 Playwright/浏览器，可通过 `HAIFENG_PLAYWRIGHT_PACKAGE`、`HAIFENG_BROWSER_EXECUTABLE` 指定；使用隔离作品，production 实际写入其副本并构建游戏 |

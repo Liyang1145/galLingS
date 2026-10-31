@@ -20,7 +20,7 @@ async function directory(root: string, path: string): Promise<string> {
 }
 
 /** Shared platform boundary. Explicit callers choose when to copy; no tool runs on import. */
-export async function prepareInput(packageId: string, platform: "windows" | "android"): Promise<PreparedInput> {
+export async function prepareInput(packageId: string, platform: "windows" | "linux" | "android"): Promise<PreparedInput> {
   const { root, game, manifest, manifestBytes } = await openGamePackageInput(packageId);
   const dist = await directory(root, "dist");
   const base = await directory(dist, platform);
@@ -28,7 +28,7 @@ export async function prepareInput(packageId: string, platform: "windows" | "and
   await mkdir(output);
   try {
     if (await realpath(output) !== output) throw new Error("平台产物目录边界已改变");
-    const frontend = await directory(output, platform === "windows" ? "frontend" : "assets/game");
+    const frontend = await directory(output, platform === "android" ? "assets/game" : "frontend");
     for (const file of gamePackageFiles(manifest)) {
       const bytes = await checkedPackageFile(game, file);
       const target = resolve(frontend, file.path);

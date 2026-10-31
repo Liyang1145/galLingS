@@ -1,0 +1,38 @@
+"""Reference-guided human body PLUS separate whale tail correction."""
+from pathlib import Path
+import json, shutil, urllib.request
+ROOT=Path(__file__).resolve().parents[1]
+OUT=ROOT/'art/portraits/local-noctq/v2'
+OUT.mkdir(parents=True,exist_ok=True)
+comfy=Path(r'<USERPROFILE>\Desktop\NoctQ-ComfyUI\ComfyUI-0.38.0')
+refs=[(r'<USERPROFILE>\Desktop\53b8dbf8a737ea418bad7d1a938a99de.png','seabreeze_body_tail_ref.png'),(r'<USERPROFILE>\Desktop\download.png','seabreeze_face_ref.png')]
+for src,name in refs: shutil.copy2(src,comfy/'input'/name)
+prompt='''TASK: Draw ONE complete full-body standing character sprite for a Japanese visual novel, redesigning the same ocean-themed woman shown in the two reference pictures. This is a new standing pose and new everyday outfit, not a recreation of the reference camera or swimsuit pose.
+
+REFERENCE PRIORITY: Picture 1 is the primary guide for blue hair, curved single ahoge, bangs, two blue bow clips, fin-like side ears, blue eyes and the blue whale tail BEHIND a human body. Picture 2 is a secondary guide for deeper navy-violet hair shadows, pale cyan hair tips and the familiar facial identity. Keep the ocean-girl identity, but depict a clearly adult woman aged 25 with mature face and adult body proportions, approximately seven heads tall.
+
+ANATOMY IS THE MOST IMPORTANT REQUIREMENT: She has a COMPLETE NORMAL HUMAN BODY: one head, one neck, two shoulders, a torso, waist, human pelvis and hips, TWO SEPARATE HUMAN THIGHS, TWO KNEES, TWO CALVES, TWO ANKLES and TWO HUMAN FEET. Both legs remain visible from below the skirt to the shoes. In ADDITION to these two human legs she has ONE separate whale tail attached behind the pelvis at the lower back/tailbone. The whale tail is an extra appendage growing from the BACK, not her lower body. There are exactly two human legs plus one whale tail. The legs must never fuse into the tail. Her torso must never terminate directly in a fish body.
+
+TAIL GEOMETRY: The base of the tail emerges from behind the back of her skirt, slightly visible on the viewer's right hip. Trace a coherent continuous curve backwards and toward the viewer's right, then turn upward along the right side of her silhouette. The thick base gradually narrows toward a clearly visible pair of broad left-and-right whale flukes near shoulder height, with a notch between them. Tail upper surface deep cobalt/navy blue, underside pale icy white, smooth cetacean skin rather than fish scales. Keep the tail separate from her thighs and calves with a visible strip of plain background between tail and legs. One tail only. The tail is behind the body, never in front of the legs, never replacing the skirt, never sprouting from an arm. Both fluke tips fit inside the frame.
+
+APPEARANCE: Long layered blue hair to mid-thigh, navy roots and shadows, cobalt midtones and subtle icy-blue tips. Neat forehead bangs, one curved ahoge above the crown, a blue bow near each side of the head. Small fin-shaped ears with pale edges. Blue eyes, calm proud expression with a restrained closed-mouth smile, slight blush. No sunglasses, maid cap, popsicle or jewelry borrowed accidentally from the source.
+
+CLOTHING: Opaque white short-sleeved sailor blouse with navy collar and small sky-blue ribbon, fully covered chest and abdomen, tidy high-waisted navy knee-length pleated skirt, simple dark navy flat shoes. The skirt has two separate human legs extending from its hem. Clean everyday seaside outfit, not swimwear, not lingerie. No cleavage emphasis, no wet transparent cloth.
+
+POSE AND CAMERA: Standing comfortably upright, eye-level camera, near-front three-quarter view turned only 10 degrees. Both feet visible, resting side by side with a small gap. Left hand resting lightly at the waist, right arm relaxed beside the torso; both hands anatomically clear with five fingers. No kneeling, no crawling, no lying down, no raised hips, no overhead camera. Whole character including hair, shoes and tail flukes visible. Leave at least 6 percent empty margin at top and bottom and around the tail. Place the human body slightly left of center so the tail has room on the right.
+
+RENDERING AND BACKGROUND: Refined anime game sprite, fine clean linework, soft cel shading, consistent gentle upper-left lighting, crisp silhouette and detailed hair. Uniform solid light gray background with no scenery, rocks, water, props, floor, shadow, text, border or watermark. No extra characters, no inset portraits, no turnaround sheet. A single coherent full-body character ready for later background removal.'''
+negative='mermaid anatomy, fish body replacing legs, legless torso, fused legs, missing legs, human torso attached directly to whale body, extra tails, multiple flukes, disconnected tail, tail attached to arm, fins replacing hands, cropped feet, cropped ahoge, cropped flukes, child, childish proportions, chibi, swimsuit, bikini, nudity, cleavage, suggestive pose, crawling, lying down, wet transparent fabric, extra limbs, malformed hands, duplicated character, scene background, text, watermark, blurry, 3d'
+p=json.loads((ROOT/'art/portraits/local-noctq/workflow-api.json').read_text(encoding='utf-8'))
+p['10']['inputs']['image']=refs[0][1]
+p['11']={'class_type':'LoadImage','inputs':{'image':refs[1][1]}}
+p['4']['inputs'].update(prompt=prompt,negative_prompt=negative,resolution=768)
+p['4']['inputs']['images.image_2']=['11',0]
+p['6']['inputs'].update(seed=2026100902,steps=25)
+p['8']['inputs']['filename_prefix']='Seabreeze/whale_human_plus_tail_v2'
+(OUT/'prompt.txt').write_text(prompt+'\n\nNEGATIVE:\n'+negative,encoding='utf-8')
+(OUT/'workflow-api.json').write_text(json.dumps(p,ensure_ascii=False,indent=2),encoding='utf-8')
+req=urllib.request.Request('http://127.0.0.1:8189/prompt',data=json.dumps({'prompt':p}).encode(),headers={'Content-Type':'application/json'})
+with urllib.request.urlopen(req,timeout=30) as r: result=json.load(r)
+(OUT/'request.json').write_text(json.dumps(result,indent=2),encoding='utf-8')
+print(json.dumps(result))

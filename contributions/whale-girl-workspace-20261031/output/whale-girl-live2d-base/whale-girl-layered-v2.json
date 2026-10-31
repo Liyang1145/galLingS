@@ -1,0 +1,227 @@
+{
+  "width": 1024,
+  "height": 1536,
+  "layers": [
+    {
+      "name": "Tail",
+      "file": "./output/whale-girl-live2d-base/layers/tail-draft-v1.png",
+      "left": 560,
+      "top": 755,
+      "crop": {
+        "left": 164,
+        "top": 45,
+        "width": 777,
+        "height": 1397
+      },
+      "height": 570
+    },
+    {
+      "name": "HairBack",
+      "file": "./output/whale-girl-live2d-base/layers/rear-hair-draft-v1.png",
+      "left": 205,
+      "top": 75,
+      "crop": {
+        "left": 43,
+        "top": 22,
+        "width": 955,
+        "height": 1052
+      },
+      "height": 625
+    },
+    {
+      "name": "ArmR",
+      "file": "./output/whale-girl-live2d-base/layers/arm-viewer-left-draft-v1.png",
+      "left": 224,
+      "top": 332,
+      "crop": {
+        "left": 158,
+        "top": 66,
+        "width": 581,
+        "height": 1421
+      },
+      "height": 505
+    },
+    {
+      "name": "ArmL",
+      "file": "./output/whale-girl-live2d-base/layers/arm-viewer-right-draft-v1.png",
+      "left": 620,
+      "top": 332,
+      "crop": {
+        "left": 318,
+        "top": 67,
+        "width": 568,
+        "height": 1346
+      },
+      "height": 505
+    },
+    {
+      "name": "BodyCore",
+      "file": "./output/whale-girl-live2d-base/layers/body-core-draft-v1.png",
+      "left": 365,
+      "top": 260,
+      "crop": {
+        "left": 342,
+        "top": 77,
+        "width": 334,
+        "height": 1418
+      },
+      "height": 1210
+    },
+    {
+      "name": "Coverup",
+      "file": "./output/whale-girl-live2d-base/layers/white-coverup-draft-v2.png",
+      "left": 302,
+      "top": 292,
+      "crop": {
+        "left": 15,
+        "top": 86,
+        "width": 994,
+        "height": 1336
+      },
+      "height": 568
+    },
+    {
+      "name": "Face",
+      "file": "./output/whale-girl-live2d-base/layers/face-base-draft-v2.png",
+      "left": 418,
+      "top": 78,
+      "crop": {
+        "left": 223,
+        "top": 89,
+        "width": 806,
+        "height": 1016
+      },
+      "height": 230
+    },
+    {
+      "name": "EyeR_Open",
+      "file": "./output/whale-girl-live2d-base/layers/eye-viewer-left-draft-v1.png",
+      "left": 435,
+      "top": 226,
+      "crop": {
+        "left": 112,
+        "top": 386,
+        "width": 984,
+        "height": 463
+      },
+      "width": 55,
+      "height": 26
+    },
+    {
+      "name": "EyeL_Open",
+      "file": "./output/whale-girl-live2d-base/layers/eye-viewer-right-draft-v1.png",
+      "left": 516,
+      "top": 226,
+      "crop": {
+        "left": 80,
+        "top": 350,
+        "width": 1152,
+        "height": 590
+      },
+      "width": 55,
+      "height": 26
+    },
+    {
+      "name": "EyeR_Closed",
+      "file": "./output/whale-girl-live2d-base/layers/closed-eye-viewer-left-draft-v1.png",
+      "left": 435,
+      "top": 246,
+      "crop": {
+        "left": 140,
+        "top": 544,
+        "width": 966,
+        "height": 274
+      },
+      "width": 55,
+      "height": 6,
+      "opacity": 0
+    },
+    {
+      "name": "EyeL_Closed",
+      "file": "./output/whale-girl-live2d-base/layers/closed-eye-viewer-right-draft-v1.png",
+      "left": 516,
+      "top": 246,
+      "crop": {
+        "left": 86,
+        "top": 576,
+        "width": 1148,
+        "height": 292
+      },
+      "width": 55,
+      "height": 6,
+      "opacity": 0
+    },
+    {
+      "name": "Eyebrows",
+      "file": "./output/whale-girl-live2d-base/layers/eyebrows-draft-v1.png",
+      "left": 434,
+      "top": 211,
+      "crop": {
+        "left": 364,
+        "top": 313,
+        "width": 1444,
+        "height": 108
+      },
+      "width": 138,
+      "height": 10
+    },
+    {
+      "name": "MouthOpen",
+      "file": "./output/whale-girl-live2d-base/layers/mouth-open-draft-v1.png",
+      "left": 490,
+      "top": 272,
+      "crop": {
+        "left": 378,
+        "top": 545,
+        "width": 495,
+        "height": 224
+      },
+      "width": 25,
+      "height": 15,
+      "opacity": 0
+    },
+    {
+      "name": "MouthClosed",
+      "file": "./output/whale-girl-live2d-base/layers/mouth-closed-draft-v1.png",
+      "left": 490,
+      "top": 279,
+      "crop": {
+        "left": 614,
+        "top": 476,
+        "width": 300,
+        "height": 80
+      },
+      "width": 25,
+      "height": 4
+    },
+    {
+      "name": "HairFrontStrands",
+      "file": "./output/whale-girl-live2d-base/layers/front-strands-draft-v1.png",
+      "left": 385,
+      "top": 210,
+      "crop": {
+        "left": 233,
+        "top": 57,
+        "width": 810,
+        "height": 1102
+      },
+      "height": 310
+    },
+    {
+      "name": "HairCap",
+      "file": "./output/whale-girl-live2d-base/layers/bangs-accessories-draft-v1.png",
+      "left": 326,
+      "top": 18,
+      "crop": {
+        "left": 38,
+        "top": 54,
+        "width": 1202,
+        "height": 1112
+      },
+      "width": 350
+    }
+  ],
+  "output": "./output/whale-girl-live2d-base/whale-girl-layered-v2.psd",
+  "preview": "./output/whale-girl-live2d-base/assembly-preview-v2.png",
+  "status": "initial assembly; native rig pending"
+}

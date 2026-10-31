@@ -1,0 +1,12 @@
+{
+  "height": 1280,
+  "output": "./output/whale-girl-live2d-base/closed-lash-hires-left-v5.psd",
+  "layers": [
+    {
+      "name": "ClosedLash_Hi_L_v5",
+      "opacity": 0,
+      "file": "./output/whale-girl-live2d-base/layers/closed-lash-candidate-v5.png"
+    }
+  ],
+  "width": 1280
+}

@@ -1,0 +1,21 @@
+{
+  "width": 1024,
+  "height": 1536,
+  "layers": [
+    {
+      "name": "Face_Static_v4",
+      "file": "./output/whale-girl-live2d-base/layers/face-skin-soft-shading-v6.png",
+      "left": 418,
+      "top": 78,
+      "crop": {
+        "left": 148,
+        "top": 46,
+        "width": 958,
+        "height": 1135
+      },
+      "width": 182,
+      "height": 230
+    }
+  ],
+  "output": "./output/whale-girl-live2d-base/face-shading-replacement-v6.psd"
+}

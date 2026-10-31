@@ -1,0 +1,11 @@
+{
+  "width": 1280,
+  "height": 1280,
+  "output": "./output/whale-girl-live2d-base/sclera-import-v3.psd",
+  "layers": [
+    {
+      "name": "Sclera_Only_Test",
+      "file": "./output/whale-girl-live2d-base/layers/sclera-only-candidate-v3.png"
+    }
+  ]
+}

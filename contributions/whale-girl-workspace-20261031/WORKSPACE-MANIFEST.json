@@ -1,0 +1,2084 @@
+{
+  "files": [
+    {
+      "path": ".codex-remote-attachments/01a12656-7864-7751-8dae-f7e1f0eb851b/105edad1-b49a-4396-b761-1153aa4d389f/1-1000053179.jpg",
+      "size": 114494,
+      "sha256": "2748e97a8b0ffe02eb6f549a82edeb637d71a7c27eb1e0cdad89d4c7976b3ab0"
+    },
+    {
+      "path": ".codex-remote-attachments/01a12656-7864-7751-8dae-f7e1f0eb851b/105edad1-b49a-4396-b761-1153aa4d389f/2-1000053181.jpg",
+      "size": 161522,
+      "sha256": "71bf8039c1f73e881222231781310f91e65b3eaf196d0d5f15b159bd6603d2c3"
+    },
+    {
+      "path": ".codex-remote-attachments/01a12656-7864-7751-8dae-f7e1f0eb851b/2168db9b-b9c1-4bbe-a498-8ea78049fbef/1-1000053181.jpg",
+      "size": 161522,
+      "sha256": "71bf8039c1f73e881222231781310f91e65b3eaf196d0d5f15b159bd6603d2c3"
+    },
+    {
+      "path": ".codex-remote-attachments/01a12656-7864-7751-8dae-f7e1f0eb851b/2168db9b-b9c1-4bbe-a498-8ea78049fbef/2-1000053179.jpg",
+      "size": 114494,
+      "sha256": "2748e97a8b0ffe02eb6f549a82edeb637d71a7c27eb1e0cdad89d4c7976b3ab0"
+    },
+    {
+      "path": ".codex-remote-attachments/01a12656-7864-7751-8dae-f7e1f0eb851b/386a5914-a494-4665-b06b-d52824dfd443/1-1000053179.jpg",
+      "size": 114494,
+      "sha256": "2748e97a8b0ffe02eb6f549a82edeb637d71a7c27eb1e0cdad89d4c7976b3ab0"
+    },
+    {
+      "path": ".codex-remote-attachments/01a12656-7864-7751-8dae-f7e1f0eb851b/7beb9b4c-2cdc-4d2c-b155-ed0c07d39d71/1-1000053179.jpg",
+      "size": 114494,
+      "sha256": "2748e97a8b0ffe02eb6f549a82edeb637d71a7c27eb1e0cdad89d4c7976b3ab0"
+    },
+    {
+      "path": ".codex-remote-attachments/01a12656-7864-7751-8dae-f7e1f0eb851b/a36b657d-622f-437c-bbb7-0c1f6e756a8f/1-1000053179.jpg",
+      "size": 114494,
+      "sha256": "2748e97a8b0ffe02eb6f549a82edeb637d71a7c27eb1e0cdad89d4c7976b3ab0"
+    },
+    {
+      "path": ".codex-remote-attachments/01a12656-7864-7751-8dae-f7e1f0eb851b/a36b657d-622f-437c-bbb7-0c1f6e756a8f/2-1000053181.jpg",
+      "size": 161522,
+      "sha256": "71bf8039c1f73e881222231781310f91e65b3eaf196d0d5f15b159bd6603d2c3"
+    },
+    {
+      "path": ".codex-remote-attachments/01a12656-7864-7751-8dae-f7e1f0eb851b/a9162d12-6928-4ad2-a9fd-96f79947f6a8/1-1000053181.jpg",
+      "size": 161522,
+      "sha256": "71bf8039c1f73e881222231781310f91e65b3eaf196d0d5f15b159bd6603d2c3"
+    },
+    {
+      "path": ".codex-remote-attachments/01a12656-7864-7751-8dae-f7e1f0eb851b/a9162d12-6928-4ad2-a9fd-96f79947f6a8/2-1000053179.jpg",
+      "size": 114494,
+      "sha256": "2748e97a8b0ffe02eb6f549a82edeb637d71a7c27eb1e0cdad89d4c7976b3ab0"
+    },
+    {
+      "path": ".codex-remote-attachments/01a12656-7864-7751-8dae-f7e1f0eb851b/f03b3b84-e46e-4db1-8fe5-8199f6cf7d42/1-1000053179.jpg",
+      "size": 114494,
+      "sha256": "2748e97a8b0ffe02eb6f549a82edeb637d71a7c27eb1e0cdad89d4c7976b3ab0"
+    },
+    {
+      "path": ".codex-remote-attachments/01a12a89-77f5-7871-9074-8e275aa01ff7/588dd74a-30cf-47e3-896a-9ae999120278/1-1000053193.jpg",
+      "size": 81881,
+      "sha256": "479916cbf8cb2b7fbaa264776311afc9652cf5c5dee0233482bc599245fd9ce1"
+    },
+    {
+      "path": ".codex-remote-attachments/01a12a89-77f5-7871-9074-8e275aa01ff7/6cd5520d-a585-4c2b-b2aa-d062b17a909b/1-1000053201.jpg",
+      "size": 128013,
+      "sha256": "ad4625cd74f68b2c6781c245cd4bb563b86e946c76a1e7324b450f30255297fb"
+    },
+    {
+      "path": ".codex-remote-attachments/01a12a89-77f5-7871-9074-8e275aa01ff7/9055364f-1785-402a-807c-2f3cdaca603d/1-1000053193.jpg",
+      "size": 81881,
+      "sha256": "479916cbf8cb2b7fbaa264776311afc9652cf5c5dee0233482bc599245fd9ce1"
+    },
+    {
+      "path": ".codex-remote-attachments/01a12a89-77f5-7871-9074-8e275aa01ff7/ccc8a2d4-a947-4c49-968b-d541fd07a80f/1-1000053193.jpg",
+      "size": 81881,
+      "sha256": "479916cbf8cb2b7fbaa264776311afc9652cf5c5dee0233482bc599245fd9ce1"
+    },
+    {
+      "path": ".codex-remote-attachments/01a12a89-77f5-7871-9074-8e275aa01ff7/ccc8a2d4-a947-4c49-968b-d541fd07a80f/2-1000053181.jpg",
+      "size": 161522,
+      "sha256": "71bf8039c1f73e881222231781310f91e65b3eaf196d0d5f15b159bd6603d2c3"
+    },
+    {
+      "path": ".codex-remote-attachments/01a12a89-77f5-7871-9074-8e275aa01ff7/ccc8a2d4-a947-4c49-968b-d541fd07a80f/3-1000053179.jpg",
+      "size": 114494,
+      "sha256": "2748e97a8b0ffe02eb6f549a82edeb637d71a7c27eb1e0cdad89d4c7976b3ab0"
+    },
+    {
+      "path": ".codex-remote-attachments/01a12a89-77f5-7871-9074-8e275aa01ff7/e30bceb7-bc5c-4525-a7e0-2a62b77750f0/1-1000053193.jpg",
+      "size": 81881,
+      "sha256": "479916cbf8cb2b7fbaa264776311afc9652cf5c5dee0233482bc599245fd9ce1"
+    },
+    {
+      "path": ".gitignore",
+      "size": 116,
+      "sha256": "9db76270e78eda94e3bc66633b1e3f2273dbfee5050a251690e744e7677407cc"
+    },
+    {
+      "path": "art/portraits/local-noctq/request.json",
+      "size": 97,
+      "sha256": "17dc4574a913fb0b9deeb56cd750a599a8f80e96bbba9ba3d617dfd5920479c1"
+    },
+    {
+      "path": "art/portraits/local-noctq/v2/prompt.txt",
+      "size": 4529,
+      "sha256": "f31efc7bdba20c158940a7f17e7390f49616b1b9c28ae79f7ff526909affb4d7"
+    },
+    {
+      "path": "art/portraits/local-noctq/v2/request.json",
+      "size": 97,
+      "sha256": "df0d87141af92117aa5fe2b8a1e848893e912a15b3a229759957bb143a9222cf"
+    },
+    {
+      "path": "art/portraits/local-noctq/v2/whale_human_plus_tail.png",
+      "size": 534641,
+      "sha256": "022648da0385e4bdca605ac46a051b927b55df2f565e7a0e56513e1ea123ac04"
+    },
+    {
+      "path": "art/portraits/local-noctq/v2/workflow-api.json",
+      "size": 6432,
+      "sha256": "07345892256b3ffbbb7a2de802da0d4a873cdead609e3aa1c0107ac01b9776d7"
+    },
+    {
+      "path": "art/portraits/local-noctq/v3-angry/prompt.txt",
+      "size": 6469,
+      "sha256": "8547b04a7834551f2587dbdefc6a7a08d060bdaff9505cbc90a8880298959930"
+    },
+    {
+      "path": "art/portraits/local-noctq/v3-angry/request-retry768.json",
+      "size": 85,
+      "sha256": "b8338b17eb738adaca81b351ab5e7f888f3e81c2e1ab5b323a1cff710c8f9911"
+    },
+    {
+      "path": "art/portraits/local-noctq/v3-angry/request.json",
+      "size": 97,
+      "sha256": "49fdbe09169d3e4fe088467af23f3c2a8cf941c6b994da8e413953f5c10190f6"
+    },
+    {
+      "path": "art/portraits/local-noctq/v3-angry/retry-err.log",
+      "size": 10739,
+      "sha256": "bdef0a99e74a6dd460a38feb59917039826af48c710fea3450369d1821db787d"
+    },
+    {
+      "path": "art/portraits/local-noctq/v3-angry/retry-out.log",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "art/portraits/local-noctq/v3-angry/whale_angry_medium.png",
+      "size": 706759,
+      "sha256": "ec11589b07f8cc8cbd6d70897a41a5d3ebcc3a0a11d31ab9bc22701d0b0ccd3c"
+    },
+    {
+      "path": "art/portraits/local-noctq/v3-angry/workflow-api.json",
+      "size": 8376,
+      "sha256": "72e6b18d65c88650f4aa604119fc031d6a12974ca113cef2214d460755e7d9f1"
+    },
+    {
+      "path": "art/portraits/local-noctq/v3-angry/workflow-retry768.json",
+      "size": 8376,
+      "sha256": "de2d6963633f1358c7e63a0ac66ddeb5a72d15c258b93185c18e6ffcf8749933"
+    },
+    {
+      "path": "art/portraits/local-noctq/whale_sprite_draft.png",
+      "size": 532154,
+      "sha256": "cfdac0881db73d8f02d00380915403550c2bc7b467e1c3caf5a74b2d8cdf766d"
+    },
+    {
+      "path": "art/portraits/local-noctq/workflow-api.json",
+      "size": 3150,
+      "sha256": "ebba917235a0915e90d8dc7a991e035acb36cb6d2f3296d8a1ea88e4c7f7fe08"
+    },
+    {
+      "path": "backups/before-rollback-20261009-210044/HANDOFF.md",
+      "size": 11119,
+      "sha256": "4f810d5e96f840e984be77b632915435dafe81848b0a7906bde23dd0d467c3b4"
+    },
+    {
+      "path": "backups/before-rollback-20261009-210044/NEXT.md",
+      "size": 2186,
+      "sha256": "69612a74d8c239e59ee67ec45ea7ba2c648008b425165f8ed70237603f80e6ee"
+    },
+    {
+      "path": "backups/before-rollback-20261009-210044/README.md",
+      "size": 5115,
+      "sha256": "27147e010d0b1169cc0664981104b3a1c91aae5cf24ae62bea596ff9cca9cf24"
+    },
+    {
+      "path": "backups/before-rollback-20261009-210044/Seabreeze/game/chapter01.rpy",
+      "size": 16621,
+      "sha256": "ecfd1dd27b7cad2aa07adad8b42f1350dc86d26375455f6d3f1d1efb7de33902"
+    },
+    {
+      "path": "backups/before-rollback-20261009-210044/Seabreeze/game/core.rpy",
+      "size": 9398,
+      "sha256": "96446e28e33b6c2f892231252d7eb870f5aea512cb3cda4593f50eb6673ec757"
+    },
+    {
+      "path": "backups/before-rollback-20261009-210044/Seabreeze/game/options.rpy",
+      "size": 1157,
+      "sha256": "f416ebb13103a5267e66134e03041f9a49b1e8a76e1ef251323bacbbd66bc1a6"
+    },
+    {
+      "path": "backups/before-rollback-20261009-210044/Seabreeze/game/tests.rpy",
+      "size": 3369,
+      "sha256": "105ef5d01145758ec52a1ff176f55d78b9be313135dfcbaf5a8c236b4f3a143f"
+    },
+    {
+      "path": "backups/before-rollback-20261009-210044/tools/build_chapter.py",
+      "size": 8647,
+      "sha256": "45d4a84ecc7aaa4fd5c6f85d16b815c86e3394890057c51925db80cbc2bc613b"
+    },
+    {
+      "path": "backups/before-rollback-20261009-210044/tools/source_map.json",
+      "size": 21935,
+      "sha256": "63bb149a05f31bbab521bf88b85a932fb0154702677649916d96a1d61779134b"
+    },
+    {
+      "path": "backups/before-rollback-20261009-210044/VALIDATION.md",
+      "size": 4013,
+      "sha256": "27237ea5faa45711cfabdfe8dc3a1c8f6ff151900fecbd8fdc4c5a3e2e32613d"
+    },
+    {
+      "path": "backups/before-rollback-20261009-210044/海风与布丁_第一季_全卷_v5.0.md",
+      "size": 280372,
+      "sha256": "20562795524e881619f2c2a04886746c89b13c25747fd8c5fe6e741607609163"
+    },
+    {
+      "path": "backups/before-rollback-20261009-210044/运行游戏.bat",
+      "size": 152,
+      "sha256": "1a1396db122e83efc3131d9125ba05d87130ead294a93138d25e37a69701e16d"
+    },
+    {
+      "path": "backups/legacy-before-team-restart-20261010/HANDOFF.md",
+      "size": 936,
+      "sha256": "dc86ac6a98f36ed99bfb66d1a02f9ec9515df264d175882a82d23cd921bd9133"
+    },
+    {
+      "path": "backups/legacy-before-team-restart-20261010/NEXT.md",
+      "size": 462,
+      "sha256": "8df30d6bf1b654adacf835d617f33bfb107d7ac5f9169e5930f992863cfb3963"
+    },
+    {
+      "path": "backups/legacy-before-team-restart-20261010/README.md",
+      "size": 1960,
+      "sha256": "d2521109c1b4ac95ea3c213abd2d81ccee4314f67d94208dae1a019cd5ae50b4"
+    },
+    {
+      "path": "HANDOFF-LIVE2D-HISTORY.md",
+      "size": 37467,
+      "sha256": "53d49afa0d577df9f11ab408f516f706e6e8a29fa2617100e30524389309f8bf"
+    },
+    {
+      "path": "HANDOFF-LIVE2D.md",
+      "size": 85167,
+      "sha256": "79114c9290a69b09000f30deecd21f7c972156b4329fae4a6df13f9b8076c456"
+    },
+    {
+      "path": "HANDOFF.md",
+      "size": 1632,
+      "sha256": "b03328285a96c3ca2beb0485cc27551649fce2f755059131811b8a4f3eb0cf99"
+    },
+    {
+      "path": "LIVE2D-RESUME-20261014.md",
+      "size": 7599,
+      "sha256": "33786372245fb548c8339acd97ed76ccb02b701d574d461f73152423e46e9e94"
+    },
+    {
+      "path": "NEXT.md",
+      "size": 2582,
+      "sha256": "4fd425efaab397da75f940324eba5639a725a7c59712fa349ec1b60f9bbfb975"
+    },
+    {
+      "path": "output/chapter1-cg-animations/audio/cg02_minimax_full_24k.wav",
+      "size": 248876,
+      "sha256": "a74ca1876da5d72807c500505980596eefeb68b219f61dc2fc8ce0d91af8b095"
+    },
+    {
+      "path": "output/chapter1-cg-animations/audio/voice_cg01.wav",
+      "size": 326480,
+      "sha256": "7ace188228133cd26d122667882b28273ba4bd7ad0cac01c1450a655ae86313f"
+    },
+    {
+      "path": "output/chapter1-cg-animations/audio/voice_cg02_tail.wav",
+      "size": 130640,
+      "sha256": "bad06683f24ca33765aa78aec9f6d94c41b484ac001f8bcc9f559879d9ae3c88"
+    },
+    {
+      "path": "output/chapter1-cg-animations/audio/voice_cg03.wav",
+      "size": 656720,
+      "sha256": "2693f8a18fbf44853d810a5872a26958c2a192caa3b0a26bca28b716b7b88785"
+    },
+    {
+      "path": "output/chapter1-cg-animations/audio/voice_cg04.wav",
+      "size": 672080,
+      "sha256": "da12920579c450ee98cbe36ae0a5c0871f4d24de92cc892bc8b328226d05222f"
+    },
+    {
+      "path": "output/chapter1-cg-animations/audio/voice_cg05.wav",
+      "size": 652880,
+      "sha256": "60476060e9f13aefdf0fb97eba2f41056f9a949d64142f3a64da2d91c37bc320"
+    },
+    {
+      "path": "output/chapter1-cg-animations/audio/voice_cg06.wav",
+      "size": 464720,
+      "sha256": "18ddceb889588247aafd4ad4a9a4efac1329747b7eb40f434f46eb3716ec43d0"
+    },
+    {
+      "path": "output/chapter1-cg-animations/audio/voice_cg07.wav",
+      "size": 698960,
+      "sha256": "55b0eebbcae160fadc2c46570eb8cfe494695de37450c2b67be196f93739d96d"
+    },
+    {
+      "path": "output/chapter1-cg-animations/audio/whale_voice_ref.wav",
+      "size": 177644,
+      "sha256": "e75f6065f7db6cf863938e58a13b0ecc6b59fe0f6b0e702c5479e59232ea0482"
+    },
+    {
+      "path": "output/chapter1-cg-animations/CG01_noon_tail_slap.mp4",
+      "size": 8942069,
+      "sha256": "0a17eb15cfc2d66c94c9d55ed0509d1c285eda473ae4f7770db8f9e46ffb549b"
+    },
+    {
+      "path": "output/chapter1-cg-animations/CG02_debut_preview_turbo8.mp4",
+      "size": 4609963,
+      "sha256": "faff4d95b3395ddb3f098dc540a28c6fbfac11faf0e0050e1ec239fa512f62b7"
+    },
+    {
+      "path": "output/chapter1-cg-animations/CG02_noon_debut_tail_sail.mp4",
+      "size": 6400103,
+      "sha256": "8bdae3b10b71e04c49dbe300f8f809710b9c2962903d52789bb5024464ae9d97"
+    },
+    {
+      "path": "output/chapter1-cg-animations/CG03_noon_notebook_ultimatum.mp4",
+      "size": 7057717,
+      "sha256": "399c240f3f112961dc4618677679c74d04605b9a77f57ae0f94f71983466e21c"
+    },
+    {
+      "path": "output/chapter1-cg-animations/CG04_noon_ankles_honest_tail.mp4",
+      "size": 7848730,
+      "sha256": "f500c98adc033f1d77cd54eb7751911dcb4be7602ce280f3ea78170fae7274e4"
+    },
+    {
+      "path": "output/chapter1-cg-animations/CG05_afternoon_reef_seagull.mp4",
+      "size": 6162124,
+      "sha256": "bebdd8b63fac956e43d232d5dd92392e9f3e0fff4cab07ec15ef4378385b08e4"
+    },
+    {
+      "path": "output/chapter1-cg-animations/CG06_afternoon_mochi_ear_fins.mp4",
+      "size": 4855938,
+      "sha256": "8ae2be51dd9c0feb657eddb48709ea0759df9ea9937b08566a85482931c41400"
+    },
+    {
+      "path": "output/chapter1-cg-animations/CG07_golden_osmanthus_dive.mp4",
+      "size": 7075983,
+      "sha256": "4b8f57e055b21172d21250e66ef911813a8a807fe468e7b971f10cd740d21407"
+    },
+    {
+      "path": "output/chapter1-cg-animations/CG08_dusk_camp_squid_diary.mp4",
+      "size": 3269274,
+      "sha256": "5b794540c1fc9d7de5c198cb204c03cae64c8fcb3cda6cf884ca952acfbc7015"
+    },
+    {
+      "path": "output/chapter1-cg-animations/contact_sheet.jpg",
+      "size": 1628991,
+      "sha256": "0a5742c0795ce12a6fb3270054a702eec2f4231dfca1c28fbd6de8a5c91295a1"
+    },
+    {
+      "path": "output/chapter1-cg-animations/index.html",
+      "size": 13905,
+      "sha256": "9e5fddc144b7260953f16e8ef4a0bc8edbfa4717bd9a44dc843acb7f1eed8bf5"
+    },
+    {
+      "path": "output/chapter1-cg-animations/keyframes/CG01_keyframe.jpg",
+      "size": 582476,
+      "sha256": "b702fb644c870f46d4991e0af37896e17ed93b00947d2d3a3d476fadb6c7a28a"
+    },
+    {
+      "path": "output/chapter1-cg-animations/keyframes/CG01_keyframe.png",
+      "size": 1915950,
+      "sha256": "ea6fdb115b0bdfe75d338abcea6369e689b1993cf989272d77bb73534365bbc0"
+    },
+    {
+      "path": "output/chapter1-cg-animations/keyframes/CG01_keyframe_b.jpg",
+      "size": 582476,
+      "sha256": "b702fb644c870f46d4991e0af37896e17ed93b00947d2d3a3d476fadb6c7a28a"
+    },
+    {
+      "path": "output/chapter1-cg-animations/keyframes/CG01_keyframe_b.png",
+      "size": 1915950,
+      "sha256": "ea6fdb115b0bdfe75d338abcea6369e689b1993cf989272d77bb73534365bbc0"
+    },
+    {
+      "path": "output/chapter1-cg-animations/keyframes/CG02_keyframe.jpg",
+      "size": 549093,
+      "sha256": "218902c171b62764e99672e268567fefebe4fa9351212dbce3a9afb91fad66c0"
+    },
+    {
+      "path": "output/chapter1-cg-animations/keyframes/CG02_keyframe.png",
+      "size": 1884035,
+      "sha256": "82df5b44b06658d3af29e9c4bff19c6e71bc6353022408b1f31d47d51e0feea1"
+    },
+    {
+      "path": "output/chapter1-cg-animations/keyframes/CG02_keyframe_b.jpg",
+      "size": 538498,
+      "sha256": "03ace3a670b50e71457cc9da2ad97e323c5c078fb6316d204d262e9b6dfd2024"
+    },
+    {
+      "path": "output/chapter1-cg-animations/keyframes/CG02_keyframe_b.png",
+      "size": 1874615,
+      "sha256": "97d6ca20320c5f32e525f6a554d597bf6e2e6f8f9176618280d58db900ef1f35"
+    },
+    {
+      "path": "output/chapter1-cg-animations/keyframes/CG03_keyframe.jpg",
+      "size": 539089,
+      "sha256": "cef5d565bfe725a2207423c01579bda8d3c6a8fd171a78760fe8389785d8aa3b"
+    },
+    {
+      "path": "output/chapter1-cg-animations/keyframes/CG03_keyframe.png",
+      "size": 1863812,
+      "sha256": "a270b05e20a60531fe859f3d6aeb90b94b5e3d2c34839fc90a29e028037b5203"
+    },
+    {
+      "path": "output/chapter1-cg-animations/keyframes/CG03_keyframe_b.jpg",
+      "size": 551387,
+      "sha256": "38649203ca56d67f7bce2c71808a1c14c709269694af07d2faa50ef87edb1aa7"
+    },
+    {
+      "path": "output/chapter1-cg-animations/keyframes/CG03_keyframe_b.png",
+      "size": 1894200,
+      "sha256": "b2ae8eb2f3b766a03029f59a0eaf87e243577be2e08a80adb9783246b7b0266e"
+    },
+    {
+      "path": "output/chapter1-cg-animations/keyframes/CG04_keyframe.jpg",
+      "size": 660923,
+      "sha256": "4975fb11dbc4db59044ee04b9faaf607e75140bfaf286eb8a32830178c8989cc"
+    },
+    {
+      "path": "output/chapter1-cg-animations/keyframes/CG04_keyframe.png",
+      "size": 2072954,
+      "sha256": "72409346823b1ee967118e18c000fadd4372491b003feecd3230fa7a60efcaf9"
+    },
+    {
+      "path": "output/chapter1-cg-animations/keyframes/CG04_keyframe_b.jpg",
+      "size": 660923,
+      "sha256": "4975fb11dbc4db59044ee04b9faaf607e75140bfaf286eb8a32830178c8989cc"
+    },
+    {
+      "path": "output/chapter1-cg-animations/keyframes/CG04_keyframe_b.png",
+      "size": 2072954,
+      "sha256": "72409346823b1ee967118e18c000fadd4372491b003feecd3230fa7a60efcaf9"
+    },
+    {
+      "path": "output/chapter1-cg-animations/keyframes/CG05_keyframe.jpg",
+      "size": 524019,
+      "sha256": "366ec71a20efb4dc7fcff976b61795d6a4703645e51e40bd6152535a20e1b364"
+    },
+    {
+      "path": "output/chapter1-cg-animations/keyframes/CG05_keyframe.png",
+      "size": 1835619,
+      "sha256": "3db5677b5ba1c91221e876f75a9ef0b49305970694d2a49a5ba69f94b8448b5d"
+    },
+    {
+      "path": "output/chapter1-cg-animations/keyframes/CG05_keyframe_b.jpg",
+      "size": 540483,
+      "sha256": "66bfc04c90c0c58b1cfde48a8f5e2c06bd3bbf076cdb1fc73bd539c860d2a6bb"
+    },
+    {
+      "path": "output/chapter1-cg-animations/keyframes/CG05_keyframe_b.png",
+      "size": 1848650,
+      "sha256": "bd90e0c0a03a81aa6e0092040996f31592d2ddafb4ae9dbdf7b59fb95aafc62e"
+    },
+    {
+      "path": "output/chapter1-cg-animations/keyframes/CG06_keyframe.jpg",
+      "size": 478456,
+      "sha256": "661f69e6e42422d1debfe07131fe68131563007253ed7358b988035a2daba0a3"
+    },
+    {
+      "path": "output/chapter1-cg-animations/keyframes/CG06_keyframe.png",
+      "size": 1768488,
+      "sha256": "16f8f915aee0679b7917461f1f38bfab189dbb6cb7686fe090c66f53b3bbcb60"
+    },
+    {
+      "path": "output/chapter1-cg-animations/keyframes/CG06_keyframe_b.jpg",
+      "size": 478456,
+      "sha256": "661f69e6e42422d1debfe07131fe68131563007253ed7358b988035a2daba0a3"
+    },
+    {
+      "path": "output/chapter1-cg-animations/keyframes/CG06_keyframe_b.png",
+      "size": 1768488,
+      "sha256": "16f8f915aee0679b7917461f1f38bfab189dbb6cb7686fe090c66f53b3bbcb60"
+    },
+    {
+      "path": "output/chapter1-cg-animations/keyframes/CG07_keyframe.jpg",
+      "size": 555370,
+      "sha256": "188813bd0a941086207fa82c61affa3715bb92a1b883d408ee363fd78f50f70b"
+    },
+    {
+      "path": "output/chapter1-cg-animations/keyframes/CG07_keyframe.png",
+      "size": 1920946,
+      "sha256": "4427a7d9bfca0979e0e0a9bc24801fde4845cbdaea37c94aac8e758fee99d4db"
+    },
+    {
+      "path": "output/chapter1-cg-animations/keyframes/CG07_keyframe_b.jpg",
+      "size": 555370,
+      "sha256": "188813bd0a941086207fa82c61affa3715bb92a1b883d408ee363fd78f50f70b"
+    },
+    {
+      "path": "output/chapter1-cg-animations/keyframes/CG07_keyframe_b.png",
+      "size": 1920946,
+      "sha256": "4427a7d9bfca0979e0e0a9bc24801fde4845cbdaea37c94aac8e758fee99d4db"
+    },
+    {
+      "path": "output/chapter1-cg-animations/keyframes/CG08_keyframe.jpg",
+      "size": 483848,
+      "sha256": "70d8bee8b09602eb7165288c20e47617c03b011a487cb97f565eb3233b4391ed"
+    },
+    {
+      "path": "output/chapter1-cg-animations/keyframes/CG08_keyframe.png",
+      "size": 1833502,
+      "sha256": "b02b22714d598c55bad558ef8ed1a84da9dc66dc2ae24ea1edf29ae49990185b"
+    },
+    {
+      "path": "output/chapter1-cg-animations/keyframes/CG08_keyframe_b.jpg",
+      "size": 490518,
+      "sha256": "bcd0448a6290fa6fd95b77b1d94ca8da4fe9bebf6a2d1c7e976ccc8b924b5fb1"
+    },
+    {
+      "path": "output/chapter1-cg-animations/keyframes/CG08_keyframe_b.png",
+      "size": 1863889,
+      "sha256": "caca95c8f626d1e3d4810c3c17b751e24050fb4156e425ada471e760c1731c66"
+    },
+    {
+      "path": "output/chapter1-cg-animations/manifest.json",
+      "size": 8070,
+      "sha256": "b3f258bd11e4d769cd4e1977b241a9a8802cc3d74a903a35583a86c34c13625e"
+    },
+    {
+      "path": "output/chapter1-cg-animations/minimax_raw/CG01_noon_tail_slap.mp4",
+      "size": 8942069,
+      "sha256": "0a17eb15cfc2d66c94c9d55ed0509d1c285eda473ae4f7770db8f9e46ffb549b"
+    },
+    {
+      "path": "output/chapter1-cg-animations/minimax_raw/CG02_noon_debut_tail_sail.mp4",
+      "size": 6400103,
+      "sha256": "8bdae3b10b71e04c49dbe300f8f809710b9c2962903d52789bb5024464ae9d97"
+    },
+    {
+      "path": "output/chapter1-cg-animations/minimax_raw/CG03_noon_notebook_ultimatum.mp4",
+      "size": 7057717,
+      "sha256": "399c240f3f112961dc4618677679c74d04605b9a77f57ae0f94f71983466e21c"
+    },
+    {
+      "path": "output/chapter1-cg-animations/minimax_raw/CG04_noon_ankles_honest_tail.mp4",
+      "size": 7848730,
+      "sha256": "f500c98adc033f1d77cd54eb7751911dcb4be7602ce280f3ea78170fae7274e4"
+    },
+    {
+      "path": "output/chapter1-cg-animations/minimax_raw/CG05_afternoon_reef_seagull.mp4",
+      "size": 6162124,
+      "sha256": "bebdd8b63fac956e43d232d5dd92392e9f3e0fff4cab07ec15ef4378385b08e4"
+    },
+    {
+      "path": "output/chapter1-cg-animations/minimax_raw/CG06_afternoon_mochi_ear_fins.mp4",
+      "size": 4855938,
+      "sha256": "8ae2be51dd9c0feb657eddb48709ea0759df9ea9937b08566a85482931c41400"
+    },
+    {
+      "path": "output/chapter1-cg-animations/minimax_raw/CG07_golden_osmanthus_dive.mp4",
+      "size": 7075983,
+      "sha256": "4b8f57e055b21172d21250e66ef911813a8a807fe468e7b971f10cd740d21407"
+    },
+    {
+      "path": "output/chapter1-cg-animations/minimax_raw/CG08_dusk_camp_squid_diary.mp4",
+      "size": 3269274,
+      "sha256": "5b794540c1fc9d7de5c198cb204c03cae64c8fcb3cda6cf884ca952acfbc7015"
+    },
+    {
+      "path": "output/local-noctq/GALgame_local_trial_00001_.png",
+      "size": 316872,
+      "sha256": "2a06e63a9ae403a8c163b195f11876128815396573906d9848b9cce5131e3b1c"
+    },
+    {
+      "path": "output/local-noctq/job.json",
+      "size": 97,
+      "sha256": "fd1a27662f3bb9f21660f1a132fec0afbe373c2c5f32c4c78d7ec625d00a050e"
+    },
+    {
+      "path": "output/local-noctq/request.json",
+      "size": 1879,
+      "sha256": "0c3507ccc8975eaf537cf1742d2e7864e313dac496d52d9521870ad66f1f39f0"
+    },
+    {
+      "path": "output/local-noctq/result.json",
+      "size": 3697,
+      "sha256": "214256c2dcfcd8917674db0c01d654cf8cdf9a6142a57c85b1d4c05817b863c8"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/assemble-independent-brows.mjs",
+      "size": 1676,
+      "sha256": "ae407b1988e8e65ffe4e56aa7b0af0eabb309d56c55f426d6d46311d438b2fbd"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/assemble-source.mjs",
+      "size": 2840,
+      "sha256": "7d58fc5c58d28975932b638e41f97e01ab6144e69a5313ab8d09778f277b0048"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/assembly-face-candidate-v3.png",
+      "size": 1070598,
+      "sha256": "201312062b9daeb4e9b30556d92ee8808e703e06b59208ca12f4f3a7b1d366f6"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/assembly-preview-partial-v1.png",
+      "size": 1080658,
+      "sha256": "c4dfa6a5b7c6683c994ffecce5ae94b75f49d23f6c82ba2fd6e3a81ae1383523"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/assembly-preview-v1.png",
+      "size": 1080815,
+      "sha256": "64b12fca8ebf82c9c3f8a889306374dab2310eef69156d29d21993fe426e505c"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/assembly-preview-v2.png",
+      "size": 1070064,
+      "sha256": "7ce6a89d2656ae1f79b6a794c699e1991cb14054850a7d7a7f0dcf027ef6d0e0"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/audit-body-support.cjs",
+      "size": 4216,
+      "sha256": "df3ac770e61d66a2eab54903cd598f0adcd4705168c89a48e445d2cab5f0cc4b"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/audit-eye-folding.cjs",
+      "size": 6364,
+      "sha256": "a5a3a270bce1f19a64c36dde5ae99159051c44e2353694eb763ade727808da71"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/audit-lash-transition.mjs",
+      "size": 5853,
+      "sha256": "2432bb1e0191395bbbdc9226c0f1e8ef442b21151e429ece4d6414068a0672b1"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/audit-parameter-response.cjs",
+      "size": 2898,
+      "sha256": "ec13b106398674c4c3c8e13dab827c61ebfcbe47820e89bfd3176c4f7a044433"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/bangs-center-shadow-import-v6.json",
+      "size": 468,
+      "sha256": "418c9c1b7a22af155450a07fb9dfff23ee592b3cd9a4a2d656f5d205a6174d97"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/bangs-center-shadow-import-v6.psd",
+      "size": 185640,
+      "sha256": "8936a50e75117d713ccff276b1e3febaa253d789956472d2bdd7fe113aa25fce"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/bangs-side-shadow-import-v6.json",
+      "size": 803,
+      "sha256": "ea1a169846204c7f2a211cd0c5a5756b1bc05a6c534657aebf623c0cdf6e6bfb"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/bangs-side-shadow-import-v6.psd",
+      "size": 233136,
+      "sha256": "884f3a24016485d4ccc652a4068b7457d8e29f96059d883f6c77c5e2b1ee8dd2"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/check-runtime-core.cjs",
+      "size": 6375,
+      "sha256": "a61ce0f7880a27a751a8ed404ae3a152a2aec44a93a71f8cf09837d394d36a56"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/check-runtime-v3.cjs",
+      "size": 4819,
+      "sha256": "ac19a941f853885b01bd6b0dd8359ec22417940c88c71f70b39e834c477a8a85"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/check-runtime-v5.cjs",
+      "size": 5942,
+      "sha256": "4a64ae0de1d41248353ad20cd0a1c4cfaa0e20e88467a372669cb94c7d25926e"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/check-runtime-v6.cjs",
+      "size": 6975,
+      "sha256": "54b64442120c280014a3e3f7e4a3876abc84282dfdb43eb152692260fedae16a"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/check-runtime.cjs",
+      "size": 5631,
+      "sha256": "34cb5505157a7a2b23147e0fc8779444e861ae64992f13a7097af6a884a07a2f"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/checkpoint-20261011-1414.json",
+      "size": 1334,
+      "sha256": "f479d7588e95d5e0ad24eec7498ad3769062bffc0548ca1299d7a889949f09af"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/closed-lash-hires-left-v5.json",
+      "size": 310,
+      "sha256": "99efda4810ba170b6e24910323c611dfd2fdb1730b1bf9cd20ceca08c7035406"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/closed-lash-hires-left-v5.psd",
+      "size": 519252,
+      "sha256": "6d308d7ee400e11dd9472986ece43bc17c835bf6bdabbd224b3943166ece349d"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/closed-lash-hires-v5.json",
+      "size": 281,
+      "sha256": "0cc5fb324c3a7618074a7c9d9dcc9fca3681649822848ca8c12011ceefdf8926"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/closed-lash-hires-v5.psd",
+      "size": 831751,
+      "sha256": "52971f0935402f1226dc76927059f1e93ebabfd66f8cd482dc579024851bf2e9"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/closed-lash-import-v5.json",
+      "size": 875,
+      "sha256": "cbf9ea1051a36b59dd3881133281ad3736ae95d12b5df4b3ae7ade1d947bfda4"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/closed-lash-import-v5.psd",
+      "size": 113890,
+      "sha256": "a48bb778db44c54489dba9029919a3409ba2c00066a22feb171f9f89e357c29a"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/compare-native-default.cjs",
+      "size": 2772,
+      "sha256": "3cc26c7141ffe32a580ddbeb1d5c5ea82cb095fe731bdedd1043a363357bf89c"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/DELIVERY-REQUIREMENTS.md",
+      "size": 1201,
+      "sha256": "b3346f2c108a496948280cc016750464594ca9ec8151dd1a8833d78157710854"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/eye-lash-import-v2.json",
+      "size": 284,
+      "sha256": "ccd53dbf0a8a6286c9cb3cd12781aab436d02c27f9c43733009eec5dbf279ab7"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/eye-lash-import-v2.psd",
+      "size": 1019102,
+      "sha256": "978fb40567e5972a42993c1abf6d9f505f0a60fb19c11c73318aea16f8b456eb"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/EYE-LAYER-CANDIDATES.md",
+      "size": 14041,
+      "sha256": "8461644c711f644ad8a9a73871389697167f5f7b5db2394609d088e55be4ea93"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/eye-layer-shading-v5.json",
+      "size": 502,
+      "sha256": "52e045c0bf7b559c2be86a72b4b2914ca5d36c0c9aeef70acf93d973be3f8dcf"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/eye-layer-shading-v5.psd",
+      "size": 1988136,
+      "sha256": "292dca0c6c0a26c9dc2a1ec5c41a00521db6ab6e2cc702fed107742b2c810e6f"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/eye-layer-test-v2.json",
+      "size": 482,
+      "sha256": "162af5fcdd4ed2e34a8611464e19aeef7b752511bada949ac4b3067f25558912"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/eye-layer-test-v2.psd",
+      "size": 1978662,
+      "sha256": "b5c67dbfd5783b8a964155bde45f1c48ebdc4a0716af2cafe9d7f49b76c9a2fb"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/eye-reference-v5/head-direction-reference-v5.png",
+      "size": 2082634,
+      "sha256": "d88e7f11d5160ea042446d1fd7488eab935041b1a8b541f116fb6e31a188ee6c"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/eye-reference-v5/README.md",
+      "size": 2266,
+      "sha256": "fa2c43df197d3d178ddf85dfbffb3c9bbd9374da336d5d2ba6c601bfca5929aa"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/face-shading-replacement-v6.json",
+      "size": 494,
+      "sha256": "5bae9b760cdf774fed181c61899553e941cdc11ef3475bec98b4f56c5386aba0"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/face-shading-replacement-v6.psd",
+      "size": 283034,
+      "sha256": "9078de1026ae5df24c3a62b5fe5988215a42c95fbb9f076f128d85dd2795ed20"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/fullbody-base-v1.png",
+      "size": 1673676,
+      "sha256": "dfe755255213762feaaf14f93d1f6530b5392def222ce471e4332adb49e83c8e"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/independent-brows-import-v6.json",
+      "size": 832,
+      "sha256": "a669916420f232b5fcb2a96d84d50a7af0a7f9e7a14b56892958447cefc3c7ef"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/independent-brows-import-v6.psd",
+      "size": 396552,
+      "sha256": "9fdabb1e67c6569fd81a52f2ccab7725265493f0ede1a39e6397fd1e605dc270"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/inspect-assets.mjs",
+      "size": 1377,
+      "sha256": "7d7886cafcaa6038480fc1d8c992b0cdba7c8350f7849c2665b35a0013dda7f5"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/jaw-neck-shadow-dark-replacement-v6.json",
+      "size": 458,
+      "sha256": "febfd12bda907e1cdc36407d0547c5c40078c8203cb166703cb4f40a4edb865d"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/jaw-neck-shadow-dark-replacement-v6.psd",
+      "size": 864735,
+      "sha256": "9674ac661d5c0aeb716c8a8e28b4239f1d00ba6e4f5b5793811af2cf593bc31d"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/jaw-neck-shadow-import-v6.json",
+      "size": 443,
+      "sha256": "d16bbebd9520f99374dcf1705c63d362bb6a91724694fd7425b9a502b4decb5a"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/jaw-neck-shadow-import-v6.psd",
+      "size": 777151,
+      "sha256": "0784f82345cfdccea718a0f137affbba68bb181a501d80fdad10f11433c7aa5c"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/layers/arm-viewer-left-draft-v1.png",
+      "size": 1027647,
+      "sha256": "61cd355a2cc45aac34f713b3444e8571022a6e38b519d6af499724b6cfe71e98"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/layers/arm-viewer-right-draft-v1.png",
+      "size": 981364,
+      "sha256": "2d31d41f2fe9eeed35ab7f5a15192eadacf5938587445e5c4760a9be6233b2b5"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/layers/bangs-accessories-draft-v1.png",
+      "size": 1175684,
+      "sha256": "e9247993b8a0df8c821285be3b0fdc53bfaf8df97be92d5211dc7fdddc3d5c78"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/layers/bangs-cast-shadow-candidate-v6.png",
+      "size": 112673,
+      "sha256": "49fdfd284e556c780c15ffdac77eb1b8f6417356abb1d4cc532c8d49ad807670"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/layers/bangs-cast-shadow-thin-candidate-v6.png",
+      "size": 109084,
+      "sha256": "3e7d56dca65c2fd658e28ab40b3f67f93c5c6da19f98d7be00ae2f46ba027352"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/layers/body-core-draft-v1.png",
+      "size": 1147769,
+      "sha256": "d68a3ff0536ddec6cb28005c3b4175007c5117664868c86c13ffd5fb43c00f13"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/layers/closed-eye-viewer-left-draft-v1.png",
+      "size": 178297,
+      "sha256": "cd66dc5a6d2fe5a677b19a40df55cdb902a7cf9bb66b1e2d7ec659da41d37835"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/layers/closed-eye-viewer-right-draft-v1.png",
+      "size": 210835,
+      "sha256": "5dca60d5806307426538f478d877e52d097fbcd7bd611f04f4e5e8c8d4fac834"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/layers/closed-lash-candidate-v5.png",
+      "size": 252898,
+      "sha256": "3031b3dc13077740b53ab1e95cad75a52c43e2aa7ec1e1fa219b64e4e15db8b2"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/layers/eye-viewer-left-draft-v1.png",
+      "size": 459143,
+      "sha256": "af30204749c4633bd1795032b04baad8be05848eaea7a690fa95358af27a1fc5"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/layers/eye-viewer-right-draft-v1.png",
+      "size": 647103,
+      "sha256": "6d839343a5d2a0b2d10bf15bfcbc57fca70730b6be00f4e4f1ba17dd613c335c"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/layers/eye-white-viewer-left-candidate-v2.png",
+      "size": 420120,
+      "sha256": "e96a9f2a745b172699b28bfb8a8a93ac03b5028c40f9c16be19cb730687e6f12"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/layers/eyebrows-draft-v1.png",
+      "size": 106093,
+      "sha256": "3a3902a265bd03a1c1090f1a935072058faee4df295ddccb0c19e3ff153b3278"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/layers/eyelash-overlay-candidate-v2.png",
+      "size": 308082,
+      "sha256": "e1dceee28a8e9ee05879af9e365d81861fd2b9bc21ba255d579b5423e264e5eb"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/layers/face-base-candidate-v3.png",
+      "size": 821683,
+      "sha256": "0d37962192205170711f5f14ffcbff7ac9dfe97974b88410e2cd285fa9391638"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/layers/face-base-draft-v1.png",
+      "size": 762717,
+      "sha256": "359cd241db905df8563d98a5578dde389279621c751e471c879277d99faa813a"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/layers/face-base-draft-v2.png",
+      "size": 815243,
+      "sha256": "4b85a58a5ee0a1af46aba64a583914c7b4ab469e3ad31d417923f249d45ec65f"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/layers/face-skin-soft-shading-v6.png",
+      "size": 1074500,
+      "sha256": "ff73a1358ecf41278d0191436498202f45996643c6ca8e8d1f5a003d0fe1b0ae"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/layers/front-strands-draft-v1.png",
+      "size": 555426,
+      "sha256": "285d51675076ab49d5429f90897a5e7652ea24aa0a506c4383f36cc797120ff4"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/layers/iris-blue-candidate-v2.png",
+      "size": 386628,
+      "sha256": "730c620396441e748ad4953e73ac7f3b1f56b1c3bb8154c504dc7c105b10e510"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/layers/iris-soft-shading-v5.png",
+      "size": 397887,
+      "sha256": "e6f725deea13aff0c061f0083e4aceff05660080d86e17eb1ceeb116150d89a2"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/layers/jaw-neck-shadow-dark-v6.png",
+      "size": 228066,
+      "sha256": "bc087bbdd1964ba9f54ce41a797c393181d0baa03e2c2b43cedc600913e9d326"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/layers/jaw-neck-shadow-v6.png",
+      "size": 231786,
+      "sha256": "92d2d7a8a3bf304e6a996591c2d2e59587f079c1f0353a9c8dc8c90da1717d30"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/layers/mouth-closed-candidate-v6-a.png",
+      "size": 211375,
+      "sha256": "8653ffac2de0fc76c39084ea8e116fba6a2ea8a77c811348f0087d5a62a785c6"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/layers/mouth-closed-candidate-v6-b.png",
+      "size": 135646,
+      "sha256": "467bb2b32378b9da6261b15df4dd107a708e8276b13e59f28961174e8f09b889"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/layers/mouth-closed-draft-v1.png",
+      "size": 530754,
+      "sha256": "746a80e37c163fee7f2d73119002138ea40e7d459ee3adf3cfe440094acf6a7c"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/layers/mouth-open-candidate-v6.png",
+      "size": 129348,
+      "sha256": "3255bad620503c54c579ccdde5590ec72e7aeba677d0f7de3cd339751b3eb5cc"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/layers/mouth-open-draft-v1.png",
+      "size": 165728,
+      "sha256": "9b4b3abca777e4a604c1b9d2ca8f0a1fad93c2666186099ae08504e4ac176842"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/layers/mouth-open-thin-v6.png",
+      "size": 90250,
+      "sha256": "de33b7d1455cefc2836f1826576accb27a239ac636d441e9a1470b60cb6106b8"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/layers/rear-hair-draft-v1.png",
+      "size": 1758902,
+      "sha256": "034b74b43a5ed41103c6fa8c8f8d19c54a76d3cd1e9039f4c5ad12639a2fce9d"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/layers/sclera-only-candidate-v3.png",
+      "size": 209871,
+      "sha256": "d9967ea2283ea017c11f50421ad9e625c9c66c12c36b4e3c87ee3fa69a0517cb"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/layers/tail-draft-v1.png",
+      "size": 1421450,
+      "sha256": "dcbf6884d365256d56db8a2682470bfd97adf2567e95921a99d803730293a18f"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/layers/white-coverup-draft-v1.png",
+      "size": 1349452,
+      "sha256": "b9f75a4dce4ee0f9d738bc6cfa06b294b9a98a3b869087fe26c9a2a14cece14f"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/layers/white-coverup-draft-v2.png",
+      "size": 1403389,
+      "sha256": "16d41d14ef4d82606e38881c5083900cba7e303016dc291172d8a06c9cac56c0"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/live2d-viewer/cubism-framework.js",
+      "size": 518869,
+      "sha256": "f147c8467635f8688fc9c3469b35f5050e81efb1e3c3440c8c8989ebb26992ea"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/live2d-viewer/index.html",
+      "size": 8203,
+      "sha256": "8bd059e9e7d68f4b4981a927bd3b148f95ee235abf2901c83df46a9578dc97b3"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/live2d-viewer/main.cjs",
+      "size": 5589,
+      "sha256": "48d58c6ad4f2c449a0a55b9b8d8fb9c312840deb642d0a5c42db41293999ac24"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/live2d-viewer/sdk/Core/CHANGELOG.md",
+      "size": 6982,
+      "sha256": "21556a2d10d8fe8aa5f9ff61786eed77b02f9595a8d8e713ba12de4e291c8327"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/live2d-viewer/sdk/Core/LICENSE.md",
+      "size": 520,
+      "sha256": "b81e37048010ef1d336106151201a0323c3309cae44aecdedf57831fe88fa991"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/live2d-viewer/sdk/Core/live2dcubismcore.d.ts",
+      "size": 15015,
+      "sha256": "25fcaa2a6dfe311db95ad1795a2a7e6286d9192719df4e2c3e634915dc050334"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/live2d-viewer/sdk/Core/live2dcubismcore.js",
+      "size": 246861,
+      "sha256": "3ba426cc788d74f276598e98fe97983214f2a95758b48dafb1e606d041db1ba7"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/live2d-viewer/sdk/Core/live2dcubismcore.js.map",
+      "size": 29138,
+      "sha256": "787d6c213e62eedf3617d79cff892a8599b96eba80418b27ddafc96b4a763454"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/live2d-viewer/sdk/Core/live2dcubismcore.min.js",
+      "size": 228042,
+      "sha256": "8741f739779b5d5210872bd3d7d99f0f1e56e6c87409e7d26d6bb4b80aa1ef47"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/live2d-viewer/sdk/Core/README.ja.md",
+      "size": 1093,
+      "sha256": "45c33c96ad56c571c7982f3c5b4819647184fc4da6e3d8c5e4a3460693db468c"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/live2d-viewer/sdk/Core/README.md",
+      "size": 770,
+      "sha256": "7a27d6d2586c555fca63e25baa9369f9da8a83781e35900c4b09ea437a5297f5"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/live2d-viewer/sdk/Core/RedistributableFiles.txt",
+      "size": 205,
+      "sha256": "d16c123688299e1e69a7f5ebc01b3bd75a8d408c024002a7d35b2aae94003f8c"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/live2d-viewer/sdk/Framework/Shaders/WebGL/fragshadersrcalphablend.frag",
+      "size": 2189,
+      "sha256": "855b247f02042a808a41e282ee4d7de7cc4533abeb5032b4ab8fe84f7dec107f"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/live2d-viewer/sdk/Framework/Shaders/WebGL/fragshadersrccolorblend.frag",
+      "size": 7525,
+      "sha256": "01d4bf6a14b4a738976e9a538767a21da0defa8816f3845a7df08a7713327538"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/live2d-viewer/sdk/Framework/Shaders/WebGL/fragshadersrccopy.frag",
+      "size": 429,
+      "sha256": "15c67a4ec3adda4c849aff2a8319a3f6aceef8a84d5e5e1f3fb7fd9cd681193c"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/live2d-viewer/sdk/Framework/Shaders/WebGL/fragshadersrcmaskinvertedpremultipliedalpha.frag",
+      "size": 1051,
+      "sha256": "1005cff8113de587cf1c0e295288d04d85f0f4ebc223684c8340e017fd8fc788"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/live2d-viewer/sdk/Framework/Shaders/WebGL/fragshadersrcmaskpremultipliedalpha.frag",
+      "size": 1043,
+      "sha256": "f84ff615393d26ea6ab7c28747803db6472524c92567c0ad01e8225fbab36a3b"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/live2d-viewer/sdk/Framework/Shaders/WebGL/fragshadersrcpremultipliedalpha.frag",
+      "size": 747,
+      "sha256": "c93abe215357cc782a25fc4ef20f5fe1f34e2cc193ee23d763b56b81fae5fce1"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/live2d-viewer/sdk/Framework/Shaders/WebGL/fragshadersrcpremultipliedalphablend.frag",
+      "size": 2038,
+      "sha256": "2155076275199a2946959838391dfb856e9d1db91b6ca3abd19ed70d4ff27e15"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/live2d-viewer/sdk/Framework/Shaders/WebGL/fragshadersrcsetupmask.frag",
+      "size": 736,
+      "sha256": "3cccc0b68a56cfbf4bd4841b0a759431dd159812c38dc280981ba633fa0afe7a"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/live2d-viewer/sdk/Framework/Shaders/WebGL/vertshadersrc.vert",
+      "size": 465,
+      "sha256": "291ed3f35f71f1e71e6df33fb055f009a8a9b36ee664f74f24f6cefef0c4029b"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/live2d-viewer/sdk/Framework/Shaders/WebGL/vertshadersrcblend.vert",
+      "size": 738,
+      "sha256": "2589837bd7a6a550a1c3af41b4fa776011e6e71f2531320fa39afcb83b209bf4"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/live2d-viewer/sdk/Framework/Shaders/WebGL/vertshadersrccopy.vert",
+      "size": 392,
+      "sha256": "b7bc4ba7517f405af4812ac47d99bc2b633c99f463c1224029556b00e8dff3cf"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/live2d-viewer/sdk/Framework/Shaders/WebGL/vertshadersrcmasked.vert",
+      "size": 559,
+      "sha256": "6704a9df2e6d3ee5176c72fca4ba59358ba4827a07054b1e0a72a3c574e281fd"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/live2d-viewer/sdk/Framework/Shaders/WebGL/vertshadersrcsetupmask.vert",
+      "size": 536,
+      "sha256": "649aad2f6c0af55a7a4adcf33dbf78937ef9d77ed6ba917fd716176adce25afe"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/live2d-viewer/viewer.js",
+      "size": 20509,
+      "sha256": "89022bd37788025da9080a9b590aab2ad82407b0d06d0cd6f2605949f2a43502"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/MCP-RESEARCH.md",
+      "size": 2577,
+      "sha256": "c2bb111faa177960b39ec1ac37285a63017e20eeabfe84bbc02ec4feee894ed2"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/mouth-hires-import-v6.json",
+      "size": 765,
+      "sha256": "8c9c18b2eba657fbf7fbf902f264f67b0f5e9cafe1e7b6cd00798c3b12362e07"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/mouth-hires-import-v6.psd",
+      "size": 557451,
+      "sha256": "1ab5bc1496df71b80075af53e43b6865772b5f73547c351be5f283d5fc6a6b1b"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/mouth-thin-replacement-v6.json",
+      "size": 764,
+      "sha256": "ac7c3a364fa526858b5ec9216d12d093e0098f79d9c7d5bb669dc78ae025cce6"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/mouth-thin-replacement-v6.psd",
+      "size": 479115,
+      "sha256": "c0267ac4f912938c194fad8a6aa0b7114eee4ddbd2ae86c10835ff365e2c929f"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/pack-psd.mjs",
+      "size": 2219,
+      "sha256": "9fc55cb4355c423cae5bb9749cb2aba7e65f506f9201150cc77fc2f362de3ef6"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/PLAN-v5.md",
+      "size": 3872,
+      "sha256": "123298ac441821b5f3cbf01cee66da2dc4a8abda4874f4cef33fc729ab69ed5d"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/PLAN-v6.md",
+      "size": 97223,
+      "sha256": "2cfea2360d4efeb0a042db2695fcb8f62666e832faae5613f5d71b9025f45d6f"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/previews-v6-final/after_face_happy_smile.png",
+      "size": 340814,
+      "sha256": "48151edf80215ddb7cec5c0904052552ae7a122ce03e7510a286038e19d5637a"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/previews-v6-final/after_face_tsundere_blush.png",
+      "size": 338511,
+      "sha256": "2fa690a164609a4220036db26e08a0a917f3e313b77b7ddeec04ad8ea8e75fff"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/previews-v6-final/after_face_tsundere_pout.png",
+      "size": 341921,
+      "sha256": "9ee7be9e3c6d141fa282510d5b706a0f64ba935bf1c03f80a6e42517942968af"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/previews-v6-final/after_fixed_face.png",
+      "size": 336551,
+      "sha256": "0edf4a77892ed670dc29ef8750cea0c8b57b19a2aee014f75118ce801690da79"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/previews-v6-final/after_fixed_face_360x340.png",
+      "size": 178917,
+      "sha256": "9cf104aafbf33f60e0c8b1f54ffc9fba4a9fada5f76c716e683abb4384bd9618"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/previews-v6-final/after_fullbody_happy_smile.png",
+      "size": 1083517,
+      "sha256": "2b39c45ee9655de98ca632b1925ceae8e7811ece006b66838bd2500f4fd6c7e3"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/previews-v6-final/after_fullbody_neutral.png",
+      "size": 1072578,
+      "sha256": "80847975f42c834263904c14f1ba8fb52c8f257f0ba68cac7d286971173edd00"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/previews-v6-final/after_fullbody_tsundere_pout.png",
+      "size": 1086896,
+      "sha256": "1808535c0ed902cce3417957d044e48db8ed82260d23a9f098bd3dd16ca2c920"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/previews-v6-final/before_6_1sol_face.png",
+      "size": 208116,
+      "sha256": "1aa6aba3642674b94c28e6dd934ebb8eba4a88db2430c1a234375ac36a31c1b4"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/previews-v6-final/viewer_live_half_v3.png",
+      "size": 986235,
+      "sha256": "03cf95bbdfee7aa4ead20485e218c9a7fa2a2d5ff1b9820e88072fdf3083a119"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/previews-v6-final/viewer_live_pout_face_v2.png",
+      "size": 902470,
+      "sha256": "3ebcfdcd7c349865276da2ca01d676c28bc2a4f0268e657757ecfd645b7fc6d4"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/PROGRESS.md",
+      "size": 110275,
+      "sha256": "80e05d4fbff9b78a07ce3a874500dcc5ce372fc9cc8924012aa57d85943d9e88"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/reference-stage.json",
+      "size": 229,
+      "sha256": "a5dafc0113dc6903db1688896ea848a9cb58ba4f271e30a02de697e83def9dfe"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/reference-stage.psd",
+      "size": 4251168,
+      "sha256": "66e2c23ca738710f0bd7f335febc2b053ce7645d4612398f1eabc8f125af3930"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/references-user-20261012/face-secondary-target.jpg",
+      "size": 128013,
+      "sha256": "ad4625cd74f68b2c6781c245cd4bb563b86e946c76a1e7324b450f30255297fb"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/references-user-20261012/face-target.jpg",
+      "size": 81881,
+      "sha256": "479916cbf8cb2b7fbaa264776311afc9652cf5c5dee0233482bc599245fd9ce1"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/references-user-20261012/fullbody-reference.jpg",
+      "size": 114494,
+      "sha256": "2748e97a8b0ffe02eb6f549a82edeb637d71a7c27eb1e0cdad89d4c7976b3ab0"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/references-user-20261012/painting-reference.jpg",
+      "size": 161522,
+      "sha256": "71bf8039c1f73e881222231781310f91e65b3eaf196d0d5f15b159bd6603d2c3"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/RIG-CONTRACT.md",
+      "size": 1537,
+      "sha256": "191b39c3505c60bbc84d0185fa1b8e5b18021338f3c824f6b20236961cd6a509"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/rig-progress.json",
+      "size": 13539,
+      "sha256": "c45a5f5bea7d9786179a5dee354b3c0eb576a506b8839c16672739940067ef3a"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/runtime-checkpoint-v3-1614/runtime-core-check.json",
+      "size": 49970,
+      "sha256": "8523fd07ffff390a07e785a59bfb5b83b1adb320e1d4ce7146ee07229a0f88cf"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/runtime-checkpoint-v3-1614/whale-girl-v3.2048/texture_00.png",
+      "size": 2153790,
+      "sha256": "4912cfa92b0215e55b0e26fafea59d36ffddc2bb35c82f7e76c747d48e54ac4b"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/runtime-checkpoint-v3-1614/whale-girl-v3.cdi3.json",
+      "size": 2278,
+      "sha256": "9d46c2dac385b4846419fffd6713e755c6503d80e04eef8680f34866a69e87e3"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/runtime-checkpoint-v3-1614/whale-girl-v3.moc3",
+      "size": 104512,
+      "sha256": "f597dcecaff3dae92de96454f5e9f1eeed0b8a699f799b78a4d3a0bfd3a5dca5"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/runtime-checkpoint-v3-1614/whale-girl-v3.model3.json",
+      "size": 448,
+      "sha256": "73426f346068435c3ab132210dd8d6a0e534fb5ef642b911f9a9521fe2f29eea"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/runtime-checkpoint-v3-1614/whale-girl-v3.physics3.json",
+      "size": 2975,
+      "sha256": "0a5e612e811db1ed95f1be6f0b8425f30f34c6f4960bb4930b3457d9afe35b83"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/runtime-core-check.json",
+      "size": 28234,
+      "sha256": "fb2c7415670ac51b133ea9bc33252acbcb53a2ee71599c5f1da891894ecde104"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/runtime-test/whale-girl.2048/texture_00.png",
+      "size": 1956828,
+      "sha256": "c5c2d6279b85772087a9e537477a1645c7a2a4865900161ed68b898455d15a5b"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/runtime-test/whale-girl.cdi3.json",
+      "size": 2198,
+      "sha256": "8869283efc9f60d57a1e2faccf8c8a8fb91db5ef1981e0bf80410d09f5298c64"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/runtime-test/whale-girl.moc3",
+      "size": 37568,
+      "sha256": "06f634c2d1a860c182f3bfb0fff656425699a115368d4b4701badeeb02d20085"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/runtime-test/whale-girl.model3.json",
+      "size": 436,
+      "sha256": "f8df33a06479004a432c97f5b9030d73a3cfc5d503e519b8ca967f2046b13c89"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/runtime-test/whale-girl.physics3.json",
+      "size": 1797,
+      "sha256": "9263667002b001c11c5317fdaff1b029e58bbaefd779c14ceccbc735b40249d0"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/runtime-test-v3/runtime-core-check.json",
+      "size": 49970,
+      "sha256": "f3798e108928ef163d1b510151b24dc6336c388736fac759cbe7db27a4e6f567"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/runtime-test-v3/whale-girl-v3.2048/texture_00.png",
+      "size": 2153790,
+      "sha256": "4912cfa92b0215e55b0e26fafea59d36ffddc2bb35c82f7e76c747d48e54ac4b"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/runtime-test-v3/whale-girl-v3.cdi3.json",
+      "size": 2278,
+      "sha256": "9d46c2dac385b4846419fffd6713e755c6503d80e04eef8680f34866a69e87e3"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/runtime-test-v3/whale-girl-v3.moc3",
+      "size": 106752,
+      "sha256": "4268b8be849620d58f98ca6d66aa93818a31be9cb15a191fa327812d9b4f9bce"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/runtime-test-v3/whale-girl-v3.model3.json",
+      "size": 448,
+      "sha256": "73426f346068435c3ab132210dd8d6a0e534fb5ef642b911f9a9521fe2f29eea"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/runtime-test-v3/whale-girl-v3.physics3.json",
+      "size": 2975,
+      "sha256": "0a5e612e811db1ed95f1be6f0b8425f30f34c6f4960bb4930b3457d9afe35b83"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/runtime-test-v5/runtime-core-check.json",
+      "size": 58748,
+      "sha256": "06d7be22f1df0d47a0db7850d02e6719c3773dad20e67e27a1147352cee01cdd"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/runtime-test-v5/whale-girl-v5.2048/texture_00.png",
+      "size": 2244665,
+      "sha256": "03da89ed59186e0f9481e309a7260bebc22a05e103dd09f83d595da3f5c4a3fe"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/runtime-test-v5/whale-girl-v5.cdi3.json",
+      "size": 2545,
+      "sha256": "f8abd5c3ac573f5f6aa31d4697129477e63794363bf49e1e5f07e116e38d58f2"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/runtime-test-v5/whale-girl-v5.moc3",
+      "size": 97216,
+      "sha256": "8159a9cbea92bb120a7c45fee9f11ddf6762bc1002111eac9d498089c08f6605"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/runtime-test-v5/whale-girl-v5.model3.json",
+      "size": 448,
+      "sha256": "53b00e2efd35b92003e4d45ca5b99121ede94fc119d84360b59db5c20dd198a7"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/runtime-test-v5/whale-girl-v5.physics3.json",
+      "size": 2975,
+      "sha256": "0a5e612e811db1ed95f1be6f0b8425f30f34c6f4960bb4930b3457d9afe35b83"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/runtime-test-v6/runtime-core-check.json",
+      "size": 8537,
+      "sha256": "1bffc1968331c963b8997c1a8943e7f784339353106e630f97c638f1bd9426d7"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/runtime-test-v6/whale-girl-v6.2048/texture_00.png",
+      "size": 2869861,
+      "sha256": "9ae583f3029c46234fdb676df8e52b6f2400149b989d8410ca2b943d52a59fd4"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/runtime-test-v6/whale-girl-v6.cdi3.json",
+      "size": 2899,
+      "sha256": "195f454a4a4abdb33e9c1e3221ba3b467812a5c85e4f887295fc68afb1365323"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/runtime-test-v6/whale-girl-v6.moc3",
+      "size": 122688,
+      "sha256": "a98afd73b0f62f38d05f889aaa5004ca946a946de6fa0de1ca5e6ebadc157df0"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/runtime-test-v6/whale-girl-v6.model3.json",
+      "size": 448,
+      "sha256": "839c612bd56f4272ead589377911c37c09463bd175af4a30bfb241d179207747"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/runtime-test-v6/whale-girl-v6.physics3.json",
+      "size": 2975,
+      "sha256": "0a5e612e811db1ed95f1be6f0b8425f30f34c6f4960bb4930b3457d9afe35b83"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/runtime-test-v6-body-x-wip/body-support.json",
+      "size": 453364,
+      "sha256": "c07b2cac0c3cc519c485ca3d438490f599defad3ef6874c44c028aca1114f293"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/runtime-test-v6-body-x-wip/default-pose-comparison.json",
+      "size": 3571,
+      "sha256": "bfe52671c3e601aaaad5dd888d92551a4389f3939a2a8ff17e717483813ea73e"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/runtime-test-v6-body-x-wip/whale-girl-v6-body-x-wip.2048/texture_00.png",
+      "size": 2869861,
+      "sha256": "9ae583f3029c46234fdb676df8e52b6f2400149b989d8410ca2b943d52a59fd4"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/runtime-test-v6-body-x-wip/whale-girl-v6-body-x-wip.cdi3.json",
+      "size": 2899,
+      "sha256": "195f454a4a4abdb33e9c1e3221ba3b467812a5c85e4f887295fc68afb1365323"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/runtime-test-v6-body-x-wip/whale-girl-v6-body-x-wip.moc3",
+      "size": 122688,
+      "sha256": "a98afd73b0f62f38d05f889aaa5004ca946a946de6fa0de1ca5e6ebadc157df0"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/runtime-test-v6-body-x-wip/whale-girl-v6-body-x-wip.model3.json",
+      "size": 492,
+      "sha256": "a1151e7d4e64fe520eb36ff5d4a797e63767fd488c3c34b883cfc4ac935f5222"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/runtime-test-v6-body-x-wip/whale-girl-v6-body-x-wip.physics3.json",
+      "size": 2975,
+      "sha256": "0a5e612e811db1ed95f1be6f0b8425f30f34c6f4960bb4930b3457d9afe35b83"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/sclera-import-v3.json",
+      "size": 266,
+      "sha256": "ba1e03052f10011b74f03256e02808ad6598cdfc81d958c43e9a6993e85580e0"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/sclera-import-v3.psd",
+      "size": 825131,
+      "sha256": "9fc1208a34d6fa07a1fdcd39ad15fd8d7d46495e760dedee429698370b6548f0"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/source-assets.json",
+      "size": 7863,
+      "sha256": "63380784b05f5a7cfd68113e29b41768d2bb6d19d2e60d31a0a5d1adaa41f31c"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/static-face-redesign-v4/face-skin-C-nose-rejected.png",
+      "size": 1081392,
+      "sha256": "af375f8bf8b519d80af94fb648d3c32c7b84f44cba24724d0e40bdd83b822eac"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/static-face-redesign-v4/face-skin-D-soft-nose.png",
+      "size": 1041733,
+      "sha256": "ee21eb887a858afc4f4a3b2ee84881c6bb0ec92969c23df18e4d86874a07c484"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/static-face-redesign-v4/face-static-import-v4.json",
+      "size": 433,
+      "sha256": "932f7a2a686c4633675daa1fde91bc13385835eaef34775739edfa4e689bdd9b"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/static-face-redesign-v4/face-static-import-v4.psd",
+      "size": 271700,
+      "sha256": "757b6754e31f2eee0cff9c36022bd75cda3124720b6c6a67b3c02b0256b1c1a0"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/static-face-redesign-v4/head-candidate-A.png",
+      "size": 2178220,
+      "sha256": "0d203614dd5fa53e359a41d67e153e71146278e28c9b57c6d3ae3548553d9759"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/static-face-redesign-v4/head-candidate-B-soft-nose.png",
+      "size": 2053054,
+      "sha256": "cbc5f0d8301aa3a21201cea28c5d192bd10cbec8431a752b5071ce8b254fd423"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/static-face-redesign-v4/README.md",
+      "size": 2971,
+      "sha256": "10147364577e113a11b28d000efb06bc91d15afd07d8c602ecf5c4085e051592"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/user-target-face-v6.jpg",
+      "size": 81881,
+      "sha256": "479916cbf8cb2b7fbaa264776311afc9652cf5c5dee0233482bc599245fd9ce1"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/whale-girl-face-refined-v3.json",
+      "size": 5531,
+      "sha256": "12127c9093275838179e3daad1b496ea805d8be042bb9b1f99c22f83de5fbbe5"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/whale-girl-face-refined-v3.psd",
+      "size": 3979792,
+      "sha256": "7148bad3c6fccda675457bee26bda4b696f7c55bdd75d537da11a082921d07ea"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/whale-girl-face-refinement-v6.cmo3",
+      "size": 6857137,
+      "sha256": "3ca1c4b74aeeeed3bcbc39f90dc07524ebc09839a1c5748e29adc0e2ef2a6c43"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/whale-girl-layered-partial-v1.json",
+      "size": 4650,
+      "sha256": "9a53b9d1976004b1e2aa64d970f88a0d6f71accb9d635794ef0591d71444c700"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/whale-girl-layered-partial-v1.psd",
+      "size": 3932972,
+      "sha256": "473d848fe10b659d9a72fe93a1657ee41a54a20bd98553a5a6b01b5f12442fe1"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/whale-girl-layered-v1.json",
+      "size": 5287,
+      "sha256": "cde5449a957f9100bb4d109d315ad6efd262ef5bcc351c10692b18beaf7d6eb2"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/whale-girl-layered-v1.psd",
+      "size": 3935147,
+      "sha256": "c9179bd65c8424488a7d825356a51737390707c02e0ba5a1e53fde643a84972b"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/whale-girl-layered-v2.json",
+      "size": 5286,
+      "sha256": "e2f9cc31dd73807000b783181b6e36948f59fe31653817a2becb190f3443d57b"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/whale-girl-layered-v2.psd",
+      "size": 3976465,
+      "sha256": "03b5b7fdede800ed41ffe2dfdfb58a3ec934241e8afadb23275af09e1243d2a2"
+    },
+    {
+      "path": "output/whale-girl-live2d-base/制作说明.md",
+      "size": 1267,
+      "sha256": "b794ca89b213cc45153c013cc8e883fbc14000571d3233e05421cdefd746ae13"
+    },
+    {
+      "path": "PROGRESS.md",
+      "size": 66211,
+      "sha256": "afcb06a5be130a92d6ff3974bea6a4e2d712b6d651abbbfd5ffe6e17737a9ee4"
+    },
+    {
+      "path": "qa-afternoon.png",
+      "size": 1580897,
+      "sha256": "195c9bdfdba1238864b36e01f5825d0468e6742269d578032da1b9052f6c9b8d"
+    },
+    {
+      "path": "qa-camp.png",
+      "size": 1439598,
+      "sha256": "25d1ce85c0db6f25aae98ccca4cb5301df373325ff65e4fabae89c2c54566b67"
+    },
+    {
+      "path": "qa-choice.png",
+      "size": 1625188,
+      "sha256": "707d3965312512570c8cafc01d1ec7b6c7ccf9949a60aff39832220bedac3f38"
+    },
+    {
+      "path": "qa-golden.png",
+      "size": 1344779,
+      "sha256": "6265d0bc82cbfa39f85c7e2c837b765135e9d2b266e7fce7cdb2fab8f5249793"
+    },
+    {
+      "path": "qa-history.png",
+      "size": 526604,
+      "sha256": "4cc7bba011a8a8d7fa8ffd7162c11944843bf4f0fbed8a9ea2fb37b7698eb9fe"
+    },
+    {
+      "path": "qa-save.png",
+      "size": 279737,
+      "sha256": "e12b951f9ac05c86a1d3f3fa4c7e2ce1a43c079eb8db8fb5a0f5e619ff656661"
+    },
+    {
+      "path": "qa-settings.png",
+      "size": 40332,
+      "sha256": "b802210caa8171842811ef8f7e4adf38cffd5b2dbe9c68066455e71e1d34cd64"
+    },
+    {
+      "path": "qa-title.png",
+      "size": 1453846,
+      "sha256": "8ba9a885c6ab8cc150ba155ffe64c289945776810a0b67bc79b821dac4157820"
+    },
+    {
+      "path": "README.md",
+      "size": 3198,
+      "sha256": "6d9c98c37fa99d2f20f7b1c63e14aa75175510de0b070964059fcec9b8f4dda0"
+    },
+    {
+      "path": "real-lived/DeepSeek免费公皮/DeepSeek/AdvancedARKitSettings.vbridger",
+      "size": 18664,
+      "sha256": "2e7b45b008fbbb362a63a97803b1d8032af11a968f1d50d8f7e2b012e41de11c"
+    },
+    {
+      "path": "real-lived/DeepSeek免费公皮/DeepSeek/Animation/IDLE.motion3.json",
+      "size": 35673,
+      "sha256": "f0729db1dcd5792429501bbd683d90eb3155f2f7995b4907c92db6ca1a45f29e"
+    },
+    {
+      "path": "real-lived/DeepSeek免费公皮/DeepSeek/Animation/举手切默认手.motion3.json",
+      "size": 1668,
+      "sha256": "16150576534ace55b795a2f22a5571269b0f659306b853d9f6761c3e9b0d0982"
+    },
+    {
+      "path": "real-lived/DeepSeek免费公皮/DeepSeek/Animation/狗尾草切回默认手.motion3.json",
+      "size": 2183,
+      "sha256": "11c67c212c6c54913b0e29e19da9ad11e686e1c7bc38eaa1162423bec2652f6c"
+    },
+    {
+      "path": "real-lived/DeepSeek免费公皮/DeepSeek/Animation/狗尾草切换出来.motion3.json",
+      "size": 2479,
+      "sha256": "e2c664f4fa9343dc09aa4696a8808490033d32515f6c6e3f10fcf1a217e093af"
+    },
+    {
+      "path": "real-lived/DeepSeek免费公皮/DeepSeek/Animation/竖手指切出来动画.motion3.json",
+      "size": 2601,
+      "sha256": "a2ce2e5e35568a16c40eb7bf3d1427b5a866de79e054acdeb647a8ad262be63e"
+    },
+    {
+      "path": "real-lived/DeepSeek免费公皮/DeepSeek/Animation/竖手指切回默认.motion3.json",
+      "size": 2257,
+      "sha256": "150ca41ed715ed16ccab17aa6ec070fb00944f01620284046f7750b3cafe5278"
+    },
+    {
+      "path": "real-lived/DeepSeek免费公皮/DeepSeek/Animation/脱捕.motion3.json",
+      "size": 17616,
+      "sha256": "078151ba18de53fa92d2919109819de0eb06ae1972247155df61c565f9577b0c"
+    },
+    {
+      "path": "real-lived/DeepSeek免费公皮/DeepSeek/Animation/默认手切举手.motion3.json",
+      "size": 1881,
+      "sha256": "14825034fe46cb2bb559ad17a2e3a400a34bd62463dda110417858465482d68e"
+    },
+    {
+      "path": "real-lived/DeepSeek免费公皮/DeepSeek/Exp3/体型1.exp3.json",
+      "size": 225,
+      "sha256": "62cef16db8f6cf6e9d045227bc4cfac31149fe7a5630e273e09e49a0caab520d"
+    },
+    {
+      "path": "real-lived/DeepSeek免费公皮/DeepSeek/Exp3/体型2.exp3.json",
+      "size": 210,
+      "sha256": "227589ae8ef49a474d9c8f685836e1031f8621d235b702df516e4da6da1307a3"
+    },
+    {
+      "path": "real-lived/DeepSeek免费公皮/DeepSeek/Exp3/兔牙.exp3.json",
+      "size": 206,
+      "sha256": "32f48bd4a9db1f80219a00340e4215c2386cb3c3fe97c848b7defca8f0d5c335"
+    },
+    {
+      "path": "real-lived/DeepSeek免费公皮/DeepSeek/Exp3/前倾.exp3.json",
+      "size": 213,
+      "sha256": "3aff2f8540bc4bee8b4bc93ae4f1eed934d69d020d4864035ab5a3f3caa9c16b"
+    },
+    {
+      "path": "real-lived/DeepSeek免费公皮/DeepSeek/Exp3/加载.exp3.json",
+      "size": 206,
+      "sha256": "051656600ad97eb8b390cc4c57ca9b62d65a278582b96910c47d32d34cab9d7f"
+    },
+    {
+      "path": "real-lived/DeepSeek免费公皮/DeepSeek/Exp3/单片眼镜.exp3.json",
+      "size": 207,
+      "sha256": "de94bd932984c81b02552e4dd84149d07d06a27059c8e28741a525652a348e64"
+    },
+    {
+      "path": "real-lived/DeepSeek免费公皮/DeepSeek/Exp3/圈圈眼.exp3.json",
+      "size": 506,
+      "sha256": "ac2b985137b68a783e20cad714efc19792701128c4a9b45b507011d1a5431a69"
+    },
+    {
+      "path": "real-lived/DeepSeek免费公皮/DeepSeek/Exp3/尾巴开关.exp3.json",
+      "size": 211,
+      "sha256": "0118f5eeca18022c5f498d666a78bd587bb82475e308545c304c65e283e6ec0f"
+    },
+    {
+      "path": "real-lived/DeepSeek免费公皮/DeepSeek/Exp3/屑屑眼.exp3.json",
+      "size": 406,
+      "sha256": "5dad811717ed3ef8cb26aa4b7b0cc96de5cb03623a5d389434867b82123eaf17"
+    },
+    {
+      "path": "real-lived/DeepSeek免费公皮/DeepSeek/Exp3/流冷汗.exp3.json",
+      "size": 207,
+      "sha256": "adca6558c134883cb76e7eaa64c49f1727d7776c2c1d20a2ef62c6ae3ba4a760"
+    },
+    {
+      "path": "real-lived/DeepSeek免费公皮/DeepSeek/Exp3/流泪.exp3.json",
+      "size": 206,
+      "sha256": "69c88091fcde8048cfb5183aef2783ce8ac76d70f375a40ed5a2f9e2f6e92642"
+    },
+    {
+      "path": "real-lived/DeepSeek免费公皮/DeepSeek/Exp3/爱心眼.exp3.json",
+      "size": 206,
+      "sha256": "23caee9addb86b60df81de8f57cd6ecb01e19350ad3289258c6bb5f580a6fb89"
+    },
+    {
+      "path": "real-lived/DeepSeek免费公皮/DeepSeek/Exp3/竖食指关.exp3.json",
+      "size": 211,
+      "sha256": "f9a09596196b4656e06e33da191e6e29c349dc1fe680398d24df904c1a0d5e3d"
+    },
+    {
+      "path": "real-lived/DeepSeek免费公皮/DeepSeek/Exp3/竖食指开.exp3.json",
+      "size": 316,
+      "sha256": "e29a862a6116d5b5c9219e97b813867286de1e1050b81efda575c70fbd8a20b1"
+    },
+    {
+      "path": "real-lived/DeepSeek免费公皮/DeepSeek/Exp3/胸口衣服.exp3.json",
+      "size": 210,
+      "sha256": "f8b3106ca0304a414cf616ac16743aba2adcf4bb3b73018e1ef98b0bb8ea7706"
+    },
+    {
+      "path": "real-lived/DeepSeek免费公皮/DeepSeek/Exp3/脱鞋.exp3.json",
+      "size": 210,
+      "sha256": "f59c3ebd420003d4ac619ecf36e8fc2460d9cdf33568213d724a976fed1c0c31"
+    },
+    {
+      "path": "real-lived/DeepSeek免费公皮/DeepSeek/Exp3/脸红.exp3.json",
+      "size": 206,
+      "sha256": "c763bb15e2cc6273f736011ab0630004054730f045b627cc9f91aba37b1352de"
+    },
+    {
+      "path": "real-lived/DeepSeek免费公皮/DeepSeek/Exp3/裙子切换.exp3.json",
+      "size": 186,
+      "sha256": "aec3befffbc28627eb0bea3a7d14a553be5c0075e1be34b8a130330c3993da36"
+    },
+    {
+      "path": "real-lived/DeepSeek免费公皮/DeepSeek/Exp3/钢盆.exp3.json",
+      "size": 207,
+      "sha256": "3dc30e71fce501df1645a1d3ba6badacfa6fc5cf01bd99b106a483aab86f528d"
+    },
+    {
+      "path": "real-lived/DeepSeek免费公皮/DeepSeek/Exp3/黑框眼镜.exp3.json",
+      "size": 207,
+      "sha256": "eab214289464063f327fbe40e56d3f0957895df74dfa30940773d74b69ba0e93"
+    },
+    {
+      "path": "real-lived/DeepSeek免费公皮/DeepSeek/Exp3/黑脸.exp3.json",
+      "size": 206,
+      "sha256": "1e229c657f659ca12d5dfff24bdf8302ecb9d6939717bb767db994b5ae1c8753"
+    },
+    {
+      "path": "real-lived/DeepSeek免费公皮/DeepSeek/Exp3/默认体型.exp3.json",
+      "size": 210,
+      "sha256": "7a42ec190079842c1d3d59772cfdb2f654aaf76ddd0f9c7c01cc62db67e7fc68"
+    },
+    {
+      "path": "real-lived/DeepSeek免费公皮/DeepSeek/Exp3/＞＜.exp3.json",
+      "size": 506,
+      "sha256": "7d1b391c27d00af64820295026b50a168ecc776b5b91f4f4acce1e498f1a9c11"
+    },
+    {
+      "path": "real-lived/DeepSeek免费公皮/DeepSeek/items_pinned_to_model.json",
+      "size": 454,
+      "sha256": "d6cb7d646e7199049cdddbeb4df6cd97438d1ae07cf8c342fb0e0bebf19fac62"
+    },
+    {
+      "path": "real-lived/DeepSeek免费公皮/DeepSeek/tools/apply_all_upgrades.py",
+      "size": 42097,
+      "sha256": "2e69fad84d6dbf461774a1b07a71a343f8d582e908556aea7290657341fca8f3"
+    },
+    {
+      "path": "real-lived/DeepSeek免费公皮/DeepSeek/tools/moc3_renderer.py",
+      "size": 16995,
+      "sha256": "527b90ebb91208561993ee332b678fd5717f3b711f40bc1a1c4cc4f3bced7336"
+    },
+    {
+      "path": "real-lived/DeepSeek免费公皮/DeepSeek/tools/texture_warper.py",
+      "size": 4855,
+      "sha256": "fbffc3778ba955f88eca3921d7ea15731a892cc97850be05266618406300651b"
+    },
+    {
+      "path": "real-lived/DeepSeek免费公皮/DeepSeek/大肥鱼.4096/texture_00.png",
+      "size": 8227589,
+      "sha256": "08218dc8a415617d78f954ed356df01a860edcb7692cf783d3fe399a4f0b2b27"
+    },
+    {
+      "path": "real-lived/DeepSeek免费公皮/DeepSeek/大肥鱼.4096/texture_01.png",
+      "size": 11768846,
+      "sha256": "266c91b3777d03af3f92fb64b565b420155f8235fded8ace7ffeff42722a15e6"
+    },
+    {
+      "path": "real-lived/DeepSeek免费公皮/DeepSeek/大肥鱼.4096/texture_02.png",
+      "size": 2264052,
+      "sha256": "48b3ed2c2217cbe2c3dfe966eb40e9fadf364d3f1cb9b4a231552c07766269ba"
+    },
+    {
+      "path": "real-lived/DeepSeek免费公皮/DeepSeek/大肥鱼.4096/texture_03.png",
+      "size": 7106480,
+      "sha256": "2c69ca913a8d2e27e438c4c9f85e2a938fb6fccade073d16b07f7fe1b24814f7"
+    },
+    {
+      "path": "real-lived/DeepSeek免费公皮/DeepSeek/大肥鱼.4096/texture_04.png",
+      "size": 281468,
+      "sha256": "441110c26bfb46929b4fc01e42288e43359d802988725b3c67e7fd6a59173b3b"
+    },
+    {
+      "path": "real-lived/DeepSeek免费公皮/DeepSeek/大肥鱼.cdi3.json",
+      "size": 53272,
+      "sha256": "24d1a66f530153b2b4c0c528b4bdf305f18ce6aa790d5b8d2612dbb641b0d746"
+    },
+    {
+      "path": "real-lived/DeepSeek免费公皮/DeepSeek/大肥鱼.moc3",
+      "size": 16498560,
+      "sha256": "95061fd1bd0ec3a6440f6cf707c8be134f5143720d63217b71f0aed678024fed"
+    },
+    {
+      "path": "real-lived/DeepSeek免费公皮/DeepSeek/大肥鱼.model3.json",
+      "size": 550,
+      "sha256": "ab4fc69a4f7c96a6b245d016061c4edb12cb1f23c442fa28e6f6d118e3c4e2b1"
+    },
+    {
+      "path": "real-lived/DeepSeek免费公皮/DeepSeek/大肥鱼.physics3.json",
+      "size": 217421,
+      "sha256": "eb5f6cac515123a8b90ba476c898ffea28ed8b560e7be5fe82e096c5d7e21415"
+    },
+    {
+      "path": "real-lived/DeepSeek免费公皮/DeepSeek/大肥鱼.png",
+      "size": 1879438,
+      "sha256": "0384984227083354810a64febadc5989c55c1be9dec150558e29b59f7cc69f4f"
+    },
+    {
+      "path": "real-lived/DeepSeek免费公皮/DeepSeek/大肥鱼.vtube.json",
+      "size": 142608,
+      "sha256": "c043da89d41ac372352614612edb11d9506251dc6e1fc45e1c4de74cf6df9566"
+    },
+    {
+      "path": "real-lived/DeepSeek免费公皮/DeepSeek免费 Live2D 模型使用须知.txt",
+      "size": 4909,
+      "sha256": "60e453914688d8b82177a08f650b60de7bc97e13319325e2e0dd4a6f4e040c2f"
+    },
+    {
+      "path": "real-lived/DeepSeek免费公皮/psd/默认已知｜大肥鱼免费模型 PSD 使用规范.txt",
+      "size": 3942,
+      "sha256": "a633685f5581df8f52c5228bb9d424588cf054656e1841cf71391babf63c9296"
+    },
+    {
+      "path": "SCENES.md",
+      "size": 1418,
+      "sha256": "9958e1c5fcdab058ecdc79239fd717c7c1bbfcc3de5ae543dd191850003429e3"
+    },
+    {
+      "path": "Seabreeze/game/cache/bytecode-312.rpyb",
+      "size": 475476,
+      "sha256": "9bf735d37c1c990d2d28fc2cc8c707a47c77f656d28a9a4ac815bb973663bad0"
+    },
+    {
+      "path": "Seabreeze/game/cache/py3analysis.rpyb",
+      "size": 22080,
+      "sha256": "db64c246e1d49f892133710a64a8d50a07a65eca87022c67a3eafb6bd6742296"
+    },
+    {
+      "path": "Seabreeze/game/cache/screens.rpyb",
+      "size": 63359,
+      "sha256": "c1a3f50a9e1f36775d99fde23a6cf81f68d9cd083b3f74323ad8b28c8be90b31"
+    },
+    {
+      "path": "Seabreeze/game/cache/shaders.txt",
+      "size": 166,
+      "sha256": "0a384dcbd51f9b61e4ce99da49aab712711ad7435bef85c2303cf6d631879181"
+    },
+    {
+      "path": "Seabreeze/game/chapter01.rpy",
+      "size": 15421,
+      "sha256": "f74139dac2d8e4ebbe1853bb77eafd2d7c94418988b69bc2b1aa452209dea85b"
+    },
+    {
+      "path": "Seabreeze/game/core.rpy",
+      "size": 9082,
+      "sha256": "b5e5035fa7f2a3035096aad80ef5bfc15cc564ef593ddfb9e9bcfd60ffe164ac"
+    },
+    {
+      "path": "Seabreeze/game/fonts/NotoSansSC.ttf",
+      "size": 17772300,
+      "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da"
+    },
+    {
+      "path": "Seabreeze/game/fonts/OFL.txt",
+      "size": 4388,
+      "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9"
+    },
+    {
+      "path": "Seabreeze/game/images/day.png",
+      "size": 8726,
+      "sha256": "8982c66faf5037b55b40d6838cae4e45e10ed12fc67e4f8584ff5f34636d8f1d"
+    },
+    {
+      "path": "Seabreeze/game/images/scenes/1.zip",
+      "size": 13075690,
+      "sha256": "e900d3cc81b4db048a8b17b4b960c07e916b25c16589c8f6cbd284fee54563b0"
+    },
+    {
+      "path": "Seabreeze/game/images/scenes/camp_dusk.png",
+      "size": 2883519,
+      "sha256": "040620513bef5879d39c76fd729663b6563044ff804e9d5d1749d1307ac60eae"
+    },
+    {
+      "path": "Seabreeze/game/images/scenes/cove_afternoon.png",
+      "size": 2565505,
+      "sha256": "20e29fdb8ab66d7bec46962f8de700fdcc3342e592b3ce4f9fc6c8a7491b2f57"
+    },
+    {
+      "path": "Seabreeze/game/images/scenes/cove_dusk.png",
+      "size": 2546261,
+      "sha256": "5a581d19c0ae288e42cfb3062d2f7f0ab0fd008d0cf5cececafca76a36cd4b9d"
+    },
+    {
+      "path": "Seabreeze/game/images/scenes/cove_golden.png",
+      "size": 2584557,
+      "sha256": "2c9fe27ca25f815676405c1fa29959a59e419e800c1758f93416352518e58fe3"
+    },
+    {
+      "path": "Seabreeze/game/images/scenes/cove_noon.png",
+      "size": 2728969,
+      "sha256": "06e8006e19f6bc22687da56a3255b2bb6d52f8822e30f9ad5fefd2fa65b0a138"
+    },
+    {
+      "path": "Seabreeze/game/images/sunset.png",
+      "size": 8782,
+      "sha256": "4db781c9cad8ba1130beb18ecaa2ab2548c8c0b243fa61ae8c1873eaa75013d8"
+    },
+    {
+      "path": "Seabreeze/game/options.rpy",
+      "size": 1157,
+      "sha256": "4c1f4da276b372b09f050aa44df65a0b5f23d0f2a244e6e17131eb66b35d249e"
+    },
+    {
+      "path": "Seabreeze/game/tests.rpy",
+      "size": 3369,
+      "sha256": "105ef5d01145758ec52a1ff176f55d78b9be313135dfcbaf5a8c236b4f3a143f"
+    },
+    {
+      "path": "Seabreeze/tests/screenshots/qa/settings.diff.png",
+      "size": 5329,
+      "sha256": "a0900417d2853472905ec1b1ab39b73936e9335f0f5e8ca749ab69f8396fb3eb"
+    },
+    {
+      "path": "Seabreeze/tests/screenshots/qa/settings.new.png",
+      "size": 40304,
+      "sha256": "ab6797290d1e6799ebb26ec0d11ef62050453c61120836a563415d0287fa93bc"
+    },
+    {
+      "path": "Seabreeze/tests/screenshots/qa/settings.png",
+      "size": 40332,
+      "sha256": "b802210caa8171842811ef8f7e4adf38cffd5b2dbe9c68066455e71e1d34cd64"
+    },
+    {
+      "path": "Seabreeze/tests/screenshots/qa/title.png",
+      "size": 48874,
+      "sha256": "d4edd9fdc67c31af33c9a834354e22ebed247167073e782be0b7a80900251154"
+    },
+    {
+      "path": "tools/build_chapter.py",
+      "size": 3746,
+      "sha256": "ecfd9e85d70aa6d9c765f943c8fac30ef76e474c285527e91c6e3c07b479e08e"
+    },
+    {
+      "path": "tools/export_private_workspace.py",
+      "size": 8391,
+      "sha256": "7eb63e70971c74aaa7c7ed789db2e922475f78c2f64bdb2689edfbd008d907fd"
+    },
+    {
+      "path": "tools/generate_local_portrait.py",
+      "size": 3301,
+      "sha256": "54c12615e2a548e45fcf9239b7a9080a8040416c377062b656c222cce6f508d4"
+    },
+    {
+      "path": "tools/generate_local_portrait_v2.py",
+      "size": 6045,
+      "sha256": "d7f1de5c2e8dc793fea8cc04345e1deec4947e5cae1de8771db19ab0d0227f7e"
+    },
+    {
+      "path": "tools/generate_local_portrait_v3.py",
+      "size": 7524,
+      "sha256": "136d3f9841f8fb3e96f51d007f0303bc8c041492cd2f4a88cee9610248c4b309"
+    },
+    {
+      "path": "tools/prepare_assets.py",
+      "size": 1353,
+      "sha256": "2a32db9d90fae6f9336c582ca20d4d5d8cf4523cf1800d0f8bf2ca032b43f665"
+    },
+    {
+      "path": "tools/rollback_to_011.py",
+      "size": 1609,
+      "sha256": "64b279279cff846ff73b39db4c14dbce828059b186283ffa26751dba6abab4fb"
+    },
+    {
+      "path": "tools/scene_manifest.json",
+      "size": 675,
+      "sha256": "f011453a02ad225bc2943224751a5080c5da7be77c2b2dd0e087b6c87f0722ca"
+    },
+    {
+      "path": "tools/source_map.json",
+      "size": 21084,
+      "sha256": "fa49961a89119381199732de8c241b81165f2320c2b202c28451f07ab3030032"
+    },
+    {
+      "path": "UPLOAD-HANDOFF.md",
+      "size": 5563,
+      "sha256": "37d0a6d4070e8c4724697c1852685b79022e3517a21d7073f687327619d8f7fa"
+    },
+    {
+      "path": "UPLOAD-RECEIPT.md",
+      "size": 5065,
+      "sha256": "4011750cc55628be159ca1a7740a8fbd057c0b1eb978654b7c41f80f10a89d07"
+    },
+    {
+      "path": "VALIDATION.md",
+      "size": 2062,
+      "sha256": "204bf53ae98409c43f2fa29d0d35ebb00626a7233261328c94863936bef179de"
+    },
+    {
+      "path": "启动鲸鱼小姐Live2D互动预览.cmd",
+      "size": 616,
+      "sha256": "a82944d2731d45aac630677041793334a724a281ce6103c17fd3f8a55d9be902"
+    },
+    {
+      "path": "海风与布丁_第一季_全卷_v5.0.md",
+      "size": 271484,
+      "sha256": "6f0f8718e36c81499d7404eea9bfa2f5b818bf9d93ea690a0472adb703d77293"
+    },
+    {
+      "path": "第一章.docx",
+      "size": 18869,
+      "sha256": "72b4db1b94c5b45844ac30ba419c7c51c8c24e4d81e69b0e115c065004acf354"
+    },
+    {
+      "path": "运行游戏.bat",
+      "size": 123,
+      "sha256": "580f6391b23f8d0f8d3740abeeaa0d093540bf65dbeffb2cf9f1c9a5e0a3f90f"
+    },
+    {
+      "path": "previews-latest-20261031/final_full_render.png",
+      "size": 1588753,
+      "sha256": "f4da657548e0eb133262609ff798f9411dde29c48176858a5220851f5122b151"
+    },
+    {
+      "path": "previews-latest-20261031/final_head_closeup.png",
+      "size": 529172,
+      "sha256": "2b2d965e99ae7330a37a5202473bb796094d3ec42713165c31d6c9065001e591"
+    },
+    {
+      "path": "previews-latest-20261031/final_poses_sheet.png",
+      "size": 2218368,
+      "sha256": "7537602976375869cc2348fba046ed3a102a27511097f555991ff6bf175b6ac7"
+    },
+    {
+      "path": "previews-latest-20261031/tail_fixed_preview.png",
+      "size": 980764,
+      "sha256": "60f461aaae7f6046184c28e2086047934b431edd3403a65503fdb58cb086053d"
+    },
+    {
+      "path": "previews-latest-20261031/tail_closeup_fixed.png",
+      "size": 196879,
+      "sha256": "84cbfc015c1faaf0b0cc35dc89262f6ed24f5b30e5fb2e860cd158110c1fa3c4"
+    },
+    {
+      "path": "previews-latest-20261031/mouth_states_verified.png",
+      "size": 31698,
+      "sha256": "f30e7f978e750d98952e8b9465221e4594022d93340bffa8942368402abf620b"
+    }
+  ]
+}

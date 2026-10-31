@@ -1,0 +1,10 @@
+.tools/
+dist/
+**/saves/
+**/cache/
+**/*.rpyc
+**/__pycache__/
+**/log.txt
+**/traceback.txt
+**/errors.txt
+**/.userdata/

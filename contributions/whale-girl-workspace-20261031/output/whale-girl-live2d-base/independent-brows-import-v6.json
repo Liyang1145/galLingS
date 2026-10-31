@@ -1,0 +1,32 @@
+{
+  "width": 2048,
+  "height": 1536,
+  "output": "./output/whale-girl-live2d-base/independent-brows-import-v6.psd",
+  "layers": [
+    {
+      "name": "Brow_ViewerLeft_v6",
+      "file": "./output/whale-girl-live2d-base/layers/eyebrows-draft-v1.png",
+      "crop": {
+        "left": 364,
+        "top": 313,
+        "width": 557,
+        "height": 108
+      },
+      "left": 200,
+      "top": 200
+    },
+    {
+      "name": "Brow_ViewerRight_v6",
+      "file": "./output/whale-girl-live2d-base/layers/eyebrows-draft-v1.png",
+      "crop": {
+        "left": 1251,
+        "top": 313,
+        "width": 557,
+        "height": 107
+      },
+      "left": 1087,
+      "top": 200
+    }
+  ],
+  "provenance": "Unmodified eyebrows-draft-v1.png; spatial crop and PSD placement only; not yet imported or rigged."
+}

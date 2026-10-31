@@ -1,0 +1,275 @@
+{
+  "method": "image_gen artwork, lossless PSD packaging",
+  "assets": [
+    {
+      "file": "arm-viewer-left-draft-v1.png",
+      "width": 1024,
+      "height": 1536,
+      "visiblePixels": 198667,
+      "nonzeroAlphaPixels": 208296,
+      "bounds": {
+        "left": 162,
+        "top": 70,
+        "right": 735,
+        "bottom": 1483
+      },
+      "sha256": "f71a1a1e77ac6ce63951cb32eb0c6b23d25d731cf28cf24a46ffd71e5591065d",
+      "status": "artwork draft; native alignment and rigging pending"
+    },
+    {
+      "file": "arm-viewer-right-draft-v1.png",
+      "width": 1024,
+      "height": 1536,
+      "visiblePixels": 170277,
+      "nonzeroAlphaPixels": 179789,
+      "bounds": {
+        "left": 322,
+        "top": 71,
+        "right": 882,
+        "bottom": 1409
+      },
+      "sha256": "284647f03746a54e29ee898542db5711614e5c9f34fd8fb31cd0b5f429d9a529",
+      "status": "artwork draft; native alignment and rigging pending"
+    },
+    {
+      "file": "bangs-accessories-draft-v1.png",
+      "width": 1254,
+      "height": 1254,
+      "visiblePixels": 525362,
+      "nonzeroAlphaPixels": 587758,
+      "bounds": {
+        "left": 42,
+        "top": 58,
+        "right": 1236,
+        "bottom": 1162
+      },
+      "sha256": "4c2955844afb680de4f2f56d97e970ca87db54be96e8dce3cec597e89f243ace",
+      "status": "artwork draft; native alignment and rigging pending"
+    },
+    {
+      "file": "body-core-draft-v1.png",
+      "width": 1024,
+      "height": 1536,
+      "visiblePixels": 286021,
+      "nonzeroAlphaPixels": 302172,
+      "bounds": {
+        "left": 346,
+        "top": 81,
+        "right": 672,
+        "bottom": 1491
+      },
+      "sha256": "aa4226750d3411cce5559eb419c81e010ca5b1876cd138f6c497f052f9bd0fb0",
+      "status": "artwork draft; native alignment and rigging pending"
+    },
+    {
+      "file": "closed-eye-viewer-left-draft-v1.png",
+      "width": 1254,
+      "height": 1254,
+      "visiblePixels": 59074,
+      "nonzeroAlphaPixels": 68038,
+      "bounds": {
+        "left": 144,
+        "top": 548,
+        "right": 1102,
+        "bottom": 814
+      },
+      "sha256": "053c1e5dfab350da1bc54db29aa13b3106d7a6f2776dc66518c9059851b9846e",
+      "status": "artwork draft; native alignment and rigging pending"
+    },
+    {
+      "file": "closed-eye-viewer-right-draft-v1.png",
+      "width": 1254,
+      "height": 1254,
+      "visiblePixels": 76020,
+      "nonzeroAlphaPixels": 86793,
+      "bounds": {
+        "left": 90,
+        "top": 580,
+        "right": 1230,
+        "bottom": 864
+      },
+      "sha256": "dedcb1a98653ce803f0af3d59bcfdcdd3314ebca98a4c40873d6ac8adc3f0dc8",
+      "status": "artwork draft; native alignment and rigging pending"
+    },
+    {
+      "file": "eye-viewer-left-draft-v1.png",
+      "width": 1254,
+      "height": 1254,
+      "visiblePixels": 229885,
+      "nonzeroAlphaPixels": 243574,
+      "bounds": {
+        "left": 116,
+        "top": 390,
+        "right": 1092,
+        "bottom": 845
+      },
+      "sha256": "27a6a60fe66b1ec27ae6777203d3cfda81447ce569b1860782cb5947599e1e36",
+      "status": "artwork draft; native alignment and rigging pending"
+    },
+    {
+      "file": "eye-viewer-right-draft-v1.png",
+      "width": 1254,
+      "height": 1254,
+      "visiblePixels": 361467,
+      "nonzeroAlphaPixels": 380335,
+      "bounds": {
+        "left": 84,
+        "top": 354,
+        "right": 1228,
+        "bottom": 936
+      },
+      "sha256": "92f18353e675378235311fc823c6d8e5b3a21e0800f44b79cc535bfbb27c70ad",
+      "status": "artwork draft; native alignment and rigging pending"
+    },
+    {
+      "file": "eyebrows-draft-v1.png",
+      "width": 2172,
+      "height": 724,
+      "visiblePixels": 20351,
+      "nonzeroAlphaPixels": 25488,
+      "bounds": {
+        "left": 368,
+        "top": 317,
+        "right": 1804,
+        "bottom": 417
+      },
+      "sha256": "dfdde47bd96f834344be5c1d358f23e30075493d0e0d8304e29c9e9c4a4e6d53",
+      "status": "artwork draft; native alignment and rigging pending"
+    },
+    {
+      "file": "face-base-draft-v1.png",
+      "width": 1254,
+      "height": 1254,
+      "visiblePixels": 564004,
+      "nonzeroAlphaPixels": 571384,
+      "bounds": {
+        "left": 250,
+        "top": 108,
+        "right": 1004,
+        "bottom": 1073
+      },
+      "sha256": "456f21a72312d5dd0b3f75db4eebefb83e3af54d1bb80fa0d2e0208cfce02f08",
+      "status": "artwork draft; native alignment and rigging pending"
+    },
+    {
+      "file": "face-base-draft-v2.png",
+      "width": 1254,
+      "height": 1254,
+      "visiblePixels": 619042,
+      "nonzeroAlphaPixels": 637637,
+      "bounds": {
+        "left": 227,
+        "top": 93,
+        "right": 1025,
+        "bottom": 1101
+      },
+      "sha256": "5235d23d69acdcfa4311fdda2f0566212401e3da6539e24aeb07edd953de5024",
+      "status": "artwork draft; native alignment and rigging pending"
+    },
+    {
+      "file": "front-strands-draft-v1.png",
+      "width": 1254,
+      "height": 1254,
+      "visiblePixels": 157113,
+      "nonzeroAlphaPixels": 228490,
+      "bounds": {
+        "left": 237,
+        "top": 61,
+        "right": 1039,
+        "bottom": 1155
+      },
+      "sha256": "1927e23c478f3f806067e0a35ae15e3f5c556b5edf027e837989ce12cc7c5ef6",
+      "status": "artwork draft; native alignment and rigging pending"
+    },
+    {
+      "file": "mouth-closed-draft-v1.png",
+      "width": 1536,
+      "height": 1024,
+      "visiblePixels": 4509,
+      "nonzeroAlphaPixels": 7158,
+      "bounds": {
+        "left": 618,
+        "top": 480,
+        "right": 910,
+        "bottom": 552
+      },
+      "sha256": "dd76d8572c9de51445c1c729e4eeaa5dd58a6e64bb0e0a69de0ef74a85edf93b",
+      "status": "artwork draft; native alignment and rigging pending"
+    },
+    {
+      "file": "mouth-open-draft-v1.png",
+      "width": 1254,
+      "height": 1254,
+      "visiblePixels": 63490,
+      "nonzeroAlphaPixels": 70388,
+      "bounds": {
+        "left": 382,
+        "top": 549,
+        "right": 869,
+        "bottom": 765
+      },
+      "sha256": "aa22cafdc86ba7fbc59cfdc0f19dfa0a3cd519217bdd2bdac49fc25d2db69305",
+      "status": "artwork draft; native alignment and rigging pending"
+    },
+    {
+      "file": "rear-hair-draft-v1.png",
+      "width": 1024,
+      "height": 1536,
+      "visiblePixels": 528975,
+      "nonzeroAlphaPixels": 580147,
+      "bounds": {
+        "left": 47,
+        "top": 26,
+        "right": 994,
+        "bottom": 1070
+      },
+      "sha256": "341d0bdff4c204e61d2123a4266140637cf609a640d6b6973bfb033e32c2a8c8",
+      "status": "artwork draft; native alignment and rigging pending"
+    },
+    {
+      "file": "tail-draft-v1.png",
+      "width": 1024,
+      "height": 1536,
+      "visiblePixels": 375818,
+      "nonzeroAlphaPixels": 389329,
+      "bounds": {
+        "left": 168,
+        "top": 49,
+        "right": 937,
+        "bottom": 1438
+      },
+      "sha256": "c9f5af9894541a54fca62d0acbc661214018afcf49551414c90b023944b4abe2",
+      "status": "artwork draft; native alignment and rigging pending"
+    },
+    {
+      "file": "white-coverup-draft-v1.png",
+      "width": 1024,
+      "height": 1536,
+      "visiblePixels": 335728,
+      "nonzeroAlphaPixels": 384219,
+      "bounds": {
+        "left": 87,
+        "top": 194,
+        "right": 937,
+        "bottom": 1360
+      },
+      "sha256": "555578c20a5eff5877dab35a62d6526a79876f1ec9b7868535abed6d54472753",
+      "status": "artwork draft; native alignment and rigging pending"
+    },
+    {
+      "file": "white-coverup-draft-v2.png",
+      "width": 1024,
+      "height": 1536,
+      "visiblePixels": 492762,
+      "nonzeroAlphaPixels": 521041,
+      "bounds": {
+        "left": 19,
+        "top": 90,
+        "right": 1005,
+        "bottom": 1418
+      },
+      "sha256": "d8ad6f7c7647db054ce68089f49b93f9628c9eb4c0e96166ad69313f8dcd12ba",
+      "status": "artwork draft; native alignment and rigging pending"
+    }
+  ]
+}

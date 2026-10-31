@@ -1,0 +1,351 @@
+{
+  "authoritativeNativeFile": "whale-girl-layered-v2.cmo3",
+  "lastVerifiedSave": "2026-10-11 11:32:47 Asia/Shanghai",
+  "sourcePsd": "whale-girl-layered-v2.psd",
+  "nativeGeometryDiffersFromPsd": true,
+  "nativeCorrections": [
+    "ArmL inward approximately 20 source pixels",
+    "ArmR inward approximately 20 source pixels",
+    "HairFrontStrands root vertices moved away from eyes"
+  ],
+  "verifiedEditorBindings": {
+    "ParamEyeLOpen": {
+      "keys": [
+        0,
+        0.5,
+        1
+      ],
+      "EyeL_OpenOpacity": [
+        0,
+        1,
+        1
+      ],
+      "EyeL_ClosedOpacity": [
+        1,
+        0,
+        0
+      ],
+      "geometry": "Open-eye mesh vertically compressed at 0; interpolated halfway shape at 0.5; original shape at 1",
+      "evidence": "Observed closed eyelash at 0 and restored open eye at 1 without grid obstruction; intermediate eye mesh and opacity inspected"
+    },
+    "ParamEyeROpen": {
+      "keys": [
+        0,
+        0.5,
+        1
+      ],
+      "EyeR_OpenOpacity": [
+        0,
+        1,
+        1
+      ],
+      "EyeR_ClosedOpacity": [
+        1,
+        0,
+        0
+      ],
+      "geometry": "Open-eye mesh compressed vertically at 0; interpolated geometry at 0.5; original at 1",
+      "evidence": "Observed grid-free right closure, both eyes closed, and restored neutral open eyes. Continuous transition remains to refine."
+    },
+    "ParamMouthOpenY": {
+      "keys": [
+        0,
+        0.5,
+        1
+      ],
+      "MouthOpenOpacity": [
+        0,
+        1,
+        1
+      ],
+      "MouthClosedOpacity": [
+        1,
+        0,
+        0
+      ],
+      "geometry": "Open mouth mesh vertically compressed at closed endpoint, interpolated at midpoint, original at open endpoint",
+      "evidence": "Grid-free closed, half-open and open states observed in Cubism. Needs close-up transition refinement and runtime validation."
+    },
+    "ParamBreath": {
+      "keys": [
+        0,
+        1
+      ],
+      "deformer": "BodyMotion",
+      "geometry": "At 1, chest center Bezier anchor lifted 6 screen px at 74.7%; side anchors lifted 4px and expanded outward 4px each. All other anchors unchanged.",
+      "evidence": "Editor inspected at 1, 0.5 and 0. Grid and full-body view show lower-leg/foot controls unchanged and no obvious clothing separation at this scale. Grid-free 0 and 1 subsequently checked at full-body scale.",
+      "remaining": "Grid-free close-up and runtime continuous playback verification"
+    }
+  },
+  "remaining": [
+    "eye spacing and shape refinement against references",
+    "continuous blink transition QA",
+    "mouth transition close-up QA and expression refinement",
+    "head X/Y motion",
+    "front and side hair motion",
+    "tail motion",
+    "body sway and poses",
+    "physics continuous runtime QA",
+    "idle and talk motions",
+    "local GALgame acceptance",
+    "delivery packaging",
+    "upload isolated directory and branch to TanPowasd/galLingS after local tests pass"
+  ],
+  "runtimeVerified": false,
+  "eyePlacement": {
+    "EyeL": {
+      "deformerName": "EyeL_Placement",
+      "adjustment": "Whole parent translated 6 screen px toward nose at 211.2% zoom (about 2.84 source px)",
+      "id": "Warp",
+      "children": [
+        "EyeL_Open",
+        "EyeL_Closed"
+      ]
+    },
+    "EyeR": {
+      "deformerName": "EyeR_Placement",
+      "adjustment": "Whole parent translated 6 screen px toward nose at 211.2% zoom (about 2.84 source px)",
+      "id": "Warp2",
+      "children": [
+        "EyeR_Open",
+        "EyeR_Closed"
+      ]
+    },
+    "verification": "Parent hierarchies and whole bounding-box translation visually confirmed; left closure, both closed, and both open rechecked at 211.2% after placement."
+  },
+  "bodyMotion": {
+    "name": "BodyMotion",
+    "id": "Warp3",
+    "transformDivisions": [
+      5,
+      9
+    ],
+    "bezierDivisions": [
+      2,
+      6
+    ],
+    "hierarchy": "All former root objects including both eye placement parents; eye children preserved",
+    "locks": "All temporary eye locks removed"
+  },
+  "hairBackSway": {
+    "name": "HairBack_Sway",
+    "id": "Warp4",
+    "parent": "Head_Turn",
+    "child": "HairBack",
+    "transformDivisions": [
+      5,
+      9
+    ],
+    "bezierDivisions": [
+      2,
+      6
+    ],
+    "parameterUi": "摇动 后发",
+    "parameterId": "ParamHairBack",
+    "keys": [
+      -1,
+      0,
+      1
+    ],
+    "geometry": "Upper five Bezier rows unchanged. Penultimate row anchors shifted horizontally +/-10 screen pixels; bottom row +/-14 pixels at 74.7% zoom. Neutral untouched.",
+    "verification": "Grid-free -1, +1 and neutral checked at full-body scale. Roots remain fixed; visible tips bend. Needs close-up intermediate and physics/runtime verification."
+  },
+  "headRotation": {
+    "name": "Head_Rotation",
+    "id": "Rotation",
+    "parent": "BodyMotion",
+    "pivot": "Created by canvas rotation creation tool at chin, screen 1797,383 at 74.7%",
+    "children": [
+      "HairCap",
+      "HairFrontStrands",
+      "MouthClosed",
+      "MouthOpen",
+      "Eyebrows",
+      "Face",
+      "EyeL_Placement",
+      "EyeR_Placement",
+      "HairBack_Sway"
+    ],
+    "parameterUi": "角度 Z",
+    "keys": [
+      -30,
+      0,
+      30
+    ],
+    "rotationDegrees": [
+      -6,
+      0,
+      6
+    ],
+    "verification": "Both endpoints visually inspected after explicit reparent of eye and back-hair deformers through Inspector. Eyes now follow face. Neutral parameter reset exactly to 0. All temporary locks cleared via Parts header lock. At 211.2% inspected both tilt endpoints with both eyes closed and left half-open at negative tilt. No visible transparent neck gap; continuous blink naturalness remains unproven.",
+    "remaining": "Close-up neck overlap, blink/mouth combinations, intermediate interpolation and runtime verification"
+  },
+  "textureAtlas": {
+    "size": [
+      2048,
+      2048
+    ],
+    "count": 1,
+    "layout": "All model images",
+    "unplacedList": "Empty",
+    "bodyScalePercent": 100,
+    "checks": "Overlap and boundary overflow selectors selected no items",
+    "status": "Saved in native model and exported to runtime-test"
+  },
+  "runtimeTestExport": {
+    "directory": "runtime-test",
+    "model": "whale-girl.model3.json",
+    "moc": "whale-girl.moc3",
+    "texture": "whale-girl.2048/texture_00.png",
+    "mocBytes": 37568,
+    "coreCheck": "runtime-core-check.json",
+    "verified": "Core loads binary; 16 drawables; 6 bound parameters affect geometry or opacity across 21 samples each; finite vertex data",
+    "breathFootMaxSourcePixels": 0.00019555672634851524,
+    "notVerified": [
+      "continuous animation quality",
+      "physics playback in Viewer and game",
+      "GALgame integration"
+    ],
+    "releaseStatus": "Local development test only",
+    "staleRelativeToNative": "Runtime predates Tail_Sway, Tail_Physics, Body_Sway and Head_Turn; reexport required."
+  },
+  "automaticDriverGroups": {
+    "EyeBlink": [
+      "ParamEyeLOpen",
+      "ParamEyeROpen"
+    ],
+    "LipSync": [
+      "ParamMouthOpenY"
+    ],
+    "evidence": "Configured via native Cubism UI, saved, reexported and validated in model3 manifest."
+  },
+  "hairBackPhysics": {
+    "name": "HairBack_Physics",
+    "fps": 60,
+    "inputPreset": "Head input",
+    "particlePreset": "Hair long",
+    "radius": 15,
+    "mobility": 0.95,
+    "delay": 0.8,
+    "acceleration": 1.5,
+    "output": "ParamHairBack",
+    "scale": 2,
+    "weight": 100,
+    "editorObservedMaximumOutputPercent": 61.507,
+    "verification": "Editor positive/negative AngleZ endpoint changes drive output without saturation; reset returns near neutral. Viewer reopened model3 and displays physics resource, 60fps, four inputs and one output.",
+    "remaining": "Continuous playback visual QA and actual game physics evaluation."
+  },
+  "viewerEvidence": {
+    "version": "Cubism Viewer for OW 5.3.04",
+    "testedAt": "2026-10-11 02:30 Asia/Shanghai",
+    "render": "Full body renders with texture and no obvious missing pieces at fit scale.",
+    "combinations": "Positive and negative AngleZ, left closed, both eyes closed, both closed plus fully open mouth visually checked.",
+    "latestWindowId": 12585314,
+    "notAcceptance": "Not final quality or GALgame acceptance."
+  },
+  "tailSway": {
+    "name": "Tail_Sway",
+    "id": "Warp5",
+    "parent": "BodyMotion",
+    "child": "Tail",
+    "parameter": "ParamTailSway",
+    "keys": [
+      -30,
+      0,
+      30
+    ],
+    "transformDivisions": [
+      5,
+      9
+    ],
+    "bezierDivisions": [
+      2,
+      6
+    ],
+    "geometry": "Upper five Bezier anchor rows unchanged. At +30, all three penultimate-row anchors moved +18 screen pixels and bottom-row anchors +24 at 74.7% zoom. At -30 corresponding offsets are -18/-24. Neutral unchanged.",
+    "verification": "Grid-free -30, +30, +15.2 and reset 0 inspected. Tail fin outline remains intact at full-body scale; tail root stays fixed. Native saved.",
+    "remaining": "Close-up continuous QA, tail inertia/idle and fresh runtime export. Existing runtime-test predates tail binding."
+  },
+  "tailPhysics": {
+    "name": "Tail_Physics",
+    "inputs": [
+      "ParamBodyAngleX",
+      "ParamBodyAngleZ"
+    ],
+    "inputPreset": "Body input",
+    "particlePreset": "Clothes heavy",
+    "radius": 10,
+    "mobility": 0.95,
+    "delay": 0.8,
+    "acceleration": 1.5,
+    "output": "ParamTailSway",
+    "scale": 20,
+    "weight": 100,
+    "verification": "Native UI output binding confirmed. Positive/negative BodyAngleZ excitation changes tail output; maximum output display 32.679. Reset followed by 1.5 second observation shows near-neutral output. Saved to cmo3.",
+    "remaining": "Full-size continuous visual QA, body X excitation, combined movement, fresh export, SDK/game physics verification. Body X/Z geometric motion remains unrigged."
+  },
+  "bodySway": {
+    "name": "Body_Sway",
+    "id": "Warp6",
+    "parent": "Root",
+    "child": "BodyMotion",
+    "parameter": "ParamBodyAngleZ",
+    "keys": [
+      -10,
+      0,
+      10
+    ],
+    "geometry": "At 50% zoom upper two Bezier rows shift +/-12 screen pixels, third row +/-6. Lower four rows unchanged. Neutral untouched.",
+    "verification": "Grid-free endpoints and -5 intermediate inspected with breath 1. No obvious clothing gaps at fullbody scale; feet fixed. Reset all parameters and saved.",
+    "remaining": "Close-up and continuous runtime QA"
+  },
+  "headTurn": {
+    "name": "Head_Turn",
+    "id": "Warp7",
+    "parent": "Head_Nod",
+    "children": [
+      "HairCap",
+      "HairFrontStrands",
+      "MouthClosed",
+      "MouthOpen",
+      "Eyebrows",
+      "Face",
+      "EyeL_Placement",
+      "EyeR_Placement",
+      "HairBack_Sway"
+    ],
+    "parameter": "ParamAngleX",
+    "keys": [
+      -30,
+      0,
+      30
+    ],
+    "geometry": "141.4% zoom: center-column Bezier anchors at y313,404,495,586 moved horizontally +/-12,24,30,16 screen pixels. Remaining anchors unchanged; modest stylized yaw, not literal 30 degree anatomical turn.",
+    "verification": "Inspected grid-free left and right endpoints, left eye closure both directions, and +AngleX plus +AngleZ. All parameters reset and native saved.",
+    "remaining": "Intermediate and continuous visual QA, combined mouth/eyes and fresh runtime export"
+  },
+  "headNod": {
+    "name": "Head_Nod",
+    "id": "Warp8",
+    "parent": "Head_Rotation",
+    "child": "Head_Turn",
+    "parameter": "ParamAngleY",
+    "keys": [
+      -30,
+      0,
+      30
+    ],
+    "geometry": "At 141.4% center anchors y404,504,605 moved by -8,-12,-6 for up; +8,+14,+6 for down. Other points fixed.",
+    "verification": "Four X/Y endpoint combinations inspected at 141.4%; no obvious neck gap. User explicitly rejected flat perspective and horizontal eyes; head perspective still requires substantive refinement."
+  },
+  "faceRefinement": {
+    "status": "First pass only; not accepted final",
+    "backup": "whale-girl-before-face-refinement.cmo3",
+    "reference": "Newly supplied 1000053179.jpg and 1000053181.jpg",
+    "faceMesh": "At 200% neutral: outer lower cheek points (1687,563)->(1675,572), (1935,551)->(1947,560); bottom point (1807,631)->(1807,621); inner cheek points (1753,538)->(1747,546), (1843,547)->(1849,555).",
+    "eyes": "Both placement warps retain lowered top baseline and now bind ParamAngleX -30,0,30. At +30 EyeL outer column moved -14 screen x with top +2y and bottom -2y; at -30 EyeR outer column moved +14x with top +2y and bottom -2y. 200% zoom.",
+    "verification": "Native saved 2026-10-11 11:43:43, 3891746 bytes. Left-turn far-eye closed and half-closed observed; half-blink still visibly compresses iris, needs layered eye correction. Runtime export stale; final visual acceptance and game test missing.",
+    "next": "Correct independent eye foreshortening and eye-corner orientation at X endpoints; refine face volume, nose/mouth midline, hair overlap. User demands high fidelity to original reference.",
+    "yawContour": "Face ArtMesh now binds ParamAngleX -30,0,30. +30 bottom (1823,621)->(1835,621), far cheek (1965,560)->(1953,558). -30 bottom (1792,621)->(1780,621), far cheek (1656,573)->(1668,571). First pass only."
+  }
+}

@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>海风与布丁 · 鲸鱼小姐 Live2D 实时互动预览</title>
+  <style>
+    * { box-sizing: border-box; user-select: none; }
+    html, body {
+      margin: 0; padding: 0; width: 100%; height: 100%;
+      overflow: hidden;
+      background: #081c26;
+      color: #eef6f7;
+      font-family: "Microsoft YaHei", "PingFang SC", system-ui, sans-serif;
+    }
+    .app {
+      display: flex;
+      width: 100%;
+      height: 100%;
+    }
+    .stage {
+      position: relative;
+      flex: 1;
+      height: 100%;
+      overflow: hidden;
+      background-color: #0b2430;
+      background-size: cover;
+      background-position: center;
+      cursor: grab;
+    }
+    .stage:active { cursor: grabbing; }
+    canvas#model {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    .hud-top {
+      position: absolute;
+      top: 16px;
+      left: 18px;
+      right: 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      pointer-events: none;
+    }
+    .badge {
+      background: rgba(9, 36, 48, 0.85);
+      border: 1px solid rgba(130, 195, 192, 0.45);
+      backdrop-filter: blur(8px);
+      padding: 8px 14px;
+      border-radius: 10px;
+      font-size: 13px;
+      color: #c8ece8;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.35);
+    }
+    .badge strong { color: #fff5e3; font-size: 14px; }
+    .dialogue-box {
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      bottom: 20px;
+      background: rgba(8, 34, 45, 0.90);
+      border: 1px solid rgba(148, 226, 220, 0.45);
+      border-radius: 14px;
+      padding: 14px 22px 16px;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.5);
+      backdrop-filter: blur(8px);
+      pointer-events: none;
+      transition: opacity 0.2s;
+    }
+    .dialogue-name {
+      font-size: 17px;
+      font-weight: 700;
+      color: #94e2dc;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .dialogue-tag {
+      font-size: 11px;
+      font-weight: 600;
+      background: rgba(148, 226, 220, 0.18);
+      color: #bce6df;
+      padding: 2px 8px;
+      border-radius: 6px;
+      border: 1px solid rgba(148, 226, 220, 0.35);
+    }
+    .dialogue-text {
+      font-size: 19px;
+      color: #f6f1e6;
+      line-height: 1.5;
+      letter-spacing: 0.3px;
+    }
+    .sidebar {
+      width: 350px;
+      height: 100%;
+      background: #0a202a;
+      border-left: 1px solid rgba(130, 195, 192, 0.25);
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      padding: 16px;
+      gap: 14px;
+    }
+    .section {
+      background: rgba(15, 46, 58, 0.65);
+      border: 1px solid rgba(130, 195, 192, 0.22);
+      border-radius: 10px;
+      padding: 12px;
+    }
+    .section-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #94e2dc;
+      margin-bottom: 9px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .btn-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 7px;
+    }
+    .btn-grid.three {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    button {
+      background: #143b48;
+      color: #e9f2f2;
+      border: 1px solid rgba(130, 195, 192, 0.35);
+      border-radius: 8px;
+      padding: 8px 10px;
+      font-size: 12.5px;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all 0.15s;
+      text-align: center;
+    }
+    button:hover {
+      background: #235868;
+      border-color: #94e2dc;
+    }
+    button.active {
+      background: #2b6f7e;
+      border-color: #f0d5aa;
+      color: #fff8eb;
+      font-weight: 600;
+      box-shadow: 0 0 10px rgba(148, 226, 220, 0.28);
+    }
+    button.full-span {
+      grid-column: 1 / -1;
+    }
+    .toggle-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12.5px;
+      padding: 4px 0;
+      color: #d7e8e8;
+    }
+    .toggle-row input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      accent-color: #82c3c0;
+      cursor: pointer;
+    }
+    .slider-row {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 7px;
+    }
+    .slider-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11.5px;
+      color: #c5dedd;
+      margin-bottom: 2px;
+    }
+    .slider-row input[type="range"] {
+      width: 100%;
+      accent-color: #82c3c0;
+      height: 5px;
+      cursor: pointer;
+    }
+    .hint {
+      font-size: 11px;
+      color: #8fb4b8;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <div class="stage" id="stage" style="background-image: url('/bg/cove_noon.png');">
+      <canvas id="model"></canvas>
+      <div class="hud-top">
+        <div class="badge">
+          <strong>海风与布丁 · 鲸鱼小姐 (v6 傲娇精修版)</strong><br>
+          <span id="status">正在初始化 Live2D Cubism WebGL 引擎…</span>
+        </div>
+        <div class="badge" style="text-align:right;">
+          滚轮缩放 · 左键拖拽平移 · 移动鼠标视线跟随
+        </div>
+      </div>
+      <div class="dialogue-box" id="dialogue-box">
+        <div class="dialogue-name">
+          <span>鲸鱼小姐</span>
+          <span class="dialogue-tag" id="pose-tag">自然待机</span>
+        </div>
+        <div class="dialogue-text" id="dialogue-text">
+          “……看什么看？本小姐只是刚好路过这片浅滩而已。”
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar">
+      <div class="section">
+        <div class="section-title">
+          <span>💢 傲娇角色表情预设 (Tsundere Presets)</span>
+        </div>
+        <div class="btn-grid">
+          <button data-pose="auto" class="active">🌊 自然待机 (呼吸眨眼)</button>
+          <button data-pose="tsundere_pout">💢 傲娇撇嘴·侧目</button>
+          <button data-pose="tsundere_blush">😳 害羞抗议·脸红</button>
+          <button data-pose="tsundere_glare">😒 嫌弃半眯眼</button>
+          <button data-pose="happy_smile" class="full-span">✨ 破防开心笑 (酸梅汤加桂花)</button>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">
+          <span>🔍 镜头景别切换 (Camera Framing)</span>
+        </div>
+        <div class="btn-grid three">
+          <button data-view="face">面部特写</button>
+          <button data-view="half" class="active">Galgame半身</button>
+          <button data-view="full">全身立绘</button>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">
+          <span>🏝️ 场景背景与UI (Scene & HUD)</span>
+        </div>
+        <div class="btn-grid three">
+          <button data-bg="noon" class="active">浅滩·正午</button>
+          <button data-bg="golden">浅滩·黄昏</button>
+          <button data-bg="studio">纯色暗底</button>
+        </div>
+        <div style="margin-top: 8px;">
+          <label class="toggle-row">
+            <span>💬 显示 Galgame 对话框预览</span>
+            <input type="checkbox" id="toggle-dialogue" checked>
+          </label>
+          <label class="toggle-row">
+            <span>👀 鼠标视线与头部实时跟随</span>
+            <input type="checkbox" id="toggle-mouse" checked>
+          </label>
+          <label class="toggle-row">
+            <span>🫁 自动呼吸、微动与自然眨眼</span>
+            <input type="checkbox" id="toggle-auto" checked>
+          </label>
+        </div>
+      </div>
+
+      <div class="section" style="flex:1;">
+        <div class="section-title">
+          <span>🎛️ 核心参数实时调试 (Live Sliders)</span>
+          <button id="reset-sliders" style="padding:2px 8px; font-size:11px;">重置</button>
+        </div>
+        <div class="hint" style="margin-bottom:8px;">拖动滑块可实时微调当前表情参数：</div>
+        <div id="sliders-container"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/sdk/Core/live2dcubismcore.min.js"></script>
+  <script src="/cubism-framework.js"></script>
+  <script src="/viewer.js"></script>
+</body>
+</html>

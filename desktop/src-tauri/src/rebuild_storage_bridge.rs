@@ -1,4 +1,4 @@
-//! Optional Windows file-record transport. One worker, one page head, one cached receipt.
+//! Optional native file-record transport (Windows/Linux). One worker, one page head, one cached receipt.
 use super::{PAGE_READY, PAGE_SEQUENCE, STOP_HEARTBEAT};
 use crate::rebuild_storage::{ExchangeResult, NativeRecordStore, StorageError};
 use serde::{Deserialize, Serialize};
@@ -157,8 +157,9 @@ fn deliver(window: &WebviewWindow, receipt: &Reply, page: u64) {
         return;
     }
     let Ok(literal) = serde_json::to_string(&json) else { return };
+    let origin = super::PAGE_ORIGIN_JS;
     let _ = window.eval(&format!(
-        "(() => {{if(window.top!==window||location.origin!=='https://tauri.localhost')return;const b=window.__HAIFENG_RECORDS__;if(b?.protocol==='haifeng.native-records/1')b.receive(JSON.parse({literal}));}})()"
+        "(() => {{if(window.top!==window||location.origin!=={origin})return;const b=window.__HAIFENG_RECORDS__;if(b?.protocol==='haifeng.native-records/1')b.receive(JSON.parse({literal}));}})()"
     ));
 }
 
@@ -173,8 +174,8 @@ pub(super) fn start(app: tauri::AppHandle, store: Arc<NativeRecordStore>, work_i
             if !current(page) { continue; }
             if last.as_ref().map(|receipt| receipt.page != page).unwrap_or(false) { last = None; }
             let (sender, receiver) = mpsc::channel();
-            let script = "(() => {if(window.top!==window||location.origin!=='https://tauri.localhost')return null;const b=window.__HAIFENG_RECORDS__;return b?.protocol==='haifeng.native-records/1'?b.readRequest():null;})()";
-            if window.eval_with_callback(script.to_owned(), move |answer| { let _ = sender.send(answer); }).is_err() {
+            let script = format!("(() => {{if(window.top!==window||location.origin!=={})return null;const b=window.__HAIFENG_RECORDS__;return b?.protocol==='haifeng.native-records/1'?b.readRequest():null;}})()", super::PAGE_ORIGIN_JS);
+            if window.eval_with_callback(script, move |answer| { let _ = sender.send(answer); }).is_err() {
                 continue;
             }
             let answer = match receiver.recv_timeout(Duration::from_secs(1)) {

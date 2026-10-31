@@ -342,6 +342,19 @@ cargo tauri build --no-bundle --config "<准备目录>/tauri.rebuild.conf.json" 
 
 这些情景均未执行。Windows 运行还需要目标设备具有可用 WebView2；本片不提供其离线安装包，不验证最低系统、安装/卸载、签名或不同设备兼容性。Android、正式记录落点、系统生命周期及最终分发继续接续，M5 尚未完成。
 
+<a id="linux"></a>
+
+## Linux 宿主（试用接线）
+
+同一 `desktop/src-tauri` 宿主按目标平台编译，Linux 不另写宿主或剧情逻辑。差异只在平台层：
+
+- 页面来源为 WebKitGTK 的 `tauri://localhost`，桥平台标识 `linux-trial`；前端 `host.ts`、`storage.ts`、`fullscreen.ts` 及两份注入脚本按来源识别，桥协议仍为 `haifeng.host-bridge/3`，Windows/Android 行为不变。
+- 原生文件记录复用同一 `NativeRecordStore` 格式与 CAS 规则，数据位于应用本地数据根 `records/`。平台原语替换为：目录/文件拒绝符号链接；`store.lock` 用独占建议锁，第二个宿主打开失败；提交用 `hard_link` 拒绝覆盖已有提交后同步目录，失败保留旧提交。
+- 没有 Windows 声音输出扩展，音频沿基础桥默认已获准；没有挂起通知，暂停仍随失焦、最小化及页面超时。
+- `npm run linux:prepare -- <产物摘要>` 与 Windows 准备相同，只复制核对游戏包并写生成配置，不编译；编译命令由脚本输出。
+
+2026-10-31 已执行 Linux `typecheck`、存储模块独立读写/锁/CAS/符号链接测试；整机 Tauri 编译、启动与试玩待执行，不能视为已验收。
+
 <a id="native-storage"></a>
 
 ## Windows 原生文件记录

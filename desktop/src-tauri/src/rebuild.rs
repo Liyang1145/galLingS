@@ -1,4 +1,4 @@
-//! Windows game host. No Python, legacy protocol or interpreter fallback.
+//! Windows/Linux game host. No Python, legacy protocol or interpreter fallback.
 use std::sync::atomic::{AtomicBool, AtomicU64, Ordering};
 use std::sync::{mpsc, Mutex};
 #[cfg(target_os = "windows")]
@@ -6,7 +6,7 @@ use std::sync::{Arc, OnceLock};
 use std::time::{Duration, Instant};
 use tauri::webview::{NewWindowResponse, PageLoadEvent};
 use tauri::{Manager, WebviewUrl, WebviewWindow, WebviewWindowBuilder, WindowEvent};
-#[cfg(target_os = "windows")]
+#[cfg(any(target_os = "windows", target_os = "linux"))]
 #[path = "rebuild_storage_bridge.rs"]
 mod records_bridge;
 #[cfg(target_os = "windows")]
@@ -21,6 +21,24 @@ mod audio_output;
 #[cfg(target_os = "windows")]
 static AUDIO_OUTPUT: OnceLock<Arc<audio_output::Output>> = OnceLock::new();
 static AUDIO_WARNED: AtomicBool = AtomicBool::new(false);
+
+/// Page origin and bridge platform tag per native target. Linux WebKitGTK serves custom protocols as tauri://localhost.
+#[cfg(target_os = "windows")]
+const PLATFORM: &str = "windows-trial";
+#[cfg(target_os = "windows")]
+const PAGE_SCHEME: &str = "https";
+#[cfg(target_os = "windows")]
+const PAGE_HOST: &str = "tauri.localhost";
+#[cfg(target_os = "windows")]
+const PAGE_ORIGIN_JS: &str = "'https://tauri.localhost'";
+#[cfg(not(target_os = "windows"))]
+const PLATFORM: &str = "linux-trial";
+#[cfg(not(target_os = "windows"))]
+const PAGE_SCHEME: &str = "tauri";
+#[cfg(not(target_os = "windows"))]
+const PAGE_HOST: &str = "localhost";
+#[cfg(not(target_os = "windows"))]
+const PAGE_ORIGIN_JS: &str = "'tauri://localhost'";
 
 static SEQUENCE: AtomicU64 = AtomicU64::new(0);
 static ACKNOWLEDGED: AtomicU64 = AtomicU64::new(0);
@@ -251,8 +269,9 @@ fn publish(window: &WebviewWindow) {
     let power = power::snapshot(page, &SEQUENCE);
     #[cfg(target_os = "windows")]
     let (sequence, power_paused) = (power.sequence, power.paused);
+    // Linux has no suspend subscription yet; focus/minimize below still pause the session.
     #[cfg(not(target_os = "windows"))]
-    let (sequence, power_paused) = (SEQUENCE.fetch_add(1, Ordering::SeqCst) + 1, true);
+    let (sequence, power_paused) = (SEQUENCE.fetch_add(1, Ordering::SeqCst) + 1, false);
     #[cfg(target_os = "windows")]
     let audio_snapshot = AUDIO_OUTPUT.get().ok_or_else(|| "声音许可任务没有建立".to_owned())
         .and_then(|output| output.snapshot(page, &identity));
@@ -271,9 +290,18 @@ fn publish(window: &WebviewWindow) {
     let (audio_script, audio_paused) = (String::new(), true);
     let paused = power_paused || audio_paused || !window.is_focused().unwrap_or(false)
         || window.is_minimized().unwrap_or(true);
+    #[cfg(target_os = "windows")]
     let script = format!(
         "(() => {{const b=window.__HAIFENG_HOST__,a=window.__HAIFENG_WINDOWS_AUDIO__; if(b?.protocol!=='haifeng.host-bridge/3'||window.__HAIFENG_WINDOWS_PAGE_ID__!=={encoded_identity}||a?.protocol!=='haifeng.audio-output/1') return null; {audio_script} b.receive({{format:'haifeng.host-state/1',platform:'windows-trial',sequence:{sequence},paused:{paused}}}); return {{sequence:b.read().sequence,audio:a.readRequest()}};}})()"
     );
+    // Linux keeps the bridge's default granted audio state; there is no device-permission extension.
+    #[cfg(not(target_os = "windows"))]
+    let script = {
+        let _ = &audio_script;
+        format!(
+            "(() => {{const b=window.__HAIFENG_HOST__; if(b?.protocol!=='haifeng.host-bridge/3'||window.__HAIFENG_WINDOWS_PAGE_ID__!=={encoded_identity}) return null; b.receive({{format:'haifeng.host-state/1',platform:'linux-trial',sequence:{sequence},paused:{paused}}}); return {{sequence:b.read().sequence,audio:null}};}})()"
+        )
+    };
     if sequence.saturating_sub(ACKNOWLEDGED.load(Ordering::SeqCst)) > 4 {
         warn_delivery();
     }
@@ -310,8 +338,8 @@ fn publish(window: &WebviewWindow) {
 }
 
 pub fn run() {
-    if !cfg!(target_os = "windows") {
-        panic!("当前桌面宿主仅支持 Windows");
+    if !cfg!(any(target_os = "windows", target_os = "linux")) {
+        panic!("当前桌面宿主仅支持 Windows 与 Linux");
     }
     let context = tauri::generate_context!();
     // Only the prepared game package may start; the base placeholder has no manifest.
@@ -357,6 +385,8 @@ pub fn run() {
             }
             let work_id = manifest["workId"].as_str()
                 .ok_or_else(|| std::io::Error::new(std::io::ErrorKind::InvalidData, "游戏包缺少作品身份"))?.to_owned();
+            #[cfg(target_os = "windows")]
+            {
             let audio_registered = manifest["frontend"].as_array().map(|files| {
                 files.iter().any(|file| file["path"] == "assets/windows-audio-client.json")
             }).unwrap_or(false);
@@ -367,6 +397,7 @@ pub fn run() {
                 || audio_capability["format"] != "haifeng.windows-audio-client/1"
                 || audio_capability["protocol"] != "haifeng.audio-output/1" {
                 return Err(std::io::Error::new(std::io::ErrorKind::InvalidData, "Windows 声音输出客户端与宿主不匹配，请重新构建并准备").into());
+            }
             }
             {
                 let registered = manifest["frontend"].as_array().map(|files| {
@@ -387,19 +418,19 @@ pub fn run() {
             AUDIO_OUTPUT.set(audio_output::Output::start()?)
                 .map_err(|_| std::io::Error::new(std::io::ErrorKind::AlreadyExists, "声音许可任务已建立"))?;
             let local_data = app.path().app_local_data_dir()?;
-            #[cfg(target_os = "windows")]
+            #[cfg(any(target_os = "windows", target_os = "linux"))]
             let native_store = Some(std::sync::Arc::new(crate::rebuild_storage::NativeRecordStore::open(
                 local_data.join("records"), work_id.clone(),
             )?));
             let data = local_data.join("webview");
             std::fs::create_dir_all(&data)?;
             let records_bootstrap = include_str!("../../../packages/player/src/web/native-records-bootstrap.js")
-                .replace("__HAIFENG_RECORD_PLATFORM__", "windows-trial")
+                .replace("__HAIFENG_RECORD_PLATFORM__", PLATFORM)
                 .replace("__HAIFENG_FILE_RECORDS__", "true")
                 .replace("__HAIFENG_RECORD_WORK__", &serde_json::to_string(&work_id)?);
             // Private per-document identity. No page command, persistent value or optional display dependency.
             let page_bootstrap = r#"(() => {
-                if(window.top!==window||window.location.origin!=='https://tauri.localhost') return;
+                if(window.top!==window||window.location.origin!==__HAIFENG_PAGE_ORIGIN__) return;
                 let identity=null;
                 try {
                     const bytes=new Uint8Array(16);
@@ -407,10 +438,13 @@ pub fn run() {
                     identity=Array.from(bytes,byte=>byte.toString(16).padStart(2,'0')).join('');
                 } catch {}
                 Object.defineProperty(window,'__HAIFENG_WINDOWS_PAGE_ID__',{value:identity,writable:false,configurable:false});
-            })();"#;
-            let bootstrap = format!("{page_bootstrap}\n{records_bootstrap}\n{}\n{}", include_str!("../../../packages/player/src/web/host-bootstrap.js")
-                .replace("__HAIFENG_PLATFORM__", "windows-trial"),
-                include_str!("../../../packages/player/src/web/windows-audio-bootstrap.js"));
+            })();"#.replace("__HAIFENG_PAGE_ORIGIN__", PAGE_ORIGIN_JS);
+            #[cfg(target_os = "windows")]
+            let audio_bootstrap = include_str!("../../../packages/player/src/web/windows-audio-bootstrap.js");
+            #[cfg(not(target_os = "windows"))]
+            let audio_bootstrap = "";
+            let bootstrap = format!("{page_bootstrap}\n{records_bootstrap}\n{}\n{audio_bootstrap}", include_str!("../../../packages/player/src/web/host-bootstrap.js")
+                .replace("__HAIFENG_PLATFORM__", PLATFORM));
             WebviewWindowBuilder::new(app, "rebuild", WebviewUrl::App("index.html".into()))
                 .title("海风与布丁")
                 .inner_size(1440.0, 810.0)
@@ -420,8 +454,8 @@ pub fn run() {
                 .data_directory(data)
                 .initialization_script(bootstrap)
                 .on_navigation(|url| {
-                    url.scheme() == "https"
-                        && url.host_str() == Some("tauri.localhost")
+                    url.scheme() == PAGE_SCHEME
+                        && url.host_str() == Some(PAGE_HOST)
                         && url.port().is_none()
                         && url.username().is_empty()
                         && url.password().is_none()
@@ -443,7 +477,7 @@ pub fn run() {
                     }
                 })
                 .build()?;
-            #[cfg(target_os = "windows")]
+            #[cfg(any(target_os = "windows", target_os = "linux"))]
             if let Some(store) = native_store { records_bridge::start(app.handle().clone(), store, work_id)?; }
             let handle = app.handle().clone();
             std::thread::Builder::new().name("haifeng-host-state".into()).spawn(move || {

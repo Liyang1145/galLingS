@@ -1,8 +1,8 @@
-//! Windows host for the shared TypeScript game.
+//! Windows/Linux host for the shared TypeScript game.
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
 mod rebuild;
-#[cfg(target_os = "windows")]
+#[cfg(any(target_os = "windows", target_os = "linux"))]
 mod rebuild_storage;
 
 fn main() {

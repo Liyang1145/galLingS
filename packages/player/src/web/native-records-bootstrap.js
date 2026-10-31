@@ -1,6 +1,7 @@
 // Explicit native trial initialization only. No filesystem paths, domain merges or story commands.
 ((enabled, workId, platform) => {
   const origin = platform === "windows-trial" ? "https://tauri.localhost"
+    : platform === "linux-trial" ? "tauri://localhost"
     : platform === "android-trial" ? "https://appassets.androidplatform.net" : null;
   if (!origin || window.top !== window || window.location.origin !== origin) return;
   Object.defineProperty(window, "__HAIFENG_RECORD_MODE__", {

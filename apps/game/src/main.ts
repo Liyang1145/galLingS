@@ -401,6 +401,7 @@ async function main(): Promise<void> {
   const host = connectHost(state => {
     const platform = state.issue ? `宿主状态异常，已暂停：${state.issue}`
       : state.platform === "windows-trial" ? "Windows 集成试用 · 记录与旧版隔离"
+      : state.platform === "linux-trial" ? "Linux 集成试用 · 记录与旧版隔离"
       : state.platform === "android-trial" ? "Android 集成试用 · 记录与旧版隔离" : "浏览器试播";
     if (hostStatus) hostStatus.textContent = `${platform}${state.audioIssue ? ` · ${state.audioIssue}` : ""}`;
     const issue = [state.issue ? `宿主状态异常，已暂停：${state.issue}` : "", state.audioIssue ?? ""].filter(Boolean).join(" · ");

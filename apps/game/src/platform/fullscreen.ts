@@ -10,6 +10,7 @@ function object(value: unknown): Record<string, unknown> {
 export function nativeFullscreenDriver(): FullscreenDriver | undefined {
   const injected: unknown = Reflect.get(window, "__HAIFENG_HOST__");
   const platform = location.origin === "https://tauri.localhost" ? "windows-trial"
+    : location.origin === "tauri://localhost" ? "linux-trial"
     : location.origin === "https://appassets.androidplatform.net" ? "android-trial" : null;
   if (!platform && injected === undefined) return undefined;
   const listeners = new Set<() => void>();

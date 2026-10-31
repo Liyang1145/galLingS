@@ -14,6 +14,7 @@ export function connectGameStorage(workId: string, notice: HTMLElement, developm
   const mode: unknown = Reflect.get(window, "__HAIFENG_RECORD_MODE__");
   const injected: unknown = Reflect.get(window, "__HAIFENG_RECORDS__");
   const platform = window.location.origin === "https://tauri.localhost" ? "windows-trial"
+    : window.location.origin === "tauri://localhost" ? "linux-trial"
     : window.location.origin === "https://appassets.androidplatform.net" ? "android-trial" : null;
   if (mode === undefined || mode === "indexeddb") {
     if (!development && platform !== null) throw new Error("游戏宿主缺少原生文件记录接线，请重新构建并准备；不会切换浏览器记录");
@@ -54,7 +55,7 @@ export function connectGameStorage(workId: string, notice: HTMLElement, developm
     try {
       const next = state();
       if (next.owner !== originalOwner) throw new Error("原生记录页面身份已改变");
-      const text = [...(development ? [`本次使用独立的 ${platform === "android-trial" ? "Android" : "Windows"} 文件记录。`] : []),
+      const text = [...(development ? [`本次使用独立的 ${platform === "android-trial" ? "Android" : platform === "linux-trial" ? "Linux" : "Windows"} 文件记录。`] : []),
         ...(typeof next.issue === "string" ? [next.issue] : []), ...warnings].join(" ");
       if (notice.textContent !== text) notice.textContent = text;
     } catch (error: unknown) {

@@ -1,6 +1,6 @@
 import { HOST_BRIDGE_PROTOCOL, WINDOWS_AUDIO_PROTOCOL } from "../../../../packages/story-model/src/host.ts";
 
-type NativePlatform = "windows-trial" | "android-trial";
+type NativePlatform = "windows-trial" | "linux-trial" | "android-trial";
 
 export interface HostState {
   platform: "browser" | NativePlatform;
@@ -25,7 +25,7 @@ function record(value: unknown): Record<string, unknown> {
 function readState(value: unknown): NativeState {
   const data = record(value);
   if (Object.keys(data).sort().join(",") !== "format,paused,platform,sequence"
-    || data.format !== "haifeng.host-state/1" || (data.platform !== "windows-trial" && data.platform !== "android-trial")
+    || data.format !== "haifeng.host-state/1" || (data.platform !== "windows-trial" && data.platform !== "linux-trial" && data.platform !== "android-trial")
     || typeof data.sequence !== "number" || !Number.isSafeInteger(data.sequence) || data.sequence < 0
     || typeof data.paused !== "boolean") throw new Error("宿主状态格式或字段无效");
   return { format: data.format, platform: data.platform, sequence: data.sequence, paused: data.paused };
@@ -53,6 +53,7 @@ export function connectHost(
   let disposed = false;
   let installed = false;
   const expected: NativePlatform | null = window.location.origin === "https://tauri.localhost" ? "windows-trial"
+    : window.location.origin === "tauri://localhost" ? "linux-trial"
     : window.location.origin === "https://appassets.androidplatform.net" ? "android-trial" : null;
   const outputView = (): { issue: string | null; pending: number | null } | null => {
     if (expected !== "windows-trial" || windowsAudio === undefined) return null;
